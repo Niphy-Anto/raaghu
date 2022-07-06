@@ -1,0 +1,23 @@
+<div class="container ps-0 pt-5"> 
+    <div class="fw-bold">
+        <rds-label [label]="translate.instant('Invoice Information')"></rds-label>
+    </div>
+    <div class="row">
+        <form #invoiceForm="ngForm">
+            <div class="col-md-12">
+                <div class=" form-group mb-3">
+                <rds-input [inputType]="'text'" [Title]="translate.instant('Legal Name')" [(ngModel)]="InvoiceDataForm.legalName" #legalName="ngModel"
+                     [placeholder]="translate.instant('Legal Name')"
+                    name="legalName"  id="legalName" [TitleType]="'Top'"></rds-input>
+                </div>
+               
+            </div>
+            <div class="col-md-12">
+                <div class=" form-group mb-3">
+                    <rds-textarea [disabled]="false" rows="3" name="address" 
+                     #address="ngModel" [label]="translate.instant('Address')" [(ngModel)]="InvoiceDataForm.address"></rds-textarea>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

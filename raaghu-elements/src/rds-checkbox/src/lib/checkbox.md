@@ -1,0 +1,95 @@
+---
+slug: "/checkbox"
+date: "2019-05-04"
+title: "checkbox"
+---
+
+
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/style-elements.css">
+<link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/main.css">
+
+#### Checkbox
+
+<p class="checkbox-def">Checkboxes are used when there are multiple items to select in a list.</p>
+
+<!-- Default State -->
+<section class="py-4">
+    <h6>Default State</h6>
+    <div class="py-3">
+      <div class="cust-tabs">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="Preview-tab" data-bs-toggle="tab" data-bs-target="#Preview" type="button" role="tab" aria-controls="Preview" aria-selected="true">Preview </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="Angular-tab" data-bs-toggle="tab" data-bs-target="#Angular" type="button" role="tab" aria-controls="Angular" aria-selected="false"><i class="bi bi-code-slash" style="font-size:1.0rem"></i>Angular</button>
+          </li>
+        </ul>
+      </div>
+      <div class="tab-content card border" id="myTabContent">
+        <div class="tab-pane fade show active" id="Preview" role="tabpanel" aria-labelledby="Preview-tab">
+          <div class="contents bg-light p-5">
+            <div class="row">
+               <div class="form-check m-5">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                <label class="form-check-label" for="flexCheckChecked">
+                  Checked checkbox
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade show" id="Angular" role="tabpanel" aria-labelledby="Angular-tab">
+          <div class="contents bg-code">
+<div class="row  m-0 p-4">
+
+```html
+<rds-checkbox
+  label="default checkbox"
+  [checked]="false"
+  [disabled]="false"
+  [switch]="false"
+  [inline]="false"
+  id="checkboxid"
+  [withLabel]="true"
+  [isInputGroup]="true"
+  state="checkbox"
+  (onChange)="onChange($event)"
+  (onClick)="onClick($event)"
+></rds-checkbox>
+```
+
+</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<!-- Skeleton / Specifications -->
+<section class="py-4">
+                        <h6>
+                           Skeleton / Specifications
+                        </h6>
+                        <div class="py-3">
+                              <!-- Tab panes -->
+                              <div class="">
+                                 <div class="row">
+                                    <div class="col-md-6 col-12">
+                                       <img src="https://portal.raaghu.io/images/components/_checkbox/img-1.png" class="img-fluid">
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                       <img src="https://portal.raaghu.io/images/components/_checkbox/img-2.png" class="img-fluid">
+                                    </div>
+                                 </div>
+                              </div>
+                        </div>
+                     </section>
+
+
+
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

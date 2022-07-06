@@ -1,0 +1,39 @@
+<div [ngSwitch]="role">
+  <div *ngSwitchCase="'with_split'">
+    <div [ngClass]="dropdownDirection">
+      <button [ngClass]="button1" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true"
+        aria-expanded="false">
+        {{ label }}
+      </button>
+      <button type="button" [ngClass]="splitdown" data-bs-toggle="dropdown" aria-expanded="false">
+        <span class="visually-hidden">Toggle Dropdown</span>
+      </button>
+      <ul [ngClass]="menu" aria-labelledby="dropdownMenuButton1">
+        <li (click)="onclick($event,item)" *ngFor="let item of listItems; index as i;">
+          <a class="dropdown-item">{{item.value}}
+            <rds-icon [name]="item.icon" *ngIf="item.icon" [width]="item.iconWidth" [fill]="item.iconFill"
+              [stroke]="item.iconStroke" [height]="item.iconHeight">
+            </rds-icon>
+            <!-- <i [ngClass]="item.icon" class="float-end"></i> -->
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div *ngSwitchCase="'dropdown-button'">
+    <div [ngClass]="dropdownDirection">
+      <button [ngClass]="classes" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+        aria-expanded="false">
+        {{ label }}
+      </button>
+      <ul [ngClass]="menu" aria-labelledby="dropdownMenuButton1">
+
+        <li (click)="onclick($event,item)" *ngFor="let item of listItems; index as i;"><a
+            class="dropdown-item">{{item.value}} <rds-icon [name]="item.icon" *ngIf="item.icon" [width]="item.iconWidth"
+              [fill]="item.iconFill" [stroke]="item.iconStroke" [height]="item.iconHeight"></rds-icon></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

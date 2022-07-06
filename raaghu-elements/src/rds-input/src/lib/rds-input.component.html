@@ -1,0 +1,23 @@
+<div [ngClass]="divclasses">
+  <div class="d-flex position-relative w-100" [ngClass]="floatclasses">
+    <input (keyup)="onKeyup($event)" data-bs-toggle="tooltip" [attr.id]="id" (focus)="focus()" [attr.type]="inputType"
+      [ngClass]="classes" [attr.placeholder]="placeholder" [(ngModel)]="value" [value]="value" data-bs-toggle="tooltip"
+      [attr.data-bs-placement]="tooltipPlacement" title="" [attr.id]="id" [disabled]="disabled" [readonly]="readonly"
+      (mouseup)="onMouseup($event)" />
+    <rds-icon *ngIf="formState&&icon" [ngClass]="iconClass" [height]="iconHeight" [width]="iconWidth" [fill]="iconFill"
+      [stroke]="iconStroke" class="icon-position" [name]="icon"></rds-icon>
+    <rds-icon [name]="'disable'" *ngIf="disabled && !readonly"></rds-icon>
+    <label *ngIf="floatclasses" [ngClass]="Title == '' ? 'd-none' : 'form-label'" class="d-none" for="Errormessage">{{
+      Title
+      }} <span class="text-danger" *ngIf="isRequired">*</span>
+    </label>
+
+  </div>
+
+  <label [ngClass]="labelClass" [ngClass]="Title == '' ? 'd-none' : 'form-label'" for="Errormessage">
+    {{
+    Title
+    }} <span class="text-danger" *ngIf="isRequired">*</span>
+  </label>
+
+</div>

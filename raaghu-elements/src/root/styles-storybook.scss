@@ -1,0 +1,142 @@
+/*------- avatar custom properties-------------*/
+.avatar-sm {
+  width: 2rem;
+  height: 2rem;
+}
+
+.avatar-md {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.avatar-lg {
+  width: 3rem;
+  height: 3rem;
+}
+
+.avatar-larger {
+  width: 6rem;
+  height: 6rem;
+}
+
+.avatar {
+  align-items: center;
+  // display: flex;
+  justify-content: center;
+  align-items: center;
+  // display: flex;
+  justify-content: center;
+}
+
+/*------- avatar group custom properties-------------*/
+.avatar-group {
+  display: flex;
+}
+
+.avatar-group img,
+.avatar-group div {
+  margin: 0.375rem;
+}
+
+// Badge css
+.badge-primary {
+  background-color: #c2e3ff;
+  border-color: #c2e3ff;
+  color: #3698ee !important;
+}
+
+.badge-secondary {
+  background-color: #e2e2e2;
+  border-color: #e2e2e2;
+  color: #a9a2a2 !important;
+}
+
+.badge-success {
+  background-color: #c5f8cf;
+  border-color: #c5f8cf;
+  color: #25c243 !important;
+}
+
+.badge-danger {
+  background-color: #ffd1d1;
+  border-color: #ffd1d1;
+  color: #ec5f5f !important;
+}
+
+.badge-warning {
+  background-color: #fff5d1;
+  border-color: #ffecb5;
+  color: #ecb15f !important;
+}
+
+.badge-info {
+  background-color: #d1f4ff;
+  border-color: #d1f4ff;
+  color: #5fcaec !important;
+}
+
+.badge-dark {
+  background-color: #FFFFFF;
+  border-color: #000000;
+  color: #000000 !important;
+}
+
+/* tags css new variations */
+.tags {
+  width: auto;
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.5;
+  word-wrap: break-word;
+  text-transform: uppercase;
+  position: relative;
+  background-color: #3698ee;
+}
+
+.tags {
+  .btn-close {
+    font-size: 0.875rem * .875;
+  }
+}
+
+.square-tags .tags {
+  box-shadow: 0px 4px 40px #0000000a;
+  border-radius: .25rem;
+}
+
+.square-tags .tags-body {
+  padding: 5px 5px 5px 10px;;
+}
+
+.rounded-tags .toast-body {
+  padding: 5px 5px 5px 10px;;
+}
+
+.rounded-tags .tags {
+  box-shadow: 0px 4px 40px #0000000a;
+  border-radius: 50rem;
+}
+
+.borderd .tags {
+  background-color: transparent;
+  border: 1px solid #ff6060 !important;
+}
+.binding-tags2 {
+  padding-bottom: 80px;
+}
+.tags-dismissible {
+  padding-right: .65em * 3;
+  // Adjust close link position
+  .btn-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1 + 1;
+    padding: .35em * 1.25 .65em;
+  }
+}
+
+svg {
+    fill: none;
+    // stroke: $gray-300;
+}

@@ -1,0 +1,73 @@
+<ng-container *ngIf="datePickerType==='basic'">
+  <div>
+    <label [ngClass]="labelClass" [ngClass]="Label == '' ? 'd-none' : 'form-label'" for="Errormessage">{{
+      Label
+      }}</label>
+    <div class="input-group mb-3 pt-2">
+      <input type="text" autocomplete="off" bsDatepicker [datesDisabled]="datesDisabled" [minDate]="minDate"
+        #datepicker="bsDatepicker" (onHidden)="onHide.emit($event)" [daysDisabled]="daysDisabled" [isOpen]="isOpen"
+        [bsConfig]="DatePickerConfig" id="DateOfBirth" [maxDate]="maxDate" [outsideEsc]="outsideEsc"
+        (onShown)="onShow.emit($event)" [placeholder]="placeholder" [bsValue]="value"
+        [dateTooltipTexts]="dateTooltipTexts" [(ngModel)]="value" name="date-picker" [minMode]="minMode"
+        (bsValueChange)="onDateChane($event)" [datesEnabled]="datesEnabled" [datesDisabled]="datesDisabled"
+        [outsideClick]="outsideClick" [placement]="placement" class="form-control" />
+      <span class="input-group-text" id="basic-addon1" (click)="datepicker.show()">
+        <rds-icon name="calendar" height="18px" width="18px"></rds-icon>
+
+      </span>
+
+    </div>
+  </div>
+</ng-container>
+<ng-container *ngIf="datePickerType==='advanced'">
+  <div class="dd">
+    <div class="dd-a vertical">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+        aria-expanded="false">
+        <rds-icon name="calendar" height="18px" width="18px"></rds-icon>
+        <span class="date-range"> {{Label }}</span>
+      </button>
+    </div>
+    <input type="checkbox" (click)="checked($event)">
+    <div [class]="classes">
+      <ul class="dropdown-menu1">
+        <li class="display-last-date cus-date"><a class="dropdown-item" href="#"><strong>{{title}}</strong></a></li>
+        <div [ngSwitch]="newDate">
+          <li class="display-date" *ngSwitchCase="'currentDate'"><a><small>{{currentDate | date:'MMM d,
+                y'}}</small></a>
+          </li>
+
+          <li class="display-date" *ngSwitchCase="'yesterdayDate'"><a><small>{{yesterdayDate | date:'MMM d,
+                y'}}</small></a></li>
+
+          <li class="display-date" *ngSwitchCase="'lastSevendate'"><a><small>{{dates | date:'MMM d, y'}} -
+                {{lastSevendate | date:'MMM d, y'}}</small></a></li>
+          <li class="display-date" *ngSwitchCase="'lastFourteendate'"><a><small>{{dates | date:'MMM d, y'}} -
+                {{lastFourteendate | date: 'MMM d, y'}}</small></a></li>
+
+
+          <li class="display-date" *ngSwitchCase="'custom'"><a><small>{{firstRange | date:'MMM d, y'}} - {{lastRange |
+                date: 'MMM d, y'}}</small></a></li>
+        </div>
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+
+        <li><a class="dropdown-item" (click)="todayDate($event);">Today</a></li>
+        <li><a class="dropdown-item" (click)="yesDate($event)">Yesterday</a></li>
+        <li><a class="dropdown-item" (click)="lastSevenDate($event)">Last 7 days</a></li>
+        <li><a class="dropdown-item" (click)="lastFourteenDate($event)">Last 14 days</a></li>
+        <li class="menu-item-has-children">
+          <div class="dropdown-item active input-group date datepicker" [bsValue]="bsInlineRangeValue"
+            [bsConfig]="{ containerClass: 'theme-dark-blue light-mode', customTodayClass: 'custom-today-class'}"
+            #dp="bsDaterangepicker" bsDaterangepicker placement="right" (bsValueChange)="changeDate($event)"
+            bsrangeValue>
+            Custom <span class="hr-line">|</span>
+          </div>
+          <div class="footerDatepicker" *ngIf="dp.isOpen">Maximum date range limit is <b>30 days</b></div>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</ng-container>

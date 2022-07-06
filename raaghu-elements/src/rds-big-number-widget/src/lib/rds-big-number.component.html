@@ -1,0 +1,10 @@
+<div class="card border-0" [ngClass]="classes">
+  <div [ngClass]="alignclasses">
+    <h1>{{bigNumber}}</h1>
+    <h6 [ngClass]="subTitleClasses">
+      <rds-icon *ngIf="icon" [name]="icon" [fill]="iconFill" [stroke]="iconStroke" [colorVariant]="iconColor"
+        [height]="iconHeight" [width]="iconWidth"></rds-icon>
+      {{subText}}
+    </h6>
+  </div>
+</div>

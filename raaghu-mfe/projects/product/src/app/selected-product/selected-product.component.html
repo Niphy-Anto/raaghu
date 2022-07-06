@@ -1,0 +1,11 @@
+<h3 class="mb-3">Selected product</h3>
+
+<div
+  class="card shadow-sm w-50 my-2"
+  *ngIf="selectedProduct$ | async as selectedProduct"
+>
+  <div class="card-body py-3 d-flex justify-content-between w-100">
+    <div>{{ selectedProduct.name }}</div>
+    <b>${{ selectedProduct.price }}</b>
+  </div>
+</div>
