@@ -1,0 +1,69 @@
+<div class="row">
+    <div class="tab-content px-3">
+        <form #languageForm="ngForm">
+            <div class="row mb-3">
+                <div class="col-md-12 col-sm-12">
+                    <div class="form-group mt-3">
+                        <rds-select-list [(ngModel)]="selectedLanguage.countryCode"
+                            [Label]="translate.instant('Language')" [customIcon]="'bi bi-chevron-down'"
+                            #language_name="ngModel" id="select-listlanguage" [value]="selectedLanguage.countryCode"
+                            ngDefaultControl name="language" [isRequired]=true required [itemList]="languageNames">
+                        </rds-select-list>
+                        <div class="form-control-feedback"
+                            *ngIf="language_name.errors && (language_name.dirty || language_name.touched)">
+                            <span class="text-danger" *ngIf="language_name.errors.required">{{"Language is
+                                required"|translate}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-12 col-sm-12">
+                    <div class="form-group mt-3">
+                        <!-- <rds-select-list [(ngModel)]="selectedLanguage.icon" [Label]="translate.instant('Country Code')"
+                            [customIcon]="'bi bi-chevron-down'" #country="ngModel" [value]="selectedLanguage.icon"
+                            id="select-list-country" ngDefaultControl name="icon" [isRequired]=true required
+                            [itemList]="flags">
+                        </rds-select-list> -->
+                        <div class="form-group mt-3">
+                            <rds-dropdownlist [icon]="selectedLanguage.icon" [colorVariant]="'btn-outline-light'" class="text-dark"
+                                [placeholder]="translate.instant('Country Code')" [value]="selectedLanguage.icon" required
+                                [multiSelect]="false" [selectAll]="false" [entity]="false" [listItems]="flags"
+                                (onSelect)="onCountryCodeSelect($event)"></rds-dropdownlist>
+
+                        </div>
+                        <div class="form-control-feedback"
+                            *ngIf="submitted && (selectedLanguage.icon===''||!selectedLanguage.icon)">
+                            <span class="text-danger">{{"Country code is
+                                required"|translate}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-sm-6">
+                    <div class="form-group mb-3">
+                        <rds-checkbox [label]="translate.instant('Is Enabled')" [checked]="selectedLanguage.isEnabled"
+                            [withLabel]="true" name="enables" [(ngModel)]="selectedLanguage.isEnabled" ngDefaultControl
+                            [id]="'isEnabled'">
+                        </rds-checkbox>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+    <div class="footer-buttons my-2">
+        <div class="row">
+            <div class="col-md-12 ">
+                <rds-button [label]="translate.instant('Close')" type="button" [colorVariant]="'outline-primary'"
+                    [size]="'small'" data-bs-dismiss="offcanvas">
+                </rds-button>
+                <rds-button [label]="translate.instant('Save')" type="button" [size]="'small'"
+                    [disabled]="!languageForm.valid" class="ms-2" [colorVariant]="'primary'"
+                    (click)="addLanguage(languageForm)">
+                </rds-button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,8 @@
+
+  <div class="form-group has-search" [class]="classes">
+    <span class="fa fa-search form-control-feedback"  id="button-addon2" (click)="search()">
+      <rds-icon name="search" height="12px" width="12px"></rds-icon>
+    </span>
+    <input type="text" class="form-control" placeholder="{{Placeholder}}" (keyup)="sendkeyup($event)"
+           (keyup.enter)="send($event)">
+  </div>

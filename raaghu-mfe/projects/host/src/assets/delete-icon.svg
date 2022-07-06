@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 70 70">
+  <g id="Group_152305" data-name="Group 152305" transform="translate(-520 -2455)">
+    <g id="Ellipse_8078" data-name="Ellipse 8078" transform="translate(520 2455)" fill="none" stroke="#eb5252" stroke-width="2.5">
+      <circle cx="35" cy="35" r="35" stroke="none"/>
+      <circle cx="35" cy="35" r="33.75" fill="none"/>
+    </g>
+    <g id="streamline-icon-interface-delete-bin-2_48x48" data-name="streamline-icon-interface-delete-bin-2@48x48" transform="translate(535.388 2467.754)">
+      <g id="Group_152267" data-name="Group 152267">
+        <line id="Line_6" data-name="Line 6" x2="39.224" transform="translate(0 9.806)" fill="none" stroke="#eb5252" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/>
+        <path id="Path_128712" data-name="Path 128712" d="M8.571,12H37.989V41.418a3.269,3.269,0,0,1-3.269,3.269H11.84a3.269,3.269,0,0,1-3.269-3.269Z" transform="translate(-3.668 -2.194)" fill="none" stroke="#eb5252" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/>
+        <path id="Path_128713" data-name="Path 128713" d="M15.429,11.52V9.886a8.172,8.172,0,1,1,16.343,0V11.52" transform="translate(-3.988 -1.714)" fill="none" stroke="#eb5252" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/>
+        <line id="Line_7" data-name="Line 7" y2="17.977" transform="translate(14.709 16.343)" fill="none" stroke="#eb5252" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/>
+        <line id="Line_8" data-name="Line 8" y2="17.977" transform="translate(24.515 16.343)" fill="none" stroke="#eb5252" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/>
+      </g>
+    </g>
+  </g>
+</svg>

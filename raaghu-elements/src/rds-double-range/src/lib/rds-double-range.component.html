@@ -1,0 +1,11 @@
+<div class="position-relative py-5">
+  <ng-container>
+    <span id="range1" class="sliderTooltipRangeOne " [attr.data-tooltip]="val1"></span>
+    <span id="range2" class="sliderTooltipRangeOne " [attr.data-tooltip]="val2"></span>
+  </ng-container>
+  <div class="slider-track"></div>
+  <input id=slider1 class="slider_1" [ngStyle]="{'z-index': rangeZIndex1}" type="range" [min]="min" [max]="max" [value]="val1" (input)="rangeone()"
+    [disabled]="valueDisabled1">
+  <input id=slider2 class="slider_2" [ngStyle]="{'z-index': rangeZIndex2}" type="range" [min]="min" [max]="max" [value]="val2" (input)="rangetwo()"
+    [disabled]="valueDisabled2">
+</div>

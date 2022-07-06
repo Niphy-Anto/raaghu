@@ -1,0 +1,54 @@
+/* tags css new variations */
+
+.tags {
+    width: auto;
+    font-size: $font-size-base;
+    font-weight: $font-weight-bold;
+    line-height: $line-height-base;
+    word-wrap: break-word;
+    text-transform: uppercase;
+    position: relative;
+  }
+  
+  .tags {
+    .btn-close {
+      font-size: $font-size-sm;
+    }
+  }
+  
+  .square-tags .tags {
+    box-shadow: $tags-shadow;
+    border-radius: $border-radius;
+  }
+  
+  .square-tags .tags-body {
+    padding: $tags-padding;
+  }
+  
+  .rounded-tags .toast-body {
+    padding: $tags-padding;
+  }
+  
+  .rounded-tags .tags {
+    box-shadow: $tags-shadow;
+    border-radius: $border-radius-pill;
+  }
+  
+  .borderd .tags {
+    background-color: transparent;
+    border: 1px solid #ff6060 !important;
+  }
+  .binding-tags2 {
+    padding-bottom: 80px;
+  }
+  .tags-dismissible {
+    padding-right: $tag-dismissible-padding-r;
+    // Adjust close link position
+    .btn-close {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: $stretched-link-z-index + 1;
+      padding: $tag-padding-y * 1.25 $tag-padding-x;
+    }
+  }
