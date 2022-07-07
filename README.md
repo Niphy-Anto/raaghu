@@ -7,7 +7,7 @@
     </a>
 <p/>
  
- 
+</br></br> 
 
 
 <h3 align="center" style="border-bottom:0;">
@@ -42,149 +42,21 @@ What is Raaghu?
     </a>
 <p/>
 
-</br></br></br></br>
 
 
-
-
-
-
-
-
-
-# 🚀 Demo
-Here is a quick [demo](https://www.raaghu.io) of the elements. We hope you enjoy it.
-
-Liked it? Please give us a ⭐️ to show your appreciation
-
-Many Thanks to all the `supporters` who have helped this project with stars(⭐)
-
-
-# 🔥 Features
-
-## 🔢 High reusability
- - Promotes reusability throughout the UI and pages
- - Reduces code duplication and helps in delivering a more consistent and even UI
-
-## 📱 Responsive and mobile-friendly
-- All of the elements are built for a wide variety of screen sizes
-
-
-# 🏗️ How to Set up `raaghu-elements` for Development?
-You can run `raaghu-elements` locally with a few easy steps.
-
-1. Clone the repository
-
-```bash
-git clone https://github.com/Wai-Technologies/raaghu-elements.git
-```
-
-2. Change the working directory
-
-```bash
-cd raaghu-elements
-```
-
-3. Install dependencies
-
-```bash
-npm install
-```
-
-4. Build all the libraries
-
-```bash
-npm run build-all
-```
-> **_NOTE:_** Above comman will create a folder named "rds-elements" with all the libraries
-
-5. Create a new blank angular project
-
-```bash
-# use angular CLI to create a new project
-ng new <project_name>
-
-# change directory to newly created project's mode modules folder
-cd <project_name>/node_modules
-
-# copy the build folder "rds-elements", created in step 4
-```
-
-6. Use rds-elements libraries
-
-```bash
-# Import it in your app.module.ts file, include the library
-import { RdsButtonModule } from "rds-elements/rds-button"
-
-# import the above module
-imports: [
-  RdsButtonModule
-]
-
-# Use it in the html file
-<rds-button
-  [color]="buttonColorType"
-  [block]="true"
-  size="'medium'"
-  [label]="buttonLabel"
-  [disabled]="!loginForm.valid"
-  (click)="submit()">
-</rds-button>
-```
-
-7. Build and serve
-
-```bash
-npm start
-
-```
-
-8. Storybook
-
-```bash
-# View all elements inside storybook
-npm run storybook 
-```
-
-
-# 🍔 Built With
-- [Angular Libraries](https://angular.io/guide/libraries): Build bulletproof UI components faster
-- [Bootstrap 5](https://bootstrap.com/): Sleek, intuitive, and powerful framework for faster and easier web development.
-- [Storybook](https://storybook.js.org/): Build bulletproof UI components faster
-
-
-# 🛡️ License
-This project is licensed under the MIT License - see the [`LICENSE`](LICENSE) file for details.
-
-
-# 🦄 Upcoming Features
-`raaghu-elements` has all the potentials to grow further. Here are some of the upcoming features,
-
-- ✔️ Custom plugin to reveal the reusability within your angular project
-- ✔️ Ability to convert existing elements in a project into angular library enabled elements
-- ✔️ Import custom elements into the library
-- ✔️ Better Performance
-- ✔️ Converiting plain angular components to custom elements
-
-If you find something is missing, we are listening. Please create a feature request [from here](https://github.com/Wai-Technologies/raaghu-elements/issues/new).
-
-
-# 🤝 Contributing to `Raaghu`
-Any kind of positive contribution is welcome! Please help us to grow by contributing to the project.
-
-If you wish to contribute, you can work on any features [listed here](https://github.com/Wai-Technologies/raaghu-elements#-upcoming-features) or create one on your own. After adding your code, please send us a Pull Request.  
-
-
-
-
-# 🙏 Support
-
-We all need support and motivation. `Raaghu` is not an exception. Please give this project a ⭐️ to encourage and show that you liked it. Don't forget to leave a star ⭐️ before you move away.
-
-<h3 className="align">
-A ⭐️ to <b>Raaghu</b> is to build its triceps 💪 stronger.
+<h3 align="center" style="border-bottom:0;">
+Here's how Raaghu works
 </h3>
+</br></br></br> 
+<p align="center">
+    <a href="https://raaghu.io" target="_blank">
+        <img src="./static/how it works.png" alt="logo" width="1200"/>
+    </a>
+<p/>
 
+
+
+</br></br></br> </br></br></br> 
 
 
 ## WAi Technology Contributors ✨
