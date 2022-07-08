@@ -1,0 +1,14 @@
+<h3>Choose a product</h3>
+<br />
+
+<ng-container *ngIf="products$ | async as products">
+    <div (click)="selectProduct(product)" class="card shadow-sm my-2 d-flex align-items-center justify-content-between" style="cursor: pointer; width: 65%;" *ngFor="let product of products">
+      <div class="card-body py-3 d-flex justify-content-between w-100">
+        <div>{{ product.name }}</div>
+        <b>${{ product.price }}</b>
+      </div>
+    </div>
+</ng-container>
+
+
+<!-- <rds-button color="primary" label="Sample button"></rds-button> -->

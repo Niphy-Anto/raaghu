@@ -1,0 +1,19 @@
+<!-- <mfe-loader [config]="rdssecurityLogMfeConfig"></mfe-loader> -->
+
+<div class="container">
+    <div class="row">
+        <div class="d-flex justify-content-end mt-2 mb-1">
+            <rds-button class="action" [colorVariant]="'primary'" [size]="'medium'"
+                (click)="exportToExcel('operation-logs')" [label]="'Export To Excel'">
+                <rds-icon left name="export_to_excel" height="12px" width="12px"></rds-icon>>
+            </rds-button>
+        </div>
+    </div>
+    <div class="row">
+        <!-- <app-rds-data-table [tableData]="securityLogs" (deleteEvent)="delete($event)" [pagination]="true" [recordsPerPage]="'5'"
+                [tableHeaders]="securityLogsHeaders"></app-rds-data-table> -->
+        <mfe-loader [config]="rdssecurityLogTableMfeConfig"></mfe-loader>
+    </div>
+
+
+</div>

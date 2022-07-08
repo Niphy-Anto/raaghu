@@ -1,0 +1,32 @@
+<div class="tab-content">
+  <form #userCreationClaimsForm="ngForm">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group mb-3">
+
+          <rds-input [inputType]="'text'" [Title]="translate.instant('Type')" [(ngModel)]="userData.type"
+            name="tenancy_name" required [isRequired]=true [placeholder]="translate.instant('Type')">
+          </rds-input>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group mb-3">
+
+          <rds-input [inputType]="'text'" [Title]="translate.instant('Value')" [(ngModel)]="userData.value"
+            name="user_name" required [isRequired]=true [placeholder]="translate.instant('Value')">
+          </rds-input>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <rds-button [label]="translate.instant('Cancel')" [colorVariant]="'secondary'" (click)="onCancel.emit()"
+      data-bs-dismiss="offcanvas">
+    </rds-button>
+    <rds-button [label]="translate.instant('Next')" [disabled]="!userCreationClaimsForm.valid" class="save-btn"
+      [colorVariant]="'primary'" (click)="next(userCreationClaimsForm)">
+    </rds-button>
+  </div>
+</div>

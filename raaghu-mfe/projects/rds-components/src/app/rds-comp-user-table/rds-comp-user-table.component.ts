@@ -1,0 +1,67 @@
+import { Component, Input, OnInit } from '@angular/core';
+import { ComponentLoaderOptions } from '@libs/shared';
+import { TranslateService } from '@ngx-translate/core';
+import { TableHeader } from '../../models/table-header.model';
+
+@Component({
+  selector: 'rds-comp-user-table',
+  templateUrl: './rds-comp-user-table.component.html',
+  styleUrls: ['./rds-comp-user-table.component.scss']
+})
+export class RdsCompUserTableComponent implements OnInit {
+  rdsUserTableMfeConfig: ComponentLoaderOptions;
+  @Input() userTableHeader: TableHeader[] = [];
+  @Input() userTableData: any = [];
+  @Input() recordsPerpage: number = 10;
+  @Input() tableStyle: string = "light";
+  @Input()
+  listuser: any[] = []
+  @Input()
+  listcountrycode: any[] = []
+  Isenabled: boolean;
+  username: string;
+  countrycode: string;
+  constructor(public translate:TranslateService) { }
+
+  ngOnInit(): void {
+    this.rdsUserTableMfeConfig = {
+      name: 'RdsDataTable',
+      input: {
+        tableHeaders: this.userTableHeader,
+        tableStyle: this.tableStyle,
+        width: '100%',
+        tableData: this.userTableData,
+        recordsPerPage: this.recordsPerpage,
+        pagination: true,
+        actions: [{ id: 'delete', displayName: 'Delete' }],
+        noDataTitle:'Currently you do not have user'
+      },
+      output: {
+        onActionSelection:(event:any)=>{
+          if(event.actionId==='delete'){
+            const index = this.userTableData.findIndex((x: any) => x.userId === event.data.userId);
+            if (index !== -1) {
+              this.userTableData.splice(index, 1);
+              const mfeConfig = this.rdsUserTableMfeConfig
+              mfeConfig.input.tableData = [... this.userTableData];
+              this.rdsUserTableMfeConfig = mfeConfig;
+            }
+          }
+        }
+      }
+    };
+  }
+
+  onChangeIsenabled(event: any) {
+    this.Isenabled = event.detail;
+  }
+  selectedCountrycode(item: any) {
+    var Result = item
+    this.countrycode = Result.item.value
+  }
+  selectedusercode(item: any) {
+    var Result = item
+    this.username = Result.item.value
+  }
+
+}

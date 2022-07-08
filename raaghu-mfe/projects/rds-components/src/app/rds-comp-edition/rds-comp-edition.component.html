@@ -1,0 +1,36 @@
+<div class="d-inline-block px-2" style="width: 200px;" *ngFor="let item of Dataset">
+    <rds-card 
+         class="rounded-avatar-basic" [Data]="EditionData">
+        <div body>
+            <div class="col-md-12" [ngStyle]="{'border-radius': borderRadious +'px'}" style="text-align: center;">
+                <b style="margin-bottom: 0px;padding: 6px">{{item.EditionName}}</b>
+                <p style="font-size: 10px;">{{item.EditionTitle}}</p>
+            </div>
+            <div class="col-md-12" style="text-align: center;">
+                <b style="color: #249CF7;font-size: 18px;">$</b>
+               <b style="margin-bottom: 0px;padding: 0px;font-size: 25px;color: #249CF7">{{item.Price}}</b>
+               <p style="font-size: 10px;color: #C7C7C7;">{{item.Plan}}</p>
+            </div>
+            <div class="col-md-12" style="text-align: left;">
+                <ul style="font-size: 10px;margin-top: 4px ;padding-left: 11px;">
+                    <li *ngFor="let items of item.features">{{items}}</li>
+                </ul>
+            </div>
+            <div class="col-md-12" style="text-align: left;">
+                <i class="bi bi-pencil" style="color: #249CF7;"></i>
+                <i class="bi bi-trash m-2" style="color: #F04646;"></i>
+            </div>
+        </div>
+    </rds-card>
+</div>
+<div class="d-inline-block px-2" style="width: 200px;height: 100%;">
+    <div class="justify-content-center align-items-center" style="height:100% ;width: 100%;text-align: center;">
+
+
+    <rds-card   class="rounded-avatar-basic" [Data]="EditionData">
+        <div style="position: relative;top: 40%;" body>
+        <i class="bi bi-plus-circle-fill position-relative text-primary font-size-lg pointer" style="font-size: 19px;"></i>
+        </div>
+    </rds-card>
+</div>
+</div>

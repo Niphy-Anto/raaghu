@@ -1,0 +1,32 @@
+.aside-fixed .aside {
+
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 98;
+}
+
+
+.main-body{
+    margin-top: 80px;
+}
+
+@media (min-width: 992px) {
+    .aside {
+        display: flex;
+    }
+    .aside {
+        flex-shrink: 0;
+    }
+
+}
+
+.rds-scrollable-wrapper{
+    width: calc(100% - 250px);
+    margin-left:2rem
+}
+.collapsed{
+    width: calc(100% - 80px);
+
+}

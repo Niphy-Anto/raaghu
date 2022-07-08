@@ -1,0 +1,31 @@
+
+<div class="row">
+  <div class="col-md-12">
+    <div class=" card p-2 border-0 rounded-0 vh-88">
+
+      <div class="col-md-12 m-3">
+        <rds-nav-tab [navtabsItems]="getNavTabItems()" [horizontalAlignment]="'start'" [verticalAlignment]="false" [pills]="false"
+                     [tabs]="true" [fill]="false" [justified]="false" [activepage]="0"></rds-nav-tab>
+      </div>
+
+      <div naveContent class="row tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="subscription-information" role="tabpanel" aria-labelledby="nav-home-tab">
+          <mfe-loader [config]="rdsPlanInformationMfeConfig"></mfe-loader>
+        </div>
+
+        <div class="tab-pane fade" id="payment-history" role="tabpanel" aria-labelledby="nav-home-tab">
+          <mfe-loader [config]="rdsDataTableForPaymentHistoryMfeConfig"></mfe-loader>
+        </div>
+
+        <div class="tab-pane fade" id="upgrade-subscription" role="tabpanel" aria-labelledby="nav-home-tab">
+          <mfe-loader [config]="rdscompSubscriptionMfeConfig"></mfe-loader>
+           
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+

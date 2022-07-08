@@ -1,0 +1,282 @@
+<!-- 6 -->
+
+<div class="position-relative">
+
+    <!-- Top-nav -->
+    <nav class="navbar navbar-expand-sm fixed-top p-0 position-absolute">
+      <div class="container-fluid mobile-fluid">
+        <span class="navbar-brand p-0 m-0" href="#">
+          <img class="image" src="assets/raaghu_icon.png" width="70" /><span
+            class="title fw-bold text-lowercase"><b>Raaghu</b></span>
+        </span>
+        <button class="navbar-toggler px-2" id="humbreger-btn" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="ps-3 py-0 m-0 breadcrumbs">
+          <div>
+            <a class="nav-link active p-0" aria-current="page" href="#">Dashboard</a>
+          </div>
+          <div class="mob-description">
+            <a class="nav-link text-muted p-0 fs-6" href="#">Statics and reports</a>
+          </div>
+        </div>
+  
+        <div class="collapse navbar-collapse ps-5 ms-4 py-0 m-0" id="navbarSupportedContent1">
+          <ul class="navbar-nav d-flex align-items-center ms-auto">
+            <rds-dropdownlist [placeholder]="'Languages'" [value]="" [icon]="" [listItems]="">
+            </rds-dropdownlist>
+            <li class="nav-item dropdown border-end px-2">
+              <a class="nav-link py-0" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <span>
+                  <rds-button class="position-relative" [size]="'small'" [roundedButton]="true" [colorVariant]="'default'"
+                    type="button">
+                    <rds-icon name="notifications" width="20px" height="20px"></rds-icon>
+                    <rds-badge right size="smallest" Types="primary" [label]="" [pillBadges]="false" [positioned]="true"
+                      [iconBadge]="true">
+                    </rds-badge>
+                  </rds-button>
+                  <!-- <rds-icon name="notifications" width="20px"></rds-icon> -->
+                </span>
+              </a>
+              <div class="
+                dropdown-menu dropdown-menu-right
+                notifications-dropdown
+                w-md-375px
+                border-0
+                mt-2
+                p-0
+              ">
+                <!-- <mfe-loader [config]="rdsNotoficationMfeConfig"></mfe-loader> -->
+              </div>
+            </li>
+            <li class="nav-item border-end px-2">
+              <rds-button [size]="'small'" [roundedButton]="true">
+                <span>
+                  <rds-icon name="gear_settings" width="20px" height="20px"></rds-icon>
+                </span>
+              </rds-button>
+            </li>
+          </ul>
+        </div>
+        <div class="mobile-ms">
+          <ul class="navbar-nav d-flex align-items-center flex-row gap-2">
+            <li class="nav-item dropdown px-2 mobile-notification">
+              <a class="nav-link py-0" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <span>
+                  <rds-icon name="alert_notification" width="20px" height="20px"></rds-icon>
+  
+                </span>
+              </a>
+              <div class="
+                dropdown-menu dropdown-menu-right
+                notifications-dropdown
+                w-md-375px
+                border-0
+                mt-2
+                p-0
+              ">
+                <!-- <mfe-loader [config]="rdsNotoficationMfeConfig"></mfe-loader> -->
+              </div>
+            </li>
+            <li class="nav-item cursor-pointer">
+              <div class="nav-link align-items-center d-flex">
+                <div class="px-2">
+                  <rds-avatar [WithProfilePic]="true" [profilePic]="" [Size]="'small'"></rds-avatar>
+                </div>
+                <div class="pe-auto">
+                  <a class="text-decoration-none">
+                    <span class="dropdown-toggle">Admin</span>
+                    <p class="mb-0 text-center text-muted user-role">
+                      admin
+                    </p>
+                  </a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  
+  </div>
+  <!-- side-nav -->
+  <div class="d-flex" style="margin-top: 55px;">
+    <div style="width: 90px;">
+      <nav id="sidebar" style="width: 80px; background-color: #336CFF;" class="bd-links min-vh-100 pt-2">
+        <ul class="list-unstyled mb-0 py-3 px-4 h-100">
+          <li class="mb-2">
+            <a class="d-inline-flex align-items-center text-decoration-none text-uppercase" role="button">
+              <rds-icon name="dashboard" height="20px" width="20px" class="pe-2" [fill]="true" [stroke]=""></rds-icon>
+              <span data-bs-toggle="tooltip" data-bs-placement="auto">
+  
+              </span>
+            </a>
+          </li>
+  
+          <li class="mb-2">
+            <a class="d-inline-flex align-items-center text-decoration-none text-uppercase" role="button">
+              <rds-icon name="tenant" height="20px" width="20px" class="pe-2"></rds-icon>
+              <span data-bs-toggle="tooltip" data-bs-placement="auto">
+  
+              </span>
+            </a>
+          </li>
+  
+          <li class="mb-2">
+            <a class="d-inline-flex align-items-center text-decoration-none text-uppercase" role="button">
+              <rds-icon name="edition" height="20px" width="20px" class="pe-2"></rds-icon>
+              <span data-bs-toggle="tooltip" data-bs-placement="auto">
+  
+              </span>
+            </a>
+          </li>
+  
+          <li class="mb-2" data-bs-toggle="collapse" href="#collapseExample" aria-expanded="false"
+            aria-controls="collapseExample">
+            <a class="d-inline-flex align-items-center text-decoration-none text-uppercase" role="button">
+              <rds-icon name="administration" height="20px" width="20px" class="pe-2"></rds-icon>
+              <span data-bs-toggle="tooltip" data-bs-placement="auto">
+  
+              </span>
+            </a>
+            <rds-icon name="item.icon" class="pe-2" data-bs-toggle="tooltip" data-bs-placement="auto">
+            </rds-icon>
+            <a class="active child" [id]="'menuWithChildren'"
+              class="d-inline-flex align-items-center text-decoration-none text-uppercase" type="button"
+              data-bs-toggle="collapse" role="button" aria-expanded="active">
+              <rds-icon height="20px" width="20px" class="pe-2" data-bs-toggle="tooltip" data-bs-placement="auto">
+              </rds-icon>
+            </a>
+  
+            <div class="collapse pt-1" id="collapseExample">
+              <ul class="list-unstyled fw-normal pb-1 small">
+                <li>
+                  <a role="button" class="d-inline-flex align-items-center rounded text-decoration-none">
+                    <rds-icon name="organization_units" height="20px" width="20px" data-bs-placement="auto" class="pe-2">
+                    </rds-icon>
+                    <span><small class="font-weight-bold"></small></span>
+                  </a>
+                </li>
+  
+                <li>
+                  <a role="button" class="d-inline-flex align-items-center rounded text-decoration-none">
+                    <rds-icon name="roles" height="20px" width="20px" data-bs-placement="auto" class="pe-2"></rds-icon>
+                    <span><small class="font-weight-bold"></small></span>
+                  </a>
+                </li>
+  
+                <li>
+                  <a role="button" class="d-inline-flex align-items-center rounded text-decoration-none">
+                    <rds-icon name="users" height="20px" width="20px" data-bs-placement="auto" class="pe-2"></rds-icon>
+                    <span><small class="font-weight-bold"></small></span>
+                  </a>
+                </li>
+  
+                <li>
+                  <a role="button" class="d-inline-flex align-items-center rounded text-decoration-none">
+                    <rds-icon name="languages" height="20px" width="20px" data-bs-placement="auto" class="pe-2">
+                    </rds-icon>
+                    <span><small class="font-weight-bold"></small></span>
+                  </a>
+                </li>
+  
+                <li>
+                  <a role="button" class="d-inline-flex align-items-center rounded text-decoration-none">
+                    <rds-icon name="audit_logs" height="20px" width="20px" data-bs-placement="auto" class="pe-2">
+                    </rds-icon>
+                    <span><small class="font-weight-bold"></small></span>
+                  </a>
+                </li>
+  
+                <li>
+                  <a role="button" class="d-inline-flex align-items-center rounded text-decoration-none">
+                    <rds-icon name="maintenance" height="20px" width="20px" data-bs-placement="auto" class="pe-2">
+                    </rds-icon>
+                    <span><small class="font-weight-bold"></small></span>
+                  </a>
+                </li>
+  
+                <li>
+                  <a role="button" class="d-inline-flex align-items-center rounded text-decoration-none">
+                    <rds-icon name="visual_settings" height="20px" width="20px" data-bs-placement="auto" class="pe-2">
+                    </rds-icon>
+                    <span><small class="font-weight-bold"></small></span>
+                  </a>
+                </li>
+  
+                <li>
+                  <a role="button" class="d-inline-flex align-items-center rounded text-decoration-none">
+                    <rds-icon name="webhook_subscriptions" height="20px" width="20px" data-bs-placement="auto"
+                      class="pe-2">
+                    </rds-icon>
+                    <span><small class="font-weight-bold"></small></span>
+                  </a>
+                </li>
+  
+                <li>
+                  <a role="button" class="d-inline-flex align-items-center rounded text-decoration-none">
+                    <rds-icon name="dynamic_properties" height="20px" width="20px" data-bs-placement="auto" class="pe-2">
+                    </rds-icon>
+                    <span><small class="font-weight-bold"></small></span>
+                  </a>
+                </li>
+  
+                <li>
+                  <a role="button" class="d-inline-flex align-items-center rounded text-decoration-none">
+                    <rds-icon name="settings" height="20px" width="20px" data-bs-placement="auto" class="pe-2">
+                    </rds-icon>
+                    <span><small class="font-weight-bold"></small></span>
+                  </a>
+                </li>
+  
+              </ul>
+            </div>
+  
+          <li class="mb-2">
+            <a class="d-inline-flex align-items-center text-decoration-none text-uppercase" role="button">
+              <rds-icon name="demo_ui_components" height="20px" width="20px" class="pe-2"></rds-icon>
+              <span data-bs-toggle="tooltip" data-bs-placement="auto">
+  
+              </span>
+            </a>
+          </li>
+          <li class="d-flex justify-content-center position-relative bottom-0 py-5">
+            <div>
+  
+              <rds-icon [name]="'collapsed_menu'" height="25px" width="25px" data-bs-toggle="tooltip"
+                data-bs-placement="auto" title="collapse menu"></rds-icon>
+            </div>
+          </li>
+          <li class="d-flex justify-content-center position-relative bottom-0 py-5">
+            <div class="mb-2">
+  
+            </div>
+            <div class="btn-container">
+              <i class="fa fa-sun-o" aria-hidden="true"></i>
+              <label class="switch btn-color-mode-switch">
+                <input type="checkbox" name="color_mode" id="flexSwitchCheckDefault" value="1">
+                <label for="color_mode" data-on="Dark" data-off="Light" class="btn-color-mode-switch-inner"></label>
+              </label>
+              <i class="fa fa-moon-o" aria-hidden="true"></i>
+  
+            </div>
+          </li>
+        </ul>
+  
+      </nav>
+    </div>
+    <div class="container-fluid">
+      <div class="row h-100">
+        <div class="col-md-4 p-3" style="border-right: 1px solid #C7C7C7;">
+          <div class="h-100 rounded" style="border: 2px dashed #6F6F6F; opacity: 0.3;"></div>
+        </div>
+        <div class="col-md-8 p-3">
+          <div class="h-100 rounded" style="border: 2px dashed #6F6F6F; opacity: 0.3;"></div>
+        </div>
+      </div>
+    </div>
+  </div>

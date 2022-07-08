@@ -1,0 +1,14 @@
+<!-- Template for the micro front end component -->
+<!-- <button class="btn" [ngClass]="classes" (click)="click.emit()">{{ label || 'Button' }}</button> -->
+
+<button [type]="submitButton" [class]="classes" (click)="onClick.emit($event)" data-bs-toggle="tooltip"
+        [attr.data-bs-placement]="tooltipPlacement" title="" [attr.id]="id" [disabled]="disabled" 
+        [ngClass]="blockWidth" [attr.aria-label]="label">
+
+  <ng-content select="[left]"></ng-content>
+  <rds-icon *ngIf="buttonType!='labelOnly'" [name]="icon" [width]="iconWidth" [height]="iconHeight"></rds-icon>
+  <span *ngIf="buttonType!='iconOnly'" class="ps-1 btn-text">{{label}}</span>
+  <ng-content></ng-content>
+  <ng-content select="[right]"></ng-content>
+
+</button>

@@ -1,0 +1,5 @@
+{
+    "remoteServiceBaseUrl": "https://localhost:44301",
+     "appBaseUrl": "http://localhost:8080",
+     "replaceUrl": "true"
+}

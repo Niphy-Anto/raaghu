@@ -1,0 +1,25 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "strict": false,
+    "noImplicitReturns": false,
+    "allowJs": true,
+    "target": "es6",
+    "types": [
+      "node"
+    ],
+    "allowSyntheticDefaultImports": true,
+    "emitDecoratorMetadata": true
+  },
+  "exclude": [
+    "../src/test.ts",
+    "../src/**/*.spec.ts",
+    "../src/**/*.e2e-spec.ts"
+  ],
+  "include": [
+    "../src/**/*.stories.ts"
+  ],
+  "files": [
+    "./typings.d.ts"
+  ]
+}

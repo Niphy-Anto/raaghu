@@ -1,0 +1,112 @@
+<nav class="navbar navbar-expand-sm fixed-top p-0">
+  <div class="container-fluid mobile-fluid">
+    <span class="navbar-brand p-0 m-0" href="#">
+      <img class="image" [src]="logo" width="70" /><span class="title fw-bold text-lowercase"><b>{{ projectName
+          }}</b></span>
+    </span>
+    <button (click)="onToggleButton()" class="navbar-toggler px-2" id="humbreger-btn" type="button"
+      data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="ps-3 py-0 m-0 breadcrumbs">
+      <div>
+        <a class="nav-link active p-0" aria-current="page" href="#">{{
+          selectedMenu|translate
+          }}</a>
+      </div>
+      <div class="mob-description">
+        <a class="nav-link text-muted p-0 fs-6" href="#">{{selectedMenuDescription|translate}}</a>
+      </div>
+    </div>
+
+    <div class="collapse navbar-collapse ps-5 ms-4 py-0 m-0" id="navbarSupportedContent1">
+      <ul class="navbar-nav d-flex align-items-center ms-auto">
+        <rds-dropdownlist [placeholder]="'Languages'" [value]="selectedLanguage.language" [icon]="selectedLanguage.icon"
+          [listItems]="languageItems" (onSelect)="onLanguageSelect($event)">
+        </rds-dropdownlist>
+        <li class="nav-item dropdown border-end px-2">
+          <a class="nav-link py-0" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            <span>
+              <rds-button class="position-relative" [size]="'small'" [roundedButton]="true" [colorVariant]="'default'"
+                type="button">
+                <rds-icon name="notifications" width="20px" height="20px"></rds-icon>
+                <rds-badge right size="smallest" Types="primary" [label]="getCount()" [pillBadges]="false"
+                  [positioned]="true" [iconBadge]="true">
+                </rds-badge>
+              </rds-button>
+              <!-- <rds-icon name="notifications" width="20px"></rds-icon> -->
+            </span>
+          </a>
+          <div class="
+              dropdown-menu dropdown-menu-right
+              notifications-dropdown
+              w-md-375px
+              border-0
+              mt-2
+              p-0
+            ">
+            <mfe-loader [config]="rdsNotoficationMfeConfig"></mfe-loader>
+          </div>
+        </li>
+        <li class="nav-item border-end px-2">
+          <rds-button [size]="'small'" [roundedButton]="true" (click)="redirectToSettings()">
+            <span>
+              <rds-icon name="gear_settings" width="20px" height="20px"></rds-icon>
+            </span>
+          </rds-button>
+        </li>
+      </ul>
+    </div>
+    <div class="mobile-ms">
+      <ul class="navbar-nav d-flex align-items-center flex-row gap-2">
+        <li class="nav-item dropdown px-2 mobile-notification">
+          <a class="nav-link py-0" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            <span>
+              <rds-icon name="alert_notification" width="20px" height="20px"></rds-icon>
+
+            </span>
+          </a>
+          <div class="
+              dropdown-menu dropdown-menu-right
+              notifications-dropdown
+              w-md-375px
+              border-0
+              mt-2
+              p-0
+            ">
+            <mfe-loader [config]="rdsNotoficationMfeConfig"></mfe-loader>
+          </div>
+        </li>
+        <li class="nav-item cursor-pointer" (click)="viewOffcanvas()">
+          <div class="nav-link align-items-center d-flex">
+            <div class="px-2">
+              <rds-avatar [WithProfilePic]="true" [profilePic]="profilePic" [Size]="'small'"></rds-avatar>
+            </div>
+            <div class="pe-auto">
+              <a class="text-decoration-none" (click)="redirect('profile')">
+                <span class="dropdown-toggle">{{ UserRole }}</span>
+                <p class="mb-0 text-center text-muted user-role">
+                  {{ profileData.userName }}
+                </p>
+              </a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<app-rds-comp-profile [MenuItems]="navtabItems" [linkedAccount]="linkedAccount" [Profileurl]="profilePic"
+  [viewCanvas]="showOffcanvas" [tableWidth]="tableWidth" [id]="offCanvasId" [userList]="userList"
+  [languageItems]="languageItems" [listItemsResult]="listusename" [DownloadTable]="dounloadata"
+  [tableStyle]="tableStyle" [LoginAttempts]="LoginAttempts" [ProfileData]="profileData"
+  [selectedLanguage]="selectedLanguage" [rdsDeligateTableHeader]="rdsDeligateTableHeader"
+  [rdsDeligateTableData]="rdsDeligateTableData" (onSaveDelegate)="saveDeligate.emit($event)"
+  [recordsPerpage]="recordsPerpage" [pagination]="pagination" (onDeleteDeligate)="deleteDeligateuser.emit($event)"
+  (ondeleteLinkaccount)="deleteLinkaccount.emit($event)" (onLinkToUser)="saveLinkUsers($event)"
+  (onProfileSave)="onProfileSave.emit($event)" (onLoginAttempts)="onLoginAttemptsRefresh.emit($event)"
+  (onDownloadLink)="onDownloadLink.emit($event)">
+</app-rds-comp-profile>

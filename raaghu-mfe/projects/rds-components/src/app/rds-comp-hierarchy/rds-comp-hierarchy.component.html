@@ -1,0 +1,161 @@
+<div class="d-flex align-items-center" *ngIf="TreeType.checkbox">
+  <div class="node-dot position-relative">
+    <rds-checkbox [attr.id]="'Selectall'" (onChange)="selectAllFeature($event)" [checked]="SelectAll"
+      class="position-absolute" [disabled]="false" [switch]="false" [inline]="false" style="top: -3px; 
+  right: -4px;
+  z-index: 4;
+  width: 14px;
+  height: 14px;" [id]="'SelectAll'"></rds-checkbox>
+  </div>
+  <span class="my-1 node-label"><span class="mr-4">{{selectAllLabel|translate}}</span></span>
+</div>
+<ng-container *ngTemplateOutlet="recursiveNodeTemplate; context: { list: treeData }"></ng-container>
+<ng-template #recursiveNodeTemplate let-list="list">
+
+  <div *ngFor="let node of list; let i = index" class="position-relative"
+    [ngStyle]="{'margin-left': list[0].level === 1 ? '0px' : '20px'}">
+    <div class="vertical-dotted-line" *ngIf="setStateBasedOnMutable(i === list.length - 1, node)"></div>
+    <div class="d-flex align-items-center">
+      <div class="node-dot" *ngIf="!TreeType.checkbox" [style.backgroundColor]="getNodeColor(node.level)">
+        <div *ngIf="node.level !== 1" class="horizontal-dotted-line"></div>
+      </div>
+      <div class="node-dot position-relative" *ngIf="TreeType.checkbox">
+        <rds-checkbox [checked]="node.selected" class="position-absolute" [disabled]="false" [switch]="false"
+          [inline]="false" (onChange)="selectNode(node,$event)" style="top: -3px;
+      right: -4px;
+      z-index: 4;
+      width: 14px;
+      height: 14px;" [id]="'selectNode'"></rds-checkbox>
+        <div *ngIf="node.level !== 1" class="horizontal-dotted-line"></div>
+      </div>
+      <span #nodeLabel class="my-1 node-label">
+        <span class="mr-4" (click)="onClicknode(node.ItemDescription)">{{ node.ItemDescription }}</span>
+        <i *ngIf="mutable === true  && TreeType.Normal===true||TreeType.IconLabel===true" data-bs-toggle="offcanvas"
+          data-bs-target="#addNestedNodeModal" (addNestedElement)="addNestedNode(node)" [nestGroup]="nodeLabel"
+          class="pl-3 nest-icon bi bi-plus-circle-fill text-secondary font-size-lg pointer"></i>
+
+        <i *ngIf="mutable === true && TreeType.IconLabel==true||TreeType.Normal===true" (click)="getNodeByID(node)"
+          data-bs-toggle="offcanvas" data-bs-target="#EditNodeModal" class="bi bi-pencil m-2"
+          [nestGroup]="nodeLabel"></i>
+
+        <i *ngIf="mutable === true && TreeType.IconLabel==true||TreeType.Normal===true" (click)="deleteNode(node)"
+          class="bi bi-trash" [nestGroup]="nodeLabel"></i>
+
+      </span>
+
+    </div>
+    <!-- <span style="padding-left: 1.5rem;">({{node.employeeCount}} Members)</span> -->
+
+    <div *ngIf="node.children?.length > 0">
+      <ng-container *ngTemplateOutlet="recursiveNodeTemplate; context: { list: node.children }">
+      </ng-container>
+    </div>
+  </div>
+  <!-- <div class="center"  *ngIf="setMaximumuserButton(i, list.length)">
+    <p>
+    </p><div class="input-group">
+        <span class="input-group-btn">
+            <button type="button" class="btn btn btn-light">
+                <span class="bi bi-dash"></span>
+            </button>
+        </span>
+        <input type="text" class="form-control" value="1" min="1" max="10">
+        <span class="input-group-btn">
+            <button type="button" class="btn btn btn-light">
+                <span class="bi bi-plus"></span>
+            </button>
+        </span>
+    </div>
+  <p></p>
+  </div> -->
+  <div class="position-relative btn p-0" *ngIf="mutable === true && TreeType.Normal===true"
+    [ngStyle]="{'margin-left': list[0].level === 1 ? '0px' : '20px'}" data-bs-toggle="offcanvas"
+    data-bs-target="#addNodeModal" aria-controls="addNodeModal"><i (click)="addNode(list)"
+      class="bi bi-plus-circle-fill position-relative text-primary font-size-lg pointer"></i>
+  </div>
+
+  <div class="position-relative btn p-0" *ngIf="mutable === true && TreeType.IconLabel==true"
+    [ngStyle]="{'margin-left': list[0].level === 1 ? '0px' : '20px'}" data-bs-toggle="offcanvas"
+    data-bs-target="#addNodeModal" aria-controls="addNodeModal"><i (click)="addNode(list)"
+      class=" btn btn-primary bi bi-plus p-0" style="font-style: normal;font-size: 12px;">{{ButtonLabel|translate}}</i>
+  </div>
+
+</ng-template>
+<rds-offcanvas [canvasTitle]="TreeNodeLabeles.ParentNodeTitle" [offId]="'addNodeModal'" [placement]="'end'"
+  [backDrop]="true">
+  <div class="form-style">
+    <form [formGroup]="nodeForm">
+      <div class="form-group mb-3">
+        <rds-input size="default" [disabled]="false" [readonly]="false" value=""
+          [placeholder]="TreeNodeLabeles.ParentItemPlaceholder" id="txtUsername" floatinginputLabel=""
+          [(ngModel)]="itemCode" [isRequired]=true ngDefaultControl formControlName="itemCodeData" (onBlur)='checkItemcodeValidation()'
+          (keyup)='checkItemcodeValidation()' (mouseup)='checkItemcodeValidation()'></rds-input>
+        <small class="text-danger" *ngIf="itemcodeRequiredMessage">{{"Item code is Required"|translate}}</small>
+      </div>
+      <div class="form-group mb-3">
+        <rds-input size="default" inputType="text"  [isRequired]=true [placeholder]="TreeNodeLabeles.ParentDescriptionPlaceholder"
+          floatinginputLabel="" [(ngModel)]="ItemDescription" id="txtDescription" formControlName="ItemDescription"
+          (onBlur)='checkDescriptionValidation()' (keyup)='checkDescriptionValidation()' ngDefaultControl></rds-input>
+        <small class="text-danger" *ngIf="DescriptionRequiredMessage">{{"Description is Required"|translate}}</small>
+      </div>
+      <rds-button [label]="'Close'" type="button" [size]="'medium'" [colorVariant]="'primary'" data-bs-dismiss="offcanvas">
+      </rds-button>
+      <rds-button [disabled]="!nodeForm.valid" [label]="'Save'" type="button" [size]="'medium'" class="px-2"
+        [colorVariant]="'primary'" (click)="pushNode()" data-bs-dismiss="offcanvas" data-bs-target="#addNodeModal">
+      </rds-button>
+    </form>
+  </div>
+</rds-offcanvas>
+
+<rds-offcanvas [canvasTitle]="TreeNodeLabeles.ChildNodeTitle" [offId]="'addNestedNodeModal'" [placement]="'end'"
+  [backDrop]="true">
+  <div class="form-style">
+
+    <div class="form-group mb-3">
+      <rds-input size="default" [disabled]="false" [readonly]="false" value="" inputType="text"
+        [placeholder]="TreeNodeLabeles.ChildItemPlaceholder" floatinginputLabel="" [(ngModel)]="itemCode"
+        (onBlur)='checkItemcodeValidation()' [isRequired]=true (keyup)='checkItemcodeValidation()' (mouseup)='checkItemcodeValidation()'
+        ngDefaultControl></rds-input>
+      <small class="text-danger" *ngIf="itemcodeRequiredMessage">{{"Item code is Required"|translate}}</small>
+    </div>
+    <div class="col-md-12">
+      <div class=" form-group mb-3">
+      <rds-input size="default" [disabled]="false" [readonly]="false" value="" inputType="text"
+        [placeholder]="TreeNodeLabeles.ChildDescriptionPlaceholder" floatinginputLabel="" [(ngModel)]="ItemDescription"
+        (onBlur)='checkDescriptionValidation()' [isRequired]=true (keyup)='checkDescriptionValidation()'
+        (mouseup)='checkDescriptionValidation()' ngDefaultControl></rds-input>
+      <small class="text-danger" *ngIf="DescriptionRequiredMessage">{{"Description is Required"|translate}}</small>
+    </div>
+    </div>
+    <rds-button [label]="'Close'" type="button" [size]="'medium'" [colorVariant]="'primary'" data-bs-dismiss="offcanvas">
+    </rds-button>
+    <rds-button [label]="'Save'" type="button" [disabled]="disableSaveButton" [size]="'medium'" class="px-2"
+      [colorVariant]="'primary'" data-bs-dismiss="offcanvas" data-bs-target="#addNestedNodeModal" (click)="pushNestedNode()">
+    </rds-button>
+
+  </div>
+</rds-offcanvas>
+
+<rds-offcanvas [canvasTitle]="TreeNodeLabeles.ChildNodeTitle" [offId]="'EditNodeModal'" [placement]="'end'"
+  [backDrop]="true">
+  <div class="form-style">
+    <div class="form-group mb-3">
+      <rds-input size="default" [disabled]="true" [readonly]="true" value="" [inputType]="'text'"
+        [placeholder]="TreeNodeLabeles.ChildItemPlaceholder" [(ngModel)]="itemCode" ngDefaultControl></rds-input>
+    </div>
+    <div class="col-md-12 pb-3">
+      <rds-input size="default" [disabled]="false" [readonly]="false" value="" [inputType]="'text'"
+        [placeholder]="TreeNodeLabeles.ChildDescriptionPlaceholder" [(ngModel)]="ItemDescription"
+        (onBlur)='checkDescriptionValidation()' [isRequired]=true (keyup)='checkDescriptionValidation()'
+        (mouseup)='checkDescriptionValidation()' ngDefaultControl></rds-input>
+      <small class="text-danger" *ngIf="DescriptionRequiredMessage">{{"Description is Required"|translate}}</small>
+    </div>
+    <rds-button [label]="'Close'" type="button" [size]="'medium'" [colorVariant]="'primary'" data-bs-dismiss="offcanvas">
+    </rds-button>
+    <rds-button [label]="'Save'" type="button" [size]="'medium'" class="px-2" [colorVariant]="'primary'"
+      data-bs-dismiss="offcanvas" [disabled]="disableSaveButton" data-bs-target="#EditNodeModal"
+      (click)="EditnodeModal()">
+    </rds-button>
+
+  </div>
+</rds-offcanvas>

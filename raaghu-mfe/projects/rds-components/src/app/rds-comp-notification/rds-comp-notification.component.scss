@@ -1,0 +1,43 @@
+   .bi-check-circle {
+    color: #16BE36;
+  }
+  
+  .bi-exclamation-circle {
+    color: #F58220;
+  }
+  
+  .bi-x-circle {
+    color: #DA1E27;
+  }
+  
+  .error {
+    color: #DA1E27;
+  }
+
+h2 {
+  margin-left: 20px;
+}
+
+.notificatioInfo {
+  font-size: 22px;
+}
+
+// .notificationBadge {
+//     margin-left:10px;
+// }
+
+ul {
+  overflow: hidden;
+  max-height: 280px;
+  overflow-y: auto;
+}
+.badge{
+  font-size: 0.45em;
+}
+
+.list-group-item :hover {
+  background-color: #E0E0E0;
+}
+.notification-card .card {
+  border: 10px solid red!important;
+}

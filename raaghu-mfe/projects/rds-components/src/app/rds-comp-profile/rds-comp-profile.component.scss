@@ -1,0 +1,84 @@
+hr {
+    margin: 2rem 0;
+    color: inherit;
+    background-color: currentColor;
+    border: 0;
+    opacity: 0.1;
+}
+
+.offcanvas-end {
+    top: 0;
+    right: 0;
+    border-left: 1px solid rgba(0,0,0,.2);
+    
+}
+.tab-content{
+    max-height: 100vh;
+}
+.offcanvas-body {
+    flex-grow: 1;
+    padding-top: 1px !important;
+    padding-right: 1px !important;
+    padding-bottom: 1px !important;
+    padding-left: 15px !important;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+.offcanvas {
+    position: fixed;
+    bottom: 0px;
+    z-index: 1045;
+    display: flex;
+    flex-direction: column;
+    visibility: hidden;
+    background-color: rgb(255, 255, 255);
+    background-clip: padding-box;
+    outline: 0px;
+    transition: transform 0.3s ease-in-out 0s;
+}
+.offcanvas.show {
+    transform: none;
+}
+.offcanvas-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1040;
+    width: 100vw;
+    height: 100vh;
+    background-color: #00000078 !important;
+}
+.profileMenuContent {
+  width: calc(100% - 221px);
+  position: relative;
+}
+.avatar{
+    display: block;
+}
+.offcanvas-logout {
+    bottom: 2rem;
+    right: 4.6rem;
+}
+.mobile-header-option{
+    display: none;
+}
+@media (max-width: 767px){
+    .profileMenuContent{
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        z-index: 9;
+    }
+    .profileMenu{
+        width: auto;
+    }
+    .mobile-header-option{
+        display: block;
+    }
+    .mobile-header-option .row{
+        position: absolute;
+        top: 30rem;
+        left: 1.2rem;
+    }
+    
+}
