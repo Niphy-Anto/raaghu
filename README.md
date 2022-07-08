@@ -100,7 +100,7 @@ Custom Services
 Benefits​
 </h2>
 <p align="center">
-     <img src="./static/Features.png" alt="logo" width="1400"/>
+     <img src="./static/features.png" alt="logo" width="1400"/>
 <p/>
 
 
