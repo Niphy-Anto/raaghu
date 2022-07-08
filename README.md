@@ -23,31 +23,49 @@
     
 </h3>
 
+
 <p align="center">
-    A progressive Angular based framework leveraging micro front end capabilities to build efficient, reliable </br> and scalable  front-end applications. 
+<a href="https://npmjs.org/rds-elements"><img src="https://img.shields.io/npm/v/rds-elements/latest.svg" alt="npm latest version" ></a>
+<a href="https://npmjs.org/rds-elements"><img src="https://img.shields.io/npm/v/rds-elements/next.svg" alt="npm next version" ></a>
+</br></br> 
+<a href="https://github.com/Wai-Technologies/raaghu-elements/blob/main/LICENSE" target="blank">
+<img alt="GitHub licence" src="https://img.shields.io/github/license/Wai-Technologies/raaghu-elements?style=social" />
+</a>
+<a href="https://github.com/Wai-Technologies/raaghu-elements/stargazers" target="blank">
+<img alt="GitHub stars" src="https://img.shields.io/github/stars/Wai-Technologies/raaghu-elements?style=social"/>
+</a>
+<a href="https://github.com/Wai-Technologies/raaghu-elements/issues" target="blank">
+<img alt="GitHub issues" src="https://img.shields.io/github/issues/Wai-Technologies/raaghu-elements?style=social"/>
+</a>
+<a href="https://github.com/Wai-Technologies/raaghu-elements/pulls">
+<img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/Wai-Technologies/raaghu-elements?style=social" />
+</a>
 </p>
+
 </br></br>
-<h1 align="center" style="border-bottom:0;">
+<2 align=" " style="border-bottom:0;">
 What is Raaghu?
-</h1>
+</h2>
 
 
-<p align="center">
+<p align=" ">
 `raaghu-elements` is an opensource Angular library framework built on top of Bootstrap 5 and Storybook offering highly customizable and reusable Angular UI elements. Raaghu elements can be used as a base to build complex components and UI layouts whilst maintaining a high level of reusability.
 </p>
 
 
 <p align="center">
     <a href="https://raaghu.io" target="_blank">
-        <img src="./static/why-raaghu-new.png" alt="logo" width="1200"/>
+        <img src="./static/why-raaghu.png" alt="logo" width="1000"/>
     </a>
 <p/>
 
-
-
-<h3 align="center" style="border-bottom:0;color:#964BFF;">
+<p align=" ">
+    A progressive Angular based framework leveraging micro front end capabilities to build efficient, reliable and scalable  front-end applications. 
+</p>
+</br>
+<h1 align=" " style="border-bottom:0;color:#964BFF;">
 Here's how Raaghu works
-</h3>
+</h1>
 </br></br></br> 
 <p align="center">
     <a href="https://raaghu.io" target="_blank">
