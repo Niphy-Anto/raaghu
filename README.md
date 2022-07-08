@@ -66,26 +66,11 @@ How Raaghu works?
         <img src="./static/how-raaghu-works.png" alt="logo" width="800"/>
 <p/>
 
-We create your wireframes or use existing available wireframes. ​
+We create your wireframes or use existing available wireframes. Based on your wireframe and theme design / branding, we apply the same CSS to elements, components and pages that we have. Based on Component driven development and our micro front end architecture we break your page design into components and enrich your library.​
 
-Based on your wireframe and theme design / branding, we apply the same CSS to elements, components and pages that we have. 
-
-Based on Component driven development and our micro front end architecture we break your page design into components and enrich your library.​
-
-These components come together to create the same wireframe design and form a page.​
-
-We deploy these components through our Ci/Cd pipeline and make use of our micro front end architecture. ​
-
-​
-
-
-
-
-
-<p align=" ">
-    A progressive Angular based framework leveraging micro front end capabilities to build efficient, reliable and scalable  front-end applications. 
-</p>
+These components come together to create the same wireframe design and form a page.We deploy these components through our Ci/Cd pipeline and make use of our micro front end architecture. 
  
+</br></br>
 <h2 align=" " style="border-bottom:0;color:#964BFF;">
 Custom Services
 </h2>
@@ -95,23 +80,27 @@ Custom Services
 ✔️  Empty State UI ​</br> 
 ✔️  Micro-Animation​</br> 
 ✔️  Explainer videos​</br> 
- 
+</br></br>
+
 <h2 align=" " style="border-bottom:0;color:#964BFF;">
 Benefits​
 </h2>
+
 <p align="center">
-     <img src="./static/features.png" alt="logo" width="1400"/>
+     <img src="./static/Features-new.png" alt="logo" width="1400"/>
 <p/>
+</br></br>
 
+<h2 align=" " style="border-bottom:0;color:#964BFF;">
+ Tutorials
+</h2>
+ 
 
+- [Setup raaghu-mfe](https://github.com/Wai-Technologies/raaghu/edit/main/README.md): For development
+- [Development Support](https://github.com/Wai-Technologies/raaghu/edit/main/README.md): Create a common Library, Component, Screen / MFE etc
+- [Storybook](https://storybook.js.org/): Build bulletproof UI components faster
 
-✔️ Speed​ </br>
-✔️ Product Tour ​</br> 
-✔️ Empty State UI ​</br> 
-✔️ Micro-Animation​</br> 
-✔️ Explainer videos​</br> 
-
-</br></br></br> </br></br></br> 
+</br> </br></br></br> 
  
 ## WAi Technology Contributors ✨
 
