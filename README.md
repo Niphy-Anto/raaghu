@@ -62,10 +62,6 @@ What is Raaghu?
     </a>
 <p/>
 
-<p align=" ">
-    A progressive Angular based framework leveraging micro front end capabilities to build efficient, reliable and scalable  front-end applications. 
-</p>
-</br>
 <h1 align=" " style="border-bottom:0;color:#964BFF;">
 Here's how Raaghu works
 </h1>
@@ -77,6 +73,10 @@ Here's how Raaghu works
 <p/>
 
 
+<p align=" ">
+    A progressive Angular based framework leveraging micro front end capabilities to build efficient, reliable and scalable  front-end applications. 
+</p>
+</br>
 
 </br></br></br> </br></br></br> 
 
