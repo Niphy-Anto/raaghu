@@ -55,9 +55,7 @@ Raaghu mfe can be used as a base to build complex components and UI layouts whil
  
 
 <p align="center">
-    <a href="https://raaghu.io" target="_blank">
         <img src="./static/why-raaghu.png" alt="logo" width="1000"/>
-    </a>
 <p/>
 
 <h2 align=" " style="border-bottom:0;color:#964BFF;">
@@ -65,17 +63,29 @@ How Raaghu works?
 </h2>
 </br></br></br> 
 <p align="center">
-    <a href="https://raaghu.io" target="_blank">
         <img src="./static/how-raaghu-works.png" alt="logo" width="800"/>
-    </a>
 <p/>
+
+We create your wireframes or use existing available wireframes. ​
+
+Based on your wireframe and theme design / branding, we apply the same CSS to elements, components and pages that we have. 
+
+Based on Component driven development and our micro front end architecture we break your page design into components and enrich your library.​
+
+These components come together to create the same wireframe design and form a page.​
+
+We deploy these components through our Ci/Cd pipeline and make use of our micro front end architecture. ​
+
+​
+
+
+
 
 
 <p align=" ">
     A progressive Angular based framework leveraging micro front end capabilities to build efficient, reliable and scalable  front-end applications. 
 </p>
-
-</br></br></br> 
+ 
 <h2 align=" " style="border-bottom:0;color:#964BFF;">
 Custom Services
 </h2>
@@ -85,6 +95,21 @@ Custom Services
 ✔️  Empty State UI ​</br> 
 ✔️  Micro-Animation​</br> 
 ✔️  Explainer videos​</br> 
+ 
+<h2 align=" " style="border-bottom:0;color:#964BFF;">
+Benefits​
+</h2>
+<p align="center">
+     <img src="./static/Features.png" alt="logo" width="1400"/>
+<p/>
+
+
+
+✔️ Speed​ </br>
+✔️ Product Tour ​</br> 
+✔️ Empty State UI ​</br> 
+✔️ Micro-Animation​</br> 
+✔️ Explainer videos​</br> 
 
 </br></br></br> </br></br></br> 
  
