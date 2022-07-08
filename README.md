@@ -48,10 +48,11 @@ What is Raaghu?
 </h2>
 
 
-<p align=" ">
-`raaghu-elements` is an opensource Angular library framework built on top of Bootstrap 5 and Storybook offering highly customizable and reusable Angular UI elements. Raaghu elements can be used as a base to build complex components and UI layouts whilst maintaining a high level of reusability.
-</p>
+`raaghu-mfe` is an opensource micro front end framework built on top of `raaghu-elements`, Bootstrap 5 and Storybook offering highly customizable UI components and built-in pages.
 
+Raaghu mfe can be used as a base to build complex components and UI layouts whilst maintaining a high level of reusability,flexibility with ease of maintenance.
+
+ 
 
 <p align="center">
     <a href="https://raaghu.io" target="_blank">
@@ -60,7 +61,7 @@ What is Raaghu?
 <p/>
 
 <h2 align=" " style="border-bottom:0;color:#964BFF;">
-Here's how Raaghu works
+How Raaghu works?
 </h2>
 </br></br></br> 
 <p align="center">
@@ -79,11 +80,11 @@ Here's how Raaghu works
 Custom Services
 </h2>
  
-- ✔️  Icons & Illustrations​
-- ✔️  Product Tour ​
-- ✔️  Empty State UI ​
-- ✔️  Micro-Animation​
-- ✔️  Explainer videos​
+✔️  Icons & Illustrations​</br> 
+✔️  Product Tour ​</br> 
+✔️  Empty State UI ​</br> 
+✔️  Micro-Animation​</br> 
+✔️  Explainer videos​</br> 
 
 </br></br></br> </br></br></br> 
  
