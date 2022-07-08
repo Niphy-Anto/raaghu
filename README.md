@@ -39,19 +39,19 @@ What is Raaghu?
 
 <p align="center">
     <a href="https://raaghu.io" target="_blank">
-        <img src="./static/why raaghu.png" alt="logo" width="1200"/>
+        <img src="./static/why-raaghu-new.png" alt="logo" width="1200"/>
     </a>
 <p/>
 
 
 
-<h3 align="center" style="border-bottom:0;">
+<h3 align="center" style="border-bottom:0;color:#964BFF;">
 Here's how Raaghu works
 </h3>
 </br></br></br> 
 <p align="center">
     <a href="https://raaghu.io" target="_blank">
-        <img src="./static/how it works.png" alt="logo" width="1200"/>
+        <img src="./static/how-raaghu-works.png" alt="logo" width="800"/>
     </a>
 <p/>
 
