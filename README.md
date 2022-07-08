@@ -3,13 +3,10 @@
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 <p align="center">
     <a href="https://raaghu.io" target="_blank">
-        <img src="./static/banner1.png" alt="logo" width="1200"/>
+        <img src="./static/banner2.png" alt="logo" width="2000"/>
     </a>
 <p/>
- 
-</br></br> 
-
-
+  
 <h3 align="center" style="border-bottom:0;">
     <a href="https://raaghu.io" target="blank">Get Started</a>
     ·
@@ -62,9 +59,9 @@ What is Raaghu?
     </a>
 <p/>
 
-<h1 align=" " style="border-bottom:0;color:#964BFF;">
+<h2 align=" " style="border-bottom:0;color:#964BFF;">
 Here's how Raaghu works
-</h1>
+</h2>
 </br></br></br> 
 <p align="center">
     <a href="https://raaghu.io" target="_blank">
@@ -76,11 +73,20 @@ Here's how Raaghu works
 <p align=" ">
     A progressive Angular based framework leveraging micro front end capabilities to build efficient, reliable and scalable  front-end applications. 
 </p>
-</br>
+
+</br></br></br> 
+<h2 align=" " style="border-bottom:0;color:#964BFF;">
+Custom Services
+</h2>
+ 
+- ✔️  Icons & Illustrations​
+- ✔️  Product Tour ​
+- ✔️  Empty State UI ​
+- ✔️  Micro-Animation​
+- ✔️  Explainer videos​
 
 </br></br></br> </br></br></br> 
-
-
+ 
 ## WAi Technology Contributors ✨
 
 Thanks goes to these wonderful people and Wai technology.
