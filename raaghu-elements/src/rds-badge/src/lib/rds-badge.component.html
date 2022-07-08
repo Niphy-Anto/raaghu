@@ -1,6 +1,0 @@
- <span [ngClass]="classList" [ngStyle]="{'top': top + '%','left': start + '%' }">
-    <ng-content select="[left]"></ng-content>
-    {{label}}
-    <span aria-hidden="true" *ngIf="close" (click)="onClosed($event)">&times;</span>
-    <ng-content select="[right]"></ng-content>
-  </span>
