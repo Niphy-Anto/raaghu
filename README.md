@@ -23,11 +23,7 @@
     
 </h3>
 
-
 <p align="center">
-<a href="https://npmjs.org/rds-elements"><img src="https://img.shields.io/npm/v/rds-elements/latest.svg" alt="npm latest version" ></a>
-<a href="https://npmjs.org/rds-elements"><img src="https://img.shields.io/npm/v/rds-elements/next.svg" alt="npm next version" ></a>
-</br></br> 
 <a href="https://github.com/Wai-Technologies/raaghu-elements/blob/main/LICENSE" target="blank">
 <img alt="GitHub licence" src="https://img.shields.io/github/license/Wai-Technologies/raaghu-elements?style=social" />
 </a>
@@ -42,8 +38,15 @@
 </a>
 </p>
 
+<p align="center">
+<a href="https://npmjs.org/rds-elements"><img src="https://img.shields.io/npm/v/rds-elements/latest.svg" alt="npm latest version" ></a>
+<a href="https://npmjs.org/rds-elements"><img src="https://img.shields.io/npm/v/rds-elements/next.svg" alt="npm next version" ></a>
+</p>
+
+
+
 </br></br>
-<2 align=" " style="border-bottom:0;">
+<h2 align=" " style="border-bottom:0;">
 What is Raaghu?
 </h2>
 
