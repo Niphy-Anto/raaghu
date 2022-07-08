@@ -89,7 +89,6 @@ Benefits​
 <p align="center">
      <img src="./static/Features-new.png" alt="logo" width="1400"/>
 <p/>
-</br></br>
 
 <h2 align=" " style="border-bottom:0;color:#964BFF;">
  Tutorials
@@ -102,7 +101,9 @@ Benefits​
 - [Elements & Components](http://raaghu.io/): Preview of all raaghu elements, components & pages.
 - [Demo](https://storybook.js.org/): Dashboard Demo (Light & Dark theme) 
 
-</br> </br></br></br> 
+</br> </br>
+
+</br></br> 
  
 ## WAi Technology Contributors ✨
 
