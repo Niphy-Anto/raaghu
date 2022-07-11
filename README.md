@@ -14,24 +14,24 @@
     ·
     <a href="https://raaghu.io" target="blank">View Demo</a>
     ·
-    <a href="https://github.com/Wai-Technologies/raaghu-elements/issues/new">Report Bug</a>
+    <a href="https://github.com/Wai-Technologies/raaghu/issues/new">Report Bug</a>
     ·
-    <a href="https://github.com/Wai-Technologies/raaghu-elements/issues/new">Request Feature</a>
+    <a href="https://github.com/Wai-Technologies/raaghu/issues/new">Request Feature</a>
     
 </h3>
 
 <p align="center">
-<a href="https://github.com/Wai-Technologies/raaghu-elements/blob/main/LICENSE" target="blank">
-<img alt="GitHub licence" src="https://img.shields.io/github/license/Wai-Technologies/raaghu-elements?style=social" />
+<a href="https://github.com/Wai-Technologies/raaghu/blob/main/LICENSE" target="blank">
+<img alt="GitHub licence" src="https://img.shields.io/github/license/Wai-Technologies/raaghu?style=social" />
 </a>
-<a href="https://github.com/Wai-Technologies/raaghu-elements/stargazers" target="blank">
-<img alt="GitHub stars" src="https://img.shields.io/github/stars/Wai-Technologies/raaghu-elements?style=social"/>
+<a href="https://github.com/Wai-Technologies/raaghu/stargazers" target="blank">
+<img alt="GitHub stars" src="https://img.shields.io/github/stars/Wai-Technologies/raaghu?style=social"/>
 </a>
-<a href="https://github.com/Wai-Technologies/raaghu-elements/issues" target="blank">
-<img alt="GitHub issues" src="https://img.shields.io/github/issues/Wai-Technologies/raaghu-elements?style=social"/>
+<a href="https://github.com/Wai-Technologies/raaghu/issues" target="blank">
+<img alt="GitHub issues" src="https://img.shields.io/github/issues/Wai-Technologies/raaghu?style=social"/>
 </a>
-<a href="https://github.com/Wai-Technologies/raaghu-elements/pulls">
-<img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/Wai-Technologies/raaghu-elements?style=social" />
+<a href="https://github.com/Wai-Technologies/raaghu/pulls">
+<img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/Wai-Technologies/raaghu?style=social" />
 </a>
 </p>
 
