@@ -1,95 +1,95 @@
 export const MfeConfig = {
   host: {
-    url: 'http://localhost:8080/remoteEntry.js',
+    url: 'https://demo.raaghu.io/remoteEntry.js',
   },
   product: {
-    url: 'http://localhost:3000/remoteEntry.js',
+    url: 'https://demo.raaghu.io/product/remoteEntry.js',
   },
   dashboard: {
-    url: 'http://localhost:5001/remoteEntry.js',
+    url: 'https://demo.raaghu.io/dashboard/remoteEntry.js',
   },
   rdsComponents: {
-    url: 'http://localhost:5000/remoteEntry.js',
+    url: 'https://demo.raaghu.io/rds-components/remoteEntry.js',
   },
   tenant: {
-    url: 'http://localhost:5015/remoteEntry.js',
+    url: 'https://demo.raaghu.io/tenant/remoteEntry.js',
   },
   demouicomponents: {
-    url: 'http://localhost:5003/remoteEntry.js',
+    url: 'https://demo.raaghu.io/demo-ui/remoteEntry.js',
   },
   edition: {
-    url: 'http://localhost:3003/remoteEntry.js',
+    url: 'https://demo.raaghu.io/edition/remoteEntry.js',
   },
   maintenance: {
-    url: 'http://localhost:5004/remoteEntry.js',
+    url: 'https://demo.raaghu.io/maintenance/remoteEntry.js',
   },
   language: {
-    url: 'http://localhost:5005/remoteEntry.js',
+    url: 'https://demo.raaghu.io/language/remoteEntry.js',
   },
   auditlogs: {
-    url: 'http://localhost:5006/remoteEntry.js',
+    url: 'https://demo.raaghu.io/audit-logs/remoteEntry.js',
   },
   role: {
-    url: 'http://localhost:5007/remoteEntry.js',
+    url: 'https://demo.raaghu.io/role/remoteEntry.js',
   },
   visualsettings: {
-    url: 'http://localhost:5008/remoteEntry.js',
+    url: 'https://demo.raaghu.io/visual-settings/remoteEntry.js',
   },
   subscription: {
-    url: 'http://localhost:5009/remoteEntry.js',
+    url: 'https://demo.raaghu.io/subscription/remoteEntry.js',
   },
   forgotpassword: {
-    url: 'http://localhost:5010/remoteEntry.js',
+    url: 'https://demo.raaghu.io/forgot-password/remoteEntry.js',
   },
   user: {
-    url: 'http://localhost:5002/remoteEntry.js',
+    url: 'https://demo.raaghu.io/user/remoteEntry.js',
   },
   login: {
-    url: 'http://localhost:5011/remoteEntry.js',
+    url: 'https://demo.raaghu.io/login/remoteEntry.js',
   },
   loginprofile: {
-    url: 'http://localhost:8006/remoteEntry.js',
+    url: 'https://demo.raaghu.io/loginprofile/remoteEntry.js',
   },
   organizationunit: {
-    url: 'http://localhost:5012/remoteEntry.js',
+    url: 'https://demo.raaghu.io/organization-unit/remoteEntry.js',
   },
   dynamicpropertymanagement: {
-    url: 'http://localhost:5013/remoteEntry.js',
+    url: 'https://demo.raaghu.io/dynamic-property-management/remoteEntry.js',
   },
   webhooksubscription: {
-    url: 'http://localhost:5014/remoteEntry.js',
+    url: 'https://demo.raaghu.io/webhooksubscription/remoteEntry.js',
   },
   Claimtype: {
-    url: 'http://localhost:5016/remoteEntry.js',
+    url: 'https://demo.raaghu.io/Claimtype/remoteEntry.js',
   },
   Securitylog: {
-    url: 'http://localhost:5018/remoteEntry.js',
+    url: 'https://demo.raaghu.io/Securitylog/remoteEntry.js',
   },
   settings: {
-    url: 'http://localhost:5017/remoteEntry.js',
+    url: 'https://demo.raaghu.io/settings/remoteEntry.js',
   },
   client: {
-    url: 'http://localhost:5019/remoteEntry.js',
+    url: 'https://demo.raaghu.io/client/remoteEntry.js',
   },
   identiyresources: {
-    url: 'http://localhost:7012/remoteEntry.js',
+    url: 'https://demo.raaghu.io/identity-resources/remoteEntry.js',
   },
   texttemplate: {
-    url: 'http://localhost:5021/remoteEntry.js',
+    url: 'https://demo.raaghu.io/text-template/remoteEntry.js',
   },
   apiresources: {
-    url: 'http://localhost:6008/remoteEntry.js',
+    url: 'https://demo.raaghu.io/api-resources/remoteEntry.js',
   },
   apiscope: {
-    url: 'http://localhost:5028/remoteEntry.js',
+    url: 'https://demo.raaghu.io/api-scope/remoteEntry.js',
   },
-  memberactivity:{
-    url: 'http://localhost:5029/remoteEntry.js',
+  memberactivity: {
+    url: 'https://demo.raaghu.io/member-activity/remoteEntry.js',
   },
-  monthlysummary:{
-    url: 'http://localhost:5030/remoteEntry.js',
+  monthlysummary: {
+    url: 'https://demo.raaghu.io/monthly-summary/remoteEntry.js',
   },
   languagetext: {
-    url: 'http://localhost:5025/remoteEntry.js',
-  }
+    url: 'https://demo.raaghu.io/language-text/remoteEntry.js',
+  },
 };
