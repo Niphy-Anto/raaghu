@@ -91,5 +91,5 @@ export const MfeConfig = {
   },
   languagetext: {
     url: 'http://localhost:5025/remoteEntry.js',
-  }
+  },
 };

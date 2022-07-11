@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RdsTagsComponent } from './rds-tags.component';
-import { RdsIconModule } from '@libs/rds-elements';
 
 @NgModule({
   declarations: [
@@ -10,8 +9,7 @@ import { RdsIconModule } from '@libs/rds-elements';
   ],
   imports: [
     CommonModule,
-    FormsModule,
-    RdsIconModule
+    FormsModule
   ],
   exports: [
     RdsTagsComponent

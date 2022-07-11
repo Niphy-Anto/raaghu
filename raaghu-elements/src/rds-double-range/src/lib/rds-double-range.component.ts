@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'rds-double-range',
@@ -7,12 +7,12 @@ import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChange
 })
 export class RdsDoubleRangeComponent implements OnInit {
 
-  @Input() val1: number = 0;
-  @Input() val2: number = 100;
+  val1: number = 0;
+  val2: number = 0;
 
-  @Input() min = 0
+  @Input() min = 5000
 
-  @Input() max = 100
+  @Input() max = 10000
 
   @Output() rangeValueOne = new EventEmitter()
 
@@ -27,22 +27,14 @@ export class RdsDoubleRangeComponent implements OnInit {
 
   minGap = 0
 
-  valueDisabled1!: boolean;
-  valueDisabled2!: boolean;
-  rangeZIndex1!: number;
-  rangeZIndex2!: number;
-
   constructor() { }
 
   ngOnInit(): void {
-    this.val1;
-    this.val2;
+    this.val1 = this.min;
+    this.val2 = this.min;
     this.sliderTrack = document.querySelector('.slider-track') as HTMLDivElement
     this.sliderOne = document.getElementById('slider1') as HTMLInputElement
     this.sliderTwo = document.getElementById('slider2') as HTMLInputElement
-    this.fillColor();
-
-
   }
 
   writeValue(obj: any): void {
@@ -57,18 +49,6 @@ export class RdsDoubleRangeComponent implements OnInit {
     }
     this.rangeValueOne.emit(this.val1)
     this.fillColor();
-    if(this.val1 >= this.val2){
-      this.val1 <= this.val2;
-      this.valueDisabled1 = true;
-      this.valueDisabled2 = false;
-      this.rangeZIndex1 = 0;
-    }
-    else if(this.val1 < this.val2){
-      this.val1 <= this.val2;
-      this.valueDisabled1 = false;
-      this.valueDisabled2 = false;
-      this.rangeZIndex2 = 1;
-    }
   }
   rangetwo() {
     this.val2 = parseInt(this.sliderTwo.value)
@@ -77,19 +57,6 @@ export class RdsDoubleRangeComponent implements OnInit {
     }
     this.rangeValueTwo.emit(this.val2)
     this.fillColor();
-    if(this.val2 <= this.val1){
-      this.val1 <= this.val2;
-      this.valueDisabled2 = true;
-      this.valueDisabled1 = false;
-      this.rangeZIndex1 = 1;
-    }
-    else if(this.val2 > this.val1){
-      this.val1 <= this.val2;
-      this.valueDisabled2 = false;
-      this.valueDisabled1 = false;
-      this.rangeZIndex2 = 0;
-    }
-
   }
 
   fillColor() {
@@ -97,7 +64,7 @@ export class RdsDoubleRangeComponent implements OnInit {
     this.range2 = document.getElementById("range2") as HTMLSpanElement
     let percent1 = ((this.val1 - this.min) / (this.max - this.min)) * 100;
     let percent2 = ((this.val2 - this.min) / (this.max - this.min)) * 100;
-    this.sliderTrack.style.background = `linear-gradient(90deg, #D0D7DD ${percent1}% , #7E2EEf ${percent1}% , #7E2EEf ${percent2}%, #D0D7DD ${percent2}%)`;
+    this.sliderTrack.style.background = `linear-gradient(90deg, #D0D7DD ${percent1}% , #5C82E3 ${percent1}% , #5C82E3 ${percent2}%, #D0D7DD ${percent2}%)`;
     this.range1.style.left = `calc(${percent1}% + (${-5 - percent1 * 0.15}px))`
     this.range2.style.left = `calc(${percent2}% + (${-5 - percent2 * 0.15}px))`
   }

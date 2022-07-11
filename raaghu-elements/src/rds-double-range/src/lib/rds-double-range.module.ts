@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RdsDoubleRangeComponent } from './rds-double-range.component';
 
@@ -9,7 +8,6 @@ import { RdsDoubleRangeComponent } from './rds-double-range.component';
     RdsDoubleRangeComponent
   ],
   imports: [
-    CommonModule
   ],
   exports: [
     RdsDoubleRangeComponent

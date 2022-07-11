@@ -4,7 +4,8 @@ const fse = require('fs-extra');
 const { execSync } = require('child_process');
 const currentDir = path.join(__dirname, '../');
 const tempDir = path.join(os.tmpdir(), 'raaghu-elements-temp');
-const ngElementsDir = path.join(tempDir, 'raaghu-elements');
+// const ngElementsDir = path.join(tempDir, 'raaghu-elements');
+const ngElementsDir = path.join(__dirname, '../../raaghu-elements');
 const ngComponentsDir = path.join(__dirname, '../projects/libs/rds-elements');
 const ngElementsRemote = 'https://github.com/Wai-Technologies/raaghu-elements.git';
 const filesToReplace = [
@@ -60,7 +61,8 @@ function mergeTSConfigJson() {
     const ngElementsFile = JSON.parse(fse.readFileSync(path.join(currentDir, 'tsconfig.json')).toString());
     if (ngElementsFile.compilerOptions.paths["@libs/rds-elements"] == undefined) {
         ngElementsFile.compilerOptions.paths = {
-            ...ngElementsFile.compilerOptions.paths, "@libs/rds-elements": [
+            ...ngElementsFile.compilerOptions.paths,
+            "@libs/rds-elements": [
                 "projects/libs/rds-elements/src/root/public-api.ts"
             ]
         };
@@ -93,17 +95,17 @@ function getDirectories(source) {
 }
 
 try {
-    console.log('fetching elements...');
-    if (fse.existsSync(tempDir)) fse.rmSync(tempDir, { recursive: true, force: true });
+    // console.log('fetching elements...');
+    // if (fse.existsSync(tempDir)) fse.rmSync(tempDir, { recursive: true, force: true });
 
-    console.log('creating temporary directory...')
-    fse.mkdirSync(path.join(tempDir));
+    // console.log('creating temporary directory...')
+    // fse.mkdirSync(path.join(tempDir));
 
-    const args = getArgs();
-    var branch = args?.branch;
-    if(branch == undefined){ branch = 'main' } else { branch = args?.branch };
-    console.log("cloning elements from the branch \x1b[32m'" + branch + "'\x1b[0m...");
-    execSync(`git clone ${ngElementsRemote} --branch=${branch}`, { cwd: tempDir, stdio: 'inherit' });
+    // const args = getArgs();
+    // var branch = args?.branch;
+    // if (branch == undefined) { branch = 'main' } else { branch = args?.branch };
+    // console.log("cloning elements from the branch \x1b[32m'" + branch + "'\x1b[0m...");
+    // execSync(`git clone ${ngElementsRemote} --branch=${branch}`, { cwd: tempDir, stdio: 'inherit' });
 
     console.log('replacing config files...');
     replaceFiles();

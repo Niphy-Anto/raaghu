@@ -1,40 +1,40 @@
 {
-  "compileOnSave": false,
-  "compilerOptions": {
-    "paths": {
-      "@libs/rds-elements": [
-        "projects/libs/rds-elements/src/root/public-api.ts"
-      ],
-      "@libs/shared": [
-        "projects/libs/shared/src/public-api.ts"
-      ],
-      "@libs/state-management": [
-        "projects/libs/state-management/src/public-api.ts"
-      ]
+    "compileOnSave": false,
+    "compilerOptions": {
+        "paths": {
+            "@libs/rds-elements": [
+                "projects/libs/rds-elements/src/root/public-api.ts"
+            ],
+            "@libs/shared": [
+                "projects/libs/shared/src/public-api.ts"
+            ],
+            "@libs/state-management": [
+                "projects/libs/state-management/src/public-api.ts"
+            ]
+        },
+        "baseUrl": "./",
+        "outDir": "./dist/out-tsc",
+        "types": [
+            "jasmine",
+            "node"
+        ],
+        "sourceMap": true,
+        "declaration": false,
+        "downlevelIteration": true,
+        "experimentalDecorators": true,
+        "moduleResolution": "node",
+        "importHelpers": true,
+        "target": "es2017",
+        "module": "es2020",
+        "lib": [
+            "es2020",
+            "dom"
+        ]
     },
-    "baseUrl": "./",
-    "outDir": "./dist/out-tsc",
-    "types": [
-      "jasmine",
-      "node"
-    ],
-    "sourceMap": true,
-    "declaration": false,
-    "downlevelIteration": true,
-    "experimentalDecorators": true,
-    "moduleResolution": "node",
-    "importHelpers": true,
-    "target": "es2020",
-    "module": "es2020",
-    "lib": [
-      "es2018",
-      "dom"
-    ]
-  },
-  "angularCompilerOptions": {
-    "enableI18nLegacyMessageIdFormat": true,
-    "strictInjectionParameters": true,
-    "strictInputAccessModifiers": true,
-    "strictTemplates": true
-  }
+    "angularCompilerOptions": {
+        "enableI18nLegacyMessageIdFormat": true,
+        "strictInjectionParameters": true,
+        "strictInputAccessModifiers": true,
+        "strictTemplates": true
+    }
 }

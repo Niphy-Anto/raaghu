@@ -8,16 +8,14 @@
               <div class="p-0">
                 <span class="d-inline-block m-1" *ngFor="let item of tagList; index as i">
                   <div [class]="classes" class=" p-1">
-                    <div class="tags tags-dismissible align-items-center fade show" role="alert" aria-live="assertive"
-                      aria-atomic="true">
+                    <div class="tags tags-dismissible align-items-center fade show" role="alert"
+                         aria-live="assertive" aria-atomic="true">
                       <div class="d-flex">
                         <div class="tags-body">
                           {{item}}
                         </div>
-                        <rds-icon height="" [fill]="false" [stroke]="true" width="" type="" name="cancel" (click)="deleteTag(i)"
-                          colorVariant=""></rds-icon>
-                        <!-- <button class="btn-close pt-3" data-bs-dismiss="tags" aria-label="Close" (click)="deleteTag(i)">
-                        </button> -->
+                        <button class="btn-close pt-3" data-bs-dismiss="tags" aria-label="Close" (click)="deleteTag(i)">
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -26,8 +24,9 @@
             </ng-template>
           </div>
           <span>
-            <input type="text" class="form-control border-0" name="inputText" [(ngModel)]="inputText"
-              (keydown.enter)="addTag()" placeholder="+ Add Tag" aria-label="+Tag" aria-describedby="basic-addon1" />
+            <input type="text" class="form-control border-0" name="inputText"
+                   [(ngModel)]="inputText" (keydown.enter)="addTag()" placeholder="+ Add Tag"
+                   aria-label="+Tag" aria-describedby="basic-addon1" />
           </span>
 
         </div>
@@ -38,22 +37,20 @@
     <div class="binding-tags2">
       <div class="d-flex">
         <div class="scroll-type res-class"
-          style="float:left; border: 1px solid  #ced4da; border-radius: 5px;padding: 5px; width: 60%">
+             style="float:left; border: 1px solid  #ced4da; border-radius: 5px;padding: 5px; width: 60%">
           <div style="float:left">
             <ng-template [ngIf]="showtag">
               <div class="p-0">
                 <span class="d-inline-block m-1" *ngFor="let item of tagList; index as i">
                   <div [class]="classes" class=" p-1">
-                    <div class="tags align-items-center fade show" role="alert" aria-live="assertive"
-                      aria-atomic="true">
+                    <div class="tags align-items-center fade show" role="alert"
+                         aria-live="assertive" aria-atomic="true">
                       <div class="d-flex">
                         <div class="tags-body">
                           {{item}}
                         </div>
-                        <rds-icon height="" [fill]="false" [stroke]="true" width="" type="" name="cancel" (click)="deleteTag(i)"
-                          colorVariant=""></rds-icon>
-                        <!-- <button class="btn-close pt-3" data-bs-dismiss="tags" aria-label="Close" (click)="deleteTag(i)">
-                        </button> -->
+                        <button class="btn-close pt-3" data-bs-dismiss="tags" aria-label="Close" (click)="deleteTag(i)">
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -62,8 +59,9 @@
             </ng-template>
           </div>
           <span>
-            <input type="text" class="form-control border-0" name="inputText" [(ngModel)]="inputText"
-              (keydown.enter)="addTag()" placeholder="+Add Tag" aria-label="+Tag" aria-describedby="basic-addon1" />
+            <input type="text" class="form-control border-0" name="inputText"
+                   [(ngModel)]="inputText" (keydown.enter)="addTag()" placeholder="+Add Tag"
+                   aria-label="+Tag" aria-describedby="basic-addon1" />
           </span>
         </div>
       </div>

@@ -6,11 +6,11 @@ const share = mf.share;
 const sharedMappings = new mf.SharedMappings();
 sharedMappings.register(
     path.join(__dirname, '../../tsconfig.json'),
-    ['@libs/rds-elements','@libs/shared','@libs/state-management','@rds-common-lib']);
+    {{ commonLibs }});
 
 module.exports = {
     output: {
-        uniqueName: "templates",
+        uniqueName: "product",
         publicPath: "auto"
     },
     optimization: {

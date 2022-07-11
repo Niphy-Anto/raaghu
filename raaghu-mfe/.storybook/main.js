@@ -6,15 +6,7 @@ module.exports = {
   "addons": [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
-    "@storybook/addon-interactions",
-    {
-      name: "@storybook/addon-docs",
-      options: {
-        configureJSX: true,
-        sourceLoaderOptions: null,
-        transcludeMarkdown: true,
-      },
-    }
+    "@storybook/addon-interactions"
   ],
   "framework": "@storybook/angular",
   "core": {
