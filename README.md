@@ -107,7 +107,7 @@ Benefits​
 </h2>
 <p>
 Any kind of positive contribution is welcome! Please help us to grow by contributing to the project.
-If you wish to contribute, you can work on any features [listed here](https://github.com/Wai-Technologies/raaghu/tree/main/raaghu-mfe#-features) or create one on your own. After adding your code, please send us a Pull Request.  
+    If you wish to contribute, you can work on any features <a href="https://github.com/Wai-Technologies/raaghu/tree/main/raaghu-mfe#-features" > [listed here] </a> or create one on your own. After adding your code, please send us a Pull Request.  
 </p>
 </br>
 <h2 align=" " style="border-bottom:0;color:#964BFF;">
