@@ -34,6 +34,8 @@ export class RdsCompFeaturesComponent implements OnInit, OnChanges, DoCheck {
   @Input() ExpiryInterval: number = 0;
   @Input() freeEditon: string;
   @Input() isDefault: boolean = false;
+  @Input() isShimmer:boolean=false;
+  @Input() editShimmer:boolean=true;
   @Input() featureList: any = [];
   @Input() nodeColors = [];
   @Input() treeData: TreeNode[] = [];

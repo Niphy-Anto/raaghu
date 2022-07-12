@@ -29,11 +29,13 @@ export class RdsCompTenantListComponent implements OnInit, DoCheck {
   actions: TableAction[] = [{ id: 'delete', displayName: this.translate.instant('Delete') }, { id: 'edit', displayName: this.translate.instant('Edit') }]
   @Input() tenantSettingsInfo: any;
   @Input() tenantData: any;
+  @Input() isShimmer:boolean=false;
   @Input() listItems = [
     { value: 'New Tenant', some: 'value', key: 'new', icon: 'plus', iconWidth: '20px', iconHeight: '20px' },
   ];  
   @Input() tenantFeatures: any = [];
   @Input() tenantFeatureValues: any = [];
+  @Input() editShimmer:boolean=false
   @Output() onSaveTenant = new EventEmitter<any>();
   @Output() onEditTenant = new EventEmitter<any>();
   @Output() onReset = new EventEmitter<any>();

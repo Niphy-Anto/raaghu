@@ -77,7 +77,7 @@ function mergeTSConfigJson() {
     // };
     if (changesDone) {
         console.log('updating tsconfig.json...');
-        fse.writeFileSync(path.join(currentDir, 'tsconfig.json'), JSON.stringify(ngElementsFile));
+        fse.writeFileSync(path.join(currentDir, 'tsconfig.json'), JSON.stringify(ngElementsFile, null, 2));
     }
     // return ngElementsFile;
 }
@@ -117,9 +117,9 @@ try {
     copyProjects();
 
     // console.log('updating package.json...');
-    // fse.writeFileSync(path.join(ngComponentsDir, 'package.json'), JSON.stringify(updatedPackageJson));
+    // fse.writeFileSync(path.join(ngComponentsDir, 'package.json'), JSON.stringify(updatedPackageJson, null, 2));
     // console.log('updating angular.json...');
-    // fse.writeFileSync(path.join(ngComponentsDir, 'angular.json'), JSON.stringify(updatedAngularJson));
+    // fse.writeFileSync(path.join(ngComponentsDir, 'angular.json'), JSON.stringify(updatedAngularJson, null, 2));
     // console.log('installing dependencies...');
 
     // execSync(`npm install`, { cwd: ngComponentsDir, stdio: 'inherit' });

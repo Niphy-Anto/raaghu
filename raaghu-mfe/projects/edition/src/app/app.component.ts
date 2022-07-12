@@ -70,7 +70,9 @@ export class AppComponent implements OnInit {
         noDataTitle: 'Currently you do not have edition',
         editionList: this.editionList,
         freeEditions: this.freeEditions,
-        tenantCount:0
+        tenantCount:0,
+        isShimmer:true,
+        editShimmer:true
       },
       output: {
         onEditionSave: (data) => {
@@ -84,6 +86,15 @@ export class AppComponent implements OnInit {
 
         },
         updateEdition: (id) => {
+          if(id==0){
+            const rdsEditionMfeConfig = this.rdsEditionMfeConfig;
+            rdsEditionMfeConfig.input.editShimmer=false;
+            this.rdsEditionMfeConfig={ ...rdsEditionMfeConfig }
+          }else{
+            const rdsEditionMfeConfig = this.rdsEditionMfeConfig;
+            rdsEditionMfeConfig.input.editShimmer=true;
+            this.rdsEditionMfeConfig={ ...rdsEditionMfeConfig }
+          }
           this.store.dispatch(getEditionInfo(id))
         },
         deleteEdition: (data) => {
@@ -97,10 +108,13 @@ export class AppComponent implements OnInit {
         }
       }
     }
+    const mfeConfig = this.rdsEditionMfeConfig
+    mfeConfig.input.isShimmer =true
+    this.rdsEditionMfeConfig = mfeConfig;
     this.store.dispatch(getEditions());
     this.store.select(selectAllEditions).subscribe((res: any) => {
       this.EditionDatatable = [];
-      if (res && res.editions && res.editions) {
+      if (res && res.editions && res.editions && res.status == "success"    ) {
         res.editions.forEach(element => {
           const edition: any = {
             editionname: element.displayName,
@@ -114,6 +128,7 @@ export class AppComponent implements OnInit {
         });
         const rdsEditionMfeConfig = this.rdsEditionMfeConfig;
         rdsEditionMfeConfig.input.EditionsTableData = this.EditionDatatable;
+        rdsEditionMfeConfig.input.isShimmer=false
         this.rdsEditionMfeConfig = rdsEditionMfeConfig;
       }
 
@@ -121,12 +136,13 @@ export class AppComponent implements OnInit {
     })
     this.store.dispatch(getEditionInfo(undefined))
     this.store.select(selectEditionInfo).subscribe((res: any) => {
-      if (res && res.editionInfo && res.editionInfo.featureValues) {
+      if (res && res.editionInfo && res.editionInfo.featureValues && res.status == "success") {
         this.featureList = this.convertArraytoTreedata(res.editionInfo.features)
         const rdsEditionMfeConfig = this.rdsEditionMfeConfig;
         rdsEditionMfeConfig.input.featureList = [...this.featureList];
         rdsEditionMfeConfig.input.selectedFeatures = [...res.editionInfo.featureValues];
         rdsEditionMfeConfig.input.selectedEdition = { ...res.editionInfo.edition };
+        rdsEditionMfeConfig.input.editShimmer=false;
         this.rdsEditionMfeConfig = { ...rdsEditionMfeConfig };
       }
 

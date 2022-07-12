@@ -55,7 +55,8 @@ export class AppComponent implements OnInit {
         operationLogsHeaders: this.operationLogsHeaders,
         operationLogs: this.operationLogs,
         changeLogsHeaders: this.changeLogsHeaders,
-        changeLogs: this.changeLogs
+        changeLogs: this.changeLogs,
+        isShimmer:true
       },
       output: {
         deleteEvent: (eventData) => {
@@ -94,7 +95,7 @@ this.filterChangeLog(eventData);
      this.store.dispatch(getAuditLogs(auditLogParamsData));
      this.store.select(selectAllAuditLogs).subscribe((res: any) => {
        this.auditLogsTableData = [];
-       if (res && res.auditLogs && res.auditLogs.items && res.auditLogs.items.length > 0) {
+       if (res && res.auditLogs && res.auditLogs.items && res.auditLogs.items.length > 0 && res.status == "success") {
          res.auditLogs.items.forEach((element: any) => {
            const item: any = {
              parameters:element.parameters,
@@ -112,11 +113,12 @@ this.filterChangeLog(eventData);
            }
            this.auditLogsTableData.push(item);
          });
-        
+         const mfeConfig = this.rdsauditLogMfeConfig
+         mfeConfig.input.operationLogs = [... this.auditLogsTableData];
+         mfeConfig.input.isShimmer=false;
+         this.rdsauditLogMfeConfig = mfeConfig;
        }
-       const mfeConfig = this.rdsauditLogMfeConfig
-       mfeConfig.input.operationLogs = [... this.auditLogsTableData];
-       this.rdsauditLogMfeConfig = mfeConfig;
+       
      })
   }
       

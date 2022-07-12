@@ -11,7 +11,7 @@
             <app-rds-data-table [tableData]="tableData" [inlineEdit]="false" [pagination]="true"
                 [recordsPerPage]="10" [actions]="actions" (onActionSelection)="onActionSelect($event)"
                 noDataTitle="Currently you do not have tenant" 
-                [tableHeaders]="tenantHeaders"></app-rds-data-table>
+                [tableHeaders]="tenantHeaders" [isShimmer]="isShimmer" ></app-rds-data-table>
             </div>
         </div>
     </div>
@@ -29,7 +29,7 @@
             <div class="tab-pane fade px-0" [ngClass]="{'show active': activePage === 0}" id="tenant-information"
                 role="tabpanel" aria-labelledby="nav-home-tab">
                 <app-rds-comp-tenant-information (tenantInfo)="getTenantData($event)" [editionList]="editionList"
-                    [tenantData]="tenantData" (onCancel)="close()" [showEmail]="showEmailList">
+                    [tenantData]="tenantData" (onCancel)="close()" [editShimmer]="editShimmer" [showEmail]="showEmailList">
                 </app-rds-comp-tenant-information>
             </div>
             <div class="tab-pane fade px-0" [ngClass]="{'show active': activePage === 1}" id="settings" role="tabpanel"
