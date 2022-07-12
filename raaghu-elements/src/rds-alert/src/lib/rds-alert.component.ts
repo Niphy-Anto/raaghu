@@ -36,7 +36,7 @@ export class RdsAlertComponent implements OnInit {
   @Input() iconWidth: string = '20px';
   @Input() iconStroke: boolean = true;
   @Input() iconFill: boolean = false;
-  @Input() type: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark' = 'primary';
+  @Input() colorVariant: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark' = 'primary';
   @Input() position: 'top' | 'bottom' = 'top';
   @Output() onDismiss = new EventEmitter<Event>();
   @Input() showAlertonLoad: boolean = false;
@@ -56,7 +56,7 @@ export class RdsAlertComponent implements OnInit {
 
 
   public get classes(): string {
-    const mode = `alert alert-${this.type} alert-dismissible fade show`;
+    const mode = `alert alert-${this.colorVariant} alert-dismissible fade show`;
     const mode2 = `${this.position === 'top' ? ' position-fixed top-0 start-0 m-3' : ' position-fixed bottom-0 start-0 m-3'}`;
     // const mode3 = `${this.align}  `;
     return mode + mode2;
@@ -65,6 +65,30 @@ export class RdsAlertComponent implements OnInit {
   public get iconSize(): string {
     const mode2 = `${this.size === 'medium' ? 'fs-4' : this.size === 'large' ? 'fs-3' : this.size === 'small'}`;
     return mode2;
+  }
+
+  public get alertSize(): string{
+    const mode3 =  `${this.size === 'small' ? 'alert-sm' : this.size === 'large' ? 'alert-lg' : 'alert-md'}`;
+    switch (this.size) {
+      case 'small':
+        this.iconHeight = '15px';
+        this.iconWidth = '15px';
+        break;
+      case 'medium':
+        this.iconHeight = '20px';
+        this.iconWidth = '20px';
+        break;
+      case 'large':
+        this.iconHeight = '25px';
+        this.iconWidth = '25px';
+        break;  
+      default:
+        this.iconHeight = '20px';
+        this.iconWidth = '20px';
+        break;
+    }
+    return mode3;
+
   }
 
 
@@ -88,7 +112,7 @@ export class RdsAlertComponent implements OnInit {
     const alert1 = new bootstrap.Alert(
       this.alertEl.nativeElement,
     );
-    if (this.type !== 'danger') {
+    if (this.colorVariant !== 'danger') {
       console.log(this.delay)
       setTimeout(() => {
         this.closeAlert();
@@ -106,7 +130,7 @@ export class RdsAlertComponent implements OnInit {
     this.onDismiss.emit();
   }
 
-  // tslint:disable-next-line:typedef
+  // tslint:disable-next-line:colorVariantdef
   close() {
     this.visibility = true;
   }

@@ -7,6 +7,13 @@
   <ng-container *ngIf="!alwaysOpen; else otherTemplate">
     <div [attr.id]="'collapse'+id" class="accordion-collapse collapse" [class.show]="expanded"  [attr.data-bs-parent]="'#' + accordionId" [attr.aria-labelledby]="'heading'+id">
       <div class="accordion-body">
+        <ng-content  select="[accordianBody]"></ng-content>
+      </div>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="alwaysOpen; else otherTemplate">
+    <div [attr.id]="'collapse'+id" class="accordion-collapse collapse" [class.show]="expanded" [attr.aria-labelledby]="'heading'+id">
+      <div class="accordion-body">
         <ng-content ></ng-content>
       </div>
     </div>
@@ -14,7 +21,7 @@
   <ng-template #otherTemplate>
     <div [attr.id]="'collapse'+id" class="accordion-collapse collapse" [class.show]="expanded">
       <div class="accordion-body">
-        <ng-content select="[accordianBody]"></ng-content>
+        <ng-content></ng-content>
       </div>
     </div>
   </ng-template>
