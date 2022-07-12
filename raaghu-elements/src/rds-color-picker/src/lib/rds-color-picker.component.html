@@ -1,1 +1,14 @@
-<input type="color" class="form-control-color p-1" [disabled]="disabled" id="exampleColorInput"  [value]="value" [title]="title" (input)="changedValue($event)">
+<div class="row">
+    <div class="col-5">
+        <div class="rds-color-picker position-relative">
+            <div class=" d-flex justify-content-center align-items-center" >
+               
+                    <label [ngClass]="labelClasses">{{label}}</label>
+              
+             <div  [class]="inputPosition"  [ngStyle]="{'width': width + 'px'}">
+                    <input type="color" class="form-control-color m-auto" [disabled]="disabled" id="exampleColorInput"  [value]="value"  (input)="changedValue($event)">
+                </div>
+            </div>                
+        </div>       
+    </div>
+</div>

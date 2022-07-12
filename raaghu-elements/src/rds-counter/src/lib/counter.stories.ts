@@ -25,9 +25,10 @@ const Template: Story<RdsCounterComponent> = (args: RdsCounterComponent) => ({
 
 export const Basic = Template.bind({})
 Basic.args = {
-  Title: '',
-  label: '',
+
+  label: 'Counter',
   colorVariant: 'primary',
   counterValue: 0,
   width: 124
 }
+

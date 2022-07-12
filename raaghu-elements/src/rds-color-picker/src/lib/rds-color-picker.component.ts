@@ -11,7 +11,7 @@ export class RdsColorPickerComponent implements OnInit {
   @Input() value = '';
   @Input() label!: string;
   @Input() disabled!: boolean;
-  @Input() title!: string;
+  @Input() position: 'start' | 'end' | 'top' | 'bottom' = 'start';
 
   @Output() onItemClick = new EventEmitter<any>();
 
@@ -38,5 +38,53 @@ export class RdsColorPickerComponent implements OnInit {
     console.log(event.target.value);
     // this.onChange(event.target.value)
     // this.onTouched()
+  }
+
+
+  public get inputClasses(): string[] {
+
+    var classes = ['form-control-color']
+    if (this.position === 'start') {     
+      classes.push('');     
+    }
+    else if(this.position === 'end') {
+      // classes.push('end-0')
+    }
+    else if(this.position === 'bottom') {
+      classes.push('')
+    }
+     else if(this.position === 'top') {
+      classes.push('')
+    }
+
+    return classes;
+  }
+  public get labelClasses(): string[] {
+
+    var classes = ['position-absolute']
+    if (this.position === 'start') {     
+      classes.push('start-0');     
+    }
+    else if(this.position === 'end') {
+      classes.push('end-0')
+    }
+    else if(this.position === 'bottom') {
+      classes.push('mt-5')
+    }
+     else if(this.position === 'top') {
+      classes.push('top-0')
+    }
+
+    return classes;
+  }
+  public get inputPosition(): string[]{
+    var inputClass=['input-group'];
+    if(this.position==='top'){
+      inputClass.push('mt-4');
+    }
+    else if(this.position==='bottom'){
+      inputClass.push('mb-4');
+    }
+    return inputClass;
   }
 }

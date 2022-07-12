@@ -15,7 +15,7 @@ export default {
   argTypes: {
 
     colorVariant: {
-      options: ['Primary', 'Secondary', 'Success', 'Danger', 'Info'],
+      options: ['primary', 'secondary', 'success', 'danger', 'info','light','dark'],
       control: { type: 'select' }
     },
     size: {
@@ -35,17 +35,25 @@ const Template: Story<RdsDropdownlistComponent> = (args: RdsDropdownlistComponen
 export const Basic: Story<RdsDropdownlistComponent> = (args) => ({
   props: args,
   template:
-    `<rds-dropdownlist [listItems]="listItems"  size="default"  colorVariant="btn-secondary">
+    `<rds-dropdownlist 
+    [listItems]="listItems"
+    [placeholder]="placeholder"
+    size="default" 
+    [colorVariant]="colorVariant"
+    [size]="size"
+     [multiSelect]="multiSelect"
+    
+  >
     </rds-dropdownlist>`
 });
 Basic.args = {
-  placeholder: 'Filter',
+  placeholder: 'Filter',  
   size: 'default',
   multiSelect: false,
-  colorVariant: 'btn-secondary',
+  colorVariant: 'primary',
   listItems: [
     { value: 'Export to excel', some: 'value', id: 1, href: '', icon: 'export_to_excel', iconWidth: '20px', iconHeight: '25px', iconStroke: true, iconFill: false },
     { value: 'Import from excel', some: 'value', id: 2, href: '', icon: 'download_collected_data', iconWidth: '20px', iconHeight: '20px', iconStroke: true, iconFill: false },
-    { value: 'Click here download sample import file.', some: 'value', id: 3, href: '', icon: 'download_collected_data', iconWidth: '', iconHeight: '', iconStroke: true, iconFill: false },
+    { value: 'Click here download sample import file.', some: 'value', id: 3, href: '', icon: 'download_collected_data', iconWidth: '20px', iconHeight: '20px', iconStroke: true, iconFill: false },
   ]
 };

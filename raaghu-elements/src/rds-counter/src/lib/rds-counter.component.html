@@ -1,20 +1,26 @@
 <div class="row">
-  <div class="col-md-12">
-    <label class="d-flex flex-column-reverse mb-2">
-      {{Title}}
-    </label>
-    <div class="d-flex align-items-center">
-      <div class="input-group" [ngStyle]="{'width': width + 'px'}">
-        <button [ngClass]="classList" (click)="decrement()" type="button" id="button-addon1"><i class="bi bi-dash-lg"></i></button>
-        <input type="text" class="form-control text-center"
-               (keyup)="onKeyup($event)" (focus)="focus()" [(ngModel)]="counterValue" [value]="counterValue"
-               [min]="min" [max]="max"
-               (mouseup)="onMouseup($event)" aria-label="Example text with button addon" aria-describedby="button-addon1" />
-        <button [ngClass]="classList" (click)="increment()" type="button" id="button-addon1"><i class="bi bi-plus-lg"></i></button>
+  <div class="col-5">
+    <div class="rds-counter position-relative">
+      <div class="d-flex justify-content-center align-items-center">
+        <label [ngClass]="labelClasses">
+          {{label}}
+        </label>
+        <div [class]="inputPosition" [ngStyle]="{'width': width + 'px'}">
+          <rds-button [ngClass]="classList" (click)="decrement()" type="button" id="button-addon1"
+            [buttonType]="'iconOnly'">
+            <rds-icon *ngIf="icon" [name]="'plus'" [height]="iconHeight" [width]="iconWidth" [fill]="iconFill"
+      [stroke]="iconStroke" class="pe-1"></rds-icon>
+          </rds-button>
+          <input type="text" class="form-control text-center" (keyup)="onKeyup($event)" (focus)="focus()"
+            [(ngModel)]="counterValue" [value]="counterValue" [min]="min" [max]="max" (mouseup)="onMouseup($event)"
+            aria-label="Example text with button addon" aria-describedby="button-addon1" />
+          <button [ngClass]="classList" (click)="increment()" type="button" id="button-addon1">
+            <rds-icon height="12px" [fill]="false" [stroke]="true" width="12px" type="" [name]="'plus'"
+              colorVariant="light"></rds-icon>
+          </button>
+        </div>
       </div>
-      <label class="ps-2">
-        {{label}}
-      </label>
+
     </div>
 
     <!-- <div *ngIf="invalidCount">

@@ -10,6 +10,14 @@ export default {
       imports: [RdsIconModule],
     }),
   ],
+  argTypes: {
+
+    size: {
+      options: ['default', 'small', 'large'],
+      control: { type: 'select' }
+    },
+
+  },
 } as Meta
 
 const Template: Story<RdsSearchInputComponent> = (args: RdsSearchInputComponent) => ({
@@ -17,9 +25,19 @@ const Template: Story<RdsSearchInputComponent> = (args: RdsSearchInputComponent)
 });
 
 export const Basic = Template.bind({})
+template:
+`<rds-dropdownlist 
+[size]="size"
+[label]="label"
+size="default" 
+[placeholder]="placeholder"
+[position]="position"
+ [value]="value"
+
+>`
 Basic.args = {
 
-  Placeholder: 'Search',
+  placeholder: 'Search',
   size: 'small',
 
 }
