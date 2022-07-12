@@ -20,6 +20,7 @@ export class RdsDataTableComponent implements OnInit, DoCheck, OnChanges {
   rowData: any;
   @Input() tableHeaders: TableHeader[] = [];
   @Input() width = 400;
+  @Input() isShimmer:boolean=false;
   @Input() role: any = 'Advanced';
   @Input() tableStyle?: any = 'light';
   @Input() pagination: boolean = false;

@@ -43,7 +43,8 @@ export class AppComponent implements OnInit {
         navtabItems: this.navtabItems,
         listskin: this.listskin,
         listSubmenu: this.listSubmenu,
-        visualsettingsItem: this.visualsettingsData
+        visualsettingsItem: this.visualsettingsData,
+        isShimmer:true
       },
       output: {
         onSaveVisualsettingsData: (visualsettingsItem: any) => {
@@ -61,6 +62,7 @@ export class AppComponent implements OnInit {
         this.visualsettingsData = res.visualsettings;
         const mfeConfig = this.rdsvisualsettingsMfeConfig
         mfeConfig.input.visualsettingsItem = [... this.visualsettingsData];
+        mfeConfig.input.isShimmer=false
         this.rdsvisualsettingsMfeConfig = mfeConfig;
       }
     })

@@ -44,6 +44,7 @@ export class RdsCompAuditLogsComponent implements OnInit {
   @Output() parameterData=new EventEmitter<any>();
   @Output() ChangeLogparameterData=new EventEmitter<any>();
   @Input() public changeLogs: any = [];
+  @Input() isShimmer:boolean=false;
   startDate:any=undefined;
   endDate:any=undefined;
   user:any;
