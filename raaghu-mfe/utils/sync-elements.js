@@ -4,7 +4,8 @@ const fse = require('fs-extra');
 const { execSync } = require('child_process');
 const currentDir = path.join(__dirname, '../');
 const tempDir = path.join(os.tmpdir(), 'raaghu-elements-temp');
-const ngElementsDir = path.join(tempDir, 'raaghu-elements');
+// const ngElementsDir = path.join(tempDir, 'raaghu-elements');
+const ngElementsDir = path.join(__dirname, '../../raaghu-elements');
 const ngComponentsDir = path.join(__dirname, '../projects/libs/rds-elements');
 const ngElementsRemote = 'https://github.com/Wai-Technologies/raaghu-elements.git';
 const filesToReplace = [
@@ -13,6 +14,25 @@ const filesToReplace = [
   '.gitignore',
   'tsconfig.json'
 ]
+
+function getArgs() {
+  const args = {};
+  process.argv
+    .slice(2, process.argv.length)
+    .forEach(arg => {
+      const longArg = arg.split('=');
+      let longArgFlag = '';
+      if (arg.slice(0, 2) === '--') {
+        longArgFlag = longArg[0].slice(2, longArg[0].length);
+      } else {
+        longArgFlag = longArg[0];
+      }
+      const longArgValue = longArg.length > 1 ? longArg[1] : true;
+      args[longArgFlag] = longArgValue;
+
+    });
+  return args;
+}
 
 function replaceFiles() {
   for (const fileName of filesToReplace) {
@@ -41,7 +61,8 @@ function mergeTSConfigJson() {
   const ngElementsFile = JSON.parse(fse.readFileSync(path.join(currentDir, 'tsconfig.json')).toString());
   if (ngElementsFile.compilerOptions.paths["@libs/rds-elements"] == undefined) {
     ngElementsFile.compilerOptions.paths = {
-      ...ngElementsFile.compilerOptions.paths, "@libs/rds-elements": [
+      ...ngElementsFile.compilerOptions.paths,
+      "@libs/rds-elements": [
         "projects/libs/rds-elements/src/root/public-api.ts"
       ]
     };
@@ -74,19 +95,27 @@ function getDirectories(source) {
 }
 
 try {
-  console.log('fetching elements...');
-  if (fse.existsSync(tempDir)) fse.rmSync(tempDir, { recursive: true, force: true });
-  fse.mkdirSync(path.join(tempDir));
-  // fse.mkdtempSync(path.join(tempDir));
-  execSync(`git clone ${ngElementsRemote}`, { cwd: tempDir, stdio: 'inherit' });
+  // console.log('fetching elements...');
+  // if (fse.existsSync(tempDir)) fse.rmSync(tempDir, { recursive: true, force: true });
+
+  // console.log('creating temporary directory...')
+  // fse.mkdirSync(path.join(tempDir));
+
+  // const args = getArgs();
+  // var branch = args?.branch;
+  // if (branch == undefined) { branch = 'main' } else { branch = args?.branch };
+  // console.log("cloning elements from the branch \x1b[32m'" + branch + "'\x1b[0m...");
+  // execSync(`git clone ${ngElementsRemote} --branch=${branch}`, { cwd: tempDir, stdio: 'inherit' });
+
   console.log('replacing config files...');
-  // console.log('Component directory: ', ngComponentsDir);
   replaceFiles();
-  // const updatedPackageJson = mergePackageJson();
-  // const updatedAngularJson = mergeAngularJson();
+
+  console.log('merging tsconfig.json file...');
   mergeTSConfigJson();
+
   console.log('copying over projects...');
   copyProjects();
+
   // console.log('updating package.json...');
   // fse.writeFileSync(path.join(ngComponentsDir, 'package.json'), JSON.stringify(updatedPackageJson));
   // console.log('updating angular.json...');

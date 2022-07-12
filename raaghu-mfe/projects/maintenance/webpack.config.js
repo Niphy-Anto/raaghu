@@ -10,7 +10,7 @@ sharedMappings.register(
 
 module.exports = {
     output: {
-        uniqueName: "maintenance",
+        uniqueName: "product",
         publicPath: "auto"
     },
     optimization: {
