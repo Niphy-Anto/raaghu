@@ -44,7 +44,9 @@ export class AppComponent {
         tenantHeaders: this.tenantTableHeader,
         tenantList: this.tenantTableData,
         editionList: this.editionList,
-        noDataTitle: 'Currently you do not have tenant'
+        noDataTitle: 'Currently you do not have tenant',
+        isShimmer:true,
+        editShimmer:true
       },
       output: {
         onSaveTenant: (tenant: any) => {
@@ -58,7 +60,9 @@ export class AppComponent {
                 isActive: tenant.tenantSettings.isActive,
                 subscriptionEndDateUtc: new Date(tenant.tenantInfo.subscriptionEndDate).toISOString(),
                 isInTrialPeriod: false,
-                id: tenant.tenantInfo.id
+                id: tenant.tenantInfo.id,
+                isShimmer:true,
+                editShimmer:true
               };
               this.store.dispatch(updateTenant(data))
 
@@ -97,7 +101,9 @@ export class AppComponent {
           mfeConfig.input.tenantSettingsInfo = { ... this.tenantSettingsInfo };
           mfeConfig.input.tenantFeatureValues = [... this.tenantFeatureValues];
           mfeConfig.input.tenantFeatures = [... this.tenantFeatures];
+          mfeConfig.input.editShimmer=true
           this.rdsTenantMfeConfig = mfeConfig;
+         
         },
         deleteEvent: (event: any) => {
           this.store.dispatch(deleteTenant(event.id))
@@ -121,7 +127,7 @@ export class AppComponent {
     this.store.dispatch(getTenants());
     this.store.select(selectAllTenants).subscribe((res: any) => {
       this.tenantTableData = [];
-      if (res && res.tenants.items) {
+      if (res && res.tenants.items && res.status == "success") {
         res.tenants.items.forEach((element: any) => {
           const status: string = (element.isActive) ? 'Active' : 'Inactive';
           // const statusTemplate = `<div class="status ${status}">${status}</div>`;
@@ -146,6 +152,7 @@ export class AppComponent {
         });
         const mfeConfig = this.rdsTenantMfeConfig
         mfeConfig.input.tenantList = [... this.tenantTableData];
+        mfeConfig.input.isShimmer=false;
         this.rdsTenantMfeConfig = mfeConfig;
       }
     });
@@ -167,6 +174,7 @@ export class AppComponent {
         const mfeConfig = this.rdsTenantMfeConfig
         mfeConfig.input.tenantData = { ... this.tenantData };
         mfeConfig.input.tenantSettingsInfo = { ... this.tenantSettingsInfo };
+        mfeConfig.input.editShimmer=false
         this.rdsTenantMfeConfig = mfeConfig;
       }
     });

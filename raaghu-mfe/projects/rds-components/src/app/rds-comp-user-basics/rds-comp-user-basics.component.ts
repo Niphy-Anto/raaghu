@@ -13,6 +13,7 @@ export class RdsCompUserBasicsComponent implements OnInit, OnChanges {
   @Output() userInfo = new EventEmitter<any>();
   @Output() onCancel = new EventEmitter<any>();
   @Input() userData: any;
+  @Input()  editShimmer: boolean = false;
   public phonePattern = /^((\\+91-?)|0)?[0-9]{10}$/;
   isPasswordMismatch:boolean=false;
   @ViewChild('userCreationForm') userInfoForm: NgForm;

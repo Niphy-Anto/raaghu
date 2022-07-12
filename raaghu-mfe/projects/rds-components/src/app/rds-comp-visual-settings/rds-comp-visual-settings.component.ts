@@ -27,6 +27,7 @@ export class RdsCompVisualSettingsComponent implements OnInit {
   @Input() visualSettingsHeader: any = {};
   @Input() visualSettingsSubHeader: any = {}
   @Input() visualSettingsMenu: any = {}
+  @Input() isShimmer:boolean=false;
   @Input() visualSettingsFooter: any = {}
   @Input() visualSettingsLayout: any = {}
   @Input() public visualsettingsItem: any[] = [];
