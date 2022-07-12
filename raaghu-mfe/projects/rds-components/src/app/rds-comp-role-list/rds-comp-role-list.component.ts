@@ -38,6 +38,8 @@ export class RdsCompRoleListComponent implements OnInit {
   @Input() SelectedPermissionValues: any = [];
   @Input() SelectedPermissionList: any = [];
   @Input() roleHeaders: TableHeader[] = [];
+  @Input() isShimmer:boolean=false;
+  @Input()  EditShimmer: boolean = false;
   @Input() listItems = [
     { value: 'New Role', some: 'value', key: 'new', icon: 'plus', iconWidth: '20px', iconHeight: '20px' },
     { value: 'Refresh', some: 'value', key: 'refresh', icon: 'refresh', iconWidth: '20px', iconHeight: '20px' },
