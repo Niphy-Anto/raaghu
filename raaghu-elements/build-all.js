@@ -1,19 +1,13 @@
 const path = require('path');
-const fs = require('fs').promises;
+const fs = require('fs');
 const { readFile, existsSync } = require('fs');
 const util = require('util');
 const http = require('http');
+const { execSync } = require('child_process');
 const exec = util.promisify(require('child_process').exec);
 const projectRootFolder = 'src';
 // const distPath = path.join(__dirname, 'rds-elements');
 // const elementsFilePath = path.join(__dirname, 'projects', 'app-config', 'src', 'lib', 'elements.ts')
-
-const buildAllProjects = async (directories, projectToBuildArray) => {
-    for (const dir of (projectToBuildArray || directories)) {
-        console.log('Building project ' + dir + '...')
-        await exec(`ng build ${dir}`, { cwd: path.join(__dirname) });
-    }
-}
 
 // const updateElementsTsFile = async () => {
 //     if (existsSync(distPath)) {
@@ -31,27 +25,6 @@ const buildAllProjects = async (directories, projectToBuildArray) => {
 //         await fs.writeFile(elementsFilePath, `export const elements: string[] = [${arr.map(r => `'${r}'`).join(',')}]`)
 //     }
 // }
-
-const getDirectories = source => {
-    return fs.readdir(source, { withFileTypes: true })
-        .then(directories => directories.filter(d => d.isDirectory()).map(d => {
-            let prjName = '';
-			if (d.name == 'root') {
-				prjName = 'rds-elements';
-			} else {
-				prjName = d.name;
-			}
-            // console.log('d.name: ' + d.name);
-            // let prjArr = d.name.split("-");
-            // console.log('prjArr: ' + prjArr);
-            // prjArr.forEach(arg => {
-            //     prjName = prjName.concat(arg.charAt(0).toUpperCase(), arg.substring(1));
-            // });
-            // console.log('prjName: ' + prjName);
-            return prjName;
-        }))
-
-}
 
 // const startServer = () => {
 //     const server = http.createServer(async (request, response) => {
@@ -75,54 +48,84 @@ const getDirectories = source => {
 //     console.log('Server listening on localhost:3000');
 // }
 
-
-async function start() {
-    const args = getArgs();
-    console.log('Argumenets: ' + args);
-    // console.log(args)
-    // if (args?.build !== "false") {
-    const directories = await getDirectories(path.join(__dirname, projectRootFolder));
-    // console.log('Directories: ' + directories);
-    const projectToBuild = args?.project;
-    if (projectToBuild) {
-        if (projectToBuild.split(',').find(r => !directories.includes(r))) {
-            console.log("Invalid project name " + projectToBuild);
-            return;
-        }
-        await buildAllProjects(directories, projectToBuild.split(','));
-    } else {
-        await fs.rm(path.join(__dirname, 'rds-elements'), { recursive: true, force: true });
-        await fs.mkdir(path.join(__dirname, 'rds-elements'));
-        console.log('Building projects from ' + projectRootFolder);
-        await buildAllProjects(directories, null);
+const buildAllProjects = async (projects) => {
+  // const projIn = ["rds-elements", "rds-icon", "rds-alert"];
+  for (const project of Object.keys(projects)) {
+    // if (project != "storybook" && projIn.indexOf(project) != -1) {
+    if (project != "storybook") {
+      console.log('Building project ' + project + '...');
+      execSync(`ng build ${project}`, { cwd: process.cwd(), stdio: 'inherit' });
     }
-    // }
-    // await updateElementsTsFile();
-    // startServer();
+  }
 }
 
+// const getDirectories = source => {
+//   return fs.readdir(source, { withFileTypes: true })
+//     .then(directories => directories.filter(d => d.isDirectory()).map(d => {
+//       let prjName = '';
+//       if (d.name == 'root') {
+//         prjName = 'rds-elements';
+//       } else {
+//         prjName = d.name;
+//       }
+//       return prjName;
+//     }))
+// }
 
-function getArgs() {
-    const args = {};
-    process.argv
-        .slice(2, process.argv.length)
-        .forEach(arg => {
-            // long arg
-            if (arg.slice(0, 2) === '--') {
-                const longArg = arg.split('=');
-                const longArgFlag = longArg[0].slice(2, longArg[0].length);
-                const longArgValue = longArg.length > 1 ? longArg[1] : true;
-                args[longArgFlag] = longArgValue;
-            }
-            // flags
-            else if (arg[0] === '-') {
-                const flags = arg.slice(1, arg.length).split('');
-                flags.forEach(flag => {
-                    args[flag] = true;
-                });
-            }
-        });
-    return args;
+function getProjects() {
+  return JSON.parse(fs.readFileSync(path.join(__dirname, 'angular.json')).toString()).projects
+}
+
+// function getArgs() {
+//   const args = {};
+//   process.argv
+//     .slice(2, process.argv.length)
+//     .forEach(arg => {
+//       // long arg
+//       if (arg.slice(0, 2) === '--') {
+//         const longArg = arg.split('=');
+//         const longArgFlag = longArg[0].slice(2, longArg[0].length);
+//         const longArgValue = longArg.length > 1 ? longArg[1] : true;
+//         args[longArgFlag] = longArgValue;
+//       }
+//       // flags
+//       else if (arg[0] === '-') {
+//         const flags = arg.slice(1, arg.length).split('');
+//         flags.forEach(flag => {
+//           args[flag] = true;
+//         });
+//       }
+//     });
+//   return args;
+// }
+
+async function start() {
+  // const args = getArgs();
+  // console.log('Argumenets: ' + args);
+
+  // console.log(args)
+  // if (args?.build !== "false") {
+  // const directories = await getDirectories(path.join(__dirname, projectRootFolder));
+  // console.log('Directories: ' + directories);
+
+  const projects = getProjects();
+  // console.log('Projects: ' + JSON.stringify(projects, null, 2));
+
+  // const projectToBuild = args?.project;
+  // console.log('Projects To Build: ' + projectToBuild.split(','));
+
+  // if (projectToBuild) {
+  //   if (projectToBuild.split(',').find(p => !projects.includes(p))) {
+  //     console.log("Invalid project name " + projectToBuild);
+  //     return;
+  //   }
+  //   // await buildAllProjects(directories);
+  // } else {
+  fs.rmSync(path.join(__dirname, 'rds-elements'), { recursive: true, force: true });
+  fs.mkdirSync(path.join(__dirname, 'rds-elements'));
+  console.log('Building projects from ' + projectRootFolder);
+  await buildAllProjects(projects);
+  // }
 }
 
 start();

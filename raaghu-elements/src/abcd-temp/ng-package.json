@@ -1,7 +1,6 @@
 {
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
-  "dest": "../../rds-elements/rds-label",
-  "deleteDestPath": false,
+  "dest": "../../dist/abcd-temp",
   "lib": {
     "entryFile": "src/public-api.ts"
   }
