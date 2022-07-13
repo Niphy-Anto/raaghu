@@ -6,7 +6,7 @@ export default {
   title: 'Elements/Avatar',
   component: RdsAvatarComponent,
   argTypes: {
-    color: {
+    colorVariant: {
       options: ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark'],
       control: { type: 'select' }
     },
