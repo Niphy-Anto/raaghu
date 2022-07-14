@@ -1,6 +1,6 @@
 import { Story, Meta, moduleMetadata } from '@storybook/angular';
 import { RdsPaginationComponent } from './rds-pagination.component';
-import { RdsIconModule } from '@libs/rds-elements';
+import { RdsIconModule } from '@libs/rds-icon';
 
 export default {
       title: 'Elements/Pagination',

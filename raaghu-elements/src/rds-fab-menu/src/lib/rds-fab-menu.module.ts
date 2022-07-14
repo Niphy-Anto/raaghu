@@ -1,9 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RdsFabMenuComponent } from './rds-fab-menu.component';
-
-import { RdsIconModule } from '../../../rds-icon/src/lib/rds-icon.module';
+import { RdsIconModule } from '@libs/rds-icon';
 import { CommonModule } from '@angular/common';
-
 
 @NgModule({
   declarations: [

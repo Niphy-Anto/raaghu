@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { BsDatepickerModule, BsDatepickerConfig  } from 'ngx-bootstrap/datepicker';
 import { RdsDatepickerComponent } from './rds-datepicker.component';
 import { FormsModule } from '@angular/forms';
-import { RdsIconModule } from '../../../rds-icon/src/lib/rds-icon.module';
+import { RdsIconModule } from '@libs/rds-icon';
 
 @NgModule({
   declarations: [
