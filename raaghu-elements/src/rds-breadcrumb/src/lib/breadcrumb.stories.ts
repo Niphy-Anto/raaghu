@@ -1,10 +1,17 @@
-import { Story, Meta } from '@storybook/angular';
+import { Story, Meta, moduleMetadata } from '@storybook/angular';
 import { RdsBreadcrumbComponent } from './rds-breadcrumb.component';
-
+import { RdsIconModule } from '@libs/rds-elements';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 export default {
 
   title: 'Elements/Breadcrumbs',
 
+  decorators: [
+    moduleMetadata({
+      imports: [CommonModule, FormsModule,RdsIconModule],
+    }),
+  ],
   component: RdsBreadcrumbComponent,
   argTypes: {
    
@@ -26,14 +33,19 @@ export default {
 
 const Template: Story<RdsBreadcrumbComponent> = (args: RdsBreadcrumbComponent) => ({
   props: args,
+ 
 });
 
 export const Basic = Template.bind({});
 Basic.args = {
   role: 'basic',
-  iconShow: false,
+  //  iconShow: false,
   disabled: false,
-  customBreadcrumbsItems: [{ name: 'Home', route: '/home', iconClass: 'bi bi-house-door' }, { name: 'About', route: '/About', iconClass: 'bi bi-house-door' }, { name: 'Contact US', route: '/Contact', iconClass: 'bi bi-house-door' }, { name: 'Services', route: '/Services', iconClass: 'bi bi-house-door' }, { name: 'Contact US', route: '/Contact', iconClass: 'bi bi-house-door' }],
+  customBreadcrumbsItems:[{ name: 'Home', route: '/home', iconClass: 'delete' , iconWidth: '15px' , iconHeight:'15px' , disabled:true }, 
+   { name: 'About', route: '/About', iconClass: 'dashboard' , iconWidth: '15px' , iconHeight:'15px' , disabled:true }, 
+   { name: 'Contact', route: '/Contact', iconClass: 'dashboard' , iconWidth: '15px' , iconHeight:'15px' , disabled:false },
+    { name: 'Services', route: '/Services', iconClass: 'dashboard' , iconWidth: '15px' , iconHeight:'15px' , disabled:false }, 
+    { name: 'Contact ', route: '/Contact', iconClass: 'dashboard' , iconWidth: '15px' , iconHeight:'15px' , disabled:true }]
 }
 
 export const Advanced = Template.bind({});
@@ -41,7 +53,11 @@ Advanced.args = {
   role: 'Advanced',
   iconShow: true,
   disabled: false,
-  customBreadcrumbsItems: [{ name: 'Home', route: '/home', iconClass: 'bi bi-house-door' }, { name: 'About', route: '/About', iconClass: 'bi bi-house-door' }, { name: 'Contact US', route: '/Contact', iconClass: 'bi bi-house-door' }, { name: 'Services', route: '/Services', iconClass: 'bi bi-house-door' }, { name: 'Contact US', route: '/Contact', iconClass: 'bi bi-house-door' }],
+  customBreadcrumbsItems: [{ name: 'Home', route: '/home', iconClass: 'dashboard' , iconWidth: '15px' , iconHeight:'15px'  , disabled: false}, 
+  { name: 'About', route: '/About', iconClass: 'dashboard' , iconWidth: '15px' , iconHeight:'15px'  , disabled: false}, 
+  { name: 'Contact', route: '/Contact', iconClass: 'dashboard' , iconWidth: '15px' , iconHeight:'15px'  , disabled: true},
+   { name: 'Services', route: '/Services', iconClass: 'dashboard' , iconWidth: '15px' , iconHeight:'15px' , disabled: true }, 
+   { name: 'Contact ', route: '/Contact', iconClass: 'dashboard' , iconWidth: '15px' , iconHeight:'15px' , disabled: true}]
 }
 
 export const withDivider = Template.bind({});
@@ -49,6 +65,9 @@ withDivider.args = {
   role: 'withDivider',
   iconShow: true,
   disabled: false,
-  customBreadcrumbsItems: [{ name: 'Home', route: '/home', iconClass: 'bi bi-house-door' }, { name: 'About', route: '/About', iconClass: 'bi bi-house-door' }, { name: 'Contact US', route: '/Contact', iconClass: 'bi bi-house-door' }, { name: 'Services', route: '/Services', iconClass: 'bi bi-house-door' }, { name: 'Contact US', route: '/Contact', iconClass: 'bi bi-house-door' }],
-
+  customBreadcrumbsItems: [{ name: 'Home', route: '/home', iconClass: 'dashboard' , iconWidth: '15px' , iconHeight:'15px' , disabled: true}, 
+  { name: 'About', route: '/About', iconClass: 'dashboard' , iconWidth: '15px' , iconHeight:'15px' , disabled: true }, 
+  { name: 'Contact', route: '/Contact', iconClass: 'dashboard' , iconWidth: '15px' , iconHeight:'15px' , disabled: false},
+   { name: 'Services', route: '/Services', iconClass: 'dashboard' , iconWidth: '15px' , iconHeight:'15px' , disabled: false}, 
+   { name: 'Contact ', route: '/Contact', iconClass: 'dashboard' , iconWidth: '15px' , iconHeight:'15px' ,disabled: true }]
 }

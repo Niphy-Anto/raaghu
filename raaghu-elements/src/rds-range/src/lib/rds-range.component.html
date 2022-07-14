@@ -1,6 +1,9 @@
-<div class="slidecontainer">
-  <span *ngIf="customstyle==='style3'" id="tooltip" class="tooltip_3" [attr.data-tooltip]="vale" ></span>
-  <span *ngIf="customstyle==='style2'" id="tooltip" class="tooltip_2" [attr.data-tooltip]="vale" ></span>
-    <span *ngIf="customstyle==='style1'" id="tooltip" class="tooltip_1" [attr.data-tooltip]="vale" ></span>
-  <input type="range" [min]="min" [max]="max" value="vale" [ngClass]="slider" [disabled]="disabled" id="myRange"  (input)="css()">
+
+<div class="position-relative py-5">
+  <ng-container>
+    <span id="range1" class="sliderTooltipRangeOne " [attr.data-tooltip]="value"></span>
+  </ng-container>
+  <div class="slider-track"></div>
+  <input id=slider1 class="slider_1 " [ngStyle]="{'z-index': rangeZIndex1}" type="range" [min]="min" [max]="max" [value]="value" (input)="rangeone()"
+    [disabled]="valueDisabled1">
 </div>
