@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RdsIconModule } from '../../../rds-icon/src/lib/rds-icon.module';
+import { RdsIconModule } from '@libs/rds-icon';
 import { RdsSearchInputComponent } from './rds-search-input.component';
 import { RdsLabelModule } from '../../../rds-label/src/lib/rds-label.module';
 import { FormsModule } from '@angular/forms';
