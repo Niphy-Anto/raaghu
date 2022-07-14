@@ -1,5 +1,6 @@
 const path = require('path');
 const fse = require('fs-extra');
+const { execSync } = require('child_process');
 const currentDir = path.join(__dirname, '../');
 const ngElementsDir = path.join(__dirname, '../../raaghu-elements');
 const ngComponentsDir = path.join(__dirname, '../projects/libs/rds-elements');
@@ -8,7 +9,11 @@ const filesToReplace = [
     '.editorconfig',
     '.gitignore',
     'tsconfig.json'
-]
+];
+const dependentElements = [
+    'rds-icon',
+    'rds-badge'
+];
 
 function replaceFiles() {
     for (const fileName of filesToReplace) {
@@ -49,9 +54,14 @@ function mergeTSConfigJson() {
         changesDone = true;
     };
     if (changesDone) {
-        console.log('updating tsconfig.json...');
+        console.log('Updating tsconfig.json file...');
         fse.writeFileSync(path.join(currentDir, 'tsconfig.json'), JSON.stringify(ngElementsFile, null, 2));
     }
+}
+
+function getDirectories(source) {
+    return fse.readdirSync(source, { withFileTypes: true })
+        .filter(d => d.isDirectory()).map(d => d.name);
 }
 
 function copyProjects() {
@@ -61,20 +71,27 @@ function copyProjects() {
     }
 }
 
-function getDirectories(source) {
-    return fse.readdirSync(source, { withFileTypes: true })
-        .filter(d => d.isDirectory()).map(d => d.name);
+function buildDependentElements() {
+    console.log('Building dependent \x1b[32m' + dependentElements.toString() + '\x1b[0m elements...');
+    for (const element of dependentElements) {
+        execSync(`npm run build ${element}`, { cwd: ngElementsDir, stdio: 'inherit' });
+    }
+
+    console.log("Coping element's build folder...");
+    fse.copySync(path.join(ngElementsDir, 'rds-elements'), path.join(currentDir, 'rds-elements'), { overwrite: true });
 }
 
 try {
 
-    console.log('replacing config files...');
+    buildDependentElements();
+
+    console.log('Replacing config files...');
     replaceFiles();
 
-    console.log('merging tsconfig.json file...');
+    console.log('Merging tsconfig.json file...');
     mergeTSConfigJson();
 
-    console.log('copying over projects...');
+    console.log('Copying over projects...');
     copyProjects();
 
 } catch (error) {
