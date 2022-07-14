@@ -204,7 +204,8 @@ export class AppComponent implements OnInit {
         DynamicPropertiesTableHeader:
           this.DynamicProperties.DynamicPropertiesTableHeader,
         inputTypeList: this.inputTypeList,
-        permissionsList: this.permissionsList
+        permissionsList: this.permissionsList,
+        isShimmer: true
       },
       output: {
         deleteEvent: (eventDataDynamic: any) => {
@@ -229,7 +230,7 @@ export class AppComponent implements OnInit {
     });
     this.store.dispatch(getDynamicProperty());
     this.store.select(selectDynamicProperty).subscribe((res: any) => {
-      if (res && res.dynamicProperty && res.dynamicProperty.items) {
+      if (res && res.dynamicProperty && res.dynamicProperty.items &&  res.status == "success") {
         this.DynamicProperties.DynamicPropertiesTableData = [];
         res.dynamicProperty.items.forEach((element: any) => {
           const item: any = {
@@ -248,6 +249,7 @@ export class AppComponent implements OnInit {
       mfeConfig.input.DynamicPropertiesTableData = [
         ...this.DynamicProperties.DynamicPropertiesTableData,
       ];
+      mfeConfig.input.isShimmer = false;
       this.rdsDynamicPropertiesMfeConfig = mfeConfig;
     });
 
@@ -259,7 +261,8 @@ export class AppComponent implements OnInit {
         DynamicEntityPropertiesTableHeader:
           this.DynamicEntityProperties.DynamicEntityPropertiesTableHeader,
         entityNames: this.DynamicEntityProperties.Entity,
-        parameterList: this.DynamicEntityProperties.Parameter
+        parameterList: this.DynamicEntityProperties.Parameter,
+        isShimmer : true
       },
       output: {
         deleteEvent: (eventDataEntity: any) => {
@@ -273,7 +276,7 @@ export class AppComponent implements OnInit {
     this.store.dispatch(getDynamicEntity());
     this.store.select(selectDynamicEntity).subscribe((res: any) => {
       this.DynamicEntityProperties.DynamicEntityPropertiesTableData = [];
-      if (res && res.dynamicEntity.items) {
+      if (res && res.dynamicEntity.items && res.status == 'success') {
         res.dynamicEntity.items.forEach((element: any) => {
           const item: any = {
             entityFullName: element.entityFullName,
@@ -290,6 +293,7 @@ export class AppComponent implements OnInit {
       mfeConfig.input.DynamicEntityPropertiesTableData = [
         ...this.DynamicEntityProperties.DynamicEntityPropertiesTableData,
       ];
+      mfeConfig.input.isShimmer = false ;
       this.rdsDynamicEntityPropertiesMfeConfig = mfeConfig;
     });
 
@@ -307,6 +311,7 @@ export class AppComponent implements OnInit {
         });
         const mfeConfig = this.rdsDynamicEntityPropertiesMfeConfig;
         mfeConfig.input.entityNames = [...this.entityNames];
+        mfeConfig.input.isShimmer = false;
         this.rdsDynamicEntityPropertiesMfeConfig = mfeConfig;
       }
     });
@@ -343,6 +348,7 @@ export class AppComponent implements OnInit {
         });
         const mfeConfig = this.rdsDynamicEntityPropertiesMfeConfig;
         mfeConfig.input.parameterList = [...this.parameterList];
+        mfeConfig.input.isShimmer = true;
         this.rdsDynamicEntityPropertiesMfeConfig = mfeConfig;
       }
     });
@@ -392,7 +398,7 @@ export class AppComponent implements OnInit {
       return this.store.dispatch(saveDynamicEntity(element));
     })
     // this.temp.forEach(element => {
-    //   setTimeout(()=>{                          
+    //   setTimeout(()=>{
     //     this.store.dispatch(saveDynamicEntity(element));
     //   }, 1000);
     // });

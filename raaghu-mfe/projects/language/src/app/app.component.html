@@ -21,7 +21,7 @@
 <ng-container *ngIf="viewCanvas">
   <rds-offcanvas [canvasTitle]="translate.instant(languageCanvasTitle)" [offId]="'AddLanguage'" [scrolling]="false"
     (onClose)="closeCanvas()" [offcanvaswidth]="550" [placement]="'end'" [backDrop]="true" >
-    <app-newlanguage [selectedLanguage]="selectedLanguage" (onLanguageSave)="addLanguages($event)"></app-newlanguage>
+    <app-newlanguage [selectedLanguage]="selectedLanguage" (onLanguageSave)="addLanguages($event)"[EditShimmer]="EditShimmer"></app-newlanguage>
   </rds-offcanvas>
 </ng-container>
 <ng-container *ngIf="currentAlerts&&currentAlerts.length>0">

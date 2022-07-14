@@ -35,11 +35,11 @@ import { RdsCompEditionTableComponent } from './rds-comp-edition-table/rds-comp-
 import { OrganizationTreeDirective } from './rds-comp-organization-tree/organizationTreeNodeModel.directive';
 import {
   RdsButtonModule, RdsSearchInputModule, RdsSelectListModule, RdsInputModule, RdsPaginationModule, RdsCheckboxModule, RdsAvatarModule, RdsDropdownModule, RdsModalModule,
-  RdsNavTabModule, RdsCardModule, RdsChartPieModule, RdsChartBarHorizontalModule, RdsChartBoolModule, RdsBadgeModule, RdsWidgetModule, RdsCheckboxGroupsModule, RdsCheckboxParentChildModule, 
+  RdsNavTabModule, RdsCardModule, RdsChartPieModule, RdsChartBarHorizontalModule, RdsChartBoolModule, RdsBadgeModule, RdsWidgetModule, RdsCheckboxGroupsModule, RdsCheckboxParentChildModule,
   RdsSideNavModule, RdsDatepickerModule, RdsBannerModule, RdsFileUploaderModule, RdsTextEditorModule, RdsOffcanvasModule, RdsTextareaModule, RdsRadioButtonModule,
-  RdsColorPickerModule, RdsChartRadarModule, RdsChartLineModule, RdsBigNumberWidgetModule, RdsIconModule, RdsTableModule, RdsChartAreaModule, RdsDropdownlistModule, 
-  RdsInputGroupModule, RdsAccordionModule, RdsTagsModule, RdsAlertModule, RdsButtonGroupModule, RdsCollapseModule, RdsIllustrationModule, RdsListGroupModule, RdsPopoverModule, 
-  RdsSpinnerModule, RdsToastsModule, RdsChartBubbleModule, RdsChartDoughnutModule, RdsChartMixedModule, RdsChartPolarAreaModule, RdsChartScatterModule, RdsChartStackedModule, 
+  RdsColorPickerModule, RdsChartRadarModule, RdsChartLineModule, RdsBigNumberWidgetModule, RdsIconModule, RdsTableModule, RdsChartAreaModule, RdsDropdownlistModule,
+  RdsInputGroupModule, RdsAccordionModule, RdsTagsModule, RdsAlertModule, RdsButtonGroupModule, RdsCollapseModule, RdsIllustrationModule, RdsListGroupModule, RdsPopoverModule,
+  RdsSpinnerModule, RdsToastsModule, RdsChartBubbleModule, RdsChartDoughnutModule, RdsChartMixedModule, RdsChartPolarAreaModule, RdsChartScatterModule, RdsChartStackedModule,
   RdsProgressbarModule, RdsBreadcrumbModule, RdsCarouselModule, RdsDoubleRangeModule, RdsScrollspyModule, RdsCounterModule, RdsFabMenuModule, RdsLabelModule
 } from '@libs/rds-elements';
 import { RdsCompDemouiComponent } from './rds-comp-demoui/rds-comp-demoui.component';
@@ -97,6 +97,18 @@ import { RdsCompSecurityShimmerComponent } from './rds-comp-security/rds-comp-se
 import { RdsCompOrganizationTreeShimmerComponent } from './rds-comp-organization-tree/rds-comp-organization-tree-shimmer/rds-comp-organization-tree-shimmer.component';
 import { RdsCompPropertiesShimmerComponent } from './rds-comp-properties/rds-comp-properties-shimmer/rds-comp-properties-shimmer.component';
 import { RdsCompTableShimmerComponent } from './rds-comp-data-table/rds-comp-table-shimmer/rds-comp-table-shimmer.component';
+import { RdsCompApiScopeBasicShimmerComponent } from './rdc-comp-api-scope-basics/rds-comp-api-scope-basic-shimmer/rds-comp-api-scope-basic-shimmer.component';
+import { RdsCompApiScopeResourcesShimmerComponent } from './rdc-comp-api-scope-resources/rds-comp-api-scope-resources-shimmer/rds-comp-api-scope-resources-shimmer.component';
+import { RdsCompAddressInputShimmerComponent } from './rds-comp-address-input/rds-comp-address-input-shimmer/rds-comp-address-input-shimmer.component';
+import { RdsCompBasicResourceShimmerComponent } from './rds-comp-basic-resource/rds-comp-basic-resource-shimmer/rds-comp-basic-resource-shimmer.component';
+import { RdsCompCacheShimmerComponent } from './rds-comp-cache/rds-comp-cache-shimmer/rds-comp-cache-shimmer.component';
+import { RdsCompClaimsShimmerComponent } from './rds-comp-claims/rds-comp-claims-shimmer/rds-comp-claims-shimmer.component';
+import { RdsCompEmailShimmerComponent } from './rds-comp-email/rds-comp-email-shimmer/rds-comp-email-shimmer.component';
+import { RdsCompInformationShimmerComponent } from './rds-comp-information/rds-comp-information-shimmer/rds-comp-information-shimmer.component';
+import { RdsCompInvoiceShimmerComponent } from './rds-comp-invoice/rds-comp-invoice-shimmer/rds-comp-invoice-shimmer.component';
+import { RdsCompNewDynamicEntityShimmerComponent } from './rds-comp-new-dynamic-entity-property/rds-comp-new-dynamic-entity-shimmer/rds-comp-new-dynamic-entity-shimmer.component';
+import { RdsCompOtherSettingsShimmerComponent } from './rds-comp-other-settings/rds-comp-other-settings-shimmer/rds-comp-other-settings-shimmer.component';
+import { RdsCompNewLangShimmerComponent } from './rds-comp-new-language/rds-comp-new-lang-shimmer/rds-comp-new-lang-shimmer.component';
 
 
 @NgModule({
@@ -183,6 +195,18 @@ import { RdsCompTableShimmerComponent } from './rds-comp-data-table/rds-comp-tab
     RdsCompOrganizationTreeShimmerComponent,
     RdsCompPropertiesShimmerComponent,
     RdsCompTableShimmerComponent,
+    RdsCompApiScopeBasicShimmerComponent,
+    RdsCompApiScopeResourcesShimmerComponent,
+    RdsCompAddressInputShimmerComponent,
+    RdsCompBasicResourceShimmerComponent,
+    RdsCompCacheShimmerComponent,
+    RdsCompClaimsShimmerComponent,
+    RdsCompEmailShimmerComponent,
+    RdsCompInformationShimmerComponent,
+    RdsCompInvoiceShimmerComponent,
+    RdsCompNewDynamicEntityShimmerComponent,
+    RdsCompOtherSettingsShimmerComponent,
+    RdsCompNewLangShimmerComponent
     //RdsCompLanguageTextListComponent,
 
   ],
