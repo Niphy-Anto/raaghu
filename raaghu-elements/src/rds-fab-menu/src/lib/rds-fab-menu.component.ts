@@ -21,9 +21,9 @@ export class RdsFabMenuComponent implements OnInit {
 
   @Input()
   size?: string;
-  @Input() menuicon?:string;
-  @Input() menuiconWidth?:string;
-  @Input() menuiconHeight?:string;
+  @Input() menuicon!:string;
+  @Input() menuiconWidth!:string;
+  @Input() menuiconHeight!:string;
   @Input()
   DropdownItems!: TemplateRef<any>;
   @Input()
