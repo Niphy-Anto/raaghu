@@ -28,7 +28,7 @@ export const Basic = Template.bind({})
 Basic.args = {
   size: 'medium',
   multipleFiles: false,
-  role: 'fileUpload',
+  role: 'default',
   label: 'Upload Files',
 }
 

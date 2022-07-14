@@ -81,62 +81,168 @@
   color: #000000 !important;
 }
 
-/* tags css new variations */
-.tags {
-  width: auto;
-  font-size: 0.875rem;
-  font-weight: 700;
-  line-height: 1.5;
-  word-wrap: break-word;
-  text-transform: uppercase;
-  position: relative;
-  background-color: #3698ee;
-}
+/// File Uploader
+.files {
+  height: 100px;
+  background: #f8f9fa;
+  border: 1px dashed #adb5bd;
+  border-radius: .25rem;
 
-.tags {
-  .btn-close {
-    font-size: 0.875rem * .875;
+  :hover {
+    background: #e9ecef;
+  }
+
+  :focus {
+    border: 3px solid #67aeec;
+    background-color: #e9ecef;
+  }
+
+  :after {
+    pointer-events: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 70px;
+    right: 0;
+    height: 70px;
+    content: "";
+    background-image: url(https://image.flaticon.com/icons/svg/130/130993.svg);
+    display: block;
+    margin: 0 auto;
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+
+  .file-input {
+    top: 10px;
+    position: absolute;
+  }
+
+  span.spn-svg {
+    right: 30px;
+    top: 29px;
+  }
+
+  .alert-col {
+    background: transparent linear-gradient(90deg, #dcdadf 0%, #ff606048 100%) 0% 0% no-repeat padding-box;
+  }
+
+  .file-close svg {
+    color: #adb5bd;
   }
 }
 
-.square-tags .tags {
-  box-shadow: 0px 4px 40px #0000000a;
+.error-msg {
+  color: #EF2E2E;
+  top: 4rem;
+}
+
+.alert-un {
+  background-color: #adb5bd !important;
+  border: 1px solid #adb5bd;
+}
+
+.list-style li {
+  list-style: none;
+}
+
+.small {
+  font-size: 0.875rem;
+  padding: 0;
+}
+
+.medium {
+  font-size: 1rem;
+  padding: 0px;
+}
+
+.large {
+  font-size: 1.25rem;
+  padding: 0;
+}
+// ==============================================================
+.square-tags { 
   border-radius: .25rem;
 }
-
-.square-tags .tags-body {
-  padding: 5px 5px 5px 10px;;
+.rounded-tags {
+  border-radius: 20px;
+}
+.tags {
+  font-size: small;
+  padding: 1px 8px 4px 8px;
+  position: relative;
 }
 
-.rounded-tags .toast-body {
-  padding: 5px 5px 5px 10px;;
+.tags-body {
+  padding-right: 20px;
 }
 
-.rounded-tags .tags {
-  box-shadow: 0px 4px 40px #0000000a;
-  border-radius: 50rem;
+.tags rds-icon {
+  position: absolute;
+  right: 8px;
+}
+.tags rds-icon svg {
+  width: 8px;
+  height: auto;
 }
 
-.borderd .tags {
-  background-color: transparent;
-  border: 1px solid #ff6060 !important;
+
+// Scroll Type 
+.rds-tags {
+  width: 100%;
+  border: 1px solid  #ced4da; 
+  border-radius: 5px;
+  padding: 5px;
 }
-.binding-tags2 {
-  padding-bottom: 80px;
+.scroll-type {
+  width: 100%;
+  max-height: 36.5px;
+  overflow-y: scroll;
 }
-.tags-dismissible {
-  padding-right: .65em * 3;
-  // Adjust close link position
-  .btn-close {
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 1 + 1;
-    padding: .35em * 1.25 .65em;
-  }
+
+// colors
+
+.tag-primary{
+  background-color: #7E2EEf;
+}
+.tag-secondary{
+  background-color: #2B0066;
+  color: #ffffff;
+}
+.tag-success{
+  background-color: #2EEF59;
+}
+.tag-info{
+  background-color: #3ef1e8;
+}
+.tag-warning{
+  background-color: #E3A300;
+}
+.tag-danger{
+  background-color: #EF2E2E;
+}
+.tag-dark{
+  background-color: #363636;
+  color: #ffffff;
+}
+.tag-light{
+  background-color: #F8F9FA;
 }
 
 svg {
     fill: none;
     // stroke: $gray-300;
+}
+
+
+// Navbar CSS
+
+.smallSize{
+  font-size: 0.875rem * 0.875 !important;
+}
+.mediumSize{
+  font-size: 0.875rem !important;
+}
+.largeSize{
+  font-size: 0.875rem * 1.25 !important;
 }
