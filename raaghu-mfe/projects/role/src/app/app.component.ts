@@ -73,7 +73,8 @@ export class AppComponent implements OnInit {
       input: {
         roleHeaders: this.RoleTableHeader,
         roleList: this.RoleDatatable,
-
+        isShimmer: true,
+        EditShimmer: true,
       },
       output: {
         onSaveRole: (eventData: any) => {
@@ -97,7 +98,7 @@ export class AppComponent implements OnInit {
         onEditRole: (event: any) => {
           this.store.dispatch(getRolByEdit(event));
           this.store.select(selectRoleForEdit).subscribe((res: any) => {
-            if (res && res.RoleEditI && res.RoleEditI.role) {
+            if (res && res.RoleEditI && res.RoleEditI.role && res.status == 'success') {
               this.Roledetails = {}
               const itemRole: any = {
                 displayName: res.RoleEditI.role.displayName,
@@ -111,6 +112,7 @@ export class AppComponent implements OnInit {
                 this.Roledetails = itemRole
               const mfeConfig = this.rdsNewRoleMfeConfig
               mfeConfig.input.RolesData = this.Roledetails
+              mfeConfig.input.EditShimmer = false;
               this.rdsNewRoleMfeConfig = { ...mfeConfig };
             }
             if (res && res.RoleEditI && res.RoleEditI.permissions) {
@@ -133,15 +135,21 @@ export class AppComponent implements OnInit {
           this.store.dispatch(getPermission());
           this.selectedPermissions=[]
           this.store.select(selectAllPermissions).subscribe((res: any) => {
-            if (res && res.PermissionI && res.PermissionI.items)
-
+            if (res && res.PermissionI && res.PermissionI.items && res.status == 'success')
+            {
               this.treeData = this.ConvertArraytoTreedata(res.PermissionI.items)
-
-            const mfeConfig = this.rdsNewRoleMfeConfig
+              const mfeConfig = this.rdsNewRoleMfeConfig
             mfeConfig.input.permissionsList = [... this.treeData];
             mfeConfig.input.SelectedPermissionValues = [...this.selectedPermissions]
+            if (data) {
+              mfeConfig.input.EditShimmer = false;
+            } else {
+              mfeConfig.input.EditShimmer = true;
+            }
             this.rdsNewRoleMfeConfig = { ...mfeConfig };
+          }
           })
+        
         },
         onRefreshRole:()=>
         {
@@ -156,6 +164,7 @@ export class AppComponent implements OnInit {
           mfeConfig.input.RolesData = { ... this.Roledetails };
           mfeConfig.input.permissionsList = [... this.treeData];
           mfeConfig.input.tenantFeatures = [... this.selectedPermissions];
+          mfeConfig.input.EditShimmer = true;
           this.rdsNewRoleMfeConfig = mfeConfig;
         },
         deleteEvent: (event: any) => {
@@ -182,6 +191,9 @@ export class AppComponent implements OnInit {
         },
       }
     };
+    const mfeConfig = this.rdsNewRoleMfeConfig;
+    mfeConfig.input.isShimmer = true;
+    this.rdsNewRoleMfeConfig = mfeConfig;
     this.store.dispatch(getRoles([]));
     this.store.select(selectAllRoles).subscribe((res: any) => {
       this.RoleDatatable = [];
@@ -203,6 +215,7 @@ export class AppComponent implements OnInit {
         });
         const mfeConfig = this.rdsNewRoleMfeConfig
          mfeConfig.input.roleList = [...this.RoleDatatable]
+         mfeConfig.input.isShimmer = false;
           this.rdsNewRoleMfeConfig = mfeConfig ;
       }
     })

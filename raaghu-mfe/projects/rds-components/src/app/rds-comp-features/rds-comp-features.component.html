@@ -8,7 +8,7 @@
     <div class="card p-2 h-100 border-0 rounded-0 card-full-stretch">
       <app-rds-data-table [inlineEdit]="false" [actions]="actions" [recordsPerPage]="recordsPerpage" [pagination]="true"
         [tableHeaders]="EditionsTableHeader" (onActionSelection)="onActionSelect($event)"
-        noDataTitle="Currently you do not have edition" [tableData]="tableData">
+        noDataTitle="Currently you do not have edition" [tableData]="tableData"  [isShimmer]="isShimmer">
       </app-rds-data-table>
     </div>
   </div>
@@ -19,8 +19,11 @@
   </rds-button> -->
   <rds-fab-menu [listItems]="listItems" [menuicon]="'plus'" [colorVariant]="'primary'" [menuiconWidth]="'12px'" [menuiconHeight]="'12px'" (onSelect)="onSelectMenu($event)"></rds-fab-menu>
 </div>
+
 <rds-offcanvas [canvasTitle]="translate.instant(canvasTitle)" [offId]="'addEdition'" [placement]="'end'"
   [backDrop]="true" [offcanvaswidth]="600" *ngIf="viewCanvas" (onClose)="closeCanvas()" >
+  <app-rds-comp-features-edit-shimmer *ngIf="editShimmer"></app-rds-comp-features-edit-shimmer>
+  <div *ngIf="!editShimmer">
   <rds-nav-tab [navtabsItems]="navtabsItems" [horizontalAlignment]="'start'" [activepage]="activePage"
                [verticalAlignment]="false" [pills]="false" [tabs]="true" [fill]="false" [justified]="false"
                (onClicktab)="onTabClick($event)"></rds-nav-tab>
@@ -150,6 +153,7 @@
       </rds-button>
     </div>
   </div>
+</div>
 </rds-offcanvas>
 
 

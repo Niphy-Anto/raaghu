@@ -68,6 +68,8 @@ export class RdsCompUserPermissionsComponent implements OnInit {
   @Input() public userList: any = [];
   @Input() public roles: any = [];
   @Input() public userinfo: any;
+  @Input() isShimmer:boolean=false;
+  @Input() editShimmer:boolean=false;
   @Input() public isEdit: boolean = false;
   @Input() public OrganizationUnit: any = [];
   @Input() permissionsList: PermissionNode[] = [];
