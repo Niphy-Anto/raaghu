@@ -12,19 +12,12 @@ export default {
   ],
   argTypes: {
     colorVariant: {
-      options: [
-        'btn-primary',
-        'btn-secondary',
-        'btn-success',
-        'btn-danger',
-        'btn-warning',
-        'btn-info',
-      ],
-      control: { type: 'select' },
+      options: ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark'],
+      control: { type: 'select' }
     },
     size: {
-      options: ['default', 'small', 'large'],
-      control: { type: 'radio' },
+      options: ['small', 'large', 'medium'],
+      control: { type: 'radio' }
     },
     direction: {
       options: ['Drop-down', 'Drop-up', 'Drop-end', 'Drop-start'],
@@ -41,10 +34,12 @@ const Template: Story<RdsDropdownComponent> = (args: RdsDropdownComponent) => ({
   props: args,
   template: `<rds-dropdown
   [listItems]="listItems"
-  label="EXCEL OPERATIONS"
-   size="default"
+  [label]="label"
+  [direction]="direction"
+   [size]="size"
+   [role]="role"
    role= 'dropdown-button'
-   dropdownStyle="btn-secondary"
+  [colorVariant]="colorVariant"
    (click)="onclick($event,item)"
    >
     </rds-dropdown>`,
@@ -53,7 +48,7 @@ const Template: Story<RdsDropdownComponent> = (args: RdsDropdownComponent) => ({
 export const basic = Template.bind({});
 
 basic.args = {
-  colorVariant: 'btn-secondary',
+  colorVariant: 'primary',
   size: 'default',
   darkDropdown: false,
   listItems: [
@@ -67,21 +62,19 @@ basic.args = {
   role: 'dropdown-button',
 };
 
-// export const Dropdown_with_split = Template.bind({});
+export const Dropdown_with_split = Template.bind({});
 
-// Dropdown_with_split.args = {
-//   dropdownStyle: 'btn-secondary',
-//   size: 'default',
-//   darkDropdown: false,
-//   listItems : [
-//     { value: 'Export to excel', some: 'value', id: 1, href: '',icon :'bi bi-upload' },
-//     { value: 'import from excel', some: 'value', id: 2,href: '',icon :'bi bi-download' },
-//     { value: 'click here download sample import file.', some: 'value', id: 3,href: '',icon :'' },
-//   ],
-//   label: 'EXCEL OPERATIONS',
-//   direction: 'Drop-down',
-//   color: '',
-//   textColor: '',
-//   dropdownAlignment: [],
-//   role: 'with_split',
-// };
+Dropdown_with_split.args = {
+  colorVariant: 'primary',
+  size: 'default',
+  darkDropdown: false,
+  listItems :  [
+    { value: 'Export to excel', some: 'value', id: 1, href: '', icon: 'circle', iconWidth: '20px', iconHeight: '20px', iconStroke: true, iconFill: false },
+    { value: 'Import from excel', some: 'value', id: 2, href: '', icon: 'download_collected_data', iconWidth: '20px', iconHeight: '20px', iconStroke: true, iconFill: false },
+    { value: 'Click here download sample import file.', some: 'value', id: 3, href: '', icon: '', iconWidth: '', iconHeight: '', iconStroke: true, iconFill: false },
+  ],
+  label: 'EXCEL OPERATIONS',
+  direction: 'Drop-down',
+  dropdownAlignment: [],
+  role: 'with_split',
+};
