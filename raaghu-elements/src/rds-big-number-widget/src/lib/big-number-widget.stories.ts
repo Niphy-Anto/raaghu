@@ -1,5 +1,5 @@
 import { Story, Meta, moduleMetadata } from '@storybook/angular';
-import { RdsIconModule } from '@libs/rds-elements';
+import { RdsIconModule } from '@libs/rds-icon';
 import { RdsBigNumberWidgetComponent } from './rds-big-number-widget.component';
 
 export default {
