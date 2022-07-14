@@ -1,14 +1,20 @@
 <div class="table-responsive">
-  <table class="table" [class]="classes" id="table">
+  <table [ngClass]="bodyColorClasses" id="table">
     <thead class="thead-dark">
       <tr>
-        <ng-container [ngTemplateOutlet]="thead"></ng-container>
+        <td *ngFor="let item of tableHeaderItems">{{item.headerName}}</td>
+        <!--<ng-container [ngTemplateOutlet]="thead"></ng-container>-->
       </tr>
     </thead>
-    <tbody class="text-capitalize">
-      <ng-container *ngFor="let items of tableItems">
+    <tbody>
+      <tr *ngFor="let item of tableBodyItems">
+        <td>{{item.name}}</td>
+        <td>{{item.age}}</td>
+        <td>{{item.state}}</td>
+      </tr>
+      <!--<ng-container *ngFor="let items of tableItems">
         <ng-container [ngTemplateOutlet]="tbody" [ngTemplateOutletContext]="{ $implicit: items}"></ng-container>
-      </ng-container>
+      </ng-container>-->
     </tbody>
   </table>
 </div>
