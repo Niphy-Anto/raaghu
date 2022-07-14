@@ -1,8 +1,9 @@
 import { Story, Meta, moduleMetadata } from '@storybook/angular';
 import { RdsBreadcrumbComponent } from './rds-breadcrumb.component';
-import { RdsIconModule } from '@libs/rds-elements';
+// import { RdsIconModule } from '@libs/rds-elements';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { RdsIconModule } from '@libs/rds-icon';
 export default {
 
   title: 'Elements/Breadcrumbs',
