@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, forwardRef, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 // import { Tooltip } from 'bootstrap'
-declare var bootstrap:any;
+declare var bootstrap: any;
 
 @Component({
   selector: 'rds-textarea',
@@ -34,19 +34,17 @@ export class RdsTextareaComponent implements AfterViewInit, ControlValueAccessor
   @Input()
   label = ''
 
-  // @Input()
-  //floatinglabel=false
+  floatinglabel: string = 'one';
 
-  @Input() floatinginputLabel?: string
+  @Input() isFloatingInputLabel: boolean = false;
+
 
   @Input()
   placeholderText = '';
 
-  floatingcontent = false;
-
   @Input() tooltipTitle: string = '';
 
-  @Input() tooltipPlacement: string = 'bottom';
+  @Input() tooltipPlacement?: string = 'bottom';
 
   id: string = 'textareaId';
 
@@ -85,13 +83,12 @@ export class RdsTextareaComponent implements AfterViewInit, ControlValueAccessor
 
   public get divclasses(): string[] {
     var classList = ['mb-0']
-    if (this.floatinginputLabel) {
-      classList.push('form-floating')
-      this.floatingcontent = true;
-    } else {
-      this.floatingcontent = false;
+    if (this.isFloatingInputLabel === true) {
+      classList.push('form-floating');
     }
-
+    else {
+      classList.push('');
+    }
     return classList
   }
 

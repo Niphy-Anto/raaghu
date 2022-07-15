@@ -11,7 +11,18 @@ export default {
     }),
   ],
   argTypes: {
-
+    colorVariant: {
+      options: ['primary', 'secondary', 'success', 'info', 'warning', 'danger', 'dark', 'light'],
+      control: { type: 'select' }
+    },
+    fill: {
+      options: [ true, false],
+      control: { type: 'select' }
+    },
+    stroke: {
+      options: [ true, false],
+      control: { type: 'select' }
+    },
   },
 } as Meta
 

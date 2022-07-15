@@ -7,10 +7,6 @@ export default {
   argTypes: {
     onShow: { click: "clicked" },
     onClose: { click: "clicked" },
-    colorVariant: {
-      options: [ 'light'],
-      control: { type: 'select' }
-    },
   },
 } as Meta;
 const Template: Story<RdsOffcanvasComponent> = (args: RdsOffcanvasComponent) => ({
@@ -20,21 +16,24 @@ export const basic: Story<RdsOffcanvasComponent> = (args) => ({
   props: args,
   template:
     `
-    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#canvasExample"
-    aria-controls="canvasExample" (click)="onShow.emit($event)">
+  <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#canvasExample"
+  aria-controls="canvasExample" (click)="onShow.emit($event)">
    Button
   </button>
-  <rds-offcanvas>
+  <rds-offcanvas
+  [colorVariant]=[colorVariant]
+  [placement]=[placement]
+  >
   </rds-offcanvas>
     `,
 
 });
 basic.args = {
-  backDrop: true,
-  scrolling: true,
   offId:'canvasExample',
   canvasTitle:'Offcanvas Title',
-  placement:'end'
+  placement:'end',
+  colorVariant:'light'
+
 };
 
 // export const basic = Template.bind({});

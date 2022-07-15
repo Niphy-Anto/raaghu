@@ -3,10 +3,11 @@
 const path = require('path');
 const { execSync } = require('child_process');
 const fs = require('fs');
-const appConfig = JSON.parse(fs.readFileSync(path.join(__dirname, '../projects/host/src/assets', 'appconfig.json')).toString());
+const APP_ROUTES = fs.readFileSync(path.join(__dirname, '../projects/host/src/app/app.routes.ts'), 'utf-8');
+const appConfig = JSON.parse(fs.readFileSync(path.join(__dirname, '../projects/host/src/assets', 'appconfig.json'), 'utf-8'));
 const mfeFilePath = path.join(__dirname, '../projects', 'mfe-config.ts');
 const mfeFilePathTemp = path.join(__dirname, '../projects', 'mfe-config-temp.ts');
-const projects = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'angular.json')).toString()).projects;
+const projects = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'angular.json'), 'utf-8')).projects;
 
 if (process.argv.length > 3) {
     console.log('Invalid command');
@@ -28,10 +29,23 @@ if (appConfig.replaceUrl == "true") {
 
     for (const mfeConf of Object.keys(mfeConfigJSON)) {
         let url = mfeConfigJSON[mfeConf].url;
+        let pathConf = '';
+        if (APP_ROUTES.indexOf(mfeConf) != -1) {
+            pathConf = APP_ROUTES.substring(
+                APP_ROUTES.indexOf("'", APP_ROUTES.lastIndexOf("path", APP_ROUTES.indexOf(mfeConf) - 1)) + 1,
+                APP_ROUTES.indexOf("'", APP_ROUTES.indexOf("'", APP_ROUTES.lastIndexOf("path", APP_ROUTES.indexOf(mfeConf) - 1)) + 1)
+            );
+        } else {
+            pathConf = mfeConf;
+        }
         if (mfeConf == "host") {
             url = url.replace(/(http:\/\/localhost:)\d{4}/g, appConfig.appBaseUrl);
+        } else if (mfeConf == "dashboard") {
+            url = url.replace(/(http:\/\/localhost:)\d{4}/g, appConfig.appBaseUrl + "/dashboard");
+        } else if (mfeConf == "rdsComponents") {
+            url = url.replace(/(http:\/\/localhost:)\d{4}/g, appConfig.appBaseUrl + "/rds-components");
         } else {
-            url = url.replace(/(http:\/\/localhost:)\d{4}/g, appConfig.appBaseUrl + "/" + mfeConf);
+            url = url.replace(/(http:\/\/localhost:)\d{4}/g, appConfig.appBaseUrl + "/" + pathConf);
         }
         mfeConfigJSON[mfeConf].url = url;
     }
@@ -40,6 +54,7 @@ if (appConfig.replaceUrl == "true") {
     mfeConfig = mfeConfig.replace(/\"/g, "");
     mfeConfig = mfeConfig.replace(/http:\/\//g, "\'http:\/\/");
     mfeConfig = mfeConfig.replace(/.js/g, ".js\'");
+    console.log(mfeConfig);
     fs.writeFileSync(mfeFilePath, mfeConfig);
 }
 

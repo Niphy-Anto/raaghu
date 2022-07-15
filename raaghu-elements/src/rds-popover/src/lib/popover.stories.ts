@@ -15,23 +15,32 @@ export default {
 
 const Template: Story<RdsPopoverComponent> = (args: RdsPopoverComponent) => ({
   props: args,
+  template:
+    `<rds-popover
+      [popoverTitle]="popoverTitle"
+       [popoverContent] ="popoverContent"
+       [popoverPosition]="popoverPosition"
+       (click)="onClick($event)">
+      <button class="btn btn-primary" [popoverPosition]="popoverPosition"> popover button </button>
+     </rds-popover>     `
 });
 
-export const PopoverWithButton: Story<RdsPopoverComponent> = (args) => ({
-  props: args,
-  template:
-    `<rds-popover [popoverPosition]= "popoverPosition"
-      [popoverTitle] =  "popoverTitle" (click)="onClick($event)"
-      [popoverContent] =  "popoverContent">
-      <button class="btn btn-primary"> popover button </button>
-      </rds-popover>
-      `,
-});
+export const PopoverWithButton = Template.bind({});
 PopoverWithButton.args = {
   popoverPosition: 'left',
   popoverTitle: 'popover title',
   popoverContent: 'popover body'
 };
+/* props: args,*/
+//template:
+//  `<rds-popover [popoverPosition]= "popoverPosition"
+//    [popoverTitle] =  "popoverTitle" (click)="onClick($event)"
+//    [popoverContent] =  "popoverContent">
+//    <button class="btn btn-primary"> popover button </button>
+//    </rds-popover>
+//    `,
+
+
 
 export const PopoverWithLink: Story<RdsPopoverComponent> = (args) => ({
   props: args,
