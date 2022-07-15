@@ -20,8 +20,8 @@
   <rds-fab-menu [listItems]="listItems" [menuicon]="'plus'" [colorVariant]="'primary'" [menuiconWidth]="'12px'" [menuiconHeight]="'12px'" (onSelect)="onSelectMenu($event)"></rds-fab-menu>
 </div>
 
-<rds-offcanvas [canvasTitle]="translate.instant(canvasTitle)" [offId]="'addEdition'" [placement]="'end'"
-  [backDrop]="true" [offcanvaswidth]="600" *ngIf="viewCanvas" (onClose)="closeCanvas()" >
+<rds-offcanvas [canvasTitle]="translate.instant(canvasTitle)" [offId]="'addEdition'" [placement]="'end'" 
+ [offcanvaswidth]="600" *ngIf="viewCanvas" (onClose)="closeCanvas()" >
   <app-rds-comp-features-edit-shimmer *ngIf="editShimmer"></app-rds-comp-features-edit-shimmer>
   <div *ngIf="!editShimmer">
   <rds-nav-tab [navtabsItems]="navtabsItems" [horizontalAlignment]="'start'" [activepage]="activePage"
@@ -157,14 +157,14 @@
 </rds-offcanvas>
 
 
-<rds-offcanvas [canvasTitle]="translate.instant(moveTenantCanvasTitle)" [offId]="'moveTenantEdition'" [placement]="'end'" [backDrop]="true"
+<rds-offcanvas [canvasTitle]="translate.instant(moveTenantCanvasTitle)" [offId]="'moveTenantEdition'" [placement]="'end'" 
   [offcanvaswidth]="600" *ngIf="viewMoveTenantCanvas" (onClose)="closeMoveTenantCanvas()">
   <!-- <b>{{moveTenantCanvasTitle}}</b> -->
   <div class="tab-content px-3 py-4 navsm-p-0">
     <div class="row">
       <div class="col-md-12">
         <div class="text-primary mb-2">{{tenantCount}} {{"Tenants will be moved"|translate}}</div>
-        <rds-select-list [Label]="translate.instant('Edition')" ngDefaultControl
+        <rds-select-list [labelText]="translate.instant('Edition')" ngDefaultControl
                          name="edition" [(ngModel)]="targetEditionId" [itemList]="editionList" [id]="editionList">
          
       </rds-select-list>

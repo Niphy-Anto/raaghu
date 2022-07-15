@@ -29,8 +29,8 @@ const Template: Story<RdsAccordionComponent> = (args: RdsAccordionComponent) => 
 export const Basic: Story<RdsAccordionComponent> = (args) => ({
   props: args,
   template: `
-  <rds-accordian [id]="id">
-  <accordion-item title="Section 1 title" [accordionId]="id" >
+  <rds-accordian [id]="id" >
+  <accordion-item title="Section 1 title" [accordionId]="id" [expanded]="true" >
   <h3>Custom </h3>
   </accordion-item>
   <accordion-item title="Section 2 title" [accordionId]="id" >
@@ -39,8 +39,8 @@ export const Basic: Story<RdsAccordionComponent> = (args) => ({
 </rds-accordian>`,
 });
 Basic.args = {
-  expand: true,
-  id:"accordionBasic"
+  expanded: true,
+  id: "accordionBasic"
 };
 export const withFlush: Story<RdsAccordionComponent> = (args) => ({
   props: args,
@@ -57,24 +57,23 @@ export const withFlush: Story<RdsAccordionComponent> = (args) => ({
 withFlush.args = {
   flush: true,
   expand: false,
-  id:"accordionWithFlush"
+  id: "accordionWithFlush"
 };
-export const withOutline: Story<RdsAccordionComponent> = (args) => ({
+export const alwaysOpen: Story<RdsAccordionComponent> = (args) => ({
   props: args,
   template: `
     <rds-accordian [outline]= "true">
-      <accordion-item title="Section 1 title">
+      <accordion-item title="Section 1 title" [alwaysOpen]="alwaysOpen" [expanded]="true">
       this is content updated
-
       </accordion-item>
     </rds-accordian>
-    
     <rds-accordian>
-      <accordion-item title="Section 2 title">
+      <accordion-item title="Section 2 title" [alwaysOpen]="alwaysOpen" >
       <h3>Custom </h3>
       </accordion-item>
     </rds-accordian>`,
 });
-withOutline.args = {
+alwaysOpen.args = {
   expand: false,
+  alwaysOpen: true
 };

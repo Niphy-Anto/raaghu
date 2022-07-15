@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output, TemplateRef } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges, TemplateRef } from '@angular/core';
 
 @Component({
   selector: 'rds-list-group',
@@ -7,15 +7,16 @@ import { Component, EventEmitter, Input, OnInit, Output, TemplateRef } from '@an
 })
 export class RdsListGroupComponent implements OnInit {
 
+  showTop = '';
+  showBottom = '';
   title = 'rds-list-group';
+  labelLeft!: string; 
   public selectdataItem: selectedData = [];
-
-  isMasterSel?: boolean;
+  @Input() labelPosition?: 'Top' | 'Bottom' | 'Left' | 'Right' = 'Top';
+  @Input() label?: string;
 
   @Output() onClick = new EventEmitter<any>();
 
-  @Input()
-  list!: TemplateRef<any>;
   @Input() listItem: any[] = [];
 
   @Input() multiSelect?: boolean;
@@ -43,7 +44,29 @@ export class RdsListGroupComponent implements OnInit {
     item.isActive = !item.isActive;
   }
 
+  public get divclasses(): string[] {
+    var classes = ['form-label']
+    if (this.labelPosition === 'Top') {
+      classes.push('top-0');
+      this.labelLeft = ' ';
+    }
+    else if (this.labelPosition === 'Bottom') {
+      classes.push(' d-flex flex-column-reverse')
+      this.labelLeft = ' ';
+    }
+    else if (this.labelPosition === 'Left') {
+      classes.push('d-flex align-items-baseline gap-3 ')
+      this.labelLeft = ' ';
+    }
+    else if (this.labelPosition === 'Right') {
+      classes.push(' d-flex align-items-baseline gap-3');
+      this.labelLeft = '2';
+    }
+    return classes;
+  }
+
 }
+
 
 export class selectedData {
   constructor(

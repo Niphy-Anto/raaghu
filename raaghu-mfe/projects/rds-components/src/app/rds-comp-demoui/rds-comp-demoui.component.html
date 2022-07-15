@@ -230,18 +230,18 @@
     <div class="row border p-4 m-2">
       <div class="col-6">
         <h6 class="mb-3">{{"BreadCrumbs - Advanced"|translate}}</h6>
-        <rds-breadcrumb [customBreadcrumbsItems]="customBreadcrumbsItems" role="Advanced" [iconShow]="true"
-                        [disabled]="false"></rds-breadcrumb>
+        <rds-breadcrumb role="Advanced" [iconShow]="true"
+                       ></rds-breadcrumb>
       </div>
       <div class="col-6">
         <h6 class="mb-3">{{"BreadCrumbs - Basic"|translate}}</h6>
-        <rds-breadcrumb [customBreadcrumbsItems]="customBreadcrumbsItems" role="basic" [iconShow]="false"
-                        [disabled]="false"></rds-breadcrumb>
+        <rds-breadcrumb  role="basic" [iconShow]="false"
+                        ></rds-breadcrumb>
       </div>
       <div class="col-6">
         <h6 class="mb-3">{{"BreadCrumbs - With Divider"|translate}}</h6>
-        <rds-breadcrumb [customBreadcrumbsItems]="customBreadcrumbsItems" role="withDivider" [iconShow]="true"
-                        [disabled]="false"></rds-breadcrumb>
+        <rds-breadcrumb  role="withDivider" [iconShow]="true"
+                        ></rds-breadcrumb>
       </div>
     </div>
 
@@ -876,7 +876,7 @@
       </div>
       <div class="col-md-6">
         <h6 class="mb-3">{{"List Group With multiselect"|translate}}</h6>
-        <rds-list-group listType="list" [multiSelect]="true" [listItem]="listitemCheck" [list]="list1">
+        <rds-list-group listType="list" [multiSelect]="true" [listItem]="listitemCheck">
           <ng-template #list1 let-item>
             <li [ngClass]="item.type">
               <input class="form-check-input me-1" type="checkbox" value="" />
@@ -1525,7 +1525,7 @@
         <h6 class="mb-3">Side Nav</h6>
         <div class="row">
           <div class="col-lg-2">
-            <rds-side-nav [sidenavItems]="sidenavItems" [collapseRequired]="false"></rds-side-nav>
+            <rds-side-nav [sidenavItems]="sidenavItems" ></rds-side-nav>
           </div>
         </div>
       </div>
@@ -1568,7 +1568,7 @@
 </div>
 <!-- /Table -->
 <!-- Tag -->
-<!--<div class="card mb-3">
+<div class="card mb-3">
   <div class="card-header">
     <h5>
       Tag
@@ -1578,17 +1578,17 @@
     <div class="row border p-4 m-2">
       <div class="col-4">
         <h6 class="mb-3">{{"Tag - With scroll"|translate}}</h6>
-        <rds-tags tagType="Square" closeButtonStyle="Normal" roles="TagWithScroll"></rds-tags>
+        <rds-tags [tagType]="'square'" [colorVariant]="'primary'" [roles]="'TagWithScroll'"></rds-tags>
       </div>
 
       <div class="col-4">
         <h6 class="mb-3">{{"Tag - Basic"|translate}}</h6>
-        <rds-tags tagType="Square" closeButtonStyle="Normal" roles="Basic"></rds-tags>
+        <rds-tags [tagType]="'square'" [colorVariant]="'primary'" [roles]="'Basic'"></rds-tags>
 
       </div>
     </div>
   </div>
-</div>-->
+</div>
 <!-- /Tag -->
 <!-- Textarea -->
 <div class="card mb-3">
