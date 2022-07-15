@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { RdsIconModule } from '@libs/rds-elements';
+
 import { Story, Meta, moduleMetadata } from '@storybook/angular';
 import { RdsCounterComponent } from './rds-counter.component';
 
@@ -9,7 +9,7 @@ export default {
   component: RdsCounterComponent,
   decorators: [
     moduleMetadata({
-      imports: [CommonModule, FormsModule,RdsIconModule],
+      imports: [CommonModule, FormsModule],
     }),
   ],
   argTypes: {

@@ -2,8 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RdsCounterComponent } from './rds-counter.component';
 import { FormsModule } from '@angular/forms';
-import { RdsIconModule } from '../../../rds-icon/src/lib/rds-icon.module';
-import { RdsButtonModule } from '@libs/rds-elements';
+
 
 @NgModule({
   declarations: [
@@ -11,9 +10,7 @@ import { RdsButtonModule } from '@libs/rds-elements';
   ],
   imports: [
     CommonModule,
-    FormsModule,
-    RdsIconModule,
-    RdsButtonModule
+    FormsModule
   ],
   exports: [
     RdsCounterComponent
