@@ -19,8 +19,8 @@
 </div>
 
 <ng-container *ngIf="viewCanvas">
-  <rds-offcanvas [canvasTitle]="translate.instant(languageCanvasTitle)" [offId]="'AddLanguage'" [scrolling]="false"
-    (onClose)="closeCanvas()" [offcanvaswidth]="550" [placement]="'end'" [backDrop]="true" >
+  <rds-offcanvas [canvasTitle]="translate.instant(languageCanvasTitle)" [offId]="'AddLanguage'" 
+    (onClose)="closeCanvas()" [offcanvaswidth]="550" [placement]="'end'"  >
     <app-newlanguage [selectedLanguage]="selectedLanguage" (onLanguageSave)="addLanguages($event)"></app-newlanguage>
   </rds-offcanvas>
 </ng-container>

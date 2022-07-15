@@ -5,6 +5,11 @@ export interface BreadcrumbsItems {
   name: string;
   route: string;
   iconClass: string;
+  iconFill?: boolean,
+  iconStroke?: boolean,
+  iconHeight: string;
+  iconWidth: string;
+  disabled : boolean;
 }
 
 @Injectable({

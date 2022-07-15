@@ -6,44 +6,52 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./rds-range.component.scss']
 })
 export class RdsRangeComponent implements OnInit {
+@Input() value: number = 0;
 
-  onChange!: (value: string) => void;
-  onTouched!: () => void;
+  @Input() min = 0
 
-  @Input() customstyle: "style1" | "style2" | "style3" = "style1"
-  @Input() max = 1000;
-  @Input() min = 500;
-  vale?: number;
-  // @Input() step = "0.5";
-  @Input() disabled: boolean = false;
+  @Input() max = 100
+
+  @Output() rangeValueOne = new EventEmitter()
+
+
   rangeval!: HTMLInputElement
+  range1!: HTMLSpanElement
+  sliderOne!: HTMLInputElement
+  sliderTrack!: HTMLDivElement
 
-  @Output() currentValue = new EventEmitter<any>()
+  minGap = 0
+
+  valueDisabled1!: boolean; 
+  rangeZIndex1!: number;    
+  rangeZIndex2!: number;     
 
   constructor() { }
 
   ngOnInit(): void {
-    this.rangeval = document.getElementById('myRange') as HTMLInputElement
-    this.vale = this.min
+    this.value;
+    this.sliderTrack = document.querySelector('.slider-track') as HTMLDivElement
+    this.sliderOne = document.getElementById('slider1') as HTMLInputElement
+    this.fillColor();
+
+
   }
 
-  css() {
-    this.vale = parseInt(this.rangeval.value)
-    let tooltip = document.getElementById('tooltip') as HTMLSpanElement
-    let length = this.max - this.min
-    let progress = ((parseInt(this.rangeval.value) - this.min) / length) * 100
-    // this.rangeval.style.backgroundImage = `linear-gradient(90deg,#5C82E3 ${progress}%,#D0D7DD 0%)`
-    progress = progress - 0.95
-    tooltip.style.left = `calc(${progress}% + (${-6 - progress * 0.15}px))`
-    this.currentValue.emit(this.vale)
+  writeValue(obj: any): void {
+    this.value = obj;
   }
 
-  public get slider(): string {
-    let applyClass = 'slider_1'
-    this.customstyle === "style1" ? applyClass = 'slider_1' : ''
-    this.customstyle === "style2" ? applyClass = 'slider_2' : ''
-    this.customstyle === "style3" ? applyClass = 'slider_3' : ''
-    return applyClass
+  rangeone() {
+    this.value = parseInt(this.sliderOne.value)
+    this.rangeValueOne.emit(this.value)
+    this.fillColor();
+  }
+  
+  fillColor() {
+    this.range1 = document.getElementById("range1") as HTMLSpanElement
+    let percent1 = ((this.value - this.min) / (this.max - this.min)) * 100;
+    this.sliderTrack.style.background = `linear-gradient(90deg,#5C82E3 ${percent1}%,#D0D7DD 0%)`;
+     this.range1.style.left = `calc(${percent1}% + (${-5 - percent1 * 0.15}px))`
   }
 
 }

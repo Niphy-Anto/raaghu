@@ -82,7 +82,7 @@
 
 </ng-template>
 <rds-offcanvas [canvasTitle]="TreeNodeLabeles.ParentNodeTitle" [offId]="'addNodeModal'" [placement]="'end'"
-  [backDrop]="true">
+>
   <div class="form-style">
     <form [formGroup]="nodeForm">
       <div class="form-group mb-3">
@@ -108,7 +108,7 @@
 </rds-offcanvas>
 
 <rds-offcanvas [canvasTitle]="TreeNodeLabeles.ChildNodeTitle" [offId]="'addNestedNodeModal'" [placement]="'end'"
-  [backDrop]="true">
+ >
   <div class="form-style">
 
     <div class="form-group mb-3">
@@ -137,7 +137,7 @@
 </rds-offcanvas>
 
 <rds-offcanvas [canvasTitle]="TreeNodeLabeles.ChildNodeTitle" [offId]="'EditNodeModal'" [placement]="'end'"
-  [backDrop]="true">
+>
   <div class="form-style">
     <div class="form-group mb-3">
       <rds-input size="default" [disabled]="true" [readonly]="true" value="" [inputType]="'text'"

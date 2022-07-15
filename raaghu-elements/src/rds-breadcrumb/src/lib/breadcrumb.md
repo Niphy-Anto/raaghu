@@ -61,7 +61,7 @@ Breadcrumbs are a list of links representing the current page and its “ancesto
 
 ```html
 <rds-breadcrumb
-  customBreadcrumbsItems="[{ name: 'Home', route: '/home', iconClass: 'bi bi-house-door' }, { name: 'About', route: '/About', iconClass: 'bi bi-house-door' }, { name: 'Contact US', route: '/Contact', iconClass: 'bi bi-house-door' }, { name: 'Services', route: '/Services', iconClass: 'bi bi-house-door' }, { name: 'Contact US', route: '/Contact', iconClass: 'bi bi-house-door' }]"
+  customBreadcrumbsItems="[{ name: 'Home', route: '/home', iconClass: 'dashboard' , iconWidth: '15px' , iconHeight:'15px' , disabled: true}, { name: 'About', route: '/About', iconClass: 'dashboard' , iconWidth: '15px' , iconHeight:'15px' , disabled: true}, { name: 'Contact US', route: '/Contact', iconClass: 'dashboard' , iconWidth: '15px' , iconHeight:'15px' , disabled: true}, { name: 'Services', route: '/Services', iconClass: 'dashboard' , iconWidth: '15px' , iconHeight:'15px', disabled: true }, { name: 'Contact US', route: '/Contact', iconClass: 'dashboard' , iconWidth: '15px' , iconHeight:'15px', disabled: true }]"
   role="basic"
   [iconShow]="false"
   [submit]="false"
