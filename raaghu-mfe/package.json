@@ -10,7 +10,7 @@
     "lib": "node utils/generate-lib.js",
     "sync-elements": "node utils/sync-elements.js",
     "build": "node utils/build.js",
-    "build-all": "export NODE_OPTIONS=--max_old_space_size=4096 node utils/build-all.js",
+    "build-all": "node --max_old_space_size=8048 utils/build-all.js",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
