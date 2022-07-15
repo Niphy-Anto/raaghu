@@ -13,20 +13,15 @@ export class RdsToastsComponent implements OnInit, AfterViewInit {
   @Input()
   message = 'Hello, world! This is a toast message.';
 
-  @Input()
-  withImage = false
 
   @Input()
   withHeader = false
 
   @Input()
-  colorVariant = ''
+  colorVariant?: string;
 
   @Input()
-  customColor = false
-
-  @Input()
-  custcolor = '#000000'
+  toastMessageColorVariant?: string;
 
   @Input()
   headerTitle = '#000000'
@@ -35,11 +30,7 @@ export class RdsToastsComponent implements OnInit, AfterViewInit {
   time = '11 seconds  ago'
 
   @Input()
-  textColor = ''
-
-  @Input()
-  position: 'Top-Left' | 'Top-Center' | 'Top-Right' | 'Middle-Left' | 'Middle-Center' | 'Middle-Right' | 'Bottom-Left' | 'Bottom-Center' | 'Bottom-Right' = 'Bottom-Right';
-  positionClass = this.position;
+  position: 'Top-Left' | 'Top-Center' | 'Top-Right' | 'Middle-Left' | 'Middle-Center' | 'Middle-Right' | 'Bottom-Left' | 'Bottom-Center' | 'Bottom-Right' = 'Top-Left';
 
   clicked = false;
 
@@ -54,27 +45,62 @@ export class RdsToastsComponent implements OnInit, AfterViewInit {
 
   public get show(): any[] {
     var customClasses = ['']
-    if (this.withHeader === true) {
+    if (this.withHeader === false) {
       customClasses.push('d-none')
     }
     return customClasses
+  }
+
+  public get positionClass(): any[] {
+    var positionClasses = ['']
+    if (this.position === "Top-Left") {
+      positionClasses.push('start-0')
+    }
+    else if (this.position === "Top-Center") {
+      positionClasses.push('top-0 start-50 translate-middle-x')
+    }
+    else if (this.position === "Top-Right") {
+      positionClasses.push('top-0 end-0')
+    }
+    else if (this.position === "Middle-Left") {
+      positionClasses.push('top-50 start-0 translate-middle-y')
+    }
+    else if (this.position === "Middle-Center") {
+      positionClasses.push('top-50 start-50 translate-middle')
+    }
+    else if (this.position === "Middle-Right") {
+      positionClasses.push('top-50 end-0 translate-middle-y')
+    }
+    else if (this.position === "Bottom-Left") {
+      positionClasses.push('bottom-0 start-0')
+    }
+    else if (this.position === "Bottom-Center") {
+      positionClasses.push('bottom-0 start-50 translate-middle-x')
+    }
+    else if (this.position === "Bottom-Right") {
+      positionClasses.push('bottom-0 end-0')
+    }
+
+    return positionClasses;
   }
 
   public get classes(): any[] {
-    var customClasses = [`${this.colorVariant}`]
-    if (this.customColor === true) {
-      customClasses.pop()
-    }
-    return customClasses
+    var colorClasses = ['toast-body bg-' + `${this.toastMessageColorVariant}`];
+    return colorClasses;
   }
 
-  public get img(): any[] {
-    var customClasses = ['']
-    if (this.withImage === true) {
-      customClasses.push('d-none')
-    }
-    return customClasses
+  public get buttonClasses(): any[] {
+    var colorClasses = ['btn btn-' + `${this.colorVariant}`];
+    return colorClasses;
   }
+
+  //public get img(): any[] {
+  //  var customClasses = ['']
+  //  if (this.withImage === true) {
+  //    customClasses.push('d-none')
+  //  }
+  //  return customClasses
+  //}
 
   showToast() {
     debugger;

@@ -236,6 +236,28 @@ svg {
     // stroke: $gray-300;
 }
 
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner:before {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  top: 24px;
+  left: 43px;
+  width: 20px;
+  height: 20px;
+/*  margin-top: -10px;
+  margin-left: -10px;*/
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  border-top-color: #000000;
+  animation: spinner .8s linear infinite;
+}
+
 // Navbar CSS
 .smallSize{
   font-size: 0.875rem * 0.875 !important;

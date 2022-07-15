@@ -19,10 +19,10 @@ export default {
       options: ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark', 'white'],
       control: { type: 'select' }
     },
-    cardheight: {
-      options: ['card-stretch', 'card-stretch-half'],
-      control: { type: 'select' }
-    },
+    //cardheight: {
+    //  options: ['card-stretch', 'card-stretch-half'],
+    //  control: { type: 'select' }
+    //},
   },
 
 } as Meta;
