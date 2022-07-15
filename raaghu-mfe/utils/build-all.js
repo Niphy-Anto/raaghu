@@ -30,7 +30,6 @@ if (appConfig.replaceUrl == "true") {
     for (const mfeConf of Object.keys(mfeConfigJSON)) {
         let url = mfeConfigJSON[mfeConf].url;
         let pathConf = '';
-        console.log("Find MFE config: ", mfeConf, ":", APP_ROUTES.indexOf(mfeConf));
         if (APP_ROUTES.indexOf(mfeConf) != -1) {
             pathConf = APP_ROUTES.substring(
                 APP_ROUTES.indexOf("'", APP_ROUTES.lastIndexOf("path", APP_ROUTES.indexOf(mfeConf) - 1)) + 1,
