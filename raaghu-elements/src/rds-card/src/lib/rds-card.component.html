@@ -7,10 +7,10 @@
  </div>
   -->
 
-  <div class="text-center" *ngIf="Recommended">
+  <!-- <div class="text-center" *ngIf="Recommended">
     <span class="small badge badge-warning" size="small">Recommended</span>
-  </div>
-  <div [ngClass]="cardClasses" [ngStyle]="{'width.px': cardWidth}">
+  </div> -->
+  <div [ngClass]="cardClasses">
     <div [ngClass]="classes">
       <ng-container [ngTemplateOutlet]="header" [ngTemplateOutletContext]="{$implicit: Data}"></ng-container>
       <ng-content select="[header]"></ng-content>
