@@ -30,34 +30,14 @@ export class RdsNavBarComponent implements OnInit {
     navclass: '',
     href: '',
   }];
+  fontSize!: string;
   @Input() navbarId?: string
-  @Input() type: 'small' | 'medium' | 'large' | 'extra large' = 'medium'
+  @Input() size = 'medium'
   @Input() navbarheader!: TemplateRef<any>;
   @Input() navbarcontent!: TemplateRef<any>
-
-  @Input()
-  public get classes(): string[] {
-    var naveclass = ['navbar navbar-expand-md']
-    if (this.type == "small") {
-      naveclass.push('navbar-expand-sm')
-    }
-    if (this.type == "medium") {
-      naveclass.push('navbar-expand-md')
-    }
-    if (this.type == "large") {
-      naveclass.push('navbar-expand-lg')
-    }
-    if (this.type == "extra large") {
-      naveclass.push('navbar-expand-xl')
-    }
-    this.navbarItems.forEach(function (element) {
-      if (element.isActive) {
-        var active = 'active'
-        element.navclass = [`nav-link`, active].join(' ');
-      } else {
-        element.navclass = "nav-link";
-      }
-    });
-    return naveclass
+  
+  public get classes(): string {
+    const mode1 = `${this.size === 'small' ? 'smallSize' : this.size === 'medium' ? 'medium' : 'largeSize' }`;
+    return mode1;
   }
 }

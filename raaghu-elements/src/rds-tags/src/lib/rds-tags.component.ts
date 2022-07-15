@@ -6,16 +6,13 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./rds-tags.component.scss']
 })
 export class RdsTagsComponent implements OnInit {
-  @Input()
-  tagType?: string;
+  @Input() tagType?: string;
 
   inputText!: string;
-  tagList: any[]=[]
-
-  showtag: boolean = true;
+  tagArray!: any[];
 
   @Input() roles: 'Basic' | 'TagWithScroll' = 'Basic';
-  @Input() colorVariant: 'primary' | 'secondary' | 'danger' | 'success' | 'warning' | 'info' | 'default' | 'light' | 'dark' = 'primary';
+  @Input() colorVariant?: string;
 
   constructor() { }
 
@@ -27,12 +24,12 @@ export class RdsTagsComponent implements OnInit {
     const tagColor = 'tag-' + `${this.colorVariant}`;
     classes.push(tagColor);
 
-    if (this.tagType === 'Square') {
+    if (this.tagType === 'square') {
       classes.push('bd-example');
       classes.push('square-tags');
       return classes
     }
-    if (this.tagType === 'Round') {
+    if (this.tagType === 'round') {
       classes.push('bd-example')
       classes.push('rounded-tags')
       return classes
@@ -40,15 +37,16 @@ export class RdsTagsComponent implements OnInit {
     return classes
   }
 
+
   addTag() {
     if (this.inputText.length > 0) {
-    this.tagList.push(this.inputText);
-    this.inputText = '';
-      this.showtag = true
+      this.tagArray = this.tagArray ? this.tagArray : [];
+      this.tagArray.push(this.inputText);
+      this.inputText = '';
     }
   }
-  deleteTag(index: number){
-    this.tagList.splice(index, 1);
+  deleteTag(index: number) {
+    this.tagArray.splice(index, 1);
   }
 
 }
