@@ -39,22 +39,22 @@ if (appConfig.replaceUrl == "true") {
             pathConf = mfeConf;
         }
         if (mfeConf == "host") {
-            url = url.replace(/(http:\/\/localhost:)\d{4}/g, appConfig.appBaseUrl);
+            url = url.replace(/((http|https):\/\/localhost:)\d{4}/g, appConfig.appBaseUrl);
         } else if (mfeConf == "dashboard") {
-            url = url.replace(/(http:\/\/localhost:)\d{4}/g, appConfig.appBaseUrl + "/dashboard");
+            url = url.replace(/((http|https):\/\/localhost:)\d{4}/g, appConfig.appBaseUrl + "/dashboard");
         } else if (mfeConf == "rdsComponents") {
-            url = url.replace(/(http:\/\/localhost:)\d{4}/g, appConfig.appBaseUrl + "/rds-components");
+            url = url.replace(/((http|https):\/\/localhost:)\d{4}/g, appConfig.appBaseUrl + "/rds-components");
         } else {
-            url = url.replace(/(http:\/\/localhost:)\d{4}/g, appConfig.appBaseUrl + "/" + pathConf);
+            url = url.replace(/((http|https):\/\/localhost:)\d{4}/g, appConfig.appBaseUrl + "/" + pathConf);
         }
         mfeConfigJSON[mfeConf].url = url;
     }
     mfeConfig = mfeConfig.substring(0, mfeConfig.indexOf("{")) + JSON.stringify(mfeConfigJSON, null, 2);
     mfeConfig = mfeConfig.replace(/\"url\":/g, "url:");
     mfeConfig = mfeConfig.replace(/\"/g, "");
-    mfeConfig = mfeConfig.replace(/http:\/\//g, "\'http:\/\/");
+    mfeConfig = mfeConfig.replace(/(http|https):\/\//g, "\'$1:\/\/");
     mfeConfig = mfeConfig.replace(/.js/g, ".js\'");
-    console.log(mfeConfig);
+    // console.log(mfeConfig);
     fs.writeFileSync(mfeFilePath, mfeConfig);
 }
 
