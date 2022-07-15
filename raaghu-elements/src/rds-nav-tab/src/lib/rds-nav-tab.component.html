@@ -1,39 +1,58 @@
-<ul class="nav nav-tabs mobile-ul-tabs" [ngClass]="classes">
-  <li class="nav-item mobile-nav-item p-0" *ngFor="let item of navtabsItems; index as i">
+<div class="row">
+  <div [ngClass]="flexClass">
 
-    <div class="row g-0">
-      <div class="col-12 p-0">
-        <a class="nav-link" [class.active]="activepage==i" aria-current="page" href="#" (click)="onClick(i)"
+
+    <ul class="nav nav-tabs mobile-ul-tabs" [ngClass]="classes">
+      <li class="nav-item mobile-nav-item p-0" *ngFor="let item of navtabsItems; index as i">
+    
+        <div class="row g-0">
+          <div class="col-12 p-0">
+            <a class="nav-link" [class.active]="activepage==i" aria-current="page" href="#" (click)="onClick(i)"
+               [attr.data-bs-target]="item.tablink" data-bs-toggle="tab" [attr.aria-controls]="item.ariacontrols"
+               [class.disabled]="item.disabled" >
+              <div class="row g-0">
+                <div class="col-12 p-1">
+                  <rds-icon [name]="item.icon" [height]="iconHeight" [fill]="item.iconFill" [stroke]="item.stroke" [width]="iconWidth"></rds-icon>
+                  <!--<div class="p-1 d-flex align-items-center">
+                        <rds-icon [name]="item.icon" [height]="iconHeight" [width]="iconWidth"></rds-icon>
+                      </div>-->
+                      <!--</div>
+                      <div class="col-10">-->
+                  <span class="ms-2">
+                    {{item.label}}
+                  </span>
+                  <div class="text-muted fw-light">{{item.subText}}</div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+    
+        <!--<a class="nav-link" [class.active]="activepage==i" aria-current="page" href="#" (click)="onClick(i)"
            [attr.data-bs-target]="item.tablink" data-bs-toggle="tab" [attr.aria-controls]="item.ariacontrols"
            [class.disabled]="item.disabled" [ngClass]="class1">
-          <div class="row g-0">
-            <div class="col-12 p-1">
-              <rds-icon [name]="item.icon" [height]="iconHeight" [fill]="item.iconFill" [stroke]="item.stroke" [width]="iconWidth"></rds-icon>
-              <!--<div class="p-1 d-flex align-items-center">
-                    <rds-icon [name]="item.icon" [height]="iconHeight" [width]="iconWidth"></rds-icon>
-                  </div>-->
-                  <!--</div>
-                  <div class="col-10">-->
-              <span class="ms-2">
-                {{item.label}}
-              </span>
-              <div class="text-muted fw-light">{{item.subText}}</div>
-            </div>
-          </div>
-        </a>
-      </div>
+          <rds-icon [name]="item.icon" [height]="iconHeight" [width]="iconWidth"></rds-icon>{{item.label}}
+          <div class="text-muted fs-6 fw-light">{{item.subText}}</div>
+        </a>-->
+        <!--<a *ngIf="activepage!=i" class="nav-link" [attr.data-bs-target]="item.tablink" data-bs-toggle="tab"
+      [attr.aria-controls]="item.ariacontrols" href="#" (click)="  onClick(i)" [class.disabled]="item.disabled"
+      [ngClass]="class1">{{item.label}}</a>-->
+    
+      </li>
+    </ul>
+    <!-- <ng-content select="[naveContent]" class="vertical-class"></ng-content> -->
+    <div naveContent class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active p-2" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+      <div class="contents">
+      <p>This is some placeholder content the Profile tab's associated content. Clicking another tab will toggle the visibility of this one for the next.<br>
+       The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other</p></div></div>
+      <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"><div class="contents bg-white p-2">This is some placeholder content the Home tab's associated content. Clicking another tab will toggle the visibility of this one for the next.<br>
+       The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other .nav-powered navigation.</div></div>
+      <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab"><div class="contents bg-white p-2">Tab3</div></div>
+      <div class="tab-pane fade" id="nav-deabled" role="tabpanel" aria-labelledby="nav-contact-tab"><div class="contents bg-white p-2">test</div></div>
     </div>
 
-    <!--<a class="nav-link" [class.active]="activepage==i" aria-current="page" href="#" (click)="onClick(i)"
-       [attr.data-bs-target]="item.tablink" data-bs-toggle="tab" [attr.aria-controls]="item.ariacontrols"
-       [class.disabled]="item.disabled" [ngClass]="class1">
-      <rds-icon [name]="item.icon" [height]="iconHeight" [width]="iconWidth"></rds-icon>{{item.label}}
-      <div class="text-muted fs-6 fw-light">{{item.subText}}</div>
-    </a>-->
-    <!--<a *ngIf="activepage!=i" class="nav-link" [attr.data-bs-target]="item.tablink" data-bs-toggle="tab"
-  [attr.aria-controls]="item.ariacontrols" href="#" (click)="  onClick(i)" [class.disabled]="item.disabled"
-  [ngClass]="class1">{{item.label}}</a>-->
+  </div>
 
-  </li>
-</ul>
-<ng-content select="[naveContent]"></ng-content>
+</div>
+

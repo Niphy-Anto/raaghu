@@ -1,4 +1,4 @@
-<button class="btn btn-primary" (click)="showToast()">Click Here</button>
+<button [ngClass]="buttonClasses" (click)="showToast()">Click Here</button>
 
 <div *ngIf="clicked" class="toast-container position-absolute p-3" [ngClass]="positionClass">
   <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
@@ -8,7 +8,7 @@
       <small>{{time}}</small>
       <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close" (click)="hideToast()"></button>
     </div>
-    <div class="toast-body" [ngClass]="classes">
+    <div [ngClass]="classes">
       {{message}}
       <ng-content></ng-content>
     </div>

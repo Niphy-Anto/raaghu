@@ -18,11 +18,11 @@
     {{buttonLabelOne}}
   </button>
   <button [class]="collapsebutton" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#'+collapseIdTwo"
-          [attr.aria-expanded]="expanded" [attr.aria-controls]="collapseIdTwo" (click)="toggleExpanded()">
+          [attr.aria-expanded]="expanded" [attr.aria-controls]="collapseIdTwo" (click)="toggleExpanded()" *ngIf="multipleButton">
     {{buttonLabelTwo}}
   </button>
   <button [class]="collapsebutton" type="button" data-bs-toggle="collapse" data-bs-target=".multi-collapse"
-          [attr.aria-expanded]="expanded" [attr.aria-controls]="collapseIdMultiple" (click)="toggleExpanded()" *ngIf="multipleButton">
+          [attr.aria-expanded]="expanded" [attr.aria-controls]="'#'+collapseIdOne+'#'+collapseIdTwo" (click)="toggleExpanded()" *ngIf="multipleButton">
     {{multipleButtonLabel}}
   </button>
 </p>

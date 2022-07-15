@@ -1,54 +1,123 @@
 /* tags css new variations */
 
+// .tags {
+//     width: auto;
+//     font-size: $font-size-base;
+//     font-weight: $font-weight-bold;
+//     line-height: $line-height-base;
+//     word-wrap: break-word;
+//     text-transform: uppercase;
+//     position: relative;
+//   }
+  
+//   .tags {
+//     .btn-close {
+//       font-size: $font-size-sm;
+//     }
+//   }
+  
+//   .square-tags .tags {
+//     box-shadow: $tags-shadow;
+//     border-radius: $border-radius;
+//   }
+  
+//   .square-tags .tags-body {
+//     padding: $tags-padding;
+//   }
+  
+//   .rounded-tags .toast-body {
+//     padding: $tags-padding;
+//   }
+  
+//   .rounded-tags .tags {
+//     box-shadow: $tags-shadow;
+//     border-radius: $border-radius-pill;
+//   }
+  
+//   .borderd .tags {
+//     background-color: transparent;
+//     border: 1px solid #ff6060 !important;
+//   }
+//   .binding-tags2 {
+//     padding-bottom: 80px;
+//   }
+//   .tags-dismissible {
+//     padding-right: $tag-dismissible-padding-r;
+//     // Adjust close link position
+//     .btn-close {
+//       position: absolute;
+//       top: 0;
+//       right: 0;
+//       z-index: $stretched-link-z-index + 1;
+//       padding: $tag-padding-y * 1.25 $tag-padding-x;
+//     }
+//   }
+
+
+.square-tags { 
+  border-radius: .25rem;
+}
+.rounded-tags {
+  border-radius: 20px;
+}
 .tags {
-    width: auto;
-    font-size: $font-size-base;
-    font-weight: $font-weight-bold;
-    line-height: $line-height-base;
-    word-wrap: break-word;
-    text-transform: uppercase;
-    position: relative;
-  }
-  
-  .tags {
-    .btn-close {
-      font-size: $font-size-sm;
-    }
-  }
-  
-  .square-tags .tags {
-    box-shadow: $tags-shadow;
-    border-radius: $border-radius;
-  }
-  
-  .square-tags .tags-body {
-    padding: $tags-padding;
-  }
-  
-  .rounded-tags .toast-body {
-    padding: $tags-padding;
-  }
-  
-  .rounded-tags .tags {
-    box-shadow: $tags-shadow;
-    border-radius: $border-radius-pill;
-  }
-  
-  .borderd .tags {
-    background-color: transparent;
-    border: 1px solid #ff6060 !important;
-  }
-  .binding-tags2 {
-    padding-bottom: 80px;
-  }
-  .tags-dismissible {
-    padding-right: $tag-dismissible-padding-r;
-    // Adjust close link position
-    .btn-close {
-      position: absolute;
-      top: 0;
-      right: 0;
-      z-index: $stretched-link-z-index + 1;
-      padding: $tag-padding-y * 1.25 $tag-padding-x;
-    }
-  }
+  font-size: small;
+  padding: 1px 8px 4px 8px;
+  position: relative;
+}
+
+.tags-body {
+  padding-right: 20px;
+}
+
+.tags rds-icon {
+  position: absolute;
+  right: 8px;
+}
+.tags rds-icon svg {
+  width: 8px;
+  height: auto;
+}
+
+
+// Scroll Type 
+.rds-tags {
+  width: 100%;
+  border: 1px solid  #ced4da; 
+  border-radius: 5px;
+  padding: 5px;
+}
+.scroll-type {
+  width: 100%;
+  max-height: 36.5px;
+  overflow-y: scroll;
+}
+
+// colors
+
+.tag-primary{
+  background-color: #7E2EEf;
+}
+.tag-secondary{
+  background-color: #2B0066;
+  color: #ffffff;
+}
+.tag-success{
+  background-color: #2EEF59;
+}
+.tag-info{
+  background-color: #3ef1e8;
+}
+.tag-warning{
+  background-color: #E3A300;
+}
+.tag-danger{
+  background-color: #EF2E2E;
+}
+.tag-dark{
+  background-color: #363636;
+  color: #ffffff;
+}
+.tag-light{
+  background-color: #F8F9FA;
+}

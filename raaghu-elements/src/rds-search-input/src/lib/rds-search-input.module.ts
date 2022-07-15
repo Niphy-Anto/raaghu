@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RdsIconModule } from '@libs/rds-icon';
 import { RdsSearchInputComponent } from './rds-search-input.component';
-
+import { RdsLabelModule } from '../../../rds-label/src/lib/rds-label.module';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -9,7 +10,9 @@ import { RdsSearchInputComponent } from './rds-search-input.component';
     RdsSearchInputComponent
   ],
   imports: [
-    RdsIconModule
+    RdsIconModule,
+    RdsLabelModule,
+    FormsModule
   ],
   exports: [
     RdsSearchInputComponent

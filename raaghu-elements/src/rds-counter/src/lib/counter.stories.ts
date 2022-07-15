@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+
 import { Story, Meta, moduleMetadata } from '@storybook/angular';
 import { RdsCounterComponent } from './rds-counter.component';
 
@@ -15,7 +16,11 @@ export default {
     colorVariant: {
       options: ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark', 'white'],
       control: { type: 'select' }
-    },   
+    },
+    position: {
+      options: ['top', 'bottom', 'start', 'end'],
+      control: { type: 'radio' }
+    },
   },
 } as Meta
 
@@ -25,7 +30,7 @@ const Template: Story<RdsCounterComponent> = (args: RdsCounterComponent) => ({
 
 export const Basic = Template.bind({})
 Basic.args = {
-  Title: '',
+  
   label: '',
   colorVariant: 'primary',
   counterValue: 0,

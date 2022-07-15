@@ -33,7 +33,7 @@
   </rds-button> -->
   <rds-fab-menu [listItems]="listItemsm" [menuicon]="'plus'" [colorVariant]="'primary'" [menuiconWidth]="'12px'" [menuiconHeight]="'12px'" (onSelect)="onSelectMenu($event)"></rds-fab-menu>
 </div>
-<rds-offcanvas [canvasTitle]="translate.instant(canvasTitle)" [offId]="'userOffcanvas'" [backDrop]="true"
+<rds-offcanvas [canvasTitle]="translate.instant(canvasTitle)" [offId]="'userOffcanvas'" 
   [offcanvaswidth]="650" [placement]="'end'" *ngIf="viewCanvas" (onClose)="close()">
   <rds-nav-tab [navtabsItems]="getNavTabItems()" (onClicktab)="getSelectedNavTab($event)" [activepage]="activePage"
     [horizontalAlignment]="'start'" [verticalAlignment]="false" [pills]="false" [tabs]="true" [fill]="false"
