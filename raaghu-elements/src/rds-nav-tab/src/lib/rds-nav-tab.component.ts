@@ -34,19 +34,24 @@ export class RdsNavTabComponent implements OnInit {
 
   public get classes(): string {
     const align = ` justify-content-${this.horizontalAlignment}`;
-    const vertical = `${this.verticalAlignment ? ' flex-column vertical-tab' : ' flex'}`;
-    const pill = `${this.pills ? ' nav-pills' : ''}`;
+    const vertical = `${this.verticalAlignment ? ' flex-column vertical-class ' : ' flex '}`;
+    const pill = `${this.pills ? 'nav nav-pills' : ''}`;
     const tab = `${this.tabs ? ' rds-tab-2' : ''}`;
     const fill = `${this.fill ? ' nav-pills nav-fill' : ''}`;
     const justify = `${this.justified ? ' nav-pills nav-justified' : ''}`;
     const flex = `${this.flex ? 'nav-pills flex-column flex-sm-row' : ''}`
     const border = `${this.tabsWithBorderTop ? '' : ' rds-tab-2'}`;
-    return align + vertical + pill + tab + fill + justify + flex + border;
+    return align + vertical + pill + tab + border;
   }
 
-  public get class1(): string {
-    const mode = `${this.flex ? 'flex-sm-fill text-sm-center' : ''}`
-    return mode;
+
+  public get flexClass(): string[] {
+    var flecClass = ['col-md-12'];
+    if (this.verticalAlignment === true) {
+      flecClass.push('d-flex');
+    }
+    return flecClass
   }
+
 
 }

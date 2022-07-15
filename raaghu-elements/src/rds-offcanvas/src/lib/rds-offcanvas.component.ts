@@ -10,13 +10,13 @@ export class RdsOffcanvasComponent implements OnInit {
 
   @Input() buttonTitle = 'Button'
   @Input() placement?: 'start' | 'end' | 'top' | 'bottom' = 'start';
-  @Input() backDrop?: boolean = true;
-  @Input() scrolling?: boolean = true;
+
   @Input() offId = 'canvasExample';
   @Input() canvasTitle: string = '';
   @Input()  offcanvaswidth=250;
-  @Input() colorVariant?:'light';
+ 
   @Input() bodySpacing: boolean=true;
+  @Input() colorVariant : 'primary' | 'secondary' | 'danger' | 'success' | 'warning' | 'info' | 'light' | 'dark' = 'light';
   @Output() onShow = new EventEmitter<Event>();
   @Output() onClose = new EventEmitter<Event>();
 
@@ -26,12 +26,22 @@ export class RdsOffcanvasComponent implements OnInit {
   }
 
   public get classes(): string {
-    let align = ` offcanvas offcanvas-${this.placement}`;
-    if (`${this.colorVariant}`!==undefined && `${this.colorVariant}`!=="" && `${this.colorVariant}`!=="undefined"){
-      align = align + ' offcanvas-bg-color ';
+    let align = ` offcanvas offcanvas-${this.placement} `;
+    let classes: string[] = [];
+    // let bgColor = 'bg-'+`${this.colorVariant}`;
+    //  `${this.colorVariant === 'dark' ? 'bg-dark' : 'bg-light'}`
+
+//   if (`${this.colorVariant}`!==undefined && `${this.colorVariant}`!=="" && `${this.colorVariant}`!=="undefined"){
+//     align = align + ' offcanvas-bg-color ';
+// }
+let bgColor ='bg-'+`${this.colorVariant}`;
+if ( `${this.colorVariant}`!=="light"){
+  bgColor = bgColor + ' text-white ';
   }
-    return align;
+     return align + bgColor;
+
   }
+
   public get bodyClasses(): string {
     let spacing = `${this.bodySpacing===false ? ' p-0' : ''}`;
     return spacing;
