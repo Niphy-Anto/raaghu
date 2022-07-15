@@ -540,10 +540,10 @@
   </div>
   <div class="card-body  pt-0">
     <div class="row border p-4 m-2">
-      <div class="col-4">
+      <div class="col-8">
         <h6 class="mb-3">{{"Color Picker"|translate}}</h6>
         <rds-color-picker value="#800080" [label]="translate.instant('Color picker')" [disabled]="false"
-                          title="Pick your color">
+                          title="Pick your color" [position]="'start'">
         </rds-color-picker>
       </div>
     </div>
@@ -623,8 +623,8 @@
 
       <div class="col-6">
         <h6 class="mb-3">{{"Dropdown List Without Icon"|translate}}</h6>
-        <rds-dropdownlist [DropdownItems]="DropdownItems" [listItems]="listItems" size="default"
-                          [colorVariant]="'btn-outline-light'" class="text-dark" [placeholder]="'Select Country'">
+        <rds-dropdownlist [listItems]="listItems" size="default"
+                          [colorVariant]="'outline-light'" class="text-dark" [placeholder]="'Select Country'">
           <ng-template #DropdownItems let-val let-index="index">
             <li [class.active]="index === 1">
               <div class="d-flex align-items-center bind-center-div1 group-list">
@@ -642,8 +642,8 @@
 
       <div class="col-6">
         <h6 class="mb-3">{{"Dropdown List With Icon"|translate}}</h6>
-        <rds-dropdownlist [DropdownItems]="DropdownItems" [listItems]="listItemsCountryCode" size="default"
-                          [colorVariant]="'btn-outline-light'" class="text-dark" [placeholder]="'Select Country Code'">
+        <rds-dropdownlist [listItems]="listItemsCountryCode" size="default"
+                          [colorVariant]="'outline-light'" class="text-dark" [placeholder]="'Select Country Code'">
           <ng-template #DropdownItems let-val let-index="index">
             <li [class.active]="index === 1">
               <div class="d-flex align-items-center bind-center-div1 group-list">
@@ -1425,9 +1425,9 @@
   </div>
   <div class="card-body  pt-0">
     <div class="row border p-4 m-2">
-      <div class="col-4">
+      <div class="col-8">
         <h6 class="mb-3">{{"Search"|translate}}</h6>
-        <rds-search-input Placeholder="Search" size="small"></rds-search-input>
+        <rds-search-input placeholder="Search.."  size="small"></rds-search-input>
       </div>
     </div>
   </div>
@@ -1602,7 +1602,7 @@
       <div class="col-4">
         <!--<h6 class="mb-3">{{"Textarea"|translate}}</h6>-->
         <rds-textarea value="" [disabled]="false" rows="3" [readonly]="false" label="Text area" floatinginputLabel=""
-                      placeholderText="Add Placeholder" tooltipTitle="Text Area" tooltipPlacement="auto"></rds-textarea>
+         placeholderText="Add Placeholder" tooltipTitle="Text Area" tooltipPlacement="auto"></rds-textarea>
       </div>
     </div>
 
