@@ -1,5 +1,5 @@
 import { Story, Meta, moduleMetadata } from '@storybook/angular';
-import { RdsIconModule } from '@libs/rds-elements';
+import { RdsIconModule } from '@libs/rds-icon';
 import { RdsFileUploaderComponent } from './rds-file-uploader.component';
 
 export default {
@@ -28,7 +28,7 @@ export const Basic = Template.bind({})
 Basic.args = {
   size: 'medium',
   multipleFiles: false,
-  role: 'fileUpload',
+  role: 'default',
   label: 'Upload Files',
 }
 

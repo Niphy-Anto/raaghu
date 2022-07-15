@@ -8,8 +8,8 @@ import { AfterViewInit, Component, EventEmitter, Inject, Input, OnInit, Output, 
 })
 export class RdsPopoverComponent implements OnInit, AfterViewInit {
 
-  @Input() popoverTitle = '';
-  @Input() popoverContent = '';
+  @Input() popoverTitle?: string;
+  @Input() popoverContent?: string;
   @Input() popoverPosition: 'top' | 'bottom' | 'right' | 'left' = 'bottom';
   @Input() hover = false;
   @Output() onClick = new EventEmitter();
@@ -34,6 +34,8 @@ export class RdsPopoverComponent implements OnInit, AfterViewInit {
                   `;
     this._renderer2.appendChild(this._document.body, script);
   }
+
+
 
   public get onHover(): string {
     return `${this.hover ? 'hover focus' : 'click'}`;

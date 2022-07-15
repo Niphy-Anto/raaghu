@@ -18,8 +18,8 @@ export class RdsAvatarComponent implements OnInit, OnChanges {
 
   @Input() WithProfilePic!: boolean;
   @Input() profilePic: string="https://th.bing.com/th/id/OIP.3IsXMskZyheEWqtE3Dr7JwHaGe?pid=ImgDet&rs=1";
-  @Input() FirstName!: string;
-  @Input() LastName!: string;
+  @Input() FirstName: string = '';
+  @Input() LastName: string = '';
   @Input()
   Size: 'small' | 'large' | 'medium' | 'larger' = 'medium';
   @Input() VerticalTitleWithProfilePic!:boolean;
@@ -28,11 +28,12 @@ export class RdsAvatarComponent implements OnInit, OnChanges {
   ngOnInit(): void {
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
+  ngOnChanges(changes: any): void {
     // this.profilePic = this.profilePic ? this.profilePic: 'assets/default_avatar.png';
     this.fName = this.FirstName.charAt(0).toUpperCase();
     this.lName = this.LastName.charAt(0).toUpperCase();
   }
+
   public get classes(): string[] {
     let classes: string[] = [];
     const bgColor = 'bg-' + `${this.colorVariant}`;

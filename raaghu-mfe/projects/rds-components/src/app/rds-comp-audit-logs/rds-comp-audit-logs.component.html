@@ -89,7 +89,7 @@
                 <app-rds-data-table [tableData]="operationLogs" (deleteEvent)="delete($event)" [pagination]="true"
                     [noDataTitle]="translate.instant('Currently you do not have operation log')" [recordsPerPage]="3"
                     (onActionSelection)="onActionSelect($event)" [showNodataSubtitle]="false" [actions]="actions" [refresh]="true"
-                    [tableHeaders]="operationLogsHeaders"></app-rds-data-table>
+                    [tableHeaders]="operationLogsHeaders" [isShimmer]="isShimmer"></app-rds-data-table>
             </div>
         </div>
 
@@ -149,13 +149,13 @@
             </div>
         </div>
     </div>
-    <!-- <rds-offcanvas [canvasTitle]="auditLogsCanvasTitle" [offId]="'auditLogCanvas'" [placement]="'end'" [backDrop]="true"
+    <!-- <rds-offcanvas [canvasTitle]="auditLogsCanvasTitle" [offId]="'auditLogCanvas'" [placement]="'end'" 
                [offcanvaswidth]="600" *ngIf="viewAuditLogsCanvas" >
   
   <b>Open Canvas</b>
 </rds-offcanvas> -->
 
-    <rds-offcanvas [canvasTitle]="translate.instant(auditLogsCanvasTitle)" [backDrop]="true" [offId]="'auditLogCanvas'"
+    <rds-offcanvas [canvasTitle]="translate.instant(auditLogsCanvasTitle)"  [offId]="'auditLogCanvas'"
         [offcanvaswidth]="550" [placement]="'end'" *ngIf="viewAuditLogsCanvas" (onClose)="onClose()">
        
         <h5><span class="fw-medium">{{'User Information' | translate}}</span></h5>
@@ -297,7 +297,7 @@
 </div>
 </rds-offcanvas>
 
-    <rds-offcanvas [canvasTitle]="changeLogsCanvasTitle" [backDrop]="true" [offId]="'changeLogCanvas'"
+    <rds-offcanvas [canvasTitle]="changeLogsCanvasTitle" [offId]="'changeLogCanvas'"
         [offcanvaswidth]="550" [placement]="'end'" *ngIf="viewChangeLogsCanvas" (onClose)="onClose()">
         <div class="row">
             <div class="col-md-12">

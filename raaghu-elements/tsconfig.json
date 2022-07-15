@@ -1,8 +1,20 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": ".",
     "outDir": "./out-tsc",
+    "paths": {
+      "@libs/rds-icon": [
+        "rds-elements/rds-icon/public-api",
+        "rds-elements/rds-icon"
+      ],
+      "@libs/rds-badge": [
+        "rds-elements/rds-badge/public-api",
+        "rds-elements/rds-badge"
+      ]
+    },
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitOverride": true,
@@ -15,25 +27,21 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
-    "paths": {
-      "@rds-common-lib": [
-        "src/rds-app-config/src/public-api"
-      ],
-      "@libs/rds-elements": [
-        "src/root/public-api"
-      ]
-    },
-    "target": "es2017",
-    "module": "es2020",
+    "target": "es2015",
+    "module": "esnext",
     "lib": [
-      "es2020",
+      "es2017",
       "dom"
-    ]
+    ],
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": true,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true
-  }
+  },
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
 }

@@ -1,5 +1,5 @@
 import { Meta, Story, moduleMetadata } from "@storybook/angular";
-import { RdsIconModule } from '@libs/rds-elements';
+import { RdsIconModule } from '@libs/rds-icon';
 import { RdsIllustrationComponent } from "./rds-illustration.component";
 
 export default {

@@ -6,7 +6,7 @@
                        ngDefaultControl
                        name="entityname"
                        [(ngModel)]="dynamicEntityData.entityFullName"
-                       [Label]="translate.instant('Entity')"
+                       [labelText]="translate.instant('Entity')"
                        [placeholderText]="translate.instant('Select Entity')" required [itemList]="entityNames">
       </rds-select-list>
     </div>
