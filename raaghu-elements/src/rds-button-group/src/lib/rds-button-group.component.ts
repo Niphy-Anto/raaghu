@@ -63,7 +63,7 @@ export class RdsButtonGroupComponent implements OnInit {
     },
   ];
 
-  @Input() activepage!: number;
+  @Input() activeButton!: number;
 
   // tslint:disable-next-line:no-output-on-prefix
   @Output() onClick = new EventEmitter<any>();
@@ -71,7 +71,7 @@ export class RdsButtonGroupComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.activepage = 0;
+    this.activeButton = 0;
   }
 
   public get classes(): string {
@@ -86,7 +86,7 @@ export class RdsButtonGroupComponent implements OnInit {
   }
 
   onClickButton(i: any): void {
-    this.activepage = i++;
+    this.activeButton = i++;
     this.onClick.emit(i);
   }
 

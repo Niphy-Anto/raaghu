@@ -23,6 +23,6 @@ export const basic = Template.bind({})
 basic.args = {
     min: 500,
     max: 1000,
-    disabled: false,
+    // disabled: false,
     // step:'0.5'
 }

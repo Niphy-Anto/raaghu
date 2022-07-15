@@ -13,20 +13,24 @@ export default {
     }),
   ],
   argTypes: {
-    size: {
-      options: ['default', 'small', 'large'],
-      control: { type: 'radio' },
-    },
+    // size: {
+    //   options: ['default', 'small', 'large'],
+    //   control: { type: 'radio' },
+    // },
     disabled: { control: { type: 'boolean' } },
     multiple: { control: { type: 'boolean' } },
     customIcon: { control: { type: 'text' } },
     rows: { control: { type: 'text' } },
-    LabelType: {
-      options: ['Top', 'Bottom', 'Left', 'Right'],
-      control: { type: 'select' },
-    },
+    // LabelType: {
+    //   options: ['Top', 'Bottom', 'Left', 'Right'],
+    //   control: { type: 'select' },
+    // },
     tooltipPlacement: {
       options: ['top', 'bottom', 'right', 'left'],
+      control: { type: 'radio' }
+    },
+    size: {
+      options: ['small', 'large', 'default'],
       control: { type: 'radio' }
     },
   },
@@ -35,10 +39,12 @@ export default {
 const Template: Story<RdsSelectListComponent> = (args: RdsSelectListComponent) => ({
   props: args,
   template: `<rds-select-list
-    size="default"
-    rows="3"
-    [disabled]="false"
-    [multiple]="false"
+    [rows]="rows"
+    [size]="size"
+    [disabled]="disabled"
+    [multiple]="multiple"
+    [labelText]="labelText"
+    [LabelType]="LabelType"
     customIcon="">
     <option selected>Open this select menu</option>
     <option value="1">One</option>
@@ -49,11 +55,13 @@ const Template: Story<RdsSelectListComponent> = (args: RdsSelectListComponent) =
 const tooltipTemplate: Story<RdsSelectListComponent> = (args: RdsSelectListComponent) => ({
   props: args,
   template: `<rds-select-list 
-    size="default"
-    [disabled]="false"
-    [multiple]="false"
+  [size]="rows"
+    [disabled]="disabled  "
+    [multiple]="multiple"
     customIcon=""
+    [labelText]="labelText"
     [tooltipTitle]="tooltipTitle"
+    [LabelType]="LabelType"
     [tooltipPlacement]="tooltipPlacement"
   >
   <option selected>Open this select menu</option>
@@ -65,10 +73,10 @@ const tooltipTemplate: Story<RdsSelectListComponent> = (args: RdsSelectListCompo
 export const basic = Template.bind({});
 
 basic.args = {
-  rows: '3',
-  Label: '',
-  LabelType: 'text',
-  size: 'default',
+  rows: '',
+  labelText: '',
+  // labelType: 'Top',
+  // size: 'default',
   disabled: false,
   multiple: false,
   customIcon: ''
