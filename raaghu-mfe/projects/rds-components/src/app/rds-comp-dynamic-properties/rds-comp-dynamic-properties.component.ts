@@ -35,7 +35,7 @@ export class RdsCompDynamicPropertiesComponent implements OnInit, OnChanges {
   activePage: number = 0;
 
   public viewCanvas: boolean = false;
-  canvasTitle: string = this.translate.instant('New Dynamic Property');
+  canvasTitle: string = this.translate.instant('NEW DYNAMIC PROPERTY');
   id: number | undefined = undefined;
   DynamicPropertiesModal: any = [
     {
@@ -69,7 +69,7 @@ export class RdsCompDynamicPropertiesComponent implements OnInit, OnChanges {
     if (event) {
       this.IsEdit = false;
       this.id = undefined;
-      this.canvasTitle = this.translate.instant('New Dynamic Property');
+      this.canvasTitle = this.translate.instant('NEW DYNAMIC PROPERTY');
       event.stopPropagation();
       this.DynamicProperyData = undefined;
     } else {
@@ -82,14 +82,14 @@ export class RdsCompDynamicPropertiesComponent implements OnInit, OnChanges {
     this.DynamicProperyInfo = undefined;
     this.selectedPermissionList = [];
     this.resetFormSubject.next(true);
-    this.canvasTitle = this.translate.instant('New Dynamic Property');
+    this.canvasTitle = this.translate.instant('NEW DYNAMIC PROPERTY');
     this.IsEdit = false;
     this.selectedPermissionList = []
   }
   editTableRow(event): void {
     this.activePage = 0;
     this.IsEdit = true;
-    this.canvasTitle = this.translate.instant('Edit Dynamic Property');
+    this.canvasTitle = this.translate.instant('EDIT DYNAMIC PROPERTY');
     this.selectedPermissionList = [];
     this.editPropertyTableRowData.emit(event.id);
     this.id = event.id;
