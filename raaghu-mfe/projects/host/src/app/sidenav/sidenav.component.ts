@@ -16,13 +16,23 @@ import { TranslateService } from '@ngx-translate/core';
 import { ThemesService } from 'projects/libs/themes/src/public-api';
 import { PrepareCollectedData } from 'projects/libs/state-management/src/lib/state/DownloadData/download-data.action';
 import { DOCUMENT } from '@angular/common';
+import { slideInAnimation } from '../animation';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-sidenav',
   templateUrl: './sidenav.component.html',
-  styleUrls: ['./sidenav.component.scss']
+  styleUrls: ['./sidenav.component.scss'],
+  animations: [
+    slideInAnimation   
+  ],
 })
 export class SidenavComponent extends MfeBaseComponent implements OnInit {
+
+  prepareRoute(outlet: RouterOutlet) {
+    return outlet && outlet.activatedRouteData && outlet.activatedRouteData.animation;
+  }
+
   toggleSideNav: boolean = false;
   currentAlerts: any = [];
   selectedLanguage: any = { language: '', icon: '' };
