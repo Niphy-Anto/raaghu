@@ -3,7 +3,7 @@
   <div class="row justify-content-between">
     <div class="col-sm-4">
       <div class="form-group mb-3">
-        <rds-search-input [Placeholder]="translate.instant('Search')"  (send)="searchLanguageText($event)"
+        <rds-search-input [placeholder]="translate.instant('Search')"  (send)="searchLanguageText($event)"
         (onClick)="searchLanguageText($event)"></rds-search-input>
       </div>
 
@@ -51,7 +51,7 @@
   </div>
 </div>
 <rds-offcanvas [canvasTitle]="translate.instant('EDIT TEXT')" [offId]="'EditlanguageText'" [offcanvaswidth]="550" [placement]="'end'"
-  [backDrop]="true">
+  >
   <app-edit-language-text [Languagetext]="LanguageText" (onLanguageTextSave)="getLanguageTextTable()"></app-edit-language-text>
 
 </rds-offcanvas>

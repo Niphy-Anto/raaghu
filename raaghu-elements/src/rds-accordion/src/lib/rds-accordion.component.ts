@@ -28,6 +28,7 @@ export class RdsAccordionComponent implements OnInit {
   @Input() outline = false;
   title: any;
   @Input() alwaysOpen!: boolean;
+  @Input() expanded!: boolean;
 
   constructor() { }
 

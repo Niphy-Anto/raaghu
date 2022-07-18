@@ -21,7 +21,7 @@
                            inputType="text" [(ngModel)]="Tenancyname" ngDefaultControl></rds-input>
               </div>
             </div>
-            <div class="col-md-12">
+            <div class="col-md-12"  *ngIf="linkaacountDivFlag">
               <div class="form-group mb-3">
 
                 <rds-input size="default" value="" [Title]="translate.instant('User Name')" [TitleType]="'Top'" inputType="text"
@@ -30,20 +30,13 @@
                 </rds-input>
               </div>
             </div>
-            <div class="col-md-12">
+            <div class="col-md-12"  *ngIf="linkaacountDivFlag">
               <div class="form-group mb-3">
 
                 <rds-input size="default" value="" [Title]="translate.instant('Password')" [placeholder]="'Password'" [TitleType]="'Top'"
                            inputType="password" [(ngModel)]="Password" [isRequired]=true ngDefaultControl (keyup)="LinkaccountValidator()"
                            (mouseup)="LinkaccountValidator()">
                 </rds-input>
-              </div>
-            </div>
-            <div class="col-md-12">
-              <div class="form-group mb-3">
-                <rds-button [label]="translate.instant('Save')" type="button" [size]="'medium'" [colorVariant]="'primary'"
-                            (click)="saveAllLinkAccount()">
-                </rds-button>
               </div>
             </div>
           </div>
@@ -55,6 +48,23 @@
         </div>
       </div>
 
+    </div>
+  </div>
+</div>
+
+<div class="footer-buttons my-2 shadow-none">
+  <div class="row">
+    <div class="col-sm-12">
+      <rds-button [label]="translate.instant('Cancel')"
+                  data-bs-dismiss="offcanvas"
+                  [colorVariant]="'outline-primary'"
+                  type="button"
+                  [size]="'medium'"
+                  (click)="onCancel()">
+      </rds-button>
+      <rds-button [label]="translate.instant('Save')" type="button" [size]="'medium'" [colorVariant]="'primary'"
+      (click)="saveAllLinkAccount()" class="ms-2">
+</rds-button>
     </div>
   </div>
 </div>

@@ -36,6 +36,7 @@ export function getRemoteServiceBaseUrl(): any {
 @NgModule({
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot(APP_ROUTES),
     ReactiveFormsModule,
     FormsModule,
@@ -62,6 +63,7 @@ export function getRemoteServiceBaseUrl(): any {
       defaultLanguage: DefaultLanguageReducer,
       downloadData:downloadReducer
     }),
+    
     StoreDevtoolsModule.instrument({
       name: 'Raaghu MFE',
       logOnly: false,

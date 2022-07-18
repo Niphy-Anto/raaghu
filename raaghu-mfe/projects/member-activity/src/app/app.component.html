@@ -2,12 +2,12 @@
 <div class="col-md-6">
   <div class="row">
   <div class="col-md-6">
-      <rds-search-input [Placeholder]="translate.instant('Member')" size="small" (onClick)="SearchMember($event)">
+      <rds-search-input [placeholder]="translate.instant('Member')" size="small" (onClick)="SearchMember($event)">
       </rds-search-input>
   </div>
   <div class="col-md-6">
       <rds-dropdownlist colorVariant="btn-secondary" [placeholder]="translate.instant('Roles')" [listItems]="listDropdown"
-          (onSelect)="selectedRole($event)" [DropdownItems]="DropdownItems" [listItems]="inputTypeList">
+          (onSelect)="selectedRole($event)" [listItems]="inputTypeList">
           <ng-template #DropdownItems let-val>
               <li><a class="dropdown-item"><i class="bi bi-bootstrap p-1"></i>{{val.value}}</a></li>
           </ng-template>
