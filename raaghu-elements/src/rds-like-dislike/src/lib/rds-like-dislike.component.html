@@ -1,5 +1,38 @@
-<a class="like"><i class="fa fa-thumbs-o-up"></i>
-    Like <input class="qty1" name="qty1" readonly="readonly" type="text" value="0" />
-  </a>
-  <a class="dislike"><i class="fa fa-thumbs-o-down"></i>
-    Dislike <input class="qty2" name="qty2" readonly="readonly" type="text" value="0" />
+ <div class="row">
+  <div class="d-flex ">
+
+
+  <div (click)="likeFun($event)">
+    <rds-icon
+    height="25"
+    [fill]="false"
+    [stroke]="lightslategrey"
+    width="25"
+    type=""
+    name="like"
+    colorVariant=""
+    class="marginclass styleIcons"
+  ></rds-icon>
+  <span>
+    <label   class="marginclass">{{likeCount}}</label></span>
+   </div>
+  
+  <div (click)="dislikeFun($event)" >
+    <rds-icon
+    height="25"
+    [fill]="false"
+    [stroke]="iconStroke"
+    width="25"
+    type=""
+    name="dislike"
+    colorVariant=""
+    class="marginclass styleIcons"
+  ></rds-icon>
+  <span>
+    <label >{{dislikeCount}}</label>
+  </span>
+  </div>
+
+ </div>
+ 
+</div>
