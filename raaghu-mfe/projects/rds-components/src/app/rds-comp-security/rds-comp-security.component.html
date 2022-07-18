@@ -1,3 +1,5 @@
+
+
 <form #Scurityform="ngForm">
   <!-- <ul class="list-unstyled pt-5 ps-0"> -->
 
@@ -86,8 +88,8 @@
     </li>
     <li>
       <div class="form-group mb-3">
-          <rds-counter [counterValue]="Seccuritysetting.maxFailedAccessAttemptsBeforeLockout"
-            [Title]="translate.instant('Maximum Number Of Failed Login Attempt Count Before Locking The Account')"
+          <rds-counter [counterValue]="Seccuritysetting.maxFailedAccessAttemptsBeforeLockout" position="top"
+            [label]="translate.instant('Maximum Number Of Failed Login Attempt Count Before Locking The Account')"
             colorVariant="primary" (counterChange)="getCounterData($event,'maxFailedAccessAttemptsBeforeLockout')"
             [(ngModel)]="Seccuritysetting.maxFailedAccessAttemptsBeforeLockout" [min]="0" [max]="26" [width]="124"
             name="maxFailedAccessAttemptsBeforeLockout" #maxFailedAccessAttemptsBeforeLockout="ngModel"

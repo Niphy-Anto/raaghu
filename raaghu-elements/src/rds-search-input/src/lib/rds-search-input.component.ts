@@ -7,10 +7,12 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class RdsSearchInputComponent implements OnInit {
 
-  value = ''
-  @Input() Placeholder = ''
+  @Input() value = ''
+  @Input() placeholder?: string;
   @Input() icon = ''
-  @Input() size: 'default' | 'small' | 'large' = 'default'
+  @Input() size: 'default' | 'small' | 'large' = 'default';
+  @Input() label='';
+  @Input() position: 'start' | 'end' | 'top' | 'bottom' = 'start';
   @Output() onClick = new EventEmitter<any>();
 
   constructor() { }
@@ -31,9 +33,45 @@ export class RdsSearchInputComponent implements OnInit {
     this.onClick.emit(this.value);
   }
 
-  public get classes(): string {
-    const mode = `${this.size === 'default' ? '' : this.size === 'small' ? 'input-group-sm' : 'input-group-lg'}`
-    return mode;
+  public get classes(): string[] {
+    var inputClass = ['form-group has-search ']
+    if (this.position === "start" || this.position === "end") {
+      inputClass.push('mx-5');
+    }
+    else if (this.position === "top") {
+      inputClass.push('mt-3');
+    }
+    if (this.size === 'small') {
+      inputClass.push('input-group-sm');
+    }
+    else if (this.size === "large") {
+      inputClass.push('input-group-lg');
+    }
+    else {
+      inputClass.push('');
+    }
+    return inputClass;
   }
+
+
+  public get labelClasses(): string[] {
+
+    var classes = ['position-absolute']
+    if (this.position === 'start') {     
+      classes.push('start-0');     
+    }
+    else if(this.position === 'end') {
+      classes.push('end-0')
+    }
+    else if(this.position === 'bottom') {
+      classes.push('mt-5')
+    }
+     else if(this.position === 'top') {
+      classes.push('top-0')
+    }
+
+    return classes;
+  }
+
 
 }

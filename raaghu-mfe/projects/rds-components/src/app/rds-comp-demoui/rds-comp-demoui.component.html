@@ -230,18 +230,18 @@
     <div class="row border p-4 m-2">
       <div class="col-6">
         <h6 class="mb-3">{{"BreadCrumbs - Advanced"|translate}}</h6>
-        <rds-breadcrumb [customBreadcrumbsItems]="customBreadcrumbsItems" role="Advanced" [iconShow]="true"
-                        [disabled]="false"></rds-breadcrumb>
+        <rds-breadcrumb role="Advanced" [iconShow]="true"
+                       ></rds-breadcrumb>
       </div>
       <div class="col-6">
         <h6 class="mb-3">{{"BreadCrumbs - Basic"|translate}}</h6>
-        <rds-breadcrumb [customBreadcrumbsItems]="customBreadcrumbsItems" role="basic" [iconShow]="false"
-                        [disabled]="false"></rds-breadcrumb>
+        <rds-breadcrumb  role="basic" [iconShow]="false"
+                        ></rds-breadcrumb>
       </div>
       <div class="col-6">
         <h6 class="mb-3">{{"BreadCrumbs - With Divider"|translate}}</h6>
-        <rds-breadcrumb [customBreadcrumbsItems]="customBreadcrumbsItems" role="withDivider" [iconShow]="true"
-                        [disabled]="false"></rds-breadcrumb>
+        <rds-breadcrumb  role="withDivider" [iconShow]="true"
+                        ></rds-breadcrumb>
       </div>
     </div>
 
@@ -540,10 +540,10 @@
   </div>
   <div class="card-body  pt-0">
     <div class="row border p-4 m-2">
-      <div class="col-4">
+      <div class="col-8">
         <h6 class="mb-3">{{"Color Picker"|translate}}</h6>
         <rds-color-picker value="#800080" [label]="translate.instant('Color picker')" [disabled]="false"
-                          title="Pick your color">
+                          title="Pick your color" [position]="'start'">
         </rds-color-picker>
       </div>
     </div>
@@ -623,8 +623,8 @@
 
       <div class="col-6">
         <h6 class="mb-3">{{"Dropdown List Without Icon"|translate}}</h6>
-        <rds-dropdownlist [DropdownItems]="DropdownItems" [listItems]="listItems" size="default"
-                          [colorVariant]="'btn-outline-light'" class="text-dark" [placeholder]="'Select Country'">
+        <rds-dropdownlist [listItems]="listItems" size="default"
+                          [colorVariant]="'outline-light'" class="text-dark" [placeholder]="'Select Country'">
           <ng-template #DropdownItems let-val let-index="index">
             <li [class.active]="index === 1">
               <div class="d-flex align-items-center bind-center-div1 group-list">
@@ -642,8 +642,8 @@
 
       <div class="col-6">
         <h6 class="mb-3">{{"Dropdown List With Icon"|translate}}</h6>
-        <rds-dropdownlist [DropdownItems]="DropdownItems" [listItems]="listItemsCountryCode" size="default"
-                          [colorVariant]="'btn-outline-light'" class="text-dark" [placeholder]="'Select Country Code'">
+        <rds-dropdownlist [listItems]="listItemsCountryCode" size="default"
+                          [colorVariant]="'outline-light'" class="text-dark" [placeholder]="'Select Country Code'">
           <ng-template #DropdownItems let-val let-index="index">
             <li [class.active]="index === 1">
               <div class="d-flex align-items-center bind-center-div1 group-list">
@@ -1425,9 +1425,9 @@
   </div>
   <div class="card-body  pt-0">
     <div class="row border p-4 m-2">
-      <div class="col-4">
+      <div class="col-8">
         <h6 class="mb-3">{{"Search"|translate}}</h6>
-        <rds-search-input Placeholder="Search" size="small"></rds-search-input>
+        <rds-search-input placeholder="Search.."  size="small"></rds-search-input>
       </div>
     </div>
   </div>
@@ -1525,7 +1525,7 @@
         <h6 class="mb-3">Side Nav</h6>
         <div class="row">
           <div class="col-lg-2">
-            <rds-side-nav [sidenavItems]="sidenavItems" [collapseRequired]="false"></rds-side-nav>
+            <rds-side-nav [sidenavItems]="sidenavItems" ></rds-side-nav>
           </div>
         </div>
       </div>
@@ -1542,22 +1542,26 @@
   </div>
   <div class="card-body  pt-0">
     <div class="row border p-4 m-2">
-      <div class="col-4">
+      <div class="col-12">
         <h6 class="mb-3">{{"Table"|translate}}</h6>
-        <rds-table [thead]="thead" [tbody]="tbody">
-          <ng-template #thead>
-            <th>{{"Name"|translate}}</th>
-            <th>{{"Age"|translate}}</th>
-            <th>{{"State"|translate}}</th>
-          </ng-template>
-          <ng-template #tbody let-tabval>
-            <tr>
-              <td>{{tabval.name}}</td>
-              <td>{{tabval.age}}</td>
-              <td>{{tabval.state}}</td>
-            </tr>
-          </ng-template>
-        </rds-table>
+        <rds-table [tableBorder]="false"
+                   [tableHeaderItems]="tableHeaderItems"
+                   [tableBodyItems]="tableBodyItems"
+                   colorVariant="primary"></rds-table>
+        <!--<rds-table [thead]="thead" [tbody]="tbody">
+    <ng-template #thead>
+      <th>{{"Name"|translate}}</th>
+      <th>{{"Age"|translate}}</th>
+      <th>{{"State"|translate}}</th>
+    </ng-template>
+    <ng-template #tbody let-tabval>
+      <tr>
+        <td>{{tabval.name}}</td>
+        <td>{{tabval.age}}</td>
+        <td>{{tabval.state}}</td>
+      </tr>
+    </ng-template>
+  </rds-table>-->
       </div>
     </div>
   </div>
@@ -1598,7 +1602,7 @@
       <div class="col-4">
         <!--<h6 class="mb-3">{{"Textarea"|translate}}</h6>-->
         <rds-textarea value="" [disabled]="false" rows="3" [readonly]="false" label="Text area" floatinginputLabel=""
-                      placeholderText="Add Placeholder" tooltipTitle="Text Area" tooltipPlacement="auto"></rds-textarea>
+         placeholderText="Add Placeholder" tooltipTitle="Text Area" tooltipPlacement="auto"></rds-textarea>
       </div>
     </div>
 
@@ -1617,19 +1621,19 @@
       <div class="col-4">
         <h6 class="mb-3">{{"Toast - position"|translate}}</h6>
         <div aria-live="polite" aria-atomic="true" style="position: relative; min-height: 200px;">
-          <rds-toasts [withImage]="false" [withHeader]="false" colorVariant="bg-info" headerTitle="Bootstrap"
+          <rds-toasts  [withHeader]="false" colorVariant="bg-info" headerTitle="Bootstrap"
                       time="11 Seconds ago"></rds-toasts>
 
         </div>
       </div>
       <div class="col-4">
         <h6 class="mb-3">{{"Toast"|translate}}</h6>
-        <rds-toasts message="Hello, world! This is a toast message." [withImage]="false" [withHeader]="false"
+        <rds-toasts message="Hello, world! This is a toast message." [withHeader]="false"
                     colorVariant="" headerTitle="Bootstrap" time="11 Seconds ago" position="Bottom-Right"></rds-toasts>
       </div>
       <div class="col-4">
         <h6 class="mb-3">{{"Toast - With Call to Action"|translate}}</h6>
-        <rds-toasts [withImage]="false" [withHeader]="false" colorVariant="undefined" headerTitle="Bootstrap"
+        <rds-toasts  [withHeader]="false" colorVariant="undefined" headerTitle="Bootstrap"
                     time="11 Seconds ago">
           <div class="mt-2 p-2 border-top">
             <rds-button [label]="'Take action'" [colorVariant]="'primary'" [size]="'small'" type="button">

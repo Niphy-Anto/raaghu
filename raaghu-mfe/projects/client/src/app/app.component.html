@@ -11,7 +11,7 @@
 </div>
 
 <ng-container *ngIf="viewCanvas">
-  <rds-offcanvas [canvasTitle]="translate.instant(canvasTitle)" [backDrop]="false" [offcanvaswidth]="500" [offId]="offcanvasId"
+  <rds-offcanvas [canvasTitle]="translate.instant(canvasTitle)" [offcanvaswidth]="500" [offId]="offcanvasId"
     [placement]="'end'" (onClose)="close()">
     <div class="section">
       <rds-nav-tab [navtabsItems]="getNavTabItems()" [activepage]="activePage" [horizontalAlignment]="'start'"
