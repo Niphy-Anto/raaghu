@@ -1,6 +1,6 @@
-
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
+
 <p align="center">
     <a href="https://raaghu.io" target="_blank">
         <img src="./static/banner2.png" alt="logo" width="2000"/>
@@ -43,7 +43,7 @@
 
 
 </br></br>
-<h2 align=" " style="border-bottom:0;">
+<h2 align="" style="border-bottom:0;">
 What is Raaghu?
 </h2>
 
@@ -58,7 +58,7 @@ Raaghu mfe can be used as a base to build complex components and UI layouts whil
         <img src="./static/why-raaghu.png" alt="logo" width="1000"/>
 <p/>
 
-<h2 align=" " style="border-bottom:0;color:#964BFF;">
+<h2 align="" style="border-bottom:0;color:#964BFF;">
 How Raaghu works?
 </h2>
 </br></br></br> 
@@ -71,7 +71,7 @@ We create your wireframes or use existing available wireframes. Based on your wi
 These components come together to create the same wireframe design and form a page.We deploy these components through our Ci/Cd pipeline and make use of our micro front end architecture. 
  
 </br></br>
-<h2 align=" " style="border-bottom:0;color:#964BFF;">
+<h2 align="" style="border-bottom:0;color:#964BFF;">
 Custom Services
 </h2>
  
@@ -82,7 +82,7 @@ Custom Services
 ✔️  Explainer videos​</br> 
 </br></br>
 
-<h2 align=" " style="border-bottom:0;color:#964BFF;">
+<h2 align="" style="border-bottom:0;color:#964BFF;">
 Benefits​
 </h2>
 
@@ -90,7 +90,7 @@ Benefits​
      <img src="./static/Features-new.png" alt="logo" width="1400"/>
 <p/>
 
-<h2 align=" " style="border-bottom:0;color:#964BFF;">
+<h2 align="" style="border-bottom:0;color:#964BFF;">
  Tutorials
 </h2>
  
@@ -102,7 +102,7 @@ Benefits​
 - [Demo](http://raaghu.io/): Dashboard Demo (Light & Dark theme) 
 
 </br> </br>
-<h2 align=" " style="border-bottom:0;color:#964BFF;">
+<h2 align="" style="border-bottom:0;color:#964BFF;">
  Contribute 🤝
 </h2>
 <p>
@@ -110,8 +110,8 @@ Any kind of positive contribution is welcome! Please help us to grow by contribu
     If you wish to contribute, you can work on any features <a href="https://github.com/Wai-Technologies/raaghu/tree/main/raaghu-mfe#-features" > [listed here] </a> or create one on your own. After adding your code, please send us a Pull Request.  
 </p>
 </br>
-<h2 align=" " style="border-bottom:0;color:#964BFF;">
- WAi Technology Contributors ✨
+<h2 align="" style="border-bottom:0;color:#964BFF;">
+ WAi Technologies Contributors ✨
 </h2>
  
 
@@ -121,66 +121,122 @@ Thanks goes to these wonderful people and Wai technology.
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
 
-<a href="https://github.com/omkarchoudhari">
-    <img src="https://avatars.githubusercontent.com/u/32321041?s=60&v=4" width="45" title="Omkar Choudhari"/>
-</a>
-<a href="https://github.com/mohanbari ">
-    <img src="https://avatars.githubusercontent.com/u/99885410?v=4 " width="45" title="Mohan Bari "/>
-</a>
-<a href="https://github.com/alok-nakhate ">
-    <img src="https://avatars.githubusercontent.com/u/99717383?v=4 " width="45" title="Alok Nakhate "/>
-</a>
-<a href="https://github.com/yohulchitre ">
-    <img src="https://avatars.githubusercontent.com/u/100934017?v=4 " width="45" title="Yohul Chitre "/>
-</a>
-<a href="https://github.com/Priyanka-Shinkar">
-    <img src="https://avatars.githubusercontent.com/u/99782840?s=60&v=4" width="45" title="Priyanka Shinkar"/>
-</a>
-<a href="https://github.com/apoorvalele ">
-    <img src="https://avatars.githubusercontent.com/u/99715342?v=4 " width="45" title="Apoorva Lele "/>
-</a>
-<a href="https://github.com/pratheesh-Krishnan ">
-    <img src="https://avatars.githubusercontent.com/u/99800378?v=4 " width="45" title="Pratheesh Krishnan "/>
-</a>
-<a href="https://github.com/Niphy-Anto ">
-    <img src="https://avatars.githubusercontent.com/u/99808648?v=4 " width="45" title="Niphy Anto "/>
-</a>
-<a href="https://github.com/suraj-khupse ">
-    <img src="https://avatars.githubusercontent.com/u/99809670?v=4 " width="45" title="Suraj Khupse "/>
-</a>
-<a href="https://github.com/rahulp34 ">
-    <img src="https://avatars.githubusercontent.com/u/55730676?v=4 " width="45" title="Rahul Patil "/>
-</a>
-<a href="https://github.com/Ketan-Khalate ">
-    <img src="https://avatars.githubusercontent.com/u/99807624?v=4 " width="45" title="Ketan Khalate "/>
-</a>
-<a href="https://github.com/obaid-ur-rahman ">
-    <img src="https://avatars.githubusercontent.com/u/100338565?v=4 " width="45" title="obaid-ur-rahman "/>
-</a>
-<a href="https://github.com/Anupriya-Biju ">
-    <img src="https://avatars.githubusercontent.com/u/99807952?v=4 " width="45" title="Anupriya Biju "/>
-</a>
-<a href="https://github.com/swamirajanarse  ">
-    <img src="https://avatars.githubusercontent.com/u/97228584?s=60&v=4  " width="45" title="swamirajanarse  "/>
-</a>
-<a href="https://github.com/neeraj-bhakre ">
-    <img src="https://avatars.githubusercontent.com/u/100110930?v=4 " width="45" title="Neeraj Bhakre "/>
-</a>
-<a href="https://github.com/maithililondhewaiin  ">
-    <img src="https://avatars.githubusercontent.com/u/100565002?s=60&v=4  " width="45" title="maithililondhewaiin  "/>
-</a>
-<a href="https://github.com/Vaish84  ">
-    <img src="https://avatars.githubusercontent.com/u/104414130?s=60&v=4  " width="45" title="Vaish84  "/>
-</a>
-<a href="https://github.com/basavraj-chorgasti ">
-    <img src="https://avatars.githubusercontent.com/u/99861347?v=4 " width="45" title="Basavraj Chorgasti "/>
-</a>
-<a href="https://github.com/shrikant-birajdar ">
-    <img src="https://avatars.githubusercontent.com/u/99856776?v=4 " width="45" title="Shrikant Birajdar "/>
-</a>
-
-
-
+<table>
+  <tr>
+    <td align="center" border="none">
+      <a href="https://github.com/omkarchoudhari">
+        <img src="https://avatars.githubusercontent.com/u/32321041?s=100&v=4" width="100" title="Omkar Choudhari"/>
+        <br /><sub><b>Omkar Choudhari</b></sub>
+      </a>
+    </td>
+    <td align="center" border="none">
+      <a href="https://github.com/mohanbari">
+        <img src="https://avatars.githubusercontent.com/u/99885410?s=100v=4" width="100" title="Mohan Bari"/>
+        <br /><sub><b>Mohan Bari</b></sub>
+      </a>
+    </td>
+    <td align="center" style="border: none">
+      <a href="https://github.com/alok-nakhate">
+        <img src="https://avatars.githubusercontent.com/u/99717383?s=100v=4" width="100" title="Alok Nakhate"/>
+        <br /><sub><b>Alok Nakhate</b></sub>
+      </a>
+    </td>
+    <td align="center" style="border: none">
+      <a href="https://github.com/yohulchitre">
+        <img src="https://avatars.githubusercontent.com/u/100934017?s=100v=4" width="100" title="Yohul Chitre"/>
+        <br /><sub><b>Yohul Chitre</b></sub>
+      </a>
+    </td>
+    <td align="center" style="border: none">
+      <a href="https://github.com/Priyanka-Shinkar">
+        <img src="https://avatars.githubusercontent.com/u/99782840?s=100&v=4" width="100" title="Priyanka Shinkar"/>
+        <br /><sub><b>Priyanka Shinkar</b></sub>
+      </a>
+    </td>
+    <td align="center" style="border: none">
+      <a href="https://github.com/apoorvalele">
+        <img src="https://avatars.githubusercontent.com/u/99715342?s=100v=4" width="100" title="Apoorva Lele"/>
+        <br /><sub><b>Apoorva Lele</b></sub>
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" style="border: none">
+      <a href="https://github.com/pratheesh-Krishnan">
+        <img src="https://avatars.githubusercontent.com/u/99800378?s=100v=4" width="100" title="Pratheesh Krishnan"/>
+        <br /><sub><b>Pratheesh Krishnan</b></sub>
+      </a>
+    </td>
+    <td align="center" style="border: none">
+      <a href="https://github.com/Niphy-Anto">
+        <img src="https://avatars.githubusercontent.com/u/99808648?s=100v=4" width="100" title="Niphy Anto"/>
+        <br /><sub><b>Niphy Anto</b></sub>
+      </a>
+    </td>
+    <td align="center" style="border: none">
+      <a href="https://github.com/rahulp34">
+        <img src="https://avatars.githubusercontent.com/u/55730676?s=100v=4" width="100" title="Rahul Patil"/>
+        <br /><sub><b>Rahul Patil</b></sub>
+      </a>
+    </td>
+    <td align="center" style="border: none">
+      <a href="https://github.com/Ketan-Khalate">
+        <img src="https://avatars.githubusercontent.com/u/99807624?s=100v=4" width="100" title="Ketan Khalate"/>
+        <br /><sub><b>Ketan Khalate</b></sub>
+      </a>
+    </td>
+    <td align="center" style="border: none">
+      <a href="https://github.com/obaid-ur-rahman">
+        <img src="https://avatars.githubusercontent.com/u/100338565?s=100v=4" width="100" title="Obaid Rahman"/>
+        <br /><sub><b>Obaid Rahman</b></sub>
+      </a>
+    </td>
+    <td align="center" style="border: none">
+      <a href="https://github.com/swamirajanarse">
+        <img src="https://avatars.githubusercontent.com/u/97228584?s=100&v=4" width="100" title="Swamiraj Anarse"/>
+        <br /><sub><b>Swamiraj Anarse</b></sub>
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" style="border: none">
+      <a href="https://github.com/neeraj-bhakre">
+        <img src="https://avatars.githubusercontent.com/u/100110930?s=100v=4" width="100" title="Neeraj Bhakre"/>
+        <br /><sub><b>Neeraj Bhakre</b></sub>
+      </a>
+    </td>
+    <td align="center" style="border: none">
+      <a href="https://github.com/maithililondhewaiin">
+        <img src="https://avatars.githubusercontent.com/u/100565002?s=100&v=4" width="100" title="Maithili Londhe">
+        <br /><sub><b>Maithili Londhe</b></sub>
+      </a>
+    </td>
+    <td align="center" style="border: none">
+      <a href="https://github.com/Vaish84">
+        <img src="https://avatars.githubusercontent.com/u/104414130?s=100&v=4" width="100" title="Vaishnavi Pardeshi"/>
+        <br /><sub><b>Vaishnavi Pardeshi</b></sub>
+      </a>
+    </td>
+    <td align="center" style="border: none">
+      <a href="https://github.com/shrikant-birajdar">
+        <img src="https://avatars.githubusercontent.com/u/99856776?s=100v=4" width="100" title="Shrikant Birajdar"/>
+        <br /><sub><b>Shrikant Birajdar</b></sub>
+      </a>
+    </td>
+    <td align="center" style="border: none">
+      <a href="https://github.com/basavraj-chorgasti">
+        <img src="https://avatars.githubusercontent.com/u/99861347?s=100v=4" width="100" title="Basavraj Chorgasti"/>
+        <br /><sub><b>Basavraj Chorgasti</b></sub>
+      </a>
+    </td>
+    <td align="center" style="border: none">
+      <a href="https://github.com/rohit9096">
+        <img src="https://avatars.githubusercontent.com/u/88035057?s=100v=4" width="100" title="Rohit Kulkarni"/>
+        <br /><sub><b>Rohit Kulkarni</b></sub>
+      </a>
+    </td>
+  </tr>
+</table>
 
 
 <!-- [Omkar Choudhari](https://github.com/omkarchoudhari), [Alok Nakhate](https://github.com/alok-nakhate), [Rohit Pingale](https://github.com/pingroh), [Mohan Bari](https://github.com/mohanbari), [Apoorva Lele](https://github.com/apoorvalele), [Yohul Chitre](https://github.com/yohulchitre),
