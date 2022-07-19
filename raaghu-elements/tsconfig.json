@@ -11,6 +11,10 @@
       "@libs/rds-badge": [
         "rds-elements/rds-badge/public-api",
         "rds-elements/rds-badge"
+      ],
+      "rds-price": [
+        "dist/rds-price/rds-price",
+        "dist/rds-price"
       ]
     },
     "skipLibCheck": true,
