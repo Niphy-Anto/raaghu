@@ -122,61 +122,61 @@ Thanks goes to these wonderful people and Wai technology.
 <!-- markdownlint-disable -->
 
 <a href="https://github.com/omkarchoudhari">
-    <img src="https://avatars.githubusercontent.com/u/32321041?s=60&v=4" width="45" title="Omkar Choudhari"/>
+    <img src="https://avatars.githubusercontent.com/u/32321041?s=60&v=4" title="Omkar Choudhari"/>
 </a>
 <a href="https://github.com/mohanbari ">
-    <img src="https://avatars.githubusercontent.com/u/99885410?v=4 " width="45" title="Mohan Bari "/>
+    <img src="https://avatars.githubusercontent.com/u/99885410?v=4 " title="Mohan Bari "/>
 </a>
 <a href="https://github.com/alok-nakhate ">
-    <img src="https://avatars.githubusercontent.com/u/99717383?v=4 " width="45" title="Alok Nakhate "/>
+    <img src="https://avatars.githubusercontent.com/u/99717383?v=4 " title="Alok Nakhate "/>
 </a>
 <a href="https://github.com/yohulchitre ">
-    <img src="https://avatars.githubusercontent.com/u/100934017?v=4 " width="45" title="Yohul Chitre "/>
+    <img src="https://avatars.githubusercontent.com/u/100934017?v=4 " title="Yohul Chitre "/>
 </a>
 <a href="https://github.com/Priyanka-Shinkar">
-    <img src="https://avatars.githubusercontent.com/u/99782840?s=60&v=4" width="45" title="Priyanka Shinkar"/>
+    <img src="https://avatars.githubusercontent.com/u/99782840?s=60&v=4" title="Priyanka Shinkar"/>
 </a>
 <a href="https://github.com/apoorvalele ">
-    <img src="https://avatars.githubusercontent.com/u/99715342?v=4 " width="45" title="Apoorva Lele "/>
+    <img src="https://avatars.githubusercontent.com/u/99715342?v=4 " title="Apoorva Lele "/>
 </a>
 <a href="https://github.com/pratheesh-Krishnan ">
-    <img src="https://avatars.githubusercontent.com/u/99800378?v=4 " width="45" title="Pratheesh Krishnan "/>
+    <img src="https://avatars.githubusercontent.com/u/99800378?v=4 " title="Pratheesh Krishnan "/>
 </a>
 <a href="https://github.com/Niphy-Anto ">
-    <img src="https://avatars.githubusercontent.com/u/99808648?v=4 " width="45" title="Niphy Anto "/>
+    <img src="https://avatars.githubusercontent.com/u/99808648?v=4 " title="Niphy Anto "/>
 </a>
 <a href="https://github.com/suraj-khupse ">
-    <img src="https://avatars.githubusercontent.com/u/99809670?v=4 " width="45" title="Suraj Khupse "/>
+    <img src="https://avatars.githubusercontent.com/u/99809670?v=4 " title="Suraj Khupse "/>
 </a>
 <a href="https://github.com/rahulp34 ">
-    <img src="https://avatars.githubusercontent.com/u/55730676?v=4 " width="45" title="Rahul Patil "/>
+    <img src="https://avatars.githubusercontent.com/u/55730676?v=4 " title="Rahul Patil "/>
 </a>
 <a href="https://github.com/Ketan-Khalate ">
-    <img src="https://avatars.githubusercontent.com/u/99807624?v=4 " width="45" title="Ketan Khalate "/>
+    <img src="https://avatars.githubusercontent.com/u/99807624?v=4 " title="Ketan Khalate "/>
 </a>
 <a href="https://github.com/obaid-ur-rahman ">
-    <img src="https://avatars.githubusercontent.com/u/100338565?v=4 " width="45" title="obaid-ur-rahman "/>
+    <img src="https://avatars.githubusercontent.com/u/100338565?v=4 " title="obaid-ur-rahman "/>
 </a>
 <a href="https://github.com/Anupriya-Biju ">
-    <img src="https://avatars.githubusercontent.com/u/99807952?v=4 " width="45" title="Anupriya Biju "/>
+    <img src="https://avatars.githubusercontent.com/u/99807952?v=4 " title="Anupriya Biju "/>
 </a>
 <a href="https://github.com/swamirajanarse  ">
-    <img src="https://avatars.githubusercontent.com/u/97228584?s=60&v=4  " width="45" title="swamirajanarse  "/>
+    <img src="https://avatars.githubusercontent.com/u/97228584?s=60&v=4  " title="swamirajanarse  "/>
 </a>
 <a href="https://github.com/neeraj-bhakre ">
-    <img src="https://avatars.githubusercontent.com/u/100110930?v=4 " width="45" title="Neeraj Bhakre "/>
+    <img src="https://avatars.githubusercontent.com/u/100110930?v=4 " title="Neeraj Bhakre "/>
 </a>
 <a href="https://github.com/maithililondhewaiin  ">
-    <img src="https://avatars.githubusercontent.com/u/100565002?s=60&v=4  " width="45" title="maithililondhewaiin  "/>
+    <img src="https://avatars.githubusercontent.com/u/100565002?s=60&v=4  " title="maithililondhewaiin  "/>
 </a>
 <a href="https://github.com/Vaish84  ">
-    <img src="https://avatars.githubusercontent.com/u/104414130?s=60&v=4  " width="45" title="Vaish84  "/>
+    <img src="https://avatars.githubusercontent.com/u/104414130?s=60&v=4  " title="Vaish84  "/>
 </a>
 <a href="https://github.com/basavraj-chorgasti ">
-    <img src="https://avatars.githubusercontent.com/u/99861347?v=4 " width="45" title="Basavraj Chorgasti "/>
+    <img src="https://avatars.githubusercontent.com/u/99861347?v=4 " title="Basavraj Chorgasti "/>
 </a>
 <a href="https://github.com/shrikant-birajdar ">
-    <img src="https://avatars.githubusercontent.com/u/99856776?v=4 " width="45" title="Shrikant Birajdar "/>
+    <img src="https://avatars.githubusercontent.com/u/99856776?v=4 " title="Shrikant Birajdar "/>
 </a>
 
 
