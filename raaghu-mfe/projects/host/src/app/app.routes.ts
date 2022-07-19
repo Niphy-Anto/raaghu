@@ -297,6 +297,21 @@ export const APP_ROUTES: Routes = [
                 }).then((m) => m.AppModule),
             data: { permission: 'Pages.Administration.Languages.ChangeTexts' },
         },
+        {
+          path: 'pagenotfound',
+          loadChildren: () =>
+              loadRemoteModule({
+                  type: 'module',
+                  remoteEntry: MfeConfig.pagenotfound.url,
+                  exposedModule: './AppModule',
+                }).then((m) => m.AppModule),
+              data: { permission: '' },   
+      },
+      {
+        path: '**',
+         redirectTo: 'pagenotfound',
+      
+    }
     ]
   },
   {
@@ -310,7 +325,17 @@ export const APP_ROUTES: Routes = [
     ]
   },
   {
+      path: 'pagenotfound',
+      loadChildren: () =>
+          loadRemoteModule({
+              type: 'module',
+              remoteEntry: MfeConfig.pagenotfound.url,
+              exposedModule: './AppModule',
+            }).then((m) => m.AppModule),
+          data: { permission: '' },   
+  },
+  {
     path: '**',
-    redirectTo: 'pages/dashboard',
-  }
+    redirectTo: 'pagenotfound',
+}
 ];
