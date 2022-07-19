@@ -1,0 +1,25 @@
+<rds-label label="Customer also purchased"></rds-label>
+<div class="row">
+  <div class="col-md-3" *ngFor="let item of Data">
+    <rds-card [header]="header" [body]="body" [borderCard]="false" [footer]="footer" class="rounded-avatar-basic">
+      <ng-template #header>
+        <div class="text-center">
+          <img src="https://picsum.photos/seed/picsum/1200/600" class="card-img-top" alt="">
+        </div>
+      </ng-template>
+      <ng-template #body>
+        <h5 class="custom-title">{{item.title}}</h5>
+        <p class="custom-desc">{{item.subTitle}}</p>
+      </ng-template>
+      <ng-template #footer>
+        <div class="d-flex justify-content-between">
+          <rds-label [label]="item.price"></rds-label>
+          <rds-badge size="smallest" [label]="item.badgeLabel" [pillBadges]="false" [positioned]="false"
+            [iconBadge]="false" colorVariant="warning" [close]="false" top="" start="" [iconStroke]="true"
+            [iconFill]="false">
+          </rds-badge>
+        </div>
+      </ng-template>
+    </rds-card>
+  </div>
+</div>

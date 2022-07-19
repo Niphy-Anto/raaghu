@@ -97,10 +97,11 @@ import { RdsCompSecurityShimmerComponent } from './rds-comp-security/rds-comp-se
 import { RdsCompOrganizationTreeShimmerComponent } from './rds-comp-organization-tree/rds-comp-organization-tree-shimmer/rds-comp-organization-tree-shimmer.component';
 import { RdsCompPropertiesShimmerComponent } from './rds-comp-properties/rds-comp-properties-shimmer/rds-comp-properties-shimmer.component';
 import { RdsCompTableShimmerComponent } from './rds-comp-data-table/rds-comp-table-shimmer/rds-comp-table-shimmer.component';
+import { RdsCompProductListComponent } from './rds-comp-product-list/rds-comp-product-list.component';
 
 
 @NgModule({
-  declarations: [
+  declarations: [	
 
     AppComponent,
     RdsLoginComponent,
@@ -183,9 +184,9 @@ import { RdsCompTableShimmerComponent } from './rds-comp-data-table/rds-comp-tab
     RdsCompOrganizationTreeShimmerComponent,
     RdsCompPropertiesShimmerComponent,
     RdsCompTableShimmerComponent,
-    //RdsCompLanguageTextListComponent,
-
-  ],
+  //RdsCompLanguageTextListComponent,
+      RdsCompProductListComponent
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
