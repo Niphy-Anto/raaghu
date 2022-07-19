@@ -3,6 +3,7 @@ import { Story, Meta } from '@storybook/angular';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RdsTagsComponent } from './rds-tags.component';
+import { RdsIconModule } from '@libs/rds-icon';
 
 export default {
   title: 'Elements/Tag',
@@ -10,17 +11,16 @@ export default {
   decorators: [
     moduleMetadata({
 
-      imports: [CommonModule, FormsModule],
+      imports: [CommonModule, FormsModule,RdsIconModule],
     }),
   ],
   argTypes: {
-  
-    Tagtype: {
-      options: ['Square', 'Round'],
-      control: { type: 'radio' }
-    }, 
     colorVariant: {
       options: ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark', 'default'],
+      control: { type: 'select' }
+    },
+    tagType: {
+      options: ['square', 'round'],
       control: { type: 'select' }
     },
 
@@ -33,16 +33,15 @@ const Template: Story<RdsTagsComponent> = (args: RdsTagsComponent) => ({
 
 export const basic = Template.bind({})
 basic.args = {
-  tagType: 'Square',
   roles: 'Basic',
-  colorVariant: 'primary'
-
+  colorVariant: 'primary',
+  tagType: 'square'
 }
 
 export const TagWithScroll = Template.bind({})
 TagWithScroll.args = {
-  tagType: 'Square',
   roles: 'TagWithScroll',
-  colorVariant: 'primary'
+  colorVariant: 'primary',
+  tagType: 'square'
 
 }

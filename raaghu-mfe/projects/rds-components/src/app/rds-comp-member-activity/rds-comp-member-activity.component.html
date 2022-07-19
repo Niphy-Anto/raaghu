@@ -1,3 +1,5 @@
+
+
 <div class="col-md-6">
     <div class="row">
     <div class="col-md-6">
@@ -6,8 +8,8 @@
     </div>
     <div class="col-md-6">
         <rds-dropdownlist colorVariant="btn-secondary" [placeholder]="'Roles'" [listItems]="listDropdown"
-            (onSelect)="selectedRole($event)" [DropdownItems]="DropdownItems" [listItems]="inputTypeList">
-            <ng-template #DropdownItems let-val>
+            (onSelect)="selectedRole($event)" [listItems]="inputTypeList">
+            <ng-template let-val>
                 <li><a class="dropdown-item"><i class="bi bi-bootstrap p-1"></i>{{val.value}}</a></li>
             </ng-template>
         </rds-dropdownlist>

@@ -10,7 +10,7 @@
 </div>
 
 <ng-container *ngIf="viewCanvas">
-  <rds-offcanvas [canvasTitle]="translate.instant(canvasTitle)" [backDrop]="false" [offcanvaswidth]="550" [offId]="offcanvasId" [placement]="'end'" (onClose)="close()">
+  <rds-offcanvas [canvasTitle]="translate.instant(canvasTitle)" [offcanvaswidth]="550" [offId]="offcanvasId" [placement]="'end'" (onClose)="close()">
     <div class="section">
       <rds-nav-tab [navtabsItems]="navtabsItems" [activepage]="activePage" [horizontalAlignment]="'start'"
                    [verticalAlignment]="false" [pills]="false" [tabs]="true" [fill]="false" [justified]="false">

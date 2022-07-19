@@ -8,12 +8,14 @@ export default {
 
 const Template: Story<RdsColorPickerComponent> = (args: RdsColorPickerComponent) => ({
     props: args,
+
 });
 
 export const Basic = Template.bind({})
 Basic.args = {
-    title: 'Pick your color',
+   
     label: 'Color picker',
     value: '#800080',
-    disabled: false
+    disabled: false,
+    
 }

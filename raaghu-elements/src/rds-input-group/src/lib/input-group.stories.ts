@@ -12,19 +12,32 @@ export default {
     //         schemas: [CUSTOM_ELEMENTS_SCHEMA],
     //     }),
     // ],
-    argTypes: {      
+    argTypes: {
+        size: {
+            options: ['sm', 'md', 'lg'],
+            control: { type: 'select' }
+        },
     },
 } as Meta;
 
 export const Basic: Story<RdsInputGroupComponent> = (args) => ({
     props: args,
-
-    template: `<rds-input-group>
-    <input   type="text" class="form-control"  id="Errormessage" placeholder="placeholder">    
-    <button class="btn btn-outline-secondary" type="button" id="button-addon1">Button</button>  
-    </rds-input-group>`
-
+    template:   `<rds-input-group>
+                    <label>{{label}}</label>
+                        <div class="input-group mb-2 " [ngClass]="{'input-group-sm': size == 'sm', 'input-group-lg': size == 'lg'}">
+                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="button-addon1" placeholder="placeholder">
+                            <button class="btn btn-outline-secondary" type="button" id="button-addon1">Button</button>
+                        </div>
+                </rds-input-group>`
+  
 });
 Basic.args = {
-    inputGroupSize: 'md',
+    
 }
+
+
+
+// template: `<rds-input-group>
+// <input   type="text" class="form-control"  id="Errormessage" placeholder="placeholder">
+// <button class="btn btn-outline-secondary" type="button" id="button-addon1">Button</button>
+// </rds-input-group>`

@@ -83,13 +83,13 @@ export const MfeConfig = {
   apiscope: {
     url: 'http://localhost:5028/remoteEntry.js',
   },
-  memberactivity:{
+  memberactivity: {
     url: 'http://localhost:5029/remoteEntry.js',
   },
-  monthlysummary:{
+  monthlysummary: {
     url: 'http://localhost:5030/remoteEntry.js',
   },
   languagetext: {
     url: 'http://localhost:5025/remoteEntry.js',
-  },
+  }
 };

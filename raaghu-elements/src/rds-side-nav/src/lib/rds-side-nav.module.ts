@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { RdsIconModule } from '../../../rds-icon/src/lib/rds-icon.module';
+import { RdsIconModule } from '@libs/rds-icon';
 import { RdsSideNavComponent } from './rds-side-nav.component';
 
 

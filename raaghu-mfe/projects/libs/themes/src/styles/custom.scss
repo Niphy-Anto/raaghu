@@ -859,6 +859,11 @@ div#file-upload-filename {
 }
 
 
+a.nav-link.breadcrumb-navlink.active{
+  color: $black;
+  display: inline;
+}
+
 /*---------------------------------------
 custom scrollbar
 ---------------------------------------*/
@@ -884,4 +889,6 @@ custom scrollbar
     /* Handle on hover */
     ::-webkit-scrollbar-thumb:hover {
       background: linear-gradient(45deg, #500DD1, #0796E3); 
-    }
+    }                                 
+
+  

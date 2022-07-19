@@ -5,14 +5,17 @@ export default {
   title: 'Elements/Card',
   component: RdsCardComponent,
   argTypes: {    
-    height: { control: 'text' },
+    colorVariant: {
+      options: ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark', 'Standard'],
+      control: { type: 'select' }
+    },
   },
 } as Meta;
 
 const Template: Story<RdsCardComponent> = (args: RdsCardComponent) => ({
   props: args,
   template: `<rds-card  [header]="header" [body]="body"
-   [footer]="footer"  [Data]="Data"
+   [footer]="footer"  [Data]="Data" [borderCard]="borderCard"
     class="rounded-avatar-basic">
    <ng-template #header>
    <div class="text-center">
@@ -32,11 +35,11 @@ const Template: Story<RdsCardComponent> = (args: RdsCardComponent) => ({
 // const teletext = "some text"
 export const Basic = Template.bind({});
 Basic.args = {
-  width: '30%',
-  cardWidth: 0,
+  //width: '30%',
+  //cardWidth: 0,
   colorVariant: '',
   borderCard: false,
-  Recommended: false,
+  //Recommended: false,
   Data: {
     headerTitle: "Header Title",
     cardDescription: "Some quick example text to build on the card title and make up the bulk of the card\'s content"
@@ -47,7 +50,7 @@ Basic.args = {
 const Avatar: Story<RdsCardComponent> = (args: RdsCardComponent) => ({
   props: args,
   template: `<rds-card  [header]="header" [body]="body" [Data]="Data"
-   [footer]="footer"
+   [footer]="footer" [borderCard]="borderCard"
     width="30%"
     class="rounded-avatar-left">
    <ng-template #header>
@@ -67,11 +70,11 @@ const Avatar: Story<RdsCardComponent> = (args: RdsCardComponent) => ({
 // const teletext = "some text"
 export const withAvatar = Avatar.bind({});
 withAvatar.args = {
-  width: '30%',
-  cardWidth: 0,
+  //width: '30%',
+  //cardWidth: 0,
   colorVariant: '',
   borderCard: false,
-  Recommended: false,
+  //Recommended: false,
   Data: {
     headerTitle: "Header Title",
     cardDescription: "Some quick example text to build on the card title and make up the bulk of the card\'s content"
@@ -82,8 +85,9 @@ const Avatarpos: Story<RdsCardComponent> = (args: RdsCardComponent) => ({
   props: args,
   template: `<rds-card  [header]="header" [body]="body" [Data]="Data"
      [footer]="footer"
+     [borderCard]="borderCard"
       width="28%"
-      class="rounded-avatar-center">
+     >
      <ng-template #header>
      <div class="banner-image1"><img class="img-responsive" src="https://picsum.photos/seed/picsum/1200/600"></div>
      <img src="https://placekitten.com/300/300" alt="" class="profile-image img-avatar">
@@ -101,11 +105,11 @@ const Avatarpos: Story<RdsCardComponent> = (args: RdsCardComponent) => ({
 // const teletext = "some text"
 export const withAvatarcenter = Avatarpos.bind({});
 withAvatarcenter.args = {
-  width: '30%',
-  cardWidth: 0,
+ // width: '30%',
+  //cardWidth: 0,
   colorVariant: '',
   borderCard: false,
-  Recommended: false,
+  //Recommended: false,
   Data: {
     headerTitle: "Header Title",
     cardDescription: "Some quick example text to build on the card title and make up the bulk of the card\'s content"

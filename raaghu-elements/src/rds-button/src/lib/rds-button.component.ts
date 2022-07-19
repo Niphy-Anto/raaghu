@@ -63,6 +63,12 @@ export class RdsButtonComponent implements AfterViewInit {
   @Input() tooltipPlacement: 'top' | 'bottom' | 'right' | 'left' = 'bottom';
 
   @Input() id: string = 'buttonId';
+
+  @Input() isLoading: boolean = false;
+
+  @Input() showLoadingSpinner: boolean = false;
+
+
   constructor() {
     this.id = this.id + RdsButtonComponent.count++;
   }
@@ -105,6 +111,13 @@ export class RdsButtonComponent implements AfterViewInit {
   ngOnDestroy(): void {
 
     RdsButtonComponent.count = 0;
+  }
+
+  buttonClick(evt: any) {
+    if (this.showLoadingSpinner) {
+      this.isLoading = true;
+    }
+    this.onClick.emit(evt);
   }
 
 }

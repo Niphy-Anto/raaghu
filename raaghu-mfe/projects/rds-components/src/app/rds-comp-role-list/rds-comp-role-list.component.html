@@ -19,7 +19,7 @@
         <div class="table-responsive">
           <app-rds-data-table [tableData]="tableData" [inlineEdit]="false" [pagination]="true" [recordsPerPage]="5"
             [actions]="actions" (deleteEvent)="deleteEvent.emit($event)" (onActionSelection)="onActionSelect($event)"
-            [tableHeaders]="roleHeaders"></app-rds-data-table>
+            [tableHeaders]="roleHeaders" [isShimmer]="isShimmer" ></app-rds-data-table>
         </div>
       </div>
     </div>
@@ -28,7 +28,7 @@
     <rds-fab-menu [listItems]="listItems" [menuicon]="'plus'" [colorVariant]="'primary'" [menuiconWidth]="'12px'" [menuiconHeight]="'12px'" (onSelect)="onSelectMenu($event)"></rds-fab-menu>
   </div>
 </div>
-<rds-offcanvas [canvasTitle]="translate.instant(canvasTitle)" [backDrop]="true" [offId]="'RoleOffcanvas'" [offcanvaswidth]="550"
+<rds-offcanvas [canvasTitle]="translate.instant(canvasTitle)"  [offId]="'RoleOffcanvas'" [offcanvaswidth]="550"
   [placement]="'end'" *ngIf="viewCanvas" (onClose)="close()">
   <rds-nav-tab [navtabsItems]="getNavTabItems()" (onClicktab)="getSelectedNavTab($event)" [activepage]="activePage"
     [horizontalAlignment]="'start'" [verticalAlignment]="false" [pills]="false" [tabs]="true" [fill]="false"
@@ -37,7 +37,7 @@
       <div class="tab-pane fade" [ngClass]="{'show active': activePage === 0}" id="Role" role="tabpanel"
         aria-labelledby="nav-home-tab">
         <app-rds-comp-new-role (RoleInfo)="getRoleData($event)" [roleData]="RolesData" (onCancel)="close()"
-          [isReset]="isReset">
+          [isReset]="isReset" [EditShimmer]="EditShimmer" >
         </app-rds-comp-new-role>
       </div>
       <div class="tab-pane fade" [ngClass]="{'show active': activePage === 1}" id="Permission" role="tabpanel"
@@ -69,7 +69,7 @@
 </rds-offcanvas>
 
 <!-- Filter by Permissions Offcanvas -->
-<rds-offcanvas [canvasTitle]="translate.instant(canvasTitle)" [backDrop]="true" [offId]="'PermissionOffcanvas'"
+<rds-offcanvas [canvasTitle]="translate.instant(canvasTitle)"  [offId]="'PermissionOffcanvas'"
   [offcanvaswidth]="550" [placement]="'end'" *ngIf="viewCanvas" (onClose)="closeFilterPermission()">
   
   <app-rds-comp-permission-tree [treeData]="permissionsList" [selectedItems]="SelectedPermissionValues"
@@ -85,7 +85,7 @@
     </rds-button>
   </div>
 </rds-offcanvas>
-<rds-offcanvas [canvasTitle]="translate.instant(canvasTitle)" [backDrop]="false" [offId]="'RoleOffcanvas'" [offcanvaswidth]="550"
+<rds-offcanvas [canvasTitle]="translate.instant(canvasTitle)"  [offId]="'RoleOffcanvas'" [offcanvaswidth]="550"
   [placement]="'end'" *ngIf="viewCanvas" (onClose)="close()">
   <rds-nav-tab [navtabsItems]="getNavTabItems()" (onClicktab)="getSelectedNavTab($event)" [activepage]="activePage"
     [horizontalAlignment]="'start'" [verticalAlignment]="false" [pills]="false" [tabs]="true" [fill]="false"

@@ -80,7 +80,9 @@ export class AppComponent {
         userList: this.userList,
         roles: this.roles,
         isEdit: false,
-        orgTreeData: this.orgTreeData
+        orgTreeData: this.orgTreeData,
+        isShimmer:true,
+        editShimmer:true
       },
       output: {
         Saveuserinfo: (eventData: any) => {
@@ -97,6 +99,7 @@ export class AppComponent {
           this.userinfo = undefined;
           const mfeConfigedit = this.rdsUserMfeConfig;
           mfeConfigedit.input.userinfo = { ...this.userinfo };
+          mfeConfigedit.input.editShimmer=true;
           this.rdsUserMfeConfig = mfeConfigedit;
         },
         deleteUser: (eventData: any) => {
@@ -149,6 +152,9 @@ export class AppComponent {
             this.isEdit = true;
           } else {
             this.isEdit = false;
+            const mfeConfigedit = this.rdsUserMfeConfig;
+            mfeConfigedit.input.editShimmer =false;
+            this.rdsUserMfeConfig = { ...mfeConfigedit };
           }
           this.store.dispatch(getUserForEdit(eventData.id));
           this.store.select(selectUserForEdit).subscribe((res: any) => {
@@ -229,7 +235,7 @@ export class AppComponent {
                 if (
                   result &&
                   result.UserPermissionI &&
-                  result.UserPermissionI.permissions
+                  result.UserPermissionI.permissions && result.status == "success"
                 ) {
                   this.Permission = [];
                   this.selectedPermissions = [];
@@ -244,11 +250,13 @@ export class AppComponent {
                       }
                     );
                   }
-                }
-                const mfeConfigedit = this.rdsUserMfeConfig;
+                  const mfeConfigedit = this.rdsUserMfeConfig;
                 mfeConfigedit.input.permissionsList = [...this.Permission];
                 mfeConfigedit.input.selectedPermissions = [...this.selectedPermissions];
+                mfeConfigedit.input.editShimmer=false;
                 this.rdsUserMfeConfig = { ...mfeConfigedit };
+                }
+                
               });
           }
         },
@@ -266,7 +274,7 @@ export class AppComponent {
     this.store.dispatch(getUsers([]));
     this.store.select(selectAllUsers).subscribe((res: any) => {
       this.userList = [];
-      if (res && res.users && res.users.items) {
+      if (res && res.users && res.users.items &&  res.status == "success") {
         res.users.items.forEach((element: any) => {
           let statusTemplate;
           if (element.isActive) {
@@ -308,6 +316,7 @@ export class AppComponent {
 
         const mfeConfig = this.rdsUserMfeConfig;
         mfeConfig.input.userList = [...this.userList];
+        mfeConfig.input.isShimmer=false;
         this.rdsUserMfeConfig = mfeConfig;
       }
     });
