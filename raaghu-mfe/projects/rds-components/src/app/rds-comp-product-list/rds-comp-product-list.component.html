@@ -14,10 +14,12 @@
       <ng-template #footer>
         <div class="d-flex justify-content-between">
           <rds-label [label]="item.price"></rds-label>
-          <rds-badge size="smallest" [label]="item.badgeLabel" [pillBadges]="false" [positioned]="false"
+          <span *ngIf="item.badgeLabel != ''">
+            <rds-badge size="smallest" [label]="item.badgeLabel" [pillBadges]="false" [positioned]="false"
             [iconBadge]="false" colorVariant="warning" [close]="false" top="" start="" [iconStroke]="true"
             [iconFill]="false">
           </rds-badge>
+          </span>
         </div>
       </ng-template>
     </rds-card>

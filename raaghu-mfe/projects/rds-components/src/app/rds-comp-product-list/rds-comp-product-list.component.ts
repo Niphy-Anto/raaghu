@@ -25,6 +25,7 @@ export class RdsCompProductListComponent implements OnInit {
   "title": "Basic Tee 2",
   "subTitle": "White 2",
   "price": "$40",
+  "badgeLabel":""
 },
 {
   "title": "Basic Tee 3",
