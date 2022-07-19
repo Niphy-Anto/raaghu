@@ -77,19 +77,3 @@
     }
   }
 
-html {
-
-  .pagination.rounded {
-    .page-item.active {
-      a.page-link {
-        border: 1px solid $primary;
-        background: $primary-0;
-        color: $primary;
-      }
-    }
-  }
-
-  .page-link:focus {
-    box-shadow: none;
-  }
-}
