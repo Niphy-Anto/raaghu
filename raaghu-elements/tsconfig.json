@@ -11,10 +11,6 @@
       "@libs/rds-badge": [
         "rds-elements/rds-badge/public-api",
         "rds-elements/rds-badge"
-      ],
-      "rds-like-dislike": [
-        "dist/rds-like-dislike/rds-like-dislike",
-        "dist/rds-like-dislike"
       ]
     },
     "skipLibCheck": true,
