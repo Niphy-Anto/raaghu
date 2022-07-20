@@ -1,0 +1,57 @@
+<div [ngSwitch]="displaytype">
+  <div *ngSwitchCase="'Basic'">
+    <section>
+
+      <div class="row d-flex justify-content-center" *ngFor="let item of itemList">
+
+        <div class="col-25 py-3">
+          <rds-icon [name]="item.icon" [colorVariant]="item.colorVariant" height="12px" width="12px"></rds-icon>
+        </div>
+        <div class="col-50 py-3 ">
+          <rds-label class=" text-left" [label]="item.action"></rds-label>
+          <span class="ps-2"> <b>
+              <rds-label [label]="item.actor" class="text-left">
+
+              </rds-label>
+            </b> </span>
+        </div>
+
+        <div class="col-20 py-3">
+          <rds-label [label]="item.date |date:'MMM d'"></rds-label>
+        </div>
+
+      </div>
+
+    </section>
+  </div>
+  <div *ngSwitchCase="'Advanced'">
+    <ng-content select="selector"></ng-content>
+
+    <div class="row d-flex justify-content-center" *ngFor="let item of itemList">
+      <div class="col-25 py-3">
+
+        <rds-avatar [WithProfilePic]="true" [profilePic]="item.profilePic" [colorVariant]="'light'" [Size]="'small'"
+          [VerticalTitleWithProfilePic]="false"></rds-avatar>
+      </div>
+
+      <div class="col-50 py-3 ">
+
+        <div class="div h-50">
+          <span> <b>
+              <rds-label [label]="item.actor" class="text-left"> </rds-label>
+            </b> </span>
+        </div>
+        <div class="div h-50">
+          <rds-label class="text-muted text-left" [label]="item.action"></rds-label>
+        </div>
+
+      </div>
+
+      <div class="col-20 py-4">
+        <rds-label [label]="date"></rds-label>
+      </div>
+
+    </div>
+
+  </div>
+</div>

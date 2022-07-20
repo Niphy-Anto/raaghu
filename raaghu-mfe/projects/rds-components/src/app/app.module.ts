@@ -97,6 +97,7 @@ import { RdsCompSecurityShimmerComponent } from './rds-comp-security/rds-comp-se
 import { RdsCompOrganizationTreeShimmerComponent } from './rds-comp-organization-tree/rds-comp-organization-tree-shimmer/rds-comp-organization-tree-shimmer.component';
 import { RdsCompPropertiesShimmerComponent } from './rds-comp-properties/rds-comp-properties-shimmer/rds-comp-properties-shimmer.component';
 import { RdsCompTableShimmerComponent } from './rds-comp-data-table/rds-comp-table-shimmer/rds-comp-table-shimmer.component';
+import { RdsCompFeedsComponent } from './rds-comp-feeds/rds-comp-feeds.component';
 
 
 @NgModule({
@@ -183,6 +184,7 @@ import { RdsCompTableShimmerComponent } from './rds-comp-data-table/rds-comp-tab
     RdsCompOrganizationTreeShimmerComponent,
     RdsCompPropertiesShimmerComponent,
     RdsCompTableShimmerComponent,
+    RdsCompFeedsComponent
     //RdsCompLanguageTextListComponent,
 
   ],
