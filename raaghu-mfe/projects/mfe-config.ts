@@ -91,5 +91,8 @@ export const MfeConfig = {
   },
   languagetext: {
     url: 'http://localhost:5025/remoteEntry.js',
+  },
+  pagenotfound: {
+    url: 'http://localhost:5031/remoteEntry.js',
   }
 };
