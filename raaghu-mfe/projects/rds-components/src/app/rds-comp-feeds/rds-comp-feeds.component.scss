@@ -1,0 +1,36 @@
+// #grid {
+
+//     display: grid;
+//     height: 42px;
+//     grid-template-columns: auto auto auto;
+//     grid-template-rows: 43px;
+//     grid-column-gap: 78px;
+//     column-gap: 21px;
+//     width: 45%;
+//     /* max-width: 590px; */
+//     text-align: left;
+
+// }
+
+.col-25{
+
+    width: 5% !important;
+  
+      max-width: 5%;
+  
+  }
+  
+  .col-50{
+  
+    width: 45% !important;
+    max-width: 36% !important;
+    
+  }
+  
+  .col-20{
+  
+    width: 25% !important;
+  
+      max-width: 25% !important;
+  
+  }

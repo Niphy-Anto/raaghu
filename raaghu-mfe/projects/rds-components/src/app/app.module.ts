@@ -103,6 +103,7 @@ import { RdsCompMarketingWebsiteNewsletterComponent } from './rds-comp-marketing
 import { RdsCompFaqComponent } from './rds-comp-faq/rds-comp-faq.component';
 import { RdsCompCalendarComponent } from './rds-comp-calendar/rds-comp-calendar.component';
 import { adapterFactory } from '@libs/rds-elements';
+import { RdsCompFeedsComponent } from './rds-comp-feeds/rds-comp-feeds.component';
 
 @NgModule({
   declarations: [
@@ -191,7 +192,8 @@ import { adapterFactory } from '@libs/rds-elements';
     RdsCompPageNotFoundComponent,
     RdsCompMarketingWebsiteNewsletterComponent,
     RdsCompFaqComponent,
-    RdsCompCalendarComponent
+    RdsCompCalendarComponent,
+    RdsCompFeedsComponent
     //RdsCompLanguageTextListComponent,
   ],
   imports: [
