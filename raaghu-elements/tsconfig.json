@@ -11,10 +11,6 @@
       "@libs/rds-badge": [
         "rds-elements/rds-badge/public-api",
         "rds-elements/rds-badge"
-      ],
-      "rds-feature-list": [
-        "dist/rds-feature-list/rds-feature-list",
-        "dist/rds-feature-list"
       ]
     },
     "skipLibCheck": true,
