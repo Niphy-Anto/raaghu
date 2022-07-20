@@ -82,7 +82,7 @@ export class AppComponent implements OnInit {
   rdsDynamicEntityPropertiesMfeConfig: ComponentLoaderOptions;
   permissionsList: any;
   public viewCanvas: boolean = false;
-  canvasTitle: string = this.translate.instant('New Dynamic Property');
+  canvasTitle: string = this.translate.instant('NEW DYNAMIC PROPERTY');
   id: number | undefined = undefined;
   DynamicEntityProperties: any = {
     DynamicEntityPropertiesTableHeader: [
@@ -480,7 +480,7 @@ export class AppComponent implements OnInit {
 
   openDynamicCanvas(): void {
     this.viewCanvas = true;
-    this.canvasTitle = this.translate.instant('New Dynamic Property');
+    this.canvasTitle = this.translate.instant('NEW DYNAMIC PROPERTY');
     this.id = undefined;
     this.isEdit = false;
     const mfeConfig = this.rdsDynamicPropertiesMfeConfig;
@@ -497,7 +497,7 @@ export class AppComponent implements OnInit {
 
   openEntityCanvas(): void {
     this.viewCanvas = true;
-    this.canvasTitle = this.translate.instant('New Dynamic Entity Property');
+    this.canvasTitle = this.translate.instant('NEW DYNAMIC ENTITY PROPERTY');
     this.id = undefined;
     const mfeConfig = this.rdsDynamicEntityPropertiesMfeConfig;
     mfeConfig.input.reset = true;
@@ -520,9 +520,9 @@ export class AppComponent implements OnInit {
 
   getBtnName(): string {
     if (this.selectedTabIndex === 1) {
-      return this.translate.instant('New Dynamic Entity Property');
+      return this.translate.instant('NEW DYNAMIC ENTITY PROPERTY');
     }
-    return this.translate.instant('New Dynamic Property');
+    return this.translate.instant('NEW DYNAMIC PROPERTY');
   }
   getNavTabItems(): any {
     this.navtabsItems[0].label = this.translate.instant('Dynamic Properties');

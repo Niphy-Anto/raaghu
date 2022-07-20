@@ -7,18 +7,18 @@ import { Component, Input, OnInit, TemplateRef } from '@angular/core';
 })
 export class RdsCardComponent implements OnInit {
 
-  @Input() width?: string = "100%";
-  @Input() height?: string = "100%";
+  //@Input() width?: string = "100%";
+  //@Input() height?: string = "100%";
   @Input() custClass: boolean = true;
   @Input() borderCard!: boolean;
-  @Input() Recommended!:boolean;
+  //@Input() Recommended!:boolean;
   @Input()
   header!: TemplateRef<any>
   @Input()
   footer!: TemplateRef<any>
   @Input()
   body!: TemplateRef<any>
-  @Input() cardWidth?: number;
+  //@Input() cardWidth?: number;
   @Input() colorVariant?: string='light';
   @Input()
   Data: any = {

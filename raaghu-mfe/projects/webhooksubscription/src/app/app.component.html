@@ -46,7 +46,7 @@
     </div>
 
     <rds-offcanvas [canvasTitle]="translate.instant('NEW WEBHOOK SUBSCRIPTION')" [offId]="'addwebhook'"
-        *ngIf="viewCanvas" [placement]="'end'" [backDrop]="true" [offcanvaswidth]="600" (onClose)="closeCanvas()">
+        *ngIf="viewCanvas" [placement]="'end'"  [offcanvaswidth]="600" (onClose)="closeCanvas()">
         <app-webhooksubscription (onSubcriptionSave)="Addsubcription($event)"></app-webhooksubscription>
     </rds-offcanvas>
 </div>

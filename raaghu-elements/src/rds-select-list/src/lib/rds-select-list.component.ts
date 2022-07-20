@@ -19,15 +19,14 @@ export class RdsSelectListComponent implements AfterViewInit, OnChanges {
   selectedValue = ''
   onChange!: (value: string) => void;
   onTouched!: () => void
-  @Input()
-  size: string = ''
+  // @Input() size?: 'default'| 'small'| 'large' = 'default';
+  @Input() size?:string;
+  // @Input()
+  // selectSize: string = '';
 
-  @Input()
-  selectSize: string = '';
-
-  @Input() Label = '';
-  @Input() LabelType = '';
-
+  @Input() labelText?: string;
+  @Input() LabelType?: 'Top' | 'Bottom' | 'Left' | 'Right' = 'Bottom';
+  // @Input() LabelType = '';
   @Input()
   rows: string = '';
   @Input()
@@ -63,7 +62,7 @@ export class RdsSelectListComponent implements AfterViewInit, OnChanges {
   @Input() tooltipPlacement!: string;
 
   id: string = 'selectList';
-
+  
   constructor() {
     RdsSelectListComponent.count++;
   }
@@ -103,22 +102,13 @@ export class RdsSelectListComponent implements AfterViewInit, OnChanges {
     return show
   }
 
-  public get classesForSelect(): string[] {
-    var selectTagClasses = ['form-select']
-    if (this.size === 'small') {
-      var selectSize = 'form-select-sm'
-      selectTagClasses.push(selectSize)
-    }
-    else if (this.size === 'large') {
-      var selectSize = 'form-select-lg'
-      selectTagClasses.push(selectSize)
-    }
-    else {
-      var selectSize = 'default'
-      selectTagClasses.push(selectSize)
-    }
-
-    return selectTagClasses
+  public get classesForSelect(): string{
+if(this.multiple===false){
+  this.rows='';
+}
+  var selectClass = ['form-select '];
+  var selectSize=` form-select-${this.size==='small'?'sm':this.size==='large'?'lg':'md'}`       
+    return selectClass + selectSize;    
   }
 
   public get bootstrapIcon(): string {
@@ -139,18 +129,22 @@ export class RdsSelectListComponent implements AfterViewInit, OnChanges {
   }
 
   public get divclasses(): string[] {
-    var classList = [''];
-    if (this.LabelType === 'Left') {
-      classList.push('d-flex align-items-baseline justify-content-end gap-3');
-    } else if (this.LabelType === 'Right') {
-      classList.push('d-flex align-items-baseline flex-row-reverse gap-3');
-    } else if (this.LabelType === 'Bottom') {
-      classList.push('d-flex flex-column-reverse');
-    } else {
-      classList.push('d-block');
-    }
-    return classList;
+    var classes = ['form-label']
+   if (this.LabelType === 'Top') {
+   classes.push('top-0');
+ }
+  else if (this.LabelType === 'Bottom') {
+   classes.push(' d-flex flex-column-reverse')
   }
+    else if (this.LabelType === 'Left') {
+      classes.push('d-flex align-items-baseline justify-content-end gap-3')
+    }
+    else if (this.LabelType === 'Right') {
+      classes.push('d-flex align-items-baseline flex-row-reverse gap-3')
+    }
+    return classes;
+  }
+
 
   public get iconPosition(): string {
     if (this.customIcon === '') {

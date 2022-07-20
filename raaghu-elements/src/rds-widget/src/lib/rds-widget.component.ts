@@ -7,11 +7,11 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class RdsWidgetComponent implements OnInit {
 
-  @Input() headerTitle:string = 'Widget'
+  @Input() headerTitle: string = 'Widget'
   @Input() isRefreshRequired: boolean = true;
   @Input() colorVariant = '';
   @Output() onRefresh = new EventEmitter<Event>();
-  @Input() cardheight = 'card-stretch';
+  //@Input() cardheight = 'card-stretch';
 
   constructor() { }
 
@@ -25,8 +25,8 @@ export class RdsWidgetComponent implements OnInit {
     if (`${this.colorVariant}` !== 'light' && `${this.colorVariant}` !== 'warning' && `${this.colorVariant}` !== 'info' && `${this.colorVariant}` !== 'white' && `${this.colorVariant}` !== '') {
       classes.push('text-white');
     }
-      var heightclass=`${this.cardheight}`;
-      classes.push(heightclass);
+    //var heightclass=`${this.cardheight}`;
+    //classes.push(heightclass);
     return classes
   }
   //public get heightclasses(): any[] {

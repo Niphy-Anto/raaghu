@@ -20,7 +20,7 @@
         <rds-fab-menu [listItems]="listItems" [menuicon]="'plus'" [colorVariant]="'primary'" [menuiconWidth]="'12px'" [menuiconHeight]="'12px'" (onSelect)="onSelectMenu($event)"></rds-fab-menu>
     </div>
 </div>
-<rds-offcanvas [canvasTitle]="translate.instant(canvasTitle)" [backDrop]="true" [offId]="'tenantOffcanvas'"
+<rds-offcanvas [canvasTitle]="translate.instant(canvasTitle)" [offId]="'tenantOffcanvas'"
     [offcanvaswidth]="550" [placement]="'end'" *ngIf="viewCanvas" [bodySpacing]="true" (onClose)="close()">
     <rds-nav-tab [navtabsItems]="navtabsItems" (onClicktab)="getSelectedNavTab($event)" [activepage]="activePage"
         [horizontalAlignment]="'start'" [verticalAlignment]="false" [pills]="false" [tabs]="true" [fill]="false"
