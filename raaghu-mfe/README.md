@@ -116,7 +116,7 @@ npm run lib <library_name>
 2. Create a component
 
 ```bash
-npm run page rds-component <component_name>
+npm run page rds-components <component_name>
 ```
 
 3. Create a screen / MFE
