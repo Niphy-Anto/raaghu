@@ -224,15 +224,15 @@ export class RdsCompTenantListComponent implements OnInit, DoCheck {
       };
       this.tenantData = undefined;
       this.tenantSettingsInfo = undefined;
-      this.onReset.emit(true);
+     
       this.isTenantInfoValid = false;
     }
     if (event) {
       this.canvasTitle = 'New Tenant';
-      // event.stopPropagation();
+      this.onReset.emit({isreset:true,editshimmer:false});
       this.tenantData = undefined;
       this.tenantSettingsInfo = undefined;
-
+     this.editShimmer=false;
       this.navtabsItems = [
         {
           label: this.translate.instant('Tenant Information'),
@@ -246,6 +246,7 @@ export class RdsCompTenantListComponent implements OnInit, DoCheck {
         },
       ];
     } else {
+      this.onReset.emit({isreset:true,editshimmer:true});
       this.navtabsItems = [
         {
           label: this.translate.instant('Tenant Information'),
@@ -283,7 +284,8 @@ export class RdsCompTenantListComponent implements OnInit, DoCheck {
     };
     this.tenantData = undefined;
     this.tenantSettingsInfo = undefined;
-    this.onReset.emit(true);
+    //this.onReset.emit(true);
+    this.onReset.emit({isreset:true,editshimmer:true});
     this.isTenantInfoValid = false;
   }
   editTableRowData(event): void {

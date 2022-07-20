@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { ModuleWithProviders, NgModule, Provider } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -98,6 +98,13 @@ import { RdsCompOrganizationTreeShimmerComponent } from './rds-comp-organization
 import { RdsCompPropertiesShimmerComponent } from './rds-comp-properties/rds-comp-properties-shimmer/rds-comp-properties-shimmer.component';
 import { RdsCompTableShimmerComponent } from './rds-comp-data-table/rds-comp-table-shimmer/rds-comp-table-shimmer.component';
 
+import { RdsCompSchedulerComponent } from './rds-comp-scheduler/rds-comp-scheduler.component';
+import {  CalendarModule,CalendarUtils,DateAdapter  } from './rds-comp-scheduler/angular-calendar/src';
+import { adapterFactory } from './rds-comp-scheduler/angular-calendar/src/date-adapters/date-fns';
+
+
+
+
 
 @NgModule({
   declarations: [
@@ -183,8 +190,9 @@ import { RdsCompTableShimmerComponent } from './rds-comp-data-table/rds-comp-tab
     RdsCompOrganizationTreeShimmerComponent,
     RdsCompPropertiesShimmerComponent,
     RdsCompTableShimmerComponent,
+    RdsCompSchedulerComponent,
     //RdsCompLanguageTextListComponent,
-
+    
   ],
   imports: [
     BrowserModule,
@@ -262,9 +270,17 @@ import { RdsCompTableShimmerComponent } from './rds-comp-data-table/rds-comp-tab
     RdsTextEditorModule,
     RdsFabMenuModule,
     RdsLabelModule,
-    NgxShimmerLoadingModule
+    NgxShimmerLoadingModule,
+   
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory,
+    }),
+  
   ],
-  providers: [],
+  providers: [CalendarUtils ],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule { 
+ 
+}
