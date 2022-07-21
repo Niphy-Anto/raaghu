@@ -1,1 +1,6 @@
-<label for="label">{{label}}</label>
+<ng-container *ngIf="!multiline">
+    <label [ngClass]="classes" for="label">{{label}}</label>
+</ng-container>
+<ng-container *ngIf="multiline">
+    <p [ngClass]="classes">{{label}}</p>
+</ng-container>
