@@ -29,5 +29,5 @@ Basic.args = {
         { id: 6, value: 'Double stitched construction', some: 'value' },
         { id: 7, value: 'Water-resistant', some: 'value' },
     ],
-    column: 1,
+    columns: 1,
 }
