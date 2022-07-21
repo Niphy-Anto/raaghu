@@ -43,8 +43,13 @@ jobs:
       with:
         node-version: ${{ env.NODE_VERSION }}
         cache: 'npm'
-        cache-dependency-path: './raaghu-mfe'       
+        cache-dependency-path: './raaghu-mfe'  
         
+    - name: npm install
+      working-directory: raaghu-elements
+      run: |
+        npm install
+       
 
     - name: npm install, build, and test
       working-directory: ./raaghu-mfe
