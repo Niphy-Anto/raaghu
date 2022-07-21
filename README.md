@@ -1,6 +1,6 @@
-
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
+
 <p align="center">
     <a href="https://raaghu.io" target="_blank">
         <img src="./static/banner2.png" alt="logo" width="2000"/>
@@ -43,7 +43,7 @@
 
 
 </br></br>
-<h2 align=" " style="border-bottom:0;">
+<h2 align="" style="border-bottom:0;">
 What is Raaghu?
 </h2>
 
@@ -58,7 +58,7 @@ Raaghu mfe can be used as a base to build complex components and UI layouts whil
         <img src="./static/why-raaghu.png" alt="logo" width="1000"/>
 <p/>
 
-<h2 align=" " style="border-bottom:0;color:#964BFF;">
+<h2 align="" style="border-bottom:0;color:#964BFF;">
 How Raaghu works?
 </h2>
 </br></br></br> 
@@ -71,7 +71,7 @@ We create your wireframes or use existing available wireframes. Based on your wi
 These components come together to create the same wireframe design and form a page.We deploy these components through our Ci/Cd pipeline and make use of our micro front end architecture. 
  
 </br></br>
-<h2 align=" " style="border-bottom:0;color:#964BFF;">
+<h2 align="" style="border-bottom:0;color:#964BFF;">
 Custom Services
 </h2>
  
@@ -82,7 +82,7 @@ Custom Services
 ✔️  Explainer videos​</br> 
 </br></br>
 
-<h2 align=" " style="border-bottom:0;color:#964BFF;">
+<h2 align="" style="border-bottom:0;color:#964BFF;">
 Benefits​
 </h2>
 
@@ -90,7 +90,7 @@ Benefits​
      <img src="./static/Features-new.png" alt="logo" width="1400"/>
 <p/>
 
-<h2 align=" " style="border-bottom:0;color:#964BFF;">
+<h2 align="" style="border-bottom:0;color:#964BFF;">
  Tutorials
 </h2>
  
@@ -102,7 +102,7 @@ Benefits​
 - [Demo](http://raaghu.io/): Dashboard Demo (Light & Dark theme) 
 
 </br> </br>
-<h2 align=" " style="border-bottom:0;color:#964BFF;">
+<h2 align="" style="border-bottom:0;color:#964BFF;">
  Contribute 🤝
 </h2>
 <p>
@@ -110,8 +110,8 @@ Any kind of positive contribution is welcome! Please help us to grow by contribu
     If you wish to contribute, you can work on any features <a href="https://github.com/Wai-Technologies/raaghu/tree/main/raaghu-mfe#-features" > [listed here] </a> or create one on your own. After adding your code, please send us a Pull Request.  
 </p>
 </br>
-<h2 align=" " style="border-bottom:0;color:#964BFF;">
- WAi Technology Contributors ✨
+<h2 align="" style="border-bottom:0;color:#964BFF;">
+ WAi Technologies Contributors ✨
 </h2>
  
 
