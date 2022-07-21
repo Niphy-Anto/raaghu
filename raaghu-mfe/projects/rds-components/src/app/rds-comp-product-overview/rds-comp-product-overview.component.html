@@ -1,0 +1,203 @@
+<div [ngSwitch]="roles">
+  <div class="continer-fluid">
+      <!-- product overview 1 -->
+    <div *ngSwitchCase="'producroverview1'">
+      <div class="row">
+        <div class="col-md-12">
+          <rds-breadcrumb
+            [customBreadcrumbsItems]="producroverview1"
+            role="withDivider"
+            [iconShow]="false"
+          ></rds-breadcrumb>
+        </div>
+        <div class="col-md-12">
+          <!-- Adding Image elements here -->
+        </div>
+        <div class="row">
+          <div class="col-md-8 border-end">
+            <h3 class="fw-bold">
+              <rds-label label="Basic Tee 6-Pack"></rds-label>
+              <span
+                ><rds-badge
+                  size="smallest"
+                  label="Assured"
+                  [pillBadges]="false"
+                  [positioned]="false"
+                  [iconBadge]="false"
+                  colorVariant="warning"
+                  [close]="false"
+                  top=""
+                  start=""
+                  [iconStroke]="true"
+                  [iconFill]="false"
+                ></rds-badge
+              ></span>
+            </h3>
+            <p>
+              The Basic Tee 6-Pack allows you to fully express your vibrant
+              personality with three grayscale options. Feeling adventurous? Put
+              on a heather gray tee. Want to be a trendsetter? Try our exclusive
+              colorway: "Black". Need to add an extra pop of color to your
+              outfit? Our white tee has you covered.
+            </p>
+            <h6>
+              <rds-label label="Highlights"></rds-label>
+            </h6>
+            <ul>
+              <li>Hand cut and sewn locally</li>
+              <li>Dyed with our proprietary colors</li>
+              <li>Pre-washed & pre-shrunk</li>
+              <li>Ultra-soft 100% cotton</li>
+            </ul>
+            <h6><rds-label label="Deatils"></rds-label></h6>
+            <p>
+              The 6-Pack includes two black, two white, and two heather gray
+              Basic Tees. Sign up for our subscription service and be the first
+              to get new, exciting colors, like our upcoming "Charcoal Gray"
+              limited release.
+            </p>
+            <div>
+              <rds-label label="14 Days return policy" class="mx-3"></rds-label>
+              <rds-label label="Cash on delivery available"></rds-label>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div>
+              <span class="fw-bold">$200</span
+              ><span class="fw-lighter m-2 text-decoration-line-through">
+                $400</span
+              ><span>50% off</span>
+            </div>
+            <div class="mt-3">
+              <rds-label label="Color"></rds-label>
+            </div>
+            <div class="mt-3">
+              <rds-label label="Size"></rds-label>
+              <span class="float-end"
+                ><rds-label label="Size guide"></rds-label
+              ></span>
+            </div>
+            <div class="mt-3">
+              <rds-button
+                colorVariant="primary"
+                [block]="false"
+                size="medium"
+                label="Add To BAG"
+              ></rds-button>
+              <rds-button
+                class="mx-2"
+                colorVariant="primary"
+                [block]="false"
+                size="medium"
+                label="BUY NOW"
+              ></rds-button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- product overview 2 -->
+    <div *ngSwitchCase="'producroverview2'">
+      <div class="row">
+        <div class="col-md-12">
+          <rds-breadcrumb
+            [customBreadcrumbsItems]="producroverview2"
+            role="withDivider"
+            [iconShow]="false"
+          ></rds-breadcrumb>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <!-- Image elements here -->
+            <p>Image element Here</p>
+            <img src="" alt="" />
+          </div>
+          <div class="col-md-6">
+            <div>
+              <span class="fw-bold"
+                ><rds-label label="Basic Tee"></rds-label>
+                <span class="h2 mx-2"
+                  ><rds-badge
+                    size="smallest"
+                    label="Assured"
+                    [pillBadges]="false"
+                    [positioned]="false"
+                    [iconBadge]="false"
+                    colorVariant="warning"
+                    [close]="false"
+                    top=""
+                    start=""
+                    [iconStroke]="true"
+                    [iconFill]="false"
+                  ></rds-badge
+                ></span>
+              </span>
+              <span class="float-end pt-3">
+                <span class="fw-bold">$200</span
+                ><span class="fw-lighter m-2 text-decoration-line-through">
+                  $400</span
+                ><span>50% off</span>
+              </span>
+            </div>
+            <div>
+              <!-- Rating elements  -->
+            </div>
+            <div class="mt-3">
+              <rds-label label="Color"></rds-label>
+            </div>
+            <div class="mt-3">
+              <rds-label label="Size"></rds-label>
+              <span class="float-end"
+                ><rds-label label="Size guide"></rds-label
+              ></span>
+            </div>
+            <div class="mt-3">
+              <rds-button
+                colorVariant="primary"
+                [block]="false"
+                size="medium"
+                label="Add To BAG"
+              ></rds-button>
+              <rds-button
+                class="mx-2 p-md-5"
+                colorVariant="primary"
+                [block]="false"
+                size="medium"
+                label="BUY NOW"
+              ></rds-button>
+            </div>
+            <div class="mt-3 border-bottom">
+              <h5><rds-label label="Deatils"></rds-label></h5>
+              <p>
+                The 6-Pack includes two black, two white, and two heather gray
+                Basic Tees. Sign up for our subscription service and be the
+                first to get new, exciting colors, like our upcoming "Charcoal
+                Gray" limited release.
+              </p>
+              <p>
+                The 6-Pack includes two black, two white, and two heather gray
+                Basic Tees. Sign up for our subscription service and be the
+                first to get new, exciting colors, like our upcoming.
+              </p>
+            </div>
+            <div class="mt-3">
+              <h5><rds-label label="Fabric & Care"></rds-label></h5>
+              <ul>
+                <li>Hand cut and sewn locally</li>
+                <li>Dyed with our proprietary colors</li>
+                <li>Pre-washed & pre-shrunk</li>
+                <li>Ultra-soft 100% cotton</li>
+              </ul>
+            </div>
+            <div class="mt-3">
+              <!-- label with text elements -->
+              <span class=""><i class="bi bi-heart"></i></span>
+              <rds-label label="14 Days return policy" class="mx-3"></rds-label>
+              <rds-label label="Cash on delivery available"></rds-label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
