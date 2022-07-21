@@ -57,7 +57,8 @@ jobs:
         npm install
         npm run sync-elements
         npm run patch-dev-server
-        npm run build-all
+        npm run build projects=rds-components
+
 
     - name: Upload artifact for deployment job
       uses: actions/upload-artifact@v3
