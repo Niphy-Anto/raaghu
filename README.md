@@ -54,9 +54,9 @@ What is Raaghu?
         <img src="./static/Features-new.png" alt="logo" width="1000"/>
 <p/>
 
-<h2 align="" style="border-bottom:0;color:#964BFF;">
+<h1 align="" style="border-bottom:0;color:#964BFF;">
 How Raaghu works?
-</h2>
+</h1>
 </br></br></br> 
 <p align="center">
         <img src="./static/how it works.png" alt="logo" width="800"/>
