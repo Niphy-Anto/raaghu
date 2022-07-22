@@ -263,5 +263,5 @@ Thanks goes to these wonderful people and Wai technology.
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind are welcome!
 
 <div align="center">
-    <img src="./static/example.svg" width="400" height="400" alt="css-in-readme">
+    <img src="./static/example.svg" width="1400" height="200" alt="css-in-readme">
 </div>
