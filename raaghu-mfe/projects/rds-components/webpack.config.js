@@ -100,7 +100,6 @@ module.exports = {
         "@ngrx/store-devtools": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
         "@ngrx/effects": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
         "@ngx-translate/core": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
-        "ngx-shimmer-loading": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
         "@ngx-translate/http-loader": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
         "rxjs": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
         ...sharedMappings.getDescriptors()

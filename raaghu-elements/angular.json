@@ -2032,6 +2032,37 @@
           }
         }
       }
+    },
+    "rds-color": {
+      "projectType": "library",
+      "root": "src/rds-color",
+      "sourceRoot": "src/rds-color/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "src/rds-color/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "src/rds-color/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "src/rds-color/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "src/rds-color/src/test.ts",
+            "tsConfig": "src/rds-color/tsconfig.spec.json",
+            "karmaConfig": "src/rds-color/karma.conf.js"
+          }
+        }
+      }
     }
   }
 }
