@@ -74,7 +74,7 @@ These components come together to create the same wireframe design and form a pa
 <h1 align="" style="border-bottom:0;">
 Startup Templates
 </h1>
-
+</br></br></br> 
 <p>
 A collection of open-source statrter templates, Free templates that are perfect starter layouts for your application.
 </p> 
