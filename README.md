@@ -2,12 +2,12 @@
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 <p align="center">
     <a href="https://raaghu.io" target="_blank">
-        <img src="./static/Raaghu-logo-mfe-white.png" alt="logo" width="2000"/>
+        <img src="./static/Raaghu-logo-mfe-white.png" alt="logo" width="200"/>
     </a>
 </p>
 <p align="center">
     <a href="https://raaghu.io" target="_blank">
-        <img src="./static/Raaghu-logo-mfe-white.png" alt="logo" width="2000"/>
+        <img src="./static/banner1.png" alt="logo" width="2000"/>
     </a>
 <p/>
   
