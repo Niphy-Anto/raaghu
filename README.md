@@ -83,7 +83,7 @@ A collection of open-source statrter templates, Free templates that are perfect 
 </p> 
 </br>
 <p align="center">
-        <img src="./static/templates.png" alt="logo" width="1200"/>
+        <img src="./static/templates1.png" alt="logo" width="1200"/>
 <p/>
  
 </br>
