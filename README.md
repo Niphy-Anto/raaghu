@@ -2,7 +2,7 @@
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 <p align="center">
     <a href="https://raaghu.io" target="_blank">
-        <img src="./static/banner-new.png" alt="logo" width="2000"/>
+        <img src="./static/banner-new1.png" alt="logo" width="2000"/>
     </a>
 <p/>
   
