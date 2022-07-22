@@ -81,7 +81,7 @@ import { RdsCompDynamicEnityPropertiesComponent } from './rds-comp-dynamic-enity
 import { RdsCompNewDynamicEntityPropertyComponent } from './rds-comp-new-dynamic-entity-property/rds-comp-new-dynamic-entity-property.component';
 import { RdsCompPlanInformationComponent } from './rds-comp-plan-information/rds-comp-plan-information.component';
 import { RdsCompVisualSettingsShimmerComponent } from './rds-comp-visual-settings/rds-comp-visual-settings-shimmer/rds-comp-visual-settings-shimmer.component';
-import { NgxShimmerLoadingModule } from  'ngx-shimmer-loading';
+
 import { RdsCompFeaturesEditShimmerComponent } from './rds-comp-features/rds-comp-features-edit-shimmer/rds-comp-features-edit-shimmer.component';
 import { RdsCompNewRoleShimmerComponent } from './rds-comp-new-role/rds-comp-new-role-shimmer/rds-comp-new-role-shimmer.component';
 import { RdsCompUserBasicsShimmerComponent } from './rds-comp-user-basics/rds-comp-user-basics-shimmer/rds-comp-user-basics-shimmer.component';
@@ -264,7 +264,7 @@ import { RdsCompPageNotFoundComponent } from './rds-comp-page-not-found/rds-comp
     RdsTextEditorModule,
     RdsFabMenuModule,
     RdsLabelModule,
-    NgxShimmerLoadingModule
+   
   ],
   providers: [],
   bootstrap: [AppComponent],
