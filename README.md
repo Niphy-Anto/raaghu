@@ -5,7 +5,7 @@
         <img src="./static/Raaghu-logo-mfe-white.png" alt="logo" width="200"/>
     </a>
 </p>
-<h1 align="center" style="border-bottom:0;">
+<h1 align="center" style="font-size:50px">
     Micro Frontend Framework
 </h1>
 <p align="center">
