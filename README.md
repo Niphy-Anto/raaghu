@@ -12,11 +12,11 @@
     Design System For Modern Web Applications
 </p>
 
-<p align="center">
+<!-- <p align="center">
     <a href="https://raaghu.io" target="_blank">
         <img src="./static/banner1.png" alt="logo" width="2000"/>
     </a>
-<p/>
+<p/> -->
   
 <h3 align="center" style="border-bottom:0;">
     <a href="https://raaghu.io" target="blank">Get Started</a>
@@ -262,3 +262,6 @@ Thanks goes to these wonderful people and Wai technology.
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind are welcome!
 
+<div align="center">
+    <img src="example.svg" width="400" height="400" alt="css-in-readme">
+</div>
