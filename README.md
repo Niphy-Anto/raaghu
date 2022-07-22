@@ -70,6 +70,10 @@ We create your wireframes or use existing available wireframes. Based on your wi
 
 These components come together to create the same wireframe design and form a page.We deploy these components through our Ci/Cd pipeline and make use of our micro front end architecture. 
  
+ 
+ 
+ 
+ 
 </br></br>
 <h1 align="" style="border-bottom:0;">
 Startup Templates
@@ -86,7 +90,17 @@ A collection of open-source statrter templates, Free templates that are perfect 
  
  
  
- 
+ </br></br>
+<h1 align="center" style="border-bottom:0;">
+
+</h1>
+<p align="center">
+Built on a robust tech stack and platform
+</p> 
+</br>
+<p align="center">
+        <img src="./static/tools.png" alt="logo" width="1200"/>
+<p/>
  
  
  
