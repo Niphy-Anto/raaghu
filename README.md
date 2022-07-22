@@ -94,9 +94,9 @@ A collection of open-source statrter templates, Free templates that are perfect 
 Built on a robust tech stack and platform
 </p> 
 </br>
-<p align="center">
+<!-- <p align="center">
         <img src="./static/tools.png" alt="logo" width="1200"/>
-<p/>
+<p/> -->
 
 <table>
   <tr>   
