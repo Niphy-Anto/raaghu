@@ -195,8 +195,6 @@ import { RdsCompPlanInformationComponent } from './rds-comp-plan-information/rds
     RdsTableModule,
     RdsChartAreaModule,
     RdsAccordionModule,
-    FormsModule,
-    CommonModule,
     RdsTagsModule,
     RdsWidgetModule,
     RdsAlertModule,
