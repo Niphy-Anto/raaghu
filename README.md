@@ -124,6 +124,14 @@ Built on a robust tech stack and platform
         <img src="./static/gatsby.png" width="80" title="Gatsby"/>
         <!-- <br /><sub><b>Omkar Choudhari</b></sub> -->
     </td>
+    <td align="center" style="border: none">
+        <img src="./static/storybook.png" width="80" title="Storybook"/>
+        <!-- <br /><sub><b>Apoorva Lele</b></sub> -->
+    </td>
+    <td align="center" border="none">
+        <img src="./static/gatsby.png" width="80" title="Gatsby"/>
+        <!-- <br /><sub><b>Omkar Choudhari</b></sub> -->
+    </td>
   </tr>
   
 </table> 
