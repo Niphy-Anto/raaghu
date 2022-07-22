@@ -97,6 +97,56 @@ Built on a robust tech stack and platform
 <p align="center">
         <img src="./static/tools.png" alt="logo" width="1200"/>
 <p/>
+<table>
+  <tr>
+   
+    <td align="center" border="none">
+        <img src="visual-studio" width="100" title="Visual Studio"/>
+        <!--  <br /><sub><b>Mohan Bari</b></sub> -->
+    </td>
+    <td align="center" style="border: none">
+        <img src="./static/nodejs.png" width="100" title="Node JS"/>
+        <!-- <br /><sub><b>Alok Nakhate</b></sub> -->
+    </td>
+    <td align="center" style="border: none">
+        <img src="./static/angular.png" width="100" title="Angular"/>
+        <!-- <br /><sub><b>Yohul Chitre</b></sub> -->
+    </td>
+    <td align="center" style="border: none">
+        <img src="./static/bootstrap.png" width="100" title="Bootstrap"/>
+        <!-- <br /><sub><b>Priyanka Shinkar</b></sub> -->
+    </td>
+    <td align="center" style="border: none">
+        <img src="./static/aspnetzero.png" width="100" title="AspnetZero"/>
+        <!-- <br /><sub><b>Apoorva Lele</b></sub> -->
+    </td>
+    <td align="center" border="none">
+        <img src="./static/batsby.png" width="100" title="Gatsby"/>
+        <!-- <br /><sub><b>Omkar Choudhari</b></sub> -->
+    </td>
+  </tr>
+  
+</table> 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
  
  
