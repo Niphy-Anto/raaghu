@@ -231,8 +231,6 @@ import { RdsCompPageNotFoundComponent } from './rds-comp-page-not-found/rds-comp
     RdsTableModule,
     RdsChartAreaModule,
     RdsAccordionModule,
-    FormsModule,
-    CommonModule,
     RdsTagsModule,
     RdsWidgetModule,
     RdsAlertModule,
