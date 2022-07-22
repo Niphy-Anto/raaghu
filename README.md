@@ -63,31 +63,13 @@ How Raaghu works?
 <p align="center">
         <img src="./static/how it works.png" alt="logo" width="800"/>
 <p/>
-
+<br/>
+<br/>
 We create your wireframes or use existing available wireframes. Based on your wireframe and theme design / branding, we apply the same CSS to elements, components and pages that we have. Based on Component driven development and our micro front end architecture we break your page design into components and enrich your library.​
 
 These components come together to create the same wireframe design and form a page.We deploy these components through our Ci/Cd pipeline and make use of our micro front end architecture. 
  
-</br></br>
-<h2 align="" style="border-bottom:0;color:#964BFF;">
-Custom Services
-</h2>
- 
-✔️  Icons & Illustrations​</br> 
-✔️  Product Tour ​</br> 
-✔️  Empty State UI ​</br> 
-✔️  Micro-Animation​</br> 
-✔️  Explainer videos​</br> 
-</br></br>
-
-<h2 align="" style="border-bottom:0;color:#964BFF;">
-Benefits​
-</h2>
-
-<p align="center">
-     <img src="./static/Features-new.png" alt="logo" width="1400"/>
-<p/>
-
+</br></br> 
 <h2 align="" style="border-bottom:0;color:#964BFF;">
  Tutorials
 </h2>
