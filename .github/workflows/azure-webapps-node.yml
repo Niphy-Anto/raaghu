@@ -27,6 +27,7 @@ env:
   AZURE_WEBAPP_NAME: raaghumfestageuiapp   # set this to your application's name
   AZURE_WEBAPP_PACKAGE_PATH: '.'      # set this to the path to your web app project, defaults to the repository root
   NODE_VERSION: '16.15.0'                # set this to the node version to use
+  NODE_OPTIONS: "--max_old_space_size=5120"
 
 permissions:
   contents: read
@@ -44,13 +45,13 @@ jobs:
         cache: 'npm'
         cache-dependency-path: './raaghu-mfe'  
         
-    - name: npm install
+    - name: npm install raaghu-elements
       working-directory: raaghu-elements
       run: |
         npm install
        
 
-    - name: npm install, build, and test
+    - name: npm install, build, and test raaghu-mfe
       working-directory: ./raaghu-mfe
       run: |
         npm install
