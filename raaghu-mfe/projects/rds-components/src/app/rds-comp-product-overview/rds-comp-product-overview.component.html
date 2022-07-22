@@ -1,6 +1,6 @@
-<div [ngSwitch]="roles">
+<div [ngSwitch]="productType">
   <div class="continer-fluid">
-      <!-- product overview 1 -->
+    <!-- product overview 1 -->
     <div *ngSwitchCase="'producroverview1'">
       <div class="row">
         <div class="col-md-12">
@@ -33,29 +33,34 @@
                 ></rds-badge
               ></span>
             </h3>
-            <p>
-              The Basic Tee 6-Pack allows you to fully express your vibrant
-              personality with three grayscale options. Feeling adventurous? Put
-              on a heather gray tee. Want to be a trendsetter? Try our exclusive
-              colorway: "Black". Need to add an extra pop of color to your
-              outfit? Our white tee has you covered.
-            </p>
-            <h6>
-              <rds-label label="Highlights"></rds-label>
-            </h6>
-            <ul>
-              <li>Hand cut and sewn locally</li>
-              <li>Dyed with our proprietary colors</li>
-              <li>Pre-washed & pre-shrunk</li>
-              <li>Ultra-soft 100% cotton</li>
-            </ul>
+            <div>
+              <rds-label
+                label="The Basic Tee 6-Pack allows you to fully express your vibrant
+                personality with three grayscale options. Feeling adventurous? Put
+                on a heather gray tee. Want to be a trendsetter? Try our exclusive
+                colorway: Black. Need to add an extra pop of color to your
+                outfit? Our white tee has you covered."
+                [multiline]="true"
+                [bold]="false"
+                [italic]="false"
+              ></rds-label>
+            </div>
+            <lib-rds-feature-list
+              header="Highlights"
+              [listItems]="listItems"
+              [column]="1"
+            ></lib-rds-feature-list>
             <h6><rds-label label="Deatils"></rds-label></h6>
-            <p>
-              The 6-Pack includes two black, two white, and two heather gray
-              Basic Tees. Sign up for our subscription service and be the first
-              to get new, exciting colors, like our upcoming "Charcoal Gray"
-              limited release.
-            </p>
+            <rds-label
+              label=" The 6-Pack includes two black, two white, and two heather gray
+                Basic Tees. Sign up for our subscription service and be the first
+                to get new, exciting colors, like our upcoming Charcoal Gray
+                limited release."
+              [multiline]="true"
+              [bold]="false"
+              [italic]="false"
+            ></rds-label>
+
             <div>
               <rds-label label="14 Days return policy" class="mx-3"></rds-label>
               <rds-label label="Cash on delivery available"></rds-label>
@@ -63,10 +68,7 @@
           </div>
           <div class="col-md-4">
             <div>
-              <span class="fw-bold">$200</span
-              ><span class="fw-lighter m-2 text-decoration-line-through">
-                $400</span
-              ><span>50% off</span>
+              <rds-price [discount]="5" [actualPrice]="1000"></rds-price>
             </div>
             <div class="mt-3">
               <rds-label label="Color"></rds-label>
@@ -77,20 +79,25 @@
                 ><rds-label label="Size guide"></rds-label
               ></span>
             </div>
-            <div class="mt-3">
-              <rds-button
-                colorVariant="primary"
-                [block]="false"
-                size="medium"
-                label="Add To BAG"
-              ></rds-button>
-              <rds-button
-                class="mx-2"
-                colorVariant="primary"
-                [block]="false"
-                size="medium"
-                label="BUY NOW"
-              ></rds-button>
+            <div class="mt-3 d-flex justify-content-between">
+              <div class="p-1">Hello</div>
+              <div class="p-1 w-50">
+                <rds-button
+                  colorVariant="primary"
+                  [outlineButton]="true"
+                  [block]="true"
+                  size="medium"
+                  label="Add To BAG"
+                ></rds-button>
+              </div>
+              <div class="p-1 w-50">
+                <rds-button
+                  colorVariant="primary"
+                  [block]="true"
+                  size="medium"
+                  label="BUY NOW"
+                ></rds-button>
+              </div>
             </div>
           </div>
         </div>
@@ -114,9 +121,11 @@
           </div>
           <div class="col-md-6">
             <div>
-              <span class="fw-bold"
-                ><rds-label label="Basic Tee"></rds-label>
-                <span class="h2 mx-2"
+              <span
+                ><span class="h3 fw-bold"
+                  ><rds-label label="Basic Tee"></rds-label
+                ></span>
+                <span class="h2 mx-2 align-text-bottom"
                   ><rds-badge
                     size="smallest"
                     label="Assured"
@@ -132,11 +141,8 @@
                   ></rds-badge
                 ></span>
               </span>
-              <span class="float-end pt-3">
-                <span class="fw-bold">$200</span
-                ><span class="fw-lighter m-2 text-decoration-line-through">
-                  $400</span
-                ><span>50% off</span>
+              <span class="float-end pt-1">
+                <rds-price [discount]="5" [actualPrice]="1000"></rds-price>
               </span>
             </div>
             <div>
@@ -151,43 +157,52 @@
                 ><rds-label label="Size guide"></rds-label
               ></span>
             </div>
-            <div class="mt-3">
-              <rds-button
-                colorVariant="primary"
-                [block]="false"
-                size="medium"
-                label="Add To BAG"
-              ></rds-button>
-              <rds-button
-                class="mx-2 p-md-5"
-                colorVariant="primary"
-                [block]="false"
-                size="medium"
-                label="BUY NOW"
-              ></rds-button>
+            <div class="mt-3 d-flex justify-content-between">
+              <div class="p-1">Hello</div>
+              <div class="p-1 w-50">
+                <rds-button
+                  colorVariant="primary"
+                  [outlineButton]="true"
+                  [block]="true"
+                  size="medium"
+                  label="Add To BAG"
+                ></rds-button>
+              </div>
+              <div class="p-1 w-50">
+                <rds-button
+                  colorVariant="primary"
+                  [block]="true"
+                  size="medium"
+                  label="BUY NOW"
+                ></rds-button>
+              </div>
             </div>
             <div class="mt-3 border-bottom">
               <h5><rds-label label="Deatils"></rds-label></h5>
-              <p>
-                The 6-Pack includes two black, two white, and two heather gray
-                Basic Tees. Sign up for our subscription service and be the
-                first to get new, exciting colors, like our upcoming "Charcoal
-                Gray" limited release.
-              </p>
-              <p>
-                The 6-Pack includes two black, two white, and two heather gray
-                Basic Tees. Sign up for our subscription service and be the
-                first to get new, exciting colors, like our upcoming.
-              </p>
+              <rds-label
+                label=" The 6-Pack includes two black, two white, and two heather gray
+              Basic Tees. Sign up for our subscription service and be the first
+              to get new, exciting colors, like our upcoming Charcoal Gray
+              limited release."
+                [multiline]="true"
+                [bold]="false"
+                [italic]="false"
+              ></rds-label>
+              <rds-label
+                label=" The 6-Pack includes two black, two white, and two heather gray
+            Basic Tees. Sign up for our subscription service and be the
+            first to get new, exciting colors, like our upcoming."
+                [multiline]="true"
+                [bold]="false"
+                [italic]="false"
+              ></rds-label>
             </div>
             <div class="mt-3">
-              <h5><rds-label label="Fabric & Care"></rds-label></h5>
-              <ul>
-                <li>Hand cut and sewn locally</li>
-                <li>Dyed with our proprietary colors</li>
-                <li>Pre-washed & pre-shrunk</li>
-                <li>Ultra-soft 100% cotton</li>
-              </ul>
+              <lib-rds-feature-list
+                header="Features"
+                [listItems]="listItems"
+                [column]="1"
+              ></lib-rds-feature-list>
             </div>
             <div class="mt-3">
               <!-- label with text elements -->
@@ -196,6 +211,184 @@
               <rds-label label="Cash on delivery available"></rds-label>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+    <div *ngSwitchCase="'producroverview3'">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <!-- Image elements here -->
+            <p>Image element Here</p>
+            <img src="" alt="" />
+          </div>
+          <div class="col-md-6">
+            <div>
+              <span>
+                <span class="h3 fw-bold"
+                  ><rds-label label="Girls' Sling Bag"></rds-label
+                ></span>
+                <span class="h2 mx-2 align-text-bottom"
+                  ><rds-badge
+                    size="smallest"
+                    label="Assured"
+                    [pillBadges]="false"
+                    [positioned]="false"
+                    [iconBadge]="false"
+                    colorVariant="warning"
+                    [close]="false"
+                    top=""
+                    start=""
+                    [iconStroke]="true"
+                    [iconFill]="false"
+                  ></rds-badge
+                ></span>
+              </span>
+              <span class="float-end pt-1">
+                <rds-price [discount]="5" [actualPrice]="1000"></rds-price>
+              </span>
+            </div>
+            <div>
+              <!-- Rating elements  -->
+            </div>
+            <div class="mt-3">
+              <rds-label label="Color"></rds-label>
+            </div>
+            <div class="mt-3">
+              <rds-label
+                label=" A handcrafted printed canvas women's cross body sling bag of high quality with PU Flap, 
+                meticulously stitched together into a gorgeous, timeless, and durable masterpiece 
+                that will stand up to daily wear and tear for many years to come."
+                [multiline]="true"
+                [bold]="false"
+                [italic]="false"
+              ></rds-label>
+            </div>
+
+            <div class="mt-3 d-flex justify-content-between border-bottom">
+              <!-- <div class="p-1">Icon</div> -->
+              <div class="p-1 w-50">
+                <rds-button
+                  colorVariant="primary"
+                  [outlineButton]="true"
+                  [block]="true"
+                  size="medium"
+                  label="Add To BAG"
+                ></rds-button>
+              </div>
+              <div class="p-1 w-50 mb-3">
+                <rds-button
+                  colorVariant="primary"
+                  [block]="true"
+                  size="medium"
+                  label="BUY NOW"
+                ></rds-button>
+              </div>
+            </div>
+            <div class="mt-4">
+              <lib-rds-feature-list
+                header="Features"
+                [listItems]="listItems"
+                [column]="2"
+              ></lib-rds-feature-list>
+            </div>
+            <div class="mt-3">
+              <!-- label with text elements -->
+              <span class=""><i class="bi bi-heart"></i></span>
+              <rds-label label="14 Days return policy" class="mx-3"></rds-label>
+              <rds-label label="Cash on delivery available"></rds-label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngSwitchCase="'producroverview4'">
+      <div class="row">
+        <div class="col-md-6">
+          <div>
+            <span>
+              <span class="h3 fw-bold"
+                ><rds-label label="Girls' Sling Bag"></rds-label
+              ></span>
+              <span class="h2 mx-2 align-text-bottom"
+                ><rds-badge
+                  size="smallest"
+                  label="Assured"
+                  [pillBadges]="false"
+                  [positioned]="false"
+                  [iconBadge]="false"
+                  colorVariant="warning"
+                  [close]="false"
+                  top=""
+                  start=""
+                  [iconStroke]="true"
+                  [iconFill]="false"
+                ></rds-badge
+              ></span>
+            </span>
+            <span class="float-end pt-1">
+              <rds-price [discount]="5" [actualPrice]="1000"></rds-price>
+            </span>
+          </div>
+          <div>
+            <!-- Rating elements  -->
+          </div>
+          <div class="mt-3">
+            <rds-label label="Color"></rds-label>
+          </div>
+          <div class="mt-3">
+            <rds-label
+              label=" Flying berry hand bag Backpack Are Made Of Faux Leather; 
+                This Backpack bag Exudes A Lot Of Class And Elegance.
+                 Spacious And Chic, This Backpack bag Will Go Well With Formals And Casuals As Well.
+                  This Backpack bag Has Sufficient Space To Carry All Your Needed Essentials With Ease And Comfort."
+              [multiline]="true"
+              [bold]="false"
+              [italic]="false"
+            ></rds-label>
+          </div>
+          <div><rds-label label="In stock and ready to shop"></rds-label></div>
+          <div>
+            <h6><rds-label label="Size"></rds-label></h6>
+          </div>
+          <div class="mt-3 d-flex justify-content-between">
+            <!-- <div class="p-1">Icon</div> -->
+            <div class="p-1 w-50">
+              <rds-button
+                colorVariant="primary"
+                [outlineButton]="true"
+                [block]="true"
+                size="medium"
+                label="Add To BAG"
+              ></rds-button>
+            </div>
+            <div class="p-1 w-50 mb-3">
+              <rds-button
+                colorVariant="primary"
+                [block]="true"
+                size="medium"
+                label="BUY NOW"
+              ></rds-button>
+            </div>
+          </div>
+          <!-- <div class="mt-4">
+            <lib-rds-feature-list
+              header="Features"
+              [listItems]="listItems"
+              [column]="2"
+            ></lib-rds-feature-list>
+          </div> -->
+          <div class="mt-3">
+            <!-- label with text elements -->
+            <span class=""><i class="bi bi-heart"></i></span>
+            <rds-label label="14 Days return policy" class="mx-3"></rds-label>
+            <rds-label label="Cash on delivery available"></rds-label>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <!-- Image elements here -->
+          <p>Image element Here</p>
+          <img src="" alt="" />
         </div>
       </div>
     </div>

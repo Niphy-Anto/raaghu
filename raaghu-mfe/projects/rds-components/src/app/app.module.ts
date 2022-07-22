@@ -99,6 +99,8 @@ import { RdsCompPropertiesShimmerComponent } from './rds-comp-properties/rds-com
 import { RdsCompTableShimmerComponent } from './rds-comp-data-table/rds-comp-table-shimmer/rds-comp-table-shimmer.component';
 import { RdsCompPageNotFoundComponent } from './rds-comp-page-not-found/rds-comp-page-not-found.component';
 import { RdsCompProductOverviewComponent } from './rds-comp-product-overview/rds-comp-product-overview.component';
+import { RdsPriceModule } from 'projects/libs/rds-elements/src/rds-price/src/public-api';
+import { RdsFeatureListModule } from 'projects/libs/rds-elements/src/rds-feature-list/src/public-api';
 
 
 @NgModule({
@@ -266,6 +268,8 @@ import { RdsCompProductOverviewComponent } from './rds-comp-product-overview/rds
     RdsTextEditorModule,
     RdsFabMenuModule,
     RdsLabelModule,
+    RdsPriceModule,
+    RdsFeatureListModule,
     NgxShimmerLoadingModule
   ],
   providers: [],

@@ -12,9 +12,9 @@ export class RdsCompProductOverviewComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  breadcrumbsitems: BreadcrumbsItems[] = [];
   // breadcrumbsitems: BreadcrumbsItems[] = [];
-@Input() roles: 'producroverview1' | 'producroverview2' = 'producroverview1';
+@Input() productType: 'producroverview1' | 'producroverview2'| 'producroverview3' | 'producroverview4' = 'producroverview1';
 
 
  @Input() producroverview1 = [
@@ -51,5 +51,6 @@ export class RdsCompProductOverviewComponent implements OnInit {
         iconClass: 'bi bi-house-door',
       },
  ];
+ listItems: []=[];
 
 }

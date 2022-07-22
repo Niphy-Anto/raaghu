@@ -10,6 +10,9 @@ import {
   RdsCardModule,
   RdsLabelModule,
 } from '@libs/rds-elements';
+import { RdsPriceModule } from 'projects/libs/rds-elements/src/rds-price/src/public-api';
+import { RdsFeatureListModule } from 'projects/libs/rds-elements/src/rds-feature-list/src/public-api';
+import { RdsIconModule } from '@libs/rds-icon';
 
 export default {
   title: 'Components/Product-Overview',
@@ -24,6 +27,9 @@ export default {
         RdsBadgeModule,
         RdsCardModule,
         RdsButtonModule,
+        RdsPriceModule,
+        RdsFeatureListModule,
+        RdsIconModule
       ],
       providers: [FormBuilder],
     }),
@@ -34,9 +40,9 @@ const Template: Story<RdsCompProductOverviewComponent> = (args: RdsCompProductOv
   props: args,
 });
 
-export const Producroverview = Template.bind({});
+export const Producroverview1 = Template.bind({});
 
-Producroverview.args = {
+Producroverview1.args = {
   customBreadcrumbsItems: [
     {
       name: 'Men',
@@ -54,13 +60,19 @@ Producroverview.args = {
       iconClass: 'bi bi-house-door',
     },
   ],
-  roles: 'producroverview1'
+  productType: 'producroverview1',
+  listItems: [
+    { id: 1, value: 'Hand cut and sewn locally', some: 'value' },
+    { id: 2, value: 'Dyed with our proprietary colors', some: 'value' },
+    { id: 3, value: 'Pre-washed and pre-shrunk', some: 'value' },
+    { id: 4, value: 'Ultra-soft 100% cotton', some: 'value' },
+  ]
 
 };
 
-export const Producroverview1 = Template.bind({});
+export const Producroverview2 = Template.bind({});
 
-Producroverview1.args = {
+Producroverview2.args = {
   producroverview2 : [
     {
           name: 'Women',
@@ -78,6 +90,33 @@ Producroverview1.args = {
           iconClass: 'bi bi-house-door',
         },
    ],
-  roles: 'producroverview2'
+   productType: 'producroverview2',
+   listItems: [
+    { id: 1, value: 'Only the best materials', some: 'value' },
+    { id: 2, value: 'Ethically and locally made', some: 'value' },
+    { id: 3, value: 'Pre-washed and pre-shrunk', some: 'value' },
+    { id: 4, value: 'Machine wash cold with similar colors', some: 'value' }
+  ]
+
+};
+export const Producroverview3 = Template.bind({});
+
+Producroverview3.args = {
+   productType: 'producroverview3',
+   listItems: [
+    { id: 1, value: 'Multiple strap configurations', some: 'value' },
+    { id: 2, value: 'Spacious interior with top zip', some: 'value' },
+    { id: 3, value: 'Leather handle and tabs', some: 'value' },
+    { id: 4, value: 'Interior dividers', some: 'value' },
+    { id: 5, value: 'Stainless strap loops ', some: 'value' },
+    { id: 6, value: 'Double stitched construction', some: 'value' },
+    { id: 7, value: 'Water-resistant', some: 'value' }
+  ]
+
+};
+export const Producroverview4 = Template.bind({});
+
+Producroverview4.args = {
+   productType: 'producroverview4',
 
 };
