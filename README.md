@@ -161,7 +161,7 @@ Built on a robust tech stack and platform
  
 </br></br> 
 <h2 align="" style="border-bottom:0;color:#964BFF;">
- Tutorials
+ Quick Links
 </h2>
  
 
@@ -170,6 +170,8 @@ Built on a robust tech stack and platform
 - [Storybook](https://storybook.js.org/): Build bulletproof UI components faster
 - [Elements & Components](http://portal.raaghu.io/): Preview of all raaghu elements, components & pages.
 - [Demo](http://raaghu.io/): Dashboard Demo (Light & Dark theme) 
+- [Figma](http:#): Preview & download Figma gesigns
+- [XD](http://raaghu.io/): Preview & download xd Designs
 
 </br> </br>
 <h2 align="" style="border-bottom:0;color:#964BFF;">
