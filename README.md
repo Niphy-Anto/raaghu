@@ -129,7 +129,7 @@ Built on a robust tech stack and platform
         <!-- <br /><sub><b>Apoorva Lele</b></sub> -->
     </td>
     <td align="center" border="none">
-        <img src="./static/gatsby.png" width="80" title="Gatsby"/>
+        <img src="./static/abpio.png" width="80" title="abpio"/>
         <!-- <br /><sub><b>Omkar Choudhari</b></sub> -->
     </td>
   </tr>
