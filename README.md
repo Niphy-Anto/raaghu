@@ -80,10 +80,10 @@ Startup Templates
 <p>
 A collection of open-source statrter templates, Free templates that are perfect starter layouts for your application.
 </p> 
-<p align="center">
+<!-- <p align="center">
         <img src="./static/Features-new.png" alt="logo" width="1000"/>
 <p/>
- 
+  -->
  
  
  
