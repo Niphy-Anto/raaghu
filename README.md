@@ -87,10 +87,10 @@ A collection of open-source statrter templates, Free templates that are perfect 
 <p/>
  
 </br>
-<h2 align="center" style="border-bottom:0;">
+<h1 align="" style="border-bottom:0;">
     Tools Used
-</h2>
-<p align="center">
+</h1>
+<p align="">
 Built on a robust tech stack and platform
 </p> 
 </br>
