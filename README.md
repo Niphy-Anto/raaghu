@@ -2,18 +2,6 @@
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 <p align="center">
     <a href="https://raaghu.io" target="_blank">
-        <img src="./static/Raaghu-logo-mfe-white.png" alt="logo" width="200"/>
-    </a>
-</p>
-<h1 align="center" style="font-size:50px">
-    Micro Frontend Framework
-</h1>
-<p align="center">
-    Design System For Modern Web Applications
-</p>
-
-<p align="center">
-    <a href="https://raaghu.io" target="_blank">
         <img src="./static/banner-new.png" alt="logo" width="2000"/>
     </a>
 <p/>
