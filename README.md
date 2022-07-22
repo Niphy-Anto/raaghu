@@ -73,7 +73,7 @@ How Raaghu works?
 </h2>
 </br></br></br> 
 <p align="center">
-        <img src="./static/how-raaghu-works.png" alt="logo" width="800"/>
+        <img src="./static/how it works.png" alt="logo" width="800"/>
 <p/>
 
 We create your wireframes or use existing available wireframes. Based on your wireframe and theme design / branding, we apply the same CSS to elements, components and pages that we have. Based on Component driven development and our micro front end architecture we break your page design into components and enrich your library.​
