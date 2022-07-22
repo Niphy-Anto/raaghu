@@ -77,8 +77,7 @@ Startup Templates
 <p>
 A collection of open-source statrter templates, Free templates that are perfect starter layouts for your application.
 </p> 
-
-</br></br></br> 
+</br>
 <p align="center">
         <img src="./static/templates.png" alt="logo" width="1200"/>
 <p/>
