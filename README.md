@@ -55,7 +55,7 @@ Raaghu mfe can be used as a base to build complex components and UI layouts whil
  
 
 <p align="center">
-        <img src="./static/why-raaghu.png" alt="logo" width="1000"/>
+        <img src="./static/Features-new.png" alt="logo" width="1000"/>
 <p/>
 
 <h2 align="" style="border-bottom:0;color:#964BFF;">
