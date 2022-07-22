@@ -92,7 +92,7 @@ A collection of open-source statrter templates, Free templates that are perfect 
  
  </br></br>
 <h1 align="center" style="border-bottom:0;">
-
+    Tools Used
 </h1>
 <p align="center">
 Built on a robust tech stack and platform
