@@ -5,10 +5,10 @@
         <img src="./static/Raaghu-logo-mfe-white.png" alt="logo" width="200"/>
     </a>
 </p>
-<h2 align="" style="border-bottom:0;">
+<h2 align="center" style="border-bottom:0;">
     Micro Frontend Framework
 </h2>
-<p>
+<p align="center">
     Design System For Modern Web Applications
 </p>
 
