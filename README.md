@@ -75,7 +75,7 @@ These components come together to create the same wireframe design and form a pa
 Startup Templates
 </h1>
 <p>
-A collection of open-source statrter templates, Free templates that are perfect starter layouts for your application.
+A collection of open-source statrter templates, Free templates that are perfect starter layouts for your application. Create your solution based on free or premium startup templates. Either with an Angular Single-Page Application or Classic MVC & jQuery architecture.
 </p> 
 </br>
 <p align="center">
