@@ -101,7 +101,7 @@ Built on a robust tech stack and platform
 <table>
   <tr>   
     <td align="center" border="none">
-        <img src="visual-studio" width="100" title="Visual Studio"/>
+        <img src="./static/visual-studio.png" width="100" title="Visual Studio"/>
         <!--  <br /><sub><b>Mohan Bari</b></sub> -->
     </td>
     <td align="center" style="border: none">
