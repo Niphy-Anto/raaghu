@@ -1,9 +1,13 @@
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
-
 <p align="center">
     <a href="https://raaghu.io" target="_blank">
-        <img src="./static/banner2.png" alt="logo" width="2000"/>
+        <img src="./static/Raaghu-logo-mfe-white.png" alt="logo" width="2000"/>
+    </a>
+</p>
+<p align="center">
+    <a href="https://raaghu.io" target="_blank">
+        <img src="./static/Raaghu-logo-mfe-white.png" alt="logo" width="2000"/>
     </a>
 <p/>
   
