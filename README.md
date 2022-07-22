@@ -97,9 +97,9 @@ Built on a robust tech stack and platform
 <p align="center">
         <img src="./static/tools.png" alt="logo" width="1200"/>
 <p/>
+
 <table>
-  <tr>
-   
+  <tr>   
     <td align="center" border="none">
         <img src="visual-studio" width="100" title="Visual Studio"/>
         <!--  <br /><sub><b>Mohan Bari</b></sub> -->
