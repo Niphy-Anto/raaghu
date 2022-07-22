@@ -41,9 +41,9 @@
 
 
 </br></br>
-<h2 align="" style="border-bottom:0;">
+<h1 align="" style="border-bottom:0;">
 What is Raaghu?
-</h2>
+</h1>
 
 
 `raaghu-mfe` is an opensource micro front end framework built on top of `raaghu-elements`, Bootstrap 5 and Storybook offering highly customizable UI components and built-in pages.
