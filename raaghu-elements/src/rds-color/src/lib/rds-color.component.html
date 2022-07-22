@@ -1,0 +1,8 @@
+<h6>{{header}}</h6>
+<div class="d-flex">
+    <ng-container *ngFor="let item of itemList">
+        <div [ngClass]="defaultValue === item.id ? 'selected-border' : 'default-border'" [id]="item.color"
+            [ngStyle]="{'background-color': item.color}" (click)="selectColor(item)">
+        </div>
+    </ng-container>
+</div>

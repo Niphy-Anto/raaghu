@@ -97,6 +97,7 @@ import { RdsCompSecurityShimmerComponent } from './rds-comp-security/rds-comp-se
 import { RdsCompOrganizationTreeShimmerComponent } from './rds-comp-organization-tree/rds-comp-organization-tree-shimmer/rds-comp-organization-tree-shimmer.component';
 import { RdsCompPropertiesShimmerComponent } from './rds-comp-properties/rds-comp-properties-shimmer/rds-comp-properties-shimmer.component';
 import { RdsCompTableShimmerComponent } from './rds-comp-data-table/rds-comp-table-shimmer/rds-comp-table-shimmer.component';
+import { RdsCompPageNotFoundComponent } from './rds-comp-page-not-found/rds-comp-page-not-found.component';
 import { RdsCompProductListComponent } from './rds-comp-product-list/rds-comp-product-list.component';
 
 
@@ -184,9 +185,11 @@ import { RdsCompProductListComponent } from './rds-comp-product-list/rds-comp-pr
     RdsCompOrganizationTreeShimmerComponent,
     RdsCompPropertiesShimmerComponent,
     RdsCompTableShimmerComponent,
-  //RdsCompLanguageTextListComponent,
-      RdsCompProductListComponent
-   ],
+        RdsCompPageNotFoundComponent,
+        RdsCompProductListComponent
+    //RdsCompLanguageTextListComponent,
+
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
