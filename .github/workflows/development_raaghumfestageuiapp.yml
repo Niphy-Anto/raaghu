@@ -45,6 +45,12 @@ jobs:
         npm run patch-dev-server
         npm run build-all
 
+    - name: copy file
+      uses: canastro/copy-file-action@master
+      with:
+        source: "./raaghu-mfe/web.config"
+        target: "./raaghu-mfe/dist"
+
 
     - name: Upload artifact for deployment job
       uses: actions/upload-artifact@v3
