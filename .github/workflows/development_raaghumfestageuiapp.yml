@@ -44,12 +44,9 @@ jobs:
         npm run sync-elements
         npm run patch-dev-server
         npm run build-all
+        cp raaghu-mfe/web.config raaghu-mfe/dist
 
-    - name: copy file
-      uses: canastro/copy-file-action@master
-      with:
-        source: "./raaghu-mfe/web.config"
-        target: "./raaghu-mfe/dist"
+
 
 
     - name: Upload artifact for deployment job
