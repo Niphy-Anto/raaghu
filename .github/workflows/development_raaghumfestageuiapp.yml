@@ -44,7 +44,8 @@ jobs:
         npm run sync-elements
         npm run patch-dev-server
         npm run build-all
-        cp raaghu-mfe/web.config raaghu-mfe/dist
+        cp web.config dist
+        cp dist/host/* dist -r
 
 
 
