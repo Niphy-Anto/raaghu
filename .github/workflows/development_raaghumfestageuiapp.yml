@@ -45,6 +45,7 @@ jobs:
         npm run patch-dev-server
         npm run build-all
         cp web.config dist
+        cp dist/host/* dist -r
 
 
 

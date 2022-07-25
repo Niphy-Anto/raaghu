@@ -20,6 +20,10 @@
         "dist/rds-feature-list/rds-feature-list",
         "dist/rds-feature-list"
       ],
+      "rds-rating": [
+        "dist/rds-rating/rds-rating",
+        "dist/rds-rating"
+      ],
       "rds-product-image": [
         "dist/rds-product-image/rds-product-image",
         "dist/rds-product-image"
