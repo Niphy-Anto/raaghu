@@ -44,12 +44,10 @@ jobs:
         npm run sync-elements
         npm run patch-dev-server
         npm run build-all
+        cp web.config dist
+        cp dist/host/* dist -r
 
-    - name: copy file
-      uses: canastro/copy-file-action@master
-      with:
-        source: "./raaghu-mfe/web.config"
-        target: "./raaghu-mfe/dist"
+
 
 
     - name: Upload artifact for deployment job

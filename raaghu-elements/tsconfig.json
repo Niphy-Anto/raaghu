@@ -23,6 +23,10 @@
       "rds-size": [
         "dist/rds-size/rds-size",
         "dist/rds-size"
+      ],
+      "rds-rating": [
+        "dist/rds-rating/rds-rating",
+        "dist/rds-rating"
       ]
     },
     "skipLibCheck": true,

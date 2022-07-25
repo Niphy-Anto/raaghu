@@ -1,0 +1,8 @@
+<div class="d-flex"  [ngClass]="classes" >
+    <div class="mt-1" [ngClass]="colorSelection">{{rating}}</div>
+    <ng-container *ngFor="let item of itemList">
+        <rds-icon class="mx-2" [fill]="item.value <= rating.toFixed()? true: false" [ngClass]="{'selected': (item.value <= rating.toFixed())}" [name]="'star'" [height]="height"
+            [width]="width"></rds-icon>
+    </ng-container>
+    <span class="px-4 mt-1" [ngClass]="colorSelection">See all {{noOfReview}} review</span>
+</div>
