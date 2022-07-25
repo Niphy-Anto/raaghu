@@ -25,6 +25,14 @@
       "@libs/rds-label": [
         "rds-elements/rds-label/public-api",
         "rds-elements/rds-label"
+      ],
+      "rds-color": [
+        "dist/rds-color/rds-color",
+        "dist/rds-color"
+      ],
+      "rds-feature-list": [
+        "dist/rds-feature-list/rds-feature-list",
+        "dist/rds-feature-list"
       ]
     },
     "skipLibCheck": true,

@@ -100,6 +100,7 @@ import { RdsCompTableShimmerComponent } from './rds-comp-data-table/rds-comp-tab
 import { RdsFeedModule } from 'projects/libs/rds-elements/src/rds-feed/src/public-api';
 import { RdsLikeDislikeModule } from 'projects/libs/rds-elements/src/rds-like-dislike/src/public-api';
 import { RdsCompFeedsComponent } from './rds-comp-feeds/rds-comp-feeds.component';
+import { RdsCompPageNotFoundComponent } from './rds-comp-page-not-found/rds-comp-page-not-found.component';
 
 
 @NgModule({
@@ -186,6 +187,7 @@ import { RdsCompFeedsComponent } from './rds-comp-feeds/rds-comp-feeds.component
     RdsCompOrganizationTreeShimmerComponent,
     RdsCompPropertiesShimmerComponent,
     RdsCompTableShimmerComponent,
+    RdsCompPageNotFoundComponent,
     RdsCompFeedsComponent
     //RdsCompLanguageTextListComponent,
 
@@ -218,25 +220,17 @@ import { RdsCompFeedsComponent } from './rds-comp-feeds/rds-comp-feeds.component
     RdsSideNavModule,
     RdsDatepickerModule,
     RdsOffcanvasModule,
-    RdsSearchInputModule,
-    RdsFileUploaderModule,
     RdsSelectListModule,
     RdsSearchInputModule,
     RdsBannerModule,
     RdsFileUploaderModule,
-    RdsTextEditorModule,
     RdsTextareaModule,
     RdsChartRadarModule,
-    RdsChartLineModule,
     RdsBigNumberWidgetModule,
-    RdsIconModule,
     RdsTableModule,
     RdsChartAreaModule,
     RdsAccordionModule,
-    FormsModule,
-    CommonModule,
     RdsTagsModule,
-    RdsWidgetModule,
     RdsAlertModule,
     RdsButtonGroupModule,
     RdsCheckboxGroupsModule,
