@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ComponentLoaderOptions } from '@libs/shared';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'frequently-asked-questions';
+  rdsNewRoleMfeConfig: ComponentLoaderOptions = {
+    name: 'RdsCompFaqComponent'
+  };
+  ngOnInit(): void {
+    this.rdsNewRoleMfeConfig
+  }
 }
