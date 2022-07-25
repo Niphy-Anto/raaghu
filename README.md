@@ -88,7 +88,7 @@ A collection of open-source statrter templates, Free templates that are perfect 
  
 </br>
 <h1 align="" style="border-bottom:0;">
-    Tools Used
+    Build With
 </h1>
 <p align="">
 Built on a robust tech stack and platform
