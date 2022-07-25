@@ -103,6 +103,8 @@ import { RdsCompMarketingWebsiteNewsletterComponent } from './rds-comp-marketing
 import { RdsCompFaqComponent } from './rds-comp-faq/rds-comp-faq.component';
 import { RdsCompCalendarComponent } from './rds-comp-calendar/rds-comp-calendar.component';
 import { adapterFactory } from '@libs/rds-elements';
+import { RdsFeedModule } from 'projects/libs/rds-elements/src/rds-feed/src/public-api';
+import { RdsLikeDislikeModule } from 'projects/libs/rds-elements/src/rds-like-dislike/src/public-api';
 import { RdsCompFeedsComponent } from './rds-comp-feeds/rds-comp-feeds.component';
 
 @NgModule({
@@ -268,7 +270,9 @@ import { RdsCompFeedsComponent } from './rds-comp-feeds/rds-comp-feeds.component
     CalendarModule.forRoot({
       provide: DateAdapter,
       useFactory: adapterFactory,
-    })
+    }),
+    RdsFeedModule,
+    RdsLikeDislikeModule
   ],
   providers: [],
   bootstrap: [AppComponent],

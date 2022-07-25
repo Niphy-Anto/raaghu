@@ -190,3 +190,11 @@ export * from '../rds-fab-menu/src/public-api';
 
 // Public API Surface of rds-label
 export * from '../rds-label/src/public-api';
+
+// Public API Surface of rds-fab-menu
+export * from '../rds-like-dislike/src/public-api';
+
+
+// Public API Surface of rds-fab-menu
+export * from '../rds-feed/src/public-api';
+

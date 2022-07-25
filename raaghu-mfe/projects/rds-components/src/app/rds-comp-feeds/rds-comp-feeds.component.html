@@ -1,40 +1,41 @@
+
 <div [ngSwitch]="displaytype">
   <div *ngSwitchCase="'Basic'">
-    <section>
 
-      <div class="row d-flex justify-content-center" *ngFor="let item of itemList">
 
-        <div class="col-25 py-3">
-          <rds-icon [name]="item.icon" [colorVariant]="item.colorVariant" height="12px" width="12px"></rds-icon>
-        </div>
-        <div class="col-50 py-3 ">
-          <rds-label class=" text-left" [label]="item.action"></rds-label>
-          <span class="ps-2"> <b>
-              <rds-label [label]="item.actor" class="text-left">
 
-              </rds-label>
-            </b> </span>
-        </div>
+    <div class="row mt-3" *ngFor="let item of itemList">
 
-        <div class="col-20 py-3">
-          <rds-label [label]="item.date |date:'MMM d'"></rds-label>
-        </div>
-
+      <div class="col-md-2 text-end">
+        <rds-icon class="" [name]="item.icon" [colorVariant]="item.colorVariant" height="20px" width="20px">
+        </rds-icon>
+      </div>
+      <div class="col-md-8">
+        <rds-label [label]="item.action"></rds-label>
+        <span class="ps-2"> <b>
+            <rds-label [label]="item.actor">
+            </rds-label>
+          </b> </span>
       </div>
 
-    </section>
+      <div class="col-md-2">
+        <rds-label [label]="item.date |date:'MMM d'"></rds-label>
+      </div>
+  </div>
+
+
   </div>
   <div *ngSwitchCase="'Advanced'">
     <ng-content select="selector"></ng-content>
 
-    <div class="row d-flex justify-content-center" *ngFor="let item of itemList">
-      <div class="col-25 py-3">
+    <div class="row mt-3" *ngFor="let item of itemList">
+      <div class="col-md-4">
 
         <rds-avatar [WithProfilePic]="true" [profilePic]="item.profilePic" [colorVariant]="'light'" [Size]="'small'"
           [VerticalTitleWithProfilePic]="false"></rds-avatar>
       </div>
 
-      <div class="col-50 py-3 ">
+      <div class="col-md-4 ">
 
         <div class="div h-50">
           <span> <b>
@@ -47,11 +48,16 @@
 
       </div>
 
-      <div class="col-20 py-4">
+      <div class="col-4 ">
         <rds-label [label]="date"></rds-label>
       </div>
 
     </div>
 
+  </div>
+
+  <div *ngSwitchCase="'With_Multiple_Items'">
+    <ng-content select="selector"></ng-content>
+    <rds-feed [itemList]="itemList"></rds-feed>
   </div>
 </div>
