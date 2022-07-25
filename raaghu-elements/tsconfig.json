@@ -19,6 +19,10 @@
       "rds-feature-list": [
         "dist/rds-feature-list/rds-feature-list",
         "dist/rds-feature-list"
+      ],
+      "rds-size": [
+        "dist/rds-size/rds-size",
+        "dist/rds-size"
       ]
     },
     "skipLibCheck": true,
