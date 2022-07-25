@@ -17,4 +17,7 @@ export class RdsCompProductListComponent implements OnInit {
   }
 
   @Input() withInlinePriceProductListItems: any[] = []
+
+  @Input()  itemList: []
+ 
 }

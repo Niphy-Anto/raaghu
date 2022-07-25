@@ -2,6 +2,8 @@ import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { RdsBadgeModule, RdsButtonModule, RdsCardModule, RdsLabelModule } from '@libs/rds-elements';
 import { RdsCompProductListComponent } from './rds-comp-product-list.component';
+import { RdsColorModule } from 'projects/libs/rds-elements/src/rds-color/src/public-api';
+import { RdsIconModule } from '@libs/rds-icon';
 
 export default {
   title: 'Components/Product List',
@@ -9,7 +11,7 @@ export default {
   decorators: [
     moduleMetadata({
       imports: [
-        FormsModule, ReactiveFormsModule, RdsButtonModule, RdsLabelModule, RdsCardModule, RdsBadgeModule
+        FormsModule, ReactiveFormsModule, RdsButtonModule, RdsLabelModule, RdsCardModule, RdsBadgeModule, RdsColorModule, RdsIconModule
       ],
       providers: [
         FormBuilder
@@ -29,6 +31,7 @@ withInlinePrice.args = {
   role: 'withInlinePrice',
   withInlinePriceProductListItems:[{"title": "Basic Tee", "subTitle": "White","price": "$35", "badgeLabel": "Quality Assured"},
   {"title": "Basic Tee 2", "subTitle": "White 2","price": "$40", "badgeLabel": ""},
+  {"title": "Basic Tee 2", "subTitle": "White 2","price": "$40", "badgeLabel": ""},
   {"title": "Basic Tee 3", "subTitle": "White 2","price": "$45", "badgeLabel": "Quality Assured"},]
 }
 
@@ -37,10 +40,10 @@ simple.args = {
   role: 'simple',
   withInlinePriceProductListItems:[{"title": "Basic Tee", "subTitle": "White","price": "$35", "badgeLabel": "Quality Assured"},
   {"title": "Basic Tee 2", "subTitle": "White 2","price": "$40", "badgeLabel": ""},
-  {"title": "Basic Tee 3", "subTitle": "White 2","price": "$45", "badgeLabel": "Quality Assured"},
-  {"title": "Basic Tee", "subTitle": "White","price": "$35", "badgeLabel": "Quality Assured"},
-  {"title": "Basic Tee 2", "subTitle": "White 2","price": "$40", "badgeLabel": ""},
-  {"title": "Basic Tee 3", "subTitle": "White 2","price": "$45", "badgeLabel": "Quality Assured"},
+  {"title": "Basic Tee 3", "subTitle": "White 2","price": "$45", "badgeLabel": ""},
+  {"title": "Basic Tee", "subTitle": "White","price": "$35", "badgeLabel": ""},
+  {"title": "Basic Tee 2", "subTitle": "White 2","price": "$40", "badgeLabel": "Quality Assured"},
+  {"title": "Basic Tee 3", "subTitle": "White 2","price": "$45", "badgeLabel": ""},
   {"title": "Basic Tee", "subTitle": "White","price": "$35", "badgeLabel": "Quality Assured"},
   {"title": "Basic Tee 2", "subTitle": "White 2","price": "$40", "badgeLabel": ""},]
 }
@@ -57,11 +60,17 @@ withCTALink.args = {
 export const withColorSwatchesAndHorizontalScrolling= Template.bind({})
 withColorSwatchesAndHorizontalScrolling.args = {
   role: 'withColorSwatchesAndHorizontalScrolling',
-  withInlinePriceProductListItems:[{"title": "Basic Tee", "subTitle": "White","price": "$35", "badgeLabel": "Quality Assured"},
+  withInlinePriceProductListItems:[{"title": "Basic Tee", "subTitle": "White","price": "$35", "badgeLabel": ""},
   {"title": "Basic Tee 2", "subTitle": "White 2","price": "$40", "badgeLabel": ""},
-  {"title": "Basic Tee 3", "subTitle": "White 2","price": "$45", "badgeLabel": "Quality Assured"},
-  {"title": "Basic Tee", "subTitle": "White","price": "$35", "badgeLabel": "Quality Assured"},]
+  {"title": "Basic Tee 3", "subTitle": "White 2","price": "$45", "badgeLabel": ""},
+  {"title": "Basic Tee", "subTitle": "White","price": "$35", "badgeLabel": "Quality Assured"},],
+  itemList: [
+    { id: 1, color: '#FFFFFF' },
+    { id: 2, color: '#FDD2FF' },
+    { id: 3, color: '#BFEAFF' },
+  ]
 }
+
 
 export const withTallImages= Template.bind({})
 withTallImages.args = {
@@ -69,7 +78,7 @@ withTallImages.args = {
   withInlinePriceProductListItems:[{"title": "Basic Tee", "subTitle": "White","price": "$35", "badgeLabel": "Quality Assured"},
   {"title": "Basic Tee 2", "subTitle": "White 2","price": "$40", "badgeLabel": ""},
   {"title": "Basic Tee 3", "subTitle": "White 2","price": "$45", "badgeLabel": "Quality Assured"},
-  {"title": "Basic Tee", "subTitle": "White","price": "$35", "badgeLabel": "Quality Assured"},
+  {"title": "Basic Tee", "subTitle": "White","price": "$35", "badgeLabel": ""},
   {"title": "Basic Tee 2", "subTitle": "White 2","price": "$40", "badgeLabel": ""},
   {"title": "Basic Tee 2", "subTitle": "White 2","price": "$40", "badgeLabel": ""},]
 }
@@ -79,7 +88,7 @@ withImageOverlayAndAddButton.args = {
   role: 'withImageOverlayAndAddButton',
   withInlinePriceProductListItems:[{"title": "Basic Tee", "subTitle": "White","price": "$35", "badgeLabel": "Quality Assured"},
   {"title": "Basic Tee 2", "subTitle": "White 2","price": "$40", "badgeLabel": ""},
-  {"title": "Basic Tee 3", "subTitle": "White 2","price": "$45", "badgeLabel": "Quality Assured"},
+  {"title": "Basic Tee 3", "subTitle": "White 2","price": "$45", "badgeLabel": ""},
   {"title": "Basic Tee", "subTitle": "White","price": "$35", "badgeLabel": "Quality Assured"},]
 }
 
@@ -94,13 +103,13 @@ withTallImagesAndCTALink.args = {
 export const withBorderGrid= Template.bind({})
 withBorderGrid.args = {
   role: 'withBorderGrid',
-  withInlinePriceProductListItems:[{"title": "Basic Tee", "subTitle": "White","price": "$35", "badgeLabel": "Quality Assured"},
+  withInlinePriceProductListItems:[{"title": "Basic Tee", "subTitle": "White","price": "$35", "badgeLabel": ""},
   {"title": "Basic Tee 2", "subTitle": "White 2","price": "$40", "badgeLabel": ""},
-  {"title": "Basic Tee 3", "subTitle": "White 2","price": "$45", "badgeLabel": "Quality Assured"},
-  {"title": "Basic Tee", "subTitle": "White","price": "$35", "badgeLabel": "Quality Assured"},
+  {"title": "Basic Tee 3", "subTitle": "White 2","price": "$45", "badgeLabel": ""},
+  {"title": "Basic Tee", "subTitle": "White","price": "$35", "badgeLabel": ""},
   {"title": "Basic Tee 2", "subTitle": "White 2","price": "$40", "badgeLabel": ""},
-  {"title": "Basic Tee 3", "subTitle": "White 2","price": "$45", "badgeLabel": "Quality Assured"},
-  {"title": "Basic Tee", "subTitle": "White","price": "$35", "badgeLabel": "Quality Assured"},
+  {"title": "Basic Tee 3", "subTitle": "White 2","price": "$45", "badgeLabel": ""},
+  {"title": "Basic Tee", "subTitle": "White","price": "$35", "badgeLabel": ""},
   {"title": "Basic Tee 2", "subTitle": "White 2","price": "$40", "badgeLabel": ""},]
 }
 
@@ -111,15 +120,15 @@ withSupportingText.args = {
   {"title": "Basic Tee 2", "subTitle": "White 2","price": "$40", "badgeLabel": ""},
   {"title": "Basic Tee 3", "subTitle": "White 2","price": "$45", "badgeLabel": "Quality Assured"},
   {"title": "Basic Tee", "subTitle": "White","price": "$35", "badgeLabel": "Quality Assured"},
-  {"title": "Basic Tee 2", "subTitle": "White 2","price": "$40", "badgeLabel": ""},
-  {"title": "Basic Tee 3", "subTitle": "White 2","price": "$45", "badgeLabel": "Quality Assured"},
+  {"title": "Basic Tee 2", "subTitle": "White 2","price": "$40", "badgeLabel": "Quality Assured"},
+  {"title": "Basic Tee 3", "subTitle": "White 2","price": "$45", "badgeLabel": ""},
   {"title": "Basic Tee", "subTitle": "White","price": "$35", "badgeLabel": "Quality Assured"},
-  {"title": "Basic Tee 2", "subTitle": "White 2","price": "$40", "badgeLabel": ""},]
+  {"title": "Basic Tee 2", "subTitle": "White 2","price": "$40", "badgeLabel": "Quality Assured"},]
 }
 
-export const cardWitFullDetails= Template.bind({})
-cardWitFullDetails.args = {
-  role: 'cardWitFullDetails',
+export const cardWithFullDetails= Template.bind({})
+cardWithFullDetails.args = {
+  role: 'cardWithFullDetails',
   withInlinePriceProductListItems:[{"title": "Basic Tee", "subTitle": "White","price": "$35", "badgeLabel": "Quality Assured"},
   {"title": "Basic Tee 2", "subTitle": "White 2","price": "$40", "badgeLabel": ""},
   {"title": "Basic Tee 3", "subTitle": "White 2","price": "$45", "badgeLabel": "Quality Assured"},
