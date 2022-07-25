@@ -101,6 +101,7 @@ import { RdsCompPageNotFoundComponent } from './rds-comp-page-not-found/rds-comp
 import { RdsCompProductOverviewComponent } from './rds-comp-product-overview/rds-comp-product-overview.component';
 import { RdsPriceModule } from 'projects/libs/rds-elements/src/rds-price/src/public-api';
 import { RdsFeatureListModule } from 'projects/libs/rds-elements/src/rds-feature-list/src/public-api';
+import { RdsColorModule } from 'projects/libs/rds-elements/src/rds-color/src/public-api';
 
 
 @NgModule({
@@ -269,6 +270,7 @@ import { RdsFeatureListModule } from 'projects/libs/rds-elements/src/rds-feature
     RdsFabMenuModule,
     RdsLabelModule,
     RdsPriceModule,
+    RdsColorModule,
     RdsFeatureListModule,
     NgxShimmerLoadingModule
   ],

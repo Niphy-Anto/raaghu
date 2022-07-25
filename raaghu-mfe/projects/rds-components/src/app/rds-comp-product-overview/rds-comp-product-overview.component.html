@@ -45,11 +45,11 @@
                 [italic]="false"
               ></rds-label>
             </div>
-            <lib-rds-feature-list
+            <rds-feature-list
               header="Highlights"
               [listItems]="listItems"
-              [column]="1"
-            ></lib-rds-feature-list>
+              [columns]="1"
+            ></rds-feature-list>
             <h6><rds-label label="Deatils"></rds-label></h6>
             <rds-label
               label=" The 6-Pack includes two black, two white, and two heather gray
@@ -71,7 +71,11 @@
               <rds-price [discount]="5" [actualPrice]="1000"></rds-price>
             </div>
             <div class="mt-3">
-              <rds-label label="Color"></rds-label>
+             <rds-label label="Color"></rds-label>
+              <rds-color
+                [itemList]="itemList"
+                [defaultValue]="1"
+              ></rds-color>
             </div>
             <div class="mt-3">
               <rds-label label="Size"></rds-label>
@@ -150,6 +154,10 @@
             </div>
             <div class="mt-3">
               <rds-label label="Color"></rds-label>
+              <rds-color
+              [itemList]="itemList"
+              [defaultValue]="1"
+            ></rds-color>
             </div>
             <div class="mt-3">
               <rds-label label="Size"></rds-label>
@@ -198,11 +206,11 @@
               ></rds-label>
             </div>
             <div class="mt-3">
-              <lib-rds-feature-list
+              <rds-feature-list
                 header="Features"
                 [listItems]="listItems"
-                [column]="1"
-              ></lib-rds-feature-list>
+                [columns]="1"
+              ></rds-feature-list>
             </div>
             <div class="mt-3">
               <!-- label with text elements -->
@@ -253,6 +261,10 @@
             </div>
             <div class="mt-3">
               <rds-label label="Color"></rds-label>
+              <rds-color
+              [itemList]="itemList"
+              [defaultValue]="1"
+            ></rds-color>
             </div>
             <div class="mt-3">
               <rds-label
@@ -286,11 +298,11 @@
               </div>
             </div>
             <div class="mt-4">
-              <lib-rds-feature-list
+              <rds-feature-list
                 header="Features"
                 [listItems]="listItems"
-                [column]="2"
-              ></lib-rds-feature-list>
+                [columns]="2"
+              ></rds-feature-list>
             </div>
             <div class="mt-3">
               <!-- label with text elements -->
@@ -303,6 +315,14 @@
       </div>
     </div>
     <div *ngSwitchCase="'producroverview4'">
+      <div class="row">
+        <div class="col-md-12">
+          <rds-breadcrumb
+            [customBreadcrumbsItems]="'producroverview4'"
+            role="withDivider"
+            [iconShow]="false"
+          ></rds-breadcrumb>
+        </div>
       <div class="row">
         <div class="col-md-6">
           <div>
@@ -335,6 +355,10 @@
           </div>
           <div class="mt-3">
             <rds-label label="Color"></rds-label>
+            <rds-color
+            [itemList]="itemList"
+            [defaultValue]="1"
+          ></rds-color>
           </div>
           <div class="mt-3">
             <rds-label
@@ -347,8 +371,8 @@
               [italic]="false"
             ></rds-label>
           </div>
-          <div><rds-label label="In stock and ready to shop"></rds-label></div>
-          <div>
+          <div class="mt-3"><rds-label label="In stock and ready to shop"></rds-label></div>
+          <div class="mt-3">
             <h6><rds-label label="Size"></rds-label></h6>
           </div>
           <div class="mt-3 d-flex justify-content-between">
@@ -391,6 +415,7 @@
           <img src="" alt="" />
         </div>
       </div>
+    </div>
     </div>
   </div>
 </div>

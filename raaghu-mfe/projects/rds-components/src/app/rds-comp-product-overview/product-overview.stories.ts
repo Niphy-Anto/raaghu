@@ -13,6 +13,7 @@ import {
 import { RdsPriceModule } from 'projects/libs/rds-elements/src/rds-price/src/public-api';
 import { RdsFeatureListModule } from 'projects/libs/rds-elements/src/rds-feature-list/src/public-api';
 import { RdsIconModule } from '@libs/rds-icon';
+import { RdsColorModule } from 'projects/libs/rds-elements/src/rds-color/src/public-api';
 
 export default {
   title: 'Components/Product-Overview',
@@ -29,7 +30,8 @@ export default {
         RdsButtonModule,
         RdsPriceModule,
         RdsFeatureListModule,
-        RdsIconModule
+        RdsIconModule,
+        RdsColorModule
       ],
       providers: [FormBuilder],
     }),
@@ -66,6 +68,11 @@ Producroverview1.args = {
     { id: 2, value: 'Dyed with our proprietary colors', some: 'value' },
     { id: 3, value: 'Pre-washed and pre-shrunk', some: 'value' },
     { id: 4, value: 'Ultra-soft 100% cotton', some: 'value' },
+  ],
+  itemList: [
+    { id: 1, color: '#FFFFFF' },
+    { id: 2, color: '#FDD2FF' },
+    { id: 3, color: '#BFEAFF' },
   ]
 
 };
@@ -96,6 +103,11 @@ Producroverview2.args = {
     { id: 2, value: 'Ethically and locally made', some: 'value' },
     { id: 3, value: 'Pre-washed and pre-shrunk', some: 'value' },
     { id: 4, value: 'Machine wash cold with similar colors', some: 'value' }
+  ],
+  itemList: [
+    { id: 1, color: '#F88AAC' },
+    { id: 2, color: '#6F6F6F' },
+    { id: 3, color: '#16BE36' },
   ]
 
 };
@@ -111,6 +123,11 @@ Producroverview3.args = {
     { id: 5, value: 'Stainless strap loops ', some: 'value' },
     { id: 6, value: 'Double stitched construction', some: 'value' },
     { id: 7, value: 'Water-resistant', some: 'value' }
+  ],
+  itemList: [
+    { id: 1, color: '#853610' },
+    { id: 2, color: '#323EAE' },
+    { id: 3, color: '#FF9900' },
   ]
 
 };
@@ -118,5 +135,23 @@ export const Producroverview4 = Template.bind({});
 
 Producroverview4.args = {
    productType: 'producroverview4',
+   itemList: [
+    { id: 1, color: '#E1CBA4' },
+    { id: 2, color: '#323EAE' },
+    { id: 3, color: '#FF9900' },
+  ],
+  producroverview4 : [
+    {
+          name: 'Travel',
+          route: '/Travel',
+          iconClass: 'bi bi-house-door',
+        },
+        {
+          name: 'Bags',
+          route: '/Bags',
+          iconClass: 'bi bi-house-door',
+        },
+   ],
+  
 
 };

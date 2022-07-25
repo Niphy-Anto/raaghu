@@ -51,6 +51,28 @@ export class RdsCompProductOverviewComponent implements OnInit {
         iconClass: 'bi bi-house-door',
       },
  ];
+ @Input() producroverview4 = [
+  {
+    name: 'Travel',
+    route: '/Travel',
+    iconClass: 'bi bi-house-door',
+  },
+  {
+    name: 'Bags',
+    route: '/Bags',
+    iconClass: 'bi bi-house-door',
+  },{
+    name: 'Travel',
+    route: '/Travel',
+    iconClass: 'bi bi-house-door',
+  },
+  {
+    name: 'Bags',
+    route: '/Bags',
+    iconClass: 'bi bi-house-door',
+  },
+ ];
  listItems: []=[];
+ itemList: []
 
 }
