@@ -19,6 +19,10 @@
       "rds-feature-list": [
         "dist/rds-feature-list/rds-feature-list",
         "dist/rds-feature-list"
+      ],
+      "rds-rating": [
+        "dist/rds-rating/rds-rating",
+        "dist/rds-rating"
       ]
     },
     "skipLibCheck": true,
