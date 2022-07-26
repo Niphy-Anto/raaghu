@@ -9,11 +9,14 @@ import {
   RdsButtonModule,
   RdsCardModule,
   RdsLabelModule,
+  
 } from '@libs/rds-elements';
 import { RdsPriceModule } from 'projects/libs/rds-elements/src/rds-price/src/public-api';
 import { RdsFeatureListModule } from 'projects/libs/rds-elements/src/rds-feature-list/src/public-api';
 import { RdsIconModule } from '@libs/rds-icon';
 import { RdsColorModule } from 'projects/libs/rds-elements/src/rds-color/src/public-api';
+import { RdsProductImageModule } from 'projects/libs/rds-elements/src/rds-product-image/src/public-api';
+import { RdsRatingModule } from 'projects/libs/rds-elements/src/rds-rating/src/public-api';
 
 export default {
   title: 'Components/Product-Overview',
@@ -31,7 +34,9 @@ export default {
         RdsPriceModule,
         RdsFeatureListModule,
         RdsIconModule,
-        RdsColorModule
+        RdsColorModule,
+        RdsProductImageModule,
+        RdsRatingModule
       ],
       providers: [FormBuilder],
     }),
@@ -73,8 +78,13 @@ Producroverview1.args = {
     { id: 1, color: '#FFFFFF' },
     { id: 2, color: '#FDD2FF' },
     { id: 3, color: '#BFEAFF' },
+  ],
+  imgitemList:[
+    "https://images.unsplash.com/photo-1433086966358-54859d0ed716?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8bmF0dXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+    "https://www.waiin.com/wp-content/uploads/2021/07/Framework-Expertise_01.png",
+    "https://www.waiin.com/wp-content/uploads/2021/07/Framework-Expertise_01.png",
+    "https://images.unsplash.com/photo-1433086966358-54859d0ed716?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8bmF0dXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
   ]
-
 };
 
 export const Producroverview2 = Template.bind({});
@@ -108,6 +118,11 @@ Producroverview2.args = {
     { id: 1, color: '#F88AAC' },
     { id: 2, color: '#6F6F6F' },
     { id: 3, color: '#16BE36' },
+  ],
+  imgitemList:[
+    "https://cdn.shopify.com/s/files/1/0752/6435/products/7_560d64a9-7d29-4ea4-93ed-7b6d29bd6339_1_765x.jpg?v=1639994439",
+    "https://cdn.shopify.com/s/files/1/0752/6435/products/7_560d64a9-7d29-4ea4-93ed-7b6d29bd6339_1_765x.jpg?v=1639994439",
+    "https://cdn.shopify.com/s/files/1/0752/6435/products/2_1418d8b1-f625-4531-b858-bf6e2ba4b2f3_1_160x.jpg?v=1639994439"
   ]
 
 };
@@ -128,6 +143,13 @@ Producroverview3.args = {
     { id: 1, color: '#853610' },
     { id: 2, color: '#323EAE' },
     { id: 3, color: '#FF9900' },
+  ],
+  imgitemList:[
+    "https://cdn.shopify.com/s/files/1/0752/6435/products/7_560d64a9-7d29-4ea4-93ed-7b6d29bd6339_1_765x.jpg?v=1639994439",
+  "https://cdn.shopify.com/s/files/1/0752/6435/products/7_560d64a9-7d29-4ea4-93ed-7b6d29bd6339_1_765x.jpg?v=1639994439",
+  "https://cdn.shopify.com/s/files/1/0752/6435/products/2_1418d8b1-f625-4531-b858-bf6e2ba4b2f3_1_160x.jpg?v=1639994439",
+  "https://cdn.shopify.com/s/files/1/0752/6435/products/1_dac179d7-7d1c-438c-a053-e85703a08be1_160x.jpg?v=1639546727",
+  "https://cdn.shopify.com/s/files/1/0752/6435/products/7_560d64a9-7d29-4ea4-93ed-7b6d29bd6339_1_160x.jpg?v=1639994439"
   ]
 
 };
@@ -152,6 +174,8 @@ Producroverview4.args = {
           iconClass: 'bi bi-house-door',
         },
    ],
-  
-
+   imgitemList:[
+    "https://cdn.shopify.com/s/files/1/0752/6435/products/2_1418d8b1-f625-4531-b858-bf6e2ba4b2f3_1_160x.jpg?v=1639994439"
+  ]
 };
+

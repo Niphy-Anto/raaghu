@@ -104,6 +104,8 @@ import { RdsCompProductOverviewComponent } from './rds-comp-product-overview/rds
 import { RdsPriceModule } from 'projects/libs/rds-elements/src/rds-price/src/public-api';
 import { RdsFeatureListModule } from 'projects/libs/rds-elements/src/rds-feature-list/src/public-api';
 import { RdsColorModule } from 'projects/libs/rds-elements/src/rds-color/src/public-api';
+import { RdsProductImageModule } from 'projects/libs/rds-elements/src/rds-product-image/src/public-api';
+import { RdsRatingModule } from 'projects/libs/rds-elements/src/rds-rating/src/public-api';
 
 
 @NgModule({
@@ -268,6 +270,8 @@ import { RdsColorModule } from 'projects/libs/rds-elements/src/rds-color/src/pub
     RdsPriceModule,
     RdsColorModule,
     RdsFeatureListModule,
+    RdsProductImageModule,
+    RdsRatingModule,
     NgxShimmerLoadingModule
   ],
   providers: [],
