@@ -5,7 +5,7 @@
   <div class="col-md-6">
     <div style="float: right;">
       <rds-dropdownlist colorVariant="btn-secondary" [placeholder]="inputTypeList[0].some" [listItems]="listDropdown"
-        (onSelect)="loadMonthlySummaryWithYear($event)" [DropdownItems]="DropdownItems" [listItems]="inputTypeList">
+        (onSelect)="loadMonthlySummaryWithYear($event)" [listItems]="inputTypeList">
         <ng-template #DropdownItems let-val>
           <li><a class="dropdown-item"><i class="bi bi-bootstrap p-1"></i>{{val.value}}</a></li>
         </ng-template>

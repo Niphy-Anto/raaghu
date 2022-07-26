@@ -1,15 +1,17 @@
+
 <div [ngClass]="divclasses">
-    <label [ngClass]="Label==''?'d-none':'form-label'" for="Label">{{Label}} <span class="text-danger"
-        *ngIf="isRequired">*</span></label>
-    <select data-bs-toggle="tooltip" [attr.data-bs-placement]="tooltipPlacement" [(ngModel)]="value" title=""
-      [attr.id]="id" name="value" [ngClass]="classesForSelect" aria-label="Default select example" [disabled]="disabled"
-      (ngModelChange)="onSelect($event)">
-      <ng-content>
-  
-      </ng-content>
-      <option selected="selected" value="" hidden>Select</option>
-      <option *ngFor="let item of itemList" [selected]="item.value==value" [value]="item.value">
-        {{item.displayText}}
-      </option>
-    </select>
-  </div>
+  <label [ngClass]="labelText==''?'d-none':'form-label'" for="value">{{labelText}}<span class="text-danger"
+      *ngIf="isRequired">*</span></label>
+  <select data-bs-toggle="tooltip" [attr.data-bs-placement]="tooltipPlacement" [(ngModel)]="value" title=""
+    [attr.id]="id" name="value" [ngClass]="classesForSelect" aria-label="Default select example" [disabled]="disabled" [multiple]="multiple" [size]="rows"
+    (ngModelChange)="onSelect($event)">
+    <ng-content>
+
+    </ng-content>
+    <option selected="selected" value="" hidden>Select</option>
+    <option *ngFor="let item of itemList" [selected]="item.value==value" [value]="item.value">
+      {{item.displayText}}
+    </option>
+  </select>
+</div>
+

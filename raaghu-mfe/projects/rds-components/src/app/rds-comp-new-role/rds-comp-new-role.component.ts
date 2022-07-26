@@ -26,7 +26,7 @@ export class RdsCompNewRoleComponent implements OnInit {
   @ViewChild('Roleform') Roleform: NgForm;
   id:any;
   edit:boolean=false;
-
+  @Input()  EditShimmer: boolean = false;
   @Input() isReset: boolean = false;
   activePage: number = 0;
   treeData: [] = [];

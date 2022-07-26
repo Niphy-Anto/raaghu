@@ -10,11 +10,13 @@ export default {
     // borderColor: { control: 'color' },
     // Color: { control: 'color' },
     colorVariant: {
-      options: ['bg-info', 'bg-warning', 'bg-success', 'bg-danger', 'bg-primary', 'default'],
+      options: ['info', 'warning', 'success', 'danger', 'primary', 'secondary'],
       control: { type: 'select' }
     },
-    custcolor: { control: { type: 'color' } },
-    textColor: { control: { type: 'color' } }
+    toastMessageColorVariant: {
+      options: ['info', 'warning', 'success', 'danger', 'primary', 'secondary'],
+      control: { type: 'select' }
+    },
   },
 } as Meta;
 
@@ -22,16 +24,11 @@ const Template: Story<RdsToastsComponent> = (args: RdsToastsComponent) => ({
   props: args,
 });
 
-export const Toast = Template.bind({})
-Toast.args = {
-  customColor: false,
+export const Basic = Template.bind({})
+Basic.args = {
   withHeader: false,
-  withImage: false,
-  custcolor: '',
-
   headerTitle: 'Bootstrap',
   time: '11 Seconds ago',
-  textColor: ''
 }
 
 const Content: Story<RdsToastsComponent> = (args: RdsToastsComponent) => ({
@@ -39,12 +36,10 @@ const Content: Story<RdsToastsComponent> = (args: RdsToastsComponent) => ({
   template: `<rds-toasts
     [withImage]="false"
     [withHeader]="false"
-    colorVariant="undefined"
-    [customColor]="false"
-    custcolor=""
+    [colorVariant]="colorVariant"
+    [toastMessageColorVariant]="toastMessageColorVariant"
     headerTitle="Bootstrap"
     time="11 Seconds ago"
-    textColor=""
   >
   <div class="mt-2 p-2 border-top">
   <button type="button" class="btn btn-primary btn-sm">Take action</button>&nbsp;
@@ -55,14 +50,9 @@ const Content: Story<RdsToastsComponent> = (args: RdsToastsComponent) => ({
 
 export const withCallToAction = Content.bind({})
 withCallToAction.args = {
-  customColor: false,
   withHeader: false,
-  withImage: false,
-  custcolor: '',
-
   headerTitle: 'Bootstrap',
   time: '11 Seconds ago',
-  textColor: ''
 }
 
 
@@ -70,16 +60,14 @@ const Pos: Story<RdsToastsComponent> = (args: RdsToastsComponent) => ({
   props: args,
   template: `
     <div aria-live="polite" aria-atomic="true" style="position: relative; min-height: 200px;">
-
     <rds-toasts
-    [withImage]="false"
     [withHeader]="false"
-    colorVariant="bg-info"
-    [customColor]="false"
-    custcolor=""
+    [colorVariant]="colorVariant"
+    [toastMessageColorVariant]="toastMessageColorVariant"
+    [position]="position"
     headerTitle="Bootstrap"
     time="11 Seconds ago"
-    textColor=""
+    [position]="position"
   >
   </rds-toasts>
   </div>
@@ -89,12 +77,9 @@ const Pos: Story<RdsToastsComponent> = (args: RdsToastsComponent) => ({
 
 export const Position = Pos.bind({})
 withCallToAction.args = {
-  customColor: false,
   withHeader: false,
-  withImage: false,
-  custcolor: '',
-  position: 'Bottom-Right',
+  colorVariant:'primary',
+  position: 'Top-Left',
   headerTitle: 'Bootstrap',
   time: '11 Seconds ago',
-  textColor: ''
 }

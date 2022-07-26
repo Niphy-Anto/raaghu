@@ -1,3 +1,6 @@
+
+
+
 <div class="row">
   <div class="col-md-12 text-end pb-3 desktop-btn">
     <rds-button [label]="translate.instant('NEW EDITION')" type="button" [colorVariant]="'primary'"
@@ -8,7 +11,7 @@
     <div class="card p-2 h-100 border-0 rounded-0 card-full-stretch">
       <app-rds-data-table [inlineEdit]="false" [actions]="actions" [recordsPerPage]="recordsPerpage" [pagination]="true"
         [tableHeaders]="EditionsTableHeader" (onActionSelection)="onActionSelect($event)"
-        noDataTitle="Currently you do not have edition" [tableData]="tableData">
+        noDataTitle="Currently you do not have edition" [tableData]="tableData"  [isShimmer]="isShimmer">
       </app-rds-data-table>
     </div>
   </div>
@@ -19,8 +22,11 @@
   </rds-button> -->
   <rds-fab-menu [listItems]="listItems" [menuicon]="'plus'" [colorVariant]="'primary'" [menuiconWidth]="'12px'" [menuiconHeight]="'12px'" (onSelect)="onSelectMenu($event)"></rds-fab-menu>
 </div>
-<rds-offcanvas [canvasTitle]="translate.instant(canvasTitle)" [offId]="'addEdition'" [placement]="'end'"
-  [backDrop]="true" [offcanvaswidth]="600" *ngIf="viewCanvas" (onClose)="closeCanvas()" >
+
+<rds-offcanvas [canvasTitle]="translate.instant(canvasTitle)" [offId]="'addEdition'" [placement]="'end'" 
+ [offcanvaswidth]="600" *ngIf="viewCanvas" (onClose)="closeCanvas()" >
+  <app-rds-comp-features-edit-shimmer *ngIf="editShimmer"></app-rds-comp-features-edit-shimmer>
+  <div *ngIf="!editShimmer">
   <rds-nav-tab [navtabsItems]="navtabsItems" [horizontalAlignment]="'start'" [activepage]="activePage"
                [verticalAlignment]="false" [pills]="false" [tabs]="true" [fill]="false" [justified]="false"
                (onClicktab)="onTabClick($event)"></rds-nav-tab>
@@ -75,7 +81,7 @@
           <div class="row">
             <div class="col-md-6">
               <div class="form-group mb-3">
-                <rds-counter [counterValue]="TrailPeriod" [Title]="translate.instant('Trial Period')"
+                <rds-counter [counterValue]="TrailPeriod" position="end" [label]="translate.instant('Trial Period')"
                   [label]="translate.instant('Days')" colorVariant="primary" [(ngModel)]="TrailPeriod" [min]="0"
                   [max]="26" [width]="124" name="trial" #trial_period="ngModel" ngDefaultControl>
                 </rds-counter>
@@ -83,7 +89,7 @@
             </div>
             <div class="col-md-6">
               <div class="form-group mb-3">
-                <rds-counter [counterValue]="" [Title]="translate.instant('Expiry Notification Interval')"
+                <rds-counter [counterValue]="" position="end" [label]="translate.instant('Expiry Notification Interval')"
                   [label]="translate.instant('Days')" colorVariant="primary" [(ngModel)]="ExpiryInterval" [min]="0"
                   [max]="26" [width]="124" name="expiry" #expiry_interval="ngModel" ngDefaultControl></rds-counter>
               </div>
@@ -150,17 +156,18 @@
       </rds-button>
     </div>
   </div>
+</div>
 </rds-offcanvas>
 
 
-<rds-offcanvas [canvasTitle]="translate.instant(moveTenantCanvasTitle)" [offId]="'moveTenantEdition'" [placement]="'end'" [backDrop]="true"
+<rds-offcanvas [canvasTitle]="translate.instant(moveTenantCanvasTitle)" [offId]="'moveTenantEdition'" [placement]="'end'" 
   [offcanvaswidth]="600" *ngIf="viewMoveTenantCanvas" (onClose)="closeMoveTenantCanvas()">
   <!-- <b>{{moveTenantCanvasTitle}}</b> -->
   <div class="tab-content px-3 py-4 navsm-p-0">
     <div class="row">
       <div class="col-md-12">
         <div class="text-primary mb-2">{{tenantCount}} {{"Tenants will be moved"|translate}}</div>
-        <rds-select-list [Label]="translate.instant('Edition')" ngDefaultControl
+        <rds-select-list [labelText]="translate.instant('Edition')" ngDefaultControl
                          name="edition" [(ngModel)]="targetEditionId" [itemList]="editionList" [id]="editionList">
          
       </rds-select-list>

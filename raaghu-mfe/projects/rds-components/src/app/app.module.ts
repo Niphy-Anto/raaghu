@@ -40,7 +40,8 @@ import {
   RdsColorPickerModule, RdsChartRadarModule, RdsChartLineModule, RdsBigNumberWidgetModule, RdsIconModule, RdsTableModule, RdsChartAreaModule, RdsDropdownlistModule, 
   RdsInputGroupModule, RdsAccordionModule, RdsTagsModule, RdsAlertModule, RdsButtonGroupModule, RdsCollapseModule, RdsIllustrationModule, RdsListGroupModule, RdsPopoverModule, 
   RdsSpinnerModule, RdsToastsModule, RdsChartBubbleModule, RdsChartDoughnutModule, RdsChartMixedModule, RdsChartPolarAreaModule, RdsChartScatterModule, RdsChartStackedModule, 
-  RdsProgressbarModule, RdsBreadcrumbModule, RdsCarouselModule, RdsDoubleRangeModule, RdsScrollspyModule, RdsCounterModule, RdsFabMenuModule, RdsLabelModule
+  RdsProgressbarModule, RdsBreadcrumbModule, RdsCarouselModule, RdsDoubleRangeModule, RdsScrollspyModule, RdsCounterModule, RdsFabMenuModule, RdsLabelModule, 
+  CalendarModule, DateAdapter
 } from '@libs/rds-elements';
 import { RdsCompDemouiComponent } from './rds-comp-demoui/rds-comp-demoui.component';
 import { RdsCompTenantManagementComponent } from './rds-comp-tenant-management/rds-comp-tenant-management.component';
@@ -80,6 +81,28 @@ import { RdsCompInformationComponent } from './rds-comp-information/rds-comp-inf
 import { RdsCompDynamicEnityPropertiesComponent } from './rds-comp-dynamic-enity-properties/rds-comp-dynamic-enity-properties.component';
 import { RdsCompNewDynamicEntityPropertyComponent } from './rds-comp-new-dynamic-entity-property/rds-comp-new-dynamic-entity-property.component';
 import { RdsCompPlanInformationComponent } from './rds-comp-plan-information/rds-comp-plan-information.component';
+import { RdsCompVisualSettingsShimmerComponent } from './rds-comp-visual-settings/rds-comp-visual-settings-shimmer/rds-comp-visual-settings-shimmer.component';
+import { NgxShimmerLoadingModule } from  'ngx-shimmer-loading';
+import { RdsCompFeaturesEditShimmerComponent } from './rds-comp-features/rds-comp-features-edit-shimmer/rds-comp-features-edit-shimmer.component';
+import { RdsCompNewRoleShimmerComponent } from './rds-comp-new-role/rds-comp-new-role-shimmer/rds-comp-new-role-shimmer.component';
+import { RdsCompUserBasicsShimmerComponent } from './rds-comp-user-basics/rds-comp-user-basics-shimmer/rds-comp-user-basics-shimmer.component';
+import { RdsCompsUserClaimsShimmerComponent } from './rds-comps-user-claims/rds-comps-user-claims-shimmer/rds-comps-user-claims-shimmer.component';
+import { RdsCompUserManagementShimmerComponent } from './rds-comp-user-management/rds-comp-user-management-shimmer/rds-comp-user-management-shimmer.component';
+import { RdsCompUserDelegationsShimmerComponent } from './rds-comp-user-delegations/rds-comp-user-delegations-shimmer/rds-comp-user-delegations-shimmer.component';
+import { RdsCompTopNavigationShimmerComponent } from './rds-comp-top-navigation/rds-comp-top-navigation-shimmer/rds-comp-top-navigation-shimmer.component';
+import { RdsCompTenantSettingsShimmerComponent } from './rds-comp-tenant-settings/rds-comp-tenant-settings-shimmer/rds-comp-tenant-settings-shimmer.component';
+import { RdsCompTenantManagementShimmerComponent } from './rds-comp-tenant-management/rds-comp-tenant-management-shimmer/rds-comp-tenant-management-shimmer.component';
+import { RdsCompTenantInformationShimmerComponent } from './rds-comp-tenant-information/rds-comp-tenant-information-shimmer/rds-comp-tenant-information-shimmer.component';
+import { RdsCompSubscriptionShimmerComponent } from './rds-comp-subscription/rds-comp-subscription-shimmer/rds-comp-subscription-shimmer.component';
+import { RdsCompSecurityShimmerComponent } from './rds-comp-security/rds-comp-security-shimmer/rds-comp-security-shimmer.component';
+import { RdsCompOrganizationTreeShimmerComponent } from './rds-comp-organization-tree/rds-comp-organization-tree-shimmer/rds-comp-organization-tree-shimmer.component';
+import { RdsCompPropertiesShimmerComponent } from './rds-comp-properties/rds-comp-properties-shimmer/rds-comp-properties-shimmer.component';
+import { RdsCompTableShimmerComponent } from './rds-comp-data-table/rds-comp-table-shimmer/rds-comp-table-shimmer.component';
+import { RdsCompPageNotFoundComponent } from './rds-comp-page-not-found/rds-comp-page-not-found.component';
+import { RdsCompMarketingWebsiteNewsletterComponent } from './rds-comp-marketing-website-newsletter/rds-comp-marketing-website-newsletter.component';
+import { RdsCompFaqComponent } from './rds-comp-faq/rds-comp-faq.component';
+import { RdsCompCalendarComponent } from './rds-comp-calendar/rds-comp-calendar.component';
+import { adapterFactory } from '@libs/rds-elements';
 
 @NgModule({
   declarations: [
@@ -149,8 +172,27 @@ import { RdsCompPlanInformationComponent } from './rds-comp-plan-information/rds
     RdsCompDynamicEnityPropertiesComponent,
     RdsCompNewDynamicEntityPropertyComponent,
     RdsCompPlanInformationComponent,
+    RdsCompVisualSettingsShimmerComponent,
+    RdsCompFeaturesEditShimmerComponent,
+    RdsCompNewRoleShimmerComponent,
+    RdsCompUserBasicsShimmerComponent,
+    RdsCompsUserClaimsShimmerComponent,
+    RdsCompUserManagementShimmerComponent,
+    RdsCompUserDelegationsShimmerComponent,
+    RdsCompTopNavigationShimmerComponent,
+    RdsCompTenantSettingsShimmerComponent,
+    RdsCompTenantManagementShimmerComponent,
+    RdsCompTenantInformationShimmerComponent,
+    RdsCompSubscriptionShimmerComponent,
+    RdsCompSecurityShimmerComponent,
+    RdsCompOrganizationTreeShimmerComponent,
+    RdsCompPropertiesShimmerComponent,
+    RdsCompTableShimmerComponent,
+    RdsCompPageNotFoundComponent,
+    RdsCompMarketingWebsiteNewsletterComponent,
+    RdsCompFaqComponent,
+    RdsCompCalendarComponent
     //RdsCompLanguageTextListComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -180,23 +222,17 @@ import { RdsCompPlanInformationComponent } from './rds-comp-plan-information/rds
     RdsSideNavModule,
     RdsDatepickerModule,
     RdsOffcanvasModule,
-    RdsSearchInputModule,
-    RdsFileUploaderModule,
     RdsSelectListModule,
     RdsSearchInputModule,
     RdsBannerModule,
     RdsFileUploaderModule,
-    RdsTextEditorModule,
     RdsTextareaModule,
     RdsChartRadarModule,
-    RdsChartLineModule,
     RdsBigNumberWidgetModule,
-    RdsIconModule,
     RdsTableModule,
     RdsChartAreaModule,
     RdsAccordionModule,
     RdsTagsModule,
-    RdsWidgetModule,
     RdsAlertModule,
     RdsButtonGroupModule,
     RdsCheckboxGroupsModule,
@@ -225,7 +261,12 @@ import { RdsCompPlanInformationComponent } from './rds-comp-plan-information/rds
     RdsCounterModule,
     RdsTextEditorModule,
     RdsFabMenuModule,
-    RdsLabelModule
+    RdsLabelModule,
+    NgxShimmerLoadingModule,
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory,
+    })
   ],
   providers: [],
   bootstrap: [AppComponent],

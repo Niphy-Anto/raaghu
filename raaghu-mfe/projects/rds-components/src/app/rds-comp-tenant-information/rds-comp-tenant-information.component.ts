@@ -15,7 +15,7 @@ export class RdsCompTenantInformationComponent implements OnInit, OnChanges {
   @Input() tenantData: any;
   @ViewChild('tenantCreationForm') tenantInfoForm: NgForm;
   @Input() showEmail: boolean= true;
-
+  @Input() editShimmer:boolean=false;
   constructor(public translate:TranslateService){}
 
   ngOnInit(): void {

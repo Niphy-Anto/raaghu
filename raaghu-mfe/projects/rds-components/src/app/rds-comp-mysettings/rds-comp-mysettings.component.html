@@ -10,7 +10,7 @@
             <div class="col-md-12 sm-p-0">
               <div class="form-group mb-3">
                 <rds-input size="default" [value]="ProfileData.UserName" [Title]="translate.instant('Profile Name')" TitleType="'Top'" inputType="text"
-                           name="profileName" [(ngModel)]="ProfileData.UserName" [disabled]="false" [readonly]="true" ngDefaultControl>
+                           name="profileName" [isRequired]=true [(ngModel)]="ProfileData.UserName" [disabled]="false" [readonly]="true" ngDefaultControl>
                 </rds-input>
               </div>
             </div>
@@ -26,7 +26,7 @@
             <div class="col-md-12 sm-p-0">
               <div class="form-group mb-3">
                 <rds-input size="default" [readonly]="true" [Title]="translate.instant('User name')" [value]="ProfileData.UserName" inputType="text"
-                           name="username" [(ngModel)]="ProfileData.UserName" ngDefaultControl>
+                           name="username" [isRequired]=true [(ngModel)]="ProfileData.UserName" ngDefaultControl>
                 </rds-input>
               </div>
             </div>
@@ -68,7 +68,7 @@
     </div>
   </div>
 </div>
-<div class="footer-buttons my-2">
+<div class="footer-buttons my-2 shadow-none">
   <div class="row">
     <div class="col-sm-12">
       <rds-button [submit]="false" [block]="false" [size]="'medium'" [disabled]="false"

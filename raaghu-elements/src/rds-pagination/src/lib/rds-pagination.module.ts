@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RdsPaginationComponent } from './rds-pagination.component';
 import { FormsModule } from '@angular/forms';
-import { RdsIconModule } from '../../../rds-icon/src/lib/rds-icon.module';
+import { RdsIconModule } from '@libs/rds-icon';
 
 @NgModule({
   declarations: [

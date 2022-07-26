@@ -10,15 +10,14 @@ import { Flags } from './flag-icons';
   // styles: [':host::ng-deep svg{width: px; height: 50px}'],
 })
 export class RdsIconComponent implements OnInit, OnChanges {
-  private svgIcon: SVGElement | undefined;
+  private svgIcon!: SVGElement;
   title = 'rds-icon';
   @Input() height: string = '';
-  @Input() fill: boolean | undefined = false;
+  @Input() fill: boolean | undefined  = false;
   @Input() stroke: boolean | undefined = true;
 
   @Input() width: string = '';
   // @Input() color: string = '';
-  @Input() type: string = '';
   @Input() name: string = '';
   @Input() colorVariant: string = '';
   constructor(private element: ElementRef,
@@ -67,9 +66,24 @@ export class RdsIconComponent implements OnInit, OnChanges {
     if (this.width) {
       svg.style.width = this.width;
     }
-    if (this.colorVariant) {
-      svg.setAttribute('class', 'icon-' + this.colorVariant);
-    }
+    if (this.colorVariant == 'primary') {
+      // svg.setAttribute('class', 'icon-' + this.colorVariant);
+      svg.style.backgroundColor = '#7E2EEf';
+    } else  if (this.colorVariant == 'secondary') {
+      svg.style.backgroundColor = '#2B0066';
+    } else  if (this.colorVariant == 'success') {
+      svg.style.backgroundColor = '#2EEF59';
+    } else  if (this.colorVariant == 'info') {
+      svg.style.backgroundColor = '#3ef1e8';
+    } else  if (this.colorVariant == 'warning') {
+      svg.style.backgroundColor = '#E3A300';
+    } else  if (this.colorVariant == 'danger') {
+      svg.style.backgroundColor = '#EF2E2E';
+    } else  if (this.colorVariant == 'dark') {
+      svg.style.backgroundColor = '#363636';
+    } else  if (this.colorVariant == 'light') {
+      svg.style.backgroundColor = '#F8F9FA';
+    };
     if (this.fill) {
       svg.style.fill = 'currentColor';
     }

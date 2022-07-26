@@ -1,39 +1,65 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": ".",
     "outDir": "./out-tsc",
+    "paths": {
+      "@libs/rds-icon": [
+        "rds-elements/rds-icon/public-api",
+        "rds-elements/rds-icon"
+      ],
+      "@libs/rds-badge": [
+        "rds-elements/rds-badge/public-api",
+        "rds-elements/rds-badge"
+      ],
+      "rds-color": [
+        "dist/rds-color/rds-color",
+        "dist/rds-color"
+      ],
+      "rds-feature-list": [
+        "dist/rds-feature-list/rds-feature-list",
+        "dist/rds-feature-list"
+      ],
+      "rds-rating": [
+        "dist/rds-rating/rds-rating",
+        "dist/rds-rating"
+      ],
+      "rds-popular-pages": [
+        "dist/rds-popular-pages/rds-popular-pages",
+        "dist/rds-popular-pages"
+      ]
+    },
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitOverride": true,
-    "noPropertyAccessFromIndexSignature": true,
-    "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "sourceMap": false,
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
+    "noImplicitReturns": true,
+    "noImplicitAny": false,
+    "strictPropertyInitialization": false,
+    "noPropertyAccessFromIndexSignature": false,
     "moduleResolution": "node",
     "importHelpers": true,
-    "paths": {
-      "@rds-common-lib": [
-        "src/rds-app-config/src/public-api"
-      ],
-      "@libs/rds-elements": [
-        "src/root/public-api"
-      ]
-    },
-    "target": "es2017",
-    "module": "es2020",
+    "target": "es2015",
+    "module": "esnext",
     "lib": [
-      "es2020",
+      "es2017",
       "dom"
-    ]
+    ],
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": true,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true
-  }
+  },
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
 }

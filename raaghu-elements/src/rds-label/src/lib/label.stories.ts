@@ -20,6 +20,9 @@ const Template: Story<RdsLabelComponent> = (args: RdsLabelComponent) => ({
 
 export const Basic = Template.bind({});
 Basic.args = {
-  label: ""
+  label: "",
+  multiline: false,
+  bold: false,
+  italic: false,
 }
 

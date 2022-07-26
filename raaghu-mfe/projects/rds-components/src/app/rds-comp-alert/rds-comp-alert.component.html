@@ -1,4 +1,4 @@
 <div *ngFor="let alert of currentAlerts; index as i">
-    <rds-alert  [position]="'bottom'" [icon]="getIcon(alert)" [type]="getType(alert)" [delay]="5000" [showAlertonLoad]="true" (onDismiss)="dispose(i)" [label]="translate.instant(alert.message)">
+    <rds-alert  [position]="'bottom'" [icon]="getIcon(alert)" [colorVariant]="getType(alert)" [delay]="5000" [showAlertonLoad]="true" (onDismiss)="dispose(i)" [label]="translate.instant(alert.message)">
     </rds-alert>
 </div>
