@@ -5,7 +5,7 @@
                 <div class="col-md-12 col-sm-12">
                     <div class="form-group mt-3">
                         <rds-select-list [(ngModel)]="selectedLanguage.countryCode"
-                            [Label]="translate.instant('Language')" [customIcon]="'bi bi-chevron-down'"
+                            [labelText]="translate.instant('Language')" [customIcon]="'bi bi-chevron-down'"
                             #language_name="ngModel" id="select-listlanguage" [value]="selectedLanguage.countryCode"
                             ngDefaultControl name="language" [isRequired]=true required [itemList]="languageNames">
                         </rds-select-list>

@@ -1,11 +1,11 @@
-<div class="modal" [class]="Animation" [id]="modalId" tabindex="-1" [attr.data-bs-backdrop]="backdropstatic"
-  data-bs-keyboard="false" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog  modal-dialog-scrollable" [class]="ModalClasses">
+<div class="modal" [ngClass]="modalAnimationClass" [id]="modalId" tabindex="-1" [attr.data-bs-backdrop]="backdropstatic"
+     data-bs-keyboard="false" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div [ngClass]="classes">
     <div class="modal-content">
       <div class="modal-header" *ngIf="isModalHeader">
         <ng-content select="[modalheader]"></ng-content>
       </div>
-      <div class="modal-body" [ngStyle]="{'height':height + 'px' }">
+      <div class="modal-body">
         <ng-content select="[Modalbody]"></ng-content>
       </div>
       <div class="modal-footer" *ngIf="isModalFooter">

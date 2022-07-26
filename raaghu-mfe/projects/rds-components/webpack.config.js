@@ -86,6 +86,8 @@ module.exports = {
         './RdsCompNewDynamicEntityProperty': './projects/rds-components/src/app/rds-comp-new-dynamic-entity-property/rds-comp-new-dynamic-entity-property.component.ts',
 
         './RdsCompPlanInformation': './projects/rds-components/src/app/rds-comp-plan-information/rds-comp-plan-information.component.ts',
+        './RdsCompPageNotFound': './projects/rds-components/src/app/rds-comp-page-not-found/rds-comp-page-not-found.component.ts',
+        './RdsCompFaqComponent': './projects/rds-components/src/app/rds-comp-faq/rds-comp-faq.component.ts',
 
       },
 

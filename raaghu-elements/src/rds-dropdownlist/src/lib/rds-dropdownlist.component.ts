@@ -13,6 +13,7 @@ export class RdsDropdownlistComponent implements OnInit, OnChanges {
   isMasterSel: boolean;
   categoryList: any;
   checkedCategoryList: any;
+ 
   @Input() value: any;
   @Input()
   multiSelect!: boolean;
@@ -23,9 +24,9 @@ export class RdsDropdownlistComponent implements OnInit, OnChanges {
   @Input()
   size?: string;
 
-  @Input() iconHeight: string = '20px';
-  @Input() iconWidth: string = '20px';
-  @Input() iconStroke: boolean = true;
+  @Input()  iconHeight: string = '10px';
+  @Input() iconWidth: string = '10px';
+  @Input()  iconStroke: boolean = true;
   @Input() iconFill: boolean = false;
   @Input() icon: string = '';
 
@@ -35,11 +36,14 @@ export class RdsDropdownlistComponent implements OnInit, OnChanges {
   @Input()
   placeholder = "Filter by user"
 
-  @Input()
-  DropdownItems!: TemplateRef<any>
+ 
 
   @Input()
-  listItems!: any;
+   listItems:any =[
+    { value: 'Export to excel', some: 'value', id: 1, href: '', icon: 'export_to_excel', iconWidth: '20px', iconHeight: '25px', iconStroke: true, iconFill: false },
+    { value: 'Import from excel', some: 'value', id: 2, href: '', icon: 'download_collected_data', iconWidth: '20px', iconHeight: '20px', iconStroke: true, iconFill: false },
+    { value: 'Click here download sample import file.', some: 'value', id: 3, href: '', icon: 'download_collected_data', iconWidth: '', iconHeight: '', iconStroke: true, iconFill: false },
+  ];
 
   @Output()
   onSelect = new EventEmitter<{ item: any }>()
@@ -73,15 +77,15 @@ export class RdsDropdownlistComponent implements OnInit, OnChanges {
 
   public get button1(): any[] {
 
-    var customClasses = [' btn ', ' form-select ', `${this.colorVariant}`, 'dropdown-toggle', 'w-100']
+    var customClasses = [' btn btn-'+ `${this.colorVariant}`, ' form-select ', 'dropdown-toggle', '']
 
     if (this.size === 'small') {
-      var selectSize = 'btn-sm'
-      customClasses.push(selectSize)
+      // var selectSize = 'btn-sm'
+      customClasses.push('btn-sm')
     }
     else if (this.size === 'large') {
-      var selectSize = 'btn-lg'
-      customClasses.push(selectSize)
+      // var selectSize = 'btn-lg'
+      customClasses.push('btn-lg')
     }
     else {
       var selectSize = ''

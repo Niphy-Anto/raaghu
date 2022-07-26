@@ -6,6 +6,10 @@ export default {
   title: 'Elements/Navbar',
   component: RdsNavBarComponent,
   argTypes: {
+    size: {
+      options: ['small', 'medium', 'large'],
+      control: { type: 'select' },
+    },
   },
 } as Meta;
 
@@ -15,33 +19,12 @@ const Template: Story<RdsNavBarComponent> = (args: RdsNavBarComponent) => ({
 });
 export const BasicNavbar: Story<RdsNavBarComponent> = (args) => ({
   props: args,
-  template: `<rds-nav-bar
-  navbarId="navbarSupportedContent"
-  [navbarheader]="navbarheader"
-  [navbarcontent]="navbarcontent"
-  [navbarItems]="navbarItems"
-  [backgroundColor]=
-  >
-<ng-template #navbarheader>
-<a class="navbar-brand" href="#">Navbar</a>
-<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-<span class="navbar-toggler-icon"></span>
 
-</button>
-
-</ng-template>
-<ng-template #navbarcontent let-val>
-<li class="nav-item" >
-<a class="nav-link" [ngClass]="val.navclass" [href]="val.href">{{val.label}}</a>
-</li>
-</ng-template>
-</rds-nav-bar>
-`
 
 });
 
 BasicNavbar.args = {
-  type: 'large',
+  size: 'medium',
   navbarItems: [{
     label: "Home",
     isActive: true,
@@ -63,4 +46,21 @@ BasicNavbar.args = {
 };
 
 
+// template: `<rds-nav-bar
+// navbarId="navbarSupportedContent"
+// [navbarheader]="navbarheader"
+// [navbarcontent]="navbarcontent"
+// [navbarItems]="navbarItems"
+// [size]="medium"
+// >
+// <ng-template #navbarheader>
 
+
+// </ng-template>
+// <ng-template #navbarcontent let-val>
+// <li class="nav-item "  >
+// <a class="nav-link" [ngClass]="classes" [ngClass]="val.navclass" [href]="val.href">{{val.label}}</a>
+// </li>
+// </ng-template>
+// </rds-nav-bar>
+// `
