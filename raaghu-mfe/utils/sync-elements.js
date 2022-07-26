@@ -15,7 +15,8 @@ const dependentElements = [
     'rds-badge',
     'rds-label',
     'rds-avatar',
-    'rds-like-dislike'
+    'rds-like-dislike',
+    'rds-rating'
     
 ];
 
@@ -83,6 +84,16 @@ function mergeTSConfigJson() {
             "@libs/rds-like-dislike": [
                 "rds-elements/rds-like-dislike/public-api",
                 "rds-elements/rds-like-dislike"
+            ]
+        };
+        changesDone = true;
+    };
+    if (ngElementsFile.compilerOptions.paths["@libs/rds-rating"] == undefined) {
+        ngElementsFile.compilerOptions.paths = {
+            ...ngElementsFile.compilerOptions.paths,
+            "@libs/rds-rating": [
+                "rds-elements/rds-rating/public-api",
+                "rds-elements/rds-rating"
             ]
         };
         changesDone = true;

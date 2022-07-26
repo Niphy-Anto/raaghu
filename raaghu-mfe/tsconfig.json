@@ -30,7 +30,12 @@
       "@libs/rds-like-dislike": [
         "rds-elements/rds-like-dislike/public-api",
         "rds-elements/rds-like-dislike"
+      ],
+      "@libs/rds-rating": [
+        "rds-elements/rds-rating/public-api",
+        "rds-elements/rds-rating"
       ]
+      
     },
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",

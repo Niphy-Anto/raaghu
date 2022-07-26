@@ -6,6 +6,10 @@ import { RdsFeedComponent } from './rds-feed.component';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
+import { RdsIconModule } from '@libs/rds-icon';
+import { RdsRatingModule } from '@libs/rds-rating';
+
+
 
 
 @NgModule({
@@ -17,7 +21,9 @@ import { CommonModule } from '@angular/common';
     RdsLabelModule,
     RdsLikeDislikeModule,
     FormsModule,
-    CommonModule
+    CommonModule,
+    RdsRatingModule,
+    RdsIconModule
   ],
   exports: [
     RdsFeedComponent

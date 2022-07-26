@@ -34,9 +34,9 @@
         "dist/rds-feature-list/rds-feature-list",
         "dist/rds-feature-list"
       ],
-      "rds-rating": [
-        "dist/rds-rating/rds-rating",
-        "dist/rds-rating"
+      "@libs/rds-rating": [
+        "rds-elements/rds-rating/public-api",
+        "rds-elements/rds-rating"
       ]
     },
     "skipLibCheck": true,
