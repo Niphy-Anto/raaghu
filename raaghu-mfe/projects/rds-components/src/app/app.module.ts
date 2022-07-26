@@ -98,6 +98,8 @@ import { RdsCompOrganizationTreeShimmerComponent } from './rds-comp-organization
 import { RdsCompPropertiesShimmerComponent } from './rds-comp-properties/rds-comp-properties-shimmer/rds-comp-properties-shimmer.component';
 import { RdsCompTableShimmerComponent } from './rds-comp-data-table/rds-comp-table-shimmer/rds-comp-table-shimmer.component';
 import { RdsCompPageNotFoundComponent } from './rds-comp-page-not-found/rds-comp-page-not-found.component';
+import { RdsCompMarketingWebsiteNewsletterComponent } from './rds-comp-marketing-website-newsletter/rds-comp-marketing-website-newsletter.component';
+import { RdsCompFaqComponent } from './rds-comp-faq/rds-comp-faq.component';
 import { RdsCompProductOverviewComponent } from './rds-comp-product-overview/rds-comp-product-overview.component';
 import { RdsPriceModule } from 'projects/libs/rds-elements/src/rds-price/src/public-api';
 import { RdsFeatureListModule } from 'projects/libs/rds-elements/src/rds-feature-list/src/public-api';
@@ -189,6 +191,8 @@ import { RdsColorModule } from 'projects/libs/rds-elements/src/rds-color/src/pub
     RdsCompPropertiesShimmerComponent,
     RdsCompTableShimmerComponent,
     RdsCompPageNotFoundComponent,
+    RdsCompMarketingWebsiteNewsletterComponent,
+    RdsCompFaqComponent,
     RdsCompProductOverviewComponent,
     //RdsCompLanguageTextListComponent,
 
