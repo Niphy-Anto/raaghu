@@ -11,6 +11,22 @@
       "@libs/rds-badge": [
         "rds-elements/rds-badge/public-api",
         "rds-elements/rds-badge"
+      ],
+      "rds-color": [
+        "dist/rds-color/rds-color",
+        "dist/rds-color"
+      ],
+      "rds-feature-list": [
+        "dist/rds-feature-list/rds-feature-list",
+        "dist/rds-feature-list"
+      ],
+      "rds-rating": [
+        "dist/rds-rating/rds-rating",
+        "dist/rds-rating"
+      ],
+      "rds-popular-pages": [
+        "dist/rds-popular-pages/rds-popular-pages",
+        "dist/rds-popular-pages"
       ]
     },
     "skipLibCheck": true,
@@ -18,13 +34,15 @@
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitOverride": true,
-    "noPropertyAccessFromIndexSignature": true,
-    "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "sourceMap": false,
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
+    "noImplicitReturns": true,
+    "noImplicitAny": false,
+    "strictPropertyInitialization": false,
+    "noPropertyAccessFromIndexSignature": false,
     "moduleResolution": "node",
     "importHelpers": true,
     "target": "es2015",

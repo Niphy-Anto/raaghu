@@ -1,0 +1,44 @@
+
+    <label class="text-muted">
+        POPULAR PAGES
+    </label>
+    <table class="table w-50 mt-3" >
+        <tbody>
+          <tr class=" border-top" *ngFor="let item of customPopularPageItems ;index as i">
+            <td class="widthTdIcon p-3"> 
+                <rds-icon
+                height="23"
+                [fill]="false"
+                [stroke]="lightslategrey"
+                width="23"
+                type=""
+                [name]="item.icon"
+                colorVariant="">
+            </rds-icon>
+          </td>
+          <td class="w-100">
+        <div class="fw-bold">
+        {{item.title}}
+        </div>
+        <div>
+        {{item.subtitle}}
+        </div>
+            </td>
+            <td>
+              <a [href]="item.route"> 
+              <rds-icon
+              height="47"
+              [fill]="false"
+              [stroke]=""
+              width="7"
+              type=""
+              name="rightArrow"
+              colorVariant=""
+              class="pointerStyle"
+            >
+          </rds-icon>
+        </a>
+        </td>
+          </tr>
+        </tbody>
+    </table>

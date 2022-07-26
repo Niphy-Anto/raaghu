@@ -4,6 +4,7 @@ module.exports = {
     "../projects/**/*.stories.@(js|jsx|ts|tsx)"
   ],
   "addons": [
+    "@storybook/addon-docs",
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions"
@@ -14,5 +15,8 @@ module.exports = {
   },
   "typescript": { 
     "reactDocgen": false
+  },
+  "core": {
+    "builder": "webpack5"
   }
 }
