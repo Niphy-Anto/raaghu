@@ -2,11 +2,15 @@
 import { Story, Meta, moduleMetadata } from '@storybook/angular';
 import { RdsLabelModule } from '@libs/rds-label';
 import { RdsAvatarModule } from '@libs/rds-avatar';
-import { RdsLikeDislikeModule } from '@libs/rds-like-dislike';
+import { RdsLikeDislikeModule } from '../../../rds-like-dislike/src/public-api';
 import { RdsFeedComponent } from './rds-feed.component';
 import * as moment from 'moment';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+// import { RdsRatingModule } from '@libs/rds-rating';
+import { RdsIconModule } from '@libs/rds-icon';
+import { RdsRatingModule } from '@libs/rds-rating';
+
 
 export default {
   title: 'Elements/Feed',
@@ -19,7 +23,9 @@ export default {
         RdsLabelModule,
         RdsLikeDislikeModule,
         FormsModule,
-        CommonModule  
+        CommonModule,
+        RdsRatingModule,
+        RdsIconModule
       ]
       }),
   ],

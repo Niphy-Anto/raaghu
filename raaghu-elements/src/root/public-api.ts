@@ -198,3 +198,6 @@ export * from '../rds-like-dislike/src/public-api';
 // Public API Surface of rds-fab-menu
 export * from '../rds-feed/src/public-api';
 
+// Public API Surface of rds-fab-menu
+export * from '../rds-rating/src/public-api';
+
