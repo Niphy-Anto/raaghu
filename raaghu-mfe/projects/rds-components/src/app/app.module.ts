@@ -98,6 +98,8 @@ import { RdsCompOrganizationTreeShimmerComponent } from './rds-comp-organization
 import { RdsCompPropertiesShimmerComponent } from './rds-comp-properties/rds-comp-properties-shimmer/rds-comp-properties-shimmer.component';
 import { RdsCompTableShimmerComponent } from './rds-comp-data-table/rds-comp-table-shimmer/rds-comp-table-shimmer.component';
 import { RdsCompPageNotFoundComponent } from './rds-comp-page-not-found/rds-comp-page-not-found.component';
+import { RdsCompMarketingWebsiteNewsletterComponent } from './rds-comp-marketing-website-newsletter/rds-comp-marketing-website-newsletter.component';
+import { RdsCompFaqComponent } from './rds-comp-faq/rds-comp-faq.component';
 
 
 @NgModule({
@@ -185,6 +187,8 @@ import { RdsCompPageNotFoundComponent } from './rds-comp-page-not-found/rds-comp
     RdsCompPropertiesShimmerComponent,
     RdsCompTableShimmerComponent,
     RdsCompPageNotFoundComponent,
+    RdsCompMarketingWebsiteNewsletterComponent,
+    RdsCompFaqComponent,
     //RdsCompLanguageTextListComponent,
 
   ],
