@@ -16,7 +16,8 @@
     "../projects/**/*.e2e-spec.ts"
   ],
   "include": [
-    "../projects/**/*.stories.ts"
+    "../projects/**/*.stories.ts",
+    "../projects/**/*.stories.mdx"
   ],
   "files": [
     "./typings.d.ts"

@@ -1,0 +1,16 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../rds-elements/rds-calendar",
+  "deleteDestPath": false,
+  "lib": {
+    "entryFile": "src/index.ts"
+  },
+  "allowedNonPeerDependencies": [
+    "tslib",
+    "angular-draggable-droppable",
+    "angular-resizable-element",
+    "calendar-utils",
+    "positioning",
+    "@scarf/scarf"
+  ]
+}
