@@ -1,5 +1,5 @@
 {
-    "remoteServiceBaseUrl": "https://localhost:44301",
-     "appBaseUrl": "https://demo.raaghu.io",
+     "remoteServiceBaseUrl": "https://demoapi.raaghu.io",
+     "appBaseUrl": "https://stageui.raaghu.io",
      "replaceUrl": "true"
 }

@@ -98,6 +98,7 @@ import { RdsCompOrganizationTreeShimmerComponent } from './rds-comp-organization
 import { RdsCompPropertiesShimmerComponent } from './rds-comp-properties/rds-comp-properties-shimmer/rds-comp-properties-shimmer.component';
 import { RdsCompTableShimmerComponent } from './rds-comp-data-table/rds-comp-table-shimmer/rds-comp-table-shimmer.component';
 import { RdsCompPageNotFoundComponent } from './rds-comp-page-not-found/rds-comp-page-not-found.component';
+import { RdsCompMarketingWebsiteNewsletterComponent } from './rds-comp-marketing-website-newsletter/rds-comp-marketing-website-newsletter.component';
 
 
 @NgModule({
@@ -185,6 +186,7 @@ import { RdsCompPageNotFoundComponent } from './rds-comp-page-not-found/rds-comp
     RdsCompPropertiesShimmerComponent,
     RdsCompTableShimmerComponent,
     RdsCompPageNotFoundComponent,
+    RdsCompMarketingWebsiteNewsletterComponent,
     //RdsCompLanguageTextListComponent,
 
   ],
@@ -216,25 +218,17 @@ import { RdsCompPageNotFoundComponent } from './rds-comp-page-not-found/rds-comp
     RdsSideNavModule,
     RdsDatepickerModule,
     RdsOffcanvasModule,
-    RdsSearchInputModule,
-    RdsFileUploaderModule,
     RdsSelectListModule,
     RdsSearchInputModule,
     RdsBannerModule,
     RdsFileUploaderModule,
-    RdsTextEditorModule,
     RdsTextareaModule,
     RdsChartRadarModule,
-    RdsChartLineModule,
     RdsBigNumberWidgetModule,
-    RdsIconModule,
     RdsTableModule,
     RdsChartAreaModule,
     RdsAccordionModule,
-    FormsModule,
-    CommonModule,
     RdsTagsModule,
-    RdsWidgetModule,
     RdsAlertModule,
     RdsButtonGroupModule,
     RdsCheckboxGroupsModule,
