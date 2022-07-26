@@ -87,6 +87,7 @@ module.exports = {
 
         './RdsCompPlanInformation': './projects/rds-components/src/app/rds-comp-plan-information/rds-comp-plan-information.component.ts',
         './RdsCompPageNotFound': './projects/rds-components/src/app/rds-comp-page-not-found/rds-comp-page-not-found.component.ts',
+        './RdsCompFaqComponent': './projects/rds-components/src/app/rds-comp-faq/rds-comp-faq.component.ts',
 
       },
 
@@ -100,7 +101,6 @@ module.exports = {
         "@ngrx/store-devtools": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
         "@ngrx/effects": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
         "@ngx-translate/core": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
-        "ngx-shimmer-loading": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
         "@ngx-translate/http-loader": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
         "rxjs": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
         ...sharedMappings.getDescriptors()
