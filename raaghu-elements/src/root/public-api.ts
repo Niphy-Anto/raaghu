@@ -1,3 +1,9 @@
+/*
+ * Public API Surface of rds-calendar
+ */
+
+export * from '../rds-calendar/src/index';
+export * from '../rds-calendar/src/date-adapters/date-fns/index';
 
 // Public API Surface of rds-accordion
 export * from '../rds-accordion/src/public-api';
