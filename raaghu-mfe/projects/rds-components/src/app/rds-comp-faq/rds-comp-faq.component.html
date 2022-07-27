@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="mt-4">
+            <h2>
+              <rds-label [label]="'Frequently asked questions'"></rds-label>
+            </h2>
+            <div class="text-dark mt-3">
+              <rds-label [label]="'Can t find the answer you are looking for? Reach out to our customer support team.'"> </rds-label>
+            </div>
+        </div>
+      </div>
+      <div class="col-md-8 scroll-notification">
+        <div class="ps-5">
+          <div class="mt-4" *ngFor="let item of questionList;">
+            <h5>
+              <rds-label [label]="item.question"></rds-label>
+            </h5>
+            <div class="text-muted">
+              <rds-label [label]="item.description"></rds-label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
