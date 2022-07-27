@@ -11,7 +11,7 @@
       "@libs/rds-badge": [
         "rds-elements/rds-badge/public-api",
         "rds-elements/rds-badge"
-      ]
+      ],
     },
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,

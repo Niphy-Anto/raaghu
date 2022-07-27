@@ -18,6 +18,18 @@
       "@libs/rds-badge": [
         "rds-elements/rds-badge/public-api",
         "rds-elements/rds-badge"
+      ],
+      "@libs/rds-icon-label": [
+        "rds-elements/rds-icon-label/public-api",
+        "rds-elements/rds-icon-label"
+      ],
+      "@libs/rds-select-list": [
+        "rds-elements/rds-select-list/public-api",
+        "rds-elements/rds-select-list"
+      ],
+      "@libs/rds-label": [
+        "rds-elements/rds-label/public-api",
+        "rds-elements/rds-label"
       ]
     },
     "baseUrl": "./",
