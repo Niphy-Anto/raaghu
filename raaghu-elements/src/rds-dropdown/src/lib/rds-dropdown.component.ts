@@ -40,7 +40,7 @@ export class RdsDropdownComponent implements OnInit, ControlValueAccessor {
   dropdownAlignment: string[] = [''];
 
   @Input()
-  label?: string;
+  label: string="Default";
 
   @Input()
   direction?: string;
@@ -48,7 +48,7 @@ export class RdsDropdownComponent implements OnInit, ControlValueAccessor {
 
 
 
-  @Input() role?: string;
+  @Input() role:'dropdown-button'| 'with_split'='dropdown-button' ;
 
   @Output() onSelect = new EventEmitter<any>();
 
@@ -72,9 +72,9 @@ export class RdsDropdownComponent implements OnInit, ControlValueAccessor {
   }
 
   public get button1(): string {
-    var customClasses = ['btn', `${this.colorVariant}`];
+    var customClasses = ['btn btn-'+ `${this.colorVariant}`];
 
-    if (this.size === 'small') {
+    if (this.size === 'small') { 
       var selectSize = 'btn-sm';
       customClasses.push(selectSize);
     } else if (this.size === 'large') {
@@ -94,11 +94,7 @@ export class RdsDropdownComponent implements OnInit, ControlValueAccessor {
 
   public get splitdown(): any[] {
     var customClasses = [
-      'btn',
-      `${this.colorVariant}`,
-      'dropdown-toggle',
-      'dropdown-toggle-split',
-    ];
+      'btn btn-'+ `${this.colorVariant}`, 'dropdown-toggle'+ 'dropdown-toggle-split'];          
 
     if (this.size === 'small') {
       var selectSize = 'btn-sm';
@@ -121,6 +117,10 @@ export class RdsDropdownComponent implements OnInit, ControlValueAccessor {
   // Dropdown background theme
   public get menu(): string[] {
     var customMenu = ['dropdown-menu'];
+    // if(this.direction==="Drop-up"){
+    //   customMenu.push('position')
+    // }
+
     var color = this.darkDropdown ? 'dropdown-menu-dark' : '';
     customMenu.push(color);
     customMenu = customMenu.concat(this.dropdownAlignment);
@@ -131,8 +131,8 @@ export class RdsDropdownComponent implements OnInit, ControlValueAccessor {
   public get dropdownDirection(): string[] {
     var directionClasses = ['btn-group'];
     if (this.direction === 'Drop-down') {
-      var direction = 'dropdown';
-      directionClasses.push(direction);
+      // var direction = 'dropdown';
+      directionClasses.push('dropdown');
     } else if (this.direction === 'Drop-up') {
       var direction = 'dropup';
       directionClasses.push(direction);
@@ -152,27 +152,34 @@ export class RdsDropdownComponent implements OnInit, ControlValueAccessor {
 
   public get classes(): any[] {
 
-    var customClasses = ['btn', `${this.colorVariant}`, 'dropdown-toggle']
+    var customClasses = ['btn btn-'+ `${this.colorVariant}`];
+
+    if(this.role==="dropdown-button"){
+      customClasses.push('dropdown-toggle')
+    }
+    else if(this.role==="with_split"){
+      customClasses.push('dropdown-toggle dropdown-toggle-split')
+
+    }
 
     if (this.size === 'small') {
-      var selectSize = 'btn-sm'
-      customClasses.push(selectSize)
+    //  var selectSize = 'btn-sm'
+     customClasses.push('btn-sm')
     }
     else if (this.size === 'large') {
-      var selectSize = 'btn-lg'
-      customClasses.push(selectSize)
+    //  var selectSize = 'btn-lg'
+     customClasses.push('btn-lg')
     }
-    else {
-      var selectSize = ''
-      customClasses.push(selectSize)
+    else if (this.size === 'default') {
+    //  var selectSize = 'btn-lg'
+     customClasses.push('')     
     }
-
-    //if (this.color !== '') {
+    // if (this.color !== '') {
 
     //  var index = customClasses.indexOf(`${this.colorVariant}`)
     //  customClasses.splice(index, 1)
-    //}
-    return customClasses
+    // }
+    return customClasses;
   }
 
   onclick(event: any, item: any) {

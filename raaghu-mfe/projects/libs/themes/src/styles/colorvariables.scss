@@ -196,8 +196,8 @@ html {
 
   $body-wrapper-bg: #F5F5FA;
   $topnav-link-color: $gray-800;
-  $card-bg-color: $white;
-  $card-border-color: $gray-200;
+  $card-bg-color: $white !default;
+  $card-border-color: $gray-200 !default;
   --bs-body-color: gray;
 
   svg {
@@ -1092,6 +1092,11 @@ html {
     color: #3D4D60;
   }
 
+  .bd-links .child::after {
+    content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e ");
+    //content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3e%3cpath fill='$current' stroke='none' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 14l6-6-6-6'/%3e%3c/svg%3e");
+  }
+
   @mixin icon-variant($color) {
     color: $color;
   }
@@ -1140,7 +1145,6 @@ html[theme=dark] {
   $min-contrast-ratio: 4.5 !default;
 
   $input-focus-border-color: tint-color($primary, 50%) !default;
-  $input-bg: $body-bg !default;
 
   $border-color: $gray-800;
 
@@ -1333,18 +1337,23 @@ html[theme=dark] {
   $subcription-bg-orangered: #F76161;
   $subcription-bg-orange: #F58220;
   $subcription-bg-green: #00A443;
-  $body-wrapper-bg: $dark-900;
+  $body-wrapper-bg: $dark-900 !default;
 
   $topnav-link-color: $white;
-  $card-bg-color: $dark-500;
-  $card-border-color: $card-bg-color;
+  $card-bg-color: $dark-500 !default;
+  $card-border-color: $card-bg-color !default;
 
-  $card-dashboard-bg-color: #161618;
+  $card-dashboard-bg-color: #161618 !default;
   $card-dashboard-border-color: #3C3E47;
 
-  $modal-bg-color: #34384F;
+  $offcanvasbg: $dark-400 !default;
 
-  $nav-tab-bg-active: #252839;
+  $modal-bg-color: #34384F;
+  $wrapper-bg: $dark-900 !default;
+  $nav-tab-bg-active: #252839 !default;
+  $footer-bgcolor: $dark-400 !default;
+  $profileMenuBgColor: #252839 !default;
+  $trhoverbg-color: $dark-400 !default;
 
   .rds-fileuploader label.file-upload > div {
     color: #9BACBC;
@@ -1421,7 +1430,7 @@ html[theme=dark] {
   }
 
   .wrapper {
-    background-color: $dark-900;
+    background-color: $wrapper-bg;
   }
 
   .accordion-button {
@@ -1468,10 +1477,6 @@ html[theme=dark] {
     }
   }
   /*badge color variables*/
-  .badge {
-    padding: $badge-padding-y $badge-padding-x;
-    @include font-size($badge-font-size);
-  }
 
   @mixin badge-variant($background, $border, $color) {
     @include gradient-bg($background);
@@ -2094,7 +2099,7 @@ html[theme=dark] {
   }
 
   .footer-buttons {
-    background-color: $dark-400;
+    background-color: $footer-bgcolor;
   }
 
   .dottedstyle {
@@ -2211,7 +2216,7 @@ html[theme=dark] {
   .table-hover {
     > tbody > tr:hover > * {
       --bs-table-accent-bg: transparent;
-      background: $dark-400;
+      background: $trhoverbg-color;
     }
   }
 
@@ -2319,7 +2324,7 @@ html[theme=dark] {
   }*/
 
   .offcanvas {
-    background-color: $dark-400;
+    background-color: $offcanvasbg;
   }
 
   .nav-link.active,
@@ -2336,6 +2341,7 @@ html[theme=dark] {
   .form-select {
     background-color: $form-select-bg;
     border-color: $form-select-bg;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e")
   }
 
   .input-group-text {
@@ -2364,11 +2370,11 @@ html[theme=dark] {
   }
 
   .tab-content.profileMenuContent {
-    background-color: #252839;
+    background-color: $profileMenuBgColor;
   }
 
   .offcanvas-bg-color {
-    background-color: $dark-400;
+    background-color: $card-bg-color;
   }
 
   #profileOffCanvas .card {
@@ -2406,5 +2412,9 @@ html[theme=dark] {
 
   .bs-datepicker .bs-datepicker-head button {
     color: $white;
+  }
+
+  .bd-links .child::after {
+    content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e ");
   }
 }

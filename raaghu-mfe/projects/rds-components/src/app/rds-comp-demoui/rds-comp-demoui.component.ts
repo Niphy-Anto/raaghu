@@ -9,6 +9,36 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class RdsCompDemouiComponent implements OnInit {
 
+tableHeaderItems=[
+  {
+    "headerName": "Name"
+  },
+  {
+    "headerName": "Age"
+  },
+  {
+    "headerName": "State"
+  }
+];
+
+tableBodyItems=[
+  {
+    "name": "xyz",
+    "age": 25,
+    "state": "Maharashtra"
+  },
+  {
+    "name": "yz",
+    "age": 21,
+    "state": "Hariyana"
+  },
+  {
+    "name": "op",
+    "age": 41,
+    "state": "Surat"
+  }
+];
+
   buttonGroupItem = [
     {
       "label": "Left",

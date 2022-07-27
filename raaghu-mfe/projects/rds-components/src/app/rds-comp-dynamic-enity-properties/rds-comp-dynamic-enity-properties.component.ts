@@ -25,7 +25,7 @@ export class RdsCompDynamicEnityPropertiesComponent implements OnInit, OnChanges
   @Input() parameterList: any[] = [];
   @Input() DynamicEntityData: any = {};
   public viewCanvas: boolean = false;
-  canvasTitle: string = this.translate.instant('New Dynamic Property');
+  canvasTitle: string = this.translate.instant('NEW DYNAMIC ENTITY PROPERTY');
   id: string | undefined = undefined;
   isEdit: boolean = false;
   constructor(public translate:TranslateService) { }

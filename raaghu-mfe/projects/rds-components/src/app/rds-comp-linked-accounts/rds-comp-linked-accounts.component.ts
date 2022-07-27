@@ -19,6 +19,7 @@ export class RdsLinkedAccountsComponent extends MfeBaseComponent implements OnIn
   @Input() pagination: boolean = false;
   @Output() ondelete = new EventEmitter<any>();
   @Output() onUserSave = new EventEmitter<any>();
+  @Output() onCancelDeligate = new EventEmitter<any>()
   @Input()
   linkedAccount: LinkedAccount = {
     TableHeader: [],
@@ -130,6 +131,10 @@ export class RdsLinkedAccountsComponent extends MfeBaseComponent implements OnIn
     const data: any = { usernameOrEmailAddress: this.userName, password: this.Password, tenancyName: this.Tenancyname };
     this.onUserSave.emit(data);
 
+  }
+
+  onCancel(): void {
+    this.onCancelDeligate.emit(true);
   }
 
 }

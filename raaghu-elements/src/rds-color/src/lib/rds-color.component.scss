@@ -1,0 +1,19 @@
+// @import '../../../../../raaghu-mfe/projects/libs/themes/src/styles/colorvariables.scss';
+$border-color : #dee2e6 !default;
+$primary : #7E2EEf;
+.default-border{
+    border: 1px solid $border-color;
+    height: 32px;
+    width: 32px;
+    cursor: pointer;
+    margin: 0 5px 0 5px;
+    border-radius: 50%;
+}
+.selected-border{
+    border: 2px solid $primary;
+    height: 32px;
+    width: 32px;
+    cursor: pointer;
+    margin: 0 5px 0 5px;
+    border-radius: 50%;
+}
