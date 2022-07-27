@@ -40,7 +40,8 @@ import {
   RdsColorPickerModule, RdsChartRadarModule, RdsChartLineModule, RdsBigNumberWidgetModule, RdsIconModule, RdsTableModule, RdsChartAreaModule, RdsDropdownlistModule, 
   RdsInputGroupModule, RdsAccordionModule, RdsTagsModule, RdsAlertModule, RdsButtonGroupModule, RdsCollapseModule, RdsIllustrationModule, RdsListGroupModule, RdsPopoverModule, 
   RdsSpinnerModule, RdsToastsModule, RdsChartBubbleModule, RdsChartDoughnutModule, RdsChartMixedModule, RdsChartPolarAreaModule, RdsChartScatterModule, RdsChartStackedModule, 
-  RdsProgressbarModule, RdsBreadcrumbModule, RdsCarouselModule, RdsDoubleRangeModule, RdsScrollspyModule, RdsCounterModule, RdsFabMenuModule, RdsLabelModule
+  RdsProgressbarModule, RdsBreadcrumbModule, RdsCarouselModule, RdsDoubleRangeModule, RdsScrollspyModule, RdsCounterModule, RdsFabMenuModule, RdsLabelModule, 
+  CalendarModule, DateAdapter
 } from '@libs/rds-elements';
 import { RdsCompDemouiComponent } from './rds-comp-demoui/rds-comp-demoui.component';
 import { RdsCompTenantManagementComponent } from './rds-comp-tenant-management/rds-comp-tenant-management.component';
@@ -101,7 +102,13 @@ import { RdsFeedModule } from 'projects/libs/rds-elements/src/rds-feed/src/publi
 import { RdsLikeDislikeModule } from 'projects/libs/rds-elements/src/rds-like-dislike/src/public-api';
 import { RdsCompFeedsComponent } from './rds-comp-feeds/rds-comp-feeds.component';
 import { RdsCompPageNotFoundComponent } from './rds-comp-page-not-found/rds-comp-page-not-found.component';
-
+import { RdsCompMarketingWebsiteNewsletterComponent } from './rds-comp-marketing-website-newsletter/rds-comp-marketing-website-newsletter.component';
+import { RdsCompFaqComponent } from './rds-comp-faq/rds-comp-faq.component';
+import { RdsCompCalendarComponent } from './rds-comp-calendar/rds-comp-calendar.component';
+import { adapterFactory } from '@libs/rds-elements';
+import { RdsFeedModule } from 'projects/libs/rds-elements/src/rds-feed/src/public-api';
+import { RdsLikeDislikeModule } from 'projects/libs/rds-elements/src/rds-like-dislike/src/public-api';
+import { RdsCompFeedsComponent } from './rds-comp-feeds/rds-comp-feeds.component';
 
 @NgModule({
   declarations: [
@@ -189,8 +196,11 @@ import { RdsCompPageNotFoundComponent } from './rds-comp-page-not-found/rds-comp
     RdsCompTableShimmerComponent,
     RdsCompPageNotFoundComponent,
     RdsCompFeedsComponent
+    RdsCompMarketingWebsiteNewsletterComponent,
+    RdsCompFaqComponent,
+    RdsCompCalendarComponent,
+    RdsCompFeedsComponent
     //RdsCompLanguageTextListComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -260,9 +270,13 @@ import { RdsCompPageNotFoundComponent } from './rds-comp-page-not-found/rds-comp
     RdsTextEditorModule,
     RdsFabMenuModule,
     RdsLabelModule,
-    NgxShimmerLoadingModule,
     RdsFeedModule,
     RdsLikeDislikeModule
+    NgxShimmerLoadingModule,
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory,
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],

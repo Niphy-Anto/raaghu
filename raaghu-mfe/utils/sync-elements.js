@@ -33,7 +33,7 @@ function mergeTSConfigJson() {
         ngElementsFile.compilerOptions.paths = {
             ...ngElementsFile.compilerOptions.paths,
             "@libs/rds-elements": [
-                "projects/libs/rds-elements/src/root/public-api.ts"
+                "projects/libs/rds-elements/src/root/public-api"
             ]
         };
         changesDone = true;
