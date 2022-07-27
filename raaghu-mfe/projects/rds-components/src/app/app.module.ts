@@ -40,7 +40,8 @@ import {
   RdsColorPickerModule, RdsChartRadarModule, RdsChartLineModule, RdsBigNumberWidgetModule, RdsIconModule, RdsTableModule, RdsChartAreaModule, RdsDropdownlistModule, 
   RdsInputGroupModule, RdsAccordionModule, RdsTagsModule, RdsAlertModule, RdsButtonGroupModule, RdsCollapseModule, RdsIllustrationModule, RdsListGroupModule, RdsPopoverModule, 
   RdsSpinnerModule, RdsToastsModule, RdsChartBubbleModule, RdsChartDoughnutModule, RdsChartMixedModule, RdsChartPolarAreaModule, RdsChartScatterModule, RdsChartStackedModule, 
-  RdsProgressbarModule, RdsBreadcrumbModule, RdsCarouselModule, RdsDoubleRangeModule, RdsScrollspyModule, RdsCounterModule, RdsFabMenuModule, RdsLabelModule
+  RdsProgressbarModule, RdsBreadcrumbModule, RdsCarouselModule, RdsDoubleRangeModule, RdsScrollspyModule, RdsCounterModule, RdsFabMenuModule, RdsLabelModule, 
+  CalendarModule, DateAdapter
 } from '@libs/rds-elements';
 import { RdsCompDemouiComponent } from './rds-comp-demoui/rds-comp-demoui.component';
 import { RdsCompTenantManagementComponent } from './rds-comp-tenant-management/rds-comp-tenant-management.component';
@@ -100,13 +101,14 @@ import { RdsCompTableShimmerComponent } from './rds-comp-data-table/rds-comp-tab
 import { RdsCompPageNotFoundComponent } from './rds-comp-page-not-found/rds-comp-page-not-found.component';
 import { RdsCompMarketingWebsiteNewsletterComponent } from './rds-comp-marketing-website-newsletter/rds-comp-marketing-website-newsletter.component';
 import { RdsCompFaqComponent } from './rds-comp-faq/rds-comp-faq.component';
+import { RdsCompCalendarComponent } from './rds-comp-calendar/rds-comp-calendar.component';
+import { adapterFactory } from '@libs/rds-elements';
 import { RdsCompProductOverviewComponent } from './rds-comp-product-overview/rds-comp-product-overview.component';
 import { RdsPriceModule } from 'projects/libs/rds-elements/src/rds-price/src/public-api';
 import { RdsFeatureListModule } from 'projects/libs/rds-elements/src/rds-feature-list/src/public-api';
 import { RdsColorModule } from 'projects/libs/rds-elements/src/rds-color/src/public-api';
 import { RdsProductImageModule } from 'projects/libs/rds-elements/src/rds-product-image/src/public-api';
 import { RdsRatingModule } from 'projects/libs/rds-elements/src/rds-rating/src/public-api';
-
 
 @NgModule({
   declarations: [
@@ -195,9 +197,9 @@ import { RdsRatingModule } from 'projects/libs/rds-elements/src/rds-rating/src/p
     RdsCompPageNotFoundComponent,
     RdsCompMarketingWebsiteNewsletterComponent,
     RdsCompFaqComponent,
+    RdsCompCalendarComponent
     RdsCompProductOverviewComponent,
     //RdsCompLanguageTextListComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -267,6 +269,11 @@ import { RdsRatingModule } from 'projects/libs/rds-elements/src/rds-rating/src/p
     RdsTextEditorModule,
     RdsFabMenuModule,
     RdsLabelModule,
+    NgxShimmerLoadingModule,
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory,
+    })
     RdsPriceModule,
     RdsColorModule,
     RdsFeatureListModule,

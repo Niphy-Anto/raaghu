@@ -85,6 +85,47 @@
         }
       }
     },
+    "rds-calendar": {
+      "projectType": "library",
+      "root": "src/rds-calendar",
+      "sourceRoot": "src/rds-calendar/src",
+      "prefix": "rds",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "src/rds-calendar/tsconfig.lib.json",
+            "project": "src/rds-calendar/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "src/rds-calendar/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "src/rds-calendar/test/entry.ts",
+            "tsConfig": "src/rds-calendar/tsconfig.spec.json",
+            "karmaConfig": "src/rds-calendar/karma.conf.ts",
+            "sourceMap": true,
+            "styles": [
+              "src/rds-calendar/src/angular-calendar.scss"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/rds-calendar/**/*.ts",
+              "src/rds-calendar/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "rds-button": {
       "projectType": "library",
       "root": "src/rds-button",
