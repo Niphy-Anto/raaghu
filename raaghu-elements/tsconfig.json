@@ -38,10 +38,7 @@
         "rds-elements/rds-rating/public-api",
         "rds-elements/rds-rating"
       ],
-      "rds-rating": [
-        "dist/rds-rating/rds-rating",
-        "dist/rds-rating"
-      ],
+
       "rds-popular-pages": [
         "dist/rds-popular-pages/rds-popular-pages",
         "dist/rds-popular-pages"
