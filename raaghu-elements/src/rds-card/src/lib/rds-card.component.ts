@@ -10,6 +10,7 @@ export class RdsCardComponent implements OnInit {
   //@Input() width?: string = "100%";
   //@Input() height?: string = "100%";
   @Input() custClass: boolean = true;
+  @Input() custSidePadding: boolean = true;
   @Input() borderCard!: boolean;
   //@Input() Recommended!:boolean;
   @Input()
@@ -51,12 +52,22 @@ export class RdsCardComponent implements OnInit {
     return custClasses
   }
   public get cardBody(): string[] {
-    let custClass = ['p-0', 'body-border']
+    let custClass = ['card-body']
     if (this.custClass === true) {
+      custClass = ['p-0', 'body-border']
+    }
+    else{
+      custClass = ['']
+    }
+    if (this.custSidePadding === true) {
+      custClass = ['px-0', 'body-border']
+    }
+    else{
       custClass = ['']
     }
     return custClass
   }
+
   public get title(): string[] {
     let custClasses = ['card-title']
 
