@@ -6,7 +6,7 @@ import { Component, Input,  OnInit } from '@angular/core';
   styleUrls: ['./rds-rating.component.scss']
 })
 export class RdsRatingComponent implements OnInit {
-  itemList: any;
+  @Input() itemList: any = [];
   @Input() rating: number = 1;
   @Input() colorVariant!: string;
   @Input() noOfReview?: number = 123;
