@@ -5,7 +5,7 @@
         <rds-label label="Customer also purchased" [multiline]="false" [bold]="true" [italic]="false"></rds-label>
       </h5>
       <div class="row">
-        <div class="col-md-3" *ngFor="let item of withInlinePriceProductListItems">
+        <div class="col-md-3" *ngFor="let item of productListItems">
           <rds-card [header]="header" [body]="body" [borderCard]="false" [footer]="footer" [custClass]="true"
             [custSidePadding]="true" class="rounded-avatar-basic">
             <ng-template #header>
@@ -36,7 +36,7 @@
     </div>
     <div *ngSwitchCase="'simple'">
       <div class="row">
-        <div class="col-md-3" *ngFor="let item of withInlinePriceProductListItems">
+        <div class="col-md-3" *ngFor="let item of productListItems">
           <rds-card [header]="header" [body]="body" [borderCard]="false" [footer]="footer" [custClass]="true"
             [custSidePadding]="true" class="rounded-avatar-basic">
             <ng-template #header>
@@ -73,7 +73,7 @@
             colorVariant=""></rds-icon></a>
       </div>
       <div class="row">
-        <div class="col-md-3" *ngFor="let item of withInlinePriceProductListItems">
+        <div class="col-md-3" *ngFor="let item of productListItems">
           <rds-card [header]="header" [body]="body" [borderCard]="false" [footer]="footer" [custClass]="true"
             [custSidePadding]="true" class="rounded-avatar-basic">
             <ng-template #header>
@@ -115,7 +115,7 @@
           </rds-icon></a>
       </div>
       <div class="row">
-        <div class="col-md-3" *ngFor="let item of withInlinePriceProductListItems">
+        <div class="col-md-3" *ngFor="let item of productListItems">
           <rds-card [header]="header" [body]="body" [borderCard]="false" [footer]="footer" [custClass]="true"
             [custSidePadding]="true" class="rounded-avatar-basic">
             <ng-template #header>
@@ -127,7 +127,7 @@
             </ng-template>
             <ng-template #body>
               <h5 class="custom-title">{{item.title}}</h5>
-              <div>Rating Element</div>
+              <rds-rating [itemList]="itemListRating" [rating]="1" colorVariant="primary" [noOfReview]="123" Size="small"></rds-rating>
               <p class="custom-desc">{{item.subTitle}}</p>
             </ng-template>
             <ng-template #footer>
@@ -141,7 +141,7 @@
                 </span>
               </div>
               <div class="pt-2">
-                <rds-color header="" [itemList]="itemList" [defaultValue]="1"></rds-color>
+                <rds-color header="" [itemList]="itemListColor" [defaultValue]="1"></rds-color>
               </div>
             </ng-template>
           </rds-card>
@@ -150,7 +150,7 @@
     </div>
     <div *ngSwitchCase="'withTallImages'">
       <div class="row">
-        <div class="col-md-4" *ngFor="let item of withInlinePriceProductListItems">
+        <div class="col-md-4" *ngFor="let item of productListItems">
           <rds-card [header]="header" [body]="body" [borderCard]="false" [footer]="footer" [custClass]="true"
             [custSidePadding]="true" class="rounded-avatar-basic">
             <ng-template #header>
@@ -184,7 +184,7 @@
         <rds-label label="Customers also bought" [multiline]="false" [bold]="true" [italic]="false"></rds-label>
       </h5>
       <div class="row">
-        <div class="col-md-3" *ngFor="let item of withInlinePriceProductListItems">
+        <div class="col-md-3" *ngFor="let item of productListItems">
           <rds-card [header]="header" [body]="body" [borderCard]="false" [footer]="footer" [custClass]="true"
             [custSidePadding]="true" class="rounded-avatar-basic">
             <ng-template #header>
@@ -227,7 +227,7 @@
       </div>
 
       <div class="row">
-        <div class="col-md-4" *ngFor="let item of withInlinePriceProductListItems">
+        <div class="col-md-4" *ngFor="let item of productListItems">
           <rds-card [header]="header" [body]="body" [borderCard]="false" [footer]="footer" [custClass]="true"
             [custSidePadding]="true" class="rounded-avatar-basic">
             <ng-template #header>
@@ -239,7 +239,7 @@
             </ng-template>
             <ng-template #body>
               <h5 class="custom-title">{{item.title}}</h5>
-              <div>Rating Element</div>
+              <rds-rating [itemList]="itemListRating" [rating]="1" colorVariant="primary" [noOfReview]="123" Size="small"></rds-rating>
               <rds-label
                 label="Best quality with nice looks in silver/black color, good for office use and corporate events"
                 [multiline]="true" [bold]="false" [italic]="false"></rds-label>
@@ -262,7 +262,7 @@
     </div>
     <div *ngSwitchCase="'withBorderGrid'">
       <div class="row">
-        <div class="col-md-3 mb-3" *ngFor="let item of withInlinePriceProductListItems">
+        <div class="col-md-3 mb-3" *ngFor="let item of productListItems">
           <rds-card [header]="header" [body]="body" [borderCard]="true" [footer]="footer" [custClass]="true"
             [custSidePadding]="false" class="rounded-avatar-basic">
             <ng-template #header>
@@ -274,7 +274,7 @@
             </ng-template>
             <ng-template #body>
               <h5 class="custom-title">{{item.title}}</h5>
-              <div>Rating Element</div>
+              <rds-rating [itemList]="itemListRating" [rating]="1" colorVariant="primary" [noOfReview]="123" Size="small"></rds-rating>
             </ng-template>
             <ng-template #footer>
               <rds-label [label]="item.price" [multiline]="false" [bold]="true" [italic]="false"></rds-label>
@@ -285,7 +285,7 @@
     </div>
     <div *ngSwitchCase="'withSupportingText'">
       <div class="row">
-        <div class="col-md-3" *ngFor="let item of withInlinePriceProductListItems">
+        <div class="col-md-3" *ngFor="let item of productListItems">
           <rds-card [header]="header" [body]="body" [borderCard]="false" [footer]="footer" [custClass]="true"
             [custSidePadding]="true" class="rounded-avatar-basic">
             <ng-template #header>
@@ -320,7 +320,7 @@
     </div>
     <div *ngSwitchCase="'cardWithFullDetails'">
       <div class="row">
-        <div class="col-md-4" *ngFor="let item of withInlinePriceProductListItems">
+        <div class="col-md-4" *ngFor="let item of productListItems">
           <rds-card [header]="header" [body]="body" [borderCard]="true" [footer]="footer" [custClass]="true"
             [custSidePadding]="false" class="rounded-avatar-basic">
             <ng-template #header>
@@ -332,7 +332,8 @@
             </ng-template>
             <ng-template #body>
               <h5 class="custom-title">{{item.title}}</h5>
-              <div>rating element</div>
+              
+              <rds-rating [itemList]="itemListRating" [rating]="1" colorVariant="primary" [noOfReview]="123" Size="small"></rds-rating>
               <rds-label
                 label="Premium Quality Soft T-Shirt White tees stain easily, and black tees fade. This is going to be gray for a while."
                 [multiline]="true" [bold]="false" [italic]="false"></rds-label>

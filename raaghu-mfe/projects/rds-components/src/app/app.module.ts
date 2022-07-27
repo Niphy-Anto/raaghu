@@ -100,6 +100,7 @@ import { RdsCompTableShimmerComponent } from './rds-comp-data-table/rds-comp-tab
 import { RdsCompProductListComponent } from './rds-comp-product-list/rds-comp-product-list.component';
 import { RdsColorModule } from 'projects/libs/rds-elements/src/rds-color/src/public-api';
 import { RdsCompPageNotFoundComponent } from './rds-comp-page-not-found/rds-comp-page-not-found.component';
+import { RdsRatingModule } from 'projects/libs/rds-elements/src/rds-rating/src/public-api';
 
 
 @NgModule({
@@ -260,7 +261,8 @@ import { RdsCompPageNotFoundComponent } from './rds-comp-page-not-found/rds-comp
     RdsFabMenuModule,
     RdsLabelModule,
     NgxShimmerLoadingModule,
-    RdsColorModule
+    RdsColorModule,
+    RdsRatingModule
   ],
   providers: [],
   bootstrap: [AppComponent],
