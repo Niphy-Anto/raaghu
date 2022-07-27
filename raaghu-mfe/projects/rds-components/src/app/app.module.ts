@@ -40,7 +40,7 @@ import {
   RdsColorPickerModule, RdsChartRadarModule, RdsChartLineModule, RdsBigNumberWidgetModule, RdsIconModule, RdsTableModule, RdsChartAreaModule, RdsDropdownlistModule, 
   RdsInputGroupModule, RdsAccordionModule, RdsTagsModule, RdsAlertModule, RdsButtonGroupModule, RdsCollapseModule, RdsIllustrationModule, RdsListGroupModule, RdsPopoverModule, 
   RdsSpinnerModule, RdsToastsModule, RdsChartBubbleModule, RdsChartDoughnutModule, RdsChartMixedModule, RdsChartPolarAreaModule, RdsChartScatterModule, RdsChartStackedModule, 
-  RdsProgressbarModule, RdsBreadcrumbModule, RdsCarouselModule, RdsDoubleRangeModule, RdsScrollspyModule, RdsCounterModule, RdsFabMenuModule, RdsLabelModule, 
+  RdsProgressbarModule, RdsBreadcrumbModule, RdsCarouselModule, RdsDoubleRangeModule, RdsScrollspyModule, RdsCounterModule, RdsFabMenuModule, RdsLabelModule,RdsIconLabelModule, 
   CalendarModule, DateAdapter
 } from '@libs/rds-elements';
 import { RdsCompDemouiComponent } from './rds-comp-demoui/rds-comp-demoui.component';
@@ -105,6 +105,8 @@ import { RdsCompMarketingWebsiteNewsletterComponent } from './rds-comp-marketing
 import { RdsCompFaqComponent } from './rds-comp-faq/rds-comp-faq.component';
 import { RdsCompCalendarComponent } from './rds-comp-calendar/rds-comp-calendar.component';
 import { adapterFactory } from '@libs/rds-elements';
+import { RdsCompOrderSummaryComponent } from './rds-comp-order-summary/rds-comp-order-summary.component';
+import { RdsCompShoppingCartProductComponent } from './rds-comp-shopping-cart-product/rds-comp-shopping-cart-product.component';
 import { RdsRatingModule } from 'projects/libs/rds-elements/src/rds-rating/src/public-api';
 
 @NgModule({
@@ -194,8 +196,11 @@ import { RdsRatingModule } from 'projects/libs/rds-elements/src/rds-rating/src/p
     RdsCompPageNotFoundComponent,
     RdsCompMarketingWebsiteNewsletterComponent,
     RdsCompFaqComponent,
-        RdsCompCalendarComponent,
-        RdsCompProductListComponent
+    RdsCompCalendarComponent,
+    RdsCompOrderSummaryComponent,
+    RdsCompShoppingCartProductComponent,
+    RdsCompCalendarComponent,
+    RdsCompProductListComponent
     //RdsCompLanguageTextListComponent,
   ],
   imports: [
@@ -273,6 +278,8 @@ import { RdsRatingModule } from 'projects/libs/rds-elements/src/rds-rating/src/p
       provide: DateAdapter,
       useFactory: adapterFactory,
     })
+    NgxShimmerLoadingModule,
+   RdsIconLabelModule
   ],
   providers: [],
   bootstrap: [AppComponent],
