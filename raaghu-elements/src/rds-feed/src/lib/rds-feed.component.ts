@@ -9,23 +9,18 @@ import * as moment from 'moment';
 })
 export class RdsFeedComponent implements OnInit {
   date = moment().format('YYYY-MM-DD');
-  @Input() itemList :any[]= [
+  @Input() itemList: any[] = [
     {
-
       'actor': 'Jijo Fleshman',
-      'username':'@jijolife123',
+      'username': '@jijolife123',
       date: this.date,
       profilePic: 'https://th.bing.com/th/id/OIP.3IsXMskZyheEWqtE3Dr7JwHaGe?pid=ImgDet&rs=1',
-      'description':'This bag is of the quality expected for the price. The lining inside the bag seems like satin and it is very strong one It has huge space inside inside as the zipper can be opened in either side.'
-      
-    },
-  ]
-   
-  
- 
+      'description': 'This bag is of the quality expected for the price. The lining inside the bag seems like satin and it is very strong one It has huge space inside inside as the zipper can be opened in either side.'
 
-   @Output() onSelect = new EventEmitter<any>();
-  
+    }
+  ]
+
+  @Output() onSelect = new EventEmitter<any>();
 
   constructor() { }
 
@@ -33,7 +28,7 @@ export class RdsFeedComponent implements OnInit {
     this.date = moment(this.date).fromNow()
   }
 
-  onLikeDislike(e:any){
+  onLikeDislike(e: any) {
     this.onSelect.emit(e)
     console.log(e);
   }
