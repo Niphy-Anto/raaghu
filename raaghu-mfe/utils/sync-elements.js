@@ -17,10 +17,8 @@ const dependentElements = [
     'rds-avatar',
     'rds-like-dislike',
     'rds-rating',
-    'rds-label',
     'rds-icon-label',
     'rds-select-list'
-   
 ];
 
 function replaceFiles() {
