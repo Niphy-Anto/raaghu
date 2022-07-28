@@ -32,6 +32,7 @@
     "calendar-utils": "^0.9.0",
     "chart.js": "^3.8.0",
     "date-fns": "^2.29.1",
+    "moment": "^2.29.4",
     "ngx-bootstrap": "^8.0.0",
     "ngx-quill": "^16.0.0",
     "positioning": "^2.0.1",

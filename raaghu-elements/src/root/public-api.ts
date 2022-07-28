@@ -190,3 +190,17 @@ export * from '../rds-fab-menu/src/public-api';
 
 // Public API Surface of rds-label
 export * from '../rds-label/src/public-api';
+
+// Public API Surface of rds-like-dislike
+export * from '../rds-like-dislike/src/public-api';
+
+// Public API Surface of rds-rating
+export * from '../rds-rating/src/public-api';
+
+// Public API Surface of rds-feed
+export * from '../rds-feed/src/public-api';
+
+
+
+// Public API Surface of rds-icon-label
+export * from '../rds-icon-label/src/public-api';

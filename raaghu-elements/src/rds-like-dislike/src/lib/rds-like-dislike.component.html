@@ -6,12 +6,12 @@
     <rds-icon
     height="25"
     [fill]="false"
-    [stroke]="lightslategrey"
+    [stroke]="false"
     width="25"
     type=""
-    name="like"
-    colorVariant=""
-    class="marginclass styleIcons"
+    [name]="'like'"
+    colorVariant="" 
+    
   ></rds-icon>
   <span>
     <label  class="marginclass">{{likeCount}}</label></span>
@@ -21,12 +21,12 @@
     <rds-icon
     height="25"
     [fill]="false"
-    [stroke]="iconStroke"
+    [stroke]="false"
     width="25"
     type=""
     name="dislike"
     colorVariant=""
-    class="marginclass styleIcons"
+    class="marginclass styleIcons" 
   ></rds-icon>
   <span>
     <label >{{dislikeCount}}</label>

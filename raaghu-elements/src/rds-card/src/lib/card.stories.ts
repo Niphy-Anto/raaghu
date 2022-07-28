@@ -16,7 +16,7 @@ const Template: Story<RdsCardComponent> = (args: RdsCardComponent) => ({
   props: args,
   template: `<rds-card  [header]="header" [body]="body"
    [footer]="footer"  [Data]="Data" [borderCard]="borderCard"
-    class="rounded-avatar-basic">
+    class="rounded-avatar-basic" [custClass]="custClass" [custSidePadding]="custSidePadding">
    <ng-template #header>
    <div class="text-center">
    <img src="https://picsum.photos/seed/picsum/1200/600" class="card-img-top" alt="">
@@ -50,7 +50,7 @@ Basic.args = {
 const Avatar: Story<RdsCardComponent> = (args: RdsCardComponent) => ({
   props: args,
   template: `<rds-card  [header]="header" [body]="body" [Data]="Data"
-   [footer]="footer" [borderCard]="borderCard"
+   [footer]="footer" [borderCard]="borderCard" [custClass]="custClass" [custSidePadding]="custSidePadding"
     width="30%"
     class="rounded-avatar-left">
    <ng-template #header>
@@ -84,7 +84,7 @@ withAvatar.args = {
 const Avatarpos: Story<RdsCardComponent> = (args: RdsCardComponent) => ({
   props: args,
   template: `<rds-card  [header]="header" [body]="body" [Data]="Data"
-     [footer]="footer"
+     [footer]="footer" [custClass]="custClass" [custSidePadding]="custSidePadding"
      [borderCard]="borderCard"
       width="28%"
      >

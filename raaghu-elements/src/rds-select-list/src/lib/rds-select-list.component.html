@@ -1,6 +1,6 @@
 
 <div [ngClass]="divclasses">
-  <label [ngClass]="labelText==''?'d-none':'form-label'" for="value">{{labelText}}<span class="text-danger"
+  <label [ngClass]="labelTextHide" for="value">{{labelText}}<span class="text-danger"
       *ngIf="isRequired">*</span></label>
   <select data-bs-toggle="tooltip" [attr.data-bs-placement]="tooltipPlacement" [(ngModel)]="value" title=""
     [attr.id]="id" name="value" [ngClass]="classesForSelect" aria-label="Default select example" [disabled]="disabled" [multiple]="multiple" [size]="rows"
@@ -14,4 +14,4 @@
     </option>
   </select>
 </div>
-
+<!-- ngClass]="labelText==''?'d-none':'form-label d-block'" -->

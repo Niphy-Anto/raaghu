@@ -106,7 +106,12 @@ export class AppComponent {
           mfeConfig.input.tenantSettingsInfo = { ... this.tenantSettingsInfo };
           mfeConfig.input.tenantFeatureValues = [... this.tenantFeatureValues];
           mfeConfig.input.tenantFeatures = [... this.tenantFeatures];
-          mfeConfig.input.editShimmer=true
+          if(event.newtenant){
+            mfeConfig.input.editShimmer=false;
+          }else{
+            mfeConfig.input.editShimmer=true;
+          }
+          
           this.rdsTenantMfeConfig = mfeConfig;
          
         },
