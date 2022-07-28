@@ -18,6 +18,7 @@ import {
   getDynamicPropertyByEditSuccess,
   getPermission,
   getPermissionSuccess,
+  getDynamicPropertyByEditFailure,
 } from './dynamic-property.actions';
 import {
   DynamicEntity,
@@ -221,17 +222,35 @@ export const GetInputnameReducer = createReducer(
   }))
 );
 
+// export const getDynamicPropertyByEditReducer = createReducer(
+//   // Supply the initial state
+//   EditDynampicPropertyInitialSate,
+//   on(getDynamicPropertyByEdit, (state) => ({ ...state, status: 'loading' })),
+//   on(getDynamicPropertyByEditSuccess, (state, { EditDynamicPropertSateI }) => ({
+//     ...state,
+//     EditDynamicPropertSateI: EditDynamicPropertSateI,
+//     error: null,
+//     status: 'success',
+//   }))
+// );
+
 export const getDynamicPropertyByEditReducer = createReducer(
-  // Supply the initial state
   EditDynampicPropertyInitialSate,
   on(getDynamicPropertyByEdit, (state) => ({ ...state, status: 'loading' })),
   on(getDynamicPropertyByEditSuccess, (state, { EditDynamicPropertSateI }) => ({
-    ...state,
-    EditDynamicPropertSateI: EditDynamicPropertSateI,
-    error: null,
-    status: 'success',
+      ...state,
+      EditDynamicPropertSateI: EditDynamicPropertSateI,
+      error: null,
+      status: 'success',
+  })),
+  on(getDynamicPropertyByEditFailure, (state, { error }) => ({
+      ...state,
+      error: error,
+      status: 'error',
   }))
-);
+
+)
+
 export const DynamicPermissionReducer = createReducer(
   // Supply the initial state
   DynamicPermissionInitialState,

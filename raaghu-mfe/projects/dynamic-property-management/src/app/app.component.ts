@@ -403,17 +403,17 @@ export class AppComponent implements OnInit {
     this.resetDynamicProperty();
     this.store.dispatch(getDynamicPropertyByEdit(event));
     this.store.select(selectDynamicPropertyForEdit).subscribe((res: any) => {
-      if (res) {
+      if (res && res.EditDynamicPropertSateI && res.status=='success') {
         const dynamicPropertData: any = {
-          displayName: res.displayName,
-          inputType: res.inputType,
-          permission: res.permission,
-          propertyName: res.propertyName,
-          id: res.id,
-          name:res.displayName
+          displayName: res.EditDynamicPropertSateI.displayName,
+          inputType: res.EditDynamicPropertSateI.inputType,
+          permission: res.EditDynamicPropertSateI.permission,
+          propertyName: res.EditDynamicPropertSateI.propertyName,
+          id: res.EditDynamicPropertSateI.id,
+          name:res.EditDynamicPropertSateI.displayName
         };
         this.selectedDynamicPermission = [];
-        this.checkSelectedNodes(res.permission);
+        this.checkSelectedNodes(res.EditDynamicPropertSateI.permission);
         const mfeConfig = this.rdsDynamicPropertiesMfeConfig;
         mfeConfig.input.DynamicProperyData = dynamicPropertData;
         mfeConfig.input.permissionsList = this.permissionsList;
