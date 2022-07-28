@@ -1,4 +1,4 @@
-<div class="row" *ngFor="let item of itemList">
+<div class="row mt-4" *ngFor="let item of itemList">
 
     <div class="col-md-1 ">
         <rds-avatar [WithProfilePic]="true" [profilePic]="item.profilePic" [colorVariant]="'light'" [Size]="'large'"
@@ -9,10 +9,11 @@
         <b>
             <rds-label [label]="item.actor" class="text-left "> </rds-label>
         </b>
+        <rds-icon [name]="item.feedIcon" height="15" class="ms-2"></rds-icon>
         <small>
             <rds-label [label]="item.username" class="text-muted"> </rds-label>
         </small>
-        <small>-<rds-label [label]="date" class="text-muted "></rds-label></small>
+        <small><span class="dot text-muted ">&#8901;</span><rds-label [label]="date" class="text-muted "></rds-label></small>
 
           <div class="h-25 mt-1">
             <rds-rating
@@ -30,4 +31,5 @@
             <rds-like-dislike [dislikeCount]="10" [likeCount]="35" ></rds-like-dislike>
         </div>
     </div>
+
 </div>
