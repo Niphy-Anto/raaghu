@@ -17,7 +17,7 @@ const dependentElements = [
     'rds-avatar',
     'rds-like-dislike',
     'rds-rating',
-    'rds-badge',
+    'rds-label',
     'rds-icon-label',
     'rds-select-list'
    
