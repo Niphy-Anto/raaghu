@@ -165,7 +165,7 @@ Built on a robust tech stack and platform
 </h2>
  
 
-- [Setup raaghu-mfe](https://github.com/Wai-Technologies/raaghu/tree/main/raaghu-mfe#%EF%B8%8F-how-to-set-up-raaghu-mfe-for-development): For development
+- [Setup raaghu](https://github.com/Wai-Technologies/raaghu/tree/main/raaghu-mfe#%EF%B8%8F-how-to-set-up-raaghu-mfe-for-development): For development
 - [Development Support](https://github.com/Wai-Technologies/raaghu/tree/main/raaghu-mfe#%EF%B8%8F-development-support): Create a common Library, Component, Screen / MFE etc
 - [Storybook](https://storybook.js.org/): Build bulletproof UI components faster
 - [Elements & Components](http://portal.raaghu.io/): Preview of all raaghu elements, components & pages.
