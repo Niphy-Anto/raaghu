@@ -69,7 +69,7 @@ export interface AppState {
   defaultLanguage: DefaultLanguageState,
   settingsComboboxItem: SettingsTenantPageComboboxState,
   download:downloadState,
-  dynamicPropertyEdit: EditDynampicPropertState
+  editdynamicProperty:EditDynampicPropertState
 }
 export const products = 'products';
 export const roles = 'roles';

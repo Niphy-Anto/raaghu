@@ -12,6 +12,20 @@
         "rds-elements/rds-badge/public-api",
         "rds-elements/rds-badge"
       ],
+     
+      "@libs/rds-like-dislike": [
+        "rds-elements/rds-like-dislike/public-api",
+        "rds-elements/rds-like-dislike"
+      ],
+      "@libs/rds-avatar": [
+        "rds-elements/rds-avatar/public-api",
+        "rds-elements/rds-avatar"
+      ],
+      
+      "@libs/rds-label": [
+        "rds-elements/rds-label/public-api",
+        "rds-elements/rds-label"
+      ],
       "rds-color": [
         "dist/rds-color/rds-color",
         "dist/rds-color"
@@ -20,14 +34,16 @@
         "dist/rds-feature-list/rds-feature-list",
         "dist/rds-feature-list"
       ],
-      "rds-rating": [
-        "dist/rds-rating/rds-rating",
-        "dist/rds-rating"
+      "@libs/rds-rating": [
+        "rds-elements/rds-rating/public-api",
+        "rds-elements/rds-rating"
       ],
+
       "rds-popular-pages": [
         "dist/rds-popular-pages/rds-popular-pages",
         "dist/rds-popular-pages"
       ]
+     
     },
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,

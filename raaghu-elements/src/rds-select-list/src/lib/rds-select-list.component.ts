@@ -53,7 +53,9 @@ export class RdsSelectListComponent implements AfterViewInit, OnChanges {
   @Input()
   listItems = [{ value: 'India', some: 'value' }, { value: 'USA' }, { value: 'Canada' }];
 
-  @Output() select = new EventEmitter();
+  // @Output() select = new EventEmitter();
+
+  @Output() selectListChange = new EventEmitter<any>();
 
   static count: number = 0;
 
@@ -64,7 +66,7 @@ export class RdsSelectListComponent implements AfterViewInit, OnChanges {
   id: string = 'selectList';
   
   constructor() {
-    RdsSelectListComponent.count++;
+    this.id = this.id + RdsSelectListComponent.count++
   }
 
 
@@ -81,6 +83,7 @@ export class RdsSelectListComponent implements AfterViewInit, OnChanges {
         let bsTooltip = new bootstrap.Tooltip(tooltipElement)
         tooltipElement.title = this.tooltipTitle
         bsTooltip = new bootstrap.Tooltip(tooltipElement)
+
       }
     }
   }
@@ -128,6 +131,18 @@ if(this.multiple===false){
     }
   }
 
+  public get labelTextHide() {
+    var classList = ['form-label'];
+    if (this.labelText === '') {
+
+      return ['d-none']
+    }
+    else {
+      classList.push('d-block')
+      return classList
+    }
+  }
+
   public get divclasses(): string[] {
     var classes = ['form-label']
    if (this.LabelType === 'Top') {
@@ -157,6 +172,7 @@ if(this.multiple===false){
 
   onSelect(event: any) {
     this.value = event;
+    this.selectListChange.emit(event);
     this.defaultSelect = false;
     this.onChange(event)
     this.onTouched()

@@ -1,10 +1,9 @@
 import { setCompodocJson } from "@storybook/addon-docs/angular";
-//import docJson from "../documentation.json";
-//setCompodocJson(docJson);
+// import docJson from "../documentation.json";
+// setCompodocJson(docJson);
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
-  angularLegacyRendering: true,
   // options: {
   //   storySort: (a, b) =>
   //     a[1].kind === b[1].kind ? 0 : a[1].id.localeCompare(b[1].id, undefined, { numeric: true }),
