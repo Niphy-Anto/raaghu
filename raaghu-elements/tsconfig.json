@@ -39,9 +39,17 @@
         "dist/rds-feature-list/rds-feature-list",
         "dist/rds-feature-list"
       ],
-      "@libs/rds-rating": [
-        "rds-elements/rds-rating/public-api",
-        "rds-elements/rds-rating"
+      "rds-rating": [
+        "dist/rds-rating/rds-rating",
+        "dist/rds-rating"
+      ],
+      "rds-popular-pages": [
+        "dist/rds-popular-pages/rds-popular-pages",
+        "dist/rds-popular-pages"
+      ],
+      "rds-video-player": [
+        "dist/rds-video-player/rds-video-player",
+        "dist/rds-video-player"
       ]
     },
     "skipLibCheck": true,
