@@ -10,9 +10,6 @@ module.exports = {
   ],
   "framework": "@storybook/angular",
   "core": {
-    "builder": "@storybook/builder-webpack5"
-  },
-  "typescript": { 
-    "reactDocgen": false
+    "builder": "webpack5"
   }
 }

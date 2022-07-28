@@ -1,0 +1,75 @@
+<div class="container" [ngSwitch]="display_type">
+  <!-- Basic  -->
+  <div class="row" *ngSwitchCase="'Basic'">
+    <div class="col-md-4 pt-1">
+      <div class="border p-4 text-center bg-light rounded">
+        <div>
+          <rds-icon [name]="item.icon" [height]="item.iconHeight" [width]="item.iconWidth"></rds-icon>
+        </div>
+        <div class="mt-1">
+          <rds-label [label]="item.title" [bold]="true" [multiline]=""></rds-label>
+        </div>
+        <div class="mt-1">
+          <rds-label [label]="item.description"></rds-label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Benefit Type 1 -->
+  <div class="row" *ngSwitchCase="'benefit_type1'">
+    <div class="col-md-4 pt-1">
+      <div class="text-center text-center rounded">
+        <div>
+          <rds-icon [name]="item.icon" [height]="item.iconHeight" [width]="item.iconWidth"></rds-icon>
+        </div>
+        <div class="mt-1">
+          <rds-label [label]="item.title" [bold]="true" [multiline]=""></rds-label>
+        </div>
+        <div class="mt-1">
+          <rds-label [label]="item.description"></rds-label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Benefit Type 2 -->
+  <div class="row" *ngSwitchCase="'benefit_type2'">
+    <div class="col-md-4 pt-1" >
+      <div class="text-center rounded">
+        <div>
+          <rds-label [title]="item.title"></rds-label>
+        </div>
+        <div>
+          <rds-icon [name]="item.icon" [height]="item.iconHeight" [width]="item.iconWidth"></rds-icon>
+        </div>
+        <div class="mt-1">
+          <rds-label [label]="item.title" [bold]="true" [multiline]=""></rds-label>
+        </div>
+        <div class="mt-1">
+          <rds-label [label]="item.description"></rds-label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Benefit Type 3 -->
+  <div class="row" *ngSwitchCase="'benefit_type3'">
+    <div class="col-md-5 pt-1">
+      <div class="d-flex">
+        <div class="d-flex align-items-center">
+          <rds-icon [name]="item.icon" [height]="item.iconHeight" [width]="item.iconWidth"></rds-icon>
+        </div>
+        <div class="ms-3 mt-3">
+          <div>
+            <rds-label [label]="item.title" [bold]="true"></rds-label>
+          </div>
+          <div>
+            <rds-label [label]="item.description"></rds-label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+

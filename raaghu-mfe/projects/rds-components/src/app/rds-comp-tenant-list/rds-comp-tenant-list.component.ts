@@ -224,12 +224,15 @@ export class RdsCompTenantListComponent implements OnInit, DoCheck {
       };
       this.tenantData = undefined;
       this.tenantSettingsInfo = undefined;
-      this.onReset.emit(true);
+      const eventdata:any={
+        newtenant:true,
+        reset:true
+      }
+      this.onReset.emit(eventdata);
       this.isTenantInfoValid = false;
     }
     if (event) {
       this.canvasTitle = 'New Tenant';
-      // event.stopPropagation();
       this.tenantData = undefined;
       this.tenantSettingsInfo = undefined;
 
@@ -283,7 +286,11 @@ export class RdsCompTenantListComponent implements OnInit, DoCheck {
     };
     this.tenantData = undefined;
     this.tenantSettingsInfo = undefined;
-    this.onReset.emit(true);
+    const event:any={
+      newtenant:false,
+      reset:true
+    }
+    this.onReset.emit(event);
     this.isTenantInfoValid = false;
   }
   editTableRowData(event): void {
