@@ -4,7 +4,9 @@
 name: Build and deploy Node.js app to Azure Web App - raaghumfestageuiapp
 
 on:
-  push:
+  schedule:
+    - cron:  '0 20 * * *'
+  workflow_run:
     branches:
       - "development"
   workflow_dispatch:
