@@ -26,7 +26,12 @@
         "rds-elements/rds-label/public-api",
         "rds-elements/rds-label"
       ],
-      "rds-color": [
+
+      "@libs/rds-checkbox": [
+        "rds-elements/rds-checkbox/public-api",
+        "rds-elements/rds-checkbox"
+      ],
+     "rds-color": [
         "dist/rds-color/rds-color",
         "dist/rds-color"
       ],
@@ -37,13 +42,7 @@
       "@libs/rds-rating": [
         "rds-elements/rds-rating/public-api",
         "rds-elements/rds-rating"
-      ],
-
-      "rds-popular-pages": [
-        "dist/rds-popular-pages/rds-popular-pages",
-        "dist/rds-popular-pages"
       ]
-     
     },
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
