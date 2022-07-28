@@ -109,6 +109,7 @@ import { RdsCompOrderSummaryComponent } from './rds-comp-order-summary/rds-comp-
 import { RdsCompShoppingCartProductComponent } from './rds-comp-shopping-cart-product/rds-comp-shopping-cart-product.component';
 import { RdsRatingModule } from 'projects/libs/rds-elements/src/rds-rating/src/public-api';
 
+
 @NgModule({
   declarations: [	
 
