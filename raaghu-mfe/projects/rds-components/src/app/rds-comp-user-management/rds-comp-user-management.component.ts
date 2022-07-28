@@ -22,6 +22,7 @@ export class RdsCompUserManagementComponent implements OnInit, OnChanges {
   checkboxLabel: any;
   isMasterSel: boolean;
   selectedDate: any = [];
+  @Input() editShimmer:boolean=false;
   @Output() UserManagementData=new EventEmitter<any>();
   @Input()
   Usermanagementsettings: any = {

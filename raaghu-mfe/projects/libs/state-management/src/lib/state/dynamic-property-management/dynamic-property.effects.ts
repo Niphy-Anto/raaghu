@@ -131,24 +131,41 @@ export class DynamicPropertyEffects {
       )
     )
   );
+  // getDynamicPropertyByEdit$ = createEffect(() =>
+  //   this.actions$.pipe(
+  //     ofType(getDynamicPropertyByEdit),
+  //     switchMap(({ id }) =>{
+  //       // Call the getTodos method, convert it to an observable
+  //     return (this.dynamicPropertyService.get(id)).pipe(
+  //         // Take the returned value and return a new success action containing the todos
+  //         map((RoleEditI) => {
+  //           return getDynamicPropertyByEditSuccess({
+  //             EditDynamicPropertSateI: RoleEditI,
+  //           });
+  //         }),
+  //         // Or... if it errors return a new failure action containing the error
+  //         catchError((error) => of(getDynamicPropertyByEditFailure({ error })))
+  //       )
+  //     )
+  //   )
+  // );
   getDynamicPropertyByEdit$ = createEffect(() =>
-    this.actions$.pipe(
-      ofType(getDynamicPropertyByEdit),
-      switchMap(({ id }) =>
-        // Call the getTodos method, convert it to an observable
-        from(this.dynamicPropertyService.get(id)).pipe(
-          // Take the returned value and return a new success action containing the todos
-          map((RoleEditI) => {
-            return getDynamicPropertyByEditSuccess({
-              EditDynamicPropertSateI: RoleEditI,
-            });
-          }),
-          // Or... if it errors return a new failure action containing the error
-          catchError((error) => of(getDynamicPropertyByEditFailure({ error })))
-        )
+  this.actions$.pipe(
+    ofType(getDynamicPropertyByEdit),
+    switchMap(({ id }) => {
+      
+      return (this.dynamicPropertyService.get(id)).pipe(
+        map((RoleEditI: any) => {
+          return getDynamicPropertyByEditSuccess({
+            EditDynamicPropertSateI: RoleEditI,
+          });
+        }),
+        catchError((error) => of(getDynamicPropertyByEditFailure({ error })))
       )
+    }
     )
-  );
+  )
+);
   deleteDynamicProperty$ = createEffect(
     () =>
       this.actions$.pipe(

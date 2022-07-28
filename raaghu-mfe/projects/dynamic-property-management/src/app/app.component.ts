@@ -205,7 +205,8 @@ export class AppComponent implements OnInit {
           this.DynamicProperties.DynamicPropertiesTableHeader,
         inputTypeList: this.inputTypeList,
         permissionsList: this.permissionsList,
-        isShimmer: true
+        isShimmer: true,
+        editShimmer : true
       },
       output: {
         deleteEvent: (eventDataDynamic: any) => {
@@ -244,13 +245,14 @@ export class AppComponent implements OnInit {
           };
           this.DynamicProperties.DynamicPropertiesTableData.push(item);
         });
+        const mfeConfig = this.rdsDynamicPropertiesMfeConfig;
+        mfeConfig.input.DynamicPropertiesTableData = [
+          ...this.DynamicProperties.DynamicPropertiesTableData,
+        ];
+        mfeConfig.input.isShimmer = false;
+        this.rdsDynamicPropertiesMfeConfig = mfeConfig;
       }
-      const mfeConfig = this.rdsDynamicPropertiesMfeConfig;
-      mfeConfig.input.DynamicPropertiesTableData = [
-        ...this.DynamicProperties.DynamicPropertiesTableData,
-      ];
-      mfeConfig.input.isShimmer = false;
-      this.rdsDynamicPropertiesMfeConfig = mfeConfig;
+     
     });
 
     this.rdsDynamicEntityPropertiesMfeConfig = {
@@ -262,7 +264,8 @@ export class AppComponent implements OnInit {
           this.DynamicEntityProperties.DynamicEntityPropertiesTableHeader,
         entityNames: this.DynamicEntityProperties.Entity,
         parameterList: this.DynamicEntityProperties.Parameter,
-        isShimmer : true
+        isShimmer : true,
+        editShimmer: true
       },
       output: {
         deleteEvent: (eventDataEntity: any) => {
@@ -288,13 +291,14 @@ export class AppComponent implements OnInit {
             item
           );
         });
-      }
-      const mfeConfig = this.rdsDynamicEntityPropertiesMfeConfig;
+        const mfeConfig = this.rdsDynamicEntityPropertiesMfeConfig;
       mfeConfig.input.DynamicEntityPropertiesTableData = [
         ...this.DynamicEntityProperties.DynamicEntityPropertiesTableData,
       ];
-      mfeConfig.input.isShimmer = false ;
+      mfeConfig.input.isShimmer = false;
       this.rdsDynamicEntityPropertiesMfeConfig = mfeConfig;
+      }
+      
     });
 
     // Get All Entities
@@ -426,6 +430,7 @@ export class AppComponent implements OnInit {
         mfeConfig.input.selectedPermissionList = [
           ...this.selectedDynamicPermission,
         ];
+        // mfeConfig.input.editShimmer = false;
         this.rdsDynamicPropertiesMfeConfig = mfeConfig;
       }
     });

@@ -214,7 +214,7 @@ import { RdsCompNewLangShimmerComponent } from './rds-comp-new-language/rds-comp
     RdsCompInvoiceShimmerComponent,
     RdsCompNewDynamicEntityShimmerComponent,
     RdsCompOtherSettingsShimmerComponent,
-    RdsCompNewLangShimmerComponent
+    RdsCompNewLangShimmerComponent,
     RdsCompCalendarComponent
     //RdsCompLanguageTextListComponent,
   ],

@@ -27,6 +27,7 @@ export class RdsCompTenantManagementComponent implements OnInit, OnChanges {
   checkboxLabel: any;
   isMasterSel: boolean;
   selectedDate: any = [];
+  @Input() editShimmer:boolean=false;
   @Output() tenantManagementData = new EventEmitter<any>();
   @Input()
   settings :any = {
