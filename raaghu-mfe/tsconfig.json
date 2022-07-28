@@ -27,7 +27,6 @@
         "rds-elements/rds-select-list/public-api",
         "rds-elements/rds-select-list"
       ],
-      
       "@libs/rds-label": [
         "rds-elements/rds-label/public-api",
         "rds-elements/rds-label"
@@ -43,8 +42,11 @@
       "@libs/rds-rating": [
         "rds-elements/rds-rating/public-api",
         "rds-elements/rds-rating"
+      ],
+      "@libs/rds-checkbox": [
+        "rds-elements/rds-checkbox/public-api",
+        "rds-elements/rds-checkbox"
       ]
-      
     },
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
