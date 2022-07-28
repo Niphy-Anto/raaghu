@@ -222,17 +222,6 @@ export const GetInputnameReducer = createReducer(
   }))
 );
 
-// export const getDynamicPropertyByEditReducer = createReducer(
-//   // Supply the initial state
-//   EditDynampicPropertyInitialSate,
-//   on(getDynamicPropertyByEdit, (state) => ({ ...state, status: 'loading' })),
-//   on(getDynamicPropertyByEditSuccess, (state, { EditDynamicPropertSateI }) => ({
-//     ...state,
-//     EditDynamicPropertSateI: EditDynamicPropertSateI,
-//     error: null,
-//     status: 'success',
-//   }))
-// );
 
 export const getDynamicPropertyByEditReducer = createReducer(
   EditDynampicPropertyInitialSate,
