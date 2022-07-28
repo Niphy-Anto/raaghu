@@ -98,6 +98,9 @@ import { RdsCompSecurityShimmerComponent } from './rds-comp-security/rds-comp-se
 import { RdsCompOrganizationTreeShimmerComponent } from './rds-comp-organization-tree/rds-comp-organization-tree-shimmer/rds-comp-organization-tree-shimmer.component';
 import { RdsCompPropertiesShimmerComponent } from './rds-comp-properties/rds-comp-properties-shimmer/rds-comp-properties-shimmer.component';
 import { RdsCompTableShimmerComponent } from './rds-comp-data-table/rds-comp-table-shimmer/rds-comp-table-shimmer.component';
+import { RdsFeedModule } from 'projects/libs/rds-elements/src/rds-feed/src/public-api';
+import { RdsLikeDislikeModule } from 'projects/libs/rds-elements/src/rds-like-dislike/src/public-api';
+import { RdsCompFeedsComponent } from './rds-comp-feeds/rds-comp-feeds.component';
 import { RdsCompProductListComponent } from './rds-comp-product-list/rds-comp-product-list.component';
 import { RdsColorModule } from 'projects/libs/rds-elements/src/rds-color/src/public-api';
 import { RdsCompPageNotFoundComponent } from './rds-comp-page-not-found/rds-comp-page-not-found.component';
@@ -195,8 +198,11 @@ import { RdsRatingModule } from 'projects/libs/rds-elements/src/rds-rating/src/p
     RdsCompPropertiesShimmerComponent,
     RdsCompTableShimmerComponent,
     RdsCompPageNotFoundComponent,
+    RdsCompFeedsComponent
     RdsCompMarketingWebsiteNewsletterComponent,
     RdsCompFaqComponent,
+    RdsCompCalendarComponent,
+    RdsCompFeedsComponent
     RdsCompCalendarComponent,
     RdsCompOrderSummaryComponent,
     RdsCompShoppingCartProductComponent,
@@ -272,6 +278,11 @@ import { RdsRatingModule } from 'projects/libs/rds-elements/src/rds-rating/src/p
     RdsTextEditorModule,
     RdsFabMenuModule,
     RdsLabelModule,
+    RdsFeedModule,
+    RdsLikeDislikeModule,
+    NgxShimmerLoadingModule,
+    RdsColorModule,
+    RdsRatingModule,
     NgxShimmerLoadingModule,
     RdsColorModule,
     RdsRatingModule,

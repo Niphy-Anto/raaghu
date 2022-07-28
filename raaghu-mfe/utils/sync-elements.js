@@ -13,9 +13,12 @@ const filesToReplace = [
 const dependentElements = [
     'rds-icon',
     'rds-badge',
+    'rds-label',
+    'rds-avatar',
+    'rds-like-dislike',
+    'rds-rating',
     'rds-icon-label',
-    'rds-select-list',
-    'rds-label'
+    'rds-select-list'
 ];
 
 function replaceFiles() {
@@ -52,6 +55,37 @@ function mergeTSConfigJson() {
             "@libs/rds-badge": [
                 "rds-elements/rds-badge/public-api",
                 "rds-elements/rds-badge"
+            ]
+        };
+        changesDone = true;
+    };
+    
+    if (ngElementsFile.compilerOptions.paths["@libs/rds-avatar"] == undefined) {
+        ngElementsFile.compilerOptions.paths = {
+            ...ngElementsFile.compilerOptions.paths,
+            "@libs/rds-avatar": [
+                "rds-elements/rds-avatar/public-api",
+                "rds-elements/rds-avatar"
+            ]
+        };
+        changesDone = true;
+    };
+    if (ngElementsFile.compilerOptions.paths["@libs/rds-like-dislike"] == undefined) {
+        ngElementsFile.compilerOptions.paths = {
+            ...ngElementsFile.compilerOptions.paths,
+            "@libs/rds-like-dislike": [
+                "rds-elements/rds-like-dislike/public-api",
+                "rds-elements/rds-like-dislike"
+            ]
+        };
+        changesDone = true;
+    };
+    if (ngElementsFile.compilerOptions.paths["@libs/rds-rating"] == undefined) {
+        ngElementsFile.compilerOptions.paths = {
+            ...ngElementsFile.compilerOptions.paths,
+            "@libs/rds-rating": [
+                "rds-elements/rds-rating/public-api",
+                "rds-elements/rds-rating"
             ]
         };
         changesDone = true;
