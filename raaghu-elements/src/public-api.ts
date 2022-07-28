@@ -184,3 +184,6 @@ export * from './rds-fab-menu/src/public-api';
 
 // Public API Surface of rds-label
 export * from './rds-label/src/public-api';
+
+// Public API Surface of rds-video-player
+export * from './rds-video-player/src/public-api';

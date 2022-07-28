@@ -23,6 +23,10 @@
       "rds-rating": [
         "dist/rds-rating/rds-rating",
         "dist/rds-rating"
+      ],
+      "rds-video-player": [
+        "dist/rds-video-player/rds-video-player",
+        "dist/rds-video-player"
       ]
     },
     "skipLibCheck": true,

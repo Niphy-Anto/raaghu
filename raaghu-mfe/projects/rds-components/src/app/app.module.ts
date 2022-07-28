@@ -100,6 +100,7 @@ import { RdsCompTableShimmerComponent } from './rds-comp-data-table/rds-comp-tab
 import { RdsCompPageNotFoundComponent } from './rds-comp-page-not-found/rds-comp-page-not-found.component';
 import { RdsCompMarketingWebsiteNewsletterComponent } from './rds-comp-marketing-website-newsletter/rds-comp-marketing-website-newsletter.component';
 import { RdsCompFaqComponent } from './rds-comp-faq/rds-comp-faq.component';
+import { RdsVideoPlayerModule } from 'projects/libs/rds-elements/src/rds-video-player/src/public-api';
 
 
 @NgModule({
@@ -260,7 +261,8 @@ import { RdsCompFaqComponent } from './rds-comp-faq/rds-comp-faq.component';
     RdsTextEditorModule,
     RdsFabMenuModule,
     RdsLabelModule,
-    NgxShimmerLoadingModule
+    NgxShimmerLoadingModule,
+    RdsVideoPlayerModule
   ],
   providers: [],
   bootstrap: [AppComponent],

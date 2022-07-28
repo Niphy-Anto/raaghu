@@ -8,7 +8,7 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./rds-comp-demoui.component.scss']
 })
 export class RdsCompDemouiComponent implements OnInit {
-
+ video = "http://static.videogular.com/assets/videos/videogular.mp4";
 tableHeaderItems=[
   {
     "headerName": "Name"
