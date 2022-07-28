@@ -200,3 +200,7 @@ export * from '../rds-rating/src/public-api';
 // Public API Surface of rds-feed
 export * from '../rds-feed/src/public-api';
 
+
+
+// Public API Surface of rds-icon-label
+export * from '../rds-icon-label/src/public-api';

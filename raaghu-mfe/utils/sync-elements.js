@@ -18,6 +18,10 @@ const dependentElements = [
     'rds-like-dislike',
     'rds-rating'
     
+    'rds-badge',
+    'rds-icon-label',
+    'rds-select-list'
+   
 ];
 
 function replaceFiles() {
@@ -58,16 +62,7 @@ function mergeTSConfigJson() {
         };
         changesDone = true;
     };
-    if (ngElementsFile.compilerOptions.paths["@libs/rds-label"] == undefined) {
-        ngElementsFile.compilerOptions.paths = {
-            ...ngElementsFile.compilerOptions.paths,
-            "@libs/rds-label": [
-                "rds-elements/rds-label/public-api",
-                "rds-elements/rds-label"
-            ]
-        };
-        changesDone = true;
-    };
+    
     if (ngElementsFile.compilerOptions.paths["@libs/rds-avatar"] == undefined) {
         ngElementsFile.compilerOptions.paths = {
             ...ngElementsFile.compilerOptions.paths,
@@ -94,6 +89,36 @@ function mergeTSConfigJson() {
             "@libs/rds-rating": [
                 "rds-elements/rds-rating/public-api",
                 "rds-elements/rds-rating"
+            ]
+        };
+        changesDone = true;
+    };
+    if (ngElementsFile.compilerOptions.paths["@libs/rds-icon-label"] == undefined) {
+        ngElementsFile.compilerOptions.paths = {
+            ...ngElementsFile.compilerOptions.paths,
+            "@libs/rds-icon-label": [
+                "rds-elements/rds-icon-label/public-api",
+                "rds-elements/rds-icon-label"
+            ]
+        };
+        changesDone = true;
+    };
+    if (ngElementsFile.compilerOptions.paths["@libs/rds-select-list"] == undefined) {
+        ngElementsFile.compilerOptions.paths = {
+            ...ngElementsFile.compilerOptions.paths,
+            "@libs/rds-select-list": [
+                "rds-elements/rds-select-list/public-api",
+                "rds-elements/rds-select-list"
+            ]
+        };
+        changesDone = true;
+    };
+    if (ngElementsFile.compilerOptions.paths["@libs/rds-label"] == undefined) {
+        ngElementsFile.compilerOptions.paths = {
+            ...ngElementsFile.compilerOptions.paths,
+            "@libs/rds-label": [
+                "rds-elements/rds-label/public-api",
+                "rds-elements/rds-label"
             ]
         };
         changesDone = true;
