@@ -182,10 +182,8 @@ export * from './rds-checkbox-groups/src/public-api';
 // Public API Surface of rds-fab-menu
 export * from './rds-fab-menu/src/public-api';
 
+// Public API Surface of rds-label
+export * from './rds-label/src/public-api';
+
 // Public API Surface of rds-fab-menu
 export * from './rds-rating/src/public-api';
-
-
-
-
-
