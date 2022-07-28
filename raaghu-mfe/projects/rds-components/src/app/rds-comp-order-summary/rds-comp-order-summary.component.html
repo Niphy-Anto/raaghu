@@ -1,0 +1,39 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="table-responsive">
+            <table id="table" class="w-100">
+                <thead class="thead-dark">
+                    <tr>
+                        <td class="p-2"> <b> Order summary</b> </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of itemList">
+                        <td class="p-2">{{item.name}}
+                            <!-- <rds-icon name="plus" [hidden]="item.iconhide" height="12px" width="12px"></rds-icon> -->
+
+                        </td>
+                        <td class="p-2 text-end">${{item.price | number : '1.2-2'}}</td>
+                    </tr>
+                    <tr >
+                        <td class="p-2">
+                            <b>
+                                <rds-label [label]="'Order Total'" ></rds-label>
+                            </b>
+                        </td>
+                        <td class="p-2 text-end">
+                            <span [class]="count(itemList)" ><b>{{orderTotal | number : '1.2-2'}} </b></span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+    </div>
+
+    </div>
+    <div class=" checkoutbtn">
+        <rds-button [label]="translate.instant('Checkout')" [size]="'small'" [block]="true" class="ms-2 btnwidth"
+            [colorVariant]="'primary'" (click)="checkout($event)">
+        </rds-button>
+    </div>
+</div>
