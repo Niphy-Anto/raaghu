@@ -13,14 +13,13 @@ const filesToReplace = [
 const dependentElements = [
     'rds-icon',
     'rds-badge',
-    'rds-label',
     'rds-avatar',
     'rds-like-dislike',
     'rds-rating',
-    'rds-icon-label',
-    'rds-select-list',
     'rds-label',
-    'rds-checkbox'
+    'rds-checkbox',
+    'rds-icon-label',
+    'rds-select-list'
 ];
 
 function replaceFiles() {
@@ -61,7 +60,7 @@ function mergeTSConfigJson() {
         };
         changesDone = true;
     };
-    
+
     if (ngElementsFile.compilerOptions.paths["@libs/rds-avatar"] == undefined) {
         ngElementsFile.compilerOptions.paths = {
             ...ngElementsFile.compilerOptions.paths,
