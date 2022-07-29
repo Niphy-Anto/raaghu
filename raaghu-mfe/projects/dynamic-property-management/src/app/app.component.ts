@@ -216,6 +216,11 @@ export class AppComponent implements OnInit {
           this.addDynamic(eventData);
         },
         editPropertyTableRowData: (eventData: any) => {
+          const mfeConfig = this.rdsDynamicEntityPropertiesMfeConfig;
+
+        mfeConfig.input.editShimmer = true;
+
+        this.rdsDynamicEntityPropertiesMfeConfig = mfeConfig
           this.EditDynamicProperty(eventData);
         },
       },
@@ -430,7 +435,7 @@ export class AppComponent implements OnInit {
         mfeConfig.input.selectedPermissionList = [
           ...this.selectedDynamicPermission,
         ];
-        // mfeConfig.input.editShimmer = false;
+         mfeConfig.input.editShimmer = false;
         this.rdsDynamicPropertiesMfeConfig = mfeConfig;
       }
     });
@@ -497,6 +502,7 @@ export class AppComponent implements OnInit {
     const mfeConfig = this.rdsDynamicPropertiesMfeConfig;
     mfeConfig.input.DynamicProperyData = {};
     mfeConfig.input.selectedPermissionList = [];
+    mfeConfig.input.editShimmer = false;
     this.rdsDynamicPropertiesMfeConfig = mfeConfig;
 
     setTimeout(() => {
@@ -524,6 +530,7 @@ export class AppComponent implements OnInit {
     const mfeConfig = this.rdsDynamicPropertiesMfeConfig;
     mfeConfig.input.permissionsList = [];
     mfeConfig.input.selectedPermissionList = [];
+    mfeConfig.input.editShimmer = true;
   }
   closeCanvas(): void {
     this.viewCanvas = false;

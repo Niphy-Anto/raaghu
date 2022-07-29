@@ -19,18 +19,11 @@ export const selectAllDynamicProperties = createSelector(
     selectDynamicProperty,
     (state: DynamicPropertyState) => state.dynamicProperty
 );
-export const dynamicPropertSelector = createFeatureSelector<AppState>('dynamicProperty');
 export const selectAllDynamicEntities = createSelector(
     selectDynamicEntity,
     (state: DynamicEntityState) => state.dynamicEntity
 );
-export const selectDynamicPropertyForEdit = createSelector(
 
-  dynamicPropertSelector,
-
-  (state: AppState) => state.dynamicPropertyEdit
-
-);
 export const selectDynamicEntities = createSelector(
   selectAllDynamicEntity,
   (state: AllDynamicEntitySate) => state.Entities

@@ -210,16 +210,16 @@ import { RdsCompNewLangShimmerComponent } from './rds-comp-new-language/rds-comp
     RdsCompPropertiesShimmerComponent,
     RdsCompTableShimmerComponent,
     RdsCompPageNotFoundComponent,
-    RdsCompFeedsComponent
+    RdsCompFeedsComponent,
     RdsCompMarketingWebsiteNewsletterComponent,
     RdsCompFaqComponent,
     RdsCompCalendarComponent,
-    RdsCompFeedsComponent
+    RdsCompFeedsComponent,
     RdsCompCalendarComponent,
     RdsCompOrderSummaryComponent,
     RdsCompShoppingCartProductComponent,
     RdsCompCalendarComponent,
-    RdsCompProductListComponent
+    RdsCompProductListComponent,
     RdsCompApiScopeBasicShimmerComponent,
     RdsCompApiScopeResourcesShimmerComponent,
     RdsCompAddressInputShimmerComponent,
