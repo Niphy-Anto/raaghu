@@ -1,5 +1,5 @@
 
-
+<div *ngIf="!editShimmer">
 <form #Scurityform="ngForm">
   <!-- <ul class="list-unstyled pt-5 ps-0"> -->
 
@@ -141,3 +141,5 @@
     </li>
   </ul>
 </form>
+</div>
+<app-rds-comp-security-shimmer *ngIf="editShimmer"></app-rds-comp-security-shimmer>

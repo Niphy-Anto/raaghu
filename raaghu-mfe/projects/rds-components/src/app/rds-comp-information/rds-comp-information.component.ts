@@ -21,6 +21,7 @@ export class RdsCompInformationComponent implements OnInit, OnChanges {
   entityNames: any[];
   @Output() dynamicPropertiesInfo = new EventEmitter<any>();
   @Input() resetFormSubject : Observable<boolean> = new Observable<boolean>();
+  @Input() editShimmer : boolean = false;
   isEdit: boolean = false;
   constructor(private store: Store, public translate:TranslateService) { }
   ngOnInit(): void {

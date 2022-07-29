@@ -10,12 +10,15 @@ import { StoreModule } from '@ngrx/store';
 import { WebhookSubscriptionEffects, WebhookSubscriptionReducer } from '@libs/state-management';
 import { EffectsModule } from '@ngrx/effects';
 import { RdsFabMenuModule } from 'projects/libs/rds-elements/src/rds-fab-menu/src/public-api';
+import { RdsWebhooksSubscriptionShimmerComponent } from './rds-webhooks-subscription-shimmer/rds-webhooks-subscription-shimmer.component';
+import { NgxShimmerLoadingModule } from 'ngx-shimmer-loading';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     WebhooksubscriptionComponent,
+    RdsWebhooksSubscriptionShimmerComponent,
 
   ],
   imports: [
@@ -31,6 +34,7 @@ import { RdsFabMenuModule } from 'projects/libs/rds-elements/src/rds-fab-menu/sr
     RdsIconModule,
     SharedModule,
     RdsBannerModule,
+    NgxShimmerLoadingModule,
     NgxTranslateModule.forRoot(),
     StoreModule.forFeature('webhookSubscriptions', {
       webhookSubscriptions: WebhookSubscriptionReducer

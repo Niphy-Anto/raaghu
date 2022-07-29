@@ -15,6 +15,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class AppComponent extends MfeBaseComponent implements OnInit {
 
   currentAlerts: any = [];
+  editShimmer:boolean=false;
   public rdsAlertMfeConfig: ComponentLoaderOptions = {
     name: 'RdsCompAlert',
     input: {
@@ -103,7 +104,8 @@ export class AppComponent extends MfeBaseComponent implements OnInit {
     name: 'RdsCompTenantManagement',
     input: {
       settings: this.tenantmanagementData,
-      settingsTenantEditionList: this.settingsTenantEditionList
+      settingsTenantEditionList: this.settingsTenantEditionList,
+      editShimmer:true
     },
 
     output: {
@@ -119,7 +121,10 @@ export class AppComponent extends MfeBaseComponent implements OnInit {
   };
   rdsCompUserManagementsMfeConfig: ComponentLoaderOptions = {
     name: 'RdsCompUserManagement',
-    input: { settingss: this.usermanagementdata },
+    input: { 
+      settingss: this.usermanagementdata,
+      editShimmer:true
+    },
     output: {
       UserManagementData: (event) => {
 
@@ -137,7 +142,10 @@ export class AppComponent extends MfeBaseComponent implements OnInit {
   };
   rdsCompSecurityMfeConfig: ComponentLoaderOptions = {
     name: 'RdsSecurity',
-    input: { setting: this.securityData },
+    input: { 
+      setting: this.securityData,
+      editShimmer:true
+    },
     output: {
       securityData: (event) => {
         this.saveHostSetting.security.passwordComplexity = new PasswordComplexitySetting();
@@ -159,7 +167,10 @@ export class AppComponent extends MfeBaseComponent implements OnInit {
   };
   rdsCompEmailMfeConfig: ComponentLoaderOptions = {
     name: 'RdsCompEmail',
-    input: { emailData: this.emailData },
+    input: { 
+      emailData: this.emailData,
+      editShimmer:true
+    },
     output: {
       EmailtData: (event) => {
         this.saveHostSetting.email.defaultFromAddress = event.defaultFromAddress;
@@ -181,7 +192,10 @@ export class AppComponent extends MfeBaseComponent implements OnInit {
   };
   rdsCompInvoiceMfeConfig: ComponentLoaderOptions = {
     name: 'RdsCompInvoice',
-    input: { invoiceData: this.invoiceInfoData },
+    input: { 
+      invoiceData: this.invoiceInfoData,
+      editShimmer:true
+    },
     output: {
       InvoiceData: (event) => {
         this.invoicedata.address = event.address
@@ -193,7 +207,10 @@ export class AppComponent extends MfeBaseComponent implements OnInit {
   };
   rdsCompOtherSettingsMfeConfig: ComponentLoaderOptions = {
     name: 'RdsCompOtherSettings',
-    input: { setting: this.otherSettingData },
+    input: { 
+      setting: this.otherSettingData,
+      editShimmer:true
+    },
     output: {
       OtherSettingData: (event) => {
         this.otherSettings.isQuickThemeSelectEnabled = event.isQuickThemeSelectEnabled
@@ -230,6 +247,7 @@ export class AppComponent extends MfeBaseComponent implements OnInit {
         //this.settingsTenantEditionList = res.editionComboboxItem.filter((x: any) => x.isFree);
         const mfeConfig = this.rdsCompTenantManageMfeConfig
         mfeConfig.input.settingsTenantEditionList = [...this.settingsTenantEditionList];
+        mfeConfig.input.editShimmer=false;
         this.rdsCompTenantManageMfeConfig = mfeConfig;
       }
     });
@@ -245,6 +263,7 @@ export class AppComponent extends MfeBaseComponent implements OnInit {
           this.invoiceInfoData.address = res.settings.billing.address;
           const mfeConfig = this.rdsCompInvoiceMfeConfig
           mfeConfig.input.InvoiceDataForm = { ... this.invoiceInfoData };
+          mfeConfig.input.editShimmer=false;
           this.rdsCompInvoiceMfeConfig = mfeConfig;
         }
         if (res.settings.tenantManagement) {
@@ -255,6 +274,7 @@ export class AppComponent extends MfeBaseComponent implements OnInit {
           this.tenantmanagementData.allowSelfRegistration = res.settings.tenantManagement.allowSelfRegistration;
           const mfeConfig = this.rdsCompTenantManageMfeConfig
           mfeConfig.input.settings = { ... this.tenantmanagementData };
+          mfeConfig.input.editShimmer=false;
           this.rdsCompTenantManageMfeConfig = mfeConfig;
         }
 
@@ -263,6 +283,7 @@ export class AppComponent extends MfeBaseComponent implements OnInit {
           this.otherSettingData.isQuickThemeSelectEnabled = res.settings.otherSettings.isQuickThemeSelectEnabled;
           const mfeConfig = this.rdsCompOtherSettingsMfeConfig
           mfeConfig.input.OtherSetting = { ... this.otherSettingData };
+          mfeConfig.input.editShimmer=false;
           this.rdsCompOtherSettingsMfeConfig = mfeConfig;
         }
         if (res.settings.userManagement) {
@@ -277,6 +298,7 @@ export class AppComponent extends MfeBaseComponent implements OnInit {
           }
           const mfeConfig = this.rdsCompUserManagementsMfeConfig
           mfeConfig.input.Usermanagementsettings = { ... this.usermanagementdata };
+          mfeConfig.input.editShimmer=false;
           this.rdsCompUserManagementsMfeConfig = mfeConfig;
         }
         if (res.settings.security) {
@@ -301,6 +323,7 @@ export class AppComponent extends MfeBaseComponent implements OnInit {
           }
           const mfeConfig = this.rdsCompSecurityMfeConfig
           mfeConfig.input.Seccuritysetting = { ... this.securityData };
+          mfeConfig.input.editShimmer=false;
           this.rdsCompSecurityMfeConfig = mfeConfig;
         }
         if (res.settings.email) {
@@ -314,6 +337,7 @@ export class AppComponent extends MfeBaseComponent implements OnInit {
           this.emailData.smtpDomain = res.settings.email.smtpDomain;
           const mfeConfig = this.rdsCompEmailMfeConfig
           mfeConfig.input.EmailData = { ... this.emailData };
+          mfeConfig.input.editShimmer=false;
           this.rdsCompEmailMfeConfig = mfeConfig;
         }
       }

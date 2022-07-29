@@ -1,4 +1,4 @@
-<div class="container ps-0 pt-5"> 
+<div class="container ps-0 pt-5" *ngIf="!editShimmer"> 
     <div class="fw-bold">
         <rds-label [label]="translate.instant('Invoice Information')"></rds-label>
     </div>
@@ -21,3 +21,4 @@
         </form>
     </div>
 </div>
+<app-rds-comp-invoice-shimmer *ngIf="editShimmer"></app-rds-comp-invoice-shimmer>
