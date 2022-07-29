@@ -12,7 +12,6 @@
         "rds-elements/rds-badge/public-api",
         "rds-elements/rds-badge"
       ],
-     
       "@libs/rds-like-dislike": [
         "rds-elements/rds-like-dislike/public-api",
         "rds-elements/rds-like-dislike"
@@ -21,35 +20,25 @@
         "rds-elements/rds-avatar/public-api",
         "rds-elements/rds-avatar"
       ],
-      
       "@libs/rds-label": [
         "rds-elements/rds-label/public-api",
         "rds-elements/rds-label"
       ],
-
       "@libs/rds-checkbox": [
         "rds-elements/rds-checkbox/public-api",
         "rds-elements/rds-checkbox"
       ],
-     "rds-color": [
-        "dist/rds-color/rds-color",
-        "dist/rds-color"
+      "@libs/rds-rating": [
+        "rds-elements/rds-rating/public-api",
+        "rds-elements/rds-rating"
       ],
-      "rds-feature-list": [
-        "dist/rds-feature-list/rds-feature-list",
-        "dist/rds-feature-list"
+      "@libs/rds-select-list": [
+        "rds-elements/rds-select-list/public-api",
+        "rds-elements/rds-select-list"
       ],
-      "rds-rating": [
-        "dist/rds-rating/rds-rating",
-        "dist/rds-rating"
-      ],
-      "rds-popular-pages": [
-        "dist/rds-popular-pages/rds-popular-pages",
-        "dist/rds-popular-pages"
-      ],
-      "rds-video-player": [
-        "dist/rds-video-player/rds-video-player",
-        "dist/rds-video-player"
+      "@libs/rds-icon-label": [
+        "rds-elements/rds-icon-label/public-api",
+        "rds-elements/rds-icon-label"
       ]
     },
     "skipLibCheck": true,
