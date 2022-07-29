@@ -1,7 +1,7 @@
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RdsIconModule } from '@libs/rds-icon';
+import { RdsLabelModule } from '@libs/rds-label';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
-import { RdsLabelModule } from 'src/rds-label/src/lib/rds-label.module';
 import { RdsBenefitComponent } from './rds-benefit.component';
 
 export default {
