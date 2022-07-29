@@ -14,26 +14,26 @@
 <a href="https://npmjs.org/rds-elements"><img src="https://img.shields.io/npm/v/rds-elements/latest.svg" alt="npm latest version" ></a>
 <a href="https://npmjs.org/rds-elements"><img src="https://img.shields.io/npm/v/rds-elements/next.svg" alt="npm next version" ></a>
 </br>
-<a href="https://github.com/Wai-Technologies/raaghu-elements/blob/main/LICENSE" target="blank">
-<img alt="GitHub licence" src="https://img.shields.io/github/license/Wai-Technologies/raaghu-elements?style=social" />
+<a href="https://github.com/Wai-Technologies/raaghu/blob/main/LICENSE" target="blank">
+<img alt="GitHub licence" src="https://img.shields.io/github/license/Wai-Technologies/raaghu?style=social" />
 </a>
-<a href="https://github.com/Wai-Technologies/raaghu-elements/stargazers" target="blank">
-<img alt="GitHub stars" src="https://img.shields.io/github/stars/Wai-Technologies/raaghu-elements?style=social"/>
+<a href="https://github.com/Wai-Technologies/raaghu/stargazers" target="blank">
+<img alt="GitHub stars" src="https://img.shields.io/github/stars/Wai-Technologies/raaghu?style=social"/>
 </a>
-<a href="https://github.com/Wai-Technologies/raaghu-elements/issues" target="blank">
-<img alt="GitHub issues" src="https://img.shields.io/github/issues/Wai-Technologies/raaghu-elements?style=social"/>
+<a href="https://github.com/Wai-Technologies/raaghu/issues" target="blank">
+<img alt="GitHub issues" src="https://img.shields.io/github/issues/Wai-Technologies/raaghu?style=social"/>
 </a>
-<a href="https://github.com/Wai-Technologies/raaghu-elements/pulls">
-<img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/Wai-Technologies/raaghu-elements?style=social" />
+<a href="https://github.com/Wai-Technologies/raaghu/pulls">
+<img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/Wai-Technologies/raaghu?style=social" />
 </a>
 </p>
 
 <p align="center">
     <a href="https://raaghu.io" target="blank">View Demo</a>
     ·
-    <a href="https://github.com/Wai-Technologies/raaghu-elements/issues/new">Report Bug</a>
+    <a href="https://github.com/Wai-Technologies/raaghu/issues/new">Report Bug</a>
     ·
-    <a href="https://github.com/Wai-Technologies/raaghu-elements/issues/new">Request Feature</a>
+    <a href="https://github.com/Wai-Technologies/raaghu/issues/new">Request Feature</a>
 </p>
 
 # 👋 Introducing `raaghu-elements` 
@@ -67,7 +67,7 @@ You can run `raaghu-elements` locally with a few easy steps.
 1. Clone the repository
 
 ```bash
-git clone https://github.com/Wai-Technologies/raaghu-elements.git
+git clone https://github.com/Wai-Technologies/raaghu.git
 ```
 
 2. Change the working directory
@@ -87,7 +87,7 @@ npm install
 ```bash
 npm run build-all
 ```
-> **_NOTE:_** Above comman will create a folder named "rds-elements" with all the libraries
+> **_NOTE:_** Above command will create a folder named "rds-elements" with all the libraries
 
 5. Create a new blank angular project
 
@@ -127,7 +127,6 @@ imports: [
 
 ```bash
 npm start
-
 ```
 
 8. Storybook
@@ -157,13 +156,13 @@ This project is licensed under the MIT License - see the [`LICENSE`](LICENSE) fi
 - ✔️ Better Performance
 - ✔️ Converiting plain angular components to custom elements
 
-If you find something is missing, we are listening. Please create a feature request [from here](https://github.com/Wai-Technologies/raaghu-elements/issues/new).
+If you find something is missing, we are listening. Please create a feature request [from here](https://github.com/Wai-Technologies/raaghu/issues/new).
 
 
 # 🤝 Contributing to `Raaghu`
 Any kind of positive contribution is welcome! Please help us to grow by contributing to the project.
 
-If you wish to contribute, you can work on any features [listed here](https://github.com/Wai-Technologies/raaghu-elements#-upcoming-features) or create one on your own. After adding your code, please send us a Pull Request.  
+If you wish to contribute, you can work on any features [listed here](https://github.com/Wai-Technologies/raaghu#-upcoming-features) or create one on your own. After adding your code, please send us a Pull Request.  
 
 
 
