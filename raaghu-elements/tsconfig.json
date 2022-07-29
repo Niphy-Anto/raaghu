@@ -12,21 +12,33 @@
         "rds-elements/rds-badge/public-api",
         "rds-elements/rds-badge"
       ],
-      "rds-color": [
-        "dist/rds-color/rds-color",
-        "dist/rds-color"
+      "@libs/rds-like-dislike": [
+        "rds-elements/rds-like-dislike/public-api",
+        "rds-elements/rds-like-dislike"
       ],
-      "rds-feature-list": [
-        "dist/rds-feature-list/rds-feature-list",
-        "dist/rds-feature-list"
+      "@libs/rds-avatar": [
+        "rds-elements/rds-avatar/public-api",
+        "rds-elements/rds-avatar"
       ],
-      "rds-rating": [
-        "dist/rds-rating/rds-rating",
-        "dist/rds-rating"
+      "@libs/rds-label": [
+        "rds-elements/rds-label/public-api",
+        "rds-elements/rds-label"
       ],
-      "rds-popular-pages": [
-        "dist/rds-popular-pages/rds-popular-pages",
-        "dist/rds-popular-pages"
+      "@libs/rds-checkbox": [
+        "rds-elements/rds-checkbox/public-api",
+        "rds-elements/rds-checkbox"
+      ],
+      "@libs/rds-rating": [
+        "rds-elements/rds-rating/public-api",
+        "rds-elements/rds-rating"
+      ],
+      "@libs/rds-select-list": [
+        "rds-elements/rds-select-list/public-api",
+        "rds-elements/rds-select-list"
+      ],
+      "@libs/rds-icon-label": [
+        "rds-elements/rds-icon-label/public-api",
+        "rds-elements/rds-icon-label"
       ]
     },
     "skipLibCheck": true,
