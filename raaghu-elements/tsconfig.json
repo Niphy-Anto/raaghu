@@ -39,6 +39,14 @@
       "@libs/rds-icon-label": [
         "rds-elements/rds-icon-label/public-api",
         "rds-elements/rds-icon-label"
+      ],
+      "rds-card-detail": [
+        "dist/rds-card-detail/rds-card-detail",
+        "dist/rds-card-detail"
+      ],
+      "@libs/rds-radio-button": [
+        "rds-elements/rds-radio-button/public-api",
+        "rds-elements/rds-radio-button"
       ]
     },
     "skipLibCheck": true,
