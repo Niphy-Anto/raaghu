@@ -24,6 +24,11 @@ const Template: Story<RdsAppDetailsComponent> = (args: RdsAppDetailsComponent) =
 
 export const Basic = Template.bind({});
 Basic.args = {
- 
+    appDetailsItemsList:[{ 
+     title: 'Zapier', 
+     subtitle: 'Build custom automation and intefrations with app', 
+     icon: 'zapier',
+     route: '/home'
+    }]
 }
 
