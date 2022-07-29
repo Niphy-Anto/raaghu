@@ -17,15 +17,15 @@
                                             <rds-icon [name]="'arrow_down'" [width]="'12px'" [height]="'12px'"
                                                 [ngClass]="getAscIconClass(header)"></rds-icon>
                                         </span>
-                                        <div class="btn-group dropup">
+                                        <div class="btn-group dropend">
                                             <span class="text-right sort-icons sortable" id="search-dropdown"
                                                 (click)="openSearchModal()" *ngIf="header.filterable"
                                                 data-bs-toggle="dropdown" aria-expanded="false">
                                                 <rds-icon [name]="'filter'" [height]="'12px'" [width]="'12px'"></rds-icon>
                                             </span>
                                             <ul class="dropdown-menu searchModal p-1" aria-labelledby="dropdownMenuButton1">
-                                                <div class="row">
-                                                    <div class="col-md-12">
+                                                <div>
+                                                    <div>
                                                         <rds-input [placeholder]="translate.instant('Search here')+' ...'"
                                                             [inputType]="header.dataType" [icon]="'search'"
                                                             [name]="header.key" [size]="'small'"
