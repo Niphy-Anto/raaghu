@@ -20,7 +20,7 @@ const dependentElements = [
     'rds-checkbox',
     'rds-icon-label',
     'rds-select-list',
-    'rds-radio-button',
+    'rds-radio-button'
 ];
 
 function replaceFiles() {

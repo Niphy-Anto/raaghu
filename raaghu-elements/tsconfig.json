@@ -28,32 +28,26 @@
         "rds-elements/rds-checkbox/public-api",
         "rds-elements/rds-checkbox"
       ],
-     "@libs/rds-color": [
-      "rds-elements/rds-color/public-api",
-       "rds-elements/rds-color"
+      "@libs/rds-color": [
+        "rds-elements/rds-color/public-api",
+        "rds-elements/rds-color"
       ],
       "@libs/rds-feature-list": [
         "rds-elements/rds-feature-list/public-api",
-       "rds-elements/rds-feature-list"
-       
+        "rds-elements/rds-feature-list"
       ],
       "@libs/rds-rating": [
         "rds-elements/rds-rating/public-api",
         "rds-elements/rds-rating"
-       
       ],
       "@libs/rds-popular-pages": [
         "rds-elements/rds-popular-pages/public-api",
         "rds-elements/rds-popular-pages"
-       
+      ],
       "@libs/rds-select-list": [
         "rds-elements/rds-select-list/public-api",
         "rds-elements/rds-select-list"
       ],
-      "@libs/rds-video-player": [
-        "rds-elements/rds-video-player/public-api",
-        "rds-elements/rds-video-player"
-       
       "@libs/rds-icon-label": [
         "rds-elements/rds-icon-label/public-api",
         "rds-elements/rds-icon-label"
