@@ -13,10 +13,11 @@ const filesToReplace = [
 const dependentElements = [
     'rds-icon',
     'rds-badge',
-    'rds-label',
     'rds-avatar',
     'rds-like-dislike',
     'rds-rating',
+    'rds-label',
+    'rds-checkbox',
     'rds-icon-label',
     'rds-select-list'
 ];
@@ -59,7 +60,7 @@ function mergeTSConfigJson() {
         };
         changesDone = true;
     };
-    
+
     if (ngElementsFile.compilerOptions.paths["@libs/rds-avatar"] == undefined) {
         ngElementsFile.compilerOptions.paths = {
             ...ngElementsFile.compilerOptions.paths,
@@ -116,6 +117,16 @@ function mergeTSConfigJson() {
             "@libs/rds-label": [
                 "rds-elements/rds-label/public-api",
                 "rds-elements/rds-label"
+            ]
+        };
+        changesDone = true;
+    };
+    if (ngElementsFile.compilerOptions.paths["@libs/rds-checkbox"] == undefined) {
+        ngElementsFile.compilerOptions.paths = {
+            ...ngElementsFile.compilerOptions.paths,
+            "@libs/rds-checkbox": [
+                "rds-elements/rds-checkbox/public-api",
+                "rds-elements/rds-checkbox"
             ]
         };
         changesDone = true;
