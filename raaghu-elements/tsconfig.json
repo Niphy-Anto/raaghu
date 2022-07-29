@@ -31,25 +31,29 @@
         "rds-elements/rds-checkbox/public-api",
         "rds-elements/rds-checkbox"
       ],
-     "rds-color": [
-        "dist/rds-color/rds-color",
-        "dist/rds-color"
+     "@libs/rds-color": [
+      "rds-elements/rds-color/public-api",
+       "rds-elements/rds-color"
       ],
-      "rds-feature-list": [
-        "dist/rds-feature-list/rds-feature-list",
-        "dist/rds-feature-list"
+      "@libs/rds-feature-list": [
+        "rds-elements/rds-feature-list/public-api",
+       "rds-elements/rds-feature-list"
+       
       ],
-      "rds-rating": [
-        "dist/rds-rating/rds-rating",
-        "dist/rds-rating"
+      "@libs/rds-rating": [
+        "rds-elements/rds-rating/public-api",
+        "rds-elements/rds-rating"
+       
       ],
-      "rds-popular-pages": [
-        "dist/rds-popular-pages/rds-popular-pages",
-        "dist/rds-popular-pages"
+      "@libs/rds-popular-pages": [
+        "rds-elements/rds-popular-pages/public-api",
+        "rds-elements/rds-popular-pages"
+       
       ],
-      "rds-video-player": [
-        "dist/rds-video-player/rds-video-player",
-        "dist/rds-video-player"
+      "@libs/rds-video-player": [
+        "rds-elements/rds-video-player/public-api",
+        "rds-elements/rds-video-player"
+       
       ]
     },
     "skipLibCheck": true,
