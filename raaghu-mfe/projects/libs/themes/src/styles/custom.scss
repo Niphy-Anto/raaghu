@@ -498,10 +498,14 @@ html {
   color: #212529;
 }
 .dropdown-menu.show {
-  min-width: fit-content;
+  // min-width: fit-content;
   max-width: 100%;
   width: 100%;
 }
+.navbar-nav .dropdown-menu.show{
+  min-width: fit-content;
+}
+
 /*  Dropdown List */
 .dropdown-item {
   font-size: small;
@@ -545,7 +549,7 @@ html {
 
 .sidenav-footer {
   position: fixed;
-  bottom: 3%;
+  bottom: 0;
   width: 290px;
   z-index: 99;
   height: 100px;
@@ -593,6 +597,22 @@ html {
     top: 7px;
     right: 20px;
   }
+  #sidebar.toggle .btn-color-mode-switch > label.btn-color-mode-switch-inner:before{
+    content: '☾';
+    right: 14px;
+    font-size: 16px;
+    top: 2.3px;
+  }
+
+  // sidebar toggle css
+
+  #sidebar.toggle .btn-color-mode-switch > label.btn-color-mode-switch-inner {
+    width: 63px;
+    height: 30px;
+}
+#sidebar.toggle .btn-color-mode-switch input[type=checkbox]:checked + label.btn-color-mode-switch-inner:after {
+  left: 30px;
+}
 
   .btn-color-mode-switch > label.btn-color-mode-switch-inner:after {
     content: attr(data-off);
@@ -611,6 +631,21 @@ html {
     align-items: center;
     justify-content: center;
     font-size: 10px;
+  }
+  #sidebar.toggle .btn-color-mode-switch > label.btn-color-mode-switch-inner:after{
+    content: '☀';
+    width: 29px;
+    height: 24px;
+    font-size: 16px;
+  }
+  html[theme=dark] #sidebar.toggle .btn-color-mode-switch > label.btn-color-mode-switch-inner:before {
+    content: "☀";
+    right: 14px;
+    left: -14px;
+  }
+  #sidebar.toggle .switcher{
+    position: relative;
+    left: 0px;
   }
 
   .btn-color-mode-switch > .alert {
@@ -642,6 +677,10 @@ html {
     content: attr(data-on);
     left: 65px;
     background: #3c3c3c;
+  }
+  html[theme=dark] #sidebar.toggle .btn-color-mode-switch input[type="checkbox"]:checked + label.btn-color-mode-switch-inner:after {
+    content: '☾';
+    color: #fff;
   }
 
   .btn-color-mode-switch input[type="checkbox"]:checked + label.btn-color-mode-switch-inner:before {
