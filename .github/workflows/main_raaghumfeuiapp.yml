@@ -23,6 +23,12 @@ jobs:
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v3
+    - uses: microsoft/variable-substitution@v1
+      with:
+          files: 'raaghu-mfe/projects/host/src/assets/appconfig.json'
+      env:
+          appBaseUrl: ${{ secrets.APPBASEURL }}
+          
 
     - name: Set up Node.js
       uses: actions/setup-node@v3
