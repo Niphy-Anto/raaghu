@@ -123,9 +123,9 @@ import { RdsCompNewDynamicEntityShimmerComponent } from './rds-comp-new-dynamic-
 import { RdsCompOtherSettingsShimmerComponent } from './rds-comp-other-settings/rds-comp-other-settings-shimmer/rds-comp-other-settings-shimmer.component';
 import { RdsCompNewLangShimmerComponent } from './rds-comp-new-language/rds-comp-new-lang-shimmer/rds-comp-new-lang-shimmer.component';
 import { RdsVideoPlayerModule } from 'projects/libs/rds-elements/src/rds-video-player/src/public-api';
+import { RdsCompCardDetailListComponent } from './rds-comp-card-detail-list/rds-comp-card-detail-list.component';
 import { RdsCompBenefitComponent } from './rds-comp-benefit/rds-comp-benefit.component';
 import { RdsCompAppDetailsComponent } from './rds-comp-app-details/rds-comp-app-details.component';
-
 
 @NgModule({
   declarations: [
@@ -218,7 +218,9 @@ import { RdsCompAppDetailsComponent } from './rds-comp-app-details/rds-comp-app-
     RdsCompFeedsComponent,
     RdsCompOrderSummaryComponent,
     RdsCompShoppingCartProductComponent,
+    RdsCompCalendarComponent,
     RdsCompProductListComponent,
+    RdsCompCardDetailListComponent,
     RdsCompApiScopeBasicShimmerComponent,
     RdsCompApiScopeResourcesShimmerComponent,
     RdsCompAddressInputShimmerComponent,
@@ -309,15 +311,14 @@ import { RdsCompAppDetailsComponent } from './rds-comp-app-details/rds-comp-app-
     RdsLikeDislikeModule,
     NgxShimmerLoadingModule,
     RdsColorModule,
-      RdsRatingModule,
-      RdsBenefitModule,
+    RdsRatingModule,
+    RdsBenefitModule,
     CalendarModule.forRoot({
       provide: DateAdapter,
       useFactory: adapterFactory
     }),
     RdsIconLabelModule,
-    RdsVideoPlayerModule
-      
+    RdsVideoPlayerModule      
   ],
   providers: [],
   bootstrap: [AppComponent],
