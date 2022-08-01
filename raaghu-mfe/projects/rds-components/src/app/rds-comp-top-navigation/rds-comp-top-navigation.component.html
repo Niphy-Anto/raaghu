@@ -22,7 +22,7 @@
 
     <div class="collapse navbar-collapse ps-5 ms-4 py-0 m-0" id="navbarSupportedContent1">
       <ul class="navbar-nav d-flex align-items-center ms-auto">
-        <rds-dropdownlist [placeholder]="'Languages'" [value]="selectedLanguage.language" [icon]="selectedLanguage.icon"
+        <rds-dropdownlist [placeholder]="'Languages'" [value]="selectedLanguage.language" [icon]="selectedLanguage.icon" [iconHeight]="'18px'" [iconWidth]="'18px'"
           [listItems]="languageItems" (onSelect)="onLanguageSelect($event)">
         </rds-dropdownlist>
         <li class="nav-item dropdown border-end px-2">
@@ -32,7 +32,7 @@
               <rds-button class="position-relative" [size]="'small'" [roundedButton]="true" [colorVariant]="'default'"
                 type="button">
                 <rds-icon name="notifications" width="20px" height="20px"></rds-icon>
-                <rds-badge right size="smallest" Types="primary" [label]="getCount()" [pillBadges]="false"
+                <rds-badge class="notification-li" right size="smallest" Types="primary" [label]="getCount()" [pillBadges]="false"
                   [positioned]="true" [iconBadge]="true">
                 </rds-badge>
               </rds-button>

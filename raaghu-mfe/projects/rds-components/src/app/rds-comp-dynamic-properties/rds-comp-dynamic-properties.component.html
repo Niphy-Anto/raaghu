@@ -8,6 +8,7 @@
     [tableHeaders]="DynamicPropertiesTableHeader"
     (onActionSelection)="onActionSelect($event)"
     [noDataTitle]="'Currently you do not have dynamic properties'"
+    [isShimmer]="isShimmer"
   ></app-rds-data-table>
 </div>
 <rds-offcanvas
@@ -45,6 +46,7 @@
           [inputTypeList]="inputTypeList"
           [dynamicPropertiesData]="DynamicProperyData"
           [resetFormSubject]="resetFormSubject.asObservable()"
+          [editShimmer]="editShimmer" 
           (dynamicPropertiesInfo)="getDynamicPropertyInfo($event)"
         ></app-rds-comp-information>
       </div>

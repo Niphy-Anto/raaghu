@@ -6,7 +6,7 @@
         [ngClass]="blockWidth" [attr.aria-label]="label">
 
   <ng-content select="[left]"></ng-content>
-  <rds-icon *ngIf="buttonType!='labelOnly'" [name]="icon" [width]="iconWidth" [height]="iconHeight"></rds-icon>
+  <rds-icon *ngIf="buttonType!='labelOnly'" [name]="icon" [width]="iconWidth" [height]="iconHeight" [fill]="iconFill" [stroke]="iconStroke"></rds-icon>
   <span *ngIf="buttonType!='iconOnly'" class="ps-1 btn-text">{{label}}</span>
   <ng-content></ng-content>
   <ng-content select="[right]"></ng-content>
