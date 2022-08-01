@@ -1,4 +1,4 @@
-<ul class="list-unstyled pt-5">
+<ul class="list-unstyled pt-5" *ngIf="!editShimmer">
   <li>
     <div class="mb-3 fw-medium">
     <rds-label [label]="translate.instant('Form-Based Registration')"></rds-label>
@@ -50,3 +50,4 @@
     </div>
   </li>
 </ul>
+<app-rds-comp-tenant-management-shimmer *ngIf="editShimmer"></app-rds-comp-tenant-management-shimmer>

@@ -14,6 +14,7 @@ export class AppComponent implements OnInit {
   title = 'webhooksubscription';
   public viewCanvas: boolean = false;
   currentAlerts: any = [];
+  isShimmer:boolean=false;
   webhooksEvent:any;
   @Input() listItems = [
     { value: 'New Webhook Subscription', some: 'value', key: 'newwebhook', icon: 'plus', iconWidth: '20px', iconHeight: '20px' },
@@ -55,14 +56,15 @@ export class AppComponent implements OnInit {
         tableData: this.webhookTableData,
         recordsPerPage: 10,
         pagination: true,
-        noDataTitle:'Currently you do not have webhook subscription'
+        noDataTitle:'Currently you do not have webhook subscription',
+        isShimmer : true
       },
 
     };
     this.store.dispatch(getWebhookSubscription());
     this.store.select(selectAll).subscribe((res: any) => {
       this.webhookTableData = [];
-      if (res && res.webhookSubscriptions && res.webhookSubscriptions.items) {
+      if (res && res.webhookSubscriptions && res.webhookSubscriptions.items && res.status == "success") {
         res.webhookSubscriptions.items.forEach(element => {
           if (element && element.webhooks) {
             this.webhooksEvent = '';
@@ -92,6 +94,8 @@ export class AppComponent implements OnInit {
         });
         const mfeConfig = this.rdswebhookTableMfeConfig
         mfeConfig.input.tableData = this.webhookTableData
+        mfeConfig.input.isShimmer = false;
+        this.rdswebhookTableMfeConfig = mfeConfig
       }
     })
     // console.log(this.allTodos$ );

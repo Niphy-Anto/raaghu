@@ -12,18 +12,21 @@ import { MaintenanceEffects, MaintenanceReducer, WebsitelogReducer } from '@libs
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { RdsFabMenuModule } from 'projects/libs/rds-elements/src/rds-fab-menu/src/public-api';
+import { RdsMaintenanceShimmerComponent } from './maintenance/rds-maintenance-shimmer/rds-maintenance-shimmer.component';
+import { NgxShimmerLoadingModule } from 'ngx-shimmer-loading';
 export const MaintenanceReducersMap = {
   maintenances: MaintenanceReducer,
   Websitelogs: WebsitelogReducer,
-  
+
 };
 @NgModule({
   declarations: [
     AppComponent,
     MaintenanceComponent,
     CacheComponent,
-    WebsitelogComponent
-  
+    WebsitelogComponent,
+    RdsMaintenanceShimmerComponent
+
   ],
   imports: [
     BrowserModule,
@@ -32,6 +35,7 @@ export const MaintenanceReducersMap = {
     RdsBadgeModule,SharedModule,
     RdsIconModule,
     RdsFabMenuModule,
+    NgxShimmerLoadingModule,
     StoreModule.forFeature('maintenances', MaintenanceReducersMap
     ),
     EffectsModule.forRoot([MaintenanceEffects]),

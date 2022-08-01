@@ -110,6 +110,18 @@ import { adapterFactory } from '@libs/rds-elements';
 import { RdsCompOrderSummaryComponent } from './rds-comp-order-summary/rds-comp-order-summary.component';
 import { RdsCompShoppingCartProductComponent } from './rds-comp-shopping-cart-product/rds-comp-shopping-cart-product.component';
 import { RdsRatingModule } from 'projects/libs/rds-elements/src/rds-rating/src/public-api';
+import { RdsCompApiScopeBasicShimmerComponent } from './rdc-comp-api-scope-basics/rds-comp-api-scope-basic-shimmer/rds-comp-api-scope-basic-shimmer.component';
+import { RdsCompApiScopeResourcesShimmerComponent } from './rdc-comp-api-scope-resources/rds-comp-api-scope-resources-shimmer/rds-comp-api-scope-resources-shimmer.component';
+import { RdsCompAddressInputShimmerComponent } from './rds-comp-address-input/rds-comp-address-input-shimmer/rds-comp-address-input-shimmer.component';
+import { RdsCompBasicResourceShimmerComponent } from './rds-comp-basic-resource/rds-comp-basic-resource-shimmer/rds-comp-basic-resource-shimmer.component';
+import { RdsCompCacheShimmerComponent } from './rds-comp-cache/rds-comp-cache-shimmer/rds-comp-cache-shimmer.component';
+import { RdsCompClaimsShimmerComponent } from './rds-comp-claims/rds-comp-claims-shimmer/rds-comp-claims-shimmer.component';
+import { RdsCompEmailShimmerComponent } from './rds-comp-email/rds-comp-email-shimmer/rds-comp-email-shimmer.component';
+import { RdsCompInformationShimmerComponent } from './rds-comp-information/rds-comp-information-shimmer/rds-comp-information-shimmer.component';
+import { RdsCompInvoiceShimmerComponent } from './rds-comp-invoice/rds-comp-invoice-shimmer/rds-comp-invoice-shimmer.component';
+import { RdsCompNewDynamicEntityShimmerComponent } from './rds-comp-new-dynamic-entity-property/rds-comp-new-dynamic-entity-shimmer/rds-comp-new-dynamic-entity-shimmer.component';
+import { RdsCompOtherSettingsShimmerComponent } from './rds-comp-other-settings/rds-comp-other-settings-shimmer/rds-comp-other-settings-shimmer.component';
+import { RdsCompNewLangShimmerComponent } from './rds-comp-new-language/rds-comp-new-lang-shimmer/rds-comp-new-lang-shimmer.component';
 import { RdsVideoPlayerModule } from 'projects/libs/rds-elements/src/rds-video-player/src/public-api';
 
 
@@ -202,11 +214,22 @@ import { RdsVideoPlayerModule } from 'projects/libs/rds-elements/src/rds-video-p
     RdsCompMarketingWebsiteNewsletterComponent,
     RdsCompFaqComponent,
     RdsCompFeedsComponent,
-    RdsCompCalendarComponent,
     RdsCompOrderSummaryComponent,
     RdsCompShoppingCartProductComponent,
-    RdsCompCalendarComponent,
-    RdsCompProductListComponent
+    RdsCompProductListComponent,
+    RdsCompApiScopeBasicShimmerComponent,
+    RdsCompApiScopeResourcesShimmerComponent,
+    RdsCompAddressInputShimmerComponent,
+    RdsCompBasicResourceShimmerComponent,
+    RdsCompCacheShimmerComponent,
+    RdsCompClaimsShimmerComponent,
+    RdsCompEmailShimmerComponent,
+    RdsCompInformationShimmerComponent,
+    RdsCompInvoiceShimmerComponent,
+    RdsCompNewDynamicEntityShimmerComponent,
+    RdsCompOtherSettingsShimmerComponent,
+    RdsCompNewLangShimmerComponent,
+    RdsCompCalendarComponent
     //RdsCompLanguageTextListComponent,
   ],
   imports: [
@@ -282,15 +305,11 @@ import { RdsVideoPlayerModule } from 'projects/libs/rds-elements/src/rds-video-p
     NgxShimmerLoadingModule,
     RdsColorModule,
     RdsRatingModule,
-    NgxShimmerLoadingModule,
-    RdsColorModule,
-    RdsRatingModule,
     CalendarModule.forRoot({
       provide: DateAdapter,
       useFactory: adapterFactory
     }),
     RdsIconLabelModule,
-    NgxShimmerLoadingModule,
     RdsVideoPlayerModule
   ],
   providers: [],
