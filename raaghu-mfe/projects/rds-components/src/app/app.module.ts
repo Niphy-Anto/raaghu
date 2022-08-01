@@ -41,7 +41,7 @@ import {
   RdsInputGroupModule, RdsAccordionModule, RdsTagsModule, RdsAlertModule, RdsButtonGroupModule, RdsCollapseModule, RdsIllustrationModule, RdsListGroupModule, RdsPopoverModule,
   RdsSpinnerModule, RdsToastsModule, RdsChartBubbleModule, RdsChartDoughnutModule, RdsChartMixedModule, RdsChartPolarAreaModule, RdsChartScatterModule, RdsChartStackedModule,
   RdsProgressbarModule, RdsBreadcrumbModule, RdsCarouselModule, RdsDoubleRangeModule, RdsScrollspyModule, RdsCounterModule, RdsFabMenuModule, RdsLabelModule, RdsIconLabelModule,
-  CalendarModule, DateAdapter, RdsFeedModule
+    CalendarModule, DateAdapter, RdsFeedModule, RdsBenefitModule
 } from '@libs/rds-elements';
 import { RdsCompDemouiComponent } from './rds-comp-demoui/rds-comp-demoui.component';
 import { RdsCompTenantManagementComponent } from './rds-comp-tenant-management/rds-comp-tenant-management.component';
@@ -123,7 +123,7 @@ import { RdsCompNewDynamicEntityShimmerComponent } from './rds-comp-new-dynamic-
 import { RdsCompOtherSettingsShimmerComponent } from './rds-comp-other-settings/rds-comp-other-settings-shimmer/rds-comp-other-settings-shimmer.component';
 import { RdsCompNewLangShimmerComponent } from './rds-comp-new-language/rds-comp-new-lang-shimmer/rds-comp-new-lang-shimmer.component';
 import { RdsVideoPlayerModule } from 'projects/libs/rds-elements/src/rds-video-player/src/public-api';
-
+import { RdsCompBenefitComponent } from './rds-comp-benefit/rds-comp-benefit.component';
 
 @NgModule({
   declarations: [
@@ -229,7 +229,8 @@ import { RdsVideoPlayerModule } from 'projects/libs/rds-elements/src/rds-video-p
     RdsCompNewDynamicEntityShimmerComponent,
     RdsCompOtherSettingsShimmerComponent,
     RdsCompNewLangShimmerComponent,
-    RdsCompCalendarComponent
+    RdsCompCalendarComponent,
+    RdsCompBenefitComponent
     //RdsCompLanguageTextListComponent,
   ],
   imports: [
@@ -304,13 +305,15 @@ import { RdsVideoPlayerModule } from 'projects/libs/rds-elements/src/rds-video-p
     RdsLikeDislikeModule,
     NgxShimmerLoadingModule,
     RdsColorModule,
-    RdsRatingModule,
+      RdsRatingModule,
+      RdsBenefitModule,
     CalendarModule.forRoot({
       provide: DateAdapter,
       useFactory: adapterFactory
     }),
     RdsIconLabelModule,
     RdsVideoPlayerModule
+      
   ],
   providers: [],
   bootstrap: [AppComponent],

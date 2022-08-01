@@ -55,7 +55,7 @@ export const benefit_type2 = Template.bind({});
 benefit_type2.args= {
     display_type:'benefit_type2',
     item:
-    { id: 6,  
+    { id: 6, 
       iconHeight :"40px",
       iconWidth: "40px",
       icon: 'users',
