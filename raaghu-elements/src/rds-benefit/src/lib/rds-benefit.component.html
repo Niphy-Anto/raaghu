@@ -1,7 +1,8 @@
-<div class="container" [ngSwitch]="display_type">
-  <!-- Basic  -->
-  <div class="row" *ngSwitchCase="'Basic'">
-    <div class="col-md-4 pt-1">
+<ng-container *ngIf="item">
+  <ng-container [ngSwitch]="display_type">
+    <!-- Basic  -->
+    <!-- <div class="row"> -->
+    <div class="pt-1" *ngSwitchCase="'Basic'">
       <div class="border p-4 text-center bg-light rounded">
         <div>
           <rds-icon [name]="item.icon" [height]="item.iconHeight" [width]="item.iconWidth"></rds-icon>
@@ -14,11 +15,9 @@
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- Benefit Type 1 -->
-  <div class="row" *ngSwitchCase="'benefit_type1'">
-    <div class="col-md-4 pt-1">
+    <!-- Benefit Type 1 -->
+    <div class="pt-1" *ngSwitchCase="'benefit_type1'">
       <div class="text-center text-center rounded">
         <div>
           <rds-icon [name]="item.icon" [height]="item.iconHeight" [width]="item.iconWidth"></rds-icon>
@@ -26,36 +25,29 @@
         <div class="mt-1">
           <rds-label [label]="item.title" [bold]="true" [multiline]=""></rds-label>
         </div>
-        <div class="mt-1">
+        <div class="mt-1" class="px-3">
           <rds-label [label]="item.description"></rds-label>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- Benefit Type 2 -->
-  <div class="row" *ngSwitchCase="'benefit_type2'">
-    <div class="col-md-4 pt-1" >
+    <!-- Benefit Type 2 -->
+    <div class="pt-1" *ngSwitchCase="'benefit_type2'">
       <div class="text-center rounded">
-        <div>
-          <rds-label [title]="item.title"></rds-label>
-        </div>
         <div>
           <rds-icon [name]="item.icon" [height]="item.iconHeight" [width]="item.iconWidth"></rds-icon>
         </div>
         <div class="mt-1">
           <rds-label [label]="item.title" [bold]="true" [multiline]=""></rds-label>
         </div>
-        <div class="mt-1">
-          <rds-label [label]="item.description"></rds-label>
+        <div class="mt-1 px-5">
+          <rds-label [label]="item.description" class=""></rds-label>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- Benefit Type 3 -->
-  <div class="row" *ngSwitchCase="'benefit_type3'">
-    <div class="col-md-5 pt-1">
+    <!-- Benefit Type 3 -->
+    <div class="pt-1" *ngSwitchCase="'benefit_type3'">
       <div class="d-flex">
         <div class="d-flex align-items-center">
           <rds-icon [name]="item.icon" [height]="item.iconHeight" [width]="item.iconWidth"></rds-icon>
@@ -64,12 +56,12 @@
           <div>
             <rds-label [label]="item.title" [bold]="true"></rds-label>
           </div>
-          <div>
+          <div class="pe-5">
             <rds-label [label]="item.description"></rds-label>
           </div>
         </div>
       </div>
     </div>
-  </div>
-
-
+    <!-- </div> -->
+  </ng-container>
+</ng-container>

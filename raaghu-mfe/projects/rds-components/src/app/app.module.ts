@@ -41,7 +41,7 @@ import {
   RdsInputGroupModule, RdsAccordionModule, RdsTagsModule, RdsAlertModule, RdsButtonGroupModule, RdsCollapseModule, RdsIllustrationModule, RdsListGroupModule, RdsPopoverModule,
   RdsSpinnerModule, RdsToastsModule, RdsChartBubbleModule, RdsChartDoughnutModule, RdsChartMixedModule, RdsChartPolarAreaModule, RdsChartScatterModule, RdsChartStackedModule,
   RdsProgressbarModule, RdsBreadcrumbModule, RdsCarouselModule, RdsDoubleRangeModule, RdsScrollspyModule, RdsCounterModule, RdsFabMenuModule, RdsLabelModule, RdsIconLabelModule,
-  CalendarModule, DateAdapter, RdsFeedModule
+    CalendarModule, DateAdapter, RdsFeedModule, RdsBenefitModule
 } from '@libs/rds-elements';
 import { RdsCompDemouiComponent } from './rds-comp-demoui/rds-comp-demoui.component';
 import { RdsCompTenantManagementComponent } from './rds-comp-tenant-management/rds-comp-tenant-management.component';
@@ -124,7 +124,8 @@ import { RdsCompOtherSettingsShimmerComponent } from './rds-comp-other-settings/
 import { RdsCompNewLangShimmerComponent } from './rds-comp-new-language/rds-comp-new-lang-shimmer/rds-comp-new-lang-shimmer.component';
 import { RdsVideoPlayerModule } from 'projects/libs/rds-elements/src/rds-video-player/src/public-api';
 import { RdsCompCardDetailListComponent } from './rds-comp-card-detail-list/rds-comp-card-detail-list.component';
-
+import { RdsCompBenefitComponent } from './rds-comp-benefit/rds-comp-benefit.component';
+import { RdsCompAppDetailsComponent } from './rds-comp-app-details/rds-comp-app-details.component';
 
 @NgModule({
   declarations: [
@@ -232,7 +233,10 @@ import { RdsCompCardDetailListComponent } from './rds-comp-card-detail-list/rds-
     RdsCompNewDynamicEntityShimmerComponent,
     RdsCompOtherSettingsShimmerComponent,
     RdsCompNewLangShimmerComponent,
-    RdsCompCalendarComponent
+    RdsCompCalendarComponent,
+    RdsCompBenefitComponent,
+    RdsCompProductListComponent,
+    RdsCompAppDetailsComponent
     //RdsCompLanguageTextListComponent,
   ],
   imports: [
@@ -308,12 +312,13 @@ import { RdsCompCardDetailListComponent } from './rds-comp-card-detail-list/rds-
     NgxShimmerLoadingModule,
     RdsColorModule,
     RdsRatingModule,
+    RdsBenefitModule,
     CalendarModule.forRoot({
       provide: DateAdapter,
       useFactory: adapterFactory
     }),
     RdsIconLabelModule,
-    RdsVideoPlayerModule
+    RdsVideoPlayerModule      
   ],
   providers: [],
   bootstrap: [AppComponent],

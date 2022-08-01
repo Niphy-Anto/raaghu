@@ -43,7 +43,7 @@ export class RdsCheckboxComponent implements OnInit, ControlValueAccessor {
       classes = ['input-group-text'];
     }
     if (this.switch === true) {
-      classes.push('form-switch px-5')
+      classes.push('form-switch')
       return classes
     }
     if (this.inline === true) {
