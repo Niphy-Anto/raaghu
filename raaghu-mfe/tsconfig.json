@@ -50,7 +50,7 @@
       "@libs/rds-radio-button": [
         "rds-elements/rds-radio-button/public-api",
         "rds-elements/rds-radio-button"
-      ],
+      ]
     },
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",

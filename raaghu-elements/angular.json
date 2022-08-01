@@ -2352,6 +2352,68 @@
           }
         }
       }
+    },
+    "rds-card-detail": {
+      "projectType": "library",
+      "root": "src/rds-card-detail",
+      "sourceRoot": "src/rds-card-detail/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "src/rds-card-detail/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "src/rds-card-detail/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "src/rds-card-detail/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "src/rds-card-detail/src/test.ts",
+            "tsConfig": "src/rds-card-detail/tsconfig.spec.json",
+            "karmaConfig": "src/rds-card-detail/karma.conf.js"
+          }
+        }
+      }
+    },
+    "rds-address-detail": {
+      "projectType": "library",
+      "root": "src/rds-address-detail",
+      "sourceRoot": "src/rds-address-detail/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "src/rds-address-detail/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "src/rds-address-detail/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "src/rds-address-detail/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "src/rds-address-detail/src/test.ts",
+            "tsConfig": "src/rds-address-detail/tsconfig.spec.json",
+            "karmaConfig": "src/rds-address-detail/karma.conf.js"
+          }
+        }
+      }
     }
   }
 }

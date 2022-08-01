@@ -1,0 +1,79 @@
+<!-- <div class="mfe-outline">
+
+  <div *ngIf="userData$ | async as userData">
+    <div><b>User email:</b> {{ userData.userEmail }}</div>
+    <div><b>User password:</b> {{ userData.userPassword }}</div>
+    <div><b>Remember Me:</b> {{ userData.rememberme }}</div>
+    <br><br>
+  </div>
+
+  <h3 class="pb-3">Address</h3>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="needs-validation">
+    <div class="row g-3">
+      <div class="col-12">
+        <label for="address" class="form-label">Address</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="address"
+          id="address"
+          placeholder="1234 Main St"
+          required
+        />
+        <div class="invalid-feedback">Please enter your shipping address.</div>
+      </div>
+
+      <div class="col-12">
+        <label for="address2" class="form-label"
+          >Address 2 <span class="text-muted">(Optional)</span></label>
+        <input
+          type="text"
+          formControlName="address2"
+          class="form-control"
+          id="address2"
+          placeholder="Apartment or suite"
+        />
+      </div>
+
+      <div class="col-md-5">
+        <label for="country" class="form-label">Country</label>
+        <select class="form-select" formControlName="country" id="country" required>
+          <option [ngValue]="null" disabled>Select Country</option>
+          <option *ngFor="let country of countries" [ngValue]="country">{{country}}</option>
+        </select>
+        <div class="invalid-feedback">Please select a valid country.</div>
+      </div>
+
+      <div class="col-md-4">
+        <label for="state" class="form-label">State</label>
+        <select class="form-select" formControlName="state" id="state" required>
+          <option [ngValue]="null" disabled>Select State</option>
+          <option *ngFor="let state of states" [ngValue]="state">{{state}}</option>
+        </select>
+        <div class="invalid-feedback">Please provide a valid state.</div>
+      </div>
+
+      <div class="col-md-4">
+        <label for="state" class="form-label">City</label>
+        <select class="form-select" formControlName="city" id="state" required>
+          <option [ngValue]="null" disabled>Select city</option>
+          <option *ngFor="let city of cities" [ngValue]="city">{{city}}</option>
+        </select>
+        <div class="invalid-feedback">Please provide a valid state.</div>
+      </div>
+
+      <div class="col-md-3">
+        <label for="zip" class="form-label">Zip</label>
+        <input
+          type="text"
+          formControlName="zip"
+          class="form-control"
+          id="zip"
+          placeholder=""
+          required
+        />
+        <div class="invalid-feedback">Zip code required.</div>
+      </div>
+    </div>
+  </form>
+</div> -->

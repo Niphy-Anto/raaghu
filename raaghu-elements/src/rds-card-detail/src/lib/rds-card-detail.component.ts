@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { yearsToMonths } from 'date-fns';
 export class CardData {
   cardID: string
   cardName: string

@@ -132,12 +132,12 @@ function mergeTSConfigJson() {
         };
         changesDone = true;
     };
-    if (ngElementsFile.compilerOptions.paths["@libs/rds-rds-radio-button"] == undefined) {
+    if (ngElementsFile.compilerOptions.paths["@libs/rds-radio-button"] == undefined) {
         ngElementsFile.compilerOptions.paths = {
             ...ngElementsFile.compilerOptions.paths,
-            "@libs/rds-rds-radio-button": [
-                "rds-elements/rds-rds-radio-button/public-api",
-                "rds-elements/rds-rds-radio-button"
+            "@libs/rds-radio-button": [
+                "rds-elements/rds-radio-button/public-api",
+                "rds-elements/rds-radio-button"
             ]
         };
         changesDone = true;
