@@ -213,12 +213,9 @@ import { RdsVideoPlayerModule } from 'projects/libs/rds-elements/src/rds-video-p
     RdsCompFeedsComponent,
     RdsCompMarketingWebsiteNewsletterComponent,
     RdsCompFaqComponent,
-    RdsCompCalendarComponent,
     RdsCompFeedsComponent,
-    RdsCompCalendarComponent,
     RdsCompOrderSummaryComponent,
     RdsCompShoppingCartProductComponent,
-    RdsCompCalendarComponent,
     RdsCompProductListComponent,
     RdsCompApiScopeBasicShimmerComponent,
     RdsCompApiScopeResourcesShimmerComponent,
@@ -308,15 +305,11 @@ import { RdsVideoPlayerModule } from 'projects/libs/rds-elements/src/rds-video-p
     NgxShimmerLoadingModule,
     RdsColorModule,
     RdsRatingModule,
-    NgxShimmerLoadingModule,
-    RdsColorModule,
-    RdsRatingModule,
     CalendarModule.forRoot({
       provide: DateAdapter,
       useFactory: adapterFactory
     }),
     RdsIconLabelModule,
-    NgxShimmerLoadingModule,
     RdsVideoPlayerModule
   ],
   providers: [],
