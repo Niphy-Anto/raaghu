@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { appDetailsItems } from './rds-app-details.service';
 
 @Component({
   selector: 'rds-app-details',
@@ -8,10 +9,10 @@ import { Component, OnInit } from '@angular/core';
 export class RdsAppDetailsComponent implements OnInit {
 
   lightslategrey: boolean = true;
-
+  @Input() ItemsList:appDetailsItems;
 
   constructor() { }
-  
+ 
 
   ngOnInit(): void {
   }

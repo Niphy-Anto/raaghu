@@ -9,8 +9,8 @@ import { RdsAppDetailsComponent } from './rds-app-details.component';
   ],
   imports: [
     CommonModule,
-    RdsIconModule,
-    RdsCheckboxModule
+    RdsCheckboxModule,
+    RdsIconModule
   ],
   exports: [
     RdsAppDetailsComponent
