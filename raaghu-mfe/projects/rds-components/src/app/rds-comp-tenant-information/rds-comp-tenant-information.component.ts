@@ -27,7 +27,7 @@ export class RdsCompTenantInformationComponent implements OnInit, OnChanges {
       this.tenantData['edition'] = '';
       this.tenantData['unlimitedSubscription'] = true;
       this.tenantData['imageUrl'] = '../assets/edit-pic.png';
-      this.tenantData['subscriptionEndDate'] = '';
+      this.tenantData['subscriptionEndDate'] = new Date();
     }
     setTimeout(() => {
     if (this.tenantData && this.tenantInfoForm) {
