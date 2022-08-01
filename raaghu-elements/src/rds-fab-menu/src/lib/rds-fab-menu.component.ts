@@ -42,7 +42,7 @@ export class RdsFabMenuComponent implements OnInit {
   }
 
   public get customClasses(): any[] {
-    var customClasses = [];
+    var customClasses!: any[];
 
     if (this.size === 'small') {
       var selectSize = 'btn-sm';

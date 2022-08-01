@@ -1,7 +1,7 @@
 
 import { RdsIconModule } from '@libs/rds-icon';
 import { Story, Meta, moduleMetadata } from '@storybook/angular';
-import { RdsLabelModule } from '../../../rds-label/src/lib/rds-label.module';
+import { RdsLabelModule } from '@libs/rds-label';
 import { RdsAppDetailsComponent } from './rds-app-details.component';
 import { RdsCheckboxModule } from '@libs/rds-checkbox';
 

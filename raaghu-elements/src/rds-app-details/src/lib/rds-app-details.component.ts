@@ -7,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RdsAppDetailsComponent implements OnInit {
 
+  lightslategrey: boolean = true;
+
+
   constructor() { }
   
 
   ngOnInit(): void {
   }
 
+  onClick(event) {
+
+  }
 }
