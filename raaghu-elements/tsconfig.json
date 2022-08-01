@@ -12,9 +12,9 @@
         "rds-elements/rds-badge/public-api",
         "rds-elements/rds-badge"
       ],
-      "rds-benefit": [
-        "dist/rds-benefit/rds-benefit",
-        "dist/rds-benefit"
+      "@libs/rds-label": [
+        "rds-elements/rds-label/public-api",
+        "rds-elements/rds-label"
       ],
       "rds-color": [
         "dist/rds-color/rds-color",

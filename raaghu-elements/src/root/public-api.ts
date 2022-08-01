@@ -193,3 +193,6 @@ export * from '../rds-label/src/public-api';
 
 // Public API Surface of rds-icon-label
 export * from '../rds-icon-label/src/public-api';
+
+// Public API Surface of rds-benefit
+export * from '../rds-benefit/src/public-api';
