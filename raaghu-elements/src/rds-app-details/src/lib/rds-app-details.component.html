@@ -1,36 +1,38 @@
-<div class="card w-50" *ngFor="let item of appDetailsItemsList ;index as i">
+<div class="card" >
 <div class="card-body">
-    <rds-icon
-    height="25"
-    [fill]="false"
-    [stroke]="lightslategrey"
-    width="25"
-    type=""
-    name="zapier"
-    colorVariant=""
-  >
-</rds-icon>
+   
+  <rds-icon
+  height="25"
+  [fill]="false"
+  [stroke]="false"
+  width="25"
+  type=""
+  [name]="ItemsList.icon"
+  colorVariant="" 
+  
+></rds-icon>
 <rds-checkbox
-  [checked]="true"
+  [checked]="false"
+  [disabled]="false"
   [switch]="true"
-  [inline]="true"
-  id="checkboxid"
-  state="checkbox"
-  class="float-end"
+  [id]="checkboxid"
+  [withLabel]="true"
+  [state]="checkbox"
+ class="float-end"
 ></rds-checkbox>
   <div>
    <label class="fs-4 fw-bold mt-2">
-{{item.title}}
+{{ItemsList.title}}
    </label> 
   </div>
   <div>
     <label class="text-muted mt-1">
-        {{item.subtitle}}
+        {{ItemsList.subtitle}}
     </label>
   </div>
 </div>
 <div class="card-footer bg-white">
-<a [href]="item.route">
+<a [href]="ItemsList.route">
    <label class="float-end pointerCur">
    View integration
    </label>

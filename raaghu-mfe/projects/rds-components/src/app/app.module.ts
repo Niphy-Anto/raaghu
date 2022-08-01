@@ -124,6 +124,8 @@ import { RdsCompOtherSettingsShimmerComponent } from './rds-comp-other-settings/
 import { RdsCompNewLangShimmerComponent } from './rds-comp-new-language/rds-comp-new-lang-shimmer/rds-comp-new-lang-shimmer.component';
 import { RdsVideoPlayerModule } from 'projects/libs/rds-elements/src/rds-video-player/src/public-api';
 import { RdsCompBenefitComponent } from './rds-comp-benefit/rds-comp-benefit.component';
+import { RdsCompAppDetailsComponent } from './rds-comp-app-details/rds-comp-app-details.component';
+
 
 @NgModule({
   declarations: [
@@ -230,7 +232,9 @@ import { RdsCompBenefitComponent } from './rds-comp-benefit/rds-comp-benefit.com
     RdsCompOtherSettingsShimmerComponent,
     RdsCompNewLangShimmerComponent,
     RdsCompCalendarComponent,
-    RdsCompBenefitComponent
+    RdsCompBenefitComponent,
+    RdsCompProductListComponent,
+    RdsCompAppDetailsComponent
     //RdsCompLanguageTextListComponent,
   ],
   imports: [
