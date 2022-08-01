@@ -46,7 +46,11 @@
       "@libs/rds-checkbox": [
         "rds-elements/rds-checkbox/public-api",
         "rds-elements/rds-checkbox"
-      ]
+      ],
+      "@libs/rds-radio-button": [
+        "rds-elements/rds-radio-button/public-api",
+        "rds-elements/rds-radio-button"
+      ],
     },
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",

@@ -111,6 +111,7 @@ import { RdsCompOrderSummaryComponent } from './rds-comp-order-summary/rds-comp-
 import { RdsCompShoppingCartProductComponent } from './rds-comp-shopping-cart-product/rds-comp-shopping-cart-product.component';
 import { RdsRatingModule } from 'projects/libs/rds-elements/src/rds-rating/src/public-api';
 import { RdsVideoPlayerModule } from 'projects/libs/rds-elements/src/rds-video-player/src/public-api';
+import { RdsCompCardDetailListComponent } from './rds-comp-card-detail-list/rds-comp-card-detail-list.component';
 
 
 @NgModule({
@@ -206,7 +207,8 @@ import { RdsVideoPlayerModule } from 'projects/libs/rds-elements/src/rds-video-p
     RdsCompOrderSummaryComponent,
     RdsCompShoppingCartProductComponent,
     RdsCompCalendarComponent,
-    RdsCompProductListComponent
+    RdsCompProductListComponent,
+    RdsCompCardDetailListComponent
     //RdsCompLanguageTextListComponent,
   ],
   imports: [
