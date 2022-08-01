@@ -29,6 +29,8 @@ export const CardDetail = Template.bind({});
 CardDetail.args = {
   cardData: {
     cardID: '1011', cardName: 'MasterCard', cardExpiry: '11/2027', cardLogo: 'dashboard', cardNumber: 1111, isDefault:false,radioItems: [{id: 1011, checked: false, name: "Radio-Button"}]
-  }
+  },
+  IsEditAndDefaultFunctionalityRequired:false,
+  IsSelectionRequired:false
 };
 

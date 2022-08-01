@@ -1,15 +1,16 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { yearsToMonths } from 'date-fns';
 export class CardData {
   cardID: string
   cardName: string
   cardExpiry: string
   cardNumber: number
   cardLogo: string
-  isDefault:boolean
-  radioItems:[{
-    id:number
-    checked:boolean
-    name:string
+  isDefault: boolean
+  radioItems: [{
+    id: number
+    checked: boolean
+    name: string
   }]
 }
 @Component({
@@ -20,6 +21,8 @@ export class CardData {
 export class RdsCardDetailComponent implements OnInit {
 
   @Input() cardData: CardData;
+  @Input() IsEditAndDefaultFunctionalityRequired: boolean = true;
+  @Input() IsSelectionRequired: boolean = true;
   @Output() onSetDefaultcard = new EventEmitter<any>();
   @Output() onSelectPaymentMethod = new EventEmitter<any>();
   @Output() onEditCard = new EventEmitter<any>();
@@ -34,11 +37,13 @@ export class RdsCardDetailComponent implements OnInit {
     this.onEditCard.emit(cardData);
   }
   setAsDefaultCard(cardData: any) {
-    cardData.radioItems[0].checked=true;
+    cardData.radioItems[0].checked = true;
+    cardData.isDefault = true;
     this.onSetDefaultcard.emit(cardData);
-    
+
   }
-  setAsPaymentMethod(cardData: any){
+  setAsPaymentMethod(cardData: any) {
+    cardData.radioItems[0].checked = true;
     this.onSelectPaymentMethod.emit(cardData);
   }
 }

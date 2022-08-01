@@ -35,6 +35,8 @@ CardDetailsList.args={
     ,{cardID:'1012',cardName:'Visa',cardExpiry:'11/2032',cardLogo:'tenant',cardNumber:3256, isDefault:false, radioItems: [{id: 1011, checked: false, name: "Radio-Button"}]}
     ,{cardID:'1013',cardName:'DEbit',cardExpiry:'04/2023',cardLogo:'plus',cardNumber:8001, isDefault:true, radioItems: [{id: 1011, checked: true, name: "Radio-Button"}]}
     ,{cardID:'1014',cardName:'Discover',cardExpiry:'08/2027',cardLogo:'roles',cardNumber:3412, isDefault:false, radioItems: [{id: 1011, checked: false, name: "Radio-Button"}]}
-]
+],
+IsEditAndDefaultFunctionalityRequired:false,
+IsSelectionRequired:false
   
 }

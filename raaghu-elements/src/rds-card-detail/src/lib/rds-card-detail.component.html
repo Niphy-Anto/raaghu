@@ -13,12 +13,12 @@
                 <div class="d-block text-muted" style="font-size: 0.80rem;">Expiry {{cardData.cardExpiry}}</div>
             </div>
         </div>
-        <div>
+        <div *ngIf="IsSelectionRequired">
             <rds-radio-button [switch]="false" [inline]="false" [isInputGroup]="false" [itemList]="cardData.radioItems"
                 (onClick)="setAsPaymentMethod(cardData)"></rds-radio-button>
         </div>
     </div>
-    <div class="d-flex mt-2" style="margin-left: 2.3rem;">
+    <div *ngIf="IsEditAndDefaultFunctionalityRequired" class="d-flex mt-2" style="margin-left: 2.3rem;">
         <a *ngIf="!cardData.isDefault" (click)="setAsDefaultCard(cardData)"
             style="cursor: pointer;text-decoration: none;font-size: 0.80rem;" class="ms-0">Set as default</a>
         <a *ngIf="cardData.isDefault" style="text-decoration: none;font-size: 0.80rem;"
