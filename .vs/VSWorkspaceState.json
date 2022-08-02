@@ -1,7 +1,18 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\raaghu-elements",
+    "\\raaghu-elements\\src",
+    "\\raaghu-elements\\src\\rds-rating",
+    "\\raaghu-elements\\src\\rds-rating\\src",
+    "\\raaghu-elements\\src\\rds-rating\\src\\lib",
+    "\\raaghu-mfe",
+    "\\raaghu-mfe\\projects",
+    "\\raaghu-mfe\\projects\\rds-components",
+    "\\raaghu-mfe\\projects\\rds-components\\src",
+    "\\raaghu-mfe\\projects\\rds-components\\src\\app",
+    "\\raaghu-mfe\\utils"
   ],
-  "SelectedNode": "\\raaghu-elements",
+  "SelectedNode": "\\raaghu-mfe\\utils\\sync-elements.js",
   "PreviewInSolutionExplorer": false
 }
