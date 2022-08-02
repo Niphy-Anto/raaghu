@@ -1,37 +1,42 @@
-<div class="card w-50">
+<div class="card" >
 <div class="card-body">
-    <rds-icon
-    height="25"
-    [fill]="false"
-    [stroke]="lightslategrey"
-    width="25"
-    type=""
-    name="like"
-    colorVariant=""
-  >
-</rds-icon>
+   
+  <rds-icon
+  height="25"
+  [fill]="false"
+  [stroke]="false"
+  width="25"
+  type=""
+  [name]="ItemsList.icon"
+  colorVariant="" 
+  
+></rds-icon>
 <rds-checkbox
-[switch]="true"
-[inline]="false"
-[isInputGroup]="false"
-(onClick)="onClick($event)"
+  [checked]="false"
+  [disabled]="false"
+  [switch]="true"
+  [id]="checkboxid"
+  [withLabel]="true"
+  [state]="checkbox"
+ class="float-end"
 ></rds-checkbox>
   <div>
    <label class="fs-4 fw-bold mt-2">
-Zapier
+{{ItemsList.title}}
    </label> 
   </div>
   <div>
     <label class="text-muted mt-1">
-        Build custom automation and intefrations with app
+        {{ItemsList.subtitle}}
     </label>
   </div>
 </div>
 <div class="card-footer bg-white">
-<a href="">
+<a [href]="ItemsList.route">
    <label class="float-end pointerCur">
    View integration
    </label>
 </a>
 </div>
 </div>
+
