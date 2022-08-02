@@ -31,6 +31,7 @@ export class MaintenanceComponent implements OnInit {
   constructor(private store: Store, public translate: TranslateService) { }
   cashedata: any = []
   websiteLogData: any[];
+  isShimmer:boolean=false;
   ngOnInit(): void {
     this.store.select(selectDefaultLanguage).subscribe((res: any) => {
       if (res) {
@@ -38,6 +39,7 @@ export class MaintenanceComponent implements OnInit {
         this.navtabItems[0].label = this.translate.instant('Caches');
         this.navtabItems[1].label = this.translate.instant('Website Logs');
       }
+      this.isShimmer = true;
     })
     this.rdsAlertMfeConfig = {
       name: 'RdsCompAlertPopup',
@@ -71,6 +73,7 @@ export class MaintenanceComponent implements OnInit {
           this.websiteLogData.push(item);
         });
       }
+      this.isShimmer = false;
     })
     this.store.dispatch(getmaintenances());
     this.store.select(selectAllmaintenance).subscribe((res: any) => {
@@ -83,6 +86,7 @@ export class MaintenanceComponent implements OnInit {
           this.cashedata.push(item);
         });
       }
+      this.isShimmer = false;
     })
   }
   deleyecaheid: any;

@@ -25,6 +25,7 @@ export class RdsCompNewLanguageComponent implements OnInit, DoCheck, OnChanges {
   @Input() flags: any[] = []
   // @Input() selectedLanguage: any;
   @Input() languageNames: any[] = []
+  @Input() EditShimmer: boolean = false;
   listLanguage: any
   listcountrycode: any
   LanguageData: any

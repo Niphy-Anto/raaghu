@@ -2,7 +2,6 @@
 import { Input } from '@angular/core';
 import { RdsIconModule } from '@libs/rds-icon';
 import { Story, Meta, moduleMetadata } from '@storybook/angular';
-import { RdsLabelModule } from '../../../rds-label/src/lib/rds-label.module';
 import { RdsPopularPagesComponent } from './rds-popular-pages.component';
 
 export default {
@@ -11,7 +10,7 @@ export default {
   decorators: [
     moduleMetadata({
       declarations: [],
-      imports: [RdsIconModule,RdsLabelModule],
+      imports: [RdsIconModule],
       }),
   ],
   argTypes: {

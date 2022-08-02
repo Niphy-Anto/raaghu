@@ -19,7 +19,7 @@ export class RdsCompInvoiceComponent implements OnInit {
   }
 
   @Output() InvoiceData = new EventEmitter<any>();
-
+  @Input() editShimmer:boolean=false;
   @Input() InvoiceDataForm: any;
   @ViewChild('invoiceForm') InvoiceFormInfo: NgForm;
 

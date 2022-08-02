@@ -18,6 +18,7 @@ export class NewlanguageComponent implements OnInit, OnChanges, OnDestroy {
   public languageNames: Item[] = [];
   public flags: any = [];
   private subscription: Subscription;
+  @Input()   EditShimmer: boolean = false;
   @Input() selectedLanguage: any = {
     countryCode: '',
     icon: '',
@@ -42,6 +43,7 @@ export class NewlanguageComponent implements OnInit, OnChanges, OnDestroy {
         flags: this.flags,
         languageNames: this.languageNames,
         selectedLanguage: this.selectedLanguage,
+        EditShimmer: true,
       },
       output: {
         onLanguageSave: (data: any) => {
@@ -66,6 +68,7 @@ export class NewlanguageComponent implements OnInit, OnChanges, OnDestroy {
         const rdsNewLanguageMfeConfig = this.rdsNewLanguageMfeConfig;
         rdsNewLanguageMfeConfig.input.flags = [...this.flags]
         rdsNewLanguageMfeConfig.input.languageNames = [...this.languageNames]
+        rdsNewLanguageMfeConfig.input.EditShimmer = false;
         this.rdsNewLanguageMfeConfig = rdsNewLanguageMfeConfig;
       }
     });

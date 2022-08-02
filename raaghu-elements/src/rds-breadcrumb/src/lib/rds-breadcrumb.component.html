@@ -5,7 +5,7 @@
         <li class="breadcrumb-item cursor" [ngClass]="{'active': activepage === i}" aria-current="page"
           *ngFor="let item of customBreadcrumbsItems; index as i" (click)="onClick(item,i) ">
           <!-- <i href="#" [ngClass]="item.iconClass" *ngIf="iconShow" class="mx-1"></i> -->
-          <a class="nav-link breadcrumb-navlink" [class.active]="activepage==i" aria-current="page" (click)="onClick(item,i)"
+          <a class="nav-link d-inline" [class.active]="activepage==i" aria-current="page" (click)="onClick(item,i)"
             [class.disabled]="item.disabled">
             <span *ngIf="iconShow">
               <rds-icon [name]="item.iconClass" [fill]="item.iconFill" [stroke]="item.iconStroke"

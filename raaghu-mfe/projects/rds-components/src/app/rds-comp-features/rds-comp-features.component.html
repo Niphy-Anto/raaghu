@@ -81,17 +81,17 @@
           <div class="row">
             <div class="col-md-6">
               <div class="form-group mb-3">
-                <rds-counter [counterValue]="TrailPeriod" position="end" [label]="translate.instant('Trial Period')"
-                  [label]="translate.instant('Days')" colorVariant="primary" [(ngModel)]="TrailPeriod" [min]="0"
-                  [max]="26" [width]="124" name="trial" #trial_period="ngModel" ngDefaultControl>
+                <rds-counter [counterValue]="TrailPeriod" position="top" [label]="translate.instant('Trial Period')"
+                   colorVariant="primary" [(ngModel)]="TrailPeriod" [min]="0"
+                  [max]="26" [width]="253" name="trial" #trial_period="ngModel" ngDefaultControl>
                 </rds-counter>
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group mb-3">
-                <rds-counter [counterValue]="" position="end" [label]="translate.instant('Expiry Notification Interval')"
-                  [label]="translate.instant('Days')" colorVariant="primary" [(ngModel)]="ExpiryInterval" [min]="0"
-                  [max]="26" [width]="124" name="expiry" #expiry_interval="ngModel" ngDefaultControl></rds-counter>
+                <rds-counter [counterValue]="" position="top" [label]="translate.instant('Expiry Notification Interval')"
+                  colorVariant="primary" [(ngModel)]="ExpiryInterval" [min]="0"
+                  [max]="26" [width]="253" name="expiry" #expiry_interval="ngModel" ngDefaultControl></rds-counter>
               </div>
             </div>
           </div>

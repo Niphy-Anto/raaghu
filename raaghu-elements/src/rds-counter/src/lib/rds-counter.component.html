@@ -1,28 +1,20 @@
 <div class="row">
-  <div class="col-5">
-    <div class="rds-counter position-relative">
-      <div class="d-flex justify-content-center align-items-center">
-        <label [ngClass]="labelClasses">
-          {{label}}
-        </label>
-        <div [class]="inputPosition" [ngStyle]="{'width': width + 'px'}">
-          <button [ngClass]="classList" (click)="decrement()" type="button" id="button-addon1">
-            <i class="bi bi-dash-lg"></i>
-          </button>
-            <!-- <rds-icon name="minus" height="12px" width="12px"></rds-icon> -->
+  <div class="rds-counter position-relative">
+    <div class="d-flex justify-content-start align-items-center">
+      <label [ngClass]="labelClasses">
+        {{label}}
+      </label>
+      <div [class]="inputPosition" [ngStyle]="{'width': width + 'px'}">
+        <button [ngClass]="classList" (click)="decrement()" type="button" id="button-addon1">
+          <em class="bi bi-dash-lg"></em>
+        </button>
         <input type="text" class="form-control text-center" (keyup)="onKeyup($event)" (focus)="focus()"
-            [(ngModel)]="counterValue" [value]="counterValue" [min]="min" [max]="max" (mouseup)="onMouseup($event)"
-            aria-label="Example text with button addon" aria-describedby="button-addon1" />
-          <button [ngClass]="classList" (click)="increment()" type="button" id="button-addon1">
-            <!-- <rds-icon name="plus" height="12px" width="12px"></rds-icon> -->
-          </button>
-        </div>
+          [(ngModel)]="counterValue" [value]="counterValue" [min]="min" [max]="max" (mouseup)="onMouseup($event)"
+          aria-label="Example text with button addon" aria-describedby="button-addon1" />
+        <button [ngClass]="classList" (click)="increment()" type="button" id="button-addon1">
+          <em class="bi bi-plus-lg"></em>
+        </button>
       </div>
-
     </div>
-
-    <!-- <div *ngIf="invalidCount">
-      <p class="text-danger">Please enter valid count.</p>
-    </div> -->
   </div>
 </div>

@@ -12,7 +12,15 @@ const filesToReplace = [
 ];
 const dependentElements = [
     'rds-icon',
-    'rds-badge'
+    'rds-badge',
+    'rds-avatar',
+    'rds-like-dislike',
+    'rds-rating',
+    'rds-label',
+    'rds-checkbox',
+    'rds-icon-label',
+    'rds-select-list',
+    'rds-radio-button'
 ];
 
 function replaceFiles() {
@@ -49,6 +57,87 @@ function mergeTSConfigJson() {
             "@libs/rds-badge": [
                 "rds-elements/rds-badge/public-api",
                 "rds-elements/rds-badge"
+            ]
+        };
+        changesDone = true;
+    };
+
+    if (ngElementsFile.compilerOptions.paths["@libs/rds-avatar"] == undefined) {
+        ngElementsFile.compilerOptions.paths = {
+            ...ngElementsFile.compilerOptions.paths,
+            "@libs/rds-avatar": [
+                "rds-elements/rds-avatar/public-api",
+                "rds-elements/rds-avatar"
+            ]
+        };
+        changesDone = true;
+    };
+    if (ngElementsFile.compilerOptions.paths["@libs/rds-like-dislike"] == undefined) {
+        ngElementsFile.compilerOptions.paths = {
+            ...ngElementsFile.compilerOptions.paths,
+            "@libs/rds-like-dislike": [
+                "rds-elements/rds-like-dislike/public-api",
+                "rds-elements/rds-like-dislike"
+            ]
+        };
+        changesDone = true;
+    };
+    if (ngElementsFile.compilerOptions.paths["@libs/rds-rating"] == undefined) {
+        ngElementsFile.compilerOptions.paths = {
+            ...ngElementsFile.compilerOptions.paths,
+            "@libs/rds-rating": [
+                "rds-elements/rds-rating/public-api",
+                "rds-elements/rds-rating"
+            ]
+        };
+        changesDone = true;
+    };
+    if (ngElementsFile.compilerOptions.paths["@libs/rds-icon-label"] == undefined) {
+        ngElementsFile.compilerOptions.paths = {
+            ...ngElementsFile.compilerOptions.paths,
+            "@libs/rds-icon-label": [
+                "rds-elements/rds-icon-label/public-api",
+                "rds-elements/rds-icon-label"
+            ]
+        };
+        changesDone = true;
+    };
+    if (ngElementsFile.compilerOptions.paths["@libs/rds-select-list"] == undefined) {
+        ngElementsFile.compilerOptions.paths = {
+            ...ngElementsFile.compilerOptions.paths,
+            "@libs/rds-select-list": [
+                "rds-elements/rds-select-list/public-api",
+                "rds-elements/rds-select-list"
+            ]
+        };
+        changesDone = true;
+    };
+    if (ngElementsFile.compilerOptions.paths["@libs/rds-label"] == undefined) {
+        ngElementsFile.compilerOptions.paths = {
+            ...ngElementsFile.compilerOptions.paths,
+            "@libs/rds-label": [
+                "rds-elements/rds-label/public-api",
+                "rds-elements/rds-label"
+            ]
+        };
+        changesDone = true;
+    };
+    if (ngElementsFile.compilerOptions.paths["@libs/rds-checkbox"] == undefined) {
+        ngElementsFile.compilerOptions.paths = {
+            ...ngElementsFile.compilerOptions.paths,
+            "@libs/rds-checkbox": [
+                "rds-elements/rds-checkbox/public-api",
+                "rds-elements/rds-checkbox"
+            ]
+        };
+        changesDone = true;
+    };
+    if (ngElementsFile.compilerOptions.paths["@libs/rds-radio-button"] == undefined) {
+        ngElementsFile.compilerOptions.paths = {
+            ...ngElementsFile.compilerOptions.paths,
+            "@libs/rds-radio-button": [
+                "rds-elements/rds-radio-button/public-api",
+                "rds-elements/rds-radio-button"
             ]
         };
         changesDone = true;

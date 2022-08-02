@@ -1,0 +1,37 @@
+<div class="card w-50">
+<div class="card-body">
+    <rds-icon
+    height="25"
+    [fill]="false"
+    [stroke]="lightslategrey"
+    width="25"
+    type=""
+    name="like"
+    colorVariant=""
+  >
+</rds-icon>
+<rds-checkbox
+[switch]="true"
+[inline]="false"
+[isInputGroup]="false"
+(onClick)="onClick($event)"
+></rds-checkbox>
+  <div>
+   <label class="fs-4 fw-bold mt-2">
+Zapier
+   </label> 
+  </div>
+  <div>
+    <label class="text-muted mt-1">
+        Build custom automation and intefrations with app
+    </label>
+  </div>
+</div>
+<div class="card-footer bg-white">
+<a href="">
+   <label class="float-end pointerCur">
+   View integration
+   </label>
+</a>
+</div>
+</div>

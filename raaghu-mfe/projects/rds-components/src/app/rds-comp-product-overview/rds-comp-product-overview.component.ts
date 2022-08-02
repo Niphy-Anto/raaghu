@@ -12,27 +12,13 @@ export class RdsCompProductOverviewComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  breadcrumbsitems: BreadcrumbsItems[] = [];
+
   // breadcrumbsitems: BreadcrumbsItems[] = [];
 @Input() productType: 'producroverview1' | 'producroverview2'| 'producroverview3' | 'producroverview4' = 'producroverview1';
 
 
  @Input() producroverview1 = [
-  {
-        name: 'Men',
-        route: '/men',
-        iconClass: 'bi bi-house-door',
-      },
-      {
-        name: 'Clothing',
-        route: '/clothing',
-        iconClass: 'bi bi-house-door',
-      },
-      {
-        name: 'Basic Tee 6-Pack',
-        route: '/basic-tee-6-pack',
-        iconClass: 'bi bi-house-door',
-      },
+  { name: 'Home', route: '/home', iconClass: 'dashboard', iconWidth: '15px', iconHeight: '15px', disabled: true }
  ];
  @Input() producroverview2 = [
   {
