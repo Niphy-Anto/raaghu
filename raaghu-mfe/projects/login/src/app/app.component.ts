@@ -119,7 +119,7 @@ export class AppComponent extends MfeBaseComponent implements OnInit {
       const currentAlert: any = {
         type: 'danger',
         title: 'title',
-        message: 'message',
+        message: 'Invalid user name or password',
       };
       this.currentAlerts.push(currentAlert);
       const rdsAlertMfeConfig = this.rdsAlertMfeConfig;
@@ -151,10 +151,10 @@ export class AppComponent extends MfeBaseComponent implements OnInit {
     this.authenticateResult = authenticateResult;
     this.store.dispatch(getCurrentLoginInformation());
 
-    let tokenExpireDate = this.authenticateModal.rememberClient ? new Date().getTime() + 1000 * this.authenticateResult.expireInSeconds : undefined;
-    let refreshTokenExpireDate = this.authenticateModal.rememberClient ? new Date().getTime() + 1000 * this.authenticateResult.refreshTokenExpireInSeconds : undefined;
+    let tokenExpireDate = this.authenticateModal.rememberClient ? new Date().getTime() + 1000 * this.authenticateResult?.expireInSeconds : undefined;
+    let refreshTokenExpireDate = this.authenticateModal.rememberClient ? new Date().getTime() + 1000 * this.authenticateResult?.refreshTokenExpireInSeconds : undefined;
 
-    if (authenticateResult.accessToken != undefined) {
+    if (authenticateResult?.accessToken != undefined) {
       localStorage.setItem('LoginCredential', JSON.stringify({
         token: this.authenticateResult.accessToken,
         refreshToken: this.authenticateResult.refreshToken,
