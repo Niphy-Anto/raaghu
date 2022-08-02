@@ -1,4 +1,4 @@
-<div class=" " style="background-color: lightsteelblue;">
+<div class=" " style="background-color: lightsteelblue;" *ngIf="!loadingshimmer">
   <div class="align-items-center d-flex justify-content-center login m-auto" style="max-width: 900px; height: 100vh;">
     <div class="container-fluid m-2">
       <div class="bg-white row rounded-3">
@@ -19,7 +19,9 @@
     </div>
   </div>
 </div>
-
+<app-forgot-password-shimmer *ngIf="loadingshimmer">
+  <mfe-loader [config]="rdsForgotPasswordMfeConfig"></mfe-loader>
+</app-forgot-password-shimmer>
 
 
 
