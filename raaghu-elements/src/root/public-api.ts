@@ -214,3 +214,6 @@ export * from '../rds-app-details/src/public-api';
 
 // Public API Surface of rds-video-player
 export * from '../rds-video-player/src/public-api';
+
+// Public API Surface of rds-card-detail
+export * from '../rds-card-detail/src/public-api';

@@ -41,8 +41,8 @@ import {
   RdsInputGroupModule, RdsAccordionModule, RdsTagsModule, RdsAlertModule, RdsButtonGroupModule, RdsCollapseModule, RdsIllustrationModule, RdsListGroupModule, RdsPopoverModule,
   RdsSpinnerModule, RdsToastsModule, RdsChartBubbleModule, RdsChartDoughnutModule, RdsChartMixedModule, RdsChartPolarAreaModule, RdsChartScatterModule, RdsChartStackedModule,
   RdsProgressbarModule, RdsBreadcrumbModule, RdsCarouselModule, RdsDoubleRangeModule, RdsScrollspyModule, RdsCounterModule, RdsFabMenuModule, RdsLabelModule, RdsIconLabelModule,
-  CalendarModule, adapterFactory, DateAdapter, RdsRatingModule, RdsLikeDislikeModule, RdsColorModule, RdsFeedModule, RdsBenefitModule, RdsVideoPlayerModule,RdsAppDetailsModule,
-  
+  CalendarModule, adapterFactory, DateAdapter, RdsRatingModule, RdsLikeDislikeModule, RdsColorModule, RdsFeedModule, RdsBenefitModule, RdsAppDetailsModule, RdsVideoPlayerModule,
+  RdsCardDetailModule
 } from '@libs/rds-elements';
 import { RdsCompDemouiComponent } from './rds-comp-demoui/rds-comp-demoui.component';
 import { RdsCompTenantManagementComponent } from './rds-comp-tenant-management/rds-comp-tenant-management.component';
@@ -122,7 +122,6 @@ import { RdsCompNewLangShimmerComponent } from './rds-comp-new-language/rds-comp
 import { RdsCompCardDetailListComponent } from './rds-comp-card-detail-list/rds-comp-card-detail-list.component';
 import { RdsCompBenefitComponent } from './rds-comp-benefit/rds-comp-benefit.component';
 import { RdsCompAppDetailsComponent } from './rds-comp-app-details/rds-comp-app-details.component';
-import {  RdsCardDetailModule } from 'projects/libs/rds-elements/src/rds-card-detail/src/public-api';
 
 @NgModule({
   declarations: [
