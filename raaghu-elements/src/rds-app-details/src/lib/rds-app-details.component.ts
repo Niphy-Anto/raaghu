@@ -9,10 +9,10 @@ import { appDetailsItems } from './rds-app-details.service';
 export class RdsAppDetailsComponent implements OnInit {
 
   lightslategrey: boolean = true;
-  @Input() ItemsList:appDetailsItems;
+  @Input() ItemsList: appDetailsItems;
 
   constructor() { }
- 
+
 
   ngOnInit(): void {
   }
