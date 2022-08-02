@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'lib-rds-product-image',
+  selector: 'rds-product-image',
   templateUrl: './rds-product-image.component.html',
   styleUrls: ['./rds-product-image.component.scss']
 })

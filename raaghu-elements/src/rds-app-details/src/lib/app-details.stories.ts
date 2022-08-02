@@ -1,9 +1,9 @@
 
 import { RdsIconModule } from '@libs/rds-icon';
 import { Story, Meta, moduleMetadata } from '@storybook/angular';
-import { RdsLabelModule } from '../../../rds-label/src/lib/rds-label.module';
 import { RdsAppDetailsComponent } from './rds-app-details.component';
 import { RdsCheckboxModule } from '@libs/rds-checkbox';
+import { RdsLabelModule } from '@libs/rds-label';
 
 export default {
   title: 'Elements/App-details',
@@ -24,6 +24,11 @@ const Template: Story<RdsAppDetailsComponent> = (args: RdsAppDetailsComponent) =
 
 export const Basic = Template.bind({});
 Basic.args = {
- 
+   ItemsList:{ 
+     title: 'Zapier', 
+     subtitle: 'Build custom automation and intefrations with app', 
+     icon: 'avatar',
+     route: '/home'
+    }
 }
 
