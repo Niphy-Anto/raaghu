@@ -2,7 +2,8 @@ import { createAction, props } from "@ngrx/store";
 import { CreateTenantInput, TenantEditDto, UpdateTenantFeaturesInput } from "projects/libs/shared/src/lib/service-proxies";
 import { Tenants } from "./tenant.models";
 
-export const getTenants = createAction('[Tenant Page] Get Languages');
+export const getTenants = createAction('[Tenant Page] Get Languages',
+(maxResultCount:number) => ({ maxResultCount }));
 
 export const getTenantSuccess = createAction(
     '[Tenant Page] Get Languages Success',
@@ -16,12 +17,12 @@ export const getTenantFailure = createAction(
 
 export const deleteTenant = createAction(
     '[Tenant Page] Delete Tenant',
-    (id: number) => ({ id })
+    (id: number,maxresult:number) => ({ id ,maxresult})
 );
 
 export const saveTenant = createAction(
     '[Tenant Page] Save Tenant',
-    (tenant: CreateTenantInput) => ({ tenant })
+    (tenant: CreateTenantInput,maxresult:number) => ({ tenant,maxresult })
 );
 
 export const updateTenantFeatureValues = createAction(
@@ -31,7 +32,7 @@ export const updateTenantFeatureValues = createAction(
 
 export const updateTenant = createAction(
     '[Tenant Page] Update Tenant',
-    (tenant: TenantEditDto) => ({ tenant })
+    (tenant: TenantEditDto,maxresult:number) => ({ tenant,maxresult })
 );
 
 

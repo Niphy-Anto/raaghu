@@ -9,6 +9,7 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class RdsCompDemouiComponent implements OnInit {
  video = "http://static.videogular.com/assets/videos/videogular.mp4";
+ showAlert:boolean=false;
 tableHeaderItems=[
   {
     "headerName": "Name"
@@ -2434,6 +2435,8 @@ tableBodyItems=[
   ngOnInit(): void {
 
   }
+   
+
 
   ngAfterViewInit(): void {
     // tslint:disable-next-line:prefer-const
@@ -2462,6 +2465,8 @@ tableBodyItems=[
   }, { progressWidth: "20%", background: 'bg-danger' }];
 
 
- 
+ onClickShowAlert()  {
+   this.showAlert=!this.showAlert;
+ }
       
 }
