@@ -3,6 +3,6 @@
   "dest": "../../rds-elements/rds-video-player",
   "deleteDestPath": false,
   "lib": {
-    "entryFile": "src/src.ts"
+    "entryFile": "src/public-api.ts"
   }
 }

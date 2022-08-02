@@ -32,7 +32,7 @@ export class AppComponent extends MfeBaseComponent implements OnInit {
   loginTokenExpiryDate = 0;
   acessTokenExpiryDate: any;
   refreshTokenExpiryDate: any;
-
+   loadingshimmer:boolean=true;
   constructor(
     private injector: Injector,
     private _userAuthService: UserAuthService,
@@ -53,20 +53,23 @@ export class AppComponent extends MfeBaseComponent implements OnInit {
     this.subscribeToAlerts();
     const tenantInfo = JSON.parse(localStorage.getItem('tenantInfo'));
     var tenancyName = tenantInfo ? tenantInfo.name : 'Not Selected';
-
+  
     this.rdsLoginMfeConfig = {
       name: 'RdsLogin',
       input: {
         rememeberMe: true,
-        TenancyName: tenancyName
+        TenancyName: tenancyName,
       },
       output: {
         onSwitchTenant: (data: any) => {
           this.insertTenant(data);
         },
+        onShimmerLoad:(event:any)=>{
+          this.loadingshimmer=false;
+        }
       }
     };
-    
+  
       if(this.sessionService.user) {
         this._router.navigateByUrl('pages/dashboard');
       }
