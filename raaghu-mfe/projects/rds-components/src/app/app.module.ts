@@ -41,7 +41,7 @@ import {
   RdsInputGroupModule, RdsAccordionModule, RdsTagsModule, RdsAlertModule, RdsButtonGroupModule, RdsCollapseModule, RdsIllustrationModule, RdsListGroupModule, RdsPopoverModule,
   RdsSpinnerModule, RdsToastsModule, RdsChartBubbleModule, RdsChartDoughnutModule, RdsChartMixedModule, RdsChartPolarAreaModule, RdsChartScatterModule, RdsChartStackedModule,
   RdsProgressbarModule, RdsBreadcrumbModule, RdsCarouselModule, RdsDoubleRangeModule, RdsScrollspyModule, RdsCounterModule, RdsFabMenuModule, RdsLabelModule, RdsIconLabelModule,
-  CalendarModule, DateAdapter, RdsFeedModule, RdsRatingModule, RdsVideoPlayerModule, RdsColorModule, adapterFactory
+  CalendarModule, adapterFactory, DateAdapter, RdsRatingModule, RdsLikeDislikeModule, RdsColorModule, RdsFeedModule, RdsVideoPlayerModule, RdsCardDetailModule, RdsAppDetailsModule, RdsBenefitModule,
 } from '@libs/rds-elements';
 import { RdsCompDemouiComponent } from './rds-comp-demoui/rds-comp-demoui.component';
 import { RdsCompTenantManagementComponent } from './rds-comp-tenant-management/rds-comp-tenant-management.component';
@@ -98,7 +98,6 @@ import { RdsCompSecurityShimmerComponent } from './rds-comp-security/rds-comp-se
 import { RdsCompOrganizationTreeShimmerComponent } from './rds-comp-organization-tree/rds-comp-organization-tree-shimmer/rds-comp-organization-tree-shimmer.component';
 import { RdsCompPropertiesShimmerComponent } from './rds-comp-properties/rds-comp-properties-shimmer/rds-comp-properties-shimmer.component';
 import { RdsCompTableShimmerComponent } from './rds-comp-data-table/rds-comp-table-shimmer/rds-comp-table-shimmer.component';
-import { RdsLikeDislikeModule } from 'projects/libs/rds-elements/src/rds-like-dislike/src/public-api';
 import { RdsCompFeedsComponent } from './rds-comp-feeds/rds-comp-feeds.component';
 import { RdsCompProductListComponent } from './rds-comp-product-list/rds-comp-product-list.component';
 import { RdsCompPageNotFoundComponent } from './rds-comp-page-not-found/rds-comp-page-not-found.component';
@@ -122,6 +121,9 @@ import { RdsCompNewLangShimmerComponent } from './rds-comp-new-language/rds-comp
 import { RdsCompBackgroundImageComponent } from './rds-comp-background-image/rds-comp-background-image.component';
 import { RdsCompStoreFrontComponent } from './rds-comp-store-front/rds-comp-store-front.component';
 
+import { RdsCompCardDetailListComponent } from './rds-comp-card-detail-list/rds-comp-card-detail-list.component';
+import { RdsCompBenefitComponent } from './rds-comp-benefit/rds-comp-benefit.component';
+import { RdsCompAppDetailsComponent } from './rds-comp-app-details/rds-comp-app-details.component';
 
 @NgModule({
   declarations: [
@@ -214,7 +216,9 @@ import { RdsCompStoreFrontComponent } from './rds-comp-store-front/rds-comp-stor
     RdsCompFeedsComponent,
     RdsCompOrderSummaryComponent,
     RdsCompShoppingCartProductComponent,
+    RdsCompCalendarComponent,
     RdsCompProductListComponent,
+    RdsCompCardDetailListComponent,
     RdsCompApiScopeBasicShimmerComponent,
     RdsCompApiScopeResourcesShimmerComponent,
     RdsCompAddressInputShimmerComponent,
@@ -229,7 +233,10 @@ import { RdsCompStoreFrontComponent } from './rds-comp-store-front/rds-comp-stor
     RdsCompNewLangShimmerComponent,
     RdsCompCalendarComponent,
     RdsCompBackgroundImageComponent,
-    RdsCompStoreFrontComponent
+    RdsCompStoreFrontComponent,
+    RdsCompBenefitComponent,
+    RdsCompProductListComponent,
+    RdsCompAppDetailsComponent
     //RdsCompLanguageTextListComponent,
   ],
   imports: [
@@ -305,6 +312,9 @@ import { RdsCompStoreFrontComponent } from './rds-comp-store-front/rds-comp-stor
     NgxShimmerLoadingModule,
     RdsColorModule,
     RdsRatingModule,
+    RdsBenefitModule,
+    RdsAppDetailsModule,
+    RdsCardDetailModule,
     CalendarModule.forRoot({
       provide: DateAdapter,
       useFactory: adapterFactory

@@ -168,7 +168,7 @@ cardWithFullDetails.args = {
 }
 export const ProductImageWithTitle = Template.bind({})
 ProductImageWithTitle.args = {
-  role: 'imageWithTitle',
+  role: 'ImageWithTitle',
   productListItems: [{ "title": "Basic Tee", imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLXV_IPvYFWoOnAfO3IGGxcCrM3Y2Bfgfciw&usqp=CAU' },
   { "title": "Basic Tee 2", imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLXV_IPvYFWoOnAfO3IGGxcCrM3Y2Bfgfciw&usqp=CAU' },
   { "title": "Basic Tee 3", imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLXV_IPvYFWoOnAfO3IGGxcCrM3Y2Bfgfciw&usqp=CAU' },

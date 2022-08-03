@@ -11,6 +11,5 @@ module.exports = {
   "framework": "@storybook/angular",
   "core": {
     "builder": "webpack5"
-  },
-  staticDirs: [{ from: '../', to: '/assets' }],
+  }
 }

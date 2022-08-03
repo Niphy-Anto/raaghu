@@ -314,8 +314,7 @@
             </ng-template>
             <ng-template #body>
               <h5 class="custom-title">{{item.title}}</h5>
-
-              <rds-rating [rating]="item.rating" colorVariant="primary" [noOfReview]="123" Size="small"></rds-rating>
+              <rds-rating [rating]="1" colorVariant="primary" [noOfReview]="123" Size="small"></rds-rating>
               <rds-label
                 label="Premium Quality Soft T-Shirt White tees stain easily, and black tees fade. This is going to be gray for a while."
                 [multiline]="true" [bold]="false" [italic]="false"></rds-label>
@@ -337,8 +336,8 @@
         </div>
       </div>
     </div>
-    <div *ngSwitchCase="'ImageWithTitle'" >
-      <div class="row mt-4"  *ngIf="productListItems">
+    <div *ngSwitchCase="'ImageWithTitle'">
+      <div class="row mt-4" *ngIf="productListItems">
         <div class="col-md-3" *ngFor="let item of productListItems">
           <rds-card [header]="header" [borderCard]="true" [showBody]="false" [custSidePadding]="true"
             class="rounded-avatar-basic">
@@ -357,7 +356,7 @@
       </div>
     </div>
     <div *ngSwitchCase="'ImageWithInfo'">
-      <div class="row"  *ngIf="productListItems">
+      <div class="row" *ngIf="productListItems">
         <div class="col-md-4" *ngFor="let item of productListItems">
           <rds-card [header]="header" [borderCard]="false" [showBody]="false" [custSidePadding]="true"
             class="rounded-avatar-basic">

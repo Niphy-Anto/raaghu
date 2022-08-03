@@ -9,11 +9,12 @@ export class RdsBenefitComponent implements OnInit {
 
   constructor() { }
   @Input()
-  item: any = {};
+  item: any ;
   
   @Input() display_type?: string = 'Basic';
   
   ngOnInit(): void {
+    console.log(this.item)
   }
 
 }

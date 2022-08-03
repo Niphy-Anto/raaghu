@@ -5,7 +5,12 @@ export class CardData {
   cardExpiry: string
   cardNumber: number
   cardLogo: string
-  isDefault:boolean
+  isDefault: boolean
+  radioItems: [{
+    id: number
+    checked: boolean
+    name: string
+  }]
 }
 @Component({
   selector: 'rds-card-detail',
@@ -15,16 +20,11 @@ export class CardData {
 export class RdsCardDetailComponent implements OnInit {
 
   @Input() cardData: CardData;
+  @Input() IsEditAndDefaultFunctionalityRequired: boolean = true;
+  @Input() IsSelectionRequired: boolean = true;
   @Output() onSetDefaultcard = new EventEmitter<any>();
+  @Output() onSelectPaymentMethod = new EventEmitter<any>();
   @Output() onEditCard = new EventEmitter<any>();
-  
-  itemList = [
-    {
-      "id": 1,
-      "checked": true,
-      "name": "Radio-Button"
-    }
-  ]
   constructor() { }
 
   ngOnInit(): void {
@@ -32,10 +32,17 @@ export class RdsCardDetailComponent implements OnInit {
   public classes() {
     return 'avatar-sm'
   }
-  onEditCardDetails(cardID: any) {
-    this.onEditCard.emit(cardID);
+  onEditCardDetails(cardData: any) {
+    this.onEditCard.emit(cardData);
   }
-  setAsDefaultCard(cardID: any) {
-    this.onSetDefaultcard.emit(cardID);
+  setAsDefaultCard(cardData: any) {
+    cardData.radioItems[0].checked = true;
+    cardData.isDefault = true;
+    this.onSetDefaultcard.emit(cardData);
+
+  }
+  setAsPaymentMethod(cardData: any) {
+    cardData.radioItems[0].checked = true;
+    this.onSelectPaymentMethod.emit(cardData);
   }
 }
