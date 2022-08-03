@@ -13,6 +13,12 @@ updates:
       interval: "daily"
 
   - package-ecosystem: "npm"
+    # Files stored in `raaghu-elements` directory
+    directory: "/raaghu-elements"
+    schedule:
+      interval: "daily"
+  
+  - package-ecosystem: "npm"
     # Files stored in `raaghu-mfe` directory
     directory: "/raaghu-mfe"
     schedule:
