@@ -41,8 +41,7 @@ import {
   RdsInputGroupModule, RdsAccordionModule, RdsTagsModule, RdsAlertModule, RdsButtonGroupModule, RdsCollapseModule, RdsIllustrationModule, RdsListGroupModule, RdsPopoverModule,
   RdsSpinnerModule, RdsToastsModule, RdsChartBubbleModule, RdsChartDoughnutModule, RdsChartMixedModule, RdsChartPolarAreaModule, RdsChartScatterModule, RdsChartStackedModule,
   RdsProgressbarModule, RdsBreadcrumbModule, RdsCarouselModule, RdsDoubleRangeModule, RdsScrollspyModule, RdsCounterModule, RdsFabMenuModule, RdsLabelModule, RdsIconLabelModule,
-  CalendarModule, adapterFactory, DateAdapter, RdsRatingModule, RdsLikeDislikeModule, RdsColorModule, RdsFeedModule, RdsBenefitModule, RdsAppDetailsModule, RdsVideoPlayerModule,
-  RdsCardDetailModule
+  CalendarModule, adapterFactory, DateAdapter, RdsRatingModule, RdsLikeDislikeModule, RdsColorModule, RdsFeedModule, RdsBenefitModule, RdsAppDetailsModule, RdsVideoPlayerModule
 } from '@libs/rds-elements';
 import { RdsCompDemouiComponent } from './rds-comp-demoui/rds-comp-demoui.component';
 import { RdsCompTenantManagementComponent } from './rds-comp-tenant-management/rds-comp-tenant-management.component';
@@ -239,7 +238,7 @@ import { RdsSizeModule } from 'projects/libs/rds-elements/src/rds-size/src/publi
     RdsCompProductListComponent,
     RdsCompAppDetailsComponent,
     RdsCompCalendarComponent,
-    RdsCompProductOverviewComponent,
+    RdsCompProductOverviewComponent
     //RdsCompLanguageTextListComponent,
   ],
   imports: [
@@ -317,7 +316,6 @@ import { RdsSizeModule } from 'projects/libs/rds-elements/src/rds-size/src/publi
     RdsRatingModule,
     RdsBenefitModule,
     RdsAppDetailsModule,
-    RdsCardDetailModule,
     CalendarModule.forRoot({
       provide: DateAdapter,
       useFactory: adapterFactory

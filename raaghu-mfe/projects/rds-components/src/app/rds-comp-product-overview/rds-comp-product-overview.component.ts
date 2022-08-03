@@ -16,11 +16,12 @@ export class RdsCompProductOverviewComponent implements OnInit {
     | 'producroverview1'
     | 'producroverview2'
     | 'producroverview3'
-    | 'producroverview4' = 'producroverview1';
+    | 'producroverview4'
+    |'producroverviewdescription' = 'producroverview1';
 
     sizeData : []
     sizeDataWithDescription : [];
-
+  @Input() itemListbenefit : []
   @Input() producroverview1 = [
     {
       name: 'Men',
