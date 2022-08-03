@@ -395,7 +395,7 @@
                         [roundedButton]="false" label="button" tooltipTitle="This is tooltip" tooltipPlacement="bottom" [size]="'large'"></rds-button>
           </div>
         </div>
-        <h6>Button Icon- Size</h6>
+        <h6 class="mt-4 mb-3">Button Icon- Size</h6>
         <div class="row">
           <div class="col-4">
             <rds-button colorVariant="primary" [submit]="false" [size]="'small'" [block]="false" [disabled]="false" [outlineButton]="false"
@@ -441,11 +441,11 @@
             </div>
           </ng-template>
           <ng-template #body>
-            <h5 class="custom-title">{{Data.headerTitle}}</h5>
-            <p class="custom-desc">{{Data.cardDescription}}</p>
+            <h5 class="custom-title px-3">{{Data.headerTitle}}</h5>
+            <p class="custom-desc px-3">{{Data.cardDescription}}</p>
           </ng-template>
           <ng-template #footer>
-            <a href="#" class="btn btn-primary mt-3">{{"Go somewhere"|translate}}</a>
+            <a href="#" class="btn btn-primary mt-3 ms-3">{{"Go somewhere"|translate}}</a>
           </ng-template>
         </rds-card>
       </div>
