@@ -17,8 +17,8 @@ updates:
     directory: "/raaghu-mfe"
     schedule:
       interval: "daily"
-      
-- package-ecosystem: "composer"
+
+  - package-ecosystem: "composer"
     # Files stored in repository root
     directory: "/"
     schedule:
