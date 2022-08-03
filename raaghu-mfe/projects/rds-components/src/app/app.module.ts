@@ -41,7 +41,7 @@ import {
   RdsInputGroupModule, RdsAccordionModule, RdsTagsModule, RdsAlertModule, RdsButtonGroupModule, RdsCollapseModule, RdsIllustrationModule, RdsListGroupModule, RdsPopoverModule,
   RdsSpinnerModule, RdsToastsModule, RdsChartBubbleModule, RdsChartDoughnutModule, RdsChartMixedModule, RdsChartPolarAreaModule, RdsChartScatterModule, RdsChartStackedModule,
   RdsProgressbarModule, RdsBreadcrumbModule, RdsCarouselModule, RdsDoubleRangeModule, RdsScrollspyModule, RdsCounterModule, RdsFabMenuModule, RdsLabelModule, RdsIconLabelModule,
-  CalendarModule, DateAdapter, RdsFeedModule
+  CalendarModule, DateAdapter, RdsFeedModule, RdsRatingModule, RdsVideoPlayerModule, RdsColorModule, adapterFactory
 } from '@libs/rds-elements';
 import { RdsCompDemouiComponent } from './rds-comp-demoui/rds-comp-demoui.component';
 import { RdsCompTenantManagementComponent } from './rds-comp-tenant-management/rds-comp-tenant-management.component';
@@ -101,15 +101,12 @@ import { RdsCompTableShimmerComponent } from './rds-comp-data-table/rds-comp-tab
 import { RdsLikeDislikeModule } from 'projects/libs/rds-elements/src/rds-like-dislike/src/public-api';
 import { RdsCompFeedsComponent } from './rds-comp-feeds/rds-comp-feeds.component';
 import { RdsCompProductListComponent } from './rds-comp-product-list/rds-comp-product-list.component';
-import { RdsColorModule } from 'projects/libs/rds-elements/src/rds-color/src/public-api';
 import { RdsCompPageNotFoundComponent } from './rds-comp-page-not-found/rds-comp-page-not-found.component';
 import { RdsCompMarketingWebsiteNewsletterComponent } from './rds-comp-marketing-website-newsletter/rds-comp-marketing-website-newsletter.component';
 import { RdsCompFaqComponent } from './rds-comp-faq/rds-comp-faq.component';
 import { RdsCompCalendarComponent } from './rds-comp-calendar/rds-comp-calendar.component';
-import { adapterFactory } from '@libs/rds-elements';
 import { RdsCompOrderSummaryComponent } from './rds-comp-order-summary/rds-comp-order-summary.component';
 import { RdsCompShoppingCartProductComponent } from './rds-comp-shopping-cart-product/rds-comp-shopping-cart-product.component';
-import { RdsRatingModule } from 'projects/libs/rds-elements/src/rds-rating/src/public-api';
 import { RdsCompApiScopeBasicShimmerComponent } from './rdc-comp-api-scope-basics/rds-comp-api-scope-basic-shimmer/rds-comp-api-scope-basic-shimmer.component';
 import { RdsCompApiScopeResourcesShimmerComponent } from './rdc-comp-api-scope-resources/rds-comp-api-scope-resources-shimmer/rds-comp-api-scope-resources-shimmer.component';
 import { RdsCompAddressInputShimmerComponent } from './rds-comp-address-input/rds-comp-address-input-shimmer/rds-comp-address-input-shimmer.component';
@@ -122,7 +119,8 @@ import { RdsCompInvoiceShimmerComponent } from './rds-comp-invoice/rds-comp-invo
 import { RdsCompNewDynamicEntityShimmerComponent } from './rds-comp-new-dynamic-entity-property/rds-comp-new-dynamic-entity-shimmer/rds-comp-new-dynamic-entity-shimmer.component';
 import { RdsCompOtherSettingsShimmerComponent } from './rds-comp-other-settings/rds-comp-other-settings-shimmer/rds-comp-other-settings-shimmer.component';
 import { RdsCompNewLangShimmerComponent } from './rds-comp-new-language/rds-comp-new-lang-shimmer/rds-comp-new-lang-shimmer.component';
-import { RdsVideoPlayerModule } from 'projects/libs/rds-elements/src/rds-video-player/src/public-api';
+import { RdsCompBackgroundImageComponent } from './rds-comp-background-image/rds-comp-background-image.component';
+import { RdsCompStoreFrontComponent } from './rds-comp-store-front/rds-comp-store-front.component';
 
 
 @NgModule({
@@ -229,7 +227,9 @@ import { RdsVideoPlayerModule } from 'projects/libs/rds-elements/src/rds-video-p
     RdsCompNewDynamicEntityShimmerComponent,
     RdsCompOtherSettingsShimmerComponent,
     RdsCompNewLangShimmerComponent,
-    RdsCompCalendarComponent
+    RdsCompCalendarComponent,
+    RdsCompBackgroundImageComponent,
+    RdsCompStoreFrontComponent
     //RdsCompLanguageTextListComponent,
   ],
   imports: [
