@@ -48,7 +48,7 @@ export class RdsBadgeComponent implements OnInit {
     }
 
     if (this.positioned === true) {
-      clsList.push('position-absolute end-0 rounded-pill')
+      clsList.push('position-absolute smallest start-100 top-0 translate-middle')
     }
 
     if (this.iconBadge === true) {
