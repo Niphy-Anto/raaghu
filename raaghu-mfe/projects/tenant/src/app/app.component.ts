@@ -69,7 +69,7 @@ export class AppComponent {
                 isShimmer:true,
                 editShimmer:true
               };
-              this.store.dispatch(updateTenant(data))
+              this.store.dispatch(updateTenant(data,20))
 
             } else {
               const data: any = {
@@ -85,7 +85,7 @@ export class AppComponent {
                 subscriptionEndDateUtc: new Date(tenant.tenantInfo.subscriptionEndDate).toISOString(),
                 isInTrialPeriod: false
               };
-              this.store.dispatch(saveTenant(data))
+              this.store.dispatch(saveTenant(data,20))
 
             }
 
@@ -116,7 +116,7 @@ export class AppComponent {
          
         },
         deleteEvent: (event: any) => {
-          this.store.dispatch(deleteTenant(event.id))
+          this.store.dispatch(deleteTenant(event.id,20))
         },
         onSaveFeatures: (feature: any) => {
           this.store.dispatch(updateTenantFeatureValues(feature))
@@ -134,7 +134,7 @@ export class AppComponent {
       }
     })
 
-    this.store.dispatch(getTenants());
+    this.store.dispatch(getTenants(20));
     this.store.select(selectAllTenants).subscribe((res: any) => {
       this.tenantTableData = [];
       if (res && res.tenants.items && res.status == "success") {
