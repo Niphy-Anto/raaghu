@@ -118,17 +118,14 @@ import { RdsCompInvoiceShimmerComponent } from './rds-comp-invoice/rds-comp-invo
 import { RdsCompNewDynamicEntityShimmerComponent } from './rds-comp-new-dynamic-entity-property/rds-comp-new-dynamic-entity-shimmer/rds-comp-new-dynamic-entity-shimmer.component';
 import { RdsCompOtherSettingsShimmerComponent } from './rds-comp-other-settings/rds-comp-other-settings-shimmer/rds-comp-other-settings-shimmer.component';
 import { RdsCompNewLangShimmerComponent } from './rds-comp-new-language/rds-comp-new-lang-shimmer/rds-comp-new-lang-shimmer.component';
-import { RdsVideoPlayerModule } from 'projects/libs/rds-elements/src/rds-video-player/src/public-api';
 import { RdsCompProductOverviewComponent } from './rds-comp-product-overview/rds-comp-product-overview.component';
 import { RdsPriceModule } from 'projects/libs/rds-elements/src/rds-price/src/public-api';
 import { RdsFeatureListModule } from 'projects/libs/rds-elements/src/rds-feature-list/src/public-api';
-import { RdsColorModule } from 'projects/libs/rds-elements/src/rds-color/src/public-api';
 import { RdsProductImageModule } from 'projects/libs/rds-elements/src/rds-product-image/src/public-api';
-import { RdsRatingModule } from 'projects/libs/rds-elements/src/rds-rating/src/public-api';
-
 import { RdsCompCardDetailListComponent } from './rds-comp-card-detail-list/rds-comp-card-detail-list.component';
 import { RdsCompBenefitComponent } from './rds-comp-benefit/rds-comp-benefit.component';
 import { RdsCompAppDetailsComponent } from './rds-comp-app-details/rds-comp-app-details.component';
+import { RdsSizeModule } from 'projects/libs/rds-elements/src/rds-size/src/public-api';
 
 @NgModule({
   declarations: [
@@ -239,7 +236,7 @@ import { RdsCompAppDetailsComponent } from './rds-comp-app-details/rds-comp-app-
     RdsCompCalendarComponent,
     RdsCompBenefitComponent,
     RdsCompProductListComponent,
-    RdsCompAppDetailsComponent
+    RdsCompAppDetailsComponent,
     RdsCompCalendarComponent,
     RdsCompProductOverviewComponent,
     //RdsCompLanguageTextListComponent,
@@ -326,7 +323,9 @@ import { RdsCompAppDetailsComponent } from './rds-comp-app-details/rds-comp-app-
     RdsVideoPlayerModule,
     RdsPriceModule,
     RdsFeatureListModule,
-    RdsProductImageModule
+    RdsProductImageModule,
+    RdsSizeModule
+
   ],
   providers: [],
   bootstrap: [AppComponent],
