@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Story, Meta, moduleMetadata } from '@storybook/angular';
 import { RdsIconModule } from '@libs/rds-icon';
 import { RdsBadgeComponent } from './rds-badge.component';
+import { RdsButtonModule } from 'src/public-api';
 
 export default {
 
@@ -10,7 +11,7 @@ export default {
   component: RdsBadgeComponent,
   decorators: [
     moduleMetadata({
-      imports: [CommonModule, RdsIconModule],
+      imports: [CommonModule, RdsIconModule,RdsButtonModule],
     }),
   ],
 
@@ -93,16 +94,16 @@ const BadgePositioned: Story<RdsBadgeComponent> = (args: RdsBadgeComponent) => (
 
   props: args,
   template:
-    `<button type="button" class="btn btn-light position-relative">
-      button<span right>
+    `<rds-button [colorVariant]="colorVariant"   
+    size="medium" class="position-relative">
+      button<span>
       <rds-badge
       size="smallest"
       label="99+"
       [pillBadges]="true"
       [positioned]="true"
-
       ></rds-badge></span>
-      </button>
+      </rds-button>
     
   `,
 

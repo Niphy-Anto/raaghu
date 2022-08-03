@@ -2376,28 +2376,27 @@ tableBodyItems=[
     {
       "name": "Home",
       "route": "/home",
-      "iconClass": "bi bi-house-door"
+      iconClass: "bi bi-house-door",
+      iconWidth: '15px' ,
+      iconHeight:'15px' ,
+      'disabled':false
     },
     {
       "name": "About",
       "route": "/About",
-      "iconClass": "bi bi-house-door"
+      iconClass: "bi bi-house-door",
+      iconWidth: '15px' ,
+      iconHeight:'15px' ,
+      'disabled':true
     },
     {
       "name": "Contact US",
       "route": "/Contact",
-      "iconClass": "bi bi-house-door"
-    },
-    // {
-    //   "name": "Services",
-    //   "route": "/Services",
-    //   "iconClass": "bi bi-house-door"
-    // },
-    // {
-    //   "name": "Contact US",
-    //   "route": "/Contact",
-    //   "iconClass": "bi bi-house-door"
-    // }
+      iconClass: "bi bi-house-door",
+      iconWidth: '15px' ,
+      iconHeight:'15px' ,
+      'disabled':true
+    },    
   ];
 
   imageItem = [
