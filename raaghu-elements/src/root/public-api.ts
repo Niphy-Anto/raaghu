@@ -188,5 +188,50 @@ export * from '../rds-checkbox-groups/src/public-api';
 // Public API Surface of rds-fab-menu
 export * from '../rds-fab-menu/src/public-api';
 
+// Public API Surface of rds-color
+export * from '../rds-color/src/public-api';
+
 // Public API Surface of rds-label
 export * from '../rds-label/src/public-api';
+
+// Public API Surface of rds-like-dislike
+export * from '../rds-like-dislike/src/public-api';
+
+// Public API Surface of rds-rating
+export * from '../rds-rating/src/public-api';
+
+// Public API Surface of rds-feed
+export * from '../rds-feed/src/public-api';
+
+// Public API Surface of rds-color
+export * from '../rds-color/src/public-api';
+
+// Public API Surface of rds-color
+export * from '../rds-video-player/src/public-api'
+
+// Public API Surface of rds-icon-label
+export * from '../rds-icon-label/src/public-api';
+
+// Public API Surface of rds-benefit
+export * from '../rds-benefit/src/public-api';
+
+// Public API Surface of rds-app-details
+export * from '../rds-app-details/src/public-api';
+
+// Public API Surface of rds-video-player
+export * from '../rds-video-player/src/public-api';
+
+// Public API Surface of rds-card-detail
+export * from '../rds-card-detail/src/public-api';
+
+// Public API Surface of rds-size
+export * from '../rds-size/src/public-api';
+
+// Public API Surface of rds-price
+export * from '../rds-price/src/public-api';
+
+// Public API Surface of rds-feature-list
+export * from '../rds-feature-list/src/public-api';
+
+// Public API Surface of rds-product-image
+export * from '../rds-product-image/src/public-api';

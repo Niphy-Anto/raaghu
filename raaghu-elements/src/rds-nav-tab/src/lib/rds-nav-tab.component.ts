@@ -41,7 +41,7 @@ export class RdsNavTabComponent implements OnInit {
     const justify = `${this.justified ? ' nav-pills nav-justified' : ''}`;
     const flex = `${this.flex ? 'nav-pills flex-column flex-sm-row' : ''}`
     const border = `${this.tabsWithBorderTop ? '' : ' rds-tab-2'}`;
-    return align + vertical + pill + tab + border;
+    return align + vertical + pill + tab + border + fill + justify + flex;
   }
 
 

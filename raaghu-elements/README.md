@@ -89,7 +89,7 @@ npm run build-all
 ```
 > **_NOTE:_** Above command will create a folder named "rds-elements" with all the libraries
 
-5. Create a new blank angular project
+5. Create a new blank angular project: new directory, other location
 
 ```bash
 # use angular CLI to create a new project

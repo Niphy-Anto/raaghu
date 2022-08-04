@@ -1,5 +1,5 @@
 import { create } from '@storybook/theming';
-import logoUrl from './raaghu-logo.svg';
+import logoUrl from './assets/raaghu-logo.svg';
 export default create({
     base: 'light',
     brandTitle: 'Raaghu',
