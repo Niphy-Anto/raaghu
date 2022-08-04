@@ -16,7 +16,7 @@
     "build-storybook": "npm run docs:json && build-storybook"
   },
   "dependencies": {
-    "@angular/animations": "13.2.0",
+    "@angular/animations": "14.1.1",
     "@angular/common": "14.1.1",
     "@angular/compiler": "14.1.1",
     "@angular/core": "14.1.1",
@@ -64,8 +64,8 @@
     "karma-chrome-launcher": "3.1.1",
     "karma-coverage": "2.2.0",
     "karma-jasmine": "5.1.0",
-    "karma-jasmine-html-reporter": "1.7.0",
-    "ng-packagr": "^13.0.0",
+    "karma-jasmine-html-reporter": "2.0.0",
+    "ng-packagr": "^14.1.0",
     "typescript": "4.7.4"
   }
 }
