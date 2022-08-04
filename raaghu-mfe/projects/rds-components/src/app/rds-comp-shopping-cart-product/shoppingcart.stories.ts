@@ -3,6 +3,7 @@ import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { RdsBadgeModule, RdsButtonModule, RdsCardModule, RdsIconLabelModule, RdsIconModule, RdsLabelModule, RdsSelectListModule } from '@libs/rds-elements';
 import { NgxTranslateModule } from '@libs/shared';
 import { RdsCompShoppingCartProductComponent } from './rds-comp-shopping-cart-product.component';
+import { CommonModule } from '@angular/common';
 
 export default {
   title: 'Components/Shopping cart',
@@ -10,8 +11,7 @@ export default {
   decorators: [
     moduleMetadata({
       imports: [
-        FormsModule, ReactiveFormsModule, RdsButtonModule, 
-         RdsCardModule, RdsBadgeModule, NgxTranslateModule, RdsLabelModule ,RdsIconModule , RdsIconLabelModule, RdsSelectListModule
+        FormsModule , ReactiveFormsModule ,NgxTranslateModule,CommonModule, RdsSelectListModule, RdsIconModule , RdsLabelModule ,RdsIconLabelModule,  RdsIconModule
       ],
       providers: [
         FormBuilder
