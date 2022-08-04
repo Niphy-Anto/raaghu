@@ -1,14 +1,14 @@
 <div [ngSwitch]="role">
   <div *ngSwitchCase="'Advanced'">
     <nav aria-label="breadcrumb">
-      <ol class="breadcrumb arrows Advanced" [ngClass]="disbleclass">
+      <ol class="breadcrumb arrows space Advanced" [ngClass]="disbleclass">
         <li class="breadcrumb-item cursor" [ngClass]="{'active': activepage === i}" aria-current="page"
           *ngFor="let item of customBreadcrumbsItems; index as i" (click)="onClick(item,i) ">
           <!-- <i href="#" [ngClass]="item.iconClass" *ngIf="iconShow" class="mx-1"></i> -->
           <a class="nav-link d-inline" [class.active]="activepage==i" aria-current="page" (click)="onClick(item,i)"
             [class.disabled]="item.disabled">
             <span *ngIf="iconShow">
-              <rds-icon [name]="item.iconClass" [fill]="item.iconFill" [stroke]="item.iconStroke"
+              <rds-icon class="d-inline-flex"  [name]="item.iconClass" [fill]="item.iconFill" [stroke]="item.iconStroke"
                 [height]="item.iconHeight" [width]="item.iconWidth" [ngClass]="classes">
               </rds-icon>
             </span>
@@ -25,7 +25,7 @@
         <li class="breadcrumb-item space cursor" aria-current="page" *ngFor="let item of customBreadcrumbsItems; index as i">
           <a class="nav-link breadcrumb-navlink" [class.active]="activepage==i" aria-current="page" (click)="onClick(item,i)"
             [class.disabled]="item.disabled">
-            <rds-icon [name]="item.iconClass" [fill]="item.iconFill" [stroke]="item.iconStroke"
+            <rds-icon  [name]="item.iconClass" [fill]="item.iconFill" [stroke]="item.iconStroke"
               [height]="item.iconHeight" [width]="item.iconWidth" [ngClass]="classes">
             </rds-icon>                                                             
             <span class="p-0" routerLink="item.name" *ngIf="activepage!=i">{{item.name}}</span>
