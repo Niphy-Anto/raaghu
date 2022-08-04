@@ -1,4 +1,4 @@
- <div class="row">
+ <!-- <div class="row">
   <div class="d-flex ">
 
 
@@ -11,6 +11,7 @@
     type=""
     [name]="'like'"
     colorVariant="" 
+    class="marginclass styleIcons" 
     
   ></rds-icon>
   <span>
@@ -29,6 +30,49 @@
     class="marginclass styleIcons" 
   ></rds-icon>
   <span>
+    <label >{{dislikeCount}}</label>
+  </span>
+  </div>
+
+ </div>
+ 
+</div> -->
+
+
+
+<div class="row">
+  <div class="d-flex ">
+
+
+  <div (click)="likeFun($event)">
+    <rds-icon
+    height="25"
+    [fill]="false"
+    [stroke]="false"
+    width="25"
+    type=""
+    [name]="'like'"
+    colorVariant="" 
+   
+    
+  ></rds-icon>
+  <span class="ms-2">
+    <label  class="marginclass ">{{likeCount}}</label></span>
+   </div>
+  
+  <div (click)="dislikeFun($event)" >
+    <rds-icon
+    height="25"
+    [fill]="false"
+    [stroke]="false"
+    width="25"
+    type=""
+    name="dislike"
+    colorVariant=""
+    class="ms-4"
+   
+  ></rds-icon>
+  <span class="ms-2">
     <label >{{dislikeCount}}</label>
   </span>
   </div>

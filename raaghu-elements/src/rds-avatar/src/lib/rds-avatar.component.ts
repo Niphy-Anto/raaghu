@@ -14,7 +14,7 @@ export class RdsAvatarComponent implements OnInit, OnChanges {
   @Input() WithUserRole!: boolean;
   @Input() Title!:string;
   @Input()
-  colorVariant?: string='light';
+  colorVariant?: string='light'; 
 
   @Input() WithProfilePic!: boolean;
   @Input() profilePic: string="https://th.bing.com/th/id/OIP.3IsXMskZyheEWqtE3Dr7JwHaGe?pid=ImgDet&rs=1";
