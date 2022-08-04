@@ -8,32 +8,39 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let item of itemList">
-                        <td class="p-2">{{item.name}}
-                            <!-- <rds-icon name="plus" [hidden]="item.iconhide" height="12px" width="12px"></rds-icon> -->
-
+                    <tr>
+                        <td class="p-2">{{translate.instant('subtotal')}}
                         </td>
-                        <td class="p-2 text-end">${{item.price | number : '1.2-2'}}</td>
+                        <td class="p-2 text-end">${{Subtotal | number : '1.2-2'}}</td>
                     </tr>
-                    <tr >
+                    <tr>
+                        <td class="p-2">{{translate.instant('Shipping estimate')}}
+                        </td>
+                        <td class="p-2 text-end">${{Shippingestimate | number : '1.2-2'}}</td>
+                    </tr>
+                    <tr>
+                        <td class="p-2">{{translate.instant('Tax estimate')}}
+                        </td>
+                        <td class="p-2 text-end">${{Taxestimate | number : '1.2-2'}}</td>
+                    </tr>
+                    <tr>
                         <td class="p-2">
                             <b>
-                                <rds-label [label]="'Order Total'" ></rds-label>
+                                <rds-label [label]="'Order Total'"></rds-label>
                             </b>
                         </td>
                         <td class="p-2 text-end">
-                            <span [class]="count(itemList)" ><b>{{orderTotal | number : '1.2-2'}} </b></span>
+                            <span><b>${{Subtotal + Shippingestimate + Taxestimate | number : '1.2-2'}} </b></span>
                         </td>
                     </tr>
                 </tbody>
             </table>
-
+        </div>
     </div>
 
-    </div>
-    <div class=" checkoutbtn">
+    <div class="checkoutbtn" *ngIf="isCheckout">
         <rds-button [label]="translate.instant('Checkout')" [size]="'small'" [block]="true" class="ms-2 btnwidth"
-            [colorVariant]="'primary'" (click)="checkout($event)">
+            [colorVariant]="'primary'" (click)="checkout()">
         </rds-button>
     </div>
 </div>

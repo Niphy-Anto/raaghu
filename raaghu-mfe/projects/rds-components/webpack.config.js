@@ -89,7 +89,9 @@ module.exports = {
         './RdsCompPageNotFound': './projects/rds-components/src/app/rds-comp-page-not-found/rds-comp-page-not-found.component.ts',
         './RdsCompFaqComponent': './projects/rds-components/src/app/rds-comp-faq/rds-comp-faq.component.ts',
 
-        './RdsCompCalendar': './projects/rds-components/src/app/rds-comp-calendar/rds-comp-calendar.component.ts'
+        './RdsCompCalendar': './projects/rds-components/src/app/rds-comp-calendar/rds-comp-calendar.component.ts',
+        './RdsCompShoppingCartProduct': './projects/rds-components/src/app/rds-comp-shopping-cart-product/rds-comp-shopping-cart-product.component.ts',
+        './RdsCompOrderSummary': './projects/rds-components/src/app/rds-comp-order-summary/rds-comp-order-summary.component.ts'
       },
 
       shared: share({

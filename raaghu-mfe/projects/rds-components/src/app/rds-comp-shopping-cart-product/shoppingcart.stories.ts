@@ -3,6 +3,7 @@ import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { RdsBadgeModule, RdsButtonModule, RdsCardModule, RdsIconLabelModule, RdsIconModule, RdsLabelModule, RdsSelectListModule } from '@libs/rds-elements';
 import { NgxTranslateModule } from '@libs/shared';
 import { RdsCompShoppingCartProductComponent } from './rds-comp-shopping-cart-product.component';
+import { DecimalPipe } from '@angular/common';
 
 export default {
   title: 'Components/Shopping cart',
@@ -14,17 +15,23 @@ export default {
          RdsCardModule, RdsBadgeModule, NgxTranslateModule, RdsLabelModule ,RdsIconModule , RdsIconLabelModule, RdsSelectListModule
       ],
       providers: [
-        FormBuilder
+        FormBuilder, DecimalPipe
       ],
     })
   ]
 } as Meta;
 
-const Template: Story<RdsCompShoppingCartProductComponent> = (args: RdsCompShoppingCartProductComponent) => ({});
+const Template: Story<RdsCompShoppingCartProductComponent> = (args: RdsCompShoppingCartProductComponent) => ({
+  props: {
+    ...args
+  }
+});
 
 export const basic = Template.bind({});
 
 basic.args = {
+  role: 'basic',
+  isCheckout: true,
   itemList:[
     {
       id: 1,
@@ -100,6 +107,29 @@ basic.args = {
         label: 'In Stock'
       },
 
+    }
+  ]
+};
+
+export const withoutQuantity = Template.bind({});
+
+withoutQuantity.args = {
+  isCheckout: true,
+  role: 'withoutQuantity',
+  itemList:[
+    {
+      id: 1,
+      image: 'https://th.bing.com/th/id/OIP.3IsXMskZyheEWqtE3Dr7JwHaGe?pid=ImgDet&rs=1',
+      prodname: 'Product Name 1', 
+      prdosubname: 'Sub Name', 
+      price: 12,
+    },
+    {
+      id: 2,
+      image: 'https://th.bing.com/th/id/OIP.3IsXMskZyheEWqtE3Dr7JwHaGe?pid=ImgDet&rs=1',
+      prodname: 'Product Name 2',
+      prdosubname: 'Sub Name',
+      price: 33,
     }
   ]
 }
