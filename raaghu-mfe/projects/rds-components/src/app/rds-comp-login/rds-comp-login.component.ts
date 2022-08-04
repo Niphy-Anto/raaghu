@@ -37,6 +37,7 @@ export class RdsLoginComponent extends MfeBaseComponent implements OnInit {
   // @Output() onRememberMeToggle = new EventEmitter<Event>();
   @Output() onClick = new EventEmitter<any>();
   @Output() onSwitchTenant = new EventEmitter<any>();
+  @Output() onShimmerLoad = new EventEmitter<any>();
   @Input() tenantdisabled: boolean;
   @Input() disabledSwitchTenant: boolean = true;
   emailPattern: any = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -46,7 +47,7 @@ export class RdsLoginComponent extends MfeBaseComponent implements OnInit {
    }
 
   ngOnInit(): void {
- 
+    this.onShimmerLoad.emit(false)
   }
 
   //for getting remebrme value

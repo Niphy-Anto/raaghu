@@ -24,10 +24,11 @@
         <ng-container *ngIf="currentAlerts && currentAlerts.length > 0">
           <mfe-loader [config]="rdsAlertMfeConfig"></mfe-loader>
         </ng-container>
-        <div [@routeAnimations]="o && o.activatedRouteData
+        <router-outlet></router-outlet>
+        <!--<div [@routeAnimations]="o && o.activatedRouteData
           && o.activatedRouteData['animation']">
           <router-outlet #o="outlet"></router-outlet>
-        </div>
+        </div>-->
 
       </div>
     </div>

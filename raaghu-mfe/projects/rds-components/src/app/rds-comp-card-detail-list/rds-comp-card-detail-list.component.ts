@@ -6,7 +6,8 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./rds-comp-card-detail-list.component.scss']
 })
 export class RdsCompCardDetailListComponent implements OnInit {
-
+  IsEditAndDefaultFunctionalityRequired:boolean=false;
+  IsSelectionRequired:boolean=false
   @Input() listItems: any = [{ cardID: '1011', cardName: 'MasterCard', cardExpiry: '06/2027', cardLogo: 'dashboard', cardNumber: 1111, radioItems: [{ id: 1011, checked: true, name: "Radio-Button" }] }
     , { cardID: '1012', cardName: 'Visa', cardExpiry: '11/2032', cardLogo: 'tenant', cardNumber: 3256, radioItems: [{ id: 1011, checked: false, name: "Radio-Button" }] }
     , { cardID: '1013', cardName: 'DEbit', cardExpiry: '04/2023', cardLogo: 'plus', cardNumber: 8001, radioItems: [{ id: 1011, checked: false, name: "Radio-Button" }] }
@@ -16,7 +17,7 @@ export class RdsCompCardDetailListComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  
   onSetAsDefaultCard(event: any) {
     const listItems = this.listItems;
     listItems.forEach((element: any) => {

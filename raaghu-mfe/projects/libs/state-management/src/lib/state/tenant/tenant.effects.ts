@@ -14,9 +14,9 @@ export class TenantEffects {
   getTenants$ = createEffect(() =>
     this.actions$.pipe(
       ofType(getTenants),
-      switchMap(() =>
+      switchMap(({maxResultCount}) =>
         // Call the getTodos method, convert it to an observable
-        from(this.tenantService.getTenants(undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined)).pipe(
+        from(this.tenantService.getTenants(undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, maxResultCount, undefined)).pipe(
           // Take the returned value and return a new success action containing the todos
           map((tenants: any) => {
             return getTenantSuccess({ tenants: tenants })
@@ -44,9 +44,9 @@ export class TenantEffects {
   saveTenant$ = createEffect(() =>
     this.actions$.pipe(
       ofType(saveTenant),
-      mergeMap((data) =>
+      mergeMap((data,maxresult) =>
         this.tenantService.createTenant(data.tenant).pipe(map((res: any) => {
-          this.store.dispatch(getTenants());
+          this.store.dispatch(getTenants(maxresult));
           this.alertService.showAlert('Success', 'Tenant added successfully', 'success')
 
 
@@ -63,9 +63,9 @@ export class TenantEffects {
   deleteTenant$ = createEffect(() =>
     this.actions$.pipe(
       ofType(deleteTenant),
-      mergeMap(({ id }) =>
+      mergeMap(({ id,maxresult }) =>
         this.tenantService.deleteTenant(id).pipe(map(() => {
-          this.store.dispatch(getTenants());
+          this.store.dispatch(getTenants(maxresult));
           this.alertService.showAlert('Success', 'Tenant deleted successfully', 'success')
 
         }
@@ -80,9 +80,9 @@ export class TenantEffects {
   updateTenant$ = createEffect(() =>
     this.actions$.pipe(
       ofType(updateTenant),
-      mergeMap((data) =>
+      mergeMap((data,maxresult) =>
         this.tenantService.updateTenant(data.tenant).pipe(map((res: any) => {
-          this.store.dispatch(getTenants());
+          this.store.dispatch(getTenants(maxresult));
           this.alertService.showAlert('Success', 'Tenant updated successfully', 'success')
 
         }),

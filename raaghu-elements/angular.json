@@ -1,8 +1,5 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "cli": {
-    "analytics": false
-  },
 	"version": 1,
 	"newProjectRoot": "src",
 	"projects": {
@@ -2417,6 +2414,38 @@
 			}
 		  }
 		}
+	  },
+	  "rds-size": {
+		"projectType": "library",
+		"root": "src/rds-size",
+		"sourceRoot": "src/rds-size/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-size/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-size/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-size/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-size/src/test.ts",
+			  "tsConfig": "src/rds-size/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-size/karma.conf.js"
+			}
+		  }
+		}
+	  }
 	  },
 		"rds-review-category": {
 			"projectType": "library",

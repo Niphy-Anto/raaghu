@@ -1,4 +1,5 @@
-<div class=" " style="background-color: lightsteelblue;">
+
+<div class=" " style="background-color: lightsteelblue;" *ngIf="!loadingshimmer">
   <div class="align-items-center d-flex justify-content-center login m-auto" style="max-width: 900px; height: 100vh;">
     <div class="container-fluid m-2">
       <div class="bg-white row rounded-3 ">
@@ -22,4 +23,6 @@
 <ng-container *ngIf="currentAlerts&&currentAlerts.length>0">
   <mfe-loader [config]="rdsAlertMfeConfig"></mfe-loader>
 </ng-container>
-
+<app-login-shimmer *ngIf="loadingshimmer">
+  <mfe-loader [config]="rdsLoginMfeConfig"></mfe-loader>
+</app-login-shimmer>

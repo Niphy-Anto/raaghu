@@ -41,18 +41,31 @@
 </div>
 <!-- /Accordion -->
 <!-- Alert -->
-<div class="">
-  <div class="">
-    <div class="row">
-      <div class="col-12">
-        <!--<h6>{{"Alert"|translate}}</h6>-->
-        <rds-alert [visibility]="false" [alertOpen]="true" size="small" [dismisable]="true" icon="destructive"
-                   [iconHeight]="'20px'" [iconWidth]="'20px'" [label]="translate.instant('A simple primary alert—check it out!')"
-                   heading="" type="danger" position="bottom"></rds-alert>
-      </div>
-    </div>
+<div class="card mb-3">
+  <div class="card-header">
+    <h5>
+      {{"Alert"|translate}}
+    </h5>
   </div>
+    <div class="card-body  pt-0">
+      <div class="row border p-4 m-2">
+        <div class="col-12">
+          <rds-button
+               colorVariant="primary"
+               [block]="false"
+               size="medium"
+               label="Show Alert"
+               (click)="onClickShowAlert()"
+           ></rds-button>
+    
+     <rds-alert [visibility]="false" [alertOpen]="true" size="small" [dismisable]="true" icon="destructive"
+                [iconHeight]="'20px'" [iconWidth]="'20px'" [label]="translate.instant('A simple primary alert—check it out!')"
+                heading="" type="danger" position="bottom" *ngIf="showAlert"></rds-alert>
+        </div>
+      </div>
+    </div>        
 </div>
+
 <!-- /Alert -->
 <!-- Avatar -->
 <div class="card mb-3">
@@ -72,16 +85,43 @@
       </div>
       <div class="col-6">
         <h6 class="mb-3">{{"Avatar in different Sizes - Without Profile picture"|translate}}</h6>
-        <rds-avatar [WithProfilePic]="false" profilePic="" FirstName="Keanu" LastName="Foster" [Size]="'medium'"
-                    [VerticalTitleWithProfilePic]="false"></rds-avatar>
-        <rds-avatar [WithProfilePic]="false" profilePic="" FirstName="Keanu" LastName="Foster" [colorVariant]="'primary'"
-                    [Size]="'small'" [VerticalTitleWithProfilePic]="false"></rds-avatar>
-        <rds-avatar [WithProfilePic]="false" profilePic="" FirstName="Keanu" LastName="Foster" [colorVariant]="'primary'"
-                    [Size]="'medium'" [VerticalTitleWithProfilePic]="false"></rds-avatar>
-        <rds-avatar [WithProfilePic]="false" profilePic="" FirstName="Keanu" LastName="Foster" [colorVariant]="'primary'"
-                    [Size]="'large'" [VerticalTitleWithProfilePic]="false"></rds-avatar>
-        <rds-avatar [WithProfilePic]="false" profilePic="" FirstName="Keanu" LastName="Foster" [colorVariant]="'primary'"
-                    [Size]="'larger'" [VerticalTitleWithProfilePic]="false"></rds-avatar>
+        <div class="row">
+          <div class="col-6">
+            <div class="row">
+              <div class="col-12">
+                <rds-avatar [WithProfilePic]="false" profilePic="" FirstName="Keanu" LastName="Foster" [Size]="'medium'"
+                [VerticalTitleWithProfilePic]="false"></rds-avatar>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 mx-2 mt-4">
+                <rds-avatar  [WithProfilePic]="false" profilePic="" FirstName="Keanu" LastName="Foster" [colorVariant]="'primary'"
+            [Size]="'small'" [VerticalTitleWithProfilePic]="false"></rds-avatar>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 ">
+
+            <div class="row">
+              <div class="col-12 mx-2">
+                <rds-avatar [WithProfilePic]="false" profilePic="" FirstName="Keanu" LastName="Foster" [colorVariant]="'primary'"
+                [Size]="'medium'" [VerticalTitleWithProfilePic]="false"></rds-avatar>
+              </div>
+            </div>
+           
+
+            <div class="row">
+              <div class="col-12 mt-3">
+                <rds-avatar  [WithProfilePic]="false" profilePic="" FirstName="Keanu" LastName="Foster" [colorVariant]="'primary'"
+                 [Size]="'large'" [VerticalTitleWithProfilePic]="false"></rds-avatar>
+              </div>
+            </div>
+           
+          </div>
+        </div>
+       
+       
+      
       </div>
       <div class="col-6">
         <h6 class="mb-3">{{"Avatar - With Profile pic"|translate}}</h6>
@@ -229,18 +269,18 @@
   <div class="card-body  pt-0">
     <div class="row border p-4 m-2">
       <div class="col-6">
-        <h6 class="mb-3">{{"BreadCrumbs - Advanced"|translate}}</h6>
-        <rds-breadcrumb role="Advanced" [iconShow]="true"
-                       ></rds-breadcrumb>
-      </div>
-      <div class="col-6">
         <h6 class="mb-3">{{"BreadCrumbs - Basic"|translate}}</h6>
-        <rds-breadcrumb  role="basic" [iconShow]="false"
+        <rds-breadcrumb  role="basic"   [iconShow]="false"
                         ></rds-breadcrumb>
       </div>
       <div class="col-6">
+        <h6 class="mb-3">{{"BreadCrumbs - Advanced"|translate}}</h6>
+        <rds-breadcrumb role="Advanced"  [iconShow]="true"
+                       ></rds-breadcrumb>
+      </div>
+      <div class="col-6">
         <h6 class="mb-3">{{"BreadCrumbs - With Divider"|translate}}</h6>
-        <rds-breadcrumb  role="withDivider" [iconShow]="true"
+        <rds-breadcrumb  role="withDivider"   [iconShow]="true"
                         ></rds-breadcrumb>
       </div>
     </div>
@@ -355,7 +395,7 @@
                         [roundedButton]="false" label="button" tooltipTitle="This is tooltip" tooltipPlacement="bottom" [size]="'large'"></rds-button>
           </div>
         </div>
-        <h6>Button Icon- Size</h6>
+        <h6 class="mt-4 mb-3">Button Icon- Size</h6>
         <div class="row">
           <div class="col-4">
             <rds-button colorVariant="primary" [submit]="false" [size]="'small'" [block]="false" [disabled]="false" [outlineButton]="false"
@@ -401,11 +441,11 @@
             </div>
           </ng-template>
           <ng-template #body>
-            <h5 class="custom-title">{{Data.headerTitle}}</h5>
-            <p class="custom-desc">{{Data.cardDescription}}</p>
+            <h5 class="custom-title px-3">{{Data.headerTitle}}</h5>
+            <p class="custom-desc px-3">{{Data.cardDescription}}</p>
           </ng-template>
           <ng-template #footer>
-            <a href="#" class="btn btn-primary mt-3">{{"Go somewhere"|translate}}</a>
+            <a href="#" class="btn btn-primary mt-3 ms-3">{{"Go somewhere"|translate}}</a>
           </ng-template>
         </rds-card>
       </div>
