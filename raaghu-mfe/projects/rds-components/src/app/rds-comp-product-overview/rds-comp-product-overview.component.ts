@@ -1,27 +1,21 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { BreadcrumbsItems } from '@libs/rds-elements';
 
 @Component({
   selector: 'rds-comp-product-overview',
   templateUrl: './rds-comp-product-overview.component.html',
   styleUrls: ['./rds-comp-product-overview.component.scss'],
 })
-export class RdsCompProductOverviewComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit(): void {}
-
-  // breadcrumbsitems: BreadcrumbsItems[] = [];
+export class RdsCompProductOverviewComponent {
   @Input() productType:
     | 'producroverview1'
     | 'producroverview2'
     | 'producroverview3'
     | 'producroverview4'
-    |'producroverviewdescription' = 'producroverview1';
+    | 'producroverviewdescription' = 'producroverview1';
 
-    sizeData : []
-    sizeDataWithDescription : [];
-  @Input() itemListbenefit : []
+  sizeData: [];
+  sizeDataWithDescription: [];
+  @Input() itemListbenefit: [];
   @Input() producroverview1 = [
     {
       name: 'Men',
