@@ -95,6 +95,7 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
 
       ],
     },
+
     { label: 'UI Components', labelTranslationKey: 'UI Components', id: '', permissionName: '', icon: 'demo_ui_components', path: '/pages/demo-ui', description: '', descriptionTranslationKey: '' },
   ];
 

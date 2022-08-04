@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-2">
+    <rds-label [label]="requestCategory.name" [multiline]="false" [bold]="true" [italic]="false"></rds-label>
+    <p class="mt-2">{{requestCategory.date | date:'MMM dd,y'}}</p>
+  </div>
+  <div class="col-3">
+    <rds-rating
+  [WithNoOfReviews]="false"
+  role="Advanced"
+  [rating]="3"
+  [noOfReview]="123"
+  Size="medium"
+></rds-rating>
+  </div>
+  <div class="col-7">
+    <rds-label [label]="requestCategory.reviewTitle" [multiline]="true" [bold]="true" [italic]="false" class="mb-1">
+    </rds-label>
+
+    <rds-label
+      [label]="requestCategory.reviewSubTitle" [multiline]="true" [bold]="false" [italic]="false" class="mt-2"></rds-label>
+
+    <rds-label [label]="requestCategory.description" [multiline]="true" [bold]="false" [italic]="false"></rds-label>
+  </div>
+</div>
+
+<div class="row">
+  <rds-like-dislike [likeCount]="0" [dislikeCount]="0" likeArray="[]" [min]="0" (onClick)="onClick($event)"
+></rds-like-dislike>
+</div>
