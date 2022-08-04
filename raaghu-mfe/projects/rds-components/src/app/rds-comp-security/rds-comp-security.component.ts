@@ -30,7 +30,7 @@ export class RdsSecurityComponent implements OnInit {
   disable: boolean;
   isdisabled: boolean;
   checked: boolean;
-
+@Input() editShimmer : boolean = false;
   dataset?: any = {};
 
   //@Input() lockDurationData: any;

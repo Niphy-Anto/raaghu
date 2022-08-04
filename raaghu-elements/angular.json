@@ -1,2264 +1,2482 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1,
-  "newProjectRoot": "src",
-  "projects": {
-    "storybook": {
-      "projectType": "application",
-      "root": "stories",
-      "sourceRoot": "stories",
-      "architect": {
-        "build": {
-          "options": {
-            "tsConfig": "tsconfig.json",
-            "styles": [
-              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
-              "./src/root/styles-storybook.scss"
-            ],
-            "scripts": [
-              "./node_modules/bootstrap/dist/js/bootstrap.min.js"
-            ]
-          }
-        }
-      }
-    },
-    "rds-icon": {
-      "projectType": "library",
-      "root": "src/rds-icon",
-      "sourceRoot": "src/rds-icon/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-icon/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-icon/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-icon/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-icon/src/test.ts",
-            "tsConfig": "src/rds-icon/tsconfig.spec.json",
-            "karmaConfig": "src/rds-icon/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-badge": {
-      "projectType": "library",
-      "root": "src/rds-badge",
-      "sourceRoot": "src/rds-badge/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-badge/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-badge/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-badge/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-badge/src/test.ts",
-            "tsConfig": "src/rds-badge/tsconfig.spec.json",
-            "karmaConfig": "src/rds-badge/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-calendar": {
-      "projectType": "library",
-      "root": "src/rds-calendar",
-      "sourceRoot": "src/rds-calendar/src",
-      "prefix": "rds",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "tsConfig": "src/rds-calendar/tsconfig.lib.json",
-            "project": "src/rds-calendar/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-calendar/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-calendar/test/entry.ts",
-            "tsConfig": "src/rds-calendar/tsconfig.spec.json",
-            "karmaConfig": "src/rds-calendar/karma.conf.ts",
-            "sourceMap": true,
-            "styles": [
-              "src/rds-calendar/src/angular-calendar.scss"
-            ]
-          }
-        },
-        "lint": {
-          "builder": "@angular-eslint/builder:lint",
-          "options": {
-            "lintFilePatterns": [
-              "src/rds-calendar/**/*.ts",
-              "src/rds-calendar/**/*.html"
-            ]
-          }
-        }
-      }
-    },
-    "rds-button": {
-      "projectType": "library",
-      "root": "src/rds-button",
-      "sourceRoot": "src/rds-button/src",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-button/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-button/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-button/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-button/src/test.ts",
-            "tsConfig": "src/rds-button/tsconfig.spec.json",
-            "karmaConfig": "src/rds-button/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-input": {
-      "projectType": "library",
-      "root": "src/rds-input",
-      "sourceRoot": "src/rds-input/src",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-input/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-input/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-input/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-input/src/test.ts",
-            "tsConfig": "src/rds-input/tsconfig.spec.json",
-            "karmaConfig": "src/rds-input/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-checkbox": {
-      "projectType": "library",
-      "root": "src/rds-checkbox",
-      "sourceRoot": "src/rds-checkbox/src",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-checkbox/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-checkbox/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-checkbox/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-checkbox/src/test.ts",
-            "tsConfig": "src/rds-checkbox/tsconfig.spec.json",
-            "karmaConfig": "src/rds-checkbox/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-accordion": {
-      "projectType": "library",
-      "root": "src/rds-accordion",
-      "sourceRoot": "src/rds-accordion/src",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-accordion/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-accordion/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-accordion/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-accordion/src/test.ts",
-            "tsConfig": "src/rds-accordion/tsconfig.spec.json",
-            "karmaConfig": "src/rds-accordion/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-alert": {
-      "projectType": "library",
-      "root": "src/rds-alert",
-      "sourceRoot": "src/rds-alert/src",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-alert/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-alert/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-alert/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-alert/src/test.ts",
-            "tsConfig": "src/rds-alert/tsconfig.spec.json",
-            "karmaConfig": "src/rds-alert/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-chart-area": {
-      "projectType": "library",
-      "root": "src/rds-chart-area",
-      "sourceRoot": "src/rds-chart-area/src",
-      "prefix": "false",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-chart-area/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-chart-area/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-chart-area/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-chart-area/src/test.ts",
-            "tsConfig": "src/rds-chart-area/tsconfig.spec.json",
-            "karmaConfig": "src/rds-chart-area/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-avatar": {
-      "projectType": "library",
-      "root": "src/rds-avatar",
-      "sourceRoot": "src/rds-avatar/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-avatar/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-avatar/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-avatar/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-avatar/src/test.ts",
-            "tsConfig": "src/rds-avatar/tsconfig.spec.json",
-            "karmaConfig": "src/rds-avatar/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-banner": {
-      "projectType": "library",
-      "root": "src/rds-banner",
-      "sourceRoot": "src/rds-banner/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-banner/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-banner/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-banner/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-banner/src/test.ts",
-            "tsConfig": "src/rds-banner/tsconfig.spec.json",
-            "karmaConfig": "src/rds-banner/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-big-number-widget": {
-      "projectType": "library",
-      "root": "src/rds-big-number-widget",
-      "sourceRoot": "src/rds-big-number-widget/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-big-number-widget/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-big-number-widget/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-big-number-widget/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-big-number-widget/src/test.ts",
-            "tsConfig": "src/rds-big-number-widget/tsconfig.spec.json",
-            "karmaConfig": "src/rds-big-number-widget/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-chart-bool": {
-      "projectType": "library",
-      "root": "src/rds-chart-bool",
-      "sourceRoot": "src/rds-chart-bool/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-chart-bool/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-chart-bool/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-chart-bool/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-chart-bool/src/test.ts",
-            "tsConfig": "src/rds-chart-bool/tsconfig.spec.json",
-            "karmaConfig": "src/rds-chart-bool/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-breadcrumb": {
-      "projectType": "library",
-      "root": "src/rds-breadcrumb",
-      "sourceRoot": "src/rds-breadcrumb/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-breadcrumb/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-breadcrumb/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-breadcrumb/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-breadcrumb/src/test.ts",
-            "tsConfig": "src/rds-breadcrumb/tsconfig.spec.json",
-            "karmaConfig": "src/rds-breadcrumb/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-chart-bubble": {
-      "projectType": "library",
-      "root": "src/rds-chart-bubble",
-      "sourceRoot": "src/rds-chart-bubble/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-chart-bubble/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-chart-bubble/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-chart-bubble/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-chart-bubble/src/test.ts",
-            "tsConfig": "src/rds-chart-bubble/tsconfig.spec.json",
-            "karmaConfig": "src/rds-chart-bubble/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-button-group": {
-      "projectType": "library",
-      "root": "src/rds-button-group",
-      "sourceRoot": "src/rds-button-group/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-button-group/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-button-group/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-button-group/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-button-group/src/test.ts",
-            "tsConfig": "src/rds-button-group/tsconfig.spec.json",
-            "karmaConfig": "src/rds-button-group/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-card": {
-      "projectType": "library",
-      "root": "src/rds-card",
-      "sourceRoot": "src/rds-card/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-card/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-card/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-card/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-card/src/test.ts",
-            "tsConfig": "src/rds-card/tsconfig.spec.json",
-            "karmaConfig": "src/rds-card/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-carousel": {
-      "projectType": "library",
-      "root": "src/rds-carousel",
-      "sourceRoot": "src/rds-carousel/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-carousel/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-carousel/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-carousel/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-carousel/src/test.ts",
-            "tsConfig": "src/rds-carousel/tsconfig.spec.json",
-            "karmaConfig": "src/rds-carousel/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-chart-bar-horizontal": {
-      "projectType": "library",
-      "root": "src/rds-chart-bar-horizontal",
-      "sourceRoot": "src/rds-chart-bar-horizontal/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-chart-bar-horizontal/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-chart-bar-horizontal/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-chart-bar-horizontal/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-chart-bar-horizontal/src/test.ts",
-            "tsConfig": "src/rds-chart-bar-horizontal/tsconfig.spec.json",
-            "karmaConfig": "src/rds-chart-bar-horizontal/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-chart-doughnut": {
-      "projectType": "library",
-      "root": "src/rds-chart-doughnut",
-      "sourceRoot": "src/rds-chart-doughnut/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-chart-doughnut/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-chart-doughnut/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-chart-doughnut/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-chart-doughnut/src/test.ts",
-            "tsConfig": "src/rds-chart-doughnut/tsconfig.spec.json",
-            "karmaConfig": "src/rds-chart-doughnut/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-collapse": {
-      "projectType": "library",
-      "root": "src/rds-collapse",
-      "sourceRoot": "src/rds-collapse/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-collapse/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-collapse/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-collapse/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-collapse/src/test.ts",
-            "tsConfig": "src/rds-collapse/tsconfig.spec.json",
-            "karmaConfig": "src/rds-collapse/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-color-picker": {
-      "projectType": "library",
-      "root": "src/rds-color-picker",
-      "sourceRoot": "src/rds-color-picker/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-color-picker/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-color-picker/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-color-picker/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-color-picker/src/test.ts",
-            "tsConfig": "src/rds-color-picker/tsconfig.spec.json",
-            "karmaConfig": "src/rds-color-picker/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-datepicker": {
-      "projectType": "library",
-      "root": "src/rds-datepicker",
-      "sourceRoot": "src/rds-datepicker/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-datepicker/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-datepicker/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-datepicker/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-datepicker/src/test.ts",
-            "tsConfig": "src/rds-datepicker/tsconfig.spec.json",
-            "karmaConfig": "src/rds-datepicker/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-double-range": {
-      "projectType": "library",
-      "root": "src/rds-double-range",
-      "sourceRoot": "src/rds-double-range/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-double-range/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-double-range/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-double-range/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-double-range/src/test.ts",
-            "tsConfig": "src/rds-double-range/tsconfig.spec.json",
-            "karmaConfig": "src/rds-double-range/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-dropdown": {
-      "projectType": "library",
-      "root": "src/rds-dropdown",
-      "sourceRoot": "src/rds-dropdown/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-dropdown/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-dropdown/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-dropdown/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-dropdown/src/test.ts",
-            "tsConfig": "src/rds-dropdown/tsconfig.spec.json",
-            "karmaConfig": "src/rds-dropdown/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-dropdownlist": {
-      "projectType": "library",
-      "root": "src/rds-dropdownlist",
-      "sourceRoot": "src/rds-dropdownlist/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-dropdownlist/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-dropdownlist/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-dropdownlist/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-dropdownlist/src/test.ts",
-            "tsConfig": "src/rds-dropdownlist/tsconfig.spec.json",
-            "karmaConfig": "src/rds-dropdownlist/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-file-uploader": {
-      "projectType": "library",
-      "root": "src/rds-file-uploader",
-      "sourceRoot": "src/rds-file-uploader/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-file-uploader/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-file-uploader/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-file-uploader/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-file-uploader/src/test.ts",
-            "tsConfig": "src/rds-file-uploader/tsconfig.spec.json",
-            "karmaConfig": "src/rds-file-uploader/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-illustration": {
-      "projectType": "library",
-      "root": "src/rds-illustration",
-      "sourceRoot": "src/rds-illustration/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-illustration/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-illustration/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-illustration/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-illustration/src/test.ts",
-            "tsConfig": "src/rds-illustration/tsconfig.spec.json",
-            "karmaConfig": "src/rds-illustration/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-input-group": {
-      "projectType": "library",
-      "root": "src/rds-input-group",
-      "sourceRoot": "src/rds-input-group/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-input-group/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-input-group/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-input-group/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-input-group/src/test.ts",
-            "tsConfig": "src/rds-input-group/tsconfig.spec.json",
-            "karmaConfig": "src/rds-input-group/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-chart-line": {
-      "projectType": "library",
-      "root": "src/rds-chart-line",
-      "sourceRoot": "src/rds-chart-line/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-chart-line/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-chart-line/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-chart-line/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-chart-line/src/test.ts",
-            "tsConfig": "src/rds-chart-line/tsconfig.spec.json",
-            "karmaConfig": "src/rds-chart-line/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-list-group": {
-      "projectType": "library",
-      "root": "src/rds-list-group",
-      "sourceRoot": "src/rds-list-group/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-list-group/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-list-group/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-list-group/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-list-group/src/test.ts",
-            "tsConfig": "src/rds-list-group/tsconfig.spec.json",
-            "karmaConfig": "src/rds-list-group/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-chart-mixed": {
-      "projectType": "library",
-      "root": "src/rds-chart-mixed",
-      "sourceRoot": "src/rds-chart-mixed/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-chart-mixed/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-chart-mixed/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-chart-mixed/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-chart-mixed/src/test.ts",
-            "tsConfig": "src/rds-chart-mixed/tsconfig.spec.json",
-            "karmaConfig": "src/rds-chart-mixed/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-modal": {
-      "projectType": "library",
-      "root": "src/rds-modal",
-      "sourceRoot": "src/rds-modal/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-modal/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-modal/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-modal/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-modal/src/test.ts",
-            "tsConfig": "src/rds-modal/tsconfig.spec.json",
-            "karmaConfig": "src/rds-modal/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-nav-bar": {
-      "projectType": "library",
-      "root": "src/rds-nav-bar",
-      "sourceRoot": "src/rds-nav-bar/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-nav-bar/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-nav-bar/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-nav-bar/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-nav-bar/src/test.ts",
-            "tsConfig": "src/rds-nav-bar/tsconfig.spec.json",
-            "karmaConfig": "src/rds-nav-bar/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-nav-tab": {
-      "projectType": "library",
-      "root": "src/rds-nav-tab",
-      "sourceRoot": "src/rds-nav-tab/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-nav-tab/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-nav-tab/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-nav-tab/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-nav-tab/src/test.ts",
-            "tsConfig": "src/rds-nav-tab/tsconfig.spec.json",
-            "karmaConfig": "src/rds-nav-tab/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-offcanvas": {
-      "projectType": "library",
-      "root": "src/rds-offcanvas",
-      "sourceRoot": "src/rds-offcanvas/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-offcanvas/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-offcanvas/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-offcanvas/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-offcanvas/src/test.ts",
-            "tsConfig": "src/rds-offcanvas/tsconfig.spec.json",
-            "karmaConfig": "src/rds-offcanvas/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-pagination": {
-      "projectType": "library",
-      "root": "src/rds-pagination",
-      "sourceRoot": "src/rds-pagination/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-pagination/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-pagination/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-pagination/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-pagination/src/test.ts",
-            "tsConfig": "src/rds-pagination/tsconfig.spec.json",
-            "karmaConfig": "src/rds-pagination/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-chart-pie": {
-      "projectType": "library",
-      "root": "src/rds-chart-pie",
-      "sourceRoot": "src/rds-chart-pie/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-chart-pie/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-chart-pie/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-chart-pie/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-chart-pie/src/test.ts",
-            "tsConfig": "src/rds-chart-pie/tsconfig.spec.json",
-            "karmaConfig": "src/rds-chart-pie/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-chart-polar-area": {
-      "projectType": "library",
-      "root": "src/rds-chart-polar-area",
-      "sourceRoot": "src/rds-chart-polar-area/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-chart-polar-area/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-chart-polar-area/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-chart-polar-area/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-chart-polar-area/src/test.ts",
-            "tsConfig": "src/rds-chart-polar-area/tsconfig.spec.json",
-            "karmaConfig": "src/rds-chart-polar-area/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-popover": {
-      "projectType": "library",
-      "root": "src/rds-popover",
-      "sourceRoot": "src/rds-popover/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-popover/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-popover/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-popover/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-popover/src/test.ts",
-            "tsConfig": "src/rds-popover/tsconfig.spec.json",
-            "karmaConfig": "src/rds-popover/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-progressbar": {
-      "projectType": "library",
-      "root": "src/rds-progressbar",
-      "sourceRoot": "src/rds-progressbar/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-progressbar/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-progressbar/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-progressbar/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-progressbar/src/test.ts",
-            "tsConfig": "src/rds-progressbar/tsconfig.spec.json",
-            "karmaConfig": "src/rds-progressbar/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-chart-radar": {
-      "projectType": "library",
-      "root": "src/rds-chart-radar",
-      "sourceRoot": "src/rds-chart-radar/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-chart-radar/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-chart-radar/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-chart-radar/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-chart-radar/src/test.ts",
-            "tsConfig": "src/rds-chart-radar/tsconfig.spec.json",
-            "karmaConfig": "src/rds-chart-radar/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-radio-button": {
-      "projectType": "library",
-      "root": "src/rds-radio-button",
-      "sourceRoot": "src/rds-radio-button/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-radio-button/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-radio-button/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-radio-button/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-radio-button/src/test.ts",
-            "tsConfig": "src/rds-radio-button/tsconfig.spec.json",
-            "karmaConfig": "src/rds-radio-button/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-range": {
-      "projectType": "library",
-      "root": "src/rds-range",
-      "sourceRoot": "src/rds-range/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-range/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-range/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-range/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-range/src/test.ts",
-            "tsConfig": "src/rds-range/tsconfig.spec.json",
-            "karmaConfig": "src/rds-range/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-chart-scatter": {
-      "projectType": "library",
-      "root": "src/rds-chart-scatter",
-      "sourceRoot": "src/rds-chart-scatter/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-chart-scatter/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-chart-scatter/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-chart-scatter/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-chart-scatter/src/test.ts",
-            "tsConfig": "src/rds-chart-scatter/tsconfig.spec.json",
-            "karmaConfig": "src/rds-chart-scatter/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-scrollspy": {
-      "projectType": "library",
-      "root": "src/rds-scrollspy",
-      "sourceRoot": "src/rds-scrollspy/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-scrollspy/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-scrollspy/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-scrollspy/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-scrollspy/src/test.ts",
-            "tsConfig": "src/rds-scrollspy/tsconfig.spec.json",
-            "karmaConfig": "src/rds-scrollspy/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-search-input": {
-      "projectType": "library",
-      "root": "src/rds-search-input",
-      "sourceRoot": "src/rds-search-input/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-search-input/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-search-input/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-search-input/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-search-input/src/test.ts",
-            "tsConfig": "src/rds-search-input/tsconfig.spec.json",
-            "karmaConfig": "src/rds-search-input/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-select-list": {
-      "projectType": "library",
-      "root": "src/rds-select-list",
-      "sourceRoot": "src/rds-select-list/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-select-list/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-select-list/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-select-list/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-select-list/src/test.ts",
-            "tsConfig": "src/rds-select-list/tsconfig.spec.json",
-            "karmaConfig": "src/rds-select-list/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-spinner": {
-      "projectType": "library",
-      "root": "src/rds-spinner",
-      "sourceRoot": "src/rds-spinner/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-spinner/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-spinner/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-spinner/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-spinner/src/test.ts",
-            "tsConfig": "src/rds-spinner/tsconfig.spec.json",
-            "karmaConfig": "src/rds-spinner/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-chart-stacked": {
-      "projectType": "library",
-      "root": "src/rds-chart-stacked",
-      "sourceRoot": "src/rds-chart-stacked/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-chart-stacked/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-chart-stacked/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-chart-stacked/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-chart-stacked/src/test.ts",
-            "tsConfig": "src/rds-chart-stacked/tsconfig.spec.json",
-            "karmaConfig": "src/rds-chart-stacked/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-table": {
-      "projectType": "library",
-      "root": "src/rds-table",
-      "sourceRoot": "src/rds-table/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-table/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-table/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-table/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-table/src/test.ts",
-            "tsConfig": "src/rds-table/tsconfig.spec.json",
-            "karmaConfig": "src/rds-table/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-tags": {
-      "projectType": "library",
-      "root": "src/rds-tags",
-      "sourceRoot": "src/rds-tags/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-tags/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-tags/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-tags/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-tags/src/test.ts",
-            "tsConfig": "src/rds-tags/tsconfig.spec.json",
-            "karmaConfig": "src/rds-tags/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-textarea": {
-      "projectType": "library",
-      "root": "src/rds-textarea",
-      "sourceRoot": "src/rds-textarea/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-textarea/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-textarea/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-textarea/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-textarea/src/test.ts",
-            "tsConfig": "src/rds-textarea/tsconfig.spec.json",
-            "karmaConfig": "src/rds-textarea/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-text-editor": {
-      "projectType": "library",
-      "root": "src/rds-text-editor",
-      "sourceRoot": "src/rds-text-editor/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-text-editor/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-text-editor/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-text-editor/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-text-editor/src/test.ts",
-            "tsConfig": "src/rds-text-editor/tsconfig.spec.json",
-            "karmaConfig": "src/rds-text-editor/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-toasts": {
-      "projectType": "library",
-      "root": "src/rds-toasts",
-      "sourceRoot": "src/rds-toasts/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-toasts/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-toasts/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-toasts/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-toasts/src/test.ts",
-            "tsConfig": "src/rds-toasts/tsconfig.spec.json",
-            "karmaConfig": "src/rds-toasts/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-side-nav": {
-      "projectType": "library",
-      "root": "src/rds-side-nav",
-      "sourceRoot": "src/rds-side-nav/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-side-nav/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-side-nav/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-side-nav/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-side-nav/src/test.ts",
-            "tsConfig": "src/rds-side-nav/tsconfig.spec.json",
-            "karmaConfig": "src/rds-side-nav/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-checkbox-parent-child": {
-      "projectType": "library",
-      "root": "src/rds-checkbox-parent-child",
-      "sourceRoot": "src/rds-checkbox-parent-child/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-checkbox-parent-child/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-checkbox-parent-child/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-checkbox-parent-child/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-checkbox-parent-child/src/test.ts",
-            "tsConfig": "src/rds-checkbox-parent-child/tsconfig.spec.json",
-            "karmaConfig": "src/rds-checkbox-parent-child/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-checkbox-groups": {
-      "projectType": "library",
-      "root": "src/rds-checkbox-groups",
-      "sourceRoot": "src/rds-checkbox-groups/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-checkbox-groups/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-checkbox-groups/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-checkbox-groups/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-checkbox-groups/src/test.ts",
-            "tsConfig": "src/rds-checkbox-groups/tsconfig.spec.json",
-            "karmaConfig": "src/rds-checkbox-groups/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-widget": {
-      "projectType": "library",
-      "root": "src/rds-widget",
-      "sourceRoot": "src/rds-widget/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-widget/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-widget/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-widget/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-widget/src/test.ts",
-            "tsConfig": "src/rds-widget/tsconfig.spec.json",
-            "karmaConfig": "src/rds-widget/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-counter": {
-      "projectType": "library",
-      "root": "src/rds-counter",
-      "sourceRoot": "src/rds-counter/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-counter/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-counter/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-counter/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-counter/src/test.ts",
-            "tsConfig": "src/rds-counter/tsconfig.spec.json",
-            "karmaConfig": "src/rds-counter/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-fab-menu": {
-      "projectType": "library",
-      "root": "src/rds-fab-menu",
-      "sourceRoot": "src/rds-fab-menu/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-fab-menu/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-fab-menu/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-fab-menu/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-fab-menu/src/test.ts",
-            "tsConfig": "src/rds-fab-menu/tsconfig.spec.json",
-            "karmaConfig": "src/rds-fab-menu/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-label": {
-      "projectType": "library",
-      "root": "src/rds-label",
-      "sourceRoot": "src/rds-label/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-label/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-label/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-label/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-label/src/test.ts",
-            "tsConfig": "src/rds-label/tsconfig.spec.json",
-            "karmaConfig": "src/rds-label/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-elements": {
-      "projectType": "library",
-      "root": "src/root",
-      "sourceRoot": "src/root",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/root/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/root/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/root/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/root/test.ts",
-            "tsConfig": "src/root/tsconfig.spec.json",
-            "karmaConfig": "src/root/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-icon-label": {
-      "projectType": "library",
-      "root": "src/rds-icon-label",
-      "sourceRoot": "src/rds-icon-label/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-icon-label/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-icon-label/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-icon-label/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-icon-label/src/test.ts",
-            "tsConfig": "src/rds-icon-label/tsconfig.spec.json",
-            "karmaConfig": "src/rds-icon-label/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-like-dislike": {
-      "projectType": "library",
-      "root": "src/rds-like-dislike",
-      "sourceRoot": "src/rds-like-dislike/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-like-dislike/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-like-dislike/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-like-dislike/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-like-dislike/src/test.ts",
-            "tsConfig": "src/rds-like-dislike/tsconfig.spec.json",
-            "karmaConfig": "src/rds-like-dislike/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-feature-list": {
-      "projectType": "library",
-      "root": "src/rds-feature-list",
-      "sourceRoot": "src/rds-feature-list/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-feature-list/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-feature-list/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-feature-list/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-feature-list/src/test.ts",
-            "tsConfig": "src/rds-feature-list/tsconfig.spec.json",
-            "karmaConfig": "src/rds-feature-list/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-price": {
-      "projectType": "library",
-      "root": "src/rds-price",
-      "sourceRoot": "src/rds-price/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-price/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-price/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-price/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-price/src/test.ts",
-            "tsConfig": "src/rds-price/tsconfig.spec.json",
-            "karmaConfig": "src/rds-price/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-color": {
-      "projectType": "library",
-      "root": "src/rds-color",
-      "sourceRoot": "src/rds-color/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-color/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-color/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-color/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-color/src/test.ts",
-            "tsConfig": "src/rds-color/tsconfig.spec.json",
-            "karmaConfig": "src/rds-color/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-rating": {
-      "projectType": "library",
-      "root": "src/rds-rating",
-      "sourceRoot": "src/rds-rating/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-rating/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-rating/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-rating/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-rating/src/test.ts",
-            "tsConfig": "src/rds-rating/tsconfig.spec.json",
-            "karmaConfig": "src/rds-rating/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-product-image": {
-      "projectType": "library",
-      "root": "src/rds-product-image",
-      "sourceRoot": "src/rds-product-image/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-product-image/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-product-image/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-product-image/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-product-image/src/test.ts",
-            "tsConfig": "src/rds-product-image/tsconfig.spec.json",
-            "karmaConfig": "src/rds-product-image/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-popular-pages": {
-      "projectType": "library",
-      "root": "src/rds-popular-pages",
-      "sourceRoot": "src/rds-popular-pages/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-popular-pages/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-popular-pages/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-popular-pages/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-popular-pages/src/test.ts",
-            "tsConfig": "src/rds-popular-pages/tsconfig.spec.json",
-            "karmaConfig": "src/rds-popular-pages/karma.conf.js"
-          }
-        }
-      }
-    },
-    "rds-benefit": {
-      "projectType": "library",
-      "root": "src/rds-benefit",
-      "sourceRoot": "src/rds-benefit/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "src/rds-benefit/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "src/rds-benefit/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "src/rds-benefit/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/rds-benefit/src/test.ts",
-            "tsConfig": "src/rds-benefit/tsconfig.spec.json",
-            "karmaConfig": "src/rds-benefit/karma.conf.js"
-          }
-        }
-      }
-    }
+	"version": 1,
+	"newProjectRoot": "src",
+	"projects": {
+	  "storybook": {
+		"projectType": "application",
+		"root": "stories",
+		"sourceRoot": "stories",
+		"architect": {
+		  "build": {
+			"options": {
+			  "tsConfig": "tsconfig.json",
+			  "styles": [
+				"./node_modules/bootstrap/dist/css/bootstrap.min.css",
+				"./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
+				"./src/root/styles-storybook.scss"
+			  ],
+			  "scripts": [
+				"./node_modules/bootstrap/dist/js/bootstrap.min.js"
+			  ]
+			}
+		  }
+		}
+	  },
+	  "rds-icon": {
+		"projectType": "library",
+		"root": "src/rds-icon",
+		"sourceRoot": "src/rds-icon/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-icon/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-icon/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-icon/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-icon/src/test.ts",
+			  "tsConfig": "src/rds-icon/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-icon/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-icon-label": {
+		"projectType": "library",
+		"root": "src/rds-icon-label",
+		"sourceRoot": "src/rds-icon-label/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-icon-label/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-icon-label/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-icon-label/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-icon-label/src/test.ts",
+			  "tsConfig": "src/rds-icon-label/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-icon-label/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-badge": {
+		"projectType": "library",
+		"root": "src/rds-badge",
+		"sourceRoot": "src/rds-badge/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-badge/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-badge/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-badge/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-badge/src/test.ts",
+			  "tsConfig": "src/rds-badge/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-badge/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-label": {
+		"projectType": "library",
+		"root": "src/rds-label",
+		"sourceRoot": "src/rds-label/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-label/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-label/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-label/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-label/src/test.ts",
+			  "tsConfig": "src/rds-label/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-label/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-select-list": {
+		"projectType": "library",
+		"root": "src/rds-select-list",
+		"sourceRoot": "src/rds-select-list/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-select-list/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-select-list/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-select-list/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-select-list/src/test.ts",
+			  "tsConfig": "src/rds-select-list/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-select-list/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-rating": {
+		"projectType": "library",
+		"root": "src/rds-rating",
+		"sourceRoot": "src/rds-rating/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-rating/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-rating/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-rating/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-rating/src/test.ts",
+			  "tsConfig": "src/rds-rating/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-rating/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-calendar": {
+		"projectType": "library",
+		"root": "src/rds-calendar",
+		"sourceRoot": "src/rds-calendar/src",
+		"prefix": "rds",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "tsConfig": "src/rds-calendar/tsconfig.lib.json",
+			  "project": "src/rds-calendar/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-calendar/tsconfig.lib.prod.json"
+			  }
+			}
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-calendar/test/entry.ts",
+			  "tsConfig": "src/rds-calendar/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-calendar/karma.conf.ts",
+			  "sourceMap": true,
+			  "styles": [
+				"src/rds-calendar/src/angular-calendar.scss"
+			  ]
+			}
+		  },
+		  "lint": {
+			"builder": "@angular-eslint/builder:lint",
+			"options": {
+			  "lintFilePatterns": [
+				"src/rds-calendar/**/*.ts",
+				"src/rds-calendar/**/*.html"
+			  ]
+			}
+		  }
+		}
+	  },
+	  "rds-button": {
+		"projectType": "library",
+		"root": "src/rds-button",
+		"sourceRoot": "src/rds-button/src",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-button/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-button/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-button/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-button/src/test.ts",
+			  "tsConfig": "src/rds-button/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-button/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-input": {
+		"projectType": "library",
+		"root": "src/rds-input",
+		"sourceRoot": "src/rds-input/src",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-input/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-input/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-input/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-input/src/test.ts",
+			  "tsConfig": "src/rds-input/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-input/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-checkbox": {
+		"projectType": "library",
+		"root": "src/rds-checkbox",
+		"sourceRoot": "src/rds-checkbox/src",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-checkbox/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-checkbox/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-checkbox/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-checkbox/src/test.ts",
+			  "tsConfig": "src/rds-checkbox/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-checkbox/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-accordion": {
+		"projectType": "library",
+		"root": "src/rds-accordion",
+		"sourceRoot": "src/rds-accordion/src",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-accordion/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-accordion/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-accordion/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-accordion/src/test.ts",
+			  "tsConfig": "src/rds-accordion/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-accordion/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-alert": {
+		"projectType": "library",
+		"root": "src/rds-alert",
+		"sourceRoot": "src/rds-alert/src",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-alert/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-alert/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-alert/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-alert/src/test.ts",
+			  "tsConfig": "src/rds-alert/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-alert/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-chart-area": {
+		"projectType": "library",
+		"root": "src/rds-chart-area",
+		"sourceRoot": "src/rds-chart-area/src",
+		"prefix": "false",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-chart-area/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-chart-area/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-chart-area/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-chart-area/src/test.ts",
+			  "tsConfig": "src/rds-chart-area/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-chart-area/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-avatar": {
+		"projectType": "library",
+		"root": "src/rds-avatar",
+		"sourceRoot": "src/rds-avatar/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-avatar/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-avatar/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-avatar/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-avatar/src/test.ts",
+			  "tsConfig": "src/rds-avatar/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-avatar/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-banner": {
+		"projectType": "library",
+		"root": "src/rds-banner",
+		"sourceRoot": "src/rds-banner/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-banner/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-banner/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-banner/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-banner/src/test.ts",
+			  "tsConfig": "src/rds-banner/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-banner/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-big-number-widget": {
+		"projectType": "library",
+		"root": "src/rds-big-number-widget",
+		"sourceRoot": "src/rds-big-number-widget/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-big-number-widget/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-big-number-widget/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-big-number-widget/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-big-number-widget/src/test.ts",
+			  "tsConfig": "src/rds-big-number-widget/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-big-number-widget/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-chart-bool": {
+		"projectType": "library",
+		"root": "src/rds-chart-bool",
+		"sourceRoot": "src/rds-chart-bool/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-chart-bool/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-chart-bool/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-chart-bool/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-chart-bool/src/test.ts",
+			  "tsConfig": "src/rds-chart-bool/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-chart-bool/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-breadcrumb": {
+		"projectType": "library",
+		"root": "src/rds-breadcrumb",
+		"sourceRoot": "src/rds-breadcrumb/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-breadcrumb/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-breadcrumb/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-breadcrumb/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-breadcrumb/src/test.ts",
+			  "tsConfig": "src/rds-breadcrumb/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-breadcrumb/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-chart-bubble": {
+		"projectType": "library",
+		"root": "src/rds-chart-bubble",
+		"sourceRoot": "src/rds-chart-bubble/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-chart-bubble/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-chart-bubble/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-chart-bubble/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-chart-bubble/src/test.ts",
+			  "tsConfig": "src/rds-chart-bubble/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-chart-bubble/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-button-group": {
+		"projectType": "library",
+		"root": "src/rds-button-group",
+		"sourceRoot": "src/rds-button-group/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-button-group/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-button-group/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-button-group/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-button-group/src/test.ts",
+			  "tsConfig": "src/rds-button-group/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-button-group/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-card": {
+		"projectType": "library",
+		"root": "src/rds-card",
+		"sourceRoot": "src/rds-card/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-card/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-card/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-card/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-card/src/test.ts",
+			  "tsConfig": "src/rds-card/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-card/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-carousel": {
+		"projectType": "library",
+		"root": "src/rds-carousel",
+		"sourceRoot": "src/rds-carousel/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-carousel/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-carousel/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-carousel/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-carousel/src/test.ts",
+			  "tsConfig": "src/rds-carousel/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-carousel/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-chart-bar-horizontal": {
+		"projectType": "library",
+		"root": "src/rds-chart-bar-horizontal",
+		"sourceRoot": "src/rds-chart-bar-horizontal/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-chart-bar-horizontal/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-chart-bar-horizontal/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-chart-bar-horizontal/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-chart-bar-horizontal/src/test.ts",
+			  "tsConfig": "src/rds-chart-bar-horizontal/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-chart-bar-horizontal/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-chart-doughnut": {
+		"projectType": "library",
+		"root": "src/rds-chart-doughnut",
+		"sourceRoot": "src/rds-chart-doughnut/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-chart-doughnut/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-chart-doughnut/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-chart-doughnut/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-chart-doughnut/src/test.ts",
+			  "tsConfig": "src/rds-chart-doughnut/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-chart-doughnut/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-collapse": {
+		"projectType": "library",
+		"root": "src/rds-collapse",
+		"sourceRoot": "src/rds-collapse/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-collapse/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-collapse/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-collapse/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-collapse/src/test.ts",
+			  "tsConfig": "src/rds-collapse/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-collapse/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-color-picker": {
+		"projectType": "library",
+		"root": "src/rds-color-picker",
+		"sourceRoot": "src/rds-color-picker/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-color-picker/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-color-picker/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-color-picker/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-color-picker/src/test.ts",
+			  "tsConfig": "src/rds-color-picker/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-color-picker/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-datepicker": {
+		"projectType": "library",
+		"root": "src/rds-datepicker",
+		"sourceRoot": "src/rds-datepicker/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-datepicker/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-datepicker/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-datepicker/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-datepicker/src/test.ts",
+			  "tsConfig": "src/rds-datepicker/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-datepicker/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-double-range": {
+		"projectType": "library",
+		"root": "src/rds-double-range",
+		"sourceRoot": "src/rds-double-range/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-double-range/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-double-range/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-double-range/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-double-range/src/test.ts",
+			  "tsConfig": "src/rds-double-range/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-double-range/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-dropdown": {
+		"projectType": "library",
+		"root": "src/rds-dropdown",
+		"sourceRoot": "src/rds-dropdown/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-dropdown/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-dropdown/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-dropdown/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-dropdown/src/test.ts",
+			  "tsConfig": "src/rds-dropdown/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-dropdown/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-dropdownlist": {
+		"projectType": "library",
+		"root": "src/rds-dropdownlist",
+		"sourceRoot": "src/rds-dropdownlist/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-dropdownlist/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-dropdownlist/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-dropdownlist/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-dropdownlist/src/test.ts",
+			  "tsConfig": "src/rds-dropdownlist/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-dropdownlist/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-file-uploader": {
+		"projectType": "library",
+		"root": "src/rds-file-uploader",
+		"sourceRoot": "src/rds-file-uploader/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-file-uploader/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-file-uploader/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-file-uploader/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-file-uploader/src/test.ts",
+			  "tsConfig": "src/rds-file-uploader/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-file-uploader/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-illustration": {
+		"projectType": "library",
+		"root": "src/rds-illustration",
+		"sourceRoot": "src/rds-illustration/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-illustration/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-illustration/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-illustration/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-illustration/src/test.ts",
+			  "tsConfig": "src/rds-illustration/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-illustration/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-input-group": {
+		"projectType": "library",
+		"root": "src/rds-input-group",
+		"sourceRoot": "src/rds-input-group/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-input-group/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-input-group/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-input-group/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-input-group/src/test.ts",
+			  "tsConfig": "src/rds-input-group/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-input-group/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-chart-line": {
+		"projectType": "library",
+		"root": "src/rds-chart-line",
+		"sourceRoot": "src/rds-chart-line/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-chart-line/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-chart-line/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-chart-line/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-chart-line/src/test.ts",
+			  "tsConfig": "src/rds-chart-line/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-chart-line/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-list-group": {
+		"projectType": "library",
+		"root": "src/rds-list-group",
+		"sourceRoot": "src/rds-list-group/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-list-group/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-list-group/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-list-group/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-list-group/src/test.ts",
+			  "tsConfig": "src/rds-list-group/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-list-group/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-chart-mixed": {
+		"projectType": "library",
+		"root": "src/rds-chart-mixed",
+		"sourceRoot": "src/rds-chart-mixed/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-chart-mixed/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-chart-mixed/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-chart-mixed/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-chart-mixed/src/test.ts",
+			  "tsConfig": "src/rds-chart-mixed/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-chart-mixed/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-modal": {
+		"projectType": "library",
+		"root": "src/rds-modal",
+		"sourceRoot": "src/rds-modal/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-modal/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-modal/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-modal/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-modal/src/test.ts",
+			  "tsConfig": "src/rds-modal/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-modal/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-nav-bar": {
+		"projectType": "library",
+		"root": "src/rds-nav-bar",
+		"sourceRoot": "src/rds-nav-bar/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-nav-bar/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-nav-bar/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-nav-bar/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-nav-bar/src/test.ts",
+			  "tsConfig": "src/rds-nav-bar/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-nav-bar/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-nav-tab": {
+		"projectType": "library",
+		"root": "src/rds-nav-tab",
+		"sourceRoot": "src/rds-nav-tab/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-nav-tab/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-nav-tab/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-nav-tab/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-nav-tab/src/test.ts",
+			  "tsConfig": "src/rds-nav-tab/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-nav-tab/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-offcanvas": {
+		"projectType": "library",
+		"root": "src/rds-offcanvas",
+		"sourceRoot": "src/rds-offcanvas/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-offcanvas/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-offcanvas/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-offcanvas/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-offcanvas/src/test.ts",
+			  "tsConfig": "src/rds-offcanvas/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-offcanvas/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-pagination": {
+		"projectType": "library",
+		"root": "src/rds-pagination",
+		"sourceRoot": "src/rds-pagination/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-pagination/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-pagination/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-pagination/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-pagination/src/test.ts",
+			  "tsConfig": "src/rds-pagination/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-pagination/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-chart-pie": {
+		"projectType": "library",
+		"root": "src/rds-chart-pie",
+		"sourceRoot": "src/rds-chart-pie/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-chart-pie/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-chart-pie/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-chart-pie/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-chart-pie/src/test.ts",
+			  "tsConfig": "src/rds-chart-pie/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-chart-pie/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-chart-polar-area": {
+		"projectType": "library",
+		"root": "src/rds-chart-polar-area",
+		"sourceRoot": "src/rds-chart-polar-area/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-chart-polar-area/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-chart-polar-area/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-chart-polar-area/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-chart-polar-area/src/test.ts",
+			  "tsConfig": "src/rds-chart-polar-area/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-chart-polar-area/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-popover": {
+		"projectType": "library",
+		"root": "src/rds-popover",
+		"sourceRoot": "src/rds-popover/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-popover/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-popover/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-popover/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-popover/src/test.ts",
+			  "tsConfig": "src/rds-popover/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-popover/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-progressbar": {
+		"projectType": "library",
+		"root": "src/rds-progressbar",
+		"sourceRoot": "src/rds-progressbar/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-progressbar/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-progressbar/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-progressbar/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-progressbar/src/test.ts",
+			  "tsConfig": "src/rds-progressbar/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-progressbar/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-chart-radar": {
+		"projectType": "library",
+		"root": "src/rds-chart-radar",
+		"sourceRoot": "src/rds-chart-radar/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-chart-radar/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-chart-radar/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-chart-radar/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-chart-radar/src/test.ts",
+			  "tsConfig": "src/rds-chart-radar/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-chart-radar/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-radio-button": {
+		"projectType": "library",
+		"root": "src/rds-radio-button",
+		"sourceRoot": "src/rds-radio-button/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-radio-button/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-radio-button/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-radio-button/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-radio-button/src/test.ts",
+			  "tsConfig": "src/rds-radio-button/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-radio-button/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-range": {
+		"projectType": "library",
+		"root": "src/rds-range",
+		"sourceRoot": "src/rds-range/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-range/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-range/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-range/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-range/src/test.ts",
+			  "tsConfig": "src/rds-range/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-range/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-chart-scatter": {
+		"projectType": "library",
+		"root": "src/rds-chart-scatter",
+		"sourceRoot": "src/rds-chart-scatter/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-chart-scatter/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-chart-scatter/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-chart-scatter/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-chart-scatter/src/test.ts",
+			  "tsConfig": "src/rds-chart-scatter/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-chart-scatter/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-scrollspy": {
+		"projectType": "library",
+		"root": "src/rds-scrollspy",
+		"sourceRoot": "src/rds-scrollspy/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-scrollspy/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-scrollspy/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-scrollspy/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-scrollspy/src/test.ts",
+			  "tsConfig": "src/rds-scrollspy/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-scrollspy/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-search-input": {
+		"projectType": "library",
+		"root": "src/rds-search-input",
+		"sourceRoot": "src/rds-search-input/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-search-input/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-search-input/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-search-input/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-search-input/src/test.ts",
+			  "tsConfig": "src/rds-search-input/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-search-input/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-spinner": {
+		"projectType": "library",
+		"root": "src/rds-spinner",
+		"sourceRoot": "src/rds-spinner/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-spinner/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-spinner/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-spinner/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-spinner/src/test.ts",
+			  "tsConfig": "src/rds-spinner/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-spinner/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-chart-stacked": {
+		"projectType": "library",
+		"root": "src/rds-chart-stacked",
+		"sourceRoot": "src/rds-chart-stacked/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-chart-stacked/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-chart-stacked/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-chart-stacked/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-chart-stacked/src/test.ts",
+			  "tsConfig": "src/rds-chart-stacked/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-chart-stacked/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-table": {
+		"projectType": "library",
+		"root": "src/rds-table",
+		"sourceRoot": "src/rds-table/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-table/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-table/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-table/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-table/src/test.ts",
+			  "tsConfig": "src/rds-table/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-table/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-tags": {
+		"projectType": "library",
+		"root": "src/rds-tags",
+		"sourceRoot": "src/rds-tags/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-tags/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-tags/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-tags/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-tags/src/test.ts",
+			  "tsConfig": "src/rds-tags/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-tags/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-textarea": {
+		"projectType": "library",
+		"root": "src/rds-textarea",
+		"sourceRoot": "src/rds-textarea/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-textarea/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-textarea/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-textarea/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-textarea/src/test.ts",
+			  "tsConfig": "src/rds-textarea/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-textarea/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-text-editor": {
+		"projectType": "library",
+		"root": "src/rds-text-editor",
+		"sourceRoot": "src/rds-text-editor/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-text-editor/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-text-editor/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-text-editor/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-text-editor/src/test.ts",
+			  "tsConfig": "src/rds-text-editor/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-text-editor/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-toasts": {
+		"projectType": "library",
+		"root": "src/rds-toasts",
+		"sourceRoot": "src/rds-toasts/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-toasts/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-toasts/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-toasts/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-toasts/src/test.ts",
+			  "tsConfig": "src/rds-toasts/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-toasts/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-side-nav": {
+		"projectType": "library",
+		"root": "src/rds-side-nav",
+		"sourceRoot": "src/rds-side-nav/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-side-nav/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-side-nav/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-side-nav/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-side-nav/src/test.ts",
+			  "tsConfig": "src/rds-side-nav/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-side-nav/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-checkbox-parent-child": {
+		"projectType": "library",
+		"root": "src/rds-checkbox-parent-child",
+		"sourceRoot": "src/rds-checkbox-parent-child/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-checkbox-parent-child/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-checkbox-parent-child/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-checkbox-parent-child/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-checkbox-parent-child/src/test.ts",
+			  "tsConfig": "src/rds-checkbox-parent-child/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-checkbox-parent-child/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-checkbox-groups": {
+		"projectType": "library",
+		"root": "src/rds-checkbox-groups",
+		"sourceRoot": "src/rds-checkbox-groups/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-checkbox-groups/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-checkbox-groups/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-checkbox-groups/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-checkbox-groups/src/test.ts",
+			  "tsConfig": "src/rds-checkbox-groups/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-checkbox-groups/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-widget": {
+		"projectType": "library",
+		"root": "src/rds-widget",
+		"sourceRoot": "src/rds-widget/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-widget/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-widget/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-widget/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-widget/src/test.ts",
+			  "tsConfig": "src/rds-widget/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-widget/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-counter": {
+		"projectType": "library",
+		"root": "src/rds-counter",
+		"sourceRoot": "src/rds-counter/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-counter/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-counter/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-counter/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-counter/src/test.ts",
+			  "tsConfig": "src/rds-counter/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-counter/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-fab-menu": {
+		"projectType": "library",
+		"root": "src/rds-fab-menu",
+		"sourceRoot": "src/rds-fab-menu/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-fab-menu/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-fab-menu/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-fab-menu/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-fab-menu/src/test.ts",
+			  "tsConfig": "src/rds-fab-menu/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-fab-menu/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-elements": {
+		"projectType": "library",
+		"root": "src/root",
+		"sourceRoot": "src/root",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/root/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/root/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/root/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/root/test.ts",
+			  "tsConfig": "src/root/tsconfig.spec.json",
+			  "karmaConfig": "src/root/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-like-dislike": {
+		"projectType": "library",
+		"root": "src/rds-like-dislike",
+		"sourceRoot": "src/rds-like-dislike/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-like-dislike/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-like-dislike/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-like-dislike/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-like-dislike/src/test.ts",
+			  "tsConfig": "src/rds-like-dislike/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-like-dislike/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-feature-list": {
+		"projectType": "library",
+		"root": "src/rds-feature-list",
+		"sourceRoot": "src/rds-feature-list/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-feature-list/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-feature-list/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-feature-list/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-feature-list/src/test.ts",
+			  "tsConfig": "src/rds-feature-list/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-feature-list/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-price": {
+		"projectType": "library",
+		"root": "src/rds-price",
+		"sourceRoot": "src/rds-price/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-price/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-price/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-price/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-price/src/test.ts",
+			  "tsConfig": "src/rds-price/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-price/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-color": {
+		"projectType": "library",
+		"root": "src/rds-color",
+		"sourceRoot": "src/rds-color/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-color/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-color/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-color/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-color/src/test.ts",
+			  "tsConfig": "src/rds-color/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-color/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-feed": {
+		"projectType": "library",
+		"root": "src/rds-feed",
+		"sourceRoot": "src/rds-feed/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-feed/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-feed/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-feed/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-feed/src/test.ts",
+			  "tsConfig": "src/rds-feed/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-feed/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-product-image": {
+		"projectType": "library",
+		"root": "src/rds-product-image",
+		"sourceRoot": "src/rds-product-image/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-product-image/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-product-image/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-product-image/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-product-image/src/test.ts",
+			  "tsConfig": "src/rds-product-image/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-product-image/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-popular-pages": {
+		"projectType": "library",
+		"root": "src/rds-popular-pages",
+		"sourceRoot": "src/rds-popular-pages/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-popular-pages/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-popular-pages/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-popular-pages/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-popular-pages/src/test.ts",
+			  "tsConfig": "src/rds-popular-pages/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-popular-pages/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-benefit": {
+		"projectType": "library",
+		"root": "src/rds-benefit",
+		"sourceRoot": "src/rds-benefit/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-benefit/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-benefit/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-benefit/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-benefit/src/test.ts",
+			  "tsConfig": "src/rds-benefit/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-benefit/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-app-details": {
+		"projectType": "library",
+		"root": "src/rds-app-details",
+		"sourceRoot": "src/rds-app-details/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-app-details/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-app-details/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-app-details/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-app-details/src/test.ts",
+			  "tsConfig": "src/rds-app-details/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-app-details/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-video-player": {
+		"projectType": "library",
+		"root": "src/rds-video-player",
+		"sourceRoot": "src/rds-video-player/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-video-player/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-video-player/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-video-player/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-video-player/src/test.ts",
+			  "tsConfig": "src/rds-video-player/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-video-player/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-card-detail": {
+		"projectType": "library",
+		"root": "src/rds-card-detail",
+		"sourceRoot": "src/rds-card-detail/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-card-detail/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-card-detail/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-card-detail/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-card-detail/src/test.ts",
+			  "tsConfig": "src/rds-card-detail/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-card-detail/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-address-detail": {
+		"projectType": "library",
+		"root": "src/rds-address-detail",
+		"sourceRoot": "src/rds-address-detail/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-address-detail/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-address-detail/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-address-detail/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-address-detail/src/test.ts",
+			  "tsConfig": "src/rds-address-detail/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-address-detail/karma.conf.js"
+			}
+		  }
+		}
+	  },
+	  "rds-size": {
+		"projectType": "library",
+		"root": "src/rds-size",
+		"sourceRoot": "src/rds-size/src",
+		"prefix": "lib",
+		"architect": {
+		  "build": {
+			"builder": "@angular-devkit/build-angular:ng-packagr",
+			"options": {
+			  "project": "src/rds-size/ng-package.json"
+			},
+			"configurations": {
+			  "production": {
+				"tsConfig": "src/rds-size/tsconfig.lib.prod.json"
+			  },
+			  "development": {
+				"tsConfig": "src/rds-size/tsconfig.lib.json"
+			  }
+			},
+			"defaultConfiguration": "production"
+		  },
+		  "test": {
+			"builder": "@angular-devkit/build-angular:karma",
+			"options": {
+			  "main": "src/rds-size/src/test.ts",
+			  "tsConfig": "src/rds-size/tsconfig.spec.json",
+			  "karmaConfig": "src/rds-size/karma.conf.js"
+			}
+		  }
+		}
+	  }
+	  },
+		"rds-review-category": {
+			"projectType": "library",
+			"root": "src/rds-review-category",
+			"sourceRoot": "src/rds-review-category/src",
+			"prefix": "lib",
+			"architect": {
+				"build": {
+					"builder": "@angular-devkit/build-angular:ng-packagr",
+					"options": {
+						"project": "src/rds-review-category/ng-package.json"
+					},
+					"configurations": {
+						"production": {
+							"tsConfig": "src/rds-review-category/tsconfig.lib.prod.json"
+						},
+						"development": {
+							"tsConfig": "src/rds-review-category/tsconfig.lib.json"
+						}
+					},
+					"defaultConfiguration": "production"
+				},
+				"test": {
+					"builder": "@angular-devkit/build-angular:karma",
+					"options": {
+						"main": "src/rds-review-category/src/test.ts",
+						"tsConfig": "src/rds-review-category/tsconfig.spec.json",
+						"karmaConfig": "src/rds-review-category/karma.conf.js"
+					}
+				}
+			}
+		}
+	}
   }
-}

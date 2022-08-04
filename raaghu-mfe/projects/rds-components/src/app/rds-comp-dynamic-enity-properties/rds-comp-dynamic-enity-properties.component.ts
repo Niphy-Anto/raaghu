@@ -24,6 +24,8 @@ export class RdsCompDynamicEnityPropertiesComponent implements OnInit, OnChanges
   @Input() entityNames: any[] = [];
   @Input() parameterList: any[] = [];
   @Input() DynamicEntityData: any = {};
+  @Input() isShimmer: boolean = false;
+  @Input() EditShimmer: boolean = false;
   public viewCanvas: boolean = false;
   canvasTitle: string = this.translate.instant('NEW DYNAMIC ENTITY PROPERTY');
   id: string | undefined = undefined;

@@ -19,7 +19,7 @@ export class AppComponent extends MfeBaseComponent implements OnInit {
   rdsForgotPasswordMfeConfig: ComponentLoaderOptions = {
     name: 'RdsForgotPassword',
   };
-
+  loadingshimmer:boolean=true;
   constructor(private injector: Injector,
     private store: Store,
     private _accountService: AccountServiceProxy,
@@ -28,6 +28,16 @@ export class AppComponent extends MfeBaseComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.rdsForgotPasswordMfeConfig = {
+      name: 'RdsForgotPassword',
+     
+      output: {
+       
+        onShimmerLoad:(event:any)=>{
+          this.loadingshimmer=false;
+        }
+      }
+    }
     this.store.select(selectDefaultLanguage).subscribe((res: any) => {
       if (res) {
         this.translate.use(res);

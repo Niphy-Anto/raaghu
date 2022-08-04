@@ -5,6 +5,7 @@ import { NgxTranslateModule, SharedModule } from '@libs/shared';
 import { SettingEffects, settingReducer, SettingsTenantPageboxReducer } from '@libs/state-management';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
+import { NgxShimmerLoadingModule } from 'ngx-shimmer-loading';
 import { RdsFabMenuModule } from 'projects/libs/rds-elements/src/rds-fab-menu/src/public-api';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -26,6 +27,7 @@ export const featureReducersMap = {
     RdsButtonModule,
     RdsFabMenuModule,
     RdsNavTabModule,
+    NgxShimmerLoadingModule,
     NgxTranslateModule.forRoot(),
     StoreModule.forFeature('settings', featureReducersMap
     ),

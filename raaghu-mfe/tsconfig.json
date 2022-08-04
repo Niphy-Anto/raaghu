@@ -30,6 +30,26 @@
       "@libs/rds-label": [
         "rds-elements/rds-label/public-api",
         "rds-elements/rds-label"
+      ],
+      "@libs/rds-avatar": [
+        "rds-elements/rds-avatar/public-api",
+        "rds-elements/rds-avatar"
+      ],
+      "@libs/rds-like-dislike": [
+        "rds-elements/rds-like-dislike/public-api",
+        "rds-elements/rds-like-dislike"
+      ],
+      "@libs/rds-rating": [
+        "rds-elements/rds-rating/public-api",
+        "rds-elements/rds-rating"
+      ],
+      "@libs/rds-checkbox": [
+        "rds-elements/rds-checkbox/public-api",
+        "rds-elements/rds-checkbox"
+      ],
+      "@libs/rds-radio-button": [
+        "rds-elements/rds-radio-button/public-api",
+        "rds-elements/rds-radio-button"
       ]
     },
     "baseUrl": "./",

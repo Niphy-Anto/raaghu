@@ -8,6 +8,13 @@ export const selectAllDynamicPropertyEntity = (state: AppState) => state.Propert
 export const selectAllInputNames = (state: AppState) => state.InputTypeNames;
 export const selectDynanmicPropertyForEdit = (state: AppState) => state.EditDynamicPropertSateI;
 export const selectDynanmicPermission = (state: AppState) => state.DynanmicPermission;
+export const dynamicProperty = createFeatureSelector<AppState>('editdynamicProperty');
+export const selectDynamicPropertyForEdit = createSelector(
+  dynamicProperty,
+  (state: AppState) => state.editdynamicProperty
+);
+
+
 export const selectAllDynamicProperties = createSelector(
     selectDynamicProperty,
     (state: DynamicPropertyState) => state.dynamicProperty
@@ -34,10 +41,10 @@ export const selectInputPropertyNameEntities = createSelector(
   (state: InputPropertynameState) => state.InputTypeNames
 );
 
-export const selectDynamicPropertyForEdit = createSelector(
-  selectDynanmicPropertyForEdit,
-  (state: EditDynampicPropertState) => state.EditDynamicPropertSateI
-);
+// export const selectDynamicPropertyForEdit = createSelector(
+//   selectDynanmicPropertyForEdit,
+//   (state: EditDynampicPropertState) => state.EditDynamicPropertSateI
+// );
 export const selectAllPermissions = createSelector(
   selectDynanmicPermission,
   (state: DynamicPermissionState) => state.DynanmicPermission

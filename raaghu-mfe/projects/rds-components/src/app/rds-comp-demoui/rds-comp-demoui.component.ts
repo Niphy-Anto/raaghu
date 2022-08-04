@@ -8,7 +8,8 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./rds-comp-demoui.component.scss']
 })
 export class RdsCompDemouiComponent implements OnInit {
-
+ video = "http://static.videogular.com/assets/videos/videogular.mp4";
+ showAlert:boolean=false;
 tableHeaderItems=[
   {
     "headerName": "Name"
@@ -2375,28 +2376,27 @@ tableBodyItems=[
     {
       "name": "Home",
       "route": "/home",
-      "iconClass": "bi bi-house-door"
+      iconClass: "bi bi-house-door",
+      iconWidth: '15px' ,
+      iconHeight:'15px' ,
+      'disabled':false
     },
     {
       "name": "About",
       "route": "/About",
-      "iconClass": "bi bi-house-door"
+      iconClass: "bi bi-house-door",
+      iconWidth: '15px' ,
+      iconHeight:'15px' ,
+      'disabled':true
     },
     {
       "name": "Contact US",
       "route": "/Contact",
-      "iconClass": "bi bi-house-door"
-    },
-    // {
-    //   "name": "Services",
-    //   "route": "/Services",
-    //   "iconClass": "bi bi-house-door"
-    // },
-    // {
-    //   "name": "Contact US",
-    //   "route": "/Contact",
-    //   "iconClass": "bi bi-house-door"
-    // }
+      iconClass: "bi bi-house-door",
+      iconWidth: '15px' ,
+      iconHeight:'15px' ,
+      'disabled':true
+    },    
   ];
 
   imageItem = [
@@ -2434,6 +2434,8 @@ tableBodyItems=[
   ngOnInit(): void {
 
   }
+   
+
 
   ngAfterViewInit(): void {
     // tslint:disable-next-line:prefer-const
@@ -2462,6 +2464,8 @@ tableBodyItems=[
   }, { progressWidth: "20%", background: 'bg-danger' }];
 
 
- 
+ onClickShowAlert()  {
+   this.showAlert=!this.showAlert;
+ }
       
 }

@@ -10,6 +10,7 @@ export interface SettingsData {
 })
 export class RdsCompOtherSettingsComponent implements OnInit {
   @Output() OtherSettingData=new EventEmitter<any>();
+  @Input() editShimmer:boolean=false;
   @Input()
   OtherSetting: any = {
     isQuickThemeSelectEnabled: false,
