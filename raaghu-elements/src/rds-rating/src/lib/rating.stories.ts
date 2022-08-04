@@ -34,7 +34,25 @@ Basic.args = {
   ],
   Size: 'medium',
   rating:1,
+  WithNoOfReviews:true,
   noOfReview:123,
   colorVariant: 'primary',
+  role:'Basic',
 }
 
+export const Advanced = Template.bind({});
+Basic.args = {
+  itemList: [
+    {id: 1, value: 1},
+    {id: 2, value: 2},
+    {id: 3, value: 3},
+    {id: 4, value: 4},
+    {id: 5, value: 5},
+  ],
+  Size: 'medium',
+  rating:1,
+  WithNoOfReviews:false,
+  noOfReview:123,
+  colorVariant: 'primary',
+  role:'Advanced',
+}
