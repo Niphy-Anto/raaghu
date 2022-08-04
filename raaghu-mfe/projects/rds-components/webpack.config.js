@@ -67,7 +67,7 @@ module.exports = {
         './RdsCompProperties': './projects/rds-components/src/app/rds-comp-properties/rds-comp-properties.component.ts',
         './RdsCompWebsiteLog': './projects/rds-components/src/app/rds-comp-website-log/rds-comp-website-log.component.ts',
         './RdsCompCache': './projects/rds-components/src/app/rds-comp-cache/rds-comp-cache.component.ts',
-        './RdsCompSecrets':'./projects/rds-components/src/app/rds-comp-secrets/rds-comp-secrets.component.ts',
+        './RdsCompSecrets': './projects/rds-components/src/app/rds-comp-secrets/rds-comp-secrets.component.ts',
         './RdsCompMemberActivity': './projects/rds-components/src/app/rds-comp-member-activity/rds-comp-member-activity.component.ts',
         './RdsCompClientResources': './projects/rds-components/src/app/rds-comp-client-resources/rds-comp-client-resources.component',
         './RdsCompClientBasics': './projects/rds-components/src/app/rds-comp-client-basics/rds-comp-client-basics.component.ts',
@@ -75,7 +75,7 @@ module.exports = {
 
         './RdsCompNewRole': './projects/rds-components/src/app/rds-comp-new-role/rds-comp-new-role.component.ts',
         './RdsCompVisualSettings': './projects/rds-components/src/app/rds-comp-visual-settings/rds-comp-visual-settings.component.ts',
-        './RdsCompPermissionTree':'./projects/rds-components/src/app/rds-comp-permission-tree/rds-comp-permission-tree.component.ts',
+        './RdsCompPermissionTree': './projects/rds-components/src/app/rds-comp-permission-tree/rds-comp-permission-tree.component.ts',
         './RdsCompTenantDashboard': './projects/rds-components/src/app/rds-comp-tenant-dashboard/rds-comp-tenant-dashboard.component.ts',
         './RdsCompAlert': './projects/rds-components/src/app/rds-comp-alert/rds-comp-alert.component.ts',
         './RdsCompRoleList': './projects/rds-components/src/app/rds-comp-role-list/rds-comp-role-list.component.ts',
@@ -90,8 +90,8 @@ module.exports = {
         './RdsCompFaqComponent': './projects/rds-components/src/app/rds-comp-faq/rds-comp-faq.component.ts',
 
         './RdsCompCalendar': './projects/rds-components/src/app/rds-comp-calendar/rds-comp-calendar.component.ts',
-        './RdsCompShoppingCartProduct': './projects/rds-components/src/app/rds-comp-shopping-cart-product/rds-comp-shopping-cart-product.component.ts',
-        './RdsCompOrderSummary': './projects/rds-components/src/app/rds-comp-order-summary/rds-comp-order-summary.component.ts'
+        './RdsCompOrderSummary': './projects/rds-components/src/app/rds-comp-order-summary/rds-comp-order-summary.component.ts',
+        './RdsCompShoppingCartProduct': './projects/rds-components/src/app/rds-comp-shopping-cart-product/rds-comp-shopping-cart-product.component.ts'
       },
 
       shared: share({

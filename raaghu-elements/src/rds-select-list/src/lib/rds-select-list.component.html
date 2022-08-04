@@ -8,7 +8,7 @@
     <ng-content>
 
     </ng-content>
-    <option selected="selected" value="" hidden>Select</option>
+    <option selected="selected" value="" hidden>{{placeholderText}}</option>
     <option *ngFor="let item of itemList" [selected]="item.value==value" [value]="item.value">
       {{item.displayText}}
     </option>

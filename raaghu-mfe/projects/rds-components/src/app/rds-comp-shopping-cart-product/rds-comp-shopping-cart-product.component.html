@@ -4,7 +4,7 @@
          <div class="table-responsive">
             <table id="table" class="w-100 p-4">
                <tbody>
-                  <tr class="mb-5" [ngClass]="{'active': closedata === i}" *ngFor="let item of itemList; index as i ">
+                  <tr class="mb-5 border-bottom mt-3 pt-3" [ngClass]="{'active': closedata === i}" *ngFor="let item of itemList; index as i ">
                      <td width="120" class=" bg-light align-content-center text-center">
                         <img [src]="item.image" height="100px" width="100px">
                      </td>

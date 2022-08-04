@@ -8,7 +8,8 @@ export interface ShoppingCartProduct {
   price: number;
   image: string;
   quantity: any;
-  highlights: any
+  highlights: any;
+  ProductTotalPrice:number;
 }
 @Component({
   selector: 'rds-comp-shopping-cart-product',
@@ -33,7 +34,6 @@ export class RdsCompShoppingCartProductComponent implements OnInit {
   @Output() onReset = new EventEmitter<{ evnt: any }>();
 
 
-  // @Output() select = new EventEmitter<{ evnt: any }>();
   @Output() onChanges = new EventEmitter<{ event: any }>();
 
   @Output()
@@ -53,6 +53,7 @@ export class RdsCompShoppingCartProductComponent implements OnInit {
   }
 
   onSelectValue(event:any,item:any) {
+    this.selectedqty = event
     const data:any={
       id:item.id,
       highlights:item.highlights,
@@ -61,8 +62,11 @@ export class RdsCompShoppingCartProductComponent implements OnInit {
       price:item.price,
       prodname:item.prodname,
       quantity:event,
+      ProductTotalPrice:item.ProductTotalPrice
     }
-
+  
     this.onItemClick.emit(data);
   }
+
+
 }

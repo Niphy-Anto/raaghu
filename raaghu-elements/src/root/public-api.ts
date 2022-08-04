@@ -203,6 +203,12 @@ export * from '../rds-rating/src/public-api';
 // Public API Surface of rds-feed
 export * from '../rds-feed/src/public-api';
 
+// Public API Surface of rds-color
+export * from '../rds-color/src/public-api';
+
+// Public API Surface of rds-color
+export * from '../rds-video-player/src/public-api'
+
 // Public API Surface of rds-icon-label
 export * from '../rds-icon-label/src/public-api';
 
@@ -217,3 +223,15 @@ export * from '../rds-video-player/src/public-api';
 
 // Public API Surface of rds-card-detail
 export * from '../rds-card-detail/src/public-api';
+
+// Public API Surface of rds-size
+export * from '../rds-size/src/public-api';
+
+// Public API Surface of rds-price
+export * from '../rds-price/src/public-api';
+
+// Public API Surface of rds-feature-list
+export * from '../rds-feature-list/src/public-api';
+
+// Public API Surface of rds-product-image
+export * from '../rds-product-image/src/public-api';

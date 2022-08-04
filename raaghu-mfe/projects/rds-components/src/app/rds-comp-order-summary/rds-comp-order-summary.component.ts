@@ -2,6 +2,7 @@ import { DecimalPipe } from '@angular/common';
 import { Component, EventEmitter, Input, OnInit, Output, TemplateRef } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
+
 export interface OrderSummaryItems {
   name: string;
   price: number;
@@ -27,7 +28,10 @@ export class RdsCompOrderSummaryComponent implements OnInit {
   @Input() Shippingestimate: number= 0;
   @Input() Taxestimate: number = 0;
 
+  @Input() isCheckout = true;
   checkout() {
     this.onItemClick.emit(this.Subtotal + this.Shippingestimate + this.Taxestimate);
   }
+
+
 }
