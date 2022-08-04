@@ -278,7 +278,7 @@ import { RdsRatingModule } from 'projects/libs/rds-elements/src/rds-rating/src/p
     CalendarModule.forRoot({
       provide: DateAdapter,
       useFactory: adapterFactory,
-    })
+    }),
     NgxShimmerLoadingModule,
    RdsIconLabelModule
   ],

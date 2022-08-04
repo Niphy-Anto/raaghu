@@ -13,6 +13,9 @@ import { TranslateService } from '@ngx-translate/core';
   encapsulation: ViewEncapsulation.None,
 })
 export class AppComponent {
+
+
+
   title = 'tenant';
   tenantSettingsInfo: any = {};
   tenantData: any = {};
@@ -31,8 +34,13 @@ export class AppComponent {
   ]
 
   tenantTableData: any = []
+
   constructor(private store: Store, private translate: TranslateService, private _arrayToTreeConverterService: ArrayToTreeConverterService) { }
   ngOnInit(): void {
+
+
+   
+
     this.store.select(selectDefaultLanguage).subscribe((res: any) => {
       if (res) {
         this.translate.use(res);

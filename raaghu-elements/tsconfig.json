@@ -12,6 +12,10 @@
         "rds-elements/rds-badge/public-api",
         "rds-elements/rds-badge"
       ],
+      "@libs/rds-label": [
+        "rds-elements/rds-label/public-api",
+        "rds-elements/rds-label"
+      ],
       "rds-color": [
         "dist/rds-color/rds-color",
         "dist/rds-color"

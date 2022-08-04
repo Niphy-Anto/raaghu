@@ -33,9 +33,9 @@ export class RdsIconLabelComponent implements OnInit {
     return classes;
   }
 
-  public get iconClass(): string {
-    var selectSize = `${this.iconSize === 'small' ? 'sm ' : this.iconSize === 'large' ? 'lg' : 'md'}`;
-    return selectSize;
-  }
+  // public get iconClass(): string {
+  //   var selectSize = `${this.iconSize === 'small' ? 'sm ' : this.iconSize === 'large' ? 'lg' : 'md'}`;
+  //   return selectSize;
+  // }
 
 }

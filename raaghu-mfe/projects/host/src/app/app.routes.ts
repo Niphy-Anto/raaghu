@@ -266,6 +266,17 @@ export const APP_ROUTES: Routes = [
             exposedModule: './AppModule',
           }).then((m) => m.AppModule),
       },
+      // {
+      //   path: 'cart',
+      //   loadChildren: () =>
+      //     loadRemoteModule({
+      //       type: 'module',
+      //       remoteEntry: MfeConfig.cart.url,
+      //       exposedModule: './AppModule',
+      //     }).then((m) => m.AppModule),
+      //   data: { permission: 'Pages.DemoUiComponents' },
+      
+      // },
       {
         path: 'text-template',
         loadChildren: () =>
@@ -343,5 +354,6 @@ export const APP_ROUTES: Routes = [
   {
     path: '**',
     redirectTo: 'pagenotfound',
-}
+},
+
 ];
