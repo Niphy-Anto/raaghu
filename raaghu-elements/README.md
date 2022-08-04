@@ -87,7 +87,7 @@ npm install
 ```bash
 npm run build-all
 ```
-> **_NOTE:_** Above comman will create a folder named "rds-elements" with all the libraries
+> **_NOTE:_** Above command will create a folder named "rds-elements" with all the libraries
 
 5. Create a new blank angular project: new directory, other location
 
@@ -127,7 +127,6 @@ imports: [
 
 ```bash
 npm start
-
 ```
 
 8. Storybook
@@ -157,13 +156,13 @@ This project is licensed under the MIT License - see the [`LICENSE`](LICENSE) fi
 - ✔️ Better Performance
 - ✔️ Converiting plain angular components to custom elements
 
-If you find something is missing, we are listening. Please create a feature request [from here](https://github.com/Wai-Technologies/raaghu-elements/issues/new).
+If you find something is missing, we are listening. Please create a feature request [from here](https://github.com/Wai-Technologies/raaghu/issues/new).
 
 
 # 🤝 Contributing to `Raaghu`
 Any kind of positive contribution is welcome! Please help us to grow by contributing to the project.
 
-If you wish to contribute, you can work on any features [listed here](https://github.com/Wai-Technologies/raaghu-elements#-upcoming-features) or create one on your own. After adding your code, please send us a Pull Request.  
+If you wish to contribute, you can work on any features [listed here](https://github.com/Wai-Technologies/raaghu#-upcoming-features) or create one on your own. After adding your code, please send us a Pull Request.  
 
 
 
