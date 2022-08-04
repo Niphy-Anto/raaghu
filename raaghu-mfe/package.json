@@ -38,7 +38,7 @@
     "@ngx-translate/http-loader": "7.0.0",
     "angular-draggable-droppable": "^6.1.0",
     "angular-resizable-element": "^5.0.0",
-    "autoprefixer": "10.4.5",
+    "autoprefixer": "10.4.8",
     "bootstrap": "5.2.0",
     "bootstrap-icons": "1.8.1",
     "calendar-utils": "^0.10.1",
