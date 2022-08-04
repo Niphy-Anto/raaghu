@@ -59,10 +59,6 @@
       "@libs/rds-radio-button": [
         "rds-elements/rds-radio-button/public-api",
         "rds-elements/rds-radio-button"
-      ],
-      "rds-review-category": [
-        "dist/rds-review-category/rds-review-category",
-        "dist/rds-review-category"
       ]
     },
     "skipLibCheck": true,
