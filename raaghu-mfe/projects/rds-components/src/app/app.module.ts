@@ -41,7 +41,7 @@ import {
   RdsInputGroupModule, RdsAccordionModule, RdsTagsModule, RdsAlertModule, RdsButtonGroupModule, RdsCollapseModule, RdsIllustrationModule, RdsListGroupModule, RdsPopoverModule,
   RdsSpinnerModule, RdsToastsModule, RdsChartBubbleModule, RdsChartDoughnutModule, RdsChartMixedModule, RdsChartPolarAreaModule, RdsChartScatterModule, RdsChartStackedModule,
   RdsProgressbarModule, RdsBreadcrumbModule, RdsCarouselModule, RdsDoubleRangeModule, RdsScrollspyModule, RdsCounterModule, RdsFabMenuModule, RdsLabelModule, RdsIconLabelModule,
-  CalendarModule, adapterFactory, DateAdapter, RdsRatingModule, RdsLikeDislikeModule, RdsColorModule, RdsFeedModule, RdsVideoPlayerModule, RdsCardDetailModule, RdsAppDetailsModule, RdsBenefitModule,
+  CalendarModule, adapterFactory, DateAdapter, RdsRatingModule, RdsLikeDislikeModule, RdsColorModule, RdsFeedModule, RdsVideoPlayerModule, RdsAppDetailsModule, RdsBenefitModule,
 } from '@libs/rds-elements';
 import { RdsCompDemouiComponent } from './rds-comp-demoui/rds-comp-demoui.component';
 import { RdsCompTenantManagementComponent } from './rds-comp-tenant-management/rds-comp-tenant-management.component';
@@ -121,9 +121,14 @@ import { RdsCompNewLangShimmerComponent } from './rds-comp-new-language/rds-comp
 import { RdsCompBackgroundImageComponent } from './rds-comp-background-image/rds-comp-background-image.component';
 import { RdsCompStoreFrontComponent } from './rds-comp-store-front/rds-comp-store-front.component';
 
+import { RdsCompProductOverviewComponent } from './rds-comp-product-overview/rds-comp-product-overview.component';
+import { RdsPriceModule } from 'projects/libs/rds-elements/src/rds-price/src/public-api';
+import { RdsFeatureListModule } from 'projects/libs/rds-elements/src/rds-feature-list/src/public-api';
+import { RdsProductImageModule } from 'projects/libs/rds-elements/src/rds-product-image/src/public-api';
 import { RdsCompCardDetailListComponent } from './rds-comp-card-detail-list/rds-comp-card-detail-list.component';
 import { RdsCompBenefitComponent } from './rds-comp-benefit/rds-comp-benefit.component';
 import { RdsCompAppDetailsComponent } from './rds-comp-app-details/rds-comp-app-details.component';
+import { RdsSizeModule } from 'projects/libs/rds-elements/src/rds-size/src/public-api';
 
 @NgModule({
   declarations: [
@@ -236,7 +241,9 @@ import { RdsCompAppDetailsComponent } from './rds-comp-app-details/rds-comp-app-
     RdsCompStoreFrontComponent,
     RdsCompBenefitComponent,
     RdsCompProductListComponent,
-    RdsCompAppDetailsComponent
+    RdsCompAppDetailsComponent,
+    RdsCompCalendarComponent,
+    RdsCompProductOverviewComponent
     //RdsCompLanguageTextListComponent,
   ],
   imports: [
@@ -314,13 +321,16 @@ import { RdsCompAppDetailsComponent } from './rds-comp-app-details/rds-comp-app-
     RdsRatingModule,
     RdsBenefitModule,
     RdsAppDetailsModule,
-    RdsCardDetailModule,
     CalendarModule.forRoot({
       provide: DateAdapter,
       useFactory: adapterFactory
     }),
     RdsIconLabelModule,
-    RdsVideoPlayerModule
+    RdsVideoPlayerModule,
+    RdsPriceModule,
+    RdsFeatureListModule,
+    RdsProductImageModule,
+    RdsSizeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
