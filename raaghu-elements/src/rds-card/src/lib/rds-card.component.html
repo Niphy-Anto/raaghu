@@ -11,16 +11,16 @@
     <span class="small badge badge-warning" size="small">Recommended</span>
   </div> -->
   <div [ngClass]="cardClasses">
-    <div [ngClass]="classes">
+    <div [ngClass]="classes" *ngIf="showHeader">
       <ng-container [ngTemplateOutlet]="header" [ngTemplateOutletContext]="{$implicit: Data}"></ng-container>
       <ng-content select="[header]"></ng-content>
     </div>
-    <div class="card-body" [ngClass]="cardBody">
+    <div class="card-body" [ngClass]="cardBody" *ngIf="showBody">
       <ng-container [ngTemplateOutlet]="body" [ngTemplateOutletContext]="{$implicit: Data}"></ng-container>
       <ng-container [ngTemplateOutlet]="footer" [ngTemplateOutletContext]="{$implicit: Data}"></ng-container>
       <ng-content select="[body]"></ng-content>
     </div>
-    <div>
+    <div *ngIf="showFooter">
       <ng-content select="[footer]"></ng-content>
     </div>
   </div>

@@ -11,6 +11,10 @@ export class RdsCardComponent implements OnInit {
   //@Input() height?: string = "100%";
   @Input() custClass: boolean = true;
   @Input() custSidePadding: boolean = true;
+  @Input() showHeader: boolean = true;
+  @Input() showBody: boolean = true;
+  @Input() showFooter: boolean = true;
+
   @Input() borderCard!: boolean;
   //@Input() Recommended!:boolean;
   @Input()
