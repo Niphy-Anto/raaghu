@@ -36,7 +36,7 @@ export const Basic = Template.bind({});
 
 Basic.args = {
   datePickerType: 'basic',
-  DatePickerConfig: { dateInputFormat: 'DD/MM/YYYY', showWeekNumbers: false, isAnimated: true },
+  DatePickerConfig: { dateInputFormat: 'MM/DD/YYYY', showWeekNumbers: false, isAnimated: true },
   placeholder: 'Date',
   datesDisabled: [new Date()],
   dateTooltipTexts: [{ date: new Date(), tooltipText: 'todays Date' }],
