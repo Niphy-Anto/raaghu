@@ -8,7 +8,8 @@ export interface ShoppingCartProduct {
   price: number;
   image: string;
   quantity: any;
-  highlights: any
+  highlights: any;
+  ProductTotalPrice:number;
 }
 @Component({
   selector: 'rds-comp-shopping-cart-product',
@@ -25,8 +26,6 @@ export class RdsCompShoppingCartProductComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
-
   closedata?: number;
   @Input()
   value = '';
@@ -36,7 +35,6 @@ export class RdsCompShoppingCartProductComponent implements OnInit {
   @Output() onReset = new EventEmitter<{ evnt: any }>();
 
 
-  // @Output() select = new EventEmitter<{ evnt: any }>();
   @Output() onChanges = new EventEmitter<{ event: any }>();
 
   @Output()
@@ -48,6 +46,7 @@ export class RdsCompShoppingCartProductComponent implements OnInit {
       prodname: 'Premium Quality Soft T-Shirt',
       prdosubname: 'Gray - medium',
       price: 12,
+      ProductTotalPrice:12,
       quantity: [
         { value: 1, displayText: 'Qty 1' },
         { value: 2, displayText: 'Qty 2' },
@@ -72,6 +71,7 @@ export class RdsCompShoppingCartProductComponent implements OnInit {
       prodname: 'Premium Quality Soft T-Shirt',
       prdosubname: 'Black & White - Large',
       price: 33,
+      ProductTotalPrice:33,
       quantity: [
         { value: 1, displayText: 'Qty 1' },
         { value: 2, displayText: 'Qty 2' },
@@ -97,6 +97,7 @@ export class RdsCompShoppingCartProductComponent implements OnInit {
       prodname: 'Premium Quality Soft T-Shirt',
       prdosubname: 'White - Small',
       price: 9,
+      ProductTotalPrice:9,
       quantity: [
         { value: 1, displayText: 'Qty 1' },
         { value: 2, displayText: 'Qty 2' },
@@ -131,6 +132,7 @@ export class RdsCompShoppingCartProductComponent implements OnInit {
   }
 
   onSelectValue(event:any,item:any) {
+    this.selectedqty = event
     const data:any={
       id:item.id,
       highlights:item.highlights,
@@ -139,10 +141,13 @@ export class RdsCompShoppingCartProductComponent implements OnInit {
       price:item.price,
       prodname:item.prodname,
       quantity:event,
+      ProductTotalPrice:item.ProductTotalPrice
     }
-
+  
     this.onItemClick.emit(data);
   }
+
+
 }
 
 

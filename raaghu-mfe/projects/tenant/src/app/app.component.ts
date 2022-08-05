@@ -17,6 +17,9 @@ import { DatePipe } from '@angular/common';
   ]
 })
 export class AppComponent {
+
+
+
   title = 'tenant';
   tenantSettingsInfo: any = {};
   tenantData: any = {};
@@ -38,6 +41,10 @@ export class AppComponent {
   tenantTableData: any = []
   constructor(public datepipe: DatePipe, private store: Store, private translate: TranslateService, private _arrayToTreeConverterService: ArrayToTreeConverterService) { }
   ngOnInit(): void {
+
+
+   
+
     this.store.select(selectDefaultLanguage).subscribe((res: any) => {
       if (res) {
         this.translate.use(res);

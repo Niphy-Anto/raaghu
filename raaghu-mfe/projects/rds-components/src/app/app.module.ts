@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RdsLoginComponent } from './rds-comp-login/rds-comp-login.component';
@@ -41,7 +41,8 @@ import {
   RdsInputGroupModule, RdsAccordionModule, RdsTagsModule, RdsAlertModule, RdsButtonGroupModule, RdsCollapseModule, RdsIllustrationModule, RdsListGroupModule, RdsPopoverModule,
   RdsSpinnerModule, RdsToastsModule, RdsChartBubbleModule, RdsChartDoughnutModule, RdsChartMixedModule, RdsChartPolarAreaModule, RdsChartScatterModule, RdsChartStackedModule,
   RdsProgressbarModule, RdsBreadcrumbModule, RdsCarouselModule, RdsDoubleRangeModule, RdsScrollspyModule, RdsCounterModule, RdsFabMenuModule, RdsLabelModule, RdsIconLabelModule,
-  CalendarModule, adapterFactory, DateAdapter, RdsRatingModule, RdsLikeDislikeModule, RdsColorModule, RdsFeedModule, RdsVideoPlayerModule, RdsCardDetailModule, RdsAppDetailsModule, RdsBenefitModule,
+  CalendarModule, adapterFactory, DateAdapter, RdsRatingModule, RdsLikeDislikeModule, RdsColorModule, RdsFeedModule, RdsVideoPlayerModule, RdsAppDetailsModule, RdsBenefitModule,
+  RdsCardDetailModule, RdsSizeModule, RdsPriceModule, RdsFeatureListModule, RdsProductImageModule
 } from '@libs/rds-elements';
 import { RdsCompDemouiComponent } from './rds-comp-demoui/rds-comp-demoui.component';
 import { RdsCompTenantManagementComponent } from './rds-comp-tenant-management/rds-comp-tenant-management.component';
@@ -124,6 +125,8 @@ import { RdsCompStoreFrontComponent } from './rds-comp-store-front/rds-comp-stor
 import { RdsCompCardDetailListComponent } from './rds-comp-card-detail-list/rds-comp-card-detail-list.component';
 import { RdsCompBenefitComponent } from './rds-comp-benefit/rds-comp-benefit.component';
 import { RdsCompAppDetailsComponent } from './rds-comp-app-details/rds-comp-app-details.component';
+import { RdsCompProductOverviewComponent } from './rds-comp-product-overview/rds-comp-product-overview.component';
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   declarations: [
@@ -236,7 +239,9 @@ import { RdsCompAppDetailsComponent } from './rds-comp-app-details/rds-comp-app-
     RdsCompStoreFrontComponent,
     RdsCompBenefitComponent,
     RdsCompProductListComponent,
-    RdsCompAppDetailsComponent
+    RdsCompAppDetailsComponent,
+    RdsCompCalendarComponent,
+    RdsCompProductOverviewComponent
     //RdsCompLanguageTextListComponent,
   ],
   imports: [
@@ -320,7 +325,11 @@ import { RdsCompAppDetailsComponent } from './rds-comp-app-details/rds-comp-app-
       useFactory: adapterFactory
     }),
     RdsIconLabelModule,
-    RdsVideoPlayerModule
+    RdsVideoPlayerModule,
+    RdsPriceModule,
+    RdsFeatureListModule,
+    RdsProductImageModule,
+    RdsSizeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

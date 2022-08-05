@@ -68,7 +68,7 @@ export class RdsCompNewLanguageComponent implements OnInit, DoCheck, OnChanges {
       this.name = this.selectedLanguage.countryCode;
       this.icon = this.selectedLanguage.icon;
       this.id = this.selectedLanguage.id;
-      this.isEnabled = (this.selectedLanguage.isDisabled) ? false : true;
+      this.isEnabled = (this.selectedLanguage.isEnabled) ? false : true;
     } else {
       this.name = '';
       this.icon = '';

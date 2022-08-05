@@ -100,7 +100,7 @@ export const APP_ROUTES: Routes = [
         data: { permission: 'Pages.Administration.AuditLogs'},
       },
       {
-        path: 'visual-settings',
+        path: 'visualsettings',
         loadChildren: () =>
           loadRemoteModule({
             type: 'module',
@@ -274,6 +274,17 @@ export const APP_ROUTES: Routes = [
             exposedModule: './AppModule',
           }).then((m) => m.AppModule),
       },
+      // {
+      //   path: 'cart',
+      //   loadChildren: () =>
+      //     loadRemoteModule({
+      //       type: 'module',
+      //       remoteEntry: MfeConfig.cart.url,
+      //       exposedModule: './AppModule',
+      //     }).then((m) => m.AppModule),
+      //   data: { permission: 'Pages.DemoUiComponents' },
+      
+      // },
       {
         path: 'text-template',
         loadChildren: () =>
