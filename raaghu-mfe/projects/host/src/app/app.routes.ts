@@ -100,7 +100,7 @@ export const APP_ROUTES: Routes = [
         data: { permission: 'Pages.Administration.AuditLogs'},
       },
       {
-        path: 'visual-settings',
+        path: 'visualsettings',
         loadChildren: () =>
           loadRemoteModule({
             type: 'module',
