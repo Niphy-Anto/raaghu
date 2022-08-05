@@ -83,7 +83,7 @@ export class RdsIconComponent implements OnInit, OnChanges {
       svg.style.backgroundColor = '#363636';
     } else  if (this.colorVariant == 'light') {
       svg.style.backgroundColor = '#F8F9FA';
-    };
+    };  
     if (this.fill) {
       svg.style.fill = 'currentColor';
     }
