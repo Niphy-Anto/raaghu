@@ -48,7 +48,7 @@ FormModal.args = {
   },
   backdropstatic: true,
 };
-export const StaicBackdropModal: Story<RdsModalComponent> = (args) => ({
+export const StaticBackdropModal: Story<RdsModalComponent> = (args) => ({
   props: args,
   template:
     `
@@ -70,7 +70,7 @@ export const StaicBackdropModal: Story<RdsModalComponent> = (args) => ({
           </rds-modal>
       `,
 });
-StaicBackdropModal.args = {
+StaticBackdropModal.args = {
   label: 'Launch static backdrop modal',
   backdropstatic: 'static',
   modalId: "storybookModal",
