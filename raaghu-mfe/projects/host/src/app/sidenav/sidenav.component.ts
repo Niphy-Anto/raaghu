@@ -87,7 +87,7 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
         { label: 'Audit logs', labelTranslationKey: 'Audit logs', id: '', permissionName: 'Pages.Administration.AuditLogs', icon: 'audit_logs', path: '/pages/audit-logs', descriptionTranslationKey: '' },
         { label: 'subscription', labelTranslationKey: 'subscription', id: '', permissionName: 'Pages.Administration.Tenant.SubscriptionManagement', icon: 'subscription', path: '/pages/subscription', descriptionTranslationKey: '' },
         { label: 'Maintenance', labelTranslationKey: 'Maintenance', id: '', permissionName: 'Pages.Administration.Host.Maintenance', icon: 'maintenance', path: '/pages/maintenance', description: 'Statistics and reports', descriptionTranslationKey: 'Statistics and reports' },
-        { label: 'Visual Settings', labelTranslationKey: 'Visual Settings', id: '', permissionName: 'Pages.Administration.UiCustomization', icon: 'visual_settings', path: '/pages/visual-settings', description: 'Change the look of UI', descriptionTranslationKey: 'Change the look of UI' },
+        { label: 'Visual Settings', labelTranslationKey: 'Visual Settings', id: '', permissionName: 'Pages.Administration.UiCustomization', icon: 'visual_settings', path: '/pages/visualsettings', description: 'Change the look of UI', descriptionTranslationKey: 'Change the look of UI' },
         { label: 'Webhook Subscriptions', labelTranslationKey: 'Webhook Subscriptions', id: '', permissionName: 'Pages.Administration.WebhookSubscription', icon: 'webhook_subscriptions', path: '/pages/webhook-subscription', description: 'Webhook Subsubscription Info', descriptionTranslationKey: 'Statistics and reports' },
         { label: 'Dynamic Properties', labelTranslationKey: 'Dynamic Properties', id: 'Pages.Administration.DynamicProperties', permissionName: '', icon: 'dynamic_properties', path: '/pages/dynamic-property-management', descriptionTranslationKey: '' },
         { label: 'Settings', labelTranslationKey: 'Settings', id: '', permissionName: 'Pages.Administration.Host.Settings', icon: 'settings', path: '/pages/settings', description: 'Show and change application settings', descriptionTranslationKey: 'Show and change application settings' },
@@ -274,10 +274,10 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
 
 
     this.store.select(selectAllLanguages).subscribe((res: any) => {
-      if (res && res.items) {
+      if (res && res.languages &&  res.languages.items && res.languages.items.length > 0 && res.status == "success") {
         this.languageItems = [];
         const languages: any = [];
-        res.items.forEach((item: any) => {
+        res.languages.items.forEach((item: any) => {
           let icon: string = item.icon.split(' ')[1];
           icon = icon.replace('-', '_')
           this.languageItems.push({ value: item.displayName, name: item.name, some: item.displayName, id: item.id, icon: icon, iconWidth: '21px', iconHeight: '14px' });
@@ -287,7 +287,7 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
           }
           languages.push(item.name);
         });
-        if (res.defaultLanguageName) {
+        if (res.languages.defaultLanguageName) {
           this.store.dispatch(setDefaultLanguageForUI(res.defaultLanguageName))
           this.translate.use(res.defaultLanguageName);
         }
