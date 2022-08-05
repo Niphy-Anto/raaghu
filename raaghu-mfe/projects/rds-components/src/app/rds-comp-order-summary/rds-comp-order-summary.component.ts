@@ -28,7 +28,6 @@ export class RdsCompOrderSummaryComponent implements OnInit {
   @Input() Shippingestimate: number= 0;
   @Input() Taxestimate: number = 0;
 
-  @Input() isCheckout = true;
   checkout() {
     this.onItemClick.emit(this.Subtotal + this.Shippingestimate + this.Taxestimate);
   }

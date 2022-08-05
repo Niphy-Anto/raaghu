@@ -156,10 +156,16 @@ export class AppComponent {
           }
           const editionTemplate = `<div class="d-flex align-items-center"><div class="edition ${element.editionDisplayName}"></div><div class="">${element.editionDisplayName}</div></div>`;
           const tenantInfoTemplate = `<div class=""><div><div><span>${element.name}</span></div><span class="text-muted">${element.tenancyName} </span></div></div>`;
-           const item: any = {
+          let subscriptionDate = '';
+          if (element.subscriptionEndDateUtc) {
+            subscriptionDate = this.datepipe.transform(new Date(element.subscriptionEndDateUtc), 'MM/dd/yyyy, h:mm:ss a');
+          } else {
+            subscriptionDate = '';
+          }
+          const item: any = {
             tenantInfoTemplate: tenantInfoTemplate,
             statusTemplate: statusTemplate,
-            subscriptionEndDateUtc: this.datepipe.transform(new Date(element.subscriptionEndDateUtc), 'dd/mm/yyyy'),
+            subscriptionEndDateUtc: subscriptionDate,
             editionDisplayName: element.editionDisplayName,
             editionTemplate: editionTemplate,
             id: element.id,
