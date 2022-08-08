@@ -129,6 +129,7 @@ import { RdsCompCardDetailListComponent } from './rds-comp-card-detail-list/rds-
 import { RdsCompBenefitComponent } from './rds-comp-benefit/rds-comp-benefit.component';
 import { RdsCompAppDetailsComponent } from './rds-comp-app-details/rds-comp-app-details.component';
 import { RdsSizeModule } from 'projects/libs/rds-elements/src/rds-size/src/public-api';
+import { RdsCompReviewCategoryComponent } from './rds-comp-review-category/rds-comp-review-category.component';
 
 @NgModule({
   declarations: [
@@ -243,7 +244,8 @@ import { RdsSizeModule } from 'projects/libs/rds-elements/src/rds-size/src/publi
     RdsCompProductListComponent,
     RdsCompAppDetailsComponent,
     RdsCompCalendarComponent,
-    RdsCompProductOverviewComponent
+    RdsCompProductOverviewComponent,
+    RdsCompReviewCategoryComponent
     //RdsCompLanguageTextListComponent,
   ],
   imports: [
