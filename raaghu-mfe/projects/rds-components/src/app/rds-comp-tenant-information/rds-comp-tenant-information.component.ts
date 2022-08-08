@@ -14,9 +14,9 @@ export class RdsCompTenantInformationComponent implements OnInit, OnChanges {
   @Output() onCancel = new EventEmitter<any>();
   @Input() tenantData: any;
   @ViewChild('tenantCreationForm') tenantInfoForm: NgForm;
-  @Input() showEmail: boolean= true;
-  @Input() editShimmer:boolean=false;
-  constructor(public translate:TranslateService){}
+  @Input() showEmail: boolean = true;
+  @Input() editShimmer: boolean = false;
+  constructor(public translate: TranslateService) { }
 
   ngOnInit(): void {
     if (!this.tenantData) {
@@ -27,18 +27,18 @@ export class RdsCompTenantInformationComponent implements OnInit, OnChanges {
       this.tenantData['edition'] = '';
       this.tenantData['unlimitedSubscription'] = true;
       this.tenantData['imageUrl'] = '../assets/edit-pic.png';
-      this.tenantData['subscriptionEndDate'] = new Date();
+      this.tenantData['subscriptionEndDate'] = null;
     }
     setTimeout(() => {
-    if (this.tenantData && this.tenantInfoForm) {
-      this.tenantInfoForm.statusChanges.subscribe(res => {
-        if (res === 'VALID') {
-          this.tenantInfo.emit({ tenant: this.tenantData, next: false });
-        } else {
-          this.tenantInfo.emit({ tenant: undefined, next: false });
-        }
-      });
-    }
+      if (this.tenantData && this.tenantInfoForm) {
+        this.tenantInfoForm.statusChanges.subscribe(res => {
+          if (res === 'VALID') {
+            this.tenantInfo.emit({ tenant: this.tenantData, next: false });
+          } else {
+            this.tenantInfo.emit({ tenant: undefined, next: false });
+          }
+        });
+      }
 
     }, 100);
 
@@ -53,7 +53,7 @@ export class RdsCompTenantInformationComponent implements OnInit, OnChanges {
       this.tenantData['edition'] = '';
       this.tenantData['unlimitedSubscription'] = true;
       this.tenantData['imageUrl'] = '../assets/edit-pic.png';
-      this.tenantData['subscriptionEndDate'] = new Date();
+      this.tenantData['subscriptionEndDate'] = null;
     }
 
   }
@@ -66,6 +66,9 @@ export class RdsCompTenantInformationComponent implements OnInit, OnChanges {
   }
   getCheckboxValue(event: any): void {
     this.tenantData.unlimitedSubscription = event;
+    if (event) {
+      this.tenantData.subscriptionEndDate = null;
+    }
   }
 
   onEditionSelect(event: any): void {
@@ -78,6 +81,11 @@ export class RdsCompTenantInformationComponent implements OnInit, OnChanges {
       this.tenantData.imageUrl = event.target.result;
     }
     reader.readAsDataURL(FileImage);
+  }
+
+  onDateChange(event) {
+    this.tenantData.subscriptionEndDate = event;
+    console.log(event);
   }
 }
 

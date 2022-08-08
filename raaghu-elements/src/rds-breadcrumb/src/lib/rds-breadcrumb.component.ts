@@ -17,8 +17,7 @@ export class RdsBreadcrumbComponent implements OnInit {
   customBreadcrumbsItems: BreadcrumbsItems[] = [{ name: 'Home', route: '/home', iconClass: 'dashboard', iconWidth: '15px', iconHeight: '15px', disabled: true },
   { name: 'About', route: '/About', iconClass: 'dashboard', iconWidth: '15px', iconHeight: '15px', disabled: false },
   { name: 'Contact US', route: '/Contact', iconClass: 'dashboard', iconWidth: '15px', iconHeight: '15px', disabled: true },
-  { name: 'Services', route: '/Services', iconClass: 'dashboard', iconWidth: '15px', iconHeight: '15px', disabled: true },
-  { name: 'Contact US', route: '/Contact', iconClass: 'dashboard', iconWidth: '15px', iconHeight: '15px', disabled: true }];
+  ];
 
 
   @Input() role: 'basic' | 'Advanced' | 'withDivider' = 'basic';
