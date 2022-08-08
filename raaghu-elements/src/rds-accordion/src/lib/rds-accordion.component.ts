@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { RdsAccordionService } from './rds-accordion.service';
 
 @Component({
   selector: 'rds-accordian',
@@ -29,15 +30,27 @@ export class RdsAccordionComponent implements OnInit {
   title: any;
   @Input() alwaysOpen!: boolean;
   @Input() expanded!: boolean;
-
-  constructor() { }
+  @Input() border: boolean=false;
+  @Output() accordianClass = new EventEmitter<any>();
+  @Output() accordionIcon = new EventEmitter<any>();
+  constructor(private rdsaccordionService:RdsAccordionService) { }
 
   ngOnInit(): void {
   }
   public get classes(): string {
     const mode = this.flush ? 'accordion accordion-flush' : 'accordion';
+ 
     const outline = this.outline ? ' accordion outline' : ' accordion';
-    return mode + outline;
+    if(!this.flush && !this.outline && this.border)
+{
+  //const borderTop = this.border ? ' border-top border-bottom' : 'accordion';
+  this.rdsaccordionService.sendItems(true)
+  return 'accordion accordion-flush' ; 
+ 
+}else{
+  this.rdsaccordionService.sendItems(false)
+  return mode + outline ; 
+} 
   }
 
 }
