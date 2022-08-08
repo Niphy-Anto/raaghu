@@ -127,7 +127,6 @@ import { RdsCompBenefitComponent } from './rds-comp-benefit/rds-comp-benefit.com
 import { RdsCompAppDetailsComponent } from './rds-comp-app-details/rds-comp-app-details.component';
 import { RdsCompProductOverviewComponent } from './rds-comp-product-overview/rds-comp-product-overview.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { RdsSizeModule } from 'projects/libs/rds-elements/src/rds-size/src/public-api';
 import { RdsCompReviewCategoryComponent } from './rds-comp-review-category/rds-comp-review-category.component';
 
 @NgModule({

@@ -2,6 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Story, Meta, moduleMetadata } from '@storybook/angular';
 import { RdsIconModule } from '@libs/rds-icon';
 import { RdsBadgeComponent } from './rds-badge.component';
+import { RdsButtonModule } from '@libs/rds-button';
+
 
 
 export default {
@@ -11,7 +13,7 @@ export default {
   component: RdsBadgeComponent,
   decorators: [
     moduleMetadata({
-      imports: [CommonModule, RdsIconModule],
+      imports: [CommonModule, RdsIconModule,RdsButtonModule],
     }),
   ],
 
