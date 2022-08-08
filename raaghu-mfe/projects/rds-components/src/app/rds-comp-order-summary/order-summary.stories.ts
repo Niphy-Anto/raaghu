@@ -10,7 +10,7 @@ export default {
   decorators: [
     moduleMetadata({
       imports: [
-        FormsModule, ReactiveFormsModule, RdsButtonModule, RdsCardModule, RdsBadgeModule, NgxTranslateModule, RdsLabelModule , RdsIconModule
+        FormsModule, ReactiveFormsModule, NgxTranslateModule, RdsLabelModule , RdsButtonModule
       ],
       providers: [
         FormBuilder
@@ -24,4 +24,5 @@ const Template: Story<RdsCompOrderSummaryComponent> = (args: RdsCompOrderSummary
 export const basic = Template.bind({});
 
 basic.args = {
+  isCheckout: true
 }

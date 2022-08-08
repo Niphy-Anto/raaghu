@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RdsLoginComponent } from './rds-comp-login/rds-comp-login.component';
@@ -42,6 +42,7 @@ import {
   RdsSpinnerModule, RdsToastsModule, RdsChartBubbleModule, RdsChartDoughnutModule, RdsChartMixedModule, RdsChartPolarAreaModule, RdsChartScatterModule, RdsChartStackedModule,
   RdsProgressbarModule, RdsBreadcrumbModule, RdsCarouselModule, RdsDoubleRangeModule, RdsScrollspyModule, RdsCounterModule, RdsFabMenuModule, RdsLabelModule, RdsIconLabelModule,
   CalendarModule, adapterFactory, DateAdapter, RdsRatingModule, RdsLikeDislikeModule, RdsColorModule, RdsFeedModule, RdsVideoPlayerModule, RdsAppDetailsModule, RdsBenefitModule,
+  RdsCardDetailModule, RdsSizeModule, RdsPriceModule, RdsFeatureListModule, RdsProductImageModule
 } from '@libs/rds-elements';
 import { RdsCompDemouiComponent } from './rds-comp-demoui/rds-comp-demoui.component';
 import { RdsCompTenantManagementComponent } from './rds-comp-tenant-management/rds-comp-tenant-management.component';
@@ -121,13 +122,11 @@ import { RdsCompNewLangShimmerComponent } from './rds-comp-new-language/rds-comp
 import { RdsCompBackgroundImageComponent } from './rds-comp-background-image/rds-comp-background-image.component';
 import { RdsCompStoreFrontComponent } from './rds-comp-store-front/rds-comp-store-front.component';
 
-import { RdsCompProductOverviewComponent } from './rds-comp-product-overview/rds-comp-product-overview.component';
-import { RdsPriceModule } from 'projects/libs/rds-elements/src/rds-price/src/public-api';
-import { RdsFeatureListModule } from 'projects/libs/rds-elements/src/rds-feature-list/src/public-api';
-import { RdsProductImageModule } from 'projects/libs/rds-elements/src/rds-product-image/src/public-api';
 import { RdsCompCardDetailListComponent } from './rds-comp-card-detail-list/rds-comp-card-detail-list.component';
 import { RdsCompBenefitComponent } from './rds-comp-benefit/rds-comp-benefit.component';
 import { RdsCompAppDetailsComponent } from './rds-comp-app-details/rds-comp-app-details.component';
+import { RdsCompProductOverviewComponent } from './rds-comp-product-overview/rds-comp-product-overview.component';
+import { BrowserModule } from '@angular/platform-browser';
 import { RdsSizeModule } from 'projects/libs/rds-elements/src/rds-size/src/public-api';
 import { RdsCompReviewCategoryComponent } from './rds-comp-review-category/rds-comp-review-category.component';
 
@@ -323,6 +322,7 @@ import { RdsCompReviewCategoryComponent } from './rds-comp-review-category/rds-c
     RdsRatingModule,
     RdsBenefitModule,
     RdsAppDetailsModule,
+    RdsCardDetailModule,
     CalendarModule.forRoot({
       provide: DateAdapter,
       useFactory: adapterFactory

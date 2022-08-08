@@ -71,7 +71,7 @@ export class RdsCompVisualSettingsComponent implements OnInit {
 
     this.navtabItems[0].label = this.translate.instant('Header Bar');
 
-    this.navtabItems[1].label = this.translate.instant('Subheader');
+    this.navtabItems[1].label = this.translate.instant('Sub header');
     this.navtabItems[2].label = this.translate.instant('Menu');
     this.navtabItems[3].label = this.translate.instant('Footer');
     return this.navtabItems;
@@ -80,7 +80,7 @@ export class RdsCompVisualSettingsComponent implements OnInit {
   onSelectnode(){
     this.navtabItems[0].label = this.translate.instant('Header Bar');
 
-    this.navtabItems[1].label = this.translate.instant('Subheader');
+    this.navtabItems[1].label = this.translate.instant('Sub header');
     this.navtabItems[2].label = this.translate.instant('Menu');
     this.navtabItems[3].label = this.translate.instant('Footer');
   }

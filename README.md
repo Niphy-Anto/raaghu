@@ -226,9 +226,9 @@ Thanks goes to these wonderful people and Wai technology.
       </a>
     </td>
     <td align="center" style="border: none">
-      <a href="https://github.com/apoorvalele">
-        <img src="https://avatars.githubusercontent.com/u/99715342?s=100v=4" width="100" title="Apoorva Lele"/>
-        <br /><sub><b>Apoorva Lele</b></sub>
+      <a href="https://github.com/rahulp34">
+        <img src="https://avatars.githubusercontent.com/u/55730676?s=100v=4" width="100" title="Rahul Patil"/>
+        <br /><sub><b>Rahul Patil</b></sub>
       </a>
     </td>
   </tr>
@@ -243,12 +243,6 @@ Thanks goes to these wonderful people and Wai technology.
       <a href="https://github.com/Niphy-Anto">
         <img src="https://avatars.githubusercontent.com/u/99808648?s=100v=4" width="100" title="Niphy Anto"/>
         <br /><sub><b>Niphy Anto</b></sub>
-      </a>
-    </td>
-    <td align="center" style="border: none">
-      <a href="https://github.com/rahulp34">
-        <img src="https://avatars.githubusercontent.com/u/55730676?s=100v=4" width="100" title="Rahul Patil"/>
-        <br /><sub><b>Rahul Patil</b></sub>
       </a>
     </td>
     <td align="center" style="border: none">
@@ -290,18 +284,6 @@ Thanks goes to these wonderful people and Wai technology.
       </a>
     </td>
     <td align="center" style="border: none">
-      <a href="https://github.com/shrikant-birajdar">
-        <img src="https://avatars.githubusercontent.com/u/99856776?s=100v=4" width="100" title="Shrikant Birajdar"/>
-        <br /><sub><b>Shrikant Birajdar</b></sub>
-      </a>
-    </td>
-    <td align="center" style="border: none">
-      <a href="https://github.com/basavraj-chorgasti">
-        <img src="https://avatars.githubusercontent.com/u/99861347?s=100v=4" width="100" title="Basavraj Chorgasti"/>
-        <br /><sub><b>Basavraj Chorgasti</b></sub>
-      </a>
-    </td>
-    <td align="center" style="border: none">
       <a href="https://github.com/rohit9096">
         <img src="https://avatars.githubusercontent.com/u/88035057?s=100v=4" width="100" title="Rohit Kulkarni"/>
         <br /><sub><b>Rohit Kulkarni</b></sub>
@@ -310,12 +292,6 @@ Thanks goes to these wonderful people and Wai technology.
   </tr>
 </table>
 
-
-<!-- [Omkar Choudhari](https://github.com/omkarchoudhari), [Alok Nakhate](https://github.com/alok-nakhate), [Rohit Pingale](https://github.com/pingroh), [Mohan Bari](https://github.com/mohanbari), [Apoorva Lele](https://github.com/apoorvalele), [Yohul Chitre](https://github.com/yohulchitre),
-[Priyanka Shinkar](https://github.com/Priyanka-Shinkar), [Suraj Khupse](https://github.com/suraj-khupse), [Pratheesh Krishnan](https://github.com/pratheesh-rishnan), [Rahul Patil](https://github.com/rahulp34),
-[Ketan khalate](https://github.com/Ketan-Khalate), [Obaid Ur Rahman](https://github.com/obaid-ur-rahman), [Anupriya Biju](https://github.com/Anupriya-Biju), [Niphy Anto](https://github.com/Niphy-Anto),
-[Neeraj Bhakre](https://github.com/neeraj-bhakre), [Basavraj Chorgasti](https://github.com/basavraj-chorgasti), [Shrikant Birajdar](https://github.com/shrikant-birajdar), [Omkar Rairikar](https://github.com/omkarrairikar),
-[Swapnil Ghormode](https://github.com/DevSwapnil22) -->
 
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->

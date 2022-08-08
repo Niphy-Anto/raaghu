@@ -98,7 +98,7 @@ export class RdsCompUserPermissionsComponent implements OnInit {
   @Input() userHeaders: TableHeader[] = [
     {
       key: 'userName',
-      displayName: 'Username',
+      displayName: 'User name',
       dataType: 'html',
       filterable: true,
       sortable: true,

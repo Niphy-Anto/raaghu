@@ -40,13 +40,12 @@ const Template: Story<RdsBreadcrumbComponent> = (args: RdsBreadcrumbComponent) =
 export const Basic = Template.bind({});
 Basic.args = {
   role: 'basic',
-  //  iconShow: false,
+    iconShow: false,
   disabled: false,
   customBreadcrumbsItems:[{ name: 'Home', route: '/home', iconClass: 'delete' , iconWidth: '15px' , iconHeight:'15px' , disabled:true }, 
    { name: 'About', route: '/About', iconClass: 'dashboard' , iconWidth: '15px' , iconHeight:'15px' , disabled:true }, 
    { name: 'Contact', route: '/Contact', iconClass: 'dashboard' , iconWidth: '15px' , iconHeight:'15px' , disabled:false },
-    { name: 'Services', route: '/Services', iconClass: 'dashboard' , iconWidth: '15px' , iconHeight:'15px' , disabled:false }, 
-    { name: 'Contact ', route: '/Contact', iconClass: 'dashboard' , iconWidth: '15px' , iconHeight:'15px' , disabled:true }]
+   ]
 }
 
 export const Advanced = Template.bind({});
@@ -57,8 +56,7 @@ Advanced.args = {
   customBreadcrumbsItems: [{ name: 'Home', route: '/home', iconClass: 'dashboard' , iconWidth: '15px' , iconHeight:'15px'  , disabled: false}, 
   { name: 'About', route: '/About', iconClass: 'dashboard' , iconWidth: '15px' , iconHeight:'15px'  , disabled: false}, 
   { name: 'Contact', route: '/Contact', iconClass: 'dashboard' , iconWidth: '15px' , iconHeight:'15px'  , disabled: true},
-   { name: 'Services', route: '/Services', iconClass: 'dashboard' , iconWidth: '15px' , iconHeight:'15px' , disabled: true }, 
-   { name: 'Contact ', route: '/Contact', iconClass: 'dashboard' , iconWidth: '15px' , iconHeight:'15px' , disabled: true}]
+   ]
 }
 
 export const withDivider = Template.bind({});
@@ -69,6 +67,5 @@ withDivider.args = {
   customBreadcrumbsItems: [{ name: 'Home', route: '/home', iconClass: 'dashboard' , iconWidth: '15px' , iconHeight:'15px' , disabled: true}, 
   { name: 'About', route: '/About', iconClass: 'dashboard' , iconWidth: '15px' , iconHeight:'15px' , disabled: true }, 
   { name: 'Contact', route: '/Contact', iconClass: 'dashboard' , iconWidth: '15px' , iconHeight:'15px' , disabled: false},
-   { name: 'Services', route: '/Services', iconClass: 'dashboard' , iconWidth: '15px' , iconHeight:'15px' , disabled: false}, 
-   { name: 'Contact ', route: '/Contact', iconClass: 'dashboard' , iconWidth: '15px' , iconHeight:'15px' ,disabled: true }]
+   ]
 }
