@@ -122,6 +122,7 @@ import { RdsCompNewLangShimmerComponent } from './rds-comp-new-language/rds-comp
 import { RdsCompCardDetailListComponent } from './rds-comp-card-detail-list/rds-comp-card-detail-list.component';
 import { RdsCompBenefitComponent } from './rds-comp-benefit/rds-comp-benefit.component';
 import { RdsCompAppDetailsComponent } from './rds-comp-app-details/rds-comp-app-details.component';
+import { RdsCompPricingTableComponent } from './rds-comp-pricing-table/rds-comp-pricing-table.component';
 
 @NgModule({
   declarations: [
@@ -232,7 +233,8 @@ import { RdsCompAppDetailsComponent } from './rds-comp-app-details/rds-comp-app-
     RdsCompCalendarComponent,
     RdsCompBenefitComponent,
     RdsCompProductListComponent,
-    RdsCompAppDetailsComponent
+    RdsCompAppDetailsComponent,
+    RdsCompPricingTableComponent
     //RdsCompLanguageTextListComponent,
   ],
   imports: [

@@ -1,0 +1,112 @@
+<div class="scroll-notification">
+  <div class="table">
+    <div class="table-body">
+      <div class="table-row">
+        <div class="table-body-cell w-40">
+          <rds-label class="mb-3" [label]="'Plans'" [bold]="true"></rds-label>
+        </div>
+        <div class="table-body-cell w-20">
+          <rds-label [label]="'Regular'" [bold]="true"></rds-label>
+        </div>
+        <div class="table-body-cell w-20">
+          <rds-label [label]="'Professional'" [bold]="true"></rds-label>
+        </div>
+        <div class="table-body-cell w-20">
+          <rds-label [label]="'Ultimate'" [bold]="true"></rds-label>
+        </div>
+      </div>
+      <div class="table-row">
+        <div class="table-body-cell space">
+          <rds-radio-button  [switch]="false"
+                            [inline]="false"
+                            [isInputGroup]="false"
+                            [itemList]="planList" (onClick)="onRadioButtonSelect($event)"></rds-radio-button>
+        </div>
+        <div class="table-body-cell" *ngFor="let item of planInfo">
+          <rds-label class="fw-bold" [label]="item.price"></rds-label>
+          <rds-label class="fw-light" [label]="item.description"></rds-label>
+          <rds-button colorVariant="info"
+                      [block]="false"
+                      size="medium"
+                      label="Buy Now"></rds-button>
+        </div>
+        <!--<div class="table-body-cell">
+          <rds-label class="fw-bold" [label]="'$300 year'"></rds-label>
+          <rds-label class="fw-light" [label]="'Video team and setup, we can create product.'"></rds-label>
+          <rds-button colorVariant="info"
+                      [block]="false"
+                      size="medium"
+                      label="Buy Now"></rds-button>
+        </div>
+        <div class="table-body-cell">
+          <rds-label class="fw-bold " [label]="'$420 year'"></rds-label>
+          <rds-label class="fw-light" [label]="'Video team and setup, we can create product.'"></rds-label>
+          <rds-button colorVariant="info"
+                      [block]="false"
+                      size="medium"
+                      label="Buy Now"></rds-button>
+        </div>-->
+      </div>
+    </div>
+  </div>
+  <rds-label class="fw-bold mt-2" [label]="'Features'"></rds-label>
+  <hr />
+  <div class="row mt-4" *ngFor="let item of itemList">
+    <div class="col-md-12">
+      <rds-label class="mb-3" [label]="item.label" [bold]="true"></rds-label>
+      <rds-table [tableBorder]="false"
+                 [tableHeader]="true"
+                 [tableHeaderItems]="item.pricingTableHeaderItems"
+                 [tableBodyItems]="item.pricingTableBodyItems"
+                 colorVariant="primary"></rds-table>
+    </div>
+  </div>
+
+  <div class="table">
+    <div class="table-body">
+      <div class="table-row">
+        <div class="table-body-cell w-40">
+        </div>
+        <div class="table-body-cell w-20">
+          <rds-button colorVariant="info"
+                      [block]="false"
+                      size="medium"
+                      label="Buy Now"></rds-button>
+        </div>
+        <div class="table-body-cell w-20">
+          <rds-button colorVariant="info"
+                      [block]="false"
+                      size="medium"
+                      label="Buy Now"></rds-button>
+        </div>
+        <div class="table-body-cell w-20">
+          <rds-button colorVariant="info"
+                      [block]="false"
+                      size="medium"
+                      label="Buy Now"></rds-button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--<div class="row">
+    <div class="col-md-3 offset-md-3">
+      <rds-button colorVariant="info"
+                  [block]="false"
+                  size="medium"
+                  label="Buy Now"></rds-button>
+    </div>
+    <div class="col-md-3">
+      <rds-button colorVariant="info"
+                  [block]="false"
+                  size="medium"
+                  label="Buy Now"></rds-button>
+    </div>
+    <div class="col-md-3">
+      <rds-button colorVariant="info"
+                  [block]="false"
+                  size="medium"
+                  label="Buy Now"></rds-button>
+    </div>
+  </div>-->
+</div>
+
