@@ -74,7 +74,7 @@ export class AppComponent implements OnInit {
             this.scope.resources = event.selectedData.resources;
             this.newScope(undefined)
           } else if (event.actionId === 'delete') {
-            const index: any = this.scopeList.findIndex((x: any) => x.id === event.selectedData.id);
+            const index: any = this.scopeList.findIndex((x: any) => x.id === event.selectedData.id);                                  
             if (index !== -1) {
               this.scopeList.splice(index, 1);
               const mfeConfig = this.rdsApiScopeMfeConfig
