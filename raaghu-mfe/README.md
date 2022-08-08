@@ -13,12 +13,12 @@
 <p align="center">
     <a href="https://raaghu.io" target="blank">View Demo</a>
     ·
-    <a href="https://github.com/Wai-Technologies/raaghu-mfe/issues/new">Report Bug</a>
+    <a href="https://github.com/Wai-Technologies/raaghu/issues/new">Report Bug</a>
 </p>
 
-# 👋 Introducing `raaghu-mfe` 
+# 👋 Introducing `raaghu` 
 
-`raaghu-mfe` is an opensource micro front end framework built on top of `raaghu-elements`, Bootstrap 5 and Storybook offering highly customizable UI components and built-in pages.
+`raaghu` is an opensource micro front end framework built on top of `raaghu-elements`, Bootstrap 5 and Storybook offering highly customizable UI components and built-in pages.
 
 Raaghu mfe can be used as a base to build complex components and UI layouts whilst maintaining a high level of reusability,flexibility with ease of maintenance.
 
@@ -69,13 +69,13 @@ You can run `raaghu-mfe` locally with a few easy steps.
 1. Clone the repository
 
 ```bash
-git clone https://github.com/Wai-Technologies/raaghu-mfe.git
+git clone https://github.com/Wai-Technologies/raaghu.git
 ```
 
 2. Change the working directory
 
 ```bash
-cd raaghu-mfe
+cd raaghu/raaghu-elements
 ```
 
 3. Install dependencies
@@ -83,22 +83,39 @@ cd raaghu-mfe
 ```bash
 npm install
 ```
-> **_NOTE:_** You can also use the option ```--legacy-peer-deps```: which ignore all peerDependencies when installing, in the style of npm old version.
 
-4. Synchronize raaghu-elements repository
+4. Change the working directory
+
+```bash
+cd raaghu/raaghu-mfe
+```
+
+5. Install dependencies
+
+```bash
+npm install
+```
+
+6. Synchronize raaghu-elements repository
 
 ```bash
 npm run sync-elements
 ```
 > **_NOTE:_** Above command will sync/copy raaghu-elements from public repository to the above local MFE project.
 
-5. Build and serve
+7. Patch Dev Server
+
+```bash
+npm run patch-dev-server
+```
+
+8. Build and serve
 
 ```bash
 npm run start
 ```
 
-6. Storybook
+9. Storybook
 
 ```bash
 # View all pages and components and elements inside the storybook

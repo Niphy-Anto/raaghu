@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RdsLoginComponent } from './rds-comp-login/rds-comp-login.component';
@@ -41,8 +41,8 @@ import {
   RdsInputGroupModule, RdsAccordionModule, RdsTagsModule, RdsAlertModule, RdsButtonGroupModule, RdsCollapseModule, RdsIllustrationModule, RdsListGroupModule, RdsPopoverModule,
   RdsSpinnerModule, RdsToastsModule, RdsChartBubbleModule, RdsChartDoughnutModule, RdsChartMixedModule, RdsChartPolarAreaModule, RdsChartScatterModule, RdsChartStackedModule,
   RdsProgressbarModule, RdsBreadcrumbModule, RdsCarouselModule, RdsDoubleRangeModule, RdsScrollspyModule, RdsCounterModule, RdsFabMenuModule, RdsLabelModule, RdsIconLabelModule,
-  CalendarModule, adapterFactory, DateAdapter, RdsRatingModule, RdsLikeDislikeModule, RdsColorModule, RdsFeedModule, RdsBenefitModule, RdsAppDetailsModule, RdsVideoPlayerModule,
-  RdsCardDetailModule
+  CalendarModule, adapterFactory, DateAdapter, RdsRatingModule, RdsLikeDislikeModule, RdsColorModule, RdsFeedModule, RdsVideoPlayerModule, RdsAppDetailsModule, RdsBenefitModule,
+  RdsCardDetailModule, RdsSizeModule, RdsPriceModule, RdsFeatureListModule, RdsProductImageModule
 } from '@libs/rds-elements';
 import { RdsCompDemouiComponent } from './rds-comp-demoui/rds-comp-demoui.component';
 import { RdsCompTenantManagementComponent } from './rds-comp-tenant-management/rds-comp-tenant-management.component';
@@ -119,9 +119,14 @@ import { RdsCompInvoiceShimmerComponent } from './rds-comp-invoice/rds-comp-invo
 import { RdsCompNewDynamicEntityShimmerComponent } from './rds-comp-new-dynamic-entity-property/rds-comp-new-dynamic-entity-shimmer/rds-comp-new-dynamic-entity-shimmer.component';
 import { RdsCompOtherSettingsShimmerComponent } from './rds-comp-other-settings/rds-comp-other-settings-shimmer/rds-comp-other-settings-shimmer.component';
 import { RdsCompNewLangShimmerComponent } from './rds-comp-new-language/rds-comp-new-lang-shimmer/rds-comp-new-lang-shimmer.component';
+import { RdsCompBackgroundImageComponent } from './rds-comp-background-image/rds-comp-background-image.component';
+import { RdsCompStoreFrontComponent } from './rds-comp-store-front/rds-comp-store-front.component';
+
 import { RdsCompCardDetailListComponent } from './rds-comp-card-detail-list/rds-comp-card-detail-list.component';
 import { RdsCompBenefitComponent } from './rds-comp-benefit/rds-comp-benefit.component';
 import { RdsCompAppDetailsComponent } from './rds-comp-app-details/rds-comp-app-details.component';
+import { RdsCompProductOverviewComponent } from './rds-comp-product-overview/rds-comp-product-overview.component';
+import { BrowserModule } from '@angular/platform-browser';
 import { RdsCompPricingTableComponent } from './rds-comp-pricing-table/rds-comp-pricing-table.component';
 
 @NgModule({
@@ -231,9 +236,13 @@ import { RdsCompPricingTableComponent } from './rds-comp-pricing-table/rds-comp-
     RdsCompOtherSettingsShimmerComponent,
     RdsCompNewLangShimmerComponent,
     RdsCompCalendarComponent,
+    RdsCompBackgroundImageComponent,
+    RdsCompStoreFrontComponent,
     RdsCompBenefitComponent,
     RdsCompProductListComponent,
     RdsCompAppDetailsComponent,
+    RdsCompCalendarComponent,
+    RdsCompProductOverviewComponent
     RdsCompPricingTableComponent
     //RdsCompLanguageTextListComponent,
   ],
@@ -318,7 +327,11 @@ import { RdsCompPricingTableComponent } from './rds-comp-pricing-table/rds-comp-
       useFactory: adapterFactory
     }),
     RdsIconLabelModule,
-    RdsVideoPlayerModule
+    RdsVideoPlayerModule,
+    RdsPriceModule,
+    RdsFeatureListModule,
+    RdsProductImageModule,
+    RdsSizeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

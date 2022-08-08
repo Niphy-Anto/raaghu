@@ -7,6 +7,10 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class RdsRatingComponent implements OnInit {
   itemList: any = [1, 2, 3, 4, 5];
+
+  @Input() WithNoOfReviews!: boolean;
+  @Input() role: 'Basic' | 'Advanced' = 'Basic';
+
   @Input() rating: number = 0;
   @Input() colorVariant!: string;
   @Input() noOfReview?: number = 123;
