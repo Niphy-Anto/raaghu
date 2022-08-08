@@ -46,7 +46,6 @@ export class RdsAccordionComponent implements OnInit {
   //const borderTop = this.border ? ' border-top border-bottom' : 'accordion';
   this.rdsaccordionService.sendItems(true)
   return 'accordion accordion-flush' ; 
- 
 }else{
   this.rdsaccordionService.sendItems(false)
   return mode + outline ; 
