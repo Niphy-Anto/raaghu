@@ -4,25 +4,29 @@
       <div class="row align-items-center">
         <div class="col-md-3 text-center cursor-pointer sm-p-0">
           <img width="100" src="../assets/edit-pic.png" (click)="selectFile.click()">
-  
+
           <input type="file" (change)="getImage($event)" accept="image/*" style="display: none" #selectFile>
-  
+
         </div>
         <div class="col-md-9 sm-p-0">
           <div class="form-group mb-3">
-            <rds-input [inputType]="'text'" [Title]="translate.instant('Tenancy Name')" [TitleType]="'Top'" [(ngModel)]="tenantData.tenancyName" name="tenancy_name" required
-                       [placeholder]="translate.instant('Tenancy Name')" [isRequired]=true #tenancyName="ngModel">
+            <rds-input [inputType]="'text'" [Title]="translate.instant('Tenancy Name')" [TitleType]="'Top'"
+              [(ngModel)]="tenantData.tenancyName" name="tenancy_name" required
+              [placeholder]="translate.instant('Tenancy Name')" [isRequired]=true #tenancyName="ngModel">
             </rds-input>
             <div class="form-control-feedback" *ngIf="tenancyName.errors && (tenancyName.dirty || tenancyName.touched)">
-              <span class="text-danger" *ngIf="tenancyName.errors.required">{{"Tenancy Name is required"|translate}}</span>
+              <span class="text-danger" *ngIf="tenancyName.errors.required">{{"Tenancy Name is
+                required"|translate}}</span>
             </div>
           </div>
           <div class="form-group mb-3">
-            <rds-input [inputType]="'text'" [Title]="translate.instant('Tenant Name')" [TitleType]="'Top'" [(ngModel)]="tenantData.tenantName" name="tenant_name" required
-                       [placeholder]="translate.instant('Tenant Name')" [isRequired]=true #tenantName="ngModel">
+            <rds-input [inputType]="'text'" [Title]="translate.instant('Tenant Name')" [TitleType]="'Top'"
+              [(ngModel)]="tenantData.tenantName" name="tenant_name" required
+              [placeholder]="translate.instant('Tenant Name')" [isRequired]=true #tenantName="ngModel">
             </rds-input>
             <div class="form-control-feedback" *ngIf="tenantName.errors && (tenantName.dirty || tenantName.touched)">
-              <span class="text-danger" *ngIf="tenantName.errors.required">{{"Tenant Name is required"|translate}}</span>
+              <span class="text-danger" *ngIf="tenantName.errors.required">{{"Tenant Name is
+                required"|translate}}</span>
             </div>
           </div>
         </div>
@@ -30,52 +34,56 @@
       <div class="row">
         <div class="col-md-6 sm-p-0" *ngIf="showEmail">
           <div class="form-group mb-3">
-            <rds-input [inputType]="'email'" [Title]="translate.instant('Admin Email')" [TitleType]="'Top'" [(ngModel)]="tenantData.adminEmailAddress" [pattern]="emailPattern"
-                       name="email" [placeholder]="translate.instant('Admin Email')" #adminEmailAddress="ngModel" [isRequired]=true required>
+            <rds-input [inputType]="'email'" [Title]="translate.instant('Admin Email')" [TitleType]="'Top'"
+              [(ngModel)]="tenantData.adminEmailAddress" [pattern]="emailPattern" name="email"
+              [placeholder]="translate.instant('Admin Email')" #adminEmailAddress="ngModel" [isRequired]=true required>
             </rds-input>
-            <div class="form-control-feedback" *ngIf="adminEmailAddress.errors && (adminEmailAddress.dirty || adminEmailAddress.touched)">
-              <span class="text-danger" *ngIf="adminEmailAddress.errors.required">{{"Admin email is required"|translate}}</span>
-              <span class="text-danger" *ngIf="adminEmailAddress.errors.pattern">{{"Please enter valid admin email"|translate}}</span>
+            <div class="form-control-feedback"
+              *ngIf="adminEmailAddress.errors && (adminEmailAddress.dirty || adminEmailAddress.touched)">
+              <span class="text-danger" *ngIf="adminEmailAddress.errors.required">{{"Admin email is
+                required"|translate}}</span>
+              <span class="text-danger" *ngIf="adminEmailAddress.errors.pattern">{{"Please enter valid admin
+                email"|translate}}</span>
             </div>
           </div>
         </div>
         <div class="col-md-6 sm-p-0">
           <div class="form-group mb-3">
-            <rds-select-list [(ngModel)]="tenantData.edition" [labelText]="translate.instant('Edition')" [value]="tenantData.edition" ngDefaultControl
-            LabelType="Top" name="edition" [itemList]="editionList">
-  
+            <rds-select-list [(ngModel)]="tenantData.edition" [labelText]="translate.instant('Edition')"
+              [value]="tenantData.edition" ngDefaultControl LabelType="Top" name="edition" [itemList]="editionList">
             </rds-select-list>
           </div>
-  
         </div>
       </div>
       <div class="row">
         <div class="col-md-12 sm-p-0">
           <div class="form-group mb-3">
             <rds-checkbox [disabled]="false" [label]="translate.instant('Unlimited Time Subscription')"
-                          [checked]="tenantData.unlimitedSubscription" [(ngModel)]="tenantData.unlimitedSubscription"
-                          name="check-box" (onChange)="getCheckboxValue($event)" [withLabel]="true" [switch]="false"
-                          [inline]="false" [id]="'unlimitedSubscription'"></rds-checkbox>
+              [checked]="tenantData.unlimitedSubscription" [(ngModel)]="tenantData.unlimitedSubscription"
+              name="check-box" (onChange)="getCheckboxValue($event)" [withLabel]="true" [switch]="false"
+              [inline]="false" [id]="'unlimitedSubscription'"></rds-checkbox>
           </div>
         </div>
       </div>
-      <div class="row">
+      <div class="row" [class.disabled]="tenantData.unlimitedSubscription">
         <div class="col-md-6 sm-p-0">
           <div class="form-group mb-3">
-            <rds-datepicker name="date-picker" [Label]="translate.instant('Subscription End Date')" [(ngModel)]="tenantData.subscriptionEndDate"
-                            [value]="tenantData.subscriptionEndDate"></rds-datepicker>
+            <rds-datepicker name="date-picker" [Label]="translate.instant('Subscription End Date')"
+              [(ngModel)]="tenantData.subscriptionEndDate" (change)="onDateChange($event)"
+              [value]="tenantData.subscriptionEndDate"></rds-datepicker>
           </div>
         </div>
       </div>
     </form>
   </div>
   <div class="footer-buttons my-2 sm-p-0">
-      <rds-button [label]="translate.instant('Cancel')"  [colorVariant]="'outline-primary'" [size]="'small'" (click)="onCancel.emit()"
-                  data-bs-dismiss="offcanvas">
-      </rds-button>
-      <rds-button [label]="translate.instant('Next')" [disabled]="!tenantCreationForm.valid" [size]="'small'" class="ms-2" [colorVariant]="'primary'"
-                  (click)="next(tenantCreationForm)">
-      </rds-button>
+    <rds-button [label]="translate.instant('Cancel')" [colorVariant]="'outline-primary'" [size]="'small'"
+      (click)="onCancel.emit()" data-bs-dismiss="offcanvas">
+    </rds-button>
+    <rds-button [label]="translate.instant('Next')"
+      [disabled]="!tenantCreationForm.valid"
+      [size]="'small'" class="ms-2" [colorVariant]="'primary'" (click)="next(tenantCreationForm)">
+    </rds-button>
   </div>
-  </div>
-  <app-rds-comp-tenant-information-shimmer *ngIf="editShimmer"></app-rds-comp-tenant-information-shimmer>
+</div>
+<app-rds-comp-tenant-information-shimmer *ngIf="editShimmer"></app-rds-comp-tenant-information-shimmer>
