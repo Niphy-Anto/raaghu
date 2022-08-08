@@ -21,9 +21,9 @@ export class RdsFabMenuComponent implements OnInit {
 
   @Input()
   size?: string;
-  @Input() menuicon!:string;
-  @Input() menuiconWidth!:string;
-  @Input() menuiconHeight!:string;
+  @Input() menuicon!: string;
+  @Input() menuiconWidth!: string;
+  @Input() menuiconHeight!: string;
   @Input()
   DropdownItems!: TemplateRef<any>;
   @Input()
@@ -42,20 +42,18 @@ export class RdsFabMenuComponent implements OnInit {
   }
 
   public get customClasses(): any[] {
-    var customClasses = [];
+    var customClasses=[''];
 
     if (this.size === 'small') {
-      var selectSize = 'btn-sm';
-      customClasses.push(selectSize);
+      customClasses.push('btn-sm');
     } else if (this.size === 'large') {
-      var selectSize = 'btn-lg';
-      customClasses.push(selectSize);
-    } else {
-      var selectSize = '';
-      customClasses.push(selectSize);
+      customClasses.push('btn-lg');
     }
-    if(`${this.colorVariant}`){
-      customClasses.push('btn-'+`${this.colorVariant}`);
+    else {
+      customClasses.push('');
+    }
+    if (`${this.colorVariant}`) {
+      customClasses.push('btn-' + `${this.colorVariant}`);
     }
     return customClasses;
   }

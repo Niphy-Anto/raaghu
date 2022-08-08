@@ -1,4 +1,4 @@
-<ul class="ps-0 pt-5 list-unstyled">
+<ul class="ps-0 pt-5 list-unstyled" *ngIf="!editShimmer">
     <div class="fw-medium mb-3">
     <rds-label [label]="translate.instant('Quick Theme Selection')"></rds-label>
 </div>
@@ -12,3 +12,4 @@
         </div>
     </li>
 </ul>
+<app-rds-comp-other-settings-shimmer *ngIf="editShimmer"></app-rds-comp-other-settings-shimmer>

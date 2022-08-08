@@ -25,6 +25,8 @@ export class AppComponent implements OnInit {
   @Input() listItems = [
     { value: 'New Language', some: 'value', key: 'new', icon: 'plus', iconWidth: '20px', iconHeight: '20px' },
   ];
+  isShimmer:boolean= false;
+  EditShimmer: boolean = false;
   languageCanvasTitle = 'New Language';
   public rdsAlertMfeConfig: ComponentLoaderOptions = {
     name: 'RdsCompAlert',
@@ -72,7 +74,8 @@ export class AppComponent implements OnInit {
         pagination: true,
         inlineEdit: false,
         actions: [{ id: 'edit', displayName: 'Edit' }, { id: 'changeText', displayName: 'Change Texts' }, { id: 'setDefaultLanguage', displayName: 'Set as default language' }, { id: 'delete', displayName: 'Delete' }],
-        noDataTitle: 'Currently you do not have language'
+        noDataTitle: 'Currently you do not have language',
+        isShimmer:true,
       },
       output: {
         onActionSelection: (event: any) => {
@@ -97,7 +100,7 @@ export class AppComponent implements OnInit {
 
     this.store.select(selectAllLanguages).subscribe((res: any) => {
       this.languageTableData = [];
-      if (res && res.items && res.items.length > 0) {
+      if (res && res.items && res.items.length > 0 && res.status == "success") {
         let defaultLanguage = res.defaultLanguageName;
         res.items.forEach((element: any) => {
           const status: any = (element.isDisabled) ? { icon: 'cross_mark', width: '24px', height: '16px' } : { icon: 'check_mark', width: '24px', height: '16px' };
@@ -118,6 +121,7 @@ export class AppComponent implements OnInit {
         });
         const mfeConfig = this.rdsLanguageTableMfeConfig
         mfeConfig.input.tableData = [... this.languageTableData];
+        mfeConfig.input.isShimmer=false;
         this.rdsLanguageTableMfeConfig = mfeConfig;
 
 
@@ -170,7 +174,7 @@ export class AppComponent implements OnInit {
     }
     this.viewCanvas = true;
     setTimeout(() => {
-      
+
     var offcanvas = document.getElementById('AddLanguage');
     var bsOffcanvas = new bootstrap.Offcanvas(offcanvas);
     bsOffcanvas.show();

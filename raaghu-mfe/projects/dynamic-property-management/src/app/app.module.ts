@@ -8,7 +8,13 @@ import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ArrayToTreeConverterService } from 'projects/libs/shared/src/lib/array-to-tree-converter.service';
 import { RdsFabMenuModule } from 'projects/libs/rds-elements/src/rds-fab-menu/src/public-api';
-
+import { EffectsModule } from '@ngrx/effects';
+import { StoreModule } from '@ngrx/store';
+import { DynamicPropertyEffects, getDynamicPropertyByEditReducer } from '@libs/state-management';
+export const featureReducersMap = {
+  editdynamicProperty: getDynamicPropertyByEditReducer,
+  
+};
 @NgModule({
   declarations: [
     AppComponent
@@ -27,7 +33,10 @@ import { RdsFabMenuModule } from 'projects/libs/rds-elements/src/rds-fab-menu/sr
     FormsModule,
     ReactiveFormsModule,
     RdsOffcanvasModule,
-    NgxTranslateModule.forRoot()
+    NgxTranslateModule.forRoot(),
+    StoreModule.forFeature('editdynamicProperty', featureReducersMap
+    ),
+    EffectsModule.forRoot([DynamicPropertyEffects]),
   ],
   providers: [ArrayToTreeConverterService],
   bootstrap: [AppComponent]
