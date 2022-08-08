@@ -42,7 +42,7 @@
         <div class="col-md-6 sm-p-0">
           <div class="form-group mb-3">
             <rds-select-list [(ngModel)]="tenantData.edition" [labelText]="translate.instant('Edition')" [value]="tenantData.edition" ngDefaultControl
-                             name="edition" [itemList]="editionList">
+            LabelType="Top" name="edition" [itemList]="editionList">
   
             </rds-select-list>
           </div>
@@ -60,7 +60,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-12 sm-p-0">
+        <div class="col-md-6 sm-p-0">
           <div class="form-group mb-3">
             <rds-datepicker name="date-picker" [Label]="translate.instant('Subscription End Date')" [(ngModel)]="tenantData.subscriptionEndDate"
                             [value]="tenantData.subscriptionEndDate"></rds-datepicker>

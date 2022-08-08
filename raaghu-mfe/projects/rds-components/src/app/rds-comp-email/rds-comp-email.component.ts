@@ -19,6 +19,7 @@ export class RdsCompEmailComponent implements OnInit {
     useDefaultCredentials: true,
 
   };
+  @Input()  editShimmer: boolean = false;
   @Output() EmailtData=new EventEmitter<any>();
   @Output() SendTestEmailData=new EventEmitter<any>();
   @ViewChild('emailForm')Emailformdata: NgForm;

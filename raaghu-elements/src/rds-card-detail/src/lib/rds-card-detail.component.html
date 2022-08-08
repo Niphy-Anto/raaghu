@@ -1,0 +1,30 @@
+<div (click)="setAsPaymentMethod(cardData)">
+    <div class="d-flex">
+        <div class="flex-grow-0 d-flex align-items-center">
+            <!-- <img [src]="cardData.cardLogo" class="rounded-circle avatar bg-light avatar-md" [ngClass]="classes"
+                onerror="this.src = ' '" /> -->
+            <rds-icon [name]="cardData.cardLogo" width="20" height="20"></rds-icon>
+
+        </div>
+        <div class="flex-grow-1 d-flex align-items-center ms-3">
+            <div>
+                <div class="d-block" style="font-size: 0.80rem;">{{cardData.cardName}} ending in {{cardData.cardNumber}}
+                </div>
+                <div class="d-block text-muted" style="font-size: 0.80rem;">Expiry {{cardData.cardExpiry}}</div>
+            </div>
+        </div>
+        <div *ngIf="IsSelectionRequired">
+            <rds-radio-button [switch]="false" [inline]="false" [isInputGroup]="false" [itemList]="cardData.radioItems"
+                (onClick)="setAsPaymentMethod(cardData)"></rds-radio-button>
+        </div>
+    </div>
+    <div *ngIf="IsEditAndDefaultFunctionalityRequired" class="d-flex mt-2" style="margin-left: 2.3rem;">
+        <a *ngIf="!cardData.isDefault" (click)="setAsDefaultCard(cardData)"
+            style="cursor: pointer;text-decoration: none;font-size: 0.80rem;" class="ms-0">Set as default</a>
+        <a *ngIf="cardData.isDefault" style="text-decoration: none;font-size: 0.80rem;"
+            class="text-muted">Default</a>
+        <a (click)="onEditCardDetails(cardData)" class="ms-3" style="text-decoration: none;font-size: 0.80rem;">
+            <strong style="cursor: pointer;">Edit</strong>
+        </a>
+    </div>
+</div>

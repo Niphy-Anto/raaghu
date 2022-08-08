@@ -14,10 +14,10 @@
         <div class="col-md-6">
           <div>
             <rds-widget [isRefreshRequired]="false" [headerTitle]="translate.instant('Sales')" cardheight = 'card-stretch-half'
-              (onRefresh)="LoadSalesData()">
+              (onRefresh)="LoadSalesData()">  
               <div body>
                 <rds-big-number-widget [bigNumber]="'$' +SalesPrice"  [subText]="'+$' +SalesProfit"
-                  [icon]="'triangle_up'" [iconHeight]="'12px'" [iconWidth]="'12px'" [iconFill]="true" [iconStroke]="true" [iconColor]="'primary'" [textAlign]="'text-start'" subTitleColorVariant="success"
+                  [icon]="'triangle_up'" [iconHeight]="'12px'" [iconWidth]="'12px'" [iconFill]="true" [iconStroke]="true" [textAlign]="'text-start'" subTitleColorVariant="success"
                 ></rds-big-number-widget>
               </div>
             </rds-widget>

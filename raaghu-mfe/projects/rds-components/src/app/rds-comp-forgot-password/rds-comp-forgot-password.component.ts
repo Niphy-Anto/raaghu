@@ -23,13 +23,14 @@ export class RdsForgotPasswordComponent extends MfeBaseComponent implements OnIn
    @Input() resendLink?:string;
    @Input() showMailSuccess = false;
    @Output() onClick = new EventEmitter<any>();
-
+   @Output() onShimmerLoad = new EventEmitter<any>();
   showMailValidityMessage = false;
   showMailRequiredMessage =false;
 
   public forgotPasswordForm:FormGroup;
 
   ngOnInit(): void {
+    this.onShimmerLoad.emit(false)
      this.forgotPasswordForm = this.formBuilder.group({
       email: ['', [Validators.required, 
             Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")]],

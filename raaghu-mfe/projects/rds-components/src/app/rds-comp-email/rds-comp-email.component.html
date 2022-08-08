@@ -1,4 +1,4 @@
-<div class="container pt-5 ps-0">
+<div class="container pt-5 ps-0" *ngIgf="!editShimmer">
   <form #emailForm="ngForm">
     <div class="row">
       <div class="col-md-6 mb-3">
@@ -77,4 +77,5 @@
     </div>
   </form>
 </div>
+<app-rds-comp-email-shimmer *ngIgf="editShimmer"></app-rds-comp-email-shimmer>
 <script src="https://smtpjs.com/v3/smtp.js"></script>

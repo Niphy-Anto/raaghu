@@ -1,0 +1,40 @@
+<div class="col-md-12">
+   <div class="table-responsive">
+      <table id="table" class="w-100 p-4">
+         <tbody>
+            <tr class="mb-5" [ngClass]="{'active': closedata === i}" *ngFor="let item of itemList; index as i ">
+               <td width="120" class=" bg-light align-content-center text-center">
+                  <img [src]="item.image" height="100px" width="100px">
+               </td>
+               <td class="ps-3">
+                  <rds-label class="fw-bold" [label]="item.prodname"></rds-label>
+                  <br>
+                  <rds-label class="text-muted" [label]="item.prdosubname"></rds-label>
+                  <br>
+                  <span class="fw-bolder">${{item.price}}</span>
+                  <div class="mt-5">
+                     <rds-icon-label [icon]="item.highlights.icon"  [label]="item.highlights.label"></rds-icon-label>
+                  </div>
+               </td>
+               <td width="120" class="vertical-top">
+                  <rds-select-list name="value" (selectListChange)="onSelectValue($event,item)"
+                     [itemList]="item.quantity" [value]="value" [placeholderText]="translate.instant('Qty')" [labelText]="">
+                  </rds-select-list>
+
+               </td>
+               <td width="120" class="vertical-top text-end">
+                  <button (click)="closeFilterPermission(item,i)" class="btn-close text-reset "></button>
+               </td>
+            </tr>
+            <!-- <tr *ngFor="let item of itemList; index as i ">
+               <td colspan="4"><hr class=""> </td>
+            </tr> -->
+         </tbody>
+
+      </table>
+
+   </div>
+
+
+</div>
+

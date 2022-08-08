@@ -33,7 +33,8 @@ export class RdsCompDynamicPropertiesComponent implements OnInit, OnChanges {
   selectedPermissions: string = '';
   DynamicProperyInfo: any = undefined;
   activePage: number = 0;
-
+@Input() isShimmer: boolean = false;
+@Input() editShimmer: boolean = false;
   public viewCanvas: boolean = false;
   canvasTitle: string = this.translate.instant('NEW DYNAMIC PROPERTY');
   id: number | undefined = undefined;
@@ -108,6 +109,7 @@ export class RdsCompDynamicPropertiesComponent implements OnInit, OnChanges {
         };
         this.createOrUpdateDynamic.emit(DynamicPropery);
         this.resetFormSubject.next(true);
+        this.editShimmer = true;
       } else {
         const DynamicPropery: any = {
           displayName: this.DynamicProperyData.displayName,
