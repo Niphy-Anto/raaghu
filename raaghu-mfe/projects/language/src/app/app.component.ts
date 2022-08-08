@@ -96,13 +96,13 @@ export class AppComponent implements OnInit {
         },
       }
     };
-    // this.store.dispatch(getLanguages());
+   this.store.dispatch(getLanguages());
 
     this.store.select(selectAllLanguages).subscribe((res: any) => {
       this.languageTableData = [];
-      if (res && res.items && res.items.length > 0 && res.status == "success") {
-        let defaultLanguage = res.defaultLanguageName;
-        res.items.forEach((element: any) => {
+      if (res && res.languages &&  res.languages.items && res.languages.items.length > 0 && res.status == "success") {
+        let defaultLanguage = res.languages.defaultLanguageName;
+        res.languages.items.forEach((element: any) => {
           const status: any = (element.isDisabled) ? { icon: 'cross_mark', width: '24px', height: '16px' } : { icon: 'check_mark', width: '24px', height: '16px' };
           // const statusTemplate = `<div class="fs-3"><i class="bi ${status}"></i></div>`;
           const languageName: string = (element.displayName);

@@ -5,6 +5,8 @@ name: Build and deploy stageui.raaghu.io
 
 on:
   push:
+    branches:
+      - "development"
   schedule:
     - cron: '0 0 * * *'
   workflow_dispatch:
