@@ -1,0 +1,35 @@
+<div class="contact-information">
+    <p class="heading">
+        Contact information
+    </p>
+    <div class="my-1">
+        <div class="label mb-1">
+            *Email address
+        </div>
+        <rds-input size="'default'" name="emailAddress" id="txtUsername" #emailAddress="ngModel" [pattern]="emailPattern"
+            ngDefaultControl [(ngModel)]="EmailID" required>
+        </rds-input>
+    </div>
+    <div class="my-3">
+        <div class="label mb-1">
+            *Contact number
+        </div>
+        <rds-input size="'default'" name="emailAddress" id="txtUsername" #emailAddress="ngModel" [pattern]="emailPattern"
+            ngDefaultControl [(ngModel)]="EmailID" required>
+        </rds-input>
+    </div>
+    <div class="my-4 pt-1 d-flex">
+        <div class="mr-3">
+            <rds-checkbox [checked]="false" [disabled]="false" [switch]="false"
+                [inline]="false" [isInputGroup]="false" [id]="'checkboxDefault'"></rds-checkbox>
+        </div>
+        <div class="description w-75">
+            I have read the terms and conditions and agree to the sale of my personal information to the highest bidder.
+        </div>
+    </div>
+    <div class="my-4 pt-4">
+        <rds-button [block]="true" [size]="'medium'" [colorVariant]="'primary'"
+            [label]="translate.instant('Continue')" (click)="continue()">
+        </rds-button>
+    </div>
+</div>
