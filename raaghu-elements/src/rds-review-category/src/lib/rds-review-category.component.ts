@@ -8,11 +8,15 @@ import { Component, Input, OnInit } from '@angular/core';
 
 export class RdsReviewCategoryComponent implements OnInit {
   @Input()
-  item: any ;
-  
+  item: any;
+
   @Input() display_type?: string = 'Basic';
 
   ngOnInit(): void {
   }
   today: number = Date.now();
+
+  onClick(event) {
+
+  }
 }

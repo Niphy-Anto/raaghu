@@ -26,7 +26,7 @@
 
           <div class="table-body-cell" *ngFor="let item of selectedPlanInfo.planInfo">
             <div *ngFor="let plan of item|keyvalue">
-              <rds-label class="position-relative labelSpace" [ngClass]="plan.key==='price'?'fw-bold':'fw-light'" [label]="plan.value"></rds-label>
+              <rds-label class="position-relative labelSpace" [ngClass]="plan.key==='price'?'fw-bold':'fw-light'" [label]="planList['label']"></rds-label>
               <span *ngIf="plan.key==='price'" class="ms-2 position-relative labelSpace">{{selectedPlan==='Monthly Plan'?'month':'year'}}</span>
             </div>
             <rds-button class="position-relative buttonSpace" colorVariant="info"
