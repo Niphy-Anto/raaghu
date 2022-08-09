@@ -127,6 +127,8 @@ import { RdsCompBenefitComponent } from './rds-comp-benefit/rds-comp-benefit.com
 import { RdsCompAppDetailsComponent } from './rds-comp-app-details/rds-comp-app-details.component';
 import { RdsCompProductOverviewComponent } from './rds-comp-product-overview/rds-comp-product-overview.component';
 import { BrowserModule } from '@angular/platform-browser';
+import { RdsCompOrderDetailsComponent } from './rds-comp-order-details/rds-comp-order-details.component';
+import { RdsAddressDetailModule } from 'projects/libs/rds-elements/src/rds-address-detail/src/public-api';
 
 @NgModule({
   declarations: [
@@ -241,7 +243,8 @@ import { BrowserModule } from '@angular/platform-browser';
     RdsCompProductListComponent,
     RdsCompAppDetailsComponent,
     RdsCompCalendarComponent,
-    RdsCompProductOverviewComponent
+    RdsCompProductOverviewComponent,
+    RdsCompOrderDetailsComponent
     //RdsCompLanguageTextListComponent,
   ],
   imports: [
@@ -330,6 +333,7 @@ import { BrowserModule } from '@angular/platform-browser';
     RdsFeatureListModule,
     RdsProductImageModule,
     RdsSizeModule,
+    RdsAddressDetailModule
   ],
   providers: [],
   bootstrap: [AppComponent],
