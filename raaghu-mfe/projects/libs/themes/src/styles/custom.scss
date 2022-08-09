@@ -555,6 +555,10 @@ html {
   height: 100px;
   padding: 2%;
 }
+
+.bg-gradient-primary svg{
+  background-color: transparent !important;
+}
   /* Sidenav */
 
   div.btn-container {
@@ -929,5 +933,3 @@ custom scrollbar
     ::-webkit-scrollbar-thumb:hover {
       background: linear-gradient(45deg, #500DD1, #0796E3); 
     }                                 
-
-  

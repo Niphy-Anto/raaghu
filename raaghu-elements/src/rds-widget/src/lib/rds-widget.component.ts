@@ -23,7 +23,7 @@ export class RdsWidgetComponent implements OnInit {
     const bgColor = 'bg-' + `${this.colorVariant}`;
     classes.push(bgColor);
     if (`${this.colorVariant}` !== 'light' && `${this.colorVariant}` !== 'warning' && `${this.colorVariant}` !== 'info' && `${this.colorVariant}` !== 'white' && `${this.colorVariant}` !== '') {
-      classes.push('text-white');
+      classes.push('text-white bg-gradient-primary');
     }
     //var heightclass=`${this.cardheight}`;
     //classes.push(heightclass);

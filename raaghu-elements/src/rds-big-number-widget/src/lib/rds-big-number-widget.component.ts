@@ -29,7 +29,7 @@ export class RdsBigNumberWidgetComponent implements OnInit {
     const bgColor = 'bg-' + `${this.colorVariant}`;
     customClasses.push(bgColor);
     if (`${this.colorVariant}` !== 'light' && `${this.colorVariant}` !== 'warning' && `${this.colorVariant}` !== 'info' && `${this.colorVariant}` !== 'white' && `${this.colorVariant}` !== '') {
-      customClasses.push('text-white');
+      customClasses.push('text-white bg-gradient-primary');
     }
     return customClasses
   }
