@@ -22,7 +22,7 @@
       </div>
       <div class="col-md-6">
         <div class=" form-group mb-3 mt-2">
-          <rds-select-list [customIcon]="'chevron-down'" [LabelType]="'Top'" [(ngModel)]="dynamicPropertiesData.inputType"
+          <rds-select-list [customIcon]="'chevron-down'" [placeholderText]="'SINGLE_LINE_STRING'" [LabelType]="'Top'" [(ngModel)]="dynamicPropertiesData.inputType"
             [labelText]="translate.instant('Input Type')" [value]="dynamicPropertiesData.inputType" ngDefaultControl name="InputNameData" 
             required [itemList]="inputTypeList">
             
