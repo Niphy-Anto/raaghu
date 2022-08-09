@@ -1,0 +1,49 @@
+<div class="row bg-white">
+  <div class="col-6">
+    <img src="../assets/Mask Group 29@2x.png" width="100%" alt="">
+  </div>
+  <div class="col-6 px-5 d-flex align-items-center">
+    <div>
+      <div class="mb-4">
+        <rds-label [multiline]="true" [label]="'Payment successful'"></rds-label>
+        <h1 style="font-weight: 900;">
+          <rds-label [label]="'Thank for ordering'"></rds-label>
+        </h1>
+        <rds-label [multiline]="true"
+          [label]="'We appreciate your order, we\'re currently processing it. So hang tight and we\'ll send you confirmation very soon!'">
+        </rds-label>
+      </div>
+      <rds-label [label]="'Tracking number'"></rds-label>
+      <div class="text-primary border-bottom">
+        <rds-label [multiline]="true" [label]="'65589964322133467999'"></rds-label>
+      </div>
+      <mfe-loader [config]="rdsCompShoppingCartProduct"></mfe-loader>
+      <div class="pt-2">
+        <mfe-loader [config]="rdsCompOrderSummary"></mfe-loader>
+      </div>
+      <div class="row border-bottom pb-4 mb-4">
+        <div class="col-4 my-3">
+          <lib-rds-address-detail [header]="'Shipping Address'" [addressLine1]="'Brookland House,'"
+            [addressLine2]="'5439, Rose Mills Road,'" [addressLine3]="'Santa Clara, CA 95054'">
+          </lib-rds-address-detail>
+        </div>
+        <div class="col-4 offset-2 my-3">
+          <rds-card-detail [cardData]="cardData" [IsEditAndDefaultFunctionalityRequired]="false"
+            [IsSelectionRequired]="false">
+          </rds-card-detail>
+        </div>
+        <div class="col-4">
+          <lib-rds-address-detail [header]="'Billing Address'" [addressLine1]="'Brookland House,'"
+            [addressLine2]="'5439, Rose Mills Road,'" [addressLine3]="'Santa Clara, CA 95054'">
+          </lib-rds-address-detail>
+        </div>
+      </div>
+      <div class="text-end text-primary">
+        <a style="text-decoration: none;" class="text-primary pt-2">
+          Continue Shopping <rds-icon [name]="'dashboard'" [fill]="false" [stroke]="true" [height]="'12'" [width]="'22'">
+          </rds-icon>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

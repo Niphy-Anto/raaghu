@@ -9,7 +9,7 @@ import { RdsIconModule } from '@libs/rds-icon';
   ],
   imports: [
     CommonModule,
-    RdsIconModule
+    RdsIconModule,
   ],
   exports: [
     RdsBadgeComponent
