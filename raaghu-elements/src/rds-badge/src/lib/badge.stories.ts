@@ -4,8 +4,6 @@ import { RdsIconModule } from '@libs/rds-icon';
 import { RdsBadgeComponent } from './rds-badge.component';
 import { RdsButtonModule } from '@libs/rds-button';
 
-
-
 export default {
 
   title: 'Elements/Badge',

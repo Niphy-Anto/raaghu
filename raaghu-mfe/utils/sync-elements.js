@@ -153,6 +153,16 @@ function mergeTSConfigJson() {
         };
         changesDone = true;
     };
+    if (ngElementsFile.compilerOptions.paths["@libs/rds-button"] == undefined) {
+        ngElementsFile.compilerOptions.paths = {
+            ...ngElementsFile.compilerOptions.paths,
+            "@libs/rds-button": [
+                "rds-elements/rds-button/public-api",
+                "rds-elements/rds-button"
+            ]
+        };
+        changesDone = true;
+    };
     if (changesDone) {
         console.log('Updating tsconfig.json file...');
         fse.writeFileSync(path.join(currentDir, 'tsconfig.json'), JSON.stringify(ngElementsFile, null, 2));
