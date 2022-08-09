@@ -91,8 +91,12 @@ module.exports = {
 
         './RdsCompCalendar': './projects/rds-components/src/app/rds-comp-calendar/rds-comp-calendar.component.ts',
         './RdsCompOrderSummary': './projects/rds-components/src/app/rds-comp-order-summary/rds-comp-order-summary.component.ts',
-        './RdsCompShoppingCartProduct': './projects/rds-components/src/app/rds-comp-shopping-cart-product/rds-comp-shopping-cart-product.component.ts'
-      },
+        './RdsCompShoppingCartProduct': './projects/rds-components/src/app/rds-comp-shopping-cart-product/rds-comp-shopping-cart-product.component.ts',
+        './RdsCompBenefit': './projects/rds-components/src/app/rds-comp-benefit/rds-comp-benefit.component.ts',
+        './RdsCompProductList': './projects/rds-components/src/app/rds-comp-product-list/rds-comp-product-list.component.ts',
+        './RdsCompProductOverview': './projects/rds-components/src/app/rds-comp-product-overview/rds-comp-product-overview.component.ts',
+        
+      }, 
 
       shared: share({
         "@angular/core": { singleton: true, strictVersion: true, requiredVersion: 'auto' },

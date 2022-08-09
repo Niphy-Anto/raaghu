@@ -13,6 +13,7 @@ const filesToReplace = [
 const dependentElements = [
     'rds-icon',
     'rds-badge',
+    'rds-button',
     'rds-avatar',
     'rds-like-dislike',
     'rds-rating',
@@ -61,7 +62,16 @@ function mergeTSConfigJson() {
         };
         changesDone = true;
     };
-
+    if (ngElementsFile.compilerOptions.paths["@libs/rds-button"] == undefined) {
+        ngElementsFile.compilerOptions.paths = {
+            ...ngElementsFile.compilerOptions.paths,
+            "@libs/rds-button": [
+                "rds-elements/rds-button/public-api",
+                "rds-elements/rds-button"
+            ]
+        };
+        changesDone = true;
+    };
     if (ngElementsFile.compilerOptions.paths["@libs/rds-avatar"] == undefined) {
         ngElementsFile.compilerOptions.paths = {
             ...ngElementsFile.compilerOptions.paths,
