@@ -223,7 +223,6 @@ import { RdsCompReviewCategoryComponent } from './rds-comp-review-category/rds-c
     RdsCompFeedsComponent,
     RdsCompMarketingWebsiteNewsletterComponent,
     RdsCompFaqComponent,
-    RdsCompCalendarComponent,
     RdsCompFeedsComponent,
     RdsCompOrderSummaryComponent,
     RdsCompShoppingCartProductComponent,
