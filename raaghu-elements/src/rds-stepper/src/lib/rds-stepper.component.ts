@@ -1,6 +1,5 @@
 import { AfterViewInit, Component, EventEmitter, Inject, Input, OnInit, Output } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
-import { first } from 'rxjs';
 
 @Component({
   selector: 'rds-stepper',
