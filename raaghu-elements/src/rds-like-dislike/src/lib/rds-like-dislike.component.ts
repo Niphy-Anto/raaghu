@@ -16,7 +16,7 @@ export class likeArray {
 export class RdsLikeDislikeComponent implements OnInit {
   @Input() likeCount: number = 0;
   @Input() dislikeCount: number = 0;
-  @Input() likeArray: any[] = [];
+   likeArray: any[] = [];
   @Input() min = 0;
   @Output() onClick = new EventEmitter<any>();
   @Input() label?: string;

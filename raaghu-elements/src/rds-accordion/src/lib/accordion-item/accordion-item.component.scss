@@ -1,0 +1,7 @@
+.accordion-button.cartIcon::after{
+    background-image: url("https://img.icons8.com/android/24/000000/minus.png");
+}
+.accordion-button.cartIcon.collapsed::after{
+background-image: url("https://img.icons8.com/android/24/000000/plus.png");
+   transform: none;
+}

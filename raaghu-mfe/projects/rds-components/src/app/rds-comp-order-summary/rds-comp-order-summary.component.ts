@@ -8,28 +8,26 @@ export interface OrderSummaryItems {
   price: number;
   // iconhide: boolean;
 }
-
 @Component({
   selector: 'rds-comp-order-summary',
   templateUrl: './rds-comp-order-summary.component.html',
   styleUrls: ['./rds-comp-order-summary.component.scss']
 })
+
 export class RdsCompOrderSummaryComponent implements OnInit {
 
-  @Input() showCheckout: boolean;
+  @Input() isCheckout = true;
   @Output()
   onItemClick = new EventEmitter<any>();
   constructor(public translate: TranslateService) { }
 
-
   ngOnInit(): void {
   }
 
-  @Input() Subtotal: number = 0
-  @Input() Shippingestimate: number= 0
-  @Input() Taxestimate: number = 0
+  @Input() Subtotal: number = 0;
+  @Input() Shippingestimate: number= 0;
+  @Input() Taxestimate: number = 0;
 
-  @Input() isCheckout = true;
   checkout() {
     this.onItemClick.emit(this.Subtotal + this.Shippingestimate + this.Taxestimate);
   }

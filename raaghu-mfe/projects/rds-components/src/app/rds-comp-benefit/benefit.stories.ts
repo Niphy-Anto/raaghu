@@ -3,7 +3,7 @@ import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { RdsBenefitModule, RdsIconModule, RdsLabelModule } from '@libs/rds-elements';
 import { RdsCompBenefitComponent } from './rds-comp-benefit.component';
 import { CommonModule } from '@angular/common';
-
+ 
 export default {
     title: 'Components/Benefit',
     component: RdsCompBenefitComponent,

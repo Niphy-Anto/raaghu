@@ -4,7 +4,6 @@ import { RdsIconModule } from '@libs/rds-icon';
 import { RdsBadgeComponent } from './rds-badge.component';
 import { RdsButtonModule } from '@libs/rds-button';
 
-// import { RdsButtonModule } from 'src/public-api';
 
 export default {
 
