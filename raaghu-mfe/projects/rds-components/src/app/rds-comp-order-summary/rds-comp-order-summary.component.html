@@ -7,29 +7,29 @@
                         <td class="p-2"> <b> Order summary</b> </td>
                     </tr>
                 </thead>
-                <tbody >
+                <tbody>
                     <tr class="border-bottom">
                         <td class="p-2">{{translate.instant('subtotal')}}
                         </td>
                         <td class="p-2 text-end">${{Subtotal | number : '1.2-2'}}</td>
-                       
+
                     </tr>
                     <tr class="border-bottom">
                         <td class="p-2">{{translate.instant('Shipping estimate')}}
                         </td>
                         <td class="p-2 text-end">${{Shippingestimate | number : '1.2-2'}}</td>
-                        
+
                     </tr>
                     <tr class="border-bottom">
                         <td class="p-2">{{translate.instant('Tax estimate')}}
                         </td>
                         <td class="p-2 text-end">${{Taxestimate | number : '1.2-2'}}</td>
-                        
+
                     </tr>
-                    <tr >
+                    <tr>
                         <td class="p-2">
                             <b>
-                                <rds-label [label]="'Order Total'" ></rds-label>
+                                <rds-label [label]="'Order Total'"></rds-label>
                             </b>
                         </td>
                         <td class="p-2 text-end">
@@ -38,13 +38,12 @@
                     </tr>
                 </tbody>
             </table>
-
+        </div>
     </div>
 
-    </div>
-    <div class="checkoutbtn"*ngIf="isCheckout">
-        <rds-button   [label]="translate.instant('Checkout')" [size]="'small'" [block]="true" class="ms-2 btnwidth"
-            [colorVariant]="'primary'" (click)="checkout()">
-        </rds-button>
-    </div>
+</div>
+<div class="checkoutbtn" *ngIf="isCheckout">
+    <rds-button [label]="translate.instant('Checkout')" [size]="'small'" [block]="true" class="ms-2 btnwidth"
+        [colorVariant]="'primary'" (click)="checkout()">
+    </rds-button>
 </div>
