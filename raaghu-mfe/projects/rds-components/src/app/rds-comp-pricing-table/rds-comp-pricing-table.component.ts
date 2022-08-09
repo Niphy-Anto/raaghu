@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 
 
 @Component({
@@ -8,15 +8,15 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 
 
-export class RdsCompPricingTableComponent implements OnInit {
+export class RdsCompPricingTableComponent implements OnInit, OnChanges {
 
   /* @Input() pricingTableHeaderItems?: any;*/
   @Input() public pricingTableHeaderItems: any = [];
   @Input() public pricingTableBodyItems: any = [];
   @Input() public itemList: any = [];
-  selectedPlan: string = 'Monthly Plan';
+  @Input() selectedPlan: string = 'Monthly Plan';
   selectedPlanInfo: any;
-  planList: [
+  @Input() planList: [
     {
       "id": 1,
       "label": "Monthly Plan",
@@ -45,10 +45,17 @@ export class RdsCompPricingTableComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-    this.selectedPlanInfo = this.planList.find((x: any) => x.label === this.selectedPlan);
+  ngOnChanges(changes: SimpleChanges): void {
+    if (this.planList) {
+      this.selectedPlanInfo = this.planList.find((x: any) => x.label === this.selectedPlan);
+    }
+  }
 
-    //  this.date.getTime = this.formDate.transform(this.currentdate);
+
+  ngOnInit(): void {
+    if (this.planList) {
+      this.selectedPlanInfo = this.planList.find((x: any) => x.label === this.selectedPlan);
+    }
   }
 
   onRadioButtonSelect(e: any) {

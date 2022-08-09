@@ -59,6 +59,10 @@
       "@libs/rds-radio-button": [
         "rds-elements/rds-radio-button/public-api",
         "rds-elements/rds-radio-button"
+      ],
+      "@libs/rds-button": [
+        "rds-elements/rds-button/public-api",
+        "rds-elements/rds-button"
       ]
     },
     "skipLibCheck": true,

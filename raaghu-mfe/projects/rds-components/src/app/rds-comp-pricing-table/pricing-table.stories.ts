@@ -34,6 +34,7 @@ const Template: Story<RdsCompPricingTableComponent> = (args: RdsCompPricingTable
 
 export const basic = Template.bind({});
 basic.args = {
+  selectedPlan: 'Monthly Plan',
   planList: [
     {
       "id": 1,
@@ -41,7 +42,17 @@ basic.args = {
       "name": "Radio-Button",
       "checked": true,
       "planInfo": [{
-        "price": "$240 year",
+        "price": "$240 ",
+        "description": "Video team and setup, we can create product.",
+
+      },
+      {
+        "price": "$300 ",
+        "description": "Video team and setup, we can create product.",
+
+      },
+      {
+        "price": "$420 ",
         "description": "Video team and setup, we can create product.",
 
       }]
@@ -53,8 +64,18 @@ basic.args = {
       "checked": false,
       "planInfo": [
         {
-          "price": "$300 year",
+          "price": "$300 ",
           "description": "Video team and setup, we can create product.",
+        },
+        {
+          "price": "$420 ",
+          "description": "Video team and setup, we can create product.",
+
+        },
+        {
+          "price": "$480 ",
+          "description": "Video team and setup, we can create product.",
+
         }]
     },
   ],
