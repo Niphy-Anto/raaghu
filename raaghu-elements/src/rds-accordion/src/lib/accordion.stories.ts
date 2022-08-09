@@ -77,3 +77,22 @@ alwaysOpen.args = {
   expand: false,
   alwaysOpen: true
 };
+export const ProductOverviewAccordion: Story<RdsAccordionComponent> = (args) => ({
+  props: args,
+  template: `
+  <rds-accordian  [border]= "true" [outline]= "false" [id]="id">
+  <accordion-item title="Section 1 title" [accordionId]="id" >
+  <h3>Custom </h3>
+  </accordion-item>
+  <accordion-item title="Section 2 title" [accordionId]="id" >
+  <h3>Custom </h3>
+  </accordion-item>
+</rds-accordian>`,
+});
+ProductOverviewAccordion.args = {
+  expand: false,
+  alwaysOpen: true,
+  flush: false,
+  outline: false,
+  border: true
+};

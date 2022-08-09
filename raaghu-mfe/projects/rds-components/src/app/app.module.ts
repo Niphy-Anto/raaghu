@@ -129,6 +129,7 @@ import { RdsCompProductOverviewComponent } from './rds-comp-product-overview/rds
 import { BrowserModule } from '@angular/platform-browser';
 import { RdsCompPricingTableComponent } from './rds-comp-pricing-table/rds-comp-pricing-table.component';
 
+
 @NgModule({
   declarations: [
 
@@ -331,7 +332,7 @@ import { RdsCompPricingTableComponent } from './rds-comp-pricing-table/rds-comp-
     RdsPriceModule,
     RdsFeatureListModule,
     RdsProductImageModule,
-    RdsSizeModule,
+    RdsSizeModule
   ],
   providers: [],
   bootstrap: [AppComponent],

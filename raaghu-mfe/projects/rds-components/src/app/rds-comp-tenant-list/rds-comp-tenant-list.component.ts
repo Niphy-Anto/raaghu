@@ -232,7 +232,7 @@ export class RdsCompTenantListComponent implements OnInit, DoCheck {
       this.isTenantInfoValid = false;
     }
     if (event) {
-      this.canvasTitle = 'New Tenant';
+      this.canvasTitle = 'NEW TENANT';
       this.tenantData = undefined;
       this.tenantSettingsInfo = undefined;
 
@@ -286,12 +286,12 @@ export class RdsCompTenantListComponent implements OnInit, DoCheck {
     };
     this.tenantData = undefined;
     this.tenantSettingsInfo = undefined;
-    const event:any={
-      newtenant:false,
-      reset:true
-    }
-    this.onReset.emit(event);
-    this.isTenantInfoValid = false;
+    // const event:any={
+    //   newtenant:false,
+    //   reset:true
+    // }
+    // this.onReset.emit(event);
+    // this.isTenantInfoValid = false;
   }
   editTableRowData(event): void {
     this.canvasTitle = 'EDIT TENANT';

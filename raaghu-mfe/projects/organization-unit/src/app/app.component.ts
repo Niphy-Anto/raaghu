@@ -295,7 +295,7 @@ export class AppComponent implements OnInit {
           const item: any = {
             id: element.id,
             userName: element.name,
-            additionTime: this.datepipe.transform(new Date(element.addedTime), 'dd/MM/yyyy, hh:mm:ss a'),
+            additionTime: this.datepipe.transform(new Date(element.addedTime), 'MM/dd/yyyy, hh:mm:ss a'),
             name:element.name.trim()
           }
           this.tableDataForMember.push(item);
@@ -316,7 +316,7 @@ export class AppComponent implements OnInit {
           const item: any = {
             id: element.id,
             roles: element.displayName,
-            additionTime: this.datepipe.transform(new Date(element.addedTime), 'dd/MM/yyyy, hh:mm:ss a'),
+            additionTime: this.datepipe.transform(new Date(element.addedTime), 'MM/dd/yyyy, hh:mm:ss a'),
             name:element.displayName.trim()
           }
           this.tableDataForRoles.push(item);
