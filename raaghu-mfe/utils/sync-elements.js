@@ -21,8 +21,7 @@ const dependentElements = [
     'rds-checkbox',
     'rds-icon-label',
     'rds-select-list',
-    'rds-radio-button',
-    'rds-button'
+    'rds-radio-button'
 ];
 
 function replaceFiles() {
@@ -63,7 +62,16 @@ function mergeTSConfigJson() {
         };
         changesDone = true;
     };
-
+    if (ngElementsFile.compilerOptions.paths["@libs/rds-button"] == undefined) {
+        ngElementsFile.compilerOptions.paths = {
+            ...ngElementsFile.compilerOptions.paths,
+            "@libs/rds-button": [
+                "rds-elements/rds-button/public-api",
+                "rds-elements/rds-button"
+            ]
+        };
+        changesDone = true;
+    };
     if (ngElementsFile.compilerOptions.paths["@libs/rds-avatar"] == undefined) {
         ngElementsFile.compilerOptions.paths = {
             ...ngElementsFile.compilerOptions.paths,
@@ -134,32 +142,12 @@ function mergeTSConfigJson() {
         };
         changesDone = true;
     };
-    if (ngElementsFile.compilerOptions.paths["@libs/rds-button"] == undefined) {
-        ngElementsFile.compilerOptions.paths = {
-            ...ngElementsFile.compilerOptions.paths,
-            "@libs/rds-button": [
-                "rds-elements/rds-button/public-api",
-                "rds-elements/rds-button"
-            ]
-        };
-        changesDone = true;
-    };
     if (ngElementsFile.compilerOptions.paths["@libs/rds-radio-button"] == undefined) {
         ngElementsFile.compilerOptions.paths = {
             ...ngElementsFile.compilerOptions.paths,
             "@libs/rds-radio-button": [
                 "rds-elements/rds-radio-button/public-api",
                 "rds-elements/rds-radio-button"
-            ]
-        };
-        changesDone = true;
-    };
-    if (ngElementsFile.compilerOptions.paths["@libs/rds-button"] == undefined) {
-        ngElementsFile.compilerOptions.paths = {
-            ...ngElementsFile.compilerOptions.paths,
-            "@libs/rds-button": [
-                "rds-elements/rds-button/public-api",
-                "rds-elements/rds-button"
             ]
         };
         changesDone = true;
