@@ -1,0 +1,43 @@
+{
+  "cookies": [
+    {
+      "sameSite": "Lax",
+      "name": "ARRAffinity",
+      "value": "65641d324b46e1be3c6a74f81dec67dc560bdc48ed46cd24312b16925d78c714",
+      "domain": ".stageui.raaghu.io",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": true
+    },
+    {
+      "sameSite": "None",
+      "name": "ARRAffinitySameSite",
+      "value": "65641d324b46e1be3c6a74f81dec67dc560bdc48ed46cd24312b16925d78c714",
+      "domain": ".stageui.raaghu.io",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": true
+    }
+  ],
+  "origins": [
+    {
+      "origin": "https://stageui.raaghu.io",
+      "localStorage": [
+        {
+          "name": "storedPermissions",
+          "value": "{\"Pages\":\"true\",\"Pages.DemoUiComponents\":\"true\",\"Pages.Administration\":\"true\",\"Pages.Administration.Roles\":\"true\",\"Pages.Administration.Roles.Create\":\"true\",\"Pages.Administration.Roles.Edit\":\"true\",\"Pages.Administration.Roles.Delete\":\"true\",\"Pages.Administration.Users\":\"true\",\"Pages.Administration.Users.Create\":\"true\",\"Pages.Administration.Users.Edit\":\"true\",\"Pages.Administration.Users.Delete\":\"true\",\"Pages.Administration.Users.ChangePermissions\":\"true\",\"Pages.Administration.Users.Impersonation\":\"true\",\"Pages.Administration.Users.Unlock\":\"true\",\"Pages.Administration.Languages\":\"true\",\"Pages.Administration.Languages.Create\":\"true\",\"Pages.Administration.Languages.Edit\":\"true\",\"Pages.Administration.Languages.Delete\":\"true\",\"Pages.Administration.Languages.ChangeTexts\":\"true\",\"Pages.Administration.Languages.ChangeDefaultLanguage\":\"true\",\"Pages.Administration.AuditLogs\":\"true\",\"Pages.Administration.OrganizationUnits\":\"true\",\"Pages.Administration.OrganizationUnits.ManageOrganizationTree\":\"true\",\"Pages.Administration.OrganizationUnits.ManageMembers\":\"true\",\"Pages.Administration.OrganizationUnits.ManageRoles\":\"true\",\"Pages.Administration.UiCustomization\":\"true\",\"Pages.Administration.WebhookSubscription\":\"true\",\"Pages.Administration.WebhookSubscription.Create\":\"true\",\"Pages.Administration.WebhookSubscription.Edit\":\"true\",\"Pages.Administration.WebhookSubscription.ChangeActivity\":\"true\",\"Pages.Administration.WebhookSubscription.Detail\":\"true\",\"Pages.Administration.Webhook.ListSendAttempts\":\"true\",\"Pages.Administration.Webhook.ResendWebhook\":\"true\",\"Pages.Administration.DynamicProperties\":\"true\",\"Pages.Administration.DynamicProperties.Create\":\"true\",\"Pages.Administration.DynamicProperties.Edit\":\"true\",\"Pages.Administration.DynamicProperties.Delete\":\"true\",\"Pages.Administration.DynamicPropertyValue\":\"true\",\"Pages.Administration.DynamicPropertyValue.Create\":\"true\",\"Pages.Administration.DynamicPropertyValue.Edit\":\"true\",\"Pages.Administration.DynamicPropertyValue.Delete\":\"true\",\"Pages.Administration.DynamicEntityProperties\":\"true\",\"Pages.Administration.DynamicEntityProperties.Create\":\"true\",\"Pages.Administration.DynamicEntityProperties.Edit\":\"true\",\"Pages.Administration.DynamicEntityProperties.Delete\":\"true\",\"Pages.Administration.DynamicEntityPropertyValue\":\"true\",\"Pages.Administration.DynamicEntityPropertyValue.Create\":\"true\",\"Pages.Administration.DynamicEntityPropertyValue.Edit\":\"true\",\"Pages.Administration.DynamicEntityPropertyValue.Delete\":\"true\",\"Pages.Administration.Host.Settings\":\"true\",\"Pages.Administration.Host.Maintenance\":\"true\",\"Pages.Administration.HangfireDashboard\":\"true\",\"Pages.Administration.Host.Dashboard\":\"true\",\"Pages.Editions\":\"true\",\"Pages.Editions.Create\":\"true\",\"Pages.Editions.Edit\":\"true\",\"Pages.Editions.Delete\":\"true\",\"Pages.Editions.MoveTenantsToAnotherEdition\":\"true\",\"Pages.Tenants\":\"true\",\"Pages.Tenants.Create\":\"true\",\"Pages.Tenants.Edit\":\"true\",\"Pages.Tenants.ChangeFeatures\":\"true\",\"Pages.Tenants.Delete\":\"true\",\"Pages.Tenants.Impersonation\":\"true\"}"
+        },
+        {
+          "name": "userNameInfo",
+          "value": "{\"username\":\"admin@aspnetzero.com\"}"
+        },
+        {
+          "name": "LoginCredential",
+          "value": "{\"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjEiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWRtaW4iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJhZG1pbkBhc3BuZXR6ZXJvLmNvbSIsIkFzcE5ldC5JZGVudGl0eS5TZWN1cml0eVN0YW1wIjoiSU1GSkw1UDJLN1BEUTJNRVhPSVlJV01BQ1oyRzdQMjIiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsInN1YiI6IjEiLCJqdGkiOiJiYmI5ZWM3NS1lNDU4LTRkNzYtYTAxMS1kNWU3NDkyMmZjOTUiLCJpYXQiOjE2NTk0NDYyNzQsInRva2VuX3ZhbGlkaXR5X2tleSI6ImUxZWFjNDQ0LWVhMzItNDBkYi1iMWViLTY5MzhjZGNmMzllNyIsInVzZXJfaWRlbnRpZmllciI6IjEiLCJ0b2tlbl90eXBlIjoiMCIsInJlZnJlc2hfdG9rZW5fdmFsaWRpdHlfa2V5IjoiNWVhZjM3MDUtYWRkMy00ODI4LWI3ZmQtMzZiNTc0MTFlZmRhIiwibmJmIjoxNjU5NDQ2Mjc0LCJleHAiOjE2NTk1MzI2NzQsImlzcyI6IlJhYWdodURlbW8iLCJhdWQiOiJSYWFnaHVEZW1vIn0.ZqoWpMeiMmTbbXp2jq7JyDbl5_PmPc-VuFPltiNObDo\",\"refreshToken\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjEiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWRtaW4iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJhZG1pbkBhc3BuZXR6ZXJvLmNvbSIsIkFzcE5ldC5JZGVudGl0eS5TZWN1cml0eVN0YW1wIjoiSU1GSkw1UDJLN1BEUTJNRVhPSVlJV01BQ1oyRzdQMjIiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsInN1YiI6IjEiLCJqdGkiOiI2MjIwNmEzZi0yYzY1LTQ1OTQtOTUzNi03OTEzODU5MzQxNjciLCJpYXQiOjE2NTk0NDYyNzMsInRva2VuX3ZhbGlkaXR5X2tleSI6IjVlYWYzNzA1LWFkZDMtNDgyOC1iN2ZkLTM2YjU3NDExZWZkYSIsInVzZXJfaWRlbnRpZmllciI6IjEiLCJ0b2tlbl90eXBlIjoiMSIsIm5iZiI6MTY1OTQ0NjI3NCwiZXhwIjoxNjkwOTgyMjc0LCJpc3MiOiJSYWFnaHVEZW1vIiwiYXVkIjoiUmFhZ2h1RGVtbyJ9.GDntZJPv7UmeU64p-mJ0g2FAUhbNzS73vpARmqz2DVg\",\"expireDate\":1659532674802,\"refreshTokenExpireDate\":1690982274802}"
+        }
+      ]
+    }
+  ]
+}

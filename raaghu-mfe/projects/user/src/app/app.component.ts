@@ -123,7 +123,7 @@ export class AppComponent {
                     emailAddress: element.emailAddress,
                     isEmailConfirmed: element.isEmailConfirmed,
                     isActive: element.isActive,
-                    creationTime: this.datepipe.transform(new Date(element.creationTime), 'dd/MM/yyyy, hh:mm:ss a'),
+                    creationTime: this.datepipe.transform(new Date(element.creationTime), 'MM/dd/yyyy, hh:mm:ss a'),
                     id: element.id,
                   };
                   if (element && element.roles) {
@@ -317,7 +317,7 @@ export class AppComponent {
             statusTemplate: statusTemplate,
             emailAddress: element.emailAddress,
             emailConfirmTemplate: emailConfirmTemplate,
-            creationTime: this.datepipe.transform(new Date(element.creationTime), 'dd/MM/yyyy, hh:mm:ss a'),
+            creationTime: this.datepipe.transform(new Date(element.creationTime), 'MM/dd/yyyy, hh:mm:ss a'),
             id: element.id
           };
           if (element && element.roles) {

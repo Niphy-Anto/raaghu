@@ -1,0 +1,33 @@
+<ul class="d-flex" id="rds-delivery">
+    <li *ngFor="let data of sizeDataWithDescription" class="m-2 border flex-evens">
+        <div class="p-2" (click)="onclick(data)">
+            <div class="d-flex">
+                <div class="type flex-grow-1">
+                    {{data.type}}
+                </div>
+                <div class="checkbox display-none">
+                    <input type="checkbox" class="checkbox-round" checked />
+                </div>
+                
+            </div>
+            <div class="description">
+                {{data.days}}
+            </div>
+            <div class="type mt-2">
+                {{data.cost}}
+            </div>
+        </div>
+    </li>
+</ul>
+<div class="my-4 pt-4 row">
+    <div class="col-6">
+        <rds-button [block]="true" [size]="'medium'" [outlineButton]="true" [colorVariant]="'primary'"
+        [label]="translate.instant('back')" (click)="back()">
+    </rds-button>
+    </div>
+    <div class="col-6">
+        <rds-button [block]="true" [size]="'medium'" [colorVariant]="'primary'"
+        [label]="translate.instant('Continue')" (click)="continue()">
+    </rds-button>
+    </div>
+</div>

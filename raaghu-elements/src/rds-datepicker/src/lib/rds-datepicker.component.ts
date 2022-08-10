@@ -42,7 +42,7 @@ export class RdsDatepickerComponent implements OnInit, ControlValueAccessor {
   @Input() placement: 'top' | 'bottom' | 'left' | 'right' = 'bottom';
   @Output() onShow = new EventEmitter<any>();
   @Output() onHide = new EventEmitter<any>();
-
+  @Input() isRequired: boolean = false;
 
 
   selectedDate!: Date;
@@ -65,8 +65,7 @@ export class RdsDatepickerComponent implements OnInit, ControlValueAccessor {
   @Input() format: string = 'MM-dd-YYYY';
   selectedRange: any;
   @Output() change = new EventEmitter<any>();
-  @Input() TitleType: string= 'Top';
-
+  @Input() TitleType: string = 'Top';
 
   constructor() {
     this.selectedDate = new Date();
@@ -76,7 +75,7 @@ export class RdsDatepickerComponent implements OnInit, ControlValueAccessor {
     this.lastSevendate = new Date();
     this.lastFourteendate = new Date();
     this.dates = new Date();
-    if(this.datePickerType!=='basic'){
+    if (this.datePickerType !== 'basic') {
       this.maxDate = new Date();
       this.maxDate.setDate(this.maxDate.getDate() + 7);
     }
@@ -90,6 +89,7 @@ export class RdsDatepickerComponent implements OnInit, ControlValueAccessor {
   writeValue(value: any): void {
     this.value = value;
   }
+
   registerOnChange(fn: any): void {
     this.onChanged = fn; // <-- save the function
   }
@@ -171,14 +171,16 @@ export class RdsDatepickerComponent implements OnInit, ControlValueAccessor {
   onDateChane(event: any) {
     if (event) {
       this.value = event;
-      this.onTouched(); // <-- mark as touched
-      this.onChanged(this.value);
+      // this.onTouched(); // <-- mark as touched
+      // this.onChanged(this.value);
       this.change.emit(this.value);
     }
 
 
     // console.log(event.toJSON().split('T')[0]);
   }
+
+
   public get labelClass(): string[] {
     var classList = [''];
     if (this.TitleType === 'Floating') {
@@ -189,7 +191,7 @@ export class RdsDatepickerComponent implements OnInit, ControlValueAccessor {
       classList.push('d-block mt-2');
     }
     else {
-      classList.push('d-flex flex-column-reverse');
+      classList.push('d-flex');
     }
     return classList;
   }
