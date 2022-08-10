@@ -1,11 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ComponentLoaderOptions } from '@libs/shared';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+
   title = 'profile-settings';
   navtabsItems: any = [
     {
@@ -34,4 +36,21 @@ export class AppComponent {
       ariacontrols: 'integations',
     }
   ];
+  rdsPersonalInfoConfig: ComponentLoaderOptions = {
+    name: 'RdsCompPersonalInfo'
+  };
+  rdsPasswordSettingsConfig: ComponentLoaderOptions = {
+    name: 'RdsCompPasswordSettings'
+  };
+  rdsEmailSettingsConfig: ComponentLoaderOptions = {
+    name: 'RdsCompEmailSettings'
+  };
+  activePage: number = 0;
+
+  ngOnInit(): void {
+  }
+
+  getSelectedNavTab(event: any): void {
+    this.activePage = event;
+  }
 }

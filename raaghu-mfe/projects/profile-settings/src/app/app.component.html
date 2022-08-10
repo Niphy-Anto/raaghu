@@ -1,15 +1,48 @@
 <div class="row">
   <div class="col-md-12">
-    <rds-nav-tab [navtabsItems]="navtabsItems" [horizontalAlignment]="'start'" [verticalAlignment]="false"
-      [pills]="false" [tabs]="true" [fill]="false" [justified]="false"></rds-nav-tab>
+    <rds-nav-tab [navtabsItems]="navtabsItems" [horizontalAlignment]="'start'" [activepage]="activePage"
+      (onClicktab)="getSelectedNavTab($event)" [verticalAlignment]="false" [pills]="false" [tabs]="true" [fill]="false"
+      [justified]="false"></rds-nav-tab>
     <div naveContent class="row tab-content" id="nav-tabContent">
-      <div class="tab-pane fade show active" id="my-details" role="tabpanel" aria-labelledby="nav-home-tab">
+      <div class="tab-pane fade show " [ngClass]="{'show active': activePage === 0}" id="my-details" role="tabpanel"
+        aria-labelledby="nav-home-tab">
         <div class="row">
           <div class="col-lg-12 col-md-12">
-            <rds-label [label]="'Personal Info'" [bold]="true"></rds-label>
-            <div>
+            <div class="mt-5">
+              <rds-label [label]="'Personal Info'" class="fs-5" [bold]="true"></rds-label>
+            </div>
+            <div class="mb-3">
               <rds-label [label]="'Update your photo and personal details here.'"></rds-label>
             </div>
+            <mfe-loader [config]="rdsPersonalInfoConfig"></mfe-loader>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade show " [ngClass]="{'show active': activePage === 1}" id="password" role="tabpanel"
+        aria-labelledby="nav-home-tab">
+        <div class="row">
+          <div class="col-lg-12 col-md-12">
+            <div class="mt-5">
+              <rds-label [label]="'Password'" class="fs-5" [bold]="true"></rds-label>
+            </div>
+            <div class="mb-3">
+              <rds-label [label]="'Please enter your current password to change your password.'"></rds-label>
+            </div>
+            <mfe-loader [config]="rdsPasswordSettingsConfig"></mfe-loader>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade show " [ngClass]="{'show active': activePage === 2}" id="email" role="tabpanel"
+        aria-labelledby="nav-home-tab">
+        <div class="row">
+          <div class="col-lg-12 col-md-12">
+            <div class="mt-5">
+              <rds-label [label]="'Update email address'" class="fs-5" [bold]="true"></rds-label>
+            </div>
+            <div class="mb-3">
+              <rds-label [label]="'Manage and update your email.'"></rds-label>
+            </div>
+            <mfe-loader [config]="rdsEmailSettingsConfig"></mfe-loader>
           </div>
         </div>
       </div>

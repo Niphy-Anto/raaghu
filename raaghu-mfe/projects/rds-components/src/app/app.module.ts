@@ -128,6 +128,8 @@ import { RdsCompAppDetailsComponent } from './rds-comp-app-details/rds-comp-app-
 import { RdsCompProductOverviewComponent } from './rds-comp-product-overview/rds-comp-product-overview.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { RdsCompPersonalInfoComponent } from './rds-comp-personal-info/rds-comp-personal-info.component';
+import { RdsCompPasswordSettingsComponent } from './rds-comp-password-settings/rds-comp-password-settings.component';
+import { RdsCompEmailSettingsComponent } from './rds-comp-email-settings/rds-comp-email-settings.component';
 
 @NgModule({
   declarations: [
@@ -243,7 +245,9 @@ import { RdsCompPersonalInfoComponent } from './rds-comp-personal-info/rds-comp-
     RdsCompAppDetailsComponent,
     RdsCompCalendarComponent,
     RdsCompProductOverviewComponent,
-    RdsCompPersonalInfoComponent
+    RdsCompPersonalInfoComponent,
+    RdsCompPasswordSettingsComponent,
+    RdsCompEmailSettingsComponent
     //RdsCompLanguageTextListComponent,
   ],
   imports: [
