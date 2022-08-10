@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Story, Meta, moduleMetadata } from '@storybook/angular';
 import { RdsIconModule } from '@libs/rds-icon';
 import { RdsBadgeComponent } from './rds-badge.component';
-import { RdsButtonModule } from 'src/public-api';
+import { RdsButtonModule } from '@libs/rds-button';
 
 export default {
 

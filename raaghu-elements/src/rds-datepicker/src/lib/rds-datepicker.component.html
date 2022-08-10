@@ -33,17 +33,15 @@
       <ul class="dropdown-menu1">
         <li class="display-last-date cus-date"><a class="dropdown-item" href="#"><strong>{{title}}</strong></a></li>
         <div [ngSwitch]="newDate">
-          <li class="display-date" *ngSwitchCase="'currentDate'"><a><small>{{currentDate | date:'MMM d,
-                y'}}</small></a>
+          <li class="display-date" *ngSwitchCase="'currentDate'"><a><small>{{currentDate | date:'MMM d,y'}}</small></a>
           </li>
 
-          <li class="display-date" *ngSwitchCase="'yesterdayDate'"><a><small>{{yesterdayDate | date:'MMM d,
-                y'}}</small></a></li>
+          <li class="display-date" *ngSwitchCase="'yesterdayDate'"><a><small>{{yesterdayDate | date:'MMM d,y'}}</small></a></li>
 
-          <li class="display-date" *ngSwitchCase="'lastSevendate'"><a><small>{{dates | date:'MMM d, y'}} -
-                {{lastSevendate | date:'MMM d, y'}}</small></a></li>
-          <li class="display-date" *ngSwitchCase="'lastFourteendate'"><a><small>{{dates | date:'MMM d, y'}} -
-                {{lastFourteendate | date: 'MMM d, y'}}</small></a></li>
+          <li class="display-date" *ngSwitchCase="'lastSevendate'"><a><small>{{dates | date:'MMM d,y'}} -
+                {{lastSevendate | date:'MMM d,y'}}</small></a></li>
+          <li class="display-date" *ngSwitchCase="'lastFourteendate'"><a><small>{{dates | date:'MMM d,y'}} -
+                {{lastFourteendate | date: 'MMM d,y'}}</small></a></li>
 
 
           <li class="display-date" *ngSwitchCase="'custom'"><a><small>{{firstRange | date:'MMM d, y'}} - {{lastRange |

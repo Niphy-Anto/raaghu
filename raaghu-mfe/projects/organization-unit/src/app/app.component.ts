@@ -111,8 +111,8 @@ export class AppComponent implements OnInit {
       width: '100%',
       pagination: true,
       actions: [{ id: 'delete', displayName: 'Delete' }],
-      noDataTitle:'Currently you do not have user',
-      noDataSubTitle:'Click on the button above to add'
+      noDataTitle: 'Currently you do not have user',
+      noDataSubTitle: 'Click on the button above to add'
     },
     output: {
       onSelectedData: (data) => {
@@ -189,12 +189,12 @@ export class AppComponent implements OnInit {
   addedDataMember: boolean = false;
   treeData2: any;
   constructor(
-    private store: Store, 
-    private _arrayToTreeConverterService: ArrayToTreeConverterService, 
-    private _organizationUnitService: OrganizationUnitServiceProxy, 
+    private store: Store,
+    private _arrayToTreeConverterService: ArrayToTreeConverterService,
+    private _organizationUnitService: OrganizationUnitServiceProxy,
     public datepipe: DatePipe,
     public translate: TranslateService
-    ) {
+  ) {
   }
   ngOnInit(): void {
     this.store.select(selectDefaultLanguage).subscribe((res: any) => {
@@ -241,7 +241,7 @@ export class AppComponent implements OnInit {
       }
     };
 
-    this.updateOrganizationTree();  
+    this.updateOrganizationTree();
 
   }
 
@@ -275,13 +275,13 @@ export class AppComponent implements OnInit {
           1
         );
         const mfeConfig = this.rdsOrganizationTreeConfig;
-        if(this.treeData2.length > 0){
+        if (this.treeData2.length > 0) {
           mfeConfig.input.organizationTreeData = this.treeData2;
         }
-        else{
+        else {
           mfeConfig.input.organizationTreeData = this.treeData1;
         }
-        
+
         this.rdsOrganizationTreeConfig = mfeConfig;
       }
     });
@@ -296,7 +296,7 @@ export class AppComponent implements OnInit {
             id: element.id,
             userName: element.name,
             additionTime: this.datepipe.transform(new Date(element.addedTime), 'dd/MM/yyyy, hh:mm:ss a'),
-            name:element.name.trim()
+            name: element.name.trim()
           }
           this.tableDataForMember.push(item);
         });
@@ -317,7 +317,7 @@ export class AppComponent implements OnInit {
             id: element.id,
             roles: element.displayName,
             additionTime: this.datepipe.transform(new Date(element.addedTime), 'dd/MM/yyyy, hh:mm:ss a'),
-            name:element.displayName.trim()
+            name: element.displayName.trim()
           }
           this.tableDataForRoles.push(item);
         });
@@ -372,7 +372,7 @@ export class AppComponent implements OnInit {
           const item: any = {
             id: element.value,
             displayName: element.name,
-            name:element.name.trim()
+            name: element.name.trim()
           }
           tableDataForRoles1.push(item);
         });
