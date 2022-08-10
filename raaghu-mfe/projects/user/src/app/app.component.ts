@@ -65,6 +65,7 @@ export class AppComponent {
   selectedPermissions: any = [];
   selectedFilterPermissions: any = [];
   OrganizationUnit: any = [];
+  resOrganizationUnit:any=[];
   SelectedOrganizationUnit: any = [];
   ngOnInit(): void {
     this.store.select(selectDefaultLanguage).subscribe((res: any) => {
@@ -197,30 +198,50 @@ export class AppComponent {
               };
               this.userinfo = item;
             }
-            if (res && res.UserEditI && res.UserEditI.allOrganizationUnits) {
+            if (res && res.UserEditI && res.UserEditI.allOrganizationUnits && res.status=="success") {
+              this.resOrganizationUnit=res.UserEditI.allOrganizationUnits
               this.OrganizationUnit = [];
-              res.UserEditI.allOrganizationUnits.forEach((element: any) => {
-                const item: any = {
-                  displayName: element.displayName,
-                  isAssignedUnit: false,
-                  code: element.id,
-                  uniteCode: element.code
+              this.SelectedOrganizationUnit=[];
+              this.OrganizationUnit= this._arrayToTreeConverterService.createTree(
+                res.UserEditI.allOrganizationUnits,
+                'parentId',
+                'id',
+                null,
+                'children',
+                [
+                  {
+                    target: 'label',
+                    source: 'displayName',
+                  },
+                  {
+                    target: 'expandedIcon',
+                    value: 'fa fa-folder-open text-warning',
+                  },
+                  {
+                    target: 'collapsedIcon',
+                    value: 'fa fa-folder text-warning',
+                  },
+                  {
+                    target: 'expanded',
+                    value: true,
+                  },
+                ],
+                1
+              );
+              if (this.isEdit) {
+                this.SelectedOrganizationUnit=[];
+                if (res && res.UserEditI && res.UserEditI.memberedOrganizationUnits && res.UserEditI.memberedOrganizationUnits.length && res.status=="success") {
+                  res.UserEditI.memberedOrganizationUnits.forEach((element: any) => {
+                    this.CheckSelectedOrganizationUnit(element)
+                  })
                 }
-                this.OrganizationUnit.push(item);
-              })
-            }
-            if (this.isEdit) {
-              if (res && res.UserEditI && res.UserEditI.memberedOrganizationUnits && res.UserEditI.memberedOrganizationUnits.length) {
-                res.UserEditI.memberedOrganizationUnits.forEach((element: any) => {
-                  this.CheckSelectedOrganizationUnit(element)
-                })
-
               }
-
+              const mfeConfigedit = this.rdsUserMfeConfig;
+              mfeConfigedit.input.OrganizationUnit = [...this.OrganizationUnit];
+              mfeConfigedit.input.selectedOrganizations = [...this.SelectedOrganizationUnit];
             }
             const mfeConfigedit = this.rdsUserMfeConfig;
             mfeConfigedit.input.roles = [...this.roles];
-            mfeConfigedit.input.OrganizationUnit = [...this.OrganizationUnit];
             if (this.userinfo) {
               mfeConfigedit.input.userinfo = { ...this.userinfo };
             }
@@ -343,7 +364,7 @@ export class AppComponent {
         this.treeData1 = this._arrayToTreeConverterService.createTree(
           res.items,
           'parentId',
-          'id',
+          'code',
           null,
           'children',
           [
@@ -443,12 +464,25 @@ export class AppComponent {
     }
   }
   CheckSelectedOrganizationUnit(SelectedCode: any) {
-    if (this.OrganizationUnit && this.OrganizationUnit.length > 0) {
-      this.OrganizationUnit.forEach((element: any) => {
-        if (element.uniteCode == SelectedCode) {
-          element.isAssignedUnit = true;
+    if (this.resOrganizationUnit && this.resOrganizationUnit.length > 0) {
+      this.resOrganizationUnit.forEach((element: any) => {
+        if (element.code == SelectedCode) {
+       
+            const selecteditem: any = {
+              name: element.displayName,
+              value: 'true',
+              // displayName: element.displayName,
+              //     isAssignedUnit: false,
+              //     code: element.id,
+              //     uniteCode: element.code
+            };
+      
+          this.SelectedOrganizationUnit.push(selecteditem)
+          // console.log( this.SelectedOrganizationUnit)
         }
+      
       })
     }
+   
   }
 }
