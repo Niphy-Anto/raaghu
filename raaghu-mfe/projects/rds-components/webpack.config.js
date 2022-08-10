@@ -95,6 +95,7 @@ module.exports = {
         './RdsCompBenefit': './projects/rds-components/src/app/rds-comp-benefit/rds-comp-benefit.component.ts',
         './RdsCompProductList': './projects/rds-components/src/app/rds-comp-product-list/rds-comp-product-list.component.ts',
         './RdsCompProductOverview': './projects/rds-components/src/app/rds-comp-product-overview/rds-comp-product-overview.component.ts',
+        './RdsCompReviewCategory': './projects/rds-components/src/app/rds-comp-review-category/rds-comp-review-category.component.ts'
         
       }, 
 

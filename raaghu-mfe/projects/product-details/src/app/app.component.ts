@@ -18,6 +18,7 @@ export class AppComponent extends MfeBaseComponent implements OnInit {
   title = 'product-details';
   public rdsprodlistMfeConfig: ComponentLoaderOptions;
   public RdsCompProductOverview: ComponentLoaderOptions;
+  public RdsCompReviewCategory: ComponentLoaderOptions;
   breadCrumbItems: BreadcrumbsItems[] = [{ name: 'Woman', route: '/home', iconClass: 'dashboard', iconWidth: '15px', iconHeight: '15px', disabled: true },
   { name: 'Clothing', route: '/About', iconClass: 'dashboard', iconWidth: '15px', iconHeight: '15px', disabled: false },
   { name: 'Basic Tees', route: '/Contact', iconClass: 'dashboard', iconWidth: '15px', iconHeight: '15px', disabled: true }];
@@ -109,29 +110,117 @@ export class AppComponent extends MfeBaseComponent implements OnInit {
       name: 'RdsCompProductOverview',
       input: {
         productType: 'producroverview2',
-        itemListbenefit: [{
-          display_type: "Basic",
-          colSize: 6,
+      //   itemListbenefit: [{
+      //     display_type: "Basic",
+      //     colSize: 6,
+      //     items: [
+      //       {
+      //         id: 1,
+      //         icon: 'roles',
+      //         iconHeight: "25px",
+      //         iconWidth: "25px",
+      //         title: "International delivery",
+      //         description: "Get your order in 2 month",
+      //         display_type: "Basic",
+      
+      //       },
+      //       {
+      //         id: 1,
+      //         icon: 'roles',
+      //         iconHeight: "25px",
+      //         iconWidth: "25px",
+      //         title: "Loyalty rewards",
+      //         description: "Don't look at other tees",
+      //         display_type: "Basic",
+      //       }
+      //     ],
+      //     itemList: [
+      //       { id: 1, color: '#F88AAC' },
+      //       { id: 2, color: '#6F6F6F' },
+      //       { id: 3, color: '#16BE36' },
+      //     ],
+      //     listItems: [
+      //       { id: 1, value: 'Only the best materials', some: 'value' },
+      //       { id: 2, value: 'Ethically and locally made', some: 'value' },
+      //       { id: 3, value: 'Pre-washed and pre-shrunk', some: 'value' },
+      //       { id: 4, value: 'Machine wash cold with similar colors', some: 'value' },
+      //     ]
+      //   }
+      // ]
+
+      listItems: [
+        { id: 1, value: 'Only the best materials', some: 'value' },
+        { id: 2, value: 'Ethically and locally made', some: 'value' },
+        { id: 3, value: 'Pre-washed and pre-shrunk', some: 'value' },
+        { id: 4, value: 'Machine wash cold with similar colors', some: 'value' },
+      ],
+      itemList: [
+        { id: 1, color: '#F88AAC' },
+        { id: 2, color: '#6F6F6F' },
+        { id: 3, color: '#16BE36' },
+      ],
+      sizeData : [{value: 'XXS'},{value:'S'},{value:'M'},{value:'L'},{value:'XL'},{value:'2XL'},{value:'3XL'},{value:'XXS'}],
+      itemListbenefit: [{
+        display_type: "Basic",
+        colSize: 6,
+        items: [
+          {
+            id: 1,
+            icon: 'roles',
+            iconHeight: "25px",
+            iconWidth: "25px",
+            title: "International delivery",
+            description: "Get your order in 2 month",
+            display_type: "Basic",
+    
+          },
+          {
+            id: 1,
+            icon: 'roles',
+            iconHeight: "25px",
+            iconWidth: "25px",
+            title: "Loyalty rewards",
+            description: "Don't look at other tees",
+            display_type: "Basic",
+          }
+        ]
+      }
+    ]
+      }
+      
+    };
+
+    this.RdsCompReviewCategory = {
+      name: 'RdsCompReviewCategory',
+      input: {
+        display_type: "ReviewType_2",
+        itemList: [{
+          display_type: "ReviewType_2",
           items: [
             {
-              id: 1,
-              icon: 'roles',
-              iconHeight: "25px",
-              iconWidth: "25px",
-              title: "International delivery",
-              description: "Get your order in 2 month",
-              display_type: "Basic",
-      
-            },
-            {
-              id: 1,
-              icon: 'roles',
-              iconHeight: "25px",
-              iconWidth: "25px",
-              title: "Loyalty rewards",
-              description: "Don't look at other tees",
-              display_type: "Basic",
-            }
+                name: 'Jems Rock',
+                date: new Date(),
+                reviewRate: 4,
+                reviewTitle: 'Very good and color also nice & fresh look',
+                reviewSubTitle:'After a quick chat with support team, I had a good feeling about this shirt and ordered there of them.',
+                description:'Less than 48 hours later, my delivery arrived. I have not worn anything else since that day! These shirts are so comfortable, yet look classy enough that I can wear them at work or even some formal events. Thank you! I have not worn anything else since that day! These shirts are so comfortable, yet look classy enough that I can wear them at work or even some formal events. Thank you!' 
+              },
+              {
+                name: 'Jems Rock',
+                date: new Date(),
+                reviewRate: 4,
+                reviewTitle: 'Very good and color also nice & fresh look',
+                reviewSubTitle:'After a quick chat with support team, I had a good feeling about this shirt and ordered there of them.',
+                description:'Less than 48 hours later, my delivery arrived. I have not worn anything else since that day! These shirts are so comfortable, yet look classy enough that I can wear them at work or even some formal events. Thank you! I have not worn anything else since that day! These shirts are so comfortable, yet look classy enough that I can wear them at work or even some formal events. Thank you!' 
+              },
+              {
+                name: 'Jems Rock',
+                date: new Date(),
+                reviewRate: 4,
+                reviewTitle: 'Very good and color also nice & fresh look',
+                reviewSubTitle:'After a quick chat with support team, I had a good feeling about this shirt and ordered there of them.',
+                description:'Less than 48 hours later, my delivery arrived. I have not worn anything else since that day! These shirts are so comfortable, yet look classy enough that I can wear them at work or even some formal events. Thank you! I have not worn anything else since that day! These shirts are so comfortable, yet look classy enough that I can wear them at work or even some formal events. Thank you!' 
+              }
           ]
         }
       ]
