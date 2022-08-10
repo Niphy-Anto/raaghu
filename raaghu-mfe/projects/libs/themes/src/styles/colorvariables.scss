@@ -662,6 +662,9 @@ html {
       background-color: transparent;
     }
   }
+  .bg-gradient-primary{
+    background: transparent linear-gradient(90deg, #5800D3 0%, #4400A4 100%) 0% 0% no-repeat padding-box;
+  }
   /*top nav bar variables*/
   .navbar {
     background-color: $nav-background-color;

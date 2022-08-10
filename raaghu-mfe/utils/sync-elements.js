@@ -21,8 +21,7 @@ const dependentElements = [
     'rds-checkbox',
     'rds-icon-label',
     'rds-select-list',
-    'rds-radio-button',
-    'rds-button'
+    'rds-radio-button'
 ];
 
 function replaceFiles() {
@@ -139,16 +138,6 @@ function mergeTSConfigJson() {
             "@libs/rds-checkbox": [
                 "rds-elements/rds-checkbox/public-api",
                 "rds-elements/rds-checkbox"
-            ]
-        };
-        changesDone = true;
-    };
-    if (ngElementsFile.compilerOptions.paths["@libs/rds-button"] == undefined) {
-        ngElementsFile.compilerOptions.paths = {
-            ...ngElementsFile.compilerOptions.paths,
-            "@libs/rds-button": [
-                "rds-elements/rds-button/public-api",
-                "rds-elements/rds-button"
             ]
         };
         changesDone = true;

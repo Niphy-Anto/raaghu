@@ -133,6 +133,7 @@ benefit_type3.args = {
         { id: 7, 
           display_type: "benefit_type3", 
           icon: 'users',
+          status:'Active',
           iconHeight :"40px",
           iconWidth: "40px",
           title:  'Free delivery all year long',
