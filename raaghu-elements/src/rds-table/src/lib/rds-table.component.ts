@@ -7,55 +7,27 @@ import { Component, Input, OnInit, TemplateRef } from '@angular/core';
 })
 export class RdsTableComponent implements OnInit {
 
-  //@Input()
-  //hover = false;
+  @Input()
+  tableBorder?: boolean;
 
   @Input()
-  tableBorder = false;
-
-  //@Input()
-  //stripe = false;
-
-  //@Input()
-  //darkmode = false;
+  tableHeader?: boolean;
 
   @Input()
-  tableHeaderItems: any = [
-    { headerName: "Name" },
-    { headerName: "Age" },
-    { headerName: "State" }
+  tableHeaderItems: any[] = [
+      { displayName: 'Name', dataType: 'text' },
+      { displayName: 'Place', dataType: 'icon' },
+      { displayName: 'Price', dataType: 'price' }
   ];
 
   @Input()
-  tableBodyItems: any =
-    [{
-      name: "xyz",
-      age: 25,
-      state: "Maharashtra"
-    },
-    {
-      name: "yz",
-      age: 21,
-      state: "Hariyana"
-    },
-    {
-      name: "op",
-      age: 41,
-      state: "Surat"
-    }
+  tableBodyItems: any[] =
+    [{ id: 1, name: 'Standard', icon: 'tickmark' },
     ];
 
   @Input()
   colorVariant?: string;
 
-  //@Input()
-  //tableItems: any = [{ name: "xyz", age: 25, state: "Maharashtra" }, { name: "yz", age: 21, state: "Hariyana" }, { name: "op", age: 41, state: "Surat" }]
-
-  //@Input()
-  //thead!: TemplateRef<any>;
-
-  //@Input()
-  //tbody!: TemplateRef<any>;
 
   constructor() { }
 
@@ -69,6 +41,15 @@ export class RdsTableComponent implements OnInit {
     }
     return bodyClass;
   }
+
+  public get hideHeader(): string[] {
+    var bodyClass = ['']
+    if (this.tableHeader === true) {
+      bodyClass.push('d-none')
+    }
+    return bodyClass;
+  }
+
 
   //public get classes(): string[] {
 

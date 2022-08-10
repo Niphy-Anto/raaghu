@@ -1,0 +1,101 @@
+<div class="contact-information">
+    <p class="heading">
+         Billing Address
+    </p>
+    <div class="my-1 row">
+        <div class="col-6">
+            <div class="label mb-1">
+                *First name
+            </div>
+            <rds-input size="'default'" name="firstName" id="txtFirstname"
+                ngDefaultControl [(ngModel)]="firstName" required>
+            </rds-input>
+        </div>
+        <div class="col-6">
+            <div class="label mb-1">
+                *Last name
+            </div>
+            <rds-input size="'default'" name="lastName" id="txtLastname"
+                ngDefaultControl [(ngModel)]="lastName" required>
+            </rds-input>
+        </div>
+    </div>
+
+    <div class="my-3 row">
+        <div class="col-6">
+            <div class="label mb-1">
+                Company
+            </div>
+            <rds-input size="'default'" name="company" id="txtCompany"
+                ngDefaultControl [(ngModel)]="company" required>
+            </rds-input>
+        </div>
+        <div class="col-6">
+            <div class="label mb-1">
+                *Phone
+            </div>
+            <rds-input size="'default'" name="phone" id="txtPhone"
+                ngDefaultControl [(ngModel)]="phone" required>
+            </rds-input>
+        </div>
+    </div>
+
+    <div class="my-3">
+        <div class="label mb-1">
+            *Address
+        </div>
+        <rds-input size="'default'" name="address" id="txtAddress"
+            ngDefaultControl [(ngModel)]="address" required>
+        </rds-input>
+    </div>
+
+    <div class="my-3 row">
+        <div class="col-6">
+            <div class="label mb-1">
+                *City
+            </div>
+            <rds-input size="'default'" name="company" id="txtCompany"
+                ngDefaultControl [(ngModel)]="company" required>
+            </rds-input>
+        </div>
+        <div class="col-6">
+            <div class="label mb-1">
+                *Country
+            </div>
+            <rds-select-list [(ngModel)]="country" [value]="country" ngDefaultControl
+                [itemList]="countryList" (change)="SelectCountry($event)" name="countryInfo">
+            </rds-select-list>  
+        </div>
+    </div>
+    <div class="my-3 row">
+        <div class="col-6">
+            <div class="label mb-1">
+                *State/Province
+            </div>
+            <rds-input size="'default'" name="state" id="txtState"
+                ngDefaultControl [(ngModel)]="state" required>
+            </rds-input>
+        </div>
+        <div class="col-6">
+            <div class="label mb-1">
+                *Postal Code
+            </div>
+            <rds-input size="'default'" name="postalCode" id="txtPostalCode"
+                ngDefaultControl [(ngModel)]="postalCode" required>
+            </rds-input>
+        </div>
+    </div>
+    
+    <div class="my-4 pt-4 row">
+        <div class="col-6">
+            <rds-button [block]="true" [size]="'medium'" [outlineButton]="true" [colorVariant]="'primary'"
+            [label]="translate.instant('back')" (click)="back()">
+        </rds-button>
+        </div>
+        <div class="col-6">
+            <rds-button [block]="true" [size]="'medium'" [colorVariant]="'primary'"
+            [label]="translate.instant('Continue')" (click)="continue()">
+        </rds-button>
+        </div>
+    </div>
+</div>

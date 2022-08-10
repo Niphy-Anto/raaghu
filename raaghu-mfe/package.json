@@ -1,6 +1,6 @@
 {
   "name": "raaghu-mfe",
-  "version": "0.0.1-beta",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "install-all": "node utils/install-all.js",

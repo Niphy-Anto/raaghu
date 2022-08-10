@@ -1,0 +1,40 @@
+.table {
+  width: 100%;
+  display: table;
+}
+
+.table-body {
+  display: table-row-group;
+}
+
+.table-row {
+  display: table-row;
+}
+
+.table-body-cell {
+  display: table-cell;  
+  padding: 8px;
+  border-top:0.6px solid grey;
+  line-height: 1.42857143;
+  vertical-align: top;
+}
+
+.w-40{
+    width:40%;
+}
+
+.w-20{
+    width:20%;
+}
+
+.radioButtonSpace {
+  top: 24px;
+}
+
+.labelSpace {
+  top: 20px;
+}
+
+.buttonSpace{
+    top:46px;
+}
