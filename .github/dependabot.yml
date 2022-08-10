@@ -16,11 +16,11 @@ updates:
     # Files stored in `raaghu-elements` directory
     directory: "/raaghu-elements"
     schedule:
-      interval: "yearly"
+      interval: "monthly"
   
   - package-ecosystem: "npm"
     # Files stored in `raaghu-mfe` directory
     directory: "/raaghu-mfe"
     schedule:
-      interval: "yearly"
+      interval: "monthly"
 
