@@ -55,7 +55,7 @@ export const StaticBackdropModal: Story<RdsModalComponent> = (args) => ({
         <button type="button" (click)="onClick($event)"  class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#storybookModal">
           {{label}}
         </button>
-          <rds-modal backdropstatic="static" modalId="storybookModal" [modalheader]="modalheader" [Modalbody]="Modalbody" [Modalfooter]="Modalfooter">
+          <rds-modal backdropstatic="static" modalId="storybookModal" [modalClasses]="modalClasses" [modalheader]="modalheader" [Modalbody]="Modalbody" [Modalfooter]="Modalfooter">
             <div modalheader class="col-md-12" *ngIf="isModalHeader">
               <button style="float:right" type="button"  class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="onClose($event)"></button>
               <h5 class="modal-title" id="storybookModal">{{modalData.modalHeader}}</h5>
@@ -89,14 +89,13 @@ export const LongContentModal: Story<RdsModalComponent> = (args) => ({
       <button type="button"  (click)="onClick($event)" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#storybookModal">
       {{label}}
     </button>
-    <rds-modal modalId="storybookModal" [modalheader]="modalheader" [Modalbody]="Modalbody" [Modalfooter]="Modalfooter" [modalAnimation]="modalAnimation">
+    <rds-modal modalId="storybookModal" [modalheader]="modalheader" [modalClasses]="modalClasses" [Modalbody]="Modalbody" [Modalfooter]="Modalfooter" [modalAnimation]="modalAnimation">
           <div modalheader class="col-md-12" *ngIf="isModalHeader">
             <button style="float:right" type="button"  class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="onClose($event)"></button>
             <h5 class="modal-title" id="storybookModal">{{modalData.modalHeader}}</h5>
           </div>
           <div Modalbody>
             <p>{{modalData.modalContent}}
-              <br><br><br><br><br><br><br><br><br><br><br><br><br>
             </p>
           </div>
           <div Modalfooter *ngIf="isModalFooter">
@@ -111,9 +110,10 @@ LongContentModal.args = {
   modalId: "storybookModal",
   isModalHeader: true,
   isModalFooter: true,
+  modalClasses: 'scrollable',
   modalData: {
     modalHeader: "Header",
-    modalContent: "This is some placeholder content to show the scrolling behavior for modals. We use repeated line breaks to demonstrate how content can exceed minimum inner height, thereby showing inner scrolling. When content becomes longer than the predefined max-height of modal, content will be cropped and scrollable within the modal.",
+    modalContent: "This is some placeholder content to show the scrolling behavior for modals. We use repeated line breaks to demonstrate how content can exceed minimum inner height, thereby showing inner scrolling. When content becomes longer than the predefined max-height of modal, content will be cropped and scrollable within the modal This is some placeholder content to show the scrolling behavior for modals. We use repeated line breaks to demonstrate how content can exceed minimum inner height, thereby showing inner scrolling. When content becomes longer than the predefined max-height of modal, content will be cropped and scrollable within the modal This is some placeholder content to show the scrolling behavior for modals. We use repeated line breaks to demonstrate how content can exceed minimum inner height, thereby showing inner scrolling. When content becomes longer than the predefined max-height of modal, content will be cropped and scrollable within the modal.",
     modalFooter: "Footer"
   },
 };
