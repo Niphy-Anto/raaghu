@@ -1,0 +1,60 @@
+<form #emailSetting="ngForm">
+    <div class="row mt-5">
+        <div class="col-md-4">
+            <rds-label [label]="'Current email'"></rds-label>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group mb-3">
+                <rds-input [inputType]="'text'"  [pattern]="emailPattern" [(ngModel)]="emailSettings.currentEmail" name="current_email" required
+                    [placeholder]="'Current email'" id="o-email" #currentEmail="ngModel">
+                </rds-input>
+                <div class="form-control-feedback"
+                    *ngIf="currentEmail.errors && (currentEmail.dirty || currentEmail.touched)">
+                    <span class="text-danger" *ngIf="currentEmail.errors.required">Current email is
+                        required</span>
+                        <span class="text-danger" *ngIf="currentEmail.errors.pattern">Please enter a valid email</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <rds-label [label]="'New email'"></rds-label>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group mb-3">
+                <rds-input [inputType]="'email'" [(ngModel)]="emailSettings.newEmail" [pattern]="emailPattern"
+                    name="new_email" id="n-email" (keyup)="compareEmail()" required [placeholder]="'New email'"
+                    #newEmail="ngModel">
+                </rds-input>
+                <div class="form-control-feedback" *ngIf="newEmail.errors &&(newEmail.dirty || newEmail.touched)">
+                    <span class="text-danger" *ngIf="newEmail.errors.required">New email is
+                        required</span>
+                    <span class="text-danger" *ngIf="newEmail.errors.pattern">Please enter a valid email</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <rds-label [label]="'Confirm New email'"></rds-label>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group mb-3">
+                <rds-input [inputType]="'email'" [(ngModel)]="emailSettings.confirmEmail" (keyup)="compareEmail()"
+                    [pattern]="emailPattern" name="confirm_email" id="c-email" required [placeholder]="'Confirm new email'"
+                    #confirmEmail="ngModel">
+                </rds-input>
+                <div class="form-control-feedback"
+                    *ngIf="confirmEmail.errors && (confirmEmail.dirty || confirmEmail.touched)">
+                    <span class="text-danger" *ngIf="confirmEmail.errors.required">please re-enter the new email</span>
+                    <span class="text-danger" *ngIf="confirmEmail.errors.pattern">Please enter a valid email</span>
+
+                </div>
+            </div>
+            <span class="text-danger" *ngIf="mismatch">Email mismatch found</span>
+
+        </div>
+    </div>
+
+</form>
