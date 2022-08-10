@@ -955,12 +955,12 @@
           <div Modalfooter>
             <rds-button class="m-1" [label]="translate.instant('Close')" [colorVariant]="'outline-primary'" [size]="'small'"
                         type="button" data-bs-dismiss="modal"></rds-button>
-            <rds-button [label]="translate.instant('Save')" [colorVariant]="'primary'" [size]="'small'"
+            <rds-button [label]="translate.instant('Save Changes')" [colorVariant]="'primary'" [size]="'small'"
                         type="button" data-bs-dismiss="modal"></rds-button>
           </div>
         </rds-modal>
       </div>
-      <div class="col-3">
+      <!-- <div class="col-3">
         <h6 class="mb-3">{{"Small Modal"|translate}}</h6>
         <rds-button [label]="translate.instant('Small Modal')" [colorVariant]="'primary'" [size]="'small'" type="button"
                     data-bs-toggle="modal" data-bs-target="#storybookModalSm">
@@ -981,8 +981,8 @@
                         type="button" data-bs-dismiss="modal"></rds-button>
           </div>
         </rds-modal>
-      </div>
-      <div class="col-3">
+      </div> -->
+      <!-- <div class="col-3">
         <h6 class="mb-3">{{"Large Modal"|translate}}l</h6>
         <rds-button [label]="translate.instant('Large Modal')" [colorVariant]="'primary'" [size]="'small'" type="button"
                     data-bs-toggle="modal" data-bs-target="#storybookModalLarge">
@@ -1004,8 +1004,8 @@
                         type="button" data-bs-dismiss="modal"></rds-button>
           </div>
         </rds-modal>
-      </div>
-      <div class="col-3">
+      </div> -->
+      <!-- <div class="col-3">
         <h6 class="mb-3">{{"Extra Large Modal"|translate}}</h6>
         <rds-button [label]="translate.instant('Extra Large Modal')" [colorVariant]="'primary'" [size]="'small'"
                     type="button" data-bs-toggle="modal" data-bs-target="#storybookModalExLarge">
@@ -1027,8 +1027,8 @@
                         type="button" data-bs-dismiss="modal"></rds-button>
           </div>
         </rds-modal>
-      </div>
-      <div class="col-3">
+      </div> -->
+      <!-- <div class="col-3">
         <h6 class="mb-3">{{"Vertically Centered Modal"|translate}}</h6>
         <rds-button [label]="'Vertically Centered Modal'" [colorVariant]="'primary'" [size]="'small'" type="button"
                     data-bs-toggle="modal" data-bs-target="#storybookModalCenter">
@@ -1050,7 +1050,7 @@
                         type="button" data-bs-dismiss="modal"></rds-button>
           </div>
         </rds-modal>
-      </div>
+      </div> -->
 
       <div class="col-3">
         <h6 class="mb-3">{{"Long Content Modal"|translate}}</h6>
@@ -1058,7 +1058,7 @@
                     type="button" data-bs-toggle="modal" data-bs-target="#storybookLongModal">
         </rds-button>
 
-        <rds-modal modalId="storybookLongModal" [modalheader]="modalheader" [Modalbody]="Modalbody"
+        <rds-modal modalId="storybookLongModal" [modalClasses]="'scrollable'" [modalheader]="modalheader" [Modalbody]="Modalbody"
                    [Modalfooter]="Modalfooter">
           <div modalheader class="col-md-12">
             <rds-button type="button" class="btn-close float-end" data-bs-dismiss="modal" aria-label="Close"></rds-button>
@@ -1066,14 +1066,13 @@
           </div>
           <div Modalbody>
             <p>
-              {{modalData.modalContent}}
-              <span class="mb-5"></span>
+              {{modalData1.modalContent}}
             </p>
           </div>
           <div Modalfooter>
             <rds-button class="m-1" [label]="translate.instant('Close')" [colorVariant]="'outline-primary'" [size]="'small'"
                         type="button" data-bs-dismiss="modal"></rds-button>
-            <rds-button [label]="translate.instant('Save')" [colorVariant]="'primary'" [size]="'small'"
+            <rds-button [label]="translate.instant('Save Changes')" [colorVariant]="'primary'" [size]="'small'"
                         type="button" data-bs-dismiss="modal"></rds-button>
           </div>
         </rds-modal>
@@ -1092,12 +1091,12 @@
             <h5 class="modal-title" id="storybookBackdropModal">{{modalData.modalHeader}}</h5>
           </div>
           <div Modalbody>
-            <p>{{modalData.modalContent}}</p>
+            <p>{{modalData2.modalContent}}</p>
           </div>
           <div Modalfooter>
             <rds-button class="m-1" [label]="translate.instant('Close')" [colorVariant]="'outline-primary'" [size]="'small'"
                         type="button" data-bs-dismiss="modal"></rds-button>
-            <rds-button [label]="translate.instant('Save')" [colorVariant]="'primary'" [size]="'small'"
+            <rds-button [label]="translate.instant('Save Changes')" [colorVariant]="'primary'" [size]="'small'"
                         type="button" data-bs-dismiss="modal"></rds-button>
           </div>
         </rds-modal>

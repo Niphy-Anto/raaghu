@@ -38,11 +38,6 @@ export class RdsCompBenefitComponent implements OnInit {
     }
   ]
 
-
-
-
-
-
   ngOnInit(): void {
   }
   getColSize(data: any): string {

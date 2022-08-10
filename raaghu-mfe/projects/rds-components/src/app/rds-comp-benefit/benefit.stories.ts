@@ -3,7 +3,7 @@ import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { RdsBenefitModule, RdsIconModule, RdsLabelModule } from '@libs/rds-elements';
 import { RdsCompBenefitComponent } from './rds-comp-benefit.component';
 import { CommonModule } from '@angular/common';
-
+ 
 export default {
     title: 'Components/Benefit',
     component: RdsCompBenefitComponent,
@@ -133,6 +133,7 @@ benefit_type3.args = {
         { id: 7, 
           display_type: "benefit_type3", 
           icon: 'users',
+          status:'Active',
           iconHeight :"40px",
           iconWidth: "40px",
           title:  'Free delivery all year long',

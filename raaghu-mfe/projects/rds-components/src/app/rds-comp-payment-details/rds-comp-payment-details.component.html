@@ -1,0 +1,62 @@
+<div class="contact-information">
+    <p class="heading">
+        Payment details
+    </p>
+    <div>
+        <input type="checkbox" name="favorite_pet" value="Cats">Credit Card<br>      
+        <input type="checkbox" name="favorite_pet" value="Dogs">Paypal<br>      
+        <input type="checkbox" name="favorite_pet" value="Birds">eTransfer<br> 
+    </div>
+    
+    <div class="my-3">
+        <div class="label mb-1">
+            *Card number
+        </div>
+        <rds-input size="'default'" name="cardNumber" id="txtCardNumber"
+            ngDefaultControl [(ngModel)]="cardNumber" required>
+        </rds-input>
+    </div>
+
+    <div class="my-3">
+        <div class="label mb-1">
+            *Name on card
+        </div>
+        <rds-input size="'default'" name="name" id="txtName"
+            ngDefaultControl [(ngModel)]="name" required>
+        </rds-input>
+    </div>
+
+    <div class="my-3 row">
+        <div class="col-9">
+            <div class="label mb-1">
+                *Expiration date (MM/YY)
+            </div>
+            <rds-input size="'default'" name="expirationDate" id="txtExpirationDate"
+                ngDefaultControl [(ngModel)]="expirationDate" required>
+            </rds-input>
+        </div>
+        <div class="col-3">
+            <div class="label mb-1">
+                *CVC
+            </div>
+            <rds-input size="'default'" name="cvc" id="txtCvc"
+                ngDefaultControl [(ngModel)]="cvc" required>
+            </rds-input>
+        </div>
+    </div>
+    
+    <div class="my-4 pt-4 row">
+        <div class="col-6">
+            <rds-button [block]="true" [size]="'medium'" [outlineButton]="true" [colorVariant]="'primary'"
+            [label]="translate.instant('back')" (click)="back()">
+        </rds-button>
+        </div>
+        <div class="col-6">
+            <rds-button [block]="true" [size]="'medium'" [colorVariant]="'primary'"
+            [label]="translate.instant('Continue')" (click)="continue()">
+        </rds-button>
+        </div>
+        
+        
+    </div>
+</div>
