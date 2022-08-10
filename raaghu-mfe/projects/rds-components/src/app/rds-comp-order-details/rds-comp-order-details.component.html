@@ -1,11 +1,11 @@
 <div [ngSwitch]="displaytype">
-    <div *ngSwitchCase="'Basic'">
+    <div *ngSwitchCase="'with-progress-bars'">
         <div class="col-md-12">
 
-            <table id="table" class="w-100 p-4 " *ngFor="let item of itemList">
+            <table id="table" class="w-100 p-4 mt-3" *ngFor="let item of itemList">
                 <tbody>
                     <tr class="mb-5 border-bottom mt-3 pt-3">
-                        <div class="row">
+                        <div class="row mb-4">
 
                             <div class="col-md-1">
                                 <td width="120" class=" bg-light align-content-center text-center">
@@ -16,8 +16,11 @@
                                 <td class="ps-3">
                                     <rds-label class="fw-bold" [label]="item.prodname"></rds-label>
                                     <br>
-                                    <span class="fw-bolder">${{item.price}}</span>
-
+                                   
+                                  
+                                        <span class="fw-bold">${{item.price}}</span> &minus; <span class="fw-bolder">{{item.qty}}</span>
+                                   
+                                 
                                     <div class="mt-2 text-muted">
                                         <rds-label [label]="item.highlights"></rds-label>
                                     </div>
@@ -34,17 +37,12 @@
                                 <td class="ps-3">
                                     <rds-label class="fw-bold" [label]="item.update"></rds-label><br>
                                     <div class="mt-2" *ngIf="!isEdit">
-                                        <rds-label [label]="item.phoneNo"></rds-label><br>
-                                        <rds-label [label]="item.emailId"></rds-label><br>
+                                         <rds-label [label]="item.emailId"></rds-label><br>
+                                         <rds-label [label]="item.phoneNo"></rds-label><br>
                                     </div>
                                     <div class="mt-2" *ngIf="isEdit">
                                         <rds-input></rds-input>
                                         <rds-input></rds-input>
-                                    </div>
-
-                                    <div class="mt-2">
-                                        <rds-button colorVariant="primary" [block]="false" size="small"
-                                            [outlineButton]="true" label="Edit" (onClick)="onEdit()"></rds-button>
                                     </div>
                                 </td>
                             </div>
@@ -59,11 +57,15 @@
 
                         </div>
                     </tr>
+                    <tr>
+                        
+                        <!-- <rds-stepper [stepperType]="progress-bar"></rds-stepper> -->
+                    </tr>
                 </tbody>
             </table>
         </div>
     </div>
-    <div *ngSwitchCase="'Advanced'">
+    <div *ngSwitchCase="'With large images and progress bars'">
     <div class="row" *ngFor="let item of itemList">
 
         <div class="col-md-3">
@@ -72,7 +74,7 @@
         <div class="col-md-9">
             <rds-label class="fw-bold" [label]="item.prodname"></rds-label>
             <br>
-            <span class="fw-bolder">${{item.price}}</span>
+            <span class="fw-bolder">${{item.price}}</span> &minus; <span class="fw-bolder">{{item.qty}}</span>
 
             <div class="mt-2 text-muted h-25">
                 <rds-label [label]="item.highlights"></rds-label>
@@ -81,7 +83,7 @@
                 <table id="table" class="w-100 p-4 ">
                     <tbody>
                         <tr class="mb-5 border-bottom  ">
-                            <div class="row">
+                            <div class="row mb-3">
                                 <div class="col-md-3">
                                     <td>
                                         <rds-address-detail header="Shopping Address" addressLine1="Brookland house,"
@@ -93,19 +95,14 @@
                                     <td class="ps-3">
                                         <rds-label class="fw-bold" [label]="item.update"></rds-label><br>
                                         <div class="mt-2" *ngIf="!isEdit">
-                                            <rds-label [label]="item.phoneNo"></rds-label><br>
                                             <rds-label [label]="item.emailId"></rds-label><br>
+                                            <rds-label [label]="item.phoneNo"></rds-label><br>
                                         </div>
                                         <div class="mt-2" *ngIf="isEdit">
                                             <rds-input></rds-input>
                                             <rds-input></rds-input>
                                         </div>
-
-                                        <div class="mt-2">
-                                            <rds-button colorVariant="primary" [block]="false" size="small"
-                                                [outlineButton]="true" label="Edit" (onClick)="onEdit()"></rds-button>
-                                        </div>
-                                    </td>
+                                     </td>
                                 </div>
                                 <div class="col-md-3">
                                     <td class="ps-3 ">
@@ -117,6 +114,9 @@
                                 </div>
                             </div>
                         </tr>
+                        <tr>
+                            <!-- <rds-stepper [stepperType]="progress-bar" [stepparList]="stepparList"></rds-stepper> -->
+                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -124,4 +124,30 @@
     </div>
 
     </div>
+    <div *ngSwitchCase="'With large images and progress bars - 1'">
+     <div class="row" *ngFor="let item of itemList">
+        <div class="col-md-12">
+            <rds-label class="fw-bold mb-3" [label]="item.tno"></rds-label><br>
+            <div class="mt-1">
+                <span style="color: rgb(90, 90, 235)">{{item.trackingNumber}}</span>
+            </div>
+        </div> 
+        <div class="row mt-3">
+            <div class="col-md-2">
+                <img [src]="item.profilePic" height="170px" width="190px">
+            </div>
+            <div class="col-md-4 h-50">
+                <rds-label class="fw-bold" [label]="item.prodname"></rds-label>
+           
+                
+               <span class="text-muted"> <rds-label [label]="item.highlights"></rds-label></span>
+          
+            <div class="h-50 mt-5">
+                <span class="fw-bolder">${{item.price}}</span> &minus; <span class="fw-bolder">{{item.qty}}</span>
+            </div>
+        </div>
+    </div>
+        </div>
+     </div>
+        
 </div>

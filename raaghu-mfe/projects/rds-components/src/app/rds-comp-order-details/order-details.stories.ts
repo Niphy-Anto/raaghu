@@ -5,6 +5,8 @@ import { RdsButtonModule, RdsCheckboxModule, RdsInputModule } from '@libs/rds-el
 import { NgxTranslateModule } from '@libs/shared';
 import { RdsAddressDetailModule } from 'projects/libs/rds-elements/src/rds-address-detail/src/public-api';
 import { RdsLabelModule } from '@libs/rds-label';
+import { RdsStepperModule } from 'projects/libs/rds-elements/src/rds-stepper/src/public-api';
+import { CommonModule } from '@angular/common';
 
 
 export default {
@@ -20,6 +22,9 @@ export default {
         RdsCheckboxModule,
        RdsAddressDetailModule,
        RdsLabelModule,
+       RdsStepperModule,
+       CommonModule,
+       
         NgxTranslateModule.forRoot()
       ],
       providers: [
@@ -29,28 +34,30 @@ export default {
   ],
   argTypes: {
     displaytype: {
-      options: ['Basic', 'Advanced', 'With_Multiple_Items'],
+      options: ['with-progress-bars', 'With large images and progress bars', 'With large images and progress bars - 1'],
       control: { type: 'select' }
     }
   }
 } as Meta;
 
-const Template: Story<RdsCompOrderDetailsComponent> = (args: RdsCompOrderDetailsComponent) => ({});
+const Template: Story<RdsCompOrderDetailsComponent> = (args: RdsCompOrderDetailsComponent) => ({
+    props: args
+});
 
 export const basic = Template.bind({});
 basic.args = {
-  displaytype: 'Basic'
+  displaytype: 'with-progress-bars'
 }
 
 export const advanced = Template.bind({});
 advanced.args = {
-  displaytype: 'Advanced'
+  displaytype: 'With large images and progress bars'
 }
 
 
-export const multipleItems = Template.bind({});
-multipleItems.args = {
-  displaytype: 'With_Multiple_Items',
+export const multiple_items= Template.bind({});
+multiple_items.args = {
+  displaytype: 'With large images and progress bars - 1',
 
 }
 

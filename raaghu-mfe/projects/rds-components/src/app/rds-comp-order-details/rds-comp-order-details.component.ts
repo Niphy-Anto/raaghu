@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./rds-comp-order-details.component.scss']
 })
 export class RdsCompOrderDetailsComponent implements OnInit {
-  @Input() displaytype: 'Basic' | 'Advanced' | 'With_Multiple_Items' = 'Basic';
+  @Input() displaytype: 'with-progress-bars' | 'With large images and progress bars' | 'With large images and progress bars - 1' = 'with-progress-bars';
   constructor() { }
   @Input() itemList = [
     {
@@ -17,11 +17,17 @@ export class RdsCompOrderDetailsComponent implements OnInit {
      update:'Shopping Update',
      tno:'Tracking number',
      trackingNumber:'655634573859574857',
-     emailId:'abc@gmail.com',
-     phoneNo:'8769549953'
+     emailId:'g******@gmail.com',
+     phoneNo:'8*******53',
+     qty:'Quantity 3'
     },
   ];
-
+  
+  stepparList:any=[
+    {stepname: "step1",steptabname:"Profile", tablink: '#nav-home',ariacontrols: 'nav-home'},
+        {stepname: "step2",steptabname:"Positions", tablink: '#nav-profile',ariacontrols: 'nav-profile'},
+        {stepname: "step3",steptabname:"Setting", tablink: '#nav-contact',ariacontrols: 'nav-contact'}
+ ];
   isEdit:boolean=false;
   ngOnInit(): void {
   }

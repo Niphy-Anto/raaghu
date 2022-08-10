@@ -136,6 +136,7 @@ import { RdsCompPricingTableComponent } from './rds-comp-pricing-table/rds-comp-
 import { RdsCompReviewCategoryComponent } from './rds-comp-review-category/rds-comp-review-category.component';
 import { RdsCompOrderDetailsComponent } from './rds-comp-order-details/rds-comp-order-details.component';
 import { RdsAddressDetailModule } from 'projects/libs/rds-elements/src/rds-address-detail/src/public-api';
+import { RdsStepperModule } from 'projects/libs/rds-elements/src/rds-stepper/src/public-api';
 
 @NgModule({
   declarations: [
@@ -254,7 +255,7 @@ import { RdsAddressDetailModule } from 'projects/libs/rds-elements/src/rds-addre
     RdsCompPricingTableComponent,
    
     RdsCompReviewCategoryComponent,
-    RdsCompOrderDetailsComponent
+    RdsCompOrderDetailsComponent,
     //RdsCompLanguageTextListComponent,
     RdsCompContactInformationComponent,
     RdsCompShippingAddressComponent,
@@ -348,7 +349,8 @@ import { RdsAddressDetailModule } from 'projects/libs/rds-elements/src/rds-addre
     RdsFeatureListModule,
     RdsProductImageModule,
     RdsSizeModule,
-    RdsAddressDetailModule
+    RdsAddressDetailModule,
+    RdsStepperModule
   ],
   providers: [],
   bootstrap: [AppComponent],
