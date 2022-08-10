@@ -104,7 +104,7 @@ export class RdsAdminDashboardComponent extends MfeBaseComponent implements OnIn
   @Input() TotalConnectedCalls?: string = '93';
   @Input() ConnectedCallsData: any = [80, 100 - 80];
   @Input() ClientCallsData: any = [65, 100 - 65];
-  @Input() ProfitShareData: any = [10, 25, 30]
+  @Input() ProfitShareData: any = [60, 25, 15]
   @Input() userName: string = 'Keanu Foster';
   @Input() memberActivityTableData: any = [
     { "cases": "<div class=\"d-flex align-items-center justify-content-center\"><div> 10 </div></div>", "member": "<div class=\"d-flex align-items-center\"><div> <img src=../assets/dashboard-data.png width=\"40px\" ></div><div class=\"ms-2 mt-2\"><p class=\"mb-0\"><b>Brian</b></p><small class=\"text-muted\">Software Developer </small></div></div>", "active": "<div class=\"d-flex align-items-center justify-content-center\"><div> 38 </div></div>", "closed": "<div class=\"d-flex align-items-center justify-content-center\"><div> 10 </div></div>", "rate": "<div class=\"HighRate d-flex align-items-center justify-content-center\">92%</div>" }
@@ -118,21 +118,21 @@ export class RdsAdminDashboardComponent extends MfeBaseComponent implements OnIn
   @Input() monthlySummaryDataSets = [
     {
       label: 'Sales',
-      data: [101, 122, 133, 231, 112, 125, 135, 135.7, 136, 124, 122, 125],
+      data: [190, 200, 133, 231, 112, 125, 135, 135.7, 266, 224, 122, 125],
       borderColor: '#4DCFFF',
       pointBackgroundColor: '#4DCFFF',
       // backgroundColor: '#ECEEF4',
       fill: true,
       pointRadius: 3,
-      fillColor: "rgba(195, 40, 96, 0.1)",
+      // fillColor: "rgba(195, 40, 96, 0.1)",
        tension: 0.4,
     },
     {
       label: 'Revenue',
-      data: [290, 262, 205, 162, 150, 280, 206, 220, 260, 300, 275, 211],
+      data: [290, 262, 205, 162, 150, 180, 206, 220, 240, 190, 275, 211],
       borderColor: '#863BFF',
       pointBackgroundColor: '#863BFF',
-      backgroundColor: '#ECEEF4',
+      // backgroundColor: '#ECEEF4',
       fill: true,
       pointRadius: 3,
       tension: 0.4,
@@ -145,7 +145,7 @@ export class RdsAdminDashboardComponent extends MfeBaseComponent implements OnIn
     radius: 0,
     pointStyle: 'circle',
     responsive: true,
-    borderWidth:1.5,
+    borderWidth:1,
     maintainAspectRatio: false,
     plugins: {
       title: {
@@ -172,7 +172,15 @@ export class RdsAdminDashboardComponent extends MfeBaseComponent implements OnIn
           labels: {
            maxheight:10
           },
-        },   
+        },
+        grid: {
+          display: false
+        }   
+      },
+      x: {
+        grid: {
+          display: false
+        }
       },
   },
     tooltip: {
@@ -189,7 +197,7 @@ export class RdsAdminDashboardComponent extends MfeBaseComponent implements OnIn
       data: this.ProfitShareData,
       backgroundColor: [
         '#ff6384',
-        '#ffcd56',
+        '#BF00BB',
         '#4bc0c0'
       ],
       fillStyle: 'blue',
@@ -309,8 +317,8 @@ export class RdsAdminDashboardComponent extends MfeBaseComponent implements OnIn
       fillStyle: '#D0D7DD',
       fillRect: [200, 100, 40, 10],
       backgroundColor: [
-        '#fff',
-        '#01AE9D' 
+        '--chartColor9',
+        '--chartColor2' 
 
       ],
       borderColor: [
@@ -374,11 +382,12 @@ export class RdsAdminDashboardComponent extends MfeBaseComponent implements OnIn
     {
       label: 'Dataset 1',
       data: this.ConnectedCallsData,
-      fillStyle: '#D0D7DD',
+      fillStyle: '#E1E1E1',
       fillRect: [200, 100, 40, 10],
       backgroundColor: [
-        '#D0D7DD',
-        '#E1E1E1'
+        '--chartColor7',
+        '--chartColor2'
+        
       ],
       borderColor: [
         '#fff',
