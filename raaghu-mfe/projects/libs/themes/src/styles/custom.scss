@@ -574,7 +574,10 @@ table thead .header.d-flex {
   padding: 2%;
 }
 
-/* Sidenav */
+.bg-gradient-primary svg{
+  background-color: transparent !important;
+}
+  /* Sidenav */
 
 div.btn-container {
   display: table-cell;

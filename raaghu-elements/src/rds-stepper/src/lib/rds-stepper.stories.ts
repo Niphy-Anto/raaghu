@@ -18,7 +18,7 @@ const Template: Story<RdsStepperComponent> = (args: RdsStepperComponent) => ({
   template:
       `
       <div class="col-md-12">
-    <rds-stepper [stepperType]="stepperType"></rds-stepper>
+    <rds-stepper [stepperList]="stepperList" [stepperType]="stepperType" [readOnly]="false" [activePageNumber]="1" ></rds-stepper>
     <div naveContent class="tab-content" id="nav-tabContent">
             <div class="tab-pane fade show active p-2" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
             <div class="contents">

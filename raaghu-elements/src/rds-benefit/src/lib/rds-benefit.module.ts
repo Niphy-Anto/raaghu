@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { RdsBadgeModule } from '@libs/rds-badge';
 import { RdsIconModule } from '@libs/rds-icon';
 import { RdsLabelModule } from '@libs/rds-label';
 import { RdsBenefitComponent } from './rds-benefit.component';
@@ -13,7 +14,8 @@ import { RdsBenefitComponent } from './rds-benefit.component';
   imports: [
     CommonModule,
     RdsIconModule,
-    RdsLabelModule
+    RdsLabelModule,
+    RdsBadgeModule
   ],
   exports: [
     RdsBenefitComponent
