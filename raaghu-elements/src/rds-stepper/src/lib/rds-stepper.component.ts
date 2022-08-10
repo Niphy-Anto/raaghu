@@ -1,6 +1,5 @@
 import { AfterViewInit, Component, EventEmitter, Inject, Input, OnInit, Output } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
-import { first } from 'rxjs';
 
 @Component({
   selector: 'rds-stepper',
@@ -9,8 +8,7 @@ import { first } from 'rxjs';
 })
 export class RdsStepperComponent implements OnInit, AfterViewInit {
   
-  @Input() activepage!: number;
-  @Output() tabNumber = new EventEmitter<any>();
+  @Input() activePageNumber: number = 0;
   totalSteps: number = 3;
  
   @Input() stepparList:any=[
@@ -19,7 +17,7 @@ export class RdsStepperComponent implements OnInit, AfterViewInit {
         {stepname: "step3",steptabname:"Setting", tablink: '#nav-contact',ariacontrols: 'nav-contact'}
  ];
 
- @Input() stepparDetailedList:any=[
+ @Input() stepperDetailedList:any=[
   {stepname: "step1",steptabname:"Profile", tablink: '#nav-home', ariacontrols: 'nav-home', description: 'Vitae sed mi luctus laoreet.'},
   {stepname: "step2",steptabname:"Positions", tablink: '#nav-profile', ariacontrols: 'nav-profile', description: 'Cursus semper viverra.'},
   {stepname: "step3",steptabname:"Setting", tablink: '#nav-contact', ariacontrols: 'nav-contact', description: 'Penatibus eu quis ante.'},
@@ -28,6 +26,7 @@ export class RdsStepperComponent implements OnInit, AfterViewInit {
 
   @Input() stepperType: 'simple' | 'panel' | 'bullets' | 'panel-simple' | 'panel-arrow' | 'panel-border' | 'multi-circles-1' | 'multi-circles-2' 
   | 'bullet-text' | 'multi-circles-3' | 'progress-bar'='simple' ;
+  @Input() readOnly: boolean = false;
 
 
   constructor( @Inject(DOCUMENT) private document: Document) {
@@ -54,45 +53,53 @@ export class RdsStepperComponent implements OnInit, AfterViewInit {
 
     let first = 0;
     filterLiElement.forEach(item1=>{
-      if(first == 0){
-        item1.classList.add(`${type}-active`);  
-        first = 1;        
+      if(first < this.activePageNumber){
+        item1.classList.add(`${type}-complete`);      
+      }
+      else if(first == this.activePageNumber){
+        item1.classList.add(`${type}-active`);
       }
       else{
         item1.classList.add(`${type}-incomplete`);
       }
+      first++;
     })
-
-    filterLiElement.forEach(item=>{
-      item.addEventListener('click', function handleClick(event){
-        let complete = 0;
-        filterLiElement.forEach(item1=>{
-          if(complete){
-            item1.classList.remove(`${type}-incomplete`)
-            item1.classList.remove(`${type}-complete`)
-            item1.classList.remove(`${type}-active`)            
-            item1.classList.add(`${type}-incomplete`)
-          }
-          else if(item1 == item){
-            item1.classList.remove(`${type}-incomplete`)
-            item1.classList.remove(`${type}-complete`)
-            item1.classList.remove(`${type}-active`)
-            item1.classList.add(`${type}-active`)
-            complete = 1;
-          }
-          else{
-            item1.classList.remove(`${type}-incomplete`)
-            item1.classList.remove(`${type}-complete`)
-            item1.classList.remove(`${type}-active`)
-            item1.classList.add(`${type}-complete`)
-          }
+    if(!this.readOnly){
+      filterLiElement.forEach((item,index)=>{
+        const that = this;
+        item.addEventListener('click', function handleClick(event){
+          let complete = 0;
+          that.activePageNumber = index;
+          filterLiElement.forEach(item1=>{
+            if(complete){
+              item1.classList.remove(`${type}-incomplete`)
+              item1.classList.remove(`${type}-complete`)
+              item1.classList.remove(`${type}-active`)            
+              item1.classList.add(`${type}-incomplete`)
+            }
+            else if(item1 == item){
+              item1.classList.remove(`${type}-incomplete`)
+              item1.classList.remove(`${type}-complete`)
+              item1.classList.remove(`${type}-active`)
+              item1.classList.add(`${type}-active`)
+              complete = 1;
+            }
+            else{
+              item1.classList.remove(`${type}-incomplete`)
+              item1.classList.remove(`${type}-complete`)
+              item1.classList.remove(`${type}-active`)
+              item1.classList.add(`${type}-complete`)
+            }
+          })
         })
+        
       })
-    })
+    }
+
+    
   }
 
   ngOnInit(): void {
-    this.activepage = 1;
     this.totalSteps = this.stepparList.length;
   }
 }

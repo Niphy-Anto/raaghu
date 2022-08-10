@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RdsAddressDetailModule, RdsCardDetailModule } from '@libs/rds-elements';
-import { RdsIconModule } from '@libs/rds-icon';
-import { RdsLabelModule } from '@libs/rds-label';
+import { RdsAddressDetailModule, RdsCardDetailModule, RdsIconModule, RdsLabelModule } from '@libs/rds-elements';
 import { SharedModule } from '@libs/shared';
 
 import { AppRoutingModule } from './app-routing.module';

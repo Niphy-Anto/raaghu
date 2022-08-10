@@ -43,7 +43,7 @@
 
 <div *ngIf="stepperType == 'panel-border'" id="rds-stepper">
   <ul class="nav d-flex list-unstyled px-4 panel" id="panel-border">
-    <li *ngFor="let item of stepparDetailedList; index as i" class="d-flex">
+    <li *ngFor="let item of stepperDetailedList; index as i" class="d-flex">
       <div class="panel-border-item align-self-center p-2">
         <a class="text-decoration-none" class="d-flex" [attr.data-bs-target]="item.tablink" data-bs-toggle="tab" [attr.aria-controls]="item.ariacontrols">
           <div class="circle align-self-center">
@@ -79,7 +79,7 @@
   <ul class="nav list-unstyled d-flex" id="bullets">
     <div class="flex-grow-1"></div>
     <div class="d-flex" id="rds-stepper">
-      <div class="step-name align-self-center">steps {{activepage+1}} of {{totalSteps}}</div>
+      <div class="step-name align-self-center">steps {{activePageNumber+1}} of {{totalSteps}}</div>
       <div class="d-flex mx-3">
         <li class="mx-2 d-flex align-self-center" *ngFor="let item of stepparList; index as i">
           <div class="bullet-circle align-self-center mx-auto" [attr.data-bs-target]="item.tablink" data-bs-toggle="tab" [attr.aria-controls]="item.ariacontrols"></div>
@@ -149,7 +149,7 @@
 <div *ngIf="stepperType == 'multi-circles-3'" class="d-flex" id="rds-stepper">
   <div class="flex-grow-1"></div>
   <ul class="nav list-unstyled" id="multi-circles">
-    <li class="d-flex" *ngFor="let item of stepparDetailedList; index as i">
+    <li class="d-flex" *ngFor="let item of stepperDetailedList; index as i">
       <div class="multi-circle d-flex" [attr.data-bs-target]="item.tablink" data-bs-toggle="tab" [attr.aria-controls]="item.ariacontrols">
         <div class="inner-circle">
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" class="bi bi-check-lg" viewBox="0 0 16 16">
