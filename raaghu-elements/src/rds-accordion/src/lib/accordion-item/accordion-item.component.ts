@@ -1,4 +1,6 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges, TemplateRef, ViewEncapsulation } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { RdsAccordionService } from '../rds-accordion.service';
 
 @Component({
   selector: 'accordion-item',
@@ -57,6 +59,7 @@ export class AccordionItemComponent implements OnInit,OnChanges {
   //   return val
   // }
   static accordionItemCount = 0;
+    subscription!: Subscription;
   @Input() id = AccordionItemComponent.accordionItemCount;
   @Input() count = AccordionItemComponent.accordionItemCount;
   @Input() title!: string;
@@ -65,10 +68,10 @@ export class AccordionItemComponent implements OnInit,OnChanges {
 
   @Output() onClose = new EventEmitter<any>();
   @Output() onShow = new EventEmitter<any>();
-
+  @Input() accordionIcon : boolean = false;
   @Input() accordionId: string = 'myAccordion';
-
-  constructor() {
+  border:boolean=false
+  constructor(private rdsservice: RdsAccordionService ) {
     AccordionItemComponent.accordionItemCount++;
   }
 
@@ -77,6 +80,15 @@ export class AccordionItemComponent implements OnInit,OnChanges {
   }
 
   ngOnInit(): void {
+    this.subscription=this.rdsservice.getItem().subscribe(item=>{
+      if(item){
+        this.border=true
+        this.accordionIcon = true
+      }else{
+        this.border=false
+        this.accordionIcon = false
+      }
+    })
 
   }
 

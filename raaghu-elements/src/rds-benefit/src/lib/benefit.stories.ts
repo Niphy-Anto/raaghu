@@ -20,7 +20,7 @@ export default {
         FormBuilder
       ],
     })
-  ]
+  ] 
 } as Meta;
 
 const Template: Story<RdsBenefitComponent> = (args: RdsBenefitComponent) => ({
