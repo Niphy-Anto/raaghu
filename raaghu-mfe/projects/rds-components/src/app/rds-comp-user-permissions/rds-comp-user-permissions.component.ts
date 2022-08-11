@@ -27,7 +27,7 @@ declare let bootstrap: any;
   encapsulation: ViewEncapsulation.None,
 })
 export class RdsCompUserPermissionsComponent implements OnInit {
-  actions: TableAction[] = [{ id: 'delete', displayName: 'Delete' }, { id: 'edit', displayName: 'Edit' }]
+  actions: TableAction[] = [{ id: 'edit', displayName: 'Edit' }, { id: 'delete', displayName: 'Delete' }]
   activePage: number = 0;
   canvasTitle: string = '';
   isReset: boolean = false;
