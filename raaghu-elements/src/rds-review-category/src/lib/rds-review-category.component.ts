@@ -11,9 +11,9 @@ export class RdsReviewCategoryComponent implements OnInit {
   item: any;
 
   @Input() display_type?: string = 'Basic';
-  onClick(event){
 
-  }
+
+  
 
   ngOnInit(): void {
   }

@@ -254,7 +254,7 @@ import { RdsCompCustomerReviewsComponent } from './rds-comp-customer-reviews/rds
     RdsCompCalendarComponent,
     RdsCompProductOverviewComponent,
     RdsCompReviewCategoryComponent,
-    RdsCompCustomerReviewsComponent
+    RdsCompCustomerReviewsComponent,
     //RdsCompLanguageTextListComponent,
     RdsCompContactInformationComponent,
     RdsCompShippingAddressComponent,
@@ -264,7 +264,6 @@ import { RdsCompCustomerReviewsComponent } from './rds-comp-customer-reviews/rds
     RdsCompProductOverviewComponent,
     RdsCompPricingTableComponent,
     RdsCompProductOverviewComponent,
-    RdsCompReviewCategoryComponent,
     RdsCompPersonalInfoComponent,
     RdsCompPasswordSettingsComponent,
     RdsCompEmailSettingsComponent
