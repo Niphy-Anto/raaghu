@@ -126,6 +126,7 @@ export class RdsCompTenantListComponent implements OnInit, DoCheck {
       selected: false,
     },
   ];
+  
   @Input() tenantHeaders: TableHeader[] = [];
   selectedFeatureList: any = [];
   showEmail: boolean;

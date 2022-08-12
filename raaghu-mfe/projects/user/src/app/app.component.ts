@@ -97,7 +97,7 @@ export class AppComponent {
           this.store.dispatch(saveUser(data));
         },
         onClose: (event: any) => {
-          this.userinfo = undefined;
+        this.userinfo = undefined;  
           const mfeConfigedit = this.rdsUserMfeConfig;
           mfeConfigedit.input.userinfo = { ...this.userinfo };
           mfeConfigedit.input.editShimmer=true;
@@ -152,10 +152,14 @@ export class AppComponent {
           if (eventData.id) {
             this.isEdit = true;
           } else {
+            
             this.isEdit = false;
             const mfeConfigedit = this.rdsUserMfeConfig;
             mfeConfigedit.input.editShimmer =false;
+            this.userinfo = undefined;  
+          mfeConfigedit.input.userinfo = { ...this.userinfo };
             this.rdsUserMfeConfig = { ...mfeConfigedit };
+
           }
           this.store.dispatch(getUserForEdit(eventData.id));
           this.store.select(selectUserForEdit).subscribe((res: any) => {
@@ -173,12 +177,7 @@ export class AppComponent {
                 this.roles.push(item);
               });
             }
-            if (
-              res &&
-              res.UserEditI &&
-              res.UserEditI.user &&
-              res.UserEditI.user.id !== null
-            ) {
+            if (  res && res.UserEditI &&  res.UserEditI.user ) {
               const item: any = {
                 name: res.UserEditI.user.name,
                 emailAddress: res.UserEditI.user.emailAddress,
@@ -197,7 +196,7 @@ export class AppComponent {
                 imageUrl: '../assets/edit-profile.png',
               };
               this.userinfo = item;
-            }
+            } 
             if (res && res.UserEditI && res.UserEditI.allOrganizationUnits && res.status=="success") {
               this.resOrganizationUnit=res.UserEditI.allOrganizationUnits
               this.OrganizationUnit = [];
@@ -243,7 +242,7 @@ export class AppComponent {
             const mfeConfigedit = this.rdsUserMfeConfig;
             mfeConfigedit.input.roles = [...this.roles];
             if (this.userinfo) {
-              mfeConfigedit.input.userinfo = { ...this.userinfo };
+           mfeConfigedit.input.userinfo = { ...this.userinfo };
             }
             mfeConfigedit.input.isEdit = this.isEdit;
             this.rdsUserMfeConfig = { ...mfeConfigedit };
