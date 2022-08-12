@@ -4,8 +4,6 @@ import { RdsIconModule } from '@libs/rds-icon';
 import { RdsBadgeComponent } from './rds-badge.component';
 import { RdsButtonModule } from '@libs/rds-button';
 
-
-
 export default {
 
   title: 'Elements/Badge',
@@ -13,7 +11,7 @@ export default {
   component: RdsBadgeComponent,
   decorators: [
     moduleMetadata({
-      imports: [CommonModule, RdsIconModule,RdsButtonModule],
+      imports: [CommonModule, RdsIconModule, RdsButtonModule],
     }),
   ],
 
@@ -152,9 +150,9 @@ export const BadgeWithIcon = BadgeIcon.bind({});
 BadgeWithIcon.args = {
   top: '',
   start: '',
-  iconFill:true,
+  iconFill: true,
   iconStroke: false
- 
+
 };
 
 

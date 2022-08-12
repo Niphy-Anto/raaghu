@@ -126,6 +126,7 @@ export class RdsCompTenantListComponent implements OnInit, DoCheck {
       selected: false,
     },
   ];
+  
   @Input() tenantHeaders: TableHeader[] = [];
   selectedFeatureList: any = [];
   showEmail: boolean;
@@ -232,7 +233,7 @@ export class RdsCompTenantListComponent implements OnInit, DoCheck {
       this.isTenantInfoValid = false;
     }
     if (event) {
-      this.canvasTitle = 'New Tenant';
+      this.canvasTitle = 'NEW TENANT';
       this.tenantData = undefined;
       this.tenantSettingsInfo = undefined;
 

@@ -2476,9 +2476,38 @@
 					}
 				}
 			}
+		},
+		"rds-stepper": {
+			"projectType": "library",
+			"root": "src/rds-stepper",
+			"sourceRoot": "src/rds-stepper/src",
+			"prefix": "lib",
+			"architect": {
+				"build": {
+					"builder": "@angular-devkit/build-angular:ng-packagr",
+					"options": {
+						"project": "src/rds-stepper/ng-package.json"
+					},
+					"configurations": {
+						"production": {
+							"tsConfig": "src/rds-stepper/tsconfig.lib.prod.json"
+						},
+						"development": {
+							"tsConfig": "src/rds-stepper/tsconfig.lib.json"
+						}
+					},
+					"defaultConfiguration": "production"
+				},
+				"test": {
+					"builder": "@angular-devkit/build-angular:karma",
+					"options": {
+						"main": "src/rds-stepper/src/test.ts",
+						"tsConfig": "src/rds-stepper/tsconfig.spec.json",
+						"karmaConfig": "src/rds-stepper/karma.conf.js"
+					}
+				}
+			}
 		}
-  },
-  "cli": {
-    "analytics": "32da651c-f51a-499f-bf30-39777d8d3d98"
-  }
+	}
+  
 }
