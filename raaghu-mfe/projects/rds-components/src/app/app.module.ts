@@ -128,6 +128,7 @@ import { RdsCompAppDetailsComponent } from './rds-comp-app-details/rds-comp-app-
 import { RdsCompProductOverviewComponent } from './rds-comp-product-overview/rds-comp-product-overview.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { RdsCompReviewCategoryComponent } from './rds-comp-review-category/rds-comp-review-category.component';
+import { RdsCompCustomerReviewsComponent } from './rds-comp-customer-reviews/rds-comp-customer-reviews.component';
 
 @NgModule({
   declarations: [
@@ -243,7 +244,8 @@ import { RdsCompReviewCategoryComponent } from './rds-comp-review-category/rds-c
     RdsCompAppDetailsComponent,
     RdsCompCalendarComponent,
     RdsCompProductOverviewComponent,
-    RdsCompReviewCategoryComponent
+    RdsCompReviewCategoryComponent,
+    RdsCompCustomerReviewsComponent
     //RdsCompLanguageTextListComponent,
   ],
   imports: [

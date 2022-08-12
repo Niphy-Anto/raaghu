@@ -235,3 +235,6 @@ export * from '../rds-feature-list/src/public-api';
 
 // Public API Surface of rds-product-image
 export * from '../rds-product-image/src/public-api';
+
+// Public API Surface of rds-review-category
+export * from '../rds-review-category/src/public-api';

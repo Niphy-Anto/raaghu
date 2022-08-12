@@ -91,7 +91,8 @@ module.exports = {
 
         './RdsCompCalendar': './projects/rds-components/src/app/rds-comp-calendar/rds-comp-calendar.component.ts',
         './RdsCompOrderSummary': './projects/rds-components/src/app/rds-comp-order-summary/rds-comp-order-summary.component.ts',
-        './RdsCompShoppingCartProduct': './projects/rds-components/src/app/rds-comp-shopping-cart-product/rds-comp-shopping-cart-product.component.ts'
+        './RdsCompShoppingCartProduct': './projects/rds-components/src/app/rds-comp-shopping-cart-product/rds-comp-shopping-cart-product.component.ts',
+        './RdsCompCustomerReviewsComponent':'./projects/rds-components/src/app/rds-comp-customer-reviews/rds-comp-customer-reviews.component.ts'
       },
 
       shared: share({
