@@ -115,7 +115,7 @@ export class RdsChartBoolComponent implements OnInit, AfterViewInit {
           element.backgroundColor[index] = (this.style.getPropertyValue(bg)) ? this.style.getPropertyValue(bg) : bg
         }
       });
-    });
+    }); 
     console.log(this.ChartDataSets);
     let svg = ChartIcons[this.centerIconName];
     let blob = new Blob([svg], { type: 'image/svg+xml' });
