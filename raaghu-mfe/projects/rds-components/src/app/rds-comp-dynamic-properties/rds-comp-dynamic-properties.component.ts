@@ -17,7 +17,7 @@ declare let bootstrap: any;
   styleUrls: ['./rds-comp-dynamic-properties.component.scss'],
 })
 export class RdsCompDynamicPropertiesComponent implements OnInit, OnChanges {
-  actions: TableAction[] = [{ id: 'delete', displayName: 'Delete' },{id:'edit',displayName:'Edit'}]
+  actions: TableAction[] = [{id:'edit',displayName:'Edit'}, { id: 'delete', displayName: 'Delete' }]
   @Input()
   DynamicPropertiesTableHeader: any;
   @Input() DynamicPropertiesTableData: any;
