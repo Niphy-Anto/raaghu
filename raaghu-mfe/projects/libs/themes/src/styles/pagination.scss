@@ -1,6 +1,3 @@
-
-@import './colorvariables.scss';
-
 /*pagination custom properties*/
 .pagination {
 
@@ -34,9 +31,7 @@
 
   .page-item.active {
     a.page-link {
-      border: 1px solid $primary;
-      background: $primary-0;
-      color: $primary;
+      border: 1px solid;
     }
   }
   // .page-item1{

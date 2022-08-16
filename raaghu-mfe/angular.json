@@ -282,33 +282,59 @@
 			"architect": {
 				"build": {
 					"builder": "ngx-build-plus:browser",
-					"options": {
-						"outputPath": "dist/host",
-						"index": "projects/host/src/index.html",
-						"main": "projects/host/src/main.ts",
-						"polyfills": "projects/host/src/polyfills.ts",
-						"tsConfig": "projects/host/tsconfig.app.json",
-						"assets": [
-							"projects/host/src/favicon.ico",
-							"projects/host/src/assets",
-							{
-								"glob": "**/*",
-								"input": "projects/libs/rds-elements/src/rds-icon/src/assets/",
-								"output": "./assets"
-							}
-						],
-						"styles": [
-							"projects/libs/themes/src/styles/quillEditor.scss",
-							"projects/libs/themes/src/styles/custom.scss",
-							"projects/libs/themes/src/styles/responsive.scss",
-							"projects/host/src/styles.css"
-						],
-						"scripts": [
-							"./node_modules/bootstrap/dist/js/bootstrap.min.js"
-						],
-						"extraWebpackConfig": "projects/host/webpack.config.js",
-						"commonChunk": false
-					},
+          "options": {
+            "outputPath": "dist/host",
+            "index": "projects/host/src/index.html",
+            "main": "projects/host/src/main.ts",
+            "polyfills": "projects/host/src/polyfills.ts",
+            "tsConfig": "projects/host/tsconfig.app.json",
+            "assets": [
+              "projects/host/src/favicon.ico",
+              "projects/host/src/assets",
+              {
+                "glob": "**/*",
+                "input": "projects/libs/rds-elements/src/rds-icon/src/assets/",
+                "output": "./assets"
+              }
+            ],
+            "styles": [
+              "projects/libs/themes/src/styles/quillEditor.scss",
+              "projects/libs/themes/src/styles/default.scss",
+              "projects/libs/themes/src/styles/responsive.scss",
+              "projects/host/src/styles.css",
+              {
+                "input": "projects/libs/themes/src/styles/default.scss",
+                "bundleName": "default",
+                "inject": false
+              },
+              {
+                "input": "projects/libs/themes/src/styles/accessible.scss",
+                "bundleName": "accessible",
+                "inject": false
+              },
+              {
+                "input": "projects/libs/themes/src/styles/blue.scss",
+                "bundleName": "blue",
+                "inject": false
+              },
+              {
+                "input": "projects/libs/themes/src/styles/green.scss",
+                "bundleName": "green",
+                "inject": false
+              },
+              {
+                "input": "projects/libs/themes/src/styles/orange.scss",
+                "bundleName": "orange",
+                "inject": false
+              }
+
+            ],
+            "scripts": [
+              "./node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ],
+            "extraWebpackConfig": "projects/host/webpack.config.js",
+            "commonChunk": false
+          },
 					"configurations": {
 						"optimization": {
 							"scripts": true,
