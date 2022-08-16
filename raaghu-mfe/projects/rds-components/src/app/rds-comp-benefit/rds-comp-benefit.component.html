@@ -1,6 +1,8 @@
 <div class="row" *ngFor="let data of itemList">
-    <ng-container *ngFor="let item of data.items; let i=index">
-    <div class="{{getColSize(data)}}" [class.border-benefittype2]="data.display_type===item.display_type&&data.display_type==='benefit_type2'&&i!==(data.items.length-1)" *ngIf="data.display_type===item.display_type">
+  <ng-container *ngFor="let item of data.items; let i=index">
+    <div class="{{getColSize(data)}}"
+      [class.border-benefittype2]="data.display_type===item.display_type&& (data.display_type==='benefit_type2' || data.display_type==='benefit_type4' || data.display_type==='benefit_type5') &&i!==(data.items.length-1)"
+      *ngIf="data.display_type===item.display_type">
       <rds-benefit [item]="item" [display_type]="data.display_type"></rds-benefit>
     </div>
   </ng-container>

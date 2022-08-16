@@ -26,7 +26,7 @@ export class RdsCompTenantListComponent implements OnInit, DoCheck {
   viewCanvas: boolean = false;
   selectedId: any = '';
   isTenantInfoValid: boolean = false;
-  actions: TableAction[] = [{ id: 'delete', displayName: this.translate.instant('Delete') }, { id: 'edit', displayName: this.translate.instant('Edit') }]
+  actions: TableAction[] = [{ id: 'edit', displayName: this.translate.instant('Edit') }, { id: 'delete', displayName: this.translate.instant('Delete') }]
   @Input() tenantSettingsInfo: any;
   @Input() tenantData: any;
   @Input() isShimmer: boolean = false;
@@ -126,6 +126,7 @@ export class RdsCompTenantListComponent implements OnInit, DoCheck {
       selected: false,
     },
   ];
+  
   @Input() tenantHeaders: TableHeader[] = [];
   selectedFeatureList: any = [];
   showEmail: boolean;
