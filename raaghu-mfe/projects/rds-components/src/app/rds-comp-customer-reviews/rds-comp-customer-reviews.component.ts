@@ -28,11 +28,11 @@ export class RdsCompCustomerReviewsComponent implements OnInit {
       this.totalReview = this.totalReview + this.itemlist[item];
     }
   }
-  getReviewRate(item: number): number {
-    return Math.round((100 * item) / this.totalReview);
+  getReviewRate(item: any): string {
+    return (Math.round((100 * item) / this.totalReview)).toString();
   }
 
-  getLabel(i: number): number {
-    return Object.keys(this.itemlist).length - i;
+  getLabel(i: number): string {
+    return (Object.keys(this.itemlist).length - i).toString();
   }
 }
