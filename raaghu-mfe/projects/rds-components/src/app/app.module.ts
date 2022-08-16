@@ -42,7 +42,7 @@ import {
   RdsSpinnerModule, RdsToastsModule, RdsChartBubbleModule, RdsChartDoughnutModule, RdsChartMixedModule, RdsChartPolarAreaModule, RdsChartScatterModule, RdsChartStackedModule,
   RdsProgressbarModule, RdsBreadcrumbModule, RdsCarouselModule, RdsDoubleRangeModule, RdsScrollspyModule, RdsCounterModule, RdsFabMenuModule, RdsLabelModule, RdsIconLabelModule,
   CalendarModule, adapterFactory, DateAdapter, RdsRatingModule, RdsLikeDislikeModule, RdsColorModule, RdsFeedModule, RdsVideoPlayerModule, RdsAppDetailsModule, RdsBenefitModule,
-  RdsCardDetailModule, RdsSizeModule, RdsPriceModule, RdsFeatureListModule, RdsProductImageModule, RdsReviewCategoryModule
+  RdsCardDetailModule, RdsSizeModule, RdsPriceModule, RdsFeatureListModule, RdsProductImageModule
 } from '@libs/rds-elements';
 import { RdsCompDemouiComponent } from './rds-comp-demoui/rds-comp-demoui.component';
 import { RdsCompTenantManagementComponent } from './rds-comp-tenant-management/rds-comp-tenant-management.component';
@@ -136,7 +136,7 @@ import { RdsCompPersonalInfoComponent } from './rds-comp-personal-info/rds-comp-
 import { RdsCompPasswordSettingsComponent } from './rds-comp-password-settings/rds-comp-password-settings.component';
 import { RdsCompEmailSettingsComponent } from './rds-comp-email-settings/rds-comp-email-settings.component';
 import { RdsCompPricingTableComponent } from './rds-comp-pricing-table/rds-comp-pricing-table.component';
-import { RdsCompReviewCategoryComponent } from './rds-comp-review-category/rds-comp-review-category.component';
+ import { RdsCompReviewCategoryComponent } from './rds-comp-review-category/rds-comp-review-category.component';
 import { RdsCompOrderDetailsComponent } from './rds-comp-order-details/rds-comp-order-details.component';
 import { RdsAddressDetailModule } from 'projects/libs/rds-elements/src/rds-address-detail/src/public-api';
 import { RdsStepperModule } from 'projects/libs/rds-elements/src/rds-stepper/src/public-api';
@@ -256,7 +256,6 @@ import { RdsStepperModule } from 'projects/libs/rds-elements/src/rds-stepper/src
     RdsCompCalendarComponent,
     RdsCompProductOverviewComponent,
     RdsCompPricingTableComponent,
-   
     RdsCompReviewCategoryComponent,
     RdsCompOrderDetailsComponent,
     //RdsCompLanguageTextListComponent,
@@ -268,8 +267,7 @@ import { RdsStepperModule } from 'projects/libs/rds-elements/src/rds-stepper/src
     RdsCompProductOverviewComponent,
     RdsCompPricingTableComponent,
     RdsCompProductOverviewComponent,
-    RdsCompReviewCategoryComponent,
-    RdsCompPersonalInfoComponent,
+   RdsCompPersonalInfoComponent,
     RdsCompPasswordSettingsComponent,
     RdsCompEmailSettingsComponent
   ],
@@ -362,7 +360,7 @@ import { RdsStepperModule } from 'projects/libs/rds-elements/src/rds-stepper/src
     RdsAddressDetailModule,
     RdsStepperModule,
    
-    RdsReviewCategoryModule
+   
   ],
   providers: [],
   bootstrap: [AppComponent],

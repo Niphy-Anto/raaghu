@@ -106,6 +106,9 @@ export const MfeConfig = {
   },
   profilesettings: {
     url: 'http://localhost:5048/remoteEntry.js',
+  },
+  orderdetails: {
+    url: 'http://localhost:5036/remoteEntry.js',
   }
 
 };

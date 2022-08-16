@@ -1,8 +1,11 @@
 <div [ngSwitch]="displaytype">
     <div *ngSwitchCase="'with-progress-bars'">
+        <div class="card mb-3">
+        <div class="card-body  pt-0">
+            <div class="row  p-3">
         <div class="col-md-12">
 
-            <table id="table" class="w-100 p-4 mt-3" *ngFor="let item of itemList">
+            <table id="table" class="w-100 p-4 mt-3 table-responsive" *ngFor="let item of itemList">
                 <tbody>
                     <tr class="mb-5 border-bottom mt-3 pt-3">
                         <div class="row mb-4">
@@ -58,14 +61,34 @@
                         </div>
                     </tr>
                     <tr>
-                        
-                        <!-- <rds-stepper [stepperType]="progress-bar"></rds-stepper> -->
+                        <div class="row mt-3">
+                            <div class="col-md-12">
+                                <rds-label [label]="item.shipDetails" [bold]="true"></rds-label>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-12">
+                                <rds-stepper
+                                [stepparList]="item.stepparList"
+                                [stepperType]="'progress-bar'"
+                                [readOnly]="false"
+                                [activePageNumber]="1"
+                              ></rds-stepper>
+                            </div>
+                        </div>
+                      
                     </tr>
                 </tbody>
             </table>
         </div>
+        </div>
+        </div>
+        </div>
     </div>
     <div *ngSwitchCase="'With large images and progress bars'">
+        <div class="card mb-3">
+        <div class="card-body  pt-0">
+            <div class="row  p-2">
     <div class="row" *ngFor="let item of itemList">
 
         <div class="col-md-3">
@@ -115,16 +138,36 @@
                             </div>
                         </tr>
                         <tr>
-                            <!-- <rds-stepper [stepperType]="progress-bar" [stepparList]="stepparList"></rds-stepper> -->
+                            <div class="row mt-3">
+                                <div class="col-md-12">
+                                    <rds-label [label]="item.shipDetails" [bold]="true"></rds-label>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-12">
+                                    <rds-stepper
+                                    [stepparList]="item.stepparList"
+                                    [stepperType]="'progress-bar'"
+                                    [readOnly]="false"
+                                    [activePageNumber]="1"
+                                  ></rds-stepper>
+                                </div>
+                            </div>
+                          
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
-
+  </div>
+  </div>
+  </div>
     </div>
     <div *ngSwitchCase="'With large images and progress bars - 1'">
+        <div class="card mb-3">
+        <div class="card-body  pt-0">
+            <div class="row  p-2">
      <div class="row" *ngFor="let item of itemList">
         <div class="col-md-12">
             <rds-label class="fw-bold mb-3" [label]="item.tno"></rds-label><br>
@@ -147,6 +190,9 @@
             </div>
         </div>
     </div>
+        </div>
+        </div>
+        </div>
         </div>
      </div>
         
