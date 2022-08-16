@@ -31,7 +31,7 @@ export class RdsCompRoleListComponent implements OnInit {
     },
   };
 
-  actions: TableAction[] = [{ id: 'delete', displayName: 'Delete' }, { id: 'edit', displayName: 'Edit' }]
+  actions: TableAction[] = [{ id: 'edit', displayName: 'Edit' }, { id: 'delete', displayName: 'Delete' }]
   @Input() RolesData: any;
   @Input() permissionsList: any = [];
   @Input() filterPermissionsList: any = [];

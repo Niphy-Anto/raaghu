@@ -318,7 +318,7 @@ export class RdsAdminDashboardComponent extends MfeBaseComponent implements OnIn
       fillRect: [200, 100, 40, 10],
       backgroundColor: [
         '--chartColor9',
-        '--chartColor2' 
+        '--chartColor7' 
 
       ],
       borderColor: [
@@ -385,8 +385,8 @@ export class RdsAdminDashboardComponent extends MfeBaseComponent implements OnIn
       fillStyle: '#E1E1E1',
       fillRect: [200, 100, 40, 10],
       backgroundColor: [
-        '--chartColor7',
-        '--chartColor2'
+        '--chartColor1',
+        '--chartColor7'
         
       ],
       borderColor: [
