@@ -15,6 +15,10 @@ export default {
       options: ['primary', 'secondary', 'success', 'info', 'warning', 'danger', 'dark', 'light'],
       control: { type: 'select' }
     },
+    fillColor: {
+      options: ['primary', 'secondary', 'success', 'info', 'warning', 'danger', 'dark', 'light'],
+      control: { type: 'select' }
+    },
     fill: {
       options: [ true, false],
       control: { type: 'select' }

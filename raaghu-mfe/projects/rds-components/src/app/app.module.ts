@@ -136,7 +136,9 @@ import { RdsCompPersonalInfoComponent } from './rds-comp-personal-info/rds-comp-
 import { RdsCompPasswordSettingsComponent } from './rds-comp-password-settings/rds-comp-password-settings.component';
 import { RdsCompEmailSettingsComponent } from './rds-comp-email-settings/rds-comp-email-settings.component';
 import { RdsCompPricingTableComponent } from './rds-comp-pricing-table/rds-comp-pricing-table.component';
- import { RdsCompReviewCategoryComponent } from './rds-comp-review-category/rds-comp-review-category.component';
+import { RdsCompReviewCategoryComponent } from './rds-comp-review-category/rds-comp-review-category.component';
+import { RdsCompCustomerReviewsComponent } from './rds-comp-customer-reviews/rds-comp-customer-reviews.component';
+
 import { RdsCompOrderDetailsComponent } from './rds-comp-order-details/rds-comp-order-details.component';
 import { RdsAddressDetailModule } from 'projects/libs/rds-elements/src/rds-address-detail/src/public-api';
 import { RdsStepperModule } from 'projects/libs/rds-elements/src/rds-stepper/src/public-api';
@@ -255,8 +257,9 @@ import { RdsStepperModule } from 'projects/libs/rds-elements/src/rds-stepper/src
     RdsCompAppDetailsComponent,
     RdsCompCalendarComponent,
     RdsCompProductOverviewComponent,
-    RdsCompPricingTableComponent,
     RdsCompReviewCategoryComponent,
+    RdsCompCustomerReviewsComponent,
+    RdsCompPricingTableComponent,
     RdsCompOrderDetailsComponent,
     //RdsCompLanguageTextListComponent,
     RdsCompContactInformationComponent,
@@ -267,7 +270,7 @@ import { RdsStepperModule } from 'projects/libs/rds-elements/src/rds-stepper/src
     RdsCompProductOverviewComponent,
     RdsCompPricingTableComponent,
     RdsCompProductOverviewComponent,
-   RdsCompPersonalInfoComponent,
+    RdsCompPersonalInfoComponent,
     RdsCompPasswordSettingsComponent,
     RdsCompEmailSettingsComponent
   ],

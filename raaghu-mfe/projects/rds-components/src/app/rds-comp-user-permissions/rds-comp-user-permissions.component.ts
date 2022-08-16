@@ -16,6 +16,7 @@ import { ComponentLoader } from 'ngx-bootstrap/component-loader';
 import { ComponentLoaderOptions } from 'projects/libs/shared/src/lib/component-loader-options.model';
 import { TableAction } from '../../models/table-action.model';
 import { TranslateService } from '@ngx-translate/core';
+import { OrganizationTreeNode } from '../../models/organization-tree.model';
 
 declare let bootstrap: any;
 
@@ -26,7 +27,7 @@ declare let bootstrap: any;
   encapsulation: ViewEncapsulation.None,
 })
 export class RdsCompUserPermissionsComponent implements OnInit {
-  actions: TableAction[] = [{ id: 'delete', displayName: 'Delete' }, { id: 'edit', displayName: 'Edit' }]
+  actions: TableAction[] = [{ id: 'edit', displayName: 'Edit' }, { id: 'delete', displayName: 'Delete' }]
   activePage: number = 0;
   canvasTitle: string = '';
   isReset: boolean = false;
@@ -72,8 +73,10 @@ export class RdsCompUserPermissionsComponent implements OnInit {
   @Input() editShimmer:boolean=false;
   @Input() public isEdit: boolean = false;
   @Input() public OrganizationUnit: any = [];
+  @Input() organizationTreeList:  [];
   @Input() permissionsList: PermissionNode[] = [];
   @Input() selectedPermissions: any = [];
+  @Input() selectedOrganizations: any = [];
   @Input() listItemsm = [
     { value: 'New User', some: 'value', key: 'new', icon: 'plus', iconWidth: '20px', iconHeight: '20px' },
     { value: 'Export To Excel', some: 'value', key: 'download', icon: 'refresh', iconWidth: '20px', iconHeight: '20px' },
@@ -90,7 +93,9 @@ export class RdsCompUserPermissionsComponent implements OnInit {
   @Output() deleteUser = new EventEmitter<{ item: any }>();
   @Output() onClose = new EventEmitter<any>();
   @Input() Selectedata: any = [];
+  Selecteorganizationdata:any=[];
   treeData: [] = [];
+  organizationtreeData: [] = [];
   PermissionFiltertreeData: [] = [];
   selectedRoles: any = [];
   PermissinFilterSelectedata: any = [];
@@ -216,7 +221,7 @@ export class RdsCompUserPermissionsComponent implements OnInit {
     const user: any = {
       userInfo: this.user.userInfo,
       roles: this.selectedRoles,
-      organizationUnits: this.selectedOrganizationUnit,
+      organizationUnits: this.Selecteorganizationdata,
     };
     this.Saveuserinfo.emit({ item: user });
     this.isReset = true;
@@ -248,9 +253,10 @@ export class RdsCompUserPermissionsComponent implements OnInit {
   newUser(event): void {
     this.selectedId = '';
     this.viewCanvas = true;
-    this.CreateOrEditUser.emit({ id: undefined });
+     this.CreateOrEditUser.emit({ id: undefined });
     if (event) {
       this.canvasTitle = 'NEW USER';
+      this.userinfo = undefined;
       event.stopPropagation();
       this.navtabsItems = [
         {
@@ -295,6 +301,7 @@ export class RdsCompUserPermissionsComponent implements OnInit {
   editTableRowData(event): void {
     this.canvasTitle = 'EDIT USER';
     this.selectedId = event.id;
+
     this.viewCanvas = true;
     if (event) {
       this.canvasTitle = 'EDIT USER';
@@ -329,7 +336,9 @@ export class RdsCompUserPermissionsComponent implements OnInit {
     }, 100);
 
     this.activePage = 0;
+    // this.newUser(undefined);
     this.CreateOrEditUser.emit({ id: this.selectedId });
+ 
   }
   getSelectedRoles() {
     this.selectedRoles = [];
@@ -348,8 +357,21 @@ export class RdsCompUserPermissionsComponent implements OnInit {
         permissionlist
       );
     }
+     console.log(permissionlist);
+    
   }
 
+  getSelectedorganizationunits(event: any): void {
+    this.organizationtreeData = event;
+    let organizationList = [];
+    if (this.organizationtreeData && this.organizationtreeData.length > 0) {
+      this.Selecteorganizationdata = this.iterateSelectedOrganizationUnits(
+        this.organizationtreeData,
+        organizationList
+      );
+    }
+    console.log(organizationList);
+  }
   iterateSelectedPermissions(arr: any, permissionList): any {
     arr.forEach((item: any) => {
       if (item.selectedChildren && item.selectedChildren.length > 0) {
@@ -359,6 +381,19 @@ export class RdsCompUserPermissionsComponent implements OnInit {
     });
     return permissionList;
   }
+  iterateSelectedOrganizationUnits(arr: any, organizationList): any {
+    arr.forEach((item: any) => {
+      if(item.selected){
+        organizationList.push(item.data.id);
+      }
+      if (item.children && item.children.length > 0) {
+         this.iterateSelectedOrganizationUnits(item.children, organizationList);
+      }
+      });
+    return organizationList;
+  }
+  
+
   getSelectedUserPermissionFilterList(event: any): void {
     if (event && event.length > 0) {
       this.PermissionFiltertreeData = event;

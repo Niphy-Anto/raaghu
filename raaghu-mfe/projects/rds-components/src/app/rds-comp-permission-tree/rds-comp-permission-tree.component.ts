@@ -63,15 +63,26 @@ export class RdsCompPermissionTreeComponent implements OnInit {
     
   }
 
+
   checkSelectedNodes(treeData: any, node: any) {
     treeData.forEach((item: any) => {
+      if( item.data.name){
       if (item.data.name === node.name) {
         item.selected = (node.value === 'true') ? true : (node.value === 'false') ? false : node.value;
 
       } else {
         this.checkSelectedNodes(item.children, node)
       }
+    }
+    if(item.data.displayName){
+if(  item.data.displayName === node.name){
+  item.selected = (node.value === 'true') ? true : (node.value === 'false') ? false : node.value;
 
+} else {
+  this.checkSelectedNodes(item.children, node)
+
+}
+    }
     })
   }
 
