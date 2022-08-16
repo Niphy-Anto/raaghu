@@ -56,7 +56,7 @@ export const APP_ROUTES: Routes = [
             remoteEntry: MfeConfig.dashboard.url,
             exposedModule: './AppModule',
           }).then((m) => m.AppModule),
-       
+
       },
       {
         path: 'language',
@@ -67,7 +67,7 @@ export const APP_ROUTES: Routes = [
             remoteEntry: MfeConfig.language.url,
             exposedModule: './AppModule',
           }).then((m) => m.AppModule),
-        data: { permission: 'Pages.Administration.Languages'},
+        data: { permission: 'Pages.Administration.Languages' },
       },
       {
         path: 'role',
@@ -77,7 +77,7 @@ export const APP_ROUTES: Routes = [
             remoteEntry: MfeConfig.role.url,
             exposedModule: './AppModule',
           }).then((m) => m.AppModule),
-        data: { permission: 'Pages.Administration.Roles'},
+        data: { permission: 'Pages.Administration.Roles' },
       },
       {
         path: 'user',
@@ -87,7 +87,7 @@ export const APP_ROUTES: Routes = [
             remoteEntry: MfeConfig.user.url,
             exposedModule: './AppModule',
           }).then((m) => m.AppModule),
-        data: { permission: 'Pages.Administration.Users'}
+        data: { permission: 'Pages.Administration.Users' }
       },
       {
         path: 'audit-logs',
@@ -97,7 +97,7 @@ export const APP_ROUTES: Routes = [
             remoteEntry: MfeConfig.auditlogs.url,
             exposedModule: './AppModule',
           }).then((m) => m.AppModule),
-        data: { permission: 'Pages.Administration.AuditLogs'},
+        data: { permission: 'Pages.Administration.AuditLogs' },
       },
       {
         path: 'visualsettings',
@@ -107,7 +107,7 @@ export const APP_ROUTES: Routes = [
             remoteEntry: MfeConfig.visualsettings.url,
             exposedModule: './AppModule',
           }).then((m) => m.AppModule),
-       
+
       },
       {
         path: 'organization-unit',
@@ -117,7 +117,7 @@ export const APP_ROUTES: Routes = [
             remoteEntry: MfeConfig.organizationunit.url,
             exposedModule: './AppModule',
           }).then((m) => m.AppModule),
-        data: { permission: 'Pages.Administration.OrganizationUnits'},
+        data: { permission: 'Pages.Administration.OrganizationUnits' },
       },
       {
         path: 'dynamic-property-management',
@@ -127,7 +127,7 @@ export const APP_ROUTES: Routes = [
             remoteEntry: MfeConfig.dynamicpropertymanagement.url,
             exposedModule: './AppModule',
           }).then((m) => m.AppModule),
-        data: { permission: 'Pages.Administration.DynamicEntityProperties'},
+        data: { permission: 'Pages.Administration.DynamicEntityProperties' },
       },
       {
         path: 'subscription',
@@ -147,7 +147,7 @@ export const APP_ROUTES: Routes = [
             remoteEntry: MfeConfig.maintenance.url,
             exposedModule: './AppModule',
           }).then((m) => m.AppModule),
-        data: { permission: 'Pages.Administration.Host.Maintenance'},
+        data: { permission: 'Pages.Administration.Host.Maintenance' },
       },
       {
         path: 'webhook-subscription',
@@ -157,7 +157,7 @@ export const APP_ROUTES: Routes = [
             remoteEntry: MfeConfig.webhooksubscription.url,
             exposedModule: './AppModule',
           }).then((m) => m.AppModule),
-        data: { permission: 'Pages.Administration.WebhookSubscription'},
+        data: { permission: 'Pages.Administration.WebhookSubscription' },
       },
       {
         path: 'demo-ui',
@@ -167,7 +167,7 @@ export const APP_ROUTES: Routes = [
             remoteEntry: MfeConfig.demouicomponents.url,
             exposedModule: './AppModule',
           }).then((m) => m.AppModule),
-        data: { permission: 'Pages.DemoUiComponents'},
+        data: { permission: 'Pages.DemoUiComponents' },
       },
       {
         path: 'ClaimType',
@@ -186,7 +186,7 @@ export const APP_ROUTES: Routes = [
             remoteEntry: MfeConfig.settings.url,
             exposedModule: './AppModule',
           }).then((m) => m.AppModule),
-        data: { permission: 'Pages.Administration.Host.Settings'},
+        data: { permission: 'Pages.Administration.Host.Settings' },
       },
       {
         path: 'setting',
@@ -206,7 +206,7 @@ export const APP_ROUTES: Routes = [
             remoteEntry: MfeConfig.tenant.url,
             exposedModule: './AppModule',
           }).then((m) => m.AppModule),
-        data: { permission: 'Pages.Tenants'},
+        data: { permission: 'Pages.Tenants' },
 
       },
       {
@@ -226,7 +226,7 @@ export const APP_ROUTES: Routes = [
             remoteEntry: MfeConfig.edition.url,
             exposedModule: './AppModule',
           }).then((m) => m.AppModule),
-        data: { permission: 'Pages.Editions'},
+        data: { permission: 'Pages.Editions' },
       },
       {
         path: 'store-front',
@@ -236,7 +236,17 @@ export const APP_ROUTES: Routes = [
             remoteEntry: MfeConfig.storefront.url,
             exposedModule: './AppModule',
           }).then((m) => m.AppModule),
-        data: { permission: 'Pages.Editions', animation: 'edition'},
+        data: { permission: 'Pages.Editions', animation: 'edition' },
+      },
+      {
+        path: 'profile-settings',
+        loadChildren: () =>
+          loadRemoteModule({
+            type: 'module',
+            remoteEntry: MfeConfig.profilesettings.url,
+            exposedModule: './AppModule',
+          }).then((m) => m.AppModule),
+        data: { permission: 'Pages.Editions', animation: 'edition' },
       },
       {
         path: 'client',
@@ -283,8 +293,19 @@ export const APP_ROUTES: Routes = [
       //       exposedModule: './AppModule',
       //     }).then((m) => m.AppModule),
       //   data: { permission: 'Pages.DemoUiComponents' },
-      
+
       // },
+        {
+        path: 'products-details',
+        loadChildren: () =>
+          loadRemoteModule({
+            type: 'module',
+            remoteEntry: MfeConfig.productdetails.url,
+            exposedModule: './AppModule',
+          }).then((m) => m.AppModule),
+        data: { permission: 'Pages.DemoUiComponents' },
+      
+      },
       {
         path: 'text-template',
         loadChildren: () =>
@@ -320,7 +341,7 @@ export const APP_ROUTES: Routes = [
             remoteEntry: MfeConfig.languagetext.url,
             exposedModule: './AppModule',
           }).then((m) => m.AppModule),
-        data: { permission: 'Pages.Administration.Languages.ChangeTexts'},
+        data: { permission: 'Pages.Administration.Languages.ChangeTexts' },
       },
       {
         path: 'pagenotfound',

@@ -132,8 +132,12 @@ import { RdsCompBenefitComponent } from './rds-comp-benefit/rds-comp-benefit.com
 import { RdsCompAppDetailsComponent } from './rds-comp-app-details/rds-comp-app-details.component';
 import { RdsCompProductOverviewComponent } from './rds-comp-product-overview/rds-comp-product-overview.component';
 import { BrowserModule } from '@angular/platform-browser';
+import { RdsCompPersonalInfoComponent } from './rds-comp-personal-info/rds-comp-personal-info.component';
+import { RdsCompPasswordSettingsComponent } from './rds-comp-password-settings/rds-comp-password-settings.component';
+import { RdsCompEmailSettingsComponent } from './rds-comp-email-settings/rds-comp-email-settings.component';
 import { RdsCompPricingTableComponent } from './rds-comp-pricing-table/rds-comp-pricing-table.component';
 import { RdsCompReviewCategoryComponent } from './rds-comp-review-category/rds-comp-review-category.component';
+import { RdsCompCustomerReviewsComponent } from './rds-comp-customer-reviews/rds-comp-customer-reviews.component';
 
 @NgModule({
   declarations: [
@@ -249,15 +253,20 @@ import { RdsCompReviewCategoryComponent } from './rds-comp-review-category/rds-c
     RdsCompAppDetailsComponent,
     RdsCompCalendarComponent,
     RdsCompProductOverviewComponent,
-    RdsCompPricingTableComponent,
-    RdsCompProductOverviewComponent,
     RdsCompReviewCategoryComponent,
+    RdsCompCustomerReviewsComponent,
     //RdsCompLanguageTextListComponent,
     RdsCompContactInformationComponent,
     RdsCompShippingAddressComponent,
     RdsCompPaymentDetailsComponent,
     RdsCompBillingAddressComponent,
-    RdsCompDeliveryMethodComponent
+    RdsCompDeliveryMethodComponent,
+    RdsCompProductOverviewComponent,
+    RdsCompPricingTableComponent,
+    RdsCompProductOverviewComponent,
+    RdsCompPersonalInfoComponent,
+    RdsCompPasswordSettingsComponent,
+    RdsCompEmailSettingsComponent
   ],
   imports: [
     BrowserModule,

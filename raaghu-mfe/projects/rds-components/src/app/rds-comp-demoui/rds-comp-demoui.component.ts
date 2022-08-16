@@ -691,8 +691,8 @@ tableBodyItems=[
         10
       ],
       "backgroundColor": [
-        "#D0D7DD",
-        "#E1E1E1"
+        "--chartColor3",
+        "--chartColor2"
       ],
       "borderColor": [
         "#fff"

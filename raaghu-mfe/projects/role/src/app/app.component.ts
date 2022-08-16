@@ -96,6 +96,16 @@ export class AppComponent implements OnInit {
           }
         },
         onEditRole: (event: any) => {
+          if (event.id) {
+            this.isEdit = true;
+          } else {
+            
+            this.Roledetails = undefined;
+          const mfeConfig = this.rdsNewRoleMfeConfig
+          mfeConfig.input.RolesData = { ... this.Roledetails };
+          this.rdsNewRoleMfeConfig = mfeConfig;
+
+          }
           this.store.dispatch(getRolByEdit(event));
           this.store.select(selectRoleForEdit).subscribe((res: any) => {
             if (res && res.RoleEditI && res.RoleEditI.role && res.status == 'success') {
@@ -121,7 +131,6 @@ export class AppComponent implements OnInit {
               if (this.treeData && res.RoleEditI.grantedPermissionNames) {
                 this.selectedPermissions = [];
                 this.checkSelectedNodes(res.RoleEditI.grantedPermissionNames);
-
               }
               const mfeConfig = this.rdsNewRoleMfeConfig
               mfeConfig.input.permissionsList = this.treeData
@@ -246,7 +255,6 @@ export class AppComponent implements OnInit {
         });
       }
     })
-
   }
 
 

@@ -95,8 +95,10 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
 
       ],
     },
-    { label: 'Demo UI Components', labelTranslationKey: 'Demo UI Components', id: '', permissionName: '', icon: 'demo_ui_components', path: '/pages/demo-ui', description: '', descriptionTranslationKey: '' },
+    { label: 'Demo UI Components', labelTranslationKey: 'Demo UI Components', id: '', permissionName: '', icon: 'demo_ui_components', path: '/pages/profile-settings', description: '', descriptionTranslationKey: '' },
     // { label: 'Cart', labelTranslationKey: 'Cart', id: 'cart', permissionName: '' ,icon: 'tenant', path: '/pages/cart', description: 'Manage your cart', descriptionTranslationKey: 'Manage your cart' },
+    { label: 'Product Details', labelTranslationKey: 'Product Details', id: '', permissionName: '', icon: 'demo_ui_components', path: '/pages/products-details', description: '', descriptionTranslationKey: '' },
+
   ];
 
   logo: string = 'https://www.carlogos.org/logo/Volkswagen-logo-2019-640x500.jpg';

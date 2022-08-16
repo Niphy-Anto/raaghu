@@ -98,10 +98,16 @@ export const MfeConfig = {
   faq: {
     url: 'http://localhost:5032/remoteEntry.js',
   },
-  storefront: {
-    url: 'http://localhost:5033/remoteEntry.js',
-  },
   cart: {
     url: 'http://localhost:5033/remoteEntry.js',
+  },
+  storefront: {
+    url: 'http://localhost:5047/remoteEntry.js',
+  },
+  profilesettings: {
+    url: 'http://localhost:5048/remoteEntry.js',
+  },
+  productdetails: {
+    url: 'http://localhost:5037/remoteEntry.js',
   }
 };
