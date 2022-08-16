@@ -93,7 +93,8 @@ module.exports = {
         './RdsCompProductList': './projects/rds-components/src/app/rds-comp-product-list/rds-comp-product-list.component.ts',
         './RdsCompPasswordSettings': './projects/rds-components/src/app/rds-comp-password-settings/rds-comp-password-settings.component.ts',
         './RdsCompEmailSettings': './projects/rds-components/src/app/rds-comp-email-settings/rds-comp-email-settings.component.ts',
-        './RdsCompBenefit': './projects/rds-components/src/app/rds-comp-benefit/rds-comp-benefit.component.ts',
+        './RdsCompCustomerReviewsComponent': './projects/rds-components/src/app/rds-comp-customer-reviews/rds-comp-customer-reviews.component.ts',
+       './RdsCompBenefit': './projects/rds-components/src/app/rds-comp-benefit/rds-comp-benefit.component.ts',
         './RdsCompProductOverview': './projects/rds-components/src/app/rds-comp-product-overview/rds-comp-product-overview.component.ts',
         './RdsCompReviewCategory': './projects/rds-components/src/app/rds-comp-review-category/rds-comp-review-category.component.ts'
       },

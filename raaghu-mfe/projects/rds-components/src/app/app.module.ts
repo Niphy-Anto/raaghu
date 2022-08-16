@@ -137,8 +137,7 @@ import { RdsCompPasswordSettingsComponent } from './rds-comp-password-settings/r
 import { RdsCompEmailSettingsComponent } from './rds-comp-email-settings/rds-comp-email-settings.component';
 import { RdsCompPricingTableComponent } from './rds-comp-pricing-table/rds-comp-pricing-table.component';
 import { RdsCompReviewCategoryComponent } from './rds-comp-review-category/rds-comp-review-category.component';
-
-
+import { RdsCompCustomerReviewsComponent } from './rds-comp-customer-reviews/rds-comp-customer-reviews.component';
 
 @NgModule({
   declarations: [
@@ -254,6 +253,8 @@ import { RdsCompReviewCategoryComponent } from './rds-comp-review-category/rds-c
     RdsCompAppDetailsComponent,
     RdsCompCalendarComponent,
     RdsCompProductOverviewComponent,
+    RdsCompReviewCategoryComponent,
+    RdsCompCustomerReviewsComponent,
     //RdsCompLanguageTextListComponent,
     RdsCompContactInformationComponent,
     RdsCompShippingAddressComponent,
@@ -263,7 +264,6 @@ import { RdsCompReviewCategoryComponent } from './rds-comp-review-category/rds-c
     RdsCompProductOverviewComponent,
     RdsCompPricingTableComponent,
     RdsCompProductOverviewComponent,
-    RdsCompReviewCategoryComponent,
     RdsCompPersonalInfoComponent,
     RdsCompPasswordSettingsComponent,
     RdsCompEmailSettingsComponent

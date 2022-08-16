@@ -12,8 +12,10 @@ export class RdsReviewCategoryComponent implements OnInit {
 
   @Input() display_type?: string = 'Basic';
   @Output() likedislikeClick = new EventEmitter<any>();
+
   ngOnInit(): void {
   }
+  
   today: number = Date.now();
   onClick(event :any){
     this.likedislikeClick.emit(event);
