@@ -510,7 +510,7 @@ html {
 
 
     &:hover {
-      background-color: $dropdown-bg-color;
+      // background-color: $dropdown-bg-color;
       border-bottom-color: $dropdown-border-bottom-hover;
     }
   }
@@ -661,6 +661,9 @@ html {
     .card-header {
       background-color: transparent;
     }
+  }
+  .bg-gradient-primary{
+    background: transparent linear-gradient(90deg, #5800D3 0%, #4400A4 100%) 0% 0% no-repeat padding-box;
   }
   /*top nav bar variables*/
   .navbar {

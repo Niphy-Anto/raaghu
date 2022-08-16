@@ -18,14 +18,14 @@
 
     <!-- Benefit Type 1 -->
     <div class="pt-1" *ngSwitchCase="'benefit_type1'">
-      <div class="text-center text-center rounded">
+      <div class="rounded" [ngClass]="textAlignment">
         <div>
           <rds-icon [name]="item.icon" [height]="item.iconHeight" [width]="item.iconWidth"></rds-icon>
         </div>
         <div class="mt-1">
           <rds-label [label]="item.title" [bold]="true" [multiline]=""></rds-label>
         </div>
-        <div class="mt-1" class="px-3">
+        <div class="mt-1">
           <rds-label [label]="item.description"></rds-label>
         </div>
       </div>
@@ -61,6 +61,39 @@
           </div>
           <div class="pe-5">
             <rds-label [label]="item.description"></rds-label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- </div> -->
+
+     <!-- Benefit Type 4 -->
+     <div class="pt-1" *ngSwitchCase="'benefit_type4'">
+      <div class="d-flex">
+        <div class="d-flex align-items-center">
+          <rds-icon [name]="item.icon" [height]="item.iconHeight" [width]="item.iconWidth"></rds-icon>
+        </div>
+        <div class="ms-3 mt-3">
+          <div>
+            <rds-label [label]="item.title" [bold]="true"></rds-label>
+          </div>
+          <div class="pe-5">
+            <rds-label [label]="item.description"></rds-label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- </div> -->
+
+     <!-- Benefit Type 5 -->
+     <div class="pt-1" *ngSwitchCase="'benefit_type5'">
+      <div class="d-flex">
+        <div class="d-flex align-items-center">
+          <rds-icon [name]="item.icon" [height]="item.iconHeight" [width]="item.iconWidth"></rds-icon>
+        </div>
+        <div class="ms-3 mt-2">
+          <div>
+            <rds-label [label]="item.title" [bold]="true"></rds-label>
           </div>
         </div>
       </div>

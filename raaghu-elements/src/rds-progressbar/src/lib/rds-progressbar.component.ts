@@ -32,8 +32,7 @@ export class RdsProgressbarComponent implements OnInit {
   public get classes(): any[] {
 
     // var customClasses =  ['progress-bar', `${this.progressIndicatorColor}` , `${this.striped}`,`${this.customIndicatorColor}`];
-    var customClasses = ['progress-bar', `${this.striped}`, `${this.colorVariant}`]
-
+    var customClasses = ['progress-bar bg-'+`${this.colorVariant}`, `${this.striped}`]
     var animate = this.animation ? 'progress-bar-striped progress-bar-animated' : ''
     customClasses.push(animate)
 

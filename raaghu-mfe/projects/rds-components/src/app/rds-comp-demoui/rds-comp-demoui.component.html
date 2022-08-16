@@ -1058,7 +1058,7 @@
                     type="button" data-bs-toggle="modal" data-bs-target="#storybookLongModal">
         </rds-button>
 
-        <rds-modal modalId="storybookLongModal" [modalheader]="modalheader" [Modalbody]="Modalbody"
+        <rds-modal modalId="storybookLongModal" [modalClasses]="'scrollable'" [modalheader]="modalheader" [Modalbody]="Modalbody"
                    [Modalfooter]="Modalfooter">
           <div modalheader class="col-md-12">
             <rds-button type="button" class="btn-close float-end" data-bs-dismiss="modal" aria-label="Close"></rds-button>
@@ -1067,7 +1067,6 @@
           <div Modalbody>
             <p>
               {{modalData1.modalContent}}
-              <br><br><br><br><br><br><br><br><br><br><br><br><br>
             </p>
           </div>
           <div Modalfooter>
@@ -1634,7 +1633,7 @@
 <div class="card mb-3">
   <div class="card-header">
     <h5>
-      Textarea
+      Text area
     </h5>
   </div>
   <div class="card-body  pt-0">
