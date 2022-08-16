@@ -120,7 +120,7 @@ export class AppComponent extends MfeBaseComponent implements OnInit {
     this.alertService.alertEvents.subscribe((alert) => {
       this.currentAlerts = [];
       const currentAlert: any = {
-        type: 'danger',
+        type: 'error',
         title: 'title',
         message: 'Invalid user name or password',
       };
@@ -129,7 +129,7 @@ export class AppComponent extends MfeBaseComponent implements OnInit {
       rdsAlertMfeConfig.input.currentAlerts = [...this.currentAlerts];
       this.rdsAlertMfeConfig = rdsAlertMfeConfig;
     });
-
+// this.alertService.showAlert('title','Invalid user name or password','danger')
   }
 
 
@@ -146,6 +146,7 @@ export class AppComponent extends MfeBaseComponent implements OnInit {
         console.log(this.authenticateModal);
       },
       error: (err: any) => {
+        this.alertService.showAlert('title','Invalid user name or password','error')
       },
     });
   }
@@ -170,7 +171,7 @@ export class AppComponent extends MfeBaseComponent implements OnInit {
       this._userAuthService.getUserConfiguration('login');
     } else {
       // Unexpected result!
-      this._router.navigateByUrl('/pages/login');
+       this._router.navigateByUrl('/pages/login');
     }
   }
 
