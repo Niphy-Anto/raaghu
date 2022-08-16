@@ -12,9 +12,28 @@ export class RdsBenefitComponent implements OnInit {
   item: any ;
   
   @Input() display_type?: string = 'Basic';
+
+  @Input() position: 'start' | 'center' | 'end'  = 'start';
   
   ngOnInit(): void {
     console.log(this.item)
+  }
+
+  public get textAlignment(): string[] {
+
+    var classes = ['']
+    if (this.position === 'start') {     
+      classes.push('text-start');     
+    }
+    else if(this.position === 'center') {
+      classes.push('text-center')
+    }
+    else if(this.position === 'end') {
+      classes.push('text-end')
+    }
+    
+
+    return classes;
   }
 
 }
