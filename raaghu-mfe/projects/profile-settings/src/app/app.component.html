@@ -9,7 +9,7 @@
           aria-labelledby="nav-home-tab">
           <div class="row">
             <div class="col-lg-12 col-md-12">
-              <div class="mt-5">
+              <div class="mt-3">
                 <rds-label [label]="'Personal Info'" class="fs-5" [bold]="true"></rds-label>
               </div>
               <div class="mb-3">
@@ -23,7 +23,7 @@
           aria-labelledby="nav-home-tab">
           <div class="row">
             <div class="col-lg-12 col-md-12">
-              <div class="mt-5">
+              <div class="mt-3">
                 <rds-label [label]="'Password'" class="fs-5" [bold]="true"></rds-label>
               </div>
               <div class="mb-3">
@@ -37,7 +37,7 @@
           aria-labelledby="nav-home-tab">
           <div class="row">
             <div class="col-lg-12 col-md-12">
-              <div class="mt-5">
+              <div class="mt-3">
                 <rds-label [label]="'Update email address'" class="fs-5" [bold]="true"></rds-label>
               </div>
               <div class="mb-3">
@@ -47,6 +47,34 @@
             </div>
           </div>
         </div>
+        <div class="tab-pane fade show " [ngClass]="{'show active': activePage === 3}" id="billing" role="tabpanel"
+          aria-labelledby="nav-home-tab">
+          <div class="row">
+            <div class="col-lg-12 col-md-12">
+              <div class="mt-3">
+                <rds-label [label]="'Billing method'" class="fs-5" [bold]="true"></rds-label>
+              </div>
+              <div class="mb-3">
+                <rds-label [label]="'Manage your plan and billing history details.'"></rds-label>
+              </div>
+              <mfe-loader [config]="rdsBillingConfig"></mfe-loader>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade show " [ngClass]="{'show active': activePage === 4}" id="integations" role="tabpanel"
+        aria-labelledby="nav-home-tab">
+        <div class="row">
+          <div class="col-lg-12 col-md-12">
+            <div class="mt-3">
+              <rds-label [label]="'Integrations and connected apps'" class="fs-5" [bold]="true"></rds-label>
+            </div>
+            <div class="mb-3">
+              <rds-label [label]="'Supercharge your workflow and connect the tool you use every day.'"></rds-label>
+            </div>
+            <mfe-loader [config]="rdsIntegrationsConfig"></mfe-loader>
+          </div>
+        </div>
+      </div>
       </div>
     </div>
   </div>

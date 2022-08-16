@@ -93,6 +93,8 @@ module.exports = {
         './RdsCompProductList': './projects/rds-components/src/app/rds-comp-product-list/rds-comp-product-list.component.ts',
         './RdsCompPasswordSettings': './projects/rds-components/src/app/rds-comp-password-settings/rds-comp-password-settings.component.ts',
         './RdsCompEmailSettings': './projects/rds-components/src/app/rds-comp-email-settings/rds-comp-email-settings.component.ts',
+        './RdsCompBilling': './projects/rds-components/src/app/rds-comp-billing/rds-comp-billing.component.ts',
+        './RdsCompIntegration': './projects/rds-components/src/app/rds-comp-integration/rds-comp-integration.component.ts',
 
       },
 

@@ -1,0 +1,93 @@
+import { Component, Input, OnInit } from '@angular/core';
+import { TableAction } from '../../models/table-action.model';
+import { TableHeader } from '../../models/table-header.model';
+
+@Component({
+  selector: 'app-rds-comp-billing',
+  templateUrl: './rds-comp-billing.component.html',
+  styleUrls: ['./rds-comp-billing.component.scss']
+})
+export class RdsCompBillingComponent implements OnInit {
+  @Input() emailId: string = 'admin@aspnetzero.com';
+  @Input() alternativeEmail: string = '';
+  @Input() cardList: any = [];
+  @Input() subscriptionData: any = [{
+    name: "Basic",
+    price: "23",
+    duration: "2",
+    iconurl: "subscription_basic",
+    recommended: false,
+    features: ["Maximum User Count", "Test Check feature", "Test check feature count 2"]
+  },
+  {
+    name: "Standard",
+    price: "23",
+    duration: "2",
+    iconurl: "subscription_standard",
+    recommended: false,
+    features: ["Maximum User Count", "Test Check feature", "Test check feature count 2"]
+  },
+  {
+    name: "Premium",
+    price: "23",
+    duration: "2",
+    iconurl: "subscription_premium",
+    recommended: false,
+    features: ["Maximum User Count", "Test Check feature", "Test check feature count 2"]
+  },
+  {
+    name: "Professional",
+    price: "23",
+    duration: "2",
+    iconurl: "subscription_professional",
+    recommended: false,
+    features: ["Maximum User Count", "Test Check feature", "Test check feature count 2"]
+  }];
+  @Input() public billingHeaders: TableHeader[] = [{ key: 'invoice', displayName: 'Invoice', dataType: 'text' }, { key: 'amount', displayName: 'Amount', dataType: 'text' }, { key: 'date', displayName: 'Date', dataType: 'text' }, { key: 'status', displayName: 'Status', dataType: 'html' }];
+  @Input() public billingData: any = [
+    {
+      invoice: 'Standard Plan - Jan 2022',
+      amount: 'USD $ 250.00',
+      date: 'Jan 23, 2022',
+      status: `<div> <span class="badge badge-success">Paid</span></div>`
+    },
+    {
+      invoice: 'Standard Plan - Dec 2021',
+      amount: 'Dec 23, 2021',
+      date: 'Jan 23, 2022',
+      status: `<div> <span class="badge badge-success">Paid</span></div>`
+    },
+    {
+      invoice: 'Standard Plan - Nov 2021',
+      amount: 'USD $ 250.00',
+      date: 'Nov 23, 2021',
+      status: `<div> <span class="badge badge-success">Paid</span></div>`
+    },
+    {
+      invoice: 'Standard Plan - Oct 2021',
+      amount: 'USD $ 250.00',
+      date: 'Oct 23, 2022',
+      status: `<div> <span class="badge badge-success">Paid</span></div>`
+    }
+  ];
+  actions: TableAction[] = [{ id: 'download', displayName: 'Download' }];
+  radioItem: any = [{ label: 'Send to my account email', checked: true, name: "Send to my account email" }]
+  radioItem1: any = [{ label: 'Send to an alternative email', checked: false, name: 'Send to an alternative email' }]
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+  onActionSelect(event: any): void {
+
+  }
+
+  setInvoiceMail(event: any): void {
+    this.radioItem1[0].checked = false
+  }
+
+  setAlternativeMail(event: any): void {
+    this.radioItem[0].checked = false
+  }
+
+}
