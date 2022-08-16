@@ -170,6 +170,40 @@ benefit_type3.args = {
     }
   ]
 };
+export const benefit_type4 = Template.bind({});
+benefit_type4.args = {
+    itemList: [{
+      display_type: "benefit_type3",
+      colSize: 4,
+      items: [
+        { id: 7, 
+          display_type: "benefit_type3", 
+          icon: 'users',
+          iconHeight :"40px",
+          iconWidth: "40px",
+          title:  '100% Safe & Secure',
+          description: "on every order"
+        },
+        { id: 7,  
+          icon: 'users',
+          display_type: "benefit_type3",
+          iconHeight :"40px",
+          iconWidth: "40px",
+          title:  'Best Price & Offers',
+          description: "on top products"
+        },
+        { id: 7,  
+          display_type: "benefit_type3",
+          icon: 'users',
+          iconHeight :"40px",
+          iconWidth: "40px",
+          title:  'Latest Style',
+          description: "from top brands"
+        }
+      ]
+    }
+  ]
+};
 
 export const benefit_type4 = Template.bind({});
 benefit_type4.args = {

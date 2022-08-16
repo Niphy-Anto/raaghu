@@ -137,6 +137,9 @@ import { RdsCompPasswordSettingsComponent } from './rds-comp-password-settings/r
 import { RdsCompEmailSettingsComponent } from './rds-comp-email-settings/rds-comp-email-settings.component';
 import { RdsCompPricingTableComponent } from './rds-comp-pricing-table/rds-comp-pricing-table.component';
 import { RdsCompReviewCategoryComponent } from './rds-comp-review-category/rds-comp-review-category.component';
+
+
+
 @NgModule({
   declarations: [
 
