@@ -1,5 +1,4 @@
-@import './default.scss';
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
 
 $font-family-sans-serif: 'Poppins', sans-serif !default;
 $font-family-monospace: 'Fira Code', monospace !default;
@@ -113,7 +112,7 @@ $node-label-font-size: $font-size-base;
 $node-label-font-weight: $font-weight-normal;
 $node-count-font-size: $font-size-sm;
 $check-node-label-font-weight: $font-weight-normal;
-$node-count-font-color: $gray-800;
+
 
 /*Progress bar variables*/
 $progress-border-radius: $border-radius-pill  !default;
@@ -127,13 +126,11 @@ $tenant-edition-border-width: $border-width;
 $tenant-edition-border-radius: $border-radius;
 
 /*table variables*/
-$table-hover-bg: #FAFAFC;
+
 $tags-shadow: 0px 4px 40px #0000000a;
 $tags-padding: 5px 5px 5px 10px;
 
 $enable-caret: true !default;
-
-@import './node_modules/bootstrap/scss/bootstrap';
 
 input::-webkit-input-placeholder {
   font-size: $font-size-sm;
@@ -159,7 +156,6 @@ input::-webkit-input-placeholder {
   position: absolute;
   right: 0px;
   bottom: 0px;
-  background-color: $white;
 }
 
 /*.chart-container {
@@ -332,7 +328,7 @@ html {
 
     &:active {
       font-weight: $check-node-label-font-weight;
-      color: $node-count-font-color;
+ 
     }
   }
 
@@ -393,35 +389,6 @@ html {
   cursor: pointer;
 }
 
-
-
-@import './colorvariables.scss';
-@import './accordion.scss';
-@import './alert.scss';
-@import './avatar.scss';
-@import './badge.scss';
-@import './breadcrumb.scss';
-@import './button.scss';
-@import './card.scss';
-@import './carousel.scss';
-@import './checkbox.scss';
-@import './counter.scss';
-@import './dropdown.scss';
-@import './file-uploader.scss';
-@import './input.scss';
-@import './list-group.scss';
-@import './nav-tab.scss';
-@import './offcanvas.scss';
-@import './pagination.scss';
-@import './radio-button.scss';
-@import './scrollspy.scss';
-@import './search-input.scss';
-@import './side-nav.scss';
-@import './table.scss';
-@import './tags.scss';
-@import './textarea.scss';
-
-
 /*card css */
 .vh-75 {
   height: 75vh !important;
@@ -439,7 +406,6 @@ html {
 .rds-scrollable-wrapper {
   width: 100%;
   padding-right: 20px;
-  background-color: #F5F5FA;
   height: calc(100vh - 57px) !important;
   overflow: auto;
   overflow-x: hidden;
@@ -608,7 +574,7 @@ div.btn-container i {
   transition: all 0.3s ease;
   /*box-shadow: 0px 0px 8px 0px rgba(17, 17, 17, 0.34) inset;*/
   display: block;
-  border: 1px solid $white;
+  border: 1px solid;
 }
 
 .btn-color-mode-switch>label.btn-color-mode-switch-inner:before {
@@ -642,7 +608,6 @@ div.btn-container i {
   content: attr(data-off);
   width: 70px;
   height: 24px;
-  background: $white;
   border-radius: 26px;
   position: absolute;
   left: 2px;
@@ -679,7 +644,6 @@ html[theme=dark] #sidebar.toggle .btn-color-mode-switch>label.btn-color-mode-swi
   display: none;
   background: #FF9800;
   border: none;
-  color: $white;
 }
 
 .btn-color-mode-switch input[type="checkbox"] {
@@ -934,7 +898,6 @@ div#file-upload-filename {
 
 
 a.nav-link.breadcrumb-navlink.active {
-  color: $black;
   display: inline;
 }
 
@@ -960,13 +923,36 @@ custom scrollbar
   border-radius: 10px;
 }
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(45deg, #500DD1, #0796E3);
-}
-
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(45deg, #500DD1, #0796E3); 
+    }
 
 .disabled {
-  cursor: none;
-  pointer-events: none;
+    cursor: none;
+    pointer-events: none;
 }
+@import './accordion.scss';
+@import './alert.scss';
+@import './avatar.scss';
+@import './badge.scss';
+@import './breadcrumb.scss';
+@import './button.scss';
+@import './card.scss';
+@import './carousel.scss';
+@import './checkbox.scss';
+@import './counter.scss';
+@import './dropdown.scss';
+@import './file-uploader.scss';
+@import './input.scss';
+@import './list-group.scss';
+@import './nav-tab.scss';
+@import './offcanvas.scss';
+@import './pagination.scss';
+@import './radio-button.scss';
+@import './scrollspy.scss';
+@import './search-input.scss';
+@import './side-nav.scss';
+@import './table.scss';
+@import './tags.scss';
+@import './textarea.scss';

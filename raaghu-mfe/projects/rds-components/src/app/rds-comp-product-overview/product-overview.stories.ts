@@ -2,6 +2,7 @@ import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { RdsCompProductOverviewComponent } from './rds-comp-product-overview.component';
 import {
+  RdsAccordionModule,
   RdsBadgeModule,
   RdsBenefitModule,
   RdsBreadcrumbModule,
@@ -41,7 +42,8 @@ export default {
         RdsRatingModule,
         RdsIconLabelModule,
         RdsBenefitModule,
-        RdsSizeModule
+        RdsSizeModule,
+        RdsAccordionModule
       ],
       providers: [FormBuilder],
     }),

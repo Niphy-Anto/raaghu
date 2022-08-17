@@ -38,7 +38,6 @@ jobs:
       run: |
         npm install
        
-
     - name: npm install, build, and test raaghu-mfe
       working-directory: ./raaghu-mfe
       run: |
@@ -48,10 +47,6 @@ jobs:
         npm run build-all
         cp web.config dist
         cp dist/host/* dist -r
-
-
-
-
     - name: Upload artifact for deployment job
       uses: actions/upload-artifact@v3
       with:
@@ -64,7 +59,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     environment:
-      name: 'Production'
+      name: 'Development'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
     steps:
@@ -78,28 +73,6 @@ jobs:
       id: deploy-to-webapp
       with:
         app-name: 'raaghumfestageuiapp'
-        slot-name: 'Production'
+        slot-name: 'Development'
         publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_392363CA3B8C4905BC10144A553C3367 }}
         package: .
-
-  test:
-    permissions:
-      contents: none
-    runs-on: ubuntu-latest
-    needs: build
-    environment:
-      name: 'Production'
-      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
-
-    steps:
-        
-    - name: npm install playwright
-      working-directory: ./raaghu-mfe/playwright
-      run: |
-        npm install
-       
-
-    - name: test raaghu-mfe with playwright
-      working-directory: ./raaghu-mfe/playwright
-      run: |
-        npx playwright test 
