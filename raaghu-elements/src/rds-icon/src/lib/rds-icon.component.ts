@@ -7,7 +7,6 @@ import { Flags } from './flag-icons';
   selector: 'rds-icon',
   templateUrl: './rds-icon.component.html',
   styleUrls: ['./rds-icon.component.scss'],
-  // styles: [':host::ng-deep svg{width: px; height: 50px}'],
 })
 export class RdsIconComponent implements OnInit, OnChanges {
   private svgIcon!: SVGElement;
@@ -15,11 +14,10 @@ export class RdsIconComponent implements OnInit, OnChanges {
   @Input() height: string = '';
   @Input() fill: boolean | undefined  = false;
   @Input() stroke: boolean | undefined = true;
-
   @Input() width: string = '';
-  // @Input() color: string = '';
   @Input() name: string = '';
   @Input() colorVariant: string = '';
+    
   constructor(private element: ElementRef,
     @Optional() @Inject(DOCUMENT) private document: any) {
   }
@@ -38,7 +36,6 @@ export class RdsIconComponent implements OnInit, OnChanges {
         this.element.nativeElement.appendChild(this.svgIcon);
       }
     }
-
   }
 
   ngOnChanges(): void {
@@ -53,8 +50,6 @@ export class RdsIconComponent implements OnInit, OnChanges {
       }
     }
   }
-
-
 
   private svgElementFromString(svgContent: string): SVGElement {
     const div = this.document.createElement('DIV');
@@ -83,7 +78,10 @@ export class RdsIconComponent implements OnInit, OnChanges {
       svg.style.backgroundColor = '#363636';
     } else  if (this.colorVariant == 'light') {
       svg.style.backgroundColor = '#F8F9FA';
-    };  
+    } else  if (this.colorVariant == 'review') {
+      svg.style.backgroundColor = '#E3A300';
+    }
+
     if (this.fill) {
       svg.style.fill = 'currentColor';
     }

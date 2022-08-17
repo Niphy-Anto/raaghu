@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, Input, OnInit, SimpleChanges } from '@angular/core';
 import Chart from 'chart.js/auto';
+import { ChartIcons } from './chart-icon';
 // import { ChartDataSet } from '@rds-common-lib';
 
 // export interface ChartLabel {
@@ -42,6 +43,7 @@ export class RdsChartBoolComponent implements OnInit, AfterViewInit {
   ChartStyle?: any;
   @Input()
   chartLabels?: any
+  @Input() centerIconName: string = '';
 
   @Input()
   ChartDataSets?: ChartDataSetBool[] | any;
@@ -51,6 +53,7 @@ export class RdsChartBoolComponent implements OnInit, AfterViewInit {
 
   @Input()
   chartOptions?: any;
+  @Input() centerSvg: any;
   static inload: boolean;
   style: CSSStyleDeclaration | undefined;
 
@@ -80,7 +83,7 @@ export class RdsChartBoolComponent implements OnInit, AfterViewInit {
   }
 
   ngOnChanges(changes: SimpleChanges) {
- 
+
     // if (this.chartBackgroundColor) {
     //   this.style = getComputedStyle(document.body);
     //   this.ChartDataSets[0].backgroundColor[0] = this.style.getPropertyValue(this.chartBackgroundColor);
@@ -107,13 +110,30 @@ export class RdsChartBoolComponent implements OnInit, AfterViewInit {
     this.ctx = this.canvas.getContext('2d');
     this.style = getComputedStyle(document.body);
     this.ChartDataSets.forEach((element: any) => {
-      element.backgroundColor.forEach((bg: any,index:number) => {
+      element.backgroundColor.forEach((bg: any, index: number) => {
         if (bg && this.style) {
           element.backgroundColor[index] = (this.style.getPropertyValue(bg)) ? this.style.getPropertyValue(bg) : bg
         }
       });
-    });
-    console.log(this.ChartDataSets)
+    }); 
+    console.log(this.ChartDataSets);
+    let svg = ChartIcons[this.centerIconName];
+    let blob = new Blob([svg], { type: 'image/svg+xml' });
+    let url = URL.createObjectURL(blob);
+    let image = document.createElement('img');
+    image.src = url;
+    const centerImage = {
+      id: 'counter2',
+      beforeDraw(chart, args, options) {
+        const { ctx, chartArea: { top, right, bottom, left, width, height } } = chart;
+        ctx.save();
+        let img = new Image();
+        img.src = url;
+        ctx.drawImage(img, 30, 30, 30, 30);
+        ctx.restore();
+      }
+
+    };
     const myChart = new Chart(this.ctx, {
       type: this.chartType,
       data: {
@@ -122,6 +142,7 @@ export class RdsChartBoolComponent implements OnInit, AfterViewInit {
       },
 
       options: this.chartOptions,
+      plugins: [centerImage]
     });
     if (myChart !== null) {
       myChart.canvas.style.height = this.chartHeight + 'px';
@@ -135,5 +156,4 @@ export class RdsChartBoolComponent implements OnInit, AfterViewInit {
     this.canvas.style.backgroundColor = this.CanvasbackgroundColor;
     this.ctx = this.canvas.getContext('2d');
   }
-
 }
