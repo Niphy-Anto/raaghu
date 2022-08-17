@@ -36,7 +36,7 @@ export class RdsDropdownlistComponent implements OnInit, OnChanges {
   @Input()
   placeholder = "Filter by user"
 
-  @Input() borderDropdown : boolean = true;
+  @Input() borderDropdown : boolean = false;
 
   @Input()
    listItems:any =[
