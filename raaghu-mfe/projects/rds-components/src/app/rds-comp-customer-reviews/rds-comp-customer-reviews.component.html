@@ -17,11 +17,10 @@
     <div class="d-inline-block w-50 mt-1">
 
         <rds-progressbar height="15" colorVariant="warning" striped="default"
-            [progressWidth]="getReviewRate(item.value)" progressbar_MaxWidth="100" role="single"
-          ></rds-progressbar>
+            [progressWidth]="getReviewRate(item[i].value)" progressbar_MaxWidth="100" role="single"></rds-progressbar>
     </div>
 
-    <rds-label [label]="getReviewRate(item.value)" [multiline]="false" [bold]="false" [italic]="false"
+    <rds-label label="{{getReviewRate(item[i].value)}}" [multiline]="false" [bold]="false" [italic]="false"
         class="fs-4 ms-3"></rds-label><span class="fs-5 fw-bolder mt-1 mx-1">%</span>
 
 </div>
