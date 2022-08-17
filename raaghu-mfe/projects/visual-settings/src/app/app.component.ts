@@ -5,13 +5,47 @@ import { getVisualsettings, UpdateDefaultUiManagementSettings } from 'projects/l
 import { selectAllVisualsettings } from 'projects/libs/state-management/src/lib/state/Visual-settings/visual-settings.selector';
 import { TranslateService } from '@ngx-translate/core';
 import { selectDefaultLanguage } from '@libs/state-management';
+import {
+  transition,
+  trigger,
+  query,
+  style,
+  animate,
+} from '@angular/animations';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  animations: [
+    trigger('fadeAnimation', [
+      transition('* <=> *', [
+        query(':enter',
+          [
+            style({ opacity: 0 })
+          ],
+          { optional: true }
+        ),
+        query(':leave',
+          [
+            style({ opacity: 1 }),
+            animate('1s', style({ opacity: 0 }))
+          ],
+          { optional: true }
+        ),
+        query(':enter',
+          [
+            style({ opacity: 0 }),
+            animate('1s', style({ opacity: 1 }))
+          ],
+          { optional: true }
+        )
+      ])
+    ])
+  ]
 })
 export class AppComponent implements OnInit {
+  isAnimation: boolean = true;
   constructor(private store: Store, private alertService: AlertService,public translate:TranslateService) { }
   visualsettingsData: any = [];
   rdsvisualsettingsMfeConfig: ComponentLoaderOptions;
@@ -28,6 +62,7 @@ export class AppComponent implements OnInit {
     }
   }
   ngOnInit(): void {
+    this.isAnimation = true;
     this.store.select(selectDefaultLanguage).subscribe((res: any) => {
 
       if (res) {
@@ -59,6 +94,7 @@ export class AppComponent implements OnInit {
     this.store.select(selectAllVisualsettings).subscribe((res: any) => {
     this.visualsettingsData=[];
       if (res && res.visualsettings && res.status === 'success') {
+        this.isAnimation = false;
         this.visualsettingsData = res.visualsettings;
         const mfeConfig = this.rdsvisualsettingsMfeConfig
         mfeConfig.input.visualsettingsItem = [... this.visualsettingsData];
