@@ -1,0 +1,26 @@
+<div>
+    <rds-label label="Customer Review" [multiline]="false" [bold]="true" [italic]="false" class="fs-2"></rds-label>
+    <div class="row mt-4">
+        <rds-rating [WithNoOfReviews]="true" role="Advanced" [rating]="3" 
+            [noOfReview]="totalReview" Size="small"></rds-rating>
+    </div>
+
+</div>
+
+
+<div class="d-flex justify-content-start mt-4" *ngFor="let item of itemlist|keyvalue; let i=index">
+
+    <rds-label [label]="getLabel(i)" [multiline]="false" [bold]="false" [italic]="false" class="fs-4 me-3"></rds-label>
+    <rds-icon height="20" [fill]="true" [stroke]="false" colorVariant="review" width="20" name="star" class="ms-2 me-3" 
+></rds-icon>
+
+    <div class="d-inline-block w-50 mt-1">
+
+        <rds-progressbar height="15" colorVariant="warning" striped="default"
+            [progressWidth]="getReviewRate(item[i].value)" progressbar_MaxWidth="100" role="single"></rds-progressbar>
+    </div>
+
+    <rds-label label="{{getReviewRate(item[i].value)}}" [multiline]="false" [bold]="false" [italic]="false"
+        class="fs-4 ms-3"></rds-label><span class="fs-5 fw-bolder mt-1 mx-1">%</span>
+
+</div>

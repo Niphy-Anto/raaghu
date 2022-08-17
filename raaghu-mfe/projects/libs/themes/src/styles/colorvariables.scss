@@ -2,10 +2,6 @@
 @import "./node_modules/bootstrap/scss/variables";
 @import "./node_modules/bootstrap/scss/mixins";
 @import "./node_modules/bootstrap/scss/_utilities";
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
-@import './default.scss';
-
-
 
 html {
   $theme-colors: ("primary": $primary, "secondary": $secondary, "success": $success, "info": $info, "warning": $warning, "danger": $danger, "light": $light, "dark": $dark ) !default;
@@ -200,11 +196,54 @@ html {
   $card-border-color: $gray-200 !default;
   --bs-body-color: gray;
 
+
+
+  .rds-scrollable-wrapper {
+    background-color: $body-wrapper-bg;
+  }
+
   svg {
     fill: none;
     stroke: $gray-300;
   }
 
+  #sidebar {
+    border-right-color: $gray-100;
+
+    ul {
+      a.active {
+        i {
+          color: $primary;
+        }
+      }
+    }
+  }
+
+  .table-hover > tbody > tr:hover > * {
+    background: $table-hover-bg;
+  }
+
+  .form-group.has-search {
+
+    .form-control {
+      background-color: $gray-200;
+
+      :focus {
+        background-color: $light;
+        border-color: $primary;
+      }
+    }
+  }
+
+  .pagination {
+    .page-item.active {
+      a.page-link {
+        border-color: $primary;
+        background: $primary-0;
+        color: $primary;
+      }
+    }
+  }
 
   .aside {
     background: $body-wrapper-bg;
@@ -510,7 +549,7 @@ html {
 
 
     &:hover {
-      background-color: $dropdown-bg-color;
+      // background-color: $dropdown-bg-color;
       border-bottom-color: $dropdown-border-bottom-hover;
     }
   }
@@ -655,20 +694,18 @@ html {
   }
   /*card color styles*/
   .card {
-    background-color: $card-bg-color;
-    border-color: $card-border-color;
+/*    background-color: $card-bg-color;
+    border-color: $card-border-color;*/
 
     .card-header {
       background-color: transparent;
     }
   }
-  .bg-gradient-primary{
+
+  .bg-gradient-primary {
     background: transparent linear-gradient(90deg, #5800D3 0%, #4400A4 100%) 0% 0% no-repeat padding-box;
   }
   /*top nav bar variables*/
-  .navbar {
-    background-color: $nav-background-color;
-  }
   /*sidebar color styles*/
   #sidebar {
     ul {
@@ -911,6 +948,12 @@ html {
     }
   }
   /*buttons variabes*/
+  /*.form-select {
+    background-color: $form-select-bg;
+    border-color: $form-select-bg;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e")
+  }*/
+
   .form-control {
     &:focus {
       border-color: $input-focus-border-color;
@@ -1134,15 +1177,6 @@ html {
   }
 }
 
-  @import "./node_modules/bootstrap/scss/functions";
-  @import "./node_modules/bootstrap/scss/variables";
-  @import "./node_modules/bootstrap/scss/mixins";
-  @import "./node_modules/bootstrap/scss/_utilities";
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
-  @import './default.scss';
-
-
-
 html[theme=dark] {
   $theme-colors: ("primary": $primary, "secondary": $secondary, "success": $success, "info": $info, "warning": $warning, "danger": $danger, "light": $light, "dark": $dark ) !default;
   $min-contrast-ratio: 4.5 !default;
@@ -1357,6 +1391,23 @@ html[theme=dark] {
   $footer-bgcolor: $dark-400 !default;
   $profileMenuBgColor: #252839 !default;
   $trhoverbg-color: $dark-400 !default;
+
+  .sidenav-footer {
+    background-color: $body-wrapper-bg;
+  }
+
+  .card {
+    background-color: $card-bg-color;
+    border-color: $card-border-color;
+
+    .card-header {
+      background-color: transparent;
+    }
+  }
+
+  .navbar {
+    background-color: $nav-background-color;
+  }
 
   .rds-fileuploader label.file-upload > div {
     color: #9BACBC;
@@ -2342,8 +2393,8 @@ html[theme=dark] {
   }
 
   .form-select {
-    background-color: $form-select-bg;
-    border-color: $form-select-bg;
+/*    background-color: $form-select-bg;
+    border-color: $form-select-bg;*/
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e")
   }
 

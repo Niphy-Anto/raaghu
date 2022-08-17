@@ -5,8 +5,8 @@ export default {
   title: 'Elements/Progress bar',
   component: RdsProgressbarComponent,
   argTypes: {
-    colorType: {
-      options: ['bg-info', 'bg-warning', 'bg-success', 'bg-danger', 'default'],
+    colorVariant: {
+      options: ['info', 'warning', 'success', 'danger', 'default'],
       control: { type: 'select' }
     },
     striped: {
