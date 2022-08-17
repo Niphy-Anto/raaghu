@@ -17,8 +17,7 @@ export class RdsIconComponent implements OnInit, OnChanges {
   @Input() width: string = '';
   @Input() name: string = '';
   @Input() colorVariant: string = '';
-  @Input() fillColor: string = '';
-  
+    
   constructor(private element: ElementRef,
     @Optional() @Inject(DOCUMENT) private document: any) {
   }
@@ -37,7 +36,6 @@ export class RdsIconComponent implements OnInit, OnChanges {
         this.element.nativeElement.appendChild(this.svgIcon);
       }
     }
-
   }
 
   ngOnChanges(): void {
@@ -80,16 +78,9 @@ export class RdsIconComponent implements OnInit, OnChanges {
       svg.style.backgroundColor = '#363636';
     } else  if (this.colorVariant == 'light') {
       svg.style.backgroundColor = '#F8F9FA';
+    } else  if (this.colorVariant == 'review') {
+      svg.style.backgroundColor = '#E3A300';
     }
-
-    if ( this.fillColor == 'primary' ) {
-      this.colorVariant == 'transparent';
-      svg.style.fill = '#7E2EEf';
-    } else if ( this.fillColor == 'warning' ) {
-      this.colorVariant == 'transparent';
-      svg.style.fill = '#E3A300';
-    }
-     
 
     if (this.fill) {
       svg.style.fill = 'currentColor';
