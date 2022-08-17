@@ -165,8 +165,8 @@ $card-border-color: $card-bg-color !default;
   //$body-wrapper-bg:;
 
 
-
+@import './custom.scss';
 @import './node_modules/bootstrap/scss/bootstrap';
 @import './colorvariables.scss';
-@import './custom.scss';
+
 
