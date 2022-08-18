@@ -1,8 +1,10 @@
-import { Component, DoCheck, EventEmitter, Injector, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
+import { Component, DoCheck, EventEmitter, Inject, Injector, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
 import { ComponentLoaderOptions, MfeBaseComponent, ThemeSettingsDto } from '@libs/shared';
 import { TranslateService } from '@ngx-translate/core';
 import { TableHeader } from '../../models/table-header.model';
+import { DOCUMENT } from '@angular/common';
+
 declare var bootstrap: any;
 @Component({
   selector: 'app-rds-top-navigation',
@@ -14,6 +16,14 @@ export class RdsTopNavigationComponent extends MfeBaseComponent implements OnIni
 
   public rdsNotoficationMfeConfig: ComponentLoaderOptions;
   showOffcanvas: boolean = false;
+  themes: any = [
+
+    { value: 'default', some: 'default', id: 1 },
+    { value: 'accessible', some: 'accessible', id: 2 },
+    { value: 'blue', some: 'blue', id: 3 },
+    { value: 'green', some: 'green', id: 4 },
+    { value: 'orange', some: 'orange', id: 5 }
+  ]
   @Input()
   LoginAttempts: any = {};
   @Input() LinkAccounts: []
@@ -145,11 +155,12 @@ export class RdsTopNavigationComponent extends MfeBaseComponent implements OnIni
       setAsRead: false,
     },
   ];
+
   notificationCount: any = 0;
   @Output() onProfileSave = new EventEmitter<any>();
 
   constructor(private router: Router, private injector: Injector,
-    public translate: TranslateService
+    public translate: TranslateService, @Inject(DOCUMENT) private document: Document
   ) {
     super(injector);
   }
@@ -161,6 +172,11 @@ export class RdsTopNavigationComponent extends MfeBaseComponent implements OnIni
   }
 
   ngOnInit(): void {
+   // const existingLinkEl = this.document.getElementById('client-theme') as HTMLLinkElement;
+   // existingLinkEl.href = 'default.css';
+    const event = 'default';
+    this.onThemeSelect(event);
+
     if (this.defaultLanguage) {
       this.selectedLanguage = this.defaultLanguage;
     }
@@ -232,5 +248,20 @@ export class RdsTopNavigationComponent extends MfeBaseComponent implements OnIni
   onToggleButton(): void {
     this.toggleEvent.emit();
   }
+  onThemeSelect(event: any) {
 
+    console.log(event)
+    const headEl = this.document.getElementsByTagName('head')[0];
+    const existingLinkEl = this.document.getElementById('client-theme') as HTMLLinkElement;
+    const newLinkEl = this.document.createElement('link');
+
+    if (existingLinkEl) {
+      existingLinkEl.href = event + '.css';
+    } else {
+      newLinkEl.id = 'client-theme'
+      newLinkEl.rel = 'stylesheet';
+      newLinkEl.href = event + '.css';
+     headEl.appendChild(newLinkEl);
+    }
+  }
 }
