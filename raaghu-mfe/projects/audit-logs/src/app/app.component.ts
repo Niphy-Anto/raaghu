@@ -5,12 +5,47 @@ import { TableHeader } from 'projects/rds-components/src/models/table-header.mod
 import { getAuditLogs, getEntityChanges, selectAllAuditLogs, selectAllchangeLogs, selectDefaultLanguage } from '../../../libs/state-management/src/public-api';
 import { DateTime } from 'luxon';
 import { TranslateService } from '@ngx-translate/core';
+import {
+  transition,
+  trigger,
+  query,
+  style,
+  animate,
+} from '@angular/animations';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  animations: [
+    trigger('fadeAnimation', [
+      transition('* <=> *', [
+        query(':enter',
+          [
+            style({ opacity: 0 })
+          ],
+          { optional: true }
+        ),
+        query(':leave',
+          [
+            style({ opacity: 1 }),
+            animate('1s', style({ opacity: 0 }))
+          ],
+          { optional: true }
+        ),
+        query(':enter',
+          [
+            style({ opacity: 0 }),
+            animate('1s', style({ opacity: 1 }))
+          ],
+          { optional: true }
+        )
+      ])
+    ])
+  ]
 })
 export class AppComponent implements OnInit {
+  isAnimation: boolean = true;
   public rdsauditLogMfeConfig: ComponentLoaderOptions;
   public operationLogs: any = [];
   public changeLogs: any = [];
@@ -39,6 +74,7 @@ export class AppComponent implements OnInit {
   constructor( private store: Store,public translate:TranslateService) { }
 
   ngOnInit(): void {
+    this.isAnimation = true;
     this.store.select(selectDefaultLanguage).subscribe((res: any) => {
 
       if (res) {
@@ -96,6 +132,7 @@ this.filterChangeLog(eventData);
      this.store.select(selectAllAuditLogs).subscribe((res: any) => {
        this.auditLogsTableData = [];
        if (res && res.auditLogs && res.auditLogs.items && res.auditLogs.items.length > 0 && res.status == "success") {
+         this.isAnimation = false;
          res.auditLogs.items.forEach((element: any) => {
            const item: any = {
              parameters:element.parameters,

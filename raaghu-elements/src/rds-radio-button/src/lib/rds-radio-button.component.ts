@@ -58,6 +58,11 @@ export class RdsRadioButtonComponent implements OnInit {
   }
 
   getValue(event: any) {
+    this.itemList.forEach(element => {
+     if( element.name!==event.target.value){
+      
+     }
+    });
     this.onClick.emit({ evnt: event, item: event.target.value });
     this.onChange(event.target.value)
     this.onTouched()

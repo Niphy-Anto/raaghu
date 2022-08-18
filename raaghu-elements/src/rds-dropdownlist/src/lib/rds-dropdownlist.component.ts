@@ -36,7 +36,7 @@ export class RdsDropdownlistComponent implements OnInit, OnChanges {
   @Input()
   placeholder = "Filter by user"
 
- 
+  @Input() borderDropdown : boolean = false;
 
   @Input()
    listItems:any =[
@@ -145,6 +145,21 @@ export class RdsDropdownlistComponent implements OnInit, OnChanges {
     }
 
     //this.checkedCategoryList = JSON.stringify(this.checkedCategoryList);
+  }
+  public get classes(): string[]{
+
+    var border = ['border']
+   if(this.borderDropdown == true){
+    
+     border.push('border');
+     border.push('rounded')
+   }
+   else{
+     border.push('');
+   }
+return border;
+  
+
   }
 
 }
