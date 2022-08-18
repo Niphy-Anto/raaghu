@@ -8,12 +8,13 @@
         </div>
         <div class="col-3">
           <rds-rating
-        [WithNoOfReviews]="false"
-        role="Advanced"
-        [rating]="3"
-        [noOfReview]="123"
-        Size="medium"
-      ></rds-rating>
+          [WithNoOfReviews]="false"
+          role="Advanced"
+          [rating]="5"
+          Size="medium"
+          [colorVariant]="'review'"
+         
+        ></rds-rating>
         </div>
         <div class="col-7">
           <rds-label [label]="item.reviewTitle" [multiline]="true" [bold]="true" [italic]="false" class="mb-1">
@@ -48,7 +49,8 @@
     <rds-rating
     [WithNoOfReviews]="false"
     role="Advanced"
-    [rating]="3"
+    [rating]="1"
+    colorVariant="review"
     [noOfReview]="123"
     Size="small"
   ></rds-rating>
@@ -86,6 +88,7 @@
   [rating]="4"
   [noOfReview]="123"
   Size="small"
+  [colorVariant]="'review'"
 ></rds-rating>
  </div>
 <div class="row mt-3">
