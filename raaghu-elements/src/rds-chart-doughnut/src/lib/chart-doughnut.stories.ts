@@ -56,5 +56,7 @@ Basic.args = {
         }
       }
     },
-  }
+  },
+  titleText: 'Title',
+  subTitleText: 'Sub-title',
 }

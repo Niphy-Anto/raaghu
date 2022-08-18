@@ -38,8 +38,9 @@
             <div body>
               <rds-big-number-widget [bigNumber]="'$' +ProfitSharePrice" [textAlign]="'text-start'"></rds-big-number-widget>
               <div class="col col-sm-12">
-                <rds-chart-doughnut [ChartDataSets]="pschartDatasets" chartId="psChart" [chartWidth]="pschartWidth" [chartHeight]="pschartHeight"
-                  [chartLabels]="pschartLabels" [chartOptions]="pschartOptions" chartType="doughnut">
+                <rds-chart-doughnut [ChartDataSets]="pschartDatasets" [titleText]="'35 K'" [subTitleText]="'Profit'" chartId="psChart"
+                  [chartWidth]="pschartWidth" [chartHeight]="pschartHeight" [chartLabels]="pschartLabels"
+                  [chartOptions]="pschartOptions" chartType="doughnut">
                 </rds-chart-doughnut>
               </div>
             </div>
