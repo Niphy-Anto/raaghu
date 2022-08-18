@@ -21,9 +21,11 @@ export class Webhooksubscription {
 @Component({
   selector: 'app-webhooksubscription',
   templateUrl: './webhooksubscription.component.html',
-  styleUrls: ['./webhooksubscription.component.scss']
+  styleUrls: ['./webhooksubscription.component.scss'],
+ 
 })
 export class WebhooksubscriptionComponent implements OnInit {
+
   public rdswebhookSubscriptionMfeConfig: ComponentLoaderOptions;
 
 
