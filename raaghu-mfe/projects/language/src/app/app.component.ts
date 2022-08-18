@@ -119,8 +119,9 @@ export class AppComponent implements OnInit {
             this.store.dispatch(deleteLanguage(event.selectedData.id))
           } else if (event.actionId === 'edit') {
             this.languageCanvasTitle = 'Edit Language';
-            this.selectedLanguage = { ...event.selectedData };
+            this.selectedLanguage = event.selectedData.name;
             this.openCanvas(true);
+
           }
           else if (event.actionId === 'setDefaultLanguage') {
             const data: any = { name: event.selectedData.countryCode };

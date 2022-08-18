@@ -17,7 +17,7 @@
         </div> -->
       </div>  
       <div class="form-group mb-3 text-start">
-        <rds-input size="default" [inputType]="userPasswordInputType" [Title]="translate.instant(Password)"
+        <rds-input size="default" [iconCursor]="'pointer'" [icon]="'eye'" [iconHeight]="'18px'" [iconWidth]="'18px'" [inputType]="userPasswordInputType" [Title]="translate.instant(Password)"
           [TitleType]="'Top'" [placeholder]="translate.instant(Password)" floatinginputLabel="" id="txtPassword"
           [(ngModel)]="userPasswordData" [isRequired]=true ngDefaultControl required #userPassword="ngModel" name="password"></rds-input>
         <div class="form-control-feedback" *ngIf="userPassword.errors && (userPassword.dirty || userPassword.touched)">
