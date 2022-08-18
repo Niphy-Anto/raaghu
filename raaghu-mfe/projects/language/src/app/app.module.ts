@@ -20,7 +20,7 @@ export const featureReducersMap = {
     NewlanguageComponent
   ],
   imports: [
-    BrowserModule,
+    //BrowserModule,
     AppRoutingModule,
     RdsOffcanvasModule,
     RdsButtonModule,
