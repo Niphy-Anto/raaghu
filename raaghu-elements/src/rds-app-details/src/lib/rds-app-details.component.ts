@@ -1,5 +1,15 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { appDetailsItems } from './rds-app-details.service';
+export interface appDetailsItems {
+  icon: string;
+  title: string;
+  subtitle: string;
+  route: string;
+  selected: boolean;
+  iconHeight: string;
+  iconWidth: string;
+  iconFill: boolean;
+  iconStroke: boolean;
+};
 
 @Component({
   selector: 'rds-app-details',
@@ -8,8 +18,7 @@ import { appDetailsItems } from './rds-app-details.service';
 })
 export class RdsAppDetailsComponent implements OnInit {
 
-  lightslategrey: boolean = true;
-  @Input() ItemsList: appDetailsItems;
+  @Input() item: appDetailsItems;
 
   constructor() { }
 

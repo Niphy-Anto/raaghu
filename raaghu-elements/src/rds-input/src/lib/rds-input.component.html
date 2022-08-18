@@ -4,8 +4,8 @@
       [ngClass]="classes" [attr.placeholder]="placeholder" [(ngModel)]="value" [value]="value" data-bs-toggle="tooltip"
       [attr.data-bs-placement]="tooltipPlacement" title="" [attr.id]="id" [disabled]="disabled" [readonly]="readonly"
       (mouseup)="onMouseup($event)" />
-    <rds-icon *ngIf="formState&&icon" [ngClass]="iconClass" [height]="iconHeight" [width]="iconWidth" [fill]="iconFill"
-      [stroke]="iconStroke" class="icon-position" [name]="icon"></rds-icon>
+    <rds-icon [title]="iconTitle" *ngIf="formState&&icon" [ngStyle]="{'cursor': iconCursor}"  [ngClass]="iconClass" [height]="iconHeight" [width]="iconWidth" [fill]="iconFill"
+      [stroke]="iconStroke" class="icon-position" [name]="icon" (click)="showPassword(inputType)"></rds-icon>
     <rds-icon [name]="'disable'" *ngIf="disabled && !readonly"></rds-icon>
     <label *ngIf="floatclasses" [ngClass]="Title == '' ? 'd-none' : 'form-label'" class="d-none" for="Errormessage">{{
       Title
