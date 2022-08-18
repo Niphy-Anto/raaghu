@@ -48,7 +48,8 @@ Basic.args = {
   inputType: 'text',
   placeholder: 'Add placeholder',
   Title: '',
-  TitleType: 'text'
+  TitleType: 'text',
+  iconCursor: 'pointer'
 };
 
 export const Tooltip = Template.bind({});
