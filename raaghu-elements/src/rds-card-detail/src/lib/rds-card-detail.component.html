@@ -1,4 +1,5 @@
 <div (click)="setAsPaymentMethod(cardData)">
+    <rds-label [label]="label" [bold]="true"></rds-label>
     <div class="d-flex">
         <div class="flex-grow-0 d-flex align-items-center">
             <!-- <img [src]="cardData.cardLogo" class="rounded-circle avatar bg-light avatar-md" [ngClass]="classes"
@@ -8,7 +9,7 @@
         </div>
         <div class="flex-grow-1 d-flex align-items-center ms-3">
             <div>
-                <div class="d-block" style="font-size: 0.80rem;">{{cardData.cardName}} ending in {{cardData.cardNumber}}
+                <div class="d-block" style="font-size: 0.80rem;">{{cardData.cardName}}Ending in {{cardData.cardNumber}}
                 </div>
                 <div class="d-block text-muted" style="font-size: 0.80rem;">Expiry {{cardData.cardExpiry}}</div>
             </div>
