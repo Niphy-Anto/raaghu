@@ -25,12 +25,13 @@ jobs:
           cache-dependency-path: './raaghu-elements'
       
       - name: Install raaghu-elements
-        working-directory: raaghu-elements
+        working-directory: ./raaghu-elements
         run: npm install
       
       - name: Publish rds-elements
         working-directory: ./raaghu-elements/rds-elements
-        run: npm publish
+        run: |
+          npm publish
 
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
