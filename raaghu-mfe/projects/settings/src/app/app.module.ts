@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { RdsButtonModule, RdsNavTabModule } from '@libs/rds-elements';
 import { NgxTranslateModule, SharedModule } from '@libs/shared';
 import { SettingEffects, settingReducer, SettingsTenantPageboxReducer } from '@libs/state-management';
@@ -21,7 +20,7 @@ export const featureReducersMap = {
     AppComponent
   ],
   imports: [
-    BrowserModule,
+    //BrowserModule,
     AppRoutingModule,
     SharedModule,
     RdsButtonModule,
