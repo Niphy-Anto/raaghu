@@ -6,6 +6,7 @@ name: Publish Package to npmjs
 on:
   release:
     types: [created]
+  workflow_dispatch:
     
 env:
   NODE_VERSION: '16.15.0'                # set this to the node version to use
