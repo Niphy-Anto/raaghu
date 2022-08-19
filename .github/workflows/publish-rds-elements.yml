@@ -19,9 +19,13 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: 16
-      - run: npm ci
-      - run: npm test
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: './raaghu-elements'
+      
+      - name: Install raaghu-elements
+        working-directory: raaghu-elements
+        run: npm install
 
   publish-npm:
     needs: build
@@ -32,7 +36,7 @@ jobs:
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org/
-      - run: npm ci
-      - run: npm publish
+      #- run: npm ci
+      #- run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
