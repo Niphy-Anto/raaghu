@@ -28,10 +28,13 @@ jobs:
         working-directory: ./raaghu-elements
         run: npm install
       
+      - name: Build raaghu-elements
+        working-directory: ./raaghu-elements
+        run: npm run build-all
+        
       - name: Publish rds-elements
         working-directory: ./raaghu-elements/rds-elements
-        run: |
-          npm publish
+        run: npm publish
 
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
