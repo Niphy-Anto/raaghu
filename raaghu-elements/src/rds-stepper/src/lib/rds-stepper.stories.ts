@@ -44,7 +44,7 @@ Simple.args = {
 export const Panel = Template.bind({});
 
 Panel.args = {
-  stepperType: 'panel'
+  stepperType: 'panel',
     readOnly: true
 
 };
