@@ -1,7 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { SubTitle } from 'chart.js';
-import { title } from 'process';
-
 @Component({
   selector: 'rds-carousel',
   templateUrl: './rds-carousel.component.html',
