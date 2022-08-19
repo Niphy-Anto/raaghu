@@ -63,6 +63,10 @@
       "@libs/rds-button": [
         "rds-elements/rds-button/public-api",
         "rds-elements/rds-button"
+      ],
+      "rds-team-member": [
+        "dist/rds-team-member/rds-team-member",
+        "dist/rds-team-member"
       ]
     },
     "skipLibCheck": true,
