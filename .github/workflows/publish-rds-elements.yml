@@ -18,8 +18,8 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       
       - name: npm install and build raaghu-elements
-      working-directory: raaghu-elements
-      run: npm install
+        working-directory: raaghu-elements
+        run: npm install
       
       - run: npm ci
       # - run: npm publish
