@@ -6,12 +6,9 @@
       padding-left: 0.75rem;
       padding-right: 40px;
       box-shadow: none;
-      background-color: $gray-200;
   
       :focus {
         color: #212529;
-        background-color: $light;
-        border-color: $primary;
         outline: 0;
         box-shadow: none;
       }

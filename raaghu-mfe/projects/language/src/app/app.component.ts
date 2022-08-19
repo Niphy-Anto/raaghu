@@ -8,6 +8,13 @@ import { selectAllLanguages, selectDefaultLanguage } from 'projects/libs/state-m
 import { TableHeader } from 'projects/rds-components/src/models/table-header.model';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import {
+  transition,
+  trigger,
+  query,
+  style,
+  animate,
+} from '@angular/animations';
 declare var bootstrap: any;
 
 
@@ -17,9 +24,37 @@ declare var bootstrap: any;
   styleUrls: ['./app.component.scss'],
   providers: [
     DatePipe
+  ],
+  animations: [
+    trigger('fadeAnimation', [
+      transition('* <=> *', [
+        query(':enter',
+          [
+            style({ opacity: 0 })
+          ],
+          { optional: true }
+        ),
+        query(':leave',
+          [
+            style({ opacity: 1 }),
+            animate('1s', style({ opacity: 0 }))
+          ],
+          { optional: true }
+        ),
+        query(':enter',
+          [
+            style({ opacity: 0 }),
+            animate('1s', style({ opacity: 1 }))
+          ],
+          { optional: true }
+        )
+      ])
+    ])
   ]
 })
+
 export class AppComponent implements OnInit {
+  isAnimation: boolean = true;
   title = 'language';
   currentAlerts: any = [];
   @Input() listItems = [
@@ -57,6 +92,7 @@ export class AppComponent implements OnInit {
   public viewCanvas: boolean = false;
   constructor(public datepipe: DatePipe, public translate: TranslateService, private store: Store, private alertService: AlertService, private router: Router) { }
   ngOnInit(): void {
+    this.isAnimation = true;
     this.store.select(selectDefaultLanguage).subscribe((res: any) => {
       if (res) {
         this.translate.use(res);
@@ -83,8 +119,9 @@ export class AppComponent implements OnInit {
             this.store.dispatch(deleteLanguage(event.selectedData.id))
           } else if (event.actionId === 'edit') {
             this.languageCanvasTitle = 'Edit Language';
-            this.selectedLanguage = { ...event.selectedData };
+            this.selectedLanguage = event.selectedData.name;
             this.openCanvas(true);
+
           }
           else if (event.actionId === 'setDefaultLanguage') {
             const data: any = { name: event.selectedData.countryCode };
@@ -100,7 +137,8 @@ export class AppComponent implements OnInit {
 
     this.store.select(selectAllLanguages).subscribe((res: any) => {
       this.languageTableData = [];
-      if (res && res.languages &&  res.languages.items && res.languages.items.length > 0 && res.status == "success") {
+      if (res && res.languages && res.languages.items && res.languages.items.length > 0 && res.status == "success") {
+        this.isAnimation = false;
         let defaultLanguage = res.languages.defaultLanguageName;
         res.languages.items.forEach((element: any) => {
           const status: any = (element.isDisabled) ? { icon: 'cross_mark', width: '24px', height: '16px' } : { icon: 'check_mark', width: '24px', height: '16px' };

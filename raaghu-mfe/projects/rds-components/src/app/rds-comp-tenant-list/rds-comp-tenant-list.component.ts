@@ -26,7 +26,10 @@ export class RdsCompTenantListComponent implements OnInit, DoCheck {
   viewCanvas: boolean = false;
   selectedId: any = '';
   isTenantInfoValid: boolean = false;
-  actions: TableAction[] = [{ id: 'edit', displayName: this.translate.instant('Edit') }, { id: 'delete', displayName: this.translate.instant('Delete') }]
+  actions: TableAction[] = [
+    { id: 'loginAsTenant', displayName: this.translate.instant('Login as Tenant') }, 
+    { id: 'edit', displayName: this.translate.instant('Edit') }, 
+    { id: 'delete', displayName: this.translate.instant('Delete') }]
   @Input() tenantSettingsInfo: any;
   @Input() tenantData: any;
   @Input() isShimmer: boolean = false;
@@ -51,6 +54,8 @@ export class RdsCompTenantListComponent implements OnInit, DoCheck {
   @Input() public tenantList: any = [];
   public tableData: any = [];
   @Input() public editionList: any = [];
+  buttonSpinnerForNewUser : boolean = true;
+  buttonSpinnerForSave : boolean = true;
 
   currentAlerts: any = [];
   public rdsAlertMfeConfig: ComponentLoaderOptions = {
@@ -213,6 +218,8 @@ export class RdsCompTenantListComponent implements OnInit, DoCheck {
   }
 
   newTenant(event, showEmail?: boolean): void {
+    this.buttonSpinnerForNewUser = false;
+    this.buttonSpinnerForSave = false;
     this.selectedId = '';
     this.viewCanvas = true;
     this.showEmailList = showEmail ? true : false;
@@ -280,6 +287,8 @@ export class RdsCompTenantListComponent implements OnInit, DoCheck {
 
   close(): void {
     this.viewCanvas = false;
+    this.buttonSpinnerForSave = false;
+    this.buttonSpinnerForNewUser = false;
     this.tenant = {
       tenantInfo: undefined,
       tenantSettings: undefined,

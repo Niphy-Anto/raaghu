@@ -8,6 +8,7 @@ import { selectOrganizationUnitMembers, selectOrganizationUnitRoles, selectOrgan
 import { TableHeader } from 'projects/rds-components/src/models/table-header.model';
 import { selectDefaultLanguage } from '@libs/state-management';
 import { TranslateService } from '@ngx-translate/core';
+import { transition, trigger, query, style, animate, } from '@angular/animations';
 
 declare var bootstrap: any;
 
@@ -15,12 +16,40 @@ declare var bootstrap: any;
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  providers: [DatePipe]
+  providers: [DatePipe],
+  animations: [
+    trigger('fadeAnimation', [
+      transition('* <=> *', [
+        query(':enter',
+          [
+            style({ opacity: 0 })
+          ],
+          { optional: true }
+        ),
+        query(':leave',
+          [
+            style({ opacity: 1 }),
+            animate('1s', style({ opacity: 0 }))
+          ],
+          { optional: true }
+        ),
+        query(':enter',
+          [
+            style({ opacity: 0 }),
+            animate('1s', style({ opacity: 1 }))
+          ],
+          { optional: true }
+        )
+      ])
+    ])
+  ]
 
 
 })
 
 export class AppComponent implements OnInit {
+  isAnimation: boolean = true;
+
   selectedTabIndex: any = 0;
   organizationCount: any;
   userUniqueId: any;
@@ -197,6 +226,7 @@ export class AppComponent implements OnInit {
   ) {
   }
   ngOnInit(): void {
+    this.isAnimation = true;
     this.store.select(selectDefaultLanguage).subscribe((res: any) => {
       if (res) {
         this.translate.use(res);

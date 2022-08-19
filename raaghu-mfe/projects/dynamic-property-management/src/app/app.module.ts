@@ -20,7 +20,7 @@ export const featureReducersMap = {
     AppComponent
   ],
   imports: [
-    BrowserModule,
+    //BrowserModule,
     AppRoutingModule,
     SharedModule,
     RdsDropdownModule,

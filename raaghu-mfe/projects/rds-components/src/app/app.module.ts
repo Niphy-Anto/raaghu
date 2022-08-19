@@ -138,6 +138,8 @@ import { RdsCompEmailSettingsComponent } from './rds-comp-email-settings/rds-com
 import { RdsCompPricingTableComponent } from './rds-comp-pricing-table/rds-comp-pricing-table.component';
 import { RdsCompReviewCategoryComponent } from './rds-comp-review-category/rds-comp-review-category.component';
 import { RdsCompCustomerReviewsComponent } from './rds-comp-customer-reviews/rds-comp-customer-reviews.component';
+import { RdsCompBillingComponent } from './rds-comp-billing/rds-comp-billing.component';
+import { RdsCompIntegrationComponent } from './rds-comp-integration/rds-comp-integration.component';
 
 import { RdsCompOrderDetailsComponent } from './rds-comp-order-details/rds-comp-order-details.component';
 import { RdsAddressDetailModule } from 'projects/libs/rds-elements/src/rds-address-detail/src/public-api';
@@ -272,7 +274,9 @@ import { RdsStepperModule } from 'projects/libs/rds-elements/src/rds-stepper/src
     RdsCompProductOverviewComponent,
     RdsCompPersonalInfoComponent,
     RdsCompPasswordSettingsComponent,
-    RdsCompEmailSettingsComponent
+    RdsCompEmailSettingsComponent,
+    RdsCompBillingComponent,
+    RdsCompIntegrationComponent
   ],
   imports: [
     BrowserModule,
