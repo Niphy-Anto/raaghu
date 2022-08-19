@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { SubTitle } from 'chart.js';
+import { title } from 'process';
 
 @Component({
   selector: 'rds-carousel',
@@ -22,6 +24,8 @@ export class RdsCarouselComponent implements OnInit {
   @Input()
   controls = false;
 
+  @Input() display_type: 'basic' | 'advanced' = 'basic';
+
   @Input()
   imageItem = [
     {
@@ -33,6 +37,20 @@ export class RdsCarouselComponent implements OnInit {
       caption: 'this is the caption section were u can add the caption for the image'
     }
   ];
+
+  @Input() carousalItem = [ {
+    icon:'https://cdn.pixabay.com/photo/2021/08/25/20/42/field-6574455__480.jpg',
+      name: 'Sam Smith',
+      roleName: 'Product Manager',
+      subTitle:'Nulla metus metus ullamcorper vel tincidunt set euismod nibh quisque volutpat condimentum veilt class patent taciti sociosqu and litara ad litora torquent per conubia nastra.'
+  },
+  {
+    icon:'https://cdn.pixabay.com/photo/2021/08/25/20/42/field-6574455__480.jpg',
+    name: 'king John',
+    roleName: 'Tech Lead',
+    subTitle:'this is the caption section were u can add the caption for the image',
+  
+  }];
 
   constructor() {
     this.id = 'carousel' + RdsCarouselComponent.count++;
