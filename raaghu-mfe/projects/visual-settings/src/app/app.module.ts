@@ -18,7 +18,7 @@ export const VisualsettingsReducersMap = {
     AppComponent
   ],
   imports: [
-    BrowserModule,
+    //BrowserModule,
     AppRoutingModule,
     SharedModule,
     RdsCardModule,

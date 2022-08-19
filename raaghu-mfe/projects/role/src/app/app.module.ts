@@ -19,7 +19,7 @@ export const RolsReducersMap = {
     AppComponent,
   ],
   imports: [
-    BrowserModule,
+    //BrowserModule,
     AppRoutingModule,
     SharedModule,
     RdsButtonModule,

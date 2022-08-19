@@ -251,8 +251,8 @@ $card-border-color: $card-bg-color;
 
   $input-bg: #353755;
 
-
+@import './custom.scss';
   @import './node_modules/bootstrap/scss/bootstrap';
   @import './colorvariables.scss';
-  @import './custom.scss';
+
 

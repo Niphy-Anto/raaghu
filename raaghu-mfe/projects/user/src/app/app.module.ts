@@ -25,7 +25,7 @@ export const UsersReducersMap = {
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    BrowserModule,
+    //BrowserModule,
     AppRoutingModule,
     SharedModule,
     ReactiveFormsModule,
