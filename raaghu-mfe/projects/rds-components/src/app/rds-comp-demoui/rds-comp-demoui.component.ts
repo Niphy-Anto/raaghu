@@ -78,11 +78,11 @@ tableBodyItems=[
     },
     {
       "label": '',
-      "icon": 'edit',
+      "icon": 'pencil',
       "id": '',
       "name": '',
-      iconWidth: '25px',
-      iconHeight: '25px',
+      iconWidth: '18px',
+      iconHeight: '18px',
       stroke: true,
       fill: false
     },
