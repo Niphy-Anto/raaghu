@@ -58,7 +58,7 @@
                (click)="onClickShowAlert()"
            ></rds-button>
     
-     <rds-alert [visibility]="false" [alertOpen]="true" size="small" [dismisable]="true" icon="destructive"
+     <rds-alert [visibility]="false" [alertOpen]="true" size="small" [dismisable]="true" icon="close_circle" 
                 [iconHeight]="'20px'" [iconWidth]="'20px'" [label]="translate.instant('A simple primary alert—check it out!')"
                 heading="" type="danger" position="bottom" *ngIf="showAlert"></rds-alert>
         </div>
@@ -156,7 +156,7 @@
         <h6 class="mb-3">{{"Badge With icon"|translate}}</h6>
         <rds-button class="position-relative" [size]="'medium'" [colorVariant]="'default'" [outlineButton]="false"
                     [roundedButton]="true" type="button">
-          <rds-icon name="chat_left_dots" height="22px" width="22px"></rds-icon>
+          <rds-icon name="youtube" height="22px" width="22px"></rds-icon>
           <rds-badge right size="smallest" Types="primary" label="9" [pillBadges]="false" [positioned]="true"
                      [iconBadge]="true">
           </rds-badge>
@@ -212,7 +212,7 @@
             <div body>
               <rds-big-number-widget [bigNumber]="'$13,20,21'" [subText]="'+$1,203'"
                                      [icon]="'triangle_up'" [iconHeight]="'12px'" [iconWidth]="'12px'" [iconFill]="true" [iconStroke]="true"
-                                     [iconColor]="'primary'" [textAlign]="'text-center'" subTitleColorVariant="dark"></rds-big-number-widget>
+                                      [textAlign]="'text-center'" subTitleColorVariant="dark"></rds-big-number-widget>
             </div>
           </rds-widget>
         </div>
@@ -355,7 +355,7 @@
         <div class="col-4">
           <h6 class="mb-3">{{"Button - Icon With Label"|translate}}</h6>
           <rds-button colorVariant="primary" [submit]="false" [block]="false" [disabled]="false" [outlineButton]="false"
-                      [roundedButton]="false" icon="edit" iconHeight="20px" iconWidth="20px" label="button" tooltipTitle=""
+                      [roundedButton]="false" icon="pencil" iconHeight="18px" iconWidth="18px" label="button" tooltipTitle=""
                       tooltipPlacement="bottom">
           </rds-button>
         </div>
@@ -373,7 +373,7 @@
         <div class="col-4">
           <h6 class="mb-3">{{"Button - icon"|translate}}</h6>
           <rds-button colorVariant="primary" [submit]="false" [size]="'small'" [block]="false" [disabled]="false" [outlineButton]="false"
-                      [roundedButton]="true" icon="edit" label="" iconHeight="16px" iconWidth="16px" tooltipTitle=""
+                      [roundedButton]="true" icon="pencil" label="" iconHeight="16px" iconWidth="16px" tooltipTitle=""
                       tooltipPlacement="bottom">
           </rds-button>
         </div>
@@ -399,19 +399,19 @@
         <div class="row">
           <div class="col-3">
             <rds-button colorVariant="primary" [submit]="false" [size]="'small'" [block]="false" [disabled]="false" [outlineButton]="false"
-                        [roundedButton]="true" icon="edit" label="" iconHeight="16px" iconWidth="16px" tooltipTitle=""
+                        [roundedButton]="true" icon="pencil" label="" iconHeight="18px" iconWidth="18px" tooltipTitle=""
                         tooltipPlacement="bottom">
             </rds-button>
           </div>
           <div class="col-3">
             <rds-button colorVariant="primary" [submit]="false" [size]="'medium'" [block]="false" [disabled]="false" [outlineButton]="false"
-                        [roundedButton]="true" icon="edit" label="" iconHeight="32px" iconWidth="32px" tooltipTitle=""
+                        [roundedButton]="true" icon="pencil" label="" iconHeight="23px" iconWidth="23px" tooltipTitle=""
                         tooltipPlacement="bottom">
             </rds-button>
           </div>
           <div class="col-3">
             <rds-button colorVariant="primary" [submit]="false" [size]="'large'" [block]="false" [disabled]="false" [outlineButton]="false"
-                        [roundedButton]="true" icon="edit" label="" iconHeight="48px" iconWidth="48px" tooltipTitle=""
+                        [roundedButton]="true" icon="pencil" label="" iconHeight="30px" iconWidth="30px" tooltipTitle=""
                         tooltipPlacement="bottom">
             </rds-button>
           </div>
@@ -798,7 +798,7 @@
     <div class="row border p-4 m-2">
       <div class="col-4"></div>
       <h6 class="mb-3">{{"Icon"|translate}}</h6>
-      <rds-icon name="empty_states" [height]="'100px'" [width]="'100px'"></rds-icon>
+      <rds-icon name="empty_states_add_records" [height]="'100px'" [width]="'100px'"></rds-icon>
       <!-- <rds-icon icon="calendar-date" [size]="15"></rds-icon> -->
     </div>
   </div>
