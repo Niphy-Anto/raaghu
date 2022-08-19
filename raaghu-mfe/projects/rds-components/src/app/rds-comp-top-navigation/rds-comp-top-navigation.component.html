@@ -22,9 +22,9 @@
 
     <div class="collapse navbar-collapse ps-5 ms-4 py-0 m-0" id="navbarSupportedContent1">
       <ul class="navbar-nav d-flex align-items-center ms-auto">
-        <rds-dropdownlist [placeholder]="'Select theme'" [value]="themes.value"
+        <rds-dropdownlist [placeholder]="'Select theme'" [value]="themes.value" [borderDropdown]="false"
                           [listItems]="themes" (onSelect)="onThemeSelect($event.item.value)"></rds-dropdownlist>
-        <rds-dropdownlist [placeholder]="'Languages'" [value]="selectedLanguage.language" [icon]="selectedLanguage.icon" [iconHeight]="'18px'" [iconWidth]="'18px'"
+        <rds-dropdownlist [placeholder]="'Languages'" [value]="selectedLanguage.language" [icon]="selectedLanguage.icon" [borderDropdown]="false" [iconHeight]="'18px'" [iconWidth]="'18px'"
                           [listItems]="languageItems" (onSelect)="onLanguageSelect($event)">
         </rds-dropdownlist>
         <li class="nav-item dropdown border-end px-2">
