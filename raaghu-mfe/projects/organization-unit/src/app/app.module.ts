@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { NgxTranslateModule, SharedModule } from '@libs/shared';
 import { RdsButtonModule, RdsIconModule, RdsNavTabModule, RdsOffcanvasModule } from '@libs/rds-elements';
 
@@ -13,7 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent
   ],
   imports: [
-    BrowserModule,
+    //BrowserModule,
     AppRoutingModule,
     SharedModule,
     RdsNavTabModule,
