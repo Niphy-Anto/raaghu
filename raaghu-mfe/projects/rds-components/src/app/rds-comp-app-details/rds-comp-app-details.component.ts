@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class RdsCompAppDetailsComponent implements OnInit {
 
-  @Input() appDetailList:any[]=[];
+  @Input() appDetailList: any[] = [];
 
 
   constructor() { }

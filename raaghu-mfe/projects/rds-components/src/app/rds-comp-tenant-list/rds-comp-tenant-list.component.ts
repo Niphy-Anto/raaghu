@@ -26,7 +26,10 @@ export class RdsCompTenantListComponent implements OnInit, DoCheck {
   viewCanvas: boolean = false;
   selectedId: any = '';
   isTenantInfoValid: boolean = false;
-  actions: TableAction[] = [{ id: 'edit', displayName: this.translate.instant('Edit') }, { id: 'delete', displayName: this.translate.instant('Delete') }]
+  actions: TableAction[] = [
+    { id: 'loginAsTenant', displayName: this.translate.instant('Login as Tenant') }, 
+    { id: 'edit', displayName: this.translate.instant('Edit') }, 
+    { id: 'delete', displayName: this.translate.instant('Delete') }]
   @Input() tenantSettingsInfo: any;
   @Input() tenantData: any;
   @Input() isShimmer: boolean = false;

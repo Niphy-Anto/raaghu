@@ -5,7 +5,14 @@ import { deleteTenant, getEditionComboboxItems, getTenantFeaturesForEdit, getTen
 import { TableHeader } from 'projects/rds-components/src/models/table-header.model';
 import { TranslateService } from '@ngx-translate/core';
 import { DatePipe } from '@angular/common';
-
+import { fadeAnimation } from '../../../libs/shared/src/lib/animation';
+import {
+  transition,
+  trigger,
+  query,
+  style,
+  animate,
+} from '@angular/animations';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +21,32 @@ import { DatePipe } from '@angular/common';
   encapsulation: ViewEncapsulation.None,
   providers: [
     DatePipe
+  ],
+  animations: [
+    trigger('fadeAnimation', [
+      transition('* <=> *', [
+        query(':enter',
+          [
+            style({ opacity: 0 })
+          ],
+          { optional: true }
+        ),
+        query(':leave',
+          [
+            style({ opacity: 1 }),
+            animate('1s', style({ opacity: 0 }))
+          ],
+          { optional: true }
+        ),
+        query(':enter',
+          [
+            style({ opacity: 0 }),
+            animate('1s', style({ opacity: 1 }))
+          ],
+          { optional: true }
+        )
+      ])
+    ])
   ]
 })
 export class AppComponent {
@@ -37,13 +70,12 @@ export class AppComponent {
     { displayName: 'Subscription End Date', key: 'subscriptionEndDateUtc', dataType: 'html', dataLength: 30, sortable: true, required: true, filterable: true },
 
   ]
+  isAnimation: boolean = true;
 
   tenantTableData: any = []
   constructor(public datepipe: DatePipe, private store: Store, private translate: TranslateService, private _arrayToTreeConverterService: ArrayToTreeConverterService) { }
   ngOnInit(): void {
-
-
-   
+    this.isAnimation = true;
 
     this.store.select(selectDefaultLanguage).subscribe((res: any) => {
       if (res) {
@@ -143,6 +175,7 @@ export class AppComponent {
     this.store.select(selectAllTenants).subscribe((res: any) => {
       this.tenantTableData = [];
       if (res && res.tenants.items && res.status == "success") {
+        this.isAnimation = false;
         res.tenants.items.forEach((element: any) => {
           const status: string = (element.isActive) ? 'Active' : 'Inactive';
           // const statusTemplate = `<div class="status ${status}">${status}</div>`;
