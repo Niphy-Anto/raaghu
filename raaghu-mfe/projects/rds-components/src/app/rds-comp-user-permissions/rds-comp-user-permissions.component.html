@@ -9,7 +9,7 @@
     <rds-button class="action me-3" [colorVariant]="'outline-primary'" [size]="'small'" (click)="exportToExcel()"
       [label]="translate.instant('Export To Excel')">
     </rds-button>
-    <rds-button [label]="translate.instant('New User')" [size]="'medium'" [colorVariant]="'primary'" [size]="'small'"
+    <rds-button [label]="translate.instant('New User')" [size]="'medium'" [colorVariant]="'primary'" [showLoadingSpinner]="buttonSpinner" [size]="'small'"
       (click)="newUser($event)">
       <rds-icon left name="plus" height="12px" width="12px"></rds-icon>
     </rds-button>

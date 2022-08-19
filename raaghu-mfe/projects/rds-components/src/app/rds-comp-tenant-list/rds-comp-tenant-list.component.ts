@@ -54,6 +54,8 @@ export class RdsCompTenantListComponent implements OnInit, DoCheck {
   @Input() public tenantList: any = [];
   public tableData: any = [];
   @Input() public editionList: any = [];
+  buttonSpinnerForNewUser : boolean = true;
+  buttonSpinnerForSave : boolean = true;
 
   currentAlerts: any = [];
   public rdsAlertMfeConfig: ComponentLoaderOptions = {
@@ -216,6 +218,8 @@ export class RdsCompTenantListComponent implements OnInit, DoCheck {
   }
 
   newTenant(event, showEmail?: boolean): void {
+    this.buttonSpinnerForNewUser = false;
+    this.buttonSpinnerForSave = false;
     this.selectedId = '';
     this.viewCanvas = true;
     this.showEmailList = showEmail ? true : false;
@@ -283,6 +287,8 @@ export class RdsCompTenantListComponent implements OnInit, DoCheck {
 
   close(): void {
     this.viewCanvas = false;
+    this.buttonSpinnerForSave = false;
+    this.buttonSpinnerForNewUser = false;
     this.tenant = {
       tenantInfo: undefined,
       tenantSettings: undefined,
