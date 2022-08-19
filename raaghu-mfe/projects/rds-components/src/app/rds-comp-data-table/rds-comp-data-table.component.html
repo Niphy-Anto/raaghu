@@ -12,9 +12,9 @@
                                     <div class="header-options mobile-header-option cursor-pointer ps-1">
                                         <span (click)="sortByColumn(header)" class="text-right sort-icons mobile-sort"
                                             *ngIf="header.sortable">
-                                            <rds-icon [name]="'arrow_up'" [width]="'12px'" [height]="'12px'"
+                                            <rds-icon [name]="'up_arrow'" [width]="'12px'" [height]="'12px'"
                                                 [ngClass]="getDescIconClass(header)"></rds-icon>
-                                            <rds-icon [name]="'arrow_down'" [width]="'12px'" [height]="'12px'"
+                                            <rds-icon [name]="'down_arrow'" [width]="'12px'" [height]="'12px'"
                                                 [ngClass]="getAscIconClass(header)"></rds-icon>
                                         </span>
                                         <div class="btn-group dropend">
@@ -109,7 +109,7 @@
                                 <div class="dropdown" *ngIf="!data.isEdit; else editActionTemplate">
                                     <rds-button [colorVariant]="'default'" [submit]="false" [block]="false" [size]="'medium'"
                                         [iconFill]="true" [iconStroke]="true"   [disabled]="false" [outlineButton]="false"
-                                        [roundedButton]="true" icon="action" [iconHeight]="'18px'" [iconWidth]="'18px'" [label]="data?.name+'_action'" tooltipTitle=""
+                                        [roundedButton]="true" icon="three_dots" [iconHeight]="'18px'" [iconWidth]="'18px'" [label]="data?.name+'_action'" tooltipTitle=""
                                         tooltipPlacement="bottom" (click)="openAction()" id="action-dropdown"
                                         data-bs-toggle="dropdown" aria-expanded="false"></rds-button>
                                     <div class="dropdown-menu" aria-labelledby="action-dropdown">
@@ -153,7 +153,7 @@
         <div class="my-5 py-5 d-flex align-items-center justify-content-center">
             <div class="text-center">
                 <div class="mb-3">
-                    <rds-icon name="empty_states" height="100px" width="100px"></rds-icon>
+                    <rds-icon name="empty_states_add_records" height="100px" width="100px"></rds-icon>
                 </div>
                 <div>
                     <h5> {{noDataTitle|translate}} </h5>
