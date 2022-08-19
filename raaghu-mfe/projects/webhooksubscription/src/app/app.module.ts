@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { RdsAlertModule, RdsBannerModule, RdsButtonModule, RdsIconModule, RdsInputModule, RdsOffcanvasModule, RdsTextareaModule } from '@libs/rds-elements';
 import { NgxTranslateModule, SharedModule } from '@libs/shared';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -22,7 +21,7 @@ import { NgxShimmerLoadingModule } from 'ngx-shimmer-loading';
 
   ],
   imports: [
-    BrowserModule,
+    //BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,

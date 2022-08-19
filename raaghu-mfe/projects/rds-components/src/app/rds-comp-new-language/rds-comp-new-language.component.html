@@ -5,10 +5,10 @@
                 <div class="col-md-6">
                     <div class="col-md-12 col-sm-12">
                         <div class="form-group mt-3">
-                            <rds-select-list [(ngModel)]="selectedLanguage.countryCode" LabelType="Top" [placeholderText]="'Select Language'"
+                            <rds-select-list [(ngModel)]="languageName" LabelType="Top" [placeholderText]="'Select Language'"
                                 [labelText]="translate.instant('Language')" [customIcon]="'bi bi-chevron-down'"
-                                #language_name="ngModel" id="select-listlanguage" [value]="selectedLanguage.nam"
-                                ngDefaultControl name="language" [isRequired]=true required [itemList]="languageNames">
+                                #language_name="ngModel" id="select-listlanguage" [value]="languageName"
+                                ngDefaultControl name="languageName" [isRequired]=true required [itemList]="languageNames">
                             </rds-select-list>
                             <div class="form-control-feedback"
                                 *ngIf="language_name.errors && (language_name.dirty || language_name.touched)">
