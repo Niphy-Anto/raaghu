@@ -277,6 +277,7 @@ export class AppComponent implements OnInit {
 
   updateOrganizationTree() {
     this.store.select(selectOrganizationUnitTree).subscribe((res: any) => {
+      this.isAnimation = false;
       if (res && res.items) {
         this.treeData2 = this._arrayToTreeConverterService.createTree(
           res.items,
@@ -319,6 +320,7 @@ export class AppComponent implements OnInit {
 
   updateMembersTable() {
     this.store.select(selectOrganizationUnitMembers).subscribe((res) => {
+      this.isAnimation = false;
       this.tableDataForMember = [];
       if (res && res.items.length > 0) {
         res.items.forEach((element: any) => {
@@ -340,6 +342,7 @@ export class AppComponent implements OnInit {
   }
   updateRolesTable() {
     this.store.select(selectOrganizationUnitRoles).subscribe((res) => {
+      this.isAnimation = false;
       this.tableDataForRoles = [];
       if (res && res.items.length > 0) {
         res.items.forEach((element: any) => {
@@ -366,6 +369,7 @@ export class AppComponent implements OnInit {
     input.maxResultCount = 10;
     this.store.dispatch(getOrganizationUnitUsersList(input));
     this.store.select(selectOrganizationUnitUsersList).subscribe((res) => {
+      this.isAnimation = false;
       if (res && res.items.length > 0) {
         this.addedDataMember = true;
         let tableDataForUserList = [];
@@ -395,6 +399,7 @@ export class AppComponent implements OnInit {
     input.maxResultCount = 10;
     this.store.dispatch(getOrganizationUnitRolesList(input));
     this.store.select(selectOrganizationUnitRolesList).subscribe((res) => {
+      this.isAnimation = false;
       if (res && res.items.length > 0) {
         this.addedDataRole = true;
         let tableDataForRoles1 = [];
