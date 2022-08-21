@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'lib-rds-address-detail',
+  selector: 'rds-address-detail',
   templateUrl: './rds-address-detail.component.html',
   styleUrls: ['./rds-address-detail.component.scss']
 })

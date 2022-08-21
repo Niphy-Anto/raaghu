@@ -42,7 +42,7 @@ import {
   RdsSpinnerModule, RdsToastsModule, RdsChartBubbleModule, RdsChartDoughnutModule, RdsChartMixedModule, RdsChartPolarAreaModule, RdsChartScatterModule, RdsChartStackedModule,
   RdsProgressbarModule, RdsBreadcrumbModule, RdsCarouselModule, RdsDoubleRangeModule, RdsScrollspyModule, RdsCounterModule, RdsFabMenuModule, RdsLabelModule, RdsIconLabelModule,
   CalendarModule, adapterFactory, DateAdapter, RdsRatingModule, RdsLikeDislikeModule, RdsColorModule, RdsFeedModule, RdsVideoPlayerModule, RdsAppDetailsModule, RdsBenefitModule,
-  RdsCardDetailModule, RdsSizeModule, RdsPriceModule, RdsFeatureListModule, RdsProductImageModule, RdsReviewCategoryModule
+  RdsCardDetailModule, RdsSizeModule, RdsPriceModule, RdsFeatureListModule, RdsProductImageModule
 } from '@libs/rds-elements';
 import { RdsCompDemouiComponent } from './rds-comp-demoui/rds-comp-demoui.component';
 import { RdsCompTenantManagementComponent } from './rds-comp-tenant-management/rds-comp-tenant-management.component';
@@ -140,6 +140,10 @@ import { RdsCompReviewCategoryComponent } from './rds-comp-review-category/rds-c
 import { RdsCompCustomerReviewsComponent } from './rds-comp-customer-reviews/rds-comp-customer-reviews.component';
 import { RdsCompBillingComponent } from './rds-comp-billing/rds-comp-billing.component';
 import { RdsCompIntegrationComponent } from './rds-comp-integration/rds-comp-integration.component';
+
+import { RdsCompOrderDetailsComponent } from './rds-comp-order-details/rds-comp-order-details.component';
+import { RdsAddressDetailModule } from 'projects/libs/rds-elements/src/rds-address-detail/src/public-api';
+import { RdsStepperModule } from 'projects/libs/rds-elements/src/rds-stepper/src/public-api';
 
 @NgModule({
   declarations: [
@@ -257,6 +261,8 @@ import { RdsCompIntegrationComponent } from './rds-comp-integration/rds-comp-int
     RdsCompProductOverviewComponent,
     RdsCompReviewCategoryComponent,
     RdsCompCustomerReviewsComponent,
+    RdsCompPricingTableComponent,
+    RdsCompOrderDetailsComponent,
     //RdsCompLanguageTextListComponent,
     RdsCompContactInformationComponent,
     RdsCompShippingAddressComponent,
@@ -358,7 +364,10 @@ import { RdsCompIntegrationComponent } from './rds-comp-integration/rds-comp-int
     RdsFeatureListModule,
     RdsProductImageModule,
     RdsSizeModule,
-    RdsReviewCategoryModule
+    RdsAddressDetailModule,
+    RdsStepperModule,
+   
+   
   ],
   providers: [],
   bootstrap: [AppComponent],
