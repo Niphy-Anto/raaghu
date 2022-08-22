@@ -6,7 +6,8 @@ name: Build and deploy stageui.raaghu.io
 
 on:
   push:
-    branches: [ development ]
+    branches:
+      - "development"
   workflow_dispatch:
 
 env:
