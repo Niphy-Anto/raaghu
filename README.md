@@ -107,15 +107,7 @@ Built on a robust tech stack and platform
     <td align="center" style="border: none">
         <img src="./static/nodejs.png" width="80" title="Node JS"/>
         <!-- <br /><sub><b>Alok Nakhate</b></sub> -->
-    </td>
-    <td align="center" style="border: none">
-        <img src="./static/angular.png" width="80" title="Angular"/>
-        <!-- <br /><sub><b>Yohul Chitre</b></sub> -->
-    </td>
-    <td align="center" style="border: none">
-        <img src="./static/bootstrap.png" width="80" title="Bootstrap"/>
-        <!-- <br /><sub><b>Priyanka Shinkar</b></sub> -->
-    </td>
+    </td>   
     <td align="center" style="border: none">
         <img src="./static/aspnetzero.png" width="80" title="AspnetZero"/>
         <!-- <br /><sub><b>Apoorva Lele</b></sub> -->
@@ -132,6 +124,35 @@ Built on a robust tech stack and platform
         <img src="./static/abpio.png" width="80" title="abpio"/>
         <!-- <br /><sub><b>Omkar Choudhari</b></sub> -->
     </td>
+  </tr>
+  
+  
+  
+  <tr>   
+    <td align="center" style="border: none">
+        <img src="./static/angular.png" width="80" title="Angular"/>
+        <!-- <br /><sub><b>Yohul Chitre</b></sub> -->
+    </td>
+    <td align="center" style="border: none">
+        <img src="./static/bootstrap.png" width="80" title="Bootstrap"/>
+        <!-- <br /><sub><b>Priyanka Shinkar</b></sub> -->
+    </td>
+    <td align="center" border="none" style="border:none">
+        <img src="./static/xd.png" width="80" title="Adobe XD"/>
+        <!--  <br /><sub><b>Mohan Bari</b></sub> -->
+    </td>
+    <td align="center" style="border: none">
+        <img src="./static/figma.png" width="80" title="Figma"/>
+        <!-- <br /><sub><b>Alok Nakhate</b></sub> -->
+    </td>
+    <td align="center" style="border: none">
+        <img src="./static/lottie.png" width="80" title="Lottie"/>
+        <!-- <br /><sub><b>Yohul Chitre</b></sub> -->
+    </td>
+    <td align="center" style="border: none">
+        <img src="./static/after-effects.png" width="80" title="After Effects"/>
+        <!-- <br /><sub><b>Priyanka Shinkar</b></sub> -->   
+    </td> 
   </tr>
   
 </table> 

@@ -39,8 +39,7 @@ import { transition,trigger,query,style,  animate,} from '@angular/animations';
   ]
 })
 export class AppComponent extends MfeBaseComponent implements OnInit {
-  isAnimation: boolean = true;
-
+  
   isAnimation: boolean = true;
   currentAlerts: any = [];
   editShimmer:boolean=false;
