@@ -151,7 +151,7 @@ Built on a robust tech stack and platform
     </td>
     <td align="center" style="border: none">
         <img src="./static/after-effects.png" width="80" title="After Effects"/>
-        <!-- <br /><sub><b>Priyanka Shinkar</b></sub> -->
+        <!-- <br /><sub><b>Priyanka Shinkar</b></sub> --> 
     </td> 
   </tr>
   
