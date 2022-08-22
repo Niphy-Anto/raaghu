@@ -55,7 +55,7 @@ export class RdsIconComponent implements OnInit, OnChanges {
   }
 
   private svgElementFromString(svgContent: string): SVGElement {
-    let fillColor = '';
+    let fillColor = 'currentColor';
     const div = this.document.createElement('DIV');
     div.innerHTML = svgContent;
     const svg = div.querySelector('svg');
@@ -86,7 +86,7 @@ export class RdsIconComponent implements OnInit, OnChanges {
       fillColor = '#E3A300';
     }
   
-    if (this.fill || this.fill === undefined) {
+    if (this.fill ) {
       svg.style.fill = fillColor;
     } else {
       svg.style.fill = 'none';
