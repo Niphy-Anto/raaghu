@@ -134,6 +134,27 @@ Built on a robust tech stack and platform
     </td>
   </tr>
   
+  
+  
+  <tr>   
+    <td align="center" border="none" style="border:none">
+        <img src="./static/xd.png" width="80" title="Adobe XD"/>
+        <!--  <br /><sub><b>Mohan Bari</b></sub> -->
+    </td>
+    <td align="center" style="border: none">
+        <img src="./static/figma.png" width="80" title="Figma"/>
+        <!-- <br /><sub><b>Alok Nakhate</b></sub> -->
+    </td>
+    <td align="center" style="border: none">
+        <img src="./static/lottie.png" width="80" title="Lottie"/>
+        <!-- <br /><sub><b>Yohul Chitre</b></sub> -->
+    </td>
+    <td align="center" style="border: none">
+        <img src="./static/after-effects.png" width="80" title="After Effects"/>
+        <!-- <br /><sub><b>Priyanka Shinkar</b></sub> -->
+    </td> 
+  </tr>
+  
 </table> 
  
  
