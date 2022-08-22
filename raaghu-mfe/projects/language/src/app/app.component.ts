@@ -37,14 +37,14 @@ declare var bootstrap: any;
         query(':leave',
           [
             style({ opacity: 1 }),
-            animate('1s', style({ opacity: 0 }))
+            animate('0.4s', style({ opacity: 0 }))
           ],
           { optional: true }
         ),
         query(':enter',
           [
             style({ opacity: 0 }),
-            animate('1s', style({ opacity: 1 }))
+            animate('0.4s', style({ opacity: 1 }))
           ],
           { optional: true }
         )
@@ -137,10 +137,10 @@ export class AppComponent implements OnInit {
 
     this.store.select(selectAllLanguages).subscribe((res: any) => {
       this.languageTableData = [];
-      if (res && res.languages && res.languages.items && res.languages.items.length > 0 && res.status == "success") {
+      if (res  && res.items && res.items.length > 0 ) {
         this.isAnimation = false;
-        let defaultLanguage = res.languages.defaultLanguageName;
-        res.languages.items.forEach((element: any) => {
+        let defaultLanguage = res.defaultLanguageName;
+        res.items.forEach((element: any) => {
           const status: any = (element.isDisabled) ? { icon: 'cross_mark', width: '24px', height: '16px' } : { icon: 'check_mark', width: '24px', height: '16px' };
           // const statusTemplate = `<div class="fs-3"><i class="bi ${status}"></i></div>`;
           const languageName: string = (element.displayName);
@@ -198,6 +198,8 @@ export class AppComponent implements OnInit {
   }
 
   openCanvas(isEdit: boolean): void {
+    this.viewCanvas = true;
+
     if (!isEdit) {
       this.selectedLanguage = {
         countryCode: '',
@@ -210,13 +212,11 @@ export class AppComponent implements OnInit {
       this.languageCanvasTitle = 'Edit Language';
 
     }
-    this.viewCanvas = true;
-    setTimeout(() => {
-
+    // setTimeout(() => {
     var offcanvas = document.getElementById('AddLanguage');
     var bsOffcanvas = new bootstrap.Offcanvas(offcanvas);
     bsOffcanvas.show();
-    }, 10);
+    // }, 5000);
 
   }
 

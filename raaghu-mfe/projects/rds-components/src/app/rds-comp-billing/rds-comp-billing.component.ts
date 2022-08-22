@@ -15,7 +15,7 @@ export class RdsCompBillingComponent implements OnInit {
     name: "Basic",
     price: "23",
     duration: "2",
-    iconurl: "subscription_basic",
+    iconurl: "basic_subscription",
     recommended: false,
     features: ["Maximum User Count", "Test Check feature", "Test check feature count 2"]
   },
@@ -23,7 +23,7 @@ export class RdsCompBillingComponent implements OnInit {
     name: "Standard",
     price: "23",
     duration: "2",
-    iconurl: "subscription_standard",
+    iconurl: "standard_subscription",
     recommended: false,
     features: ["Maximum User Count", "Test Check feature", "Test check feature count 2"]
   },
@@ -31,7 +31,7 @@ export class RdsCompBillingComponent implements OnInit {
     name: "Premium",
     price: "23",
     duration: "2",
-    iconurl: "subscription_premium",
+    iconurl: "premium_subscription",
     recommended: false,
     features: ["Maximum User Count", "Test Check feature", "Test check feature count 2"]
   },
@@ -39,7 +39,7 @@ export class RdsCompBillingComponent implements OnInit {
     name: "Professional",
     price: "23",
     duration: "2",
-    iconurl: "subscription_professional",
+    iconurl: "professional_subscription",
     recommended: false,
     features: ["Maximum User Count", "Test Check feature", "Test check feature count 2"]
   }];
