@@ -1,0 +1,43 @@
+  <div class="row m-2">
+    <div class="col-md-9">
+      <rds-label class="fs-2" [label]="'Order #36690'" [bold]="true"></rds-label>
+    </div>
+    <div class="col-md-3 float-end mt-2">
+      <rds-label [label]="'Order Placed'"></rds-label>&nbsp;<rds-label [label]="'June 03,2022'" [bold]="true"></rds-label>
+    </div>
+  </div>
+  
+  <mfe-loader [config]="rdsOrderDetailsMfeConfig"></mfe-loader>
+
+  <div class="card card1 mb-3  ">
+    <div class="card-body pt-0 mt-3" >
+   <div class="row ">
+    
+    <div class="col-md-6">
+      <div class="row pb-4 mb-4">
+        <div class="col-md-4 my-3">
+        <rds-address-detail [header]="'Shipping Address'" [addressLine1]="'Brookland House,'"
+          [addressLine2]="'5439, Rose Mills Road,'" [addressLine3]="'Santa Clara, CA 95054'">
+      </rds-address-detail>
+      </div>
+      <div class="col-md-4 offset-2 my-3">
+        <rds-card-detail  [cardData]="cardData" [label]="label" [IsEditAndDefaultFunctionalityRequired]="false"
+        [IsSelectionRequired]="false">
+      </rds-card-detail>
+        <!-- <mfe-loader [config]="RdsCompCardDetailList"></mfe-loader> -->
+      </div>
+      <div class="col-md-4">
+        <rds-address-detail [header]="'Billing Address'" [addressLine1]="'Brookland House,'"
+          [addressLine2]="'5439, Rose Mills Road,'" [addressLine3]="'Santa Clara, CA 95054'">
+        </rds-address-detail>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 mt-2">
+    <mfe-loader  [config]="rdsCompOrderSummary"></mfe-loader>
+  </div>
+  
+</div>
+</div>
+</div>
+<!-- </div> -->

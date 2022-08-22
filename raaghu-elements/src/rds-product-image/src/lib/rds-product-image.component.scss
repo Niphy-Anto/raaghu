@@ -4,3 +4,20 @@
 .card-stretch-50 {
     height: calc(50% - 0.7rem);
 }
+
+.imgWidth{
+    position: relative;
+    top: 111px;
+    z-index: 9;
+    width: 100%;
+    max-width: 100%;
+ }
+
+ .imgWidthBorder{
+    // position: relative;
+    // top: 111px;
+    // z-index: 9;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 50%;
+ }

@@ -5,6 +5,8 @@ import { selectDefaultLanguage } from '@libs/state-management';
 import { Store } from '@ngrx/store';
 import { TranslateService } from '@ngx-translate/core';
 import { ArrayToTreeConverterService } from 'projects/libs/shared/src/lib/array-to-tree-converter.service';
+import { transition, trigger, query, style, animate, } from '@angular/animations';
+
 import {
   getDynamicEntity,
   getDynamicProperty,
@@ -47,8 +49,35 @@ export class TreeNode {
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   providers: [DatePipe],
+  animations: [
+    trigger('fadeAnimation', [
+      transition('* <=> *', [
+        query(':enter',
+          [
+            style({ opacity: 0 })
+          ],
+          { optional: true }
+        ),
+        query(':leave',
+          [
+            style({ opacity: 1 }),
+            animate('1s', style({ opacity: 0 }))
+          ],
+          { optional: true }
+        ),
+        query(':enter',
+          [
+            style({ opacity: 0 }),
+            animate('1s', style({ opacity: 1 }))
+          ],
+          { optional: true }
+        )
+      ])
+    ])
+  ]
 })
 export class AppComponent implements OnInit {
+  isAnimation: boolean = true;
   currentAlerts: any = [];
   public rdsAlertMfeConfig: ComponentLoaderOptions = {
     name: 'RdsCompAlert',
@@ -190,6 +219,7 @@ export class AppComponent implements OnInit {
     private appSessionService: AppSessionService
   ) {}
   ngOnInit(): void {
+    this.isAnimation = true;
     this.store.select(selectDefaultLanguage).subscribe((res: any) => {
       if (res) {
         this.translate.use(res);
@@ -236,7 +266,8 @@ export class AppComponent implements OnInit {
     });
     this.store.dispatch(getDynamicProperty());
     this.store.select(selectDynamicProperty).subscribe((res: any) => {
-      if (res && res.dynamicProperty && res.dynamicProperty.items &&  res.status == "success") {
+      if (res && res.dynamicProperty && res.dynamicProperty.items && res.status == "success") {
+        this.isAnimation = false;
         this.DynamicProperties.DynamicPropertiesTableData = [];
         res.dynamicProperty.items.forEach((element: any) => {
           const item: any = {
@@ -285,6 +316,7 @@ export class AppComponent implements OnInit {
     this.store.select(selectDynamicEntity).subscribe((res: any) => {
       this.DynamicEntityProperties.DynamicEntityPropertiesTableData = [];
       if (res && res.dynamicEntity.items && res.status == 'success') {
+        this.isAnimation = false;
         res.dynamicEntity.items.forEach((element: any) => {
           const item: any = {
             entityFullName: element.entityFullName,

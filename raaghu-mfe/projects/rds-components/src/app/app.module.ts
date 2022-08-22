@@ -42,7 +42,7 @@ import {
   RdsSpinnerModule, RdsToastsModule, RdsChartBubbleModule, RdsChartDoughnutModule, RdsChartMixedModule, RdsChartPolarAreaModule, RdsChartScatterModule, RdsChartStackedModule,
   RdsProgressbarModule, RdsBreadcrumbModule, RdsCarouselModule, RdsDoubleRangeModule, RdsScrollspyModule, RdsCounterModule, RdsFabMenuModule, RdsLabelModule, RdsIconLabelModule,
   CalendarModule, adapterFactory, DateAdapter, RdsRatingModule, RdsLikeDislikeModule, RdsColorModule, RdsFeedModule, RdsVideoPlayerModule, RdsAppDetailsModule, RdsBenefitModule,
-  RdsCardDetailModule, RdsSizeModule, RdsPriceModule, RdsFeatureListModule, RdsProductImageModule, RdsReviewCategoryModule
+  RdsCardDetailModule, RdsSizeModule, RdsPriceModule, RdsFeatureListModule, RdsProductImageModule
 } from '@libs/rds-elements';
 import { RdsCompDemouiComponent } from './rds-comp-demoui/rds-comp-demoui.component';
 import { RdsCompTenantManagementComponent } from './rds-comp-tenant-management/rds-comp-tenant-management.component';
@@ -141,6 +141,10 @@ import { RdsCompCustomerReviewsComponent } from './rds-comp-customer-reviews/rds
 import { RdsCompBillingComponent } from './rds-comp-billing/rds-comp-billing.component';
 import { RdsCompIntegrationComponent } from './rds-comp-integration/rds-comp-integration.component';
 import { RdsCompTestimonialsComponent } from './rds-comp-testimonials/rds-comp-testimonials.component';
+
+import { RdsCompOrderDetailsComponent } from './rds-comp-order-details/rds-comp-order-details.component';
+import { RdsAddressDetailModule } from 'projects/libs/rds-elements/src/rds-address-detail/src/public-api';
+import { RdsStepperModule } from 'projects/libs/rds-elements/src/rds-stepper/src/public-api';
 
 @NgModule({
   declarations: [	
@@ -258,6 +262,8 @@ import { RdsCompTestimonialsComponent } from './rds-comp-testimonials/rds-comp-t
     RdsCompProductOverviewComponent,
     RdsCompReviewCategoryComponent,
     RdsCompCustomerReviewsComponent,
+    RdsCompPricingTableComponent,
+    RdsCompOrderDetailsComponent,
     //RdsCompLanguageTextListComponent,
     RdsCompContactInformationComponent,
     RdsCompShippingAddressComponent,
@@ -360,7 +366,10 @@ import { RdsCompTestimonialsComponent } from './rds-comp-testimonials/rds-comp-t
     RdsFeatureListModule,
     RdsProductImageModule,
     RdsSizeModule,
-    RdsReviewCategoryModule
+    RdsAddressDetailModule,
+    RdsStepperModule,
+   
+   
   ],
   providers: [],
   bootstrap: [AppComponent],

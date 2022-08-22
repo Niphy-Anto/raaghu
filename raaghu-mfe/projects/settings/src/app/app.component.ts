@@ -5,13 +5,7 @@ import { Store } from '@ngrx/store';
 import { AlertService } from '@libs/shared';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import {
-  transition,
-  trigger,
-  query,
-  style,
-  animate,
-} from '@angular/animations';
+import { transition,trigger,query,style,  animate,} from '@angular/animations';
 
 @Component({
   selector: 'app-root',
@@ -45,8 +39,8 @@ import {
   ]
 })
 export class AppComponent extends MfeBaseComponent implements OnInit {
+  
   isAnimation: boolean = true;
-
   currentAlerts: any = [];
   editShimmer:boolean=false;
   public rdsAlertMfeConfig: ComponentLoaderOptions = {
