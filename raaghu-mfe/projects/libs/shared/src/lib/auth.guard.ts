@@ -67,11 +67,12 @@ canLoad(route: any): Observable<boolean> | Promise<boolean> | boolean {
   return this.canActivateInternal(route.data, null);
 }
 
-  selectBestRoute(): string {
+  selectBestRoute(): string 
+  {
     if (!this._sessionService.user) {
-        return '/login';
-    }
-
+        return '/login';                  
+    }                                      
+                                                 
     return '/pages/dashboard';
   }
 }

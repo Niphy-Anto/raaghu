@@ -146,6 +146,8 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
   tenancyTableData = [];
   sidenavItems = [];
 
+  permissions:any;
+
   ngOnInit(): void {
 
     this.store.dispatch(getLanguages());
@@ -165,11 +167,18 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
         this.filterNavItems(this.sidenavItemsOriginal, res, this.sidenavItems);
       }
       else{
-        let permissions = localStorage.getItem('storedPermission');
-        if(permissions){
-          permissions = JSON.parse(permissions);
-          this.filterNavItems(this.sidenavItemsOriginal, permissions, this.sidenavItems);
+
+        const storedPermission = localStorage.getItem('storedPermissions');                                                                                                              
+        const parsedPermission = JSON.parse(storedPermission);
+        if(parsedPermission){
+          this.permissions = parsedPermission;
+          this.filterNavItems(this.sidenavItemsOriginal, parsedPermission, this.sidenavItems);
         }
+        // let permissions = localStorage.getItem('storedPermission');
+        // if(permissions){
+        //   permissions = JSON.parse(permissions);
+        //   this.filterNavItems(this.sidenavItemsOriginal, permissions, this.sidenavItems);
+        // }
       }
     });
     this.subscribeToAlerts();
