@@ -50,6 +50,7 @@ benefit_type1.args = {
     icon: 'users',
     iconHeight: "25px",
     iconWidth: "25px",
+    position: "start",
     title: "Free delivery all year long",
     description: "Name another place that offers year long free delivery? We'll be waiting. Order now and you'll get delivery absolutely free."
   }
@@ -84,4 +85,30 @@ benefit_type3.args = {
   }
 }
 
+export const benefit_type4 = Template.bind({});
+benefit_type4.args = {
+  display_type: 'benefit_type4',
+  item:
+  {
+    id: 7,
+    icon: 'users',
+    iconHeight: "40px",
+    iconWidth: "40px",
+    title: 'Free shipping world wide',
+    description: "Free delivery is our main part of company"
+  }
+}
+
+export const benefit_type5 = Template.bind({});
+benefit_type5.args = {
+  display_type: 'benefit_type5',
+  item:
+  {
+    id: 7,
+    icon: 'users',
+    iconHeight: "40px",
+    iconWidth: "40px",
+    title: 'Free delivery all year long',
+  }
+}
 

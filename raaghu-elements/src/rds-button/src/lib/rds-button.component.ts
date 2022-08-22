@@ -1,4 +1,5 @@
-import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { AfterViewInit, Component, DoCheck, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import de from 'date-fns/locale/de/index';
 // import { Tooltip } from 'bootstrap'
 declare var bootstrap: any;
 @Component({
@@ -6,7 +7,7 @@ declare var bootstrap: any;
   templateUrl: './rds-button.component.html',
   styleUrls: ['./rds-button.component.scss']
 })
-export class RdsButtonComponent implements AfterViewInit {
+export class RdsButtonComponent implements AfterViewInit, DoCheck, OnInit {
 
   @Input()
   colorVariant?: string;
@@ -59,18 +60,32 @@ export class RdsButtonComponent implements AfterViewInit {
   onClick = new EventEmitter<Event>();
 
   @Input() tooltipTitle: string = '';
-
   @Input() tooltipPlacement: 'top' | 'bottom' | 'right' | 'left' = 'bottom';
-
   @Input() id: string = 'buttonId';
-
   @Input() isLoading: boolean = false;
-
   @Input() showLoadingSpinner: boolean = false;
-
+  makeSpinnerActive: boolean;
 
   constructor() {
     this.id = this.id + RdsButtonComponent.count++;
+    
+  }
+  ngOnInit(): void {
+    this.makeSpinnerActive = this.showLoadingSpinner;
+  }
+  
+  ngDoCheck(): void {
+    if(!this.showLoadingSpinner){
+      this.isLoading = false;
+      if(this.makeSpinnerActive){
+        this.showLoadingSpinner = true;
+      }
+    }
+    else{
+      if(this.makeSpinnerActive && this.showLoadingSpinner){
+        this.isLoading = true;
+      }
+    }
   }
 
 
@@ -114,10 +129,12 @@ export class RdsButtonComponent implements AfterViewInit {
   }
 
   buttonClick(evt: any) {
-    if (this.showLoadingSpinner) {
+    debugger
+    if (this.makeSpinnerActive) {
       this.isLoading = true;
     }
     this.onClick.emit(evt);
   }
 
 }
+  

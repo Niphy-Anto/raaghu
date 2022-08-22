@@ -96,4 +96,5 @@ Basic.args = {
 
     }
   },
+  centerIconName: ''
 };

@@ -215,7 +215,7 @@ export class RdsAdminDashboardComponent extends MfeBaseComponent implements OnIn
       },
     }
   ];
-  @Input() pschartLabels = ['Total Sales', 'Revenue', 'Expenses']
+  @Input() pschartLabels = ['Total Sales - 60 %', 'Revenue - 25 %', 'Expenses - 15 %']
   @Input() pschartWidth = 255;
   @Input() pschartHeight = 200;
   @Input() pschartOptions = {
@@ -318,7 +318,7 @@ export class RdsAdminDashboardComponent extends MfeBaseComponent implements OnIn
       fillRect: [200, 100, 40, 10],
       backgroundColor: [
         '--chartColor9',
-        '--chartColor2' 
+        '--chartColor7' 
 
       ],
       borderColor: [
@@ -385,8 +385,8 @@ export class RdsAdminDashboardComponent extends MfeBaseComponent implements OnIn
       fillStyle: '#E1E1E1',
       fillRect: [200, 100, 40, 10],
       backgroundColor: [
-        '--chartColor7',
-        '--chartColor2'
+        '--chartColor1',
+        '--chartColor7'
         
       ],
       borderColor: [

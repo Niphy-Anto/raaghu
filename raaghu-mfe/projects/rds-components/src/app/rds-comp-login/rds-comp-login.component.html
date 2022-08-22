@@ -11,13 +11,13 @@
           [TitleType]="'Top'" [placeholder]="translate.instant(UserName)" id="txtUsername" floatinginputLabel=""
           [(ngModel)]="userNameData" [pattern]="emailPattern" [isRequired]=true required #username="ngModel" ngDefaultControl
           name="userName"></rds-input>
-        <div class="form-control-feedback" *ngIf="username.errors && (username.dirty || username.touched)">
+        <!-- <div class="form-control-feedback" *ngIf="username.errors && (username.dirty || username.touched)">
           <span class="text-danger" *ngIf="username.errors.required">{{"Username is required"|translate}}</span>
           <span class="text-danger" *ngIf="username.errors.pattern">{{"Please enter valid username"|translate}}</span>
-        </div>
-      </div>
+        </div> -->
+      </div>  
       <div class="form-group mb-3 text-start">
-        <rds-input size="default" [inputType]="userPasswordInputType" [Title]="translate.instant(Password)"
+        <rds-input size="default" [iconCursor]="'pointer'" [icon]="'eye'" [iconHeight]="'18px'" [iconWidth]="'18px'" [inputType]="userPasswordInputType" [Title]="translate.instant(Password)"
           [TitleType]="'Top'" [placeholder]="translate.instant(Password)" floatinginputLabel="" id="txtPassword"
           [(ngModel)]="userPasswordData" [isRequired]=true ngDefaultControl required #userPassword="ngModel" name="password"></rds-input>
         <div class="form-control-feedback" *ngIf="userPassword.errors && (userPassword.dirty || userPassword.touched)">
@@ -39,7 +39,7 @@
         <br />
       </div>
       <div class="pb-3">
-        <rds-button class="d-grid mb-3" colorVariant="primary" [block]="false" size="'medium'" [submit]="true"
+        <rds-button class="d-grid mb-3" colorVariant="primary" [block]="false" size="'medium'" [submit]="true" [showLoadingSpinner]="buttonSpinner"
           [label]="translate.instant(buttonLabel)" (click)="submit(loginForm)"></rds-button>
         <!-- <rds-button class="d-grid border" [colorVariant]="buttonColorTypeUp" [block]="false" size="'medium'"
           [label]="translate.instant(buttonLabelUp)">

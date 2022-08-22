@@ -5,8 +5,7 @@ name: Build and deploy stageui.raaghu.io
 
 on:
   push:
-    branches:
-      - "development"
+    branches: [ development ]
   schedule:
     - cron: '0 0 * * *'
   workflow_dispatch:
@@ -81,25 +80,3 @@ jobs:
         slot-name: 'Production'
         publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_392363CA3B8C4905BC10144A553C3367 }}
         package: .
-
-  test:
-    permissions:
-      contents: none
-    runs-on: ubuntu-latest
-    needs: build
-    environment:
-      name: 'Production'
-      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
-
-    steps:
-        
-    - name: npm install playwright
-      working-directory: ./raaghu-mfe/playwright
-      run: |
-        npm install
-       
-
-    - name: test raaghu-mfe with playwright
-      working-directory: ./raaghu-mfe/playwright
-      run: |
-        npx playwright test 

@@ -47,7 +47,7 @@ const Template: Story<RdsSelectListComponent> = (args: RdsSelectListComponent) =
     [labelText]="labelText"
     [LabelType]="LabelType"
     customIcon="">
-    <option selected>Open this select menu</option>
+    <option selected hidden>{{placeholderText}}</option>
     <option value="1">One</option>
     <option value="2">Two</option>
     <option value="3">Three</option>
@@ -65,7 +65,7 @@ const tooltipTemplate: Story<RdsSelectListComponent> = (args: RdsSelectListCompo
     [LabelType]="LabelType"
     [tooltipPlacement]="tooltipPlacement"
   >
-  <option selected>Open this select menu</option>
+  <option selected hidden>{{placeholderText}}</option>
   <option value="1">One</option>
   <option value="2">Two</option>
   <option value="3">Three</option>
@@ -78,6 +78,7 @@ basic.args = {
   labelText: '',
   // labelType: 'Top',
   // size: 'default',
+  placeholderText:'Open this select menu', 
   disabled: false,
   multiple: false,
   customIcon: ''
@@ -88,6 +89,7 @@ Tooltip.args = {
   disabled: false,
   multiple: false,
   customIcon: '',
+  placeholderText:'Open this select menu', 
   tooltipPlacement: '',
   tooltipTitle: 'This is tooltip'
 };

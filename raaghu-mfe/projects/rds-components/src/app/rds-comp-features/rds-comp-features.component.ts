@@ -18,7 +18,7 @@ declare var bootstrap: any;
   ]
 })
 export class RdsCompFeaturesComponent implements OnInit, OnChanges, DoCheck {
-  actions: TableAction[] = [{ id: 'delete', displayName:this.translate.instant('Delete') }, { id: 'edit', displayName: this.translate.instant('Edit') }, { id: 'moveTenant', displayName: this.translate.instant('Move Tenants to Another Edition') }]
+  actions: TableAction[] = [{ id: 'edit', displayName: this.translate.instant('Edit') }, { id: 'delete', displayName:this.translate.instant('Delete') }, { id: 'moveTenant', displayName: this.translate.instant('Move Tenants to Another Edition') }]
   @Input() selectedFeatures = [];
   @Input() selectedEdition: any;
   @Input() EditionsTableHeader: TableHeader[] = [];

@@ -294,6 +294,17 @@ export const APP_ROUTES: Routes = [
       //   data: { permission: 'Pages.DemoUiComponents' },
 
       // },
+        {
+        path: 'products-details',
+        loadChildren: () =>
+          loadRemoteModule({
+            type: 'module',
+            remoteEntry: MfeConfig.productdetails.url,
+            exposedModule: './AppModule',
+          }).then((m) => m.AppModule),
+        data: { permission: 'Pages.DemoUiComponents' },
+      
+      },
       {
         path: 'text-template',
         loadChildren: () =>
@@ -341,6 +352,16 @@ export const APP_ROUTES: Routes = [
           }).then((m) => m.AppModule),
         data: { permission: '' },
       },
+      //{
+      //  path: 'orderdetails',
+      //  loadChildren: () =>
+      //    loadRemoteModule({
+      //      type: 'module',
+      //      remoteEntry: MfeConfig.orderdetails.url,
+      //      exposedModule: './AppModule',
+      //    }).then((m) => m.AppModule),
+      //  data: { permission: '' },
+      //},
       {
         path: '**',
         redirectTo: 'pagenotfound',

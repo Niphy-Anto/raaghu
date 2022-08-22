@@ -5,15 +5,43 @@ import { Store } from '@ngrx/store';
 import { AlertService } from '@libs/shared';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-
+import { transition,trigger,query,style,  animate,} from '@angular/animations';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  animations: [
+    trigger('fadeAnimation', [
+      transition('* <=> *', [
+        query(':enter',
+          [
+            style({ opacity: 0 })
+          ],
+          { optional: true }
+        ),
+        query(':leave',
+          [
+            style({ opacity: 1 }),
+            animate('1s', style({ opacity: 0 }))
+          ],
+          { optional: true }
+        ),
+        query(':enter',
+          [
+            style({ opacity: 0 }),
+            animate('1s', style({ opacity: 1 }))
+          ],
+          { optional: true }
+        )
+      ])
+    ])
+  ]
 })
 export class AppComponent extends MfeBaseComponent implements OnInit {
+  isAnimation: boolean = true;
 
+  isAnimation: boolean = true;
   currentAlerts: any = [];
   editShimmer:boolean=false;
   public rdsAlertMfeConfig: ComponentLoaderOptions = {
@@ -225,6 +253,7 @@ export class AppComponent extends MfeBaseComponent implements OnInit {
   };
 
   ngOnInit(): void {
+    this.isAnimation = true;
     this.store.select(selectDefaultLanguage).subscribe((res: any) => {
       if (res) {
         this.translate.use(res);
@@ -253,6 +282,7 @@ export class AppComponent extends MfeBaseComponent implements OnInit {
     });
     this.store.dispatch(getSettings());
     this.store.select(selectAllSettings).subscribe((res: any) => {
+      this.isAnimation = false;
       console.log(res);
       if (res) {
         this.hostSetting.general = res.settings.general;

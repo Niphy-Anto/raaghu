@@ -1,4 +1,7 @@
 
+$theme: "default" !default;
+
+
 $primary: #7E2EEf;
 $secondary: #2B0066;
 $success: #2EEF59;
@@ -110,28 +113,32 @@ $dark-900: #141414;
 $default-100: #F58220;
 
   /*Chart color variables*/
-  :root {
-    --chartColor1:  #BF00BB;
-    --chartColor2: #EBEEFB;
-    --chartColor3: #EDB371;
-    --chartColor4: #0085D3;
-    --chartColor5: #5151D3;
-    --chartColor6: #7E2EEF;
-    --chartColor7: #01AE9D;
-    --chartColor8: #F58220;
-    --chartColor9: #EA2745;
-    --chartColor10: #00FFE6;
-    --chartgradient1: rgba(63,28, 255, 100%);
-    --chartgradient2: #863bff94;
-    --chartgradient3: rgba(56,25,226,89%);
-    --chartgradient4: rgba(48,22,194,76%);  
-    --chartgradient5: rgba(25,70,186,36%);
-    --chartgradient6: rgba(25,70,186,26%);
-    --chartgradient7: rgba(25,70,186,22%);
-    --chartgradient8: rgba(25,70,186,14%);
-    --chartgradient9: rgba(25,70,186,0.5%);
-    --chartgradient10: rgba(255,255,255);
-  }
+:root {
+  --chartColor7: #EBEEFB;
+  --chartColor2: #BF00BB;
+  --chartColor3: #7E2EEF;
+  --chartColor4: #0085D3;
+  --chartColor5: #5151D3;
+  --chartColor6: #EDB371;
+  --chartColor1: #01AE9D;
+  --chartColor8: #F58220;
+  --chartColor9: #EA2745;
+  --chartColor10: #00FFE6;
+  --chartgradient1: rgba(63,28, 255, 100%);
+  --chartgradient2: #863bff94;
+  --chartgradient3: rgba(56,25,226,89%);
+  --chartgradient4: rgba(48,22,194,76%);
+  --chartgradient5: rgba(25,70,186,36%);
+  --chartgradient6: rgba(25,70,186,26%);
+  --chartgradient7: rgba(25,70,186,22%);
+  --chartgradient8: rgba(25,70,186,14%);
+  --chartgradient9: rgba(25,70,186,0.5%);
+  --chartgradient10: rgba(255,255,255);
 
-  
- 
+}
+
+
+@import './custom.scss';
+@import './node_modules/bootstrap/scss/bootstrap';
+@import './colorvariables.scss';
+

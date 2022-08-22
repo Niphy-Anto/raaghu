@@ -38,8 +38,9 @@
             <div body>
               <rds-big-number-widget [bigNumber]="'$' +ProfitSharePrice" [textAlign]="'text-start'"></rds-big-number-widget>
               <div class="col col-sm-12">
-                <rds-chart-doughnut [ChartDataSets]="pschartDatasets" chartId="psChart" [chartWidth]="pschartWidth" [chartHeight]="pschartHeight"
-                  [chartLabels]="pschartLabels" [chartOptions]="pschartOptions" chartType="doughnut">
+                <rds-chart-doughnut [ChartDataSets]="pschartDatasets" [titleText]="'35 K'" [subTitleText]="'Profit'" chartId="psChart"
+                  [chartWidth]="pschartWidth" [chartHeight]="pschartHeight" [chartLabels]="pschartLabels"
+                  [chartOptions]="pschartOptions" chartType="doughnut">
                 </rds-chart-doughnut>
               </div>
             </div>
@@ -57,9 +58,9 @@
             <rds-widget [isRefreshRequired]="false" cardheight = 'card-stretch-three'
               [headerTitle]="translate.instant('Call Overview')">
               <div body>
-                <div class="d-flex align-items-center">
+                <div class="d-flex align-items-center"> 
                   <div class="">
-                    <rds-chart-bool chartId="ConnectedCallschart" [ChartDataSets]="ConnectedCallschartDatasets" [chartBackgroundColor]="'--chartColor7'"
+                    <rds-chart-bool chartId="ConnectedCallschart" [centerIconName]="'headset'" [ChartDataSets]="ConnectedCallschartDatasets" [chartBackgroundColor]="'--chartColor7'"
                       [chartLabels]="ConnectedCallschartLabels" [chartWidth]="100" [chartHeight]="100"
                       [chartOptions]="ConnectedCallschartOptions" chartType="doughnut"></rds-chart-bool>
                   </div>
@@ -70,7 +71,7 @@
                 </div>
                 <div class="d-flex align-items-center mt-3">
                   <div class="">
-                    <rds-chart-bool chartId="ClientCallschart" [ChartDataSets]="ClientCallschartDatasets" [chartBackgroundColor]="'--chartColor6'"
+                    <rds-chart-bool chartId="ClientCallschart" [centerIconName]="'users'" [ChartDataSets]="ClientCallschartDatasets" [chartBackgroundColor]="'--chartColor6'"
                       [chartLabels]="ClientCallschartLabels" [chartWidth]="100" [chartHeight]="100"
                       [chartOptions]="ClientCallschartOptions" chartType="doughnut"></rds-chart-bool>
                   </div>

@@ -33,6 +33,7 @@ export class RdsCompNewLanguageComponent implements OnInit, DoCheck, OnChanges {
   icon: string = '';
   id: number | undefined = undefined;
   isEnabled: boolean = false;
+  languageName = [];
   @Input() selectedLanguage: any = {
     countryCode: '',
     icon: '',
@@ -78,6 +79,8 @@ export class RdsCompNewLanguageComponent implements OnInit, DoCheck, OnChanges {
   }
 
   ngOnInit(): void {
+    this.languageName = [];
+    this.languageName.push(`${this.selectedLanguage.countryCode}`);
     if (this.selectedLanguage.icon && this.flags.length > 0) {
       const selectedLanguage = this.flags.find((x: any) => x.value === this.selectedLanguage.icon);
       this.selectedLanguage.icon = selectedLanguage.some;
@@ -98,7 +101,7 @@ export class RdsCompNewLanguageComponent implements OnInit, DoCheck, OnChanges {
       return;
     }
     const flag: any = this.flags.find((x: any) => x.some === this.selectedLanguage.icon);
-    this.onLanguageSave.emit({ icon: flag.value, isEnabled: this.selectedLanguage.isEnabled, name: this.selectedLanguage.countryCode, id: this.selectedLanguage.id });
+    this.onLanguageSave.emit({ icon: flag.value, isEnabled: this.selectedLanguage.isEnabled, name: this.languageName[0], id: this.selectedLanguage.id });
 
   }
 
