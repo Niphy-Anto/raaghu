@@ -40,7 +40,10 @@ export class RdsIconComponent implements OnInit, OnChanges {
 
   ngOnChanges(): void {
     if (this.name) {
-      const svgData: string = Icons[this.name];
+      let svgData: string = Icons[this.name];
+      if (!svgData || svgData === '') {
+        svgData = Flags[this.name]
+      }
       if (svgData) {
         if (this.svgIcon) {
           this.element.nativeElement.removeChild(this.svgIcon);
