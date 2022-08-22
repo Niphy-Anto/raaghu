@@ -6,13 +6,19 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./rds-rating.component.scss']
 })
 export class RdsRatingComponent implements OnInit {
-  itemList: any = [1, 2, 3, 4, 5];
+  itemList: any= [
+    {id: 1, value: 1},
+    {id: 2, value: 2},
+    {id: 3, value: 3},
+    {id: 4, value: 4},
+    {id: 5, value: 5},
+  ];
 
   @Input() WithNoOfReviews!: boolean;
   @Input() role: 'Basic' | 'Advanced' = 'Basic';
 
   @Input() rating: number = 0;
-  @Input() colorVariant!: string;
+  @Input() colorVariant: string= "review";
   @Input() noOfReview?: number = 123;
   @Input() Size: 'small' | 'medium' | 'large' = 'medium';
   height = '';
@@ -34,5 +40,7 @@ export class RdsRatingComponent implements OnInit {
     const startSize1 = `${this.Size === 'small' ? this.width = '14px' : this.Size === 'large' ? this.width = '28px' : this.width = '19px'}`;
     return sizes;
   }
+
+  
 }
 

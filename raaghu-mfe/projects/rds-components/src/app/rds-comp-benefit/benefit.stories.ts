@@ -186,22 +186,7 @@ benefit_type4.args = {
           title:  'Free shipping world wide',
           description: "Free delivery is our main part of company"
         },
-        { id: 7,  
-          icon: 'users',
-          display_type: "benefit_type4",
-          iconHeight :"40px",
-          iconWidth: "40px",
-          title:  'Exchanges or returns any time',
-          description: "Exchange and return policy in now active"
-        },
-        { id: 7,  
-          display_type: "benefit_type4",
-          icon: 'users',
-          iconHeight :"40px",
-          iconWidth: "40px",
-          title:  'Warranty 10-year on all product',
-          description: "Unbelievable offers check out online now"
-        }
+       
       ]
     }
   ]
