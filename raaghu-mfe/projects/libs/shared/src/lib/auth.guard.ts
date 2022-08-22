@@ -38,6 +38,9 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
         if(parsedCredentials.date - todaysDate > 0){
           return this.canActivateInternal(route.data, state);
         }
+        else{
+          return of(false);
+        }
       }
       else{
         return of(false);

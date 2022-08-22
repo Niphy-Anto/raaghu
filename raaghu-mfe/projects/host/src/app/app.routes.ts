@@ -55,6 +55,7 @@ export const APP_ROUTES: Routes = [
             remoteEntry: MfeConfig.dashboard.url,
             exposedModule: './AppModule',
           }).then((m) => m.AppModule),
+          data: { permission: 'Pages.Administration' },
 
       },
       {
