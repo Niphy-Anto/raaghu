@@ -24,7 +24,7 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './sidenav.component.html',
   styleUrls: ['./sidenav.component.scss'],
   animations: [
-    slideInAnimation   
+    slideInAnimation
   ],
 })
 export class SidenavComponent extends MfeBaseComponent implements OnInit {
@@ -163,7 +163,7 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
     })
 
     this.userAuthService.getPermissions().subscribe(res => {
-      if(res){
+      if (res) {
         this.filterNavItems(this.sidenavItemsOriginal, res, this.sidenavItems);
       }
       else{
@@ -174,11 +174,6 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
           this.permissions = parsedPermission;
           this.filterNavItems(this.sidenavItemsOriginal, parsedPermission, this.sidenavItems);
         }
-        // let permissions = localStorage.getItem('storedPermission');
-        // if(permissions){
-        //   permissions = JSON.parse(permissions);
-        //   this.filterNavItems(this.sidenavItemsOriginal, permissions, this.sidenavItems);
-        // }
       }
     });
     this.subscribeToAlerts();
@@ -284,10 +279,10 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
 
 
     this.store.select(selectAllLanguages).subscribe((res: any) => {
-      if (res && res.languages &&  res.languages.items && res.languages.items.length > 0 && res.status == "success") {
+      if (res && res.items && res.items.length > 0 ) {
         this.languageItems = [];
         const languages: any = [];
-        res.languages.items.forEach((item: any) => {
+        res.items.forEach((item: any) => {
           let icon: string = item.icon.split(' ')[1];
           icon = icon.replace('-', '_')
           this.languageItems.push({ value: item.displayName, name: item.name, some: item.displayName, id: item.id, icon: icon, iconWidth: '21px', iconHeight: '14px' });
@@ -297,7 +292,7 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
           }
           languages.push(item.name);
         });
-        if (res.languages.defaultLanguageName) {
+        if (res.defaultLanguageName) {
           this.store.dispatch(setDefaultLanguageForUI(res.defaultLanguageName))
           this.translate.use(res.defaultLanguageName);
         }
