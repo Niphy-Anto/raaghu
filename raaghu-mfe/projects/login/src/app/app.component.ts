@@ -162,7 +162,8 @@ export class AppComponent extends MfeBaseComponent implements OnInit {
         token: this.authenticateResult.accessToken,
         refreshToken: this.authenticateResult.refreshToken,
         expireDate: tokenExpireDate,
-        refreshTokenExpireDate: refreshTokenExpireDate
+        refreshTokenExpireDate: refreshTokenExpireDate,
+        date: Date.now()+tokenExpireDate
       }));
       this._userAuthService.authenticateUser();
       this.store.dispatch(GetProfilePicture());

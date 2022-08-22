@@ -36,7 +36,6 @@ export const APP_ROUTES: Routes = [
   {
     path: 'pages',
     component: SidenavComponent,
-    canActivate: [AuthGuard],
     canActivateChild: [AuthGuard],
     children: [
       {
