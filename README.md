@@ -107,8 +107,7 @@ Built on a robust tech stack and platform
     <td align="center" style="border: none">
         <img src="./static/nodejs.png" width="80" title="Node JS"/>
         <!-- <br /><sub><b>Alok Nakhate</b></sub> -->
-    </td>
-   
+    </td>   
     <td align="center" style="border: none">
         <img src="./static/aspnetzero.png" width="80" title="AspnetZero"/>
         <!-- <br /><sub><b>Apoorva Lele</b></sub> -->
