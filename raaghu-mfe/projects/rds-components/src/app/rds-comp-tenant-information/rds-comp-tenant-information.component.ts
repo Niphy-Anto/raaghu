@@ -59,7 +59,9 @@ export class RdsCompTenantInformationComponent implements OnInit, OnChanges {
   }
 
   next(tenantCreationForm: NgForm): void {
+    tenantCreationForm.form.markAllAsTouched();
     if (!tenantCreationForm || tenantCreationForm.invalid) {
+      
       return;
     }
     this.tenantInfo.emit({ tenant: this.tenantData, next: true });
