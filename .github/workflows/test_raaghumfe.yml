@@ -4,9 +4,11 @@
 name: test stageui.raaghu.io
 
 on:
-  push:
-  schedule:
-    - cron: '0 0 * * *'
+  workflow_run:
+    workflows: ["Build and deploy stageui.raaghu.io"]
+    types: [completed]
+    branches:
+      - 'main'
 
 permissions:
   contents: read
