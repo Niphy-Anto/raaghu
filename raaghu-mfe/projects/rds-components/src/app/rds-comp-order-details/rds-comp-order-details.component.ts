@@ -15,6 +15,7 @@ export interface orderDetails {
   shipDetails:string
   address:string
   stepparList:any
+  orderProgress:string
 }
 @Component({
   selector: 'app-rds-comp-order-details',

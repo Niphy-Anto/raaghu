@@ -197,4 +197,6 @@ export * from './rds-product-image/src/public-api';
 // Public API Surface of rds-website-metric
 export * from './rds-website-metric/src/public-api';
 
+// Public API Surface of rds-address-detail
+export * from './rds-address-detail/src/public-api';
 

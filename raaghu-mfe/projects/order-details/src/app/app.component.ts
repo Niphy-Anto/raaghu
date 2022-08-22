@@ -34,6 +34,7 @@ export class AppComponent implements OnInit {
             qty: 50,
             orderTotal: 0,
             shipDetails: 'Preparing to ship on June 05,2022',
+            orderProgress:"25",
             label: 'Order#36690',
             "stepparList": [
               { stepname: "step1", steptabname: "Order placed", tablink: '#nav-home', ariacontrols: 'nav-home' },
@@ -59,6 +60,7 @@ export class AppComponent implements OnInit {
             phoneNo: '8*******53',
             qty: 3,
             orderTotal: 0,
+            orderProgress:"50",
             shipDetails: 'Order is placed on June 06,2022',
             label: 'Order#36690',
             "stepparList": [
