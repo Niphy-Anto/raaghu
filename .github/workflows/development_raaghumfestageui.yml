@@ -4,9 +4,10 @@
 name: Build and deploy stageui.raaghu.io
 
 on:
+  pull_request:
+    types: [closed]
   push:
-    branches:
-      - "development"
+    branches: [development]
 
   workflow_dispatch:
 
@@ -25,6 +26,8 @@ jobs:
     steps:
     - name: Checkout raaghu code
       uses: actions/checkout@v3
+      with:
+        ref: development
 
     - name: Set up Node.js
       uses: actions/setup-node@v3
