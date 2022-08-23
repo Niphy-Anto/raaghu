@@ -5,9 +5,9 @@
                 <div class="col-md-6">
                     <div class="col-md-12 col-sm-12">
                         <div class="form-group mt-3">
-                            <rds-select-list [(ngModel)]="languageName" LabelType="Top" [placeholderText]="'Select Language'"
+                            <rds-select-list [(ngModel)]="selectedLanguage.countryCode" LabelType="Top" [placeholderText]="'Select Language'"
                                 [labelText]="translate.instant('Language')" [customIcon]="'bi bi-chevron-down'"
-                                #language_name="ngModel" id="select-listlanguage" [value]="languageName"
+                                #language_name="ngModel" id="select-listlanguage" [value]="selectedLanguage.countryCode"
                                 ngDefaultControl name="languageName" [isRequired]=true required [itemList]="languageNames">
                             </rds-select-list>
                             <div class="form-control-feedback"
@@ -29,7 +29,7 @@
                     </rds-select-list> -->
                     <div class="form-group mt-3">
                         <div class="mb-2">
-                            <rds-label label="Country Code"></rds-label>
+                            <rds-label label="Country Code"></rds-label><span class="text-danger">*</span>
                         </div>
                         <rds-dropdownlist [icon]="selectedLanguage.icon" [borderDropdown]="true" [colorVariant]="'btn-outline-light'" class="text-dark"
                             [placeholder]="translate.instant('Country Code')" [value]="selectedLanguage.icon" required
@@ -63,8 +63,8 @@
     <div class="footer-buttons my-2">
         <div class="row">
             <div class="col-md-12 ">
-                <rds-button [label]="translate.instant('Close')" type="button" [colorVariant]="'outline-primary'"
-                    [size]="'small'" data-bs-dismiss="offcanvas">
+                <rds-button [label]="translate.instant('Close')" (click)="closeCanvas()" type="button" [colorVariant]="'outline-primary'"
+                    [size]="'small'">
                 </rds-button>
                 <rds-button [label]="translate.instant('Save')" type="button" [size]="'small'"
                     [disabled]="!languageForm.valid" class="ms-2" [colorVariant]="'primary'"
