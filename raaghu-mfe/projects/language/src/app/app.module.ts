@@ -34,9 +34,9 @@ export const featureReducersMap = {
     RdsIconModule,
     NgxTranslateModule.forRoot(),
 
-    StoreModule.forFeature('languages', featureReducersMap
-    ),
-    EffectsModule.forRoot([LanguageEffects]),
+    // StoreModule.forFeature('languages', featureReducersMap
+    // ),
+    // EffectsModule.forRoot([LanguageEffects]),
   ],
   // providers: [[HttpClient,
 

@@ -9,7 +9,7 @@ async function globalSetup(config): Promise<void> {
   // const { storageState } = config.use;
 
   // TODO: Remove headless after this has been tested
-  const browser = await chromium.launch({ headless: false });
+  const browser = await chromium.launch({ headless: true });
 
   // Admin Login
   const adminPage = await browser.newPage();
