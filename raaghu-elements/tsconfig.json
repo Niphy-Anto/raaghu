@@ -63,7 +63,15 @@
       "@libs/rds-button": [
         "rds-elements/rds-button/public-api",
         "rds-elements/rds-button"
-      ]
+      ],
+      "rds-website-metric": [
+        "rds-elements/rds-website-metric/public-api",
+        "rds-elements/rds-website-metric"
+      ],
+      "@libs/rds-big-number-widget": [
+        "rds-elements/rds-big-number-widget/public-api",
+        "rds-elements/rds-big-number-widget"
+      ],
     },
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,

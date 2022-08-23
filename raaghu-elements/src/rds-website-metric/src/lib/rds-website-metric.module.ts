@@ -1,24 +1,24 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { RdsButtonModule } from '@libs/rds-button';
 import { RdsIconModule } from '@libs/rds-icon';
 import { RdsLabelModule } from '@libs/rds-label';
-// import { RdsProductImageModule } from 'src/public-api';
-
-import { RdsTeamMemberComponent } from './rds-team-member.component';
+import { RdsWebsiteMetricComponent } from './rds-website-metric.component';
 
 
 
 @NgModule({
   declarations: [
-    RdsTeamMemberComponent
+    RdsWebsiteMetricComponent
   ],
   imports: [
     CommonModule,
-    // RdsProductImageModule,
     RdsLabelModule,
-    RdsIconModule
+    RdsIconModule,
+    RdsButtonModule
   ],
   exports: [
-    RdsTeamMemberComponent  ]
+    RdsWebsiteMetricComponent
+  ]
 })
-export class RdsTeamMemberModule { }
+export class RdsWebsiteMetricModule { }
