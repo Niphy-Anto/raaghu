@@ -140,10 +140,15 @@ import { RdsCompReviewCategoryComponent } from './rds-comp-review-category/rds-c
 import { RdsCompCustomerReviewsComponent } from './rds-comp-customer-reviews/rds-comp-customer-reviews.component';
 import { RdsCompBillingComponent } from './rds-comp-billing/rds-comp-billing.component';
 import { RdsCompIntegrationComponent } from './rds-comp-integration/rds-comp-integration.component';
+import { RdsCompTestimonialsComponent } from './rds-comp-testimonials/rds-comp-testimonials.component';
 import { RdsCompTeamsComponent } from './rds-comp-teams/rds-comp-teams.component';
 
+import { RdsCompOrderDetailsComponent } from './rds-comp-order-details/rds-comp-order-details.component';
+import { RdsAddressDetailModule } from 'projects/libs/rds-elements/src/rds-address-detail/src/public-api';
+import { RdsStepperModule } from 'projects/libs/rds-elements/src/rds-stepper/src/public-api';
+
 @NgModule({
-  declarations: [
+  declarations: [	
 
     AppComponent,
     RdsLoginComponent,
@@ -258,6 +263,8 @@ import { RdsCompTeamsComponent } from './rds-comp-teams/rds-comp-teams.component
     RdsCompProductOverviewComponent,
     RdsCompReviewCategoryComponent,
     RdsCompCustomerReviewsComponent,
+    RdsCompPricingTableComponent,
+    RdsCompOrderDetailsComponent,
     //RdsCompLanguageTextListComponent,
     RdsCompContactInformationComponent,
     RdsCompShippingAddressComponent,
@@ -271,6 +278,8 @@ import { RdsCompTeamsComponent } from './rds-comp-teams/rds-comp-teams.component
     RdsCompPasswordSettingsComponent,
     RdsCompEmailSettingsComponent,
     RdsCompBillingComponent,
+    RdsCompIntegrationComponent,
+    RdsCompTestimonialsComponent,
     RdsCompIntegrationComponent,
     RdsCompTeamsComponent
   ],
@@ -360,6 +369,10 @@ import { RdsCompTeamsComponent } from './rds-comp-teams/rds-comp-teams.component
     RdsFeatureListModule,
     RdsProductImageModule,
     RdsSizeModule,
+    RdsAddressDetailModule,
+    RdsStepperModule,
+   
+   
     RdsReviewCategoryModule,
     RdsTeamMemberModule
   ],

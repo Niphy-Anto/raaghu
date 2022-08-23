@@ -50,7 +50,7 @@ export class RdsCompAlertComponent implements OnInit {
       case EventTypes.Success:
         return 'successful';
       case EventTypes.Info:
-        return 'info';
+        return 'information';
       case EventTypes.Warning:
         return 'warning';
       default:

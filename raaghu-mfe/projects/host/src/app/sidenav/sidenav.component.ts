@@ -24,7 +24,7 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './sidenav.component.html',
   styleUrls: ['./sidenav.component.scss'],
   animations: [
-    slideInAnimation   
+    slideInAnimation
   ],
 })
 export class SidenavComponent extends MfeBaseComponent implements OnInit {
@@ -71,16 +71,16 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
   @Input() AccountLinkedTable: any = [];
 
   sidenavItemsOriginal: any = [
-    { label: 'Dashboard', labelTranslationKey: 'Dashboard', id: '', permissionName: 'Pages.Administration.Host.Dashboard', icon: 'dashboard', path: '/pages/dashboard', descriptionTranslationKey: 'Statistics and reports', description: 'Statistics and reports' },
-    { label: 'Dashboard', labelTranslationKey: 'Dashboard', id: '', permissionName: 'Pages.Tenant.Dashboard', icon: 'dashboard', path: '/pages/dashboard', description: 'Statistics and reports', descriptionTranslationKey: 'Statistics and reports' },
+    { label: 'Dashboard', labelTranslationKey: 'Dashboard', id: '', permissionName: 'Pages.Administration.Host.Dashboard', icon: 'home', path: '/pages/dashboard', descriptionTranslationKey: 'Statistics and reports', description: 'Statistics and reports' },
+    { label: 'Dashboard', labelTranslationKey: 'Dashboard', id: '', permissionName: 'Pages.Tenant.Dashboard', icon: 'home', path: '/pages/dashboard', description: 'Statistics and reports', descriptionTranslationKey: 'Statistics and reports' },
     { label: 'Tenants', labelTranslationKey: 'Tenants', id: 'tenants', permissionName: 'Pages.Tenants', icon: 'tenant', path: '/pages/tenant', description: 'Manage your tenants', descriptionTranslationKey: 'Manage your tenants' },
-    { label: 'Editions', labelTranslationKey: 'Editions', id: '', permissionName: 'Pages.Editions', icon: 'edition', path: '/pages/edition', description: 'Manage editions and features of the application', descriptionTranslationKey: 'Manage editions and features of the application' },
+    { label: 'Editions', labelTranslationKey: 'Editions', id: '', permissionName: 'Pages.Editions', icon: 'editions', path: '/pages/edition', description: 'Manage editions and features of the application', descriptionTranslationKey: 'Manage editions and features of the application' },
     // { label: 'Api Scopes', id: 'ApiScope', permissionName: '', icon: 'settings', path: '/pages/apiScope', description: 'Home > Identity Server > Api Scope' },
 
     {
       label: 'Administration', labelTranslationKey: 'Administration', id: 'admin', permissionName: '', icon: 'administration', path: '',
       children: [
-        { label: 'Organization Units', labelTranslationKey: 'Organization Units', id: '', permissionName: 'Pages.Administration.OrganizationUnits', icon: 'organization_units', path: '/pages/organization-unit', description: 'Use organization units to organize users and entities', descriptionTranslationKey: 'Use organization units to organize users and entities' },
+        { label: 'Organization Units', labelTranslationKey: 'Organization Units', id: '', permissionName: 'Pages.Administration.OrganizationUnits', icon: 'organization', path: '/pages/organization-unit', description: 'Use organization units to organize users and entities', descriptionTranslationKey: 'Use organization units to organize users and entities' },
         { label: 'Roles', labelTranslationKey: 'Roles', id: '', permissionName: 'Pages.Administration.Roles', icon: 'roles', path: '/pages/role', description: 'Use roles to group permissions', descriptionTranslationKey: 'Use roles to group permissions' },
         { label: 'Users', labelTranslationKey: 'Users', id: '', permissionName: 'Pages.Administration.Users', icon: 'users', path: '/pages/user', description: 'Manage users and permissions', descriptionTranslationKey: 'Manage users and permissions' },
         { label: 'Language', labelTranslationKey: 'Language', id: '', permissionName: 'Pages.Administration.Languages', icon: 'languages', path: '/pages/language', description: 'Manage user interface languages', descriptionTranslationKey: 'Statistics and reports' },
@@ -88,16 +88,15 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
         { label: 'subscription', labelTranslationKey: 'subscription', id: '', permissionName: 'Pages.Administration.Tenant.SubscriptionManagement', icon: 'subscription', path: '/pages/subscription', descriptionTranslationKey: '' },
         { label: 'Maintenance', labelTranslationKey: 'Maintenance', id: '', permissionName: 'Pages.Administration.Host.Maintenance', icon: 'maintenance', path: '/pages/maintenance', description: 'Statistics and reports', descriptionTranslationKey: 'Statistics and reports' },
         { label: 'Visual Settings', labelTranslationKey: 'Visual Settings', id: '', permissionName: 'Pages.Administration.UiCustomization', icon: 'visual_settings', path: '/pages/visualsettings', description: 'Change the look of UI', descriptionTranslationKey: 'Change the look of UI' },
-        { label: 'Webhook Subscriptions', labelTranslationKey: 'Webhook Subscriptions', id: '', permissionName: 'Pages.Administration.WebhookSubscription', icon: 'webhook_subscriptions', path: '/pages/webhook-subscription', description: 'Webhook Subsubscription Info', descriptionTranslationKey: 'Statistics and reports' },
+        { label: 'Webhook Subscriptions', labelTranslationKey: 'Webhook Subscriptions', id: '', permissionName: 'Pages.Administration.WebhookSubscription', icon: 'webhook_subscription', path: '/pages/webhook-subscription', description: 'Webhook Subsubscription Info', descriptionTranslationKey: 'Statistics and reports' },
         { label: 'Dynamic Properties', labelTranslationKey: 'Dynamic Properties', id: 'Pages.Administration.DynamicProperties', permissionName: '', icon: 'dynamic_properties', path: '/pages/dynamic-property-management', descriptionTranslationKey: '' },
-        { label: 'Settings', labelTranslationKey: 'Settings', id: '', permissionName: 'Pages.Administration.Host.Settings', icon: 'settings', path: '/pages/settings', description: 'Show and change application settings', descriptionTranslationKey: 'Show and change application settings' },
-        { label: 'Settings', labelTranslationKey: 'Settings', id: '', permissionName: 'Pages.Administration.Tenant.Settings', icon: 'settings', path: '/pages/settings', description: 'Show and change application settings', descriptionTranslationKey: 'Show and change application settings' },
+        { label: 'Settings', labelTranslationKey: 'Settings', id: '', permissionName: 'Pages.Administration.Host.Settings', icon: 'setting', path: '/pages/settings', description: 'Show and change application settings', descriptionTranslationKey: 'Show and change application settings' },
+        { label: 'Settings', labelTranslationKey: 'Settings', id: '', permissionName: 'Pages.Administration.Tenant.Settings', icon: 'setting', path: '/pages/settings', description: 'Show and change application settings', descriptionTranslationKey: 'Show and change application settings' },
 
       ],
     },
-    { label: 'Demo UI Components', labelTranslationKey: 'Demo UI Components', id: '', permissionName: '', icon: 'demo_ui_components', path: '/pages/demo-ui', description: '', descriptionTranslationKey: '' },
+    { label: 'Demo UI Components', labelTranslationKey: 'Demo UI Components', id: '', permissionName: '', icon: 'demo_ui', path: '/pages/demo-ui', description: '', descriptionTranslationKey: '' },
     // { label: 'Cart', labelTranslationKey: 'Cart', id: 'cart', permissionName: '' ,icon: 'tenant', path: '/pages/cart', description: 'Manage your cart', descriptionTranslationKey: 'Manage your cart' },
-    { label: 'Product Details', labelTranslationKey: 'Product Details', id: '', permissionName: '', icon: 'demo_ui_components', path: '/pages/products-details', description: '', descriptionTranslationKey: '' },
 
   ];
 
@@ -147,6 +146,8 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
   tenancyTableData = [];
   sidenavItems = [];
 
+  permissions:any;
+
   ngOnInit(): void {
 
     this.store.dispatch(getLanguages());
@@ -162,14 +163,16 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
     })
 
     this.userAuthService.getPermissions().subscribe(res => {
-      if(res){
+      if (res) {
         this.filterNavItems(this.sidenavItemsOriginal, res, this.sidenavItems);
       }
       else{
-        let permissions = localStorage.getItem('storedPermission');
-        if(permissions){
-          permissions = JSON.parse(permissions);
-          this.filterNavItems(this.sidenavItemsOriginal, permissions, this.sidenavItems);
+
+        const storedPermission = localStorage.getItem('storedPermissions');                                                                                                              
+        const parsedPermission = JSON.parse(storedPermission);
+        if(parsedPermission){
+          this.permissions = parsedPermission;
+          this.filterNavItems(this.sidenavItemsOriginal, parsedPermission, this.sidenavItems);
         }
       }
     });
@@ -276,10 +279,10 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
 
 
     this.store.select(selectAllLanguages).subscribe((res: any) => {
-      if (res && res.languages &&  res.languages.items && res.languages.items.length > 0 && res.status == "success") {
+      if (res && res.items && res.items.length > 0 ) {
         this.languageItems = [];
         const languages: any = [];
-        res.languages.items.forEach((item: any) => {
+        res.items.forEach((item: any) => {
           let icon: string = item.icon.split(' ')[1];
           icon = icon.replace('-', '_')
           this.languageItems.push({ value: item.displayName, name: item.name, some: item.displayName, id: item.id, icon: icon, iconWidth: '21px', iconHeight: '14px' });
@@ -289,7 +292,7 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
           }
           languages.push(item.name);
         });
-        if (res.languages.defaultLanguageName) {
+        if (res.defaultLanguageName) {
           this.store.dispatch(setDefaultLanguageForUI(res.defaultLanguageName))
           this.translate.use(res.defaultLanguageName);
         }

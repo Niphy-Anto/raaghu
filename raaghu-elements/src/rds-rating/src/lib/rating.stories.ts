@@ -13,7 +13,7 @@ export default {
   ],
   argTypes: {
     colorVariant: {
-      options: ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark'],
+      options: ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark','review'],
       control: { type: 'select' }
     },
   },
@@ -33,26 +33,26 @@ Basic.args = {
     {id: 5, value: 5},
   ],
   Size: 'medium',
-  rating:1,
+  rating:2,
   WithNoOfReviews:true,
   noOfReview:123,
-  colorVariant: 'primary',
-  role:'Basic',
+  colorVariant: 'review',
+  // role:'Basic',
 }
 
-export const Advanced = Template.bind({});
-Basic.args = {
-  itemList: [
-    {id: 1, value: 1},
-    {id: 2, value: 2},
-    {id: 3, value: 3},
-    {id: 4, value: 4},
-    {id: 5, value: 5},
-  ],
-  Size: 'medium',
-  rating:1,
-  WithNoOfReviews:false,
-  noOfReview:123,
-  colorVariant: 'primary',
-  role:'Advanced',
-}
+// export const Advanced = Template.bind({});
+// Basic.args = {
+//   itemList: [
+//     {id: 1, value: 1},
+//     {id: 2, value: 2},
+//     {id: 3, value: 3},
+//     {id: 4, value: 4},
+//     {id: 5, value: 5},
+//   ],
+//   Size: 'medium',
+//   rating:1,
+//   WithNoOfReviews:false,
+//   noOfReview:123,
+//   colorVariant: 'primary',
+//   role:'Advanced',
+// }

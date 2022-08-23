@@ -19,13 +19,12 @@
   </rds-button> -->
   <rds-fab-menu [listItems]="listItems" [menuicon]="'plus'" [colorVariant]="'primary'" [menuiconWidth]="'12px'" [menuiconHeight]="'12px'" (onSelect)="onSelectMenu($event)"></rds-fab-menu>
 </div>
-
-<ng-container *ngIf="viewCanvas">
+<!-- <ng-container *ngIf="viewCanvas"> -->
   <rds-offcanvas [canvasTitle]="translate.instant(languageCanvasTitle)" [offId]="'AddLanguage'" 
     (onClose)="closeCanvas()" [offcanvaswidth]="550" [placement]="'end'"  >
     <app-newlanguage [selectedLanguage]="selectedLanguage" (onLanguageSave)="addLanguages($event)"></app-newlanguage>
   </rds-offcanvas>
-</ng-container>
+<!-- </ng-container> -->
 <!--<ng-container *ngIf="currentAlerts&&currentAlerts.length>0">
   <mfe-loader [config]="rdsAlertMfeConfig"></mfe-loader>
 </ng-container>-->

@@ -24,18 +24,20 @@ export class RdsCompWebsiteLogComponent implements OnInit {
     if (this.websiteLogData) {
       this.totalRecords = this.websiteLogData.length;
       this.dataSource = this.websiteLogData;
-      this.tempData = this.websiteLogData;
+    //  this.tempData = this.websiteLogData;
     }
   }
     ngDoCheck(): void {
       if (this.websiteLogData) {
-        this.tempData = JSON.parse(JSON.stringify(this.websiteLogData));
+        //this.tempData = JSON.parse(JSON.stringify(this.websiteLogData));
+        this.dataSource = this.websiteLogData;
         this.totalRecords = this.websiteLogData.length;
       }
     }
     ngOnChanges(changes: SimpleChanges): void {
       if (this.websiteLogData) {
-        this.tempData = this.websiteLogData;
+        //this.tempData = this.websiteLogData;
+        this.dataSource = this.websiteLogData;
         this.totalRecords = this.websiteLogData.length;
       }
     }
