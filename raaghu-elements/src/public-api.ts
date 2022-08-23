@@ -191,3 +191,9 @@ export * from './rds-rating/src/public-api';
 // Public API Surface of rds-video-player
 export * from './rds-video-player/src/public-api';
 
+// Public API Surface of rds-product-image
+export * from './rds-product-image/src/public-api';
+
+// Public API Surface of rds-product-image
+export * from './rds-website-metric/src/public-api';
+
