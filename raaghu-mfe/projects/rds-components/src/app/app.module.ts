@@ -42,7 +42,7 @@ import {
   RdsSpinnerModule, RdsToastsModule, RdsChartBubbleModule, RdsChartDoughnutModule, RdsChartMixedModule, RdsChartPolarAreaModule, RdsChartScatterModule, RdsChartStackedModule,
   RdsProgressbarModule, RdsBreadcrumbModule, RdsCarouselModule, RdsDoubleRangeModule, RdsScrollspyModule, RdsCounterModule, RdsFabMenuModule, RdsLabelModule, RdsIconLabelModule,
   CalendarModule, adapterFactory, DateAdapter, RdsRatingModule, RdsLikeDislikeModule, RdsColorModule, RdsFeedModule, RdsVideoPlayerModule, RdsAppDetailsModule, RdsBenefitModule,
-  RdsCardDetailModule, RdsSizeModule, RdsPriceModule, RdsFeatureListModule, RdsProductImageModule, RdsReviewCategoryModule, RdsTeamMemberModule
+  RdsCardDetailModule, RdsSizeModule, RdsPriceModule, RdsFeatureListModule, RdsProductImageModule, RdsReviewCategoryModule, RdsTeamMemberModule, RdsWebsiteMetricModule
 } from '@libs/rds-elements';
 import { RdsCompDemouiComponent } from './rds-comp-demoui/rds-comp-demoui.component';
 import { RdsCompTenantManagementComponent } from './rds-comp-tenant-management/rds-comp-tenant-management.component';
@@ -374,7 +374,8 @@ import { RdsCompTeamsComponent } from './rds-comp-teams/rds-comp-teams.component
     RdsAddressDetailModule,
     RdsStepperModule,
     RdsReviewCategoryModule,
-    RdsTeamMemberModule
+    RdsTeamMemberModule,
+    RdsWebsiteMetricModule
   ],
   providers: [],
   bootstrap: [AppComponent],
