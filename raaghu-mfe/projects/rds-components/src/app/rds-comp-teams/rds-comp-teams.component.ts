@@ -1,9 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Basic } from 'projects/libs/rds-elements/src/rds-accordion/src/lib/accordion.stories';
-import { Advanced } from 'projects/libs/rds-elements/src/rds-breadcrumb/src/lib/breadcrumb.stories';
 
 @Component({
-  selector: 'app-rds-comp-teams',
+  selector: 'rds-comp-teams',
   templateUrl: './rds-comp-teams.component.html',
   styleUrls: ['./rds-comp-teams.component.scss']
 })
@@ -13,9 +11,9 @@ export class RdsCompTeamsComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
   @Input() displayType : 'Basic' | 'Advanced' = 'Basic';
-  @Input() teamItem = [
+
+  teamItem =[
     {
       title: 'Tina',
       subTitle: 'Web Developer',
@@ -25,7 +23,7 @@ export class RdsCompTeamsComponent implements OnInit {
       description: 'Lorem ipsum dolor sit amet conr adipiscing elit'
     },
     {
-      title: 'Tina',
+      title: 'Wily',
       subTitle: 'Web Developer',
       imgLink:'https://uxwing.com/wp-content/themes/uxwing/download/peoples-avatars/no-profile-picture-icon.png?W=100',
       twitterIcon: 'star',
@@ -33,7 +31,7 @@ export class RdsCompTeamsComponent implements OnInit {
       description: 'Lorem ipsum dolor sit amet conr adipiscing elit'
     } ,
     {
-      title: 'Tina',
+      title: 'Vivek',
       subTitle: 'Web Developer',
       imgLink:'https://uxwing.com/wp-content/themes/uxwing/download/peoples-avatars/no-profile-picture-icon.png?W=100',
       twitterIcon: 'star',
@@ -41,7 +39,7 @@ export class RdsCompTeamsComponent implements OnInit {
       description: 'Lorem ipsum dolor sit amet conr adipiscing elit'
     } ,
     {
-      title: 'Tina',
+      title: 'Riya',
       subTitle: 'Web Developer',
       imgLink:'https://uxwing.com/wp-content/themes/uxwing/download/peoples-avatars/no-profile-picture-icon.png?W=100',
       twitterIcon: 'star',
