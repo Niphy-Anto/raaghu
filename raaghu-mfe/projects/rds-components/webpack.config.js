@@ -98,9 +98,9 @@ module.exports = {
         './RdsCompProductOverview': './projects/rds-components/src/app/rds-comp-product-overview/rds-comp-product-overview.component.ts',
         './RdsCompReviewCategory': './projects/rds-components/src/app/rds-comp-review-category/rds-comp-review-category.component.ts',
         './RdsCompBilling': './projects/rds-components/src/app/rds-comp-billing/rds-comp-billing.component.ts',
-        './RdsCompIntegration': './projects/rds-components/src/app/rds-comp-integration/rds-comp-integration.component.ts'
+        './RdsCompIntegration': './projects/rds-components/src/app/rds-comp-integration/rds-comp-integration.component.ts',
+        './RdsCompTeams':'./projects\rds-components\src\app\rds-comp-teams\rds-comp-teams.component.ts'
       },
-
 
 
       shared: share({
