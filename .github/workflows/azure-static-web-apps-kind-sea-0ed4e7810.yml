@@ -18,6 +18,14 @@ jobs:
       - uses: actions/checkout@v2
         with:
           submodules: true
+      - name: npm install at raaghu-elements
+        working-directory: raaghu-elements
+        run: |
+          npm install
+      - name: npm install at  raaghu-mfe
+        working-directory: ./raaghu-mfe
+        run: |
+          npm install
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
