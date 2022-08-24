@@ -112,5 +112,11 @@ export const MfeConfig = {
   },
   orderdetails: {
     url: 'http://localhost:5036/remoteEntry.js',
+  },
+  underconstruction: {
+    url: 'http://localhost:5039/remoteEntry.js',
+  },
+  undermaintanance: {
+    url: 'http://localhost:5046/remoteEntry.js',
   }
 };
