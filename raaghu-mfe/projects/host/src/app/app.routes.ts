@@ -343,6 +343,7 @@ export const APP_ROUTES: Routes = [
           }).then((m) => m.AppModule),
         data: { permission: '' },
       },
+
       {
         path: 'visualsettings',
         loadChildren: () =>
@@ -353,17 +354,7 @@ export const APP_ROUTES: Routes = [
           }).then((m) => m.AppModule),
 
       },
-      //{
-      //  path: 'orderdetails',
-      //  loadChildren: () =>
-      //    loadRemoteModule({
-      //      type: 'module',
-      //      remoteEntry: MfeConfig.orderdetails.url,
-      //      exposedModule: './AppModule',
-      //    }).then((m) => m.AppModule),
-      //  data: { permission: '' },
-      //},
-
+     
       {
         path: '**',
         redirectTo: 'pagenotfound',

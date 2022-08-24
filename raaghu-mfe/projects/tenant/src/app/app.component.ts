@@ -106,7 +106,7 @@ export class AppComponent {
                 isInTrialPeriod: false,
                 id: tenant.tenantInfo.id
               };
-              this.store.dispatch(updateTenant(data, 20))
+              this.store.dispatch(updateTenant(data, 30))
 
             } else {
               const data: any = {
@@ -122,7 +122,7 @@ export class AppComponent {
                 subscriptionEndDateUtc: (tenant.tenantInfo.unlimitedSubscription) ? null : new Date(tenant.tenantInfo.subscriptionEndDate).toISOString(),
                 isInTrialPeriod: false
               };
-              this.store.dispatch(saveTenant(data, 20))
+              this.store.dispatch(saveTenant(data, 30))
 
             }
 
@@ -153,7 +153,7 @@ export class AppComponent {
 
         },
         deleteEvent: (event: any) => {
-          this.store.dispatch(deleteTenant(event.id, 20))
+          this.store.dispatch(deleteTenant(event.id, 30))
         },
         onSaveFeatures: (feature: any) => {
           this.store.dispatch(updateTenantFeatureValues(feature))
@@ -171,7 +171,7 @@ export class AppComponent {
       }
     })
 
-    this.store.dispatch(getTenants(20));
+    this.store.dispatch(getTenants(30));
     this.store.select(selectAllTenants).subscribe((res: any) => {
       this.tenantTableData = [];
       if (res && res.tenants.items && res.status == "success") {
