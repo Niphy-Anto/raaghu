@@ -285,22 +285,11 @@ export const APP_ROUTES: Routes = [
           }).then((m) => m.AppModule),
       },
       // {
-      //   path: 'underConstruction',
+      //   path: 'cart',
       //   loadChildren: () =>
       //     loadRemoteModule({
       //       type: 'module',
-      //       remoteEntry: MfeConfig.underconstruction.url,
-      //       exposedModule: './AppModule',
-      //     }).then((m) => m.AppModule),
-      //   data: { permission: 'Pages.DemoUiComponents' },
-
-      // },
-      // {
-      //   path: 'underMaintenance',
-      //   loadChildren: () =>
-      //     loadRemoteModule({
-      //       type: 'module',
-      //       remoteEntry: MfeConfig.undermaintanance.url,
+      //       remoteEntry: MfeConfig.cart.url,
       //       exposedModule: './AppModule',
       //     }).then((m) => m.AppModule),
       //   data: { permission: 'Pages.DemoUiComponents' },

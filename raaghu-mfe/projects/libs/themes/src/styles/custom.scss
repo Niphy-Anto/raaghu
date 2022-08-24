@@ -157,6 +157,10 @@
     z-index: 1;
   }
 
+  .page-full-height {
+    height: calc(100vh - 90px) !important;
+  }
+
   .upload-icon {
     position: absolute;
     right: 0px;
