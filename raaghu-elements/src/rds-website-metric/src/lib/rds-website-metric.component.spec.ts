@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NewlanguageComponent } from './newlanguage.component';
+import { RdsWebsiteMetricComponent } from './rds-website-metric.component';
 
-describe('NewlanguageComponent', () => {
-  let component: NewlanguageComponent;
-  let fixture: ComponentFixture<NewlanguageComponent>;
+describe('RdsWebsiteMetricComponent', () => {
+  let component: RdsWebsiteMetricComponent;
+  let fixture: ComponentFixture<RdsWebsiteMetricComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NewlanguageComponent ]
+      declarations: [ RdsWebsiteMetricComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NewlanguageComponent);
+    fixture = TestBed.createComponent(RdsWebsiteMetricComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

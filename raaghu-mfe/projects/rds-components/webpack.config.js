@@ -99,11 +99,10 @@ module.exports = {
         './RdsCompReviewCategory': './projects/rds-components/src/app/rds-comp-review-category/rds-comp-review-category.component.ts',
         './RdsCompBilling': './projects/rds-components/src/app/rds-comp-billing/rds-comp-billing.component.ts',
         './RdsCompIntegration': './projects/rds-components/src/app/rds-comp-integration/rds-comp-integration.component.ts',
-          
           './RdsCompOrderDetails': './projects/rds-components/src/app/rds-comp-order-details/rds-comp-order-details.component.ts',
           './RdsCompCardDetailList': './projects/rds-components/src/app/rds-comp-card-detail-list/rds-comp-card-detail-list.component.ts',
+        './RdsCompIntegration': './projects/rds-components/src/app/rds-comp-integration/rds-comp-integration.component.ts'
       },
-
 
 
       shared: share({
