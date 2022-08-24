@@ -1,0 +1,38 @@
+<div class="row">
+  <div class="col-md-3" *ngFor="let item of testimonialItems; let i=index">
+    <div class="card text-center p-4">
+      <div>
+        <rds-icon
+          [name]="item.icon"
+          [fill]="item.iconFill"
+          [stroke]="item.iconStroke"
+          [height]="item.iconHeight"
+          [width]="item.iconWidth"
+          class="fs-6 me-2"
+        ></rds-icon>
+      </div>
+      <div class="card-body p-2">
+        <label class="text-muted py-2">
+          {{ item.description }}
+        </label>
+        <div>
+          <div class="d-block">
+            <div class="d-flex justify-content-center pb-3">
+                <img src={{item.img}} class="rounded-circle" width="100" height="100" alt="...">
+              </div>
+          </div>
+        </div>
+        <div>
+          <label class="fs-5 fw-bold">
+            {{ item.title }}
+          </label>
+        </div>
+        <div>
+          <label class="text-muted mt-1">
+            {{ item.subtitle }}
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

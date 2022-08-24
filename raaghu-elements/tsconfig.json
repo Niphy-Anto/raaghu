@@ -63,6 +63,10 @@
       "@libs/rds-button": [
         "rds-elements/rds-button/public-api",
         "rds-elements/rds-button"
+      ],
+      "rds-testimonial": [
+        "dist/rds-testimonial/rds-testimonial",
+        "dist/rds-testimonial"
       ]
     },
     "skipLibCheck": true,
