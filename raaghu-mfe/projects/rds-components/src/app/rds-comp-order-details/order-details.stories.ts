@@ -5,9 +5,9 @@ import { RdsButtonModule, RdsCheckboxModule, RdsInputModule } from '@libs/rds-el
 import { NgxTranslateModule } from '@libs/shared';
 import { RdsAddressDetailModule } from 'projects/libs/rds-elements/src/rds-address-detail/src/public-api';
 import { RdsLabelModule } from '@libs/rds-label';
-
+import { RdsStepperModule } from '@libs/rds-stepper';
 import { CommonModule } from '@angular/common';
-import { RdsStepperModule } from 'projects/libs/rds-elements/src/rds-stepper/src/public-api';
+
 
 
 export default {
