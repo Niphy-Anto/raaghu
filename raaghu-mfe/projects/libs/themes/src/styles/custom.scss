@@ -910,6 +910,10 @@ custom scrollbar
     pointer-events: none;
   }
 
+  .border-opacity-10 {
+    --bs-border-opacity: 0.1;
+      }
+
   @import './accordion.scss';
   @import './alert.scss';
   @import './avatar.scss';

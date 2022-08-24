@@ -1,0 +1,43 @@
+<div class="row">
+    <form #contactForm="ngForm">
+      <div class="col-md-10">
+        <div class="form-group mt-4">
+          <rds-input [inputType]="'text'" [Title]="'Email ID'" [TitleType]="'Top'" [pattern]="emailPattern"
+            [(ngModel)]="info.emailID" name="email_ID" required [placeholder]="'name@domain.com'"
+            [isRequired]=true #emailId="ngModel">
+          </rds-input>
+          <div class="form-control-feedback" *ngIf="emailId.errors && (emailId.dirty || emailId.touched)">
+            <span class="text-danger" *ngIf="emailId.errors.required">Email ID is
+              required</span>
+              <span class="text-danger" *ngIf="emailId.errors.pattern">Please enter valid email</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-10">
+        <div class="form-group mt-4">
+          <rds-input [inputType]="'text'" [Title]="'Full Name'" [TitleType]="'Top'"
+            [(ngModel)]="info.fullName" name="full_name" required [placeholder]="'full name'"
+            [isRequired]=true #fullName="ngModel">
+          </rds-input>
+          <div class="form-control-feedback" *ngIf="fullName.errors && (fullName.dirty || fullName.touched)">
+            <span class="text-danger" *ngIf="fullName.errors.required">Full name is
+              required</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-10">
+        <div class="form-group mt-4">
+          <label class="pb-2">Message<span class="text-danger">*</span></label>
+          <rds-textarea #message="ngModel" [placeholderText]="'message'"  [value]="info.message"
+            [(ngModel)]="info.message" name="contact_message" required>
+          </rds-textarea>
+          <div class="form-control-feedback" *ngIf="message.errors && (message.dirty || message.touched)">
+            <span class="text-danger" *ngIf="message.errors.required">Message is required</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-10 mt-4 text-center">
+        <rds-button [label]="'Send Message'" [size]="'medium'" [disabled]="!contactForm.valid" (click)="sendMessage(contactForm)" colorVariant="primary"></rds-button>
+      </div>
+    </form>
+  </div>
