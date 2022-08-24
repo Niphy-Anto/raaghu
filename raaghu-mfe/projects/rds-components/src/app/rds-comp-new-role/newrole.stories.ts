@@ -3,7 +3,7 @@ import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { RdsButtonModule, RdsCheckboxModule, RdsDatepickerModule, RdsFabMenuModule, RdsIconModule, RdsInputModule, RdsModalModule, RdsNavTabModule, RdsOffcanvasModule, RdsPaginationModule, RdsPopoverModule, RdsSelectListModule } from '@libs/rds-elements';
 import { NgxTranslateModule, SharedModule } from '@libs/shared';
 import { RdsCompNewRoleComponent } from './rds-comp-new-role.component';
-import { RdsLabelModule } from 'projects/libs/rds-elements/src/rds-label/src/public-api';
+import { RdsLabelModule } from '@libs/rds-label';
 
 
 export default {
