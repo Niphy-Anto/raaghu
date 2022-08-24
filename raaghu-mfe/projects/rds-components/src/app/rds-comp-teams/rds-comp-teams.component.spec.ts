@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NewlanguageComponent } from './newlanguage.component';
+import { RdsCompTeamsComponent } from './rds-comp-teams.component';
 
-describe('NewlanguageComponent', () => {
-  let component: NewlanguageComponent;
-  let fixture: ComponentFixture<NewlanguageComponent>;
+describe('RdsCompTeamsComponent', () => {
+  let component: RdsCompTeamsComponent;
+  let fixture: ComponentFixture<RdsCompTeamsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NewlanguageComponent ]
+      declarations: [ RdsCompTeamsComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NewlanguageComponent);
+    fixture = TestBed.createComponent(RdsCompTeamsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

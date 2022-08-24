@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CacheComponent } from './cache.component';
+import { RdsWebsiteMetricComponent } from './rds-website-metric.component';
 
-describe('CacheComponent', () => {
-  let component: CacheComponent;
-  let fixture: ComponentFixture<CacheComponent>;
+describe('RdsWebsiteMetricComponent', () => {
+  let component: RdsWebsiteMetricComponent;
+  let fixture: ComponentFixture<RdsWebsiteMetricComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CacheComponent ]
+      declarations: [ RdsWebsiteMetricComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CacheComponent);
+    fixture = TestBed.createComponent(RdsWebsiteMetricComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

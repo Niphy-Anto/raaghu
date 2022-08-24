@@ -1,0 +1,69 @@
+<div class="conatiner">
+    <div [ngSwitch]="displayType">
+        <div class="row" *ngSwitchCase="'Basic'">
+            <div class="col-md-12">
+              <div class="align-items-center col-md-12 d-flex justify-content-between">
+                <h2><rds-label label="Meet the Team"></rds-label></h2>
+                <span>
+                    <rds-icon
+                    height="15px"
+                    [fill]="false"
+                    [stroke]="true"
+                    width="15px"
+                    name="plus"
+                    colorVariant=""
+                  ></rds-icon>
+                  <rds-icon
+                    height="15px"
+                    [fill]="false"
+                    [stroke]="true"
+                    width="15px"
+                    name="plus"
+                    class="mx-2"
+                    colorVariant=""
+                  ></rds-icon>
+                </span>
+              </div>
+              <div>
+                <rds-team-member
+                  displayType="Basic"
+                  [teamItem]="teamItem"
+                ></rds-team-member>
+              </div>
+            </div>
+          </div>
+          <div class="row" *ngSwitchCase="'Advance'">
+            <div class="col-md-12">
+              <div class="align-items-center col-md-12 d-flex justify-content-between">
+                <h2><rds-label label="Meet the Team"></rds-label></h2>
+                <span>
+                    <rds-icon
+                    height="15px"
+                    [fill]="false"
+                    [stroke]="true"
+                    width="15px"
+                    name="plus"
+                    colorVariant=""
+                  ></rds-icon>
+                  <rds-icon
+                    height="15px"
+                    [fill]="false"
+                    [stroke]="true"
+                    width="15px"
+                    name="plus"
+                    class="mx-2"
+                    colorVariant=""
+                  ></rds-icon>
+                </span>
+              </div>
+              <div class="mt-4">
+                <rds-team-member
+                  displayType="Advance"
+                  [teamItem]="teamItem"
+                ></rds-team-member>
+              </div>
+            </div>
+          </div>
+    </div>
+
+</div>

@@ -19,6 +19,7 @@
 							}
 						],
 						"styles": [
+							"./node_modules/bootstrap/dist/css/bootstrap.min.css",
 							"./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
 							"./projects/libs/themes/src/styles/quillEditor.scss",
 							"./projects/libs/themes/src/styles/custom.scss",
@@ -41,6 +42,7 @@
 					"options": {
 						"tsConfig": "tsconfig.json",
 						"styles": [
+							"./node_modules/bootstrap/dist/css/bootstrap.min.css",
 							"./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
 							"./projects/libs/themes/src/styles/quillEditor.scss",
 							"./projects/libs/themes/src/styles/custom.scss",
@@ -4456,8 +4458,8 @@
 								},
 								{
 									"type": "anyComponentStyle",
-									"maximumWarning": "2kb",
-									"maximumError": "4kb"
+									"maximumWarning": "15kb",
+									"maximumError": "20kb"
 								}
 							],
 							"fileReplacements": [
