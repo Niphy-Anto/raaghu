@@ -25,7 +25,7 @@
           <div>
             <rds-widget [isRefreshRequired]="false" [headerTitle]="translate.instant('Revenue')" [colorVariant]="'primary'" cardheight = 'card-stretch-half'>
               <div body>
-                <rds-big-number-widget  [iconFill]="true" [iconStroke]="true" [iconColor]="'primary'" [bigNumber]="'$' +RevenuePrice" [textAlign]="'text-start'" subTitleColorVariant="warning" [colorVariant]="'primary'"
+                <rds-big-number-widget  [iconFill]="true" [iconStroke]="true" [bigNumber]="'$' +RevenuePrice" [textAlign]="'text-start'" subTitleColorVariant="warning" [colorVariant]="'primary'"
                   [subText]="'-$' +RevenueProfit" [icon]="'triangle_down'" [iconHeight]="'12px'" [iconWidth]="'12px'" 
                 ></rds-big-number-widget>
               </div>
@@ -38,8 +38,9 @@
             <div body>
               <rds-big-number-widget [bigNumber]="'$' +ProfitSharePrice" [textAlign]="'text-start'"></rds-big-number-widget>
               <div class="col col-sm-12">
-                <rds-chart-doughnut [ChartDataSets]="pschartDatasets" chartId="psChart" [chartWidth]="pschartWidth" [chartHeight]="pschartHeight"
-                  [chartLabels]="pschartLabels" [chartOptions]="pschartOptions" chartType="doughnut">
+                <rds-chart-doughnut [ChartDataSets]="pschartDatasets" [titleText]="'35 K'" [subTitleText]="'Profit'" chartId="psChart"
+                  [chartWidth]="pschartWidth" [chartHeight]="pschartHeight" [chartLabels]="pschartLabels"
+                  [chartOptions]="pschartOptions" chartType="doughnut">
                 </rds-chart-doughnut>
               </div>
             </div>

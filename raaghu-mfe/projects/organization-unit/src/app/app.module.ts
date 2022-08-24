@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { NgxTranslateModule, SharedModule } from '@libs/shared';
 import { RdsButtonModule, RdsIconModule, RdsNavTabModule, RdsOffcanvasModule } from '@libs/rds-elements';
 
@@ -7,13 +6,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ArrayToTreeConverterService } from 'projects/libs/shared/src/lib/array-to-tree-converter.service';
 import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule,
+    //BrowserModule,
+    CommonModule,
     AppRoutingModule,
     SharedModule,
     RdsNavTabModule,

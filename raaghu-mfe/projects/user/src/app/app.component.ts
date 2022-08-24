@@ -25,13 +25,49 @@ import {
   AlertService,
   ComponentLoaderOptions,
 } from '../../../libs/shared/src/public-api';
+import {
+  transition,
+  trigger,
+  query,
+  style,
+  animate,
+} from '@angular/animations';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  animations: [
+    trigger('fadeAnimation', [
+      transition('* <=> *', [
+        query(':enter',
+          [
+            style({ opacity: 0 })
+          ],
+          { optional: true }
+        ),
+        query(':leave',
+          [
+            style({ opacity: 1 }),
+            animate('0.4s', style({ opacity: 0 }))
+          ],
+          { optional: true }
+        ),
+        query(':enter',
+          [
+            style({ opacity: 0 }),
+            animate('0.4s', style({ opacity: 1 }))
+          ],
+          { optional: true }
+        )
+      ])
+    ])
+  ]
 })
 export class AppComponent {
+
+  isAnimation: boolean = true;
+
   title: string = 'user';
   currentAlerts: any = [];
   public rdsAlertMfeConfig: ComponentLoaderOptions = {
@@ -68,6 +104,8 @@ export class AppComponent {
   resOrganizationUnit:any=[];
   SelectedOrganizationUnit: any = [];
   ngOnInit(): void {
+    this.isAnimation=true;
+
     this.store.select(selectDefaultLanguage).subscribe((res: any) => {
       if (res) {
         this.translate.use(res);
@@ -294,7 +332,8 @@ export class AppComponent {
     this.store.dispatch(getUsers([]));
     this.store.select(selectAllUsers).subscribe((res: any) => {
       this.userList = [];
-      if (res && res.users && res.users.items &&  res.status == "success") {
+      if (res && res.users && res.users.items && res.status == "success") {
+        this.isAnimation = false;
         res.users.items.forEach((element: any) => {
           let statusTemplate;
           if (element.isActive) {

@@ -47,12 +47,14 @@ export class RdsInputComponent implements AfterViewInit {
 
   @Input()
   icon = '';
-  @Input() iconHeight: string = '13px';
-  @Input() iconWidth: string = '13px';
+  @Input() iconCursor = '';
+  @Input() iconHeight: string = '16px';
+  @Input() iconWidth: string = '16px';
   @Input() iconStroke: boolean = true;
   @Input() iconFill: boolean = false;
   @Input()
   isRequired:boolean = false;
+  iconTitle = 'Show';
 
   // @Input()
   // ErrorMessage ='Add custom error message'
@@ -204,4 +206,15 @@ export class RdsInputComponent implements AfterViewInit {
     return state;
   }
 
+  showPassword(event: string) {
+    if (event == 'password'){
+      this.inputType = 'text';
+      this.icon='eye_slash';
+      this.iconTitle = 'Hide';
+    } else if (event == 'text'){
+      this.inputType = 'password';
+      this.icon='eye';
+      this.iconTitle = 'Show';
+    }
+  }
 }

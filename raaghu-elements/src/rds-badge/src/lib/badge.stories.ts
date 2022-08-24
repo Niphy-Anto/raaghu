@@ -128,7 +128,7 @@ const BadgeIcon: Story<RdsBadgeComponent> = (args: RdsBadgeComponent) => ({
   template:
     `<button
       class="position-relative btn btn-light">
-<rds-icon name="chat_left_dots" height="20px" width="20px" [fill]="iconFill"
+<rds-icon name="three_dots_horizontal" height="20px" width="20px" [fill]="iconFill"
 [stroke]="iconStroke"></rds-icon>
     <rds-badge right
     size="smallest"
