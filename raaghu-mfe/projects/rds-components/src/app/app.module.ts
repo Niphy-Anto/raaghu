@@ -42,7 +42,7 @@ import {
   RdsSpinnerModule, RdsToastsModule, RdsChartBubbleModule, RdsChartDoughnutModule, RdsChartMixedModule, RdsChartPolarAreaModule, RdsChartScatterModule, RdsChartStackedModule,
   RdsProgressbarModule, RdsBreadcrumbModule, RdsCarouselModule, RdsDoubleRangeModule, RdsScrollspyModule, RdsCounterModule, RdsFabMenuModule, RdsLabelModule, RdsIconLabelModule,
   CalendarModule, adapterFactory, DateAdapter, RdsRatingModule, RdsLikeDislikeModule, RdsColorModule, RdsFeedModule, RdsVideoPlayerModule, RdsAppDetailsModule, RdsBenefitModule,
-  RdsCardDetailModule, RdsSizeModule, RdsPriceModule, RdsFeatureListModule, RdsProductImageModule
+  RdsCardDetailModule, RdsSizeModule, RdsPriceModule, RdsFeatureListModule, RdsProductImageModule, RdsReviewCategoryModule, RdsTeamMemberModule, RdsWebsiteMetricModule
 } from '@libs/rds-elements';
 import { RdsCompDemouiComponent } from './rds-comp-demoui/rds-comp-demoui.component';
 import { RdsCompTenantManagementComponent } from './rds-comp-tenant-management/rds-comp-tenant-management.component';
@@ -141,10 +141,12 @@ import { RdsCompCustomerReviewsComponent } from './rds-comp-customer-reviews/rds
 import { RdsCompBillingComponent } from './rds-comp-billing/rds-comp-billing.component';
 import { RdsCompIntegrationComponent } from './rds-comp-integration/rds-comp-integration.component';
 import { RdsCompTestimonialsComponent } from './rds-comp-testimonials/rds-comp-testimonials.component';
+// import { RdsCompTeamsComponent } from './rds-comp-teams/rds-comp-teams.component';
 
 import { RdsCompOrderDetailsComponent } from './rds-comp-order-details/rds-comp-order-details.component';
 import { RdsAddressDetailModule } from 'projects/libs/rds-elements/src/rds-address-detail/src/public-api';
 import { RdsStepperModule } from 'projects/libs/rds-elements/src/rds-stepper/src/public-api';
+import { RdsCompTeamsComponent } from './rds-comp-teams/rds-comp-teams.component';
 
 @NgModule({
   declarations: [	
@@ -278,8 +280,11 @@ import { RdsStepperModule } from 'projects/libs/rds-elements/src/rds-stepper/src
     RdsCompEmailSettingsComponent,
     RdsCompBillingComponent,
     RdsCompIntegrationComponent,
-      RdsCompTestimonialsComponent
-   ],
+    RdsCompTestimonialsComponent,
+    RdsCompIntegrationComponent,
+    RdsCompTeamsComponent,
+  
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -368,8 +373,9 @@ import { RdsStepperModule } from 'projects/libs/rds-elements/src/rds-stepper/src
     RdsSizeModule,
     RdsAddressDetailModule,
     RdsStepperModule,
-   
-   
+    RdsReviewCategoryModule,
+    RdsTeamMemberModule,
+    RdsWebsiteMetricModule
   ],
   providers: [],
   bootstrap: [AppComponent],

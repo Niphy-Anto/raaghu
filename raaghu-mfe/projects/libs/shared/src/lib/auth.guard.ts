@@ -39,11 +39,11 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
           return this.canActivateInternal(route.data, state);
         }
         else{
-          return of(false);
+          this._router.navigateByUrl(this.selectBestRoute());
         }
       }
       else{
-        return of(false);
+        this._router.navigateByUrl(this.selectBestRoute());
       }
 
   } 
@@ -57,7 +57,7 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
     if (this.permissions[data['permission']]) {
         return of(true);
     }
-    return of(false);
+    this._router.navigateByUrl(this.selectBestRoute());
 }
 canActivateChild(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
   return this.canActivate(route, state);
