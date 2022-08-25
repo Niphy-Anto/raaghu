@@ -1,5 +1,4 @@
 import { AfterViewInit, Component, DoCheck, EventEmitter, Input , OnInit, Output } from '@angular/core';
-import de from 'date-fns/locale/de/index';
 // import { Tooltip } from 'bootstrap'
 declare var bootstrap: any;
 @Component({
@@ -67,6 +66,7 @@ export class RdsButtonComponent implements AfterViewInit, OnInit, DoCheck {
   @Input() isLoading: boolean = false;
   @Input() showLoadingSpinner: boolean = false;
   makeSpinnerActive: boolean;
+  iconTemp: string;
 
   constructor() {
     this.id = this.id + RdsButtonComponent.count++;
@@ -77,14 +77,17 @@ export class RdsButtonComponent implements AfterViewInit, OnInit, DoCheck {
     this.makeSpinnerActive = this.showLoadingSpinner;
     this.showLoadingSpinner = false;
     this.labelTemp = this.label;
+    this.iconTemp = this.icon;
   }
   
   ngDoCheck(): void {
     if(this.showLoadingSpinner == true){
       this.label = '';
+      this.icon = '';
     }
     else{
       this.label = this.labelTemp;
+      this.icon = this.iconTemp;
     }
   }
 

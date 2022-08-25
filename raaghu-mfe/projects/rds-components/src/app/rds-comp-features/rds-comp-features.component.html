@@ -3,7 +3,7 @@
 
 <div class="row">
   <div class="col-md-12 text-end pb-3 desktop-btn">
-    <rds-button [label]="translate.instant('NEW EDITION')" type="button" [colorVariant]="'primary'"
+    <rds-button [label]="translate.instant('NEW EDITION')" [showLoadingSpinner]="buttonSpinnerForNewEdition" type="button" [colorVariant]="'primary'"
       (click)="openCanvas()" [attr.aria-controls]="'addEdition'" [icon]="'plus'" iconHeight="12px" iconWidth="12px" [size]="'small'">
     </rds-button>
   </div>

@@ -140,7 +140,7 @@ export const APP_ROUTES: Routes = [
         data: { permission: 'Pages.Administration.Host.Maintenance' },
       },
       {
-        path: 'webhook-subscription',
+        path: 'webhooksubscription',
         loadChildren: () =>
           loadRemoteModule({
             type: 'module',
