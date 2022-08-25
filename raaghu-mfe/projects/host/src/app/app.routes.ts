@@ -239,6 +239,16 @@ export const APP_ROUTES: Routes = [
         data: { permission: 'Pages.Editions', animation: 'edition' },
       },
       {
+        path: 'contact-us',
+        loadChildren: () =>
+          loadRemoteModule({
+            type: 'module',
+            remoteEntry: MfeConfig.contactus.url,
+            exposedModule: './AppModule',
+          }).then((m) => m.AppModule),
+        data: { permission: 'Pages.Editions', animation: 'edition' },
+      },
+      {
         path: 'client',
         loadChildren: () =>
           loadRemoteModule({
