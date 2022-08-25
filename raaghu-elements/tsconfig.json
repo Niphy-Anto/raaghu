@@ -64,10 +64,6 @@
         "rds-elements/rds-button/public-api",
         "rds-elements/rds-button"
       ],
-      "rds-testimonial": [
-        "dist/rds-testimonial/rds-testimonial",
-        "dist/rds-testimonial"
-      ],
       "@libs/rds-big-number-widget": [
         "rds-elements/rds-big-number-widget/public-api",
         "rds-elements/rds-big-number-widget"
