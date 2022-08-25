@@ -42,7 +42,7 @@ import {
   RdsSpinnerModule, RdsToastsModule, RdsChartBubbleModule, RdsChartDoughnutModule, RdsChartMixedModule, RdsChartPolarAreaModule, RdsChartScatterModule, RdsChartStackedModule,
   RdsProgressbarModule, RdsBreadcrumbModule, RdsCarouselModule, RdsDoubleRangeModule, RdsScrollspyModule, RdsCounterModule, RdsFabMenuModule, RdsLabelModule, RdsIconLabelModule,
   CalendarModule, adapterFactory, DateAdapter, RdsRatingModule, RdsLikeDislikeModule, RdsColorModule, RdsFeedModule, RdsVideoPlayerModule, RdsAppDetailsModule, RdsBenefitModule,
-    RdsCardDetailModule, RdsSizeModule, RdsPriceModule, RdsFeatureListModule, RdsProductImageModule, RdsReviewCategoryModule, RdsTeamMemberModule, RdsWebsiteMetricModule, RdsAddressDetailModule
+  RdsCardDetailModule, RdsSizeModule, RdsPriceModule, RdsFeatureListModule, RdsProductImageModule, RdsReviewCategoryModule, RdsTeamMemberModule, RdsWebsiteMetricModule,RdsAddressDetailModule
 } from '@libs/rds-elements';
 import { RdsCompDemouiComponent } from './rds-comp-demoui/rds-comp-demoui.component';
 import { RdsCompTenantManagementComponent } from './rds-comp-tenant-management/rds-comp-tenant-management.component';
@@ -146,6 +146,8 @@ import { RdsCompTestimonialsComponent } from './rds-comp-testimonials/rds-comp-t
 import { RdsCompOrderDetailsComponent } from './rds-comp-order-details/rds-comp-order-details.component';
 import { RdsStepperModule } from 'projects/libs/rds-elements/src/rds-stepper/src/public-api';
 import { RdsCompTeamsComponent } from './rds-comp-teams/rds-comp-teams.component';
+import { RdsCompContactUsComponent } from './rds-comp-contact-us/rds-comp-contact-us.component';
+import { RdsTestimonialModule } from 'projects/libs/rds-elements/src/rds-testimonial/src/public-api';
 
 @NgModule({
   declarations: [	
@@ -282,6 +284,7 @@ import { RdsCompTeamsComponent } from './rds-comp-teams/rds-comp-teams.component
     RdsCompTestimonialsComponent,
     RdsCompIntegrationComponent,
     RdsCompTeamsComponent,
+    RdsCompContactUsComponent,
   
   ],
   imports: [
@@ -374,7 +377,8 @@ import { RdsCompTeamsComponent } from './rds-comp-teams/rds-comp-teams.component
     RdsStepperModule,
     RdsReviewCategoryModule,
     RdsTeamMemberModule,
-    RdsWebsiteMetricModule
+    RdsWebsiteMetricModule,
+    RdsTestimonialModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -32,7 +32,7 @@ export class AppComponent extends MfeBaseComponent implements OnInit {
   loginTokenExpiryDate = 0;
   acessTokenExpiryDate: any;
   refreshTokenExpiryDate: any;
-   loadingshimmer:boolean=true;
+  loadingshimmer:boolean=true;
   constructor(
     private injector: Injector,
     private _userAuthService: UserAuthService,
@@ -79,7 +79,7 @@ export class AppComponent extends MfeBaseComponent implements OnInit {
     if(this.sessionService.user) {
       this._router.navigateByUrl('pages/dashboard');
     }
-    }
+  }
 
   insertTenant(data: any) {
     const tenantData: any = {
@@ -124,12 +124,14 @@ export class AppComponent extends MfeBaseComponent implements OnInit {
       rdsAlertMfeConfig.input.currentAlerts = [...this.currentAlerts];
       this.rdsAlertMfeConfig = rdsAlertMfeConfig;
     });
-// this.alertService.showAlert('title','Invalid user name or password','danger')
+   // this.alertService.showAlert('title','Invalid user name or password','danger')
   }
 
 
 
   authenticate(redirectUrl?: string): void {
+    const mfeConfig = this.rdsLoginMfeConfig
+    mfeConfig.input.buttonSpinner = true;
     this._tokenAuthService.authenticate(this.authenticateModal).subscribe({
       next: (result: AuthenticateResultModel) => {
         this.processAuthenticateResult(result, redirectUrl);
@@ -138,11 +140,8 @@ export class AppComponent extends MfeBaseComponent implements OnInit {
           username: this.authenticateModal.userNameOrEmailAddress
 
         }));
-        const mfeConfig = this.rdsLoginMfeConfig
-        mfeConfig.input.buttonSpinner = true;
       },
       error: (err: any) => {
-        const mfeConfig = this.rdsLoginMfeConfig
         mfeConfig.input.buttonSpinner = false;
         this.alertService.showAlert('title','Invalid user name or password','error')
       },

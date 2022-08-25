@@ -100,16 +100,6 @@ export const APP_ROUTES: Routes = [
         data: { permission: 'Pages.Administration.AuditLogs' },
       },
       {
-        path: 'visualsettings',
-        loadChildren: () =>
-          loadRemoteModule({
-            type: 'module',
-            remoteEntry: MfeConfig.visualsettings.url,
-            exposedModule: './AppModule',
-          }).then((m) => m.AppModule),
-
-      },
-      {
         path: 'organization-unit',
         loadChildren: () =>
           loadRemoteModule({
@@ -249,6 +239,16 @@ export const APP_ROUTES: Routes = [
         data: { permission: 'Pages.Editions', animation: 'edition' },
       },
       {
+        path: 'contact-us',
+        loadChildren: () =>
+          loadRemoteModule({
+            type: 'module',
+            remoteEntry: MfeConfig.contactus.url,
+            exposedModule: './AppModule',
+          }).then((m) => m.AppModule),
+        data: { permission: 'Pages.Editions', animation: 'edition' },
+      },
+      {
         path: 'client',
         loadChildren: () =>
           loadRemoteModule({
@@ -353,6 +353,18 @@ export const APP_ROUTES: Routes = [
           }).then((m) => m.AppModule),
         data: { permission: '' },
       },
+
+      {
+        path: 'visualsettings',
+        loadChildren: () =>
+          loadRemoteModule({
+            type: 'module',
+            remoteEntry: MfeConfig.visualsettings.url,
+            exposedModule: './AppModule',
+          }).then((m) => m.AppModule),
+
+      },
+     
       // {
       //  path: 'orderdetails',
       //  loadChildren: () =>
