@@ -299,7 +299,7 @@
       position: absolute;
       left: 0;
       bottom: 0;
-      top: 2.5rem;
+      top: 1.5rem;
       width: 0.5625rem;
       height: 100%;
       border-right: $check-verticle-border-width dashed;
@@ -310,8 +310,10 @@
       width: 1.75rem;
       border-bottom: $check-verticle-border-width dashed;
       position: relative;
-      right: 1.625rem;
-      margin-top: 0.625rem;
+      // right: 1.625rem;
+      // margin-top: 0.625rem;
+      right: 1.725rem;
+      margin-top: -1.095rem;
     }
 
     .node-dot {
@@ -913,27 +915,8 @@ custom scrollbar
     pointer-events: none;
   }
 
-  @import './accordion.scss';
-  @import './alert.scss';
-  @import './avatar.scss';
-  @import './badge.scss';
-  @import './breadcrumb.scss';
-  @import './button.scss';
-  @import './card.scss';
-  @import './carousel.scss';
-  @import './checkbox.scss';
-  @import './counter.scss';
-  @import './dropdown.scss';
-  @import './file-uploader.scss';
-  @import './input.scss';
-  @import './list-group.scss';
-  @import './nav-tab.scss';
-  @import './offcanvas.scss';
-  @import './pagination.scss';
-  @import './radio-button.scss';
-  @import './scrollspy.scss';
-  @import './search-input.scss';
-  @import './side-nav.scss';
-  @import './table.scss';
-  @import './tags.scss';
-  @import './textarea.scss';
+ 
+
+  .form-control, .offcanvas-body .form-select{
+    background-color: #F4F7F9 !important;
+} 
