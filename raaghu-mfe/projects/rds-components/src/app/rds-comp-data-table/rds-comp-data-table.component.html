@@ -107,9 +107,9 @@
                         <td *ngIf="actions.length>0" class="align-middle">
                             <div class="d-flex align-items-center">
                                 <div class="dropdown" *ngIf="!data.isEdit; else editActionTemplate">
-                                    <rds-button [colorVariant]="'default'" [submit]="false" [block]="false" [size]="'medium'"
-                                        [iconFill]="true" [iconStroke]="true"   [disabled]="false" [outlineButton]="false"
-                                        [roundedButton]="true" icon="three_dots" [iconHeight]="'18px'" [iconWidth]="'18px'" [label]="data?.name+'_action'" tooltipTitle=""
+                                    <rds-button [colorVariant]="'light'" [submit]="false" [block]="false" [size]="'small'"
+                                        [iconFill]="true" [iconStroke]="true"   [disabled]="false" [outlineButton]="true"
+                                        [roundedButton]="true" icon="three_dots" [iconHeight]="'16px'" [iconWidth]="'16px'" [label]="data?.name+'_action'" tooltipTitle=""
                                         tooltipPlacement="bottom" (click)="openAction()" id="action-dropdown"
                                         data-bs-toggle="dropdown" aria-expanded="false"></rds-button>
                                     <div class="dropdown-menu" aria-labelledby="action-dropdown">

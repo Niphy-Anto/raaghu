@@ -39,6 +39,7 @@ export class RdsCompFeaturesComponent implements OnInit, OnChanges, DoCheck {
   @Input() featureList: any = [];
   @Input() nodeColors = [];
   @Input() treeData: TreeNode[] = [];
+  buttonSpinnerForNewEdition: boolean = true;
   @Output() deleteEdition = new EventEmitter<{ item: any }>();
   @Output() onEditionSave = new EventEmitter<any>();
   @Output() updateEdition = new EventEmitter<any>();
@@ -213,6 +214,7 @@ export class RdsCompFeaturesComponent implements OnInit, OnChanges, DoCheck {
     this.selectpermissionList = event
   }
   openCanvas(): void {
+    this.buttonSpinnerForNewEdition = true;
     this.updateEdition.emit(0);
     this.contentOnEdit = false;
     this.selectedFeatures = [];
@@ -290,6 +292,7 @@ export class RdsCompFeaturesComponent implements OnInit, OnChanges, DoCheck {
 
   closeCanvas(): void {
     this.viewCanvas = false;
+    this.buttonSpinnerForNewEdition = false;
     this.resetPermission();
   }
 

@@ -46,6 +46,7 @@ export class RdsCompRoleListComponent implements OnInit {
     { value: 'Filter By Permission', some: 'value', key: 'filterByPermission', icon: 'funnel', iconWidth: '20px', iconHeight: '20px' },
   ];
   @Input() roleList: any[] = [];
+  buttonSpinnerForNewRole: boolean = true;
   @Output() onSaveRole = new EventEmitter<any>();
   @Output() onRefreshRole = new EventEmitter<any>();
   @Output() onEditRole = new EventEmitter<any>();
@@ -140,6 +141,7 @@ export class RdsCompRoleListComponent implements OnInit {
   }
 
   newRole(event): void {
+    this.buttonSpinnerForNewRole = true;
     this.selectedId = '';
     this.viewCanvas = true;
     this.onEditRole.emit({ id: undefined });
@@ -191,6 +193,7 @@ export class RdsCompRoleListComponent implements OnInit {
     this.RolesData = undefined;
     this.onReset.emit(true);
     this.isRoleDataValid = false;
+    this.buttonSpinnerForNewRole = false;
   }
   editTableRowData(event): void {
     

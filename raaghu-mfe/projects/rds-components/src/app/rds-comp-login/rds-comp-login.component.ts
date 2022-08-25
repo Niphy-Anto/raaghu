@@ -1,8 +1,6 @@
 import {
   Component,
-  DoCheck,
   EventEmitter,
-  Injector,
   Input,
   OnChanges,
   OnInit,

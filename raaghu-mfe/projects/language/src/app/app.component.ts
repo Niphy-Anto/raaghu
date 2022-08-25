@@ -63,6 +63,7 @@ export class AppComponent implements OnInit {
   isShimmer: boolean = false;
   EditShimmer: boolean = false;
   languageCanvasTitle = 'New Language';
+  buttonSpinnerForNewLanguage:boolean = true;
   public rdsAlertMfeConfig: ComponentLoaderOptions = {
     name: 'RdsCompAlert',
     input: {
@@ -254,6 +255,7 @@ export class AppComponent implements OnInit {
   // }
 
   openCanvas(edit: boolean = false): void {
+    this.buttonSpinnerForNewLanguage =true;
     this.viewCanvas = true;
     if (!edit) {
       this.selectedLanguage = {
@@ -290,6 +292,7 @@ export class AppComponent implements OnInit {
       isEnabled: false,
       id: undefined,
     };
+    this.buttonSpinnerForNewLanguage = false;
   }
   subscribeToAlerts() {
     this.alertService.alertEvents.subscribe((alert) => {
