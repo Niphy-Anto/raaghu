@@ -163,6 +163,16 @@ function mergeTSConfigJson() {
         };
         changesDone = true;
     };
+    if (ngElementsFile.compilerOptions.paths["@libs/rds-app-details"] == undefined) {
+        ngElementsFile.compilerOptions.paths = {
+            ...ngElementsFile.compilerOptions.paths,
+            "@libs/rds-app-details": [
+                "rds-elements/rds-app-details/public-api",
+                "rds-elements/rds-app-details-image"
+            ]
+        };
+        changesDone = true;
+    };
     if (changesDone) {
         console.log('Updating tsconfig.json file...');
         fse.writeFileSync(path.join(currentDir, 'tsconfig.json'), JSON.stringify(ngElementsFile, null, 2));
