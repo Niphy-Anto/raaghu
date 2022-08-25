@@ -147,6 +147,7 @@ import { RdsCompOrderDetailsComponent } from './rds-comp-order-details/rds-comp-
 import { RdsAddressDetailModule } from 'projects/libs/rds-elements/src/rds-address-detail/src/public-api';
 import { RdsStepperModule } from 'projects/libs/rds-elements/src/rds-stepper/src/public-api';
 import { RdsCompTeamsComponent } from './rds-comp-teams/rds-comp-teams.component';
+import { RdsTestimonialModule } from 'projects/libs/rds-elements/src/rds-testimonial/src/public-api';
 
 @NgModule({
   declarations: [	
@@ -375,7 +376,8 @@ import { RdsCompTeamsComponent } from './rds-comp-teams/rds-comp-teams.component
     RdsStepperModule,
     RdsReviewCategoryModule,
     RdsTeamMemberModule,
-    RdsWebsiteMetricModule
+    RdsWebsiteMetricModule,
+    RdsTestimonialModule
   ],
   providers: [],
   bootstrap: [AppComponent],

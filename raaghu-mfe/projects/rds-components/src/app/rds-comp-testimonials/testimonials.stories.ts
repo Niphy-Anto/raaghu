@@ -1,7 +1,8 @@
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { RdsCarouselModule } from '@libs/rds-elements';
+import { RdsCarouselModule, RdsIconModule } from '@libs/rds-elements';
 import { RdsLabelModule } from '@libs/rds-label';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
+import { RdsTestimonialModule } from 'projects/libs/rds-elements/src/rds-testimonial/src/public-api';
 import { RdsCompTestimonialsComponent } from './rds-comp-testimonials.component';
 
 export default {
@@ -9,14 +10,16 @@ export default {
   component: RdsCompTestimonialsComponent,
   decorators: [
     moduleMetadata({
+      declarations: [RdsCompTestimonialsComponent],
       imports: [
-        FormsModule, ReactiveFormsModule,RdsCarouselModule,RdsLabelModule
+        FormsModule, ReactiveFormsModule,RdsCarouselModule,RdsLabelModule,RdsIconModule, RdsTestimonialModule
       ],
       providers: [
         FormBuilder
       ],
     })
   ]
+
 } as Meta;
 
 const Template: Story<RdsCompTestimonialsComponent> = (args: RdsCompTestimonialsComponent) => ({
@@ -25,6 +28,7 @@ const Template: Story<RdsCompTestimonialsComponent> = (args: RdsCompTestimonials
 
 export const Basic = Template.bind({});
 Basic.args = {
+  displayType: 'basic',
    carousalItem: [
       {
         icon:'https://cdn.pixabay.com/photo/2021/08/25/20/42/field-6574455__480.jpg',
@@ -39,6 +43,64 @@ Basic.args = {
         subTitle:'this is the caption section were u can add the caption for the image',
       }
     ],
+   
+}
+
+
+export const Advanced = Template.bind({});
+Advanced.args = {
+  displayType: 'advanced',
+  testimonialItems: [
+    { img:'https://cdn.pixabay.com/photo/2021/08/25/20/42/field-6574455__480.jpg',
+    title:'SAM SMITH',
+    subtitle: 'PRODUCT MANAGER', 
+    description: 'Nulla metus metus ullamcorper vel tincidunt set euismod nibh quisque volutpat', 
+    icon: 'zapier',
+    route: '/home',
+    selected:true,
+    iconHeight:'18px',
+    iconWidth:'18px',
+    iconFill:false,
+    iconStroke:true},
+
+    { img:'https://cdn.pixabay.com/photo/2021/08/25/20/42/field-6574455__480.jpg',
+    title:'King John',
+    subtitle: 'PRODUCT MANAGER', 
+    description: 'Nulla metus metus ullamcorper vel tincidunt set euismod nibh quisque volutpat', 
+    icon: 'zapier',
+    route: '/home',
+    selected:true,
+    iconHeight:'18px',
+    iconWidth:'18px',
+    iconFill:false,
+    iconStroke:true,
+  },
+
+  { img:'https://cdn.pixabay.com/photo/2021/08/25/20/42/field-6574455__480.jpg',
+  title:'King John',
+  subtitle: 'PRODUCT MANAGER', 
+  description: 'Nulla metus metus ullamcorper vel tincidunt set euismod nibh quisque volutpat', 
+  icon: 'quote',
+  route: '/home',
+  selected:true,
+  iconHeight:'18px',
+  iconWidth:'18px',
+  iconFill:false,
+  iconStroke:true,
+},
+  { img:'https://cdn.pixabay.com/photo/2021/08/25/20/42/field-6574455__480.jpg',
+    title:'King John',
+    subtitle: 'PRODUCT MANAGER', 
+    description: 'Nulla metus metus ullamcorper vel tincidunt set euismod nibh quisque volutpat', 
+    icon: 'quote_right',
+    route: '/home',
+    selected:true,
+    iconHeight:'18px',
+    iconWidth:'18px',
+    iconFill:false,
+    iconStroke:true,
+  },
+  ]
    
 }
 
