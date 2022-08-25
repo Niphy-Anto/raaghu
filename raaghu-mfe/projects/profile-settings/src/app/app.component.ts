@@ -45,6 +45,12 @@ export class AppComponent implements OnInit {
   rdsEmailSettingsConfig: ComponentLoaderOptions = {
     name: 'RdsCompEmailSettings'
   };
+  rdsBillingConfig: ComponentLoaderOptions = {
+    name: 'RdsCompBilling'
+  };
+  rdsIntegrationsConfig: ComponentLoaderOptions = {
+    name: 'RdsCompIntegration'
+  };
   activePage: number = 0;
 
   ngOnInit(): void {

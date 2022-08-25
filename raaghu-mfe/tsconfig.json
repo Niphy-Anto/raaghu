@@ -54,6 +54,14 @@
       "@libs/rds-button": [
         "rds-elements/rds-button/public-api",
         "rds-elements/rds-button"
+      ],
+      "@libs/rds-product-image": [
+        "rds-elements/rds-product-image/public-api",
+        "rds-elements/rds-product-image"
+      ],
+      "@libs/rds-big-number-widget": [
+        "rds-elements/rds-big-number-widget/public-api",
+        "rds-elements/rds-big-number-widget"
       ]
     },
     "baseUrl": "./",

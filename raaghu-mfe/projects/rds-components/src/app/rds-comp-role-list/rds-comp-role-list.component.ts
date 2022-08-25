@@ -31,7 +31,7 @@ export class RdsCompRoleListComponent implements OnInit {
     },
   };
 
-  actions: TableAction[] = [{ id: 'delete', displayName: 'Delete' }, { id: 'edit', displayName: 'Edit' }]
+  actions: TableAction[] = [{ id: 'edit', displayName: 'Edit' }, { id: 'delete', displayName: 'Delete' }]
   @Input() RolesData: any;
   @Input() permissionsList: any = [];
   @Input() filterPermissionsList: any = [];
@@ -142,15 +142,16 @@ export class RdsCompRoleListComponent implements OnInit {
   newRole(event): void {
     this.selectedId = '';
     this.viewCanvas = true;
+    this.onEditRole.emit({ id: undefined });
     this.SelectedPermissionValues = [];
-    // if (event) {
+     if (event) {
       this.canvasTitle = 'NEW ROLE';
       this.Roles = { RolesData: undefined, permissionsList: [] };
       this.RolesData = undefined;
       this.onnewRole.emit(true)
-      //event.stopPropagation();
-    // } else {
-    // }
+      event.stopPropagation();
+    } else {
+    }
     setTimeout(() => {
       var offcanvas = document.getElementById('RoleOffcanvas')
       var bsOffcanvas = new bootstrap.Offcanvas(offcanvas);
@@ -192,8 +193,9 @@ export class RdsCompRoleListComponent implements OnInit {
     this.isRoleDataValid = false;
   }
   editTableRowData(event): void {
-    this.newRole(undefined);
+    
     this.canvasTitle = 'EDIT ROLE';
+    this.newRole(undefined);
     this.onEditRole.emit(event.id);
     this.selectedId = event.id;
   }

@@ -8,6 +8,7 @@ import { selectOrganizationUnitMembers, selectOrganizationUnitRoles, selectOrgan
 import { TableHeader } from 'projects/rds-components/src/models/table-header.model';
 import { selectDefaultLanguage } from '@libs/state-management';
 import { TranslateService } from '@ngx-translate/core';
+import { transition, trigger, query, style, animate, } from '@angular/animations';
 
 declare var bootstrap: any;
 
@@ -15,12 +16,40 @@ declare var bootstrap: any;
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  providers: [DatePipe]
+  providers: [DatePipe],
+  animations: [
+    trigger('fadeAnimation', [
+      transition('* <=> *', [
+        query(':enter',
+          [
+            style({ opacity: 0 })
+          ],
+          { optional: true }
+        ),
+        query(':leave',
+          [
+            style({ opacity: 1 }),
+            animate('0.4s', style({ opacity: 0 }))
+          ],
+          { optional: true }
+        ),
+        query(':enter',
+          [
+            style({ opacity: 0 }),
+            animate('0.4s', style({ opacity: 1 }))
+          ],
+          { optional: true }
+        )
+      ])
+    ])
+  ]
 
 
 })
 
 export class AppComponent implements OnInit {
+  isAnimation: boolean = true;
+
   selectedTabIndex: any = 0;
   organizationCount: any;
   userUniqueId: any;
@@ -197,6 +226,7 @@ export class AppComponent implements OnInit {
   ) {
   }
   ngOnInit(): void {
+    this.isAnimation = true;
     this.store.select(selectDefaultLanguage).subscribe((res: any) => {
       if (res) {
         this.translate.use(res);
@@ -247,6 +277,7 @@ export class AppComponent implements OnInit {
 
   updateOrganizationTree() {
     this.store.select(selectOrganizationUnitTree).subscribe((res: any) => {
+      this.isAnimation = false;
       if (res && res.items) {
         this.treeData2 = this._arrayToTreeConverterService.createTree(
           res.items,
@@ -289,6 +320,7 @@ export class AppComponent implements OnInit {
 
   updateMembersTable() {
     this.store.select(selectOrganizationUnitMembers).subscribe((res) => {
+      this.isAnimation = false;
       this.tableDataForMember = [];
       if (res && res.items.length > 0) {
         res.items.forEach((element: any) => {
@@ -310,6 +342,7 @@ export class AppComponent implements OnInit {
   }
   updateRolesTable() {
     this.store.select(selectOrganizationUnitRoles).subscribe((res) => {
+      this.isAnimation = false;
       this.tableDataForRoles = [];
       if (res && res.items.length > 0) {
         res.items.forEach((element: any) => {
@@ -336,6 +369,7 @@ export class AppComponent implements OnInit {
     input.maxResultCount = 10;
     this.store.dispatch(getOrganizationUnitUsersList(input));
     this.store.select(selectOrganizationUnitUsersList).subscribe((res) => {
+      this.isAnimation = false;
       if (res && res.items.length > 0) {
         this.addedDataMember = true;
         let tableDataForUserList = [];
@@ -365,6 +399,7 @@ export class AppComponent implements OnInit {
     input.maxResultCount = 10;
     this.store.dispatch(getOrganizationUnitRolesList(input));
     this.store.select(selectOrganizationUnitRolesList).subscribe((res) => {
+      this.isAnimation = false;
       if (res && res.items.length > 0) {
         this.addedDataRole = true;
         let tableDataForRoles1 = [];

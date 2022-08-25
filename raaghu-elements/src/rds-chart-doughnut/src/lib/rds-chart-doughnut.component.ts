@@ -31,6 +31,8 @@ export class RdsChartDoughnutComponent implements OnInit {
   @Input() canvasBackgroundColor?: any;
   @Input() ChartDataSets?: ChartDataSetDoughnut[] | any;
   @Input() chartOptions?: any;
+  @Input() titleText = '';
+  @Input() subTitleText = '';
   style: CSSStyleDeclaration | undefined;
 
   constructor() {
@@ -74,16 +76,35 @@ export class RdsChartDoughnutComponent implements OnInit {
       chartStatus.destroy();
     }
     this.canvas = document.getElementById(this.chartId);
+    const title = this.titleText;
+    const subTitle = this.subTitleText;
     if (this.canvas !== null) {
       this.canvas.style.backgroundColor = this.canvasBackgroundColor;
       this.ctx = this.canvas.getContext('2d');
+      const centerText = {
+        id: 'counter3',
+        beforeDraw(chart, args, options) {
+          const { ctx, chartArea: { top, right, bottom, left, width, height } } = chart;
+          ctx.save();
+          ctx.font = '600 1.2rem Poppins';
+          ctx.textAlign = 'center';
+          ctx.fillText(title, width / 2, top + (height / 2.1));
+          ctx.restore();
+
+          ctx.font = '400 0.7rem Poppins';
+          ctx.textAlign = 'center';
+          ctx.fillText(subTitle, width / 2, (height / 0.85) / 2.1 + top);
+          ctx.restore();
+        }
+      };
       const canvas = new Chart(this.ctx, {
         type: 'doughnut',
         data: {
           labels: this.chartLabels,
           datasets: this.ChartDataSets,
         },
-        options: this.chartOptions
+        options: this.chartOptions,
+        plugins: [centerText]
       });
       if(canvas !== null){
         canvas.canvas.style.height = this.chartHeight+'px'; 

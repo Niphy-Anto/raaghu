@@ -23,4 +23,3 @@ updates:
     directory: "/raaghu-mfe"
     schedule:
       interval: "monthly"
-

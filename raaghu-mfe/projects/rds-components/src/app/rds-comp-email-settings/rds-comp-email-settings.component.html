@@ -5,14 +5,14 @@
         </div>
         <div class="col-md-4">
             <div class="form-group mb-3">
-                <rds-input [inputType]="'text'"  [pattern]="emailPattern" [(ngModel)]="emailSettings.currentEmail" name="current_email" required
-                    [placeholder]="'Current email'" id="o-email" #currentEmail="ngModel">
+                <rds-input [inputType]="'text'" [pattern]="emailPattern" [(ngModel)]="emailSettings.currentEmail"
+                    name="current_email" required [placeholder]="'Current email'" id="o-email" #currentEmail="ngModel">
                 </rds-input>
                 <div class="form-control-feedback"
                     *ngIf="currentEmail.errors && (currentEmail.dirty || currentEmail.touched)">
                     <span class="text-danger" *ngIf="currentEmail.errors.required">Current email is
                         required</span>
-                        <span class="text-danger" *ngIf="currentEmail.errors.pattern">Please enter a valid email</span>
+                    <span class="text-danger" *ngIf="currentEmail.errors.pattern">Please enter a valid email</span>
                 </div>
             </div>
         </div>
@@ -42,8 +42,8 @@
         <div class="col-md-4">
             <div class="form-group mb-3">
                 <rds-input [inputType]="'email'" [(ngModel)]="emailSettings.confirmEmail" (keyup)="compareEmail()"
-                    [pattern]="emailPattern" name="confirm_email" id="c-email" required [placeholder]="'Confirm new email'"
-                    #confirmEmail="ngModel">
+                    [pattern]="emailPattern" name="confirm_email" id="c-email" required
+                    [placeholder]="'Confirm new email'" #confirmEmail="ngModel">
                 </rds-input>
                 <div class="form-control-feedback"
                     *ngIf="confirmEmail.errors && (confirmEmail.dirty || confirmEmail.touched)">
@@ -58,3 +58,10 @@
     </div>
 
 </form>
+<hr>
+<div class="mt-5 footer-buttons text-end">
+    <rds-button [label]="'Cancel'" [colorVariant]="'outline-primary'" [size]="'small'" class="">
+    </rds-button>
+    <rds-button [label]="'Save'" [size]="'small'" [colorVariant]="'primary'" class="ms-2">
+    </rds-button>
+</div>

@@ -1,29 +1,25 @@
 <div class="row">
   <div class=" col-md-12 text-end pb-3 desktop-btn d-sm-none d-lg-block">
     <rds-button [label]="translate.instant('New Language')" type="button" style="float: right" [size]="'small'"
-      [colorVariant]="'primary'" (click)="openCanvas(false)" [attr.aria-controls]="'AddLanguage'" [icon]="'plus'" [iconHeight]="'12px'" [iconWidth]="'12px'">
+      [colorVariant]="'primary'" (click)="openCanvas()" [attr.aria-controls]="'AddLanguage'" [icon]="'plus'"
+      [iconHeight]="'12px'" [iconWidth]="'12px'">
     </rds-button>
   </div>
   <div class="col-md-12">
     <div class="card p-2 h-100 border-0 rounded-0 card-full-stretch">
-      <mfe-loader [config]="rdsLanguageTableMfeConfig"></mfe-loader>
+      <div [@fadeAnimation]="isAnimation ? 'fadeAnimation' : ''">
+        <mfe-loader [config]="rdsLanguageTableMfeConfig"></mfe-loader>
+      </div>
     </div>
   </div>
 </div>
 <div class="mobile-btn position-absolute bottom-0 end-0 my-4 mx-5">
-  <!-- <rds-button [label]="''" type="button" style="float: right" [size]="'small'" [colorVariant]="'primary'"
-    (click)="openCanvas(false)" [attr.aria-controls]="'AddLanguage'" [roundedButton]="true" [icon]="'plus'"
-    [iconHeight]="'12px'" [iconWidth]="'12px'">
-  </rds-button> -->
-  <rds-fab-menu [listItems]="listItems" [menuicon]="'plus'" [colorVariant]="'primary'" [menuiconWidth]="'12px'" [menuiconHeight]="'12px'" (onSelect)="onSelectMenu($event)"></rds-fab-menu>
+  <rds-fab-menu [listItems]="listItems" [menuicon]="'plus'" [colorVariant]="'primary'" [menuiconWidth]="'12px'"
+    [menuiconHeight]="'12px'" (onSelect)="onSelectMenu($event)"></rds-fab-menu>
 </div>
-
 <ng-container *ngIf="viewCanvas">
-  <rds-offcanvas [canvasTitle]="translate.instant(languageCanvasTitle)" [offId]="'AddLanguage'" 
-    (onClose)="closeCanvas()" [offcanvaswidth]="550" [placement]="'end'"  >
-    <app-newlanguage [selectedLanguage]="selectedLanguage" (onLanguageSave)="addLanguages($event)"></app-newlanguage>
+  <rds-offcanvas [canvasTitle]="translate.instant(languageCanvasTitle)" [offId]="'AddLanguage'"
+    (onClose)="closeCanvas()" [offcanvaswidth]="550" [placement]="'end'">
+    <mfe-loader [config]="rdsNewLanguageMfeConfig"></mfe-loader>
   </rds-offcanvas>
-</ng-container>
-<ng-container *ngIf="currentAlerts&&currentAlerts.length>0">
-  <mfe-loader [config]="rdsAlertMfeConfig"></mfe-loader>
 </ng-container>
