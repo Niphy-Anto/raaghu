@@ -92,7 +92,7 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
         { label: 'Dynamic Properties', labelTranslationKey: 'Dynamic Properties', id: 'Pages.Administration.DynamicProperties', permissionName: '', icon: 'dynamic_properties', path: '/pages/dynamic-property-management', descriptionTranslationKey: '' },
         { label: 'Settings', labelTranslationKey: 'Settings', id: '', permissionName: 'Pages.Administration.Host.Settings', icon: 'setting', path: '/pages/settings', description: 'Show and change application settings', descriptionTranslationKey: 'Show and change application settings' },
         { label: 'Settings', labelTranslationKey: 'Settings', id: '', permissionName: 'Pages.Administration.Tenant.Settings', icon: 'setting', path: '/pages/settings', description: 'Show and change application settings', descriptionTranslationKey: 'Show and change application settings' },
-
+        
       ],
     },
     { label: 'Demo UI Components', labelTranslationKey: 'Demo UI Components', id: '', permissionName: '', icon: 'demo_ui', path: '/pages/demo-ui', description: '', descriptionTranslationKey: '' },
@@ -105,7 +105,7 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
   color: string = '#8d9ba9';
   backgroundColor: string = '#F5F5FA';
   collapsedHeaderHeight: any = '40px';
-  profilePic: string = 'https://cdn.dribbble.com/users/5534/screenshots/14230133/media/e2f853f8232acad78bf143c32f2f3a04.jpg';
+  profilePic: string = '../assets/profile-picture-circle.svg';
   offCanvasId: string = 'profileOffCanvas'
   collapseRequired: any = true;
   @Input() UserRole: string = 'Admin';
