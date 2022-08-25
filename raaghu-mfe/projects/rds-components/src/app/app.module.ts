@@ -144,10 +144,12 @@ import { RdsCompTestimonialsComponent } from './rds-comp-testimonials/rds-comp-t
 // import { RdsCompTeamsComponent } from './rds-comp-teams/rds-comp-teams.component';
 
 import { RdsCompOrderDetailsComponent } from './rds-comp-order-details/rds-comp-order-details.component';
+import { RdsAddressDetailModule } from 'projects/libs/rds-elements/src/rds-address-detail/src/public-api';
 import { RdsStepperModule } from 'projects/libs/rds-elements/src/rds-stepper/src/public-api';
 import { RdsCompTeamsComponent } from './rds-comp-teams/rds-comp-teams.component';
 import { RdsCompContactUsComponent } from './rds-comp-contact-us/rds-comp-contact-us.component';
 import { RdsTestimonialModule } from 'projects/libs/rds-elements/src/rds-testimonial/src/public-api';
+import { RdsCompTimelineComponent } from './rds-comp-timeline/rds-comp-timeline.component';
 
 @NgModule({
   declarations: [	
@@ -285,6 +287,7 @@ import { RdsTestimonialModule } from 'projects/libs/rds-elements/src/rds-testimo
     RdsCompIntegrationComponent,
     RdsCompTeamsComponent,
     RdsCompContactUsComponent,
+    RdsCompTimelineComponent,
   
   ],
   imports: [
