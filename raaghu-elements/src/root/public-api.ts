@@ -251,3 +251,5 @@ export * from '../rds-team-member/src/public-api';
 // Public API Surface of rds-website-metric
 export * from '../rds-website-metric/src/public-api';
 
+// Public API Surface of rds-website-metric
+export * from '../rds-testimonial/src/public-api'

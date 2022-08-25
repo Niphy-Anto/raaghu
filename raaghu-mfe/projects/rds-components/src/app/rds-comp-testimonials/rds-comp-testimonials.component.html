@@ -1,3 +1,5 @@
+<div [ngSwitch]="displayType">
+    <div *ngSwitchCase="'basic'">
 <h1 class="text-center">
   <rds-label
   [label]="'TESTIMONIALS'"
@@ -14,3 +16,35 @@
   [display_type]="'advanced'"
   [carousalItem]="carousalItem"
 ></rds-carousel>
+</div>
+
+<div *ngSwitchCase="'advanced'">
+  <div class="col-md-12">
+    <div class="align-items-center col-md-12 d-flex justify-content-between">
+      <h2><rds-label label="Testimonial" [bold]="true"></rds-label></h2>
+      <span>
+          <rds-icon
+          height="15px"
+          [fill]="false"
+          [stroke]="true"
+          width="15px"
+          name="chevron_right_arrow"
+          colorVariant=""
+        ></rds-icon>
+        <rds-icon
+          height="15px"
+          [fill]="false"
+          [stroke]="true"
+          width="15px"
+          name="chevron_left_arrow"
+          class="mx-2"
+          colorVariant=""
+        ></rds-icon>
+      </span>
+    </div>
+    <div class="mt-4">
+      <rds-testimonial [testimonialItems]="testimonialItems"></rds-testimonial>
+    </div>
+  </div>
+</div>
+</div>

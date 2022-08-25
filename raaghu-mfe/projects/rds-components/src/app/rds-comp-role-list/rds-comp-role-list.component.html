@@ -1,7 +1,7 @@
 <div class="">
   <div class="row">
     <div class="col-md-12 text-end pb-3 desktop-btn">
-      <rds-button [label]="translate.instant('NEW ROLE')" type="button" style="float: right" [size]="'small'"
+      <rds-button [label]="translate.instant('NEW ROLE')" [showLoadingSpinner]="buttonSpinnerForNewRole" type="button" style="float: right" [size]="'small'"
         [colorVariant]="'primary'" (click)="newRole($event)" [icon]="'plus'" iconHeight="12px" iconWidth="12px"
         class="ms-2">
       </rds-button>

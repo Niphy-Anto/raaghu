@@ -90,13 +90,17 @@
               <img [src]="profilePic" alt="" height="32px" width="32px">
             </div>
             <div class="pe-auto">
-              <a class="text-decoration-none" (click)="redirect('profile')">
-                <span class="dropdown-toggle">{{ UserRole }}</span>
-                <p class="mb-0 text-center text-muted user-role">
+              <span class="text-decoration-none" (click)="redirect('profile')">
+                <span>{{ UserRole }}</span>
+            <rds-icon [name]="'chevron_down_arrow'" [height]="'15px'" [width]="'15px'" class="ms-3" ></rds-icon>
+
+                <p class="mb-0  text-muted user-role">
                   {{ profileData.userName }}
                 </p>
-              </a>
+
+              </span>
             </div>
+
           </div>
         </li>
       </ul>

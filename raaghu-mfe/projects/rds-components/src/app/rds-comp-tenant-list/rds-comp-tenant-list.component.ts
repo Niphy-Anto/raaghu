@@ -160,6 +160,8 @@ export class RdsCompTenantListComponent implements OnInit, DoCheck {
   }
 
   save(): void {
+    this.buttonSpinnerForSave = true;
+    this.buttonSpinnerForNewUser = false;
     if (!this.selectedFeatureList || this.selectedFeatureList.length === 0) {
       return;
     }
@@ -218,7 +220,7 @@ export class RdsCompTenantListComponent implements OnInit, DoCheck {
   }
 
   newTenant(event, showEmail?: boolean): void {
-    this.buttonSpinnerForNewUser = false;
+    this.buttonSpinnerForNewUser = true;
     this.buttonSpinnerForSave = false;
     this.selectedId = '';
     this.viewCanvas = true;
@@ -287,8 +289,6 @@ export class RdsCompTenantListComponent implements OnInit, DoCheck {
 
   close(): void {
     this.viewCanvas = false;
-    this.buttonSpinnerForSave = false;
-    this.buttonSpinnerForNewUser = false;
     this.tenant = {
       tenantInfo: undefined,
       tenantSettings: undefined,
@@ -302,6 +302,8 @@ export class RdsCompTenantListComponent implements OnInit, DoCheck {
     // }
     // this.onReset.emit(event);
     // this.isTenantInfoValid = false;
+    this.buttonSpinnerForSave = false;
+    this.buttonSpinnerForNewUser = false;
   }
   editTableRowData(event): void {
     this.canvasTitle = 'EDIT TENANT';
