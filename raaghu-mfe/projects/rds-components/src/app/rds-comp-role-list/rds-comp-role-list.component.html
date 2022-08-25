@@ -5,8 +5,9 @@
         [colorVariant]="'primary'" (click)="newRole($event)" [icon]="'plus'" iconHeight="12px" iconWidth="12px"
         class="ms-2">
       </rds-button>
-      <rds-button type="button" [size]="'small'" [colorVariant]="'primary'" [roundedButton]="true" icon="refresh" [iconFill]="true" [iconStroke]="false"
-        class="ms-2" (click)="getRoles()" iconHeight="20px" iconWidth="20px">
+      <rds-button type="button" [size]="'small'" [colorVariant]="'primary'" [roundedButton]="true"
+      icon="refresh" iconHeight="16px" iconWidth="16px"
+        class="ms-2" (click)="getRoles()">
       </rds-button>
       <rds-button [label]="translate.instant('FILTER BY PERMISSIONS')" type="button"
         (click)="filterByPermission($event)" [size]="'small'" [colorVariant]="'primary'" [outlineButton]="true"

@@ -83,7 +83,9 @@
         <li class="nav-item cursor-pointer" (click)="viewOffcanvas()">
           <div class="nav-link align-items-center d-flex">
             <div class="px-2">
-              <rds-avatar [WithProfilePic]="true" [profilePic]="profilePic" [Size]="'small'"></rds-avatar>
+              <!-- <rds-icon name="profile_circle" height="20px" width="20px" [stroke]="true"></rds-icon> -->
+              <!-- <rds-avatar [WithProfilePic]="true" [profilePic]="profilePic" [Size]="'small'"></rds-avatar> -->
+              <img [src]="profilePic" alt="" height="32px" width="32px">
             </div>
             <div class="pe-auto">
               <a class="text-decoration-none" (click)="redirect('profile')">

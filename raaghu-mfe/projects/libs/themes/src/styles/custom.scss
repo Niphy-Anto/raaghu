@@ -326,7 +326,7 @@ html {
 
   .node-label {
     font-weight: $font-weight-normal;
-    margin-top: 0.6875rem;
+    margin-top: 0.8875rem;
     margin-left: 0.2rem;
     /*color: $gray-600;*/
 
@@ -489,14 +489,16 @@ html {
 .btn-outline-light {
   background-color: #fff;
   border: 1px solid #ced4da;
-  color: #212529;
+  // color: #212529;
+  color: #6c757d;
 }
 
 .btn-outline-light:hover,
 .btn-outline-light:focus {
   background-color: #fff;
   border: 1px solid #ced4da;
-  color: #212529;
+  // color: #212529;
+  color: #6c757d;
 }
 
 .btn-check:checked+.btn-outline-light,
@@ -506,7 +508,8 @@ html {
 .btn-outline-light.dropdown-toggle.show {
   background-color: #fff;
   border: 1px solid #ced4da;
-  color: #212529;
+  // color: #212529;
+  color: #6c757d;
 }
 
 .dropdown-menu.show {
