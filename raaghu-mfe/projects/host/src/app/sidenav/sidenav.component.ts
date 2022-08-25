@@ -105,7 +105,7 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
   color: string = '#8d9ba9';
   backgroundColor: string = '#F5F5FA';
   collapsedHeaderHeight: any = '40px';
-  profilePic: string = 'https://cdn.dribbble.com/users/5534/screenshots/14230133/media/e2f853f8232acad78bf143c32f2f3a04.jpg';
+  profilePic: string = '../assets/profile-picture-circle.svg';
   offCanvasId: string = 'profileOffCanvas'
   collapseRequired: any = true;
   @Input() UserRole: string = 'Admin';

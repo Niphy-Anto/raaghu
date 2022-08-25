@@ -148,6 +148,7 @@ import { RdsAddressDetailModule } from 'projects/libs/rds-elements/src/rds-addre
 import { RdsStepperModule } from 'projects/libs/rds-elements/src/rds-stepper/src/public-api';
 import { RdsCompTeamsComponent } from './rds-comp-teams/rds-comp-teams.component';
 import { RdsCompContactUsComponent } from './rds-comp-contact-us/rds-comp-contact-us.component';
+import { RdsTestimonialModule } from 'projects/libs/rds-elements/src/rds-testimonial/src/public-api';
 
 @NgModule({
   declarations: [	
@@ -377,7 +378,8 @@ import { RdsCompContactUsComponent } from './rds-comp-contact-us/rds-comp-contac
     RdsStepperModule,
     RdsReviewCategoryModule,
     RdsTeamMemberModule,
-    RdsWebsiteMetricModule
+    RdsWebsiteMetricModule,
+    RdsTestimonialModule
   ],
   providers: [],
   bootstrap: [AppComponent],
