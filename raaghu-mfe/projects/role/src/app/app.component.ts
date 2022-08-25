@@ -11,6 +11,13 @@ import { deleteRole, getPermission, getRolByEdit, getRoles, saveRole } from 'pro
 import { selectAllPermissions, selectAllRoles, selectRoleForEdit } from 'projects/libs/state-management/src/lib/state/role/role.selector';
 import { PermissionNode } from 'projects/rds-components/src/models/pemission.model';
 import { TableHeader } from 'projects/rds-components/src/models/table-header.model';
+import {
+  transition,
+  trigger,
+  query,
+  style,
+  animate,
+} from '@angular/animations';
 
 declare let bootstrap: any;
 
@@ -20,9 +27,38 @@ declare let bootstrap: any;
   styleUrls: ['./app.component.scss'],
   providers: [
     DatePipe
+  ],
+  animations: [
+    trigger('fadeAnimation', [
+      transition('* <=> *', [
+        query(':enter',
+          [
+            style({ opacity: 0 })
+          ],
+          { optional: true }
+        ),
+        query(':leave',
+          [
+            style({ opacity: 1 }),
+            animate('0.4s', style({ opacity: 0 }))
+          ],
+          { optional: true }
+        ),
+        query(':enter',
+          [
+            style({ opacity: 0 }),
+            animate('0.4s', style({ opacity: 1 }))
+          ],
+          { optional: true }
+        )
+      ])
+    ])
   ]
 })
 export class AppComponent implements OnInit {
+
+  isAnimation: boolean = true;
+
   currentAlerts: any = [];
   public rdsAlertMfeConfig: ComponentLoaderOptions = {
     name: 'RdsCompAlert',
@@ -61,6 +97,7 @@ export class AppComponent implements OnInit {
   rdsRoleTableMfeConfig: ComponentLoaderOptions;
 
   ngOnInit(): void {
+    this.isAnimation = true;
     this.store.select(selectDefaultLanguage).subscribe((res: any) => {
       if (res) {
         this.translate.use(res);
@@ -96,6 +133,16 @@ export class AppComponent implements OnInit {
           }
         },
         onEditRole: (event: any) => {
+          if (event.id) {
+            this.isEdit = true;
+          } else {
+            
+            this.Roledetails = undefined;
+          const mfeConfig = this.rdsNewRoleMfeConfig
+          mfeConfig.input.RolesData = { ... this.Roledetails };
+          this.rdsNewRoleMfeConfig = mfeConfig;
+
+          }
           this.store.dispatch(getRolByEdit(event));
           this.store.select(selectRoleForEdit).subscribe((res: any) => {
             if (res && res.RoleEditI && res.RoleEditI.role && res.status == 'success') {
@@ -121,7 +168,6 @@ export class AppComponent implements OnInit {
               if (this.treeData && res.RoleEditI.grantedPermissionNames) {
                 this.selectedPermissions = [];
                 this.checkSelectedNodes(res.RoleEditI.grantedPermissionNames);
-
               }
               const mfeConfig = this.rdsNewRoleMfeConfig
               mfeConfig.input.permissionsList = this.treeData
@@ -198,6 +244,7 @@ export class AppComponent implements OnInit {
     this.store.select(selectAllRoles).subscribe((res: any) => {
       this.RoleDatatable = [];
       if (res && res.roles && res.roles.items && res.status == "success") {
+        this.isAnimation = false;
         res.roles.items.forEach((element: any) => {
           const status: string = (element.isStatic) ? '<span class="badge badge-primary p-1 mx-1 rounded">Static</span> ' : '';
           const status1: string = (element.isDefault) ? '<span class="badge badge-success p-1 mx-1 rounded">Default</span> ' : '';
@@ -246,7 +293,6 @@ export class AppComponent implements OnInit {
         });
       }
     })
-
   }
 
 

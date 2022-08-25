@@ -59,32 +59,27 @@ export class AppComponent extends MfeBaseComponent implements OnInit {
       input: {
         rememeberMe: true,
         TenancyName: tenancyName,
+        buttonSpinner: true
       },
       output: {
         onSwitchTenant: (data: any) => {
           this.insertTenant(data);
+        },
+        onLogin:(data: any) =>{
+          this.authenticateModal.userNameOrEmailAddress = data.userEmail;
+          this.authenticateModal.password = data.userPassword;
+          this.authenticateModal.rememberClient = data.rememberme;
+          this.authenticate();
         },
         onShimmerLoad:(event:any)=>{
           this.loadingshimmer=false;
         }
       }
     };
-  
-      if(this.sessionService.user) {
-        this._router.navigateByUrl('pages/dashboard');
-      }
-      else {
-        this.on('login').subscribe(r => {
-          this.authenticateModal.userNameOrEmailAddress = r.userEmail;
-          this.authenticateModal.password = r.userPassword;
-          this.authenticateModal.rememberClient = r.rememberme;
-          this.authenticate();
-        })
-      }
-
-  }
-
-
+    if(this.sessionService.user) {
+      this._router.navigateByUrl('pages/dashboard');
+    }
+    }
 
   insertTenant(data: any) {
     const tenantData: any = {
@@ -120,7 +115,7 @@ export class AppComponent extends MfeBaseComponent implements OnInit {
     this.alertService.alertEvents.subscribe((alert) => {
       this.currentAlerts = [];
       const currentAlert: any = {
-        type: 'danger',
+        type: 'error',
         title: 'title',
         message: 'Invalid user name or password',
       };
@@ -129,7 +124,7 @@ export class AppComponent extends MfeBaseComponent implements OnInit {
       rdsAlertMfeConfig.input.currentAlerts = [...this.currentAlerts];
       this.rdsAlertMfeConfig = rdsAlertMfeConfig;
     });
-
+// this.alertService.showAlert('title','Invalid user name or password','danger')
   }
 
 
@@ -143,9 +138,13 @@ export class AppComponent extends MfeBaseComponent implements OnInit {
           username: this.authenticateModal.userNameOrEmailAddress
 
         }));
-        console.log(this.authenticateModal);
+        const mfeConfig = this.rdsLoginMfeConfig
+        mfeConfig.input.buttonSpinner = true;
       },
       error: (err: any) => {
+        const mfeConfig = this.rdsLoginMfeConfig
+        mfeConfig.input.buttonSpinner = false;
+        this.alertService.showAlert('title','Invalid user name or password','error')
       },
     });
   }
@@ -162,7 +161,8 @@ export class AppComponent extends MfeBaseComponent implements OnInit {
         token: this.authenticateResult.accessToken,
         refreshToken: this.authenticateResult.refreshToken,
         expireDate: tokenExpireDate,
-        refreshTokenExpireDate: refreshTokenExpireDate
+        refreshTokenExpireDate: refreshTokenExpireDate,
+        date: Date.now()+tokenExpireDate
       }));
       this._userAuthService.authenticateUser();
       this.store.dispatch(GetProfilePicture());
@@ -170,7 +170,7 @@ export class AppComponent extends MfeBaseComponent implements OnInit {
       this._userAuthService.getUserConfiguration('login');
     } else {
       // Unexpected result!
-      this._router.navigateByUrl('/pages/login');
+       this._router.navigateByUrl('/pages/login');
     }
   }
 

@@ -3,6 +3,7 @@ import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { RdsButtonModule, RdsCheckboxModule, RdsInputModule, RdsSelectListModule } from '@libs/rds-elements';
 import { NgxTranslateModule } from '@libs/shared';
 import { RdsCompNewLanguageComponent } from './rds-comp-new-language.component';
+import { RdsLabelModule } from '@libs/rds-label';
 
 export default {
   title: 'Components/New Language',
@@ -15,6 +16,7 @@ export default {
         RdsButtonModule,
         RdsSelectListModule,
         RdsCheckboxModule,
+        RdsLabelModule,
         NgxTranslateModule.forRoot()
       ],
       providers: [

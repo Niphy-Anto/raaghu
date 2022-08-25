@@ -1,6 +1,6 @@
 <div [ngSwitch]="display_type">
     <div *ngSwitchCase="'Basic'">
-      <img [src]="itemList[0]">
+      <img [src]="itemList[0]" [ngClass]="imgClass">
     </div>
 
     <div class="container-fluid" *ngSwitchCase="'Product_overview1'" style="width: 100%;">
@@ -14,7 +14,7 @@
             <div class="bg-light border w-100 card-stretch-50 mb-4 " style="display: flex; align-items: start;">
               <img [src]="itemList[1]" class="w-100">
              </div>
-             <div class="bg-light border w-100 card-stretch-50" style="display: flex; align-items: end;" >
+             <div class="bg-light border w-100 card-stretch-50" style="display: flex; align-items: end;">
               <img [src]="itemList[2]" class="w-100">
             </div>
       </div>
@@ -33,10 +33,10 @@
           </div>
         </div>
         <div class="row mt-4">
-            <div class="col" style="height: 170px; display: flex align-items-center justify-content-center" >
+            <div class="col" style="display: flex align-items-center justify-content-center" >
               <img [src]="itemList[1]" class="w-100">
             </div>
-            <div class="col" style="height: 170px; display: flex align-items-center justify-content-center">
+            <div class="col" style="display: flex align-items-center justify-content-center">
               <img [src]="itemList[2]" class="w-100">
             </div>
         </div>
@@ -50,16 +50,17 @@
         </div>
       </div>
       <div class="row mt-4">
-          <div class="col" style="height: 170px; display: flex align-items-center justify-content-center" >
+          <div class="col" style="display: flex align-items-center justify-content-center">
             <img [src]="itemList[1]" class="w-100">
           </div>
-          <div class="col" style="height: 170px; display: flex align-items-center justify-content-center">
+          <div class="col" style="display: flex align-items-center justify-content-center">
             <img [src]="itemList[2]" class="w-100">
           </div>
-          <div class="col" style="height: 170px; display: flex align-items-center justify-content-center ">
+          <div class="col" style="display: flex align-items-center justify-content-center">
             <img [src]="itemList[3]" class="w-100">
           </div>
-          <div class="col" style="height: 170px; display: flex align-items-center justify-content-center ">
+          <div class="col" style="
+          display: flex align-items-center justify-content-center">
             <img [src]="itemList[4]" class="w-100">
           </div>
       </div>

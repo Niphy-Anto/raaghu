@@ -67,6 +67,7 @@ benefit_type1.args = {
           icon: 'users',  
           iconHeight :"25px",
           iconWidth: "25px",
+          position:"start",
           title: "Free delivery all year long", 
           description: "Name another place that offers year long free delivery? We'll be waiting. Order now and you'll get delivery absolutely free." 
         },
@@ -75,6 +76,7 @@ benefit_type1.args = {
           icon: 'users',  
           iconHeight :"25px",
           iconWidth: "25px",
+          position:"start",
           title: "24/7 Customer Support", 
           description: "Or so we want you to believe. In reality our chat widget is powered by a naïve series of if/she statements that churn out canned responses. Guaranteed to irritate." 
         },
@@ -83,6 +85,7 @@ benefit_type1.args = {
           icon: 'users',  
           iconHeight :"25px",
           iconWidth: "25px",
+          position:"start",
           title: "Fast Shopping Cart", 
           description: "Look at the cart in that icon, there's never been a faster cart. What does this mean for the actual checkout experience? I don't know." 
         }
@@ -168,3 +171,55 @@ benefit_type3.args = {
   ]
 };
 
+
+export const benefit_type4 = Template.bind({});
+benefit_type4.args = {
+    itemList: [{
+      display_type: "benefit_type4",
+      colSize: 4,
+      items: [
+        { id: 7, 
+          display_type: "benefit_type4", 
+          icon: 'users',
+          iconHeight :"40px",
+          iconWidth: "40px",
+          title:  'Free shipping world wide',
+          description: "Free delivery is our main part of company"
+        },
+       
+      ]
+    }
+  ]
+};
+
+export const benefit_type5 = Template.bind({});
+benefit_type5.args = {
+    itemList: [{
+      display_type: "benefit_type5",
+      colSize: 4,
+      items: [
+        { id: 7, 
+          display_type: "benefit_type5", 
+          icon: 'users',
+          iconHeight :"40px",
+          iconWidth: "40px",
+          title:  'Free shipping world wide',
+        },
+        { id: 7,  
+          icon: 'users',
+          display_type: "benefit_type5",
+          iconHeight :"40px",
+          iconWidth: "40px",
+          title:  'Exchanges or returns any time',
+         },
+        { id: 7,  
+          display_type: "benefit_type5",
+          icon: 'users',
+          iconHeight :"40px",
+          iconWidth: "40px",
+          title:  'Warranty 10-year on all product',
+           }
+      ]
+    }
+  ]
+};

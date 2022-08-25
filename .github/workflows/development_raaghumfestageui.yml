@@ -4,11 +4,11 @@
 name: Build and deploy stageui.raaghu.io
 
 on:
+  pull_request:
+    types: [closed]
   push:
-    branches:
-      - "development"
-  schedule:
-    - cron: '0 0 * * *'
+    branches: [development]
+
   workflow_dispatch:
 
 env:
@@ -24,7 +24,8 @@ jobs:
   build:
     runs-on: windows-latest
     steps:
-    - uses: actions/checkout@v3
+    - name: Checkout raaghu code
+      uses: actions/checkout@v3
 
     - name: Set up Node.js
       uses: actions/setup-node@v3
@@ -38,7 +39,6 @@ jobs:
       run: |
         npm install
        
-
     - name: npm install, build, and test raaghu-mfe
       working-directory: ./raaghu-mfe
       run: |
@@ -48,9 +48,6 @@ jobs:
         npm run build-all
         cp web.config dist
         cp dist/host/* dist -r
-
-
-
 
     - name: Upload artifact for deployment job
       uses: actions/upload-artifact@v3
@@ -73,7 +70,7 @@ jobs:
       with:
         name: node-app
 
-    - name: 'Deploy to Azure Web App'
+    - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v2
       id: deploy-to-webapp
       with:
@@ -81,25 +78,3 @@ jobs:
         slot-name: 'Production'
         publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_392363CA3B8C4905BC10144A553C3367 }}
         package: .
-
-  test:
-    permissions:
-      contents: none
-    runs-on: ubuntu-latest
-    needs: build
-    environment:
-      name: 'Production'
-      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
-
-    steps:
-        
-    - name: npm install playwright
-      working-directory: ./raaghu-mfe/playwright
-      run: |
-        npm install
-       
-
-    - name: test raaghu-mfe with playwright
-      working-directory: ./raaghu-mfe/playwright
-      run: |
-        npx playwright test 

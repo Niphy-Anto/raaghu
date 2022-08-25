@@ -20,7 +20,6 @@ export const featureReducersMap = {
     AppComponent,
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
     SharedModule,
     NgxTranslateModule.forRoot(),

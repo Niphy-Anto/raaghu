@@ -25,13 +25,49 @@ import {
   AlertService,
   ComponentLoaderOptions,
 } from '../../../libs/shared/src/public-api';
+import {
+  transition,
+  trigger,
+  query,
+  style,
+  animate,
+} from '@angular/animations';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  animations: [
+    trigger('fadeAnimation', [
+      transition('* <=> *', [
+        query(':enter',
+          [
+            style({ opacity: 0 })
+          ],
+          { optional: true }
+        ),
+        query(':leave',
+          [
+            style({ opacity: 1 }),
+            animate('0.4s', style({ opacity: 0 }))
+          ],
+          { optional: true }
+        ),
+        query(':enter',
+          [
+            style({ opacity: 0 }),
+            animate('0.4s', style({ opacity: 1 }))
+          ],
+          { optional: true }
+        )
+      ])
+    ])
+  ]
 })
 export class AppComponent {
+
+  isAnimation: boolean = true;
+
   title: string = 'user';
   currentAlerts: any = [];
   public rdsAlertMfeConfig: ComponentLoaderOptions = {
@@ -68,6 +104,8 @@ export class AppComponent {
   resOrganizationUnit:any=[];
   SelectedOrganizationUnit: any = [];
   ngOnInit(): void {
+    this.isAnimation=true;
+
     this.store.select(selectDefaultLanguage).subscribe((res: any) => {
       if (res) {
         this.translate.use(res);
@@ -97,7 +135,7 @@ export class AppComponent {
           this.store.dispatch(saveUser(data));
         },
         onClose: (event: any) => {
-          this.userinfo = undefined;
+        this.userinfo = undefined;  
           const mfeConfigedit = this.rdsUserMfeConfig;
           mfeConfigedit.input.userinfo = { ...this.userinfo };
           mfeConfigedit.input.editShimmer=true;
@@ -152,10 +190,14 @@ export class AppComponent {
           if (eventData.id) {
             this.isEdit = true;
           } else {
+            
             this.isEdit = false;
             const mfeConfigedit = this.rdsUserMfeConfig;
             mfeConfigedit.input.editShimmer =false;
+            this.userinfo = undefined;  
+          mfeConfigedit.input.userinfo = { ...this.userinfo };
             this.rdsUserMfeConfig = { ...mfeConfigedit };
+
           }
           this.store.dispatch(getUserForEdit(eventData.id));
           this.store.select(selectUserForEdit).subscribe((res: any) => {
@@ -173,12 +215,7 @@ export class AppComponent {
                 this.roles.push(item);
               });
             }
-            if (
-              res &&
-              res.UserEditI &&
-              res.UserEditI.user &&
-              res.UserEditI.user.id !== null
-            ) {
+            if (  res && res.UserEditI &&  res.UserEditI.user ) {
               const item: any = {
                 name: res.UserEditI.user.name,
                 emailAddress: res.UserEditI.user.emailAddress,
@@ -197,7 +234,7 @@ export class AppComponent {
                 imageUrl: '../assets/edit-profile.png',
               };
               this.userinfo = item;
-            }
+            } 
             if (res && res.UserEditI && res.UserEditI.allOrganizationUnits && res.status=="success") {
               this.resOrganizationUnit=res.UserEditI.allOrganizationUnits
               this.OrganizationUnit = [];
@@ -243,7 +280,7 @@ export class AppComponent {
             const mfeConfigedit = this.rdsUserMfeConfig;
             mfeConfigedit.input.roles = [...this.roles];
             if (this.userinfo) {
-              mfeConfigedit.input.userinfo = { ...this.userinfo };
+           mfeConfigedit.input.userinfo = { ...this.userinfo };
             }
             mfeConfigedit.input.isEdit = this.isEdit;
             this.rdsUserMfeConfig = { ...mfeConfigedit };
@@ -295,7 +332,8 @@ export class AppComponent {
     this.store.dispatch(getUsers([]));
     this.store.select(selectAllUsers).subscribe((res: any) => {
       this.userList = [];
-      if (res && res.users && res.users.items &&  res.status == "success") {
+      if (res && res.users && res.users.items && res.status == "success") {
+        this.isAnimation = false;
         res.users.items.forEach((element: any) => {
           let statusTemplate;
           if (element.isActive) {

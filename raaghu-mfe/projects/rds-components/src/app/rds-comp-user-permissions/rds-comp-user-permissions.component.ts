@@ -34,6 +34,7 @@ export class RdsCompUserPermissionsComponent implements OnInit {
   viewCanvas: boolean = false;
   selectedId: any = '';
   selectedOrganizationUnit: any = [];
+  buttonSpinner: boolean = true;
   public user: any = {
     userInfo: undefined,
     userSettings: undefined,
@@ -253,9 +254,10 @@ export class RdsCompUserPermissionsComponent implements OnInit {
   newUser(event): void {
     this.selectedId = '';
     this.viewCanvas = true;
-    this.CreateOrEditUser.emit({ id: undefined });
+     this.CreateOrEditUser.emit({ id: undefined });
     if (event) {
       this.canvasTitle = 'NEW USER';
+      this.userinfo = undefined;
       event.stopPropagation();
       this.navtabsItems = [
         {
@@ -300,6 +302,7 @@ export class RdsCompUserPermissionsComponent implements OnInit {
   editTableRowData(event): void {
     this.canvasTitle = 'EDIT USER';
     this.selectedId = event.id;
+
     this.viewCanvas = true;
     if (event) {
       this.canvasTitle = 'EDIT USER';
@@ -334,7 +337,9 @@ export class RdsCompUserPermissionsComponent implements OnInit {
     }, 100);
 
     this.activePage = 0;
+    // this.newUser(undefined);
     this.CreateOrEditUser.emit({ id: this.selectedId });
+ 
   }
   getSelectedRoles() {
     this.selectedRoles = [];
