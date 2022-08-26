@@ -11,20 +11,22 @@ export class RdsProgressbarComponent implements OnInit {
   @Input() height?: string;
   @Input() colorVariant?: string;
   @Input() striped?: string;
-  @Input() progressWidth?: string;
+  @Input() progressWidth?: number;
   @Input() progressbar_MaxWidth?: string;
   @Input() label?: boolean;
   @Input() role?: 'single' | 'multiple' = 'single';
   @Input() progressvalues = [{ progressWidth: "50%", background: 'bg-success', stripe: 'progress-bar-striped', animation: 'progress-bar-animated' }, { progressWidth: "20%", background: 'bg-danger' }, { progressWidth: "30%", background: 'bg-info' }];
+  progressWidthString: string;
 
   constructor() { }
 
   ngOnInit(): void {
+    this.progressWidthString = `${this.progressWidth}`;
   }
 
   // lable value
   public get lableValue(): any {
-    var label = this.label ? this.progressWidth : ''
+    var label = this.label ? `${this.progressWidth}` : ''
     return label
   }
 
