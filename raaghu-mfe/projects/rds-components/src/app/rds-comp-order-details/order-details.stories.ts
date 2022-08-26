@@ -1,13 +1,13 @@
 import { RdsCompOrderDetailsComponent } from './rds-comp-order-details.component';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
-import { RdsAddressDetailModule, RdsButtonModule, RdsCheckboxModule, RdsInputModule } from '@libs/rds-elements';
+import { RdsAddressDetailModule, RdsButtonModule, RdsCheckboxModule, RdsInputModule, RdsStepperModule } from '@libs/rds-elements';
 import { NgxTranslateModule } from '@libs/shared';
-
 import { RdsLabelModule } from '@libs/rds-label';
 //import { RdsStepperModule } from '@libs/rds-stepper';
 import { CommonModule } from '@angular/common';
 
+import { RdsStepperModule } from 'projects/libs/rds-elements/src/rds-stepper/src/public-api';
 
 
 export default {
