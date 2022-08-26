@@ -112,5 +112,9 @@ export const MfeConfig = {
   },
   orderdetails: {
     url: 'http://localhost:5036/remoteEntry.js',
+  },
+  contactus: {
+    url: 'http://localhost:5055/remoteEntry.js',
   }
+
 };

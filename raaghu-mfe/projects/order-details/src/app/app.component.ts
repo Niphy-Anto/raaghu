@@ -11,6 +11,7 @@ export class AppComponent implements OnInit {
   cardData: any;
   totalPrice: Number = 0;
   orderTotal: Number = 0;
+  
   label: string = 'Payment Information';
   public rdsCompOrderSummaryMfeConfig: ComponentLoaderOptions;
   public rdsOrderDetailsMfeConfig: ComponentLoaderOptions
@@ -34,14 +35,9 @@ export class AppComponent implements OnInit {
             qty: 50,
             orderTotal: 0,
             shipDetails: 'Preparing to ship on June 05,2022',
+            orderStage:"shipped",
             label: 'Order#36690',
-            "stepparList": [
-              { stepname: "step1", steptabname: "Order placed", tablink: '#nav-home', ariacontrols: 'nav-home' },
-              { stepname: "step2", steptabname: "Processing", tablink: '#nav-profile', ariacontrols: 'nav-profile' },
-              { stepname: "step3", steptabname: "Shipped", tablink: '#nav-contact', ariacontrols: 'nav-contact' },
-              { stepname: "step3", steptabname: "Delivered", tablink: '#nav-contact', ariacontrols: 'nav-contact' }
-            ],
-            address: [
+             address: [
               { header: "Shopping Address", addressLine1: "Brookland house,", addressLine2: "5439,Rose Mills Road,", addressLine3: "Santa Clara, CA95054" }
             ]
 
@@ -59,6 +55,7 @@ export class AppComponent implements OnInit {
             phoneNo: '8*******53',
             qty: 3,
             orderTotal: 0,
+            orderStage:"processing",
             shipDetails: 'Order is placed on June 06,2022',
             label: 'Order#36690',
             "stepparList": [

@@ -34,7 +34,7 @@ export class RdsCompUserPermissionsComponent implements OnInit {
   viewCanvas: boolean = false;
   selectedId: any = '';
   selectedOrganizationUnit: any = [];
-  buttonSpinner: boolean = true;
+  buttonSpinnerForNewUser: boolean = true;
   public user: any = {
     userInfo: undefined,
     userSettings: undefined,
@@ -252,6 +252,7 @@ export class RdsCompUserPermissionsComponent implements OnInit {
   }
 
   newUser(event): void {
+    this.buttonSpinnerForNewUser = true;
     this.selectedId = '';
     this.viewCanvas = true;
      this.CreateOrEditUser.emit({ id: undefined });
@@ -297,6 +298,7 @@ export class RdsCompUserPermissionsComponent implements OnInit {
     };
     this.userinfo = undefined;
     this.onClose.emit();
+    this.buttonSpinnerForNewUser = false;
   }
   
   editTableRowData(event): void {

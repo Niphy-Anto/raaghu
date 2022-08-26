@@ -1,0 +1,36 @@
+<div>
+  <div class="card h-100 border-0 rounded-0 card-full-stretch">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md 6 bg-light p-5">
+          <rds-label [label]="'Lets get in touch'" [bold]="true" class="fs-3"></rds-label>
+          <div class="pt-2">
+            <rds-label [label]="'We are open for any suggestion or just to have a chat.'"></rds-label>
+          </div>
+          <mfe-loader [config]="rdsContactMfeConfig"></mfe-loader>
+        </div>
+        <div class="col-md-6 bg-white  border p-5 ">
+          <div class="text-center mt-3">
+            <img src="../assets/contact.svg" width="250px" height="190px">
+          </div>
+          <div class="container-fluid mt-3">
+            <div class="row justify-content-center">
+              <div class="col-md-7 col-sm-12 mt-4 border p-2 border-primary border-opacity-10">
+                <rds-icon name="phone" class="px-1" width="20px" height="20px"></rds-icon>
+                <rds-label class="px-2" [label]="contactUs.phone"></rds-label>
+              </div>
+              <div class="col-md-7 col-sm-12 mt-4 border p-2 border-primary border-opacity-10">
+                <rds-icon name="envelope" class="px-1" width="20px" height="20px"></rds-icon>
+                <rds-label class="px-2" [label]="contactUs.mail"></rds-label>
+              </div>
+              <div class="col-md-7 col-sm-12 mt-4 border p-2 border-primary border-opacity-10">
+                <rds-icon name="location" class="px-1" width="20px" height="20px"></rds-icon>
+                <rds-label class="px-2" [label]="contactUs.location"></rds-label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
