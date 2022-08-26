@@ -5,13 +5,13 @@
         {{label}}
       </label>
       <div [class]="inputPosition" [ngStyle]="{'width': width + 'px'}">
-        <button [ngClass]="classList" (click)="decrement()" type="button" id="button-addon1">
+        <button class="btn-icon" [ngClass]="classList" (click)="decrement()" type="button" id="button-addon1">
           <em class="bi bi-dash-lg"></em>
         </button>
         <input type="text" class="form-control text-center" (keyup)="onKeyup($event)" (focus)="focus()"
           [(ngModel)]="counterValue" [value]="counterValue" [min]="min" [max]="max" (mouseup)="onMouseup($event)"
           aria-label="Example text with button addon" aria-describedby="button-addon1" />
-        <button [ngClass]="classList" (click)="increment()" type="button" id="button-addon1">
+        <button class="btn-icon" [ngClass]="classList" (click)="increment()" type="button" id="button-addon1">
           <em class="bi bi-plus-lg"></em>
         </button>
       </div>
