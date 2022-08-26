@@ -25,6 +25,8 @@ const dependentElements = [
     'rds-product-image'
 ];
 
+
+
 function replaceFiles() {
     for (const fileName of filesToReplace) {
         fse.copySync(path.join(ngElementsDir, fileName), path.join(ngComponentsDir, fileName), { overwrite: true });

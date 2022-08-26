@@ -68,6 +68,11 @@
         "rds-elements/rds-big-number-widget/public-api",
         "rds-elements/rds-big-number-widget"
       ],
+      
+      "@libs/rds-product-image": [
+        "rds-elements/rds-product-image/public-api",
+        "rds-elements/rds-product-image"
+      ]
     },
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
