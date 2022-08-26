@@ -24,7 +24,7 @@ const Template: Story<RdsAvatarComponent> = (args: RdsAvatarComponent) => ({
 export const Basic = Template.bind({});
 Basic.args = {
   Size: 'medium',
-  WithProfilePic: false,
+  WithProfilePic: true,
   FirstName: '',
   LastName: '',
   WithUserRole: false,
