@@ -5,7 +5,7 @@ import { RdsAddressDetailModule, RdsButtonModule, RdsCheckboxModule, RdsInputMod
 import { NgxTranslateModule } from '@libs/shared';
 
 import { RdsLabelModule } from '@libs/rds-label';
-import { RdsStepperModule } from '@libs/rds-stepper';
+//import { RdsStepperModule } from '@libs/rds-stepper';
 import { CommonModule } from '@angular/common';
 
 
@@ -22,10 +22,10 @@ export default {
         RdsInputModule,
         RdsCheckboxModule,
         RdsAddressDetailModule,
-       RdsLabelModule,
-       RdsStepperModule,
-       CommonModule,
-       
+        RdsLabelModule,
+        //RdsStepperModule,
+        CommonModule,
+
         NgxTranslateModule.forRoot()
       ],
       providers: [
@@ -42,7 +42,7 @@ export default {
 } as Meta;
 
 const Template: Story<RdsCompOrderDetailsComponent> = (args: RdsCompOrderDetailsComponent) => ({
-    props: args
+  props: args
 });
 
 export const basic = Template.bind({});
@@ -56,7 +56,7 @@ advanced.args = {
 }
 
 
-export const multiple_items= Template.bind({});
+export const multiple_items = Template.bind({});
 multiple_items.args = {
   displaytype: 'With large images and progress bars - 1',
 

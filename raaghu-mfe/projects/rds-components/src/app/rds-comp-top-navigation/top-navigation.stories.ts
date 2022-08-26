@@ -5,11 +5,11 @@ import { RdsTopNavigationComponent } from './rds-comp-top-navigation.component';
 import { RouterModule } from '@angular/router';
 import { DatePipe } from '@angular/common';
 import { API_BASE_URL } from '@libs/shared';
-import demodata from '../assets/appconfig.json';
+//import demodata from '../assets/appconfig.json';
 
 export function getRemoteServiceBaseUrl(): any {
-  let URL = demodata.remoteServiceBaseUrl
-  return URL;
+  //let URL = demodata.remoteServiceBaseUrl
+  //return URL;
 }
 
 export default {
