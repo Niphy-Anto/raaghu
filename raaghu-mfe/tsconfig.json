@@ -63,6 +63,10 @@
         "rds-elements/rds-big-number-widget/public-api",
         "rds-elements/rds-big-number-widget"
       ],
+      "@libs/rds-stepper": [
+        "rds-elements/rds-stepper/public-api",
+        "rds-elements/rds-stepper"
+      ],
       "@libs/rds-app-details": [
         "rds-elements/rds-app-details/public-api",
         "rds-elements/rds-app-details"
