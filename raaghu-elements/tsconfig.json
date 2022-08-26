@@ -68,6 +68,10 @@
         "dist/rds-testimonial/rds-testimonial",
         "dist/rds-testimonial"
       ],
+      "rds-stat": [
+        "dist/rds-stat/rds-stat",
+        "dist/rds-stat"
+      ],
       "@libs/rds-big-number-widget": [
         "rds-elements/rds-big-number-widget/public-api",
         "rds-elements/rds-big-number-widget"
