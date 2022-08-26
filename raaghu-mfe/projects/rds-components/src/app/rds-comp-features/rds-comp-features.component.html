@@ -1,6 +1,3 @@
-
-
-
 <div class="row">
   <div class="col-md-12 text-end pb-3 desktop-btn">
     <rds-button [label]="translate.instant('NEW EDITION')" [showLoadingSpinner]="buttonSpinnerForNewEdition" type="button" [colorVariant]="'primary'"
@@ -159,19 +156,17 @@
 </div>
 </rds-offcanvas>
 
-
 <rds-offcanvas [canvasTitle]="translate.instant(moveTenantCanvasTitle)" [offId]="'moveTenantEdition'" [placement]="'end'" 
   [offcanvaswidth]="600" *ngIf="viewMoveTenantCanvas" (onClose)="closeMoveTenantCanvas()">
   <!-- <b>{{moveTenantCanvasTitle}}</b> -->
   <div class="tab-content px-3 py-4 navsm-p-0">
     <div class="row">
       <div class="col-md-12">
-        <div class="text-primary mb-2">{{tenantCount}} {{"Tenants will be moved"|translate}}</div>
-        <rds-select-list [labelText]="translate.instant('Edition')" ngDefaultControl
-                         name="edition" [(ngModel)]="targetEditionId" [itemList]="editionList" [id]="editionList">
-         
-      </rds-select-list>
-  
+        <div class="text-primary mb-4">{{tenantCount}} {{"Tenants will be moved"|translate}}</div>
+   
+        <rds-select-list [labelText]="translate.instant('Edition')" [LabelType]="'Top'" ngDefaultControl
+                        name="edition" [(ngModel)]="targetEditionId" [itemList]="editionList" [id]="editionList">
+        </rds-select-list>
       </div>
     </div>
   </div>
