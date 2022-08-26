@@ -1,7 +1,7 @@
 <nav id="sidebar" class="bd-links min-vh-100 pt-2 position-relative" [class.side-nav-height]="isPageWrapper"
      [ngClass]="{ 'toggle' : collapsed }">
   <ul class="list-unstyled mb-0 py-2 px-4 h-100">
-    <li class="mb-4" *ngFor="let item of sidenavItems; let i=index">
+    <li class="mb-2" *ngFor="let item of sidenavItems; let i=index">
       <a (click)="onClick($event,i,item)" *ngIf="!item.children" [ngClass]="{ 'active' : activepage===i }"
          class="d-inline-flex align-items-center text-decoration-none text-uppercase" role="button"
          aria-expanded="false">
