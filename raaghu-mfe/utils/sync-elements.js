@@ -22,7 +22,8 @@ const dependentElements = [
     'rds-icon-label',
     'rds-select-list',
     'rds-radio-button',
-    'rds-product-image'
+    'rds-product-image',
+    'rds-app-details'
 ];
 
 function replaceFiles() {
