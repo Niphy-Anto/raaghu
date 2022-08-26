@@ -169,7 +169,7 @@
         <div class="text-primary mb-4">{{tenantCount}} {{"Tenants will be moved"|translate}}</div>
    
         <rds-select-list [labelText]="translate.instant('Edition')" [LabelType]="'Top'" ngDefaultControl
-                        name="edition" [(ngModel)]="targetEditionId" [itemList]="editionList" [id]="editionList">
+             [placeholderText]="'Edition'"    name="edition" [(ngModel)]="targetEditionId" [itemList]="editionList" [id]="editionList" >
          
       </rds-select-list>
 
