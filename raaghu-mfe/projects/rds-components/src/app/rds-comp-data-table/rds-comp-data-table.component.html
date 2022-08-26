@@ -55,7 +55,7 @@
                                 <ng-container
                                     *ngIf="column.dataType.toLowerCase()==='icon'&&!data.isEdit; else nonTemplateData">
                                     <td>
-                                        <rds-icon [name]="data[column.key].icon" [width]="data[column.key].width"
+                                        <rds-icon [name]="data[column.key].icon" [width]="data[column.key].width" [colorVariant]="data[column.key].colorVariant"
                                             [height]="data[column.key].height"></rds-icon>
                                     </td>
                                 </ng-container>
