@@ -22,7 +22,8 @@ const dependentElements = [
     'rds-icon-label',
     'rds-select-list',
     'rds-radio-button',
-    'rds-product-image'
+    'rds-product-image',
+    'rds-app-details'
 ];
 
 function replaceFiles() {
@@ -159,6 +160,16 @@ function mergeTSConfigJson() {
             "@libs/rds-product-image": [
                 "rds-elements/rds-product-image/public-api",
                 "rds-elements/rds-product-image"
+            ]
+        };
+        changesDone = true;
+    };
+    if (ngElementsFile.compilerOptions.paths["@libs/rds-app-details"] == undefined) {
+        ngElementsFile.compilerOptions.paths = {
+            ...ngElementsFile.compilerOptions.paths,
+            "@libs/rds-app-details": [
+                "rds-elements/rds-app-details/public-api",
+                "rds-elements/rds-app-details-image"
             ]
         };
         changesDone = true;
