@@ -40,7 +40,7 @@ declare var bootstrap: any;
 })
 export class AppComponent implements OnInit {
   isAnimation: boolean = true;
-
+  buttonSpinnerForNewWebhook: boolean = true;
   title = 'webhooksubscription';
   public viewCanvas: boolean = false;
   currentAlerts: any = [];
@@ -153,6 +153,7 @@ export class AppComponent implements OnInit {
   }
 
   openCanvas(): void {
+    this.buttonSpinnerForNewWebhook = true;
     this.viewCanvas = true;
     setTimeout(() => {
       var offcanvas = document.getElementById('addwebhook');
@@ -162,8 +163,8 @@ export class AppComponent implements OnInit {
   }
 
   closeCanvas(): void {
+    this.buttonSpinnerForNewWebhook =false;
     this.viewCanvas = false;
-
   }
 
   subscribeToAlerts() {

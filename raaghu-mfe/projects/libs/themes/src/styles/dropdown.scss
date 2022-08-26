@@ -37,6 +37,11 @@
   .dropdown .btn {
     text-align: left;
   }
+  #action-dropdown .rounded-pill{
+    text-align: center;
+    color: gray;
+    border: 1px solid;
+  }
 
 /**/
 .form-select[size]:not([size="1"]) {
