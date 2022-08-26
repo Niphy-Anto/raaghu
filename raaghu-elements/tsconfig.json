@@ -68,6 +68,10 @@
         "rds-elements/rds-big-number-widget/public-api",
         "rds-elements/rds-big-number-widget"
       ],
+      "@libs/rds-counter": [
+        "rds-elements/rds-counter/public-api",
+        "rds-elements/rds-counter"
+      ],
     },
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
