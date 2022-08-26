@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-md-12 text-end pb-3 desktop-btn">
             <rds-button [id]="'yes'" [size]="'small'" [tooltipPlacement]="'top'" [colorVariant]="'primary'"
-                [label]="translate.instant('NEW WEBHOOK SUBSCRIPTION')" (click)="openCanvas()"
+                [label]="translate.instant('NEW WEBHOOK SUBSCRIPTION')" [showLoadingSpinner]="buttonSpinnerForNewWebhook" (click)="openCanvas()"
                 [attr.data-bs-target]="'#addwebhook'" [attr.aria-controls]="'addwebhook'" icon="plus" iconHeight="12px"
                 iconWidth="12px">
             </rds-button>

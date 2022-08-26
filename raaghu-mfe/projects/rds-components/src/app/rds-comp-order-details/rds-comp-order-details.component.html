@@ -20,11 +20,7 @@
                                 <td class="ps-3">
                                     <rds-label class="fw-normal" [bold]="true" [label]="item.prodname"></rds-label>
                                     <br>
-                                   
-                                  
-                                        <span class="fw-bold">${{item.price}}</span> &minus; <span class="fw-bolder">Quantity {{item.qty}}</span>
-                                   
-                                 
+                                   <span class="fw-bold">${{item.price}}</span> &minus; <span class="fw-bolder">Quantity {{item.qty}}</span>
                                     <div class="mt-2 text-muted">
                                         <rds-label [label]="item.highlights"></rds-label>
                                     </div>
@@ -44,8 +40,7 @@
                                          <rds-label [label]="item.emailId"></rds-label><br>
                                          <rds-label [label]="item.phoneNo"></rds-label><br>
                                     </div>
-                                   
-                                </td>
+                                 </td>
                             </div>
                             <div class="col-md-2">
                                 <td class="ps-3 ">
@@ -55,8 +50,7 @@
                                     </div>
                                 </td>
                             </div>
-
-                        </div>
+                         </div>
                     </tr>
                     <hr>
                     <tr>
@@ -68,15 +62,31 @@
                         
                         <div class="row mt-3">
                             <div class="col-md-12">
-                                <rds-stepper
-                                [stepparList]="item.stepparList"
-                                [stepperType]="'progress-bar'"
-                                [readOnly]="true"
-                                [activePageNumber]="1"
-                              ></rds-stepper>
+                                <rds-progressbar [animation]="false"
+                                height="15"
+                                colorVariant="primary"
+                                striped="default"
+                                [progressWidth]= "item.processPercent"
+                                progressbar_MaxWidth="100"
+                                [label]="false"
+                                role="single"></rds-progressbar>
                             </div>
+                             <div class="row mt-2" >
+                                <div class="col-md-3  m-0" >
+                                  <span [ngStyle]="{'color':item.processPercent >= 0 ? '#8533ff' : 'black'}" >Order Placed</span>
+                                </div>
+                                <div class="col-md-3" style="text-align: center;">
+                                  <span [ngStyle]="{'color':item.processPercent >= 36 ? '#8533ff' : 'black' }" >Processing</span>
+                                </div>
+                                <div class="col-md-3" style="text-align: center;">
+                                  <span [ngStyle]=" {'color':item.processPercent >= 62 ? '#8533ff' : 'black' }" >Shipped</span>
+                                </div>
+                                <div class="col-md-3 m-0 p-0" style="text-align: right;">
+                                  <span [ngStyle]="{'color':item.processPercent >= 100 ? '#8533ff' : 'black' }" >Delivred</span>
+                                </div>
+                              </div>
                         </div>
-                      
+                        
                     </tr>
                 </tbody>
             </table>
@@ -109,8 +119,7 @@
                             <div class="row mb-3">
                                 <div class="col-md-3">
                                     <td>
-
-                                        <rds-address-detail header="Shopping Address" addressLine1="Brookland house,"
+                                            <rds-address-detail header="Shopping Address" addressLine1="Brookland house,"
                                             addressLine2="5439,Rose Mills Road," addressLine3="Santa Clara, CA95054">
                                         </rds-address-detail>
                                     </td>
@@ -146,13 +155,29 @@
                             </div>
                             <div class="row mt-3">
                                 <div class="col-md-12">
-                                    <rds-stepper
-                                    [stepparList]="item.stepparList"
-                                    [stepperType]="'progress-bar'"
-                                    [readOnly]="true"
-                                    [activePageNumber]="1"
-                                  ></rds-stepper>
+                                    <rds-progressbar [animation]="false"
+                                    height="15"
+                                    colorVariant="primary"
+                                    striped="default"
+                                    [progressWidth]= "item.processPercent"
+                                    progressbar_MaxWidth="100"
+                                    [label]="false"
+                                    role="single"></rds-progressbar>
                                 </div>
+                                 <div class="row mt-2" >
+                                    <div class="col-md-3  m-0" >
+                                      <span [ngStyle]="{'color':item.processPercent >= 0 ? '#8533ff' : 'black'}" >Order Placed</span>
+                                    </div>
+                                    <div class="col-md-3" style="text-align: center;">
+                                      <span [ngStyle]="{'color':item.processPercent >= 36 ? '#8533ff' : 'black' }" >Processing</span>
+                                    </div>
+                                    <div class="col-md-3" style="text-align: center;">
+                                      <span [ngStyle]=" {'color':item.processPercent >= 62 ? '#8533ff' : 'black' }" >Shipped</span>
+                                    </div>
+                                    <div class="col-md-3 m-0 p-0" style="text-align: right;">
+                                      <span [ngStyle]="{'color':item.processPercent >= 100 ? '#8533ff' : 'black' }" >Delivred</span>
+                                    </div>
+                                  </div>
                             </div>
                           
                         </tr>

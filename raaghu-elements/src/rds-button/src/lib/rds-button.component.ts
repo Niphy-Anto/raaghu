@@ -1,5 +1,4 @@
-import { AfterViewInit, Component, DoCheck, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import de from 'date-fns/locale/de/index';
+import { AfterViewInit, Component, DoCheck, EventEmitter, Input , OnInit, Output } from '@angular/core';
 // import { Tooltip } from 'bootstrap'
 declare var bootstrap: any;
 @Component({
@@ -7,7 +6,7 @@ declare var bootstrap: any;
   templateUrl: './rds-button.component.html',
   styleUrls: ['./rds-button.component.scss']
 })
-export class RdsButtonComponent implements AfterViewInit, DoCheck, OnInit {
+export class RdsButtonComponent implements AfterViewInit, OnInit, DoCheck {
 
   @Input()
   colorVariant?: string;
@@ -56,6 +55,8 @@ export class RdsButtonComponent implements AfterViewInit, DoCheck, OnInit {
   @Input()
   label: string = '';
 
+  labelTemp:string;
+
   @Output()
   onClick = new EventEmitter<Event>();
 
@@ -65,26 +66,28 @@ export class RdsButtonComponent implements AfterViewInit, DoCheck, OnInit {
   @Input() isLoading: boolean = false;
   @Input() showLoadingSpinner: boolean = false;
   makeSpinnerActive: boolean;
+  iconTemp: string;
 
   constructor() {
     this.id = this.id + RdsButtonComponent.count++;
-    
   }
+  
+
   ngOnInit(): void {
     this.makeSpinnerActive = this.showLoadingSpinner;
+    this.showLoadingSpinner = false;
+    this.labelTemp = this.label;
+    this.iconTemp = this.icon;
   }
   
   ngDoCheck(): void {
-    if(!this.showLoadingSpinner){
-      this.isLoading = false;
-      if(this.makeSpinnerActive){
-        this.showLoadingSpinner = true;
-      }
+    if(this.showLoadingSpinner == true){
+      this.label = '';
+      this.icon = '';
     }
     else{
-      if(this.makeSpinnerActive && this.showLoadingSpinner){
-        this.isLoading = true;
-      }
+      this.label = this.labelTemp;
+      this.icon = this.iconTemp;
     }
   }
 
@@ -124,14 +127,12 @@ export class RdsButtonComponent implements AfterViewInit, DoCheck, OnInit {
   }
 
   ngOnDestroy(): void {
-
     RdsButtonComponent.count = 0;
   }
 
   buttonClick(evt: any) {
-    debugger
     if (this.makeSpinnerActive) {
-      this.isLoading = true;
+      this.showLoadingSpinner = true;
     }
     this.onClick.emit(evt);
   }
