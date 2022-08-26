@@ -8,6 +8,7 @@ import { RdsLabelModule } from '@libs/rds-label';
 import { RdsStepperModule } from '@libs/rds-stepper';
 import { CommonModule } from '@angular/common';
 
+import { RdsStepperModule } from 'projects/libs/rds-elements/src/rds-stepper/src/public-api';
 
 
 export default {
