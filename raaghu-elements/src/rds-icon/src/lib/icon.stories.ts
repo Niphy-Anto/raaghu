@@ -16,11 +16,11 @@ export default {
       control: { type: 'select' }
     },
     fill: {
-      options: [ true, false],
+      options: [true, false],
       control: { type: 'select' }
     },
     stroke: {
-      options: [ true, false],
+      options: [true, false],
       control: { type: 'select' }
     },
   },
@@ -32,5 +32,7 @@ const Template: Story<RdsIconComponent> = (args: RdsIconComponent) => ({
 
 export const Basic = Template.bind({})
 Basic.args = {
-  name: 'avatar'
+  name: 'users',
+  width: '20px',
+  height: '20px'
 }
