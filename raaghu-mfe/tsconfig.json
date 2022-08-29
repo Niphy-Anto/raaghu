@@ -70,6 +70,10 @@
       "@libs/rds-app-details": [
         "rds-elements/rds-app-details/public-api",
         "rds-elements/rds-app-details"
+      ],
+      "@libs/rds-counter": [
+        "rds-elements/rds-counter/public-api",
+        "rds-elements/rds-counter"
       ]
     },
     "baseUrl": "./",

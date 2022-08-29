@@ -2,15 +2,17 @@
   <div aria-labelledby="nav-Deligation" class="h-100">
     <div class="card border-0 h-100">
       <div class="card-header border-bottom">
-        <h5 class="card-title">{{"MY SETTINGS"|translate}}</h5>
+        <h5 class="card-title m-1">{{"MY SETTINGS"|translate}}</h5>
       </div>
-      <div class="card-body">
-        <div class="">
+      <div class="card-body m-1">
+        <rds-label [label]="'Profile'" ></rds-label>
+        <div class="mt-3">
           <div class="row">
             <div class="col-md-12 sm-p-0">
-              <div class="form-group mb-3">
+              <div class="form-group mb-4">
                 <rds-input size="default" [value]="ProfileData.UserName" [Title]="translate.instant('Profile Name')" TitleType="'Top'" inputType="text"
-                           name="profileName" #profile_Name="ngModel" [isRequired]=true required [(ngModel)]="ProfileData.UserName" [disabled]="false" [readonly]="true" ngDefaultControl>
+                           name="profileName" #profile_Name="ngModel" [isRequired]=true required [(ngModel)]="ProfileData.UserName" [disabled]="false" [readonly]="true"
+                           [placeholder]="'Profile Name'" ngDefaultControl>
                 </rds-input>
                 <div class="form-control-feedback"
                 *ngIf="profile_Name.errors && (profile_Name.dirty || profile_Name.touched)">
@@ -19,10 +21,10 @@
               </div>
             </div>
             <div class="col-md-12 sm-p-0">
-              <div class="form-group mb-3">
+              <div class="form-group mb-4">
                 <rds-input size="default" [value]="ProfileData.EmailAddress" [Title]="translate.instant('Email Address')" TitleType="'Top'"
                            inputType="email" [(ngModel)]="ProfileData.EmailAddress" (keyup)="emailValidator(ProfileData.EmailAddress)"
-                           ngDefaultControl #email_Address="ngModel" [isRequired]=true required name="emailAddress" [disabled]="false" [readonly]="true">
+                           [placeholder]="'Email Address'"   ngDefaultControl #email_Address="ngModel" [isRequired]=true required name="emailAddress" [disabled]="false" [readonly]="true">
                 </rds-input>
                 <div class="form-control-feedback"
                 *ngIf="email_Address.errors && (email_Address.dirty || email_Address.touched)">
@@ -31,9 +33,9 @@
               </div>
             </div>
             <div class="col-md-12 sm-p-0">
-              <div class="form-group mb-3">
+              <div class="form-group mb-4">
                 <rds-input size="default" [readonly]="true" [Title]="translate.instant('User name')" [value]="ProfileData.UserName" inputType="text"
-                           name="username" #user_Name="ngModel" [isRequired]=true required [(ngModel)]="ProfileData.UserName" ngDefaultControl>
+                [placeholder]="'User Name'"  name="username" #user_Name="ngModel" [isRequired]=true required [(ngModel)]="ProfileData.UserName" ngDefaultControl>
                 </rds-input>
                 <div class="form-control-feedback"
                 *ngIf="user_Name.errors && (user_Name.dirty || user_Name.touched)">
@@ -48,10 +50,10 @@
           <form #changePasswordForm="ngForm">
             <div class="row">
               <div class="col-md-12 sm-p-0">
-                <div class="form-group mb-3">
+                <div class="form-group mb-4">
 
                   <rds-input size="default" [disabled]="false" [isRequired]=true [Title]="translate.instant('Current Password')" [inputType]="'password'" required
-                             [(ngModel)]="ProfileData.CurrentPassword" #password="ngModel" ngDefaultControl name="password">
+                  [placeholder]="'Current Password'"    [(ngModel)]="ProfileData.CurrentPassword" #password="ngModel" ngDefaultControl name="password">
                   </rds-input>
                   <div class="form-control-feedback"
                   *ngIf="password.errors && (password.dirty || password.touched)">
@@ -60,10 +62,10 @@
                 </div>
               </div>
               <div class="col-md-12 sm-p-0">
-                <div class="form-group mb-3">
+                <div class="form-group mb-4">
 
                   <rds-input size="default" [inputType]="'password'" [isRequired]=true [Title]="translate.instant('New Password')"
-                             [(ngModel)]="ProfileData.NewPassword" #new_Password="ngModel" ngDefaultControl name="newpassword" (keyup)='confirmPassword()'
+                  [placeholder]="'New Password'"     [(ngModel)]="ProfileData.NewPassword" #new_Password="ngModel" ngDefaultControl name="newpassword" (keyup)='confirmPassword()'
                              required>
                   </rds-input>
                   <div class="form-control-feedback"
@@ -73,9 +75,9 @@
                 </div>
               </div>
               <div class="col-md-12 sm-p-0">
-                <div class="form-group mb-3">
+                <div class="form-group mb-4">
                   <rds-input size="default" [inputType]="'password'" [isRequired]=true [Title]="translate.instant('Confirm new Password')" required
-                             [(ngModel)]="ProfileData.ConFNewPassword" #confirm_Password="ngModel" ngDefaultControl name="chkpass" (keyup)='confirmPassword()'>
+                  [placeholder]="'Confirm Password'"   [(ngModel)]="ProfileData.ConFNewPassword" #confirm_Password="ngModel" ngDefaultControl name="chkpass" (keyup)='confirmPassword()'>
                   </rds-input>
                   <div class="form-control-feedback"
                   *ngIf="confirm_Password.errors && (confirm_Password.dirty || confirm_Password.touched)">
@@ -90,7 +92,7 @@
     </div>
   </div>
 </div>
-<div class="footer-buttons my-2 shadow-none">
+<div class="footer-buttons my-2 shadow-none m-1">
   <div class="row">
     <div class="col-sm-12">
       <rds-button [submit]="false" [block]="false" [size]="'medium'" [disabled]="false"
