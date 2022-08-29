@@ -42,7 +42,7 @@
       <div class="col-md-5">
         <div class="form-group mb-3">
           <rds-select-list [(ngModel)]="dataset.defaultEditionId" [labelText]="translate.instant('Edition')" [value]="dataset.defaultEditionId"
-            ngDefaultControl name="defaultEditionId" [itemList]="settingsTenantEditionList"
+            ngDefaultControl name="defaultEditionId" [itemList]="settingsTenantEditionList" labeltype="Top"
             (change)="getAllowTenants($event)">
           </rds-select-list>
         </div>

@@ -6,9 +6,6 @@ import { NgxTranslateModule } from '@libs/shared';
 import { RdsLabelModule } from '@libs/rds-label';
 import { CommonModule } from '@angular/common';
 
-import { RdsStepperModule } from 'projects/libs/rds-elements/src/rds-stepper/src/public-api';
-
-
 export default {
   title: 'Components/Order-details',
   component: RdsCompOrderDetailsComponent,
