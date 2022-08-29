@@ -1,3 +1,6 @@
+ 
+
+
 <div class="row">
   <div class="col-md-12 text-end pb-3 desktop-btn">
     <rds-button [label]="translate.instant('NEW EDITION')" [showLoadingSpinner]="buttonSpinnerForNewEdition" type="button" [colorVariant]="'primary'"
@@ -75,20 +78,20 @@
         </div>
 
         <div *ngIf="!contentOnEdit">
-          <div class="row gap-5">
-            <div class="col-md-4">
+          <div class="row">
+            <div class="col-md-6">
               <div class="form-group mb-3">
                 <rds-counter [counterValue]="TrailPeriod" position="top" [label]="translate.instant('Trial Period')"
                    colorVariant="primary" [(ngModel)]="TrailPeriod" [min]="0"
-                  [max]="26" [width]="125" name="trial" #t.prial_period="ngModel" ngDefaultControl>
+                  [max]="7" [width]="124" name="trial" #trial_period="ngModel" ngDefaultControl>
                 </rds-counter>
               </div>
             </div>
-            <div class="col-md-4 ms-5">
+            <div class="col-md-6">
               <div class="form-group mb-3">
                 <rds-counter [counterValue]="" position="top" [label]="translate.instant('Expiry Notification Interval')"
                   colorVariant="primary" [(ngModel)]="ExpiryInterval" [min]="0"
-                  [max]="26" [width]="125" name="expiry" #expiry_interval="ngModel" ngDefaultControl></rds-counter>
+                  [max]="7" [width]="124" name="expiry" #expiry_interval="ngModel" ngDefaultControl></rds-counter>
               </div>
             </div>
           </div>
@@ -156,22 +159,17 @@
 </div>
 </rds-offcanvas>
 
+
 <rds-offcanvas [canvasTitle]="translate.instant(moveTenantCanvasTitle)" [offId]="'moveTenantEdition'" [placement]="'end'" 
   [offcanvaswidth]="600" *ngIf="viewMoveTenantCanvas" (onClose)="closeMoveTenantCanvas()">
   <!-- <b>{{moveTenantCanvasTitle}}</b> -->
   <div class="tab-content px-3 py-4 navsm-p-0">
     <div class="row">
       <div class="col-md-12">
-        <div class="text-primary mb-4">{{tenantCount}} {{"Tenants will be moved"|translate}}</div>
-   
-        <rds-select-list [labelText]="translate.instant('Edition')" [LabelType]="'Top'" ngDefaultControl
-             [placeholderText]="'Edition'"    name="edition" [(ngModel)]="targetEditionId" [itemList]="editionList" [id]="editionList" >
-         
+        <div class="text-primary mb-2">{{tenantCount}} {{"Tenants will be moved"|translate}}</div>
+        <rds-select-list [labelText]="translate.instant('Edition')" ngDefaultControl
+                         name="edition" [(ngModel)]="targetEditionId" [itemList]="editionList" [id]="editionList">
       </rds-select-list>
-
-
-
-     
   
       </div>
     </div>
