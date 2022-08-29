@@ -52,7 +52,7 @@
   </div>
 </div>
 
-<div class="footer-buttons my-2 shadow-none">
+<div class="footer-buttons my-2 shadow-none" *ngIf="!showNewLinkAccoutButton">
   <div class="row">
     <div class="col-sm-12">
       <rds-button [label]="translate.instant('Cancel')"
