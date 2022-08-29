@@ -7,8 +7,9 @@
 
   <ng-content select="[left]"></ng-content>
   <rds-icon *ngIf="buttonType!='labelOnly'" [name]="icon" [width]="iconWidth" [height]="iconHeight" [fill]="iconFill" [stroke]="iconStroke"></rds-icon>
-  <span *ngIf="buttonType!='iconOnly'" class="ps-1 btn-text">{{label}}</span>
+  <span *ngIf="buttonType!='iconOnly'" class="ps-1 btn-text mx-1">{{label}}</span>
   <ng-content></ng-content>
   <ng-content select="[right]"></ng-content>
+
 
 </button>
