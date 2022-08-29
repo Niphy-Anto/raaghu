@@ -67,7 +67,7 @@ export class RdsCounterComponent implements OnInit {
 
   public get classList(): string[] {
     var clsList: string[] = [];
-    const bgColor = 'btn btn-' + `${this.colorVariant}`;
+    const bgColor = 'btn btn-icon btn-' + `${this.colorVariant}`;
     clsList.push(bgColor);
     if (`${this.colorVariant}` !== 'light' && `${this.colorVariant}` !== 'warning' && `${this.colorVariant}` !== 'info' && `${this.colorVariant}` !== 'primary') {
       clsList.push('primary');

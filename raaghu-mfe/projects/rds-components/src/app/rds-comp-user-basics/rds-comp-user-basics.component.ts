@@ -73,10 +73,12 @@ export class RdsCompUserBasicsComponent implements OnInit, OnChanges {
   }
 
   next(userCreationForm: NgForm): void {
+    userCreationForm.form.markAllAsTouched();
     if (!userCreationForm || userCreationForm.invalid) {
       return;
     }
     this.userInfo.emit({ user: this.userData, next: true });
+    
   }
   getCheckboxValue(event: any): void {
     this.userData.unlimitedSubscription = event;
