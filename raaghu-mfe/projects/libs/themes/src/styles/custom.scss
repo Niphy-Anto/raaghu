@@ -504,6 +504,7 @@
     max-width: inherit;
     width: 375px !important;
     box-shadow: 0 0rem 1rem rgb(0 0 0 / 15%) !important;
+    left: auto;
   }
   /* table */
 
@@ -1023,3 +1024,7 @@ $size: 10;
 .form-control, .offcanvas-body .form-select {
     background-color: #F4F7F9 !important;
 } 
+
+.svg-gray{
+  color:#dee2e6;
+}
