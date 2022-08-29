@@ -143,6 +143,7 @@ export class RdsCompFeaturesComponent implements OnInit, OnChanges, DoCheck {
   }
 
   addEdition(editionForm: NgForm): void {
+    editionForm.form.markAllAsTouched();
     if (editionForm.invalid) {
       return;
     }
@@ -174,6 +175,7 @@ export class RdsCompFeaturesComponent implements OnInit, OnChanges, DoCheck {
 
     }
     this.onEditionSave.emit(body);
+    this.closeCanvas();
     this.resetPermission();
   }
 
