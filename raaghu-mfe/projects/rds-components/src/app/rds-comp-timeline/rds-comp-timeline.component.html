@@ -1,0 +1,150 @@
+<div class="conatiner scroll-notification">
+  <div [ngSwitch]="displayType">
+    <!-- Today Activites -->
+    <div class="w-50" *ngSwitchCase="'Basic'">
+      <div>
+        <h4 class="p-4">
+          <rds-label
+            label="Todays Activity"
+            [multiline]="false"
+            [bold]="true"
+            [italic]="false"
+          ></rds-label>
+        </h4>
+        <div *ngFor="let item of timelinData">
+          <!-- timeline item 1 -->
+          <div class="row">
+            <!-- timeline item 1 left dot -->
+            <div class="col-auto text-center flex-column d-none d-sm-flex">
+              <div class="row">
+                <div class="col border-end">&nbsp;</div>
+                <div class="col">&nbsp;</div>
+              </div>
+              <div class="m-2">
+                <span class="badge badge-pill border rounded-circle" [class]="'bg-'+item.colorVariant">&nbsp;</span>
+              </div>
+              <div class="row h-50">
+                <div class="col border-end">&nbsp;</div>
+                <div class="col">&nbsp;</div>
+              </div>
+            </div>
+            <!-- timeline item 1 event content -->
+            <div class="col py-2">
+              <div>
+                <div class="card-body">
+                  <h5 class="card-title">{{ item.text }}</h5>
+                  <p class="text-black-50">{{ item.date }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Today Activites -->
+    <div class="w-50" *ngSwitchCase="'Advance'">
+      <h4 class="p-4">
+        <rds-label
+          label="Recent Activity"
+          [multiline]="false"
+          [bold]="true"
+          [italic]="false"
+        ></rds-label>
+      </h4>
+      <div *ngFor="let item of recentData">
+        <!-- timeline item 1 -->
+        <div class="row">
+          <!-- timeline item 1 left dot -->
+          <div class="col-auto text-center flex-column d-none d-sm-flex">
+            <div class="row h-50">
+              <div class="col border-end">&nbsp;</div>
+              <div class="col">&nbsp;</div>
+            </div>
+            <div class="m-2">
+              <span class="badge badge-pill border px-2 py-3 rounded-circle" [class]="'bg-'+item.colorVariant">
+                <rds-icon
+                height="30px"
+                [fill]="false"
+                [stroke]="true"
+                width="30px"
+                [name]="item.icon"
+                class="mx-2"
+                colorVariant=""
+              ></rds-icon>
+            </span>
+            </div>
+            <div class="row h-50">
+              <div class="col border-end">&nbsp;</div>
+              <div class="col">&nbsp;</div>
+            </div>
+          </div>
+          <!-- timeline item 1 event content -->
+          <div class="col py-2">
+            <div>
+              <div class="card-body">
+                <h5 class="card-title">{{ item.text }}</h5>
+                <p class="text-black-50">{{ item.date }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="w-50" *ngSwitchCase="'Timeline'">
+      <h4 class="p-4">
+        <rds-label
+          label="Activity Timeline"
+          [multiline]="false"
+          [bold]="true"
+          [italic]="false"
+        ></rds-label>
+      </h4>
+      <div *ngFor="let item of timeLine">
+        <!-- timeline item 1 -->
+        <div class="row">
+          <!-- timeline item 1 left dot -->
+          <div class="col-auto text-center flex-column d-none d-sm-flex">
+            <div class="row">
+              <div class="col border-end">&nbsp;</div>
+              <div class="col">&nbsp;</div>
+            </div>
+            <div class="m-2">
+              <span class=""
+                ><rds-icon
+                height="30px"
+                [fill]="false"
+                [stroke]="true"
+                width="30px"
+                [name]="item.icon"
+                class="mx-2"
+                colorVariant=""
+              ></rds-icon></span>
+            </div>
+            <div class="row h-50">
+              <div class="col border-end">&nbsp;</div>
+              <div class="col">&nbsp;</div>
+            </div>
+          </div>
+          <!-- timeline item 1 event content -->
+          <div class="col py-2">
+            <div>
+              <div class="align-items-center card-body d-flex justify-content-between">
+                <div class="">
+                  <h5 class="card-title">{{ item.title }}</h5>
+                  <p class="text-black-50">{{ item.subTitle }}</p>
+                </div>
+                <div>
+                  <span class="text-black-50">{{ item.date }}</span>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row text-end me-1">
+        <rds-label label="View All"></rds-label>
+      </div>
+    </div>
+  </div>
+</div>

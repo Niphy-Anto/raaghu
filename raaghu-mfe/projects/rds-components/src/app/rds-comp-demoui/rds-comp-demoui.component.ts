@@ -11,11 +11,14 @@ export class RdsCompDemouiComponent implements OnInit {
  video = "http://static.videogular.com/assets/videos/videogular.mp4";
  showAlert:boolean=false;
 
+
   progressBarList = [{
     "width": "50",
     "widthMax":"25"
   }];
 
+ hundred :number =100;
+ fourty:number =40;
 tableHeaderItems=[
   {
     "headerName": "Name"

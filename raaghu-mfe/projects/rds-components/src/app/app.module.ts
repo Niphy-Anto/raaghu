@@ -42,7 +42,7 @@ import {
   RdsSpinnerModule, RdsToastsModule, RdsChartBubbleModule, RdsChartDoughnutModule, RdsChartMixedModule, RdsChartPolarAreaModule, RdsChartScatterModule, RdsChartStackedModule,
   RdsProgressbarModule, RdsBreadcrumbModule, RdsCarouselModule, RdsDoubleRangeModule, RdsScrollspyModule, RdsCounterModule, RdsFabMenuModule, RdsLabelModule, RdsIconLabelModule,
   CalendarModule, adapterFactory, DateAdapter, RdsRatingModule, RdsLikeDislikeModule, RdsColorModule, RdsFeedModule, RdsVideoPlayerModule, RdsAppDetailsModule, RdsBenefitModule,
-  RdsCardDetailModule, RdsSizeModule, RdsPriceModule, RdsFeatureListModule, RdsProductImageModule, RdsReviewCategoryModule, RdsTeamMemberModule, RdsWebsiteMetricModule
+  RdsCardDetailModule, RdsSizeModule, RdsPriceModule, RdsFeatureListModule, RdsProductImageModule, RdsReviewCategoryModule, RdsTeamMemberModule,RdsAddressDetailModule,RdsWebsiteMetricModule,RdsTestimonialModule,RdsStepperModule
 } from '@libs/rds-elements';
 import { RdsCompDemouiComponent } from './rds-comp-demoui/rds-comp-demoui.component';
 import { RdsCompTenantManagementComponent } from './rds-comp-tenant-management/rds-comp-tenant-management.component';
@@ -144,10 +144,9 @@ import { RdsCompTestimonialsComponent } from './rds-comp-testimonials/rds-comp-t
 // import { RdsCompTeamsComponent } from './rds-comp-teams/rds-comp-teams.component';
 
 import { RdsCompOrderDetailsComponent } from './rds-comp-order-details/rds-comp-order-details.component';
-import { RdsAddressDetailModule } from 'projects/libs/rds-elements/src/rds-address-detail/src/public-api';
-import { RdsStepperModule } from 'projects/libs/rds-elements/src/rds-stepper/src/public-api';
 import { RdsCompTeamsComponent } from './rds-comp-teams/rds-comp-teams.component';
-import { RdsTestimonialModule } from 'projects/libs/rds-elements/src/rds-testimonial/src/public-api';
+import { RdsCompContactUsComponent } from './rds-comp-contact-us/rds-comp-contact-us.component';
+import { RdsCompTimelineComponent } from './rds-comp-timeline/rds-comp-timeline.component';
 
 @NgModule({
   declarations: [	
@@ -284,6 +283,8 @@ import { RdsTestimonialModule } from 'projects/libs/rds-elements/src/rds-testimo
     RdsCompTestimonialsComponent,
     RdsCompIntegrationComponent,
     RdsCompTeamsComponent,
+    RdsCompContactUsComponent,
+    RdsCompTimelineComponent,
   
   ],
   imports: [

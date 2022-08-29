@@ -70,9 +70,9 @@ export class RdsCompBillingComponent implements OnInit {
       status: `<div> <span class="badge badge-success">Paid</span></div>`
     }
   ];
-  actions: TableAction[] = [{ id: 'download', displayName: 'Download' }];
-  radioItem: any = [{ label: 'Send to my account email', checked: true, name: "Send to my account email" }]
-  radioItem1: any = [{ label: 'Send to an alternative email', checked: false, name: 'Send to an alternative email' }]
+  @Input() actions: TableAction[] = [{ id: 'download', displayName: 'Download' }];
+  @Input() radioItem: any = [{ label: 'Send to my account email', checked: true, name: "Send to my account email" }];
+  @Input() radioItem1: any = [{ label: 'Send to an alternative email', checked: false, name: 'Send to an alternative email' }];
   constructor() { }
 
   ngOnInit(): void {
