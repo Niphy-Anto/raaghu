@@ -18,8 +18,14 @@
               </div>
               <div class="col-sm-12" *ngIf="linkaacountDivFlag">
                 <div class="form-group mb-3">
-                  <rds-input size="default" value="" [Title]="translate.instant('Tenancy Name')" [placeholder]="translate.instant('Tenancy Name')" [TitleType]="'Top'"
-                             inputType="text" [(ngModel)]="Tenancyname" ngDefaultControl></rds-input>
+                  <!-- <rds-input size="default" value="" [Title]="translate.instant('Tenancy Name')" [placeholder]="translate.instant('Tenancy Name')" [TitleType]="'Top'"
+                   inputType="text" #name="ngModel" [(ngModel)]="Tenancyname" [isRequired]="true" required ngDefaultControl></rds-input> -->
+                   <rds-input size="default" value="" [inputType]="'text'" [Title]="translate.instant('Tenancy Name')" [(ngModel)]="tenancyName" [TitleType]="'Top'" name="tenancyName"
+                   required #name="ngModel" [placeholder]="translate.instant('Tenancy Name')" [isRequired]=true required>
+                 </rds-input>
+                       <div class="form-control-feedback" *ngIf="name.errors&&(name.dirty||name.touched)">
+                              <span class="text-danger" *ngIf="name.errors.required">{{"Tenancy name is required"|translate}}</span>
+                        </div>
                 </div>
               </div>
               <div class="col-md-12"  *ngIf="linkaacountDivFlag">
