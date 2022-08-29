@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 import { TableAction } from '../../models/table-action.model';
 import { TableHeader } from '../../models/table-header.model';
@@ -19,6 +20,8 @@ export class RdsUserDelegationsComponent implements OnInit, OnChanges, OnDestroy
   @Input() pagination: boolean = false;
   @Input() tableWidth: string = '100%';
   @Input() tableStyle: string = 'Light';
+  @Input() UserName: string;
+
   username:string='';
   StartDate:string='';
   endDate:string='';
@@ -53,7 +56,8 @@ export class RdsUserDelegationsComponent implements OnInit, OnChanges, OnDestroy
   onUserSelection(event: any): void {
     this.selectedUser = event.item
   }
-  onSave(): void {
+  onSave(userDelegation:NgForm): void {
+    userDelegation.form.markAllAsTouched();
     const DeligateData:any={
       endTime:this.endDate,
       startTime:this.StartDate,
