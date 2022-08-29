@@ -109,7 +109,7 @@ export class RdsDatepickerComponent implements OnInit, ControlValueAccessor {
   }
 
   public get classes(): string[] {
-    var classes = ['dd-c']
+    var classes = ['date-picker-c']
     if (this.toggle) {
       classes.push('d-block')
       return classes
