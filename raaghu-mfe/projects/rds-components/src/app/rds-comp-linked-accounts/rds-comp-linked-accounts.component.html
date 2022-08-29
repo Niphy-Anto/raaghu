@@ -52,7 +52,7 @@
   </div>
 </div>
 
-<div class="footer-buttons my-2 shadow-none">
+<div class="footer-buttons my-2 shadow-none" *ngIf="!showNewLinkAccoutButton">
   <div class="row">
     <div class="col-sm-12">
       <rds-button [label]="translate.instant('Cancel')"
@@ -62,9 +62,12 @@
                   [size]="'medium'"
                   (click)="onCancel()">
       </rds-button>
-      <rds-button [label]="translate.instant('Save')" type="button" [size]="'medium'" [colorVariant]="'primary'"
-      (click)="saveAllLinkAccount()" class="ms-2">
-</rds-button>
+      <rds-button [label]="translate.instant('Save')" 
+                  type="button" 
+                  [size]="'medium'" 
+                  [colorVariant]="'primary'"
+                  (click)="saveAllLinkAccount()" class="ms-2">
+      </rds-button>
     </div>
   </div>
 </div>

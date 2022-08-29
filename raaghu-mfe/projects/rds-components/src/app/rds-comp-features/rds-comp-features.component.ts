@@ -57,7 +57,7 @@ export class RdsCompFeaturesComponent implements OnInit, OnChanges, DoCheck {
   public isEdition: boolean = false;
   id: number | undefined = undefined;
   canvasTitle: string = 'NEW EDITION';
-  moveTenantCanvasTitle: string = 'MOVE TENANTS TO ANOTHER EDITION';
+  moveTenantCanvasTitle: string = 'MOVE TENANTS TO ANOTHER EDITION  ';
 
   disable: boolean;
   dataset?: any = {};
@@ -143,6 +143,7 @@ export class RdsCompFeaturesComponent implements OnInit, OnChanges, DoCheck {
   }
 
   addEdition(editionForm: NgForm): void {
+    editionForm.form.markAllAsTouched();
     if (editionForm.invalid) {
       return;
     }
@@ -174,6 +175,7 @@ export class RdsCompFeaturesComponent implements OnInit, OnChanges, DoCheck {
 
     }
     this.onEditionSave.emit(body);
+    this.closeCanvas();
     this.resetPermission();
   }
 

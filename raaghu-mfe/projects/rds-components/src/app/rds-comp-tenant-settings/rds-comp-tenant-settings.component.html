@@ -7,17 +7,23 @@
                     <rds-checkbox [disabled]="false" [label]="translate.instant('Use Host Database')"
                         (onChange)="getCheckboxValue($event,'host')" [withLabel]="true"
                         [checked]="tenantSettingsInfo.useHostDatabase" [switch]="false" [inline]="false"
-                        [id]="'useHostDatabase'"></rds-checkbox>
+                        [id]="'useHostDatabase'" ></rds-checkbox>                           
                 </div>
             </div>
         </div>
         <div class="row  mb-3">
             <div class="col-md-6 sm-p-0">
                 <div class="form-group mb-3">
-                    <rds-input [inputType]="'password'" [Title]="translate.instant('Password')" [TitleType]="'Top'"
+                    <!-- <rds-input [inputType]="'password'" [Title]="translate.instant('Password')" [TitleType]="'Top'"
                         [placeholder]="translate.instant('Password')" (keyup)="confirmPasswordValidation()"
                         [(ngModel)]="tenantSettingsInfo.password" [isRequired]=true name="password" required>
-                    </rds-input>
+                    </rds-input> -->
+                    <rds-input [inputType]="'password'" [Title]="translate.instant('Password')" [(ngModel)]="tenantSettingsInfo.password" [TitleType]="'Top'" name="password"
+                    required #name="ngModel" [placeholder]="translate.instant('Password')" [isRequired]=true required>
+                  </rds-input>
+                  <div class="form-control-feedback" *ngIf="name.errors&&(name.dirty||name.touched)">
+                    <span class="text-danger" *ngIf="name.errors.required">{{"Password is required"|translate}}</span>
+                  </div>
                 </div>
             </div>
             <div class="col-md-6 sm-p-0">
@@ -26,6 +32,9 @@
                         [placeholder]="translate.instant('Confirm Password')" (keyup)="confirmPasswordValidation()"
                         [(ngModel)]="tenantSettingsInfo.confirmPassword" [isRequired]=true name="cpassword" required>
                     </rds-input>
+                    <div class="form-control-feedback" *ngIf="name.errors&&(name.dirty||name.touched)">
+                        <span class="text-danger" *ngIf="name.errors.required">{{"Conform Password is required"|translate}}</span>
+                      </div>
                 </div>
             </div>
             <div class="col-12 sm-p-0">
