@@ -57,7 +57,7 @@ export class RdsCompFeaturesComponent implements OnInit, OnChanges, DoCheck {
   public isEdition: boolean = false;
   id: number | undefined = undefined;
   canvasTitle: string = 'NEW EDITION';
-  moveTenantCanvasTitle: string = 'MOVE TENANTS TO ANOTHER EDITION';
+  moveTenantCanvasTitle: string = 'MOVE TENANTS TO ANOTHER EDITION  ';
 
   disable: boolean;
   dataset?: any = {};

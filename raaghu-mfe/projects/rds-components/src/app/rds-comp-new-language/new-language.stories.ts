@@ -42,7 +42,7 @@ basic.args = {
         ,{value: "famfamfam-flags ai", displayText: "ai", isSelected: false}
     ],
     languageNames:[
-        {value: "", displayText: "Invariant Language (Invariant Country) ()", isSelected: false}
+        {value: "", displayText: "Invariant Language ()", isSelected: false}
         ,{value: "aa", displayText: "Afar (aa)", isSelected: false}
         ,{value: "aa-DJ", displayText: "Afar (Djibouti) (aa-DJ)", isSelected: false}
         ,{value: "aa-ER", displayText: "Afar (Eritrea) (aa-ER)", isSelected: false}
