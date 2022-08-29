@@ -17,7 +17,8 @@ export class RdsIconComponent implements OnInit, OnChanges {
   @Input() width: string = '';
   @Input() name: string = '';
   @Input() colorVariant: string = '';
-    
+  @Input() opacity: string = '';
+ 
   constructor(private element: ElementRef,
     @Optional() @Inject(DOCUMENT) private document: any) {
   }
@@ -64,6 +65,9 @@ export class RdsIconComponent implements OnInit, OnChanges {
     }
     if (this.width) {
       svg.style.width = this.width;
+    }
+    if (this.opacity) {
+      svg.style.opacity = this.opacity;
     }
     if (this.colorVariant == 'primary') {
       // svg.setAttribute('class', 'icon-' + this.colorVariant);

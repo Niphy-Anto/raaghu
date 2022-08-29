@@ -23,7 +23,7 @@ export class RdsLoginComponent implements OnInit,OnChanges {
   @Input() TenancyName: string;
   @Input() TenantName: string;
   @Input() enableSwitchtenent: boolean;
-  @Input() UserName: string = 'Email';
+  @Input() UserName: string = 'Email/Username';
   @Input() Password: string = 'Password';
   @Input() userNameInputType: string = 'email';
   @Input() userPasswordInputType: string = 'password';
