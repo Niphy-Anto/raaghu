@@ -76,7 +76,7 @@ export class RdsCompTenantSettingsComponent implements OnInit, OnChanges {
 
   }
   next(tenantSettingsForm: NgForm): void {
-
+    tenantSettingsForm.form.markAllAsTouched();
     if (tenantSettingsForm.invalid || this.isPasswordMismatch) {
       return;
     }
