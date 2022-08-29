@@ -164,9 +164,9 @@ export class RdsCompProfileComponent extends MfeBaseComponent implements OnInit 
   public get NavtabClass(): string {
     var classList = '';
     if (this.offCanvasWidth == 1000) {
-      classList = 'w-100';
+      classList = 'w-100 bg-light';
     } else {
-      classList = 'profileMenu';
+      classList = 'profileMenu bg-light';
     }
     return classList;
   }

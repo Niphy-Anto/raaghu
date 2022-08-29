@@ -1,0 +1,55 @@
+<div class="row">
+    <div class="col-md-4" *ngFor="let item of statItems; let i=index">
+      <div class="card text-center p-4">
+        <div class="card-body p-2">
+            <div class="py-5">
+            <rds-icon
+            [name]="item.icon"
+            [fill]="item.iconFill"
+            [stroke]="item.iconStroke"
+            [height]="item.iconHeight"
+            [width]="item.iconWidth"
+            colorVariant="primary"
+            class="fs-6 me-2">
+        </rds-icon>
+    </div>
+          <h1 class="fw-bold py-2">
+            {{ item.value }}
+          </h1>
+          <div>
+            <label class="fs-5 text-muted">
+              {{ item.title }}
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-md-4" *ngFor="let item of statItems; let i=index">
+      <div class="card text-center p-4 border rounded-circle" style=" border-width: 30px !important;">
+        <div class="card-body p-2">
+            <div class="py-5 niraj">
+            <rds-icon
+            [name]="item.icon"
+            [fill]="item.iconFill"
+            [stroke]="item.iconStroke"
+            [height]="item.iconHeight"
+            [width]="item.iconWidth"
+            colorVariant="primary"
+            class="fs-6 me-2">
+        </rds-icon>
+    </div>
+          <h1 class="fw-bold py-2">
+            {{ item.value }}
+          </h1>
+          <div>
+            <label class="fs-5 text-muted">
+              {{ item.title }}
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

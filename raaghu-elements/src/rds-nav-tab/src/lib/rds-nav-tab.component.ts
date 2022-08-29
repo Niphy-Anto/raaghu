@@ -34,7 +34,7 @@ export class RdsNavTabComponent implements OnInit {
 
   public get classes(): string {
     const align = ` justify-content-${this.horizontalAlignment}`;
-    const vertical = `${this.verticalAlignment ? ' flex-column vertical-class ' : ' flex '}`;
+    const vertical = `${this.verticalAlignment ? ' flex-column vertical-tab' : ' flex '}`;
     const pill = `${this.pills ? 'nav nav-pills' : ''}`;
     const tab = `${this.tabs ? ' rds-tab-2' : ''}`;
     const fill = `${this.fill ? ' nav-pills nav-fill' : ''}`;

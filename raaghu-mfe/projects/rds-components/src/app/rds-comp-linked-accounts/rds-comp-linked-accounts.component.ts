@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Injector, Input, OnInit, Output, SimpleChanges } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { ComponentLoaderOptions, MfeBaseComponent } from '@libs/shared';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -17,6 +18,7 @@ export class RdsLinkedAccountsComponent extends MfeBaseComponent implements OnIn
   DatasetLinkedAccount: any = [];
   @Input() recordsPerpage: number = 3;
   @Input() pagination: boolean = false;
+  @Input() TenantName: string;
   @Output() ondelete = new EventEmitter<any>();
   @Output() onUserSave = new EventEmitter<any>();
   @Output() onCancelDeligate = new EventEmitter<any>()
@@ -125,8 +127,9 @@ export class RdsLinkedAccountsComponent extends MfeBaseComponent implements OnIn
   }
 
   saveAllLinkAccount() {
+    // linkedAccount.form.markAllAsTouched();
     this.showNewLinkAccoutButton = true;
-    this.linkaacountDivFlag = false;
+    //this.linkaacountDivFlag = false;
     this.showManageLinkAccountTable = true;
     const data: any = { usernameOrEmailAddress: this.userName, password: this.Password, tenancyName: this.Tenancyname };
     this.onUserSave.emit(data);

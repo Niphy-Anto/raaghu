@@ -1,5 +1,6 @@
 import { DatePipe } from '@angular/common';
 import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { ComponentLoaderOptions } from '@libs/shared';
 import { TranslateService } from '@ngx-translate/core';
 import { Login, LoginAttempts } from '../../models/profile.model';
@@ -16,6 +17,7 @@ export class RdsCompLoginAttemptsComponent implements OnInit {
   TabiD: string;
   @Input()
   LoginAttempts: any = {};
+  @Input() Result: string;
    
 
   result:string
@@ -60,8 +62,8 @@ export class RdsCompLoginAttemptsComponent implements OnInit {
   }
   LoginAttemptTableData: LoginAttempts;
  
-Search(){
-  
+Search(loginAttempt:NgForm){
+  loginAttempt.form.markAllAsTouched();
 let startdate = this.startDate .toISOString()
 
 let endDate = this.endDate.toISOString()
