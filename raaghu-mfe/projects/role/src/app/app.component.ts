@@ -88,7 +88,7 @@ export class AppComponent implements OnInit {
   selectedPermissionnames: any = [];
   @Input() RoleTableHeader: TableHeader[] = [
     { displayName: 'Role Name', key: 'rolename', dataType: 'html', dataLength: 30, sortable: true, required: true,filterable:true },
-    { displayName: 'id', key: 'id', dataType: 'text', dataLength: 30, sortable: true, required: true,filterable:true },
+   
     { displayName: 'Creation Time', key: 'creationTime', dataType: 'text', dataLength: 30, required: true, sortable: true }
   ]
   @Output() deleteRole = new EventEmitter<{ item: any }>();
@@ -251,7 +251,7 @@ export class AppComponent implements OnInit {
           const roleName: string = (element.displayName);
           const defaultLanguageTemplate = `<div class="d-flex align-items-center"> ${roleName} <div class="d-block text-end"> ${status} ${status1} </div></div> `
           const item: any = {
-            id: element.id,            
+                    
             rolename: defaultLanguageTemplate,
             isDefault: element.isDefault,
             creationTime: this.datepipe.transform(new Date(element.creationTime), 'MM/dd/yyyy, h:mm:ss a'),

@@ -46,6 +46,7 @@ export class RdsCompNewLanguageComponent implements OnInit, OnChanges {
   onChangeIsenabled(event: any) {
 
   }
+  
 
   ngOnChanges(changes: SimpleChanges): void {
 
@@ -60,6 +61,7 @@ export class RdsCompNewLanguageComponent implements OnInit, OnChanges {
   }
 
   addLanguage(languageForm: NgForm): void {
+    languageForm.form.markAllAsTouched();
     this.submitted = true;
     if (languageForm.invalid || !this.selectedLanguage.icon || this.selectedLanguage.icon === '') {
       return;

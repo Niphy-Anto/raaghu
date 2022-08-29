@@ -27,6 +27,8 @@ const dependentElements = [
     'rds-app-details'
 ];
 
+
+
 function replaceFiles() {
     for (const fileName of filesToReplace) {
         fse.copySync(path.join(ngElementsDir, fileName), path.join(ngComponentsDir, fileName), { overwrite: true });
@@ -181,6 +183,16 @@ function mergeTSConfigJson() {
             "@libs/rds-app-details": [
                 "rds-elements/rds-app-details/public-api",
                 "rds-elements/rds-app-details-image"
+            ]
+        };
+        changesDone = true;
+    };
+    if (ngElementsFile.compilerOptions.paths["@libs/rds-counter"] == undefined) {
+        ngElementsFile.compilerOptions.paths = {
+            ...ngElementsFile.compilerOptions.paths,
+            "@libs/rds-counter": [
+                "rds-elements/rds-counter/public-api",
+                "rds-elements/rds-counter"
             ]
         };
         changesDone = true;
