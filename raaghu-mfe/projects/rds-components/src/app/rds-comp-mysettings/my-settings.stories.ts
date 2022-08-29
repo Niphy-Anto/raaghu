@@ -1,6 +1,6 @@
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
-import { RdsButtonModule, RdsInputModule, RdsNavTabModule } from '@libs/rds-elements';
+import { RdsButtonModule, RdsInputModule, RdsLabelModule, RdsNavTabModule } from '@libs/rds-elements';
 import { RdsMysettingsComponent } from './rds-comp-mysettings.component';
 import { NgxTranslateModule } from '@libs/shared';
 
@@ -10,7 +10,7 @@ export default {
   decorators: [
     moduleMetadata({
       imports: [
-        FormsModule, ReactiveFormsModule, RdsButtonModule, RdsInputModule, NgxTranslateModule
+        FormsModule, ReactiveFormsModule, RdsButtonModule, RdsInputModule, NgxTranslateModule,RdsLabelModule
       ],
       providers: [
         FormBuilder
