@@ -1368,7 +1368,7 @@
 				"build": {
 					"builder": "ngx-build-plus:browser",
 					"options": {
-						"outputPath": "dist/visual-settings",
+						"outputPath": "dist/visualsettings",
 						"index": "projects/visual-settings/src/index.html",
 						"main": "projects/visual-settings/src/main.ts",
 						"polyfills": "projects/visual-settings/src/polyfills.ts",
