@@ -65,10 +65,10 @@
           </div>
         </div>
       </div>
-      <div class="row" [class.disabled]="tenantData.unlimitedSubscription">
+      <div class="row" >
         <div class="col-md-6 sm-p-0">
           <div class="form-group mb-3">
-            <rds-datepicker name="date-picker" [Label]="translate.instant('Subscription End Date')"
+            <rds-datepicker name="date-picker" [disabled]="tenantData.unlimitedSubscription" [Label]="''"
               [(ngModel)]="tenantData.subscriptionEndDate" (change)="onDateChange($event)"
               [value]="tenantData.subscriptionEndDate"></rds-datepicker>
           </div>
