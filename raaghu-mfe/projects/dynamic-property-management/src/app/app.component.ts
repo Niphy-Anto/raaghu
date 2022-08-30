@@ -429,7 +429,7 @@ export class AppComponent implements OnInit {
       ) {
         const entityData: any = {
           dynamicPropertyId: element.PropertyID,
-          entityFullName: element.entityFullName,
+          entityFullName: element.entityFullName[0],
           tenantId: this.appSessionService.tenantId,
         };
         this.temp.push(entityData);
@@ -551,7 +551,7 @@ export class AppComponent implements OnInit {
     const mfeConfig = this.rdsDynamicEntityPropertiesMfeConfig;
     mfeConfig.input.reset = true;
     this.rdsDynamicEntityPropertiesMfeConfig = mfeConfig;
-
+ 
     setTimeout(() => {
       var offcanvas = document.getElementById('AddEntity');
       var bsOffcanvas = new bootstrap.Offcanvas(offcanvas);
