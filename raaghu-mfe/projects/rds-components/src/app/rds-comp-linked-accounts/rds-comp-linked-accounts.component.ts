@@ -63,7 +63,7 @@ export class RdsLinkedAccountsComponent extends MfeBaseComponent implements OnIn
 
   @Output()
   LinkAccountSave = new EventEmitter<{ item: any }>()
-  constructor(private injector: Injector,public translate:TranslateService) {
+  constructor(private injector: Injector, public translate: TranslateService) {
     super(injector)
   }
 
@@ -126,7 +126,7 @@ export class RdsLinkedAccountsComponent extends MfeBaseComponent implements OnIn
     })
   }
 
-  saveAllLinkAccount(linkedAccount) {
+  saveAllLinkAccount(linkedAccount: NgForm) {
     linkedAccount.form.markAllAsTouched();
     this.showNewLinkAccoutButton = true;
     //this.linkaacountDivFlag = false;

@@ -154,22 +154,20 @@
                 [role]="role"></rds-pagination>
         </ng-container>
     </ng-container>
-    </div>
-    <ng-template #emptyTemplate>
-        <div class="my-5 py-5 d-flex align-items-center justify-content-center">
-            <div class="text-center">
-                <div class="mb-3">
-                    <rds-icon name="file_plus" height="100px" width="100px"></rds-icon>
+</div>
+<ng-template #emptyTemplate>
+    <div class="my-5 py-5 d-flex align-items-center justify-content-center">
+        <div class="text-center">
+            <div class="mb-3">
+                <rds-icon name="file_plus" height="100px" width="100px"></rds-icon>
+            </div>
+            <div>
+                <h5> {{noDataTitle|translate}} </h5>
+                <div *ngIf="showNodataSubtitle">
+                    <small class="text-muted">
+                        {{noDataSubTitle|translate}}
+                    </small>
                 </div>
-                <div>
-                    <h5> {{noDataTitle|translate}} </h5>
-                    <div *ngIf="showNodataSubtitle">
-                        <small class="text-muted">
-                            {{noDataSubTitle|translate}}
-                        </small>
-                    </div>
-                </div>
-    
             </div>
         </div>
     </ng-template>
