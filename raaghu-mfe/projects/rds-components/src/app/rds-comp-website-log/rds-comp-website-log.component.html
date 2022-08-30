@@ -23,15 +23,15 @@
         </div>
     </div>
     <div class="pt-2">
-      <rds-pagination [reset]="resetPagination" (onPageChange)="onPagination($event)" [recordsPerPage]="+10"
-                      [totalRecords]="getTotalRecords()" [alignmentType]="alignmentType" [role]="role"></rds-pagination>
+        <rds-pagination [reset]="resetPagination" (onPageChange)="onPagination($event)" [recordsPerPage]="+10"
+            [totalRecords]="getTotalRecords()" [alignmentType]="alignmentType" [role]="role"></rds-pagination>
     </div>
 </div>
 <ng-template #emptyTemplate>
     <div class="my-5 py-5 d-flex align-items-center justify-content-center">
         <div class="text-center">
             <div class="mb-3">
-                <rds-icon name="empty_states_add_records" width="100px" height="100px"></rds-icon>
+                <rds-icon name="file_plus" width="100px" height="100px"></rds-icon>
             </div>
             <div>
                 <h5> {{"Currently you do not have website log"|translate}} </h5>
@@ -39,4 +39,3 @@
         </div>
     </div>
 </ng-template>
-

@@ -2,11 +2,9 @@
   <form #emailForm="ngForm">
     <div class="row">
       <div class="col-md-6 mb-3">
-
         <rds-input size="'default'" [Title]="translate.instant('Default From (Sender) Email Address')" name="defaultFromAddress" [placeholder]="'admin@mydomain.com'" id="txtUsername"
           #defaultFromAddress="ngModel" [pattern]="emailPattern" ngDefaultControl
           [(ngModel)]="EmailData.defaultFromAddress" required [isRequired]=true floatinginputLabel="" [TitleType]="'Top'">
-
         </rds-input>
         <div class="form-control-feedback"
           *ngIf="defaultFromAddress.errors&&(defaultFromAddress.dirty||defaultFromAddress.touched)">
@@ -70,7 +68,7 @@
       </div>
       <div class="col-md-6">
         <div class="form-group mb-3 mt-1 pt-4">
-          <rds-button [tooltipPlacement]="'bottom'" (click)="sendTestmail()" [tooltipTitle]="translate.instant('SEND TEST EMAIL')" [label]="translate.instant('')"
+          <rds-button [tooltipPlacement]="'bottom'" (click)="sendTestmail()" [id]="'sendTestEmail'" [tooltipTitle]="translate.instant('SEND TEST EMAIL')" [label]="translate.instant('')"
             type="button" [size]="'Small'" [colorVariant]="'primary'" [outlineButton]="false"></rds-button>
         </div>
       </div>
