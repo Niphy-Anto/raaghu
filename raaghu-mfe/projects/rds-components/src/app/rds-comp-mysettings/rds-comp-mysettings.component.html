@@ -96,7 +96,7 @@
   <div class="row">
     <div class="col-sm-12">
       <rds-button [submit]="false" [block]="false" [size]="'medium'" [disabled]="false"
-                  [colorVariant]="'outline-primary'" [roundedButton]="false" data-bs-dismiss="offcanvas" [label]="translate.instant('Cancel')"></rds-button>
+                  [colorVariant]="'outline-primary'" [roundedButton]="false" (click)="onCancel()"  [label]="translate.instant('Cancel')"></rds-button>
       <rds-button [disabled]="changePasswordForm.invalid||isPasswordMismatch" [label]="translate.instant('Save')" type="button"
                   [size]="'medium'" class="px-2" [colorVariant]="'primary'" (click)="saveProfile(changePasswordForm)">
       </rds-button>
