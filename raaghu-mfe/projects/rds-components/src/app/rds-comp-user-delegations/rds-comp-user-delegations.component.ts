@@ -20,15 +20,13 @@ export class RdsUserDelegationsComponent implements OnInit, OnChanges, OnDestroy
   @Input() pagination: boolean = false;
   @Input() tableWidth: string = '100%';
   @Input() tableStyle: string = 'Light';
-  @Input() UserName: string;
-
-  username:string='';
-  StartDate:string='';
-  endDate:string='';
+  username: any = '';
+  startDate: Date = new Date();
+  endDate: Date = new Date();
   @Output() onDeligateSave = new EventEmitter<any>()
   @Output() onCancelDeligate = new EventEmitter<any>()
   @Output() onDeleteDeligate = new EventEmitter<any>()
-  constructor(public translate:TranslateService) { }
+  constructor(public translate: TranslateService) { }
   ngOnChanges(changes: SimpleChanges): void {
   }
 
@@ -36,37 +34,44 @@ export class RdsUserDelegationsComponent implements OnInit, OnChanges, OnDestroy
   }
 
   deleteDeligateData(event: any): void {
-    if(event.actionId==='delete'){
+    if (event.actionId === 'delete') {
       this.onDeleteDeligate.emit(event.selectedData);
     }
   }
 
   hideandShowdelegateform() {
-    this.deligateDivFlag = !this.deligateDivFlag
+    this.deligateDivFlag = !this.deligateDivFlag;
   }
 
-  addUser(): void {
-    const DeligateData:any={
-      endTime:this.endDate,
-      startTime:this.StartDate,
-      targetUserId:this.username
-    }
-    this.onDeligateSave.emit(DeligateData);
-  }
+
   onUserSelection(event: any): void {
     this.selectedUser = event.item
   }
-  onSave(userDelegation:NgForm): void {
-    userDelegation.form.markAllAsTouched();
-    const DeligateData:any={
-      endTime:this.endDate,
-      startTime:this.StartDate,
-      targetUserId:this.username
+  onSave(delegateForm: NgForm): void {
+    if (!delegateForm.valid) {
+      return;
+    }
+    const DeligateData: any = {
+      endTime: this.endDate,
+      startTime: this.startDate,
+      targetUserId: this.username[0]
     }
     this.onDeligateSave.emit(DeligateData);
+    this.deligateDivFlag = false;
+    this.endDate = new Date();
+    this.startDate = new Date();
+    this.username[0] = '';
   }
   onCancel(): void {
     this.onCancelDeligate.emit(true);
+  }
+
+  onDateChange(date: Date, type: string) {
+    if (type === 'startDate') {
+      this.startDate = date;
+    } else {
+      this.endDate = date;
+    }
   }
   ngOnDestroy(): void {
   }
