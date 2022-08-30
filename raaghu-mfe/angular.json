@@ -299,11 +299,7 @@
 							"projects/libs/themes/src/styles/quillEditor.scss",
 							"projects/libs/themes/src/styles/responsive.scss",
 							"projects/host/src/styles.css",
-							{
-								"input": "projects/libs/themes/src/styles/default.scss",
-								"bundleName": "",
-								"inject": false
-							},
+							"projects/libs/themes/src/styles/default.scss",
 							{
 								"input": "projects/libs/themes/src/styles/default.scss",
 								"bundleName": "default",
