@@ -19,6 +19,7 @@ export class RdsLinkedAccountsComponent extends MfeBaseComponent implements OnIn
   @Input() recordsPerpage: number = 3;
   @Input() pagination: boolean = false;
   @Input() TenantName: string;
+  @Input() tenancyName: any;
   @Output() ondelete = new EventEmitter<any>();
   @Output() onUserSave = new EventEmitter<any>();
   @Output() onCancelDeligate = new EventEmitter<any>()
