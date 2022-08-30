@@ -113,10 +113,10 @@
                             <div class="d-flex align-items-center">
                                 <div class="dropdown" *ngIf="!data.isEdit; else editActionTemplate">
                                     <rds-button [colorVariant]="'default'" [submit]="false" [block]="false" [size]="'small'"
-                                    [iconFill]="true" [iconStroke]="true"   [disabled]="false" [outlineButton]="true"
-                                    [roundedButton]="true" icon="three_dots" [iconHeight]="'16px'" [iconWidth]="'16px'" [label]="data?.name+'_action'" tooltipTitle=""
-                                    tooltipPlacement="bottom" (click)="openAction()" id="action-dropdown"
-                                    data-bs-toggle="dropdown" aria-expanded="false"></rds-button>
+                                        [iconFill]="true" [iconStroke]="false"   [disabled]="false" [outlineButton]="true"
+                                        [roundedButton]="true" icon="three_dots" [iconHeight]="'16px'" [iconWidth]="'16px'" [label]="data?.name+'_action'" tooltipTitle=""
+                                        tooltipPlacement="bottom" (click)="openAction()" id="action-dropdown"
+                                        data-bs-toggle="dropdown" aria-expanded="false"></rds-button>
                                     <div class="dropdown-menu" aria-labelledby="action-dropdown">
                                         <ng-container *ngFor="let action of actions">
                                             <a class="dropdown-item"
@@ -159,7 +159,7 @@
     <div class="my-5 py-5 d-flex align-items-center justify-content-center">
         <div class="text-center">
             <div class="mb-3">
-                <rds-icon name="empty_states_add_records" height="100px" width="100px"></rds-icon>
+                <rds-icon name="file_plus" height="100px" width="100px"></rds-icon>
             </div>
             <div>
                 <h5> {{noDataTitle|translate}} </h5>
@@ -169,8 +169,6 @@
                     </small>
                 </div>
             </div>
-
         </div>
-    </div>
-</ng-template>
-<app-rds-comp-table-shimmer *ngIf="isShimmer"></app-rds-comp-table-shimmer>
+    </ng-template>
+    <app-rds-comp-table-shimmer *ngIf="isShimmer"></app-rds-comp-table-shimmer>
