@@ -1,19 +1,18 @@
 <ng-container *ngIf="datePickerType==='basic'">
-  <div>
+  <div [class.disable-pointer]="disabled">
     <label [ngClass]="labelClass" [ngClass]="Label == '' ? 'd-none' : 'form-label'" for="Errormessage">{{
       Label
       }}<span class="text-danger" *ngIf="isRequired">*</span></label>
     <div class="input-group mb-3 pt-2">
-      <input type="text" autocomplete="off" bsDatepicker [datesDisabled]="datesDisabled" [disabled]="disabled" [minDate]="minDate"
-        #datepicker="bsDatepicker" (onHidden)="onHide.emit($event)" [daysDisabled]="daysDisabled" [isOpen]="isOpen"
-        [bsConfig]="DatePickerConfig" id="DateOfBirth" [maxDate]="maxDate" [outsideEsc]="outsideEsc"
-        (onShown)="onShow.emit($event)" [placeholder]="placeholder" [bsValue]="value"
-        [dateTooltipTexts]="dateTooltipTexts" [(ngModel)]="value" name="date-picker" [minMode]="minMode"
-        (bsValueChange)="onDateChane($event)" [datesEnabled]="datesEnabled" [datesDisabled]="datesDisabled"
-        [outsideClick]="outsideClick" [placement]="placement" class="form-control" />
-      <span class="input-group-text" id="basic-addon1" (click)="datepicker.show()" [class.disabled]="disabled">
-        <rds-icon name="calendar" height="18px" width="18px"></rds-icon>
-
+      <input type="text" autocomplete="off" bsDatepicker [datesDisabled]="datesDisabled"
+        [class.disable-pointer]="disabled" [disabled]="disabled" [minDate]="minDate" #datepicker="bsDatepicker"
+        (onHidden)="onHide.emit($event)" [daysDisabled]="daysDisabled" [isOpen]="isOpen" [bsConfig]="DatePickerConfig"
+        id="DateOfBirth" [maxDate]="maxDate" [outsideEsc]="outsideEsc" (onShown)="onShow.emit($event)"
+        [placeholder]="placeholder" [bsValue]="value" [dateTooltipTexts]="dateTooltipTexts" [(ngModel)]="value"
+        name="date-picker" [minMode]="minMode" (bsValueChange)="onDateChane($event)" [datesEnabled]="datesEnabled"
+        [datesDisabled]="datesDisabled" [outsideClick]="outsideClick" [placement]="placement" class="form-control" />
+      <span class="input-group-text" id="basic-addon1" (click)="datepicker.show()" [class.disable-pointer]="disabled">
+        <rds-icon name="calendar" height="18px" width="18px" [disabled]="disabled"></rds-icon>
       </span>
 
     </div>
@@ -36,7 +35,8 @@
           <li class="display-date" *ngSwitchCase="'currentDate'"><a><small>{{currentDate | date:'MMM d,y'}}</small></a>
           </li>
 
-          <li class="display-date" *ngSwitchCase="'yesterdayDate'"><a><small>{{yesterdayDate | date:'MMM d,y'}}</small></a></li>
+          <li class="display-date" *ngSwitchCase="'yesterdayDate'"><a><small>{{yesterdayDate | date:'MMM
+                d,y'}}</small></a></li>
 
           <li class="display-date" *ngSwitchCase="'lastSevendate'"><a><small>{{dates | date:'MMM d,y'}} -
                 {{lastSevendate | date:'MMM d,y'}}</small></a></li>
