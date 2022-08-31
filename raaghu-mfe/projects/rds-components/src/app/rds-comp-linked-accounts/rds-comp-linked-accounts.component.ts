@@ -19,9 +19,10 @@ export class RdsLinkedAccountsComponent extends MfeBaseComponent implements OnIn
   @Input() recordsPerpage: number = 3;
   @Input() pagination: boolean = false;
   @Input() TenantName: string;
+  @Input() tenancyName: any;
   @Output() ondelete = new EventEmitter<any>();
   @Output() onUserSave = new EventEmitter<any>();
-  @Output() onCancelDeligate = new EventEmitter<any>()
+  @Output() onCancelLinkedAccounts = new EventEmitter<any>()
   @Input()
   linkedAccount: LinkedAccount = {
     TableHeader: [],
@@ -137,7 +138,7 @@ export class RdsLinkedAccountsComponent extends MfeBaseComponent implements OnIn
   }
 
   onCancel(): void {
-    this.onCancelDeligate.emit(true);
+    this.onCancelLinkedAccounts.emit(true);
   }
 
 }
