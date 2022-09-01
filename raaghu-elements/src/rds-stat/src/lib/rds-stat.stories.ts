@@ -22,8 +22,9 @@ const Template: Story<RdsStatComponent> = (args: RdsStatComponent) => ({
   props: args,
 });
 
-export const Basic = Template.bind({});
-Basic.args = {
+export const basic = Template.bind({});
+basic.args = {
+  display_type: 'Basic',
     statItems: [
         { title:'SAM SMITH',
         value: '2370', 
@@ -32,22 +33,17 @@ Basic.args = {
         iconWidth:'80px',
         iconFill:true,
         iconStroke:true},
-    
-        { title:'SAM SMITH',
-        value: '2370', 
-        icon: 'star',
-        iconHeight:'80px',
-        iconWidth:'80px',
-        iconFill:true,
-        iconStroke:true},
+      ]
 
+}
+
+export const advanced = Template.bind({});
+advanced.args = {
+  display_type: 'Advanced',
+    statItems: [
         { title:'SAM SMITH',
         value: '2370', 
-        icon: 'star',
-        iconHeight:'80px',
-        iconWidth:'80px',
-        iconFill:true,
-        iconStroke:true},
+      },
       ]
 
 }

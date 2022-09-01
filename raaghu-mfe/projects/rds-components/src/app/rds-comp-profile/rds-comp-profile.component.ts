@@ -36,8 +36,9 @@ export class RdsCompProfileComponent extends MfeBaseComponent implements OnInit 
   @Output() onLanguageSelection = new EventEmitter<any>();
   public rdsAlertMfeConfig: ComponentLoaderOptions;
   alertData: any = {
-
-    alertConfirmation: "DownLoding Data",
+    iconUrl: "download_data",
+    colorVariant: "success",
+    alertConfirmation: "Downloading Data",
     messageAlert: "We are preaparing your data For Downloading",
     CancelButtonLabel: "Cancel",
     DeleteButtonLabel: "OK"
@@ -138,11 +139,12 @@ export class RdsCompProfileComponent extends MfeBaseComponent implements OnInit 
   onclickMenu(item: any) {
 
     if (this.MenuItems[item]?.showoffcanvas == false) {
-      this.offCanvasWidth = 1000;
-      this.tabisVisible = false;
-      this.firstcontent = false
-      this.cancelbutton = true;
-      this.isAnyProfileMenuSelected = false;
+      // this.offCanvasWidth = 1000;
+      // this.tabisVisible = false;
+      // this.firstcontent = false
+      // this.cancelbutton = true;
+      // this.isAnyProfileMenuSelected = false;
+      this.onClickCloseTabContent();
       this.onDownloadLink.emit(item)
       $('#DownloadDatamodal').modal('show');
     } else {
@@ -284,9 +286,9 @@ export class RdsCompProfileComponent extends MfeBaseComponent implements OnInit 
   }
 
 
-  private downloadText() {
+   downloadText() {
     let showUserData = JSON.parse(localStorage.getItem('userNameInfo'));
-
+ console.log("Hello");
     // this.userEmailOrName = this.showUserData.username;
     const data: any = {
       Tenancy_name: JSON.parse(localStorage.getItem('tenantInfo')),
