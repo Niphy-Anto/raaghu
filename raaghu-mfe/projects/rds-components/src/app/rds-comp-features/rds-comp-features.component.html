@@ -49,9 +49,10 @@
           </div>
           <div class="col-md-6">
             <div class="form-group mb-3">
-              <rds-input size="default" [inputType]="'number'" [placeholder]="translate.instant('Annual Price')"
+              <rds-input size="default" [inputType]="'text'" [placeholder]="translate.instant('Annual Price')" 
                 [TitleType]="'Top'" [Title]="translate.instant('Annual Price')" #annual_price="ngModel"
-                [(ngModel)]="AnnualPrice" [isRequired]=true name="annual" required ngDefaultControl>
+                [(ngModel)]="AnnualPrice" [isRequired]=true name="annual" required ngDefaultControl               
+                onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57">
               </rds-input>
               <div class="form-control-feedback"
                 *ngIf="annual_price.errors && (annual_price.dirty || annual_price.touched)">

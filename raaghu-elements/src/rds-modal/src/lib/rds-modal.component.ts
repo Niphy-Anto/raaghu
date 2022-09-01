@@ -1,19 +1,35 @@
-import { Component, EventEmitter, Input, OnInit, Output, TemplateRef } from '@angular/core';
+import { Component, EventEmitter, Input, AfterViewInit, OnInit, Output, SimpleChanges, TemplateRef } from '@angular/core';
 
 @Component({
   selector: 'rds-modal',
   templateUrl: './rds-modal.component.html',
   styleUrls: ['./rds-modal.component.scss']
 })
-export class RdsModalComponent implements OnInit {
+export class RdsModalComponent implements OnInit, AfterViewInit {
 
   onChange!: (value: string) => void;
   onTouched!: () => void
 
   constructor() { }
 
+
+  ngAfterViewInit(): void {
+    if (this.modalId) {
+      var myModalEl = document.getElementById(this.modalId);
+      if (myModalEl) {
+        const that = this;
+        myModalEl.addEventListener('hidden.bs.modal', function (event) {
+          that.onClose.emit();
+        })
+      }
+    }
+  }
+
+
   ngOnInit(): void {
   }
+
+
 
   @Input()
   isModalHeader: boolean = true;
