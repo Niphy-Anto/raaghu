@@ -313,7 +313,7 @@
           <h6 class="mb-3">{{"ButtonGroup - Icon"|translate}}</h6>
           <!-- <rds-button-group [vertical]="false" colorVariant="warning" [outline]="false" role="button"
           [buttonGroupItem]="buttonGroupItemWithIcon"></rds-button-group> -->
-          <rds-button-group [vertical]="false" [colorVariant]="'secondary'" [outline]="false" role="button" size="medium"
+          <rds-button-group [vertical]="false" [colorVariant]="'info'" [outline]="false" role="button" size="medium"
                             [buttonGroupItem]="buttonGroupItemWithIcon"></rds-button-group>
         </div>
       </div>
@@ -369,7 +369,7 @@
         <div class="col-4">
           <h6 class="mb-3">{{"Button - icon"|translate}}</h6>
           <rds-button colorVariant="primary" [submit]="false" [size]="'small'" [block]="false" [disabled]="false" [outlineButton]="false"
-                      [roundedButton]="true" icon="pencil" label="" iconHeight="16px" iconWidth="16px" tooltipTitle=""
+                      [roundedButton]="true" icon="pencil" label="" iconHeight="13px" iconWidth="13px" tooltipTitle=""
                       tooltipPlacement="bottom">
           </rds-button>
         </div>
@@ -395,19 +395,19 @@
         <div class="row">
           <div class="col-3">
             <rds-button colorVariant="primary" [submit]="false" [size]="'small'" [block]="false" [disabled]="false" [outlineButton]="false"
-                        [roundedButton]="true" icon="pencil" label="" iconHeight="18px" iconWidth="18px" tooltipTitle=""
+                        [roundedButton]="true" icon="pencil" label="" iconHeight="14px" iconWidth="14px" tooltipTitle=""
                         tooltipPlacement="bottom">
             </rds-button>
           </div>
           <div class="col-3">
             <rds-button colorVariant="primary" [submit]="false" [size]="'medium'" [block]="false" [disabled]="false" [outlineButton]="false"
-                        [roundedButton]="true" icon="pencil" label="" iconHeight="23px" iconWidth="23px" tooltipTitle=""
+                        [roundedButton]="true" icon="pencil" label="" iconHeight="18px" iconWidth="18px" tooltipTitle=""
                         tooltipPlacement="bottom">
             </rds-button>
           </div>
           <div class="col-3">
             <rds-button colorVariant="primary" [submit]="false" [size]="'large'" [block]="false" [disabled]="false" [outlineButton]="false"
-                        [roundedButton]="true" icon="pencil" label="" iconHeight="30px" iconWidth="30px" tooltipTitle=""
+                        [roundedButton]="true" icon="pencil" label="" iconHeight="24px" iconWidth="24px" tooltipTitle=""
                         tooltipPlacement="bottom">
             </rds-button>
           </div>
@@ -659,7 +659,7 @@
       <div class="col-6">
         <h6 class="mb-3">{{"Dropdown List Without Icon"|translate}}</h6>
         <rds-dropdownlist [listItems]="listItems" size="default"
-                          [colorVariant]="'outline-light'" class="text-dark" [placeholder]="'Select Country'">
+                          class="text-dark" [placeholder]="'Select Country'">
           <ng-template #DropdownItems let-val let-index="index">
             <li [class.active]="index === 1">
               <div class="d-flex align-items-center bind-center-div1 group-list">
@@ -678,7 +678,7 @@
       <div class="col-6">
         <h6 class="mb-3">{{"Dropdown List With Icon"|translate}}</h6>
         <rds-dropdownlist [listItems]="listItemsCountryCode" size="default"
-                          [colorVariant]="'outline-light'" class="text-dark" [placeholder]="'Select Country Code'">
+                           class="text-dark" [placeholder]="'Select Country Code'">
           <ng-template #DropdownItems let-val let-index="index">
             <li [class.active]="index === 1">
               <div class="d-flex align-items-center bind-center-div1 group-list">
