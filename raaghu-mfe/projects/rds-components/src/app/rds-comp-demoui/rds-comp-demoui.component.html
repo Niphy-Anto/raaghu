@@ -658,8 +658,7 @@
 
       <div class="col-6">
         <h6 class="mb-3">{{"Dropdown List Without Icon"|translate}}</h6>
-        <rds-dropdownlist [listItems]="listItems" size="default"
-                          class="text-dark" [placeholder]="'Select Country'">
+        <rds-dropdownlist [listItems]="listItems" size="default" class="text-dark" [placeholder]="'Select Country'">
           <ng-template #DropdownItems let-val let-index="index">
             <li [class.active]="index === 1">
               <div class="d-flex align-items-center bind-center-div1 group-list">
