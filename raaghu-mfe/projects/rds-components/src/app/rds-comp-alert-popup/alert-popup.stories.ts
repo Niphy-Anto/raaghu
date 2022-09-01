@@ -37,7 +37,8 @@ export const basic: Story<RdsCompAlertPopupComponent> = (args) => ({
 basic.args = {
   
   alertData:  {
-    iconUrl: "./delete-icon.svg",
+    iconUrl: "delete",
+    colorVariant: "danger",
     alertConfirmation: "Are you sure ?",
     messageAlert: "The record will be deleted permanently",
     CancelButtonLabel: "Cancel",

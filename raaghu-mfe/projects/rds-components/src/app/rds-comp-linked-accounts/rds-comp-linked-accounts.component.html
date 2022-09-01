@@ -20,7 +20,7 @@
               <div class="col-sm-12" *ngIf="linkaacountDivFlag">
                 <div class="form-group mb-3">
                   <rds-input size="default" value="" [Title]="translate.instant('Tenancy Name')"
-                    [placeholder]="translate.instant('Tenancy Name')" [TitleType]="'Top'" inputType="text"
+                    [placeholder]="translate.instant('Tenancy Name')" [TitleType]="'Top'" name="tenancy_name" inputType="text"
                     [(ngModel)]="Tenancyname" ngDefaultControl></rds-input>
                 </div>
               </div>
@@ -28,7 +28,7 @@
                 <div class="form-group mb-3">
 
                   <rds-input size="default" value="" [Title]="translate.instant('User Name')" [TitleType]="'Top'"
-                    inputType="text" [placeholder]="translate.instant('User Name')" [(ngModel)]="userName"
+                    inputType="text" [placeholder]="translate.instant('User Name')" [(ngModel)]="userName" name="user_name"
                     [isRequired]=true ngDefaultControl (keyup)="LinkaccountValidator()"
                     (mouseup)="LinkaccountValidator()">
                   </rds-input>
@@ -37,7 +37,7 @@
               <div class="col-md-12" *ngIf="linkaacountDivFlag">
                 <div class="form-group mb-3">
 
-                  <rds-input size="default" value="" [Title]="translate.instant('Password')" [placeholder]="'Password'"
+                  <rds-input size="default" value="" [Title]="translate.instant('Password')" [placeholder]="'Password'" name="linked_pswd"
                     [TitleType]="'Top'" inputType="password" [(ngModel)]="Password" [isRequired]=true ngDefaultControl
                     (keyup)="LinkaccountValidator()" (mouseup)="LinkaccountValidator()">
                   </rds-input>
