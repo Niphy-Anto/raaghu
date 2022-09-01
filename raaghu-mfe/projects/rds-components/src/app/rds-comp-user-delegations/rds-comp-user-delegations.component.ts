@@ -15,6 +15,7 @@ export class RdsUserDelegationsComponent implements OnInit, OnChanges, OnDestroy
   deligateDivFlag: boolean = false;
   @Input() rdsDeligateTableHeader: TableHeader[] = [];
   @Input() rdsDeligateTableData: any = [];
+  @Input() tabClosed: boolean = false;
   @Input() recordsPerpage: number = 10;
   actions: TableAction[] = [{ id: 'delete', displayName: 'Delete' }]
   @Input() pagination: boolean = false;
@@ -28,6 +29,9 @@ export class RdsUserDelegationsComponent implements OnInit, OnChanges, OnDestroy
   @Output() onDeleteDeligate = new EventEmitter<any>()
   constructor(public translate: TranslateService) { }
   ngOnChanges(changes: SimpleChanges): void {
+    if (this.tabClosed) {
+      this.deligateDivFlag = false;
+    }
   }
 
   ngOnInit(): void {
@@ -63,7 +67,8 @@ export class RdsUserDelegationsComponent implements OnInit, OnChanges, OnDestroy
     this.username[0] = '';
   }
   onCancel(): void {
-    this.onCancelDeligate.emit(true);
+    this.deligateDivFlag = false;
+    // this.onCancelDeligate.emit(true);
   }
 
   onDateChange(date: Date, type: string) {

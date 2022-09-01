@@ -32,6 +32,7 @@ export class RdsCompProfileComponent extends MfeBaseComponent implements OnInit 
   @Input() languageItems = [];
   @Input() selectedLanguage: any = { language: '', icon: '' };
   @Input() defaultLanguage: string = '';
+  tabClosed: boolean = false;
   @Output() onLanguageSelection = new EventEmitter<any>();
   public rdsAlertMfeConfig: ComponentLoaderOptions;
   alertData: any = {
@@ -152,6 +153,11 @@ export class RdsCompProfileComponent extends MfeBaseComponent implements OnInit 
       this.isAnyProfileMenuSelected = true;
 
     }
+    if (this.MenuItems[item].label == 'Manage Authority Delegation') {
+      this.tabClosed = true;
+    } else {
+      this.tabClosed = false;
+    }
   }
   onClickCloseTabContent() {
     this.offCanvasWidth = 304;
@@ -261,7 +267,7 @@ export class RdsCompProfileComponent extends MfeBaseComponent implements OnInit 
   }
   close(): void {
     this.viewCanvas = false;
-    this.rdsDeligateTableData=[];
+    this.tabClosed = true;
   }
 
   // language ts
