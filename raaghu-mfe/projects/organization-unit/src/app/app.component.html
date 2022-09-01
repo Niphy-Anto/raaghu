@@ -8,7 +8,7 @@
             <div class="card-header bg-transparent">
               <h5 class="card-title">{{'Organization Tree'| translate}}</h5>
             </div>
-            <div class="card-body">
+            <div class="card-body overflow-auto vh-100">
               <mfe-loader [config]="rdsOrganizationTreeConfig"></mfe-loader>
             </div>
           </div>
@@ -26,7 +26,7 @@
               <div *ngIf="selectedTreeNode != 0">
 
                 <div class="card-header d-flex justify-content-between bg-transparent">
-                  <h5 class="card-title">
+                  <h5 class="card-title text-primary">
                     {{ organizationName }}
                   </h5>
                   <rds-button [label]="translate.instant('New Member')" *ngIf="selectedTabIndex == 0" [size]="'small'" [colorVariant]="'primary'"

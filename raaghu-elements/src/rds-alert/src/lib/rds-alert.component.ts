@@ -113,7 +113,6 @@ export class RdsAlertComponent implements OnInit {
       this.alertEl.nativeElement,
     );
     if (this.colorVariant !== 'danger') {
-      console.log(this.delay)
       setTimeout(() => {
         this.closeAlert();
       }, this.delay);

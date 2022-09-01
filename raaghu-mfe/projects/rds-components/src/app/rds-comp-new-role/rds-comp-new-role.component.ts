@@ -74,6 +74,7 @@ export class RdsCompNewRoleComponent implements OnInit {
       }
   }
   addRole(Roleform: NgForm): void {
+    Roleform.form.markAllAsTouched();
     if (!Roleform || Roleform.invalid) {
       return;
     }
