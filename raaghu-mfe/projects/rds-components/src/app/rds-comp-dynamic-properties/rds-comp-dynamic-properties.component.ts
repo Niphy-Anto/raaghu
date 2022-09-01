@@ -101,43 +101,42 @@ export class RdsCompDynamicPropertiesComponent implements OnInit, OnChanges {
       if (this.DynamicProperyInfo && this.DynamicProperyInfo.length) {
         const DynamicPropery: any = {
           displayName: this.DynamicProperyInfo.dynamicProperties.displayName,
-          inputType: this.DynamicProperyInfo.dynamicProperties.inputType,
+          inputType: this.DynamicProperyInfo.dynamicProperties.inputType[0],
           permission: this.selectedPermissions,
           propertyName: this.DynamicProperyInfo.dynamicProperties.propertyName,
           tenantId: null,
           id: this.id,
         };
         this.createOrUpdateDynamic.emit(DynamicPropery);
-        this.resetFormSubject.next(true);
+        this.closeCanvas();
         this.editShimmer = true;
       } else {
+          const DynamicPropery: any = {
+            displayName: this.DynamicProperyData.displayName,
+            inputType: this.DynamicProperyData.inputType,
+            permission: this.selectedPermissions,
+            propertyName: this.DynamicProperyData.propertyName,
+            tenantId: null,
+            id: this.id,
+          };
+          this.createOrUpdateDynamic.emit(DynamicPropery);
+        }
+    } else {
+      if(this.DynamicProperyInfo.dynamicProperties.inputType[0] != "" && this.selectedPermissions!= "" && this.DynamicProperyInfo.dynamicProperties.propertyName != " "){
         const DynamicPropery: any = {
-          displayName: this.DynamicProperyData.displayName,
-          inputType: this.DynamicProperyData.inputType,
+          displayName: this.DynamicProperyInfo.dynamicProperties.displayName,
+          inputType: this.DynamicProperyInfo.dynamicProperties.inputType[0],
           permission: this.selectedPermissions,
-          propertyName: this.DynamicProperyData.propertyName,
+          propertyName: this.DynamicProperyInfo.dynamicProperties.propertyName,
           tenantId: null,
-          id: this.id,
         };
         this.createOrUpdateDynamic.emit(DynamicPropery);
-        this.resetFormSubject.next(true);
+        this.closeCanvas();
       }
-    } else {
-      const DynamicPropery: any = {
-        displayName: this.DynamicProperyInfo.dynamicProperties.displayName,
-        inputType: this.DynamicProperyInfo.dynamicProperties.inputType,
-        permission: this.selectedPermissions,
-        propertyName: this.DynamicProperyInfo.dynamicProperties.propertyName,
-        tenantId: null,
-      };
-      this.createOrUpdateDynamic.emit(DynamicPropery);
-      this.resetFormSubject.next(true);
     }
     this.id = undefined;
     this.DynamicProperyData = {};
     this.selectedPermissionList = [];
-    this.resetFormSubject.next(true);
-    this.closeCanvas();
   }
   getDynamicPropertyInfo(eventData) {
     this.DynamicProperyInfo = eventData;
