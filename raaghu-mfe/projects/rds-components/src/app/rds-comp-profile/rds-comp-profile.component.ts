@@ -261,6 +261,7 @@ export class RdsCompProfileComponent extends MfeBaseComponent implements OnInit 
   }
   close(): void {
     this.viewCanvas = false;
+    this.rdsDeligateTableData=[];
   }
 
   // language ts
