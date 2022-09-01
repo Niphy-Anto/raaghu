@@ -19,7 +19,7 @@
       <div class="d-flex justify-content-end" *ngIf="tabweb && websiteLogData && websiteLogData.length > 0 ">
         <div class="desktop-btn">
           <rds-button type="button" [size]="'small'" [colorVariant]="'primary'" [roundedButton]="true"
-                      icon="refresh" iconHeight="20px" iconWidth="27px" (click)="refreshData()" class="me-2">
+                      icon="refresh" iconHeight="18px" iconWidth="26px" (click)="refreshData()" class="me-2">
           </rds-button>
           <rds-button [id]="'yes'" [size]="'small'" [tooltipPlacement]="'top'" [colorVariant]="'primary'"
                       (click)="exportToExcel()" [label]="translate.instant('DOWNLOAD ALL')" [outlineButton]="true">
