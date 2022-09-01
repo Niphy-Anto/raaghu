@@ -96,7 +96,8 @@ export class RdsOrganizationTreeComponent extends MfeBaseComponent implements On
   onUpdateUnitTree = new EventEmitter<{data:{id: number, displayName: string }}>()
 
   alertData: AlertPopupData = {
-    iconUrl: "assets/delete-icon.svg",
+    iconUrl: "delete",
+    colorVariant: "danger",
     alertConfirmation: "Are you sure ?",
     messageAlert: "The record will be deleted permanently",
     CancelButtonLabel: "Cancel",
