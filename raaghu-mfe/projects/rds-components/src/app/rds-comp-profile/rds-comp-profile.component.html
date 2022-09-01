@@ -2,13 +2,13 @@
   [offcanvaswidth]="offCanvasWidth" [placement]="'end'" (onClose)="close()">
   <div class="d-lg-flex d-sm-block h-100">
     <div naveContent class="tab-content profileMenuContent" [ngClass]="{'d-none':!isAnyProfileMenuSelected}"
-      id="nav-tabContent">
+      id="nav-tabContent">       
       <button type="button" class="btn-close text-reset closetabs" (click)="onClickCloseTabContent()"
-        aria-label="Close"></button>
+        aria-label="Close"></button>    
       <div class="tab-pane active h-100" id="nav-LinkAccount" role="tabpanel" aria-labelledby="nav-LinkAccount">
         <app-rds-linked-accounts [linkedAccount]="linkedAccount" (ondelete)="ondeleteLinkaccount.emit($event)"
           [pagination]="pagination" [recordsPerpage]="recordsPerpage" (deleteEvent)="deleteLinkaccount($event) "
-          (onUserSave)="linkToUser($event)" (onCancelDeligate)="cancelDelegate($event)">
+          (onUserSave)="linkToUser($event)" (onCancelLinkedAccounts)="onClickCloseTabContent()">
         </app-rds-linked-accounts>
       </div>
       <div class="tab-pane fade h-100" id="nav-Deligation" role="tabpanel" aria-labelledby="nav-Deligation">
@@ -25,7 +25,7 @@
         </app-rds-comp-login-attempts>
       </div>
       <div class="tab-pane fade h-100" id="nav-Settings" role="tabpanel" aria-labelledby="nav-Settings">
-        <app-rds-mysettings [ProfileData]="ProfileData" (onProfileSave)="onProfileSave.emit($event)">
+        <app-rds-mysettings [ProfileData]="ProfileData" (onProfileSave)="onProfileSave.emit($event)" (onProfileClose)="onClickCloseTabContent()">
         </app-rds-mysettings>
       </div>
       <div class="tab-pane fade h-100" id="nav-DownLoad" role="tabpanel" aria-labelledby="nav-DownLoad">

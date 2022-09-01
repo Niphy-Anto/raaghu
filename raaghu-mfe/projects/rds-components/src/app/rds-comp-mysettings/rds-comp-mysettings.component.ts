@@ -18,7 +18,7 @@ export class RdsMysettingsComponent implements OnInit, OnChanges {
     NewPassword: '',
     ConFNewPassword: ''
   }
-  
+  @Output() onProfileClose= new EventEmitter<any>();
   @Output() onProfileSave = new EventEmitter<any>();
   firstcontent: boolean = false;
   invalidEmail: boolean = false;
@@ -84,5 +84,8 @@ export class RdsMysettingsComponent implements OnInit, OnChanges {
       return;
     }
     this.onProfileSave.emit({ currentPassword: this.ProfileData.CurrentPassword, newPassword: this.ProfileData.NewPassword });
+  }
+  onCancel():void{
+    this.onProfileClose.emit();
   }
 }
