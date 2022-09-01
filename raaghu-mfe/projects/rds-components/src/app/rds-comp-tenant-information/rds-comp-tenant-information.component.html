@@ -49,8 +49,8 @@
         </div>
         <div class="col-md-6 sm-p-0">
           <div class="form-group mb-3">
-            <rds-select-list [(ngModel)]="tenantData.edition" [labelText]="translate.instant('Edition')" [placeholderText]="'Edition'" 
-              [value]="tenantData.edition" [placeholderText]="'Select Edition'" ngDefaultControl LabelType="Top" name="edition" [itemList]="editionList">
+            <rds-select-list [(ngModel)]="tenantData.edition" [labelText]="translate.instant('Edition')" [isRequired]=true
+              [value]="tenantData.edition" ngDefaultControl LabelType="Top" name="edition" [itemList]="editionList" [placeholderText]="'Select Edition'">
             </rds-select-list>
           </div>
         </div>
