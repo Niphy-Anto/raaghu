@@ -264,7 +264,7 @@ export class AppComponent implements OnInit {
         isEnabled: false,
         id: undefined,
       };
-      this.languageCanvasTitle = 'New Language';
+      this.languageCanvasTitle = 'NEW LANGUAGE';
 
     } else {
       this.languageCanvasTitle = 'Edit Language';
