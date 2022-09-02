@@ -1,4 +1,13 @@
+<!-- vscode-markdown-toc -->
+* 1. [🔢 High reusability](#Highreusability)
+* 2. [📱 Responsive and mobile-friendly](#Responsiveandmobile-friendly)
+* 3. [WAi Technology Contributors ✨](#WAiTechnologyContributors)
 
+<!-- vscode-markdown-toc-config
+	numbering=true
+	autoSave=true
+	/vscode-markdown-toc-config -->
+<!-- /vscode-markdown-toc -->
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 <p align="center">
@@ -9,10 +18,6 @@
 <p>
 <h1 align="center">Raaghu Elements</h4>
 </p>
-<p>
-<h1 align="center">hii</h4>
-</p>
-
 
 <p align="center">
 <a href="https://npmjs.org/rds-elements"><img src="https://img.shields.io/npm/v/rds-elements/latest.svg" alt="npm latest version" ></a>
@@ -40,6 +45,7 @@
     <a href="https://github.com/Wai-Technologies/raaghu/issues/new">Request Feature</a>
 </p>
 
+
 # 👋 Introducing `raaghu-elements` 
 
 `raaghu-elements` is an opensource Angular library framework built on top of Bootstrap 5 and Storybook offering highly customizable and reusable Angular UI elements.
@@ -57,11 +63,11 @@ Many Thanks to all the `supporters` who have helped this project with stars(⭐)
 
 # 🔥 Features
 
-## 🔢 High reusability
+##  1. <a name='Highreusability'></a>🔢 High reusability
  - Promotes reusability throughout the UI and pages
  - Reduces code duplication and helps in delivering a more consistent and even UI
 
-## 📱 Responsive and mobile-friendly
+##  2. <a name='Responsiveandmobile-friendly'></a>📱 Responsive and mobile-friendly
 - All of the elements are built for a wide variety of screen sizes
 
 
@@ -181,7 +187,7 @@ A ⭐️ to <b>Raaghu</b> is to build its triceps 💪 stronger.
 
 
 
-## WAi Technology Contributors ✨
+##  3. <a name='WAiTechnologyContributors'></a>WAi Technology Contributors ✨
 
 Thanks goes to these wonderful people and Wai technology.
 
