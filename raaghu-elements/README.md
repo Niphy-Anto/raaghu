@@ -1,15 +1,4 @@
-<!-- vscode-markdown-toc -->
-* 1. [🔢 High reusability](#Highreusability)
-* 2. [📱 Responsive and mobile-friendly](#Responsiveandmobile-friendly)
-* 3. [WAi Technology Contributors ✨](#WAiTechnologyContributors)
 
-<!-- vscode-markdown-toc-config
-	numbering=true
-	autoSave=true
-	/vscode-markdown-toc-config -->
-<!-- /vscode-markdown-toc -->
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
 <p align="center">
     <a href="https://raaghu.io" target="_blank">
         <img src="./raaghu_icon.png" alt="logo" width="125"/>
@@ -46,14 +35,15 @@
 </p>
 
 
-# 👋 Introducing `raaghu-elements` 
+
+# Introducing `raaghu-elements` 
 
 `raaghu-elements` is an opensource Angular library framework built on top of Bootstrap 5 and Storybook offering highly customizable and reusable Angular UI elements.
 
 Raaghu elements can be used as a base to build complex components and UI layouts whilst maintaining a high level of reusability.
 
 
-# 🚀 Demo
+# Demo
 Here is a quick [demo](https://www.raaghu.io) of the elements. We hope you enjoy it.
 
 Liked it? Please give us a ⭐️ to show your appreciation
@@ -61,7 +51,7 @@ Liked it? Please give us a ⭐️ to show your appreciation
 Many Thanks to all the `supporters` who have helped this project with stars(⭐)
 
 
-# 🔥 Features
+# Features
 
 ##  1. <a name='Highreusability'></a>🔢 High reusability
  - Promotes reusability throughout the UI and pages
@@ -71,7 +61,7 @@ Many Thanks to all the `supporters` who have helped this project with stars(⭐)
 - All of the elements are built for a wide variety of screen sizes
 
 
-# 🏗️ How to Set up `raaghu-elements` for Development?
+# How to Set up `raaghu-elements` for Development?
 You can run `raaghu-elements` locally with a few easy steps.
 
 1. Clone the repository
@@ -147,17 +137,17 @@ npm run storybook
 ```
 
 
-# 🍔 Built With
+# Built With
 - [Angular Libraries](https://angular.io/guide/libraries): Build bulletproof UI components faster
 - [Bootstrap 5](https://bootstrap.com/): Sleek, intuitive, and powerful framework for faster and easier web development.
 - [Storybook](https://storybook.js.org/): Build bulletproof UI components faster
 
 
-# 🛡️ License
+# License
 This project is licensed under the MIT License - see the [`LICENSE`](LICENSE) file for details.
 
 
-# 🦄 Upcoming Features
+# Upcoming Features
 `raaghu-elements` has all the potentials to grow further. Here are some of the upcoming features,
 
 - ✔️ Custom plugin to reveal the reusability within your angular project
