@@ -153,7 +153,7 @@ npm run storybook
 ## <a name='UpcomingFeatures'></a>Upcoming Features
 - Predefined themes for the UI/UX.
 - Heroes, feature sections, newsletter sign up forms for the marketing websites.
-- Checkout forms, shopping carts, product views for the ecommerce websites.
+- Checkout forms, shopping carts, product views for the e-commerce websites.
 - Fully capable with Abp.io .
 
 If you find something is missing, we are listening. Please create a feature request [from here](https://github.com/Wai-Technologies/raaghu/issues/new).
