@@ -1362,7 +1362,7 @@
       <div class="col-md-6">
         <h6 class="mb-3">{{"Progress Bar - Multiple"|translate}}</h6>
         <rds-progressbar [animation]="true" height="15" colorVariant="default" striped="progress-bar-striped"
-                         [progressWidth]="100" progressbar_MaxWidth="40" [label]="false" role="multiple"
+                         [progressWidth]="100" progressbar_MaxWidth="70" [label]="false" role="multiple"
                          [progressvalues]="progressvalues"></rds-progressbar>
       </div>
 
@@ -1499,7 +1499,7 @@
         <div class="col-4 pb-3">
           <h6 class="mb-3">{{"Select list - Basic"|translate}}</h6>
           <rds-select-list size="default" selected="SelectName" [disabled]="false" [multiple]="false" customIcon=""
-                           [itemList]="options" [tooltipTitle]="'Tooltip'" [tooltipPlacement]="'auto'">
+                           [itemList]="options">
 
           </rds-select-list>
         </div>
@@ -1661,7 +1661,7 @@
       <div class="col-4">
         <h6 class="mb-3">{{"Toast"|translate}}</h6>
         <rds-toasts message="Hello, world! This is a toast message." [withHeader]="false"
-                    colorVariant="" headerTitle="Bootstrap" time="11 Seconds ago" position="Bottom-Right"></rds-toasts>
+                    colorVariant="" headerTitle="Bootstrap" time="11 Seconds ago"></rds-toasts>
       </div>
       <div class="col-4">
         <h6 class="mb-3">{{"Toast - With Call to Action"|translate}}</h6>
