@@ -42,7 +42,6 @@
 </p>
 
 * 1. [🔢 High reusability](#Highreusability)
-* [Introducing raaghu-elements](#a-nameintroductiona-introducing-raaghu-elements)
 * 2. [📱 Responsive and mobile-friendly](#Responsiveandmobile-friendly)
 * 3. [WAi Technology Contributors ✨](#WAiTechnologyContributors)
 
