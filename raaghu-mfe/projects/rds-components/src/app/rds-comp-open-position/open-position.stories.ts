@@ -37,43 +37,55 @@ const Template: Story<RdsCompOpenPositionComponent> = (args: RdsCompOpenPosition
 
 export const basic = Template.bind({});
 basic.args = {
-  itemList: [{
+  item: {
     titleHeader: "Open Positions",
     navtabsItems: [
       {
+        id:'developer',
         label: 'Developer',
-        tablink: '#Developer',
-        ariacontrols: 'Developer',
+        tablink: '#developer',
+        ariacontrols: 'developer',
       },
       {
+        id:'marketing',
         label: 'Marketing',
-        tablink: '#Marketing',
-        ariacontrols: 'Marketing',
+        tablink: '#marketing',
+        ariacontrols: 'marketing',
       },
       {
+        id:'designer',
         label: 'Designer',
-        tablink: '#Designer',
-        ariacontrols: 'Designer',
+        tablink: '#designer',
+        ariacontrols: 'designer',
       },
       {
+        id:'researcher',
         label: 'Researcher',
-        tablink: '#Researcher',
-        ariacontrols: 'Researcher',
+        tablink: '#researcher',
+        ariacontrols: 'researcher',
       }
     ],
-    roleName: "Android Developer",
-    discription: [
+    descriptions: [
       {
+        type:"marketing",
         roleName: "Android Developer",
-        roleDiscription: "Designing and developing advanced applications for the Android platform · Unit-testing code for robustness, ...",
+        roleDescription: "Designing and developing advanced applications for the Android platform · Unit-testing code for robustness, ...",
         buttonLabel: "Apply Now"
       },
       {
+        type: "designer",
         roleName: "Android Developer",
-        roleDiscription: "Designing and developing advanced applications for the Android platform · Unit-testing code for robustness, ...",
+        roleDescription: "Designing and developing advanced applications for the Android platform · Unit-testing code for robustness, ...",
         buttonLabel: "Apply Now"
-      }],
-  }],
+      },
+      {
+        type: "researcher",
+        roleName: "Android Developer",
+        roleDescription: "Designing and developing advanced applications for the Android platform · Unit-testing code for robustness, ...",
+        buttonLabel: "Apply Now"
+      },
+    ],
+  }
 
 }
 

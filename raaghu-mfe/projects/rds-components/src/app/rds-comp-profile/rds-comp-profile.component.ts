@@ -33,6 +33,7 @@ export class RdsCompProfileComponent extends MfeBaseComponent implements OnInit 
   @Input() selectedLanguage: any = { language: '', icon: '' };
   @Input() defaultLanguage: string = '';
   @Output() onLanguageSelection = new EventEmitter<any>();
+  activePage: number;
   public rdsAlertMfeConfig: ComponentLoaderOptions;
   alertData: any = {
 
@@ -258,10 +259,16 @@ export class RdsCompProfileComponent extends MfeBaseComponent implements OnInit 
     let openedCanvas = bootstrap.Offcanvas.getInstance(myOffCanvas);
     // $(".offcanvas-backdrop").remove();
     openedCanvas.hide();
+    this.activePage = 8;
   }
   close(): void {
+    this.onClickCloseTabContent();    
+    this.activePage = 8;
+    let myOffCanvas = document.getElementById(this.id);
+    let openedCanvas = bootstrap.Offcanvas.getInstance(myOffCanvas);
+    openedCanvas.hide();
     this.viewCanvas = false;
-    this.rdsDeligateTableData=[];
+    this.rdsDeligateTableData = [];
   }
 
   // language ts
@@ -280,7 +287,6 @@ export class RdsCompProfileComponent extends MfeBaseComponent implements OnInit 
 
   private downloadText() {
     let showUserData = JSON.parse(localStorage.getItem('userNameInfo'));
-
     // this.userEmailOrName = this.showUserData.username;
     const data: any = {
       Tenancy_name: JSON.parse(localStorage.getItem('tenantInfo')),
