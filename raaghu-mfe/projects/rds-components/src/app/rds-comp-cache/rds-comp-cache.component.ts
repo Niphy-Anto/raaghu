@@ -20,7 +20,8 @@ export class RdsCompCacheComponent implements OnInit,DoCheck,OnChanges {
   totalRecords: number = 0;
   @Input() recordsPerPage: number = 10;
   alertData: any = {
-    iconUrl: "assets/delete-icon.svg",
+    iconUrl: "delete",
+    colorVariant: "danger",
     alertConfirmation: "Are you sure ?",
     messageAlert: "The record will be deleted permanently",
     CancelButtonLabel: "Cancel",
