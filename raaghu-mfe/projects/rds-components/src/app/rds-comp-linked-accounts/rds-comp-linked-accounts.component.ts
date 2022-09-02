@@ -130,7 +130,7 @@ export class RdsLinkedAccountsComponent extends MfeBaseComponent implements OnIn
   saveAllLinkAccount(linkedAccount: NgForm) {
     linkedAccount.form.markAllAsTouched();
     this.showNewLinkAccoutButton = true;
-    //this.linkaacountDivFlag = false;
+    this.linkaacountDivFlag = false;
     this.showManageLinkAccountTable = true;
     const data: any = { usernameOrEmailAddress: this.userName, password: this.Password, tenancyName: this.Tenancyname };
     this.onUserSave.emit(data);

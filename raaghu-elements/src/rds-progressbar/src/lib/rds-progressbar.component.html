@@ -8,7 +8,7 @@
   </div>
   <div *ngSwitchCase="'multiple'" [ngStyle]="{'width':progressbar_MaxWidth + '%'}">
     <div class="progress" [ngStyle]="{'height':height + 'px'}">
-      <div *ngFor="let item of progressvalues" [ngClass]="['progress-bar',item.background,item.stripe,item.animation ]"
+      <div class="px-2" *ngFor="let item of progressvalues" [ngClass]="['progress-bar',item.background,item.stripe,item.animation ]"
         role="progressbar" [style.width]="progressWidthString" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">
         {{progressWidthString}}</div>
     </div>

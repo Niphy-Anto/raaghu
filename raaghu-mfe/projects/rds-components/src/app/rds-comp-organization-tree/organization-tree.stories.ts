@@ -24,7 +24,8 @@ export default {
 const Template: Story<RdsOrganizationTreeComponent> = (args: RdsOrganizationTreeComponent) => ({
     props:{
         ...args
-    }
+
+    },    
 });
 
 export const basic = Template.bind({});
