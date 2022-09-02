@@ -45,7 +45,8 @@ export class AppComponent implements OnInit{
 
   title = 'maintenance';
   alertData: any = {
-    iconUrl: "assets/delete-icon.svg",
+    iconUrl: "delete",
+    colorVariant: "danger",
     alertConfirmation: "Are you sure ?",
     messageAlert: "All items will be deleted",
     CancelButtonLabel: "Cancel",

@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import * as bootstrap from 'bootstrap';
+// import * as bootstrap from 'bootstrap';
+declare var bootstrap : any;
 
 @Component({
   selector: 'rds-toasts',
