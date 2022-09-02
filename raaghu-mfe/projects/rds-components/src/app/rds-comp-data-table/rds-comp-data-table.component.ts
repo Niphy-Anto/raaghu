@@ -40,7 +40,8 @@ export class RdsDataTableComponent implements OnInit, DoCheck, OnChanges {
   @Output() onSelectedData = new EventEmitter<any>();
   pageDetails: any;
   alertData: AlertPopupData = {
-    iconUrl: "assets/delete-icon.svg",
+    iconUrl: "delete",
+    colorVariant: "danger",
     alertConfirmation: "Are you sure ?",
     messageAlert: "The record will be deleted permanently",
     CancelButtonLabel: "Cancel",

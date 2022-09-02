@@ -8,7 +8,7 @@
             <div class="card-header bg-transparent">
               <h5 class="card-title">{{'Organization Tree'| translate}}</h5>
             </div>
-            <div class="card-body">
+            <div class="card-body overflow-auto vh-75">
               <mfe-loader [config]="rdsOrganizationTreeConfig"></mfe-loader>
             </div>
           </div>
@@ -22,11 +22,11 @@
     <h5 class="card-title">{{'Select an organization unit to see members' | translate}}</h5>
   </div> -->
           <div [@fadeAnimation]="isAnimation ? 'fadeAnimation' : ''">
-            <div class="card-body">
+            <div class="">
               <div *ngIf="selectedTreeNode != 0">
 
-                <div class="card-header d-flex justify-content-between bg-transparent">
-                  <h5 class="card-title">
+                <div class="card-header d-flex justify-content-between bg-transparent align-items-center">
+                  <h5 class="card-title text-primary">
                     {{ organizationName }}
                   </h5>
                   <rds-button [label]="translate.instant('New Member')" *ngIf="selectedTabIndex == 0" [size]="'small'" [colorVariant]="'primary'"
@@ -42,7 +42,7 @@
                   </rds-button>
                 </div>
 
-                <div class="card-body">
+                <div class="card-body pt-2">
                   <div class="col-md-12 mb-2">
                     <rds-nav-tab [navtabsItems]="getNavTabItems()" [horizontalAlignment]="'start'" [verticalAlignment]="false"
                                  [pills]="false" [tabs]="true" [fill]="false" [justified]="false" [flex]="false"

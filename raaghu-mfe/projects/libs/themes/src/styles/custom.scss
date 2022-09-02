@@ -484,12 +484,12 @@ html {
   color: #6c757d;
 }
 
-.dropdown-menu.show {
-  min-width: fit-content;
-  max-width: 100%;
-  width: 100%;
-}
-
+  .dropdown-menu.show {
+    // min-width: fit-content;
+    max-width: 100%;
+    width: 100%;
+  }
+  
 
 .navbar-nav .dropdown-menu.show {
   min-width: fit-content;
@@ -1059,10 +1059,10 @@ $size: 10;
   height: 100%;
 }
 
-.form-control,
-.offcanvas-body .form-select {
-  background-color: #F4F7F9 !important;
-}
+// .form-control,
+// .offcanvas-body .form-select {
+//   background-color: #F4F7F9 !important;
+// }
 
 .svg-gray {
   color: #dee2e6;

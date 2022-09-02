@@ -8,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class RdsStatComponent implements OnInit {
 
   @Input() statItems: any[] = [];
-  
+  @Input() display_type?: string = 'Basic';
   constructor() { }
 
   ngOnInit(): void {
