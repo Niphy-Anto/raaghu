@@ -5,26 +5,13 @@
 <p/>
 </p>
 <p>
-<h1 align="center">raaghu Elements</h4>
+<h1 align="center">raaghu Elements</h1>
 </p>
 
 <p align="center">
 <a href="https://npmjs.org/rds-elements"><img src="https://img.shields.io/npm/v/rds-elements/latest.svg" alt="npm latest version" ></a>
 <a href="https://npmjs.org/rds-elements"><img src="https://img.shields.io/npm/v/rds-elements/next.svg" alt="npm next version" ></a>
 </br>
-<a href="https://github.com/Wai-Technologies/raaghu/blob/main/LICENSE" target="blank">
-<img alt="GitHub licence" src="https://img.shields.io/github/license/Wai-Technologies/raaghu?style=social" />
-</a>
-<a href="https://github.com/Wai-Technologies/raaghu/stargazers" target="blank">
-<img alt="GitHub stars" src="https://img.shields.io/github/stars/Wai-Technologies/raaghu?style=social"/>
-</a>
-<a href="https://github.com/Wai-Technologies/raaghu/issues" target="blank">
-<img alt="GitHub issues" src="https://img.shields.io/github/issues/Wai-Technologies/raaghu?style=social"/>
-</a>
-<a href="https://github.com/Wai-Technologies/raaghu/pulls">
-<img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/Wai-Technologies/raaghu?style=social" />
-</a>
-</p>
 
 <p align="center">
     <a href="https://raaghu.io" target="blank">View Demo</a>
@@ -33,7 +20,7 @@
     ·
     <a href="https://github.com/Wai-Technologies/raaghu/issues/new">Request Feature</a>
 </p>
-<h1 >Table of content</h4>
+<h2 >Table of content</h2>
 <!-- vscode-markdown-toc -->
 
 * [ Introducing raaghu-elements](#Introducingraaghu-elements)
@@ -43,7 +30,6 @@
 	*  [ Responsive and mobile-friendly](#Responsiveandmobile-friendly)
 *  [How to Set up `raaghu-elements` for Development?](#setup)
 *  [Built With](#BuiltWith)
-*  [License](#License)
 *  [Upcoming Features](#UpcomingFeatures)
 *  [ Contributing to `raaghu`](#ContributingtoRaaghu)
 *  [ Support](#Support)
@@ -163,11 +149,10 @@ npm run storybook
 
 
 ## <a name='UpcomingFeatures'></a>Upcoming Features
-- ✔️ Custom plugin to reveal the reusability within your angular project
-- ✔️ Ability to convert existing elements in a project into angular library enabled elements
-- ✔️ Import custom elements into the library
-- ✔️ Better Performance
-- ✔️ Converiting plain angular components to custom elements
+- Predefined themes for the UI/UX.
+- Heroes, feature sections, newsletter sign up forms for the marketing websites.
+- Checkout forms, shopping carts, product views for the ecommerce websites.
+- Fully capable with Abp.io .
 
 If you find something is missing, we are listening. Please create a feature request [from here](https://github.com/Wai-Technologies/raaghu/issues/new).
 
