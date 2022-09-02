@@ -1,4 +1,3 @@
-<p align="center">
     <a href="https://raaghu.io" target="_blank">
         <img src="./raaghu_icon.png" alt="logo" width="125"/>
     </a>
@@ -33,18 +32,34 @@
     <a href="https://github.com/Wai-Technologies/raaghu/issues/new">Request Feature</a>
 </p>
 
-* 1. [🔢 High reusability](#Highreusability)
-* 2. [📱 Responsive and mobile-friendly](#Responsiveandmobile-friendly)
-* 3. [WAi Technology Contributors ✨](#WAiTechnologyContributors)
+<!-- vscode-markdown-toc -->
+* 1. [ Introducing raaghu-elements](#Introducingraaghu-elements)
+* 2. [<a name='Demo'>Demo](#anameDemoDemo)
+* 3. [<a name='Features'> Features](#anameFeaturesFeatures)
+	* 3.1. [🔢 High reusability](#Highreusability)
+	* 3.2. [📱 Responsive and mobile-friendly](#Responsiveandmobile-friendly)
+* 4. [<a name='Setup'> How to Set up `raaghu-elements` for Development?](#anameSetupHowtoSetupraaghu-elementsforDevelopment)
+* 5. [Built With](#BuiltWith)
+* 6. [License](#License)
+* 7. [Upcoming Features](#UpcomingFeatures)
+* 8. [🤝 Contributing to `Raaghu`](#ContributingtoRaaghu)
+* 9. [🙏 Support](#Support)
+* 10. [WAi Technology Contributors ✨](#WAiTechnologyContributors)
 
-# <a name='Introduction'></a> Introducing raaghu-elements 
+<!-- vscode-markdown-toc-config
+	numbering=true
+	autoSave=true
+	/vscode-markdown-toc-config -->
+<!-- /vscode-markdown-toc --><p align="center">
+
+##  1. <a name='Introducingraaghu-elements'></a> Introducing raaghu-elements 
 
 `raaghu-elements` is an opensource Angular library framework built on top of Bootstrap 5 and Storybook offering highly customizable and reusable Angular UI elements.
 
 Raaghu elements can be used as a base to build complex components and UI layouts whilst maintaining a high level of reusability.
 
 
-# Demo
+##  2. <a name='anameDemoDemo'></a><a name='Demo'>Demo
 Here is a quick [demo](https://www.raaghu.io) of the elements. We hope you enjoy it.
 
 Liked it? Please give us a ⭐️ to show your appreciation
@@ -52,17 +67,17 @@ Liked it? Please give us a ⭐️ to show your appreciation
 Many Thanks to all the `supporters` who have helped this project with stars(⭐)
 
 
-# Features
+##  3. <a name='anameFeaturesFeatures'></a><a name='Features'> Features
 
-##  1. <a name='Highreusability'></a>🔢 High reusability
+###  3.1. <a name='Highreusability'></a>🔢 High reusability
  - Promotes reusability throughout the UI and pages
  - Reduces code duplication and helps in delivering a more consistent and even UI
 
-##  2. <a name='Responsiveandmobile-friendly'></a>📱 Responsive and mobile-friendly
+###  3.2. <a name='Responsiveandmobile-friendly'></a>📱 Responsive and mobile-friendly
 - All of the elements are built for a wide variety of screen sizes
 
 
-# How to Set up `raaghu-elements` for Development?
+##  4. <a name='anameSetupHowtoSetupraaghu-elementsforDevelopment'></a><a name='Setup'> How to Set up `raaghu-elements` for Development?
 You can run `raaghu-elements` locally with a few easy steps.
 
 1. Clone the repository
@@ -138,17 +153,17 @@ npm run storybook
 ```
 
 
-# Built With
+##  5. <a name='BuiltWith'></a>Built With
 - [Angular Libraries](https://angular.io/guide/libraries): Build bulletproof UI components faster
 - [Bootstrap 5](https://bootstrap.com/): Sleek, intuitive, and powerful framework for faster and easier web development.
 - [Storybook](https://storybook.js.org/): Build bulletproof UI components faster
 
 
-# License
+##  6. <a name='License'></a>License
 This project is licensed under the MIT License - see the [`LICENSE`](LICENSE) file for details.
 
 
-# Upcoming Features
+##  7. <a name='UpcomingFeatures'></a>Upcoming Features
 `raaghu-elements` has all the potentials to grow further. Here are some of the upcoming features,
 
 - ✔️ Custom plugin to reveal the reusability within your angular project
@@ -160,7 +175,7 @@ This project is licensed under the MIT License - see the [`LICENSE`](LICENSE) fi
 If you find something is missing, we are listening. Please create a feature request [from here](https://github.com/Wai-Technologies/raaghu/issues/new).
 
 
-# 🤝 Contributing to `Raaghu`
+##  8. <a name='ContributingtoRaaghu'></a>🤝 Contributing to `Raaghu`
 Any kind of positive contribution is welcome! Please help us to grow by contributing to the project.
 
 If you wish to contribute, you can work on any features [listed here](https://github.com/Wai-Technologies/raaghu#-upcoming-features) or create one on your own. After adding your code, please send us a Pull Request.  
@@ -168,7 +183,7 @@ If you wish to contribute, you can work on any features [listed here](https://gi
 
 
 
-# 🙏 Support
+##  9. <a name='Support'></a>🙏 Support
 
 We all need support and motivation. `Raaghu` is not an exception. Please give this project a ⭐️ to encourage and show that you liked it. Don't forget to leave a star ⭐️ before you move away.
 
@@ -178,7 +193,7 @@ A ⭐️ to <b>Raaghu</b> is to build its triceps 💪 stronger.
 
 
 
-##  3. <a name='WAiTechnologyContributors'></a>WAi Technology Contributors ✨
+##  10. <a name='WAiTechnologyContributors'></a>WAi Technology Contributors ✨
 
 Thanks goes to these wonderful people and Wai technology.
 
