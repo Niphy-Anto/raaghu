@@ -18,7 +18,7 @@ import { PrepareCollectedData } from 'projects/libs/state-management/src/lib/sta
 import { DOCUMENT } from '@angular/common';
 import { slideInAnimation } from '../animation';
 import { RouterOutlet } from '@angular/router';
-
+declare var bootstrap: any;
 @Component({
   selector: 'app-sidenav',
   templateUrl: './sidenav.component.html',
@@ -87,12 +87,12 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
         { label: 'Audit logs', labelTranslationKey: 'Audit logs', id: '', permissionName: 'Pages.Administration.AuditLogs', icon: 'audit_logs', path: '/pages/audit-logs', descriptionTranslationKey: '' },
         { label: 'subscription', labelTranslationKey: 'subscription', id: '', permissionName: 'Pages.Administration.Tenant.SubscriptionManagement', icon: 'subscription', path: '/pages/subscription', descriptionTranslationKey: '' },
         { label: 'Maintenance', labelTranslationKey: 'Maintenance', id: '', permissionName: 'Pages.Administration.Host.Maintenance', icon: 'maintenance', path: '/pages/maintenance', description: 'Statistics and reports', descriptionTranslationKey: 'Statistics and reports' },
-        { label: 'Visual Settings', labelTranslationKey: 'Visual Settings', id: '', permissionName: 'Pages.Administration.UiCustomization', icon: 'visual_settings', path: '/pages/visualsettings', description: 'Change the look of UI', descriptionTranslationKey: 'Change the look of UI' },
+        { label: 'Visual Settings', labelTranslationKey: 'Visual Settings', id: '', permissionName: '', icon: 'visual_settings', path: '/pages/visualsettings', description: 'Change the look of UI', descriptionTranslationKey: 'Change the look of UI' },
         { label: 'Webhook Subscriptions', labelTranslationKey: 'Webhook Subscriptions', id: '', permissionName: 'Pages.Administration.WebhookSubscription', icon: 'webhook_subscription', path: '/pages/webhooksubscription', description: 'Webhook Subsubscription Info', descriptionTranslationKey: 'Statistics and reports' },
         { label: 'Dynamic Properties', labelTranslationKey: 'Dynamic Properties', id: 'Pages.Administration.DynamicProperties', permissionName: '', icon: 'dynamic_properties', path: '/pages/dynamic-property-management', descriptionTranslationKey: '' },
         { label: 'Settings', labelTranslationKey: 'Settings', id: '', permissionName: 'Pages.Administration.Host.Settings', icon: 'setting', path: '/pages/settings', description: 'Show and change application settings', descriptionTranslationKey: 'Show and change application settings' },
         { label: 'Settings', labelTranslationKey: 'Settings', id: '', permissionName: 'Pages.Administration.Tenant.Settings', icon: 'setting', path: '/pages/settings', description: 'Show and change application settings', descriptionTranslationKey: 'Show and change application settings' },
-        
+
       ],
     },
     { label: 'UI Components', labelTranslationKey: 'UI Components', id: '', permissionName: '', icon: 'demo_ui', path: '/pages/demo-ui', description: '', descriptionTranslationKey: '' },
@@ -146,7 +146,7 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
   tenancyTableData = [];
   sidenavItems = [];
 
-  permissions:any;
+  permissions: any;
 
   ngOnInit(): void {
 
@@ -166,11 +166,11 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
       if (res) {
         this.filterNavItems(this.sidenavItemsOriginal, res, this.sidenavItems);
       }
-      else{
+      else {
 
-        const storedPermission = localStorage.getItem('storedPermissions');                                                                                                              
+        const storedPermission = localStorage.getItem('storedPermissions');
         const parsedPermission = JSON.parse(storedPermission);
-        if(parsedPermission){
+        if (parsedPermission) {
           this.permissions = parsedPermission;
           this.filterNavItems(this.sidenavItemsOriginal, parsedPermission, this.sidenavItems);
         }
@@ -279,7 +279,7 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
 
 
     this.store.select(selectAllLanguages).subscribe((res: any) => {
-      if (res && res.items && res.items.length > 0 ) {
+      if (res && res.items && res.items.length > 0) {
         this.languageItems = [];
         const languages: any = [];
         res.items.forEach((item: any) => {
@@ -431,6 +431,12 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
     this.rdsTopNavigationMfeConfig.input.selectedMenu = event.label;
     this.rdsTopNavigationMfeConfig.input.selectedMenuDescription = event.description;
     this.router.navigate([event.path]);
+    var alertNode = document.querySelector('.alert');
+    if (alertNode) {
+      var alert = bootstrap.Alert.getInstance(alertNode);
+      alert.close();
+    }
+
   }
   redirect(event): void {
   }
