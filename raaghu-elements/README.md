@@ -1,11 +1,3 @@
-<!-- vscode-markdown-toc -->
-
-
-<!-- vscode-markdown-toc-config
-	numbering=true
-	autoSave=true
-	/vscode-markdown-toc-config -->
-<!-- /vscode-markdown-toc -->
 <p align="center">
     <a href="https://raaghu.io" target="_blank">
         <img src="./raaghu_icon.png" alt="logo" width="125"/>
