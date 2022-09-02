@@ -1,11 +1,11 @@
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
-<!-- <p align="center">
+<p align="center">
     <a href="https://raaghu.io" target="_blank">
         <img src="./raaghu_icon.png" alt="logo" width="125"/>
     </a>
-<p/> -->
+<p/>
 <p>
 <h1 align="center">Raaghu Elements</h4>
 <p/>
