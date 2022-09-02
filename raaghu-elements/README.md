@@ -29,8 +29,9 @@
     ·
     <a href="https://github.com/Wai-Technologies/raaghu/issues/new">Request Feature</a>
 </p>
-
+<h1 >Table of content</h4>
 <!-- vscode-markdown-toc -->
+
 * [ Introducing raaghu-elements](#Introducingraaghu-elements)
 *  [Demo](#Demo)
 *  [Features](#Features)
