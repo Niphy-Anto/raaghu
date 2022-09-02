@@ -36,11 +36,11 @@
 *  [Features](#Features)
 	*  [🔢 High reusability](#Highreusability)
 	*  [📱 Responsive and mobile-friendly](#Responsiveandmobile-friendly)
-*  [setup](#How to Set up `raaghu-elements` for Development?)
+*  [How to Set up `raaghu-elements` for Development?](#setup)
 *  [Built With](#BuiltWith)
 *  [License](#License)
 *  [Upcoming Features](#UpcomingFeatures)
-*  [ Contributing to `Raaghu`](#ContributingtoRaaghu)
+*  [ Contributing to `raaghu`](#ContributingtoRaaghu)
 *  [ Support](#Support)
 *  [WAi Technology Contributors](#WAiTechnologyContributors)
 
