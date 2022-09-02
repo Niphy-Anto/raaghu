@@ -594,27 +594,22 @@
   </div>
   <div class="card-body  pt-0">
     <div class="row border p-4 m-2">
-      <div class="col-4">
+      <div class="col-6">
         <h6 class="mb-3">{{"Date Picker - Basic"|translate}}</h6>
 
         <rds-datepicker name="date-picker" [Label]="''" [placeholder]="translate.instant('End Date')">
         </rds-datepicker>
-
-
+   
+       
         <!-- <rds-datepicker datePickerType="advanced"
           DatePickerConfig="{ dateInputFormat: 'DD/MM/YYYY', showWeekNumbers: false, isAnimated: true }"
           placeholder="Date" datesDisabled="[]" datesEnabled="[]" dateTooltipTexts="[]" daysDisabled="[]" [isOpen]="false"
           [outsideClick]="true" [outsideEsc]="false" placement="bottom" Label="Date Range" format="MM-dd-YYYY">
         </rds-datepicker> -->
       </div>
-      <div class="col-4">
-
-        <!-- <h6>{{"Date Picker - Basic"|translate}}</h6> -->
-        <!-- <rds-datepicker datePickerType="basic"
-        DatePickerConfig=" { dateInputFormat: 'DD/MM/YYYY', showWeekNumbers: false, isAnimated: true }"
-        placeholder="Date" datesDisabled="[new Date()]"
-        dateTooltipTexts="[{ date: new Date(), tooltipText: 'todays Date' }]" daysDisabled="[3]"
-        maxDate=" new Date(new Date().setDate(27))" placement="bottom"></rds-datepicker> -->
+      <div class="col-6">
+        <h6 class="mb-4">{{"Date Picker - Advanced"|translate}}</h6>
+        <rds-datepicker datePickerType="advanced" Label="Date Range"></rds-datepicker>       
       </div>
 
 
