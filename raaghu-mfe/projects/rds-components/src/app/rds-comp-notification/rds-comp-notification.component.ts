@@ -43,16 +43,16 @@ export class RdsNotificationComponent implements OnInit {
 
   getIcon(notification: notificationData): string {
     if (notification.status === 'success') {
-      return 'successful';
+      return 'check';
     }
     if (notification.status === 'warn') {
-      return 'warning';
+      return 'exclamation_circle';
     }
     if (notification.status === 'error') {
-      return 'destructive';
+      return 'close_circle';
     }
     if (notification.status === 'info') {
-      return 'informational';
+      return 'information';
     }
     return '';
   }

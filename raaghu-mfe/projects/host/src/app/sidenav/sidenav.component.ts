@@ -460,7 +460,7 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
   format(userNotification) {
     let formatted = {
       userNotificationId: userNotification.id,
-      title: userNotification.notification.data.properties.Message,
+      title: userNotification.notification.data.properties.Message.name,
       time: this.formatDate(userNotification.notification.creationTime, 'yyyy-LL-dd HH:mm:ss'),
       creationTime: userNotification.notification.creationTime as any,
       data: userNotification.notification.data,

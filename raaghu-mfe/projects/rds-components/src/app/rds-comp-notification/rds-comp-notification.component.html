@@ -18,11 +18,11 @@
       </div>
     </div>
   </div>
-  <div body class="scroll-notification d-flex align-items-center justify-content-center">
+  <div body class="scroll-notification d-flex align-items-center justify-content-center w-100 p-1 m-0">
     <ul class="list-group list-group-flush">
       <ng-container *ngIf="notification && notification.length > 0; else emptyTemplate">
-        <li class="list-group-item" *ngFor="let notification of notification">
-          <div class="row">
+        <li class="list-group-item p-0 px-2" *ngFor="let notification of notification">
+          <div class="row py-2">
             <div class="col-md-2 mt-2">
               <rds-icon class="notificatioInfo" [name]="getIcon(notification)"></rds-icon>
               <!-- <i class="notificatioInfo" [ngClass]="getIcon(notification)"></i> -->
