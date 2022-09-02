@@ -58,7 +58,7 @@
   <ng-template #other_content>Select Property</ng-template>
   <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
     <li class="list-group-item p-0" *ngIf="selectAll && multiSelect">
-      <a class="dropdown-item">
+      <a class="dropdown-item text-capitalize">
         <input type="checkbox" class="form-check-input" [(ngModel)]="isMasterSel" name="list_name" value="h1"
           (change)="checkUncheckAll()" />
         <label class="form-check-label mx-2">Select All</label>
