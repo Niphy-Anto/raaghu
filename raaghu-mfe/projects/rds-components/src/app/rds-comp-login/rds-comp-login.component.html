@@ -11,13 +11,13 @@
       <div class="form-group mb-3 text-start">
         <rds-input size="default" [inputType]="userNameInputType" [Title]="translate.instant(UserName)"
           [TitleType]="'Top'" [placeholder]="translate.instant(UserName)" id="txtUsername" floatinginputLabel=""
-          [(ngModel)]="userNameData" [pattern]="emailPattern" [isRequired]=true required #username="ngModel"
-          ngDefaultControl name="userName"></rds-input>
-        <!-- <div class="form-control-feedback" *ngIf="username.errors && (username.dirty || username.touched)">
+          [(ngModel)]="userNameData" [pattern]="emailPattern" [isRequired]=true required #username="ngModel" ngDefaultControl
+          name="userName"></rds-input>
+         <div class="form-control-feedback" *ngIf="username.errors && (username.dirty || username.touched)">
           <span class="text-danger" *ngIf="username.errors.required">{{"Username is required"|translate}}</span>
           <span class="text-danger" *ngIf="username.errors.pattern">{{"Please enter valid username"|translate}}</span>
-        </div> -->
-      </div>
+        </div> 
+      </div>  
       <div class="form-group mb-3 text-start">
         <rds-input size="default" [iconCursor]="'pointer'" [icon]="'eye'" [iconOpacity]="'0.4'" [iconHeight]="'18px'"
           [iconWidth]="'18px'" [inputType]="userPasswordInputType" [Title]="translate.instant(Password)"

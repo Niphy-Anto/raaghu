@@ -1,0 +1,128 @@
+<div *ngFor="let item of itemList">
+  <div class="row mb-2">
+    <div class="col-md-12">
+      <h5><rds-label [label]="item.titleHeader" [bold]="true"></rds-label></h5>
+    </div>
+  </div>
+  <div class="row mb-5">
+    <div class="col-md-12">
+      <rds-label class="text-muted" [label]="item.titleDescription"></rds-label>
+    </div>
+  </div>
+  <form>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="from-group">
+          <rds-input size="default"
+                     [disabled]="false"
+                     [Title]="item.emailInputlabel"
+                     TitleType="text"
+                     [readonly]="false"
+                     value=""
+                     inputType="text"
+                     [placeholder]="item.emailInputPlaceholder"
+                     iconCursor="pointer"></rds-input>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="from-group">
+          <rds-input size="default"
+                     [disabled]="false"
+                     [Title]="item.fullNameInputlabel"
+                     TitleType="text"
+                     [readonly]="false"
+                     value=""
+                     inputType="text"
+                     [placeholder]="item.fullNameInputPlaceholder"
+                     iconCursor="pointer"></rds-input>
+        </div>
+      </div>
+    </div>
+    <div class="row my-4">
+      <div class="col-md-6">
+        <div class="from-group">
+          <rds-input size="default"
+                     [disabled]="false"
+                     [Title]="item.contactInputlabel"
+                     TitleType="text"
+                     [readonly]="false"
+                     value=""
+                     inputType="text"
+                     [placeholder]="item.contactInputPlaceholder"
+                     iconCursor="pointer"></rds-input>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="from-group">
+          <rds-input size="default"
+                     [disabled]="false"
+                     [Title]="item.positionInputlabel"
+                     TitleType="text"
+                     [readonly]="false"
+                     value=""
+                     inputType="text"
+                     [placeholder]="item.positionInputPlaceholder"
+                     iconCursor="pointer"></rds-input>
+        </div>
+      </div>
+    </div>
+    <div class="row my-4">
+      <div class="col-md-6">
+        <div class="from-group">
+          <div class="row">
+            <rds-input size="default"
+                       [disabled]="false"
+                       [Title]="item.startInputLabel"
+                       TitleType="text"
+                       [readonly]="false"
+                       value=""
+                       inputType="text"
+                       [placeholder]="item.startInputPlaceholder"
+                       iconCursor="pointer"></rds-input>
+          </div>
+          <div class="row my-4">
+            <rds-file-uploader size="medium"
+                               [label]="item.uploadInputlabel"
+                               [multipleFiles]="false"
+                               maxfilesize="5"
+                               sizeType=""
+                               role="fileUpload"
+                               ></rds-file-uploader>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="from-group">
+          <rds-textarea 
+                        [placeholderText]="item.coverInputPlaceholder"
+                        [label]="item.coverInputLabel"
+                        rows="8"
+                        ></rds-textarea>
+
+        </div>
+      </div>
+      <div class="row my-4">
+        <div class="col-md-6">
+          <div class="from-group">
+            <rds-button class="d-grid mb-3" colorVariant="primary" [block]="false"
+                        size="'medium'" [submit]="true"
+                        [label]="item.buttonLabel"></rds-button>
+          </div>
+        </div>       
+      </div>
+    </div>
+  </form>
+</div>
+<!--<div class="row">
+  <div class="col-6">
+    <div class="row">
+      ff
+    </div>
+    <div class="row">
+      hello
+    </div>
+  </div>
+  <div class="col-6">
+    hi
+  </div>
+</div>-->
