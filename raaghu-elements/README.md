@@ -1,7 +1,11 @@
-
+<p align="center">
+    <a href="https://raaghu.io" target="_blank">
+        <img src="./raaghu_icon.png" alt="logo" width="125"/>
+    </a>
+<p/>
 </p>
 <p>
-<h1 align="center">Raaghu Elements</h4>
+<h1 align="center">raaghu Elements</h4>
 </p>
 
 <p align="center">
@@ -35,8 +39,8 @@
 * [ Introducing raaghu-elements](#Introducingraaghu-elements)
 *  [Demo](#Demo)
 *  [Features](#Features)
-	*  [🔢 High reusability](#Highreusability)
-	*  [📱 Responsive and mobile-friendly](#Responsiveandmobile-friendly)
+	*  [ High reusability](#Highreusability)
+	*  [ Responsive and mobile-friendly](#Responsiveandmobile-friendly)
 *  [How to Set up `raaghu-elements` for Development?](#setup)
 *  [Built With](#BuiltWith)
 *  [License](#License)
@@ -47,7 +51,7 @@
 
 <p align="center">
 
-##  1. <a name='Introducingraaghu-elements'></a> Introducing raaghu-elements 
+##  <a name='Introducingraaghu-elements'></a> Introducing raaghu-elements 
 
 `raaghu-elements` is an opensource Angular library framework built on top of Bootstrap 5 and Storybook offering highly customizable and reusable Angular UI elements.
 
@@ -55,25 +59,26 @@ Raaghu elements can be used as a base to build complex components and UI layouts
 
 
 
-##  2. <a name='Demo'></a>Demo
+##  <a name='Demo'></a>Demo
 
-Here is a quick [demo](https://www.raaghu.io) of the elements. We hope you enjoy it.
+Here is a quick demo of the elements. We hope you enjoy it.
+<img title="imge" alt="gif" src="../raaghu-elements/Demo.gif">
 
 Liked it? Please give us a ⭐️ to show your appreciation
 
 Many Thanks to all the `supporters` who have helped this project with stars(⭐)
 
-##  3. <a name='Features'></a> Features
+##   <a name='Features'></a> Features
 
-###  3.1. <a name='Highreusability'></a>🔢 High reusability
+###  <a name='Highreusability'></a>🔢 High reusability
  - Promotes reusability throughout the UI and pages
  - Reduces code duplication and helps in delivering a more consistent and even UI
 
-###  3.2. <a name='Responsiveandmobile-friendly'></a>📱 Responsive and mobile-friendly
+### <a name='Responsiveandmobile-friendly'></a>📱 Responsive and mobile-friendly
 - All of the elements are built for a wide variety of screen sizes
 
 
-##  4. <a name='setup'></a> How to Set up `raaghu-elements` for Development?
+## <a name='setup'></a> How to Set up `raaghu-elements` for Development?
 
 You can run `raaghu-elements` locally with a few easy steps.
 
@@ -150,18 +155,18 @@ npm run storybook
 ```
 
 
-##  5. <a name='BuiltWith'></a>Built With
+##  <a name='BuiltWith'></a>Built With
 
 - [Angular Libraries](https://angular.io/guide/libraries): Build bulletproof UI components faster
 - [Bootstrap 5](https://bootstrap.com/): Sleek, intuitive, and powerful framework for faster and easier web development.
 - [Storybook](https://storybook.js.org/): Build bulletproof UI components faster
 
 
-##  6. <a name='License'></a>License
+##  <a name='License'></a>License
 This project is licensed under the MIT License - see the [`LICENSE`](LICENSE) file for details.
 
 
-##  7. <a name='UpcomingFeatures'></a>Upcoming Features
+## <a name='UpcomingFeatures'></a>Upcoming Features
 - ✔️ Custom plugin to reveal the reusability within your angular project
 - ✔️ Ability to convert existing elements in a project into angular library enabled elements
 - ✔️ Import custom elements into the library
@@ -171,7 +176,7 @@ This project is licensed under the MIT License - see the [`LICENSE`](LICENSE) fi
 If you find something is missing, we are listening. Please create a feature request [from here](https://github.com/Wai-Technologies/raaghu/issues/new).
 
 
-##  8. <a name='ContributingtoRaaghu'></a>🤝 Contributing to `Raaghu`
+##  <a name='ContributingtoRaaghu'></a>🤝 Contributing to `Raaghu`
 Any kind of positive contribution is welcome! Please help us to grow by contributing to the project.
 
 If you wish to contribute, you can work on any features [listed here](https://github.com/Wai-Technologies/raaghu#-upcoming-features) or create one on your own. After adding your code, please send us a Pull Request.  
@@ -179,7 +184,7 @@ If you wish to contribute, you can work on any features [listed here](https://gi
 
 
 
-##  9. <a name='Support'></a>🙏 Support
+##  <a name='Support'></a>🙏 Support
 
 We all need support and motivation. `Raaghu` is not an exception. Please give this project a ⭐️ to encourage and show that you liked it. Don't forget to leave a star ⭐️ before you move away.
 
@@ -189,7 +194,7 @@ A ⭐️ to <b>Raaghu</b> is to build its triceps 💪 stronger.
 
 
 
-##  10. <a name='WAiTechnologyContributors'></a>WAi Technology Contributors ✨
+##  <a name='WAiTechnologyContributors'></a>WAi Technology Contributors ✨
 
 Thanks goes to these wonderful people and Wai technology.
 
@@ -197,11 +202,104 @@ Thanks goes to these wonderful people and Wai technology.
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
 
-[Omkar Choudhari](https://github.com/omkarchoudhari), [Alok Nakhate](https://github.com/alok-nakhate), [Rohit Pingale](https://github.com/pingroh), [Mohan Bari](https://github.com/mohanbari), [Apoorva Lele](https://github.com/apoorvalele), [Yohul Chitre](https://github.com/yohulchitre),
-[Priyanka Shinkar](https://github.com/Priyanka-Shinkar), [Suraj Khupse](https://github.com/suraj-khupse), [Pratheesh Krishnan](https://github.com/pratheesh-rishnan), [Rahul Patil](https://github.com/rahulp34),
-[Ketan khalate](https://github.com/Ketan-Khalate), [Obaid Ur Rahman](https://github.com/obaid-ur-rahman), [Anupriya Biju](https://github.com/Anupriya-Biju), [Niphy Anto](https://github.com/Niphy-Anto),
-[Neeraj Bhakre](https://github.com/neeraj-bhakre), [Basavraj Chorgasti](https://github.com/basavraj-chorgasti), [Shrikant Birajdar](https://github.com/shrikant-birajdar), [Omkar Rairikar](https://github.com/omkarrairikar),
-[Swapnil Ghormode](https://github.com/DevSwapnil22)
+<table>
+  <tr>
+    <td align="center" border="none">
+      <a href="https://github.com/omkarchoudhari">
+        <img src="https://avatars.githubusercontent.com/u/32321041?s=100&v=4" width="100" title="Omkar Choudhari"/>
+        <br /><sub><b>Omkar Choudhari</b></sub>
+      </a>
+    </td>
+    <td align="center" border="none">
+      <a href="https://github.com/mohanbari">
+        <img src="https://avatars.githubusercontent.com/u/99885410?s=100v=4" width="100" title="Mohan Bari"/>
+        <br /><sub><b>Mohan Bari</b></sub>
+      </a>
+    </td>
+    <td align="center" style="border: none">
+      <a href="https://github.com/alok-nakhate">
+        <img src="https://avatars.githubusercontent.com/u/99717383?s=100v=4" width="100" title="Alok Nakhate"/>
+        <br /><sub><b>Alok Nakhate</b></sub>
+      </a>
+    </td>
+    <td align="center" style="border: none">
+      <a href="https://github.com/yohulchitre">
+        <img src="https://avatars.githubusercontent.com/u/100934017?s=100v=4" width="100" title="Yohul Chitre"/>
+        <br /><sub><b>Yohul Chitre</b></sub>
+      </a>
+    </td>
+    <td align="center" style="border: none">
+      <a href="https://github.com/Priyanka-Shinkar">
+        <img src="https://avatars.githubusercontent.com/u/99782840?s=100&v=4" width="100" title="Priyanka Shinkar"/>
+        <br /><sub><b>Priyanka Shinkar</b></sub>
+      </a>
+    </td>
+    <td align="center" style="border: none">
+      <a href="https://github.com/rahulp34">
+        <img src="https://avatars.githubusercontent.com/u/55730676?s=100v=4" width="100" title="Rahul Patil"/>
+        <br /><sub><b>Rahul Patil</b></sub>
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" style="border: none">
+      <a href="https://github.com/pratheesh-Krishnan">
+        <img src="https://avatars.githubusercontent.com/u/99800378?s=100v=4" width="100" title="Pratheesh Krishnan"/>
+        <br /><sub><b>Pratheesh Krishnan</b></sub>
+      </a>
+    </td>
+    <td align="center" style="border: none">
+      <a href="https://github.com/Niphy-Anto">
+        <img src="https://avatars.githubusercontent.com/u/99808648?s=100v=4" width="100" title="Niphy Anto"/>
+        <br /><sub><b>Niphy Anto</b></sub>
+      </a>
+    </td>
+    <td align="center" style="border: none">
+      <a href="https://github.com/Ketan-Khalate">
+        <img src="https://avatars.githubusercontent.com/u/99807624?s=100v=4" width="100" title="Ketan Khalate"/>
+        <br /><sub><b>Ketan Khalate</b></sub>
+      </a>
+    </td>
+    <td align="center" style="border: none">
+      <a href="https://github.com/obaid-ur-rahman">
+        <img src="https://avatars.githubusercontent.com/u/100338565?s=100v=4" width="100" title="Obaid Rahman"/>
+        <br /><sub><b>Obaid Rahman</b></sub>
+      </a>
+    </td>
+    <td align="center" style="border: none">
+      <a href="https://github.com/swamirajanarse">
+        <img src="https://avatars.githubusercontent.com/u/97228584?s=100&v=4" width="100" title="Swamiraj Anarse"/>
+        <br /><sub><b>Swamiraj Anarse</b></sub>
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" style="border: none">
+      <a href="https://github.com/neeraj-bhakre">
+        <img src="https://avatars.githubusercontent.com/u/100110930?s=100v=4" width="100" title="Neeraj Bhakre"/>
+        <br /><sub><b>Neeraj Bhakre</b></sub>
+      </a>
+    </td>
+    <td align="center" style="border: none">
+      <a href="https://github.com/maithililondhewaiin">
+        <img src="https://avatars.githubusercontent.com/u/100565002?s=100&v=4" width="100" title="Maithili Londhe">
+        <br /><sub><b>Maithili Londhe</b></sub>
+      </a>
+    </td>
+    <td align="center" style="border: none">
+      <a href="https://github.com/Vaish84">
+        <img src="https://avatars.githubusercontent.com/u/104414130?s=100&v=4" width="100" title="Vaishnavi Pardeshi"/>
+        <br /><sub><b>Vaishnavi Pardeshi</b></sub>
+      </a>
+    </td>
+    <td align="center" style="border: none">
+      <a href="https://github.com/rohit9096">
+        <img src="https://avatars.githubusercontent.com/u/88035057?s=100v=4" width="100" title="Rohit Kulkarni"/>
+        <br /><sub><b>Rohit Kulkarni</b></sub>
+      </a>
+    </td>
+  </tr>
+</table>
 
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
