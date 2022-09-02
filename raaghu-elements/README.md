@@ -70,11 +70,11 @@ Many Thanks to all the `supporters` who have helped this project with stars(⭐)
 
 ##   <a name='Features'></a> Features
 
-###  <a name='Highreusability'></a>🔢 High reusability
+###  <a name='Highreusability'></a> High reusability
  - Promotes reusability throughout the UI and pages
  - Reduces code duplication and helps in delivering a more consistent and even UI
 
-### <a name='Responsiveandmobile-friendly'></a>📱 Responsive and mobile-friendly
+### <a name='Responsiveandmobile-friendly'></a> Responsive and mobile-friendly
 - All of the elements are built for a wide variety of screen sizes
 
 
