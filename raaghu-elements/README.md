@@ -39,7 +39,7 @@
 
 ##  <a name='Introducingraaghu-elements'></a> Introducing raaghu-elements 
 
-raaghu-elements is an opensource Angular library framework built on top of Bootstrap 5 and Storybook having 80+ user interface elements as well as 170+ custom icons that offers highly customizable and reusable Angular UI elements.
+raaghu-elements is an opensource Angular library framework built on top of Bootstrap 5 and Storybook having 79+ user interface elements as well as 170+ custom icons that offers highly customizable and reusable Angular UI elements.
 
 raaghu elements can be used as a base to build complex components and UI layouts whilst maintaining a high level of reusability.
 
