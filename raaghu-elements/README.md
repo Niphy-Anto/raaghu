@@ -46,6 +46,7 @@
 * 9. [🙏 Support](#Support)
 * 10. [WAi Technology Contributors ✨](#WAiTechnologyContributors)
 
+<<<<<<< HEAD
 <!-- vscode-markdown-toc-config
 	numbering=true
 	autoSave=true
@@ -53,13 +54,21 @@
 <!-- /vscode-markdown-toc --><p align="center">
 
 ##  1. <a name='Introducingraaghu-elements'></a> Introducing raaghu-elements 
+=======
+
+# Introducing `raaghu-elements` 
+>>>>>>> 4be3cb5fac08c9af237a85b5e42a27f69b2f81d4
 
 `raaghu-elements` is an opensource Angular library framework built on top of Bootstrap 5 and Storybook offering highly customizable and reusable Angular UI elements.
 
 Raaghu elements can be used as a base to build complex components and UI layouts whilst maintaining a high level of reusability.
 
 
+<<<<<<< HEAD
 ##  2. <a name='anameDemoDemo'></a><a name='Demo'>Demo
+=======
+# Demo
+>>>>>>> 4be3cb5fac08c9af237a85b5e42a27f69b2f81d4
 Here is a quick [demo](https://www.raaghu.io) of the elements. We hope you enjoy it.
 
 Liked it? Please give us a ⭐️ to show your appreciation
@@ -67,7 +76,11 @@ Liked it? Please give us a ⭐️ to show your appreciation
 Many Thanks to all the `supporters` who have helped this project with stars(⭐)
 
 
+<<<<<<< HEAD
 ##  3. <a name='anameFeaturesFeatures'></a><a name='Features'> Features
+=======
+# Features
+>>>>>>> 4be3cb5fac08c9af237a85b5e42a27f69b2f81d4
 
 ###  3.1. <a name='Highreusability'></a>🔢 High reusability
  - Promotes reusability throughout the UI and pages
@@ -77,7 +90,11 @@ Many Thanks to all the `supporters` who have helped this project with stars(⭐)
 - All of the elements are built for a wide variety of screen sizes
 
 
+<<<<<<< HEAD
 ##  4. <a name='anameSetupHowtoSetupraaghu-elementsforDevelopment'></a><a name='Setup'> How to Set up `raaghu-elements` for Development?
+=======
+# How to Set up `raaghu-elements` for Development?
+>>>>>>> 4be3cb5fac08c9af237a85b5e42a27f69b2f81d4
 You can run `raaghu-elements` locally with a few easy steps.
 
 1. Clone the repository
@@ -153,17 +170,29 @@ npm run storybook
 ```
 
 
+<<<<<<< HEAD
 ##  5. <a name='BuiltWith'></a>Built With
+=======
+# Built With
+>>>>>>> 4be3cb5fac08c9af237a85b5e42a27f69b2f81d4
 - [Angular Libraries](https://angular.io/guide/libraries): Build bulletproof UI components faster
 - [Bootstrap 5](https://bootstrap.com/): Sleek, intuitive, and powerful framework for faster and easier web development.
 - [Storybook](https://storybook.js.org/): Build bulletproof UI components faster
 
 
+<<<<<<< HEAD
 ##  6. <a name='License'></a>License
 This project is licensed under the MIT License - see the [`LICENSE`](LICENSE) file for details.
 
 
 ##  7. <a name='UpcomingFeatures'></a>Upcoming Features
+=======
+# License
+This project is licensed under the MIT License - see the [`LICENSE`](LICENSE) file for details.
+
+
+# Upcoming Features
+>>>>>>> 4be3cb5fac08c9af237a85b5e42a27f69b2f81d4
 `raaghu-elements` has all the potentials to grow further. Here are some of the upcoming features,
 
 - ✔️ Custom plugin to reveal the reusability within your angular project
