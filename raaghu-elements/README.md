@@ -162,10 +162,6 @@ npm run storybook
 - [Storybook](https://storybook.js.org/): Build bulletproof UI components faster
 
 
-##  <a name='License'></a>License
-This project is licensed under the MIT License - see the [`LICENSE`](LICENSE) file for details.
-
-
 ## <a name='UpcomingFeatures'></a>Upcoming Features
 - ✔️ Custom plugin to reveal the reusability within your angular project
 - ✔️ Ability to convert existing elements in a project into angular library enabled elements
