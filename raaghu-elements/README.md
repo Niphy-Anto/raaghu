@@ -26,8 +26,6 @@
 * [ Introducing raaghu-elements](#Introducingraaghu-elements)
 *  [Demo](#Demo)
 *  [Features](#Features)
-	*  [ High reusability](#Highreusability)
-	*  [ Responsive and mobile-friendly](#Responsiveandmobile-friendly)
 *  [How to Set up `raaghu-elements` for Development?](#setup)
 *  [Built With](#BuiltWith)
 *  [Upcoming Features](#UpcomingFeatures)
