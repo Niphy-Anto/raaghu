@@ -15,7 +15,7 @@ import { RdsTeamMemberComponent } from './rds-team-member.component';
   ],
   imports: [
     CommonModule,
-    // RdsProductImageModule,
+    RdsProductImageModule,
     RdsLabelModule,
     RdsIconModule
   ],
