@@ -1200,6 +1200,7 @@ bs-days-calendar-view .bs-datepicker-head button.current:last-child {
   }
   .dropdown-divider {
     margin: 0rem 0;
+    border-bottom:1px solid #e1e6e9;
   }
   .dropdown-toggle::after {
     margin-left: 57px;
@@ -1222,7 +1223,7 @@ bs-days-calendar-view .bs-datepicker-head button.current:last-child {
   margin-top: -36px;
   box-shadow:none!important;
   .bs-datepicker-container {
-    padding: 15px;
+   
     margin-left: 10px;;
     
 }
@@ -1382,11 +1383,20 @@ bs-days-calendar-view .bs-datepicker-head button.current:last-child {
 }
 
 }
+.theme-green .bs-datepicker-head{
+  background-color: #fff;
+}
 
 .theme-green .bs-datepicker-body table td.week span {
   display: none;
 }
+.theme-dark-blue .bs-datepicker-head {
+  background-color: #ffff;
+}
 
+.theme-dark-blue .bs-datepicker-body table td span.selected{
+  background-color: #5C82E3;
+}
 .date-picker input:hover ~ .date-picker-a {
 -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
 -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
@@ -1401,11 +1411,11 @@ transform: scaleY(1);
 position: absolute;
 z-index: 1081;
 top: 170px;
-left: 202px;
+left: 205px;
 border: 1px solid #D0D7DD;
 align-self: center;
 padding: 4px;
-width: 310px;
+width: 320px;
 text-align: center;
 border-bottom-left-radius: 4px;
 border-bottom-right-radius: 4px;
