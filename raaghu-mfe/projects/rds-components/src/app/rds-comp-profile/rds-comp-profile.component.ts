@@ -34,6 +34,7 @@ export class RdsCompProfileComponent extends MfeBaseComponent implements OnInit 
   @Input() defaultLanguage: string = '';
   tabClosed: boolean = false;
   @Output() onLanguageSelection = new EventEmitter<any>();
+  activePage: number;
   public rdsAlertMfeConfig: ComponentLoaderOptions;
   alertData: any = {
     iconUrl: "download_data",
@@ -266,10 +267,17 @@ export class RdsCompProfileComponent extends MfeBaseComponent implements OnInit 
     let openedCanvas = bootstrap.Offcanvas.getInstance(myOffCanvas);
     // $(".offcanvas-backdrop").remove();
     openedCanvas.hide();
+    this.activePage = 8;
   }
   close(): void {
+    this.onClickCloseTabContent();    
+    this.activePage = 8;
+    let myOffCanvas = document.getElementById(this.id);
+    let openedCanvas = bootstrap.Offcanvas.getInstance(myOffCanvas);
+    openedCanvas.hide();
     this.viewCanvas = false;
     this.tabClosed = true;
+    this.rdsDeligateTableData = [];
   }
 
   // language ts

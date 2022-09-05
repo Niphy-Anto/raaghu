@@ -25,7 +25,7 @@ const Template: Story<RdsTextareaComponent> = (args: RdsTextareaComponent) => ({
     [label]="label"
     [value]="value"
     [isFloatingInputLabel]="isFloatingInputLabel"
-    [floatinglabel]="floatinglabel">
+    [floatinglabel]="floatinglabel" [rows]="rows">
   </rds-textarea>
 `
 });
