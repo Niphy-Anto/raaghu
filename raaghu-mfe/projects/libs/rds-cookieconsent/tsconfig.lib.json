@@ -1,0 +1,36 @@
+{
+  "extends": "../../../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../dist/out-tsc",
+    "target": "es2015",
+    "declaration": true,
+    "declarationMap": true,
+    "inlineSources": true,
+    "types": [],
+    "lib": ["dom", "es2018"]
+  },
+  "exclude": [
+    "src/test-setup.ts",
+    "**/*.spec.ts",
+    "**/*.test.ts"
+  ],
+  "include": ["**/*.ts"]
+}
+
+// {
+//   "extends": "./tsconfig.json",
+//   "compilerOptions": {
+//     "outDir": "../../dist/out-tsc",
+//     "target": "es2015",
+//     "declaration": true,
+//     "declarationMap": true,
+//     "inlineSources": true,
+//     "types": [],
+//     "lib": ["dom", "es2018"]
+//   },
+//   "exclude": ["src/test-setup.ts", "**/*.spec.ts", "**/*.test.ts"],
+//   "include": ["**/*.ts"]
+// }
+
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
+

@@ -25,9 +25,11 @@
 							"./projects/libs/themes/src/styles/custom.scss",
 							"./projects/libs/themes/src/styles/responsive.scss",
 							"./projects/host/src/styles.css"
+							
 						],
 						"scripts": [
-							"./node_modules/bootstrap/dist/js/bootstrap.min.js"
+							"./node_modules/bootstrap/dist/js/bootstrap.min.js",
+							"./node_modules/cookieconsent/build/cookieconsent.min.js"
 						]
 					}
 				}
@@ -117,6 +119,39 @@
 					}
 				}
 			}
+		},
+		"@libs/ngx-cookieconsent": {
+			"projectType": "library",
+			"root": "projects/libs/ngx-cookieconsent",
+			"sourceRoot": "projects/libs/ngx-cookieconsent/src",
+			"prefix": "lib",
+			"architect": {
+				"build": {
+					"builder": "@angular-devkit/build-angular:ng-packagr",
+					"options": {
+						"project": "projects/libs/ngx-cookieconsent/ng-package.json"
+					},
+					"configurations": {
+						"production": {
+							"tsConfig": "projects/libs/ngx-cookieconsent/tsconfig.lib.prod.json"
+						},
+						"development": {
+							"tsConfig": "projects/libs/ngx-cookieconsent/tsconfig.lib.json"
+						}
+					},
+					"defaultConfiguration": "production"
+				},
+				"test": {
+					"builder": "@angular-devkit/build-angular:karma",
+					"options": {
+						"main": "projects/libs/ngx-cookieconsent/src/test.ts",
+						"tsConfig": "projects/libs/ngx-cookieconsent/tsconfig.spec.json",
+						"karmaConfig": "projects/libs/ngx-cookieconsent/karma.conf.js"
+					}
+				}
+			}
+			
+			
 		},
 		"@libs/rds-elements": {
 			"projectType": "library",
@@ -303,7 +338,7 @@
 							"projects/libs/themes/src/styles/quillEditor.scss",
 							"projects/libs/themes/src/styles/default.scss",
 							"projects/libs/themes/src/styles/responsive.scss",
-							"projects/host/src/styles.css",
+							"projects/host/src/styles.css",							
 							{
 								"input": "projects/libs/themes/src/styles/default.scss",
 								"bundleName": "default",
@@ -331,7 +366,8 @@
 							}
 						],
 						"scripts": [
-							"./node_modules/bootstrap/dist/js/bootstrap.min.js"
+							"./node_modules/bootstrap/dist/js/bootstrap.min.js",
+							"./node_modules/cookieconsent/build/cookieconsent.min.js"
 						],
 						"extraWebpackConfig": "projects/host/webpack.config.js",
 						"commonChunk": false

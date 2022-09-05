@@ -1,0 +1,14 @@
+
+
+{
+  "name": "@libs/ngx-cookieconsent",
+  "version": "0.0.0-development",
+  "peerDependencies": {
+    "@angular/common": "^13.1.0",
+    "@angular/core": "^13.1.0",
+    "cookieconsent": "^3.1.1"
+  },
+  "dependencies": {
+    "tslib": "^2.1.0"
+  }
+}

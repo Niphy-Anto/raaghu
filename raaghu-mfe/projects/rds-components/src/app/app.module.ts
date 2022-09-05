@@ -376,6 +376,7 @@ import { RdsCompTeamsComponent } from './rds-comp-teams/rds-comp-teams.component
     RdsReviewCategoryModule,
     RdsTeamMemberModule,
     RdsWebsiteMetricModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent],
