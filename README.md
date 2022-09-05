@@ -123,7 +123,7 @@ Built on a robust tech stack and platform
      </td>
        <td align="center" style="border: none">
         <a href="https://www.typescriptlang.org/">
-        <img src="./static/logo_typescript.png" width="80" title="typescript"/>
+        <img src="./static/logo_typescript.png" width="70" title="typescript"/>
         <!-- <br /><sub><b>Priyanka Shinkar</b></sub> -->
     </td>
     <td align="center" style="border: none">
