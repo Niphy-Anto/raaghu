@@ -484,12 +484,12 @@ html {
   color: #6c757d;
 }
 
-.dropdown-menu.show {
-  min-width: fit-content;
-  max-width: 100%;
-  width: 100%;
-}
-
+  .dropdown-menu.show {
+    // min-width: fit-content;
+    max-width: 100%;
+    width: 100%;
+  }
+  
 
 .navbar-nav .dropdown-menu.show {
   min-width: fit-content;
@@ -594,7 +594,7 @@ div.btn-container i {
   font-size: 12px;
   font-weight: 500;
   top: 7px;
-  right: 20px;
+  right: 15px;
 }
 
 #sidebar.toggle .btn-color-mode-switch>label.btn-color-mode-switch-inner:before {
@@ -922,7 +922,7 @@ custom scrollbar
 
 /* Track */
 ::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px grey;
+  //box-shadow: inset 0 0 5px grey;
   border-radius: 10px;
 }
 
@@ -935,6 +935,27 @@ custom scrollbar
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(45deg, #500DD1, #0796E3);
+}
+.slim-scroll {
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 2px grey;
+    border-radius: 15px;
+    background-color: transparent;
+  }
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-radius: 2px;
+  }
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, #500DD1, #0796E3);
+  }
 }
 
 .disabled {
@@ -1059,10 +1080,10 @@ $size: 10;
   height: 100%;
 }
 
-.form-control,
-.offcanvas-body .form-select {
-  background-color: #F4F7F9 !important;
-}
+// .form-control,
+// .offcanvas-body .form-select {
+//   background-color: #F4F7F9 !important;
+// }
 
 .svg-gray {
   color: #dee2e6;

@@ -130,7 +130,7 @@ export class RdsLinkedAccountsComponent extends MfeBaseComponent implements OnIn
   saveAllLinkAccount(linkedAccount: NgForm) {
     linkedAccount.form.markAllAsTouched();
     this.showNewLinkAccoutButton = true;
-    //this.linkaacountDivFlag = false;
+    this.linkaacountDivFlag = false;
     this.showManageLinkAccountTable = true;
     const data: any = { usernameOrEmailAddress: this.userName, password: this.Password, tenancyName: this.Tenancyname };
     this.onUserSave.emit(data);
@@ -138,7 +138,14 @@ export class RdsLinkedAccountsComponent extends MfeBaseComponent implements OnIn
   }
 
   onCancel(): void {
-    this.onCancelLinkedAccounts.emit(true);
+    this.linkaacountDivFlag = false;
+    this.showNewLinkAccoutButton = true;
+    //this.onCancelLinkedAccounts.emit(true);
   }
+
+  // onCancel(): void {
+  //   this.deligateDivFlag = false;
+  //   // this.onCancelDeligate.emit(true);
+  // }
 
 }

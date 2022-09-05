@@ -3,7 +3,7 @@
     <label [ngClass]="labelClass" [ngClass]="Label == '' ? 'd-none' : 'form-label'" for="Errormessage">{{
       Label
       }}<span class="text-danger" *ngIf="isRequired">*</span></label>
-    <div class="input-group mb-3 pt-2">
+    <div class="input-group mb-3">
       <input type="text" autocomplete="off" bsDatepicker [datesDisabled]="datesDisabled"
         [class.disable-pointer]="disabled" [disabled]="disabled" [minDate]="minDate" #datepicker="bsDatepicker"
         (onHidden)="onHide.emit($event)" [daysDisabled]="daysDisabled" [isOpen]="isOpen" [bsConfig]="DatePickerConfig"
@@ -19,8 +19,8 @@
   </div>
 </ng-container>
 <ng-container *ngIf="datePickerType==='advanced'">
-  <div class="dd">
-    <div class="dd-a vertical">
+  <div class="date-picker">
+    <div class="date-picker-a vertical">
       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
         aria-expanded="false">
         <rds-icon name="calendar" height="18px" width="18px"></rds-icon>

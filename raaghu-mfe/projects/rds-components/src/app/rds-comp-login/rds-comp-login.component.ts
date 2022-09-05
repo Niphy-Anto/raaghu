@@ -15,14 +15,13 @@ import { TranslateService } from '@ngx-translate/core';
   templateUrl: './rds-comp-login.component.html',
   styleUrls: ['./rds-comp-login.component.scss'],
 })
-export class RdsLoginComponent implements OnInit,OnChanges {
+export class RdsLoginComponent implements OnInit, OnChanges {
   @Input() userNameData: any;
   @Input() userPasswordData: any;
   @Input() rememeberMe: boolean;
   @Input() TenantNameData: any;
   @Input() TenancyName: string;
   @Input() TenantName: string;
-  @Input() enableSwitchtenent: boolean;
   @Input() UserName: string = 'Email/Username';
   @Input() Password: string = 'Password';
   @Input() userNameInputType: string = 'email';
@@ -40,17 +39,19 @@ export class RdsLoginComponent implements OnInit,OnChanges {
   @Input() tenantdisabled: boolean;
   @Input() disabledSwitchTenant: boolean = true;
   
+  @Input() switchTenant: boolean = false;
   emailPattern: any = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   @Input() buttonSpinner: boolean = true;
   constructor(private formBuilder: FormBuilder, public translate: TranslateService) {
-   }
- 
+  }
+
   ngOnChanges(changes: SimpleChanges): void {
     this.onShimmerLoad.emit(false);
   }
 
   ngOnInit(): void {
     this.onShimmerLoad.emit(false);
+
   }
 
   //for getting remebrme value
@@ -65,30 +66,24 @@ export class RdsLoginComponent implements OnInit,OnChanges {
       rememberme: this.rememeberMe,
     })
   }
-  ChangeTenant() {
-    this.onSwitchTenant.emit(this.TenantNameData);
-    this.buttonSpinner=true;
 
-  }
-  switchTenanat(event: any, tenantForm: NgForm) {
-    if (event) {
-      this.tenantdisabled = false;
-      this.enableSwitchtenent = false
-      this.disabledSwitchTenant = false;
-
-      
-    } else {
-      this.tenantdisabled = true;
-      this.enableSwitchtenent = true
-      this.disabledSwitchTenant = true;
-      this.TenantNameData = '';
-      this.onSwitchTenant.emit(null);
-
-
-
+  ChangeTenant(tenantForm: NgForm) {
+    if (!this.switchTenant || tenantForm.invalid) {
+      return;
     }
+    this.onSwitchTenant.emit(this.TenantNameData);
   }
-  back(){
-    this.buttonSpinner=false;
+
+  onModalClose(tenantForm: NgForm): void {
+    this.TenantNameData = '';
+    this.switchTenant = false;
+    tenantForm.reset();
   }
+
+  switchTenanat(event: any) {
+    this.switchTenant = event;
+  }
+    back() {
+        this.buttonSpinner = false;
+    }
 }
