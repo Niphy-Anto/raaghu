@@ -113,7 +113,7 @@ git clone https://github.com/Wai-Technologies/raaghu.git
 ```bash
 cd raaghu/raaghu-elements
 ```
-
+<img src="../static/MicrosoftTeams-image (8).png" alt="Screenshot-17"  border="0"><br />
 
 
 3. Install dependencies
@@ -121,27 +121,28 @@ cd raaghu/raaghu-elements
 ```bash
 npm install
 ```
-<img src="../static/npm-install.png" alt="Screenshot-17"  border="0"><br />
+<img src="../static/MicrosoftTeams-image (9).png" alt="Screenshot-17"  border="0"><br />
 
 4. Change the working directory
 
 ```bash
 cd raaghu/raaghu-mfe
 ```
-<img src="../static/cd.png" alt="Screenshot-17"  border="0"><br />
+<img src="../static/MicrosoftTeams-image (10).png" alt="Screenshot-17"  border="0"><br />
 
 5. Install dependencies
 
 ```bash
 npm install
 ```
+<img src="../static/MicrosoftTeams-image (11).png" alt="Screenshot-17"  border="0"><br />
 
 6. Synchronize raaghu-elements repository
 
 ```bash
 npm run sync-elements
 ```
-<img src="../static/npm sync elements.png" alt="Screenshot-17"  border="0"><br />
+<img src="../static/MicrosoftTeams-image (10).png" alt="Screenshot-17"  border="0"><br />
 > **_NOTE:_** Above command will sync/copy raaghu-elements from public repository to the above local MFE project.
 
 7. Patch Dev Server
