@@ -21,10 +21,7 @@
                 [itemList]="listItemsResult"> 
 
               </rds-select-list>
-              <div class="form-control-feedback"
-                    *ngIf="result_name.errors && (result_name.dirty || result_name.touched)">
-                    <span class="text-danger" *ngIf="result_name.errors.required">{{"Result is required"|translate}}</span>
-             </div> 
+           
              
             </div>
              
@@ -44,10 +41,13 @@
             </div>
           </div>
           <div class="col-md-1  m-auto mb-3 pt-4 px-0">
-            <rds-icon name="refresh" width="25px" height="25px" class=" btn btn-primary btn-md btn-icon"  (click)="Search(loginAttempt)" text-primary></rds-icon>
+            <rds-icon name="refresh" width="20px" height="20px" class=" btn btn-primary btn-md btn-icon"  (click)="Search(loginAttempt)" text-primary></rds-icon>
         
           </div>
-          
+          <div class="form-control-feedback"
+          *ngIf="result_name.errors && (result_name.dirty || result_name.touched)">
+          <span class="text-danger" *ngIf="result_name.errors.required">{{"Result is required"|translate}}</span>
+   </div> 
         </div>
       
         <div class="row">

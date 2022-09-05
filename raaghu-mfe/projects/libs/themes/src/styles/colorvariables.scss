@@ -167,7 +167,7 @@ html {
   $verticle-border-color: $gray-100 !default;
 
   /* offcanvas-header */
-  $offcanvas-border-color: $border-color;
+  $offcanvas-border-color: $gray-200;
 
   $btn-transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
 
@@ -234,7 +234,6 @@ html {
       }
     }
   }
-
   // .pagination {
   //   .page-item.active {
   //     a.page-link {
@@ -483,12 +482,10 @@ html {
   .pagination.rounded {
 
     .page-item {
-
       // &:nth-child(-n + 2) .page-link {
       //   background: $pagination-item-bg;
       //   color: $pagination-item-color;
       // }
-
       // &:nth-last-child(-n + 2) .page-link {
       //   background: $pagination-item-last-bg;
       // }
@@ -514,7 +511,6 @@ html {
 
     .page-item {
       border-color: $gray-100;
-
       // &:nth-child(-n + 2) .page-link {
       //   background: $pagination-item-bg;
       //   color: $pagination-item-color;
@@ -538,7 +534,7 @@ html {
     }
 
     .active .page-link {
-      color: $white;
+      color: $page-link-active-color;
       background-color: $pagination-bg-hover-color;
     }
   }
@@ -694,7 +690,7 @@ html {
   }
   /*card color styles*/
   .card {
-/*    background-color: $card-bg-color;
+    /*    background-color: $card-bg-color;
     border-color: $card-border-color;*/
 
     .card-header {

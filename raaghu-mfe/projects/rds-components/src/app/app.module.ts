@@ -147,6 +147,8 @@ import { RdsCompOrderDetailsComponent } from './rds-comp-order-details/rds-comp-
 import { RdsCompTeamsComponent } from './rds-comp-teams/rds-comp-teams.component';
 import { RdsCompContactUsComponent } from './rds-comp-contact-us/rds-comp-contact-us.component';
 import { RdsCompTimelineComponent } from './rds-comp-timeline/rds-comp-timeline.component';
+import { RdsCompApplyForPositionComponent } from './rds-comp-apply-for-position/rds-comp-apply-for-position.component';
+import { RdsCompOpenPositionComponent } from './rds-comp-open-position/rds-comp-open-position.component';
 
 @NgModule({
   declarations: [	
@@ -285,6 +287,8 @@ import { RdsCompTimelineComponent } from './rds-comp-timeline/rds-comp-timeline.
     RdsCompTeamsComponent,
     RdsCompContactUsComponent,
     RdsCompTimelineComponent,
+    RdsCompApplyForPositionComponent,
+    RdsCompOpenPositionComponent,
   
   ],
   imports: [

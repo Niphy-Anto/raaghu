@@ -30,11 +30,11 @@
   <rds-nav-tab [navtabsItems]="navtabsItems" [horizontalAlignment]="'start'" [activepage]="activePage"
                [verticalAlignment]="false" [pills]="false" [tabs]="true" [fill]="false" [justified]="false"
                (onClicktab)="onTabClick($event)"></rds-nav-tab>
-  <div naveContent class="tab-content py-4 px-3 navsm-p-0" id="nav-tabContent">
+  <div naveContent class="tab-content py-2 px-3 navsm-p-0" id="nav-tabContent">
     <div class="tab-pane fade" [ngClass]="{'show active': activePage === 0}" id="newedition" edition="tabpanel"
       aria-labelledby="nav-home-tab">
       <form #editionForm="ngForm">
-        <div class="row mt-4" *ngIf="!contentOnEdit">
+        <div class="row" *ngIf="!contentOnEdit">
           <div class="col-md-6">
             <div class="form-group mb-3">
               <rds-input size="default" [inputType]="'text'" [Title]="translate.instant('Edition Name')"
@@ -62,7 +62,7 @@
             </div>
           </div>
         </div>
-        <div class="row mt-4" *ngIf="contentOnEdit">
+        <div class="row" *ngIf="contentOnEdit">
           <div class="col-md-12">
             <div class="form-group mb-3">
               <rds-input size="default" [inputType]="'text'" [TitleType]="'Top'"
@@ -124,7 +124,7 @@
           <div class="row mt-4" *ngIf="showAssignEditionDropdown">
             <div class="col-md-6">
               <rds-select-list ngDefaultControl name="freeEditions" [(ngModel)]="freeEditon" [value]="freeEditon"
-                [itemList]="freeEditions" [id]="freeEditions">
+                [itemList]="freeEditions" [id]="freeEditions" [placeholderText]="'Select Edition'">
               </rds-select-list>
             </div>
           </div>
@@ -168,10 +168,9 @@
     <div class="row">
       <div class="col-md-12">
         <div class="text-primary mb-2">{{tenantCount}} {{"Tenants will be moved"|translate}}</div>
-        <rds-select-list [labelText]="translate.instant('Edition')" ngDefaultControl
+        <rds-select-list [labelText]="translate.instant('Edition')" ngDefaultControl 
                          name="edition" [(ngModel)]="targetEditionId" [itemList]="editionList" [id]="editionList">
       </rds-select-list>
-  
       </div>
     </div>
   </div>
