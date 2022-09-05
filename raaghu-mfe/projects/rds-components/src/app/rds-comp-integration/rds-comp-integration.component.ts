@@ -8,7 +8,8 @@ import { Component, Input, OnInit } from '@angular/core';
 export class RdsCompIntegrationComponent implements OnInit {
   @Input() integrationList: any = [
     {
-      title: 'Zapier', subtitle: 'Build custom automation and intefrations with app', icon: 'zapier', route: '/home', selected: true, iconHeight: '25px', iconWidth: '25px', iconStroke: true, iconFill: false
+      title: 'Zapier',
+       subtitle: 'Build custom automation and intefrations with app', icon: 'zapier', route: '/home', selected: true, iconHeight: '25px', iconWidth: '25px', iconStroke: true, iconFill: false
     },
     {
       title: 'Adobe XD', subtitle: 'Build custom automation and intefrations with app', icon: 'adobeXD', route: '/home', selected: true, iconHeight: '25px', iconWidth: '25px', iconStroke: false, iconFill: false
@@ -35,9 +36,14 @@ export class RdsCompIntegrationComponent implements OnInit {
       title: 'Linear', subtitle: 'Build custom automation and intefrations with app', icon: 'linear', route: '/home', selected: true, iconHeight: '25px', iconWidth: '25px', iconStroke: false, iconFill: false
     }];
 
+    @Input () buttonSpinner : boolean =true;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  back(){
+    this.buttonSpinner=false;
+  }  
 }

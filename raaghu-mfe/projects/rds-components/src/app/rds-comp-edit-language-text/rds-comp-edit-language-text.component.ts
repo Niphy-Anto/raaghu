@@ -9,8 +9,9 @@ import { LanguageText } from 'projects/language-text/src/modal/language-text';
   styleUrls: ['./rds-comp-edit-language-text.component.scss']
 })
 export class RdsCompEditLanguageTextComponent implements OnInit {
-
+  @Input() buttonSpinner: boolean = true;
   constructor(public translate:TranslateService) { }
+
   @Input() Languagetext: LanguageText = {
     baseValue: '',
     baseLanguageName: '',
@@ -30,5 +31,9 @@ export class RdsCompEditLanguageTextComponent implements OnInit {
       return;
     }
     this.onLanguageTextSave.emit({ languageName:this.Languagetext.languageName,sourceName:this.Languagetext.sourceName,key:this.Languagetext.key,value:this.Languagetext.value });
+   
+  }
+  back(){
+    this.buttonSpinner=false;
   }
 }

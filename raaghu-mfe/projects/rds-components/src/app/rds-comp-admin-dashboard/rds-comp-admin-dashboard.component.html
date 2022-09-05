@@ -108,7 +108,12 @@
     <div class="col-md-6">
       <rds-widget [isRefreshRequired]="true" cardheight = 'card-stretch' [headerTitle]="translate.instant('Member Activity')" (onRefresh)="LoadMemberActivityTable()">
         <div body>
-          <mfe-loader [config]="rdsMemberActivityTableMfeConfig"></mfe-loader>
+          <!--<mfe-loader [config]="rdsMemberActivityTableMfeConfig"></mfe-loader>-->
+          <app-rds-data-table [tableHeaders]="memberActivityTableHeader" [tableStyle]="'light'"
+                              [tableData]="memberActivityTableData"
+                              [recordsPerPage]="10" [pagination]="true"
+                              [inlineEdit]="false"></app-rds-data-table>
+
         </div>
       </rds-widget>
     </div>

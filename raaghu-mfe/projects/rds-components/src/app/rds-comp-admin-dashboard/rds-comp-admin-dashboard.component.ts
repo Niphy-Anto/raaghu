@@ -445,7 +445,7 @@ export class RdsAdminDashboardComponent extends MfeBaseComponent implements OnIn
   }
 
   rdsMemberActivityTableMfeConfig: ComponentLoaderOptions;
-  memberActivityTableHeader: TableHeader[] = [
+  @Input() memberActivityTableHeader: TableHeader[] = [
     { displayName: 'Member', key: 'member', dataType: 'html' },
     { displayName: 'Cases', key: 'cases', dataType: 'html' },
     { displayName: 'Active', key: 'active', dataType: 'html' },
