@@ -528,7 +528,7 @@ html {
       // border: 1px solid $pagination-bg-color;
 
       &:hover {
-        color: $white;
+        color: $pagination-item-color;
         background-color: $pagination-bg-hover-color;
       }
     }
