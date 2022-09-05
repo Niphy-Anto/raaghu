@@ -4,6 +4,7 @@ import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { RdsButtonModule, RdsCheckboxModule, RdsInputModule, RdsOffcanvasModule } from '@libs/rds-elements';
 import { RdsCompHierarchyComponent } from './rds-comp-hierarchy.component';
 import { TreeNode,  TreeNodeLabeles, TreeType  } from '../../models/tree-node.model';
+import { NgxTranslateModule } from '@libs/shared';
 
 export default {
   title: 'Components/Hierarchy',
@@ -12,6 +13,7 @@ export default {
     moduleMetadata({
       imports: [
         FormsModule, ReactiveFormsModule, RdsButtonModule, RdsCheckboxModule, RdsOffcanvasModule, RdsInputModule,
+        NgxTranslateModule
       ],
       providers: [
         FormBuilder

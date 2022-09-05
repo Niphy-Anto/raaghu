@@ -3,7 +3,7 @@
     <h5 class="offcanvas-title" [id]="'canvas' + offId">{{ canvasTitle }}</h5>
   </div>
   <div class="offcanvas-body" [class]="bodyClasses">
-    <button type="button" (click)="onClose.emit($event)" class="btn-close text-reset btn-sm offcanvas-close" data-bs-dismiss="offcanvas"
+    <button type="button" (click)="onClose.emit($event)" class="btn-close text-reset offcanvas-close" data-bs-dismiss="offcanvas"
             aria-label="Close"></button>
     <ng-content></ng-content>
   </div>

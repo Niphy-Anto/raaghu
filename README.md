@@ -62,7 +62,7 @@ How Raaghu works?
 </h1>
 </br></br></br> 
 <p align="center">
-        <img src="./static/how it works.png" alt="logo" width="800"/>
+        <img src="./static/raaghu-illustration.png" alt="logo" width="600"/>
 <p/>
 <br/>
 <br/>

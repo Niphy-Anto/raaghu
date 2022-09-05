@@ -13,7 +13,7 @@ declare var $: any;
 })
 export class RdsOrganizationTreeComponent extends MfeBaseComponent implements OnInit {
 
-  constructor(public translate:TranslateService, private injector: Injector ,private formBuilder: FormBuilder) {
+  constructor(public translate: TranslateService, private injector: Injector, private formBuilder: FormBuilder) {
     super(injector);
   }
   public rdsAlertMfeConfig: ComponentLoaderOptions;
@@ -24,12 +24,12 @@ export class RdsOrganizationTreeComponent extends MfeBaseComponent implements On
       ItemDescription: ['', Validators.required]
     })
     this.nodeEditForm = this.formBuilder.group({
-     ItemDescription: ['', Validators.required]
+      ItemDescription: ['', Validators.required]
     })
     this.NetednodeForm = this.formBuilder.group({
       ItemDescription: ['', Validators.required]
-     })
-     this.rdsAlertMfeConfig = {
+    })
+    this.rdsAlertMfeConfig = {
       name: 'RdsCompAlertPopup',
       input: {
         alertID: 'deleteTreeNode',
@@ -56,30 +56,30 @@ export class RdsOrganizationTreeComponent extends MfeBaseComponent implements On
 
 
 
-  public nodeForm  = new FormGroup({})
-  public nodeEditForm  = new FormGroup({})
+  public nodeForm = new FormGroup({})
+  public nodeEditForm = new FormGroup({})
   public NetednodeForm = new FormGroup({})
-  disableSaveButton:boolean;
-  disableSaveButtonfromDes:boolean
-  disableSaveButtonfromCode:boolean
+  disableSaveButton: boolean;
+  disableSaveButtonfromDes: boolean
+  disableSaveButtonfromCode: boolean
   @Input() organizationTreeData;
   @Input() mutable: boolean;
-  @Input() ButtonLabel:String;
+  @Input() ButtonLabel: String;
   @Input()
-  OrganizationTreeLabeles: OrganizationTreeLabeles={
-  ParentItemPlaceholder: "",
-  ChildItemPlaceholder:  "",
-  ParentDescriptionPlaceholder: "",
-  ChildDescriptionPlaceholder:  "",
-  ChildDescriptionEditPlaceholder:"",
-  ParentNodeTitle:  "",
-  ChildNodeTitle:  "",
-}
+  OrganizationTreeLabeles: OrganizationTreeLabeles = {
+    ParentItemPlaceholder: "",
+    ChildItemPlaceholder: "",
+    ParentDescriptionPlaceholder: "",
+    ChildDescriptionPlaceholder: "",
+    ChildDescriptionEditPlaceholder: "",
+    ParentNodeTitle: "",
+    ChildNodeTitle: "",
+  }
   @Input()
-  OrganizationTreeType: OrganizationTreeType={
-     IconLabel:false ,
-     Normal:false ,
-     checkbox: true
+  OrganizationTreeType: OrganizationTreeType = {
+    IconLabel: false,
+    Normal: false,
+    checkbox: true
   }
   @Input() nodeColor: string[] = ['#BDCEFC', '#0D79AE', '#14A94B', '#FBA919'];
   @Output()
@@ -93,10 +93,11 @@ export class RdsOrganizationTreeComponent extends MfeBaseComponent implements On
   @Output()
   onEdit = new EventEmitter<{ item: any }>()
   @Output()
-  onUpdateUnitTree = new EventEmitter<{data:{id: number, displayName: string }}>()
+  onUpdateUnitTree = new EventEmitter<{ data: { id: number, displayName: string } }>()
 
   alertData: AlertPopupData = {
-    iconUrl: "assets/delete-icon.svg",
+    iconUrl: "delete",
+    colorVariant: "danger",
     alertConfirmation: "Are you sure ?",
     messageAlert: "The record will be deleted permanently",
     CancelButtonLabel: "Cancel",
@@ -104,7 +105,7 @@ export class RdsOrganizationTreeComponent extends MfeBaseComponent implements On
   }
 
   @Output()
-  onDelete = new EventEmitter<{evnt:any,item:boolean}>()
+  onDelete = new EventEmitter<{ evnt: any, item: boolean }>()
   selectedData: any;
 
   deleteNodeId: any;
@@ -115,26 +116,26 @@ export class RdsOrganizationTreeComponent extends MfeBaseComponent implements On
   nodeLabel!: string;
   itemCode: any;
   ItemDescription: any;
-  itemcodeRequiredMessage:boolean;
-  DescriptionRequiredMessage:boolean;
-  offcanvasTitleModel:string = "New Organization Unit";
-  offcanvasTitleModelEdit: string ="Edit Organization Unit"
+  itemcodeRequiredMessage: boolean;
+  DescriptionRequiredMessage: boolean;
+  offcanvasTitleModel: string = "New Organization Unit";
+  offcanvasTitleModelEdit: string = "Edit Organization Unit"
   addNode(nodeArray) {
-    this.itemCode=nodeArray[0].data.parentId;
-    this.ItemDescription='';
+    this.itemCode = nodeArray[0].data.parentId;
+    this.ItemDescription = '';
     //this.checkSavebuttonEnable(false,false)
   }
 
   addNestedNode(node) {
-    this.disableSaveButton=true
-    this.itemCode='';
-    this.ItemDescription='';
+    this.disableSaveButton = true
+    this.itemCode = '';
+    this.ItemDescription = '';
     this.selectedNestedNode = node;
   }
 
 
   pushNode() {
-    this.onChildSave.emit({parentId:this.itemCode, displayName: this.ItemDescription})
+    this.onChildSave.emit({ parentId: this.itemCode, displayName: this.ItemDescription })
   }
 
   pushNestedNode() {
@@ -155,16 +156,26 @@ export class RdsOrganizationTreeComponent extends MfeBaseComponent implements On
     return true;
   }
 
-  selectNode(node: OrganizationTreeNode, event: any)
-   {
+  selectNode(node: OrganizationTreeNode, event: any) {
     node.selected = event.target.checked;
     this.SelectAll = this.checkAllSelectorNot()
     this.onSelectnode.emit({ item: node })
-    }
+  }
 
-    onClicknode(node :string){
-      this.onSelectnode.emit({ item: node })
+  onClicknode(node: any) {
+    this.unselectAllNode(this.organizationTreeData);
+    node.selected = true;
+    this.onSelectnode.emit({ item: node })
+  }
+
+  unselectAllNode(nodes: any): void {
+    for (const n of nodes) {
+      n.selected = false;
+      if (n.children && n.children.length > 0) {
+        this.unselectAllNode(n.children);
+      }
     }
+  }
 
   selectAllNode(node: OrganizationTreeNode, checked: boolean) {
     node.selected = checked;
@@ -176,27 +187,27 @@ export class RdsOrganizationTreeComponent extends MfeBaseComponent implements On
   deleteNode(node) {
     this.onDeleteNode.emit({ id: this.deleteNodeId });
     $('#deleteTreeNode').modal('hide');
-    }
+  }
 
-    deleteConfirmation(node : any) {
-      this.deleteNodeId = node.data.id
-      $('#deleteTreeNode').modal('show');
+  deleteConfirmation(node: any) {
+    this.deleteNodeId = node.data.id
+    $('#deleteTreeNode').modal('show');
 
-    }
+  }
 
 
   selectAllFeature(event: any) {
     for (const n of this.organizationTreeData) {
       this.selectAllNode(n, event.detail);
     }
-    this.SelectAll=true;
+    this.SelectAll = true;
     this.onSelectAll.emit({ item: this.organizationTreeData });
 
   }
   checkAllSelectorNot(): boolean {
     for (const n of this.organizationTreeData) {
-     this.SelectAll = this.checkNodSelectOrnot(n);
-      if (this.SelectAll==false) {
+      this.SelectAll = this.checkNodSelectOrnot(n);
+      if (this.SelectAll == false) {
         return this.SelectAll;
 
       }
@@ -204,8 +215,8 @@ export class RdsOrganizationTreeComponent extends MfeBaseComponent implements On
     return this.SelectAll;
   }
   checkNodSelectOrnot(node: OrganizationTreeNode): boolean {
-  if (node.selected == false) {
-     return false;
+    if (node.selected == false) {
+      return false;
     } else {
       for (const n of node.children) {
         let checked = this.checkNodSelectOrnot(n);
@@ -216,59 +227,59 @@ export class RdsOrganizationTreeComponent extends MfeBaseComponent implements On
     }
     return true;
   }
-  getNodeByID(node){
+  getNodeByID(node) {
     this.NetednodeForm = this.formBuilder.group({
       ItemDescription: ['', Validators.required]
-     })
+    })
 
-    this.ItemDescription=node.data.displayName;
-    this.itemCode=node.data.id;
+    this.ItemDescription = node.data.displayName;
+    this.itemCode = node.data.id;
   }
-  EditnodeModal(){
- 
-    this.onUpdateUnitTree.emit({data:{id: this.itemCode, displayName: this.ItemDescription}})
+  EditnodeModal() {
+
+    this.onUpdateUnitTree.emit({ data: { id: this.itemCode, displayName: this.ItemDescription } })
   }
 
-  setMaximumuserButton(index:number,length:number){
-    let place=length/2;
-    place= Math.floor(place);
-    if(index===place){
+  setMaximumuserButton(index: number, length: number) {
+    let place = length / 2;
+    place = Math.floor(place);
+    if (index === place) {
       return true;
 
-    } else{
+    } else {
       return false;
     }
   }
-  checkSavebuttonEnable(disableSaveButton:boolean,disableSaveButtonfromDes:boolean){
-    if(disableSaveButton===true||disableSaveButtonfromDes===true){
-      this.disableSaveButton=true;
-    }else{
-      this.disableSaveButton=false
+  checkSavebuttonEnable(disableSaveButton: boolean, disableSaveButtonfromDes: boolean) {
+    if (disableSaveButton === true || disableSaveButtonfromDes === true) {
+      this.disableSaveButton = true;
+    } else {
+      this.disableSaveButton = false
     }
 
   }
-  checkItemcodeValidation(){
-    if(this.itemCode === '' || this.itemCode === undefined){
-      this.itemcodeRequiredMessage=true;
-      this.disableSaveButtonfromCode=true
-      this.checkSavebuttonEnable(this.disableSaveButtonfromCode,this.disableSaveButtonfromDes)
+  checkItemcodeValidation() {
+    if (this.itemCode === '' || this.itemCode === undefined) {
+      this.itemcodeRequiredMessage = true;
+      this.disableSaveButtonfromCode = true
+      this.checkSavebuttonEnable(this.disableSaveButtonfromCode, this.disableSaveButtonfromDes)
     }
-    else{
-      this.itemcodeRequiredMessage=false;
-      this.disableSaveButtonfromCode=false
-      this.checkSavebuttonEnable(this.disableSaveButtonfromCode,this.disableSaveButtonfromDes)
+    else {
+      this.itemcodeRequiredMessage = false;
+      this.disableSaveButtonfromCode = false
+      this.checkSavebuttonEnable(this.disableSaveButtonfromCode, this.disableSaveButtonfromDes)
     }
   }
-  checkDescriptionValidation(){
-    if(this.ItemDescription === '' || this.ItemDescription === undefined){
-      this.DescriptionRequiredMessage=true;
-      this.disableSaveButtonfromDes=true
-      this.checkSavebuttonEnable(this.disableSaveButtonfromCode,this.disableSaveButtonfromDes)
-     }
-    else{
-      this.DescriptionRequiredMessage=false;
-      this.disableSaveButtonfromDes=false
-      this.checkSavebuttonEnable(this.disableSaveButtonfromCode,this.disableSaveButtonfromDes)
+  checkDescriptionValidation() {
+    if (this.ItemDescription === '' || this.ItemDescription === undefined) {
+      this.DescriptionRequiredMessage = true;
+      this.disableSaveButtonfromDes = true
+      this.checkSavebuttonEnable(this.disableSaveButtonfromCode, this.disableSaveButtonfromDes)
+    }
+    else {
+      this.DescriptionRequiredMessage = false;
+      this.disableSaveButtonfromDes = false
+      this.checkSavebuttonEnable(this.disableSaveButtonfromCode, this.disableSaveButtonfromDes)
     }
   }
 }

@@ -28,7 +28,7 @@ module.exports = {
         new ModuleFederationPlugin({
             library: { type: "module" },
 
-            name: "visual-settings",
+            name: "visualsettings",
             filename: "remoteEntry.js",
             exposes: {
                 './AppModule': './projects/visual-settings/src/app/app.module.ts',

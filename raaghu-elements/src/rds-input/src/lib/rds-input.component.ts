@@ -52,6 +52,7 @@ export class RdsInputComponent implements AfterViewInit {
   @Input() iconWidth: string = '16px';
   @Input() iconStroke: boolean = true;
   @Input() iconFill: boolean = false;
+  @Input() iconOpacity: string = '0.4';
   @Input()
   isRequired:boolean = false;
   iconTitle = 'Show';
@@ -135,6 +136,10 @@ export class RdsInputComponent implements AfterViewInit {
     } else {
       var selectSize = '';
       classList.push(selectSize);
+    }
+
+    if (this.inputType === "password") {
+      classList.push('hideEye');
     }
 
     return classList;

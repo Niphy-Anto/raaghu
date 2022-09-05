@@ -1,16 +1,38 @@
-<button [ngClass]="buttonClasses" (click)="showToast()">Click Here</button>
-
-<div *ngIf="clicked" class="toast-container position-absolute p-3" [ngClass]="positionClass">
-  <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
-    <div class="toast-header" [ngClass]="show">
-      <!-- <img src="../../assets/images/blue.jfif" class="rounded me-2" [ngClass]="img" alt="..." width="20" height="20"> -->
-      <strong class="me-auto">{{headerTitle}}</strong>
-      <small>{{time}}</small>
-      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close" (click)="hideToast()"></button>
-    </div>
-    <div [ngClass]="classes">
-      {{message}}
-      <ng-content></ng-content>
+<ng-container [ngSwitch]="data_type">
+  <div class="toast-container position-absolute p-3" [ngClass]="positionClass" *ngSwitchCase="'basic'">
+    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" [attr.id]="toastId"
+      [attr.data-bs-autohide]="autoHide" [attr.data-bs-delay]="delay">
+      <div class="toast-header">
+        <strong class="me-auto">{{headerTitle}}</strong>
+        <small>{{time}}</small>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div [ngClass]="classes">
+        {{message}}
+        <ng-content></ng-content>
+      </div>
     </div>
   </div>
-</div>
+  <!-- <div class="toast-container position-absolute p-3" [ngClass]="positionClass" *ngSwitchCase="'type1'">
+    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" [attr.id]="toastId"
+      [attr.data-bs-autohide]="autoHide" [attr.data-bs-delay]="delay">
+      <div class="d-flex  border-start border-2  toast-body justify-content-center" [class]="'border-'+colorVariant">
+        <div class="justify-content-center py-3 pe-2">
+          <div class="p-2  border border-2 rounded-circle" [class]="'bg-'+colorVariant">
+            <rds-icon [height]="iconHeight" [fill]="iconFill" [stroke]="iconStroke" [width]="iconWidth"
+              [name]="iconName" [colorVariant]="iconColorVariant">
+            </rds-icon>
+          </div>
+        </div>
+        <div class="p-2 justify-content-center">
+          <b>{{headerTitle}}</b>
+          <div>{{message}}</div>
+        </div>
+        <div class="ps-3 py-4">
+          <button type="button" class="btn-close opacity-25" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+</ng-container>

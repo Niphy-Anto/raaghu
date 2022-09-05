@@ -19,13 +19,10 @@
 							}
 						],
 						"styles": [
-							"./node_modules/bootstrap/dist/css/bootstrap.min.css",
-							"./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
-							"./projects/libs/themes/src/styles/quillEditor.scss",
-							"./projects/libs/themes/src/styles/custom.scss",
-							"./projects/libs/themes/src/styles/responsive.scss",
-							"./projects/host/src/styles.css"
-							
+							"projects/libs/themes/src/styles/quillEditor.scss",
+							"projects/libs/themes/src/styles/responsive.scss",
+							"projects/host/src/styles.css",
+							"projects/libs/themes/src/styles/default.scss"
 						],
 						"scripts": [
 							"./node_modules/bootstrap/dist/js/bootstrap.min.js",
@@ -44,12 +41,10 @@
 					"options": {
 						"tsConfig": "tsconfig.json",
 						"styles": [
-							"./node_modules/bootstrap/dist/css/bootstrap.min.css",
-							"./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
-							"./projects/libs/themes/src/styles/quillEditor.scss",
-							"./projects/libs/themes/src/styles/custom.scss",
-							"./projects/libs/themes/src/styles/responsive.scss",
-							"./projects/host/src/styles.css"
+							"projects/libs/themes/src/styles/quillEditor.scss",
+							"projects/libs/themes/src/styles/responsive.scss",
+							"projects/host/src/styles.css",
+							"projects/libs/themes/src/styles/default.scss"
 						],
 						"scripts": [
 							"./node_modules/bootstrap/dist/js/bootstrap.min.js"
@@ -1387,7 +1382,7 @@
 				}
 			}
 		},
-		"visual-settings": {
+		"visualsettings": {
 			"projectType": "application",
 			"schematics": {
 				"@schematics/angular:component": {
@@ -1404,7 +1399,7 @@
 				"build": {
 					"builder": "ngx-build-plus:browser",
 					"options": {
-						"outputPath": "dist/visual-settings",
+						"outputPath": "dist/visualsettings",
 						"index": "projects/visual-settings/src/index.html",
 						"main": "projects/visual-settings/src/main.ts",
 						"polyfills": "projects/visual-settings/src/polyfills.ts",
@@ -1459,11 +1454,11 @@
 					"builder": "ngx-build-plus:dev-server",
 					"configurations": {
 						"production": {
-							"browserTarget": "visual-settings:build:production",
+							"browserTarget": "visualsettings:build:production",
 							"extraWebpackConfig": "projects/visual-settings/webpack.prod.config.js"
 						},
 						"development": {
-							"browserTarget": "visual-settings:build:development"
+							"browserTarget": "visualsettings:build:development"
 						}
 					},
 					"defaultConfiguration": "development",
@@ -1477,7 +1472,7 @@
 				"extract-i18n": {
 					"builder": "ngx-build-plus:extract-i18n",
 					"options": {
-						"browserTarget": "visual-settings:build",
+						"browserTarget": "visualsettings:build",
 						"extraWebpackConfig": "projects/visual-settings/webpack.config.js"
 					}
 				},

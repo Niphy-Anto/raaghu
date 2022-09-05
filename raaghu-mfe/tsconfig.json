@@ -66,9 +66,17 @@
         "rds-elements/rds-big-number-widget/public-api",
         "rds-elements/rds-big-number-widget"
       ],
-      "@libs/rds-cookies": [
-        "rds-elements/rds-cookies/public-api",
-        "rds-elements/rds-cookies"
+      "@libs/rds-stepper": [
+        "rds-elements/rds-stepper/public-api",
+        "rds-elements/rds-stepper"
+      ],
+      "@libs/rds-app-details": [
+        "rds-elements/rds-app-details/public-api",
+        "rds-elements/rds-app-details"
+      ],
+      "@libs/rds-counter": [
+        "rds-elements/rds-counter/public-api",
+        "rds-elements/rds-counter"
       ]
     },
     "baseUrl": "./",

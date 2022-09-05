@@ -9,16 +9,16 @@ import { Observable } from 'rxjs';
   templateUrl: './rds-comp-information.component.html',
   styleUrls: ['./rds-comp-information.component.scss'],
 })
-export class RdsCompInformationComponent implements OnInit, OnChanges {
+export class RdsCompInformationComponent implements OnInit {
+  @ViewChild('newDynamicPropertyForm', { read: NgForm }) newDynamicPropertyForm!: NgForm;
   propertyName: string;
   displayName: string;
   permission: string;
   inputType: any = '';
   DynamicPropertyId: any;
-  @ViewChild('dynamicPropertiesCreationForm') dynamicPropertiesInfoForm: NgForm;
-  @Input() dynamicPropertiesData: any = {};
+  @Input() dynamicPropertiesData: {propertyName:string, displayName: string, inputType: string};
   @Input() inputTypeList: any[] = [];
-  entityNames: any[];
+  entityNames: any[]; 
   @Output() dynamicPropertiesInfo = new EventEmitter<any>();
   @Input() resetFormSubject : Observable<boolean> = new Observable<boolean>();
   @Input() editShimmer : boolean = false;
@@ -27,38 +27,23 @@ export class RdsCompInformationComponent implements OnInit, OnChanges {
   ngOnInit(): void {
     this.resetFormSubject.subscribe(response => {
       if(response){
-       this.dynamicPropertiesInfoForm.reset();
-      // Or do whatever operations you need.
+        console.log(this.newDynamicPropertyForm);
+        this.newDynamicPropertyForm.form.markAllAsTouched();
     }
-   })
+  })
     if (!this.dynamicPropertiesData) {
-      this.dynamicPropertiesData = {};
       this.dynamicPropertiesData['propertyName'] = '';
       this.dynamicPropertiesData['displayName'] = '';
       this.dynamicPropertiesData['inputType'] = '';
     }
-    setTimeout(() => {
-      if (this.dynamicPropertiesData && this.dynamicPropertiesInfoForm) {
-        this.dynamicPropertiesInfoForm.statusChanges.subscribe((res) => {
-          if (res === 'VALID') {
-            this.dynamicPropertiesInfo.emit({
-              dynamicProperties: this.dynamicPropertiesData,
-            });
-          } else {
-            this.dynamicPropertiesInfo.emit({ dynamicProperties: undefined });
-          }
-        });
-      }
-    }, 100);
   }
 
+
   ngOnChanges(changes: SimpleChanges): void {
-    if (!this.dynamicPropertiesData) {
-      this.dynamicPropertiesData = {};
-      this.dynamicPropertiesData['propertyName'] = '';
-      this.dynamicPropertiesData['displayName'] = '';
-      this.dynamicPropertiesData['inputType'] = '';
-      this.dynamicPropertiesInfoForm.reset();
+    if(this.dynamicPropertiesData.displayName != "" && this.dynamicPropertiesData.propertyName !="" && this.dynamicPropertiesData.inputType != ""){ 
+      this.dynamicPropertiesInfo.emit({
+        dynamicProperties: this.dynamicPropertiesData,
+      });
     }
   }
 }

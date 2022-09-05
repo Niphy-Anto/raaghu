@@ -118,5 +118,9 @@ export const MfeConfig = {
   },
   undermaintanance: {
     url: 'http://localhost:5046/remoteEntry.js',
+  },
+  contactus: {
+    url: 'http://localhost:5055/remoteEntry.js',
   }
+
 };

@@ -1,12 +1,12 @@
 <div class="">
   <div class="row">
     <div class="col-md-12 text-end pb-3 desktop-btn">
-      <rds-button [label]="translate.instant('NEW ROLE')" type="button" style="float: right" [size]="'small'"
+      <rds-button [label]="translate.instant('NEW ROLE')" [showLoadingSpinner]="buttonSpinnerForNewRole" type="button" style="float: right" [size]="'small'"
         [colorVariant]="'primary'" (click)="newRole($event)" [icon]="'plus'" iconHeight="12px" iconWidth="12px"
         class="ms-2">
       </rds-button>
-      <rds-button type="button" [size]="'small'" [colorVariant]="'primary'" [roundedButton]="true" icon="refresh" [iconFill]="false" [iconStroke]="true"
-        class="ms-2" (click)="getRoles()" iconHeight="20px" iconWidth="20px">
+      <rds-button type="button" [size]="'small'" [colorVariant]="'primary'" [roundedButton]="true" icon="refresh"
+        class="ms-2" (click)="getRoles()" iconHeight="18px" iconWidth="26px">
       </rds-button>
       <rds-button [label]="translate.instant('FILTER BY PERMISSIONS')" type="button" 
         (click)="filterByPermission($event)" [size]="'small'" [colorVariant]="'primary'" [outlineButton]="true"
@@ -16,7 +16,7 @@
     <div class="col-md-12">
       <div class="card p-2 h-100 border-0 rounded-0 card-full-stretch">
         <div class="table-responsive">
-          <app-rds-data-table [tableData]="tableData" [inlineEdit]="false" [pagination]="true" [recordsPerPage]="5"
+          <app-rds-data-table [tableData]="tableData" [inlineEdit]="false" [pagination]="true" [recordsPerPage]="10"
             [actions]="actions" (deleteEvent)="deleteEvent.emit($event)" (onActionSelection)="onActionSelect($event)"
             [tableHeaders]="roleHeaders" [isShimmer]="isShimmer" ></app-rds-data-table>
         </div>

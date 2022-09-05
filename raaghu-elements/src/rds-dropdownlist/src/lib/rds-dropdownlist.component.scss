@@ -4,5 +4,6 @@
 }
 
 .dropdown-toggle::after {
-  border-top: 0;
+ /* border-top: 0;*/
+  display:none;
 }
