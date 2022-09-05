@@ -185,10 +185,10 @@ Thanks goes to these wonderful people and Wai technology.
 
 <table>
   <tr>
-    <td align="center" border="none">
+    <td align="center" >
       <a href="https://github.com/omkarchoudhari">
-        <img src="https://avatars.githubusercontent.com/u/32321041?s=100&v=4" width="100" title="Omkar Choudhari"/>
-        <br /><sub><b>Omkar Choudhari</b></sub>
+        <img src="https://avatars.githubusercontent.com/u/32321041?s=100&v=4" width="50"/ style="border-radius:50%">
+        <br />
       </a>
     </td>
     <td align="center" border="none">
