@@ -16,19 +16,30 @@
     <a href="https://github.com/Wai-Technologies/raaghu/issues/new">Report Bug</a>
 </p>
 
-# 👋 Introducing `raaghu` 
+<!-- vscode-markdown-toc -->
 
+* [ Introducing raaghu](#Introducingraaghu-elements)
+*  [Demo](#Demo)
+*  [Features](#Features)
+*  [Prerequisites](#pre)
+*  [How to Set up `raaghu-mfe` for Development?](#setup)
+*  [Built With](#BuiltWith)
+*  [ Contributing to `raaghu`](#ContributingtoRaaghu)
+*  [ Support](#Support)
+*  [Contributors](#WAiTechnologyContributors)
+
+##  <a name='Introducingraaghu-elements'></a>Introducing `raaghu` 
 `raaghu` is an opensource micro front end framework built on top of `raaghu-elements`, Bootstrap 5 and Storybook offering highly customizable UI components and built-in pages.
 
 Raaghu mfe can be used as a base to build complex components and UI layouts whilst maintaining a high level of reusability,flexibility with ease of maintenance.
 
-# 🚀 Demo
+##  <a name='Demo'></a>Demo
 
 Here is a quick [demo](https://www.raaghu.io) of the elements.
 
 Share your appreciation to raaghu design system contributors with a ⭐️
 
-# 🔥 Features
+##   <a name='Features'></a> Features
 
 ## 🔢 High reusability
  - Promotes reusability throughout the UI and pages
@@ -51,7 +62,8 @@ Share your appreciation to raaghu design system contributors with a ⭐️
 ## Scalability
 - Provides better scalability as each codebase is much simpler to build, test and maintain
 
-# ⚛️ Prerequisites for development
+## <a name='pre'></a> Prerequisites for development
+# ⚛️ 
 
 > #### To use the raaghu, you should be familiar with:
 > - TypeScript
@@ -63,7 +75,9 @@ Share your appreciation to raaghu design system contributors with a ⭐️
 > - Node.js with NPM (Node Package Manager)
 > - Angular-CLI (Command Line Interface)
 
-# 🏗️ How to Set up `raaghu-mfe` for Development?
+
+## <a name='setup'></a> How to Set up `raaghu-mfe` for Development?
+
 You can run `raaghu-mfe` locally with a few easy steps.
 
 1. Clone the repository
@@ -149,22 +163,19 @@ npm run page <mfe_name> <page_name>
 ```
 
 
-# 🍔 Built With
+##  <a name='BuiltWith'></a>Built With
 - [raaghu-elements Libraries](https://www.npmjs.com/package/rds-elements): Build bulletproof UI components faster
 - [Bootstrap 5](https://bootstrap.com/): Sleek, intuitive, and powerful framework for faster and easier web development.
 - [Storybook](https://storybook.js.org/): Build bulletproof UI components faster
 
-# 🛡️ License
-This project is licensed under the MIT License - see the [`LICENSE`](LICENSE) file for details.
 
-
-# 🤝 Contributing to `Raaghu`
+##  <a name='ContributingtoRaaghu'></a>🤝 Contributing to `Raaghu`
 Help us grow by contributing to raaghu micro front-end design system. 
 
  You can work on any features [listed here](https://github.com/Wai-Technologies/raaghu-elements#-upcoming-features)
  or create a custom one. After adding your code, please send us a Pull Request.  
 
-# 🙏 Support
+##  <a name='Support'></a>🙏 Support
 
 We all need support and motivation. `Raaghu` is not an exception. Please give this project a ⭐️ to encourage and show that you liked it. Don't forget to leave a star ⭐️ before you move away.
 
@@ -172,7 +183,7 @@ We all need support and motivation. `Raaghu` is not an exception. Please give th
 A ⭐️ to <b>Raaghu</b> is to build its triceps 💪 stronger.
 </h3>
 
-## WAi Technology Contributors ✨
+##  <a name='WAiTechnologyContributors'></a> Contributors ✨
 
 Thanks goes to these wonderful people and Wai technology.
 
