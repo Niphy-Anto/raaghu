@@ -185,40 +185,40 @@ Thanks goes to these wonderful people and Wai technology.
 
 <table>
   <tr>
-    <td align="center" >
+    <td align="center" border="none">
       <a href="https://github.com/omkarchoudhari">
-        <img src="https://avatars.githubusercontent.com/u/32321041?s=100&v=4" width="100">
-        <br />
+        <img src="https://avatars.githubusercontent.com/u/32321041?s=100&v=4" width="100" title="Omkar Choudhari"/>
+        <br /><sub><b></b></sub>
       </a>
     </td>
     <td align="center" border="none">
       <a href="https://github.com/mohanbari">
         <img src="https://avatars.githubusercontent.com/u/99885410?s=100v=4" width="100" title="Mohan Bari"/>
-        <br /><sub><b>Mohan Bari</b></sub>
+        <br /><sub><b></b></sub>
       </a>
     </td>
     <td align="center" style="border: none">
       <a href="https://github.com/alok-nakhate">
         <img src="https://avatars.githubusercontent.com/u/99717383?s=100v=4" width="100" title="Alok Nakhate"/>
-        <br /><sub><b>Alok Nakhate</b></sub>
+        <br /><sub><b></b></sub>
       </a>
     </td>
     <td align="center" style="border: none">
       <a href="https://github.com/yohulchitre">
         <img src="https://avatars.githubusercontent.com/u/100934017?s=100v=4" width="100" title="Yohul Chitre"/>
-        <br /><sub><b>Yohul Chitre</b></sub>
+        <br /><sub><b></b></sub>
       </a>
     </td>
     <td align="center" style="border: none">
       <a href="https://github.com/Priyanka-Shinkar">
         <img src="https://avatars.githubusercontent.com/u/99782840?s=100&v=4" width="100" title="Priyanka Shinkar"/>
-        <br /><sub><b>Priyanka Shinkar</b></sub>
+        <br /><sub><b></b></sub>
       </a>
     </td>
     <td align="center" style="border: none">
       <a href="https://github.com/rahulp34">
         <img src="https://avatars.githubusercontent.com/u/55730676?s=100v=4" width="100" title="Rahul Patil"/>
-        <br /><sub><b>Rahul Patil</b></sub>
+        <br /><sub><b></b></sub>
       </a>
     </td>
   </tr>
@@ -226,60 +226,78 @@ Thanks goes to these wonderful people and Wai technology.
     <td align="center" style="border: none">
       <a href="https://github.com/pratheesh-Krishnan">
         <img src="https://avatars.githubusercontent.com/u/99800378?s=100v=4" width="100" title="Pratheesh Krishnan"/>
-        <br /><sub><b>Pratheesh Krishnan</b></sub>
+        <br /><sub><b></b></sub>
       </a>
     </td>
     <td align="center" style="border: none">
       <a href="https://github.com/Niphy-Anto">
         <img src="https://avatars.githubusercontent.com/u/99808648?s=100v=4" width="100" title="Niphy Anto"/>
-        <br /><sub><b>Niphy Anto</b></sub>
+        <br /><sub><b></b></sub>
       </a>
     </td>
     <td align="center" style="border: none">
       <a href="https://github.com/Ketan-Khalate">
         <img src="https://avatars.githubusercontent.com/u/99807624?s=100v=4" width="100" title="Ketan Khalate"/>
-        <br /><sub><b>Ketan Khalate</b></sub>
+        <br /><sub><b></b></sub>
       </a>
     </td>
     <td align="center" style="border: none">
       <a href="https://github.com/obaid-ur-rahman">
         <img src="https://avatars.githubusercontent.com/u/100338565?s=100v=4" width="100" title="Obaid Rahman"/>
-        <br /><sub><b>Obaid Rahman</b></sub>
+        <br /><sub><b></b></sub>
       </a>
     </td>
     <td align="center" style="border: none">
       <a href="https://github.com/swamirajanarse">
         <img src="https://avatars.githubusercontent.com/u/97228584?s=100&v=4" width="100" title="Swamiraj Anarse"/>
-        <br /><sub><b>Swamiraj Anarse</b></sub>
+        <br /><sub><b></b></sub>
+      </a>
+    </td>
+    <td align="center" style="border: none">
+      <a href="https://github.com/Prashant-waii">
+        <img src="https://avatars.githubusercontent.com/u/112158709?v=4" width="100" title="Prashant Kashyap"/>
+        <br /><sub><b></b></sub>
       </a>
     </td>
   </tr>
   <tr>
     <td align="center" style="border: none">
-      <a href="https://github.com/neeraj-bhakre">
-        <img src="https://avatars.githubusercontent.com/u/100110930?s=100v=4" width="100" title="Neeraj Bhakre"/>
-        <br /><sub><b>Neeraj Bhakre</b></sub>
+      <a href="https://github.com/shubham-waii">
+        <img src="https://avatars.githubusercontent.com/u/112168652?v=4" width="100" title="Shubham "/>
+        <br /><sub><b></b></sub>
       </a>
     </td>
     <td align="center" style="border: none">
-      <a href="https://github.com/maithililondhewaiin">
-        <img src="https://avatars.githubusercontent.com/u/100565002?s=100&v=4" width="100" title="Maithili Londhe">
-        <br /><sub><b>Maithili Londhe</b></sub>
+      <a href="[https://github.com/maithililondhewaiin](https://github.com/TejasSadaphal)">
+        <img src="https://avatars.githubusercontent.com/u/103165573?v=4" width="100" title="Maithili Londhe">
+        <br /><sub><b></b></sub>
       </a>
     </td>
     <td align="center" style="border: none">
       <a href="https://github.com/Vaish84">
         <img src="https://avatars.githubusercontent.com/u/104414130?s=100&v=4" width="100" title="Vaishnavi Pardeshi"/>
-        <br /><sub><b>Vaishnavi Pardeshi</b></sub>
+        <br /><sub><b></b></sub>
       </a>
     </td>
     <td align="center" style="border: none">
       <a href="https://github.com/rohit9096">
         <img src="https://avatars.githubusercontent.com/u/88035057?s=100v=4" width="100" title="Rohit Kulkarni"/>
-        <br /><sub><b>Rohit Kulkarni</b></sub>
+        <br /><sub><b></b></sub>
+      </a>
+ <td align="center" style="border: none">
+      <a href="https://github.com/neeraj-bhakre">
+        <img src="https://avatars.githubusercontent.com/u/100110930?s=100v=4" width="100" title="Neeraj Bhakre"/>
+        <br /><sub><b></b></sub>
+      </a>
+    </td>
+    <td align="center" style="border: none">
+      <a href="https://github.com/maithililondhewaiin">
+        <img src="https://avatars.githubusercontent.com/u/100565002?s=100&v=4" width="100" title="Maithili Londhe">
+        <br /><sub><b></b></sub>
       </a>
     </td>
   </tr>
+  
 </table>
 
 <!-- markdownlint-restore -->
