@@ -18,6 +18,7 @@ import { PrepareCollectedData } from 'projects/libs/state-management/src/lib/sta
 import { DOCUMENT } from '@angular/common';
 import { slideInAnimation } from '../animation';
 import { RouterOutlet } from '@angular/router';
+import * as moment from 'moment';
 declare var bootstrap: any;
 @Component({
   selector: 'app-sidenav',
@@ -48,10 +49,11 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
     }
   }
   severity = [
-    'info',
-    'success',
-    'warn',
     'error',
+
+    'success',
+    'info',
+    'warn',
     'fatal'
   ]
   LoginAttempts: any = {
@@ -466,9 +468,9 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
   format(userNotification) {
     let formatted = {
       userNotificationId: userNotification.id,
-      title: userNotification.notification.data.properties.Message.name,
-      time: this.formatDate(userNotification.notification.creationTime, 'yyyy-LL-dd HH:mm:ss'),
-      creationTime: userNotification.notification.creationTime as any,
+      title: userNotification.notification.notificationName,
+      time: moment(new Date(userNotification.notification.creationTime),'YYYY-MM-DD hh:mm:ss').fromNow(),
+      creationTime: userNotification.notification.creationTime,
       data: userNotification.notification.data,
       status: this.severity[userNotification.notification.severity],
       url: this.getUrl(userNotification),
