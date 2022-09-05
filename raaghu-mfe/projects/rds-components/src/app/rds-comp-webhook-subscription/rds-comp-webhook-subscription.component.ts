@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ComponentLoaderOptions } from '@libs/shared';
 import { TranslateService } from '@ngx-translate/core';
@@ -25,7 +25,7 @@ export class Webhooksubscription {
 export class RdsCompWebhookSubscriptionComponent implements OnInit {
   @Output() onSubcriptionSave = new EventEmitter<Webhooksubscription>();
   @Output() onReset = new EventEmitter<any>();
-
+@Input() buttonSpinner :boolean =true;
 
 
   rdswebhookheaderTableMfeConfig: ComponentLoaderOptions;
@@ -46,7 +46,7 @@ export class RdsCompWebhookSubscriptionComponent implements OnInit {
     subscriptionData: new subscription,
     additionalHeaders: []
   };
-  HeaderTableHeader: TableHeader[] = [
+  @Input() HeaderTableHeader: TableHeader[] = [
     { displayName: 'Header key', disabled: true, key: 'additionalheaderKey', dataType: 'text', dataLength: 30, sortable: true, required: true },
     { displayName: 'Header value', key: 'additionalheadervalue', dataType: 'text', dataLength: 30, required: true, sortable: true },
 
@@ -76,22 +76,27 @@ export class RdsCompWebhookSubscriptionComponent implements OnInit {
 
     }
     headerForm.resetForm();
+
   }
 
   AddWebhooSubscription(webhookForm: NgForm) {
     if (webhookForm.invalid || this.additionalheaders.length === 0) {
       return;
+
     }
     else {
       this.webhookSubscriptionData.subscriptionData = this.subscriptionData;
       this.webhookSubscriptionData.additionalHeaders = this.additionalheaders;
       this.onSubcriptionSave.emit(this.webhookSubscriptionData);
+
+
     }
     this.close(webhookForm);
   }
   close(webhookForm: NgForm) {
     webhookForm.resetForm();
     this.additionalheaders = [];
+    this.buttonSpinner=false;
   }
 
 }
