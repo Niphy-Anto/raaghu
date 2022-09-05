@@ -211,7 +211,7 @@ This project is licensed under the Apache License - see the [`LICENSE`](/LICENSE
 ##  <a name='contribute'></a> How to Contribute 🤝
 </h2>
 <p>
-    We :hearts: our contributors and we will be more than happy to see any kind of positive contribution and stay committed for a safe environment in the community.<br>        If you wish to contribute, you can work on any features <a href="https://github.com/Wai-Technologies/raaghu/tree/main/raaghu-mfe#-features" > listed here </a> or create one on your own. After adding your code, please send us a Pull Request.
+    We :hearts: our contributors and we will be more than happy to see any kind of positive contribution and stay committed for a safe environment in the community.<br>        If you wish to contribute, you can work on any features <a href="https://github.com/shubham-waii/raaghu/tree/main/raaghu-mfe#Features" > listed here </a> or create one on your own. After adding your code, please send us a Pull Request.
     We expect our contributors to participate at it's highest potential and abide by our <a href="https://github.com/shubham-waii/raaghu/blob/development/CODE_OF_CONDUCT.md"> Code of Conduct</a>. Please read and follow it.<br>
     Let's build a great community and software together :relaxed:
 </p>
