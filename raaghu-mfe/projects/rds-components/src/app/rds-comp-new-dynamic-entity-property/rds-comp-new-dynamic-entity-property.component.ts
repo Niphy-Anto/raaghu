@@ -7,8 +7,7 @@ import {
   EventEmitter,
   ViewChild,
   OnChanges,
-  SimpleChanges,
-  ElementRef,
+  SimpleChanges
 } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
@@ -48,14 +47,20 @@ export class RdsCompNewDynamicEntityPropertyComponent
   }
 
   addEntity(dynamicEnityForm) {
-    let Data = this.dynamicEntityDataSelect
-    this.createOrUpdateDynamicEntity.emit(Data);
-    this.dynamicEntityData = { entityFullName: '', PropertyID: '' };
-    this.dynamicEntityDataSelect = [];
-    dynamicEnityForm.resetForm();
-    this.resetDropdownList();
-    this.Placeholder = "Select Property";
-    this.resetFormSubject.next(true);
+    let Data = this.dynamicEntityDataSelect;
+    if(Data.length > 0){
+      this.createOrUpdateDynamicEntity.emit(Data);
+      this.dynamicEntityData = { entityFullName: '', PropertyID: '' };
+      this.dynamicEntityDataSelect = [];
+      dynamicEnityForm.resetForm();
+      this.resetDropdownList();
+      this.Placeholder = "Select Property";
+    }
+    else{
+      this.dynamicEntityInfoForm.form.markAllAsTouched();
+    }
+    
+    
   }
 
   onPropertySelect(prop : any) {
@@ -81,7 +86,6 @@ export class RdsCompNewDynamicEntityPropertyComponent
     this.Placeholder = "Select Property";
     this.dynamicEntityData = { entityFullName: '', PropertyID: '' };
     this.resetDropdownList();
-    this.resetFormSubject.next(true);
   }
 
   resetDropdownList() {
