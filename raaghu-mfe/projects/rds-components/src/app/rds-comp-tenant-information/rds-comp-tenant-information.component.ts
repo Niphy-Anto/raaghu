@@ -16,6 +16,7 @@ export class RdsCompTenantInformationComponent implements OnInit, OnChanges {
   @ViewChild('tenantCreationForm') tenantInfoForm: NgForm;
   @Input() showEmail: boolean = true;
   @Input() editShimmer: boolean = false;
+  @Input() buttonSpinner: boolean =true;
   constructor(public translate: TranslateService) { }
 
   ngOnInit(): void {
@@ -60,6 +61,8 @@ export class RdsCompTenantInformationComponent implements OnInit, OnChanges {
 
   next(tenantCreationForm: NgForm): void {
     tenantCreationForm.form.markAllAsTouched();
+this.buttonSpinner=true;
+
     if (!tenantCreationForm || tenantCreationForm.invalid) {
       
       return;
@@ -88,6 +91,11 @@ export class RdsCompTenantInformationComponent implements OnInit, OnChanges {
   onDateChange(event) {
     this.tenantData.subscriptionEndDate = event;
     console.log(event);
+  }
+  onCanceled(){
+this.buttonSpinner=false;
+this.onCancel.emit(true);
+
   }
 }
 

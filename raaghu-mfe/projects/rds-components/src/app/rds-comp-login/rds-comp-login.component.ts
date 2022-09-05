@@ -39,6 +39,7 @@ export class RdsLoginComponent implements OnInit,OnChanges {
   @Output() onShimmerLoad: EventEmitter<any> = new EventEmitter<any>();
   @Input() tenantdisabled: boolean;
   @Input() disabledSwitchTenant: boolean = true;
+  
   emailPattern: any = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   @Input() buttonSpinner: boolean = true;
   constructor(private formBuilder: FormBuilder, public translate: TranslateService) {
@@ -65,19 +66,29 @@ export class RdsLoginComponent implements OnInit,OnChanges {
     })
   }
   ChangeTenant() {
-    this.onSwitchTenant.emit(this.TenantNameData)
+    this.onSwitchTenant.emit(this.TenantNameData);
+    this.buttonSpinner=true;
+
   }
   switchTenanat(event: any, tenantForm: NgForm) {
     if (event) {
       this.tenantdisabled = false;
       this.enableSwitchtenent = false
       this.disabledSwitchTenant = false;
+
+      
     } else {
       this.tenantdisabled = true;
       this.enableSwitchtenent = true
       this.disabledSwitchTenant = true;
       this.TenantNameData = '';
-      this.onSwitchTenant.emit(null)
+      this.onSwitchTenant.emit(null);
+
+
+
     }
+  }
+  back(){
+    this.buttonSpinner=false;
   }
 }
