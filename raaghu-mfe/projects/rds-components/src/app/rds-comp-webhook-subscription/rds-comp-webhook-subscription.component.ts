@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ComponentLoaderOptions } from '@libs/shared';
 import { TranslateService } from '@ngx-translate/core';
@@ -46,7 +46,7 @@ export class RdsCompWebhookSubscriptionComponent implements OnInit {
     subscriptionData: new subscription,
     additionalHeaders: []
   };
-  HeaderTableHeader: TableHeader[] = [
+  @Input() HeaderTableHeader: TableHeader[] = [
     { displayName: 'Header key', disabled: true, key: 'additionalheaderKey', dataType: 'text', dataLength: 30, sortable: true, required: true },
     { displayName: 'Header value', key: 'additionalheadervalue', dataType: 'text', dataLength: 30, required: true, sortable: true },
 
