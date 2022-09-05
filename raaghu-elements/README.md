@@ -187,7 +187,7 @@ Thanks goes to these wonderful people and Wai technology.
   <tr>
     <td align="center" >
       <a href="https://github.com/omkarchoudhari">
-        <img src="https://avatars.githubusercontent.com/u/32321041?s=100&v=4" width="50"/ style="border-radius:50%">
+        <img src="https://avatars.githubusercontent.com/u/32321041?s=100&v=4" width="100">
         <br />
       </a>
     </td>
