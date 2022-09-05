@@ -46,7 +46,7 @@ raaghu elements can be used as a base to build complex components and UI layouts
 ##  <a name='Demo'></a>Demo
 
 Here is a quick demo of the elements. We hope you enjoy it.
-<img title="imge" alt="gif" src="../raaghu-elements/Demo.gif">
+<img title="imge" alt="gif" src="../raaghu-elements/Demo (1).gif">
 
 Liked it? Please give us a ⭐️ to show your appreciation
 
