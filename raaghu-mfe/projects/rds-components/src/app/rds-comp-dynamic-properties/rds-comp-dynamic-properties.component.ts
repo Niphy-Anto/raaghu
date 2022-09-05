@@ -5,7 +5,7 @@ import {
   Output,
   EventEmitter,
   OnChanges,
-  SimpleChanges,
+  SimpleChanges
 } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { Subject } from 'rxjs';
@@ -33,9 +33,8 @@ export class RdsCompDynamicPropertiesComponent implements OnInit, OnChanges {
   selectedPermissions: string = '';
   DynamicProperyInfo: any = undefined;
   activePage: number = 0;
-@Input() isShimmer: boolean = false;
-@Input() editShimmer: boolean = false;
-  public viewCanvas: boolean = false;
+  @Input() isShimmer: boolean = false;
+  @Input() editShimmer: boolean = false;
   canvasTitle: string = this.translate.instant('NEW DYNAMIC PROPERTY');
   id: number | undefined = undefined;
   DynamicPropertiesModal: any = [
@@ -65,7 +64,6 @@ export class RdsCompDynamicPropertiesComponent implements OnInit, OnChanges {
   }
 
   openDynamicCanvas(event): void {
-    this.viewCanvas = true;
     this.activePage = 0;
     if (event) {
       this.IsEdit = false;
@@ -78,7 +76,6 @@ export class RdsCompDynamicPropertiesComponent implements OnInit, OnChanges {
   }
   closeCanvas(): void {
     this.activePage = 0;
-    this.viewCanvas = false;
     this.DynamicProperyData = {};
     this.DynamicProperyInfo = undefined;
     this.selectedPermissionList = [];
@@ -122,7 +119,7 @@ export class RdsCompDynamicPropertiesComponent implements OnInit, OnChanges {
           this.createOrUpdateDynamic.emit(DynamicPropery);
         }
     } else {
-      if(this.DynamicProperyInfo.dynamicProperties.inputType[0] != "" && this.selectedPermissions!= "" && this.DynamicProperyInfo.dynamicProperties.propertyName != " "){
+      if(this.DynamicProperyInfo.dynamicProperties?.propertyName && this.DynamicProperyInfo.dynamicProperties.inputType[0] != "" && this.selectedPermissions!= "" && this.DynamicProperyInfo.dynamicProperties.propertyName != ""){
         const DynamicPropery: any = {
           displayName: this.DynamicProperyInfo.dynamicProperties.displayName,
           inputType: this.DynamicProperyInfo.dynamicProperties.inputType[0],
@@ -133,11 +130,14 @@ export class RdsCompDynamicPropertiesComponent implements OnInit, OnChanges {
         this.createOrUpdateDynamic.emit(DynamicPropery);
         this.closeCanvas();
       }
+      else{
+        this.resetFormSubject.next(true);
+      }
     }
     this.id = undefined;
     this.DynamicProperyData = {};
     this.selectedPermissionList = [];
-  }
+  } 
   getDynamicPropertyInfo(eventData) {
     this.DynamicProperyInfo = eventData;
   }
