@@ -60,8 +60,8 @@ const Template: Story<RdsCompUserPermissionsComponent> = (args: RdsCompUserPermi
     }
 });
 
-export const basic = Template.bind({});
-basic.args = {
+export const Default = Template.bind({});
+Default.args = {
     FilterPermissionList: [{
         "data": {
             "parentName": null,

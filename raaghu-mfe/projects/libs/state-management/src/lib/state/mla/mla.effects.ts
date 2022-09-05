@@ -74,7 +74,7 @@ export class MLAEffects {
     this.actions$.pipe(
       ofType(getUserNotification),
       switchMap(() => {
-        return (this.notificationService.getUserNotifications( undefined, undefined, undefined, 10, 0)).pipe(
+        return (this.notificationService.getUserNotifications( undefined, undefined, undefined, undefined, undefined)).pipe(
           map((getNotificaitonsOutput) => {
             return getUserNotificationSuccess({ getNotificaitonsOutput });
           }),
