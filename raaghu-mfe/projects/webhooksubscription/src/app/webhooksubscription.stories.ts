@@ -112,8 +112,8 @@ const Template: Story<WebHookSubscriptionComponent> = (args: WebHookSubscription
 `
 });
 
-export const basic = Template.bind({});
-basic.args = {
+export const Default = Template.bind({});
+Default.args = {
   navtabsItems: [
     {
       label: 'Dynamic Properties',

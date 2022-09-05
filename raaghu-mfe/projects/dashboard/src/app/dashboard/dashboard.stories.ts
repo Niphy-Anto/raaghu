@@ -45,9 +45,8 @@ export default {
 } as Meta;
 
 const Template: Story<DashboardComponent> = (args: DashboardComponent) => ({
-  props: {
-    ...args
-  },
+  props: args,
+
   template:`<div *ngIf="istenant">
                 <app-rds-comp-tenant-dashboard></app-rds-comp-tenant-dashboard>
             </div>
@@ -60,8 +59,8 @@ const Template: Story<DashboardComponent> = (args: DashboardComponent) => ({
 });
 
 
-export const basic = Template.bind({});
-basic.args = {
+export const Default = Template.bind({});
+Default.args = {
   memberActivityTableHeader:  [
     { displayName: 'Member', key: 'member', dataType: 'html' },
     { displayName: 'Cases', key: 'cases', dataType: 'html' },

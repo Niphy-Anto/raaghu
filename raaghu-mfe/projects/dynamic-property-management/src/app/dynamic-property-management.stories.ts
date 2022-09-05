@@ -145,8 +145,8 @@ const Template: Story<DynamicPropertyManagment> = (args: DynamicPropertyManagmen
 `
 });
 
-export const basic = Template.bind({});
-basic.args = {
+export const Default = Template.bind({});
+Default.args = {
   navtabsItems: [
     {
       label: 'Dynamic Properties',

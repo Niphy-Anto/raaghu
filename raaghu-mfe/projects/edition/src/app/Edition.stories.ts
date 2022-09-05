@@ -31,9 +31,9 @@ const Template: Story<RdsCompFeaturesComponent> = (args: RdsCompFeaturesComponen
       ...args
   }
   });
-  export const EditionPage = Template.bind({});
+export const Default = Template.bind({});
 
-  EditionPage.args = {
+Default.args = {
     EditionsTableData: [{editionname: 'Standard', price: null, trialPeriod: null, expiringEdition: null, id: 1},
     {editionname: 'apple', price: 2000, trialPeriod: 10, expiringEdition: 'Standard', id: 5},
    {editionname: 'Apple1', price: 20, trialPeriod: 3, expiringEdition: 'Standard', id: 6},

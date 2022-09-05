@@ -115,4 +115,4 @@ const Template: Story<LanguageTextComponent> = (args: LanguageTextComponent) => 
 `
 });
 
-export const basic = Template.bind({});
+export const Default = Template.bind({});
