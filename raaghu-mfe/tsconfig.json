@@ -8,6 +8,9 @@
       "@libs/shared": [
         "projects/libs/shared/src/public-api.ts"
       ],
+      "@libs/ngx-cookieconsent": [
+        "projects/libs/ngx-cookieconsent/src/public-api.ts"
+      ],
       "@libs/state-management": [
         "projects/libs/state-management/src/public-api.ts"
       ],
