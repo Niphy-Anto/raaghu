@@ -50,6 +50,7 @@ Contents
 *  [Startup Templates](#templates)
 *  [Build with](#build_with)
 *  [License](#license)
+*  [How to Contribute](#contribute)
 *  [ WAi Technologies Contributors](#contributers)
 
 
@@ -207,11 +208,12 @@ Built on a robust tech stack and platform
 ##  <a name='license'></a> License
 This project is licensed under the Apache License - see the [`LICENSE`](/LICENSE) file for details.
 
- Contribute 🤝
+##  <a name='contribute'></a> How to Contribute 🤝
 </h2>
 <p>
-Any kind of positive contribution is welcome! Please help us to grow by contributing to the project.
-    If you wish to contribute, you can work on any features <a href="https://github.com/Wai-Technologies/raaghu/tree/main/raaghu-mfe#-features" > [listed here] </a> or create one on your own. After adding your code, please send us a Pull Request.  
+    We :hearts: our contributors and we will be more than happy to see any kind of positive contribution and stay committed for a safe environment in the community.<br>        If you wish to contribute, you can work on any features <a href="https://github.com/Wai-Technologies/raaghu/tree/main/raaghu-mfe#-features" > listed here </a> or create one on your own. After adding your code, please send us a Pull Request.
+    We expect our contributors to participate at it's highest potential and abide by our <a href="https://github.com/shubham-waii/raaghu/blob/development/CODE_OF_CONDUCT.md"> Code of Conduct</a>. Please read and follow it.<br>
+    Let's build a great community and software together :relaxed:
 </p>
 </br>
 
