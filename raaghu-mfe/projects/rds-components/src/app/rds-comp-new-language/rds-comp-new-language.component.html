@@ -69,9 +69,9 @@
                 <rds-button [label]="translate.instant('Close')" (click)="closeCanvas()" type="button" [colorVariant]="'outline-primary'"
                     [size]="'small'">
                 </rds-button>
-                <rds-button [label]="translate.instant('Save')" type="button" [size]="'small'"
+                <rds-button [label]="translate.instant('Save')" type="button" [size]="'small'" [showLoadingSpinner]="buttonSpinner"
                     [disabled]="!languageForm.valid" class="ms-2" [colorVariant]="'primary'"
-                    (click)="addLanguage(languageForm)">
+                    (click)="addLanguage(languageForm)"> 
                 </rds-button>
             </div>
         </div>
