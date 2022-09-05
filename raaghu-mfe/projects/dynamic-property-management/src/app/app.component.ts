@@ -230,9 +230,9 @@ export class AppComponent implements OnInit {
       name: 'RdsCompDynamicProperties',
       input: {
         DynamicPropertiesTableData:
-          this.DynamicProperties.DynamicPropertiesTableData,
+        this.DynamicProperties.DynamicPropertiesTableData,
         DynamicPropertiesTableHeader:
-          this.DynamicProperties.DynamicPropertiesTableHeader,
+        this.DynamicProperties.DynamicPropertiesTableHeader,
         inputTypeList: this.inputTypeList,
         permissionsList: this.permissionsList,
         isShimmer: true,
@@ -412,6 +412,7 @@ export class AppComponent implements OnInit {
     this.selectedTabIndex = event;
   }
   addDynamic(data: any): void {
+    
     if (data.id) {
       this.store.dispatch(UpdateDynamicProperty(data));
     } else {
@@ -525,7 +526,7 @@ export class AppComponent implements OnInit {
       this.openEntityCanvas();
     }
   }
-
+ 
   openDynamicCanvas(): void {
     this.viewCanvas = true;
     this.canvasTitle = this.translate.instant('NEW DYNAMIC PROPERTY');
