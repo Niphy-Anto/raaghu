@@ -16,7 +16,8 @@
   [offId]="'AddDynamic'"
   [placement]="'end'"
   [offcanvaswidth]="600"
-  (onClose)="closeCanvas()"
+  (onClose)="closeCanvas()" 
+  *ngIf="viewCanvas"
 >
 <div>
     <rds-nav-tab

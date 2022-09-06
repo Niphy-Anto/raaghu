@@ -82,7 +82,7 @@ export class RdsCompDynamicPropertiesComponent implements OnInit, OnChanges {
     this.resetFormSubject.next(true);
     this.canvasTitle = this.translate.instant('NEW DYNAMIC PROPERTY');
     this.IsEdit = false;
-    this.selectedPermissionList = []
+    this.selectedPermissionList = [];
   }
   editTableRow(event): void {
     this.activePage = 0;
