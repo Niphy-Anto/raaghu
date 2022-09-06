@@ -78,7 +78,7 @@ git clone https://github.com/Wai-Technologies/raaghu.git
 ```bash
 cd raaghu/raaghu-elements
 ```
-<img src="../static/MicrosoftTeams-image (8).png" alt="Screenshot-17"  border="0"><br />
+
 
 
 3. Install dependencies
@@ -86,7 +86,8 @@ cd raaghu/raaghu-elements
 ```bash
 npm install
 ```
-<img src="../static/MicrosoftTeams-image (9).png" alt="Screenshot-17"  border="0"><br />
+<img src="../static/MicrosoftTeams-image (8).png" alt="Screenshot-17"  border="0"><br />
+
 
 4. Change the working directory
 
@@ -100,7 +101,8 @@ cd raaghu/raaghu-mfe
 ```bash
 npm install
 ```
-<img src="../static/MicrosoftTeams-image (11).png" alt="Screenshot-17"  border="0"><br />
+<img src="../static/MicrosoftTeams-image (9).png" alt="Screenshot-17"  border="0"><br />
+
 
 6. Synchronize raaghu-elements repository
 
@@ -115,14 +117,14 @@ npm run sync-elements
 ```bash
 npm run patch-dev-server
 ```
-<img src="../static/Screenshot (14).png" alt="Screenshot-17"  border="0"><br />
+<img src="../static/MicrosoftTeams-image (12).png" alt="Screenshot-17"  border="0"><br />
 
 8. Build and serve
 
 ```bash
 npm run start
 ```
-<img src="../static/npm-run start.png" alt="Screenshot-17"  border="0"><br />
+<img src="../static/MicrosoftTeams-image (13).png" alt="Screenshot-17"  border="0"><br />
 9. Storybook
 
 
@@ -130,7 +132,7 @@ npm run start
 # View all pages and components and elements inside the storybook
 npm run storybook 
 ```
-<img src="../static/npm run storybook.png" alt="Screenshot-17"  border="0"><br />
+
 
 
 ##  Development support
