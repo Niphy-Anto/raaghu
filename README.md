@@ -241,6 +241,12 @@ Thanks goes to these wonderful people and Wai technology.
         <br /><sub><b></b></sub>
       </a>
     </td>
+      <td align="center" style="border: none">
+      <a href="https://github.com/kirtikulkarni1011">
+        <img src="https://avatars.githubusercontent.com/u/40684426?v=4" width="100" title="Kirti Kulkarni"/>
+        <br /><sub><b></b></sub>
+      </a>
+    </td>  
     <td align="center" style="border: none">
       <a href="https://github.com/alok-nakhate">
         <img src="https://avatars.githubusercontent.com/u/99717383?s=100v=4" width="100" title="Alok Nakhate"/>
@@ -283,13 +289,6 @@ Thanks goes to these wonderful people and Wai technology.
         <br /><sub><b></b></sub>
       </a>
     </td> 
-      <td align="center" style="border: none">
-      <a href="https://github.com/j-yogendra">
-        <img src="https://avatars.githubusercontent.com/u/99783626?v=4" width="100" title="yogendra jaiswal"/>
-        <br /><sub><b></b></sub>
-      </a>
-    </td> 
-  
   </tr>
   <tr>
     <td align="center" style="border: none">
@@ -340,15 +339,15 @@ Thanks goes to these wonderful people and Wai technology.
         <br /><sub><b></b></sub>
       </a>
     </td>
+      <td align="center" style="border: none">
+      <a href="https://github.com/j-yogendra">
+        <img src="https://avatars.githubusercontent.com/u/99783626?v=4" width="100" title="yogendra jaiswal"/>
+        <br /><sub><b></b></sub>
+      </a>
+    </td> 
         <td align="center" style="border: none">
       <a href="https://github.com/aniketchandar-waiin">
         <img src="https://avatars.githubusercontent.com/u/67675741?v=4" width="100" title="Aniket Chandar"/>
-        <br /><sub><b></b></sub>
-      </a>
-    </td>
-       <td align="center" style="border: none">
-      <a href="https://github.com/basavraj-chorgasti">
-        <img src=https://avatars.githubusercontent.com/u/99861347?v=4" width="100" title="Basavraj Chorgasti"/>
         <br /><sub><b></b></sub>
       </a>
     </td>
@@ -357,6 +356,12 @@ Thanks goes to these wonderful people and Wai technology.
     <td align="center" style="border: none">
       <a href="https://github.com/rohit9096">
         <img src="https://avatars.githubusercontent.com/u/88035057?s=100v=4" width="100" title="Rohit Kulkarni"/>
+        <br /><sub><b></b></sub>
+      </a>
+    </td>
+       <td align="center" style="border: none">
+      <a href="https://github.com/basavraj-chorgasti">
+        <img src=https://avatars.githubusercontent.com/u/99861347?v=4" width="100" title="Basavraj Chorgasti"/>
         <br /><sub><b></b></sub>
       </a>
     </td>
@@ -408,14 +413,14 @@ Thanks goes to these wonderful people and Wai technology.
         <br /><sub><b></b></sub>
       </a>
     </td>
-          <td align="center" style="border: none">
+   </tr>
+ <tr>
+     <td align="center" style="border: none">
       <a href="https://github.com/bhagwatkhushwaha">
         <img src="https://avatars.githubusercontent.com/u/54980601?v=4" width="100" title="bhagwat khushwaha"/>
         <br /><sub><b></b></sub>
       </a>
     </td> 
-   </tr>
- <tr>
       <td align="center" style="border: none">
       <a href="https://github.com/DeepenKakde">
         <img src="https://avatars.githubusercontent.com/u/99784291?v=4" width="100" title="Deepen Kakde"/>
@@ -440,13 +445,87 @@ Thanks goes to these wonderful people and Wai technology.
         <br /><sub><b></b></sub>
       </a>
     </td>
-          <td align="center" style="border: none">
-      <a href="https://github.com/jis248">
-        <img src="https://avatars.githubusercontent.com/u/84921389?v=4" width="100" title="jis248"/>
+        <td align="center" style="border: none">
+      <a href="https://github.com/kolatelaxman">
+        <img src="https://avatars.githubusercontent.com/u/100756200?v=4" width="100" title="kolate laxman"/>
         <br /><sub><b></b></sub>
       </a>
-    </td>                                                                                        
-   </tr> 
+    </td>
+        <td align="center" style="border: none">
+      <a href="https://github.com/kravi97">
+        <img src="https://avatars.githubusercontent.com/u/109577685?v=4" width="100" title="kravi"/>
+        <br /><sub><b></b></sub>
+      </a>
+    </td>
+        <td align="center" style="border: none">
+      <a href="https://github.com/krutikajoshiWaiin">
+        <img src="https://avatars.githubusercontent.com/u/100564860?v=4" width="100" title="krutika joshi"/>
+        <br /><sub><b></b></sub>
+      </a>
+    </td>
+          <td align="center" style="border: none">
+      <a href="https://github.com/lijovargheses">
+        <img src="https://avatars.githubusercontent.com/u/99785224?v=4" width="100" title="Lijo Varghese"/>
+        <br /><sub><b></b></sub>
+      </a>
+    </td> 
+           <td align="center" style="border: none">
+      <a href="https://github.com/nitinsonawane123">
+        <img src="https://avatars.githubusercontent.com/u/97287679?v=4" width="100" title="nitin sonawane"/>
+        <br /><sub><b></b></sub>
+      </a>
+    </td>
+  </tr> 
+     <tr>
+         <td align="center" style="border: none">
+      <a href="https://github.com/omkarrairikar">
+        <img src="https://avatars.githubusercontent.com/u/100824245?v=4" width="100" title="omkar rairikar"/>
+        <br /><sub><b></b></sub>
+      </a>
+    </td> 
+         <td align="center" style="border: none">
+      <a href="https://github.com/palakchimaniya">
+        <img src="https://avatars.githubusercontent.com/u/89460181?v=4" width="100" title="palak chimaniya"/>
+        <br /><sub><b></b></sub>
+      </a>
+    </td>
+        <td align="center" style="border: none">
+      <a href="https://github.com/pingroh">
+        <img src="https://avatars.githubusercontent.com/u/83004731?v=4" width="100" title="pingroh"/>
+        <br /><sub><b></b></sub>
+      </a>
+    </td>
+        <td align="center" style="border: none">
+      <a href="https://github.com/poojagurav21">
+        <img src="https://avatars.githubusercontent.com/u/100746056?v=4" width="100" title="pooja gurav"/>
+        <br /><sub><b></b></sub>
+      </a>
+    </td>
+          <td align="center" style="border: none">
+      <a href="https://github.com/poojakulkarniWai">
+        <img src="https://avatars.githubusercontent.com/u/107623732?v=4" width="100" title="pooja kulkarni"/>
+        <br /><sub><b></b></sub>
+      </a>
+    </td>
+           <td align="center" style="border: none">
+      <a href="https://github.com/prakashmhaske">
+        <img src="https://avatars.githubusercontent.com/u/97657667?v=4" width="100" title="prakash mhaske"/>
+        <br /><sub><b></b></sub>
+      </a>
+    </td>
+          <td align="center" style="border: none">
+      <a href="https://github.com/prasaddeshmukh-waiin">
+        <img src="https://avatars.githubusercontent.com/u/101566386?v=4" width="100" title="prasad deshmukh"/>
+        <br /><sub><b></b></sub>
+      </a>
+    </td> 
+            <td align="center" style="border: none">
+      <a href="https://github.com/PravinCAher">
+        <img src="https://avatars.githubusercontent.com/u/99784764?v=4" width="100" title="prasad deshmukh"/>
+        <br /><sub><b></b></sub>
+      </a>
+    </td>                                                                                                 
+     </tr>                                                                                                     
                                                                                                     
 </table>
 
