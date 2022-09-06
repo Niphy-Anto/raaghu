@@ -265,6 +265,19 @@ Thanks goes to these wonderful people and Wai technology.
         <br /><sub><b></b></sub>
       </a>
     </td>
+      <td align="center" style="border: none">
+      <a href="https://github.com/Bhorga">
+        <img src="https://avatars.githubusercontent.com/u/102799341?v=4" width="100" title="Harshit Bhorga"/>
+        <br /><sub><b></b></sub>
+      </a>
+    </td>
+      <td align="center" style="border: none">
+      <a href="https://github.com/pratheesh-Krishnan">
+        <img src="https://avatars.githubusercontent.com/u/99800378?s=100v=4" width="100" title="Pratheesh Krishnan"/>
+        <br /><sub><b></b></sub>
+      </a>
+    </td>
+  
   </tr>
   <tr>
     <td align="center" style="border: none">
@@ -297,32 +310,46 @@ Thanks goes to these wonderful people and Wai technology.
         <br /><sub><b></b></sub>
       </a>
     </td>
-  </tr>
-  <tr>
-    <td align="center" style="border: none">
+     <td align="center" style="border: none">
       <a href="https://github.com/neeraj-bhakre">
-        <img src="https://avatars.githubusercontent.com/u/100110930?s=100v=4" width="100" title="Neeraj Bhakre"/>
+        <img src="https://avatars.githubusercontent.com/u/100110930?s=100v=4" width="110" title="Neeraj Bhakre"/>
         <br /><sub><b></b></sub>
       </a>
     </td>
-    <td align="center" style="border: none">
+      <td align="center" style="border: none">
       <a href="https://github.com/maithililondhewaiin">
         <img src="https://avatars.githubusercontent.com/u/100565002?s=100&v=4" width="100" title="Maithili Londhe">
         <br /><sub><b></b></sub>
       </a>
     </td>
-    <td align="center" style="border: none">
-      <a href="https://github.com/Vaish84">
-        <img src="https://avatars.githubusercontent.com/u/104414130?s=100&v=4" width="100" title="Vaishnavi Pardeshi"/>
+      <td align="center" style="border: none">
+      <a href="https://github.com/neeraj-bhakre">
+        <img src="https://avatars.githubusercontent.com/u/104414130?s=100&v=4" width="110" title="Vaishnavi Pardeshi"/>
         <br /><sub><b></b></sub>
       </a>
     </td>
+  </tr>
+  <tr>
     <td align="center" style="border: none">
       <a href="https://github.com/rohit9096">
         <img src="https://avatars.githubusercontent.com/u/88035057?s=100v=4" width="100" title="Rohit Kulkarni"/>
         <br /><sub><b></b></sub>
       </a>
     </td>
+      <td align="center" style="border: none">
+      <a href="https://github.com/rohit9096">
+        <img src="https://avatars.githubusercontent.com/u/112158709?v=4" width="100" title="Prashant"/>
+        <br /><sub><b></b></sub>
+      </a>
+    </td>
+       <td align="center" style="border: none">
+      <a href="https://github.com/rohit9096">
+        <img src="https://avatars.githubusercontent.com/u/112168652?v=4" width="100" title="Shubham"/>
+        <br /><sub><b></b></sub>
+      </a>
+    </td>
+      
+      
   </tr>
 </table>
 
