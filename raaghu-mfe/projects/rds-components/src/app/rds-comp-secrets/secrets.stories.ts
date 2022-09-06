@@ -27,6 +27,8 @@ export default {
   ]
 } as Meta;
 
-const Template: Story< RdsCompSecretsComponent> = (args:  RdsCompSecretsComponent) => ({});
+const Template: Story< RdsCompSecretsComponent> = (args:  RdsCompSecretsComponent) => ({
 
-export const basic = Template.bind({});
+});
+
+export const Default = Template.bind({});
