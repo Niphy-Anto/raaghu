@@ -277,15 +277,21 @@ Thanks goes to these wonderful people and Wai technology.
         <br /><sub><b></b></sub>
       </a>
     </td>
+        <td align="center" style="border: none">
+      <a href="https://github.com/DevSwapnil22">
+        <img src="https://avatars.githubusercontent.com/u/100186754?v=4" width="100" title="Swapnil Ghormode"/>
+        <br /><sub><b></b></sub>
+      </a>
+    </td> 
+      <td align="center" style="border: none">
+      <a href="https://github.com/j-yogendra">
+        <img src="https://avatars.githubusercontent.com/u/99783626?v=4" width="100" title="yogendra jaiswal"/>
+        <br /><sub><b></b></sub>
+      </a>
+    </td> 
   
   </tr>
   <tr>
-    <td align="center" style="border: none">
-      <a href="https://github.com/pratheesh-Krishnan">
-        <img src="https://avatars.githubusercontent.com/u/99800378?s=100v=4" width="100" title="Pratheesh Krishnan"/>
-        <br /><sub><b></b></sub>
-      </a>
-    </td>
     <td align="center" style="border: none">
       <a href="https://github.com/Niphy-Anto">
         <img src="https://avatars.githubusercontent.com/u/99808648?s=100v=4" width="100" title="Niphy Anto"/>
@@ -328,6 +334,24 @@ Thanks goes to these wonderful people and Wai technology.
         <br /><sub><b></b></sub>
       </a>
     </td>
+       <td align="center" style="border: none">
+      <a href="https://github.com/amolkulkarniwaiin">
+        <img src="https://avatars.githubusercontent.com/u/99239211?v=4" width="100" title="Amol Kulkarni"/>
+        <br /><sub><b></b></sub>
+      </a>
+    </td>
+        <td align="center" style="border: none">
+      <a href="https://github.com/aniketchandar-waiin">
+        <img src="https://avatars.githubusercontent.com/u/67675741?v=4" width="100" title="Aniket Chandar"/>
+        <br /><sub><b></b></sub>
+      </a>
+    </td>
+       <td align="center" style="border: none">
+      <a href="https://github.com/basavraj-chorgasti">
+        <img src=https://avatars.githubusercontent.com/u/99861347?v=4" width="100" title="Basavraj Chorgasti"/>
+        <br /><sub><b></b></sub>
+      </a>
+    </td>
   </tr>
   <tr>
     <td align="center" style="border: none">
@@ -342,15 +366,88 @@ Thanks goes to these wonderful people and Wai technology.
         <br /><sub><b></b></sub>
       </a>
     </td>
-       <td align="center" style="border: none">
-      <a href="https://github.com/rohit9096">
+      <td align="center" style="border: none">
+      <a href="https://github.com/shubham-waii">
         <img src="https://avatars.githubusercontent.com/u/112168652?v=4" width="100" title="Shubham"/>
         <br /><sub><b></b></sub>
       </a>
     </td>
-      
-      
-  </tr>
+       <td align="center" style="border: none">
+      <a href="https://github.com/Abhijeet-warade">
+        <img src="https://avatars.githubusercontent.com/u/109577508?v=4" width="100" title="Abhijeet warade"/>
+        <br /><sub><b></b></sub>
+      </a>
+    </td>
+       <td align="center" style="border: none">
+      <a href="https://github.com/abhijeetjawale1">
+        <img src="https://avatars.githubusercontent.com/u/97285066?v=4" width="100" title="Abhijeet jawale"/>
+        <br /><sub><b></b></sub>
+      </a>
+    </td>
+       <td align="center" style="border: none">
+      <a href="https://github.com/adilsayyad">
+        <img src="https://avatars.githubusercontent.com/u/100746642?v=4" width="100" title="Adil Sayyad"/>
+        <br /><sub><b></b></sub>
+      </a>
+    </td>
+         <td align="center" style="border: none">
+      <a href="https://github.com/SIDDHARTHPAL223427">
+        <img src="https://avatars.githubusercontent.com/u/109146967?v=4" width="100" title="Siddharth Pal"/>
+        <br /><sub><b></b></sub>
+      </a>
+    </td>
+      <td align="center" style="border: none">
+      <a href="https://github.com/AshleshaKawale">
+        <img src="https://avatars.githubusercontent.com/u/109782676?v=4" width="100" title="Ashhlesha Kawale"/>
+        <br /><sub><b></b></sub>
+      </a>
+    </td>
+        <td align="center" style="border: none">
+      <a href="https://github.com/bbsahoowaiin">
+        <img src="https://avatars.githubusercontent.com/u/105644806?v=4" width="100" title="Bikram Sahoo"/>
+        <br /><sub><b></b></sub>
+      </a>
+    </td>
+          <td align="center" style="border: none">
+      <a href="https://github.com/bhagwatkhushwaha">
+        <img src="https://avatars.githubusercontent.com/u/54980601?v=4" width="100" title="bhagwat khushwaha"/>
+        <br /><sub><b></b></sub>
+      </a>
+    </td> 
+   </tr>
+ <tr>
+      <td align="center" style="border: none">
+      <a href="https://github.com/DeepenKakde">
+        <img src="https://avatars.githubusercontent.com/u/99784291?v=4" width="100" title="Deepen Kakde"/>
+        <br /><sub><b></b></sub>
+      </a>
+    </td>     
+          <td align="center" style="border: none">
+      <a href="https://github.com/ganesh-mokate-waiin">
+        <img src="https://avatars.githubusercontent.com/u/100756494?v=4" width="100" title="ganesh mokate"/>
+        <br /><sub><b></b></sub>
+      </a>
+    </td>
+           <td align="center" style="border: none">
+      <a href="https://github.com/girisanket">
+        <img src="https://avatars.githubusercontent.com/u/106297759?v=4" width="100" title="Sanket Giri"/>
+        <br /><sub><b></b></sub>
+      </a>
+    </td>
+         <td align="center" style="border: none">
+      <a href="https://github.com/jis248">
+        <img src="https://avatars.githubusercontent.com/u/84921389?v=4" width="100" title="jis248"/>
+        <br /><sub><b></b></sub>
+      </a>
+    </td>
+          <td align="center" style="border: none">
+      <a href="https://github.com/jis248">
+        <img src="https://avatars.githubusercontent.com/u/84921389?v=4" width="100" title="jis248"/>
+        <br /><sub><b></b></sub>
+      </a>
+    </td>                                                                                        
+   </tr> 
+                                                                                                    
 </table>
 
 
