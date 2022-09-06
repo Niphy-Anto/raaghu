@@ -73,9 +73,9 @@ Contents
 <p/>
 <br/>
 <br/>
-We create your wireframes or use existing available wireframes. Based on your wireframe and theme design / branding, we apply the same CSS to elements, components and pages that we have. Based on Component driven development and our micro front end architecture we break your page design into components and enrich your library.
+We create your wireframes or use the existing available wireframes. Based on your wireframe and theme design / branding, we apply the same CSS to elements, components and pages that we have. With the help of Component driven development and our micro front end architecture, we break your page design into components and enrich your library.
 
-These components come together to create the same wireframe design and form a page.We deploy these components through our Ci/Cd pipeline and make use of our micro front end architecture. 
+These components come together to create the same wireframe design and form a page.We deploy these components through our Ci/Cd pipeline and make use of our micro front end architecture.
  
 ##  <a name='started'></a> Getting started with raaghu
 
