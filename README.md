@@ -231,7 +231,7 @@ Thanks goes to these wonderful people and Wai technology.
   <tr>
     <td align="center" border="none">
       <a href="https://github.com/omkarchoudhari">
-        <img src="https://avatars.githubusercontent.com/u/32321041?s=100&v=4" width="100" title="Omkar Choudhari"/>
+        <img src="https://avatars.githubusercontent.com/u/32321041?s=100&v=4" width="100" style="border-radius:50%" title="Omkar Choudhari"/>
         <br /><sub><b></b></sub>
       </a>
     </td>
@@ -524,10 +524,31 @@ Thanks goes to these wonderful people and Wai technology.
         <img src="https://avatars.githubusercontent.com/u/99784764?v=4" width="100" title="prasad deshmukh"/>
         <br /><sub><b></b></sub>
       </a>
-    </td>                                                                                                 
-     </tr>                                                                                                     
-                                                                                                    
+    </td>                                                                                                                                                                       <td align="center" style="border: none">
+      <a href="https://github.com/raghavnaphade">
+        <img src="https://avatars.githubusercontent.com/u/84921664?v=4" width="100" title="raghav naphade"/>
+        <br /><sub><b></b></sub>
+      </a>
+    </td> 
+           <td align="center" style="border: none">
+      <a href="https://github.com/RahulMoreWAi">
+        <img src="https://avatars.githubusercontent.com/u/99783494?v=4" width="100" title="Rahul More"/>
+        <br /><sub><b></b></sub>
+      </a>
+    </td>                                                                                                          
+     </tr>
+    <tr>
+           <td align="center" style="border: none">
+      <a href="https://github.com/Sachin-Ghorpade">
+        <img src="https://avatars.githubusercontent.com/u/109578038?v=4" width="100" title="Sachin Ghorpade"/>
+        <br /><sub><b></b></sub>
+      </a>
+    </td>                                                                                             
+    </tr>                                                                                                
+                                                                                                      
+                                                                                                     
 </table>
+                                                                                                          
 
 
 <!-- markdownlint-restore -->
