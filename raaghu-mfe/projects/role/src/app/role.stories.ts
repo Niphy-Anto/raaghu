@@ -33,9 +33,9 @@ const Template: Story<RdsCompRoleListComponent> = (args: RdsCompRoleListComponen
     ...args
   }
 });
-export const RolePage = Template.bind({});
+export const Default = Template.bind({});
 
-RolePage.args = {
+Default.args = {
   roleList: [{ id: 1, rolename: '<div class="d-flex align-items-center"> Admin <div class="d-block text-end"> <span class="badge badge-primary p-1 mx-1 rounded">Static</span>   </div></div> ', isDefault: false, creationTime: '04/29/2022, 8:36:40 PM' },
   { id: 8, rolename: '<div class="d-flex align-items-center"> userPrime <div class="d-block text-end">   </div></div> ', isDefault: false, creationTime: '05/03/2022, 2:26:47 PM' },
   { id: 149, rolename: '<div class="d-flex align-items-center"> Golden Roles <div class="d-block text-end">   </div></div> ', isDefault: false, creationTime: '06/06/2022, 4:47:38 PM' },

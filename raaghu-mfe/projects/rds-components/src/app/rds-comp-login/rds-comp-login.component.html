@@ -59,7 +59,7 @@
     <h5 class="modal-title"><b> {{"Switch Tenant"|translate}}</b></h5>
     <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
   </div>
-  <div Modalbody class="p-2">
+<div Modalbody class="p-2">
     <form #tenantForm="ngForm">
       <div class="row mb-5">
         <div class="col-md-12">
@@ -86,13 +86,13 @@
       </div>
     </form>
   </div>
-  <div Modalfooter>
-    <rds-button [tooltipPlacement]="'top'" data-bs-dismiss="modal" [colorVariant]="'outline-primary'" [size]="'medium'"
+<div Modalfooter>
+    <rds-button [tooltipPlacement]="'top'" data-bs-dismiss="modal" [colorVariant]="'outline-primary'" [size]="'medium'" (click)="back()"
       [label]="translate.instant('Cancel')" class="px-2">
     </rds-button>
     <rds-button class="mr-1" [id]="'yes'" [disabled]="!switchTenant||tenantForm.invalid" [size]="'medium'"
       (click)="ChangeTenant(tenantForm)" [tooltipPlacement]="'top'" [colorVariant]="'primary'"
-      [label]="translate.instant('Switch to the tenant')">
+      [label]="translate.instant('Switch to the tenant')" [showLoadingSpinner]="buttonSpinner">
     </rds-button>
   </div>
 </rds-modal>

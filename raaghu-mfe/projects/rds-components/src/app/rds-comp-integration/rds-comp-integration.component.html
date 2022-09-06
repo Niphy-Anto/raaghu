@@ -1,8 +1,8 @@
 <app-rds-comp-app-details [appDetailList]="integrationList"></app-rds-comp-app-details>
 <hr>
 <div class="mt-5  text-end">
-    <rds-button [label]="'Cancel'" [colorVariant]="'outline-primary'" [size]="'small'" class="">
+    <rds-button [label]="'Cancel'" [colorVariant]="'outline-primary'" [size]="'small'" class="" (click)="back()">
     </rds-button>
-    <rds-button [label]="'Save'" [size]="'small'" [colorVariant]="'primary'" class="ms-2">
+    <rds-button [label]="'Save'" [size]="'small'" [colorVariant]="'primary'" class="ms-2" [showLoadingSpinner]="buttonSpinner" >
     </rds-button>
 </div>
