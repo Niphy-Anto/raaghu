@@ -366,14 +366,14 @@ Thanks goes to these wonderful people and Wai technology.
       </a>
     </td>   
       <td align="center" style="border: none">
-      <a href="https://github.com/rohit9096">
+      <a href="https://github.com/Prashant-waii">
         <img src="https://avatars.githubusercontent.com/u/112158709?v=4" width="100" title="Prashant"/>
         <br /><sub><b></b></sub>
       </a>
     </td>
       <td align="center" style="border: none">
       <a href="https://github.com/shubham-waii">
-        <img src="https://avatars.githubusercontent.com/u/112168652?v=4" width="100" title="Shubham"/>
+        <img src="https://avatars.githubusercontent.com/u/112168652?v=4" width="100" title="Shubham Sharma"/>
         <br /><sub><b></b></sub>
       </a>
     </td>
