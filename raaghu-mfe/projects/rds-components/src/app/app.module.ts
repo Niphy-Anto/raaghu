@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-
+import { StoreModule } from '@ngrx/store';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RdsLoginComponent } from './rds-comp-login/rds-comp-login.component';
@@ -288,6 +288,7 @@ import { RdsCompTimelineComponent } from './rds-comp-timeline/rds-comp-timeline.
   
   ],
   imports: [
+    StoreModule,
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
