@@ -19,18 +19,20 @@
   </div>
 </ng-container>
 <ng-container *ngIf="datePickerType==='advanced'">
-  <div class="dd">
-    <div class="dd-a vertical">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+  <div class="date-picker">
+    <div class="date-picker-a vertical">
+      
+       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
         aria-expanded="false">
-        <rds-icon name="calendar" height="18px" width="18px"></rds-icon>
-        <span class="date-range"> {{Label }}</span>
-      </button>
-    </div>
+         <rds-icon name="calendar" height="18px" width="18px"></rds-icon>
+        <span class="date-range  ms-2"> {{Label }}</span>
+       </button>
+     
+     </div>
     <input type="checkbox" (click)="checked($event)">
     <div [class]="classes">
       <ul class="dropdown-menu1">
-        <li class="display-last-date cus-date"><a class="dropdown-item" href="#"><strong>{{title}}</strong></a></li>
+        <li class="display-last-date cus-date"><a class="dropdown-item mb-2 ml-2" href="#"><strong>{{title}}</strong></a></li>
         <div [ngSwitch]="newDate">
           <li class="display-date" *ngSwitchCase="'currentDate'"><a><small>{{currentDate | date:'MMM d,y'}}</small></a>
           </li>
@@ -51,7 +53,7 @@
           <hr class="dropdown-divider">
         </li>
 
-        <li><a class="dropdown-item" (click)="todayDate($event);">Today</a></li>
+        <li><a class="dropdown-item " (click)="todayDate($event);">Today</a></li>
         <li><a class="dropdown-item" (click)="yesDate($event)">Yesterday</a></li>
         <li><a class="dropdown-item" (click)="lastSevenDate($event)">Last 7 days</a></li>
         <li><a class="dropdown-item" (click)="lastFourteenDate($event)">Last 14 days</a></li>

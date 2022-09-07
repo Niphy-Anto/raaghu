@@ -7,14 +7,13 @@ import { RdsCompAlertComponent } from 'projects/rds-components/src/app/rds-comp-
 import { RdsDataTableComponent } from 'projects/rds-components/src/app/rds-comp-data-table/rds-comp-data-table.component';
 import { RdsCompFeaturesComponent } from 'projects/rds-components/src/app/rds-comp-features/rds-comp-features.component';
 import { RdsCompPermissionTreeComponent } from 'projects/rds-components/src/app/rds-comp-permission-tree/rds-comp-permission-tree.component';
-import { RdsCompRoleListComponent } from 'projects/rds-components/src/app/rds-comp-role-list/rds-comp-role-list.component';
 
 export default {
   title: 'Pages/Edition',
   component: RdsCompFeaturesComponent,
   decorators: [
     moduleMetadata({
-      declarations: [RdsCompRoleListComponent, RdsDataTableComponent,RdsCompPermissionTreeComponent,
+      declarations: [RdsCompFeaturesComponent,RdsDataTableComponent,RdsCompPermissionTreeComponent,
         RdsCompAlertComponent],
       imports: [
         FormsModule, ReactiveFormsModule, RdsButtonModule, RdsModalModule, RdsPaginationModule,RdsIconModule, 
@@ -22,20 +21,19 @@ export default {
         RdsSelectListModule,RdsCheckboxModule,RdsDatepickerModule,RdsRadioButtonModule,RdsCounterModule
       ],
       providers: [
-        FormBuilder,
-       
+        FormBuilder,       
       ],
     })
   ]
 } as Meta;
-const Template: Story<RdsCompRoleListComponent> = (args: RdsCompRoleListComponent) => ({
+const Template: Story<RdsCompFeaturesComponent> = (args: RdsCompFeaturesComponent) => ({
     props:{
       ...args
   }
   });
-  export const EditionPage = Template.bind({});
+export const Default = Template.bind({});
 
-  EditionPage.args = {
+Default.args = {
     EditionsTableData: [{editionname: 'Standard', price: null, trialPeriod: null, expiringEdition: null, id: 1},
     {editionname: 'apple', price: 2000, trialPeriod: 10, expiringEdition: 'Standard', id: 5},
    {editionname: 'Apple1', price: 20, trialPeriod: 3, expiringEdition: 'Standard', id: 6},

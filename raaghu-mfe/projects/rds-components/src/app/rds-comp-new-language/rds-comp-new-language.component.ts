@@ -23,7 +23,7 @@ export class RdsCompNewLanguageComponent implements OnInit, OnChanges {
   constructor(public datepipe: DatePipe, public translate: TranslateService) { }
   @Output() onLanguageSave = new EventEmitter<any>();
   @Output() onCloseCanvas = new EventEmitter<any>()
-
+@Input() buttonSpinner : boolean =true;
   @Input() flags: any[] = []
   // @Input() selectedLanguage: any;
   @Input() languageNames: any[] = []
@@ -63,6 +63,7 @@ export class RdsCompNewLanguageComponent implements OnInit, OnChanges {
   addLanguage(languageForm: NgForm): void {
     languageForm.form.markAllAsTouched();
     this.submitted = true;
+    this.buttonSpinner=true;
     if (languageForm.invalid || !this.selectedLanguage.icon || this.selectedLanguage.icon === '') {
       return;
     }
@@ -77,5 +78,6 @@ export class RdsCompNewLanguageComponent implements OnInit, OnChanges {
 
   closeCanvas(): void {
     this.onCloseCanvas.emit(true);
+    this.buttonSpinner=false;
   }
 }

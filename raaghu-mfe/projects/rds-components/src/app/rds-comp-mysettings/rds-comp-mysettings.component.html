@@ -5,7 +5,7 @@
         <h5 class="card-title m-1">{{"MY SETTINGS"|translate}}</h5>
       </div>
       <div class="card-body m-1">
-        <rds-label [label]="'Profile'" ></rds-label>
+        <h5>{{"Profile"|translate}}</h5>
         <div class="mt-3">
           <div class="row">
             <div class="col-md-12 sm-p-0">
@@ -44,8 +44,8 @@
               </div>
             </div>
           </div>
-          <div class="mb-3">
-            <h6>{{"Change Password"|translate}}</h6>
+          <div class="mb-3 mt-3">
+            <h5>{{"Change Password"|translate}}</h5>
           </div>
           <form #changePasswordForm="ngForm">
             <div class="row">
@@ -97,7 +97,7 @@
     <div class="col-sm-12">
       <rds-button [submit]="false" [block]="false" [size]="'medium'" [disabled]="false"
                   [colorVariant]="'outline-primary'" [roundedButton]="false" (click)="onCancel()"  [label]="translate.instant('Cancel')"></rds-button>
-      <rds-button [disabled]="changePasswordForm.invalid||isPasswordMismatch" [label]="translate.instant('Save')" type="button"
+      <rds-button [disabled]="changePasswordForm.invalid||isPasswordMismatch" [label]="translate.instant('Save')" type="button" [showLoadingSpinner]="buttonSpinner"
                   [size]="'medium'" class="px-2" [colorVariant]="'primary'" (click)="saveProfile(changePasswordForm)">
       </rds-button>
     </div>
