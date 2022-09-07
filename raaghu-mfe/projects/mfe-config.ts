@@ -116,7 +116,7 @@ export const MfeConfig = {
   underconstruction: {
     url: 'http://localhost:5039/remoteEntry.js',
   },
-  undermaintanance: {
+  undermaintenance: {
     url: 'http://localhost:5040/remoteEntry.js',
   },
   contactus: {
