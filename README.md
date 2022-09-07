@@ -359,12 +359,6 @@ Thanks goes to these wonderful people and Wai technology.
         <br /><sub><b></b></sub>
       </a>
     </td>
-    <td align="center" style="border: none">
-      <a href="https://github.com/shubham-waii">
-        <img src="https://avatars.githubusercontent.com/u/112168652?v=4" width="100" title="Shubham"/>
-        <br /><sub><b></b></sub>
-      </a>
-    </td>    
          <td align="center" style="border: none">
       <a href="https://github.com/Sachin-Ghorpade">
         <img src="https://avatars.githubusercontent.com/u/109578038?v=4" width="100" title="Sachin Ghorpade"/>
@@ -374,6 +368,12 @@ Thanks goes to these wonderful people and Wai technology.
       <td align="center" style="border: none">
       <a href="https://github.com/rohit9096">
         <img src="https://avatars.githubusercontent.com/u/112158709?v=4" width="100" title="Prashant"/>
+        <br /><sub><b></b></sub>
+      </a>
+    </td>
+      <td align="center" style="border: none">
+      <a href="https://github.com/shubham-waii">
+        <img src="https://avatars.githubusercontent.com/u/112168652?v=4" width="100" title="Shubham"/>
         <br /><sub><b></b></sub>
       </a>
     </td>
@@ -414,6 +414,67 @@ Thanks goes to these wonderful people and Wai technology.
       </a>
     </td>
    </tr>
+  <tr>
+     <td align="center" style="border: none">
+      <a href="https://github.com/dhirajlha">
+        <img src="https://avatars.githubusercontent.com/u/82803816?v=4" width="100" title= "Dhiraj Laha">
+        <br /><sub><b></b></sub>
+      </a>
+    </td> 
+      <td align="center" style="border: none">
+      <a href="https://github.com/agaurav0019">
+        <img src="https://avatars.githubusercontent.com/u/109716529?v=4" width="100" title="Abhishek Gaurav"/>
+        <br /><sub><b></b></sub>
+      </a>
+    </td>     
+          <td align="center" style="border: none">
+      <a href="https://github.com/saniyasonkaria">
+        <img src="https://avatars.githubusercontent.com/u/109716234?v=4" width="100" title="Saniya Sonkaria"/>
+        <br /><sub><b></b></sub>
+      </a>
+    </td>
+           <td align="center" style="border: none">
+      <a href="https://github.com/mayank-kumar-arun">
+        <img src="https://avatars.githubusercontent.com/u/109716282?v=4" width="100" title="Mayank Kumar Arun"/>
+        <br /><sub><b></b></sub>
+      </a>
+    </td>
+         <td align="center" style="border: none">
+      <a href="https://github.com/yaminichandanawaiin">
+        <img src="https://avatars.githubusercontent.com/u/109151876?v=4" width="100" title="Yamini Chandana"/>
+        <br /><sub><b></b></sub>
+      </a>
+    </td>
+        <td align="center" style="border: none">
+      <a href="https://github.com/anshuman-singh-wai">
+        <img src="https://avatars.githubusercontent.com/u/112934036?v=4" width="100" title="Anshuman Singh"/>
+        <br /><sub><b></b></sub>
+      </a>
+    </td>
+        <td align="center" style="border: none">
+      <a href="https://github.com/developer4385">
+        <img src="https://avatars.githubusercontent.com/u/109150955?v=4" width="100" title="Vishal Singh"/>
+        <br /><sub><b></b></sub>
+      </a>
+    </td>
+       <td align="center" style="border: none">
+      <a href="https://github.com/PravinCAher">
+        <img src="https://avatars.githubusercontent.com/u/99784764?v=4" width="100" title="prasad deshmukh"/>
+        <br /><sub><b></b></sub>
+      </a>
+    </td>                                                                                                                                                                       <td align="center" style="border: none">
+      <a href="https://github.com/raghavnaphade">
+        <img src="https://avatars.githubusercontent.com/u/84921664?v=4" width="100" title="raghav naphade"/>
+        <br /><sub><b></b></sub>
+      </a>
+    </td> 
+           <td align="center" style="border: none">
+      <a href="https://github.com/RahulMoreWAi">
+        <img src="https://avatars.githubusercontent.com/u/99783494?v=4" width="100" title="Rahul More"/>
+        <br /><sub><b></b></sub>
+      </a>
+    </td>                 
+  </tr>    
  <tr>
      <td align="center" style="border: none">
       <a href="https://github.com/bhagwatkhushwaha">
@@ -518,29 +579,9 @@ Thanks goes to these wonderful people and Wai technology.
         <img src="https://avatars.githubusercontent.com/u/101566386?v=4" width="100" title="prasad deshmukh"/>
         <br /><sub><b></b></sub>
       </a>
-    </td> 
-            <td align="center" style="border: none">
-      <a href="https://github.com/PravinCAher">
-        <img src="https://avatars.githubusercontent.com/u/99784764?v=4" width="100" title="prasad deshmukh"/>
-        <br /><sub><b></b></sub>
-      </a>
-    </td>                                                                                                                                                                       <td align="center" style="border: none">
-      <a href="https://github.com/raghavnaphade">
-        <img src="https://avatars.githubusercontent.com/u/84921664?v=4" width="100" title="raghav naphade"/>
-        <br /><sub><b></b></sub>
-      </a>
-    </td> 
-           <td align="center" style="border: none">
-      <a href="https://github.com/RahulMoreWAi">
-        <img src="https://avatars.githubusercontent.com/u/99783494?v=4" width="100" title="Rahul More"/>
-        <br /><sub><b></b></sub>
-      </a>
-    </td>                                                                                                          
-     </tr>
-    <tr>
-                                                                                                    
-    </tr>                                                                                                
-                                                                                                      
+    </td>                                                                                                    
+   </tr>
+                                                                                              
                                                                                                      
 </table>
                                                                                                           
