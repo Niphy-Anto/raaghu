@@ -168,24 +168,5 @@ npm run page <mfe_name> <page_name>
 - [raaghu-elements Libraries](https://www.npmjs.com/package/rds-elements): Build bulletproof UI components faster
 - [Storybook](https://storybook.js.org/): Build bulletproof UI components faster
  
- ##  <a name='ContributingtoRaaghu'></a>🤝 Contributing to `Raaghu`
-Help us grow by contributing to raaghu micro front-end design system.
-
-##  <a name='Support'></a>🙏 Support
-
-We all need support and motivation. `Raaghu` is not an exception. Please give this project a ⭐️ to encourage and show that you liked it. Don't forget to leave a star ⭐️ before you move away.
-
-<h3 className="align">
-A ⭐️ to <b>Raaghu</b> is to build its triceps 💪 stronger.
-</h3>
-
-##  <a name='WAiTechnologyContributors'></a> Contributors ✨
-
-<p>
-    We :hearts: our contributors and we will be more than happy to see any kind of positive contribution and stay committed for a safe environment in the community.<br>        If you wish to contribute, you can work on any features <a href="https://github.com/shubham-waii/raaghu/tree/main/raaghu-mfe#Features" > listed here </a> or create one on your own. After adding your code, please send us a Pull Request.
-    We expect our contributors to participate at it's highest potential and abide by our <a href="https://github.com/shubham-waii/raaghu/blob/development/CODE_OF_CONDUCT.md"> Code of Conduct</a>. Please read and follow it.<br>
-    Let's build a great community and software together :relaxed:
-</p>
-</br>
 
 
