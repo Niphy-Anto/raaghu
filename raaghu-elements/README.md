@@ -29,15 +29,12 @@
 *  [How to Set up `raaghu-elements` for Development?](#setup)
 *  [Built With](#BuiltWith)
 *  [Upcoming Features](#UpcomingFeatures)
-*  [ Contributing to `raaghu`](#ContributingtoRaaghu)
-*  [ Support](#Support)
-*  [WAi Technology Contributors](#WAiTechnologyContributors)
-
+* 
 <p align="center">
 
 ##  <a name='Introducingraaghu-elements'></a> Introducing raaghu-elements 
 
-raaghu-elements is an opensource Angular library framework built on top of Bootstrap 5 and Storybook having 79+ user interface elements as well as 170+ custom icons that offers highly customizable and reusable Angular UI elements.
+raaghu-elements is an opensource Angular library framework built on top of Bootstrap 5 and Storybook having 60+ user interface elements as well as 170+ custom icons that offers highly customizable and reusable Angular UI elements.
 
 raaghu elements can be used as a base to build complex components and UI layouts whilst maintaining a high level of reusability.
 
@@ -154,151 +151,7 @@ npm run storybook
 - Checkout forms, shopping carts, product views for the e-commerce websites.
 - Fully capable with Abp.io .
 
-If you find something is missing, we are listening. Please create a feature request [from here](https://github.com/Wai-Technologies/raaghu/issues/new).
 
-
-##  <a name='ContributingtoRaaghu'></a>🤝 Contributing to `Raaghu`
-Any kind of positive contribution is welcome! Please help us to grow by contributing to the project.
-
-If you wish to contribute, you can work on any features [listed here](https://github.com/Wai-Technologies/raaghu#-upcoming-features) or create one on your own. After adding your code, please send us a Pull Request.  
-
-
-
-
-##  <a name='Support'></a>🙏 Support
-
-We all need support and motivation. `Raaghu` is not an exception. Please give this project a ⭐️ to encourage and show that you liked it. Don't forget to leave a star ⭐️ before you move away.
-
-<h3 className="align">
-A ⭐️ to <b>Raaghu</b> is to build its triceps 💪 stronger.
-</h3>
-
-
-
-##  <a name='WAiTechnologyContributors'></a>WAi Technology Contributors ✨
-
-Thanks goes to these wonderful people and Wai technology.
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-
-<table>
-  <tr>
-    <td align="center" border="none">
-      <a href="https://github.com/omkarchoudhari">
-        <img src="https://avatars.githubusercontent.com/u/32321041?s=100&v=4" width="100" title="Omkar Choudhari"/>
-        <br /><sub><b></b></sub>
-      </a>
-    </td>
-    <td align="center" border="none">
-      <a href="https://github.com/mohanbari">
-        <img src="https://avatars.githubusercontent.com/u/99885410?s=100v=4" width="100" title="Mohan Bari"/>
-        <br /><sub><b></b></sub>
-      </a>
-    </td>
-    <td align="center" style="border: none">
-      <a href="https://github.com/alok-nakhate">
-        <img src="https://avatars.githubusercontent.com/u/99717383?s=100v=4" width="100" title="Alok Nakhate"/>
-        <br /><sub><b></b></sub>
-      </a>
-    </td>
-    <td align="center" style="border: none">
-      <a href="https://github.com/yohulchitre">
-        <img src="https://avatars.githubusercontent.com/u/100934017?s=100v=4" width="100" title="Yohul Chitre"/>
-        <br /><sub><b></b></sub>
-      </a>
-    </td>
-    <td align="center" style="border: none">
-      <a href="https://github.com/Priyanka-Shinkar">
-        <img src="https://avatars.githubusercontent.com/u/99782840?s=100&v=4" width="100" title="Priyanka Shinkar"/>
-        <br /><sub><b></b></sub>
-      </a>
-    </td>
-    <td align="center" style="border: none">
-      <a href="https://github.com/rahulp34">
-        <img src="https://avatars.githubusercontent.com/u/55730676?s=100v=4" width="100" title="Rahul Patil"/>
-        <br /><sub><b></b></sub>
-      </a>
-    </td>
-  </tr>
-  <tr>
-    <td align="center" style="border: none">
-      <a href="https://github.com/pratheesh-Krishnan">
-        <img src="https://avatars.githubusercontent.com/u/99800378?s=100v=4" width="100" title="Pratheesh Krishnan"/>
-        <br /><sub><b></b></sub>
-      </a>
-    </td>
-    <td align="center" style="border: none">
-      <a href="https://github.com/Niphy-Anto">
-        <img src="https://avatars.githubusercontent.com/u/99808648?s=100v=4" width="100" title="Niphy Anto"/>
-        <br /><sub><b></b></sub>
-      </a>
-    </td>
-    <td align="center" style="border: none">
-      <a href="https://github.com/Ketan-Khalate">
-        <img src="https://avatars.githubusercontent.com/u/99807624?s=100v=4" width="100" title="Ketan Khalate"/>
-        <br /><sub><b></b></sub>
-      </a>
-    </td>
-    <td align="center" style="border: none">
-      <a href="https://github.com/obaid-ur-rahman">
-        <img src="https://avatars.githubusercontent.com/u/100338565?s=100v=4" width="100" title="Obaid Rahman"/>
-        <br /><sub><b></b></sub>
-      </a>
-    </td>
-    <td align="center" style="border: none">
-      <a href="https://github.com/swamirajanarse">
-        <img src="https://avatars.githubusercontent.com/u/97228584?s=100&v=4" width="100" title="Swamiraj Anarse"/>
-        <br /><sub><b></b></sub>
-      </a>
-    </td>
-    <td align="center" style="border: none">
-      <a href="https://github.com/Prashant-waii">
-        <img src="https://avatars.githubusercontent.com/u/112158709?v=4" width="100" title="Prashant Kashyap"/>
-        <br /><sub><b></b></sub>
-      </a>
-    </td>
-  </tr>
-  <tr>
-    <td align="center" style="border: none">
-      <a href="https://github.com/shubham-waii">
-        <img src="https://avatars.githubusercontent.com/u/112168652?v=4" width="100" title="Shubham "/>
-        <br /><sub><b></b></sub>
-      </a>
-    </td>
-    <td align="center" style="border: none">
-      <a href="[https://github.com/maithililondhewaiin](https://github.com/TejasSadaphal)">
-        <img src="https://avatars.githubusercontent.com/u/103165573?v=4" width="100" title="Maithili Londhe">
-        <br /><sub><b></b></sub>
-      </a>
-    </td>
-    <td align="center" style="border: none">
-      <a href="https://github.com/Vaish84">
-        <img src="https://avatars.githubusercontent.com/u/104414130?s=100&v=4" width="100" title="Vaishnavi Pardeshi"/>
-        <br /><sub><b></b></sub>
-      </a>
-    </td>
-    <td align="center" style="border: none">
-      <a href="https://github.com/rohit9096">
-        <img src="https://avatars.githubusercontent.com/u/88035057?s=100v=4" width="100" title="Rohit Kulkarni"/>
-        <br /><sub><b></b></sub>
-      </a>
- <td align="center" style="border: none">
-      <a href="https://github.com/neeraj-bhakre">
-        <img src="https://avatars.githubusercontent.com/u/100110930?s=100v=4" width="100" title="Neeraj Bhakre"/>
-        <br /><sub><b></b></sub>
-      </a>
-    </td>
-    <td align="center" style="border: none">
-      <a href="https://github.com/maithililondhewaiin">
-        <img src="https://avatars.githubusercontent.com/u/100565002?s=100&v=4" width="100" title="Maithili Londhe">
-        <br /><sub><b></b></sub>
-      </a>
-    </td>
-  </tr>
-  
-</table>
 
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
