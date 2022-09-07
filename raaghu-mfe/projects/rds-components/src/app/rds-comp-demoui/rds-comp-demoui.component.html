@@ -313,7 +313,7 @@
           <h6 class="mb-3">{{"ButtonGroup - Icon"|translate}}</h6>
           <!-- <rds-button-group [vertical]="false" colorVariant="warning" [outline]="false" role="button"
           [buttonGroupItem]="buttonGroupItemWithIcon"></rds-button-group> -->
-          <rds-button-group [vertical]="false" [colorVariant]="'secondary'" [outline]="false" role="button" size="medium"
+          <rds-button-group [vertical]="false" [colorVariant]="'info'" [outline]="false" role="button" size="medium"
                             [buttonGroupItem]="buttonGroupItemWithIcon"></rds-button-group>
         </div>
       </div>
@@ -369,7 +369,7 @@
         <div class="col-4">
           <h6 class="mb-3">{{"Button - icon"|translate}}</h6>
           <rds-button colorVariant="primary" [submit]="false" [size]="'small'" [block]="false" [disabled]="false" [outlineButton]="false"
-                      [roundedButton]="true" icon="pencil" label="" iconHeight="16px" iconWidth="16px" tooltipTitle=""
+                      [roundedButton]="true" icon="pencil" label="" iconHeight="13px" iconWidth="13px" tooltipTitle=""
                       tooltipPlacement="bottom">
           </rds-button>
         </div>
@@ -395,19 +395,19 @@
         <div class="row">
           <div class="col-3">
             <rds-button colorVariant="primary" [submit]="false" [size]="'small'" [block]="false" [disabled]="false" [outlineButton]="false"
-                        [roundedButton]="true" icon="pencil" label="" iconHeight="18px" iconWidth="18px" tooltipTitle=""
+                        [roundedButton]="true" icon="pencil" label="" iconHeight="14px" iconWidth="14px" tooltipTitle=""
                         tooltipPlacement="bottom">
             </rds-button>
           </div>
           <div class="col-3">
             <rds-button colorVariant="primary" [submit]="false" [size]="'medium'" [block]="false" [disabled]="false" [outlineButton]="false"
-                        [roundedButton]="true" icon="pencil" label="" iconHeight="23px" iconWidth="23px" tooltipTitle=""
+                        [roundedButton]="true" icon="pencil" label="" iconHeight="18px" iconWidth="18px" tooltipTitle=""
                         tooltipPlacement="bottom">
             </rds-button>
           </div>
           <div class="col-3">
             <rds-button colorVariant="primary" [submit]="false" [size]="'large'" [block]="false" [disabled]="false" [outlineButton]="false"
-                        [roundedButton]="true" icon="pencil" label="" iconHeight="30px" iconWidth="30px" tooltipTitle=""
+                        [roundedButton]="true" icon="pencil" label="" iconHeight="24px" iconWidth="24px" tooltipTitle=""
                         tooltipPlacement="bottom">
             </rds-button>
           </div>
@@ -594,27 +594,22 @@
   </div>
   <div class="card-body  pt-0">
     <div class="row border p-4 m-2">
-      <div class="col-4">
+      <div class="col-6">
         <h6 class="mb-3">{{"Date Picker - Basic"|translate}}</h6>
 
-        <rds-datepicker name="date-picker" [Label]="''" [placeholder]="translate.instant('End Date')">
+        <rds-datepicker datePickerType="basic" name="date-picker" [Label]="''" [placeholder]="translate.instant('End Date')">
         </rds-datepicker>
-
-
+   
+       
         <!-- <rds-datepicker datePickerType="advanced"
           DatePickerConfig="{ dateInputFormat: 'DD/MM/YYYY', showWeekNumbers: false, isAnimated: true }"
           placeholder="Date" datesDisabled="[]" datesEnabled="[]" dateTooltipTexts="[]" daysDisabled="[]" [isOpen]="false"
           [outsideClick]="true" [outsideEsc]="false" placement="bottom" Label="Date Range" format="MM-dd-YYYY">
-        </rds-datepicker> -->
+        </rds-datepicker>-->
       </div>
-      <div class="col-4">
-
-        <!-- <h6>{{"Date Picker - Basic"|translate}}</h6> -->
-        <!-- <rds-datepicker datePickerType="basic"
-        DatePickerConfig=" { dateInputFormat: 'DD/MM/YYYY', showWeekNumbers: false, isAnimated: true }"
-        placeholder="Date" datesDisabled="[new Date()]"
-        dateTooltipTexts="[{ date: new Date(), tooltipText: 'todays Date' }]" daysDisabled="[3]"
-        maxDate=" new Date(new Date().setDate(27))" placement="bottom"></rds-datepicker> -->
+      <div class="col-6">
+        <h6 class="mb-4">{{"Date Picker - Advanced"|translate}}</h6>
+        <rds-datepicker datePickerType="advanced" Label="Date Range"></rds-datepicker>       
       </div>
 
 
@@ -658,8 +653,7 @@
 
       <div class="col-6">
         <h6 class="mb-3">{{"Dropdown List Without Icon"|translate}}</h6>
-        <rds-dropdownlist [listItems]="listItems" size="default"
-                          [colorVariant]="'outline-light'" class="text-dark" [placeholder]="'Select Country'">
+        <rds-dropdownlist [listItems]="listItems" size="default" class="text-dark" [placeholder]="'Select Country'">
           <ng-template #DropdownItems let-val let-index="index">
             <li [class.active]="index === 1">
               <div class="d-flex align-items-center bind-center-div1 group-list">
@@ -678,7 +672,7 @@
       <div class="col-6">
         <h6 class="mb-3">{{"Dropdown List With Icon"|translate}}</h6>
         <rds-dropdownlist [listItems]="listItemsCountryCode" size="default"
-                          [colorVariant]="'outline-light'" class="text-dark" [placeholder]="'Select Country Code'">
+                           class="text-dark" [placeholder]="'Select Country Code'">
           <ng-template #DropdownItems let-val let-index="index">
             <li [class.active]="index === 1">
               <div class="d-flex align-items-center bind-center-div1 group-list">
@@ -793,7 +787,7 @@
     <div class="row border p-4 m-2">
       <div class="col-4"></div>
       <h6 class="mb-3">{{"Icon"|translate}}</h6>
-      <rds-icon name="empty_states_add_records" [height]="'100px'" [width]="'100px'"></rds-icon>
+      <rds-icon name="file_plus" [height]="'100px'" [width]="'100px'"></rds-icon>
       <!-- <rds-icon icon="calendar-date" [size]="15"></rds-icon> -->
     </div>
   </div>
@@ -826,12 +820,12 @@
   </div>
   <div class="card-body  pt-0">
     <div class="row border p-4 m-2">
-      <div class="col-4">
+      <div class="col-5">
         <h6 class="mb-3">{{"Input Group"|translate}}</h6>
         <rds-input-group>
           <input type="text" class="form-control" id="Errormessage" placeholder="placeholder" />
           <rds-button id="button-addon1" [label]="'Button'" [colorVariant]="'primary'" [outlineButton]="false"
-                      [size]="'small'" type="button">
+                      [size]="'medium'" type="button">
           </rds-button>
         </rds-input-group>
       </div>
@@ -1363,7 +1357,7 @@
       <div class="col-md-6">
         <h6 class="mb-3">{{"Progress Bar - Multiple"|translate}}</h6>
         <rds-progressbar [animation]="true" height="15" colorVariant="default" striped="progress-bar-striped"
-                         [progressWidth]="100" progressbar_MaxWidth="40" [label]="false" role="multiple"
+                         [progressWidth]="100" progressbar_MaxWidth="70" [label]="false" role="multiple"
                          [progressvalues]="progressvalues"></rds-progressbar>
       </div>
 
@@ -1500,18 +1494,18 @@
         <div class="col-4 pb-3">
           <h6 class="mb-3">{{"Select list - Basic"|translate}}</h6>
           <rds-select-list size="default" selected="SelectName" [disabled]="false" [multiple]="false" customIcon=""
-                           [itemList]="options" [tooltipTitle]="'Tooltip'" [tooltipPlacement]="'auto'">
+                           [itemList]="options">
 
           </rds-select-list>
         </div>
-        <div class="col-4">
+        <!--<div class="col-4">
           <h6 class="mb-3">{{"Select list - Auto tooltip"|translate}}</h6>
           <rds-select-list size="default" [disabled]="false" [multiple]="false" customIcon="" [tooltipTitle]="'Tooltip'"
                            [tooltipPlacement]="'auto'" [itemList]="options">
 
           </rds-select-list>
-        </div>
-        <div class="col-4">
+        </div>-->
+        <!--<div class="col-4">
           <h6 class="mb-3">{{"Select list - bottom tooltip"|translate}}</h6>
           <rds-select-list size="default" [disabled]="false" [multiple]="false" customIcon="" [tooltipTitle]="'Tooltip'"
                            [tooltipPlacement]="'bottom'" [itemList]="options">
@@ -1538,7 +1532,7 @@
                            [tooltipPlacement]="'top'" [itemList]="options">
 
           </rds-select-list>
-        </div>
+        </div>-->
 
       </div>
     </div>
@@ -1662,7 +1656,7 @@
       <div class="col-4">
         <h6 class="mb-3">{{"Toast"|translate}}</h6>
         <rds-toasts message="Hello, world! This is a toast message." [withHeader]="false"
-                    colorVariant="" headerTitle="Bootstrap" time="11 Seconds ago" position="Bottom-Right"></rds-toasts>
+                    colorVariant="" headerTitle="Bootstrap" time="11 Seconds ago"></rds-toasts>
       </div>
       <div class="col-4">
         <h6 class="mb-3">{{"Toast - With Call to Action"|translate}}</h6>

@@ -12,12 +12,14 @@ export class RdsIconComponent implements OnInit, OnChanges {
   private svgIcon!: SVGElement;
   title = 'rds-icon';
   @Input() height: string = '';
-  @Input() fill: boolean | undefined  = false;
+  @Input() disabled: boolean | undefined = false;
+  @Input() fill: boolean | undefined = false;
   @Input() stroke: boolean | undefined = true;
   @Input() width: string = '';
   @Input() name: string = '';
   @Input() colorVariant: string = '';
-    
+  @Input() opacity: string = '';
+ 
   constructor(private element: ElementRef,
     @Optional() @Inject(DOCUMENT) private document: any) {
   }
@@ -65,28 +67,34 @@ export class RdsIconComponent implements OnInit, OnChanges {
     if (this.width) {
       svg.style.width = this.width;
     }
+    if (this.disabled) {
+      svg.classList.add('disabled');
+    }
+    if (this.opacity) {
+      svg.style.opacity = this.opacity;
+    }
     if (this.colorVariant == 'primary') {
       // svg.setAttribute('class', 'icon-' + this.colorVariant);
       fillColor = '#7E2EEf';
-    } else  if (this.colorVariant == 'secondary') {
+    } else if (this.colorVariant == 'secondary') {
       fillColor = '#2B0066';
-    } else  if (this.colorVariant == 'success') {
+    } else if (this.colorVariant == 'success') {
       fillColor = '#2EEF59';
-    } else  if (this.colorVariant == 'info') {
+    } else if (this.colorVariant == 'info') {
       fillColor = '#3ef1e8';
-    } else  if (this.colorVariant == 'warning') {
+    } else if (this.colorVariant == 'warning') {
       fillColor = '#E3A300';
-    } else  if (this.colorVariant == 'danger') {
+    } else if (this.colorVariant == 'danger') {
       fillColor = '#EF2E2E';
-    } else  if (this.colorVariant == 'dark') {
+    } else if (this.colorVariant == 'dark') {
       fillColor = '#363636';
-    } else  if (this.colorVariant == 'light') {
+    } else if (this.colorVariant == 'light') {
       fillColor = '#F8F9FA';
-    } else  if (this.colorVariant == 'review') {
+    } else if (this.colorVariant == 'review') {
       fillColor = '#E3A300';
     }
-  
-    if (this.fill ) {
+
+    if (this.fill) {
       svg.style.fill = fillColor;
     } else {
       svg.style.fill = 'none';

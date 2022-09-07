@@ -22,6 +22,7 @@ export class RdsCompTenantSettingsComponent implements OnInit, OnChanges {
   @Input() tenantSettingsInfo: any;
   @Input() isTenantInfoValid: boolean = false
   @Input() showEditData : boolean = false;
+  @Input () buttonSpinner : boolean =true;
   @ViewChild('tenantSettingsForm') settingsForm: NgForm;
 
   constructor(public translate:TranslateService) { }
@@ -76,6 +77,8 @@ export class RdsCompTenantSettingsComponent implements OnInit, OnChanges {
 
   }
   next(tenantSettingsForm: NgForm): void {
+    tenantSettingsForm.form.markAllAsTouched();
+this.buttonSpinner=true;
 
     if (tenantSettingsForm.invalid || this.isPasswordMismatch) {
       return;
@@ -93,5 +96,10 @@ export class RdsCompTenantSettingsComponent implements OnInit, OnChanges {
       return;
     }
     this.isPasswordMismatch = false;
+  }
+  onCancelSetting(){
+    this.buttonSpinner=false;
+    this.onCancel.emit(true);
+
   }
 }

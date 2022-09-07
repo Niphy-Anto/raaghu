@@ -38,7 +38,7 @@ import { transition,trigger,query,style,  animate,} from '@angular/animations';
     ])
   ]
 })
-export class AppComponent extends MfeBaseComponent implements OnInit {
+export class AppComponent  implements OnInit {
   isAnimation: boolean = true;
   currentAlerts: any = [];
   editShimmer:boolean=false;
@@ -124,7 +124,7 @@ export class AppComponent extends MfeBaseComponent implements OnInit {
 
 
   constructor(private injector: Injector, private store: Store, private alertService: AlertService, public translate: TranslateService) {
-    super(injector);
+    
   }
   rdsCompTenantManageMfeConfig: ComponentLoaderOptions = {
     name: 'RdsCompTenantManagement',

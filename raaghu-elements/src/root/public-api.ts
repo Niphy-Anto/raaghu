@@ -242,9 +242,6 @@ export * from '../rds-review-category/src/public-api';
 // Public API Surface of rds-address-detail
 export * from '../rds-address-detail/src/public-api';
 
-// Public API Surface of rds-address-detail
-export * from '../rds-address-detail/src/public-api';
-
 // Public API Surface of rds-teams-member
 export * from '../rds-team-member/src/public-api';
 
@@ -253,3 +250,7 @@ export * from '../rds-website-metric/src/public-api';
 
 // Public API Surface of rds-website-metric
 export * from '../rds-testimonial/src/public-api'
+
+// Public API Surface of rds-stepper
+export * from '../rds-stepper/src/public-api';
+

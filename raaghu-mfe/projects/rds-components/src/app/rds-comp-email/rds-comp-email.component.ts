@@ -2,6 +2,7 @@
 import { Component, EventEmitter, Injector, Input, OnChanges, OnInit, Output, SimpleChanges, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
+
 export interface EmailData {
   useSSL: boolean;
   useDefaultCredentials: boolean;

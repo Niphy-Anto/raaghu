@@ -1,7 +1,7 @@
 <nav id="sidebar" class="bd-links min-vh-100 pt-2 position-relative" [class.side-nav-height]="isPageWrapper"
      [ngClass]="{ 'toggle' : collapsed }">
   <ul class="list-unstyled mb-0 py-2 px-4 h-100">
-    <li class="mb-4" *ngFor="let item of sidenavItems; let i=index">
+    <li class="mb-2" *ngFor="let item of sidenavItems; let i=index">
       <a (click)="onClick($event,i,item)" *ngIf="!item.children" [ngClass]="{ 'active' : activepage===i }"
          class="d-inline-flex align-items-center text-decoration-none text-uppercase" role="button"
          aria-expanded="false">
@@ -40,16 +40,17 @@
     <li>
       <div class="sidenav-footer">
         <div *ngIf="collapseRequired" class="d-flex justify-content-center mb-3">
-
+          <!-- <div class="p-1" style="border:2px solid rgb(113,115,130) ; border-radius: 5px;" > -->
           <!-- svg icon of side-nav collapse -->
-          <rds-icon [name]="'grid'" height="23px" [stroke]="true" width="23px" data-bs-toggle="tooltip" data-bs-placement="auto"
+          <rds-icon [name]="'grid_square'" height="23px" [stroke]="true" width="23px" data-bs-toggle="tooltip" data-bs-placement="auto"
                     title="collapse menu" (click)="onCollapse()"></rds-icon>
+        <!-- </div> -->
         </div>
         <div class="btn-container d-flex justify-content-center ">
           <i class="fa fa-sun-o" aria-hidden="true"></i>
           <label class="switch btn-color-mode-switch border-0">
             <input type="checkbox" name="color_mode" id="flexSwitchCheckDefault" (click)="toggleLightAndDarkMode()" value="1">
-            <label for="color_mode" data-on="Dark" data-off="Light" class="btn-color-mode-switch-inner"></label>
+            <label for="color_mode" data-on="☾ &nbsp; Dark" data-off="☀  Light" class="btn-color-mode-switch-inner border-0"></label>
           </label>
           <i class="fa fa-moon-o" aria-hidden="true"></i>
 

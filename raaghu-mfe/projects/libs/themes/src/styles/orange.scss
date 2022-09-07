@@ -123,15 +123,15 @@ $default-100: #F58220;
   --chartColor9: #EA2745;
   --chartColor10: #00FFE6;
   --chartgradient1: rgba(63,28, 255, 100%);
-  --chartgradient2: rgba(59,26,240,94%);
+  --chartgradient2: #863bff94;
   --chartgradient3: rgba(56,25,226,89%);
   --chartgradient4: rgba(48,22,194,76%);
-  --chartgradient5: rgba(35,16,143,56%);
-  --chartgradient6: rgba(27,12,109,43%);
-  --chartgradient7: rgba(19,9,78,31%);
-  --chartgradient8: rgba(12,5,47,18%);
-  --chartgradient9: rgba(4,2,16,6%);
-  --chartgradient10: rgba(0,0,0,0%);
+  --chartgradient5: rgba(25,70,186,36%);
+  --chartgradient6: rgba(25,70,186,26%);
+  --chartgradient7: rgba(25,70,186,22%);
+  --chartgradient8: rgba(25,70,186,16%);
+  --chartgradient9: rgba(25,70,186,8%);
+  --chartgradient10: rgba(25,70,186,1%);
 }
 
 
@@ -280,4 +280,4 @@ svg {
 @import './tags.scss';
 @import './textarea.scss';
 @import './colorvariables.scss';
-
+@import './cookieconsent.scss';

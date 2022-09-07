@@ -3,11 +3,19 @@
     <div class="row">
       <div class="col-md-3 card-border" *ngFor="let item of teamItem">
         <div class="d-flex justify-content-center imgWidth">
+          <!-- <rds-product-image
+            class="position-relative w-75"
+           
+          ></rds-product-image> -->
+          <!-- [itemList]="[item.imgLink]" -->
+          <!--           
+          [borderRadius]="false"
+          [positionClass]="true" -->
           <rds-product-image
+          class="position-relative w-75"
+            [itemList]="[item.imgLink]"
             [borderRadius]="false"
             [positionClass]="true"
-            class="position-relative w-75"
-            [itemList]="[item.imgLink]"
           ></rds-product-image>
         </div>
         <div class="card h-50 justify-content-end pb-4 pt-5 px-3">
@@ -68,12 +76,12 @@
     <div class="row">
       <div class="col-md-3 card-border" *ngFor="let item of teamItem">
         <div class="d-flex justify-content-center imgWidth">
-          <rds-product-image
+          <!-- <rds-product-image
             [borderRadius]="true"
             [positionClass]="false"
             class="position-relative w-75"
             [itemList]="[item.imgLink]"
-          ></rds-product-image>
+          ></rds-product-image> -->
         </div>
         <div class="justify-content-end pb-4 px-3">
           <div>

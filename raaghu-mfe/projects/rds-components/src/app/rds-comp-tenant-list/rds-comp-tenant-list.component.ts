@@ -343,4 +343,9 @@ export class RdsCompTenantListComponent implements OnInit, DoCheck {
       this.newTenant(event);
     }
   }
+  show():void{
+    var toastEl = document.getElementById('liveToast');
+    var toast = new bootstrap.Toast(toastEl);
+    toast.show();
+  }
 }

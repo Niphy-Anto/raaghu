@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
- body {
+ /* @import '~cookieconsent/build/cookieconsent.min'; */ 
+body {
   padding-top: 0rem;
 } 
 /* .starter-template {
@@ -12,3 +13,4 @@
   /*border: 2px dotted red;*/
   padding: 74px;
 }
+
