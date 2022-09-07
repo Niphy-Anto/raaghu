@@ -26,9 +26,7 @@
 *  [Prerequisites](#pre)
 *  [How to Set up `raaghu-mfe` for Development?](#setup)
 *  [Built With](#BuiltWith)
-*  [ Contributing to `raaghu`](#ContributingtoRaaghu)
-*  [ Support](#Support)
-*  [Contributors](#WAiTechnologyContributors)
+
 
 ##  <a name='Introducingraaghu-elements'></a>Introducing `raaghu`
 
