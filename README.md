@@ -359,12 +359,12 @@ Thanks goes to these wonderful people and Wai technology.
         <br /><sub><b></b></sub>
       </a>
     </td>
-       <td align="center" style="border: none">
-      <a href="https://github.com/basavraj-chorgasti">
-        <img src=https://avatars.githubusercontent.com/u/99861347?v=4" width="100" title="Basavraj Chorgasti"/>
+         <td align="center" style="border: none">
+      <a href="https://github.com/Sachin-Ghorpade">
+        <img src="https://avatars.githubusercontent.com/u/109578038?v=4" width="100" title="Sachin Ghorpade"/>
         <br /><sub><b></b></sub>
       </a>
-    </td>
+    </td>   
       <td align="center" style="border: none">
       <a href="https://github.com/rohit9096">
         <img src="https://avatars.githubusercontent.com/u/112158709?v=4" width="100" title="Prashant"/>
@@ -538,12 +538,7 @@ Thanks goes to these wonderful people and Wai technology.
     </td>                                                                                                          
      </tr>
     <tr>
-           <td align="center" style="border: none">
-      <a href="https://github.com/Sachin-Ghorpade">
-        <img src="https://avatars.githubusercontent.com/u/109578038?v=4" width="100" title="Sachin Ghorpade"/>
-        <br /><sub><b></b></sub>
-      </a>
-    </td>                                                                                             
+                                                                                                    
     </tr>                                                                                                
                                                                                                       
                                                                                                      
