@@ -20,6 +20,7 @@ export class RdsUserDelegationsComponent implements OnInit, OnChanges, OnDestroy
   actions: TableAction[] = [{ id: 'delete', displayName: 'Delete' }]
   @Input() pagination: boolean = false;
   @Input() tableWidth: string = '100%';
+  @Input() buttonSpinner :boolean =true;
   @Input() tableStyle: string = 'Light';
   username: any = '';
   startDate: Date = new Date();
@@ -65,8 +66,11 @@ export class RdsUserDelegationsComponent implements OnInit, OnChanges, OnDestroy
     this.endDate = new Date();
     this.startDate = new Date();
     this.username[0] = '';
+
   }
   onCancel(): void {
+    this.onCancelDeligate.emit(true);
+    this.buttonSpinner=false;
     this.deligateDivFlag = false;
     // this.onCancelDeligate.emit(true);
   }
@@ -80,5 +84,6 @@ export class RdsUserDelegationsComponent implements OnInit, OnChanges, OnDestroy
   }
   ngOnDestroy(): void {
   }
+  
 
 }

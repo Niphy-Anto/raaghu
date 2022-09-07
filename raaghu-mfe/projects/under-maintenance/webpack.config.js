@@ -28,10 +28,10 @@ module.exports = {
         new ModuleFederationPlugin({
             library: { type: "module" },
 
-            name: "under-maintanance",
+            name: "under-maintenance",
             filename: "remoteEntry.js",
             exposes: {
-                './AppModule': './projects/under-maintanance/src/app/app.module.ts',
+                './AppModule': './projects/under-maintenance/src/app/app.module.ts',
             },
 
 
