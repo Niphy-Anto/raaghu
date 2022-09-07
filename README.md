@@ -416,7 +416,7 @@ Thanks goes to these wonderful people and Wai technology.
    </tr>
   <tr>
      <td align="center" style="border: none">
-      <a href="https://github.com/dhirajlha">
+      <a href="https://github.com/dhirajlaha">
         <img src="https://avatars.githubusercontent.com/u/82803816?v=4" width="100" title= "Dhiraj Laha">
         <br /><sub><b></b></sub>
       </a>
