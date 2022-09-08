@@ -334,7 +334,7 @@ export const APP_ROUTES: Routes = [
           }).then((m) => m.AppModule),
       },
       {
-        path: 'LanguageText',
+        path: 'languagetext',
         loadChildren: () =>
           loadRemoteModule({
             type: 'module',
