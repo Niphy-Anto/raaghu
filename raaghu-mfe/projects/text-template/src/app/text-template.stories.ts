@@ -20,9 +20,6 @@ import {
   SharedModule,
 } from '../../../libs/shared/src/public-api';
 import { StoreModule } from '@ngrx/store';
-import { RdsCompApiScopeComponent } from 'projects/rds-components/src/app/rds-comp-api-scope/rds-comp-api-scope.component';
-import { RdcCompApiScopeBasicsComponent } from 'projects/rds-components/src/app/rdc-comp-api-scope-basics/rdc-comp-api-scope-basics.component';
-import { RdcCompApiScopeResourcesComponent } from 'projects/rds-components/src/app/rdc-comp-api-scope-resources/rdc-comp-api-scope-resources.component';
 import { RdsDataTableComponent } from 'projects/rds-components/src/app/rds-comp-data-table/rds-comp-data-table.component';
 
 export default {
