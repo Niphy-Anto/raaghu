@@ -579,7 +579,25 @@ Thanks goes to these wonderful people and Wai technology.
         <img src="https://avatars.githubusercontent.com/u/101566386?v=4" width="100" title="prasad deshmukh"/>
         <br /><sub><b></b></sub>
       </a>
-    </td>                                                                                                    
+    </td>
+         <td align="center" style="border: none">
+      <a href="https://github.com/vyankatesh21">
+        <img src="https://avatars.githubusercontent.com/u/109503161?v=4" width="100" title="vyankatesh"/>
+        <br /><sub><b></b></sub>
+      </a>
+    </td>  
+         <td align="center" style="border: none">
+      <a href="https://github.com/suraj-khupse">
+        <img src="https://avatars.githubusercontent.com/u/99809670?v=4" width="100" title="Suraj Khupse"/>
+        <br /><sub><b></b></sub>
+      </a>
+    </td>  
+         <td align="center" style="border: none">
+      <a href="https://github.com/shwetaholkar">
+        <img src="https://avatars.githubusercontent.com/u/100746624?v=4" width="100" title="Shweta Holkar"/>
+        <br /><sub><b></b></sub>
+      </a>
+    </td>  
    </tr>
                                                                                               
                                                                                                      
