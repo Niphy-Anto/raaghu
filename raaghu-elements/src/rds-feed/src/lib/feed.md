@@ -1,7 +1,7 @@
 ---
-slug: "/Price"
+slug: "/Feeds"
 date: "2019-05-04"
-title: "Price"
+title: "Feeds"
 ---
 
 <!-- CSS only -->
@@ -10,7 +10,7 @@ title: "Price"
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/main.css">
 
 
-#### Price
+#### Feeds
 
 <p class="">A card is a small rectangular module with images and text. It is an entry point for users to learn more details</p>
 <section class="py-4">
@@ -31,7 +31,7 @@ title: "Price"
          <div class="contents bg-light p-5">
               <div class="row">
               <!-- <img src="https://raw.githubusercontent.com/Wai-Technologies/raaghu/main/raaghu-mfe/assets/Edit-Language-Text.png" alt="color"> -->
-              <img src="/images/price.png" class="img-thumbnail w-50">
+              <img src="/images/feeds.png" class="img-thumbnail w-50">
            </div>
                        
   </div>
@@ -41,7 +41,7 @@ title: "Price"
 <div class="row m-0">
 
 ```html
-   <rds-price [discount]="0" [actualPrice]="0"></rds-price>
+   <rds-feed [itemList]="itemList" (onSelect)="onSelect($event)"></rds-feed>
 ```
 </div>
 </div>
@@ -50,4 +50,4 @@ title: "Price"
       </div>
     </div>
   </section>
-
+   

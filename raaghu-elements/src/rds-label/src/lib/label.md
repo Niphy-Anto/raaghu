@@ -1,16 +1,15 @@
 ---
-slug: "/Price"
+slug: "/Label"
 date: "2019-05-04"
-title: "Price"
+title: "Label"
 ---
-
 <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-<link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/style-elements.css">
-<link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/style-elements.css">
 
 
-#### Price
+
+#### Label
 
 <p class="">A card is a small rectangular module with images and text. It is an entry point for users to learn more details</p>
 <section class="py-4">
@@ -31,7 +30,7 @@ title: "Price"
          <div class="contents bg-light p-5">
               <div class="row">
               <!-- <img src="https://raw.githubusercontent.com/Wai-Technologies/raaghu/main/raaghu-mfe/assets/Edit-Language-Text.png" alt="color"> -->
-              <img src="/images/price.png" class="img-thumbnail w-50">
+              <img src="/images/label.png" class="img-thumbnail w-50">
            </div>
                        
   </div>
@@ -41,7 +40,12 @@ title: "Price"
 <div class="row m-0">
 
 ```html
-   <rds-price [discount]="0" [actualPrice]="0"></rds-price>
+  <rds-label
+  label=""
+  [multiline]="false"
+  [bold]="false"
+  [italic]="false"
+></rds-label>
 ```
 </div>
 </div>
@@ -50,4 +54,4 @@ title: "Price"
       </div>
     </div>
   </section>
-
+   
