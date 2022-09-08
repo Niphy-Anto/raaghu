@@ -23,9 +23,10 @@
 							"projects/libs/themes/src/styles/responsive.scss",
 							"projects/host/src/styles.css",
 							"projects/libs/themes/src/styles/default.scss"
+
 						],
 						"scripts": [
-							"./node_modules/bootstrap/dist/js/bootstrap.min.js",
+							"./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
 							"./node_modules/cookieconsent/build/cookieconsent.min.js"
 						]
 					}
@@ -47,7 +48,8 @@
 							"projects/libs/themes/src/styles/default.scss"
 						],
 						"scripts": [
-							"./node_modules/bootstrap/dist/js/bootstrap.min.js"
+							"./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+							"./node_modules/cookieconsent/build/cookieconsent.min.js"
 						]
 					}
 				}

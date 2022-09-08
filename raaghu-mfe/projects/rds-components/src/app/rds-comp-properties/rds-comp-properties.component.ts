@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ComponentLoaderOptions } from '@libs/shared';
 import { TableHeader } from '../../models/table-header.model';
+
 export class Properties {
   public key: any;
   public value: any;
@@ -17,6 +18,7 @@ export class RdsCompPropertiesComponent implements OnInit {
   constructor() { }
  key:string;
  value:string;
+@Input() PropertyTableData: any = []
 @Input() PropertyList:any=[];
 @Output()
 onPropertyResourceSave = new EventEmitter<{Property:any}>()
