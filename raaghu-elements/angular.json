@@ -1,5 +1,8 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "48e9a667-c720-4bb4-acc8-649d5cab9122"
+  },
 	"version": 1,
 	"newProjectRoot": "src",
 	"projects": {
@@ -17,7 +20,7 @@
 							"./src/root/styles-storybook.scss"
 						],
 						"scripts": [
-							"./node_modules/bootstrap/dist/js/bootstrap.min.js"
+							"./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
 						]
 					}
 				}
