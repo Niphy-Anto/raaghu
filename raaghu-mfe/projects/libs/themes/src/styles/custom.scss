@@ -157,13 +157,16 @@ input::-webkit-input-placeholder {
   z-index: 1;
 }
 
-.upload-icon {
-  position: absolute;
-  right: 0px;
-  bottom: 0px;
-}
+  .page-full-height {
+    height: calc(100vh - 90px) !important;
+  }
 
-/*.chart-container {
+  .upload-icon {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+  }
+  /*.chart-container {
   position: relative;
   margin: auto;
   height: 80vh;

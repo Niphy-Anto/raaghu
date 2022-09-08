@@ -6,7 +6,7 @@ import { RdsCompShippingAddressComponent } from './rds-comp-shipping-address.com
 
 
 export default {
-    title: 'Components/Shipping Adress',
+    title: 'Components/Shipping Address',
     component: RdsCompShippingAddressComponent,
     decorators: [
         moduleMetadata({
