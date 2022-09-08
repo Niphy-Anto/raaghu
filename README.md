@@ -283,12 +283,12 @@ Thanks goes to these wonderful people and Wai technology.
         <br /><sub><b></b></sub>
       </a>
     </td>
-        <td align="center" style="border: none">
-      <a href="https://github.com/DevSwapnil22">
-        <img src="https://avatars.githubusercontent.com/u/100186754?v=4" width="100" title="Swapnil Ghormode"/>
+      <td align="center" style="border: none">
+      <a href="https://github.com/amolkulkarniwaiin">
+        <img src="https://avatars.githubusercontent.com/u/99239211?v=4" width="100" title="Amol Kulkarni"/>
         <br /><sub><b></b></sub>
       </a>
-    </td> 
+    </td>
   </tr>
   <tr>
     <td align="center" style="border: none">
@@ -333,12 +333,12 @@ Thanks goes to these wonderful people and Wai technology.
         <br /><sub><b></b></sub>
       </a>
     </td>
-       <td align="center" style="border: none">
-      <a href="https://github.com/amolkulkarniwaiin">
-        <img src="https://avatars.githubusercontent.com/u/99239211?v=4" width="100" title="Amol Kulkarni"/>
+        <td align="center" style="border: none">
+      <a href="https://github.com/DevSwapnil22">
+        <img src="https://avatars.githubusercontent.com/u/100186754?v=4" width="100" title="Swapnil Ghormode"/>
         <br /><sub><b></b></sub>
       </a>
-    </td>
+    </td> 
       <td align="center" style="border: none">
       <a href="https://github.com/j-yogendra">
         <img src="https://avatars.githubusercontent.com/u/99783626?v=4" width="100" title="yogendra jaiswal"/>
@@ -358,13 +358,13 @@ Thanks goes to these wonderful people and Wai technology.
         <img src="https://avatars.githubusercontent.com/u/88035057?s=100v=4" width="100" title="Rohit Kulkarni"/>
         <br /><sub><b></b></sub>
       </a>
-    </td>
-         <td align="center" style="border: none">
-      <a href="https://github.com/Sachin-Ghorpade">
-        <img src="https://avatars.githubusercontent.com/u/109578038?v=4" width="100" title="Sachin Ghorpade"/>
+    </td> 
+       <td align="center" style="border: none">
+      <a href="https://github.com/suraj-khupse">
+        <img src="https://avatars.githubusercontent.com/u/99809670?v=4" width="100" title="Suraj Khupse"/>
         <br /><sub><b></b></sub>
       </a>
-    </td>   
+    </td> 
       <td align="center" style="border: none">
       <a href="https://github.com/Prashant-waii">
         <img src="https://avatars.githubusercontent.com/u/112158709?v=4" width="100" title="Prashant"/>
@@ -586,12 +586,12 @@ Thanks goes to these wonderful people and Wai technology.
         <br /><sub><b></b></sub>
       </a>
     </td>  
-         <td align="center" style="border: none">
-      <a href="https://github.com/suraj-khupse">
-        <img src="https://avatars.githubusercontent.com/u/99809670?v=4" width="100" title="Suraj Khupse"/>
+           <td align="center" style="border: none">
+      <a href="https://github.com/Sachin-Ghorpade">
+        <img src="https://avatars.githubusercontent.com/u/109578038?v=4" width="100" title="Sachin Ghorpade"/>
         <br /><sub><b></b></sub>
       </a>
-    </td>  
+    </td>        
          <td align="center" style="border: none">
       <a href="https://github.com/shwetaholkar">
         <img src="https://avatars.githubusercontent.com/u/100746624?v=4" width="100" title="Shweta Holkar"/>
