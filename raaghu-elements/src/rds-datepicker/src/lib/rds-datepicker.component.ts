@@ -187,7 +187,7 @@ export class RdsDatepickerComponent implements OnInit, ControlValueAccessor {
     if (this.TitleType === 'Floating') {
       classList.push('d-none');
     } else if (this.TitleType === 'Top') {
-      classList.push('d-flex flex-column-reverse');
+      classList.push('d-flex flex-column-reverse mb-2');
     } else if (this.TitleType === 'Bottom') {
       classList.push('d-block mt-2');
     }
