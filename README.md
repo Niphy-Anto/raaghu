@@ -539,12 +539,6 @@ Thanks goes to these wonderful people and Wai technology.
   </tr> 
      <tr>
          <td align="center" style="border: none">
-      <a href="https://github.com/omkarrairikar">
-        <img src="https://avatars.githubusercontent.com/u/100824245?v=4" width="100" title="omkar rairikar"/>
-        <br /><sub><b></b></sub>
-      </a>
-    </td> 
-         <td align="center" style="border: none">
       <a href="https://github.com/palakchimaniya">
         <img src="https://avatars.githubusercontent.com/u/89460181?v=4" width="100" title="palak chimaniya"/>
         <br /><sub><b></b></sub>
