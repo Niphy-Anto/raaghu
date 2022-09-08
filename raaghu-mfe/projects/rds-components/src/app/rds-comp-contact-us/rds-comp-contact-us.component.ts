@@ -8,6 +8,8 @@ import { NgForm } from '@angular/forms';
 })
 export class RdsCompContactUsComponent implements OnInit {
   @Input() info: any = { emailID: '', message: '', fullName: '' };
+
+
   public emailPattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   @Output() onSendMessage = new EventEmitter<any>();
 
@@ -20,6 +22,7 @@ export class RdsCompContactUsComponent implements OnInit {
     if (!contactForm.valid) {
       return;
     }
-    this.onSendMessage.emit(this.info)
+    this.onSendMessage.emit(this.info);
+  
   }
 }

@@ -1,6 +1,5 @@
-import { AfterViewChecked, AfterViewInit, Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Store } from '@ngrx/store';
 import { TranslateService } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
 
@@ -10,6 +9,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./rds-comp-information.component.scss'],
 })
 export class RdsCompInformationComponent implements OnInit {
+  @ViewChild('newDynamicPropertyForm', { read: NgForm }) newDynamicPropertyForm!: NgForm;
   propertyName: string;
   displayName: string;
   permission: string;
@@ -22,14 +22,21 @@ export class RdsCompInformationComponent implements OnInit {
   @Input() resetFormSubject : Observable<boolean> = new Observable<boolean>();
   @Input() editShimmer : boolean = false;
   isEdit: boolean = false;
-  constructor(private store: Store, public translate:TranslateService) { }
+  constructor( public translate:TranslateService) { }
   ngOnInit(): void {
+    this.resetFormSubject.subscribe(response => {
+      if(response){
+        console.log(this.newDynamicPropertyForm);
+        this.newDynamicPropertyForm.form.markAllAsTouched();
+    }
+  })
     if (!this.dynamicPropertiesData) {
       this.dynamicPropertiesData['propertyName'] = '';
       this.dynamicPropertiesData['displayName'] = '';
       this.dynamicPropertiesData['inputType'] = '';
     }
   }
+
 
   ngOnChanges(changes: SimpleChanges): void {
     if(this.dynamicPropertiesData.displayName != "" && this.dynamicPropertiesData.propertyName !="" && this.dynamicPropertiesData.inputType != ""){ 

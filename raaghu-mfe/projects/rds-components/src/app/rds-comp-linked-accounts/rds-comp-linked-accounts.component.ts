@@ -138,7 +138,14 @@ export class RdsLinkedAccountsComponent extends MfeBaseComponent implements OnIn
   }
 
   onCancel(): void {
-    this.onCancelLinkedAccounts.emit(true);
+    this.linkaacountDivFlag = false;
+    this.showNewLinkAccoutButton = true;
+    //this.onCancelLinkedAccounts.emit(true);
   }
+
+  // onCancel(): void {
+  //   this.deligateDivFlag = false;
+  //   // this.onCancelDeligate.emit(true);
+  // }
 
 }

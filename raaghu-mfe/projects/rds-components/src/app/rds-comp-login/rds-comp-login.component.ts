@@ -36,6 +36,9 @@ export class RdsLoginComponent implements OnInit, OnChanges {
   @Output() onLogin: EventEmitter<any> = new EventEmitter<any>();
   @Output() onSwitchTenant: EventEmitter<any> = new EventEmitter<any>();
   @Output() onShimmerLoad: EventEmitter<any> = new EventEmitter<any>();
+  @Input() tenantdisabled: boolean;
+  @Input() disabledSwitchTenant: boolean = true;
+  
   @Input() switchTenant: boolean = false;
   emailPattern: any = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   @Input() buttonSpinner: boolean = true;
@@ -80,5 +83,7 @@ export class RdsLoginComponent implements OnInit, OnChanges {
   switchTenanat(event: any) {
     this.switchTenant = event;
   }
-
+    back() {
+        this.buttonSpinner = false;
+    }
 }

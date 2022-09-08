@@ -4,6 +4,7 @@ import {
   ChangeDetectionStrategy,
   ViewChild,
   TemplateRef,
+  Input,
 } from '@angular/core';
 import {
   startOfDay,
@@ -31,6 +32,7 @@ import {
 })
 export class RdsCompCalendarComponent implements OnInit {
 
+  
   colors: any = {
     red: {
       primary: '#ad2121',
@@ -79,7 +81,7 @@ export class RdsCompCalendarComponent implements OnInit {
 
   refresh = new Subject<void>();
 
-  events: CalendarEvent[] = [
+  @Input() events: CalendarEvent[] = [
     {
       start: subDays(startOfDay(new Date()), 1),
       end: addDays(new Date(), 1),
