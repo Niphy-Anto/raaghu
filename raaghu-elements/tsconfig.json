@@ -75,7 +75,7 @@
       "@libs/rds-product-image": [
         "rds-elements/rds-product-image/public-api",
         "rds-elements/rds-product-image"
-      ],
+      ]
     },
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,

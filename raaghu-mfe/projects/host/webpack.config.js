@@ -6,7 +6,7 @@ const share = mf.share;
 const sharedMappings = new mf.SharedMappings();
 sharedMappings.register(
   path.join(__dirname, '../../tsconfig.json'),
-  ['@libs/rds-elements', '@libs/shared', '@libs/state-management']);
+  ['@libs/rds-elements', '@libs/shared', '@libs/state-management' , '@libs/ngx-cookieconsent']);
 
 module.exports = {
   output: {

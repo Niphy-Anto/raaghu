@@ -240,41 +240,41 @@ export class RdsCompFeaturesComponent implements OnInit, OnChanges, DoCheck {
   private initialize(): void {
     this.itemListImmediately = [
       {
-        "id": 1,
-        "label": this.translate.instant('Immediately'),
-        "checked": true,
-        "disabled": false,
-        "name": "Radio-Button"
+        id: 1,
+        label: this.translate.instant('Immediately'),
+        checked: true,
+        disabled: false,
+        name: "Radio-Button"
       },
     ];
 
     this.itemListAfterTrailPeriod = [
       {
-        "id": 1,
-        "label": this.translate.instant('After Trial Period'),
-        "checked": false,
-        "disabled": false,
-        "name": "Radio-Button"
+        id: 2,
+        label: this.translate.instant('After Trial Period'),
+        checked: false,
+        disabled: false,
+        name: "Radio-Button"
       },
     ];
 
     this.itemListSubscription = [
       {
-        "id": 1,
-        "label": this.translate.instant("Deactivate Tenant"),
-        "checked": true,
-        "disabled": false,
-        "name": "AfterSubscriptionExpiryBtn"
+        id: 3,
+        label: this.translate.instant("Deactivate Tenant"),
+        checked: true,
+        disabled: false,
+        name: "AfterSubscriptionExpiryBtn"
       },
     ];
 
     this.itemListAssign = [
       {
-        "id": 1,
-        "label": this.translate.instant("Assign To Another Edition"),
-        "checked": false,
-        "disabled": false,
-        "name": "AfterSubscriptionExpiryBtn"
+        id: 4,
+        label: this.translate.instant("Assign To Another Edition"),
+        checked: false,
+        disabled: false,
+        name: "AfterSubscriptionExpiryBtn"
       },
     ];
 
