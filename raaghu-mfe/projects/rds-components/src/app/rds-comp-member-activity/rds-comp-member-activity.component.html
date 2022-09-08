@@ -19,5 +19,7 @@
 <div class="col-md-6">
 </div>
 <div class="col-md-12 mt-3">
-    <mfe-loader [config]="rdsMemberActivityTableMfeConfig"></mfe-loader>
+    <!-- <mfe-loader [config]="rdsMemberActivityTableMfeConfig"></mfe-loader> -->
+    <app-rds-data-table [tableData]="memberActivityTableData" [inlineEdit]="false" [pagination]="true" [recordsPerPage]="10"
+            [tableHeaders]="memberActivityTableHeader"  ></app-rds-data-table>
 </div>
