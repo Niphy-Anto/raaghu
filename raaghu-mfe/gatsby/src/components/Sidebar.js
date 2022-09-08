@@ -85,6 +85,8 @@ const Sidebar = () => {
     "sidenav",
     "selected-product",
     "ele-preview",
+   "webhooks-subscription-shimmer",
+   "cookieconsent"
   ];
   const pageList = elementsList.filter(
     (item, index, self) =>
@@ -107,7 +109,7 @@ const Sidebar = () => {
   return (
     <div className="h-100 cust-scroll">
       <div className="menu-list p-0 mt-4">
-        <Accordion defaultActiveKey="0" className="accordion accordion-flush">
+        <Accordion defaultActiveKey="0" className="accordion accordion-flush px-2">
           <Accordion.Item eventKey="0" className="accordion-item">
             <Accordion.Header className="accordion-header">
               <div className="suheading pb-2 align-middle">
