@@ -1,10 +1,10 @@
 ---
-slug: "/checkbox-groups"
+slug: "/Chart-Bar-Horizontal"
 date: "2019-05-04"
-title: "checkbox-groups"
+title: "Chart-bar-horizontal"
 ---
 
-### Checkbox-groups
+### Chart-bar-horizontal
 
 <p class="">A card is a small rectangular module with images and text. It is an entry point for users to learn more details</p>
 <section class="py-4">
@@ -24,18 +24,7 @@ title: "checkbox-groups"
         <div class="tab-pane fade show active" id="PreviewBasic" role="tabpanel" aria-labelledby="PreviewBasic-tab">
          <div class="contents bg-light p-5">
               <div class="row">
-           <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
-    Default checkbox
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-  <label class="form-check-label" for="flexCheckChecked">
-    Checked checkbox
-  </label>
-</div>
+            <img src="/images/popular-pages.png" class="img-thumbnail w-50">
      </div>
                        
   </div>
@@ -45,12 +34,12 @@ title: "checkbox-groups"
 <div class="row m-0">
 
 ```html
-   <rds-checkbox-groups
-  [withLabel]="true"
-  [itemList]="itemList"
-  (onCheck)="onCheck($event)"
-  (onUncheck)="onUncheck($event)"
-></rds-checkbox-groups>
+ <rds-chart-bar-horizontal
+  [chartWidth]="100"
+  [chartLabels]="chartLabels"
+  [ChartDataSets]="ChartDataSets"
+  [chartOptions]="chartOptions"
+></rds-chart-bar-horizontal>
 ```
 </div>
 </div>
