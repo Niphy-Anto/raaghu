@@ -1,7 +1,7 @@
 ---
-slug: "/admin-dashboard"
+slug: "/spinner"
 date: "2019-05-04"
-title: "admin-dashboard"
+title: "spinner"
 ---
 
 <!-- CSS only -->
@@ -10,4 +10,4 @@ title: "admin-dashboard"
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/main.css">
 
 
-#### admin-dashboard
+#### Spinner

@@ -1,7 +1,7 @@
 ---
-slug: "/admin-dashboard"
+slug: "/text-editor"
 date: "2019-05-04"
-title: "admin-dashboard"
+title: "text-editor"
 ---
 
 <!-- CSS only -->
@@ -10,4 +10,4 @@ title: "admin-dashboard"
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/main.css">
 
 
-#### admin-dashboard
+#### Text-editor

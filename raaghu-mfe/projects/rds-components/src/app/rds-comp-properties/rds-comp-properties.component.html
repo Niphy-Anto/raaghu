@@ -1,6 +1,8 @@
 <div class="container">
-    <mfe-loader [config]="rdsresourceTableMfeConfig"></mfe-loader>
-    <div style="display: flex;">
+    <!-- <mfe-loader [config]="rdsresourceTableMfeConfig"></mfe-loader> -->
+    <app-rds-data-table [tableData]="PropertyTableData" [inlineEdit]="false" [pagination]="true" [recordsPerPage]="10"
+            [tableHeaders]="PropertyTableHeader"></app-rds-data-table>
+    <div style="display: flex;" class="mt-4">
         <div class="form-group col-sm-5 mb-3 me-2">
             <rds-input size="default" value="" TitleType="'Top'" [Title]="'Key'" inputType="text" [(ngModel)]="PropertiesData.key"
                 [disabled]="false" [readonly]="false">

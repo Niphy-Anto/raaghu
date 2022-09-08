@@ -1,7 +1,7 @@
 ---
-slug: "/admin-dashboard"
+slug: "/testimonial"
 date: "2019-05-04"
-title: "admin-dashboard"
+title: "testimonial"
 ---
 
 <!-- CSS only -->
@@ -10,4 +10,4 @@ title: "admin-dashboard"
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/main.css">
 
 
-#### admin-dashboard
+#### Testimonial

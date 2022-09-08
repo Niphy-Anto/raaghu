@@ -1,7 +1,7 @@
 ---
-slug: "/admin-dashboard"
+slug: "/select-list"
 date: "2019-05-04"
-title: "admin-dashboard"
+title: "Select-list"
 ---
 
 <!-- CSS only -->
@@ -10,4 +10,4 @@ title: "admin-dashboard"
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/main.css">
 
 
-#### admin-dashboard
+#### Select-list

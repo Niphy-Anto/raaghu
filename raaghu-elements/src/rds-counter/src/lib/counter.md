@@ -1,7 +1,7 @@
 ---
-slug: "/admin-dashboard"
-date: "2019-05-04"
-title: "admin-dashboard"
+slug: "/counter/"
+date: "2022-06-09"
+title: "Counter"
 ---
 
 <!-- CSS only -->
@@ -9,5 +9,4 @@ title: "admin-dashboard"
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/style-elements.css">
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/main.css">
 
-
-#### admin-dashboard
+#### Counter
