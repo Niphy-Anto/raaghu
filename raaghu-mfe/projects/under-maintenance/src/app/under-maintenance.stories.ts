@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 
 
 export default {
-  title: 'Pages/Under-Maintanance',
+  title: 'Pages/Under-Maintenance',
   component: AppComponent,
   decorators: [
     moduleMetadata({
