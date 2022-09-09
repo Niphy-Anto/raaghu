@@ -501,11 +501,12 @@ html {
 /*  Dropdown List */
 .dropdown-item {
   font-size: small;
+  white-space:normal;
 }
 
 .dropdown-menu {
   max-height: 600px;
-  overflow: auto;
+  //overflow: auto;
 }
 
 .dropdown-toggle::after {

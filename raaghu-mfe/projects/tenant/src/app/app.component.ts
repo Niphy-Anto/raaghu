@@ -106,7 +106,7 @@ export class AppComponent {
                 isInTrialPeriod: false,
                 id: tenant.tenantInfo.id
               };
-              this.store.dispatch(updateTenant(data, 30))
+              this.store.dispatch(updateTenant(data))
 
             } else {
               const data: any = {

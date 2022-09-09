@@ -3,7 +3,7 @@
     <label [ngClass]="labelClass" [ngClass]="Label == '' ? 'd-none' : 'form-label'" for="Errormessage">{{
       Label
       }}<span class="text-danger" *ngIf="isRequired">*</span></label>
-    <div class="input-group mb-3">
+    <div class="input-group">
       <input type="text" autocomplete="off" bsDatepicker [datesDisabled]="datesDisabled"
         [class.disable-pointer]="disabled" [disabled]="disabled" [minDate]="minDate" #datepicker="bsDatepicker"
         (onHidden)="onHide.emit($event)" [daysDisabled]="daysDisabled" [isOpen]="isOpen" [bsConfig]="DatePickerConfig"
