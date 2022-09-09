@@ -1357,7 +1357,7 @@
       <div class="col-md-6">
         <h6 class="mb-3">{{"Progress Bar - Multiple"|translate}}</h6>
         <rds-progressbar [animation]="true" height="15" colorVariant="default" striped="progress-bar-striped"
-                         [progressWidth]="100" progressbar_MaxWidth="70" [label]="false" role="multiple"
+                         [progressWidth]="10" progressbar_MaxWidth="70" [label]="false" role="multiple"
                          [progressvalues]="progressvalues"></rds-progressbar>
       </div>
 
@@ -1649,19 +1649,19 @@
         <h6 class="mb-3">{{"Toast - position"|translate}}</h6>
         <div aria-live="polite" aria-atomic="true" style="position: relative; min-height: 200px;">
           <rds-toasts [withHeader]="false" colorVariant="bg-info" headerTitle="Bootstrap"
-                      time="11 Seconds ago"></rds-toasts>
+                      time="11 Seconds ago" [show]="true" [toastId]="'Toast-position'" [data_type]="'basic'"></rds-toasts>
 
         </div>
       </div>
       <div class="col-4">
         <h6 class="mb-3">{{"Toast"|translate}}</h6>
         <rds-toasts message="Hello, world! This is a toast message." [withHeader]="false"
-                    colorVariant="" headerTitle="Bootstrap" time="11 Seconds ago"></rds-toasts>
+                    colorVariant="" headerTitle="Bootstrap" time="11 Seconds ago" [show]="true" [toastId]="'Toast'" [data_type]="'basic'"></rds-toasts>
       </div>
       <div class="col-4">
         <h6 class="mb-3">{{"Toast - With Call to Action"|translate}}</h6>
         <rds-toasts [withHeader]="false" colorVariant="undefined" headerTitle="Bootstrap"
-                    time="11 Seconds ago">
+                    time="11 Seconds ago" [show]="true" [toastId]="'Toast-WithCalltoAction'" [data_type]="'basic'">
           <div class="mt-2 p-2 border-top">
             <rds-button [label]="'Take action'" [colorVariant]="'primary'" [size]="'small'" type="button">
             </rds-button>
