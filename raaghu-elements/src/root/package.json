@@ -1,7 +1,7 @@
 {
   "name": "rds-elements",
-  "version": "1,0.0",
-  "license": "MIT",
+  "version": "1.0.0",
+  "license": "Apache-2.0",
   "author": "WAI Technologies Pvt. Ltd. <contactus@waiin.com>",
   "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.1.",
   "sideEffects": false,
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Wai-Technologies/raaghu.git"
+    "url": "git+https://github.com/Wai-Technologies/raaghu-angular.git"
   },
   "keywords": [
     "raaghu",
@@ -19,10 +19,10 @@
     "rds-elements"
   ],
   "bugs": {
-    "url": "https://github.com/Wai-Technologies/raaghu/issues",
+    "url": "https://github.com/Wai-Technologies/raaghu-angular/issues",
     "email": "contact@raaghu.io"
   },
-  "homepage": "https://github.com/Wai-Technologies/raaghu#readme",
+  "homepage": "https://github.com/Wai-Technologies/raaghu-angular#readme",
   "peerDependencies": {
     "@angular/common": "^13.2.0",
     "@angular/core": "^13.2.0",
