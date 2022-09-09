@@ -9,93 +9,81 @@ title: "popover"
 <link rel="stylesheet" href="../assets/css/main.css">
 
 
-#  **Popover**
+#### Popover
   
 <p class="">Popovers are used to provide supplemental, useful, unique information about an element, including one or multiple actionable elements.</p>
 
 <section class="py-4">
- <h6><b>Popover with Button  </b> </h6>
-  
-  <div class="py-3">
-    <div class="cust-tabs">
-  <ul class="nav nav-tabs" id="myTab1" role="tablist">
-
-  <li class="nav-item" role="presentation">
-  <button class="nav-link active" id="preview-tab" data-bs-toggle="tab" data-bs-target="#previewButton" type="button" role="tab" aria-controls="previewButton" aria-selected="true">Preview</button>
-  </li>
-
-  <li class="nav-item" role="presentation">
-  <button class="nav-link" id="code-tab" data-bs-toggle="tab" data-bs-target="#codeButton" type="button" role="tab" aria-controls="codeButton" aria-selected="false"><img src="../../../../../../../raaghu/src/images/Angular_Icon.png"> &nbsp;
-  <i class="bi bi-code-slash" style="font-size:1.0rem"></i></button>
-  </li>
-</ul>
-
-
-<div class="tab-content card border" id="myTabContent1">
-
-  <div class="tab-pane fade show active" id="previewButton" role="tabpanel" aria-labelledby="preview-tab">
-  
-  <div class="contents bg-light p-5">
-
-     Preview Section
-     
+    <h6>Popover with Button</h6>
+    <div class="py-3">
+      <div class="cust-tabs">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="PreviewBasic-tab" data-bs-toggle="tab" data-bs-target="#PreviewBasic" type="button" role="tab" aria-controls="PreviewBasic" aria-selected="true">Preview </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="AngularBasic-tab" data-bs-toggle="tab" data-bs-target="#AngularBasic" type="button" role="tab" aria-controls="AngularBasic" aria-selec0ted="false"><i class="bi bi-code-slash" style="font-size:1.0rem"></i>Angular</button>
+          </li>
+        </ul>
+      </div>
+      <div class="tab-content card border" id="myTabContent">
+        <div class="tab-pane fade show active" id="PreviewBasic" role="tabpanel" aria-labelledby="PreviewBasic-tab">
+         <div class="contents bg-light p-5">
+              <div class="row">
+               <img src="\images\popover-with-button.png" class="img-thumbnail w-25">
+              </div>
+                       
   </div>
-  </div>
-  <div class="tab-pane fade" id="codeButton" role="tabpanel" aria-labelledby="code-tab">
-   <div class="contents bg-code">
-     <div class=" py-4 px-4" >
+        </div>
+        <div class="tab-pane fade show" id="AngularBasic" role="tabpanel" aria-labelledby="AngularBasic-tab">
+          <div class="contents bg-code">
+<div class="row m-0">
 
 ```html
-<rds-popover
-  [popoverPosition]="popoverPosition"
+ <rds-popover
   [popoverTitle]="popoverTitle"
-  (click)="onClick($event)"
   [popoverContent]="popoverContent"
+  [popoverPosition]="popoverPosition"
+  (click)="onClick($event)"
 >
-  <button class="btn btn-primary">popover button</button>
+  <button class="btn btn-primary" [popoverPosition]="popoverPosition">
+    popover button
+  </button>
 </rds-popover>
 ```
 </div>
-  </div>
 </div>
-
-</div>
-     </div>
   </div>
-
-</section>
+        </div>
+      </div>
+    </div>
+  </section>
 
 <section class="py-4">
- <h6><b>Popover with Link  </b> </h6>
-  
-  <div class="py-3">
-    <div class="cust-tabs">
-  <ul class="nav nav-tabs" id="myTab1" role="tablist">
-
-  <li class="nav-item" role="presentation">
-  <button class="nav-link active" id="preview-tab" data-bs-toggle="tab" data-bs-target="#previewLink" type="button" role="tab" aria-controls="previewLink" aria-selected="true">Preview</button>
-  </li>
-
-  <li class="nav-item" role="presentation">
-  <button class="nav-link" id="code-tab" data-bs-toggle="tab" data-bs-target="#codeLink" type="button" role="tab" aria-controls="codeLink" aria-selected="false"><img src="../../../../../../../raaghu/src/images/Angular_Icon.png"> &nbsp;
-  <i class="bi bi-code-slash" style="font-size:1.0rem"></i></button>
-  </li>
-</ul>
-
-
-<div class="tab-content card border" id="myTabContent1">
-
-  <div class="tab-pane fade show active" id="previewLink" role="tabpanel" aria-labelledby="preview-tab">
-  
-  <div class="contents bg-light p-5">
-
-     Preview Section
-     
+    <h6>Popover with Link</h6>
+    <div class="py-3">
+      <div class="cust-tabs">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="PreviewBasic-tab1" data-bs-toggle="tab" data-bs-target="#PreviewBasic1" type="button" role="tab" aria-controls="PreviewBasic1" aria-selected="true">Preview </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="AngularBasic-tab1" data-bs-toggle="tab" data-bs-target="#AngularBasic1" type="button" role="tab" aria-controls="AngularBasic1" aria-selec0ted="false"><i class="bi bi-code-slash" style="font-size:1.0rem"></i>Angular</button>
+          </li>
+        </ul>
+      </div>
+      <div class="tab-content card border" id="myTabContent">
+        <div class="tab-pane fade show active" id="PreviewBasic1" role="tabpanel" aria-labelledby="PreviewBasic-tab1">
+         <div class="contents bg-light p-5">
+              <div class="row">
+               <img src="\images\popover-with-link.png" class="img-thumbnail w-25">
+              </div>
+                       
   </div>
-  </div>
-  <div class="tab-pane fade" id="codeLink" role="tabpanel" aria-labelledby="code-tab">
-   <div class="contents bg-code">
-     <div class=" py-4 px-4" >
+        </div>
+        <div class="tab-pane fade show" id="AngularBasic1" role="tabpanel" aria-labelledby="AngularBasic-tab1">
+          <div class="contents bg-code">
+<div class="row m-0">
 
 ```html
 <rds-popover
@@ -108,25 +96,9 @@ title: "popover"
 </rds-popover>
 ```
 </div>
+</div>
   </div>
-</div>
-
-</div>
-     </div>
-  </div>
-
-</section>
-
-  <section class="py-4">
-    <h6>Skeleton / Specifications</h6>
-      <div class="py-3">
-   <!-- Tab panes -->
-    <div class="card border p-5">
-    <div class="row">
-       <div class="col-md-12">
-         <img src="https://portal.raaghu.io/images/components/_popover/img-1.png" class="img-fluid">
-      </div> 
-       </div>
-       </div>
-</div>
- </section>
+        </div>
+      </div>
+    </div>
+  </section>
