@@ -9,115 +9,36 @@ title: "tags"
 <link rel="stylesheet" href="../assets/css/main.css">
 
 
-#  **Tags**
-  
-<p>Tags are used to label, organize, or categorize objects. Tags can also serve as a label for content or display counts.</p>
+#### Tag
+
+<p class="checkbox-def">Tables are a designed for displaying large amounts of data in rows and columns.</p>
 
 <section class="py-4">
- <h6><b>Tag With Scroll </b> </h6>
-  
-  <div class="py-3">
-    <div class="cust-tabs">
-  <ul class="nav nav-tabs" id="myTab1" role="tablist">
-
-  <li class="nav-item" role="presentation">
-  <button class="nav-link active" id="preview-tab" data-bs-toggle="tab" data-bs-target="#previewScroll" type="button" role="tab" aria-controls="previewScroll" aria-selected="true">Preview</button>
-  </li>
-
-  <li class="nav-item" role="presentation">
-  <button class="nav-link" id="code-tab" data-bs-toggle="tab" data-bs-target="#codeScroll" type="button" role="tab" aria-controls="codeScroll" aria-selected="false"><img src="../../../../../../../raaghu/src/images/Angular_Icon.png"> &nbsp;
-  <i class="bi bi-code-slash" style="font-size:1.0rem"></i></button>
-  </li>
-</ul>
-
-
-<div class="tab-content card border" id="myTabContent1">
-
-  <div class="tab-pane fade show active" id="previewScroll" role="tabpanel" aria-labelledby="preview-tab">
-  
-  <div class="contents bg-light p-5">
-
-     Preview Section
-     
-  </div>
-  </div>
-  <div class="tab-pane fade" id="codeScroll" role="tabpanel" aria-labelledby="code-tab">
-   <div class="contents bg-code">
-     <div class=" py-4 px-4" >
+    <h6>Basic</h6>
+    <div class="py-3">
+      <div class="cust-tabs">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="Preview-tab" data-bs-toggle="tab" data-bs-target="#Preview" type="button" role="tab" aria-controls="Preview" aria-selected="true">Preview </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="angular-tab" data-bs-toggle="tab" data-bs-target="#angular" type="button" role="tab" aria-controls="angular" aria-selected="false"><i class="bi bi-code-slash" style="font-size:1.0rem"></i>Angular</button>
+          </li>
+        </ul>
+      </div>
+      <div class="tab-content card border" id="myTabContent">
+        <div class="tab-pane fade show active" id="Preview" role="tabpanel" aria-labelledby="Preview-tab">
+          <div class="contents bg-light p-5">
+             <img src="/images/tag.png" class="img-fuild">                   
+            </div>
+        </div>
+        <div class="tab-pane fade show" id="Preview" role="tabpanel" aria-labelledby="Preview-tab">
+          <div class="contents bg-code">
+<div class="row  m-0 p-4">
 
 ```html
-<rds-tags
-  backgroundColor=""
-  borderColor=""
-  color=""
-  tagType="Square"
-  closeButtonStyle="Normal"
-  [Border]="NaN"
-  roles="TagWithScroll"
-></rds-tags>
+<rds-testimonial [testimonialItems]="testimonialItems"></rds-testimonial>
 ```
-</div>
-  </div>
-
-
-</div>
-     </div>
-  </div>
-
-</section>
-
-<section class="py-4">
- <h6><b>Basic </b> </h6>
-  
-  <div class="py-3">
-    <div class="cust-tabs">
-  <ul class="nav nav-tabs" id="myTab1" role="tablist">
-
-  <li class="nav-item" role="presentation">
-  <button class="nav-link active" id="preview-tab" data-bs-toggle="tab" data-bs-target="#previewBasic" type="button" role="tab" aria-controls="previewBasic" aria-selected="true">Preview</button>
-  </li>
-
-  <li class="nav-item" role="presentation">
-  <button class="nav-link" id="code-tab" data-bs-toggle="tab" data-bs-target="#codeBasic" type="button" role="tab" aria-controls="codeBasic" aria-selected="false"><img src="../../../../../../../raaghu/src/images/Angular_Icon.png"> &nbsp;
-  <i class="bi bi-code-slash" style="font-size:1.0rem"></i></button>
-  </li>
-</ul>
-
-
-<div class="tab-content card border" id="myTabContent1">
-
-  <div class="tab-pane fade show active" id="previewBasic" role="tabpanel" aria-labelledby="preview-tab">
-  
-  <div class="contents bg-light p-5">
-
-     Preview Section
-     
-  </div>
-  </div>
-  <div class="tab-pane fade" id="codeBasic" role="tabpanel" aria-labelledby="code-tab">
-   <div class="contents bg-code">
-     <div class=" py-4 px-4" >
-
-```html
-<rds-tags
-  backgroundColor=""
-  borderColor=""
-  color=""
-  tagType="Square"
-  closeButtonStyle="Normal"
-  [Border]="NaN"
-  roles="Basic"
-></rds-tags>
-```
-</div>
-  </div>
-
-
-</div>
-     </div>
-  </div>
-
-</section>
 
 
 
