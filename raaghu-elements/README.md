@@ -68,6 +68,7 @@ You can run `raaghu-elements` locally with a few easy steps.
 ```bash
 git clone https://github.com/Wai-Technologies/raaghu.git
 ```
+  
 <img title="imge" alt="gif" src="../raaghu-elements/Screenshot (40).png">
 
 
@@ -76,14 +77,13 @@ git clone https://github.com/Wai-Technologies/raaghu.git
 ```bash
 cd raaghu-elements
 ```
+<img title="imge" alt="gif" src="../raaghu-elements/Screenshot (39).png">
 
 3. Install dependencies
 
 ```bash
 npm install
 ```
-<img title="imge" alt="gif" src="../raaghu-elements/Screenshot (39).png">
-
 4. Build all the libraries
 
 ```bash
