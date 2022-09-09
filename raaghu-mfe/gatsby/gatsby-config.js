@@ -35,6 +35,14 @@ module.exports = {
       },
     },
     {
+      //access Components Markdown file
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `markdown`,
+        path: `../projects/rds-components/src/app`,
+      },
+    },
+    {
       //access Pages
       resolve: `gatsby-source-filesystem`,
       options: {
