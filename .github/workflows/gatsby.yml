@@ -26,7 +26,10 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '14'
+        node-version: ${{ env.NODE_VERSION }}
+        cache: 'npm'
+        cache-dependency-path: './raaghu-mfe/gatsby'
+
     - name: npm install raaghu-elements
       working-directory: raaghu-elements
       run: |
@@ -47,4 +50,4 @@ jobs:
       working-directory: ./raaghu-mfe/gatsby      
       run: |
         npm run build
-    
+   
