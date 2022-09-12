@@ -15,7 +15,7 @@ export class RdsToastsComponent implements OnInit, AfterViewInit, OnChanges {
   @Input()
   message = 'Hello, world! This is a toast message.';
 
-  @Input() data_type: string = '';
+  @Input() data_type: string = 'basic';
   delay: number | undefined = undefined;
   @Input() autoHide: boolean = false;
   @Input() toastId: string = 'toastId';

@@ -13,4 +13,9 @@ export const selectAllNotification = createSelector(
     selectMLA,
     (state: MLAState) => state.notification
 );
+export const selectNotificationSettings = createSelector(
+    selectMLA,
+    (state: MLAState) => state.notificationSettings
+);
+
 
