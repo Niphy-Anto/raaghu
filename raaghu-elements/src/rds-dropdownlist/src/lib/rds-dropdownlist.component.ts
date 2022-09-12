@@ -77,7 +77,7 @@ export class RdsDropdownlistComponent implements OnInit, OnChanges {
 
   public get button1(): any[] {
 
-    var customClasses = [' btn btn-'+ `${this.colorVariant}`, ' form-select ', 'dropdown-toggle', '']
+    var customClasses = [' btn-'+ `${this.colorVariant}`, ' form-control ', ' form-select ', 'dropdown-toggle', '']
 
     if (this.size === 'small') {
       // var selectSize = 'btn-sm'
@@ -86,6 +86,9 @@ export class RdsDropdownlistComponent implements OnInit, OnChanges {
     else if (this.size === 'large') {
       // var selectSize = 'btn-lg'
       customClasses.push('btn-lg')
+    }
+    else if(this.borderDropdown === false){
+      customClasses.push('border-0')
     }
     else {
       var selectSize = ''
@@ -151,11 +154,11 @@ export class RdsDropdownlistComponent implements OnInit, OnChanges {
     var border = ['border']
    if(this.borderDropdown == true){
     
-     border.push('border');
+    //  border.push('border');
      border.push('rounded')
    }
    else{
-     border.push('');
+     border.push('border-0');
    }
 return border;
   

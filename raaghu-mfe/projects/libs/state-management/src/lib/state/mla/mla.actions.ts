@@ -1,12 +1,12 @@
 import { LinkToUserInput, ListResultDtoOfLinkedUserDto, ListResultDtoOfOrganizationUnitDto, PagedResultDtoOfOrganizationUnitRoleListDto, PagedResultDtoOfOrganizationUnitUserListDto, UnlinkUserInput } from "@libs/shared";
 import { createAction, props } from "@ngrx/store";
-import { GetNotificationsOutput } from "projects/libs/shared/src/lib/service-proxies";
+import { GetNotificationsOutput, UpdateNotificationSettingsInput } from "projects/libs/shared/src/lib/service-proxies";
 
 export const getMLATenancyData = createAction('[MLA Page] Get MLA Tenancy data');
 
 export const getMLATenancyDataSuccess = createAction(
     '[MLA Page] Get MLA Tenancy data Success',
-    props<{ tenancyData: any  }>()
+    props<{ tenancyData: any }>()
 );
 
 export const getMLATenancyDataFailure = createAction(
@@ -36,10 +36,27 @@ export const getUserNotificationFailure = createAction(
     props<{ error: string }>()
 );
 
+
 export const SetAllNotificationsAsRead = createAction('[MLA Page] Set All Notification Read');
 
 
 export const SetNotificationRead = createAction('[MLA Page] Set Notification Read',
-    (user) => (user)
+    (user) => (user));
+
+export const getNotificationSettings = createAction('[MLA Page] Get Notification Settings');
+
+export const getNotificationSettingsSuccess = createAction(
+    '[MLA Page] Get  Notification Settings Success',
+    props<{ notificationSettings: any }>()
+);
+
+export const getNotificationSettingsFailure = createAction(
+    '[MLA Page] Get  Notification Settings Failure',
+    props<{ error: string }>()
+);
+
+export const updateNotificationSettings = createAction(
+    '[MLA Page] update notification settings',
+    (data: UpdateNotificationSettingsInput) => ({ data })
 );
 

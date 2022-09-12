@@ -10,8 +10,7 @@ title: "Feature-List"
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/main.css">
 
 
-#### Color
-
+#### Feature List
 <p class="">A card is a small rectangular module with images and text. It is an entry point for users to learn more details</p>
 <section class="py-4">
     <h6>Basic</h6>
@@ -41,11 +40,11 @@ title: "Feature-List"
 <div class="row m-0">
 
 ```html
-  <rds-feature-list
-  header="Features"
-  [listItems]="listItems"
-  [columns]="1"
-></rds-feature-list>
+<rds-feature-list
+header="Features"
+[listItems]="listItems"
+[columns]="1">
+</rds-feature-list>
 ```
 </div>
 </div>

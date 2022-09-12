@@ -27,14 +27,8 @@ title: "chart-doughnut"
         <div class="tab-pane fade show active" id="Preview" role="tabpanel" aria-labelledby="Preview-tab">
           <div class="contents bg-light p-5">
                                           <div class="row">
-                                             <div class="col-4">
-                                                  <img src="https://portal.raaghu.io/images/components/_charts/1.png" class="img-fluid">
-                                             </div> 
-                                             <div class="col-4">
-                                                  <img src="https://portal.raaghu.io/images/components/_charts/2.png" class="img-fluid">
-                                             </div> 
-                                             <div class="col-4">
-                                                  <img src="https://portal.raaghu.io/images/components/_charts/3.png" class="img-fluid pt-4">
+                                             <div class="col-12 col-md-8">
+                                                  <img src="/images/doughnut-chart.png" class="img-fluid">                                             
                                              </div> 
                                           </div>
                                     </div>
