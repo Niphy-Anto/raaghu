@@ -34,7 +34,7 @@
                                     <rds-label label="Country Code"></rds-label>
                                 </div>
                                 <rds-dropdownlist [icon]="selectedLanguage.icon" [borderDropdown]="true"
-                                    [colorVariant]="'btn-outline-light'" class="text-dark"
+                                    class="text-dark"
                                     [placeholder]="translate.instant('Country Code')" [value]="selectedLanguage.icon"
                                     required [multiSelect]="false" [selectAll]="false" [entity]="false"
                                     [listItems]="flags" (onSelect)="onCountryCodeSelect($event)"></rds-dropdownlist>

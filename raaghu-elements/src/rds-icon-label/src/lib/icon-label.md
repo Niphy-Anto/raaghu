@@ -31,7 +31,7 @@ title: "Icon-Label"
          <div class="contents bg-light p-5">
               <div class="row">
               <!-- <img src="https://raw.githubusercontent.com/Wai-Technologies/raaghu/main/raaghu-mfe/assets/Edit-Language-Text.png" alt="color"> -->
-              <img src="/images/icon-label.png" class="img-thumbnail w-50">
+              <img src="/images/icon-label.png" class="img-thumbnail w-25">
            </div>
                        
   </div>
@@ -41,13 +41,13 @@ title: "Icon-Label"
 <div class="row m-0">
 
 ```html
-  <rds-icon-label
-  [iconposition]="iconposition"
-  [icon]="icon"
-  [label]="label"
-  [size]="size"
-  [iconSize]="iconSize"
-></rds-icon-label>
+<rds-icon-label
+[iconposition]="iconposition"
+[icon]="icon"
+[label]="label"
+[size]="size"
+[iconSize]="iconSize">
+</rds-icon-label>
 ```
 </div>
 </div>
