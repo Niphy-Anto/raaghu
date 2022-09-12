@@ -74,7 +74,6 @@ export class RdsLoginComponent implements OnInit, OnChanges {
   onModalClose(tenantForm: NgForm): void {
     this.TenantNameData = '';
     this.switchTenant = false;
-    this.buttonSpinner = true;
     tenantForm.reset();
   }
 

@@ -1,24 +1,34 @@
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-
+declare var bootstrap: any;
 @Component({
   selector: 'app-rds-comp-notification-settings',
   templateUrl: './rds-comp-notification-settings.component.html',
   styleUrls: ['./rds-comp-notification-settings.component.scss']
 })
-export class RdsCompNotificationSettingsComponent implements OnInit, OnChanges {
+export class RdsCompNotificationSettingsComponent implements OnInit, OnChanges, AfterViewInit {
   @Input() receiveNotifications: any = false;
   @Input() notificationTypes: any = [];
+  @Input() show: boolean = false;
   @Output() onUpdateNotificationSettings = new EventEmitter<any>();
   constructor(public translate: TranslateService) { }
+  ngAfterViewInit(): void {
+    if (this.show) {
+      var myModalEl = document.getElementById('notification-settings');
+      var modal = new bootstrap.Modal(myModalEl)
+      modal.show();
+    }
+  }
   ngOnChanges(changes: SimpleChanges): void {
+
   }
 
   ngOnInit(): void {
+
   }
 
   updateSettings(): void {
-    
+
     const data: any = {
       receiveNotifications: this.receiveNotifications,
       notifications: []
