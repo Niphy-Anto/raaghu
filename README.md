@@ -58,7 +58,7 @@ Contents
 </br></br>
 ##  <a name='raahghu-intro'></a> What is raaghu
 <p>
-<b>raaghu</b> is an open source Angular based front-end design system leveraging micro front end capabilities that helps in building efficient, reliable and scalable front-end applications . raaghu is built on top of raaghu elements as well as front end toolkit like <b>Bootstrap<b>, <b>storybook<b> offering highly customizable UI components and built in pages.
+<b>raaghu</b> is an open source Angular based front-end design system leveraging micro front end capabilities that helps in building efficient, reliable and scalable front-end applications . raaghu is built on top of raaghu elements as well as front end toolkit like <b>Bootstrap<b>, <b>storybook</b> offering highly customizable UI components and built in pages.
 </p> 
 
 ##  <a name='why'></a> Why raaghu?
