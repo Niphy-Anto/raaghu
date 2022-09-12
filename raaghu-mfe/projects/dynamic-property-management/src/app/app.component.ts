@@ -573,7 +573,7 @@ export class AppComponent implements OnInit {
     if (this.selectedTabIndex === 1) {
       return this.translate.instant('NEW DYNAMIC ENTITY PROPERTY');
     }
-    return this.translate.instant('NEW DYNAMIC PROPERTY');
+    return this.translate.instant('NEW DYNAMIC ENTITY PROPERTY');
   }
   getNavTabItems(): any {
     this.navtabsItems[0].label = this.translate.instant('Dynamic Properties');

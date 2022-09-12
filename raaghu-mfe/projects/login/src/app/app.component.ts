@@ -95,10 +95,11 @@ export class AppComponent extends MfeBaseComponent implements OnInit {
           var modal = bootstrap.Modal.getInstance(myModalEl)
           modal.hide();
           this.alertService.showAlert('Success', 'Switched to tenancy "' + this.tenancyName + '" successfully', AlertTypes.Success)
-        } else if (res.state === 3) {
+        } else if (res.state === 0 || res.state > 1) {
           this.alertService.showAlert('Failed', 'Tenancy "' + this.tenancyName + '" is not available', AlertTypes.Error)
           localStorage.removeItem('tenantInfo');
           mfeConfig.input.TenancyName = 'Not Selected';
+          // mfeConfig.input.buttonSpinner = false;
           this.rdsLoginMfeConfig = mfeConfig;
         }
 
@@ -108,19 +109,21 @@ export class AppComponent extends MfeBaseComponent implements OnInit {
   }
 
   insertTenant(data: any) {
-    const tenantData: any = {
-      tenancyName: data,
-    }
-    this.tenancyName = data;
-    if (data) {
+    if (data && data !== null) {
+      const tenantData: any = {
+        tenancyName: data,
+      }
+      this.tenancyName = data;
       this.store.dispatch(ValidateTenantName(tenantData));
-
+    } else {
+      const mfeConfig = this.rdsLoginMfeConfig;
+      localStorage.removeItem('tenantInfo');
+      mfeConfig.input.TenancyName = 'Not Selected';
+      this.rdsLoginMfeConfig = mfeConfig;
+      var myModalEl = document.getElementById('ChangeTenant');
+      var modal = bootstrap.Modal.getInstance(myModalEl)
+      modal.hide();
     }
-    // else {
-    //   localStorage.removeItem('tenantInfo');
-    //   mfeConfig.input.TenancyName = 'Not Selected';
-    //   this.rdsLoginMfeConfig = mfeConfig;
-    // }
   }
 
   subscribeToAlerts() {

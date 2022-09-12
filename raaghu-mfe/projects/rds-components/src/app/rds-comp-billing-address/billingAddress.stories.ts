@@ -31,6 +31,6 @@ const Template: Story<RdsCompBillingAddressComponent> = (args: RdsCompBillingAdd
 export const Template1 = Template.bind({});
 
 Template1.args = {
-    
+    countryList:["India","China","Canada","Japan","Australia","USA","UK"]
 }
 

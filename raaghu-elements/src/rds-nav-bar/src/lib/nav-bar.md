@@ -30,7 +30,7 @@ title: "Nav-bar"
          <div class="contents bg-light p-5">
               <div class="row">
               <!-- <img src="https://raw.githubusercontent.com/Wai-Technologies/raaghu/main/raaghu-mfe/assets/Edit-Language-Text.png" alt="color"> -->
-              <img src="/images/nav-bar.png" class="img-thumbnail w-50">
+              <img src="/images/nav-bar.png" class="img-thumbnail w-100">
            </div>
                        
   </div>
@@ -40,7 +40,7 @@ title: "Nav-bar"
 <div class="row m-0">
 
 ```html
-  <rds-nav-bar [navbarItems]="navbarItems" size="medium"></rds-nav-bar>
+<rds-nav-bar [navbarItems]="navbarItems" size="medium"></rds-nav-bar>
 ```
 </div>
 </div>

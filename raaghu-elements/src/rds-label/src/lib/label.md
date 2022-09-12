@@ -30,7 +30,7 @@ title: "Label"
          <div class="contents bg-light p-5">
               <div class="row">
               <!-- <img src="https://raw.githubusercontent.com/Wai-Technologies/raaghu/main/raaghu-mfe/assets/Edit-Language-Text.png" alt="color"> -->
-              <img src="/images/label.png" class="img-thumbnail w-50">
+              <img src="/images/label.png" class="img-thumbnail w-25">
            </div>
                        
   </div>
@@ -40,12 +40,12 @@ title: "Label"
 <div class="row m-0">
 
 ```html
-  <rds-label
-  label=""
-  [multiline]="false"
-  [bold]="false"
-  [italic]="false"
-></rds-label>
+<rds-label
+label=""
+[multiline]="false"
+[bold]="false"
+[italic]="false">
+</rds-label>
 ```
 </div>
 </div>
