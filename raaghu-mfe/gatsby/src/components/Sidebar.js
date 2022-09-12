@@ -153,7 +153,7 @@ const Sidebar = () => {
               <ul className="">
                 {componentsList.map((node) => (
                   <li key={node.name}>
-                    <Link to={node.name.substring(9)}>
+                    <Link href={node.name.substring(9)}>
                       {node.name.substring(9)}
                     </Link>
                   </li>
