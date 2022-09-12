@@ -24,7 +24,7 @@ title: "App-Details"
         <div class="tab-pane fade show active" id="PreviewBasic" role="tabpanel" aria-labelledby="PreviewBasic-tab">
          <div class="contents bg-light p-5">
               <div class="row">
-               <img src="/images/popular-pages.png" class="img-thumbnail w-50">
+               <img src="/images/app-details.png" class="img-thumbnail w-50">
            </div>
                        
   </div>
