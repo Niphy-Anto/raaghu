@@ -13,7 +13,6 @@ declare let bootstrap: any;
   styleUrls: ['./rds-comp-language-text-list.component.scss']
 })
 export class RdsCompLanguageTextListComponent implements OnInit {
-
   LanguageText: LanguageText
   rdsLanguagetextTableMfeConfig: ComponentLoaderOptions;
   baselanguage: string;
@@ -26,7 +25,13 @@ export class RdsCompLanguageTextListComponent implements OnInit {
     { displayName: 'Value', key: 'Value', dataType: 'text', dataLength: 30, required: true, sortable: true },
     //{ displayName: 'Resource Name', key: 'ResourceName', dataType: 'text', dataLength: 30, required: true, sortable: true }
   ]
-  languagetextTableData: any = [] = []
+  languagetextTableData: any = [] = [ { languagename: 'India', countryCode: 'IND', statusTemplate: 'true', creationTime: '12-10-1992' },
+  { languagename: 'India', countryCode: 'IND', statusTemplate: 'true', creationTime: '12-10-1992' },
+  { languagename: 'India', countryCode: 'IND', statusTemplate: 'true', creationTime: '12-10-1992' },
+  { languagename: 'India', countryCode: 'IND', statusTemplate: 'false', creationTime: '12-10-1992' },
+  { languagename: 'India', countryCode: 'IND', statusTemplate: 'false', creationTime: '12-10-1992' },
+  { languagename: 'India', countryCode: 'IND', statusTemplate: 'false', creationTime: '12-10-1992' },
+  { languagename: 'India', countryCode: 'IND', statusTemplate: 'true', creationTime: '12-10-1992' }]
   @Input() listbaseLanguage: any[] = [];
   listTargetCulturename: any[] = []
   @Input() listsource: any[] = []
@@ -105,7 +110,6 @@ export class RdsCompLanguageTextListComponent implements OnInit {
       var bsOffcanvas = new bootstrap.Offcanvas(offcanvas);
       bsOffcanvas.show()
     }, 100);
-
 
   }
   

@@ -501,11 +501,12 @@ html {
 /*  Dropdown List */
 .dropdown-item {
   font-size: small;
+  white-space:normal;
 }
 
 .dropdown-menu {
   max-height: 600px;
-  overflow: auto;
+  //overflow: auto;
 }
 
 .dropdown-toggle::after {
@@ -1090,4 +1091,9 @@ $size: 10;
 
 .svg-gray {
   color: #dee2e6;
+}
+
+.member-activity-col .table-responsive{
+  overflow-y: scroll;
+    height: 22rem;
 }
