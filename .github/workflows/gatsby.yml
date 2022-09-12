@@ -6,7 +6,6 @@ on:
   push:
     branches: [development]
 
-  workfolw_dispatch:
 
 env: 
   AZURE_WEBAPP_NAME:    # set this to your application's name
