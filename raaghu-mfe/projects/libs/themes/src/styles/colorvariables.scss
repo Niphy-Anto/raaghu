@@ -167,7 +167,7 @@ html {
   $verticle-border-color: $gray-100 !default;
 
   /* offcanvas-header */
-  $offcanvas-border-color: $border-color;
+  $offcanvas-border-color: $gray-200;
 
   $btn-transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
 
@@ -196,7 +196,11 @@ html {
   $card-border-color: $gray-200 !default;
   --bs-body-color: gray;
 
-
+  .form-select[size]:not([size="1"]) {
+    padding-right: 1.25rem;
+    background-position: right 0.15rem center;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+  }
 
   .rds-scrollable-wrapper {
     background-color: $body-wrapper-bg;
@@ -234,7 +238,6 @@ html {
       }
     }
   }
-
   // .pagination {
   //   .page-item.active {
   //     a.page-link {
@@ -483,12 +486,10 @@ html {
   .pagination.rounded {
 
     .page-item {
-
       // &:nth-child(-n + 2) .page-link {
       //   background: $pagination-item-bg;
       //   color: $pagination-item-color;
       // }
-
       // &:nth-last-child(-n + 2) .page-link {
       //   background: $pagination-item-last-bg;
       // }
@@ -514,7 +515,6 @@ html {
 
     .page-item {
       border-color: $gray-100;
-
       // &:nth-child(-n + 2) .page-link {
       //   background: $pagination-item-bg;
       //   color: $pagination-item-color;
@@ -532,13 +532,13 @@ html {
       // border: 1px solid $pagination-bg-color;
 
       &:hover {
-        color: $white;
+        color: $pagination-item-color;
         background-color: $pagination-bg-hover-color;
       }
     }
 
     .active .page-link {
-      color: $white;
+      color: $page-link-active-color;
       background-color: $pagination-bg-hover-color;
     }
   }
@@ -546,7 +546,7 @@ html {
 
   .dropdown-item {
     border-bottom-color: $dropdown-border-bottom;
-
+    white-space: normal;
 
     &:hover {
       // background-color: $dropdown-bg-color;
@@ -694,7 +694,7 @@ html {
   }
   /*card color styles*/
   .card {
-/*    background-color: $card-bg-color;
+    /*    background-color: $card-bg-color;
     border-color: $card-border-color;*/
 
     .card-header {
@@ -703,7 +703,7 @@ html {
   }
 
   .bg-gradient-primary {
-    background: transparent linear-gradient(90deg, #5800D3 0%, #4400A4 100%) 0% 0% no-repeat padding-box;
+    background: transparent linear-gradient(90deg, #7e2eef 0%, #01ae9d 100%) 0% 0% no-repeat padding-box;
   }
   /*top nav bar variables*/
   /*sidebar color styles*/
@@ -1226,8 +1226,6 @@ html[theme=dark] {
   $breadcrumb-active-color: $gray-500;
   $breadcrumb-divider-color: $primary;
 
-  $border-color: $gray-100 !default;
-
   /*carousal color variables*/
   $carousel-caption-color: $light !default;
 
@@ -1391,10 +1389,18 @@ html[theme=dark] {
   $footer-bgcolor: $dark-400 !default;
   $profileMenuBgColor: #252839 !default;
   $trhoverbg-color: $dark-400 !default;
-  $nav-li-border:$white !default;
+  $nav-li-border: $white !default;
 
   .sidenav-footer {
     background-color: $body-wrapper-bg;
+  }
+
+  .form-select[size]:not([size="1"]) {
+    border-color: $input-bg;
+    padding-right: 1.25rem;
+    background-position: right 0.15rem center;
+    background-color: $input-bg;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
   }
 
   .card {
@@ -2470,6 +2476,6 @@ html[theme=dark] {
   }
 
   .bd-links .child::after {
-    content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e ");
+    content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e ");
   }
 }

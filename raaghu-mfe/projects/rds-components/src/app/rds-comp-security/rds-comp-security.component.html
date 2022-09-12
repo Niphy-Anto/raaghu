@@ -98,21 +98,22 @@
       </div>
     </li>
     <li>
-      <div class="form-group mb-3">
+      <div class="form-group mb-4">
         <div class="form-label mb-1">
         <rds-label [label]="translate.instant('Account Locking Duration (As seconds)')"></rds-label>
         </div>
+        <div class="col-md-4 col-lg-3">
           <rds-input size="default" [inputType]="'text'" [TitleType]="'Top'" #defaultAccountLockoutSeconds="ngModel"
             required [(ngModel)]="Seccuritysetting.defaultAccountLockoutSeconds" name="defaultAccountLockoutSeconds"
             (onChange)="selectAllFeature(Seccuritysetting.defaultAccountLockoutSeconds,'defaultAccountLockoutSeconds')"
             ngDefaultControl>
           </rds-input>
-
+        </div>
       </div>
     </li>
 
     <li>
-      <div class="form-group mb-3">
+      <div class="form-group mb-4">
        
         <div class="form-label fw-medium">
           <rds-label [label]="translate.instant('Two Factor Login')"></rds-label>

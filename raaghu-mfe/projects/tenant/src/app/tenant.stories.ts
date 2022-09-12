@@ -35,9 +35,9 @@ const Template: Story<RdsCompTenantListComponent> = (args: RdsCompTenantListComp
   }
   });
 
-  export const TenantPage = Template.bind({});
+export const Default = Template.bind({});
 
-  TenantPage.args = {
+Default.args = {
   tenantSettingsInfo : {  },
   tenantData: {},
   tenantList: [{tenantInfoTemplate: '<div class=""><div><div><span>Default</span></div><span class="text-muted">Default </span></div></div>', statusTemplate: '<div><span class="badge badge-secondary">Inactive</span></div>', editionDisplayName: 'Standard', editionTemplate: '<div class="d-flex align-items-center"><div class=…tandard"></div><div class="">Standard</div></div>', id: 1},

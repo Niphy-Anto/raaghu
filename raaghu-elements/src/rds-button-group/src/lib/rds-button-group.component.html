@@ -4,7 +4,7 @@
       <ng-container *ngFor="let item of buttonGroupItem;let i=index">
         <input type="radio" class="btn-check" [name]="item.name" [id]="item.id" autocomplete="off"
                (click)="onClickButton(i)">
-        <label [class]="itemClass" [for]="item.id" class="itemClass" [class.active]="activeButton==i">
+        <label [class]="itemClass" [for]="item.id" [class.active]="activeButton==i">
           <rds-icon [name]="item.icon" *ngIf="item.icon" [width]="item.iconWidth" [height]="item.iconHeight"
                     [fill]="item.iconFill" [stroke]="item.iconStroke"></rds-icon> {{item.label}}
         </label>
@@ -15,7 +15,7 @@
     <div [class]="classes" role="group" aria-label="Basic example">
       <ng-container *ngFor="let item of buttonGroupItem;let i=index">
         <input type="checkbox" class="btn-check" [id]="item.id" autocomplete="off" (click)="onClickButton(i)">
-        <label [class]="itemClass" [for]="item.id" class="itemClass" [class.active]="activeButton==i">
+        <label [class]="itemClass" [for]="item.id" [class.active]="activeButton==i">
           <rds-icon [name]="item.icon" *ngIf="item.icon" [width]="item.iconWidth" [height]="item.iconHeight"
                     [fill]="item.iconFill" [stroke]="item.iconStroke"></rds-icon>
           {{item.label}}
@@ -26,7 +26,7 @@
   <div *ngSwitchDefault>
     <div [class]="classes" role="group" aria-label="Basic example">
       <button type="button" *ngFor=" let item of buttonGroupItem;let i=index" [class]="itemClass"
-              (click)="onClickButton(i)" class="itemClass" [class.active]="activeButton==i">
+              (click)="onClickButton(i)" [class.active]="activeButton==i">
         <rds-icon [name]="item.icon" [width]="item.iconWidth" [height]="item.iconHeight" [fill]="item.iconFill"
                   *ngIf="item.icon" [stroke]="item.iconStroke"></rds-icon> {{item.label}}
       </button>

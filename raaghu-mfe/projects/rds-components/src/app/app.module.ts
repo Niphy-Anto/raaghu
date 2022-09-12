@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-
+import { StoreModule } from '@ngrx/store';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RdsLoginComponent } from './rds-comp-login/rds-comp-login.component';
@@ -52,7 +52,6 @@ import { RdsCompInvoiceComponent } from './rds-comp-invoice/rds-comp-invoice.com
 import { RdsCompEmailComponent } from './rds-comp-email/rds-comp-email.component';
 import { RdsSecurityComponent } from './rds-comp-security/rds-comp-security.component';
 import { RdsCompFeaturesComponent } from './rds-comp-features/rds-comp-features.component';
-import { RdsCompApiScopeComponent } from './rds-comp-api-scope/rds-comp-api-scope.component';
 import { RdsCompMemberActivityComponent } from './rds-comp-member-activity/rds-comp-member-activity.component';
 import { RdsCompNewClaimTypeComponent } from './rds-comp-new-claim-type/rds-comp-new-claim-type.component';
 import { RdsCompBasicResourceComponent } from './rds-comp-basic-resource/rds-comp-basic-resource.component';
@@ -125,8 +124,6 @@ import { RdsCompNewDynamicEntityShimmerComponent } from './rds-comp-new-dynamic-
 import { RdsCompOtherSettingsShimmerComponent } from './rds-comp-other-settings/rds-comp-other-settings-shimmer/rds-comp-other-settings-shimmer.component';
 import { RdsCompNewLangShimmerComponent } from './rds-comp-new-language/rds-comp-new-lang-shimmer/rds-comp-new-lang-shimmer.component';
 import { RdsCompBackgroundImageComponent } from './rds-comp-background-image/rds-comp-background-image.component';
-import { RdsCompStoreFrontComponent } from './rds-comp-store-front/rds-comp-store-front.component';
-
 import { RdsCompCardDetailListComponent } from './rds-comp-card-detail-list/rds-comp-card-detail-list.component';
 import { RdsCompBenefitComponent } from './rds-comp-benefit/rds-comp-benefit.component';
 import { RdsCompAppDetailsComponent } from './rds-comp-app-details/rds-comp-app-details.component';
@@ -147,6 +144,8 @@ import { RdsCompOrderDetailsComponent } from './rds-comp-order-details/rds-comp-
 import { RdsCompTeamsComponent } from './rds-comp-teams/rds-comp-teams.component';
 import { RdsCompContactUsComponent } from './rds-comp-contact-us/rds-comp-contact-us.component';
 import { RdsCompTimelineComponent } from './rds-comp-timeline/rds-comp-timeline.component';
+import { RdsCompApplyForPositionComponent } from './rds-comp-apply-for-position/rds-comp-apply-for-position.component';
+import { RdsCompOpenPositionComponent } from './rds-comp-open-position/rds-comp-open-position.component';
 
 @NgModule({
   declarations: [	
@@ -186,7 +185,6 @@ import { RdsCompTimelineComponent } from './rds-comp-timeline/rds-comp-timeline.
     RdsCompUserTableComponent,
     RdsCompEditionTableComponent,
     RdsCompFeaturesComponent,
-    RdsCompApiScopeComponent,
     RdsCompMemberActivityComponent,
     RdsCompNewClaimTypeComponent,
     RdsCompBasicResourceComponent,
@@ -256,7 +254,6 @@ import { RdsCompTimelineComponent } from './rds-comp-timeline/rds-comp-timeline.
     RdsCompNewLangShimmerComponent,
     RdsCompCalendarComponent,
     RdsCompBackgroundImageComponent,
-    RdsCompStoreFrontComponent,
     RdsCompBenefitComponent,
     RdsCompProductListComponent,
     RdsCompAppDetailsComponent,
@@ -285,9 +282,12 @@ import { RdsCompTimelineComponent } from './rds-comp-timeline/rds-comp-timeline.
     RdsCompTeamsComponent,
     RdsCompContactUsComponent,
     RdsCompTimelineComponent,
+    RdsCompApplyForPositionComponent,
+    RdsCompOpenPositionComponent,
   
   ],
   imports: [
+    StoreModule,
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,

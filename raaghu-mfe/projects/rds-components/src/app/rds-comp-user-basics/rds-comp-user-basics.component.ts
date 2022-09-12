@@ -14,6 +14,7 @@ export class RdsCompUserBasicsComponent implements OnInit, OnChanges {
   @Output() onCancel = new EventEmitter<any>();
   @Input() userData: any;
   @Input()  editShimmer: boolean = false;
+  @Input () buttonSpinner: boolean =true;
   public phonePattern = /^((\\+91-?)|0)?[0-9]{10}$/;
   isPasswordMismatch:boolean=false;
   @ViewChild('userCreationForm') userInfoForm: NgForm;
@@ -73,10 +74,13 @@ export class RdsCompUserBasicsComponent implements OnInit, OnChanges {
   }
 
   next(userCreationForm: NgForm): void {
+    userCreationForm.form.markAllAsTouched();
+    this.buttonSpinner=true;
     if (!userCreationForm || userCreationForm.invalid) {
       return;
     }
     this.userInfo.emit({ user: this.userData, next: true });
+    
   }
   getCheckboxValue(event: any): void {
     this.userData.unlimitedSubscription = event;
@@ -99,5 +103,10 @@ export class RdsCompUserBasicsComponent implements OnInit, OnChanges {
     } else {
       this.isPasswordMismatch = true
     }
+  }
+  onCancelUser(){
+    this.buttonSpinner=false;
+  this.onCancel.emit(true);
+
   }
 }

@@ -28,6 +28,7 @@ export class RdsCompNewRoleComponent implements OnInit {
   edit:boolean=false;
   @Input()  EditShimmer: boolean = false;
   @Input() isReset: boolean = false;
+  @Input () buttonSpinner :boolean=true;
   activePage: number = 0;
   treeData: [] = [];
 
@@ -71,18 +72,28 @@ export class RdsCompNewRoleComponent implements OnInit {
       this.roleData['id'] =undefined ;
       this.roleData['isDefault'] = false;
     
+    
       }
   }
   addRole(Roleform: NgForm): void {
+    Roleform.form.markAllAsTouched();
+    this.buttonSpinner=true;
     if (!Roleform || Roleform.invalid) {
       return;
     }
  this.RoleInfo.emit({ role: this.roleData,isOnSave:true});
+  
+  
       //  this.roleData={};
       // this.roleData['displayName'] = '';
       // this.roleData['id'] =undefined ;
       // this.roleData['isDefault'] = false;
    }
 
-
+   onCanceledRole(){
+    this.onCancel.emit(true);
+    this.buttonSpinner=false;
+   }
+  
+   
 }

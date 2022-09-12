@@ -1,99 +1,94 @@
-@import "./node_modules/bootstrap/scss/functions";
-@import "./node_modules/bootstrap/scss/variables";
-@import "./node_modules/bootstrap/scss/mixins";
-@import "./node_modules/bootstrap/scss/_utilities";
-
 /*------- Main accordian custom properties-------------*/
 .accordion-header {
-    border-radius: $accordion-border-radius;
+  border-radius: $accordion-border-radius;
+}
+
+.accordion-item {
+  // background-color: $accordion-bg;
+  // border: $accordion-border-width solid $accordion-border-color;
+  margin-bottom: $accordio-margin;
+
+  &:first-of-type {
+    @include border-top-radius($accordion-border-radius);
+
+    .accordion-button {
+      border-bottom-right-radius: 0px;
+      border-top-right-radius: 0px;
+    }
   }
-  
-  .accordion-item {
-    // background-color: $accordion-bg;
-    // border: $accordion-border-width solid $accordion-border-color;
-    margin-bottom: $accordio-margin;
-  
-    &:first-of-type {
-      @include border-top-radius($accordion-border-radius);
-  
-      .accordion-button {
+  // Only set a border-radius on the last item if the accordion is collapsed
+  &:last-of-type {
+    @include border-bottom-radius($accordion-border-radius);
+
+    .accordion-button {
+      &.collapsed {
         border-bottom-right-radius: 0px;
         border-top-right-radius: 0px;
-      }
-    }
-    // Only set a border-radius on the last item if the accordion is collapsed
-    &:last-of-type {
-      @include border-bottom-radius($accordion-border-radius);
-  
-      .accordion-button {
-        &.collapsed {
-          border-bottom-right-radius: 0px;
-          border-top-right-radius: 0px;
-          box-shadow: none;
-        }
+        box-shadow: none;
       }
     }
   }
-  
-  .accordion-button {
-    width: calc(100% - 2.875rem);
-    height: 2.8125rem;
-    //border-radius: $accordion-border-radius 0 0 $accordion-border-radius;
-  
-    &:not(.collapsed) {
-      box-shadow: none;
-  
-      &::after {
-        //background-position: 0.813rem 1rem;
-        background-image: escape-svg($accordion-button-icon);
-      }
-    }
-  
-    &:focus {
-      outline: 0;
-    }
-  
+}
+
+.accordion-button {
+  width: calc(100% - 2.875rem);
+  height: 2.8125rem;
+  //border-radius: $accordion-border-radius 0 0 $accordion-border-radius;
+
+  &:not(.collapsed) {
+    box-shadow: none;
+
     &::after {
-      position: absolute;
-      right: -2.000rem;
-      //background-position: 0.938rem 1.25rem;
+      background-position: 0.813rem 1rem;
       background-image: escape-svg($accordion-button-icon);
-      background-size: calc($accordion-icon-width - 1.7375rem);
-      // border-radius: 0 $accordion-border-radius $accordion-border-radius;
     }
   }
-  
+
+  &:focus {
+    outline: 0;
+  }
+
+  &::after {
+    position: absolute;
+    right: -2.875rem;
+    background-position: 0.938rem 1.25rem;
+    background-image: escape-svg($accordion-button-icon);
+    background-size: calc($accordion-icon-width - 1.7375rem);
+    // border-radius: 0 $accordion-border-radius $accordion-border-radius;
+  }
+}
+
+.accordion-item {
+  &:last-of-type {
+    .accordion-collapse {
+      border-bottom-right-radius: 0;
+    }
+  }
+}
+
+.outline {
+  $accordion-button-blueicon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path d='M19413.9-9696l7 7 7-7' transform='translate(-19412.486 9697.414)' fill='none' stroke='#1E8DED' stroke-linecap='round' stroke-width='2'/></svg>") !default;
+  $accordion-button-active-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path d='M19413.9-9696l7 7 7-7' transform='translate(-19412.486 9697.414)' fill='none' stroke='#6a8ce4' stroke-linecap='round' stroke-width='2'/ ></svg>") !default;
+
+  .accordion-header {
+    border: $accordio-border-width solid;
+  }
+
   .accordion-item {
-    &:last-of-type {
-      .accordion-collapse {
-        border-bottom-right-radius: 0;
-      }
-    }
+    border: 0px;
   }
-  
-  .outline {
-    $accordion-button-blueicon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path d='M19413.9-9696l7 7 7-7' transform='translate(-19412.486 9697.414)' fill='none' stroke='#1E8DED' stroke-linecap='round' stroke-width='2'/></svg>") !default;
-    $accordion-button-active-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path d='M19413.9-9696l7 7 7-7' transform='translate(-19412.486 9697.414)' fill='none' stroke='#6a8ce4' stroke-linecap='round' stroke-width='2'/ ></svg>") !default;
-  
-    .accordion-header {
-      border: $accordio-border-width solid;
-    }
-  
-    .accordion-item {
-      border: 0px;
-    }
-  
-    .accordion-button {
-      border-right: $accordio-border-width solid;
-  
-      &:not(.collapsed) {
-        &::after {
-          background-image: escape-svg($accordion-button-blueicon);
-        }
-      }
-  
+
+  .accordion-button {
+    border-right: $accordio-border-width solid;
+
+    &:not(.collapsed) {
       &::after {
         background-image: escape-svg($accordion-button-blueicon);
       }
     }
+
+    &::after {
+      background-image: escape-svg($accordion-button-blueicon);
+    }
   }
+}

@@ -1,4 +1,4 @@
-<div class="checkedstyle flush-border treeview-flush pt-2">
+<div class="checkedstyle flush-border treeview-flush ">
    
     <rds-search-input
         value=""
@@ -44,12 +44,12 @@
 
                     <ng-container *ngIf="node.data.inputType && node.data.inputType.name=='SINGLE_LINE_STRING'">
 
-                        <div class="mx-5 sm-ms-3" *ngFor="let item of permissions">
-                            <rds-counter colorVariant="primary" ngDefaultControl *ngIf="node.data.name==item.name"
-                                [min]="0" [max]="26" [width]="124" name="countervalue" [counterValue]="item.value"
-                                (counterChange)="getCounterData($event,node.data.name)">
-                            </rds-counter>
-                        </div>
+                    <div class="mx-3 mt-2  sm-ms-3" *ngFor="let item of permissions">
+                      <rds-counter colorVariant="primary" ngDefaultControl *ngIf="node.data.name==item.name"
+                                   [min]="0" [max]="26" [width]="124" name="countervalue"
+                                   [counterValue]="item.value" (counterChange)="getCounterData($event,node.data.name)">
+                      </rds-counter>
+                    </div>
 
                     </ng-container>
 
@@ -65,8 +65,8 @@
 </div>
 <!--Old Permission tree Structure  -->
 
-
-<!-- <ng-container *ngTemplateOutlet="recursiveNodeTemplate; context: { list: treeData }"></ng-container>
+<!-- 
+ <ng-container *ngTemplateOutlet="recursiveNodeTemplate; context: { list: treeData }"></ng-container>
     <ng-template #recursiveNodeTemplate let-list="list">
     <ul>
             <div *ngFor="let node of list; let i = index" class="position-relative"

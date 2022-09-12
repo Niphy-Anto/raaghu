@@ -1,5 +1,6 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import * as moment from 'moment';
 
 export interface notificationData {
   status: any;
@@ -8,8 +9,9 @@ export interface notificationData {
   urlTitle?: any;
   time: any;
   setAsRead: boolean;
-  creationTime:any;
+  creationTime: any;
   userNotificationId;
+
 }
 
 
@@ -20,12 +22,23 @@ export interface notificationData {
 })
 export class RdsNotificationComponent implements OnInit {
   @Input() unreadCount: number = 0;
-  
-  constructor(public translate:TranslateService) {}
+
+  constructor(public translate: TranslateService) { }
 
   dataset: any[] = [];
+  item: any;
 
   ngOnInit(): void {
+  }
+
+  getIconColor(notification: any): string {
+    if (notification.status == 'info') {
+      return '';
+    }
+    if (notification.status == 'error') {
+      return 'danger';
+    }
+    return notification.status;
   }
 
 
@@ -38,21 +51,21 @@ export class RdsNotificationComponent implements OnInit {
   Paddig?: number;
   @Input()
   width?: number;
-  @Output() setAllReadOutput = new EventEmitter<boolean>(); 
+  @Output() setAllReadOutput = new EventEmitter<boolean>();
   @Output() setAsReadOutput = new EventEmitter<any>();
 
   getIcon(notification: notificationData): string {
     if (notification.status === 'success') {
-      return 'successful';
+      return 'check';
     }
     if (notification.status === 'warn') {
-      return 'warning';
+      return 'exclamation_circle';
     }
     if (notification.status === 'error') {
-      return 'destructive';
+      return 'close_circle';
     }
     if (notification.status === 'info') {
-      return 'informational';
+      return 'information';
     }
     return '';
   }
@@ -64,7 +77,7 @@ export class RdsNotificationComponent implements OnInit {
     return '';
   }
 
-  getNotifyLabel(): string { 
+  getNotifyLabel(): string {
     return `${this.unreadCount}  New`;
   }
 

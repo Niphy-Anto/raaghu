@@ -46,11 +46,14 @@
     <!-- </div> -->
     <div>
   
-      <mfe-loader [config]="rdsLanguagetextTableMfeConfig"></mfe-loader>
+      <!-- <mfe-loader [config]="rdsLanguagetextTableMfeConfig"></mfe-loader> -->
+      <app-rds-data-table [tableData]="languagetextTableData" [inlineEdit]="false" [pagination]="true" [recordsPerPage]="10"
+
+            [tableHeaders]="languagetextTableHeader" ></app-rds-data-table>
     </div>
   </div>
   <rds-offcanvas [canvasTitle]="'EDIT LANGUAGE'" [offId]="'EditlanguageText'" [offcanvaswidth]="550" [placement]="'end'"
-    >
+  *ngIf="viewCanvas">
     <app-rds-comp-edit-language-text [Languagetext]="LanguageText"></app-rds-comp-edit-language-text>
 
   </rds-offcanvas>

@@ -15,9 +15,9 @@
 .icon-position {
   position: absolute;
   right: 0;
-  top: 0;
+  top: -8px;
   margin-right: 11px;
-  margin-top: 5px;
+  margin-top: 14px;
 }
 .searchModal .icon-position {
   margin-right: 3px;
@@ -52,4 +52,9 @@
 //     letter-spacing: 0px;
 //     color: #FF6060;
 //     opacity: 1;
-// }              
+// }
+
+input.hideEye::-ms-reveal,
+input.hideEye::-ms-clear {
+  display: none;
+}

@@ -187,6 +187,16 @@ function mergeTSConfigJson() {
         };
         changesDone = true;
     };
+    if (ngElementsFile.compilerOptions.paths["@libs/rds-counter"] == undefined) {
+        ngElementsFile.compilerOptions.paths = {
+            ...ngElementsFile.compilerOptions.paths,
+            "@libs/rds-counter": [
+                "rds-elements/rds-counter/public-api",
+                "rds-elements/rds-counter"
+            ]
+        };
+        changesDone = true;
+    };
     if (changesDone) {
         console.log('Updating tsconfig.json file...');
         fse.writeFileSync(path.join(currentDir, 'tsconfig.json'), JSON.stringify(ngElementsFile, null, 2));
