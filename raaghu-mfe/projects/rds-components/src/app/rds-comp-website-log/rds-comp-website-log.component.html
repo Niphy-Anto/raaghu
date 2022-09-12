@@ -10,7 +10,7 @@
 </div> -->
 
 <div *ngIf="dataSource && dataSource.length > 0; else emptyTemplate">
-    <div class="px-4 bg-light" *ngFor="let item of dataSource">
+    <div class="px-4" *ngFor="let item of dataSource">
         <div class="row w-100 border-bottom">
             <div class="col-md-1 col-sm-2 py-2 d-flex align-items-center">
                 <rds-badge size="small" [label]="'WARN'" [colorVariant]="'warning'"></rds-badge>

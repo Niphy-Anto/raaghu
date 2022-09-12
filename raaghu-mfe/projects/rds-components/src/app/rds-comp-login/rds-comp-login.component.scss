@@ -4,3 +4,6 @@
 
 }
 
+html[theme=dark] {
+    --bs-body-color: var(--bs-body-color);
+}

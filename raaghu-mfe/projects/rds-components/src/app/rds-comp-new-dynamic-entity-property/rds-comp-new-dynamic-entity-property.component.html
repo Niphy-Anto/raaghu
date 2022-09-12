@@ -6,6 +6,7 @@
                        ngDefaultControl
                        ngModel
                        name="entityname"
+                       [LabelType]="'Top'"
                        #entityname = "ngModel"
                        [(ngModel)]="dynamicEntityData.entityFullName"
                        [labelText]="translate.instant('Entity')"
@@ -15,7 +16,7 @@
         <span class="text-danger" *ngIf="entityname.errors.required">{{'Entity Name is required'| translate}}</span>
       </div>
     </div>
-    <div class="form-group mb-3">
+    <div class="form-group mb-3 border rounded">
       <!-- <rds-select-list [(ngModel)]="dynamicEntityData.PropertyID"
                        [value]="dynamicEntityData.PropertyID"
                        ngDefaultControl
@@ -25,7 +26,7 @@
   
       </rds-select-list> -->
 
-      <rds-dropdownlist [colorVariant]="'btn-outline-light'" class="text-dark" [resetFormSubject]="resetFormSubject" size="small" [reset]="resetDropdown" [resetPlaceholder]="placeholderReset" [placeholder]="Placeholder" [value]=" " required [multiSelect]="true" 
+      <rds-dropdownlist class="text-dark" [resetFormSubject]="resetFormSubject" size="small" [reset]="resetDropdown" [resetPlaceholder]="placeholderReset" [placeholder]="Placeholder" [value]=" " required [multiSelect]="true" 
         [selectAll]="false" [entity]="true" [listItems]="parameterList" (onSelect)="onPropertySelect($event)"></rds-dropdownlist>
       
     </div>
