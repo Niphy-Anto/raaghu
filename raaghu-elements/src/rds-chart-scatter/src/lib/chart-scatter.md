@@ -20,13 +20,19 @@ title: "chart-scatter"
             <button class="nav-link active" id="PreviewBasic-tab" data-bs-toggle="tab" data-bs-target="#PreviewBasic" type="button" role="tab" aria-controls="PreviewBasic" aria-selected="true">Preview </button>
           </li>
           <li class="nav-item" role="presentation">
-            <button class="nav-link" id="AngularBasic-tab" data-bs-toggle="tab" data-bs-target="#AngularBasic" type="button" role="tab" aria-controls="AngularBasic" aria-selected="false"><img src="icons/angular-icon-logo.svg" class="img-fluid" style="width: 20px; height: 20px;" /> Angular</button>
+            <button class="nav-link" id="AngularBasic-tab" data-bs-toggle="tab" data-bs-target="#AngularBasic" type="button" role="tab" aria-controls="AngularBasic" aria-selected="false"><i class="bi bi-code-slash" style="font-size:1.0rem"></i> Angular</button>
           </li>
         </ul>
       </div>
       <div class="tab-content card border" id="myTabContent">
         <div class="tab-pane fade show active" id="PreviewBasic" role="tabpanel" aria-labelledby="PreviewBasic-tab">
-          image will go here
+          <div class="contents bg-light p-5">                                            
+                                             <div class="row">
+                                                <div class="col-md-6 col-12">
+                                                     <img src="/images/scatter-chart-basic.png" class="img-fluid">
+                                                </div> 
+                                             </div>
+                                    </div>
         </div>
         <div class="tab-pane fade show" id="AngularBasic" role="tabpanel" aria-labelledby="AngularBasic-tab">
           <div class="contents bg-code">
@@ -63,7 +69,13 @@ title: "chart-scatter"
       </div>
       <div class="tab-content card border" id="myTabContent">
         <div class="tab-pane fade show active" id="PreviewMulti" role="tabpanel" aria-labelledby="PreviewMulti-tab">
-          image will go here
+         <div class="contents bg-light p-5">                                            
+                                             <div class="row">
+                                                <div class="col-md-6 col-12">
+                                                     <img src="/images/scatter-chart-multiseries.png" class="img-fluid">
+                                                </div> 
+                                             </div>
+                                    </div>
         </div>
         <div class="tab-pane fade show" id="AngularMulti" role="tabpanel" aria-labelledby="AngularMulti-tab">
           <div class="contents bg-code">
