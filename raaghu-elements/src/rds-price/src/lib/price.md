@@ -12,7 +12,6 @@ title: "Price"
 
 #### Price
 
-<p class="">A card is a small rectangular module with images and text. It is an entry point for users to learn more details</p>
 <section class="py-4">
     <h6>Basic</h6>
     <div class="py-3">
@@ -22,7 +21,7 @@ title: "Price"
             <button class="nav-link active" id="PreviewBasic-tab" data-bs-toggle="tab" data-bs-target="#PreviewBasic" type="button" role="tab" aria-controls="PreviewBasic" aria-selected="true">Preview </button>
           </li>
           <li class="nav-item" role="presentation">
-            <button class="nav-link" id="AngularBasic-tab" data-bs-toggle="tab" data-bs-target="#AngularBasic" type="button" role="tab" aria-controls="AngularBasic" aria-selected="false"><i class="bi bi-code-slash" style="font-size:1.0rem"></i>Angular</button>
+            <button class="nav-link" id="AngularBasic-tab" data-bs-toggle="tab" data-bs-target="#AngularBasic" type="button" role="tab" aria-controls="AngularBasic" aria-selec0ted="false"><i class="bi bi-code-slash" style="font-size:1.0rem"></i>Angular</button>
           </li>
         </ul>
       </div>
@@ -30,9 +29,8 @@ title: "Price"
         <div class="tab-pane fade show active" id="PreviewBasic" role="tabpanel" aria-labelledby="PreviewBasic-tab">
          <div class="contents bg-light p-5">
               <div class="row">
-              <!-- <img src="https://raw.githubusercontent.com/Wai-Technologies/raaghu/main/raaghu-mfe/assets/Edit-Language-Text.png" alt="color"> -->
-              <img src="/images/price.png" class="img-thumbnail w-50">
-           </div>
+               <img src="/images/price.png" class="img-thumbnail w-50">
+              </div>
                        
   </div>
         </div>
@@ -41,7 +39,7 @@ title: "Price"
 <div class="row m-0">
 
 ```html
-   <rds-price [discount]="0" [actualPrice]="0"></rds-price>
+<rds-price [discount]="0" [actualPrice]="0"></rds-price>
 ```
 </div>
 </div>
@@ -50,4 +48,7 @@ title: "Price"
       </div>
     </div>
   </section>
+
+
+
 
