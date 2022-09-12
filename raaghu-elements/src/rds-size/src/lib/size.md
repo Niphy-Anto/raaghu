@@ -28,10 +28,10 @@ title: "size"
       </div>
       <div class="tab-content card border" id="myTabContent">
         <div class="tab-pane fade show active" id="PreviewBasic" role="tabpanel" aria-labelledby="PreviewBasic-tab">
-         <div class="contents bg-light p-5">
+         <div class="contents  p-5">
               <div class="row">
               <!-- <img src="https://raw.githubusercontent.com/Wai-Technologies/raaghu/main/raaghu-mfe/assets/Edit-Language-Text.png" alt="color"> -->
-              <img src="/images/size.png" class="img-thumbnail w-50">
+              <img src="/images/size.png" class="img-fuild">
            </div>
                        
   </div>

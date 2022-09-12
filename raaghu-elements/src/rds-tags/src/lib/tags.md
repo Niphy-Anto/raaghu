@@ -37,7 +37,11 @@ title: "tags"
 <div class="row  m-0 p-4">
 
 ```html
-<rds-testimonial [testimonialItems]="testimonialItems"></rds-testimonial>
+<rds-tags
+  tagType="square"
+  roles="TagWithScroll"
+  colorVariant="primary"
+></rds-tags>
 ```
 
 

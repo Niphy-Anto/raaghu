@@ -28,8 +28,12 @@ title: "Table"
       </div>
       <div class="tab-content card border" id="myTabContent">
         <div class="tab-pane fade show active" id="Preview" role="tabpanel" aria-labelledby="Preview-tab">
-          <div class="contents bg-light p-5">
-             <img src="/images/table.png" class="img-fuild">                   
+          <div class="contents p-5">
+          <div class="row">
+            <div class="col-md-12">
+                <img src="/images/table.png" class="img-fuild w-100">
+            </div>
+          </div>                                
             </div>
         </div>
         <div class="tab-pane fade show" id="Preview" role="tabpanel" aria-labelledby="Preview-tab">
