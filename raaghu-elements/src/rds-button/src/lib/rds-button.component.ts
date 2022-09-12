@@ -67,6 +67,7 @@ export class RdsButtonComponent implements AfterViewInit, OnInit, DoCheck {
   @Input() showLoadingSpinner: boolean = false;
   makeSpinnerActive: boolean;
   iconTemp: string;
+  buttonTypeTemp: 'iconOnly' | 'labelOnly' | 'iconLabel'| undefined;
 
   constructor() {
     this.id = this.id + RdsButtonComponent.count++;
@@ -78,16 +79,19 @@ export class RdsButtonComponent implements AfterViewInit, OnInit, DoCheck {
     this.showLoadingSpinner = false;
     this.labelTemp = this.label;
     this.iconTemp = this.icon;
+    this.buttonTypeTemp = this.buttonType;
   }
   
   ngDoCheck(): void {
     if(this.showLoadingSpinner == true){
       this.label = '';
       this.icon = '';
+      this.buttonType = 'labelOnly';
     }
     else{
       this.label = this.labelTemp;
       this.icon = this.iconTemp;
+      this.buttonType = this.buttonTypeTemp;
     }
   }
 
@@ -133,9 +137,9 @@ export class RdsButtonComponent implements AfterViewInit, OnInit, DoCheck {
   buttonClick(evt: any) {
     if (this.makeSpinnerActive) {
       this.showLoadingSpinner = true;
+      
     }
     this.onClick.emit(evt);
   }
 
 }
-  

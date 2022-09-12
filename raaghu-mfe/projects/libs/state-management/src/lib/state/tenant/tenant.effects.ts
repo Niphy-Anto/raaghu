@@ -80,9 +80,9 @@ export class TenantEffects {
   updateTenant$ = createEffect(() =>
     this.actions$.pipe(
       ofType(updateTenant),
-      mergeMap((data,maxresult) =>
+      mergeMap((data) =>
         this.tenantService.updateTenant(data.tenant).pipe(map((res: any) => {
-          this.store.dispatch(getTenants(maxresult));
+          this.store.dispatch(getTenants());
           this.alertService.showAlert('Success', 'Tenant updated successfully', 'success')
 
         }),
