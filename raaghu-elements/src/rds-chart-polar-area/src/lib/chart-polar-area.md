@@ -29,7 +29,7 @@ title: "chart-polar-area"
           <div class="contents bg-light p-5">                                            
                                              <div class="row">
                                                 <div class="col-md-6 col-12">
-                                                     <img src="https://portal.raaghu.io/images/components/_charts/9.png" class="img-fluid">
+                                                     <img src="/images/polar-area-chart.png" class="img-fluid">
                                                 </div> 
                                              </div>
                                     </div>

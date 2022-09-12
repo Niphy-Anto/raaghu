@@ -161,7 +161,7 @@ const Sidebar = () => {
               </ul>
             </Accordion.Body>
           </Accordion.Item>
-          <Accordion.Item eventKey="1">
+          <Accordion.Item eventKey="2">
             <Accordion.Header>
               <div className="suheading pb-2">
                 <img
