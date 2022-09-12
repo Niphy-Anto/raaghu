@@ -19,9 +19,9 @@
     </div>
   </div>
   <div body class="scroll-notification align-items-center w-100 m-0">
-    <ul class="list-group list-group-flush">
+    <div>
       <ng-container *ngIf="notification && notification.length > 0; else emptyTemplate">
-        <li class="list-group-item p-0" *ngFor="let notification of notification">
+        <div class="p-0" *ngFor="let notification of notification">
           <div class="d-flex py-2 px-3">
             <div class="px-3 mt-2 d-flex ps-0">
               <rds-icon class="notificatioInfo" [colorVariant]="getIconColor(notification)"  [name]="getIcon(notification)" width="15px" height="15px"></rds-icon>
@@ -44,7 +44,7 @@
               </div>
             </div>
           </div>
-        </li>
+        </div>
       </ng-container>
       <ng-template #emptyTemplate>
         <div class="text-muted text-center">
@@ -52,7 +52,7 @@
           <div class="fs-4 mt-4">{{"No new notifications"|translate}}</div>
         </div>
       </ng-template>
-    </ul>
+    </div>
   </div>
 
   <div footer *ngIf="notification && notification.length > 0">
