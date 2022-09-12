@@ -29,7 +29,7 @@ title: "tags"
       <div class="tab-content card border" id="myTabContent">
         <div class="tab-pane fade show active" id="Preview" role="tabpanel" aria-labelledby="Preview-tab">
           <div class="contents bg-light p-5">
-             <img src="/images/tag.png" class="img-fuild">                   
+             <img src="/images/tag.png" class="img-fuild w-100">                   
             </div>
         </div>
         <div class="tab-pane fade show" id="Preview" role="tabpanel" aria-labelledby="Preview-tab">
