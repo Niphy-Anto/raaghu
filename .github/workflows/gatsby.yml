@@ -6,7 +6,7 @@ on:
   push:
     branches: [development]
 
-workfolw_dispatch:
+  workfolw_dispatch:
 
 env: 
   AZURE_WEBAPP_NAME:    # set this to your application's name
@@ -18,25 +18,25 @@ permissions:
   contents: read
 
 jobs:
-    build: 
-      runs-on: windows-latest
-      steps:
-      - name: checkout gatsby code
-        uses: actions/checkout@v3
+  build: 
+    runs-on: windows-latest
+    steps:
+    - name: Checkout gatsby code
+      uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: 'npm'
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ env.NODE_VERSION }}
+        cache: 'npm'
 
-      - name: npm install gatsby
-        working-directory: ./raaghu-mfe/gatsby      
-        run: |
-             npm install
+    - name: npm install gatsby
+      working-directory: ./raaghu-mfe/gatsby      
+      run: |
+        npm install
 
-      - name: build gatsby
-        working-directory: ./raaghu-mfe/gatsby      
-        run: |
-            npm run build
+    - name: build gatsby
+      working-directory: ./raaghu-mfe/gatsby      
+      run: |
+        npm run build
    
