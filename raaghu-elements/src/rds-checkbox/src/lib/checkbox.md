@@ -32,12 +32,9 @@ title: "checkbox"
         <div class="tab-pane fade show active" id="Preview" role="tabpanel" aria-labelledby="Preview-tab">
           <div class="contents bg-light p-5">
             <div class="row">
-               <div class="form-check m-5">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                <label class="form-check-label" for="flexCheckChecked">
-                  Checked checkbox
-                </label>
-              </div>
+               <div class="col-md-12 col-6">
+                <img src="/images/checkbox-basic.png">
+               </div>
             </div>
           </div>
         </div>

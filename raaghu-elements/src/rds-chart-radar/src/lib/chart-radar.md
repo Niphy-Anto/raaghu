@@ -26,7 +26,13 @@ title: "chart-radar"
       </div>
       <div class="tab-content card border" id="myTabContent">
         <div class="tab-pane fade show active" id="Preview" role="tabpanel" aria-labelledby="Preview-tab">
-          image will go here
+         <div class="contents bg-light p-5">                                            
+                                             <div class="row">
+                                                <div class="col-md-6 col-12">
+                                                     <img src="/images/radar-chart.png" class="img-fluid">
+                                                </div> 
+                                             </div>
+                                    </div>
         </div>
         <div class="tab-pane fade show" id="Angular" role="tabpanel" aria-labelledby="Angular-tab">
           <div class="contents bg-code">

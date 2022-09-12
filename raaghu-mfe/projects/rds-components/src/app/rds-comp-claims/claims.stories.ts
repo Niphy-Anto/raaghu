@@ -25,7 +25,16 @@ export default {
 const Template: Story<RdsCompClaimsComponent> = (args: RdsCompClaimsComponent) => ({
     props:{
         ...args
-    }
+    },
 });
 
 export const Default = Template.bind({});
+ 
+Default.args= {
+  ClaimData:{
+    claim_ato_e: 'undefined',
+    claim_f_to_o: 'undefined',
+    claim_p_to_z: 'undefined'
+  }
+ 
+}
