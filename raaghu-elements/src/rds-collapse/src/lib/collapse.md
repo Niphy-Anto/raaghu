@@ -28,7 +28,12 @@ title: "collapse"
       </div>
       <div class="tab-content card border" id="myTabContent">
         <div class="tab-pane fade show active" id="PreviewBasic" role="tabpanel" aria-labelledby="PreviewBasic-tab">
-          Preview
+           <div class="contents bg-light p-5">
+              <div class="row">              
+              <img src="/images/collapse-basic.png" class="img-thumbnail w-50">
+           </div>
+                       
+  </div>
         </div>
         <div class="tab-pane fade show" id="AngularBasic" role="tabpanel" aria-labelledby="AngularBasic-tab">
           <div class="contents bg-code">
@@ -36,9 +41,11 @@ title: "collapse"
 
 ```html
 <rds-collapse
-  collapseId="collapseExample4"
-  label="collapse button"
-  content="placeholder content for collapse. Its hidden by default and shown when triggered."
+  [colorVariant]="colorVariant"
+  [buttonLabelOne]="buttonLabelOne"
+  [collapseIdOne]="collapseIdOne"
+  [contentSectionOne]="contentSectionOne"
+  [borderCard]="borderCard"
   (toggle)="toggle($event)"
   (onClose)="onClose($event)"
   (onShow)="onShow($event)"
@@ -54,7 +61,7 @@ title: "collapse"
 
 
   <section class="py-4">
-    <h6>Horizontal</h6>
+    <h6>Collapse with Multiple-Target</h6>
     <div class="py-3">
       <div class="cust-tabs">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -70,28 +77,9 @@ title: "collapse"
         <div class="tab-pane fade show active" id="PreviewHorizontal" role="tabpanel" aria-labelledby="PreviewHorizontal-tab">
           <div class="contents bg-light p-5">
             <div class="row">
-               <div class="row">
-  <div class="col-xl-3 col-md-4 col-12 mb-4 text-right text-start">
-   <a class="btn btn-primary mb-2 btn-block" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Toggle first element</a>
-    <div class="collapse multi-collapse" id="multiCollapseExample1">
-      <div class="card card-body">
-        Some placeholder content for the first collapse component of this multi-collapse example. 
-      </div>
-    </div>
-  </div>
-  <div class="col-xl-3 col-md-4 col-12 mb-4 text-right text-start">
-   <button class="btn btn-primary mb-2 btn-block" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Toggle second element</button>
-    <div class="collapse multi-collapse" id="multiCollapseExample2">
-      <div class="card card-body">
-        Some placeholder content for the second collapse component of this multi-collapse example. 
-      </div>
-    </div>
-  </div>
-  <div class="col-xl-3 col-md-4 col-12 mb-4 text-right text-start">
-      <button class="btn btn-primary mb-2 btn-block" type="button" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2">Toggle both elements</button>
-  </div>
-</div>     
-            </div>
+              <div class="col-md-12 col-6">
+                <img src="/images/collapse-multiple-target.png" class="img-thumbnail w-50">
+              </div>
           </div>
         </div>
         <div class="tab-pane fade show" id="AngularHorizontal" role="tabpanel" aria-labelledby="AngularHorizontal-tab">
@@ -100,9 +88,16 @@ title: "collapse"
 
 ```html
 <rds-collapse
-  collapseId="collapseExample4"
-  label="collapse button"
-  content="placeholder content for collapse. Its hidden by default and shown when triggered."
+  [colorVariant]="colorVariant"
+  [buttonLabelOne]="buttonLabelOne"
+  [buttonLabelTwo]="buttonLabelTwo"
+  [collapseIdOne]="collapseIdOne"
+  [collapseIdTwo]="collapseIdTwo"
+  [multipleButtonLabel]="multipleButtonLabel"
+  [contentSectionOne]="contentSectionOne"
+  [contentSectionTwo]="contentSectionTwo"
+  [borderCard]="borderCard"
+  [multipleButton]="multipleButton"
   (toggle)="toggle($event)"
   (onClose)="onClose($event)"
   (onShow)="onShow($event)"

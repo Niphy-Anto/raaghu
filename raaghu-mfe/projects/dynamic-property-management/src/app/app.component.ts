@@ -577,9 +577,7 @@ export class AppComponent implements OnInit {
     this.viewCanvas = false;
   }
 
-  getBtnName(): void {
 
-  }
   getNavTabItems(): any {
     this.navtabsItems[0].label = this.translate.instant('Dynamic Properties');
     this.navtabsItems[1].label = this.translate.instant('Dynamic Entity Properties');
