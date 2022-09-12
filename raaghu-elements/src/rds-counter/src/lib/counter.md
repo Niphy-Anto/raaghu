@@ -13,6 +13,7 @@ title: "Counter"
 
 <p class="checkbox-def">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore sdavavfgsv</p>
 
+
 <section class="py-4">
     <h6>Basic</h6>
     <div class="py-3">
@@ -22,7 +23,9 @@ title: "Counter"
             <button class="nav-link active" id="PreviewBasic-tab" data-bs-toggle="tab" data-bs-target="#PreviewBasic" type="button" role="tab" aria-controls="PreviewBasic" aria-selected="true">Preview </button>
           </li>
           <li class="nav-item" role="presentation">
+
             <button class="nav-link" id="AngularBasic-tab" data-bs-toggle="tab" data-bs-target="#AngularBasic" type="button" role="tab" aria-controls="AngularBasic" aria-selec0ted="false"><i class="bi bi-code-slash" style="font-size:1.0rem"></i>Angular</button>
+
           </li>
         </ul>
       </div>
@@ -30,8 +33,11 @@ title: "Counter"
         <div class="tab-pane fade show active" id="PreviewBasic" role="tabpanel" aria-labelledby="PreviewBasic-tab">
          <div class="contents bg-light p-5">
               <div class="row">
-               <img src="/images/counter.png" class="img-thumbnail w-25">
-              </div>
+
+              <!-- <img src="https://raw.githubusercontent.com/Wai-Technologies/raaghu/main/raaghu-mfe/assets/Edit-Language-Text.png" alt="color"> -->
+              <img src="/images/counter.png" class="img-thumbnail w-50">
+           </div>
+
                        
   </div>
         </div>
@@ -40,19 +46,13 @@ title: "Counter"
 <div class="row m-0">
 
 ```html
-<rds-counter
-[counterValue]="0"
-label=""
-[min]="0"
-[max]="40"
-[width]="124"
-colorVariant="primary"
-position="start"
-icon="plus"
-[iconStroke]="true"
-[iconFill]="false"
-(counterChange)="counterChange($event)">
-</rds-counter>
+
+  <rds-counter
+  [counterValue]="0"
+  label=""
+  [width]="124"
+  colorVariant="primary"
+></rds-counter>
 ```
 </div>
 </div>
@@ -61,33 +61,3 @@ icon="plus"
       </div>
     </div>
   </section>
-
-
-
-
- 
-<section class="py-4">
-                        <h6>
-                           Skeleton / Specifications
-                        </h6>
-                        <div class="py-3">
-                              <!-- Tab panes -->
-                              <div class="card border p-5">
-                                 <div class="row">
-                                    <div class="col-md-6">
-                                       <img src="https://portal.raaghu.io/images/components/_dropdown-list/img-1.png" class="img-fluid">
-                                    </div>
-                                    <div class="col-md-6 ">
-                                       <img src="https://portal.raaghu.io/images/components/_dropdown-list/img-2.png" class="img-fluid">
-                                    </div>
-                                 </div>
-                              </div>
-                        </div>
-                     </section>
-
-
-
-
-<!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-

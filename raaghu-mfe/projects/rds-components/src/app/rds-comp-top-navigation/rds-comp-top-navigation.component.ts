@@ -4,7 +4,7 @@ import { ComponentLoaderOptions, MfeBaseComponent, ThemeSettingsDto } from '@lib
 import { TranslateService } from '@ngx-translate/core';
 import { TableHeader } from '../../models/table-header.model';
 import { DOCUMENT } from '@angular/common';
-
+let that: any;
 declare var bootstrap: any;
 @Component({
   selector: 'app-rds-top-navigation',
@@ -14,7 +14,6 @@ declare var bootstrap: any;
 export class RdsTopNavigationComponent extends MfeBaseComponent implements OnInit, DoCheck, OnChanges {
   // rdsProfileMfeConfig: ComponentLoaderOptions;
 
-  public rdsNotoficationMfeConfig: ComponentLoaderOptions;
   showOffcanvas: boolean = false;
   themes: any = [
 
@@ -47,23 +46,28 @@ export class RdsTopNavigationComponent extends MfeBaseComponent implements OnIni
   @Input() notificationLink: string = '';
   @Input() profileData: any;
   @Input() rdsDeligateTableData: any = [];
-  @Input() unreadCount: number;
+  @Input() unreadCount: any = 0;
+  @Input() notificationTypes: any = [];
+  @Input() receiveNotifications: any;
   @Output() deleteLinkaccount = new EventEmitter<any>();
   @Output() deleteDeligateuser = new EventEmitter<any>();
   @Output() linkUser = new EventEmitter<any>();
   @Output() redirection = new EventEmitter<any>();
   @Output() saveDeligate = new EventEmitter<any>();
   @Output() toggleEvent = new EventEmitter<boolean>();
-  @Output() setAllRead = new EventEmitter<boolean>();
+  @Output() setAllNotificationAsRead = new EventEmitter<boolean>();
   @Output() onLoginAttemptsRefresh = new EventEmitter<any>();
   @Output() onLanguageSelection = new EventEmitter<any>();
   @Output() onDownloadLink = new EventEmitter<any>();
+  @Output() setNotificationAsRead = new EventEmitter<any>();
+  @Output() onUpdateNotificationSettings = new EventEmitter<any>();
+
   navtabItems: any = [
-    { label: 'Manage Linked Accounts', translationKey: 'Manage Linked Accounts', tablink: '#nav-LinkAccount', ariacontrols: 'nav-LinkAccount', Image: 'bi bi-pencil-fill', icon: 'manage_linked', subText: 'Manage accounts linked to your account', subtextTranslationKey: 'Manage accounts linked to your account' ,showoffcanvas:true},
-    { label: 'Manage Authority Delegation', translationKey: 'Manage Authority Delegation', tablink: '#nav-Deligation', ariacontrols: 'nav-Deligation', icon: 'manage_authority', subText: 'Manage authority accounts', subtextTranslationKey: 'Manage authority accounts',showoffcanvas:true},
-    { label: 'Login Attempts', translationKey: 'Login Attempts', tablink: '#nav-Attempts', ariacontrols: 'nav-Attempts', icon: 'login_attempts', subText: 'See recent login attempts for your account', subtextTranslationKey: 'See recent login attempts for your account',showoffcanvas:true },
-    { label: 'My Settings', translationKey: 'My Settings', tablink: '#nav-Settings', ariacontrols: 'nav-Settings', icon: 'my_settings', subText: 'Change your account settings', subtextTranslationKey: 'Change your account settings',showoffcanvas:true },
-    { label: 'Download Collected Data', translationKey: 'Download Collected Data', tablink: '#nav-DownLoad', ariacontrols: 'nav-DownLoad', icon: 'download_data', subText: 'Download data belongs to your account', subtextTranslationKey: 'Download data belongs to your account',showoffcanvas:false },
+    { label: 'Manage Linked Accounts', translationKey: 'Manage Linked Accounts', tablink: '#nav-LinkAccount', ariacontrols: 'nav-LinkAccount', Image: 'bi bi-pencil-fill', icon: 'manage_linked', subText: 'Manage accounts linked to your account', subtextTranslationKey: 'Manage accounts linked to your account', showoffcanvas: true },
+    { label: 'Manage Authority Delegation', translationKey: 'Manage Authority Delegation', tablink: '#nav-Deligation', ariacontrols: 'nav-Deligation', icon: 'manage_authority', subText: 'Manage authority accounts', subtextTranslationKey: 'Manage authority accounts', showoffcanvas: true },
+    { label: 'Login Attempts', translationKey: 'Login Attempts', tablink: '#nav-Attempts', ariacontrols: 'nav-Attempts', icon: 'login_attempts', subText: 'See recent login attempts for your account', subtextTranslationKey: 'See recent login attempts for your account', showoffcanvas: true },
+    { label: 'My Settings', translationKey: 'My Settings', tablink: '#nav-Settings', ariacontrols: 'nav-Settings', icon: 'my_settings', subText: 'Change your account settings', subtextTranslationKey: 'Change your account settings', showoffcanvas: true },
+    { label: 'Download Collected Data', translationKey: 'Download Collected Data', tablink: '#nav-DownLoad', ariacontrols: 'nav-DownLoad', icon: 'download_data', subText: 'Download data belongs to your account', subtextTranslationKey: 'Download data belongs to your account', showoffcanvas: false },
   ]
   userdata: any = {
     ProfileName: "Test",
@@ -101,68 +105,15 @@ export class RdsTopNavigationComponent extends MfeBaseComponent implements OnIni
     { DateofData: '08/07/2022', NummberofDates: '5days ago', downloadUrl: 'assets/Photp.jpeg' }
   ]
   openNotification: boolean;
-  notifications: any = [
-    {
-      status: 'info',
-      title: 'Your data is preparing now. Your data is preparing now.',
-      time: '2 days ago',
-      setAsRead: false,
-    },
-    {
-      status: 'error',
-      title: 'Your data is not prepared, try again.',
-      time: '3 days ago',
-      setAsRead: false,
-    },
-    {
-      status: 'success',
-      title: 'Your data is prepared, click here to ',
-      url: 'https://www.google.co.in/',
-      urlTitle: 'download.',
-      time: '3 days ago',
-      setAsRead: false,
-    },
-    {
-      status: 'warn',
-      title: 'Data downloading error, try again.',
-      time: '3 days ago',
-      setAsRead: false,
-    },
-    {
-      status: 'info',
-      title: 'Your data is preparing now.',
-      time: '2 days ago',
-      setAsRead: false,
-    },
-    {
-      status: 'error',
-      title: 'Your data is not prepared, try again.',
-      time: '3 days ago',
-      setAsRead: false,
-    },
-    {
-      status: 'success',
-      title: 'Your data is prepared, click here to ',
-      url: 'https://www.google.co.in/',
-      urlTitle: 'download.',
-      time: '3 days ago',
-      setAsRead: false,
-    },
-    {
-      status: 'error',
-      title: 'Your data is not prepared, try again.',
-      time: '3 days ago',
-      setAsRead: false,
-    },
-  ];
 
-  notificationCount: any = 0;
+
   @Output() onProfileSave = new EventEmitter<any>();
 
   constructor(private router: Router, private injector: Injector,
     public translate: TranslateService, @Inject(DOCUMENT) private document: Document
   ) {
     super(injector);
+    that = this;
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -172,27 +123,21 @@ export class RdsTopNavigationComponent extends MfeBaseComponent implements OnIni
   }
 
   ngOnInit(): void {
-   // const existingLinkEl = this.document.getElementById('client-theme') as HTMLLinkElement;
-   // existingLinkEl.href = 'default.css';
+    var notificationDropdown = document.getElementById('navbarDropdownMenuLink')
+    notificationDropdown.addEventListener('hide.bs.dropdown', function () {
+      that.notificationData.forEach((x: any) => {
+        x.selected = false;
+      })
+    })
+    // const existingLinkEl = this.document.getElementById('client-theme') as HTMLLinkElement;
+    // existingLinkEl.href = 'default.css';
     const event = 'default';
     this.onThemeSelect(event);
 
     if (this.defaultLanguage) {
       this.selectedLanguage = this.defaultLanguage;
     }
-    this.rdsNotoficationMfeConfig = {
-      name: 'RdsNotification',
-      input: {
-        notification: this.notificationData,
-        unreadCount: this.unreadCount
-      },
-      output: {
-        setAllReadOutput: () => {
-          console.log('we got the notificaiton set all');
-          this.setAllRead.emit();
-        }
-      }
-    };
+
 
     this.on('logout').subscribe(r => {
       this.emitEvent('logout-returns', {});
@@ -204,13 +149,7 @@ export class RdsTopNavigationComponent extends MfeBaseComponent implements OnIni
     })
   }
 
-  getCount(): any {
-    if (this.notificationData) {
-      return this.notificationData.filter((x => !x.setAsRead)).length
-    } else {
-      return 0;
-    }
-  }
+
 
   ngDoCheck(): void {
   }
@@ -261,7 +200,7 @@ export class RdsTopNavigationComponent extends MfeBaseComponent implements OnIni
       newLinkEl.id = 'client-theme'
       newLinkEl.rel = 'stylesheet';
       newLinkEl.href = event + '.css';
-     headEl.appendChild(newLinkEl);
+      headEl.appendChild(newLinkEl);
     }
   }
 }
