@@ -747,6 +747,10 @@ html {
             circle.icon {
               stroke: $gray-700;
             }
+
+            ellipse.icon {
+              stroke: $gray-700;
+            }
           }
         }
 
@@ -772,6 +776,10 @@ html {
             }
 
             circle.icon {
+              stroke: $primary;
+            }
+
+            ellipse.icon {
               stroke: $primary;
             }
           }
@@ -1996,6 +2004,10 @@ html[theme=dark] {
             circle.icon {
               stroke: $gray-700;
             }
+
+            ellipse.icon {
+              stroke: $gray-700;
+            }
           }
         }
 
@@ -2028,6 +2040,10 @@ html[theme=dark] {
             }
 
             circle.icon {
+              stroke: $primary;
+            }
+
+            ellipse.icon {
               stroke: $primary;
             }
           }
