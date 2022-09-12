@@ -1,11 +1,12 @@
 import { GetNotificationsOutput, ListResultDtoOfLinkedUserDto, ListResultDtoOfOrganizationUnitDto, PagedResultDtoOfOrganizationUnitRoleListDto, PagedResultDtoOfOrganizationUnitUserListDto } from "@libs/shared";
 import { createReducer, on } from "@ngrx/store";
-import { getMLATenancyData, getMLATenancyDataSuccess, getUserNotification, getUserNotificationFailure, getUserNotificationSuccess, SetAllNotificationsAsRead, } from "./mla.actions";
+import { getMLATenancyData, getMLATenancyDataSuccess, getNotificationSettings, getNotificationSettingsFailure, getNotificationSettingsSuccess, getUserNotification, getUserNotificationFailure, getUserNotificationSuccess, SetAllNotificationsAsRead, } from "./mla.actions";
 
 
 export interface MLAState {
     tenancyData: any,
     notification: any,
+    notificationSettings: any,
     error: string;
     status: 'pending' | 'loading' | 'error' | 'success';
 }
@@ -13,7 +14,8 @@ export interface MLAState {
 
 export const MLAInitialState: MLAState = {
     tenancyData: null,
-    notification:null,
+    notification: null,
+    notificationSettings: null,
     error: "",
     status: 'pending',
 };
@@ -29,7 +31,7 @@ export const MLAReducer = createReducer(
         error: null,
         status: 'success',
     })),
-    
+
     on(getUserNotification, (state) => ({ ...state, status: 'loading' })),
     on(getUserNotificationSuccess, (state, { getNotificaitonsOutput }) => ({
         ...state,
@@ -43,4 +45,20 @@ export const MLAReducer = createReducer(
         error: error,
         status: 'error',
     })),
+
+    // Supply the initial state
+    on(getNotificationSettings, (state) => ({ ...state, status: 'loading' })),
+    // Handle successfully loaded todos
+    on(getNotificationSettingsSuccess, (state, { notificationSettings }) => ({
+        ...state,
+        notificationSettings: notificationSettings,
+        error: null,
+        status: 'success',
+    })),
+    // Handle todos load failure
+    on(getNotificationSettingsFailure, (state, { error }) => ({
+        ...state,
+        error: error,
+        status: 'error',
+    }))
 )
