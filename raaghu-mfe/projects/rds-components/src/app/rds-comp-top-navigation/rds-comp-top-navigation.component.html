@@ -1,3 +1,4 @@
+
 <nav class="navbar navbar-expand-sm fixed-top p-0">
   <div class="container-fluid mobile-fluid">
     <span class="navbar-brand p-0 m-0" href="#">
@@ -35,14 +36,14 @@
               <rds-button class="position-relative" [size]="'small'" [id]="'notification'" [roundedButton]="true"
                 [colorVariant]="'default'" type="button">
                 <rds-icon name="notification" width="20px" height="20px"></rds-icon>
-                <rds-badge class="notification-li" right size="smallest" Types="primary" [label]="getCount()"
+                <rds-badge class="notification-li" right size="smallest" Types="primary" [label]="unreadCount"
                   [pillBadges]="false" [positioned]="true" [iconBadge]="true">
                 </rds-badge>
               </rds-button>
               <!-- <rds-icon name="notifications" width="20px"></rds-icon> -->
             </span>
           </a>
-          <div class="
+          <div aria-labelledby="navbarDropdownMenuLink" class="
               dropdown-menu dropdown-menu-right
               notifications-dropdown
               w-md-375px
@@ -50,11 +51,14 @@
               mt-2
               p-0
             ">
-            <mfe-loader [config]="rdsNotoficationMfeConfig"></mfe-loader>
+            <app-rds-notification [notifications]="notificationData" [unreadCount]="unreadCount"
+              (setAsReadOutput)="setNotificationAsRead.emit($event)"
+              (setAllReadOutput)="setAllNotificationAsRead.emit($event)"></app-rds-notification>
+            <!-- <mfe-loader [config]="rdsNotoficationMfeConfig"></mfe-loader> -->
           </div>
         </li>
         <li class="nav-item border-end px-2">
-          <rds-button [size]="'small'" [roundedButton]="true" (click)="redirectToSettings()">
+          <rds-button [size]="'small'" [roundedButton]="true" >
             <span>
               <rds-icon name="gear" width="20px" height="20px"></rds-icon>
             </span>
@@ -80,8 +84,9 @@
               mt-2
               p-0
             ">
-            <mfe-loader [config]="rdsNotoficationMfeConfig"></mfe-loader>
           </div>
+          <app-rds-notification [notifications]="notificationData" [unreadCount]="unreadCount"></app-rds-notification>
+
         </li>
         <li class="nav-item cursor-pointer" (click)="viewOffcanvas()">
           <div class="nav-link align-items-center d-flex">
@@ -119,3 +124,4 @@
   (onProfileSave)="onProfileSave.emit($event)" (onLoginAttempts)="onLoginAttemptsRefresh.emit($event)"
   (onDownloadLink)="onDownloadLink.emit($event)">
 </app-rds-comp-profile>
+<app-rds-comp-notification-settings [notificationTypes]="notificationTypes" [receiveNotifications]="receiveNotifications" (onUpdateNotificationSettings)="onUpdateNotificationSettings.emit($event)"></app-rds-comp-notification-settings>

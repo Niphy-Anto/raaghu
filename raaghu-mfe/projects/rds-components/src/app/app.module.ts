@@ -146,6 +146,7 @@ import { RdsCompContactUsComponent } from './rds-comp-contact-us/rds-comp-contac
 import { RdsCompTimelineComponent } from './rds-comp-timeline/rds-comp-timeline.component';
 import { RdsCompApplyForPositionComponent } from './rds-comp-apply-for-position/rds-comp-apply-for-position.component';
 import { RdsCompOpenPositionComponent } from './rds-comp-open-position/rds-comp-open-position.component';
+import { RdsCompNotificationSettingsComponent } from './rds-comp-notification-settings/rds-comp-notification-settings.component';
 
 @NgModule({
   declarations: [	
@@ -284,6 +285,7 @@ import { RdsCompOpenPositionComponent } from './rds-comp-open-position/rds-comp-
     RdsCompTimelineComponent,
     RdsCompApplyForPositionComponent,
     RdsCompOpenPositionComponent,
+    RdsCompNotificationSettingsComponent,
   
   ],
   imports: [
