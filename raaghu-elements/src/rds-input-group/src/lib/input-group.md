@@ -30,7 +30,7 @@ title: "Input-Group"
          <div class="contents bg-light p-5">
               <div class="row">
               <!-- <img src="https://raw.githubusercontent.com/Wai-Technologies/raaghu/main/raaghu-mfe/assets/Edit-Language-Text.png" alt="color"> -->
-              <img src="/images/input-group.png" class="img-thumbnail w-50">
+              <img src="/images/input-group.png" class="img-thumbnail w-100">
            </div>
                        
   </div>
@@ -40,19 +40,17 @@ title: "Input-Group"
 <div class="row m-0">
 
 ```html
-  <rds-input-group>
-  <label>{{label}}</label>
-  <div
-    class="input-group mb-2"
-    [ngClass]="{'input-group-sm': size == 'sm', 'input-group-lg': size == 'lg'}"
-  >
+<rds-input-group>
+<label>{{label}}</label>
+<div
+  class="input-group mb-2"
+    [ngClass]="{'input-group-sm': size == 'sm', 'input-group-lg': size == 'lg'}">
     <input
       type="text"
       class="form-control"
       aria-label="Sizing example input"
       aria-describedby="button-addon1"
-      placeholder="placeholder"
-    />
+      placeholder="placeholder"/>
     <button class="btn btn-outline-secondary" type="button" id="button-addon1">
       Button
     </button>
