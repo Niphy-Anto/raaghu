@@ -75,7 +75,7 @@ export class RdsCompNewDynamicEntityPropertyComponent
       else{
         this.dynamicEntityDataSelect.forEach((element,index)=>{
           if(JSON.stringify(element)==JSON.stringify(data)){
-            this.dynamicEntityDataSelect.splice(index,1);
+            this.dynamicEntityDataSelect.splice(index, 1);
           }  
        });
       }

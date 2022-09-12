@@ -18,7 +18,7 @@
       </div>
       <div class="text-warning small">
        <rds-label [label]="translate.instant('1 year')"></rds-label> 
-      </div>
+      </div>  
     </div>
   </div>
 
@@ -40,9 +40,7 @@
           <div class="mt-2">{{EditionData.subscriptionDateString}}</div>
         </div>
       </div>
-
     </div>
-
   </div>
 
   <div class="row mt-3">
@@ -59,17 +57,26 @@
           <rds-icon name="tick_circle"  height="15px"  width="15px" class="text-success"></rds-icon>
           {{item}}
         </li>
-      </ul>
+       </ul>
     </div>
-    <div class="col-md-4 mt-3">
+    <!-- <div class="col-md-6 mt-3">
       <rds-button [outlineButton]="false" [label]="translate.instant('Upgrade')" type="button" [size]="'medium'"
                   [colorVariant]="'primary'" [block]="true">
       </rds-button>
-    </div>
+    </div> -->
   </div>
 
 
+<div class="row g-0 py-2">
+   <div class="col-md-4">
+      <rds-button class="d-grid" [outlineButton]="false" [label]="translate.instant('Upgrade')" type="button" [size]="'medium'"
+                  [colorVariant]="'primary'" [block]="false">
+      </rds-button>
+    </div>
 </div>
+
+ 
+
 
 
 <!--<rds-card class="rounded-avatar-basic">
