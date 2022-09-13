@@ -26,7 +26,13 @@ title: "chart-pie"
       </div>
       <div class="tab-content card border" id="myTabContent">
         <div class="tab-pane fade show active" id="PreviewBasic" role="tabpanel" aria-labelledby="PreviewBasic-tab">
-          image will go here
+         <div class="contents bg-light p-5">
+              <div class="row">
+                                                <div class="col-md-8 col-12">
+                                                     <img src="/images/pie-chart.png" class="img-fluid">
+                                                </div> 
+                                             </div>
+           </div>
         </div>
         <div class="tab-pane fade show" id="AngularBasic" role="tabpanel" aria-labelledby="AngularBasic-tab">
           <div class="contents bg-code">
@@ -63,7 +69,13 @@ title: "chart-pie"
       </div>
       <div class="tab-content card border" id="myTabContent">
         <div class="tab-pane fade show active" id="PreviewMulti" role="tabpanel" aria-labelledby="PreviewMulti-tab">
-          image will go here
+         <div class="contents bg-light p-5">
+              <div class="row">
+                                                <div class="col-md-8 col-12">
+                                                     <img src="/images/piechart-multiseries.png" class="img-fluid">
+                                                </div> 
+                                             </div>
+           </div>
         </div>
         <div class="tab-pane fade show" id="AngularMulti" role="tabpanel" aria-labelledby="AngularMulti-tab">
           <div class="contents bg-code">

@@ -107,7 +107,7 @@ export class AppComponent implements OnInit {
   ];
   featuredata: any = [];
   tableDataForPayment = [
-    // { id: 1, invoice: "Invoice", processTime: "Date", editionDisplayName: "Edition", gateway: "Gateway", amount: "11", status: "active", period: "11", dayCount: "11", externalPaymentId: "11" }
+     { id: 1, invoice: "Invoice", processTime: "Date", editionDisplayName: "Edition", gateway: "Gateway", amount: "11", status: "active", period: "11", dayCount: "11", externalPaymentId: "11" }
   ];
 
   @Input()
@@ -135,7 +135,7 @@ export class AppComponent implements OnInit {
       ariacontrols: 'payment-history',
     },
     {
-      label: this.translate.instant('Subscription'),
+      label: this.translate.instant('Upgrade Subscription'),
       tablink: '#upgrade-subscription',
       ariacontrols: 'subscription',
     },
@@ -189,7 +189,7 @@ export class AppComponent implements OnInit {
         ariacontrols: 'payment-history',
       },
       {
-        label: this.translate.instant('Subscription'),
+        label: this.translate.instant('Upgrade Subscription'),
         tablink: '#upgrade-subscription',
         ariacontrols: 'subscription',
       },
@@ -200,7 +200,7 @@ export class AppComponent implements OnInit {
         this.translate.use(res);
         this.navtabsItems[0].label=this.translate.instant('Subscription Information');
         this.navtabsItems[0].label=this.translate.instant('Payment History');
-        this.navtabsItems[0].label=this.translate.instant('Subscription');
+        this.navtabsItems[0].label=this.translate.instant('Subscription Information');
       }
     })
     this.rdsDataTableForPaymentHistoryMfeConfig = {
@@ -303,7 +303,7 @@ export class AppComponent implements OnInit {
 getNavTabItems():any{
   this.navtabsItems[0].label=this.translate.instant('Subscription Information');
   this.navtabsItems[0].label=this.translate.instant('Payment History');
-  this.navtabsItems[0].label=this.translate.instant('Subscription');
+  this.navtabsItems[0].label=this.translate.instant('Subscription Information');
   return this.navtabsItems;
 }
 

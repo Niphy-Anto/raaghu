@@ -196,7 +196,21 @@ html {
   $card-border-color: $gray-200 !default;
   --bs-body-color: gray;
 
+  .form-select[size]:not([size="1"]) {
+    padding-right: 1.25rem;
+    background-position: right 0.15rem center;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+  }
 
+  .profileMenu {
+    background-color: $light;
+  }
+
+
+
+  .login {
+    color: #212529;
+  }
 
   .rds-scrollable-wrapper {
     background-color: $body-wrapper-bg;
@@ -543,7 +557,6 @@ html {
   .dropdown-item {
     border-bottom-color: $dropdown-border-bottom;
 
-
     &:hover {
       // background-color: $dropdown-bg-color;
       border-bottom-color: $dropdown-border-bottom-hover;
@@ -739,6 +752,10 @@ html {
             circle.icon {
               stroke: $gray-700;
             }
+
+            ellipse.icon {
+              stroke: $gray-700;
+            }
           }
         }
 
@@ -764,6 +781,10 @@ html {
             }
 
             circle.icon {
+              stroke: $primary;
+            }
+
+            ellipse.icon {
               stroke: $primary;
             }
           }
@@ -1222,8 +1243,6 @@ html[theme=dark] {
   $breadcrumb-active-color: $gray-500;
   $breadcrumb-divider-color: $primary;
 
-  $border-color: $gray-100 !default;
-
   /*carousal color variables*/
   $carousel-caption-color: $light !default;
 
@@ -1387,10 +1406,22 @@ html[theme=dark] {
   $footer-bgcolor: $dark-400 !default;
   $profileMenuBgColor: #252839 !default;
   $trhoverbg-color: $dark-400 !default;
-  $nav-li-border:$white !default;
+  $nav-li-border: $white !default;
 
   .sidenav-footer {
     background-color: $body-wrapper-bg;
+  }
+
+  .profileMenu {
+    background-color: $offcanvasbg;
+  }
+
+  .form-select[size]:not([size="1"]) {
+    border-color: $input-bg;
+    padding-right: 1.25rem;
+    background-position: right 0.15rem center;
+    background-color: $input-bg;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
   }
 
   .card {
@@ -1982,6 +2013,10 @@ html[theme=dark] {
             circle.icon {
               stroke: $gray-700;
             }
+
+            ellipse.icon {
+              stroke: $gray-700;
+            }
           }
         }
 
@@ -2014,6 +2049,10 @@ html[theme=dark] {
             }
 
             circle.icon {
+              stroke: $primary;
+            }
+
+            ellipse.icon {
               stroke: $primary;
             }
           }
@@ -2466,6 +2505,6 @@ html[theme=dark] {
   }
 
   .bd-links .child::after {
-    content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e ");
+    content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e ");
   }
 }

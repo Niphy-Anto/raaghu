@@ -3,7 +3,7 @@ import { CreateTenantInput, TenantEditDto, UpdateTenantFeaturesInput } from "pro
 import { Tenants } from "./tenant.models";
 
 export const getTenants = createAction('[Tenant Page] Get Languages',
-(maxResultCount:number) => ({ maxResultCount }));
+(maxResultCount?:number) => ({ maxResultCount }));
 
 export const getTenantSuccess = createAction(
     '[Tenant Page] Get Languages Success',
@@ -32,7 +32,7 @@ export const updateTenantFeatureValues = createAction(
 
 export const updateTenant = createAction(
     '[Tenant Page] Update Tenant',
-    (tenant: TenantEditDto,maxresult:number) => ({ tenant,maxresult })
+    (tenant: TenantEditDto) => ({ tenant })
 );
 
 

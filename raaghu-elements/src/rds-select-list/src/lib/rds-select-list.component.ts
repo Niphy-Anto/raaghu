@@ -134,7 +134,6 @@ if(this.multiple===false){
   public get labelTextHide() {
     var classList = ['form-label'];
     if (this.labelText === '') {
-
       return ['d-none']
     }
     else {
