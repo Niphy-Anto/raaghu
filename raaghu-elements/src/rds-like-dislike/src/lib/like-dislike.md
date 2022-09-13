@@ -9,7 +9,7 @@ title: "Like-Dislike"
 
 
 
-#### Color
+#### Like Dislike
 
 <p class="">A card is a small rectangular module with images and text. It is an entry point for users to learn more details</p>
 <section class="py-4">

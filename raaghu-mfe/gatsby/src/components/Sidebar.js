@@ -153,7 +153,7 @@ const Sidebar = () => {
               <ul className="">
                 {componentsList.map((node) => (
                   <li key={node.name}>
-                    <Link to={node.name.substring(9)}>
+                    <Link href={node.name.substring(9)}>
                       {node.name.substring(9)}
                     </Link>
                   </li>
@@ -161,7 +161,7 @@ const Sidebar = () => {
               </ul>
             </Accordion.Body>
           </Accordion.Item>
-          <Accordion.Item eventKey="1">
+          <Accordion.Item eventKey="2">
             <Accordion.Header>
               <div className="suheading pb-2">
                 <img

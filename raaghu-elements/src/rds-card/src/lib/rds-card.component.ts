@@ -11,6 +11,7 @@ export class RdsCardComponent implements OnInit {
   //@Input() height?: string = "100%";
   @Input() custClass: boolean = true;
   @Input() custSidePadding: boolean = true;
+  @Input() customTopBottom: boolean = true;
   @Input() showHeader: boolean = true;
   @Input() showBody: boolean = true;
   @Input() showFooter: boolean = true;
@@ -65,6 +66,13 @@ export class RdsCardComponent implements OnInit {
     }
     if (this.custSidePadding === true) {
       custClass = ['px-0', 'body-border']
+    }
+    else{
+      custClass = ['']
+    }
+    
+    if(this.customTopBottom === true){
+      custClass = ['py-0','px-0']
     }
     else{
       custClass = ['']
