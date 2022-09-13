@@ -1,7 +1,7 @@
 ---
-slug: "/Admin-dashboard"
+slug: "/Basic-Resource"
 date: "2019-05-04"
-title: "Admin-Dashboard"
+title: "Basic-Resource"
 ---
 
 <!-- CSS only -->
@@ -9,7 +9,7 @@ title: "Admin-Dashboard"
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/style-elements.css">
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/main.css">
 
-#### Admin-Dashboard
+#### Basic-Resource
 
  <section class="py-4">
     <h6>Basic</h6>
@@ -28,7 +28,7 @@ title: "Admin-Dashboard"
         <div class="tab-pane fade show active" id="PreviewBasic1" role="tabpanel" aria-labelledby="PreviewBasic-tab">
          <div class="contents bg-light p-5">
               <div class="row">
-               <img src="\images\admin-dashboard.png" class="img-fluid">
+               <img src="\images\basic-resource.png" class="img-fluid">
               </div>
                        
   </div>
@@ -38,9 +38,9 @@ title: "Admin-Dashboard"
 <div class="row m-0">
 
 ```html
-<app-rds-admin-dashboard
-  [memberActivityTableHeader]="memberActivityTableHeader"
-></app-rds-admin-dashboard>
+<app-rds-comp-basic-resource
+  [ResourceData]="ResourceData"
+></app-rds-comp-basic-resource>
 ```
 </div>
 </div>

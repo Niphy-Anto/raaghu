@@ -1,7 +1,7 @@
 ---
-slug: "/Admin-dashboard"
+slug: "/alert-popup"
 date: "2019-05-04"
-title: "Admin-Dashboard"
+title: "Alert-Popup"
 ---
 
 <!-- CSS only -->
@@ -9,7 +9,7 @@ title: "Admin-Dashboard"
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/style-elements.css">
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/main.css">
 
-#### Admin-Dashboard
+#### Alert-Popup
 
  <section class="py-4">
     <h6>Basic</h6>
@@ -28,7 +28,7 @@ title: "Admin-Dashboard"
         <div class="tab-pane fade show active" id="PreviewBasic1" role="tabpanel" aria-labelledby="PreviewBasic-tab">
          <div class="contents bg-light p-5">
               <div class="row">
-               <img src="\images\admin-dashboard.png" class="img-fluid">
+               <img src="\images\alert-popup.png" class="w-50">
               </div>
                        
   </div>
@@ -38,9 +38,20 @@ title: "Admin-Dashboard"
 <div class="row m-0">
 
 ```html
-<app-rds-admin-dashboard
-  [memberActivityTableHeader]="memberActivityTableHeader"
-></app-rds-admin-dashboard>
+<rds-button
+  [label]="'Delete'"
+  [size]="'small'"
+  class="px-2"
+  [colorVariant]="'primary'"
+  data-bs-toggle="modal"
+  data-bs-target="#deleteModal"
+></rds-button>
+<app-rds-comp-alert-popup
+  [alertID]="'deleteModal'"
+  (onCancel)="close()"
+  (onDelete)="delete()"
+  [alertData]="alertData"
+></app-rds-comp-alert-popup>
 ```
 </div>
 </div>
