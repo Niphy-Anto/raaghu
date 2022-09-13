@@ -1,7 +1,7 @@
 import { Component, Inject, Injector, Input, OnInit, SimpleChanges } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { ComponentLoaderOptions, MfeBaseComponent, UserAuthService, UserDelegationServiceProxy } from '@libs/shared';
+import { ComponentLoaderOptions, LinkedUserDto, MfeBaseComponent, UserAuthService, UserDelegationServiceProxy } from '@libs/shared';
 import { Store } from '@ngrx/store';
 import { changePassword, getLanguages, getProfile, selectAllLanguages, selectDefaultLanguage, selectProfileInfo, setDefaultLanguageForUI } from '@libs/state-management';
 import { deleteDelegations, getDelegations, getUsername, saveDelegations } from 'projects/libs/state-management/src/lib/state/authority-delegations/authority-delegations.action';
@@ -9,8 +9,8 @@ import { selectDelegationsInfo, selectUserFilter } from 'projects/libs/state-man
 import { selectAllLoginAttempts } from 'projects/libs/state-management/src/lib/state/login-attempts/login-attempts.selector';
 import { DateTime } from 'luxon';
 import { getLoginAttempts } from 'projects/libs/state-management/src/lib/state/login-attempts/login-attempts.actions';
-import { deleteAccount, getMLATenancyData, getUserNotification, linkToUser, SetAllNotificationsAsRead } from 'projects/libs/state-management/src/lib/state/mla/mla.actions';
-import { selectAllNotification, selectTenancyData } from 'projects/libs/state-management/src/lib/state/mla/mla.selector';
+import { deleteAccount, getMLATenancyData, getNotificationSettings, getUserNotification, linkToUser, SetAllNotificationsAsRead, SetNotificationRead, updateNotificationSettings } from 'projects/libs/state-management/src/lib/state/mla/mla.actions';
+import { selectAllNotification, selectNotificationSettings, selectTenancyData } from 'projects/libs/state-management/src/lib/state/mla/mla.selector';
 import { AlertService } from 'projects/libs/shared/src/lib/alert.service';
 import { TranslateService } from '@ngx-translate/core';
 import { ThemesService } from 'projects/libs/themes/src/public-api';
@@ -49,10 +49,9 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
     }
   }
   severity = [
-    'error',
-
-    'success',
     'info',
+    'error',
+    'success',
     'warn',
     'fatal'
   ]
@@ -71,7 +70,8 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
   sideMenuCollapsed: boolean = false;
   headerHeight: any = '110px';
   @Input() AccountLinkedTable: any = [];
-
+  receiveNotifications: any;
+  notificationTypes: any = [];
   sidenavItemsOriginal: any = [
     { label: 'Dashboard', labelTranslationKey: 'Dashboard', id: '', permissionName: 'Pages.Administration.Host.Dashboard', icon: 'home', path: '/pages/dashboard', descriptionTranslationKey: 'Statistics and reports', description: 'Statistics and reports' },
     { label: 'Dashboard', labelTranslationKey: 'Dashboard', id: '', permissionName: 'Pages.Tenant.Dashboard', icon: 'home', path: '/pages/dashboard', description: 'Statistics and reports', descriptionTranslationKey: 'Statistics and reports' },
@@ -110,8 +110,7 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
   profilePic: string = '../assets/profile-picture-circle.svg';
   offCanvasId: string = 'profileOffCanvas'
   collapseRequired: any = true;
-  @Input() UserRole: string = 'Admin';
-  @Input() UserName: string = 'Wai Technologies';
+  @Input() tenancy: string = 'Host Admin';
   selectedMenu: string = '';
   selectedMenuDescription: string = '';
   sub: Subscription
@@ -151,7 +150,12 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
   permissions: any;
 
   ngOnInit(): void {
-
+    const tenancy: any = JSON.parse(localStorage.getItem('tenantInfo'));
+    if (tenancy) {
+      this.tenancy= tenancy.name;
+    } else {
+      this.tenancy = 'Host Admin';
+    }
     this.store.dispatch(getLanguages());
     this.store.select(selectDefaultLanguage).subscribe((res: any) => {
       if (res) {
@@ -162,7 +166,8 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
         }
         this.sidenavItems = this.translateMenu(this.sidenavItems);
       }
-    })
+    });
+
 
     this.userAuthService.getPermissions().subscribe(res => {
       if (res) {
@@ -196,7 +201,10 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
         linkedAccounts: this.linkedAccount,
         userList: this.usernameList,
         notificationData: this.notifications,
-        unreadCount: this.unreadCount
+        unreadCount: this.unreadCount,
+        receiveNotifications: this.receiveNotifications,
+        notificationTypes: this.notificationTypes,
+        tenancy:this.tenancy
       },
       output: {
         toggleEvent: () => {
@@ -255,14 +263,38 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
         linkUser: (data: any) => {
           console.log(data);
           this.store.dispatch(linkToUser(data))
-
         },
-        setAllRead: () => {
+        setAllNotificationAsRead: () => {
           this.store.dispatch(SetAllNotificationsAsRead());
+        },
+        setNotificationAsRead: (data: any) => {
+          this.store.dispatch(SetNotificationRead({ id: data.userNotificationId }));
+        },
+        onUpdateNotificationSettings: (data: any) => {
+          this.store.dispatch(updateNotificationSettings(data));
         }
       }
     }
+    this.store.dispatch(getNotificationSettings());
+    this.store.select(selectNotificationSettings).subscribe((res: any) => {
+      if (res && res !== null) {
+        this.receiveNotifications = res.receiveNotifications;
+        this.notificationTypes = [];
+        res.notifications.forEach((notification: any) => {
+          const data: any = {
+            name: notification.name,
+            displayName: notification.displayName,
+            isSubscribed: notification.isSubscribed
+          };
+          this.notificationTypes.push(data);
+        })
+        const mfeConfig = this.rdsTopNavigationMfeConfig;
+        mfeConfig.input.receiveNotifications = this.receiveNotifications;
+        mfeConfig.input.notificationTypes = [...this.notificationTypes];
 
+        this.rdsTopNavigationMfeConfig = mfeConfig;
+      }
+    })
     this.store.dispatch(getUserNotification());
 
     this.store.select(selectAllNotification).subscribe((res: any) => {
@@ -271,6 +303,9 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
         this.notifications = [];
         res.items.forEach((element: any) => {
           this.notifications.push(this.format(element));
+        });
+        this.notifications.sort(function (a, b) {
+          return a.state - b.state;
         });
         const mfeConfig = this.rdsTopNavigationMfeConfig;
         mfeConfig.input.notificationData = [...this.notifications];
@@ -337,7 +372,17 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
     this.store.select(selectTenancyData).subscribe(res => {
       this.linkedAccount.tableData = [];
       if (res && res.items) {
-        this.linkedAccount.tableData = res.items;
+        const data: any = [];
+        res.items.forEach((item: any) => {
+          const _item: any = {
+            id: item.id,
+            username: item.username,
+            tenancyName: item.tenancyName,
+            tenantId: item.tenantId
+          }
+          data.push(_item);
+        });
+        this.linkedAccount.tableData = data;
         const mfe = this.rdsTopNavigationMfeConfig;
         mfe.input.linkedAccount = { ...this.linkedAccount };
         this.rdsTopNavigationMfeConfig = mfe;
@@ -469,12 +514,12 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
     let formatted = {
       userNotificationId: userNotification.id,
       title: userNotification.notification.notificationName,
-      time: moment(new Date(userNotification.notification.creationTime),'YYYY-MM-DD hh:mm:ss').fromNow(),
+      time: moment(new Date(userNotification.notification.creationTime), 'YYYY-MM-DD hh:mm:ss').fromNow(),
       creationTime: userNotification.notification.creationTime,
       data: userNotification.notification.data,
       status: this.severity[userNotification.notification.severity],
       url: this.getUrl(userNotification),
-      setAsRead: userNotification.state ? true : false
+      state: userNotification.state
     };
     return formatted;
   }

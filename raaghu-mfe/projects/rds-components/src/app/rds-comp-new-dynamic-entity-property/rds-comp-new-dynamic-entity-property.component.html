@@ -6,6 +6,7 @@
                        ngDefaultControl
                        ngModel
                        name="entityname"
+                       [LabelType]="'Top'"
                        #entityname = "ngModel"
                        [(ngModel)]="dynamicEntityData.entityFullName"
                        [labelText]="translate.instant(' Entity')"
