@@ -1,7 +1,7 @@
 ---
-slug: "/Admin-dashboard"
+slug: "/Background-Image"
 date: "2019-05-04"
-title: "Admin-Dashboard"
+title: "Background-Image"
 ---
 
 <!-- CSS only -->
@@ -9,7 +9,7 @@ title: "Admin-Dashboard"
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/style-elements.css">
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/main.css">
 
-#### Admin-Dashboard
+#### Background-Image
 
  <section class="py-4">
     <h6>Basic</h6>
@@ -28,7 +28,7 @@ title: "Admin-Dashboard"
         <div class="tab-pane fade show active" id="PreviewBasic1" role="tabpanel" aria-labelledby="PreviewBasic-tab">
          <div class="contents bg-light p-5">
               <div class="row">
-               <img src="\images\admin-dashboard.png" class="img-fluid">
+               <img src="\images\background-image.png" class="img-fluid">
               </div>
                        
   </div>
@@ -38,9 +38,14 @@ title: "Admin-Dashboard"
 <div class="row m-0">
 
 ```html
-<app-rds-admin-dashboard
-  [memberActivityTableHeader]="memberActivityTableHeader"
-></app-rds-admin-dashboard>
+<app-rds-comp-background-image
+  imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLXV_IPvYFWoOnAfO3IGGxcCrM3Y2Bfgfciw&usqp=CAU"
+  title="New arrivals are here"
+  btnLabel="CHECK NEW ARRIVALS HERE"
+  subtitle="The new arrivals have, well newly arrived. Check out the latest options from our summer small-batch release while they are still in stock."
+  backgroundRepeat="no-repeat"
+  backgroundSize="cover"
+></app-rds-comp-background-image>
 ```
 </div>
 </div>
