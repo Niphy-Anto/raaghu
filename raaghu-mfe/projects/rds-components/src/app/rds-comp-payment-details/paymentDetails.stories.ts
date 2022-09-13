@@ -25,11 +25,20 @@ export default {
 const Template: Story<RdsCompPaymentDetailsComponent> = (args: RdsCompPaymentDetailsComponent) => ({
     props: {
         ...args
-    }
+    },
+
+  
+     
 });
 export const Template1 = Template.bind({});
 
 Template1.args = {
+
+
+   
+
+
+   
     
 }
 

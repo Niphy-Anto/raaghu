@@ -1,6 +1,5 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import * as moment from 'moment';
 
 export interface notificationData {
   status: any;
@@ -8,9 +7,10 @@ export interface notificationData {
   url?: any;
   urlTitle?: any;
   time: any;
-  setAsRead: boolean;
+  state: number;
   creationTime: any;
-  userNotificationId;
+  userNotificationId: any;
+  selected: boolean;
 
 }
 
@@ -21,42 +21,50 @@ export interface notificationData {
   styleUrls: ['./rds-comp-notification.component.scss'],
 })
 export class RdsNotificationComponent implements OnInit {
-  @Input() unreadCount: number = 0;
-
+  @Input() unreadCount: any = 0;
+  @Input() notifications: notificationData[];
+  @Input() backgroundColor?: string;
+  @Input() borderRadious?: number;
+  @Input() Paddig?: number;
+  @Input() width?: number;
+  @Output() setAllReadOutput = new EventEmitter<boolean>();
+  @Output() setAsReadOutput = new EventEmitter<any>();
   constructor(public translate: TranslateService) { }
 
-  dataset: any[] = [];
-  item: any;
 
   ngOnInit(): void {
   }
 
-  getIconColor(notification: any): string {
-    if (notification.status == 'info') {
-      return '';
+  getColor(notification: notificationData, isIcon: boolean = false): string {
+    if (isIcon) {
+      if (notification.status == 'info') {
+        return 'primary';
+      }
+      if (notification.status == 'error') {
+        return 'danger';
+      }
+      return notification.status;
+    } else {
+      if (notification.selected) {
+        if (notification.status == 'info') {
+          return 'text-primary';
+        }
+        if (notification.status == 'error') {
+          return 'text-danger';
+        }
+        return 'text-' + notification.status;
+      }
+
     }
-    if (notification.status == 'error') {
-      return 'danger';
-    }
-    return notification.status;
+
   }
 
 
-  elementUrls: string[];
-  @Input()
-  backgroundColor?: string;
-  @Input()
-  borderRadious?: number;
-  @Input()
-  Paddig?: number;
-  @Input()
-  width?: number;
-  @Output() setAllReadOutput = new EventEmitter<boolean>();
-  @Output() setAsReadOutput = new EventEmitter<any>();
+
 
   getIcon(notification: notificationData): string {
     if (notification.status === 'success') {
-      return 'check';
+      return 'tick_circle';
     }
     if (notification.status === 'warn') {
       return 'exclamation_circle';
@@ -70,35 +78,29 @@ export class RdsNotificationComponent implements OnInit {
     return '';
   }
 
-  getError(notification: notificationData): string {
-    if (notification.status === 'error') {
-      return 'error';
-    }
-    return '';
-  }
 
-  getNotifyLabel(): string {
-    return `${this.unreadCount}  New`;
-  }
 
   setAsRead(notification: notificationData): void {
-    if (notification.setAsRead) {
-      return;
-    }
-    notification.setAsRead = true;
-    this.setAsReadOutput.emit(notification.userNotificationId);
+    this.setAsReadOutput.emit(notification);
   }
 
-  setAllRead() {
-    if (!this.notification || this.notification.length === 0) {
-      return;
-    }
-    this.notification.forEach((item) => {
-      this.setAsRead(item);
-    });
-    this.setAllReadOutput.emit();
+
+  onNotificationSelect(notification: notificationData, event: any): void {
+    this.notifications.forEach((_notification: notificationData) => {
+      _notification.selected = false;
+    })
+    notification.selected = true;
+    event.stopPropagation();
   }
 
-  @Input()
-  notification: notificationData[];
+  checkUnreadMessage(): boolean {
+    if (this.notifications && this.notifications.length > 0) {
+      if (this.notifications.find((x: any) => x.state == 0)) {
+        return true;
+      }
+      return false;
+    }
+    return false;
+  }
+
 }

@@ -107,7 +107,7 @@ export class AppComponent implements OnInit {
   ];
   featuredata: any = [];
   tableDataForPayment = [
-    // { id: 1, invoice: "Invoice", processTime: "Date", editionDisplayName: "Edition", gateway: "Gateway", amount: "11", status: "active", period: "11", dayCount: "11", externalPaymentId: "11" }
+     { id: 1, invoice: "Invoice", processTime: "Date", editionDisplayName: "Edition", gateway: "Gateway", amount: "11", status: "active", period: "11", dayCount: "11", externalPaymentId: "11" }
   ];
 
   @Input()
