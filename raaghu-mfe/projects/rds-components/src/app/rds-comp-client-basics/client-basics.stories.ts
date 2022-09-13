@@ -30,3 +30,6 @@ const Template: Story<RdsCompClientBasicsComponent> = (args: RdsCompClientBasics
 });
 
 export const Default = Template.bind({});
+Default.args={
+  clientInfo:[]
+}

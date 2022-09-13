@@ -44,7 +44,7 @@
 </label> -->
 
 <div class="dropdown w-100" [class]="classes">
-  <a [ngClass]="button1" class="dropdown-toggle gap-2" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" size="small"
+  <span [ngClass]="button1" class="dropdown-toggle gap-2" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" size="small"
     aria-expanded="false">
     <rds-icon *ngIf="icon" [name]="icon" [height]="iconHeight" [width]="iconWidth" [fill]="iconFill"
       [stroke]="iconStroke" class="pe-1"></rds-icon>
@@ -53,16 +53,16 @@
       <rds-badge *ngFor="let title of badgeList" (onClose)="initAllSelect($event, title)" class="mx-1" [close]="true"
         size="small" [colorVariant]="'primary'" [label]="title.value"></rds-badge>
     </span>
-  </a>
+  </span>
 
   <ng-template #other_content>Select Property</ng-template>
   <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
     <li class="list-group-item p-0" *ngIf="selectAll && multiSelect">
-      <a class="dropdown-item text-capitalize">
+      <span class="dropdown-item">
         <input type="checkbox" class="form-check-input" [(ngModel)]="isMasterSel" name="list_name" value="h1"
           (change)="checkUncheckAll()" />
         <label class="form-check-label mx-2">Select All</label>
-      </a>
+      </span>
     </li>
 
     <li *ngFor="let item of listItems; index as i;" (click)="initAllSelect($event, item)">    
