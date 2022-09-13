@@ -26,7 +26,13 @@ title: "chart-stacked"
       </div>
       <div class="tab-content card border" id="myTabContent">
         <div class="tab-pane fade show active" id="PreviewBasic" role="tabpanel" aria-labelledby="PreviewBasic-tab">
-          image will go here
+          <div class="contents bg-light p-5">                                            
+                                             <div class="row">
+                                                <div class="col-md-6 col-12">
+                                                     <img src="/images/stacked-chart.png" class="img-fluid">
+                                                </div> 
+                                             </div>
+                                    </div>
         </div>
         <div class="tab-pane fade show" id="AngularBasic" role="tabpanel" aria-labelledby="AngularBasic-tab">
           <div class="contents bg-code">
