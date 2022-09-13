@@ -38,6 +38,9 @@ export class RdsButtonComponent implements AfterViewInit, OnInit, DoCheck,OnChan
   @Input()
   roundedButton = false;
 
+  @Input()
+  roundedCorner = false;
+
   @Input() iconHeight: string = '';
   @Input() iconWidth: string = '';
   @Input() iconStroke: boolean = true;
@@ -115,8 +118,9 @@ export class RdsButtonComponent implements AfterViewInit, OnInit, DoCheck,OnChan
     const outline = `${this.outlineButton ? 'btn btn-outline-' + this.colorVariant : 'btn btn-' + this.colorVariant}`;
     const mode = ` btn-${this.size === 'small' ? 'sm' : this.size === 'large' ? 'lg' : 'md'}`;
     const icon = `${this.roundedButton ? ' btn-icon rounded-pill' : ''}`;
+    const icon1 = `${this.roundedCorner ? ' rounded-pill' : ''}`;
 
-    return outline + mode + icon;
+    return outline + mode + icon + icon1;
   }
 
   public get blockWidth(): string[] {
@@ -125,6 +129,7 @@ export class RdsButtonComponent implements AfterViewInit, OnInit, DoCheck,OnChan
       classes.push('w-100')
       return classes
     }
+  
     return classes;
     // return this.block ? 'd-grid' : '';
   }
