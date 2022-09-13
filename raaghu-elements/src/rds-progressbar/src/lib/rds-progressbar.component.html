@@ -3,13 +3,13 @@
 <div [ngSwitch]="role">
   <div *ngSwitchCase="'single'" [ngStyle]="{'width':progressbar_MaxWidth + '%'}">
     <div class="progress" [ngStyle]="{'height':height + 'px'}">
-      <div [ngClass]="classes" [ngStyle]="{'width':progressWidthString + '%'}" role="progressbar" aria-valuenow="" aria-valuemin="0" aria-valuemax="100">{{lableValue}}</div>
+      <div [ngClass]="classes" [ngStyle]="{'width':progressWidthString + '%'}" role="progressbar" aria-valuenow="" aria-valuemin="0" aria-valuemax="10">{{lableValue}}</div>
     </div>
   </div>
   <div *ngSwitchCase="'multiple'" [ngStyle]="{'width':progressbar_MaxWidth + '%'}">
     <div class="progress" [ngStyle]="{'height':height + 'px'}">
-      <div *ngFor="let item of progressvalues" [ngClass]="['progress-bar',item.background,item.stripe,item.animation ]"
-        role="progressbar" [style.width]="progressWidthString" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">
+      <div class="px-2" *ngFor="let item of progressvalues" [ngClass]="['progress-bar',item.background,item.stripe,item.animation ]"
+        role="progressbar" [style.width]="progressWidthString" aria-valuenow="15" aria-valuemin="0" aria-valuemax="10">
         {{progressWidthString}}</div>
     </div>
   </div>

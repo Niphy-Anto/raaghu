@@ -63,7 +63,7 @@ export class AppComponent implements OnInit {
   isShimmer: boolean = false;
   EditShimmer: boolean = false;
   languageCanvasTitle = 'New Language';
-  buttonSpinnerForNewLanguage:boolean = true;
+  buttonSpinnerForNewLanguage: boolean = true;
   public rdsAlertMfeConfig: ComponentLoaderOptions = {
     name: 'RdsCompAlert',
     input: {
@@ -194,7 +194,7 @@ export class AppComponent implements OnInit {
         this.isAnimation = false;
         let defaultLanguage = res.defaultLanguageName;
         res.items.forEach((element: any) => {
-          const status: any = (element.isDisabled) ? { icon: 'cross_mark', width: '24px', height: '16px' } : { icon: 'check_mark', width: '24px', height: '16px' };
+          const status: any = (element.isDisabled) ? { icon: 'close', width: '24px', height: '16px', colorVariant: 'danger' } : { icon: 'check', width: '24px', height: '16px', colorVariant: 'success' };
           // const statusTemplate = `<div class="fs-3"><i class="bi ${status}"></i></div>`;
           const languageName: string = (element.displayName);
           const defaultLanguageTemplate = `<div> ${languageName} <span class="badge badge-success p-1 mx-1 rounded">Default</span></div>`
@@ -255,7 +255,7 @@ export class AppComponent implements OnInit {
   // }
 
   openCanvas(edit: boolean = false): void {
-    this.buttonSpinnerForNewLanguage =true;
+    this.buttonSpinnerForNewLanguage = true;
     this.viewCanvas = true;
     if (!edit) {
       this.selectedLanguage = {
@@ -264,7 +264,7 @@ export class AppComponent implements OnInit {
         isEnabled: false,
         id: undefined,
       };
-      this.languageCanvasTitle = 'New Language';
+      this.languageCanvasTitle = 'NEW LANGUAGE';
 
     } else {
       this.languageCanvasTitle = 'Edit Language';

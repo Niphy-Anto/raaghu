@@ -1,4 +1,5 @@
-<div ria-labelledby="nav-LinkAccount" class="h-100">
+<form #loginAttempt="ngForm">
+  <div ria-labelledby="nav-LinkAccount" class="h-100">
   <div class="card border-0 h-100">
     <div class="card-header border-bottom">
       <h5 class="card-title">{{"LOGIN ATTEMPTS"|translate}}</h5>
@@ -6,47 +7,55 @@
     <div class="card-body">
       <div class="">
         <div class="row">
-          <div class="col-md-12 mb-3 sm-p-0"><h5>{{"List and filter login attempts"|translate}}</h5></div>
-          <div class="col-sm-6 sm-p-0">
-            <div class="form-group mb-3">
-              <rds-select-list [(ngModel)]="result" [value]="result" ngDefaultControl [labelText]="translate.instant('Result')" name="edition"
-              [itemList]="listItemsResult">
-               
-              </rds-select-list>
-            </div>
+          <div class="col-md-12 mb-3 sm-p-0">
+            <h5>{{"List and filter login attempts"|translate}}</h5>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 sm-p-0">
-            <div class="form-group mb-3">
-              <rds-datepicker name="date-picker" [Label]="translate.instant('Start Date')" [(ngModel)]="startDate" [value]="startDate">
-              </rds-datepicker>
-            </div>
-          </div>
-          <div class="col-md-6 mb-3 sm-p-0">
-            <div class="form-group mb-3">
-              <rds-datepicker name="date-picker" [Label]="translate.instant('End Date')" [(ngModel)]="endDate" [value]="endDate">
-              </rds-datepicker>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12 sm-p-0">
-            <rds-button [outlineButton]="false" [label]="translate.instant('Refresh')" type="button" [size]="'medium'"
-                        [colorVariant]="'primary'" (click)="Search()">
-            </rds-button>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-sm-12 sm-p-0">
-              <mfe-loader [config]="rdsLoginTableMfeConfig"></mfe-loader>
-            </div>
-          </div>
-        </div>
-    </div>
-    <!--<div class="card-footer">
 
-    </div>-->
+        </div>
+        <div class="row">
+          <div class="col-md-3 sm-p-0">
+            <div class="form-group mb-3">
+               <rds-select-list [(ngModel)]="result" [value]="result" [placeholderText]="'Select Result'" ngDefaultControl
+                [labelText]="translate.instant('Result')"
+               [LabelType]="'Top'" name="edition" #result_name ="ngModel" [(ngModel)]="Result"   required
+                [itemList]="listItemsResult"> 
+              </rds-select-list>
+           
+             
+            </div>
+             
+          </div>
+          <div class="col-md-4 sm-p-0">
+            <div class="form-group ">
+              <rds-datepicker name="date-picker" [Label]="translate.instant('Start Date')" [(ngModel)]="startDate"
+                [value]="startDate">
+              </rds-datepicker>
+            </div>
+          </div>
+          <div class="col-md-4 sm-p-0">
+            <div class="form-group ">
+              <rds-datepicker name="date-picker" [Label]="translate.instant('End Date')" [(ngModel)]="endDate"
+                [value]="endDate">
+              </rds-datepicker>
+            </div>
+          </div>
+          <div class="col-md-1  m-auto mb-3 pt-4 px-0">
+            <rds-icon name="refresh" width="20px" height="20px" class=" btn btn-primary btn-md btn-icon"  (click)="Search(loginAttempt)" text-primary></rds-icon>
+        
+          </div>
+          <div class="form-control-feedback"
+          *ngIf="result_name.errors && (result_name.dirty || result_name.touched)">
+          <span class="text-danger" *ngIf="result_name.errors.required">{{"Result is required"|translate}}</span>
+   </div> 
+        </div>
+      
+        <div class="row">
+          <div class="col-sm-12 sm-p-0">
+            <mfe-loader [config]="rdsLoginTableMfeConfig"></mfe-loader>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
-
+</form>

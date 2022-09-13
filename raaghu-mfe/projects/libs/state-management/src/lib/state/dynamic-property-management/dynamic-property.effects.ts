@@ -40,7 +40,7 @@ import {
   UpdateDynamicProperty,
   editDynamicEntityFailure,
 } from './dynamic-property.actions';
-
+declare var bootstrap:any;
 @Injectable()
 export class DynamicPropertyEffects {
   constructor(
@@ -78,7 +78,10 @@ export class DynamicPropertyEffects {
           this.dynamicPropertyService.add(data.DynamicProperty).pipe(
             map((res: any) => {
               this.store.dispatch(getDynamicProperty());
-              this.alertService.showAlert('Success', 'Dynamic property added successfully', 'success')
+              this.alertService.showAlert('Success', 'Dynamic property added successfully', 'success');
+              var myModalEl = document.getElementById('AddDynamic');
+              var modal = bootstrap.Offcanvas.getInstance(myModalEl)
+              modal.hide();
             }),
 
             catchError((error: any) => of(console.log(error)))
@@ -260,7 +263,10 @@ export class DynamicEntityEffects {
           this.dynamicEntityService.add(data.DynamicEntity).pipe(
             map((res: any) => {
               this.store.dispatch(getDynamicEntity());
-              this.alertService.showAlert('Success', 'Dynamic entity added successfully', 'success')
+              this.alertService.showAlert('Success', 'Dynamic entity added successfully', 'success');
+              var myModalE2 = document.getElementById('AddEntity');
+              var modal2 = bootstrap.Offcanvas.getInstance(myModalE2)
+              modal2.hide();
             }),
 
             catchError((error: any) => of(console.log(error)))

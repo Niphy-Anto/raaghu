@@ -15,14 +15,21 @@ export class RdsCompPaymentDetailsComponent implements OnInit {
   @Input() cardNumber:number;
   @Input() name:string;
   @Input() expirationDate:string;  
+  @Input() buttonSpinner: boolean = true;
+ 
+
+  
   
   ngOnInit(): void {
   }
   
   continue(){
+    this.buttonSpinner=true;
+
   }
   
   back(){
+      this.buttonSpinner=false;
   }
 
 }

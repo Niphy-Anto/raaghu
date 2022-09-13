@@ -1,71 +1,77 @@
-<div class="tab-content">
-  <div ria-labelledby="nav-LinkAccount" class="h-100">
-    <div class="card border-0 h-100">
-      <div class="card-header border-bottom">
-        <h5 class="card-title">{{"MANAGE LINKED ACCOUNTS"|translate}}</h5>
-      </div>
+<form #linkedAccount="ngForm">
+  <div class="tab-content">
+    <div ria-labelledby="nav-LinkAccount" class="h-100">
+      <div class="card border-0 h-100">
+        <div class="card-header border-bottom">
+          <h5 class="card-title">{{"MANAGE LINKED ACCOUNTS"|translate}}</h5>
+        </div>
 
-      <div class="card-body">
-        <div class="">
-          <div class="row">
-            <div class="col-md-12 ">
-              <div class="form-group mb-3" *ngIf="showNewLinkAccoutButton">
-                <rds-button [label]="translate.instant('LINK NEW ACCOUNT')" type="button" [size]="'medium'" [colorVariant]="'primary'"
-                            [icon]="'plus'" iconHeight="12px" iconWidth="12px" (click)="hideandShowaccountform()">
-                </rds-button>
+        <div class="card-body">
+          <div class="">
+            <div class="row">
+              <div class="col-md-12 ">
+                <div class="form-group mb-3" *ngIf="showNewLinkAccoutButton">
+                  <rds-button [label]="translate.instant('LINK NEW ACCOUNT')" type="button" [size]="'medium'"
+                    [colorVariant]="'primary'" [icon]="'plus'" iconHeight="12px" iconWidth="12px"
+                    (click)="hideandShowaccountform()">
+                  </rds-button>
+                </div>
               </div>
-            </div>
-            <div class="col-sm-12" *ngIf="linkaacountDivFlag">
-              <div class="form-group mb-3">
-                <rds-input size="default" value="" [Title]="translate.instant('Tenancy Name')" [placeholder]="translate.instant('Tenancy Name')" [TitleType]="'Top'"
-                           inputType="text" [(ngModel)]="Tenancyname" ngDefaultControl></rds-input>
+              <div class="col-sm-12" *ngIf="linkaacountDivFlag">
+                <div class="form-group mb-3">
+                  <rds-input size="default" value="" [Title]="translate.instant('Tenancy Name')"
+                    [placeholder]="translate.instant('Tenancy Name')" [TitleType]="'Top'" name="tenancy_name" inputType="text"
+                    [(ngModel)]="Tenancyname" ngDefaultControl></rds-input>
+                </div>
               </div>
-            </div>
-            <div class="col-md-12"  *ngIf="linkaacountDivFlag">
-              <div class="form-group mb-3">
+              <div class="col-md-12" *ngIf="linkaacountDivFlag">
+                <div class="form-group mb-3">
 
-                <rds-input size="default" value="" [Title]="translate.instant('User Name')" [TitleType]="'Top'" inputType="text"
-                           [placeholder]="translate.instant('User Name')" [(ngModel)]="userName" [isRequired]=true ngDefaultControl (keyup)="LinkaccountValidator()"
-                           (mouseup)="LinkaccountValidator()">
-                </rds-input>
+                  <rds-input size="default" value="" [Title]="translate.instant('User Name')" [TitleType]="'Top'"
+                    inputType="text" [placeholder]="translate.instant('User Name')" [(ngModel)]="userName" name="user_name"
+                    [isRequired]=true ngDefaultControl (keyup)="LinkaccountValidator()"
+                    (mouseup)="LinkaccountValidator()">
+                  </rds-input>
+                </div>
               </div>
-            </div>
-            <div class="col-md-12"  *ngIf="linkaacountDivFlag">
-              <div class="form-group mb-3">
+              <div class="col-md-12" *ngIf="linkaacountDivFlag">
+                <div class="form-group mb-3">
 
-                <rds-input size="default" value="" [Title]="translate.instant('Password')" [placeholder]="'Password'" [TitleType]="'Top'"
-                           inputType="password" [(ngModel)]="Password" [isRequired]=true ngDefaultControl (keyup)="LinkaccountValidator()"
-                           (mouseup)="LinkaccountValidator()">
-                </rds-input>
+                  <rds-input size="default" value="" [Title]="translate.instant('Password')" [placeholder]="'Password'" name="linked_pswd"
+                    [TitleType]="'Top'" inputType="password" [(ngModel)]="Password" [isRequired]=true ngDefaultControl
+                    (keyup)="LinkaccountValidator()" (mouseup)="LinkaccountValidator()">
+                  </rds-input>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="col-sm-12">
-              <mfe-loader [config]="rdsLinkedAccountTableMfeConfig"></mfe-loader>
+            <div class="row">
+              <div class="col-sm-12">
+                <mfe-loader [config]="rdsLinkedAccountTableMfeConfig"></mfe-loader>
+              </div>
             </div>
           </div>
         </div>
+
       </div>
-
     </div>
   </div>
-</div>
 
-<div class="footer-buttons my-2 shadow-none">
-  <div class="row">
-    <div class="col-sm-12">
-      <rds-button [label]="translate.instant('Cancel')"
-                  data-bs-dismiss="offcanvas"
-                  [colorVariant]="'outline-primary'"
-                  type="button"
-                  [size]="'medium'"
-                  (click)="onCancel()">
-      </rds-button>
-      <rds-button [label]="translate.instant('Save')" type="button" [size]="'medium'" [colorVariant]="'primary'"
-      (click)="saveAllLinkAccount()" class="ms-2">
-</rds-button>
+  <div class="footer-buttons my-2 shadow-none" *ngIf="!showNewLinkAccoutButton">
+    <div class="row">
+      <div class="col-sm-12">
+        <rds-button [label]="translate.instant('Cancel')"
+                   
+                    [colorVariant]="'outline-primary'"
+                    type="button"
+                    [size]="'medium'"
+                    (click)="onCancel()">  
+        </rds-button>
+        <rds-button [label]="translate.instant('Save')" type="button" [size]="'medium'" [colorVariant]="'primary'"
+          (click)="saveAllLinkAccount(linkedAccount)" class="ms-2">
+        </rds-button>
+      </div>
     </div>
   </div>
-</div>
 
+
+</form>

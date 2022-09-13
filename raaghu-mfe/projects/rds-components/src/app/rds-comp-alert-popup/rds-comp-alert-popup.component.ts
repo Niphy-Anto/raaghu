@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@
 import { TranslateService } from '@ngx-translate/core';
 export interface AlertPopupData {
   iconUrl:string,
+  colorVariant: string,
   alertConfirmation:string,
   messageAlert:string,
   CancelButtonLabel:string,
@@ -32,6 +33,7 @@ export class RdsCompAlertPopupComponent implements OnInit {
   alertID?:any
   @Input()
   iconUrl!: string
+  @Input() colorVariant : string;
   @Input()
   ConformString!: string
   @Input()
@@ -44,7 +46,8 @@ export class RdsCompAlertPopupComponent implements OnInit {
   backgroundColor!:string;
   @Input() 
   alertData: AlertPopupData={
-    iconUrl:"assets/delete-icon.svg",
+    iconUrl:"delete",
+    colorVariant: "danger",
     alertConfirmation:"Are you sure to Delete",
     messageAlert:"The record will be deleted permanently",
     CancelButtonLabel:"Cancel",

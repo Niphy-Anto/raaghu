@@ -71,7 +71,7 @@ export class AppComponent implements OnInit {
       }
     }
   }
-  constructor(public datepipe: DatePipe, private store: Store, private _arrayToTreeConverterService: ArrayToTreeConverterService, private alertService: AlertService, public translate:TranslateService) { }
+  constructor(public datepipe: DatePipe, private store: Store, private _arrayToTreeConverterService: ArrayToTreeConverterService, private alertService: AlertService, public translate: TranslateService) { }
 
   rdsNewRoleMfeConfig: ComponentLoaderOptions = {
     name: 'RdsCompRoleList'
@@ -87,8 +87,8 @@ export class AppComponent implements OnInit {
   selectedPermissions: any = [];
   selectedPermissionnames: any = [];
   @Input() RoleTableHeader: TableHeader[] = [
-    { displayName: 'Role Name', key: 'rolename', dataType: 'html', dataLength: 30, sortable: true, required: true,filterable:true },
-    { displayName: 'id', key: 'id', dataType: 'text', dataLength: 30, sortable: true, required: true,filterable:true },
+    { displayName: 'Role Name', key: 'rolename', dataType: 'html', dataLength: 30, sortable: true, required: true, filterable: true },
+
     { displayName: 'Creation Time', key: 'creationTime', dataType: 'text', dataLength: 30, required: true, sortable: true }
   ]
   @Output() deleteRole = new EventEmitter<{ item: any }>();
@@ -129,18 +129,18 @@ export class AppComponent implements OnInit {
                 grantedPermissionNames: [],
               };
               this.store.dispatch(saveRole(data));
-               }
+            }
           }
         },
         onEditRole: (event: any) => {
           if (event.id) {
             this.isEdit = true;
           } else {
-            
+
             this.Roledetails = undefined;
-          const mfeConfig = this.rdsNewRoleMfeConfig
-          mfeConfig.input.RolesData = { ... this.Roledetails };
-          this.rdsNewRoleMfeConfig = mfeConfig;
+            const mfeConfig = this.rdsNewRoleMfeConfig
+            mfeConfig.input.RolesData = { ... this.Roledetails };
+            this.rdsNewRoleMfeConfig = mfeConfig;
 
           }
           this.store.dispatch(getRolByEdit(event));
@@ -151,7 +151,7 @@ export class AppComponent implements OnInit {
                 displayName: res.RoleEditI.role.displayName,
                 id: res.RoleEditI.role.id,
                 isDefault: res.RoleEditI.role.isDefault,
-                name:res.RoleEditI.role.displayName
+                name: res.RoleEditI.role.displayName
               }
               this.Roledetails['displayName'] = res.RoleEditI.role.displayName;
               this.Roledetails['id'] = res.RoleEditI.role.id;
@@ -179,26 +179,24 @@ export class AppComponent implements OnInit {
         },
         onnewRole: (data: any) => {
           this.store.dispatch(getPermission());
-          this.selectedPermissions=[]
+          this.selectedPermissions = []
           this.store.select(selectAllPermissions).subscribe((res: any) => {
-            if (res && res.PermissionI && res.PermissionI.items && res.status == 'success')
-            {
+            if (res && res.PermissionI && res.PermissionI.items && res.status == 'success') {
               this.treeData = this.ConvertArraytoTreedata(res.PermissionI.items)
               const mfeConfig = this.rdsNewRoleMfeConfig
-            mfeConfig.input.permissionsList = [... this.treeData];
-            mfeConfig.input.SelectedPermissionValues = [...this.selectedPermissions]
-            if (data) {
-              mfeConfig.input.EditShimmer = false;
-            } else {
-              mfeConfig.input.EditShimmer = true;
+              mfeConfig.input.permissionsList = [... this.treeData];
+              mfeConfig.input.SelectedPermissionValues = [...this.selectedPermissions]
+              if (data) {
+                mfeConfig.input.EditShimmer = false;
+              } else {
+                mfeConfig.input.EditShimmer = true;
+              }
+              this.rdsNewRoleMfeConfig = { ...mfeConfig };
             }
-            this.rdsNewRoleMfeConfig = { ...mfeConfig };
-          }
           })
-        
+
         },
-        onRefreshRole:()=>
-        {
+        onRefreshRole: () => {
           this.store.dispatch(getRoles([]));
           this.updateRoleData();
         },
@@ -251,32 +249,33 @@ export class AppComponent implements OnInit {
           const roleName: string = (element.displayName);
           const defaultLanguageTemplate = `<div class="d-flex align-items-center"> ${roleName} <div class="d-block text-end"> ${status} ${status1} </div></div> `
           const item: any = {
-            id: element.id,            
+
             rolename: defaultLanguageTemplate,
             isDefault: element.isDefault,
             creationTime: this.datepipe.transform(new Date(element.creationTime), 'MM/dd/yyyy, h:mm:ss a'),
-            name:element.displayName
+            name: element.displayName,
+            id: element.id
           }
           this.RoleDatatable.push(item);
-          
+
         });
         const mfeConfig = this.rdsNewRoleMfeConfig
-         mfeConfig.input.roleList = [...this.RoleDatatable]
-         mfeConfig.input.isShimmer = false;
-          this.rdsNewRoleMfeConfig = mfeConfig ;
+        mfeConfig.input.roleList = [...this.RoleDatatable]
+        mfeConfig.input.isShimmer = false;
+        this.rdsNewRoleMfeConfig = mfeConfig;
       }
     })
-   // this.updateRoleData();
+    // this.updateRoleData();
   }
 
-  updateRoleData(){
+  updateRoleData() {
     this.store.select(selectAllRoles).subscribe((res: any) => {
       this.RoleDatatable = [];
       if (res && res.roles && res.roles.items) {
         res.roles.items.forEach((element: any) => {
           const status: string = (element.isStatic) ? '<span class="badge badge-primary p-1 mx-1 rounded">Static</span> ' : '';
           const status1: string = (element.isDefault) ? '<span class="badge badge-success p-1 mx-1 rounded">Default</span> ' : '';
-         
+
           const roleName: string = (element.displayName);
           const defaultLanguageTemplate = `<div class="d-flex align-items-center"> ${roleName} <div class="d-block text-end"> ${status} ${status1} </div></div> `
           const item: any = {

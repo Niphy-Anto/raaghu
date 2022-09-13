@@ -4,14 +4,15 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RdsTeamMemberComponent } from '../public-api';
 import { RdsIconModule } from '@libs/rds-icon';
-
+import { RdsProductImageModule } from '@libs/rds-product-image';
+// import { RdsProductImageModule } from '@libs/rds-product-image';
 export default {
   title: 'Elements/Team-member',
   component: RdsTeamMemberComponent,
   decorators: [
     moduleMetadata({
 
-      imports: [CommonModule, FormsModule,RdsIconModule],
+      imports: [CommonModule, FormsModule,RdsIconModule , RdsProductImageModule],
     }),
   ],
 } as Meta

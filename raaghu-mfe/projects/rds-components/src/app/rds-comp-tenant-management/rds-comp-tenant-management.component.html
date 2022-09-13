@@ -5,7 +5,7 @@
   </div>
   </li>
   <li>
-    <div class="form-group mb-3">
+    <div class="form-group mb-2">
     <rds-checkbox [disabled]="false" [label]="translate.instant('Allow Tenants To Register To The System')+'.'"
       [checked]="dataset.allowSelfRegistration" [(ngModel)]="dataset.allowSelfRegistration" name="default"
       [withLabel]="true" [switch]="false" [inline]="false" [id]="'isDefault'"
@@ -14,12 +14,12 @@
     </div>
   </li>
   <li>
-   <div class="mb-3">
+   <div class="mt-4">
       <rds-label [label]="translate.instant('New Registered Tenants Are Active By Default')"></rds-label>
     </div>
   </li>
   <li>
-    <div class="form-group mb-3">
+    <div class="form-group mb-1 mt-2">
       <rds-checkbox [disabled]="false" [label]="translate.instant('Allow Tenants To Register To The System')+'.'"
         [checked]="dataset.isNewRegisteredTenantActiveByDefault"
         [(ngModel)]="dataset.isNewRegisteredTenantActiveByDefault" name="allowTenants" [withLabel]="true" [switch]="false"
@@ -29,7 +29,7 @@
     </div>
   </li>
   <li class="">
-    <div class="form-group mb-3">
+    <div class="form-group mb-2 mt-4">
       <rds-checkbox [disabled]="false"
         [label]="translate.instant('Use Security Image Question (Captcha) On Registration.')"
         [checked]="dataset.useCaptchaOnRegistration" [(ngModel)]="dataset.useCaptchaOnRegistration"
@@ -40,9 +40,9 @@
   <li>
     <div class="row">
       <div class="col-md-5">
-        <div class="form-group mb-3">
+        <div class="form-group mb-2 mt-4">
           <rds-select-list [(ngModel)]="dataset.defaultEditionId" [labelText]="translate.instant('Edition')" [value]="dataset.defaultEditionId"
-            ngDefaultControl name="defaultEditionId" [itemList]="settingsTenantEditionList"
+            ngDefaultControl name="defaultEditionId" [LabelType]="'Top'" [itemList]="settingsTenantEditionList"
             (change)="getAllowTenants($event)">
           </rds-select-list>
         </div>

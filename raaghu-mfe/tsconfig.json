@@ -8,6 +8,9 @@
       "@libs/shared": [
         "projects/libs/shared/src/public-api.ts"
       ],
+      "@libs/ngx-cookieconsent": [
+        "projects/libs/ngx-cookieconsent/src/public-api.ts"
+      ],
       "@libs/state-management": [
         "projects/libs/state-management/src/public-api.ts"
       ],
@@ -62,6 +65,18 @@
       "@libs/rds-big-number-widget": [
         "rds-elements/rds-big-number-widget/public-api",
         "rds-elements/rds-big-number-widget"
+      ],
+      "@libs/rds-stepper": [
+        "rds-elements/rds-stepper/public-api",
+        "rds-elements/rds-stepper"
+      ],
+      "@libs/rds-app-details": [
+        "rds-elements/rds-app-details/public-api",
+        "rds-elements/rds-app-details"
+      ],
+      "@libs/rds-counter": [
+        "rds-elements/rds-counter/public-api",
+        "rds-elements/rds-counter"
       ]
     },
     "baseUrl": "./",

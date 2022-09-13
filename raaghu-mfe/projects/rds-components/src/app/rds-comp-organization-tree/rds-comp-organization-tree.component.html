@@ -18,7 +18,7 @@
         <div *ngIf="node.level !== 1" class="horizontal-dotted-line dottedstyle"></div>
       </div>
       <span #nodeLabel class="mt-1 node-label d-flex ">
-        <span class="mr-5" (click)="onClicknode(node)">{{ node.data.displayName }}</span>
+        <span class="mr-5" (click)="onClicknode(node)" [class.text-primary]="node.selected">{{ node.data.displayName }}</span>
         <i *ngIf="mutable === true  && OrganizationTreeType.Normal===true||OrganizationTreeType.IconLabel===true"
           data-bs-toggle="offcanvas" data-bs-target="#addNestedNodeModal" (addNestedElement)="addNestedNode(node)"
           [nestGroup]="nodeLabel" class="pl-3 mx-2  nest-icon bi bi-plus-circle-fill text-secondary font-size-lg pointer"></i>
@@ -33,8 +33,7 @@
       </span>
 
     </div>
-    <span *ngIf="node.data.displayName" class="node-count text-muted">({{node.data.memberCount}} Members)</span>
-
+    <span *ngIf="node.data.displayName" class="node-count text-muted">({{node.children?.length}} Members)</span>
     <div *ngIf="node.children?.length > 0">
       <ng-container *ngTemplateOutlet="recursiveNodeTemplate; context: { list: node.children }">
       </ng-container>

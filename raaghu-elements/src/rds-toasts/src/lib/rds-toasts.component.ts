@@ -1,11 +1,13 @@
-import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
+import { AfterViewInit, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+// import * as bootstrap from 'bootstrap';
+declare var bootstrap : any;
 
 @Component({
   selector: 'rds-toasts',
   templateUrl: './rds-toasts.component.html',
   styleUrls: ['./rds-toasts.component.scss']
 })
-export class RdsToastsComponent implements OnInit, AfterViewInit {
+export class RdsToastsComponent implements OnInit, AfterViewInit, OnChanges {
 
   // messages: any[] = [];
   // subscription!: Subscription;
@@ -13,12 +15,22 @@ export class RdsToastsComponent implements OnInit, AfterViewInit {
   @Input()
   message = 'Hello, world! This is a toast message.';
 
+  @Input() data_type: string = '';
+  delay: number | undefined = undefined;
+  @Input() autoHide: boolean = false;
+  @Input() toastId: string = 'toastId';
+  @Input() colorVariant: string = 'success';
+  @Input() iconName: string = 'check';
+  @Input() iconHeight: string = '16px'
+  @Input() iconWidth: string = '18px'
+  @Input() iconColorVariant: string = '';
+  @Input() show: boolean = false;
+  @Input() iconFill: boolean = false;
+  @Input() iconStroke: boolean = true;
+
 
   @Input()
   withHeader = false
-
-  @Input()
-  colorVariant?: string;
 
   @Input()
   toastMessageColorVariant?: string;
@@ -37,19 +49,32 @@ export class RdsToastsComponent implements OnInit, AfterViewInit {
 
   constructor() { }
 
+  ngOnChanges(changes: SimpleChanges): void {
+    if (this.show) {
+      var toastEl: any = document.getElementById(this.toastId);
+      if (toastEl) {
+        var toast = new bootstrap.Toast(toastEl);
+        toast.show();
+      }
+
+    }
+  }
+
   ngOnInit(): void {
   }
 
   ngAfterViewInit(): void {
+    if (this.show) {
+      var toastEl: any = document.getElementById(this.toastId);
+      if (toastEl) {
+        var toast = new bootstrap.Toast(toastEl);
+        toast.show();
+      }
+
+    }
   }
 
-  public get show(): any[] {
-    var customClasses = ['']
-    if (this.withHeader === false) {
-      customClasses.push('d-none')
-    }
-    return customClasses
-  }
+
 
   public get positionClass(): any[] {
     var positionClasses = ['']
@@ -94,21 +119,8 @@ export class RdsToastsComponent implements OnInit, AfterViewInit {
     return colorClasses;
   }
 
-  //public get img(): any[] {
-  //  var customClasses = ['']
-  //  if (this.withImage === true) {
-  //    customClasses.push('d-none')
-  //  }
-  //  return customClasses
-  //}
 
-  showToast() {
-    debugger;
-    this.clicked = !this.clicked;
-  }
-  hideToast() {
-    debugger;
-    this.clicked = false;
-  }
+
+
 
 }

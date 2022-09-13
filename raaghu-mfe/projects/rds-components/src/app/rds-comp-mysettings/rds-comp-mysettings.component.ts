@@ -18,7 +18,8 @@ export class RdsMysettingsComponent implements OnInit, OnChanges {
     NewPassword: '',
     ConFNewPassword: ''
   }
-  
+  @Input() buttonSpinner : boolean =true;
+  @Output() onProfileClose= new EventEmitter<any>();
   @Output() onProfileSave = new EventEmitter<any>();
   firstcontent: boolean = false;
   invalidEmail: boolean = false;
@@ -33,7 +34,6 @@ export class RdsMysettingsComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     if (this.ProfileData) {
-
     }
   }
 
@@ -62,7 +62,8 @@ export class RdsMysettingsComponent implements OnInit, OnChanges {
   }
   confirmPassword() {
     if (this.ProfileData.NewPassword === this.ProfileData.ConFNewPassword) {
-      this.isPasswordMismatch = false
+      this.isPasswordMismatch = false;
+
     } else {
       this.isPasswordMismatch = true
     }
@@ -74,14 +75,24 @@ export class RdsMysettingsComponent implements OnInit, OnChanges {
     if (!EMAIL_REGEXP.test(data)) {
       this.invalidEmail = true;
 
+
     }
     else this.invalidEmail = false;
   }
 
-  saveProfile(form: NgForm) {
-    if (!form.valid || this.isPasswordMismatch) {
+
+  saveProfile(changePasswordForm: NgForm) {
+    changePasswordForm.form.markAllAsTouched();
+    this.buttonSpinner=true;
+
+    if (!changePasswordForm.valid || this.isPasswordMismatch) {
       return;
     }
     this.onProfileSave.emit({ currentPassword: this.ProfileData.CurrentPassword, newPassword: this.ProfileData.NewPassword });
+   
+  }
+  onCancel():void{
+    this.onProfileClose.emit();
+    this.buttonSpinner=false;
   }
 }

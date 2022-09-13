@@ -1,11 +1,12 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Component, Injector, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AlertService, AppSessionService, ComponentLoaderOptions, MfeBaseComponent, UserAuthService } from '@libs/shared';
+import { AlertService, AlertTypes, AppSessionService, ComponentLoaderOptions, MfeBaseComponent, UserAuthService } from '@libs/shared';
 import { AuthenticateModel, AuthenticateResultModel, TokenAuthServiceProxy } from '@libs/shared';
 import { Store } from '@ngrx/store';
 import { getCurrentLoginInformation, GetProfilePicture, GetSubscriptionExpiringData, ValidateTenantName } from 'projects/libs/state-management/src/lib/state/login/login.actions';
 import { selectTenant } from 'projects/libs/state-management/src/lib/state/login/login.selector';
+declare var bootstrap: any;
 
 @Component({
   selector: 'app-root',
@@ -32,7 +33,8 @@ export class AppComponent extends MfeBaseComponent implements OnInit {
   loginTokenExpiryDate = 0;
   acessTokenExpiryDate: any;
   refreshTokenExpiryDate: any;
-  loadingshimmer:boolean=true;
+  loadingshimmer: boolean = true;
+  tenancyName: string = '';
   constructor(
     private injector: Injector,
     private _userAuthService: UserAuthService,
@@ -53,7 +55,7 @@ export class AppComponent extends MfeBaseComponent implements OnInit {
     this.subscribeToAlerts();
     const tenantInfo = JSON.parse(localStorage.getItem('tenantInfo'));
     var tenancyName = tenantInfo ? tenantInfo.name : 'Not Selected';
-  
+
     this.rdsLoginMfeConfig = {
       name: 'RdsLogin',
       input: {
@@ -65,66 +67,76 @@ export class AppComponent extends MfeBaseComponent implements OnInit {
         onSwitchTenant: (data: any) => {
           this.insertTenant(data);
         },
-        onLogin:(data: any) =>{
+        onLogin: (data: any) => {
           this.authenticateModal.userNameOrEmailAddress = data.userEmail;
           this.authenticateModal.password = data.userPassword;
           this.authenticateModal.rememberClient = data.rememberme;
           this.authenticate();
         },
-        onShimmerLoad:(event:any)=>{
-          this.loadingshimmer=false;
+        onShimmerLoad: (event: any) => {
+          this.loadingshimmer = false;
         }
       }
     };
-    if(this.sessionService.user) {
+    if (this.sessionService.user) {
       this._router.navigateByUrl('pages/dashboard');
     }
+    this.store.select(selectTenant).subscribe(res => {
+      if (res) {
+        const mfeConfig = this.rdsLoginMfeConfig;
+        if (res.state === 1 && res.tenantId !== null) {
+          mfeConfig.input.TenancyName = this.tenancyName;
+          this.rdsLoginMfeConfig = mfeConfig;
+          localStorage.setItem('tenantInfo', JSON.stringify({
+            id: res.tenantId,
+            name: this.tenancyName
+          }));
+          var myModalEl = document.getElementById('ChangeTenant');
+          var modal = bootstrap.Modal.getInstance(myModalEl)
+          modal.hide();
+          this.alertService.showAlert('Success', 'Switched to tenancy "' + this.tenancyName + '" successfully', AlertTypes.Success)
+        } else if (res.state === 3) {
+          this.alertService.showAlert('Failed', 'Tenancy "' + this.tenancyName + '" is not available', AlertTypes.Error)
+          localStorage.removeItem('tenantInfo');
+          mfeConfig.input.TenancyName = 'Not Selected';
+          this.rdsLoginMfeConfig = mfeConfig;
+        }
+
+      }
+
+    })
   }
 
   insertTenant(data: any) {
     const tenantData: any = {
       tenancyName: data,
     }
-    const mfeConfig = this.rdsLoginMfeConfig;
+    this.tenancyName = data;
     if (data) {
       this.store.dispatch(ValidateTenantName(tenantData));
-      this.store.select(selectTenant).subscribe(res => {
-        if (res.tenantId) {
-          mfeConfig.input.TenancyName = tenantData.tenancyName;
-          this.rdsLoginMfeConfig = mfeConfig;
-          localStorage.setItem('tenantInfo', JSON.stringify({
-            id: res.tenantId,
-            name: data
-          }));
-        }
-        else {
-          localStorage.removeItem('tenantInfo');
-          mfeConfig.input.TenancyName = 'Not Selected';
-          this.rdsLoginMfeConfig = mfeConfig;
-        }
-      })
+
     }
-    else {
-      localStorage.removeItem('tenantInfo');
-      mfeConfig.input.TenancyName = 'Not Selected';
-      this.rdsLoginMfeConfig = mfeConfig;
-    }
+    // else {
+    //   localStorage.removeItem('tenantInfo');
+    //   mfeConfig.input.TenancyName = 'Not Selected';
+    //   this.rdsLoginMfeConfig = mfeConfig;
+    // }
   }
 
   subscribeToAlerts() {
     this.alertService.alertEvents.subscribe((alert) => {
       this.currentAlerts = [];
       const currentAlert: any = {
-        type: 'error',
-        title: 'title',
-        message: 'Invalid user name or password',
+        type: alert.type,
+        title: alert.title,
+        message: alert.message,
       };
       this.currentAlerts.push(currentAlert);
       const rdsAlertMfeConfig = this.rdsAlertMfeConfig;
       rdsAlertMfeConfig.input.currentAlerts = [...this.currentAlerts];
       this.rdsAlertMfeConfig = rdsAlertMfeConfig;
     });
-   // this.alertService.showAlert('title','Invalid user name or password','danger')
+    // this.alertService.showAlert('title','Invalid user name or password','danger')
   }
 
 
@@ -143,7 +155,7 @@ export class AppComponent extends MfeBaseComponent implements OnInit {
       },
       error: (err: any) => {
         mfeConfig.input.buttonSpinner = false;
-        this.alertService.showAlert('title','Invalid user name or password','error')
+        this.alertService.showAlert('title', 'Invalid user name or password', 'error')
       },
     });
   }
@@ -161,7 +173,7 @@ export class AppComponent extends MfeBaseComponent implements OnInit {
         refreshToken: this.authenticateResult.refreshToken,
         expireDate: tokenExpireDate,
         refreshTokenExpireDate: refreshTokenExpireDate,
-        date: Date.now()+tokenExpireDate
+        date: Date.now() + tokenExpireDate
       }));
       this._userAuthService.authenticateUser();
       this.store.dispatch(GetProfilePicture());
@@ -169,7 +181,7 @@ export class AppComponent extends MfeBaseComponent implements OnInit {
       this._userAuthService.getUserConfiguration('login');
     } else {
       // Unexpected result!
-       this._router.navigateByUrl('/pages/login');
+      this._router.navigateByUrl('/pages/login');
     }
   }
 

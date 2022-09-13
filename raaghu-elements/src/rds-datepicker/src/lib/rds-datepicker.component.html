@@ -1,42 +1,44 @@
 <ng-container *ngIf="datePickerType==='basic'">
-  <div>
+  <div [class.disable-pointer]="disabled">
     <label [ngClass]="labelClass" [ngClass]="Label == '' ? 'd-none' : 'form-label'" for="Errormessage">{{
       Label
       }}<span class="text-danger" *ngIf="isRequired">*</span></label>
-    <div class="input-group mb-3 pt-2">
-      <input type="text" autocomplete="off" bsDatepicker [datesDisabled]="datesDisabled" [minDate]="minDate"
-        #datepicker="bsDatepicker" (onHidden)="onHide.emit($event)" [daysDisabled]="daysDisabled" [isOpen]="isOpen"
-        [bsConfig]="DatePickerConfig" id="DateOfBirth" [maxDate]="maxDate" [outsideEsc]="outsideEsc"
-        (onShown)="onShow.emit($event)" [placeholder]="placeholder" [bsValue]="value"
-        [dateTooltipTexts]="dateTooltipTexts" [(ngModel)]="value" name="date-picker" [minMode]="minMode"
-        (bsValueChange)="onDateChane($event)" [datesEnabled]="datesEnabled" [datesDisabled]="datesDisabled"
-        [outsideClick]="outsideClick" [placement]="placement" class="form-control" />
-      <span class="input-group-text" id="basic-addon1" (click)="datepicker.show()">
-        <rds-icon name="calendar" height="18px" width="18px"></rds-icon>
-
+    <div class="input-group mb-3">
+      <input type="text" autocomplete="off" bsDatepicker [datesDisabled]="datesDisabled"
+        [class.disable-pointer]="disabled" [disabled]="disabled" [minDate]="minDate" #datepicker="bsDatepicker"
+        (onHidden)="onHide.emit($event)" [daysDisabled]="daysDisabled" [isOpen]="isOpen" [bsConfig]="DatePickerConfig"
+        id="DateOfBirth" [maxDate]="maxDate" [outsideEsc]="outsideEsc" (onShown)="onShow.emit($event)"
+        [placeholder]="placeholder" [bsValue]="value" [dateTooltipTexts]="dateTooltipTexts" [(ngModel)]="value"
+        name="date-picker" [minMode]="minMode" (bsValueChange)="onDateChane($event)" [datesEnabled]="datesEnabled"
+        [datesDisabled]="datesDisabled" [outsideClick]="outsideClick" [placement]="placement" class="form-control" />
+      <span class="input-group-text" id="basic-addon1" (click)="datepicker.show()" [class.disable-pointer]="disabled">
+        <rds-icon name="calendar" height="18px" width="18px" [disabled]="disabled"></rds-icon>
       </span>
 
     </div>
   </div>
 </ng-container>
 <ng-container *ngIf="datePickerType==='advanced'">
-  <div class="dd">
-    <div class="dd-a vertical">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+  <div class="date-picker">
+    <div class="date-picker-a vertical">
+      
+       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
         aria-expanded="false">
-        <rds-icon name="calendar" height="18px" width="18px"></rds-icon>
-        <span class="date-range"> {{Label }}</span>
-      </button>
-    </div>
+         <rds-icon name="calendar" height="18px" width="18px"></rds-icon>
+        <span class="date-range  ms-2"> {{Label }}</span>
+       </button>
+     
+     </div>
     <input type="checkbox" (click)="checked($event)">
     <div [class]="classes">
       <ul class="dropdown-menu1">
-        <li class="display-last-date cus-date"><a class="dropdown-item" href="#"><strong>{{title}}</strong></a></li>
+        <li class="display-last-date cus-date"><a class="dropdown-item mb-2 ml-2" href="#"><strong>{{title}}</strong></a></li>
         <div [ngSwitch]="newDate">
           <li class="display-date" *ngSwitchCase="'currentDate'"><a><small>{{currentDate | date:'MMM d,y'}}</small></a>
           </li>
 
-          <li class="display-date" *ngSwitchCase="'yesterdayDate'"><a><small>{{yesterdayDate | date:'MMM d,y'}}</small></a></li>
+          <li class="display-date" *ngSwitchCase="'yesterdayDate'"><a><small>{{yesterdayDate | date:'MMM
+                d,y'}}</small></a></li>
 
           <li class="display-date" *ngSwitchCase="'lastSevendate'"><a><small>{{dates | date:'MMM d,y'}} -
                 {{lastSevendate | date:'MMM d,y'}}</small></a></li>
@@ -51,7 +53,7 @@
           <hr class="dropdown-divider">
         </li>
 
-        <li><a class="dropdown-item" (click)="todayDate($event);">Today</a></li>
+        <li><a class="dropdown-item " (click)="todayDate($event);">Today</a></li>
         <li><a class="dropdown-item" (click)="yesDate($event)">Yesterday</a></li>
         <li><a class="dropdown-item" (click)="lastSevenDate($event)">Last 7 days</a></li>
         <li><a class="dropdown-item" (click)="lastFourteenDate($event)">Last 14 days</a></li>

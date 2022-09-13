@@ -49,8 +49,8 @@
         </div>
         <div class="col-md-6 sm-p-0">
           <div class="form-group mb-3">
-            <rds-select-list [(ngModel)]="tenantData.edition" [labelText]="translate.instant('Edition')"
-              [value]="tenantData.edition" ngDefaultControl LabelType="Top" name="edition" [itemList]="editionList">
+            <rds-select-list [(ngModel)]="tenantData.edition" [labelText]="translate.instant('Edition')" [isRequired]=true
+              [value]="tenantData.edition" ngDefaultControl LabelType="Top" name="edition" [itemList]="editionList" [placeholderText]="'Select Edition'">
             </rds-select-list>
           </div>
         </div>
@@ -65,10 +65,10 @@
           </div>
         </div>
       </div>
-      <div class="row" [class.disabled]="tenantData.unlimitedSubscription">
+      <div class="row" >
         <div class="col-md-6 sm-p-0">
           <div class="form-group mb-3">
-            <rds-datepicker name="date-picker" [Label]="translate.instant('Subscription End Date')"
+            <rds-datepicker name="date-picker" [disabled]="tenantData.unlimitedSubscription" [Label]="''"
               [(ngModel)]="tenantData.subscriptionEndDate" (change)="onDateChange($event)"
               [value]="tenantData.subscriptionEndDate"></rds-datepicker>
           </div>
@@ -78,11 +78,11 @@
   </div>
   <div class="footer-buttons my-2 sm-p-0">
     <rds-button [label]="translate.instant('Cancel')" [colorVariant]="'outline-primary'" [size]="'small'"
-      (click)="onCancel.emit()" data-bs-dismiss="offcanvas">
+      (click)="onCanceled()" data-bs-dismiss="offcanvas">
     </rds-button>
     <rds-button [label]="translate.instant('Next')"
       [disabled]="!tenantCreationForm.valid"
-      [size]="'small'" class="ms-2" [colorVariant]="'primary'" (click)="next(tenantCreationForm)">
+      [size]="'small'" class="ms-2" [colorVariant]="'primary'" (click)="next(tenantCreationForm)" [showLoadingSpinner]="buttonSpinner">
     </rds-button>
   </div>
 </div>

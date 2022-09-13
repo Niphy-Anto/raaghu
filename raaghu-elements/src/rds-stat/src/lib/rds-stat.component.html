@@ -1,0 +1,56 @@
+<div [ngSwitch]="display_type">
+  <div *ngSwitchCase="'Basic'">
+    <div class="card h-100 w-100 border" *ngFor="let item of statItems; let i = index">
+          <div class="card-body align-items-center d-flex justify-content-center">
+        <div>
+            <div class="grow mt-4 text-center">
+              <rds-icon
+              [name]="item.icon"
+              [fill]="item.iconFill"
+              [stroke]="item.iconStroke"
+              [height]="item.iconHeight"
+              [width]="item.iconWidth"
+              colorVariant="primary"
+              class="fs-6 me-2">
+            </rds-icon>
+          </div>   
+        <h1 class="fw-bold mt-4 text-center">
+          {{ item.value }}
+        </h1>
+        <div>
+          <label class="fs-5 text-muted text-center">
+            {{ item.title }}
+          </label>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div *ngSwitchCase="'Advanced'">
+    <div class="card h-300px w-300px border rounded-circle"
+      *ngFor="let item of statItems; let i = index">
+      <div
+        class="
+          card-body
+          align-items-center
+          card-body
+          d-flex
+          justify-content-center
+          stathover
+        "
+      >
+        <div class="d-block text-center">
+          <h1 class="fw-bold py-2 titlehover">
+            {{ item.value }}
+          </h1>
+          <div>
+            <label class="fs-5 text-muted">
+              {{ item.title }}
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

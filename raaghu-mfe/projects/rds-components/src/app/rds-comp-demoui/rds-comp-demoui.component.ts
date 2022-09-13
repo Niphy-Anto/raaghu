@@ -17,6 +17,8 @@ export class RdsCompDemouiComponent implements OnInit {
     "widthMax":"25"
   }];
 
+ hundred :number =100;
+ fourty:number =40;
 tableHeaderItems=[
   {
     "headerName": "Name"
