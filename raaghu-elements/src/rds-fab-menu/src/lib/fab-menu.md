@@ -1,7 +1,7 @@
 ---
-slug: "/Fab-Menu"
+slug: "/Fab Menu"
 date: "2019-05-04"
-title: "Fab-Menu"
+title: "Fab Menu"
 ---
 
 <!-- CSS only -->
@@ -9,10 +9,10 @@ title: "Fab-Menu"
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/style-elements.css">
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/main.css">
 
+#### Fab Menu
 
-#### Fab-Menu
+<p class="checkbox-def">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore sdavavfgsv</p>
 
-<p class="">A card is a small rectangular module with images and text. It is an entry point for users to learn more details</p>
 <section class="py-4">
     <h6>Basic</h6>
     <div class="py-3">
@@ -22,7 +22,7 @@ title: "Fab-Menu"
             <button class="nav-link active" id="PreviewBasic-tab" data-bs-toggle="tab" data-bs-target="#PreviewBasic" type="button" role="tab" aria-controls="PreviewBasic" aria-selected="true">Preview </button>
           </li>
           <li class="nav-item" role="presentation">
-            <button class="nav-link" id="AngularBasic-tab" data-bs-toggle="tab" data-bs-target="#AngularBasic" type="button" role="tab" aria-controls="AngularBasic" aria-selected="false"><i class="bi bi-code-slash" style="font-size:1.0rem"></i>Angular</button>
+            <button class="nav-link" id="AngularBasic-tab" data-bs-toggle="tab" data-bs-target="#AngularBasic" type="button" role="tab" aria-controls="AngularBasic" aria-selec0ted="false"><i class="bi bi-code-slash" style="font-size:1.0rem"></i>Angular</button>
           </li>
         </ul>
       </div>
@@ -30,9 +30,8 @@ title: "Fab-Menu"
         <div class="tab-pane fade show active" id="PreviewBasic" role="tabpanel" aria-labelledby="PreviewBasic-tab">
          <div class="contents bg-light p-5">
               <div class="row">
-              <!-- <img src="https://raw.githubusercontent.com/Wai-Technologies/raaghu/main/raaghu-mfe/assets/Edit-Language-Text.png" alt="color"> -->
-              <img src="/images/fab-menu.png" class="img-thumbnail w-50">
-           </div>
+               <!-- <img src="/images/dropdown-list-basic.png" class="img-thumbnail w-100"> -->
+              </div>
                        
   </div>
         </div>
@@ -41,12 +40,12 @@ title: "Fab-Menu"
 <div class="row m-0">
 
 ```html
- <rds-fab-menu
-  colorVariant="btn-secondary"
-  size="default"
-  [listItems]="listItems"
-  (onSelect)="onSelect($event)"
-></rds-fab-menu>
+<rds-fab-menu
+colorVariant="btn-secondary"
+size="default"
+[listItems]="listItems"
+(onSelect)="onSelect($event)">
+</rds-fab-menu>
 ```
 </div>
 </div>
@@ -55,4 +54,32 @@ title: "Fab-Menu"
       </div>
     </div>
   </section>
-   
+
+
+
+
+ 
+<section class="py-4">
+                        <h6>
+                           Skeleton / Specifications
+                        </h6>
+                        <div class="py-3">
+                              <!-- Tab panes -->
+                              <div class="card border p-5">
+                                 <div class="row">
+                                    <div class="col-md-6">
+                                       <img src="https://portal.raaghu.io/images/components/_dropdown-list/img-1.png" class="img-fluid">
+                                    </div>
+                                    <div class="col-md-6 ">
+                                       <img src="https://portal.raaghu.io/images/components/_dropdown-list/img-2.png" class="img-fluid">
+                                    </div>
+                                 </div>
+                              </div>
+                        </div>
+                     </section>
+
+
+
+
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

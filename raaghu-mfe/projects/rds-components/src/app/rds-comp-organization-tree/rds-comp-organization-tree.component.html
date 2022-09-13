@@ -97,18 +97,18 @@
       </div>
     </div>
   </div>
-   <div class="footer-buttons my-2">
-  <div class="row">
-    <div class="col-md-12">
-      <rds-button  [label]="translate.instant('Cancel')" type="button" [colorVariant]="'outline-primary'" [size]="'small'"
-        data-bs-dismiss="offcanvas">
-      </rds-button>
-      <rds-button [disabled]="!nodeForm.invalid"  [label]="translate.instant('Save')" type="button" [size]="'small'" class="px-2"
-        [colorVariant]="'primary'" (click)="pushNode()"   data-bs-target="#addNodeModal" data-bs-dismiss="offcanvas">
-      </rds-button>
+  <div class="footer-buttons my-2">
+    <div class="row">
+      <div class="col-md-12">
+        <rds-button  [label]="translate.instant('Cancel')" type="button" [colorVariant]="'outline-primary'" [size]="'small'"
+          data-bs-dismiss="offcanvas">
+        </rds-button>
+        <rds-button [disabled]="ItemDescription==null || ItemDescription == ''"  [label]="translate.instant('Save')" type="button" [size]="'small'" class="px-2"
+          [colorVariant]="'primary'" (click)="pushNode()" data-bs-dismiss="offcanvas" data-bs-target="#addNodeModal">
+        </rds-button>
+      </div>
     </div>
-  </div>
-</div>    
+  </div>   
 </rds-offcanvas>
 
 <rds-offcanvas [canvasTitle]="translate.instant(offcanvasTitleModel)" [offId]="'addNestedNodeModal'" [placement]="'end'"

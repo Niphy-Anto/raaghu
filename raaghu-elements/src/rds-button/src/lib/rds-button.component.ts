@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, DoCheck, EventEmitter, Input , OnInit, Output } from '@angular/core';
+import { AfterViewInit, Component, DoCheck, EventEmitter, Input , OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 // import { Tooltip } from 'bootstrap'
 declare var bootstrap: any;
 @Component({
@@ -6,7 +6,7 @@ declare var bootstrap: any;
   templateUrl: './rds-button.component.html',
   styleUrls: ['./rds-button.component.scss']
 })
-export class RdsButtonComponent implements AfterViewInit, OnInit, DoCheck {
+export class RdsButtonComponent implements AfterViewInit, OnInit, DoCheck,OnChanges {
 
   @Input()
   colorVariant?: string;
@@ -37,6 +37,9 @@ export class RdsButtonComponent implements AfterViewInit, OnInit, DoCheck {
 
   @Input()
   roundedButton = false;
+
+  @Input()
+  roundedCorner = false;
 
   @Input() iconHeight: string = '';
   @Input() iconWidth: string = '';
@@ -71,6 +74,9 @@ export class RdsButtonComponent implements AfterViewInit, OnInit, DoCheck {
 
   constructor() {
     this.id = this.id + RdsButtonComponent.count++;
+  }
+  ngOnChanges(changes: SimpleChanges): void {
+    this.labelTemp = this.label;
   }
   
 
@@ -112,8 +118,9 @@ export class RdsButtonComponent implements AfterViewInit, OnInit, DoCheck {
     const outline = `${this.outlineButton ? 'btn btn-outline-' + this.colorVariant : 'btn btn-' + this.colorVariant}`;
     const mode = ` btn-${this.size === 'small' ? 'sm' : this.size === 'large' ? 'lg' : 'md'}`;
     const icon = `${this.roundedButton ? ' btn-icon rounded-pill' : ''}`;
+    const icon1 = `${this.roundedCorner ? ' rounded-pill' : ''}`;
 
-    return outline + mode + icon;
+    return outline + mode + icon + icon1;
   }
 
   public get blockWidth(): string[] {
@@ -122,6 +129,7 @@ export class RdsButtonComponent implements AfterViewInit, OnInit, DoCheck {
       classes.push('w-100')
       return classes
     }
+  
     return classes;
     // return this.block ? 'd-grid' : '';
   }
