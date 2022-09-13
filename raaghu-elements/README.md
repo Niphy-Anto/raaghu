@@ -86,7 +86,7 @@ npm install
 ```
  <img title="imge" alt="gif" src="../raaghu-elements/Screenshot (39).png">
 4. Build all the libraries
-
+ <img title="imge" alt="gif" src="../raaghu-elements/Screenshot (66).png">
 ```bash
 npm run build-all
 ```
