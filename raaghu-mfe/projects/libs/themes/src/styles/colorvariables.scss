@@ -633,6 +633,11 @@ html {
             stroke: $gray-700;
           }
 
+
+          ellipse.icon {
+            stroke: $gray-700;
+          }
+
           path.icon {
             stroke: $gray-700;
           }
@@ -663,6 +668,10 @@ html {
           }
 
           polygon.icon {
+            stroke: $primary;
+          }
+
+          ellipse.icon {
             stroke: $primary;
           }
 
@@ -761,6 +770,10 @@ html {
               stroke: $gray-700;
             }
 
+            ellipse.icon {
+              stroke: $gray-700;
+            }
+
             path.icon {
               stroke: $gray-700;
             }
@@ -797,6 +810,10 @@ html {
             }
 
             polygon.icon {
+              stroke: $primary;
+            }
+
+            ellipse.icon {
               stroke: $primary;
             }
 
@@ -1057,6 +1074,18 @@ html {
         fill: none;
         stroke: $color;
 
+        polygon.icon {
+          stroke: $color;
+        }
+
+        polyline.icon {
+          stroke: $color;
+        }
+
+        ellipse.icon {
+          stroke: $color;
+        }
+
         path.icon {
           stroke: $color;
         }
@@ -1090,6 +1119,18 @@ html {
         height: 22px;
         fill: none;
         stroke: $color;
+
+        polygon.icon {
+          stroke: $color;
+        }
+
+        polyline.icon {
+          stroke: $color;
+        }
+
+        ellipse.icon {
+          stroke: $color;
+        }
 
         path.icon {
           stroke: $color;
@@ -1135,6 +1176,10 @@ html {
         }
 
         polygon.icon {
+          stroke: $alert-color;
+        }
+
+        ellipse.icon {
           stroke: $alert-color;
         }
 
@@ -1219,6 +1264,10 @@ html {
         }
 
         polygon.icon {
+          stroke: $icon-color;
+        }
+
+        ellipse.icon {
           stroke: $icon-color;
         }
 
@@ -1923,6 +1972,10 @@ html[theme=dark] {
             stroke: $gray-700;
           }
 
+          ellipse.icon {
+            stroke: $gray-700;
+          }
+
           path.icon {
             stroke: $gray-700;
           }
@@ -1954,6 +2007,10 @@ html[theme=dark] {
           }
 
           polygon.icon {
+            stroke: $primary;
+          }
+
+          ellipse.icon {
             stroke: $primary;
           }
 
@@ -2070,6 +2127,10 @@ html[theme=dark] {
               stroke: $gray-700;
             }
 
+            ellipse.icon {
+              stroke: $gray-700;
+            }
+
             path.icon {
               stroke: $gray-700;
             }
@@ -2109,6 +2170,10 @@ html[theme=dark] {
             }
 
             polygon.icon {
+              stroke: $primary;
+            }
+
+            ellipse.icon {
               stroke: $primary;
             }
 
@@ -2409,6 +2474,10 @@ html[theme=dark] {
           stroke: $color;
         }
 
+        ellipse.icon {
+          stroke: $color;
+        }
+
         path.icon {
           stroke: $color;
         }
@@ -2451,6 +2520,10 @@ html[theme=dark] {
         }
 
         polygon.icon {
+          stroke: $alert-color;
+        }
+
+        ellipse.icon {
           stroke: $alert-color;
         }
 
