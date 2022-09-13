@@ -30,7 +30,7 @@ jobs:
     - name: npm install gatsby
       working-directory: ./raaghu-mfe/gatsby      
       run: |
-        npm install
+        npm install --force
 
     - name: build gatsby
       working-directory: ./raaghu-mfe/gatsby      
