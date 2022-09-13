@@ -7,7 +7,6 @@
 html {
   $theme-colors: ("primary": $primary, "secondary": $secondary, "success": $success, "info": $info, "warning": $warning, "danger": $danger, "light": $light, "dark": $dark ) !default;
   $min-contrast-ratio: 4.5 !default;
-  $primary: #7E2EEf;
   $input-focus-border-color: tint-color($primary, 50%) !default;
   $input-bg: $body-bg !default;
 
