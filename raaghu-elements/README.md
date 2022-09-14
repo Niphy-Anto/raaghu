@@ -43,7 +43,7 @@ raaghu elements can be used as a base to build complex components and UI layouts
 ##  <a name='Demo'></a>Demo
 
 Here is a quick demo of the elements. We hope you enjoy it.
-<img title="imge" alt="gif" src="../raaghu-elements/Demo (1).gif">
+<img title="imge" alt="gif" src="../static/Demo (1).gif">
 
 Liked it? Please give us a ⭐️ to show your appreciation
 
@@ -69,7 +69,7 @@ You can run `raaghu-elements` locally with a few easy steps.
 git clone https://github.com/Wai-Technologies/raaghu.git
 ```
   
-<img title="imge" alt="gif" src="../raaghu-elements/Screenshot (40).png">
+<img title="imge" alt="gif" src="../static/Screenshot (40).png">
 
 
 2. Change the working directory
@@ -84,9 +84,9 @@ cd raaghu-elements
 ```bash
 npm install
 ```
- <img title="imge" alt="gif" src="../raaghu-elements/Screenshot (39).png">
+ <img title="imge" alt="gif" src="../static/Screenshot (39).png">
 4. Build all the libraries
- <img title="imge" alt="gif" src="../raaghu-elements/Screenshot (66).png">
+ <img title="imge" alt="gif" src="../static/Screenshot (66).png">
 ```bash
 npm run build-all
 ```
