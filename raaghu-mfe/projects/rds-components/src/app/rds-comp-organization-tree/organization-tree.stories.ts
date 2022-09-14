@@ -5,6 +5,7 @@ import { RdsButtonModule, RdsCheckboxModule, RdsInputModule, RdsOffcanvasModule 
 import { RdsOrganizationTreeComponent } from './rds-comp-organization-tree.component';
 import { OrganizationTreeNode, OrganizationTreeLabeles, OrganizationTreeType } from '../../models/organization-tree.model';
 import { NgxTranslateModule } from '@libs/shared';
+import { RdsIconModule } from '@libs/rds-icon';
 
 export default {
   title: 'Components/Organization Tree',
@@ -12,7 +13,7 @@ export default {
   decorators: [
     moduleMetadata({
       imports: [
-        FormsModule, ReactiveFormsModule, RdsButtonModule, RdsCheckboxModule, RdsOffcanvasModule, RdsInputModule, NgxTranslateModule
+        FormsModule, ReactiveFormsModule, RdsButtonModule, RdsCheckboxModule, RdsOffcanvasModule, RdsInputModule, NgxTranslateModule, RdsIconModule
       ],
       providers: [
         FormBuilder
