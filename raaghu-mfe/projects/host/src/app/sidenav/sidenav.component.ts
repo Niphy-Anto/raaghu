@@ -1,7 +1,7 @@
 import { Component, Inject, Injector, Input, OnInit, SimpleChanges } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { ComponentLoaderOptions, LinkedUserDto, MfeBaseComponent, UserAuthService, UserDelegationServiceProxy } from '@libs/shared';
+import { ComponentLoaderOptions, LinkedUserDto, MfeBaseComponent, SharedService, UserAuthService, UserDelegationServiceProxy } from '@libs/shared';
 import { Store } from '@ngrx/store';
 import { changePassword, getLanguages, getProfile, selectAllLanguages, selectDefaultLanguage, selectProfileInfo, setDefaultLanguageForUI } from '@libs/state-management';
 import { deleteDelegations, getDelegations, getUsername, saveDelegations } from 'projects/libs/state-management/src/lib/state/authority-delegations/authority-delegations.action';
@@ -131,6 +131,7 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
     private store: Store,
     private alertService: AlertService,
     public translate: TranslateService,
+    private shared:SharedService,
     private injector: Injector,
     private userAuthService: UserAuthService,
     private theme: ThemesService,
@@ -483,6 +484,7 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
       var alert = bootstrap.Alert.getInstance(alertNode);
       alert.close();
     }
+    this.shared.setTopNavTitle('');
 
   }
   redirect(event): void {

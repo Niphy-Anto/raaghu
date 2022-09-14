@@ -2,7 +2,7 @@
     <div class="row m-1">
         <div class="col-md-12">
             <rds-nav-tab [navtabsItems]="getNavTabItems()" [horizontalAlignment]="'start'" [verticalAlignment]="false"
-                [pills]="false" [tabs]="true" [fill]="false" (onchange)="onSelectnode()" [justified]="false"></rds-nav-tab>
+                [pills]="false" [tabs]="true" [fill]="false" (onClicktab)="onSelectnode($event)" [justified]="false"></rds-nav-tab>
         </div>
     </div>
     <div naveContent class="row tab-content m-2" id="nav-tabContent">

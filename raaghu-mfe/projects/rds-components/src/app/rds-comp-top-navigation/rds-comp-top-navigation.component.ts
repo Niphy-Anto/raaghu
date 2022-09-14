@@ -1,6 +1,6 @@
 import { Component, DoCheck, EventEmitter, Inject, Injector, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
-import { ComponentLoaderOptions, MfeBaseComponent, ThemeSettingsDto } from '@libs/shared';
+import { ComponentLoaderOptions, MfeBaseComponent, SharedService, ThemeSettingsDto } from '@libs/shared';
 import { TranslateService } from '@ngx-translate/core';
 import { TableHeader } from '../../models/table-header.model';
 import { DOCUMENT } from '@angular/common';
@@ -61,7 +61,7 @@ export class RdsTopNavigationComponent extends MfeBaseComponent implements OnIni
   @Output() onDownloadLink = new EventEmitter<any>();
   @Output() setNotificationAsRead = new EventEmitter<any>();
   @Output() onUpdateNotificationSettings = new EventEmitter<any>();
-
+  tabName: string = '';
   navtabItems: any = [
     { label: 'Manage Linked Accounts', translationKey: 'Manage Linked Accounts', tablink: '#nav-LinkAccount', ariacontrols: 'nav-LinkAccount', Image: 'bi bi-pencil-fill', icon: 'manage_linked', subText: 'Manage accounts linked to your account', subtextTranslationKey: 'Manage accounts linked to your account', showoffcanvas: true },
     { label: 'Manage Authority Delegation', translationKey: 'Manage Authority Delegation', tablink: '#nav-Deligation', ariacontrols: 'nav-Deligation', icon: 'manage_authority', subText: 'Manage authority accounts', subtextTranslationKey: 'Manage authority accounts', showoffcanvas: true },
@@ -110,6 +110,7 @@ export class RdsTopNavigationComponent extends MfeBaseComponent implements OnIni
   @Output() onProfileSave = new EventEmitter<any>();
 
   constructor(private router: Router, private injector: Injector,
+    private shared: SharedService,
     public translate: TranslateService, @Inject(DOCUMENT) private document: Document
   ) {
     super(injector);
@@ -123,6 +124,10 @@ export class RdsTopNavigationComponent extends MfeBaseComponent implements OnIni
   }
 
   ngOnInit(): void {
+    this.shared.getTopNavTitle().subscribe((res: any) => {
+      this.tabName = res;
+    });
+
     var notificationDropdown = document.getElementById('navbarDropdownMenuLink')
     notificationDropdown.addEventListener('hide.bs.dropdown', function () {
       that.notificationData.forEach((x: any) => {

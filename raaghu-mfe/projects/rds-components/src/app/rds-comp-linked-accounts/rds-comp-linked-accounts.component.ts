@@ -45,7 +45,7 @@ export class RdsLinkedAccountsComponent extends MfeBaseComponent implements OnIn
       actions: [{ id: 'delete', displayName: 'Delete' }],
       pagination: true,
       recordsPerPage: 5,
-      noDataTitle: 'Currently you do not have linked acccounts'
+      noDataTitle: 'Currently you do not have linked accounts'
     },
     output: {
       onActionSelection: (event: any) => {
