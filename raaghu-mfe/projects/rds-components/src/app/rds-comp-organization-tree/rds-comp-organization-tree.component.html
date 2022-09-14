@@ -99,7 +99,7 @@
     <div class="row mt-2 form-style">
       <div class="col-md-12">
         <div class="col-md-12 pb-2">
-          <rds-input size="default" [Title]="translate.instant('Name')" [TitleType]="'Top'" [disabled]="true"
+          <rds-input size="default" [Title]="translate.instant('Name')" [TitleType]="'Top'" [disabled]="false"
             [readonly]="false" value="" inputType="text"
             [placeholder]="OrganizationTreeLabeles.ChildDescriptionPlaceholder" floatinginputLabel="" [id]="'childnode'"
             [(ngModel)]="ItemDescription" (onBlur)='checkDescriptionValidation()' (keyup)='checkDescriptionValidation()'
