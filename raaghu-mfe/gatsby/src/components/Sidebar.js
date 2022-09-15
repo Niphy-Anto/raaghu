@@ -26,7 +26,7 @@ const Sidebar = () => {
 
   const elementsList = JSON.parse(JSON.stringify(data.allDirectory.nodes)); 
   
-  const componentsExcludesList = ['-shimmer',"nents"];
+  // const componentsExcludesList = ['-shimmer',"nents"];
 
   // const componentsList = elementsList.filter((item) =>
   //   item.name.includes("rds-comp")
