@@ -177,7 +177,7 @@ const Sidebar = () => {
             <Accordion.Body>
               <div className="mb-4">
                 <ul className="">
-                  {elementTO.map((node) => (
+                  {elementsList.map((node) => (
                     <li key={node.name}>
                       <Link href={node.name.substring(4)} >
                         {node.name.substring(4)}
@@ -202,7 +202,7 @@ const Sidebar = () => {
             </Accordion.Header>
             <Accordion.Body>
               <ul className="">
-                {componentName.map((node) => (
+                {componentsList.map((node) => (
                   <li key={node.name}>
                     <Link href={node.name.substring(9)}>
                       {node.name.substring(9)}
@@ -226,7 +226,7 @@ const Sidebar = () => {
             </Accordion.Header>
             <Accordion.Body>
               <ul className="">
-                {pageName.map((node) => (
+                {pageList.map((node) => (
                   <li key={node.name}>
                     <Link href={node.name}>{node.name}</Link>
                   </li>
