@@ -24,14 +24,14 @@ const Sidebar = () => {
   `);
 
 
-  const elementsList = JSON.parse(JSON.stringify(data.allDirectory.nodes));
-
-  // console.log(elementsList);
-  const componentsExcludesList = ['-shimmer'];
+  const elementsList = JSON.parse(JSON.stringify(data.allDirectory.nodes)); 
+  
+  const componentsExcludesList = ['-shimmer',"nents"];
 
   const componentsList = elementsList.filter((item) =>
-    item.name.includes("rds-comp") && !componentsExcludesList.some((element) => item.name.includes(element))
-  );
+    item.name.includes("rds-comp") && !componentsExcludesList.some((element) => item.name.includes(element)) 
+  ); 
+  
 
   componentsList.sort((a, b) => {
     let fa = a.name.toLowerCase(),
@@ -45,13 +45,14 @@ const Sidebar = () => {
     return 0;
   });
 
-  const elementExcludesList = ['-shimmer','element','-cookieconsent'];
+  const elementExcludesList = ['-shimmer','element','-cookieconsent','components'];
 
   const rdsElementList = elementsList.filter(
     (item) =>
       item.name.includes("rds-") && !componentsList.find((x) => x === item) &&
-       !elementExcludesList.some((element) => item.name.includes(element))
+       !elementExcludesList.some((element) => item.name.includes(element)) 
   );
+
 
   elementsList.sort((a, b) => {
     let fa = a.name.toLowerCase(),
@@ -141,6 +142,8 @@ const Sidebar = () => {
       !excludes.some((element) => item.name.includes(element)) &&
       index === self.findIndex((t) => t.name === item.name)
   );
+  
+
 
   pageList.sort((a, b) => {
     let fa = a.name.toLowerCase(),
@@ -174,7 +177,7 @@ const Sidebar = () => {
             <Accordion.Body>
               <div className="mb-4">
                 <ul className="">
-                  {rdsElementList.map((node) => (
+                  {elementTO.map((node) => (
                     <li key={node.name}>
                       <Link href={node.name.substring(4)} >
                         {node.name.substring(4)}
@@ -199,7 +202,7 @@ const Sidebar = () => {
             </Accordion.Header>
             <Accordion.Body>
               <ul className="">
-                {componentsList.map((node) => (
+                {componentName.map((node) => (
                   <li key={node.name}>
                     <Link href={node.name.substring(9)}>
                       {node.name.substring(9)}
@@ -223,7 +226,7 @@ const Sidebar = () => {
             </Accordion.Header>
             <Accordion.Body>
               <ul className="">
-                {pageList.map((node) => (
+                {pageName.map((node) => (
                   <li key={node.name}>
                     <Link href={node.name}>{node.name}</Link>
                   </li>
