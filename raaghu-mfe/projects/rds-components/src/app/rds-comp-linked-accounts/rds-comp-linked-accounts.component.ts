@@ -11,28 +11,19 @@ import { Account, LinkedAccount } from '../../models/profile.model';
   styleUrls: ['./rds-comp-linked-accounts.component.scss']
 })
 export class RdsLinkedAccountsComponent extends MfeBaseComponent implements OnInit {
-
-  Addaccountflag: boolean = true;
-  linkaacountDivFlag: boolean = false;
-  linckAccount: any;
-  DatasetLinkedAccount: any = [];
   public actions: any = [{ id: 'delete', displayName: 'Delete' }];
   @Input() recordsPerpage: number = 3;
   @Input() pagination: boolean = false;
-  @Input() TenantName: string;
-  @Input() tenancyName: any;
   @Output() ondelete = new EventEmitter<any>();
   @Output() onUserSave = new EventEmitter<any>();
   @Output() onCancelLinkedAccounts = new EventEmitter<any>()
-  @Input() linkedAccountHeaders:any=[];
-  @Input() linkedAccountData:any=[];
+  @Input() linkedAccountHeaders: any = [];
+  @Input() linkedAccountData: any = [];
   @Input() manageLinkedAccountsTabOpened: boolean = false;
-  userName: '';
-  Tenancyname: '';
-  Password: '';
-
-  showNewLinkAccoutButton: boolean = true;
-  showManageLinkAccountTable: boolean = false;
+  public tenancyName: string = '';
+  public userName: string = '';
+  public password: string = '';
+  public showNewLinkAccoutButton: boolean = true;
 
 
 
@@ -55,58 +46,31 @@ export class RdsLinkedAccountsComponent extends MfeBaseComponent implements OnIn
   }
   hideandShowaccountform() {
     this.showNewLinkAccoutButton = false;
-    this.showManageLinkAccountTable = false;
-    this.linkaacountDivFlag = !this.linkaacountDivFlag;
-    this.Password = '';
-    this.Tenancyname = '';
+    this.password = '';
+    this.tenancyName = '';
     this.userName = '';
   }
 
-  LinkaccountValidator() {
-    if (this.userName && this.Password) {
-      this.Addaccountflag = false
-    } else {
-      this.Addaccountflag = true
-    }
-  }
-
   saveLinkAccount() {
-    // const data = this.LinkedAccountTable.LinkedAccounts
-    // data.push(this.linckAccount);
-    // this.LinkedAccountTable.LinkedAccounts = [...data]
-    // this.linkaacountDivFlag = !this.linkaacountDivFlag;
-    // this.linckAccount=new Account();
-
-    // this.LinkedAccountTable.LinkedAccounts.push(this.linckAccount);
-    // const mfeConfig = this.rdsLinkedAccountTableMfeConfig
-    // mfeConfig.input.tableData = [... this.LinkedAccountTable.LinkedAccounts];
-    // this.rdsLinkedAccountTableMfeConfig = mfeConfig;
-    // this.linckAccount = {
-    // userName: '',
-    // Tenancyname: '',
-    // Password: ''
-    // };
-    // // this.linkaacountDivFlag = !this.linkaacountDivFlag;
-    // this.LinkaccountValidator();
     this.emitEvent('tenancyData', {
       userNameOrEmailAddress: this.userName,
-      tenancyName: this.Tenancyname,
-      password: this.Password
+      tenancyName: this.tenancyName,
+      password: this.password
     })
   }
 
   saveAllLinkAccount(linkedAccount: NgForm) {
+    if (!linkedAccount.valid) {
+      return;
+    }
     linkedAccount.form.markAllAsTouched();
     this.showNewLinkAccoutButton = true;
-    this.linkaacountDivFlag = false;
-    this.showManageLinkAccountTable = true;
-    const data: any = { usernameOrEmailAddress: this.userName, password: this.Password, tenancyName: this.Tenancyname };
+    const data: any = { usernameOrEmailAddress: this.userName, password: this.password, tenancyName: this.tenancyName };
     this.onUserSave.emit(data);
 
   }
 
   onCancel(): void {
-    this.linkaacountDivFlag = false;
     this.showNewLinkAccoutButton = true;
   }
 

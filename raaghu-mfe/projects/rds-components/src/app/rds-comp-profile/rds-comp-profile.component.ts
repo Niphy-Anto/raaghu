@@ -32,7 +32,7 @@ export class RdsCompProfileComponent extends MfeBaseComponent implements OnInit 
   @Input() languageItems = [];
   @Input() selectedLanguage: any = { language: '', icon: '' };
   @Input() defaultLanguage: string = '';
-  tabClosed: boolean = false;
+  delegateTabopened: boolean = false;
   manageLinkedAccountsTabOpened: boolean = false;
 
   @Output() onLanguageSelection = new EventEmitter<any>();
@@ -143,9 +143,9 @@ export class RdsCompProfileComponent extends MfeBaseComponent implements OnInit 
 
     }
     if (this.MenuItems[item].translationKey == 'Manage Authority Delegation') {
-      this.tabClosed = true;
+      this.delegateTabopened = true;
     } else {
-      this.tabClosed = false;
+      this.delegateTabopened = false;
     }
 
     if (this.MenuItems[item].translationKey == 'Manage Authority Delegation') {
@@ -268,7 +268,7 @@ export class RdsCompProfileComponent extends MfeBaseComponent implements OnInit 
     let openedCanvas = bootstrap.Offcanvas.getInstance(myOffCanvas);
     openedCanvas.hide();
     this.viewCanvas = false;
-    this.tabClosed = true;
+    this.delegateTabopened = true;
     this.rdsDeligateTableData = [];
   }
 
