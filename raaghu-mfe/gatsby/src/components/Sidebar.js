@@ -23,13 +23,15 @@ const Sidebar = () => {
     }
   `);
 
-  const elementsList = JSON.parse(JSON.stringify(data.allDirectory.nodes));
 
-  // console.log(elementsList);
+  const elementsList = JSON.parse(JSON.stringify(data.allDirectory.nodes)); 
+  
+  const componentsExcludesList = ['-shimmer',"nents"];
 
   const componentsList = elementsList.filter((item) =>
-    item.name.includes("rds-comp")
-  );
+    item.name.includes("rds-comp") && !componentsExcludesList.some((element) => item.name.includes(element)) 
+  ); 
+  
 
   componentsList.sort((a, b) => {
     let fa = a.name.toLowerCase(),
@@ -43,10 +45,14 @@ const Sidebar = () => {
     return 0;
   });
 
+  const elementExcludesList = ['-shimmer','element','-cookieconsent','components'];
+
   const rdsElementList = elementsList.filter(
     (item) =>
-      item.name.includes("rds-") && !componentsList.find((x) => x === item)
+      item.name.includes("rds-") && !componentsList.find((x) => x === item) &&
+       !elementExcludesList.some((element) => item.name.includes(element)) 
   );
+
 
   elementsList.sort((a, b) => {
     let fa = a.name.toLowerCase(),
@@ -86,13 +92,58 @@ const Sidebar = () => {
     "selected-product",
     "ele-preview",
    "webhooks-subscription-shimmer",
-   "cookieconsent"
+   "cookieconsent",
+   "utils",
+   "util",
+   "-shimmer",
+   "rdc-comp-api-scope-basic",
+   "rdc-comp-api-scope-resource",
+   "test",
+   "testing",
+   "mla",
+   "date-fns",
+   "day",
+   "model",
+   "moment",
+   "ng-add",
+   "themes",
+   "event",
+   "home",
+   "date-adapters",
+   "date-adapter",
+   "basicresource",
+   "common",
+   "host",
+   "modules",
+   "month",   
+   "i18n", 
+   "service",
+   "DownloadData",
+   "product-list",
+   "products",
+   "api-claims",
+   "api-properties",
+   "api-basics",
+   "api-secrets",
+   "authority-delegations",
+   "claim-types",
+   "claims",
+   "edit-language-text",
+   "language-storybook",
+   "login-attempts",
+   "manage-linked-accounts",
+   "modal",
+   "my-settings",
+   "schematics",
+   "visual-settings"
   ];
   const pageList = elementsList.filter(
     (item, index, self) =>
       !excludes.some((element) => item.name.includes(element)) &&
       index === self.findIndex((t) => t.name === item.name)
   );
+  
+
 
   pageList.sort((a, b) => {
     let fa = a.name.toLowerCase(),
@@ -126,7 +177,7 @@ const Sidebar = () => {
             <Accordion.Body>
               <div className="mb-4">
                 <ul className="">
-                  {rdsElementList.map((node) => (
+                  {elementsList.map((node) => (
                     <li key={node.name}>
                       <Link href={node.name.substring(4)} >
                         {node.name.substring(4)}
@@ -177,7 +228,7 @@ const Sidebar = () => {
               <ul className="">
                 {pageList.map((node) => (
                   <li key={node.name}>
-                    <Link to={node.name}>{node.name}</Link>
+                    <Link href={node.name}>{node.name}</Link>
                   </li>
                 ))}
               </ul>
