@@ -69,7 +69,7 @@ export class RdsUserDelegationsComponent implements OnInit, OnChanges, OnDestroy
 
   }
   onCancel(): void {
-    this.onCancelDeligate.emit(true);
+    // this.onCancelDeligate.emit(true);
     this.buttonSpinner=false;
     this.deligateDivFlag = false;
     // this.onCancelDeligate.emit(true);

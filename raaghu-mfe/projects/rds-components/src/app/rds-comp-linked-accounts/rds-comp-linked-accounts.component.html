@@ -46,7 +46,8 @@
             </div>
             <div class="row">
               <div class="col-sm-12">
-                <mfe-loader [config]="rdsLinkedAccountTableMfeConfig"></mfe-loader>
+                <app-rds-data-table [tableStyle]="'light'" [actions]="actions" [recordsPerPage]="5" [noDataTitle]="'Currently you do not have linked accounts'" [pagination]="true"  [width]="100" [tableData]="linkedAccountData" [tableHeaders]="linkedAccountHeaders"></app-rds-data-table>
+                <!-- <mfe-loader [config]="rdsLinkedAccountTableMfeConfig"></mfe-loader> -->
               </div>
             </div>
           </div>

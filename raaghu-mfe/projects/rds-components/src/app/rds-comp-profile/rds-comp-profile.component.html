@@ -8,7 +8,7 @@
       <button type="button" class="btn-close text-reset closetabs" (click)="onClickCloseTabContent()"
               aria-label="Close"></button>
       <div class="tab-pane active h-100" [ngClass]="{'show active': activePage === 0}" id="nav-LinkAccount" role="tabpanel" aria-labelledby="nav-LinkAccount">
-        <app-rds-linked-accounts [linkedAccount]="linkedAccount" (ondelete)="ondeleteLinkaccount.emit($event)"
+        <app-rds-linked-accounts [linkedAccountHeaders]="linkedAccountHeaders" [linkedAccountData]="linkedAccountData" (ondelete)="ondeleteLinkaccount.emit($event)"  [manageLinkedAccountsTabOpened]="manageLinkedAccountsTabOpened"
                                  [pagination]="pagination" [recordsPerpage]="recordsPerpage" (deleteEvent)="deleteLinkaccount($event) "
                                  (onUserSave)="linkToUser($event)" (onCancelLinkedAccounts)="onClickCloseTabContent()">
         </app-rds-linked-accounts>

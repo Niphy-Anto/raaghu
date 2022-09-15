@@ -112,16 +112,16 @@
     </div>
   </div>
 </nav>
-<app-rds-comp-profile [MenuItems]="navtabItems" [linkedAccount]="linkedAccount" [Profileurl]="profilePic"
-  [viewCanvas]="showOffcanvas" [tableWidth]="tableWidth" [id]="offCanvasId" [userList]="userList"
-  [languageItems]="languageItems" [listItemsResult]="listusename" [DownloadTable]="dounloadata"
-  [tableStyle]="tableStyle" [LoginAttempts]="LoginAttempts" [ProfileData]="profileData"
-  [selectedLanguage]="selectedLanguage" [rdsDeligateTableHeader]="rdsDeligateTableHeader"
-  [rdsDeligateTableData]="rdsDeligateTableData" (onSaveDelegate)="saveDeligate.emit($event)"
-  [recordsPerpage]="recordsPerpage" [pagination]="pagination" (onDeleteDeligate)="deleteDeligateuser.emit($event)"
-  (ondeleteLinkaccount)="deleteLinkaccount.emit($event)" (onLinkToUser)="saveLinkUsers($event)"
-  (onProfileSave)="onProfileSave.emit($event)" (onLoginAttempts)="onLoginAttemptsRefresh.emit($event)"
-  (onDownloadLink)="onDownloadLink.emit($event)">
+<app-rds-comp-profile [MenuItems]="navtabItems" [Profileurl]="profilePic" [viewCanvas]="showOffcanvas"
+  [tableWidth]="tableWidth" [id]="offCanvasId" [userList]="userList" [languageItems]="languageItems"
+  [listItemsResult]="listusename" [DownloadTable]="dounloadata" [tableStyle]="tableStyle"
+  [LoginAttempts]="LoginAttempts" [ProfileData]="profileData" [selectedLanguage]="selectedLanguage"
+  [rdsDeligateTableHeader]="rdsDeligateTableHeader" [rdsDeligateTableData]="rdsDeligateTableData"
+  (onSaveDelegate)="saveDeligate.emit($event)" [recordsPerpage]="recordsPerpage" [pagination]="pagination"
+  (onDeleteDeligate)="deleteDeligateuser.emit($event)" (ondeleteLinkaccount)="deleteLinkaccount.emit($event)"
+  (onLinkToUser)="saveLinkUsers($event)" (onProfileSave)="onProfileSave.emit($event)"
+  (onLoginAttempts)="onLoginAttemptsRefresh.emit($event)" (onDownloadLink)="onDownloadLink.emit($event)"
+  [linkedAccountHeaders]="linkedAccountHeaders" [linkedAccountData]="linkedAccountData">
 </app-rds-comp-profile>
 <app-rds-comp-notification-settings [notificationTypes]="notificationTypes"
   [receiveNotifications]="receiveNotifications"

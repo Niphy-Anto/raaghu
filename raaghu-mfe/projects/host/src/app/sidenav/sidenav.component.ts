@@ -119,10 +119,8 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
   activePage: any;
   activesubmenu: any;
   languageItems: any = [];
-  linkedAccount: any = {
-    TableHeader: [{ displayName: 'User Name', key: 'username', dataType: 'text', dataLength: 30, required: true }],
-    tableData: []
-  }
+  linkedAccountData: any = [];
+  linkedAccountHeaders: any = [{ displayName: 'User Name', key: 'username', dataType: 'text', dataLength: 30, required: true }];
   notifications: any[];
   unreadCount: number = 0;
   selectedMode: any;
@@ -131,7 +129,7 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
     private store: Store,
     private alertService: AlertService,
     public translate: TranslateService,
-    private shared:SharedService,
+    private shared: SharedService,
     private injector: Injector,
     private userAuthService: UserAuthService,
     private theme: ThemesService,
@@ -153,7 +151,7 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
   ngOnInit(): void {
     const tenancy: any = JSON.parse(localStorage.getItem('tenantInfo'));
     if (tenancy) {
-      this.tenancy= tenancy.name;
+      this.tenancy = tenancy.name;
     } else {
       this.tenancy = 'Host Admin';
     }
@@ -199,13 +197,14 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
         offCanvasId: this.offCanvasId,
         logo: 'assets/raaghu_icon.png',
         projectName: 'Raaghu',
-        linkedAccounts: this.linkedAccount,
+        linkedAccountData: this.linkedAccountData,
+        linkedAccountHeaders:this.linkedAccountHeaders,
         userList: this.usernameList,
         notificationData: this.notifications,
         unreadCount: this.unreadCount,
         receiveNotifications: this.receiveNotifications,
         notificationTypes: this.notificationTypes,
-        tenancy:this.tenancy
+        tenancy: this.tenancy
       },
       output: {
         toggleEvent: () => {
@@ -371,7 +370,7 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
     this.store.dispatch(getMLATenancyData());
 
     this.store.select(selectTenancyData).subscribe(res => {
-      this.linkedAccount.tableData = [];
+      this.linkedAccountData = [];
       if (res && res.items) {
         const data: any = [];
         res.items.forEach((item: any) => {
@@ -381,11 +380,10 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
             tenancyName: item.tenancyName,
             tenantId: item.tenantId
           }
-          data.push(_item);
+          this.linkedAccountData.push(_item);
         });
-        this.linkedAccount.tableData = data;
         const mfe = this.rdsTopNavigationMfeConfig;
-        mfe.input.linkedAccount = { ...this.linkedAccount };
+        mfe.input.linkedAccountData = [ ...this.linkedAccountData ];
         this.rdsTopNavigationMfeConfig = mfe;
 
       }

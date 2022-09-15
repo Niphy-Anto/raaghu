@@ -16,6 +16,7 @@ export class RdsLinkedAccountsComponent extends MfeBaseComponent implements OnIn
   linkaacountDivFlag: boolean = false;
   linckAccount: any;
   DatasetLinkedAccount: any = [];
+  public actions: any = [{ id: 'delete', displayName: 'Delete' }];
   @Input() recordsPerpage: number = 3;
   @Input() pagination: boolean = false;
   @Input() TenantName: string;
@@ -23,11 +24,9 @@ export class RdsLinkedAccountsComponent extends MfeBaseComponent implements OnIn
   @Output() ondelete = new EventEmitter<any>();
   @Output() onUserSave = new EventEmitter<any>();
   @Output() onCancelLinkedAccounts = new EventEmitter<any>()
-  @Input()
-  linkedAccount: LinkedAccount = {
-    TableHeader: [],
-    tableData: []
-  };
+  @Input() linkedAccountHeaders:any=[];
+  @Input() linkedAccountData:any=[];
+  @Input() manageLinkedAccountsTabOpened: boolean = false;
   userName: '';
   Tenancyname: '';
   Password: '';
@@ -35,32 +34,7 @@ export class RdsLinkedAccountsComponent extends MfeBaseComponent implements OnIn
   showNewLinkAccoutButton: boolean = true;
   showManageLinkAccountTable: boolean = false;
 
-  rdsLinkedAccountTableMfeConfig: ComponentLoaderOptions = {
-    name: 'RdsDataTable',
-    input: {
-      tableHeaders: this.linkedAccount.TableHeader,
-      tableStyle: 'light',
-      width: '100%',
-      tableData: this.linkedAccount.tableData,
-      actions: [{ id: 'delete', displayName: 'Delete' }],
-      pagination: true,
-      recordsPerPage: 5,
-      noDataTitle: 'Currently you do not have linked accounts'
-    },
-    output: {
-      onActionSelection: (event: any) => {
-        if (event.actionId === 'delete') {
-          const data: any =
-          {
-            tenantId: event.selectedData.tenantId,
-            userId: event.selectedData.id
-          }
-          this.ondelete.emit(data)
-        }
 
-      },
-    }
-  };
 
   @Output()
   LinkAccountSave = new EventEmitter<{ item: any }>()
@@ -69,21 +43,15 @@ export class RdsLinkedAccountsComponent extends MfeBaseComponent implements OnIn
   }
 
   ngOnInit(): void {
-    this.rdsLinkedAccountTableMfeConfig.input.tableHeaders = this.linkedAccount.TableHeader;
-    this.rdsLinkedAccountTableMfeConfig.input.tableData = this.linkedAccount.tableData;
     this.on('tenancyData').subscribe(res => {
       this.emitEvent('tenancyDataAgain', res);
     })
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log(this.linkedAccount);
-    const mfeConfig = this.rdsLinkedAccountTableMfeConfig
-    mfeConfig.input.tableData = [... this.linkedAccount.tableData];
-    this.rdsLinkedAccountTableMfeConfig = mfeConfig;
-    // this.DatasetLinkedAccount = this.LinkedAccountTable;
-    // this.rdsLinkedAccountTableMfeConfig.input.tableData = this.LinkedAccountTable.LinkedAccounts;
-    // // this.LinkedAccountTable.LinkedAccounts=JSON.parse(JSON.stringify(this.linckAccount));
+    if (this.manageLinkedAccountsTabOpened) {
+      this.onCancel();
+    }
   }
   hideandShowaccountform() {
     this.showNewLinkAccoutButton = false;
@@ -140,12 +108,8 @@ export class RdsLinkedAccountsComponent extends MfeBaseComponent implements OnIn
   onCancel(): void {
     this.linkaacountDivFlag = false;
     this.showNewLinkAccoutButton = true;
-    //this.onCancelLinkedAccounts.emit(true);
   }
 
-  // onCancel(): void {
-  //   this.deligateDivFlag = false;
-  //   // this.onCancelDeligate.emit(true);
-  // }
+
 
 }

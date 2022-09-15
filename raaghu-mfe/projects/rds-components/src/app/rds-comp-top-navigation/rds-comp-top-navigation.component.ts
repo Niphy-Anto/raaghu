@@ -61,6 +61,8 @@ export class RdsTopNavigationComponent extends MfeBaseComponent implements OnIni
   @Output() onDownloadLink = new EventEmitter<any>();
   @Output() setNotificationAsRead = new EventEmitter<any>();
   @Output() onUpdateNotificationSettings = new EventEmitter<any>();
+  @Input() linkedAccountHeaders: any = [];
+  @Input() linkedAccountData: any = [];
   tabName: string = '';
   navtabItems: any = [
     { label: 'Manage Linked Accounts', translationKey: 'Manage Linked Accounts', tablink: '#nav-LinkAccount', ariacontrols: 'nav-LinkAccount', Image: 'bi bi-pencil-fill', icon: 'manage_linked', subText: 'Manage accounts linked to your account', subtextTranslationKey: 'Manage accounts linked to your account', showoffcanvas: true },
@@ -89,10 +91,6 @@ export class RdsTopNavigationComponent extends MfeBaseComponent implements OnIni
   tableWidth: string = '100%';
   tableStyle: string = 'light';
 
-  @Input() linkedAccount: any = {
-    TableHeader: [],
-    tableData: []
-  }
   listusename: any[] = [
     { value: 'Admin1', some: 'Admin', status: 'All', isSelected: false },
     { value: 'jack', some: 'jack1', status: 'jack1', isSelected: false },
