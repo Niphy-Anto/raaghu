@@ -22,4 +22,4 @@ export default {
 
 const Template: Story<RdsCompFaqComponent> = (args: RdsCompFaqComponent) => ({});
 
-export const basic = Template.bind({});
+export const Default = Template.bind({});

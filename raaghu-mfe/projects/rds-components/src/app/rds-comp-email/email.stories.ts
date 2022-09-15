@@ -24,4 +24,4 @@ export default {
 
 const Template: Story<RdsCompEmailComponent> = (args: RdsCompEmailComponent) => ({});
 
-export const basic = Template.bind({});
+export const Default = Template.bind({});
