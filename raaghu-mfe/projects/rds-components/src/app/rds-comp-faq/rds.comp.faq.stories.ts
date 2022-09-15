@@ -27,7 +27,7 @@ const Template: Story<RdsCompFaqComponent> = (args: RdsCompFaqComponent) => ({
 });
 
 export const Default = Template.bind({});
-basic.args={
+Default.args={
   questionList:
     [
       {

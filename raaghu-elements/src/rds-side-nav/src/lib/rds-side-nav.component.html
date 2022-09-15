@@ -1,7 +1,7 @@
 <nav id="sidebar" class="bd-links min-vh-100 pt-2 position-relative" [class.side-nav-height]="isPageWrapper"
      [ngClass]="{ 'toggle' : collapsed }">
   <ul class="list-unstyled mb-0 py-2 px-4 h-100">
-    <li class="mb-3" *ngFor="let item of sidenavItems; let i=index">
+    <li class="mb-2" *ngFor="let item of sidenavItems; let i=index">
       <a (click)="onClick($event,i,item)" *ngIf="!item.children" [ngClass]="{ 'active' : activepage===i }"
          class="d-inline-flex align-items-center text-decoration-none text-uppercase" role="button"
          aria-expanded="false">
@@ -23,12 +23,12 @@
         </rds-icon><span [ngClass]="{ 'd-none' : collapsed }">{{item.label}}</span>
       </a>
 
-      <div class="collapse pt-3 " [ngClass]="{ 'show' : activepage===i }" [id]="item.id" *ngIf="item.children"
+      <div class="collapse pt-2 " [ngClass]="{ 'show' : activepage===i }" [id]="item.id" *ngIf="item.children"
            style="margin-left: 1rem;">
         <ul class="list-unstyled fw-normal pb-1 small">
           <li *ngFor="let child of item.children; index as j">
             <a [ngClass]="{ 'active' : activesubmenu===j && activepage===i }" (click)="onClickSubMenu($event,i,j,child)"
-               role="button" class="d-inline-flex align-items-center rounded text-decoration-none mb-3">
+               role="button" class="d-inline-flex align-items-center rounded text-decoration-none mb-2">
               <rds-icon [name]="child.icon" data-bs-toggle="tooltip" [fill]="child.iconFill" [stroke]="child.iconStroke"
                         [height]="iconHeight" [width]="iconWidth" data-bs-placement="auto" [title]="child.label"
                         [ngStyle]="{'margin-right': collapsed ? '1.5rem' : '.9rem'}"></rds-icon><span [ngClass]="{ 'd-none' : collapsed }"><small class="font-weight-bold">{{child.label}}</small></span>
