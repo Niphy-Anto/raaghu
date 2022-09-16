@@ -1,7 +1,7 @@
 ---
 slug: "/Avatar"
 date: "2019-05-04"
-title: "Avatar"
+title: "Elements / Avatar"
 ---
 
 <!-- CSS only -->
