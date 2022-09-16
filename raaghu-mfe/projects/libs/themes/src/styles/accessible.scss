@@ -158,7 +158,7 @@ $accessible-400: #474c74;
 $datepicker-bg: $accessible-600 !default;
 $datepicker-head: $accessible-600 !default;
 $nav-background-color: $accessible-500 !default;
-  $form-select-bg: $accessible-500 !default;
+/*  $form-select-bg: $accessible-500 !default;*/
   $card-dashboard-bg-color: $accessible-700 !default;
   $body-wrapper-bg: $accessible-800 !default;
   $sidbar-border-right-color: #1A0339;
@@ -167,15 +167,35 @@ $nav-background-color: $accessible-500 !default;
   $card-bg-color: $accessible-700 !default;
 $card-border-color: $card-bg-color !default;
   $offcanvasbg: $accessible-700 !default;
-  $input-bg: #2d2847;
+   
   $footer-bgcolor: $accessible-700 !default;
 
   $nav-tab-bg-active: $accessible-600!default;
   $profileMenuBgColor: $nav-tab-bg-active !default;
   $trhoverbg-color: $accessible-600;
+$input-group-addon-bg: $accessible-300 !default;
 
 //$body-wrapper-bg:;
+html[theme=dark] {
+  --bs-card-cap-color: $white;
+  $input-bg: $accessible-300!default;
+  $form-select-bg: $input-bg;
+  $notification-header-bg: $accessible-500!default;
 
+  .form-control, .form-control:focus {
+    background-color: $input-bg;
+    border: 1px solid $accessible-400;
+    color: $white;
+  }
+
+  .form-select[size]:not([size="1"]) {
+    background-color: $input-bg;
+  }
+
+  .notification-header {
+    background-color: $notification-header-bg;
+  }
+}
 
 @import './custom.scss';
 @import './node_modules/bootstrap/scss/bootstrap';
