@@ -27,8 +27,8 @@ const Template: Story<RdsCompSubscriptionComponent> = (args: RdsCompSubscription
     }
 });
 
-export const basic = Template.bind({});
-basic.args={
+export const Default = Template.bind({});
+Default.args={
   subscriptionData:[{
     name: "test",
     price: "23",

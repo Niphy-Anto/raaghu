@@ -30,9 +30,9 @@ const Template: Story<RdsLoginComponent> = (args: RdsLoginComponent) => ({
   }
 });
 
-export const basic = Template.bind({});
+export const Default = Template.bind({});
 
-basic.args ={
+Default.args ={
   userNameData:[],
  userPasswordData: '',
  rememeberMe: '',

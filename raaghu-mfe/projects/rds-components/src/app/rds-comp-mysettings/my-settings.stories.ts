@@ -25,9 +25,9 @@ const Template: Story<RdsMysettingsComponent> = (args: RdsMysettingsComponent) =
   }
 });
 
-export const basic = Template.bind({});
+export const Default = Template.bind({});
 
-basic.args={
+Default.args={
   ProfileData:  {
     ProfileName: 'Wai Technologies',
     EmailAddress: 'contact@waiin.com',

@@ -26,10 +26,9 @@ const Template: Story<RdsCompLoginAttemptsComponent> = (args: RdsCompLoginAttemp
     ...args
   }
 });
+export const Default = Template.bind({});
 
-export const basic = Template.bind({});
-
-basic.args={
+Default.args={
   listItemsResult: [
   { value: '', displayText: 'All'},
   { value: 'Success', displayText: 'Success'},

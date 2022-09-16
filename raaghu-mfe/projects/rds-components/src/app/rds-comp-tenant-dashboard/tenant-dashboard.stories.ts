@@ -26,9 +26,9 @@ const Template: Story<RdsCompTenantDashboardComponent>=(args: RdsCompTenantDashb
   }
 });
 
-export const basic = Template.bind({});
+export const Default = Template.bind({});
 
-basic.args={
+Default.args={
 
   ConnectedCallsData:  [80, 100 - 80],
   ClientCallsData:  [65, 100 - 65],
