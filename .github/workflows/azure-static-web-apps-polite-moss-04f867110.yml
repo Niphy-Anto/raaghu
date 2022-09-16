@@ -23,7 +23,7 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: 'npm'
-          cache-dependency-path: './raaghu-mfe/gatsby'  
+          cache-dependency-path: '.raaghu-angular/raaghu-mfe/gatsby'  
 
       - name: npm install raaghu-elements
         working-directory: raaghu-elements
@@ -31,18 +31,18 @@ jobs:
          npm install
        
       - name: npm install, build, and test raaghu-mfe
-        working-directory: ./raaghu-mfe
+        working-directory: .raaghu-angular/raaghu-mfe
         run: |
          npm install
          npm run sync-elements    
 
       - name: npm install gatsby
-        working-directory: ./raaghu-mfe/gatsby      
+        working-directory: .raaghu-angular/raaghu-mfe/gatsby      
         run: |
           npm install --force
     
       - name: build gatsby
-        working-directory: ./raaghu-mfe/gatsby      
+        working-directory: .raaghu-angular/raaghu-mfe/gatsby      
         run: |
           npm run build
 
@@ -50,7 +50,7 @@ jobs:
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
         with:
-          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_POLITE_MOSS_04F867110 }}
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_RED_WAVE_01A34F710 }}
           repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
           action: "upload"
           ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
@@ -69,5 +69,5 @@ jobs:
         id: closepullrequest
         uses: Azure/static-web-apps-deploy@v1
         with:
-          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_POLITE_MOSS_04F867110 }}
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_RED_WAVE_01A34F710 }}
           action: "close"
