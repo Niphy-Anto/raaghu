@@ -23,7 +23,7 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: 'npm'
-          cache-dependency-path: './raaghu-mfe/gatsby'  
+          cache-dependency-path: '.raaghu-angular/raaghu-mfe/gatsby'  
 
       - name: npm install raaghu-elements
         working-directory: raaghu-elements
@@ -31,18 +31,18 @@ jobs:
          npm install
        
       - name: npm install, build, and test raaghu-mfe
-        working-directory: ./raaghu-mfe
+        working-directory: .raaghu-angular/raaghu-mfe
         run: |
          npm install
          npm run sync-elements    
 
       - name: npm install gatsby
-        working-directory: ./raaghu-mfe/gatsby      
+        working-directory: .raaghu-angular/raaghu-mfe/gatsby      
         run: |
           npm install --force
     
       - name: build gatsby
-        working-directory: ./raaghu-mfe/gatsby      
+        working-directory: .raaghu-angular/raaghu-mfe/gatsby      
         run: |
           npm run build
 
