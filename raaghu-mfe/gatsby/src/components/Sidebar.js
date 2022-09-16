@@ -177,7 +177,7 @@ const Sidebar = () => {
             <Accordion.Body>
               <div className="mb-4">
                 <ul className="">
-                  {elementsList.map((node) => (
+                  {rdsElementList.map((node) => (
                     <li key={node.name}>
                       <Link href={node.name.substring(4)} >
                         {node.name.substring(4)}
