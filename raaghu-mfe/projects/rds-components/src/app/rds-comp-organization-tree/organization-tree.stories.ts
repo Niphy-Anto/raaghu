@@ -28,9 +28,9 @@ const Template: Story<RdsOrganizationTreeComponent> = (args: RdsOrganizationTree
   },
 });
 
-export const basic = Template.bind({});
+export const Default = Template.bind({});
 
-basic.args = {
+Default.args = {
   organizationTreeData: [
     new OrganizationTreeNode("WaiIndia", 'Wai India', 1, '',
       [new OrganizationTreeNode("WaiPune", 'Wai Pune', 2, 'WaiIndia', [], true),

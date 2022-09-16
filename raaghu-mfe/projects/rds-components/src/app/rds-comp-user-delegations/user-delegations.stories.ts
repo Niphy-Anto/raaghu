@@ -22,4 +22,4 @@ export default {
 
 const Template: Story<RdsUserDelegationsComponent> = (args: RdsUserDelegationsComponent) => ({});
 
-export const basic = Template.bind({});
+export const Default = Template.bind({});

@@ -25,9 +25,9 @@ const Template: Story<RdsSideNavComponent> = (args: RdsSideNavComponent) => ({
   </rds-side-nav></div></div>`,
 });
 
-export const basic = Template.bind({});
+export const Default = Template.bind({});
 
-basic.args = {
+Default.args = {
   sidenavItems: [
     { label: 'Dashboard', id: '', icon: 'home', path: 'home' },
     { label: 'Tenant', id: '', icon: 'tenant', path: 'tenant' },

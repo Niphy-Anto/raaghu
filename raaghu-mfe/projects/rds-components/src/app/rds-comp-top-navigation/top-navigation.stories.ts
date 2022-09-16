@@ -31,4 +31,4 @@ export default {
 
 const Template: Story<RdsTopNavigationComponent> = (args: RdsTopNavigationComponent) => ({});
 
-export const Basic = Template.bind({});
+export const Default = Template.bind({});

@@ -25,4 +25,4 @@ const Template: Story<RdsCompSubscriptionComponent> = (args: RdsCompSubscription
     
 });
 
-export const basic = Template.bind({});
+export const Default = Template.bind({});

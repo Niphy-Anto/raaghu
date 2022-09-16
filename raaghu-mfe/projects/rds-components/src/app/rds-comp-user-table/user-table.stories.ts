@@ -30,5 +30,5 @@ const Template: Story<RdsCompUserTableComponent> = (args: RdsCompUserTableCompon
     // }
 });
 
-export const basic = Template.bind({});
+export const Default = Template.bind({});
 

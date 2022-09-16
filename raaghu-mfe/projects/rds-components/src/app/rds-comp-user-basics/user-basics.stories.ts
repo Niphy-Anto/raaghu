@@ -30,8 +30,8 @@ const Template: Story<RdsCompUserBasicsComponent> = (args: RdsCompUserBasicsComp
   }
 });
 
-export const basic = Template.bind({});
-basic.args = {
+export const Default = Template.bind({});
+Default.args = {
   userData: [{
     emailAddress: "admin@aspnetzero.com",
     id: 1,
