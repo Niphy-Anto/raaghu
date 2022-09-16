@@ -14,7 +14,7 @@ title: "Elements /button-group"
 <p class="checkbox-def">Button group wraps a series of buttons together into a single line (navbar} or stack in a vertical column.</p>
 
 <section class="py-4">
-    <h6>Basic</h6>
+    <h6>Default</h6>
     <div class="py-3">
       <div class="cust-tabs">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
