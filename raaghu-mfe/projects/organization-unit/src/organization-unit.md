@@ -1,7 +1,7 @@
 ---
 slug: "/Organization-Unit"
 date: "2019-05-04"
-title: "Pages /Organization-Unit"
+title: "Pages / Organization Unit"
 ---
 
 <!-- CSS only -->
@@ -9,7 +9,7 @@ title: "Pages /Organization-Unit"
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/style-elements.css">
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/main.css">
 
-#### Organization-Unit
+#### Organization Unit
 
  <section class="py-4">
     <h6>Default</h6>

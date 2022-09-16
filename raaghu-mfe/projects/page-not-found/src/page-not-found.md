@@ -1,7 +1,7 @@
 ---
 slug: "/Page-Not-Found"
 date: "2019-05-04"
-title: "Pages /Page-Not-Found"
+title: "Pages / Page Not Found"
 ---
 
 <!-- CSS only -->
@@ -9,7 +9,7 @@ title: "Pages /Page-Not-Found"
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/style-elements.css">
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/main.css">
 
-#### Page-Not-Found
+#### Page Not Found
 
  <section class="py-4">
     <h6>Default</h6>

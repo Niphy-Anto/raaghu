@@ -1,7 +1,7 @@
 ---
 slug: "/Security-Log"
 date: "2019-05-04"
-title: "Pages /Security-Log"
+title: "Pages / Security Log"
 ---
 
 <!-- CSS only -->
@@ -9,7 +9,7 @@ title: "Pages /Security-Log"
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/style-elements.css">
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/main.css">
 
-#### Security-Log
+#### Security Log
 
  <section class="py-4">
     <h6>Default</h6>

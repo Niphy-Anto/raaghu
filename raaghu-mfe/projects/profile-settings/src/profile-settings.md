@@ -1,7 +1,7 @@
 ---
 slug: "/Profile-Settings"
 date: "2019-05-04"
-title: "Pages /Profile-Settings"
+title: "Pages / Profile Settings"
 ---
 
 <!-- CSS only -->
@@ -9,7 +9,7 @@ title: "Pages /Profile-Settings"
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/style-elements.css">
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/main.css">
 
-#### Profile-Settings
+#### Profile Settings
 
  <section class="py-4">
     <h6>Default</h6>

@@ -1,7 +1,7 @@
 ---
 slug: "/Product-Details"
 date: "2019-05-04"
-title: "Pages /Product-Details"
+title: "Pages / Product Details"
 ---
 
 <!-- CSS only -->
@@ -9,7 +9,7 @@ title: "Pages /Product-Details"
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/style-elements.css">
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/main.css">
 
-#### Product-Details
+#### Product Details
 
  <section class="py-4">
     <h6>Default</h6>
