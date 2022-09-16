@@ -23,7 +23,7 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: 'npm'
-          cache-dependency-path: '.raaghu-angular/raaghu-mfe/gatsby'  
+          cache-dependency-path: './raaghu-mfe/gatsby'  
 
       - name: npm install raaghu-elements
         working-directory: raaghu-elements
