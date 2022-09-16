@@ -23,4 +23,4 @@ export default {
 
 const Template: Story<RdsCompLoginAttemptsComponent> = (args: RdsCompLoginAttemptsComponent) => ({});
 
-export const basic = Template.bind({});
+export const Default = Template.bind({});

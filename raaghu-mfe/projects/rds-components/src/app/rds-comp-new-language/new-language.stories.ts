@@ -32,8 +32,8 @@ const Template: Story<RdsCompNewLanguageComponent> = (args: RdsCompNewLanguageCo
     }
 });
 
-export const basic = Template.bind({});
-basic.args = {
+export const Default = Template.bind({});
+Default.args = {
     flags:[
         {value: "famfamfam-flags ad", displayText: "ad", isSelected: false}
         ,{value: "famfamfam-flags ae", displayText: "ae", isSelected: false}

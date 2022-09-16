@@ -22,4 +22,4 @@ export default {
 
 const Template: Story<RdsCompTenantDashboardComponent> = (args: RdsCompTenantDashboardComponent) => ({});
 
-export const basic = Template.bind({});
+export const Default = Template.bind({});
