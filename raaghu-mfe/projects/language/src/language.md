@@ -1,7 +1,7 @@
 ---
-slug: "/Avatar"
+slug: "/Language "
 date: "2019-05-04"
-title: "Elements /Avatar"
+title: "Language"
 ---
 
 <!-- CSS only -->
@@ -9,7 +9,8 @@ title: "Elements /Avatar"
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/style-elements.css">
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/main.css">
 
-#### Avatar
+
+#### Language
 
 <p class="checkbox-def">Avatar is known as a visual form representing a user oneself and one's identity wished.</p>
 
@@ -32,7 +33,7 @@ title: "Elements /Avatar"
          <div class="contents  p-5">
                                           <div class="row">
                                             <div class="col-md-12">
-                                            <img src="/images/avatar.png" class="img-fuild">
+                                            <img src="/images/language.png" class="w-100">
                                             </div>
                                           </div>
                                     </div>
@@ -42,13 +43,57 @@ title: "Elements /Avatar"
 <div class="row m-0">
 
 ```html
-<rds-avatar
-  [WithProfilePic]="false"
-  profilePic=""
-  FirstName=""
-  LastName=""
-  Size="Medium"
-></rds-avatar>
+<div class="row">
+  <div class="col-md-12 text-end pb-3 desktop-btn d-sm-none d-lg-block">
+    <rds-button
+      [label]="'New Language'"
+      type="button"
+      [showLoadingSpinner]="buttonSpinnerForNewLanguage"
+      style="float: right"
+      [size]="'small'"
+      [colorVariant]="'primary'"
+      (click)="openCanvas()"
+      [attr.aria-controls]="'AddLanguage'"
+      [icon]="'plus'"
+      [iconHeight]="'12px'"
+      [iconWidth]="'12px'"
+    ></rds-button>
+  </div>
+  <div class="col-md-12">
+    <div class="card p-2 h-100 border-0 rounded-0 card-full-stretch">
+      <app-rds-data-table
+        [tableHeaders]="languageTableHeader"
+        [tableStyle]="'light'"
+        [tableData]="languageTableData"
+        [recordsPerPage]="10"
+        [pagination]="true"
+        [inlineEdit]="false"
+      ></app-rds-data-table>
+    </div>
+  </div>
+</div>
+<div class="mobile-btn position-absolute bottom-0 end-0 my-4 mx-5">
+  <rds-fab-menu
+    [listItems]="listItems"
+    [menuicon]="'plus'"
+    [colorVariant]="'primary'"
+    [menuiconWidth]="'12px'"
+    [menuiconHeight]="'12px'"
+    (onSelect)="onSelectMenu($event)"
+  ></rds-fab-menu>
+</div>
+<ng-container *ngIf="viewCanvas">
+  <rds-offcanvas
+    [canvasTitle]="translate.instant(languageCanvasTitle)"
+    [offId]="'AddLanguage'"
+    (onClose)="closeCanvas()"
+    [offcanvaswidth]="550"
+    [placement]="'end'"
+  >
+    <app-rds-comp-new-language></app-rds-comp-new-language>
+  </rds-offcanvas>
+</ng-container>
+
 ```
 
 </div>
@@ -58,25 +103,4 @@ title: "Elements /Avatar"
     </div>
   </section>
 
-
-<!-- Skeleton / Specifications -->
-<section class="py-4">
-                        <h6>
-                           Skeleton / Specifications
-                        </h6>
-                        <div class="py-3">
-                              <!-- Tab panes -->
-                              <div class="card border p-5">
-                                 <div class="row">
-                                    <div class="col-md-9 col-12">
-                                       <img src="https://portal.raaghu.io/images/components/_avatar/img-2.png" class="img-fluid">
-                                    </div>
-                                 </div>
-                              </div>
-                        </div>
-                     </section>
-
-
-
-<!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+ 

@@ -1,7 +1,7 @@
 ---
 slug: "/big-number-widget"
 date: "2019-05-04"
-title: "big-number-widget"
+title: "Elements /big-number-widget"
 ---
 
 ### Big-number-widget
@@ -22,13 +22,15 @@ title: "big-number-widget"
       </div>
       <div class="tab-content card border" id="myTabContent">
         <div class="tab-pane fade show active" id="PreviewBasic" role="tabpanel" aria-labelledby="PreviewBasic-tab">
-         <div class="contents bg-light p-5">
+         <div class="contents  p-5">
               <div class="row">
-            <!-- content for img-->
+            <div class="col-md-12">
+            <img src="/images/big-number-widget.png" class="img-fluid ">
+            </div>
+            </div>
      </div>
                        
   </div>
-        </div>
         <div class="tab-pane fade show" id="AngularBasic" role="tabpanel" aria-labelledby="AngularBasic-tab">
           <div class="contents bg-code">
 <div class="row m-0">

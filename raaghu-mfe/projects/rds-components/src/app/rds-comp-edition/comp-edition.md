@@ -1,14 +1,14 @@
 ---
-slug: "/banner"
+slug: "/Comp-Edition"
 date: "2019-05-04"
-title: "Elements /Banner"
+title: "Edition"
 ---
 
-#### Banner
 
-<p class="checkbox-def">Avatar is known as a visual form representing a user oneself and one's identity wished.</p>
+### Edition
 
-<!-- Basic -->
+<p class="">A card is a small rectangular module with images and text. It is an entry point for users to learn more details</p>
+
 <section class="py-4">
     <h6>Basic</h6>
     <div class="py-3">
@@ -24,33 +24,25 @@ title: "Elements /Banner"
       </div>
       <div class="tab-content card border" id="myTabContent">
         <div class="tab-pane fade show active" id="PreviewBasic" role="tabpanel" aria-labelledby="PreviewBasic-tab">
-         <div class="contents  p-5">
-                                          <div class="row">
-                                            <div class="col-md-12">
-                                            <img src="/images/banner.png" class="img-fuild w-100">
-                                            </div>
-                                          </div>
-                                    </div>
+         <div class="contents bg-light p-5">
+              <div class="row">
+                  <img src="/images/edition.png" class="img-thumbnail w-25">
+            </div>
+          
+  </div>
         </div>
         <div class="tab-pane fade show" id="AngularBasic" role="tabpanel" aria-labelledby="AngularBasic-tab">
           <div class="contents bg-code">
 <div class="row m-0">
 
 ```html
-<rds-banner
-  [alignCenter]="false"
-  bannerText="Big news! We are excited to announce a brand new product."
-  [sticky]="false"
-  position="top"
-  colorVariant="light"
-></rds-banner>
+  <rds-card-detail [cardData]="cardData"></rds-card-detail>
 ```
-
 </div>
-          </div>
+</div>
+  </div>
         </div>
       </div>
     </div>
   </section>
-
-
+   
