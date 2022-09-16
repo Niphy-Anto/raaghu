@@ -158,7 +158,7 @@ const Sidebar = () => {
   });
 
   return (
-    <div className="h-100 cust-scroll">
+    <div className=" cust-scroll">
       <div className="menu-list p-0 mt-4">
         <Accordion defaultActiveKey="0" className="accordion accordion-flush px-2">
           <Accordion.Item eventKey="0" className="accordion-item">
@@ -177,7 +177,7 @@ const Sidebar = () => {
             <Accordion.Body>
               <div className="mb-4">
                 <ul className="">
-                  {elementsList.map((node) => (
+                  {rdsElementList.map((node) => (
                     <li key={node.name}>
                       <Link href={node.name.substring(4)} >
                         {node.name.substring(4)}
