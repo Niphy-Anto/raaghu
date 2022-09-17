@@ -73,7 +73,7 @@ export class AppComponent implements OnInit {
     },
   ];
 
-  tableHeadersForMember: TableHeader[] = [{ displayName: 'Users', key: 'userName', dataType: 'text', dataLength: 30, filterable: true, required: true, sortable: true },
+  tableHeadersForMember: TableHeader[] = [{ displayName: 'Name', key: 'userName', dataType: 'text', dataLength: 30, filterable: true, required: true, sortable: true },
   { displayName: 'Addition Time', key: 'additionTime', dataType: 'text', dataLength: 5, required: true, sortable: true },];
   tableDataForMember = [];
 

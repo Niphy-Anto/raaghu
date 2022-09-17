@@ -3,6 +3,8 @@ import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { RdsAvatarModule, RdsButtonModule, RdsCardModule, RdsDropdownModule, RdsInputModule, RdsNavTabModule, RdsPaginationModule } from '@libs/rds-elements';
 import { RdsCompSubscriptionComponent } from './rds-comp-subscription.component';
 import { NgxTranslateModule } from '@libs/shared';
+import { RdsIconModule } from '@libs/rds-icon';
+
 
 export default {
   title: 'Components/Subscription',
@@ -10,7 +12,7 @@ export default {
   decorators: [
     moduleMetadata({
       imports: [
-        FormsModule, ReactiveFormsModule, RdsButtonModule, RdsCardModule, NgxTranslateModule
+        FormsModule, ReactiveFormsModule, RdsButtonModule, RdsCardModule, NgxTranslateModule, RdsIconModule
       ],
       providers: [
         FormBuilder
@@ -20,7 +22,19 @@ export default {
 } as Meta;
 
 const Template: Story<RdsCompSubscriptionComponent> = (args: RdsCompSubscriptionComponent) => ({
-    
+    props:{
+      ...args
+    }
 });
 
-export const basic = Template.bind({});
+export const Default = Template.bind({});
+Default.args={
+  subscriptionData:[{
+    name: "test",
+    price: "23",
+    duration: "2",
+    iconurl:"assets/Group.jpg",
+    recommended:false,
+    features:["Maximum User Count","Test Check feature","Test check feature count 2"]
+  }]
+}

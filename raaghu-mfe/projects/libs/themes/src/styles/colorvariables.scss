@@ -3,10 +3,10 @@
 @import "./node_modules/bootstrap/scss/mixins";
 @import "./node_modules/bootstrap/scss/_utilities";
 
+
 html {
   $theme-colors: ("primary": $primary, "secondary": $secondary, "success": $success, "info": $info, "warning": $warning, "danger": $danger, "light": $light, "dark": $dark ) !default;
   $min-contrast-ratio: 4.5 !default;
-
   $input-focus-border-color: tint-color($primary, 50%) !default;
   $input-bg: $body-bg !default;
 
@@ -196,7 +196,21 @@ html {
   $card-border-color: $gray-200 !default;
   --bs-body-color: gray;
 
+  .form-select[size]:not([size="1"]) {
+    padding-right: 1.25rem;
+    background-position: right 0.15rem center;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+  }
 
+  .profileMenu {
+    background-color: $light;
+  }
+
+
+
+  .login {
+    color: #212529;
+  }
 
   .rds-scrollable-wrapper {
     background-color: $body-wrapper-bg;
@@ -543,7 +557,6 @@ html {
   .dropdown-item {
     border-bottom-color: $dropdown-border-bottom;
 
-
     &:hover {
       // background-color: $dropdown-bg-color;
       border-bottom-color: $dropdown-border-bottom-hover;
@@ -610,7 +623,20 @@ html {
           width: 22px;
           height: 22px;
           fill: none;
-          stroke: currentColor;
+          stroke: $gray-700;
+
+          polyline.icon {
+            stroke: $gray-700;
+          }
+
+          polygon.icon {
+            stroke: $gray-700;
+          }
+
+
+          ellipse.icon {
+            stroke: $gray-700;
+          }
 
           path.icon {
             stroke: $gray-700;
@@ -635,7 +661,19 @@ html {
           width: 22px;
           height: 22px;
           fill: none;
-          stroke: currentColor;
+          stroke: $primary;
+
+          polyline.icon {
+            stroke: $primary;
+          }
+
+          polygon.icon {
+            stroke: $primary;
+          }
+
+          ellipse.icon {
+            stroke: $primary;
+          }
 
           path.icon {
             stroke: $primary;
@@ -722,7 +760,19 @@ html {
             width: 22px;
             height: 22px;
             fill: none;
-            stroke: currentColor;
+            stroke: $gray-700;
+
+            polyline.icon {
+              stroke: $gray-700;
+            }
+
+            polygon.icon {
+              stroke: $gray-700;
+            }
+
+            ellipse.icon {
+              stroke: $gray-700;
+            }
 
             path.icon {
               stroke: $gray-700;
@@ -737,6 +787,10 @@ html {
             }
 
             circle.icon {
+              stroke: $gray-700;
+            }
+
+            ellipse.icon {
               stroke: $gray-700;
             }
           }
@@ -749,7 +803,19 @@ html {
             width: 22px;
             height: 22px;
             fill: none;
-            stroke: currentColor;
+            stroke: $primary;
+
+            polyline.icon {
+              stroke: $primary;
+            }
+
+            polygon.icon {
+              stroke: $primary;
+            }
+
+            ellipse.icon {
+              stroke: $primary;
+            }
 
             path.icon {
               stroke: $primary;
@@ -764,6 +830,10 @@ html {
             }
 
             circle.icon {
+              stroke: $primary;
+            }
+
+            ellipse.icon {
               stroke: $primary;
             }
           }
@@ -1002,7 +1072,19 @@ html {
         width: 22px;
         height: 22px;
         fill: none;
-        stroke: currentColor;
+        stroke: $color;
+
+        polygon.icon {
+          stroke: $color;
+        }
+
+        polyline.icon {
+          stroke: $color;
+        }
+
+        ellipse.icon {
+          stroke: $color;
+        }
 
         path.icon {
           stroke: $color;
@@ -1036,7 +1118,19 @@ html {
         width: 22px;
         height: 22px;
         fill: none;
-        stroke: currentColor;
+        stroke: $color;
+
+        polygon.icon {
+          stroke: $color;
+        }
+
+        polyline.icon {
+          stroke: $color;
+        }
+
+        ellipse.icon {
+          stroke: $color;
+        }
 
         path.icon {
           stroke: $color;
@@ -1075,7 +1169,19 @@ html {
         width: 22px;
         height: 22px;
         fill: none;
-        stroke: currentColor;
+        stroke: $alert-color;
+
+        polyline.icon {
+          stroke: $alert-color;
+        }
+
+        polygon.icon {
+          stroke: $alert-color;
+        }
+
+        ellipse.icon {
+          stroke: $alert-color;
+        }
 
         path.icon {
           stroke: $alert-color;
@@ -1151,7 +1257,19 @@ html {
         width: 22px;
         height: 22px;
         fill: none;
-        stroke: currentColor;
+        stroke: $icon-color;
+
+        polyline.icon {
+          stroke: $icon-color;
+        }
+
+        polygon.icon {
+          stroke: $icon-color;
+        }
+
+        ellipse.icon {
+          stroke: $icon-color;
+        }
 
         path.icon {
           stroke: $icon-color;
@@ -1221,8 +1339,6 @@ html[theme=dark] {
   /*Breadcrumb color variables*/
   $breadcrumb-active-color: $gray-500;
   $breadcrumb-divider-color: $primary;
-
-  $border-color: $gray-100 !default;
 
   /*carousal color variables*/
   $carousel-caption-color: $light !default;
@@ -1387,10 +1503,22 @@ html[theme=dark] {
   $footer-bgcolor: $dark-400 !default;
   $profileMenuBgColor: #252839 !default;
   $trhoverbg-color: $dark-400 !default;
-  $nav-li-border:$white !default;
+  $nav-li-border: $white !default;
 
   .sidenav-footer {
     background-color: $body-wrapper-bg;
+  }
+
+  .profileMenu {
+    background-color: $offcanvasbg;
+  }
+
+  .form-select[size]:not([size="1"]) {
+    border-color: $input-bg;
+    padding-right: 1.25rem;
+    background-position: right 0.15rem center;
+    background-color: $input-bg;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
   }
 
   .card {
@@ -1834,7 +1962,19 @@ html[theme=dark] {
       .nav-link {
         svg {
           fill: none;
-          stroke: currentColor;
+          stroke: $gray-700;
+
+          polyline.icon {
+            stroke: $gray-700;
+          }
+
+          polygon.icon {
+            stroke: $gray-700;
+          }
+
+          ellipse.icon {
+            stroke: $gray-700;
+          }
 
           path.icon {
             stroke: $gray-700;
@@ -1860,7 +2000,19 @@ html[theme=dark] {
 
         svg {
           fill: none;
-          stroke: currentColor;
+          stroke: $primary;
+
+          polyline.icon {
+            stroke: $primary;
+          }
+
+          polygon.icon {
+            stroke: $primary;
+          }
+
+          ellipse.icon {
+            stroke: $primary;
+          }
 
           path.icon {
             stroke: $primary;
@@ -1965,7 +2117,19 @@ html[theme=dark] {
 
           svg {
             fill: none;
-            stroke: currentColor;
+            stroke: $gray-700;
+
+            polyline.icon {
+              stroke: $gray-700;
+            }
+
+            polygon.icon {
+              stroke: $gray-700;
+            }
+
+            ellipse.icon {
+              stroke: $gray-700;
+            }
 
             path.icon {
               stroke: $gray-700;
@@ -1980,6 +2144,10 @@ html[theme=dark] {
             }
 
             circle.icon {
+              stroke: $gray-700;
+            }
+
+            ellipse.icon {
               stroke: $gray-700;
             }
           }
@@ -1995,9 +2163,17 @@ html[theme=dark] {
 
           svg {
             fill: none;
-            stroke: currentColor;
+            stroke: $primary;
 
-            * {
+            polyline.icon {
+              stroke: $primary;
+            }
+
+            polygon.icon {
+              stroke: $primary;
+            }
+
+            ellipse.icon {
               stroke: $primary;
             }
 
@@ -2014,6 +2190,10 @@ html[theme=dark] {
             }
 
             circle.icon {
+              stroke: $primary;
+            }
+
+            ellipse.icon {
               stroke: $primary;
             }
           }
@@ -2284,7 +2464,19 @@ html[theme=dark] {
 
       svg {
         fill: none;
-        stroke: currentColor;
+        stroke: $color;
+
+        polyline.icon {
+          stroke: $color;
+        }
+
+        polygon.icon {
+          stroke: $color;
+        }
+
+        ellipse.icon {
+          stroke: $color;
+        }
 
         path.icon {
           stroke: $color;
@@ -2321,7 +2513,19 @@ html[theme=dark] {
     .alert {
       svg {
         fill: none;
-        stroke: currentColor;
+        stroke: $alert-color;
+
+        polyline.icon {
+          stroke: $alert-color;
+        }
+
+        polygon.icon {
+          stroke: $alert-color;
+        }
+
+        ellipse.icon {
+          stroke: $alert-color;
+        }
 
         path.icon {
           stroke: $alert-color;
@@ -2466,6 +2670,6 @@ html[theme=dark] {
   }
 
   .bd-links .child::after {
-    content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e ");
+    content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e ");
   }
 }

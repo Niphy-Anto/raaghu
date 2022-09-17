@@ -1168,6 +1168,8 @@ bs-days-calendar-view .bs-datepicker-head button.current:last-child {
     padding-top: 5px;
     padding-bottom: 5px;
       span.hr-line {
+          position:relative;
+          top:-4px;
       color: #5C82E3;
       border: 2px solid;
       background-color: #5C82E3;
@@ -1255,6 +1257,7 @@ bs-days-calendar-view .bs-datepicker-head button.current:last-child {
     background-color: #fff;
     color: #424A50;
     font-weight: 600;
+    border:0px;
    &:hover {
       background-color: transparent;
      
@@ -1306,6 +1309,7 @@ bs-days-calendar-view .bs-datepicker-head button.current:last-child {
   .days.weeks {
     position: relative;
     z-index: 1;
+
     span.in-range:not(.select-start):before {
       background: #b1c3f2;
       border-bottom-right-radius: 10px;
@@ -1411,7 +1415,7 @@ transform: scaleY(1);
 position: absolute;
 z-index: 1081;
 top: 170px;
-left: 205px;
+left: 217px;
 border: 1px solid #D0D7DD;
 align-self: center;
 padding: 4px;
@@ -1469,3 +1473,5 @@ border-bottom-right-radius: 4px;
     margin-left: 0px;
 }
 }
+/* .bs-datepicker */
+

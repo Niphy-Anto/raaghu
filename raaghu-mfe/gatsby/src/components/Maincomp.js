@@ -10,7 +10,7 @@ const Maincomp = () => {
   return (
     <div className="container-fluid mt-5 p-0 mx-0">
       <div className="row g-0">
-        <div className="col-md-2 border-right">
+        <div className="col-md-2 border-right ">
           <Sidebar />
         </div>
         <div className="col-md-10 left-border">

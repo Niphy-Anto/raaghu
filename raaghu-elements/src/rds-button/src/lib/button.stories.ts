@@ -49,8 +49,8 @@ const Template: Story<RdsButtonComponent> = (args: RdsButtonComponent) => ({
 //   label: 'Button',
 // };
 
-export const Basic = Template.bind({});
-Basic.args = {
+export const Default = Template.bind({});
+Default.args = {
   colorVariant: 'primary',
   label: 'button',
   block: false,
@@ -89,6 +89,7 @@ Outline.args = {
 export const With_Icon = Template.bind({});
 With_Icon.args = {
   roundedButton: false,
+  roundedCorner: false,
   icon: 'plus',
   colorVariant: 'primary',
   label: '',
@@ -100,6 +101,7 @@ With_Icon.args = {
 export const Icon_With_label = Template.bind({});
 Icon_With_label.args = {
   roundedButton: false,
+  roundedCorner: false,
   icon: 'plus',
   colorVariant: 'primary',
   label: 'button',

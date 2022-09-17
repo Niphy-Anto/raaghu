@@ -1,7 +1,7 @@
 ---
 slug: "/dropdownlist"
 date: "2019-05-04"
-title: "dropdownlist"
+title: "Elements / Dropdownlist"
 ---
 
 <!-- CSS only -->
@@ -11,66 +11,55 @@ title: "dropdownlist"
 
 #### Dropdown List
 
-<p class="checkbox-def">It is list of options for selection. A selected option can represent a value in a form, or can be used as an action</p>
+<p class="checkbox-def">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore sdavavfgsv</p>
 
 <section class="py-4">
-    <h6>Basic</h6>
+    <h6>Default</h6>
     <div class="py-3">
       <div class="cust-tabs">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
           <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="Preview-tab" data-bs-toggle="tab" data-bs-target="#Preview" type="button" role="tab" aria-controls="Preview" aria-selected="true">Preview </button>
+            <button class="nav-link active" id="PreviewBasic-tab" data-bs-toggle="tab" data-bs-target="#PreviewBasic" type="button" role="tab" aria-controls="PreviewBasic" aria-selected="true">Preview </button>
           </li>
           <li class="nav-item" role="presentation">
-            <button class="nav-link" id="Angular-tab" data-bs-toggle="tab" data-bs-target="#Angular" type="button" role="tab" aria-controls="Angular" aria-selected="false"><i class="bi bi-code-slash" style="font-size:1.0rem"></i>Angular</button>
+            <button class="nav-link" id="AngularBasic-tab" data-bs-toggle="tab" data-bs-target="#AngularBasic" type="button" role="tab" aria-controls="AngularBasic" aria-selec0ted="false"><i class="bi bi-code-slash" style="font-size:1.0rem"></i>Angular</button>
           </li>
         </ul>
       </div>
       <div class="tab-content card border" id="myTabContent">
-        <div class="tab-pane fade show active" id="Preview" role="tabpanel" aria-labelledby="Preview-tab">
-          <div class="contents bg-light p-5">
-                                          <div class="row">
-                                             <div class="col-md-4 col-12">
-                                                 <img src="https://portal.raaghu.io/images/components/_dropdown-list/1.png" class="img-fluid">
-                                             </div>
-                                          </div>
-                                    </div>
+        <div class="tab-pane fade show active" id="PreviewBasic" role="tabpanel" aria-labelledby="PreviewBasic-tab">
+         <div class="contents p-5">
+              <div class="row">
+               <div class="col-md-12">
+                  <img src="/images/dropdown-list-basic.png" class="img-fuild w-100">
+               </div>               
+              </div>
+                       
+  </div>
         </div>
-        <div class="tab-pane fade show" id="Angular" role="tabpanel" aria-labelledby="Angular-tab">
+        <div class="tab-pane fade show" id="AngularBasic" role="tabpanel" aria-labelledby="AngularBasic-tab">
           <div class="contents bg-code">
-<div class="row  m-0 p-4">
+<div class="row m-0">
 
 ```html
 <rds-dropdownlist
-  [DropdownItems]="DropdownItems"
-  [listItems]="listItems"
-  size="default"
-  varient="btn-secondary"
->
-  <ng-template #DropdownItems let-val let-index="index">
-    <li [class.active]="index === 1">
-      <div class="d-flex align-items-center bind-center-div1 group-list">
-        <input type="checkbox" *ngIf="multiSelect" />
-        <img
-          class="drop-round-img bind-avtar"
-          src="https://placekitten.com/50/50"
-        />
-        <span class="mr-auto">
-          {{val.some}}
-          <br />
-        </span>
-      </div>
-    </li>
-  </ng-template>
+[listItems]="listItems"
+[placeholder]="placeholder"
+size="default"
+[colorVariant]="colorVariant"
+[size]="size"
+[multiSelect]="multiSelect">
 </rds-dropdownlist>
 ```
-
 </div>
-          </div>
+</div>
+  </div>
         </div>
       </div>
     </div>
   </section>
+
+
 
 
  

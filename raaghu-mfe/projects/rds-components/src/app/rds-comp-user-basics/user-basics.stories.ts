@@ -9,6 +9,9 @@ export default {
   component: RdsCompUserBasicsComponent,
   decorators: [
     moduleMetadata({
+      declarations:[
+        RdsCompUserBasicsComponent
+      ],
       imports: [
         FormsModule,
         ReactiveFormsModule,
@@ -30,20 +33,10 @@ const Template: Story<RdsCompUserBasicsComponent> = (args: RdsCompUserBasicsComp
   }
 });
 
-export const basic = Template.bind({});
-basic.args = {
-  userData: [{
-    emailAddress: "admin@aspnetzero.com",
-    id: 1,
-    isActive: true,
-    isLockoutEnabled: true,
-    isTwoFactorEnabled: true,
-    name: "admin",
-    password: null,
-    phoneNumber: null,
-    shouldChangePasswordOnNextLogin: false,
-    surname: "admin",
-    userName: "admin",
-  }]
+export const Default = Template.bind({});
+Default.args = {
+  userData: [],
+  editShimmer: false,
+  buttonSpinner: true
 }
 

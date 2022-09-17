@@ -8,7 +8,6 @@ import { RdsCompNewLanguageComponent } from 'projects/rds-components/src/app/rds
 import { RdsDataTableComponent } from 'projects/rds-components/src/app/rds-comp-data-table/rds-comp-data-table.component';
 import { RdsCompAlertComponent } from 'projects/rds-components/src/app/rds-comp-alert/rds-comp-alert.component';
 import { StoreModule } from '@ngrx/store';
- import { NewlanguageComponent } from './newlanguage/newlanguage.component';
 import { Router, RouterModule } from '@angular/router';
 import { NgxShimmerLoadingModule } from 'ngx-shimmer-loading';
 import { AppRoutingModule } from './app-routing.module';
@@ -89,8 +88,8 @@ const Template: Story<LanguageComponent> = (args: LanguageComponent) => ({
 </ng-container>`
 });
 
-export const basic = Template.bind({});
-basic.args = {
+export const Default = Template.bind({});
+Default.args = {
   languageTableHeader: [
     { displayName: 'Language Name', key: 'languagename', dataType: 'html', dataLength: 30, sortable: true, required: true, filterable: true },
     { displayName: 'Code', key: 'countryCode', dataType: 'text', dataLength: 30, required: true, sortable: true },

@@ -9,7 +9,7 @@ import {
 } from '@angular/core';
 import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
-
+declare var bootstrap: any;
 @Component({
   selector: 'rds-login-comp',
   templateUrl: './rds-comp-login.component.html',
@@ -38,10 +38,11 @@ export class RdsLoginComponent implements OnInit, OnChanges {
   @Output() onShimmerLoad: EventEmitter<any> = new EventEmitter<any>();
   @Input() tenantdisabled: boolean;
   @Input() disabledSwitchTenant: boolean = true;
-  
+
   @Input() switchTenant: boolean = false;
   emailPattern: any = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   @Input() buttonSpinner: boolean = true;
+  @Input() buttonSpinnerForChangeTenant: boolean = true;
   constructor(private formBuilder: FormBuilder, public translate: TranslateService) {
   }
 
@@ -68,9 +69,6 @@ export class RdsLoginComponent implements OnInit, OnChanges {
   }
 
   ChangeTenant(tenantForm: NgForm) {
-    if (!this.switchTenant || tenantForm.invalid) {
-      return;
-    }
     this.onSwitchTenant.emit(this.TenantNameData);
   }
 
@@ -82,8 +80,25 @@ export class RdsLoginComponent implements OnInit, OnChanges {
 
   switchTenanat(event: any) {
     this.switchTenant = event;
-  }
-    back() {
-        this.buttonSpinner = false;
+    if (!event) {
+      this.TenantNameData = '';
     }
+  }
+  back() {
+    this.buttonSpinner = false;
+  }
+
+  openTenantModal(): void {
+    var myModalEl = document.getElementById('ChangeTenant');
+    var modal = new bootstrap.Modal(myModalEl)
+    modal.show();
+    const tenancy: any = JSON.parse(localStorage.getItem('tenantInfo'));
+    if (tenancy) {
+      this.TenantNameData = tenancy.name;
+      if (this.TenantNameData) {
+        this.switchTenant = true;
+      }
+    }
+
+  }
 }

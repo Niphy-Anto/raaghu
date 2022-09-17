@@ -148,6 +148,8 @@ $default-100: #F58220;
 }
 
 
+
+
 @import './custom.scss';
 @import './node_modules/bootstrap/scss/bootstrap';
 @import './accordion.scss';
@@ -178,3 +180,13 @@ $default-100: #F58220;
 @import './toast.scss';
 @import './cookieconsent.scss';
 
+
+html[theme=dark] .border-bottom {
+  border-bottom: 1px solid $gray-800 !important;
+}
+html[theme=dark] .form-select {
+  background-color: $dark-100;
+}
+rds-dropdownlist .form-select{
+  border: 0;
+}

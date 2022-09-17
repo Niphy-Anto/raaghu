@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Store } from '@ngrx/store';
 import { TranslateService } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
 
@@ -23,7 +22,7 @@ export class RdsCompInformationComponent implements OnInit {
   @Input() resetFormSubject : Observable<boolean> = new Observable<boolean>();
   @Input() editShimmer : boolean = false;
   isEdit: boolean = false;
-  constructor(private store: Store, public translate:TranslateService) { }
+  constructor( public translate:TranslateService) { }
   ngOnInit(): void {
     this.resetFormSubject.subscribe(response => {
       if(response){
