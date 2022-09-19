@@ -79,17 +79,18 @@ console.log(markdownRemark);
                   <nav aria-label="breadcrumb" className="px-3">
                     <ol className="breadcrumb">
                       <li className="breadcrumb-item">
-                        <a href="/" className="link">
-                          {" "}
-                          Elements{" "}
-                        </a>
+                         <a href="/" className="link">
+                           {" "}
+                          {frontmatter.title.split('>')[0]}{" "}
+                        </a> 
+                       
                       </li>
                       <li
                         className="breadcrumb-item active"
                         aria-current="page"
                       >
                         {" "}
-                        {frontmatter.title}{" "}
+                        {frontmatter.title.split('>')[1]}{" "}
                       </li>
                     </ol>
                   </nav>
@@ -107,7 +108,7 @@ console.log(markdownRemark);
                   <a href="/">
                     <ul>
                       <li>
-                        <img src="https://portal.raaghu.io/images/components/common/prev-arrow.svg" alt="prev-arrow" className="img-fluid" width="40px" />
+                        <img src="images/prev-arrow.png" alt="prev-arrow" className="img-fluid" width="40px" />
                       </li>
                       <li>
                         <nav className="pt-3 px-4">
@@ -117,7 +118,7 @@ console.log(markdownRemark);
                             </small>
                           </div>
                           <ol className="breadcrumb">
-                            <li className="breadcrumb-item"><h6> {frontmatter.title } </h6></li>
+                            <li className="breadcrumb-item"><h6> {frontmatter.title.split('>')[1]} </h6></li>
                           </ol>
                         </nav>
                       </li>
@@ -135,12 +136,12 @@ console.log(markdownRemark);
                             </small>
                           </div>
                           <ol className="breadcrumb">
-                            <li className="breadcrumb-item"><h6> Alert </h6> </li>
+                            <li className="breadcrumb-item"><h6> {frontmatter.title.split('>')[1]} </h6> </li>
                           </ol>
                         </nav>
                       </li>
                       <li>
-                        <img src="https://portal.raaghu.io/images/components/common/next-arrow.svg"  alt="next-arrow" className="img-fluid" width="40px" />
+                        <img src="images/next-arrow.png"  alt="next-arrow" className="img-fluid" width="40px" />
                       </li>
                     </ul>
                   </a>

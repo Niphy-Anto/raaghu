@@ -1,7 +1,7 @@
 ---
-slug: "/api-scope"
+slug: "/cart"
 date: "2019-05-04"
-title: "api-scope"
+title: "cart"
 ---
 
 <!-- CSS only -->
@@ -9,5 +9,4 @@ title: "api-scope"
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/style-elements.css">
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/main.css">
 
-
-#### Api Scope 
+#### cart

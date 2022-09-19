@@ -153,70 +153,70 @@
       "children": [
         {
           "id": 1,
-          "image": "https://portal.raaghu.io/images/components/accordion.png",
+          "image": "images/accordion.png",
           "title": "Accordion",
           "text": " It is list of collapsible panels  with clickable heading or down arrow, expands to show rolled up content. ",
           "link": "/accordion"
         },
         {
           "id": 2,
-          "image": "https://portal.raaghu.io/images/components/Avatar.png",
+          "image": "images/Avatar.png",
           "title": "Avatar",
           "text": " Avatar is known as a visual form representing a user oneself and one's identity wished.",
           "link": "/avatar"
         },
         {
           "id": 3,
-          "image": "https://portal.raaghu.io/images/components/cards.png",
+          "image": "images/cards.png",
           "title": "Card",
           "text": " A card is a small rectangular module with images and text. It is an entry point for users to learn more details.",
           "link": "/Date-Time Picker"
         },
         {
           "id": 4,
-          "image": "https://portal.raaghu.io/images/components/chart.png",
+          "image": "images/chart.png",
           "title": "Chats ",
           "text": "A Chart is an embedded component inserted within a worksheet. use a Chart component to better visualize and present your data",
           "link": "/Dropdown list"
         },
         {
           "id": 5,
-          "image": "https://portal.raaghu.io/images/components/carousel.png",
+          "image": "images/carousel.png",
           "title": "Carousel",
           "text": " It is referred as the 'slider' or 'slides'. Carousel works by rotating a group of images that can house text, static images or video content. ",
           "link": "/Date-Time Picker"
         },
         {
           "id": 6,
-          "image": "https://portal.raaghu.io/images/components/popover.png",
+          "image": "images/popover.png",
           "title": "Popover",
           "text": "   Popovers are used to provide supplemental, useful, unique information about an element, including one or multiple actionable elements.",
           "link": "/Date-Time Picker"
         },
         {
           "id": 7,
-          "image": "https://portal.raaghu.io/images/components/list-group.png",
+          "image": "images/list-group.png",
           "title": "List Group",
           "text": "  Lists are vertical groupings of related content. List items begin with either a number or a bullet.",
           "link": "/Date-Time Picker"
         },
         {
           "id": 8,
-          "image": "https://portal.raaghu.io/images/components/table.png",
+          "image": "images/table.png",
           "title": "Table",
           "text": " Tables are a designed for displaying large amounts of data in rows and columns.",
           "link": "/Date-Time Picker"
         },
         {
           "id": 9,
-          "image": "https://portal.raaghu.io/images/components/tree.png",
+          "image": "images/tree.png",
           "title": "Tree",
           "text": "  A tree is visualization of a structure hierarchy. A branch can be expanded or collapsed.",
           "link": "/Date-Time Picker"
         },
         {
           "id": 10,
-          "image": "https://portal.raaghu.io/images/components/tooltip.png",
+          "image": "images/tooltip.png",
           "title": "Tooltip",
           "text": "  A tooltip is a message box that is displayed when a user hovers over, clicks or gives focus to a UI element.",
           "link": "/Date-Time Picker"
@@ -229,21 +229,21 @@
       "children": [
         {
           "id": 1,
-          "image": "https://portal.raaghu.io/images/components/alerts.png",
+          "image": "images/alerts.png",
           "title": "Alert",
           "text": "  An alert helps to keeps people informed of the status of the system and may or may not require the user to respond.",
           "link": "/alert"
         },
         {
           "id": 2,
-          "image": "https://portal.raaghu.io/images/components/progress-bar.png",
+          "image": "images/progress-bar.png",
           "title": "Progress Bar",
           "text": " Progress bars show continuous progress through a process, such as a percentage value. ",
           "link": "/Pagination"
         },
         {
           "id": 3,
-          "image": "https://portal.raaghu.io/images/components/collapse-button.png",
+          "image": "images/collapse-button.png",
           "title": "Toast Message",
           "text": "  Toasts are time-based window elements used to display short messages. It will disappear after a few seconds.",
           "link": "/Date-Time Picker"
@@ -256,14 +256,14 @@
       "children": [
         {
           "id": 1,
-          "image": "https://portal.raaghu.io/images/components/tags.png",
+          "image": "images/tags.png",
           "title": "Tags",
           "text": "  Tags are used to label, organize, or categorize objects. Tags can also serve as a label for content or display counts.",
           "link": "/Breadcrumbs"
         },
         {
           "id": 2,
-          "image": "https://portal.raaghu.io/images/components/badge.png",
+          "image": "images/badge.png",
           "title": "Badge",
           "text": "  Use the Badge Component Symbol to draw attention to another interface element or to display a notification. ",
           "link": "/Pagination"
@@ -276,21 +276,21 @@
       "children": [
         {
           "id": 1,
-          "image": "https://portal.raaghu.io/images/components/offcanvas.png",
+          "image": "images/offcanvas.png",
           "title": "Offcanvas",
           "text": "  Offcanvas is a sidebar that can be toggled via JavaScript to appear from the left, right, or bottom edge of the viewport.",
           "link": "/Breadcrumbs"
         },
         {
           "id": 2,
-          "image": "https://portal.raaghu.io/images/components/scrollspy.png",
+          "image": "images/scrollspy.png",
           "title": "scrollspy",
           "text": "  Scrollspy is a navigation mechanism that automatically highlights the nav links based on the scroll position",
           "link": "/Pagination"
         },
         {
           "id": 3,
-          "image": "https://portal.raaghu.io/images/components/modal-popups.png",
+          "image": "images/modal-popups.png",
           "title": "Modal Popups",
           "text": " It is a dialog box/popup window that is displayed on top of the current page",
           "link": "/Date-Time Picker"
@@ -308,6 +308,7 @@
           "text": " Buttons with predefined styles (warning, info, danger) for  multiple button types.",
           "link": "/Breadcrumbs"
         }
+        
       ]
     }]
    },

@@ -1,7 +1,7 @@
 ---
-slug: "/api-resources"
+slug: "/visualsettings"
 date: "2019-05-04"
-title: "api-resources"
+title: "Component > visual settings"
 ---
 
 <!-- CSS only -->
@@ -9,5 +9,4 @@ title: "api-resources"
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/style-elements.css">
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/main.css">
 
-
-#### Api Resource 
+#### Visual Settings
