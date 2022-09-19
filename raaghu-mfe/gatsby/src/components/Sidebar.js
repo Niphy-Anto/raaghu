@@ -279,7 +279,7 @@ const Sidebar = () => {
               <ul className="">
                 {pageLists.map((node) => (
                   <li key={node.url}>
-                    <Link to={node.url}>{node.displayName}</Link>
+                    <Link href={node.url}>{node.displayName}</Link>
                   </li>
                 ))}
               </ul>
