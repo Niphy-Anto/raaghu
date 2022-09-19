@@ -72,51 +72,56 @@
   </div>
   <div class="card-body  pt-0">
     <div class="row border p-4 m-2">
-
-      <div class="col-6">
-        <h6 class="mb-3">{{"Avatar - With Profile pic and title vertically aligned"|translate}}</h6>
-        <rds-avatar [withProfilePic]="true"
-          profilePic="https://th.bing.com/th/id/OIP.3IsXMskZyheEWqtE3Dr7JwHaGe?pid=ImgDet&rs=1" [size]="'medium'"
-          [verticallyAlligned]="
-          true"></rds-avatar>
-      </div>
-      <div class="col-6">
-        <h6 class="mb-3">{{"Avatar in different Sizes - Without Profile picture"|translate}}</h6>
-        <div class="row">
-          <div class="col-6">
-            <div class="row">
-              <div class="col-12">
-                <rds-avatar firstName="Keanu" lastName="Foster" [size]="'medium'" [verticallyAlligned]="false">
-                </rds-avatar>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-12 mx-2 mt-4">
-                <rds-avatar firstName="Keanu" lastName="Foster" [colorVariant]="'primary'" [size]="'small'"
-                  [verticallyAlligned]="false"></rds-avatar>
-              </div>
-            </div>
-          </div>
-          <div class="col-6 ">
-            <div class="row">
-              <div class="col-12 mx-2">
-                <rds-avatar firstName="Keanu" lastName="Foster" [colorVariant]="'primary'" [size]="'large'"
-                  [verticallyAlligned]="false"></rds-avatar>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
       <div class="col-6">
         <h6 class="mb-3">{{"Avatar - With Profile pic"|translate}}</h6>
         <rds-avatar [withProfilePic]="true"
           profilePic="https://th.bing.com/th/id/OIP.3IsXMskZyheEWqtE3Dr7JwHaGe?pid=ImgDet&rs=1" [size]="'medium'"
           [verticallyAlligned]="false"></rds-avatar>
       </div>
+      <div class="col-6">
+        <h6 class="mb-3">{{"Avatar - With Profile pic and horizontally aligned Info"|translate}}</h6>
+        <rds-avatar [withProfilePic]="true"
+          profilePic="https://th.bing.com/th/id/OIP.3IsXMskZyheEWqtE3Dr7JwHaGe?pid=ImgDet&rs=1" [size]="'medium'"
+          [verticallyAlligned]="
+          true">
+          <div class="ms-4 mt-2">Admin</div>
+        </rds-avatar>
+      </div>
+      <div class="col-6">
+        <h6 class="mb-3">{{"Avatar - With Profile pic and vertically aligned Info"|translate}}</h6>
+        <rds-avatar [withProfilePic]="true"
+          profilePic="https://th.bing.com/th/id/OIP.3IsXMskZyheEWqtE3Dr7JwHaGe?pid=ImgDet&rs=1" [size]="'medium'">
+          <div class="mt-2">Admin</div>
+        </rds-avatar>
+      </div>
+      <div class="col-6 mt-2">
+        <h6 class="mb-3">{{"Avatar in different Sizes - Without Profile picture"|translate}}</h6>
+        <div class="row">
+          <div class="col-4">
+            <rds-avatar firstName="Keanu" [colorVariant]="'primary'" lastName="Foster" [size]="'small'"
+              [verticallyAlligned]="false">
+            </rds-avatar>
+          </div>
+          <div class="col-4 ">
+            <rds-avatar firstName="Keanu" lastName="Foster" [colorVariant]="'primary'" [size]="'medium'"
+              [verticallyAlligned]="false"></rds-avatar>
+          </div>
+
+          <div class="col-4">
+            <rds-avatar firstName="Keanu" lastName="Foster" [colorVariant]="'primary'" [size]="'large'"
+              [verticallyAlligned]="false"></rds-avatar>
+
+          </div>
+        </div>
+      </div>
 
     </div>
+    <!-- </div> -->
+
+
   </div>
 </div>
+<!-- </div> -->
 <!-- /Avatar -->
 <!-- Badge -->
 <div class="card mb-3">
