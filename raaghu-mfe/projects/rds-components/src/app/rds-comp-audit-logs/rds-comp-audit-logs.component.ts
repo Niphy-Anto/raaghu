@@ -18,9 +18,9 @@ declare var bootstrap: any;
 export class RdsCompAuditLogsComponent implements OnInit {
   actions: TableAction[] = [{ id: 'view', displayName: this.translate.instant('View') },];
   actionForChangeLogs: TableAction[] = [{ id: 'view', displayName: this.translate.instant('View') },]
-
+  selectedIndex: any = 0;
   auditCanvasTitle: string = '';
-  selectedRowData:any;
+  selectedRowData: any;
   public navtabsItems: any = [
     {
       label: this.translate.instant('Operation Logs'),
@@ -42,46 +42,46 @@ export class RdsCompAuditLogsComponent implements OnInit {
   public changeLogsHeaders: TableHeader[] = [];
   @Input() public operationLogs: any = [];
   @Output() deleteEvent = new EventEmitter<any>();
-  @Output() parameterData=new EventEmitter<any>();
-  @Output() ChangeLogparameterData=new EventEmitter<any>();
+  @Output() parameterData = new EventEmitter<any>();
+  @Output() ChangeLogparameterData = new EventEmitter<any>();
   @Input() public changeLogs: any = [];
-  @Input() isShimmer:boolean=false;
-  startDate:any=undefined;
-  endDate:any=undefined;
-  user:any;
-  service:any='';
-  from:any='';
-  to:any='';
-  action:any='';
-  status:any='';
-  browserInfo:any='';
-  statusList:any=[
-    {value:'',displayText:'All'},
-    {value:true,displayText:'HasError'},
-    {value:false,displayText:'Sucsses'}]
-    browserList:any=[
-      {value:'',displayText:'Select Browser'},
-      {value:'Chrome',displayText:'Chrome'},
-      {value:'Opera',displayText:'Opera'},
-      {value:'Edge',displayText:'Edge'},
-      {value:'Safari',displayText:'Safari'},
-      {value:'UC Browser',displayText:'UC Browser'}]
-  showFilters:boolean=false;
+  @Input() isShimmer: boolean = false;
+  startDate: any = undefined;
+  endDate: any = undefined;
+  user: any;
+  service: any = '';
+  from: any = '';
+  to: any = '';
+  action: any = '';
+  status: any = '';
+  browserInfo: any = '';
+  statusList: any = [
+    { value: '', displayText: 'All' },
+    { value: true, displayText: 'HasError' },
+    { value: false, displayText: 'Sucsses' }]
+  browserList: any = [
+    { value: '', displayText: 'Select Browser' },
+    { value: 'Chrome', displayText: 'Chrome' },
+    { value: 'Opera', displayText: 'Opera' },
+    { value: 'Edge', displayText: 'Edge' },
+    { value: 'Safari', displayText: 'Safari' },
+    { value: 'UC Browser', displayText: 'UC Browser' }]
+  showFilters: boolean = false;
 
-  viewAuditLogsCanvas:boolean=false;
-  viewChangeLogsCanvas:boolean=false;
-  changeLogStartdate:any=undefined
-  changeLogEndDate:any=undefined
-  changeLogUsername:any=undefined
-  auditLogsCanvasTitle:string=this.translate.instant('AUDIT LOG DETAIL');
-  changeLogsCanvasTitle:string = this.translate.instant('Change LOG DETAIL');
+  viewAuditLogsCanvas: boolean = false;
+  viewChangeLogsCanvas: boolean = false;
+  changeLogStartdate: any = undefined
+  changeLogEndDate: any = undefined
+  changeLogUsername: any = undefined
+  auditLogsCanvasTitle: string = this.translate.instant('AUDIT LOG DETAIL');
+  changeLogsCanvasTitle: string = this.translate.instant('Change LOG DETAIL');
 
   constructor(private sanitizer: DomSanitizer,
     private sharedService:SharedService,
     public translate:TranslateService) { }
 
   ngOnInit(): void { }
-  
+
   exportToExcel(navTab: string): void {
     if (navTab === 'operation-logs') {
 
@@ -134,14 +134,14 @@ export class RdsCompAuditLogsComponent implements OnInit {
     this.deleteEvent.emit(event);
   }
 
-  showAdvancedFilter(){
-    this.showFilters=!this.showFilters;
+  showAdvancedFilter() {
+    this.showFilters = !this.showFilters;
   }
 
   onActionSelect(event: any): void {
     if (event.actionId === 'view') {
       console.log(event.selectedData);
-      this.selectedRowData=event.selectedData;
+      this.selectedRowData = event.selectedData;
       // this.deleteEdition.emit(event.selectedData);
       this.showAuditLogDetail();
     }
@@ -150,14 +150,14 @@ export class RdsCompAuditLogsComponent implements OnInit {
   onChangeActionSelect(event: any): void {
     if (event.actionId === 'view') {
       console.log(event.selectedData);
-      this.selectedRowData=event.selectedData;
+      this.selectedRowData = event.selectedData;
       // this.deleteEdition.emit(event.selectedData);
       this.showAuditChangeLogDetail();
     }
   }
 
 
-  showAuditLogDetail(): void  {
+  showAuditLogDetail(): void {
     this.viewAuditLogsCanvas = true;
     this.auditLogsCanvasTitle = 'AUDIT LOG DETAIL';
     setTimeout(() => {
@@ -175,15 +175,17 @@ export class RdsCompAuditLogsComponent implements OnInit {
     return this.navtabsItems;
 
   }
-  onSelectnode(e:any){
-    if (e > 0) {
-      this.sharedService.setTopNavTitle(this.navtabsItems[e].label);
+  onSelectnode(event: any) {
+    this.selectedIndex = event;
+    if (event > 0) {
+      this.sharedService.setTopNavTitle(this.navtabsItems[event].label);
     } else {
       this.sharedService.setTopNavTitle('');
     }
+
   }
 
-  showAuditChangeLogDetail(): void  {
+  showAuditChangeLogDetail(): void {
     this.viewChangeLogsCanvas = true;
     this.changeLogsCanvasTitle = 'Change LOG DETAIL';
     setTimeout(() => {
@@ -194,13 +196,13 @@ export class RdsCompAuditLogsComponent implements OnInit {
   }
 
   startDateModify(event) {
-    
-    this.startDate=event;
+
+    this.startDate = event;
     this.sendParameterData();
 
   }
   endDateModify(event) {
-    this.endDate=event;
+    this.endDate = event;
     this.sendParameterData();
   }
   userModify(event) {
@@ -215,40 +217,42 @@ export class RdsCompAuditLogsComponent implements OnInit {
   toModify(event) {
     this.sendParameterData();
   }
-  actionModify(event){
-    this.sendParameterData(); 
+  actionModify(event) {
+    this.sendParameterData();
   }
-  exceptionModify(event){
-    this.sendParameterData(); 
+  exceptionModify(event) {
+    this.sendParameterData();
   }
-  SelectBroser(event){
-    this.sendParameterData(); 
+  SelectBroser(event) {
+    this.sendParameterData();
   }
-  sendParameterData(){
-    if(this.startDate && this.endDate ){
-      this.parameterData.emit({startDate:this.startDate,endDate:this.endDate,userName:this.user,serviceName:this.service,
-        minExecutionDuration:this.from,maxExecutionDuration:this.to,MethodName:this.action ,HasException:this.status,BrowserInfo:this.browserInfo})
+  sendParameterData() {
+    if (this.startDate && this.endDate) {
+      this.parameterData.emit({
+        startDate: this.startDate, endDate: this.endDate, userName: this.user, serviceName: this.service,
+        minExecutionDuration: this.from, maxExecutionDuration: this.to, MethodName: this.action, HasException: this.status, BrowserInfo: this.browserInfo
+      })
     }
   }
-  onClose():void{
-    this.viewAuditLogsCanvas=false;
-    this.selectedRowData=undefined;
+  onClose(): void {
+    this.viewAuditLogsCanvas = false;
+    this.selectedRowData = undefined;
   }
-  changelogefiltermodify(event){
-this.sendChangelogParamter();
+  changelogefiltermodify(event) {
+    this.sendChangelogParamter();
   }
-  sendChangelogParamter(){
-    if(this.changeLogStartdate && this.changeLogEndDate ){
-      this.ChangeLogparameterData.emit({StartDate:this.changeLogStartdate,EndDate:this.changeLogEndDate,UserName:this.changeLogUsername})
+  sendChangelogParamter() {
+    if (this.changeLogStartdate && this.changeLogEndDate) {
+      this.ChangeLogparameterData.emit({ StartDate: this.changeLogStartdate, EndDate: this.changeLogEndDate, UserName: this.changeLogUsername })
     }
   }
 
   // fabmenu mobile 
-  onSelectMenu(event:any){
-    if(event.key==='operation-log'){
+  onSelectMenu(event: any) {
+    if (event.key === 'operation-log') {
       this.exportToExcel('operation-logs');
     }
-    else if(event.key==='change-log'){
+    else if (event.key === 'change-log') {
       this.exportToExcel('change-logs');
     }
   }

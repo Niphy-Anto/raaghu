@@ -55,8 +55,8 @@
           <div class="card-body h-100 p-0 d-grid">
             <div class="justify-content-center d-flex align-items-center">
               <div class="d-inline-block position-relative">
-                <rds-avatar [WithProfilePic]="true" [profilePic]="Profileurl" [Size]="'larger'"
-                            [VerticalTitleWithProfilePic]="true"></rds-avatar>
+                <rds-avatar [withProfilePic]="true" [profilePic]="Profileurl" [size]="'large'"
+                            [verticallyAlligned]="true"></rds-avatar>
                 <div class="" *ngIf="ProfileData">
                   {{ProfileData.UserName}}
                   <input type="file" (change)="checkFileSize($event);checkExtension($event)" #file
@@ -93,7 +93,7 @@
               </div>
             </div>
           </div>
-          <div class="card-footer  border-0 bg-transparent d-flex justify-content-center">
+          <div class="card-footer  border-0 bg-transparent d-flex justify-content-center py-3">
             <rds-button [outlineButton]="true" [label]="translate.instant('LOGOUT')" type="button" [size]="'medium'"
                         [colorVariant]="'primary'" [iconFill]="false" [iconStroke]="true" (click)="logout()" [icon]="'logout'"
                         [iconHeight]="'15px'" [iconWidth]="'15px'">
