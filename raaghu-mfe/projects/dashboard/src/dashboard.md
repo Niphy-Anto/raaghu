@@ -28,7 +28,7 @@ title: "Pages / dashboard"
          <div class="contents  p-5">
               <div class="row">
               <!-- <img src="https://raw.githubusercontent.com/Wai-Technologies/raaghu/main/raaghu-mfe/assets/Edit-Language-Text.png" alt="color"> -->
-              <img src="/images/dashboard.png" class="">
+              <img src="/images/dashboard.png" class="w-100">
            </div>
                        
   </div>
