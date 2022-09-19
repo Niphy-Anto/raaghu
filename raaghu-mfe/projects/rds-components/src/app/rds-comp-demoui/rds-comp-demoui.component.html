@@ -431,7 +431,8 @@
         <h6 class="mb-3">{{"Card - Basic"|translate}}</h6>
 
         <rds-card [header]="header" [custClass]="true" [borderCard]="true" [body]="body" [footer]="footer" [Data]="Data"
-          class="rounded-avatar-basic">
+                  class="rounded-avatar-basic" [customTopBottom]="false">
+
           <ng-template #header>
             <div class="text-center">
               <img src="https://picsum.photos/seed/picsum/1200/600" class="card-img-top" alt="" />
@@ -448,8 +449,8 @@
       </div>
       <div class="col-4">
         <h6 class="mb-3">Card - With Avatar</h6>
-        <rds-card [header]="header" [body]="body" [Data]="Data" [custClass]="true" [borderCard]="true" [footer]="footer"
-          width="30%" class="rounded-avatar-left">
+        <rds-card [header]="header" [body]="body" [Data]="Data"  [custClass]="true" [borderCard]="true" [footer]="footer" [customTopBottom]="false" width="30%" class="rounded-avatar-left">
+
           <ng-template #header>
             <div class="banner-image1">
               <img class="img-responsive" src="https://picsum.photos/seed/picsum/1200/600" />
@@ -467,8 +468,10 @@
       </div>
       <div class="col-4">
         <h6 class="mb-3">{{"Card - With Avatar center"|translate}}</h6>
-        <rds-card [header]="header" [body]="body" [Data]="Data" [custClass]="true" [borderCard]="true" [footer]="footer"
-          width="28%" class="rounded-avatar-center">
+
+        <rds-card [header]="header" [customTopBottom]="false" [body]="body" [Data]="Data"  [custClass]="true" [borderCard]="true" [footer]="footer" width="28%"
+                  class="rounded-avatar-center">
+
           <ng-template #header>
             <div class="banner-image1">
               <img class="img-responsive" src="https://picsum.photos/seed/picsum/1200/600" />
