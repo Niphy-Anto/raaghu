@@ -198,6 +198,7 @@ html {
   $datepicker-bg: $white !default;
   $datepicker-head: $white !default;
   $notification-header-bg: $light !default;
+  $input-group-addon-bg: $input-bg;
 
   .notification-header {
     background-color: $notification-header-bg;
@@ -2720,8 +2721,6 @@ html[theme=dark] {
   }
 
   .input-group-text {
-    background-color: $input-group-addon-bg;
-    border-color: $input-group-addon-border-color;
     color: $white;
   }
 

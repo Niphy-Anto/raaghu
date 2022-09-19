@@ -166,9 +166,6 @@ $theme: "green" !default;
   $datepicker-bg: $accessible-600 !default;
   $datepicker-head: $accessible-600 !default;
 
-$input-group-addon-bg: $accessible-300 !default;
-
-
   $link-color: $primary;
 
 
@@ -191,16 +188,27 @@ $input-group-addon-bg: $accessible-300 !default;
 
 
 html[theme=dark] {
-  --bs-card-cap-color:$white;
+  $dropdown-color: $white;
 
   $input-bg: $accessible-300 !default;
   $form-select-bg: $input-bg;
   $notification-header-bg: $accessible-500!default;
+  $input-group-addon-bg: $input-bg;
+  $input-group-addon-border-color: $accessible-400 !default;
 
   .form-control, .form-control:focus {
     background-color: $input-bg;
     border: 1px solid $accessible-400;
     color: $white;
+  }
+
+  .dropdown-menu {
+    --bs-dropdown-color: $dropdown-color;
+  }
+
+  .input-group-text {
+    background-color: $input-group-addon-bg;
+    border-color: $input-group-addon-border-color;
   }
 
   .form-select[size]:not([size="1"]) {

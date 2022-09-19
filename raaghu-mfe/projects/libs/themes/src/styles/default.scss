@@ -147,15 +147,24 @@ $default-100: #F58220;
   
 }
 html[theme=dark] {
-  --bs-card-cap-color: $white;
+  $dropdown-color: $white;
   $input-bg: $dark-100!default;
   $input-border-color: $input-bg;
   $form-select-bg: $input-bg;
+  $input-group-addon-bg: $input-bg;
 
   .form-control, .form-control:focus {
     background-color: $input-bg;
     border: 1px solid $input-border-color;
     color: $white;
+  }
+
+  .dropdown-menu {
+    --bs-dropdown-color: $dropdown-color;
+  }
+
+  .input-group-text {
+    background-color: $input-group-addon-bg;
   }
 
   .form-select[size]:not([size="1"]) {
