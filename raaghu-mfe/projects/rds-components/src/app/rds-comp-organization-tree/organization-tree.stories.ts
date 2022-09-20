@@ -4,7 +4,7 @@ import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { RdsButtonModule, RdsCheckboxModule, RdsInputModule, RdsOffcanvasModule } from '@libs/rds-elements';
 import { RdsOrganizationTreeComponent } from './rds-comp-organization-tree.component';
 import { OrganizationTreeNode, OrganizationTreeLabeles, OrganizationTreeType } from '../../models/organization-tree.model';
-import { NgxTranslateModule } from '@libs/shared';
+import { NgxTranslateModule, SharedModule } from '@libs/shared';
 import { RdsIconModule } from '@libs/rds-icon';
 
 export default {
@@ -13,7 +13,7 @@ export default {
   decorators: [
     moduleMetadata({
       imports: [
-        FormsModule, ReactiveFormsModule, RdsButtonModule, RdsCheckboxModule, RdsOffcanvasModule, RdsInputModule, NgxTranslateModule, RdsIconModule
+        FormsModule, ReactiveFormsModule, RdsButtonModule, RdsCheckboxModule, RdsOffcanvasModule, RdsInputModule, NgxTranslateModule, RdsIconModule, SharedModule
       ],
       providers: [
         FormBuilder
