@@ -9,16 +9,16 @@ export class RdsBigNumberWidgetComponent implements OnInit {
 
   title = 'rds-big-number';
   @Input() bigNumber: string = '$ 55,000';
-  @Input() subText?: string;
-  @Input() icon?: string;
+  @Input() subText: string = '';
+  @Input() icon: string = '';
   @Input() iconHeight: string = '12px';
   @Input() iconStroke: boolean = true;
   @Input() iconFill: boolean = false;
   @Input() iconWidth: string = '12px';
   @Input() iconColor: string = '';
-  @Input() colorVariant = '';
-  @Input() textAlign = 'text-center';
-  @Input() subTitleColorVariant: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'dark' | 'white' = 'white'
+  @Input() colorVariant: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'dark' | 'light' = 'primary';
+  @Input() textAlign: 'text-start' | 'text-center' | 'text-end' = 'text-center';
+  @Input() subTitleColorVariant: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'dark' | 'light' = 'success';
   constructor() { }
 
   ngOnInit(): void {
