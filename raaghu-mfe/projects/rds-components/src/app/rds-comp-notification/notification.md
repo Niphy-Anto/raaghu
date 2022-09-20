@@ -1,7 +1,7 @@
 ---
 slug: "/Notification"
 date: "2019-05-04"
-title: "Components / Notification"
+title: "Components > Notification"
 ---
 
 
