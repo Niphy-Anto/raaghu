@@ -197,6 +197,12 @@ html {
   --bs-body-color: gray;
   $datepicker-bg: $white !default;
   $datepicker-head: $white !default;
+  $notification-header-bg: $light !default;
+  $input-group-addon-bg: $input-bg;
+
+  .notification-header {
+    background-color: $notification-header-bg;
+  }
 
   .bs-datepicker-head {
     background-color: $datepicker-head;
@@ -207,8 +213,9 @@ html {
     border-bottom: 1px solid $gray-200;
   }
 
+
   .date-picker .date-picker-c {
-    border:1px solid $gray-200;
+    border: 1px solid $gray-200;
   }
 
   .dropdown-item.active {
@@ -1381,7 +1388,7 @@ html[theme=dark] {
   $border-color: $gray-700 !default;
 
   $btn-close-width: 1em !default;
-  $btn-close-color: $gray-100 !default;
+  $btn-close-color: $gray-900 !default;
   $btn-close-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$btn-close-color}'><path d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/></svg>") !default;
 
   /*accordion color variables*/
@@ -1615,7 +1622,7 @@ html[theme=dark] {
   }
 
   .form-select[size]:not([size="1"]) {
-    border-color: $input-bg;
+    border-color: tint-color($input-border-color, 60%);
     padding-right: 1.25rem;
     background-position: right 0.15rem center;
     background-color: $input-bg;
@@ -2707,12 +2714,6 @@ html[theme=dark] {
     background-color: transparent;
   }
 
-  .form-control {
-    background-color: $input-bg;
-    border: $input-border-color;
-    color: $white;
-  }
-
   .form-select {
     /*    background-color: $form-select-bg;
     border-color: $form-select-bg;*/
@@ -2720,8 +2721,6 @@ html[theme=dark] {
   }
 
   .input-group-text {
-    background-color: $input-group-addon-bg;
-    border-color: $input-group-addon-border-color;
     color: $white;
   }
 
