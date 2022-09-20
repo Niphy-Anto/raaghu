@@ -144,6 +144,8 @@ $accessible-600: #282A42;
 $accessible-700: rgb(48, 51, 78);
 $accessible-800: #13002E;
 
+$datepicker-bg: $accessible-600 !default;
+$datepicker-head: $accessible-600 !default;
 $nav-background-color: $accessible-600 !default;
 $form-select-bg: $accessible-500 !default;
 $card-dashboard-bg-color: $accessible-700 !default;
