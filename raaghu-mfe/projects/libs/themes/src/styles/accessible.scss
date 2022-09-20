@@ -155,7 +155,9 @@ $accessible-400: #474c74;
   $accessible-700: #13022E;
   $accessible-800: #13002E;
 
-  $nav-background-color: $accessible-500 !default;
+$datepicker-bg: $accessible-600 !default;
+$datepicker-head: $accessible-600 !default;
+$nav-background-color: $accessible-500 !default;
   $form-select-bg: $accessible-500 !default;
   $card-dashboard-bg-color: $accessible-700 !default;
   $body-wrapper-bg: $accessible-800 !default;
@@ -172,7 +174,7 @@ $card-border-color: $card-bg-color !default;
   $profileMenuBgColor: $nav-tab-bg-active !default;
   $trhoverbg-color: $accessible-600;
 
-  //$body-wrapper-bg:;
+//$body-wrapper-bg:;
 
 
 @import './custom.scss';
