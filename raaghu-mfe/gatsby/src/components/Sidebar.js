@@ -48,8 +48,6 @@ const Sidebar = () => {
     }
   });
 
-  // var componentName=JSON.parse(JSON.stringify(componentsList).replace(/-/g,' '));
-
   componentsList.sort((a, b) => {
     let fa = a.name.toLowerCase(),
       fb = b.name.toLowerCase();
@@ -88,8 +86,8 @@ const Sidebar = () => {
   });
 
   elementsLists.sort((a, b) => {
-    let fa = a.name.toLowerCase(),
-      fb = b.name.toLowerCase();
+    let fa = a.displayName.toLowerCase(),
+      fb = b.displayName.toLowerCase();
     if (fa < fb) {
       return -1;
     }
@@ -187,25 +185,14 @@ const Sidebar = () => {
     }
   });
 
-  // elementsList.forEach((item) => {
-  //   if( (item, index, self) => !pageexcludesList.some((element) => item.name.includes(element)) && index === self.findIndex((t) => t.name === item.name)){
-  //     const _item={
-  //       name:item.name,
-  //       url :item.name,
-  //       displayName: item.name.replace(/-/g,' ')
-  //     }
-  //     pageLists.push(_item);
-  //   }
-
-  // });
 
   pageLists.sort((a, b) => {
-    let fa = a.name.toLowerCase(),
-      fb = b.name.toLowerCase();
-    if (fa < fb) {
+    // let fa = a.name.toLowerCase(),
+    //   fb = b.name.toLowerCase();
+    if (a.name.toLowerCase() < b.name.toLowerCase()) {
       return -1;
     }
-    if (fa > fb) {
+    if (a.name.toLowerCase() > b.name.toLowerCase()) {
       return 1;
     }
     return 0;
