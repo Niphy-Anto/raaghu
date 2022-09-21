@@ -1,7 +1,7 @@
 ---
 slug: "/Page-Not-Found"
 date: "2019-05-04"
-title: "Pages / Page Not Found"
+title: "Pages > Page Not Found"
 ---
 
 <!-- CSS only -->

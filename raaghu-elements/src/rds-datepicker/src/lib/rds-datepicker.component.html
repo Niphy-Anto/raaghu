@@ -6,7 +6,7 @@
     <div class="input-group border">
       <input type="text" autocomplete="off" bsDatepicker [datesDisabled]="datesDisabled"
         [class.disable-pointer]="disabled" [disabled]="disabled" [minDate]="minDate" #datepicker="bsDatepicker"
-        (onHidden)="onHide.emit($event)" [daysDisabled]="daysDisabled" [isOpen]="isOpen" [bsConfig]="DatePickerConfig"
+        (onHidden)="onHide.emit($event)" [daysDisabled]="daysDisabled" [isOpen]="isOpen" [bsConfig]="datePickerConfig"
         id="DateOfBirth" [maxDate]="maxDate" [outsideEsc]="outsideEsc" (onShown)="onShow.emit($event)"
         [placeholder]="placeholder" [bsValue]="value" [dateTooltipTexts]="dateTooltipTexts" [(ngModel)]="value"
         name="date-picker" [minMode]="minMode" (bsValueChange)="onDateChane($event)" [datesEnabled]="datesEnabled"

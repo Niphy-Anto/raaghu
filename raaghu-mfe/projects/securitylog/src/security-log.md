@@ -1,7 +1,7 @@
 ---
 slug: "/Security-Log"
 date: "2019-05-04"
-title: "Pages / Security Log"
+title: "Pages > Security Log"
 ---
 
 <!-- CSS only -->
