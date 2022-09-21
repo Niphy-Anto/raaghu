@@ -32,15 +32,26 @@ const Template: Story<RdsOrganizationTreeComponent> = (args: RdsOrganizationTree
 export const Default = Template.bind({});
 
 Default.args = {
-  organizationTreeData: [
-    new OrganizationTreeNode("WaiIndia", 'Wai India', 1, '',
-      [new OrganizationTreeNode("WaiPune", 'Wai Pune', 2, 'WaiIndia', [], true),
-      new OrganizationTreeNode("WaiNagar", 'Wai Nagar', 2, 'WaiIndia', [], true)
-      ], true),
-    new OrganizationTreeNode("WaiUSA", 'Wai USA', 1, '',
-      [new OrganizationTreeNode("WaiTexas", 'Wai Texas', 2, 'WaiUSA', [], true)
-      ], true)
-  ],
+   organizationTreeData : [{
+    "data": {
+      "parentId": null,
+      "code": "00001",
+      "displayName": null,
+      "memberCount": 1,
+      "roleCount": 3,
+      "lastModificationTime": "2022-05-06T00:08:34.702+05:30",
+      "lastModifierUserId": 6,
+      "creationTime": "2022-04-29T11:43:17.223+05:30",
+      "creatorUserId": 1,
+      "id": 1
+    },
+    "level": 1,
+    "selected": false,
+    "label": "waii",
+    "expandedIcon": "fa fa-folder-open text-warning",
+    "collapsedIcon": "fa fa-folder text-warning",
+    "expanded": true,
+  }],
 
   nodeColor: ['#6E4D9F', '#0D79AE', '#14A94B', '#FBA919'],
   mutable: true,
