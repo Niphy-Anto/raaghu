@@ -1,7 +1,7 @@
 ---
 slug: "/New Role"
 date: "2019-05-04"
-title: "Components / New Role"
+title: "Components > New Role"
 ---
 
 #### New Role
