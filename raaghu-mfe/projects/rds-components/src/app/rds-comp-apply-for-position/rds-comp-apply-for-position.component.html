@@ -1,10 +1,10 @@
 <div *ngFor="let item of itemList">
-  <div class="row mb-2">
+  <div class="row">
     <div class="col-md-12">
       <h5><rds-label [label]="item.titleHeader" [bold]="true"></rds-label></h5>
     </div>
   </div>
-  <div class="row mb-5">
+  <div class="row mb-3">
     <div class="col-md-12">
       <rds-label class="text-muted" [label]="item.titleDescription"></rds-label>
     </div>
@@ -16,7 +16,7 @@
           <rds-input size="default"
                      [disabled]="false"
                      [Title]="item.emailInputlabel"
-                     TitleType="text"
+                     TitleType="Top"
                      [readonly]="false"
                      value=""
                      inputType="text"
@@ -29,7 +29,7 @@
           <rds-input size="default"
                      [disabled]="false"
                      [Title]="item.fullNameInputlabel"
-                     TitleType="text"
+                     TitleType="Top"
                      [readonly]="false"
                      value=""
                      inputType="text"
@@ -44,7 +44,7 @@
           <rds-input size="default"
                      [disabled]="false"
                      [Title]="item.contactInputlabel"
-                     TitleType="text"
+                     TitleType="Top"
                      [readonly]="false"
                      value=""
                      inputType="text"
@@ -57,7 +57,7 @@
           <rds-input size="default"
                      [disabled]="false"
                      [Title]="item.positionInputlabel"
-                     TitleType="text"
+                     TitleType="Top"
                      [readonly]="false"
                      value=""
                      inputType="text"
@@ -73,7 +73,7 @@
             <rds-input size="default"
                        [disabled]="false"
                        [Title]="item.startInputLabel"
-                       TitleType="text"
+                       TitleType="Top"
                        [readonly]="false"
                        value=""
                        inputType="text"
