@@ -34,8 +34,8 @@ Default.args = {
   {
     id: 1,
     icon: 'roles',
-    iconHeight: "25px",
-    iconWidth: "25px",
+    iconHeight: "35px",
+    iconWidth: "35px",
     title: "International delivery",
     description: "Get your order in 2 years"
   }
@@ -48,8 +48,8 @@ benefit_type1.args = {
   {
     id: 3,
     icon: 'users',
-    iconHeight: "25px",
-    iconWidth: "25px",
+    iconHeight: "40px",
+    iconWidth: "40px",
     position: "start",
     title: "Free delivery all year long",
     description: "Name another place that offers year long free delivery? We'll be waiting. Order now and you'll get delivery absolutely free."

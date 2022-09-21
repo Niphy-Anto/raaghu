@@ -3,31 +3,7 @@
     <div class=" card p-2 border-0 rounded-0 vh-88">
       <div class="row pt-4 theam-cards">
 
-        <div class="col-md-4 mb-4">
-          <div class="d-inline-block p-3 pb-0" [ngClass]="{ 'selected' : selectedThemeIndex === '1' }">
-            <!--<rds-card class="rounded-avatar-basic" style="cursor:pointer">-->
-            <div class="p-0" body (click)="getThemeSettings('1')" style="cursor:pointer">
-              <img src="../assets/Dashboard.png" class="w-100">
-            </div>
-
-            <!--</rds-card>-->
-            <div class="p-2">
-              <h5 class="text-center"> Dark </h5>
-            </div>
-          </div> 
-        </div>
-        <div class="col-md-4 mb-4">
-          <div class="d-inline-block p-3 pb-0" [ngClass]="{ 'selected' : selectedThemeIndex === '0' }">
-            <!--<rds-card class="rounded-avatar-basic" style="cursor:pointer">-->
-            <div class="p-0" body (click)="getThemeSettings('0')" style="cursor:pointer">
-              <img src="../assets/LightTheme.png" class="w-100">
-            </div>
-            <!--/rds-card>-->
-            <div class="p-3">
-              <h5 class="text-center"> Light </h5>
-            </div>
-          </div>
-        </div>
+       
         <div class="col-md-4 mb-4">
           <div class="d-inline-block p-3 pb-0" [ngClass]="{ 'selected' : selectedThemeIndex === '2' }">
             <!--<rds-card class="rounded-avatar-basic" style="cursor:pointer">-->
@@ -42,6 +18,31 @@
               <h5 class="text-center"> Default </h5>
             </div>
           </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="d-inline-block p-3 pb-0" [ngClass]="{ 'selected' : selectedThemeIndex === '0' }">
+            <!--<rds-card class="rounded-avatar-basic" style="cursor:pointer">-->
+            <div class="p-0" body (click)="getThemeSettings('0')" style="cursor:pointer">
+              <img src="../assets/LightTheme.png" class="w-100">
+            </div>
+            <!--/rds-card>-->
+            <div class="p-3">
+              <h5 class="text-center"> Light </h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="d-inline-block p-3 pb-0" [ngClass]="{ 'selected' : selectedThemeIndex === '1' }">
+            <!--<rds-card class="rounded-avatar-basic" style="cursor:pointer">-->
+            <div class="p-0" body (click)="getThemeSettings('1')" style="cursor:pointer">
+              <img src="../assets/Dashboard.png" class="w-100">
+            </div>
+
+            <!--</rds-card>-->
+            <div class="p-2">
+              <h5 class="text-center"> Dark </h5>
+            </div>
+          </div> 
         </div>
       </div>
       <!-- </div>
@@ -100,8 +101,9 @@
                   [(ngModel)]="visualSettingsHeader.mobileFixedHeader"></rds-checkbox>
               </div>
               <div class="form-group mb-3">
-                <rds-button [tooltipPlacement]="'bottom'" [tooltipTitle]="translate.instant('upgrade')" [label]="translate.instant('SAVE AS SYSTEM DEFAULT ')"
-                  (click)="saveVisualSettings()" type="button" [size]="'small'" [colorVariant]="'primary'" [outlineButton]="false"></rds-button>
+                <rds-button [tooltipPlacement]="'bottom'" [tooltipTitle]="translate.instant('upgrade')"  [label]="translate.instant('SAVE AS SYSTEM DEFAULT ')"
+                  (click)="saveVisualSettings()" type="button" [size]="'small'" [colorVariant]="'primary'" 
+                   [outlineButton]="false"></rds-button>
               </div>
             </div>
           </div>
@@ -118,7 +120,7 @@
                   [(ngModel)]="visualSettingsSubHeader.fixedSubHeader"></rds-checkbox>
               </div>
               <div class="form-group mb-3">
-                <rds-button [tooltipPlacement]="'bottom'" [tooltipTitle]="translate.instant('upgrade')" [label]="translate.instant('SAVE AS SYSTEM DEFAULT ')"
+                <rds-button [tooltipPlacement]="'bottom'" [tooltipTitle]="translate.instant('upgrade')"  [label]="translate.instant('SAVE AS SYSTEM DEFAULT ')"
                   type="button" [size]="'small'" [colorVariant]="'primary'"
                   (click)="saveVisualSettings()" [outlineButton]="false"></rds-button>
               </div>
@@ -162,7 +164,7 @@
                 </rds-select-list>
               </div>
               <div class="form-group mb-3">
-                <rds-button [tooltipPlacement]="'bottom'" [tooltipTitle]="translate.instant('upgrade')" [label]="translate.instant('SAVE AS SYSTEM DEFAULT ')"
+                <rds-button [tooltipPlacement]="'bottom'" [tooltipTitle]="translate.instant('upgrade')"  [label]="translate.instant('SAVE AS SYSTEM DEFAULT ')"
                   type="button" [size]="'small'" [colorVariant]="'primary'"
                   (click)="saveVisualSettings()" [outlineButton]="false"></rds-button>
               </div>
@@ -178,8 +180,8 @@
               [inline]="false" [id]="'fixedFooter'" [(ngModel)]="visualSettingsFooter.fixedFooter"></rds-checkbox>
           </div>
           <div class="form-group mb-3">
-            <rds-button [tooltipPlacement]="'bottom'" [tooltipTitle]="translate.instant('upgrade')" [label]="translate.instant('SAVE AS SYSTEM DEFAULT ')"
-              (click)="saveVisualSettings()" type="button" [size]="'small'" [colorVariant]="'primary'" [outlineButton]="false">
+            <rds-button [tooltipPlacement]="'bottom'" [tooltipTitle]="translate.instant('upgrade')"  [label]="translate.instant('SAVE AS SYSTEM DEFAULT ')"
+              (click)="saveVisualSettings()" type="button" [size]="'small'" [colorVariant]="'primary'"  [outlineButton]="false">
             </rds-button>
           </div>
         </div>
