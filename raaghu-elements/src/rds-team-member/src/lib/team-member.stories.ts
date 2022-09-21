@@ -2,9 +2,10 @@ import { moduleMetadata } from '@storybook/angular';
 import { Story, Meta } from '@storybook/angular';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { RdsTeamMemberComponent } from '../public-api';
 import { RdsIconModule } from '@libs/rds-icon';
 import { RdsProductImageModule } from '@libs/rds-product-image';
+import { RdsTeamMemberComponent } from './rds-team-member.component';
+import { RdsLabelModule } from '@libs/rds-label';
 // import { RdsProductImageModule } from '@libs/rds-product-image';
 export default {
   title: 'Elements/Team-member',
@@ -12,7 +13,7 @@ export default {
   decorators: [
     moduleMetadata({
 
-      imports: [CommonModule, FormsModule,RdsIconModule , RdsProductImageModule],
+      imports: [CommonModule, FormsModule, RdsIconModule, RdsProductImageModule,RdsLabelModule],
     }),
   ],
 } as Meta
@@ -22,33 +23,33 @@ const Template: Story<RdsTeamMemberComponent> = (args: RdsTeamMemberComponent) =
 });
 
 export const Default = Template.bind({});
-Default.args ={
+Default.args = {
   displayType: 'Basic',
-  teamItem :[
+  teamItem: [
     {
       title: 'Tina',
       subTitle: 'Web Developer',
-      imgLink:'https://uxwing.com/wp-content/themes/uxwing/download/peoples-avatars/no-profile-picture-icon.png?W=100',
+      imgLink: 'https://uxwing.com/wp-content/themes/uxwing/download/peoples-avatars/no-profile-picture-icon.png?W=100',
       twitterIcon: 'twitter',
       linkdineIcon: 'linkedin',
       description: 'Lorem ipsum dolor sit amet conr adipiscing elit'
-    } 
+    }
   ]
 
 }
 
 export const advance = Template.bind({});
-advance.args ={
+advance.args = {
   displayType: 'Advance',
-  teamItem :[
+  teamItem: [
     {
       title: 'Tina',
       subTitle: 'Web Developer',
-      imgLink:'https://uxwing.com/wp-content/themes/uxwing/download/peoples-avatars/no-profile-picture-icon.png?W=100',
+      imgLink: 'https://uxwing.com/wp-content/themes/uxwing/download/peoples-avatars/no-profile-picture-icon.png?W=100',
       twitterIcon: 'star',
       linkdineIcon: 'star',
       description: 'Lorem ipsum dolor sit amet conr adipiscing elit'
-    } 
+    }
   ]
 
 }

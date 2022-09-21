@@ -13,6 +13,7 @@ export class RdsAvatarComponent implements OnInit, OnChanges {
   @Input() lastName: string = '';
   @Input() size: 'small' | 'large' | 'medium' = 'medium';
   @Input() verticallyAlligned: boolean = false;
+  @Input() roundedAvatar: boolean = true;
   constructor() { }
   ngOnInit(): void {
 
@@ -26,10 +27,16 @@ export class RdsAvatarComponent implements OnInit, OnChanges {
     let classes: string[] = [];
     const bgColor = 'bg-' + `${this.colorVariant}`;
     classes.push(bgColor);
-    const size = 'avatar-' + `${this.size === 'small' ? 'sm' : this.size === 'large' ? 'lg' : 'md'}`;
-    classes.push(size);
+    if (this.roundedAvatar) {
+      const size = 'avatar-' + `${this.size === 'small' ? 'sm' : this.size === 'large' ? 'lg' : 'md'}`;
+      classes.push(size);
+    }
+
     if (`${this.colorVariant}` !== 'light' && `${this.colorVariant}` !== 'warning' && `${this.colorVariant}` !== 'info' && `${this.colorVariant}` !== 'white') {
       classes.push('text-white');
+    }
+    if (this.roundedAvatar && this.withProfilePic) {
+      classes.push('rounded-circle')
     }
 
     return classes;
