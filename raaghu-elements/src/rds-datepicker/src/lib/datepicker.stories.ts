@@ -20,9 +20,9 @@ export default {
 const Template1: Story<RdsDatepickerComponent> = (args: RdsDatepickerComponent) => ({
   props: args,
 });
-export const Advanced = Template1.bind({});
-Advanced.args = {
-  Label: 'Date Range',
+export const advanced = Template1.bind({});
+advanced.args = {
+  label: 'Date Range',
   datePickerType: 'advanced'
 }
 
@@ -36,7 +36,7 @@ export const Default = Template.bind({});
 
 Default.args = {
   datePickerType: 'basic',
-  DatePickerConfig: { dateInputFormat: 'MM/DD/YYYY', showWeekNumbers: false, isAnimated: true },
+  datePickerConfig: { dateInputFormat: 'MM/DD/YYYY', showWeekNumbers: false, isAnimated: true },
   placeholder: 'Date',
   datesDisabled: [new Date()],
   dateTooltipTexts: [{ date: new Date(), tooltipText: 'todays Date' }],

@@ -1,12 +1,12 @@
 <ng-container *ngIf="datePickerType==='basic'">
   <div [class.disable-pointer]="disabled">
     <label [ngClass]="labelClass" [ngClass]="Label == '' ? 'd-none' : 'form-label'" for="Errormessage">{{
-      Label
+      label
       }}<span class="text-danger" *ngIf="isRequired">*</span></label>
     <div class="input-group">
       <input type="text" autocomplete="off" bsDatepicker [datesDisabled]="datesDisabled"
         [class.disable-pointer]="disabled" [disabled]="disabled" [minDate]="minDate" #datepicker="bsDatepicker"
-        (onHidden)="onHide.emit($event)" [daysDisabled]="daysDisabled" [isOpen]="isOpen" [bsConfig]="DatePickerConfig"
+        (onHidden)="onHide.emit($event)" [daysDisabled]="daysDisabled" [isOpen]="isOpen" [bsConfig]="datePickerConfig"
         id="DateOfBirth" [maxDate]="maxDate" [outsideEsc]="outsideEsc" (onShown)="onShow.emit($event)"
         [placeholder]="placeholder" [bsValue]="value" [dateTooltipTexts]="dateTooltipTexts" [(ngModel)]="value"
         name="date-picker" [minMode]="minMode" (bsValueChange)="onDateChane($event)" [datesEnabled]="datesEnabled"
@@ -25,7 +25,7 @@
        <button class="btn border dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
         aria-expanded="false">
          <rds-icon name="calendar" height="18px" width="18px"></rds-icon>
-        <span class="date-range  ms-2"> {{Label }}</span>
+        <span class="date-range  ms-2"> {{label }}</span>
        </button>
      
      </div>
