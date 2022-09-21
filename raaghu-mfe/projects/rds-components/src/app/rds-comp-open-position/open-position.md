@@ -1,7 +1,7 @@
 ---
 slug: "/Open Position"
 date: "2019-05-04"
-title: "Component / Open Position"
+title: "Component > Open Position"
 ---
 
 
