@@ -36,8 +36,14 @@ export class RdsCompOpenPositionComponent implements OnInit {
     ],
     descriptions: [
       {
-        type: "marketing",
+        type: "developer",
         roleName: "Android Developer",
+        roleDescription: "Designing and developing advanced applications for the Android platform · Unit-testing code for robustness, ...",
+        buttonLabel: "Apply Now"
+      },     
+      {
+        type: "marketing",
+        roleName: "Sales",
         roleDescription: "Designing and developing advanced applications for the Android platform · Unit-testing code for robustness, ...",
         buttonLabel: "Apply Now"
       },
@@ -49,14 +55,17 @@ export class RdsCompOpenPositionComponent implements OnInit {
       },
       {
         type: "researcher",
-        roleName: "Android Developer",
+        roleName: "Tester",
         roleDescription: "Designing and developing advanced applications for the Android platform · Unit-testing code for robustness, ...",
         buttonLabel: "Apply Now"
       },
     ],
-  }
-;  
+  };
+  
   activePage: number = 0;
+  openFormContent: boolean = false;
+
+  applyPositionContent: boolean = true;
   constructor() { }
 
   ngOnInit(): void {
@@ -69,10 +78,15 @@ export class RdsCompOpenPositionComponent implements OnInit {
     if (!this.item) {
       return [];
     }
-    if (selectedId === 'developer') {
-      return this.item.descriptions;
-    }
+    //if (selectedId === 'developer') {
+    //  return this.item.descriptions;
+    //}
     return this.item.descriptions.filter((x: any) => x.type === selectedId);
+  }
+
+  openForm() {
+    this.applyPositionContent = false;
+    this.openFormContent = true;
   }
 
 }
