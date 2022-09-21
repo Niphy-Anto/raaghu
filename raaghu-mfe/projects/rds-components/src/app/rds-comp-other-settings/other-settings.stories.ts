@@ -19,6 +19,15 @@ export default {
   ]
 } as Meta;
 
-const Template: Story<RdsCompOtherSettingsComponent> = (args: RdsCompOtherSettingsComponent) => ({});
+const Template: Story<RdsCompOtherSettingsComponent> = (args: RdsCompOtherSettingsComponent) => ({
+  props: { 
+    ...args 
+  }
+});
 
-export const basic = Template.bind({});
+export const Default = Template.bind({});
+Default.args={
+  OtherSetting:{
+    isQuickThemeSelectEnabled:true
+  }
+}

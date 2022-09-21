@@ -144,6 +144,7 @@ input::-webkit-input-placeholder {
 
 .form-select {
   font-size: $font-size-sm;
+  line-height:1.8;
 }
 
 .navbar {
@@ -1096,4 +1097,10 @@ $size: 10;
 .member-activity-col .table-responsive{
   overflow-y: scroll;
     height: 22rem;
+}
+
+// storybook css temp
+
+app-rds-comp-product-list .card-body{
+  padding: 1rem !important;
 }

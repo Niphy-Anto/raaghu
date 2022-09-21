@@ -15,22 +15,22 @@ export class RdsUserDelegationsComponent implements OnInit, OnChanges, OnDestroy
   deligateDivFlag: boolean = false;
   @Input() rdsDeligateTableHeader: TableHeader[] = [];
   @Input() rdsDeligateTableData: any = [];
-  @Input() tabClosed: boolean = false;
+  @Input() delegateTabopened: boolean = false;
   @Input() recordsPerpage: number = 10;
   actions: TableAction[] = [{ id: 'delete', displayName: 'Delete' }]
   @Input() pagination: boolean = false;
   @Input() tableWidth: string = '100%';
   @Input() buttonSpinner :boolean =true;
-  @Input() tableStyle: string = 'Light';
+  @Input() tableStyle: string = 'Light'; 
   username: any = '';
   startDate: Date = new Date();
-  endDate: Date = new Date();
+  endDate: any = '';
   @Output() onDeligateSave = new EventEmitter<any>()
   @Output() onCancelDeligate = new EventEmitter<any>()
   @Output() onDeleteDeligate = new EventEmitter<any>()
   constructor(public translate: TranslateService) { }
   ngOnChanges(changes: SimpleChanges): void {
-    if (this.tabClosed) {
+    if (this.delegateTabopened) {
       this.deligateDivFlag = false;
     }
   }
@@ -45,6 +45,7 @@ export class RdsUserDelegationsComponent implements OnInit, OnChanges, OnDestroy
   }
 
   hideandShowdelegateform() {
+    this.endDate = '';
     this.deligateDivFlag = !this.deligateDivFlag;
   }
 
@@ -69,7 +70,7 @@ export class RdsUserDelegationsComponent implements OnInit, OnChanges, OnDestroy
 
   }
   onCancel(): void {
-    this.onCancelDeligate.emit(true);
+    // this.onCancelDeligate.emit(true);
     this.buttonSpinner=false;
     this.deligateDivFlag = false;
     // this.onCancelDeligate.emit(true);

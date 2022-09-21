@@ -18,8 +18,8 @@ const Template: Story<RdsButtonGroupComponent> = (args: RdsButtonGroupComponent)
   props: args,
 });
 
-export const Basic = Template.bind({});
-Basic.args = {
+export const Default = Template.bind({});
+Default.args = {
   vertical: false,
   size: 'medium',
   colorVariant: 'primary',
@@ -80,7 +80,7 @@ IconButtonGroup.args = {
   buttonGroupItem: [
     {
       label: '',
-      icon: 'settings',
+      icon: 'setting',
       iconHeight: '20px',
       iconWidth: '20px',
       iconStroke: true,

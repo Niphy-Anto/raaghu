@@ -32,11 +32,11 @@ const Template: Story<RdsDatepickerComponent> = (args: RdsDatepickerComponent) =
  > 
     </rds-datepicker></div></div>`,
 });
-export const Basic = Template.bind({});
+export const Default = Template.bind({});
 
-Basic.args = {
+Default.args = {
   datePickerType: 'basic',
-  DatePickerConfig: { dateInputFormat: 'MM/DD/YYYY', showWeekNumbers: false, isAnimated: true },
+  datePickerConfig: { dateInputFormat: 'MM/DD/YYYY', showWeekNumbers: false, isAnimated: true },
   placeholder: 'Date',
   datesDisabled: [new Date()],
   dateTooltipTexts: [{ date: new Date(), tooltipText: 'todays Date' }],
