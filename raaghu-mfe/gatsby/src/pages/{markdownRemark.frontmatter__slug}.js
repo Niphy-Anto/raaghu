@@ -213,7 +213,7 @@ export default function Template({
    let type=frontmatter.title.split('>')[0].trim();
 
   switch(type){
-    case "Componets":
+    case "Components":
       data=componentsList;
       break;
       case "Elements":
@@ -339,9 +339,7 @@ export default function Template({
                           </div>
                           <ol className="breadcrumb">               
                               <li className="breadcrumb-item">
-                              {/* {elementsList.map((node)=> (
-                                 <Link to={node.url}>{node.displayName}</Link>
-                              ))} */}
+                              {frontmatter.data}
                             </li> 
                           </ol>
                         </nav>
@@ -360,9 +358,7 @@ export default function Template({
                             </div>
                             <ol className="breadcrumb">
                               <li className="breadcrumb-item">
-                                {/* {elementsList.map((node)=> (
-                                 <Link to={node.url}>{node.displayName}</Link>
-                              ))} */}
+                              {frontmatter.data}
 
                               </li>
                             </ol>

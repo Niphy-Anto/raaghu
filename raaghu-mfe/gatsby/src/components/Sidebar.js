@@ -169,7 +169,12 @@ const Sidebar = () => {
     "modal",
     "my-settings",
     "schematics",
-    "visual-settings",    
+    "under-maintanance",
+    "icons",
+    "week",
+    "under-maintanance",
+    "webhooksubscription"
+    ,    
   ];
   elementsList.forEach((item, index, self) => {
     if (
