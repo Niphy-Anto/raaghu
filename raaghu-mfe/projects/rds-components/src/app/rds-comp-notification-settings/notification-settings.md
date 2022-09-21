@@ -1,7 +1,7 @@
 ---
 slug: "/Notification-Settings"
 date: "2019-05-04"
-title: "Components / Notification Settings"
+title: "Components > Notification Settings"
 ---
 
 

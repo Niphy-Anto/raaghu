@@ -1,7 +1,7 @@
 ---
 slug: "/Profile-Settings"
 date: "2019-05-04"
-title: "Pages / Profile Settings"
+title: "Pages > Profile Settings"
 ---
 
 <!-- CSS only -->
