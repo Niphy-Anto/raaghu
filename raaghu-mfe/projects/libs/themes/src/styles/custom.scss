@@ -144,6 +144,7 @@ input::-webkit-input-placeholder {
 
 .form-select {
   font-size: $font-size-sm;
+  line-height:1.8;
 }
 
 .navbar {
@@ -1102,4 +1103,8 @@ $size: 10;
 
 app-rds-comp-product-list .card-body{
   padding: 1rem !important;
+}
+rds-product-image .imgWidth{
+  bottom: 170px !important;
+  top: 0px !important;
 }
