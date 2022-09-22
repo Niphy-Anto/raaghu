@@ -6,7 +6,7 @@
   "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.1.",
   "sideEffects": false,
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/",
+    "registry": "https://npm.pkg.github.com",
     "tag": "latest"
   },
   "repository": {
