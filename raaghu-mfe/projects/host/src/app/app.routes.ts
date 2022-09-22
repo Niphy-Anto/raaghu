@@ -175,18 +175,7 @@ export const APP_ROUTES: Routes = [
             type: 'module',
             remoteEntry: MfeConfig.settings.url,
             exposedModule: './AppModule',
-          }).then((m) => m.AppModule),
-        data: { permission: 'Pages.Administration.Host.Settings' },
-      },
-      {
-        path: 'setting',
-        loadChildren: () =>
-          loadRemoteModule({
-            type: 'module',
-            remoteEntry: MfeConfig.settings.url,
-            exposedModule: './AppModule',
-          }).then((m) => m.AppModule),
-        data: { permission: 'Pages.Administration.Tenant.Settings' },
+          }).then((m) => m.AppModule)
       },
       {
         path: 'tenant',

@@ -94,7 +94,6 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
         { label: 'Dynamic Properties', labelTranslationKey: 'Dynamic Properties', id: 'Pages.Administration.DynamicProperties', permissionName: '', icon: 'dynamic_properties', path: '/pages/dynamic-property-management', descriptionTranslationKey: '' },
         { label: 'Settings', labelTranslationKey: 'Settings', id: '', permissionName: 'Pages.Administration.Host.Settings', icon: 'setting', path: '/pages/settings', description: 'Show and change application settings', descriptionTranslationKey: 'Show and change application settings' },
         { label: 'Settings', labelTranslationKey: 'Settings', id: '', permissionName: 'Pages.Administration.Tenant.Settings', icon: 'setting', path: '/pages/settings', description: 'Show and change application settings', descriptionTranslationKey: 'Show and change application settings' },
-
       ],
     },
     { label: 'UI Components', labelTranslationKey: 'UI Components', id: '', permissionName: '', icon: 'demo_ui', path: '/pages/demo-ui', description: '', descriptionTranslationKey: '' },
