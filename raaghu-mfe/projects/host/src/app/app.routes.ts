@@ -364,6 +364,17 @@ export const APP_ROUTES: Routes = [
       //    }).then((m) => m.AppModule),
       //  data: { permission: '' },
       // },
+
+      //{
+      //  path: 'careers',
+      //  loadChildren: () =>
+      //    loadRemoteModule({
+      //      type: 'module',
+      //      remoteEntry: MfeConfig.careers.url,
+      //      exposedModule: './AppModule',
+      //    }).then((m) => m.AppModule),
+
+      //},
       {
         path: '**',
         redirectTo: 'pagenotfound',
