@@ -19,7 +19,8 @@ export class RdsCompBillingAddressComponent implements OnInit {
   @Input() address:string;
   @Input() state:string;
   @Input() country:string;
-  @Input() countryList:string[] = ["India","China","Canada","Japan","Australia","USA","UK"];
+  @Input() countryList: any[] = []
+
   @Input() postalCode:number;
   @Input() buttonSpinner: boolean = true;
   
