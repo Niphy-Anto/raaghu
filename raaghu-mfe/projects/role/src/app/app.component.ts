@@ -133,7 +133,7 @@ export class AppComponent implements OnInit {
           }
         },
         onEditRole: (event: any) => {
-          if (event.id) {
+          if (event) {
             this.store.dispatch(getRolByEdit(event));
             this.isEdit = true;
           } else {
