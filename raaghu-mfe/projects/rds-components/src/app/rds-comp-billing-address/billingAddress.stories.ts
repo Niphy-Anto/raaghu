@@ -6,7 +6,7 @@ import { RdsCompBillingAddressComponent } from './rds-comp-billing-address.compo
 
 
 export default {
-    title: 'Components/Billing Adress',
+    title: 'Components/Billing Address',
     component: RdsCompBillingAddressComponent,
     decorators: [
         moduleMetadata({
@@ -28,9 +28,9 @@ const Template: Story<RdsCompBillingAddressComponent> = (args: RdsCompBillingAdd
         ...args
     }
 });
-export const Template1 = Template.bind({});
+export const Default = Template.bind({});
 
-Template1.args = {
+Default.args = {
     countryList:["India","China","Canada","Japan","Australia","USA","UK"]
 }
 
