@@ -4,6 +4,7 @@ module.exports = {
     title: `Raaghu`
   },
   plugins: [
+    `gatsby-plugin-slug`,
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
