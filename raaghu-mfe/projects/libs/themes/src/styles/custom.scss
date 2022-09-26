@@ -212,8 +212,14 @@ input::-webkit-input-placeholder {
 
 /* html */
 html {
+  overflow: scroll;
+}
+html[theme=dark], html[theme=light] {
   overflow: hidden;
 }
+// #storybook-preview-wrapper html{
+//   overflow-y: scroll;
+// }
 
 /* scrolling input type */
 // *********Tenant*******
