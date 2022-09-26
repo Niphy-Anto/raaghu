@@ -64,8 +64,8 @@ avtarWithHorizontallyAllignedInfo.args = {
   colorVariant: 'warning',
 };
 
-export const avtarWithVerticallyAllignedInfo = avatarWithInfoTemplate.bind({});
-avtarWithVerticallyAllignedInfo.args = {
+export const avatarWithVerticallyAllignedInfo = avatarWithInfoTemplate.bind({});
+avatarWithVerticallyAllignedInfo.args = {
   size: 'medium',
   firstName: 'Admin',
   lastName: 'Admin',

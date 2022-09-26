@@ -6,6 +6,7 @@ import { RdsIconModule } from '@libs/rds-icon';
 import { RdsProductImageModule } from '@libs/rds-product-image';
 import { RdsTeamMemberComponent } from './rds-team-member.component';
 import { RdsLabelModule } from '@libs/rds-label';
+import { RdsAvatarModule } from '@libs/rds-avatar';
 // import { RdsProductImageModule } from '@libs/rds-product-image';
 export default {
   title: 'Elements/Team-member',
@@ -13,7 +14,7 @@ export default {
   decorators: [
     moduleMetadata({
 
-      imports: [CommonModule, FormsModule, RdsIconModule, RdsProductImageModule,RdsLabelModule],
+      imports: [CommonModule, FormsModule, RdsIconModule, RdsProductImageModule,RdsLabelModule,RdsAvatarModule],
     }),
   ],
 } as Meta

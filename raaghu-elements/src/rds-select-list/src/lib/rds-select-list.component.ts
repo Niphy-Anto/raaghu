@@ -2,7 +2,7 @@ import { AfterViewInit, Component, EventEmitter, Input, OnChanges, Output, Simpl
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { Tooltip } from 'bootstrap'
 declare var bootstrap: any;
-export interface item {
+export interface selectListItem {
   displayName: string;
   value: any;
 }
@@ -27,7 +27,7 @@ export class RdsSelectListComponent implements AfterViewInit, OnChanges {
   @Input() labelPosition: 'top' | 'bottom' | 'left' | 'right' = 'top';
   @Input() rows: string = '';
   @Input() multiple: boolean = false;
-  @Input() itemList: item[] = [];
+  @Input() itemList: selectListItem[] = [];
   @Input() disabled: boolean = false;
   @Input() value: any = '';
   @Input() placeholder: string = '';

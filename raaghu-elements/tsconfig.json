@@ -56,6 +56,10 @@
         "rds-elements/rds-card-detail/public-api",
         "rds-elements/rds-card-detail"
       ],
+      "@libs/rds-card": [
+        "rds-elements/rds-card/public-api",
+        "rds-elements/rds-card"
+      ],
       "@libs/rds-radio-button": [
         "rds-elements/rds-radio-button/public-api",
         "rds-elements/rds-radio-button"
