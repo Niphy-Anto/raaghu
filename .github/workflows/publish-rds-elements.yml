@@ -34,7 +34,7 @@ jobs:
         
       - name: Publish rds-elements
         working-directory: ./raaghu-elements/rds-elements
-        run: npm publish --registry=https://registry.npmjs.org/
+        run: npm publish
 
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
