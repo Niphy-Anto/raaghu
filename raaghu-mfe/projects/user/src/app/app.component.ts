@@ -32,6 +32,8 @@ import {
   style,
   animate,
 } from '@angular/animations';
+import { getRoles } from 'projects/libs/state-management/src/lib/state/role/role.actions';
+import { selectAllRoles } from 'projects/libs/state-management/src/lib/state/role/role.selector';
 
 @Component({
   selector: 'app-root',
@@ -104,6 +106,25 @@ export class AppComponent {
   resOrganizationUnit:any=[];
   SelectedOrganizationUnit: any = [];
   ngOnInit(): void {
+    // this.store.dispatch(getRoles([]));
+    // this.store.select(selectAllRoles).subscribe((res: any) => {
+    //   this.roles = [];
+    //   if (res && res.roles && res.roles.items && res.status == "success") {
+    //     this.isAnimation = false;
+    //     res.roles.items.forEach((element: any) => {
+    //       const status: string = (element.isStatic) ? '<span class="badge badge-primary p-1 mx-1 rounded">Static</span> ' : '';
+    //       const status1: string = (element.isDefault) ? '<span class="badge badge-success p-1 mx-1 rounded">Default</span> ' : '';
+    //       const roleName: string = (element.displayName);
+    //       const defaultLanguageTemplate = `<div class="d-flex align-items-center"> ${roleName} <div class="d-block text-end"> ${status} ${status1} </div></div> `
+    //       const item: any = {
+    //         rolename: defaultLanguageTemplate,
+    //         isDefault: element.isDefault,
+    //         creationTime: this.datepipe.transform(new Date(element.creationTime), 'MM/dd/yyyy, h:mm:ss a'),
+    //         name: element.displayName,
+    //         id: element.id
+    //       }
+    //       this.roles.push(item);
+    //     });
     this.isAnimation=true;
 
     this.store.select(selectDefaultLanguage).subscribe((res: any) => {
@@ -201,6 +222,7 @@ export class AppComponent {
           }
           this.store.dispatch(getUserForEdit(eventData.id));
           this.store.select(selectUserForEdit).subscribe((res: any) => {
+            debugger
             if (res && res.UserEditI && res.UserEditI.roles && res.UserEditI.roles.length) {
               this.roles = [];
               res.UserEditI.roles.forEach((element: any) => {
@@ -215,7 +237,7 @@ export class AppComponent {
                 this.roles.push(item);
               });
             }
-            if (  res && res.UserEditI &&  res.UserEditI.user ) {
+            if (res && res.UserEditI &&  res.UserEditI.user ) {
               const item: any = {
                 name: res.UserEditI.user.name,
                 emailAddress: res.UserEditI.user.emailAddress,
@@ -278,6 +300,11 @@ export class AppComponent {
               mfeConfigedit.input.selectedOrganizations = [...this.SelectedOrganizationUnit];
             }
             const mfeConfigedit = this.rdsUserMfeConfig;
+            if(!this.isEdit){
+              this.roles.forEach(node=>{
+                node.isAssigned = false;
+              })
+            }
             mfeConfigedit.input.roles = [...this.roles];
             if (this.userinfo) {
            mfeConfigedit.input.userinfo = { ...this.userinfo };
@@ -308,7 +335,7 @@ export class AppComponent {
                       }
                     );
                   }
-                  const mfeConfigedit = this.rdsUserMfeConfig;
+                const mfeConfigedit = this.rdsUserMfeConfig;
                 mfeConfigedit.input.permissionsList = [...this.Permission];
                 mfeConfigedit.input.selectedPermissions = [...this.selectedPermissions];
                 mfeConfigedit.input.editShimmer=false;

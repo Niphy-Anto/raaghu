@@ -102,10 +102,12 @@ module.exports = {
         './RdsCompOrderDetails': './projects/rds-components/src/app/rds-comp-order-details/rds-comp-order-details.component.ts',
         './RdsCompCardDetailList': './projects/rds-components/src/app/rds-comp-card-detail-list/rds-comp-card-detail-list.component.ts',
         './RdsCompIntegration': './projects/rds-components/src/app/rds-comp-integration/rds-comp-integration.component.ts',
-        './RdsCompContactUs': './projects/rds-components/src/app/rds-comp-contact-us/rds-comp-contact-us.component.ts'
+        './RdsCompContactUs': './projects/rds-components/src/app/rds-comp-contact-us/rds-comp-contact-us.component.ts',
+        './RdsCompOpenPosition': './projects/rds-components/src/app/rds-comp-open-position/rds-comp-open-position.component.ts',
+        './RdsCompApplyForPosition': './projects/rds-components/src/app/rds-comp-apply-for-position/rds-comp-apply-for-position.component.ts'
       },
 
-
+      
       shared: share({
         "@angular/core": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
         "@angular/common": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
