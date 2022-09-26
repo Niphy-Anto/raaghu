@@ -33,12 +33,9 @@ export class RdsCompLanguageTextListComponent implements OnInit {
   { languagename: 'India', countryCode: 'IND', statusTemplate: 'false', creationTime: '12-10-1992' },
   { languagename: 'India', countryCode: 'IND', statusTemplate: 'true', creationTime: '12-10-1992' }]
   @Input() listbaseLanguage: any[] = [];
-  listTargetCulturename: any[] = []
+  @Input() listTargetCulturename: any[] = [];
   @Input() listsource: any[] = []
-  listTargetValue: any[] = [
-    { value: 'ALL', displayText: 'All' },
-    { value: 'EMPTY', displayText: 'Empty Ones' }
-  ]
+  @Input() listTargetValue: any[] = []
   constructor(private http: HttpClient, private store: Store) {}
   ngOnInit(): void {
     const languageTextDataParams: any = {

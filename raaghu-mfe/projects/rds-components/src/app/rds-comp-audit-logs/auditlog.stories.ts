@@ -5,6 +5,8 @@ import { RdsDataTableComponent } from '../rds-comp-data-table/rds-comp-data-tabl
 import { NgxTranslateModule, SharedModule } from '@libs/shared';
 import { RdsCompAlertComponent } from '../rds-comp-alert/rds-comp-alert.component';
 import { RdsCompAuditLogsComponent } from './rds-comp-audit-logs.component';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 export default {
   title: 'Components/Audit Log',
@@ -16,7 +18,7 @@ export default {
       imports: [
         FormsModule, ReactiveFormsModule, RdsButtonModule, RdsModalModule, RdsPaginationModule,RdsIconModule, 
         SharedModule,RdsFabMenuModule,NgxTranslateModule,RdsInputModule,RdsOffcanvasModule,RdsNavTabModule,
-        RdsSelectListModule,RdsCheckboxModule,RdsDatepickerModule
+        RdsSelectListModule,RdsCheckboxModule,RdsDatepickerModule,BsDatepickerModule.forRoot(), BrowserAnimationsModule, 
       ],
       providers: [
         FormBuilder
