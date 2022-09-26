@@ -31,6 +31,12 @@ jobs:
       - name: Build raaghu-elements
         working-directory: ./raaghu-elements
         run: npm run build-all
+      
+      - name: Upload artifact for the publish job
+        uses: actions/upload-artifact@v3
+        with:
+          name: node-app
+          path: ./raaghu-elements/rds-elements
   
   publish:
     runs-on: ubuntu-latest
@@ -40,8 +46,12 @@ jobs:
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
       
     steps:
+      - name: Download artifact from build job
+        uses: actions/download-artifact@v3
+        with:
+          name: node-app
+          
       - name: Publish rds-elements
-        working-directory: ./raaghu-elements/rds-elements
         run: npm publishh --registry=https://registry.npmjs.org/
 
         env:
