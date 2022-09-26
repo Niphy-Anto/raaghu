@@ -32,9 +32,9 @@ const Template: Story<RdsCompAuditLogsComponent> = (args: RdsCompAuditLogsCompon
   }
   });
 
-  export const AuditLog = Template.bind({});
+  export const Default = Template.bind({});
 
-  AuditLog.args = {
+  Default.args = {
     operationLogsHeaders: [{ key: 'userName', displayName:'User Name', dataType: 'text', sortable: true, filterable: true },
     { key: 'serviceName', displayName: 'Service', dataType: 'text', sortable: true, filterable: true },
     { key: 'methodName', displayName: 'Action', dataType: 'text', sortable: true, filterable: true},

@@ -45,8 +45,8 @@ const Template: Story<RdsCompBillingComponent> = (args: RdsCompBillingComponent)
     }
 });
 
-export const billing = Template.bind({});
-billing.args = {
+export const Default = Template.bind({});
+Default.args = {
     emailId: 'admin@aspnetzero.com',
     alternativeEmail: '',
     cardList: [],
