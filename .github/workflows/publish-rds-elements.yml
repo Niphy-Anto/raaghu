@@ -52,7 +52,7 @@ jobs:
           name: node-app
           
       - name: Publish rds-elements
-        run: npm publishh --registry=https://registry.npmjs.org/
+        run: npm publish --registry=https://registry.npmjs.org/
 
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
