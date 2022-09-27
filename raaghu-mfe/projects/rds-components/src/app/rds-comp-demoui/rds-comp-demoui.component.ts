@@ -78,9 +78,9 @@ export class RdsCompDemouiComponent implements OnInit {
     },
   ]
   options = [
-    { value: 'option 1', displayName: 'option 1' },
-    { value: 'option 2', displayName: 'option 2' },
-    { value: 'option 3', displayName: 'option 3' },
+    { value: 'option 1', displayText: 'option 1' },
+    { value: 'option 2', displayText: 'option 2' },
+    { value: 'option 3', displayText: 'option 3' },
   ];
   buttonGroupItemWithIcon = [
     {

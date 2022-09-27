@@ -3,7 +3,7 @@ import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { Tooltip } from 'bootstrap'
 declare var bootstrap: any;
 export interface selectListItem {
-  displayName: string;
+  displayText: string;
   value: any;
 }
 
@@ -48,14 +48,18 @@ export class RdsSelectListComponent implements AfterViewInit, OnChanges {
       this.value = '';
     }
     if (this.tooltipTitle) {
-      const tooltipTriggerList: any = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new Tooltip(tooltipTriggerEl))
+      const tooltipTriggerList: any = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+      if (tooltipTriggerList) {
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new Tooltip(tooltipTriggerEl))
+      }
     }
   }
   ngAfterViewInit(): void {
     if (this.tooltipTitle) {
       const tooltipTriggerList: any = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new Tooltip(tooltipTriggerEl))
+      if (tooltipTriggerList) {
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new Tooltip(tooltipTriggerEl))
+      }
     }
   }
 

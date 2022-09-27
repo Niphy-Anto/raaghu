@@ -51,9 +51,15 @@ export class RdsAlertComponent implements OnInit {
 
   closeAlert() {
     var element = document.getElementById('alert');
-    var alert = new bootstrap.Alert(element);
-    alert.close();
-    this.onDismiss.emit();
+    if(element){
+      var alert = new bootstrap.Alert(element);
+      if(alert){
+        alert.close();
+        this.onDismiss.emit();
+      }
+
+    }
+
   }
 
   public get iconSize(): string {

@@ -24,7 +24,7 @@ export const Default = Template.bind({});
 Default.args = {
   dismissible: true,
   icon: 'information',
-  position: 'bottom',
+  position: 'top',
   delay: 0,
   colorVariant:'danger',
   iconFill:false,

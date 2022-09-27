@@ -9,7 +9,7 @@ declare var bootstrap: any;
 })
 export class RdsButtonComponent implements AfterViewInit, OnInit, DoCheck {
 
-  @Input() colorVariant: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'dark' | 'light'|'default' = 'default';
+  @Input() colorVariant: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'dark' | 'light' | 'default' = 'default';
   @Input() submit = false;
   static count: number = 0;
   @Input() block: boolean = false;
@@ -68,7 +68,7 @@ export class RdsButtonComponent implements AfterViewInit, OnInit, DoCheck {
 
   ngAfterViewInit(): void {
     const tooltipTriggerList: any = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-    if(this.tooltipTitle){
+    if (this.tooltipTitle && tooltipTriggerList) {
       const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new Tooltip(tooltipTriggerEl))
     }
     // if (this.tooltipPlacement && this.tooltipTitle) {

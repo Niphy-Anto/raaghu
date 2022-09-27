@@ -18,7 +18,7 @@ export class RdsBigNumberWidgetComponent implements OnInit {
   @Input() iconColor: 'warning' | 'review' | 'danger' | 'success' | 'info' | 'primary' | 'secondary' | 'dark' | 'light' | undefined = undefined;
   @Input() colorVariant: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'dark' | 'light' | undefined = undefined;;
   @Input() textAlign: 'text-start' | 'text-center' | 'text-end' = 'text-center';
-  @Input() subTitleColorVariant: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'dark' | 'light' | undefined = undefined;;
+  @Input() subTitleColorVariant: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'dark' | 'light' | undefined = 'light';
   constructor() { }
 
   ngOnInit(): void {
@@ -30,7 +30,7 @@ export class RdsBigNumberWidgetComponent implements OnInit {
       customClasses.push(bgColor);
     }
 
-    if (`${this.colorVariant}` !== 'light' && `${this.colorVariant}` !== 'warning' && `${this.colorVariant}` !== 'info' && `${this.colorVariant}` !== 'white' && `${this.colorVariant}` !== '') {
+    if (this.colorVariant!==undefined&&`${this.colorVariant}` !== 'light' && `${this.colorVariant}` !== 'warning' && `${this.colorVariant}` !== 'info' && `${this.colorVariant}` !== 'white' && `${this.colorVariant}` !== '') {
       customClasses.push('text-white bg-gradient-primary');
     }
     return customClasses

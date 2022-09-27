@@ -23,12 +23,13 @@ export class RdsBannerComponent implements OnInit {
     if (this.align) {
       classes.push('justify-content-' + this.align);
     }
-    if (this.position) {
-      const position = `${this.position === 'top' ? 'fixed-top' : ' fixed-bottom bottom-0'}`;
-      classes.push(position);
-    }
+
 
     if (this.sticky === true) {
+      if (this.position) {
+        const position = `${this.position === 'top' ? 'fixed-top' : ' fixed-bottom bottom-0'}`;
+        classes.push(position);
+      }
       classes.push(' m-auto');
     }
     if (this.colorVariant) {
