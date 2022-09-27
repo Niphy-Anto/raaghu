@@ -102,7 +102,8 @@ module.exports = {
         './RdsCompOrderDetails': './projects/rds-components/src/app/rds-comp-order-details/rds-comp-order-details.component.ts',
         './RdsCompCardDetailList': './projects/rds-components/src/app/rds-comp-card-detail-list/rds-comp-card-detail-list.component.ts',
         './RdsCompIntegration': './projects/rds-components/src/app/rds-comp-integration/rds-comp-integration.component.ts',
-        './RdsCompContactUs': './projects/rds-components/src/app/rds-comp-contact-us/rds-comp-contact-us.component.ts'
+        './RdsCompContactUs': './projects/rds-components/src/app/rds-comp-contact-us/rds-comp-contact-us.component.ts',
+         './RdsCompUserPermissionsNew': './projects/rds-components/src/app/rds-comp-user-permissions-new/rds-comp-user-permissions-new.component.ts'
       },
 
 
