@@ -30,9 +30,9 @@ const Template: Story<RdsCompPaymentDetailsComponent> = (args: RdsCompPaymentDet
   
      
 });
-export const Template1 = Template.bind({});
+export const Default = Template.bind({});
 
-Template1.args = {
+Default.args = {
     cvc: 123,
     cardNumber: 246,
     name: 'abc',
