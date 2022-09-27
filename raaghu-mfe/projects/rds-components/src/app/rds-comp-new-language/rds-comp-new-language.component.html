@@ -4,13 +4,11 @@
             <div class="row mb-3">
                 <div class="col-md-6">
                     <div class="col-md-12 col-sm-12">
-                        <div class="form-group mt-3">           
+                        <div class="form-group mt-3">
                             <rds-select-list [(ngModel)]="languageName" [value]="languageName"
-                                [placeholderText]="'Select Language'" LabelType="Top" ngDefaultControl
-                                [labelText]="translate.instant('Language')" [customIcon]="'bi bi-chevron-down'"
-                                id="select-listlanguage" name="languageName" #language="ngModel" required
-                                [itemList]="languageNames">
-
+                                [placeholder]="'Select Language'" labelPosition="top" ngDefaultControl
+                                [label]="translate.instant('Language')" id="select-listlanguage" name="languageName"
+                                #language="ngModel" required [itemList]="languageNames">
                             </rds-select-list>
                             <div class="form-control-feedback"
                                 *ngIf="language.errors && (language.dirty || language.touched)">
@@ -34,10 +32,10 @@
                                     <rds-label label="Country Code"></rds-label>
                                 </div>
                                 <rds-dropdownlist [icon]="selectedLanguage.icon" [borderDropdown]="true"
-                                    class="text-dark"
-                                    [placeholder]="translate.instant('Country Code')" [value]="selectedLanguage.icon"
-                                    required [multiSelect]="false" [selectAll]="false" [entity]="false"
-                                    [listItems]="flags" (onSelect)="onCountryCodeSelect($event)"></rds-dropdownlist>
+                                    class="text-dark" [placeholder]="translate.instant('Country Code')"
+                                    [value]="selectedLanguage.icon" required [multiSelect]="false" [selectAll]="false"
+                                    [entity]="false" [listItems]="flags" (onSelect)="onCountryCodeSelect($event)">
+                                </rds-dropdownlist>
 
                             </div>
                             <div class="form-control-feedback"
@@ -66,12 +64,12 @@
     <div class="footer-buttons my-2">
         <div class="row">
             <div class="col-md-12 ">
-                <rds-button [label]="translate.instant('Close')" (click)="closeCanvas()" type="button" [colorVariant]="'outline-primary'"
-                    [size]="'small'">
+                <rds-button [label]="translate.instant('Close')" (click)="closeCanvas()" type="button"
+                    [colorVariant]="'primary'" [size]="'small'">
                 </rds-button>
-                <rds-button [label]="translate.instant('Save')" type="button" [size]="'small'" [showLoadingSpinner]="buttonSpinner"
-                    [disabled]="!languageForm.valid" class="ms-2" [colorVariant]="'primary'"
-                    (click)="addLanguage(languageForm)"> 
+                <rds-button [label]="translate.instant('Save')" type="button" [size]="'small'"
+                    [showLoadingSpinner]="buttonSpinner" [disabled]="!languageForm.valid" class="ms-2"
+                    [colorVariant]="'primary'" (click)="addLanguage(languageForm)">
                 </rds-button>
             </div>
         </div>

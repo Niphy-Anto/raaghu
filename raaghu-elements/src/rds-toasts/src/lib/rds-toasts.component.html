@@ -4,12 +4,12 @@
       [attr.id]="toastId" [attr.data-bs-autohide]="autohide" [attr.data-bs-delay]="delay">
       <div class="toast-header" *ngIf="showHeader">
         <strong class="me-auto">{{headerTitle}}</strong>
-        <ng-content #header> </ng-content>
+        <ng-content select="[header]"> </ng-content>
         <button type="button" class="btn-close" data-bs-dismiss="toast" (click)="close()" aria-label="Close"></button>
       </div>
       <div class="toast-body">
         {{message}}
-        <ng-content #body></ng-content>
+        <ng-content select="[body]"></ng-content>
       </div>
     </div>
   </div>

@@ -1,5 +1,5 @@
 <div class="d-flex text-center justify-content-center">
-    <rds-card [borderCard]="true" *ngFor="let item of subscriptionData" class="p-2">
+    <rds-card  *ngFor="let item of subscriptionData" class="p-2">
         <div header class="bg-primary py-2">
             <rds-label [label]="item.name.toUpperCase()" [bold]="true" class="fs-5"></rds-label>
         </div>
@@ -112,7 +112,7 @@
 </div>
 <hr>
 <div class="col-md-12 mt-5">
-    <rds-button [label]="'Cancel'" [colorVariant]="'outline-primary'" [size]="'small'" class="float-end ms-2">
+    <rds-button [label]="'Cancel'" [colorVariant]="'primary'" [outlineButton]="true" [size]="'small'" class="float-end ms-2">
     </rds-button>
     <rds-button [label]="'Save'" [size]="'small'" [colorVariant]="'primary'" class="float-end">
     </rds-button>

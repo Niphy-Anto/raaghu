@@ -79,6 +79,14 @@
       "@libs/rds-product-image": [
         "rds-elements/rds-product-image/public-api",
         "rds-elements/rds-product-image"
+      ],
+      "@libs/rds-team-member": [
+        "rds-elements/rds-team-member/public-api",
+        "rds-elements/rds-team-member"
+      ],
+      "@libs/rds-nav-bar": [
+        "rds-elements/rds-nav-bar/public-api",
+        "rds-elements/rds-nav-bar"
       ]
     },
     "skipLibCheck": true,

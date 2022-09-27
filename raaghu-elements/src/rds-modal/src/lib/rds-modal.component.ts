@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, AfterViewInit, OnInit, Output, SimpleChanges, TemplateRef } from '@angular/core';
-import inputGroupStories from 'src/rds-input-group/src/lib/input-group.stories';
 
 @Component({
   selector: 'rds-modal',

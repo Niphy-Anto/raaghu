@@ -25,14 +25,12 @@ const Template: Story<RdsTeamMemberComponent> = (args: RdsTeamMemberComponent) =
 
 export const Default = Template.bind({});
 Default.args = {
-  displayType: 'Basic',
+  displayType: 'basic',
   teamItem: [
     {
       title: 'Tina',
       subTitle: 'Web Developer',
       imgLink: 'https://uxwing.com/wp-content/themes/uxwing/download/peoples-avatars/no-profile-picture-icon.png?W=100',
-      twitterIcon: 'twitter',
-      linkdineIcon: 'linkedin',
       description: 'Lorem ipsum dolor sit amet conr adipiscing elit'
     }
   ]
@@ -41,14 +39,12 @@ Default.args = {
 
 export const advance = Template.bind({});
 advance.args = {
-  displayType: 'Advance',
+  displayType: 'advanced',
   teamItem: [
     {
       title: 'Tina',
       subTitle: 'Web Developer',
       imgLink: 'https://uxwing.com/wp-content/themes/uxwing/download/peoples-avatars/no-profile-picture-icon.png?W=100',
-      twitterIcon: 'star',
-      linkdineIcon: 'star',
       description: 'Lorem ipsum dolor sit amet conr adipiscing elit'
     }
   ]

@@ -1,11 +1,10 @@
 <div id="alert" [class]="classes" #alertElement role="alert" class="d-flex justify-content-between align-items-center">
-  <span class="wordbreak d-flex align-items-center" [class]="alertSize">
-    <rds-icon *ngIf="icon" [name]="icon" [fill]="iconFill" [stroke]="iconStroke" [height]="iconHeight"
-      [width]="iconWidth" [ngClass]="iconSize" class="fs-6 me-2"></rds-icon>
+  <span class="wordbreak d-flex align-items-center">
+    <rds-icon *ngIf="icon" [name]="icon" [ngClass]="iconSize" [fill]="iconFill" [stroke]="iconStroke" [height]="iconHeight"
+      [width]="iconWidth" class="fs-6 me-2"></rds-icon>
     {{ label }}
   </span>
   <ng-content></ng-content>
-  <button (click)="closeAlert()" type="button" class="btn-close" [class]="alertSize" *ngIf="dismisable"
-    data-bs-dismiss="alert" aria-label="Close"></button>
+  <button (click)="closeAlert()" type="button" class="btn-close" *ngIf="dismissible" data-bs-dismiss="alert"
+    aria-label="Close"></button>
 </div>
-

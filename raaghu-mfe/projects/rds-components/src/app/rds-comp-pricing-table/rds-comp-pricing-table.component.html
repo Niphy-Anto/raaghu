@@ -48,10 +48,10 @@
   <div class="row mt-4" *ngFor="let item of itemList">
     <div class="col-md-12">
       <rds-label class="mb-3" [label]="item.label" [bold]="true"></rds-label>
-      <rds-table [tableBorder]="false"
-                 [tableHeader]="true"
-                 [tableHeaderItems]="item.pricingTableHeaderItems"
-                 [tableBodyItems]="item.pricingTableBodyItems"
+      <rds-table [showTableBorder]="false"
+                 [showTableHeader]="true"
+                 [tableHeaders]="item.pricingTableHeaderItems"
+                 [tableData]="item.pricingTableBodyItems"
                  colorVariant="primary"></rds-table>
     </div>
   </div>

@@ -9,6 +9,7 @@ export class RdsAlertComponent implements OnInit {
 
 
   // @Input() size: 'small' | 'medium' | 'large' = 'medium'
+  @Input() size: 'small' | 'medium' | 'large' = 'medium'
   @Input() dismissible: boolean = true
   @Input() icon: string = '';
   @Input() label = 'A simple primary alert—check it out!';
@@ -55,5 +56,32 @@ export class RdsAlertComponent implements OnInit {
     this.onDismiss.emit();
   }
 
+  public get iconSize(): string {
+    const mode2 = `${this.size === 'medium' ? 'fs-4' : this.size === 'large' ? 'fs-3' : this.size === 'small'}`;
+    return mode2;
+  }
 
+  public get alertSize(): string{
+    const mode3 =  `${this.size === 'small' ? 'alert-sm' : this.size === 'large' ? 'alert-lg' : 'alert-md'}`;
+    switch (this.size) {
+      case 'small':
+        this.iconHeight = '15px';
+        this.iconWidth = '15px';
+        break;
+      case 'medium':
+        this.iconHeight = '20px';
+        this.iconWidth = '20px';
+        break;
+      case 'large':
+        this.iconHeight = '25px';
+        this.iconWidth = '25px';
+        break;  
+      default:
+        this.iconHeight = '20px';
+        this.iconWidth = '20px';
+        break;
+    }
+    return mode3;
+
+  }
 }

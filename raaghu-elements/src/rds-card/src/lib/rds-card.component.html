@@ -1,12 +1,11 @@
 <div [ngClass]="cardClasses" class="card">
-  <ng-content></ng-content>
-  <div *ngIf="showHeader" class="card-header">
+  <div *ngIf="showHeader" >
     <ng-content select="[header]"></ng-content>
   </div>
   <div class="card-body" [ngClass]="cardBody" *ngIf="showBody">
     <ng-content select="[body]"></ng-content>
   </div>
-  <div *ngIf="showFooter" class="card-footer">
+  <div *ngIf="showFooter" >
     <ng-content select="[footer]"></ng-content>
   </div>
 </div>

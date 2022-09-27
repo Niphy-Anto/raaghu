@@ -21,7 +21,7 @@ export class RdsCompFeedsComponent implements OnInit {
 
   @Input() listItems = [];
 
-  @Input() itemList = [
+  @Input() itemList: any = [
     {
 
       'actor': 'Jijo Fleshman',
@@ -33,7 +33,7 @@ export class RdsCompFeedsComponent implements OnInit {
       fill: true,
       colorVariant: 'primary',
       profilePic: 'https://th.bing.com/th/id/OIP.3IsXMskZyheEWqtE3Dr7JwHaGe?pid=ImgDet&rs=1',
-     rating:5
+      rating: 5
     },
     {
       'actor': 'Bethany Blake',
@@ -45,7 +45,7 @@ export class RdsCompFeedsComponent implements OnInit {
       fill: true,
       colorVariant: 'primary',
       profilePic: 'https://th.bing.com/th/id/OIP.3IsXMskZyheEWqtE3Dr7JwHaGe?pid=ImgDet&rs=1',
-     rating:2
+      rating: 2
     },
     {
       'actor': 'Martha Gardner',
@@ -57,9 +57,9 @@ export class RdsCompFeedsComponent implements OnInit {
       fill: true,
       colorVariant: 'warning',
       profilePic: 'https://th.bing.com/th/id/OIP.3IsXMskZyheEWqtE3Dr7JwHaGe?pid=ImgDet&rs=1',
-      rating:3
+      rating: 3
     },
-    
+
   ]
   pDate: any;
 
@@ -67,8 +67,8 @@ export class RdsCompFeedsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-   this.date = moment(this.date).fromNow()
-   console.log(this.date);
+    this.date = moment(this.date).fromNow()
+    console.log(this.date);
   }
 
 }

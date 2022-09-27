@@ -15,19 +15,21 @@ export class RdsBigNumberWidgetComponent implements OnInit {
   @Input() iconStroke: boolean = true;
   @Input() iconFill: boolean = false;
   @Input() iconWidth: string = '12px';
-  @Input() iconColor: string = '';
-  @Input() colorVariant: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'dark' | 'light' = 'primary';
+  @Input() iconColor: 'warning' | 'review' | 'danger' | 'success' | 'info' | 'primary' | 'secondary' | 'dark' | 'light' | undefined = undefined;
+  @Input() colorVariant: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'dark' | 'light' | undefined = undefined;;
   @Input() textAlign: 'text-start' | 'text-center' | 'text-end' = 'text-center';
-  @Input() subTitleColorVariant: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'dark' | 'light' = 'success';
+  @Input() subTitleColorVariant: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'dark' | 'light' | undefined = undefined;;
   constructor() { }
 
   ngOnInit(): void {
   }
   public get classes(): any[] {
     let customClasses: string[] = [];
+    if (this.colorVariant) {
+      const bgColor = 'bg-' + `${this.colorVariant}`;
+      customClasses.push(bgColor);
+    }
 
-    const bgColor = 'bg-' + `${this.colorVariant}`;
-    customClasses.push(bgColor);
     if (`${this.colorVariant}` !== 'light' && `${this.colorVariant}` !== 'warning' && `${this.colorVariant}` !== 'info' && `${this.colorVariant}` !== 'white' && `${this.colorVariant}` !== '') {
       customClasses.push('text-white bg-gradient-primary');
     }

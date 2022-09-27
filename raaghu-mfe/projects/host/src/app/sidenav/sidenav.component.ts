@@ -472,6 +472,9 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
 
   }
   redirectPath(event): void {
+    const rdsAlertMfeConfig = this.rdsAlertMfeConfig;
+    rdsAlertMfeConfig.input.currentAlerts = [];
+    this.rdsAlertMfeConfig = rdsAlertMfeConfig;
     this.rdsTopNavigationMfeConfig.input.selectedMenu = event.label;
     this.rdsTopNavigationMfeConfig.input.selectedMenuDescription = event.description;
     this.router.navigate([event.path]);

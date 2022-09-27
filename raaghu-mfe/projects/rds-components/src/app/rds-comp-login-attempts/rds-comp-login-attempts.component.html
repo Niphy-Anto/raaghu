@@ -17,23 +17,23 @@
            <div class="row">
              <div class="col-md-4 sm-p-0">
                <div class="form-group mb-3">
-                 <rds-select-list [(ngModel)]="result" [value]="result" [placeholderText]="'Select Result'" ngDefaultControl
-                                  [labelText]="translate.instant('Result')"
-                                  [LabelType]="'Top'" name="edition" #result_name="ngModel" [(ngModel)]="Result" required
+                 <rds-select-list [(ngModel)]="result" [value]="result" [placeholder]="'Select Result'" ngDefaultControl
+                                  [label]="translate.instant('Result')"
+                                  [labelPosition]="'top'" name="edition" #result_name="ngModel" [(ngModel)]="Result" required
                                   [itemList]="listItemsResult">
                  </rds-select-list>
                </div>
              </div>
              <div class="col-md-4 sm-p-0">
                <div class="form-group ">
-                 <rds-datepicker name="date-picker" [Label]="translate.instant('Start Date')" [(ngModel)]="startDate"
+                 <rds-datepicker name="date-picker" [label]="translate.instant('Start Date')" [(ngModel)]="startDate"
                                  [value]="startDate">
                  </rds-datepicker>
                </div>
              </div>
              <div class="col-md-4 sm-p-0">
                <div class="form-group ">
-                 <rds-datepicker name="date-picker" [Label]="translate.instant('End Date')" [(ngModel)]="endDate"
+                 <rds-datepicker name="date-picker" [label]="translate.instant('End Date')" [(ngModel)]="endDate"
                                  [value]="endDate">
                  </rds-datepicker>
                </div>

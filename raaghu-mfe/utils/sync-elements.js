@@ -24,7 +24,9 @@ const dependentElements = [
     'rds-radio-button',
     'rds-product-image',
     'rds-stepper',
-    'rds-app-details'
+    'rds-app-details',
+    'rds-team-member',
+    'rds-nav-tab'
 ];
 
 
@@ -193,6 +195,26 @@ function mergeTSConfigJson() {
             "@libs/rds-counter": [
                 "rds-elements/rds-counter/public-api",
                 "rds-elements/rds-counter"
+            ]
+        };
+        changesDone = true;
+    };
+    if (ngElementsFile.compilerOptions.paths["@libs/rds-team-member"] == undefined) {
+        ngElementsFile.compilerOptions.paths = {
+            ...ngElementsFile.compilerOptions.paths,
+            "@libs/rds-team-member": [
+                "rds-elements/rds-team-member/public-api",
+                "rds-elements/rds-team-member"
+            ]
+        };
+        changesDone = true;
+    };
+    if (ngElementsFile.compilerOptions.paths["@libs/rds-nav-tab"] == undefined) {
+        ngElementsFile.compilerOptions.paths = {
+            ...ngElementsFile.compilerOptions.paths,
+            "@libs/rds-nav-tab": [
+                "rds-elements/rds-nav-tab/public-api",
+                "rds-elements/rds-nav-tab"
             ]
         };
         changesDone = true;

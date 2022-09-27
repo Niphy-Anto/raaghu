@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class RdsWebsiteMetricComponent implements OnInit {
   @Input() item: any;
-  @Input() colorVariant:string='warning';
+  @Input() colorVariant: 'warning' | 'review' | 'danger' | 'success' | 'info' | 'primary' | 'secondary' | 'dark' | 'light' | undefined = 'warning';
   constructor() { }
 
   ngOnInit(): void {
