@@ -33,25 +33,25 @@
 //   });
 // };
 
-const path = require('path')
+// const path = require('path')
 
-exports.createPage = async ({ graphql, actions })=> {
+// exports.createPage = async ({ graphql, actions })=> {
 
-    const { data } = await graphql(`
-    query {
-      allMarkdownRemark {
-        nodes {
-          frontmatter {
-            slug
-          }
-        }
-      }
-    }`)
-   data.allMarkdownRemark.nodes.forEach(node => {
-       actions.createPage({
-        path: '../projects/libs/rds-elements/src' + node.frontmatter.slug,
-        component: path.resolve('./src/pages/{markdownRemark.frontmatter__slug}.js'),
-        context: { slug:node.frontmatter.slug }
-       })
-   });
-}
+//     const { data } = await graphql(`
+//     query {
+//       allMarkdownRemark {
+//         nodes {
+//           frontmatter {
+//             slug
+//           }
+//         }
+//       }
+//     }`)
+//    data.allMarkdownRemark.nodes.forEach(node => {
+//        actions.createPage({
+//         path: '../projects/libs/rds-elements/src' + node.frontmatter.slug,
+//         component: path.resolve('./src/pages/{markdownRemark.frontmatter__slug}.js'),
+//         context: { slug:node.frontmatter.slug }
+//        })
+//    });
+// }
