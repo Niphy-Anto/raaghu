@@ -148,6 +148,9 @@ import { RdsCompTimelineComponent } from './rds-comp-timeline/rds-comp-timeline.
 import { RdsCompApplyForPositionComponent } from './rds-comp-apply-for-position/rds-comp-apply-for-position.component';
 import { RdsCompOpenPositionComponent } from './rds-comp-open-position/rds-comp-open-position.component';
 import { RdsCompNotificationSettingsComponent } from './rds-comp-notification-settings/rds-comp-notification-settings.component';
+import { RdsCompUserBasicProfileRightComponent } from './rds-comp-user-basic-profile-right/rds-comp-user-basic-profile-right.component';
+import { RdsCompUserPermissionsNewComponent } from './rds-comp-user-permissions-new/rds-comp-user-permissions-new.component';
+import { RdsCompAuditLogsNewComponent } from './rds-comp-audit-logs-new/rds-comp-audit-logs-new.component';
 import { RdsCompFeaturesListNewComponent } from './rds-comp-features-list-new/rds-comp-features-list-new.component';
 import { RdsCompEditionNewBasicComponent } from './rds-comp-edition-new-basic/rds-comp-edition-new-basic.component';
 import { RdsCompEditionNewFeaturesComponent } from './rds-comp-edition-new-features/rds-comp-edition-new-features.component';
@@ -293,6 +296,9 @@ import { RdsCompEditionNewFeaturesComponent } from './rds-comp-edition-new-featu
     RdsCompFeaturesListNewComponent,
     RdsCompEditionNewBasicComponent,
     RdsCompEditionNewFeaturesComponent,
+    RdsCompUserBasicProfileRightComponent,
+    RdsCompUserPermissionsNewComponent,
+    RdsCompAuditLogsNewComponent
   
   ],
   imports: [

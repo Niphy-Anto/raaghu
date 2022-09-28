@@ -4,8 +4,27 @@ import Accordion from "react-bootstrap/Accordion";
 import elements from "../images/logo/element-icon1.svg";
 import components from "../images/logo/comp-icon.svg";
 import pages from "../images/logo/page.svg";
+// import { useLocation } from "react-router-dom";
+
+
+function useQuery(){
+  const isBrowser = typeof window !== "undefined";
+
+  if (!isBrowser) { return; }
+  let eventkey = new URLSearchParams(window.location.search).get('eventkey');
+  if(eventkey){
+    localStorage.setItem('eventKey',eventkey);
+    window.history.pushState({},document.title,window.location.origin + window.location.pathname);
+    return eventkey;
+  }
+
+  const key = localStorage.getItem('eventKey');
+  return key;
+}
+
 
 const Sidebar = () => {
+  let query = useQuery();
   const data = useStaticQuery(graphql`
     query MyQuery {
       allDirectory(skip: 4) {
@@ -32,6 +51,23 @@ const Sidebar = () => {
   //   item.name.includes("rds-comp")
   // );
 
+  // chart elements
+let chartList = [];
+
+elementsList.forEach((item) => {
+  if (item.name.includes("rds-chart") ) {
+    const _item = {
+      name: item.name,
+      url: item.name.substring(4),
+      displayName: item.name.substring(4).replace(/-/g, " "),
+    };
+    chartList.push(_item);
+    console.log(chartList);
+
+  }
+});
+
+
   const componentsList = [];
   const componentsExcludesList = ["-shimmer", "nents","client-basics"];
   elementsList.forEach((item) => {
@@ -47,8 +83,6 @@ const Sidebar = () => {
       componentsList.push(_item);
     }
   });
-
-  // var componentName=JSON.parse(JSON.stringify(componentsList).replace(/-/g,' '));
 
   componentsList.sort((a, b) => {
     let fa = a.name.toLowerCase(),
@@ -76,7 +110,8 @@ const Sidebar = () => {
       item.name.includes("rds-") &&
       !componentsExcludesList.some((element) => item.name.includes(element)) &&
       !componentsList.find((x) => x.name === item.name) &&
-      !elementsExcludesList.some((element) => item.name.includes(element))
+      !elementsExcludesList.some((element) => item.name.includes(element)) &&
+      !chartList.find((x) => x.name === item.name)
     ) {
       const _item = {
         name: item.name,
@@ -88,8 +123,8 @@ const Sidebar = () => {
   });
 
   elementsLists.sort((a, b) => {
-    let fa = a.name.toLowerCase(),
-      fb = b.name.toLowerCase();
+    let fa = a.displayName.toLowerCase(),
+      fb = b.displayName.toLowerCase();
     if (fa < fb) {
       return -1;
     }
@@ -99,6 +134,8 @@ const Sidebar = () => {
     return 0;
   });
 
+
+// pages
   const pageLists = [];
   // find out pages names.
   const pageexcludesList = [
@@ -171,7 +208,12 @@ const Sidebar = () => {
     "modal",
     "my-settings",
     "schematics",
-    "visual-settings",    
+    "under-maintanance",
+    "icons",
+    "week",
+    "under-maintanance",
+    "webhooksubscription"
+    ,    
   ];
   elementsList.forEach((item, index, self) => {
     if (
@@ -187,25 +229,14 @@ const Sidebar = () => {
     }
   });
 
-  // elementsList.forEach((item) => {
-  //   if( (item, index, self) => !pageexcludesList.some((element) => item.name.includes(element)) && index === self.findIndex((t) => t.name === item.name)){
-  //     const _item={
-  //       name:item.name,
-  //       url :item.name,
-  //       displayName: item.name.replace(/-/g,' ')
-  //     }
-  //     pageLists.push(_item);
-  //   }
-
-  // });
 
   pageLists.sort((a, b) => {
-    let fa = a.name.toLowerCase(),
-      fb = b.name.toLowerCase();
-    if (fa < fb) {
+    // let fa = a.name.toLowerCase(),
+    //   fb = b.name.toLowerCase();
+    if (a.name.toLowerCase() < b.name.toLowerCase()) {
       return -1;
     }
-    if (fa > fb) {
+    if (a.name.toLowerCase() > b.name.toLowerCase()) {
       return 1;
     }
     return 0;
@@ -215,7 +246,7 @@ const Sidebar = () => {
     <div className=" cust-scroll">
       <div className="menu-list p-0 mt-4">
         <Accordion
-          defaultActiveKey="0"
+                  defaultActiveKey={query}
           className="accordion accordion-flush px-2"
         >
           <Accordion.Item eventKey="0" className="accordion-item">
@@ -236,7 +267,7 @@ const Sidebar = () => {
                 <ul className="">
                   {elementsLists.map((node) => (
                     <li key={node.url}>
-                      <Link href={node.url}>{node.displayName}</Link>
+                      <Link href={node.url + "?eventkey=0"}>{node.displayName}</Link>
                     </li>
                   ))}
                 </ul>
@@ -244,6 +275,28 @@ const Sidebar = () => {
             </Accordion.Body>
           </Accordion.Item>
           <Accordion.Item eventKey="1">
+            <Accordion.Header>
+              <div className="suheading pb-2">
+                <img
+                  src={pages}
+                  className="img-fluid"
+                  width="20px"
+                  alt="pages"
+                />
+                <span className="px-3"> Charts </span>
+              </div>
+            </Accordion.Header>
+            <Accordion.Body>
+              <ul className="">
+                {chartList.map((node) => (
+                  <li key={node.url}>
+                    <Link href={node.url + "?eventkey=1" }>{node.displayName}</Link>
+                  </li>
+                ))}
+              </ul>
+            </Accordion.Body>
+          </Accordion.Item>
+          <Accordion.Item eventKey="2">
             <Accordion.Header>
               <div className="suheading pb-2">
                 <img
@@ -259,13 +312,13 @@ const Sidebar = () => {
               <ul className="">
                 {componentsList.map((node) => (
                   <li key={node.url}>
-                    <Link href={node.url}>{node.displayName}</Link>
+                    <Link href={node.url + "?eventkey=2"}>{node.displayName}</Link>
                   </li>
                 ))}
               </ul>
             </Accordion.Body>
           </Accordion.Item>
-          <Accordion.Item eventKey="2">
+          <Accordion.Item eventKey="3">
             <Accordion.Header>
               <div className="suheading pb-2">
                 <img
@@ -281,13 +334,14 @@ const Sidebar = () => {
               <ul className="">
                 {pageLists.map((node) => (
                   <li key={node.url}>
-                    <Link href={node.url}>{node.displayName}</Link>
+                    <Link href={node.url + "?eventkey=3" }>{node.displayName}</Link>
                   </li>
                 ))}
               </ul>
             </Accordion.Body>
           </Accordion.Item>
         </Accordion>
+       
       </div>
     </div>
   );

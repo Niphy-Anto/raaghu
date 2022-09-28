@@ -175,18 +175,7 @@ export const APP_ROUTES: Routes = [
             type: 'module',
             remoteEntry: MfeConfig.settings.url,
             exposedModule: './AppModule',
-          }).then((m) => m.AppModule),
-        data: { permission: 'Pages.Administration.Host.Settings' },
-      },
-      {
-        path: 'setting',
-        loadChildren: () =>
-          loadRemoteModule({
-            type: 'module',
-            remoteEntry: MfeConfig.settings.url,
-            exposedModule: './AppModule',
-          }).then((m) => m.AppModule),
-        data: { permission: 'Pages.Administration.Tenant.Settings' },
+          }).then((m) => m.AppModule)
       },
       {
         path: 'tenant',
@@ -284,17 +273,17 @@ export const APP_ROUTES: Routes = [
             exposedModule: './AppModule',
           }).then((m) => m.AppModule),
       },
-      // {
-      //   path: 'cart',
-      //   loadChildren: () =>
-      //     loadRemoteModule({
-      //       type: 'module',
-      //       remoteEntry: MfeConfig.cart.url,
-      //       exposedModule: './AppModule',
-      //     }).then((m) => m.AppModule),
-      //   data: { permission: 'Pages.DemoUiComponents' },
+      {
+        path: 'auditLog-new',
+        loadChildren: () =>
+          loadRemoteModule({
+            type: 'module',
+            remoteEntry: MfeConfig.auditLognew.url,
+            exposedModule: './AppModule',
+          }).then((m) => m.AppModule),
+        data: { permission: 'Pages.DemoUiComponents' },
 
-      // },
+      },
         {
         path: 'products-details',
         loadChildren: () =>
@@ -385,6 +374,17 @@ export const APP_ROUTES: Routes = [
       //    }).then((m) => m.AppModule),
       //  data: { permission: '' },
       // },
+
+      //{
+      //  path: 'careers',
+      //  loadChildren: () =>
+      //    loadRemoteModule({
+      //      type: 'module',
+      //      remoteEntry: MfeConfig.careers.url,
+      //      exposedModule: './AppModule',
+      //    }).then((m) => m.AppModule),
+
+      //},
       {
         path: '**',
         redirectTo: 'pagenotfound',

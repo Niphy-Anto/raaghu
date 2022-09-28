@@ -106,6 +106,9 @@ module.exports = {
         './RdsCompEditionNewBasic': './projects/rds-components/src/app/rds-comp-edition-new-basic/rds-comp-edition-new-basic.component.ts',
         './RdsCompEditionNewFeatures': './projects/rds-components/src/app/rds-comp-edition-new-features/rds-comp-edition-new-features.component.ts',
         './RdsCompFeaturesListNew': './projects/rds-components/src/app/rds-comp-features-list-new/rds-comp-features-list-new.component.ts',
+        './RdsCompUserPermissionsNew': './projects/rds-components/src/app/rds-comp-user-permissions-new/rds-comp-user-permissions-new.component.ts',
+       './RdsCompOpenPosition': './projects/rds-components/src/app/rds-comp-open-position/rds-comp-open-position.component.ts',
+        './RdsCompApplyForPosition': './projects/rds-components/src/app/rds-comp-apply-for-position/rds-comp-apply-for-position.component.ts'
       },
 
 

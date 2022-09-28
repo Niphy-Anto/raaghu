@@ -122,8 +122,16 @@ export const MfeConfig = {
   contactus: {
     url: 'http://localhost:5055/remoteEntry.js',
   },
+  careers: {
+    url: 'http://localhost:5056/remoteEntry.js',
+  },
+  usernew: {
+    url: 'http://localhost:5060/remoteEntry.js',
+  },
+  auditLognew: {
+    url: 'http://localhost:5061/remoteEntry.js',
+  },
   editionnew: {
     url: 'http://localhost:5062/remoteEntry.js',
   }
-
 };

@@ -1,6 +1,6 @@
 <div (click)="setAsPaymentMethod(cardData)">
     <rds-label [label]="label" [bold]="true"></rds-label>
-    <div class="d-flex">
+    <div class="d-flex align-items-center">
         <div class="flex-grow-0 d-flex align-items-center">
             <!-- <img [src]="cardData.cardLogo" class="rounded-circle avatar bg-light avatar-md" [ngClass]="classes"
                 onerror="this.src = ' '" /> -->
@@ -12,6 +12,15 @@
                 <div class="d-block" style="font-size: 0.80rem;">{{cardData.cardName}}Ending in {{cardData.cardNumber}}
                 </div>
                 <div class="d-block text-muted" style="font-size: 0.80rem;">Expiry {{cardData.cardExpiry}}</div>
+                <div *ngIf="IsEditAndDefaultFunctionalityRequired" class="d-flex mt-3">
+                    <a *ngIf="!cardData.isDefault" (click)="setAsDefaultCard(cardData)"
+                        style="cursor: pointer;text-decoration: none;font-size: 0.80rem;" class="ms-0">Set as default</a>
+                    <a *ngIf="cardData.isDefault" style="text-decoration: none;font-size: 0.80rem;"
+                        class="text-muted">Default</a>
+                    <a (click)="onEditCardDetails(cardData)" class="ms-3" style="text-decoration: none;font-size: 0.80rem;">
+                        <strong style="cursor: pointer;">Edit</strong>
+                    </a>
+                </div>
             </div>
         </div>
         <div *ngIf="IsSelectionRequired">
@@ -19,13 +28,5 @@
                 (onClick)="setAsPaymentMethod(cardData)"></rds-radio-button>
         </div>
     </div>
-    <div *ngIf="IsEditAndDefaultFunctionalityRequired" class="d-flex mt-2 ms-3">
-        <a *ngIf="!cardData.isDefault" (click)="setAsDefaultCard(cardData)"
-            style="cursor: pointer;text-decoration: none;font-size: 0.80rem;" class="ms-0">Set as default</a>
-        <a *ngIf="cardData.isDefault" style="text-decoration: none;font-size: 0.80rem;"
-            class="text-muted">Default</a>
-        <a (click)="onEditCardDetails(cardData)" class="ms-3" style="text-decoration: none;font-size: 0.80rem;">
-            <strong style="cursor: pointer;">Edit</strong>
-        </a>
-    </div>
+   
 </div>
