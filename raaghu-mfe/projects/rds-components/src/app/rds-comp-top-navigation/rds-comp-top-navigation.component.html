@@ -1,23 +1,23 @@
 
 <nav class="navbar navbar-expand-sm fixed-top p-0">
   <div class="container-fluid mobile-fluid">
-    <span class="navbar-brand p-0 m-0" href="#">
+    <!-- <span class="navbar-brand p-0 m-0" href="#">
       <img class="image" [src]="logo" width="70" /><span class="title fw-bold text-lowercase"><b>{{ projectName
-          }}</b></span>
-    </span>
+          }}</b></span> 
+    </span> -->
     <button (click)="onToggleButton()" class="navbar-toggler px-2" id="humbreger-btn" type="button"
       data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
       aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="py-0 m-0 breadcrumbs">
-      <div>
+      <!-- <div>
         <a class="nav-link active p-0" aria-current="page" href="#">{{
           selectedMenu|translate
           }}</a>
-      </div>
+      </div> -->
       <div class="mob-description">
-        <a class="nav-link text-muted p-0 fs-6" href="#">{{selectedMenuDescription|translate}}</a>
+        <!-- <a class="nav-link text-muted p-0 fs-6" href="#">{{selectedMenuDescription|translate}}</a> -->
       </div>
     </div>
 
@@ -97,12 +97,12 @@
             </div>
             <div class="pe-auto">
               <span class="text-decoration-none" (click)="redirect('profile')">
-                <span>{{ UserRole }}</span>
+                <!-- <span>{{ UserRole }}</span> -->
                 <rds-icon [name]="'chevron_down_arrow'" [height]="'15px'" [width]="'15px'" class="ms-3"></rds-icon>
 
-                <p class="mb-0  text-muted user-role">
-                  {{ profileData.userName }}
-                </p>
+                <!-- <{{ p class="mb-0  text-muted user-role">
+                  profileData.userName }}
+                </p> -->
 
               </span>
             </div>

@@ -1,5 +1,5 @@
 import { createAction, props } from "@ngrx/store";
-import { ThemeSettingsDto } from "projects/libs/shared/src/lib/service-proxies";
+//import { ThemeSettingsDto } from "projects/libs/shared/src/lib/service-proxies";
 
 export const getVisualsettings = createAction('[visualsettings Page] Get visualsettings');
 

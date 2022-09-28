@@ -1,5 +1,5 @@
 import { createAction, props } from "@ngrx/store";
-import { CreateTenantInput, TenantEditDto, UpdateTenantFeaturesInput } from "projects/libs/shared/src/lib/service-proxies";
+//import { CreateTenantInput, TenantEditDto, UpdateTenantFeaturesInput } from "projects/libs/shared/src/lib/service-proxies";
 import { Tenants } from "./tenant.models";
 
 export const getTenants = createAction('[Tenant Page] Get Languages',
@@ -22,17 +22,17 @@ export const deleteTenant = createAction(
 
 export const saveTenant = createAction(
     '[Tenant Page] Save Tenant',
-    (tenant: CreateTenantInput,maxresult:number) => ({ tenant,maxresult })
+    (tenant: any,maxresult:number) => ({ tenant,maxresult })
 );
 
 export const updateTenantFeatureValues = createAction(
     '[Tenant Page] Update Tenant Feature Values',
-    (feature: UpdateTenantFeaturesInput) => ({ feature })
+    (feature: any) => ({ feature })
 );
 
 export const updateTenant = createAction(
     '[Tenant Page] Update Tenant',
-    (tenant: TenantEditDto) => ({ tenant })
+    (tenant: any) => ({ tenant })
 );
 
 

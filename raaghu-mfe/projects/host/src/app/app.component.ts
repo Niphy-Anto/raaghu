@@ -8,6 +8,7 @@ import { RdsInitializationErrorEvent } from 'projects/libs/rds-cookieconsent/src
 import { RdsStatusChangeEvent } from 'projects/libs/rds-cookieconsent/src/lib/event/status-change.event';
 import { RdsNoCookieLawEvent } from 'projects/libs/rds-cookieconsent/src/lib/event/no-cookie-law.event';
 import { RdsCookieConsentConfig } from 'projects/libs/rds-cookieconsent/src/lib/service/cookieconsent-config';
+import { OrganizationUnitsServiceProxy, UserAuthService } from '@libs/shared';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +17,9 @@ import { RdsCookieConsentConfig } from 'projects/libs/rds-cookieconsent/src/lib/
 })
 export class AppComponent implements OnInit, OnDestroy {
 
-  constructor(public translate: TranslateService, private store: Store, private ccService: RdsCookieConsentService) { }
+  constructor(public translate: TranslateService, private store: Store, private organizationunitService: OrganizationUnitsServiceProxy, private ccService: RdsCookieConsentService) { 
+    //this.userauthService.authenticateUser();
+  }
 
   private popupOpenSubscription!: Subscription;
   private popupCloseSubscription!: Subscription;
@@ -78,7 +81,12 @@ export class AppComponent implements OnInit, OnDestroy {
       });
   }
 
-  
+  callapi(){
+    console.log("hii here we called one api");
+    this.organizationunitService.all().subscribe(result=>{
+      console.log(result);
+    });
+  }
 
   ngOnDestroy() {
     // unsubscribe to cookieconsent observables to prevent memory leaks

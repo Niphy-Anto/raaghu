@@ -6,6 +6,5 @@ import { Subject } from 'rxjs';
 })
 export class SharedService {
   constructor() {}
-
   subjects: { [key: string]: Subject<any> } = {};
 }

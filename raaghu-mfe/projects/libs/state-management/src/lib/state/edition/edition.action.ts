@@ -1,5 +1,6 @@
 import { createAction, props } from "@ngrx/store";
-import { CreateEditionDto, MoveTenantsToAnotherEditionDto, UpdateEditionDto } from "projects/libs/shared/src/lib/service-proxies";
+import { AnyFn } from "@ngrx/store/src/selector";
+//import { CreateEditionDto, MoveTenantsToAnotherEditionDto, UpdateEditionDto } from "projects/libs/shared/src/lib/service-proxies";
 import { Edition } from "./edition.model";
 
 export const getEditions = createAction('[Edition Page] Get Edition');
@@ -34,12 +35,12 @@ export const deleteEdition = createAction(
 
 export const saveEdition = createAction(
     '[Edition Page] Save Edition',
-    (edition: CreateEditionDto) => ({ edition })
+    (edition: AnyFn) => ({ edition })
 );
 
 export const updateEdition = createAction(
     '[Edition Page] Update Edition',
-    (edition: UpdateEditionDto) => ({ edition })
+    (edition: any) => ({ edition })
 );
 
 export const getEditionUpdateSuccess = createAction(
@@ -85,7 +86,7 @@ export const getTenantCountFailure = createAction(
 
 export const moveTenant = createAction(
   '[Edition Page] Move Tenant',
-  (data: MoveTenantsToAnotherEditionDto) => ({ data })
+  (data: any) => ({ data })
 );
 
 

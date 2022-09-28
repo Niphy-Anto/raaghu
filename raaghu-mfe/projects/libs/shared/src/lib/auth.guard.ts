@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router, CanActivateChild, CanLoad, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable, of } from 'rxjs';
-import { GetCurrentLoginInformationsOutput, RefreshTokenResult, SessionServiceProxy, TokenAuthServiceProxy, UserAuthService } from '@libs/shared'
+//import { GetCurrentLoginInformationsOutput, RefreshTokenResult, SessionServiceProxy, TokenAuthServiceProxy, 
+import { UserAuthService } from '@libs/shared'
 import { catchError, map } from 'rxjs/operators';
-import { AppSessionService } from './app-session.service';
 
 @Injectable({
   providedIn: 'root'
@@ -13,18 +13,15 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
   constructor(
     private _router: Router, 
     private _userAuthService: UserAuthService,
-    private _sessionService: AppSessionService,
-    private _sessionServiceproxy: SessionServiceProxy,
-    private _tokenAuthServiceProxy: TokenAuthServiceProxy                                                                  
     ) { 
       
      }
   permissions:any;
-  refreshTokenResult: RefreshTokenResult;
 
   canActivate(   
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean>{
+      return of(true);
 
       const storedPermission = localStorage.getItem('storedPermissions');                                                                                                              
       const parsedPermission = JSON.parse(storedPermission);
@@ -49,7 +46,7 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
   } 
 
   canActivateInternal(data: any, state: RouterStateSnapshot): Observable<boolean> {
-
+    return of(true);
     if (!data || !data['permission']) {
         return of(true)
     }
@@ -69,9 +66,9 @@ canLoad(route: any): Observable<boolean> | Promise<boolean> | boolean {
 
   selectBestRoute(): string 
   {
-    if (!this._sessionService.user) {
-        return '/login';                  
-    }                                      
+    // if (!this) {
+    //     return '/login';                  
+    // }                                      
                                                  
     return '/pages/dashboard';
   }

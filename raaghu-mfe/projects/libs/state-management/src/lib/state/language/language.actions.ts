@@ -1,5 +1,5 @@
 import { createAction, props } from "@ngrx/store";
-import { CreateOrUpdateLanguageInput } from "projects/libs/shared/src/lib/service-proxies";
+//import { CreateOrUpdateLanguageInput } from "projects/libs/shared/src/lib/service-proxies";
 import { Countries, Language, PostLanguage } from "./language.models";
 
 export const getLanguages = createAction('[Language Page] Get Languages');
@@ -7,7 +7,7 @@ export const getLanguages = createAction('[Language Page] Get Languages');
 
 export const getLanguageSuccess = createAction(
     '[Language Page] Get Languages Success',
-    props<{ languages: Language }>()
+    props<{ languages: any }>()
 );
 
 export const getLanguageFailure = createAction(
@@ -29,7 +29,7 @@ export const getCountryListFailure = createAction(
 
 export const saveLanguage = createAction(
     '[Language Page] Save Language',
-    (language: CreateOrUpdateLanguageInput) => ({ language })
+    (language: any) => ({ language })
 );
 
 export const deleteLanguage = createAction(

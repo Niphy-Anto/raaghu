@@ -1,4 +1,3 @@
-import { UpdateUserPermissionsInput } from "@libs/shared";
 import { createAction, props } from "@ngrx/store";
 import { User } from "./user.models";
 
@@ -46,7 +45,7 @@ export const getUsePermissionsFailure = createAction(
 );
 export const UpdateUserPermission = createAction(
     '[User Page] Update User Permission',
-    (Permissions: UpdateUserPermissionsInput) => ({ Permissions })
+    (Permissions: any) => ({ Permissions })
 );
 export const UpdateUserPermissionSuccess = createAction(
     '[User Page] Update User Permission Success', props<{ Permissions: any }>()

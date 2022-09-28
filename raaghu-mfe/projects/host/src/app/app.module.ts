@@ -11,18 +11,13 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { MultipleMfeComponent } from './multiple-mfe/multiple-mfe.component';
 import { EffectsModule } from '@ngrx/effects';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SharedModule, UserAuthModule, NgxTranslateModule, API_BASE_URL } from '@libs/shared';
+import { SharedModule, UserAuthModule, NgxTranslateModule, API_BASE_URL, UserAuthService, OrganizationUnitsServiceProxy } from '@libs/shared';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { DatePipe } from '@angular/common';
 import {
-  LanguageEffects, ProductEffects, productReducer, DynamicEntityEffects, DynamicEntityReducer,
-  DynamicPropertyEffects, DynamicPropertyReducer, ProfileEffects, ProfileReducer, WebhookSubscriptionEffects,
-  LoginEffects, ValidateTenantReducer,
-  OrganizationUnitReducer, OrganizationUnitEffects, MLAReducer, MLAEffects,
-  MaintenanceEffects, ManageLinkedAccountsEffects, LoginAttemptsEffects,
-  DelegationsReducer, DelegationsEffects, GetAllDynamicProperty, GetAllDynamicPropertyEntites,
-  GetInputnameReducer, getDynamicPropertyByEditReducer, DynamicPermissionReducer,
-  GetUsernameFilterReducer, LoginAttemptsReducer, LanguageReducer, CountryListReducer, DefaultLanguageReducer, downloadReducer, DownloadEffects
+  LoginEffects,
+   ValidateTenantReducer,downloadReducer,DownloadEffects
+ 
 
 } from '@libs/state-management';
 import { LanguageTextEffects } from 'projects/libs/state-management/src/lib/state/language-text/language-text.effects';
@@ -31,6 +26,7 @@ import { LanguageTextReducer } from 'projects/libs/state-management/src/lib/stat
 import demodata from '../assets/appconfig.json';
 import { RdsCookieConsentConfig } from 'projects/libs/rds-cookieconsent/src/lib/service/cookieconsent-config';
 import { RdsCookieConsentModule } from 'projects/libs/rds-cookieconsent/src/lib/rds-cookieconsent.module';
+import { OAuthModule, OAuthService, OAuthStorage } from 'angular-oauth2-oidc';
 export function getRemoteServiceBaseUrl(): any {
   let URL = demodata.remoteServiceBaseUrl
   return URL;
@@ -78,36 +74,40 @@ const cookieConfig: RdsCookieConsentConfig = {
     FormsModule,
     NgxTranslateModule.forRoot(),
     StoreModule.forRoot({
-      products: productReducer,
-      dynamicProperty: DynamicPropertyReducer,
-      dynamicEntity: DynamicEntityReducer,
-      profile: ProfileReducer,
-      Entities: GetAllDynamicProperty,
-      PropertiesEntitie: GetAllDynamicPropertyEntites,
-      organizationUnit: OrganizationUnitReducer,
-      Delegation: DelegationsReducer,
-      mla: MLAReducer,
+      // products: productReducer,
+      // dynamicProperty: DynamicPropertyReducer,
+      // dynamicEntity: DynamicEntityReducer,
+      // profile: ProfileReducer,
+      // Entities: GetAllDynamicProperty,
+      // PropertiesEntitie: GetAllDynamicPropertyEntites,
+      // organizationUnit: OrganizationUnitReducer,
+      // Delegation: DelegationsReducer,
+      // mla: MLAReducer,
       validateTenant: ValidateTenantReducer,
-      InputTypeNames: GetInputnameReducer,
-      EditDynamicPropertSateI: getDynamicPropertyByEditReducer,
-      DynanmicPermission: DynamicPermissionReducer,
-      usernames: GetUsernameFilterReducer,
-      loginAttempts: LoginAttemptsReducer,
-      languages: LanguageReducer,
-      countries: CountryListReducer,
+      // InputTypeNames: GetInputnameReducer,
+      // EditDynamicPropertSateI: getDynamicPropertyByEditReducer,
+      // DynanmicPermission: DynamicPermissionReducer,
+      // usernames: GetUsernameFilterReducer,
+      // loginAttempts: LoginAttemptsReducer,
+      // languages: LanguageReducer,
+      // countries: CountryListReducer,
       languageText: LanguageTextReducer,
-      defaultLanguage: DefaultLanguageReducer,
-      downloadData: downloadReducer
+      // defaultLanguage: DefaultLanguageReducer,
+       downloadData: downloadReducer
     }),
 
     StoreDevtoolsModule.instrument({
       name: 'Raaghu MFE',
       logOnly: false,
     }),
-    EffectsModule.forRoot([ProductEffects, LoginAttemptsEffects, MLAEffects,
-      LanguageEffects, ManageLinkedAccountsEffects, DynamicPropertyEffects,
-      DynamicEntityEffects, ProfileEffects,
-      OrganizationUnitEffects, MaintenanceEffects, DelegationsEffects, LoginEffects, LanguageTextEffects, DownloadEffects
+    EffectsModule.forRoot([
+      // ProductEffects, LoginAttemptsEffects, MLAEffects,
+      // languageEffects, ManageLinkedAccountsEffects, DynamicPropertyEffects,
+      // DynamicEntityEffects, ProfileEffects,
+      // OrganizationUnitEffects, MaintenanceEffects, DelegationsEffects, 
+      LanguageTextEffects, 
+      DownloadEffects,
+      LoginEffects
     ]),
     SharedModule,
     UserAuthModule,
@@ -124,10 +124,13 @@ const cookieConfig: RdsCookieConsentConfig = {
   ],
 
   providers: [
-    DatePipe,
+    DatePipe, 
+    OAuthService,
     { provide: API_BASE_URL, useFactory: getRemoteServiceBaseUrl },
-
-  ],
+    UserAuthService,
+    OAuthModule,
+    OrganizationUnitsServiceProxy
+    ],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
