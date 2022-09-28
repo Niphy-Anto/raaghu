@@ -128,6 +128,9 @@ export const MfeConfig = {
   usernew: {
     url: 'http://localhost:5060/remoteEntry.js',
   },
+  auditLognew: {
+    url: 'http://localhost:5061/remoteEntry.js',
+  },
   tenantnew: {
     url: 'http://localhost:5058/remoteEntry.js',
   },

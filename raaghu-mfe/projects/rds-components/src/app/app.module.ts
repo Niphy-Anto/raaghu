@@ -152,6 +152,7 @@ import { RdsCompTenantListNewComponent } from './rds-comp-tenant-list-new/rds-co
 import { RdsCompTenantFeaturesComponent } from './rds-comp-tenant-features/rds-comp-tenant-features.component';
 import { RdsCompUserBasicProfileRightComponent } from './rds-comp-user-basic-profile-right/rds-comp-user-basic-profile-right.component';
 import { RdsCompUserPermissionsNewComponent } from './rds-comp-user-permissions-new/rds-comp-user-permissions-new.component';
+import { RdsCompAuditLogsNewComponent } from './rds-comp-audit-logs-new/rds-comp-audit-logs-new.component';
 
 @NgModule({
   declarations: [	
@@ -296,6 +297,7 @@ import { RdsCompUserPermissionsNewComponent } from './rds-comp-user-permissions-
     RdsCompTenantFeaturesComponent,
     RdsCompUserBasicProfileRightComponent,
     RdsCompUserPermissionsNewComponent,
+    RdsCompAuditLogsNewComponent,
   
   ],
   imports: [

@@ -7,8 +7,10 @@ import pages from "../images/logo/page.svg";
 // import { useLocation } from "react-router-dom";
 
 
-
 function useQuery(){
+  const isBrowser = typeof window !== "undefined";
+
+  if (!isBrowser) { return; }
   let eventkey = new URLSearchParams(window.location.search).get('eventkey');
   if(eventkey){
     localStorage.setItem('eventKey',eventkey);
