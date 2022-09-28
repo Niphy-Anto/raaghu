@@ -2,7 +2,7 @@
   <div [ngClass]="alignclasses">
     <h1>{{bigNumber}}</h1>
     <h6 [ngClass]="subTitleClasses">
-      <rds-icon *ngIf="icon" [name]="icon" [fill]="iconFill" [stroke]="iconStroke" [colorVariant]="iconColor"
+      <rds-icon *ngIf="icon" class="ms-1" [name]="icon" [fill]="iconFill" [stroke]="iconStroke" [colorVariant]="iconColor"
         [height]="iconHeight" [width]="iconWidth"></rds-icon>
       {{subText}}
     </h6>

@@ -41,8 +41,8 @@
     <div class="row">
       <div class="col-md-5">
         <div class="form-group mb-2 mt-4">
-          <rds-select-list [(ngModel)]="dataset.defaultEditionId" [labelText]="translate.instant('Edition')" [value]="dataset.defaultEditionId"
-            ngDefaultControl name="defaultEditionId" [LabelType]="'Top'" [itemList]="settingsTenantEditionList"
+          <rds-select-list [(ngModel)]="dataset.defaultEditionId" [label]="translate.instant('Edition')" [value]="dataset.defaultEditionId"
+            ngDefaultControl name="defaultEditionId" [labelPosition]="'top'" [itemList]="settingsTenantEditionList"
             (change)="getAllowTenants($event)">
           </rds-select-list>
         </div>
