@@ -8,7 +8,7 @@
       <div>
         <rds-rating
           [rating]="3.9"
-          colorVariant="primary"
+          colorVariant="review"
           [noOfReview]="123"
           Size="small"
         ></rds-rating>
@@ -81,7 +81,7 @@
       <div class="mt-3">
         <rds-rating
           [rating]="3.9"
-          colorVariant="primary"
+          colorVariant="review"
           [noOfReview]="123"
           Size="small"
         ></rds-rating>
@@ -163,7 +163,7 @@
           [icon]="'refresh_sync'"
           [label]="'14 Days return policy'"
           [size]="'medium'"
-          [iconSize]="'medium'"
+          [iconSize]="'small'"
         ></rds-icon-label>
         <rds-icon-label
           class="mx-3"
@@ -171,7 +171,7 @@
           [icon]="'money'"
           [label]="'Cash on delivery available'"
           [size]="'medium'"
-          [iconSize]="'medium'"
+          [iconSize]="'small'"
         ></rds-icon-label>
       </div>
       <div class="mt-3">
@@ -201,7 +201,7 @@
       <div class="mt-3">
         <rds-rating
           [rating]="3.9"
-          colorVariant="primary"
+          colorVariant="review"
           [noOfReview]="123"
           Size="small"
         ></rds-rating>
@@ -308,7 +308,7 @@
       <div class="mt-3">
         <rds-rating
           [rating]="3.9"
-          colorVariant="primary"
+          colorVariant="review"
           [noOfReview]="123"
           Size="small"
         ></rds-rating>
@@ -402,33 +402,15 @@
       <div>
         <h3 class="fw-bold">
           <rds-label label="Basic Tee 6-Pack"></rds-label>
-          <span class="mx-4 align-text-top">
-            <span>
-              <rds-icon
-                height="15px"
-                [fill]="false"
-                [stroke]="true"
-                width="15px"
-                name="assured"
-                colorVariant="warning"
-              ></rds-icon>
-            </span>
-            <rds-badge
-              size="smallest"
-              label="Assured"
-              [pillBadges]="false"
-              [positioned]="false"
-              [iconBadge]="false"
-              colorVariant="warning"
-              [close]="false"
-              top=""
-              start=""
-              [iconStroke]="true"
-              [iconFill]="false"
-            ></rds-badge
-          ></span>
+          <rds-button class="position-relative" [size]="'medium'" [colorVariant]="'default'" [outlineButton]="false"
+          [roundedButton]="false" type="button">
+          <rds-icon name="featured" height="18px" colorVariant="warning" width="18px"></rds-icon>
+          <rds-badge right size="smallest" colorVariant="warning" Types="primary" label="Assured" [pillBadges]="true" [positioned]="false"
+            [iconBadge]="false">
+          </rds-badge>
+        </rds-button>
         </h3>
-        <div class="mb-4 me-5 pe-5">
+        <div class="mb-4">
           <small class="text-muted">
             <rds-label
               label="The Basic Tee 6-Pack allows you to fully express your vibrant
@@ -449,7 +431,7 @@
             [columns]="1"
           ></rds-feature-list>
         </div>
-        <div class="me-5 pe-5">
+        <div>
           <rds-label label="Deatils" [bold]="true"></rds-label>
           <small class="text-muted">
             <rds-label
@@ -463,10 +445,10 @@
             ></rds-label>
           </small>
         </div>
-        <div class="d-flex">
+        <div class="d-flex sm-block">
           <rds-icon-label
             [iconposition]="'left'"
-            [icon]="'Refresh'"
+            [icon]="'refresh_sync'"
             [label]="'14 Days return policy'"
             [size]="'small'"
             [iconSize]="'small'"
@@ -474,7 +456,7 @@
           <rds-icon-label
             class="mx-3"
             [iconposition]="'left'"
-            [icon]="'cash'"
+            [icon]="'money'"
             [label]="'Cash on delivery available'"
             [size]="'small'"
             [iconSize]="'small'"
