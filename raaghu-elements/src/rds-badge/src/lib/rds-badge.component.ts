@@ -13,13 +13,17 @@ export class RdsBadgeComponent implements OnInit {
   @Input() positioned: boolean = false
   @Input() badgeType: 'rectangle' | 'circle' | 'pill' = 'rectangle'
   @Input() colorVariant: 'primary' | 'success' | 'warning' | 'danger' | 'info' | 'dark' | 'light' | 'secondary' | undefined = undefined;
+  @Input() showClose: boolean = false;
 
-
+  @Output() onClose = new EventEmitter<any>()
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  onClosed(event:any){
+    this.onClose.emit(event);
+  }
 
   public get classList(): string[] {
     var clsList: string[] = ['badge']

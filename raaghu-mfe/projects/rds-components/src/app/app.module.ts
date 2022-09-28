@@ -149,6 +149,7 @@ import { RdsCompOpenPositionComponent } from './rds-comp-open-position/rds-comp-
 import { RdsCompNotificationSettingsComponent } from './rds-comp-notification-settings/rds-comp-notification-settings.component';
 import { RdsCompUserBasicProfileRightComponent } from './rds-comp-user-basic-profile-right/rds-comp-user-basic-profile-right.component';
 import { RdsCompUserPermissionsNewComponent } from './rds-comp-user-permissions-new/rds-comp-user-permissions-new.component';
+import { RdsCompAuditLogsNewComponent } from './rds-comp-audit-logs-new/rds-comp-audit-logs-new.component';
 
 @NgModule({
   declarations: [	
@@ -290,6 +291,7 @@ import { RdsCompUserPermissionsNewComponent } from './rds-comp-user-permissions-
     RdsCompNotificationSettingsComponent,
     RdsCompUserBasicProfileRightComponent,
     RdsCompUserPermissionsNewComponent,
+    RdsCompAuditLogsNewComponent,
   
   ],
   imports: [
