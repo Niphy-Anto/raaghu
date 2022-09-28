@@ -82,7 +82,7 @@ title: "Elements > Button"
         <div class="tab-pane fade show active" id="PreviewIcon" role="tabpanel" aria-labelledby="PreviewIcon-tab">
          <div class="row">
          <div class="col-md-12">
-         <div class="contents bg-light p-5">
+         <div class="contents p-5">
           <img src="/images/button-icon.png">  
            </div>
    </div>                          
@@ -135,7 +135,7 @@ title: "Elements > Button"
         <div class="tab-pane fade show active" id="PreviewOutline" role="tabpanel" aria-labelledby="PreviewOutline-tab">
          <div class="row">
          <div class="col-md-12">
-         <div class="contents bg-light p-5">
+         <div class="contents p-5">
             <img src="/images/button-outline.png">
                </div>
    </div>              
@@ -162,6 +162,94 @@ title: "Elements > Button"
     
   </section>
 
+<section class="py-4">
+
+###### Button Disable
+   <div class="py-3">
+      <div class="cust-tabs">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="PreviewDisable-tab" data-bs-toggle="tab" data-bs-target="#PreviewDisable" type="button" role="tab" aria-controls="PreviewOutline" aria-selected="true">Preview </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="AngularOutline-tab" data-bs-toggle="tab" data-bs-target="#AngularDisable" type="button" role="tab" aria-controls="AngularOutline" aria-selected="false"><i class="bi bi-code-slash" style="font-size:1.0rem"></i>Angular</button>
+          </li>
+        </ul>
+      </div>
+      <div class="tab-content card border" id="myTabContent">
+        <div class="tab-pane fade show active" id="PreviewDisable" role="tabpanel" aria-labelledby="PreviewDisable-tab">
+         <div class="row">
+         <div class="col-md-12">
+         <div class="contents p-5">
+            <img src="/images/disable-button.png">
+               </div>
+   </div>              
+   </div>
+   </div>
+        <div class="tab-pane fade show" id="AngularDisable" role="tabpanel" aria-labelledby="AngularDisable-tab">
+          <div class="contents bg-code">
+<div class="row">
+
+```html
+<rds-button
+  colorVariant="primary"
+  [block]="false"
+  size="medium"
+  [disabled]="true"
+  label="Disable"
+></rds-button>
+```
+
+</div>
+          </div>
+        </div>
+      </div>
+    
+  </section>
+
+  ###### Button-Tooltip Disable
+   <div class="py-3">
+      <div class="cust-tabs">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="Previewtooltip-tab" data-bs-toggle="tab" data-bs-target="#Previewtooltip" type="button" role="tab" aria-controls="PreviewOutline" aria-selected="true">Preview </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="Angulartooltip-tab" data-bs-toggle="tab" data-bs-target="#Angulartooltip" type="button" role="tab" aria-controls="AngularOutline" aria-selected="false"><i class="bi bi-code-slash" style="font-size:1.0rem"></i>Angular</button>
+          </li>
+        </ul>
+      </div>
+      <div class="tab-content card border" id="myTabContent">
+        <div class="tab-pane fade show active" id="Angulartooltip" role="tabpanel" aria-labelledby="Previewtooltip-tab">
+         <div class="row">
+         <div class="col-md-12">
+         <div class="contents p-5">
+            <img src="/images/button-tooltip.png">
+               </div>
+   </div>              
+   </div>
+   </div>
+        <div class="tab-pane fade show" id="Angulartooltip" role="tabpanel" aria-labelledby="Angulartooltip-tab">
+          <div class="contents bg-code">
+<div class="row">
+
+```html
+<rds-button
+  colorVariant="primary"
+  [block]="false"
+  size="medium"
+  label="button"
+  tooltipTitle="This is tooltip"
+  tooltipPlacement="bottom"
+></rds-button>
+```
+
+</div>
+          </div>
+        </div>
+      </div>
+    
+  </section>
 
 
 ###### Skeleton/Specifications

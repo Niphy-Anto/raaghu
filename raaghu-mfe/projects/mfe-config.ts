@@ -124,5 +124,8 @@ export const MfeConfig = {
   },
   careers: {
     url: 'http://localhost:5056/remoteEntry.js',
+  },
+  usernew: {
+    url: 'http://localhost:5060/remoteEntry.js',
   }
 };

@@ -4,8 +4,25 @@ import Accordion from "react-bootstrap/Accordion";
 import elements from "../images/logo/element-icon1.svg";
 import components from "../images/logo/comp-icon.svg";
 import pages from "../images/logo/page.svg";
+// import { useLocation } from "react-router-dom";
+
+
+
+function useQuery(){
+  let eventkey = new URLSearchParams(window.location.search).get('eventkey');
+  if(eventkey){
+    localStorage.setItem('eventKey',eventkey);
+    window.history.pushState({},document.title,window.location.origin + window.location.pathname);
+    return eventkey;
+  }
+
+  const key = localStorage.getItem('eventKey');
+  return key;
+}
+
 
 const Sidebar = () => {
+  let query = useQuery();
   const data = useStaticQuery(graphql`
     query MyQuery {
       allDirectory(skip: 4) {
@@ -207,7 +224,7 @@ const Sidebar = () => {
     <div className=" cust-scroll">
       <div className="menu-list p-0 mt-4">
         <Accordion
-          defaultActiveKey="0"
+                  defaultActiveKey={query}
           className="accordion accordion-flush px-2"
         >
           <Accordion.Item eventKey="0" className="accordion-item">
@@ -228,7 +245,7 @@ const Sidebar = () => {
                 <ul className="">
                   {elementsLists.map((node) => (
                     <li key={node.url}>
-                      <Link href={node.url}>{node.displayName}</Link>
+                      <Link href={node.url + "?eventkey=0"}>{node.displayName}</Link>
                     </li>
                   ))}
                 </ul>
@@ -251,7 +268,7 @@ const Sidebar = () => {
               <ul className="">
                 {componentsList.map((node) => (
                   <li key={node.url}>
-                    <Link href={node.url}>{node.displayName}</Link>
+                    <Link href={node.url + "?eventkey=1"}>{node.displayName}</Link>
                   </li>
                 ))}
               </ul>
@@ -273,7 +290,7 @@ const Sidebar = () => {
               <ul className="">
                 {pageLists.map((node) => (
                   <li key={node.url}>
-                    <Link href={node.url}>{node.displayName}</Link>
+                    <Link href={node.url + "?eventkey=2" }>{node.displayName}</Link>
                   </li>
                 ))}
               </ul>
