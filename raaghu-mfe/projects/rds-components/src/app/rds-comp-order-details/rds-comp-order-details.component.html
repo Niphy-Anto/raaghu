@@ -180,18 +180,15 @@
         </div> 
         <div class="row mt-3">
             <div class="col-md-2">
-                <img [src]="item.profilePic" height="170px" width="190px">
+                <img [src]="item.profilePic" class="product-img">
             </div>
-            <div class="col-md-4 h-50 ps-5">
-                <rds-label class="fw-bold" [label]="item.prodname"></rds-label>
-           
-                
-               <span class="text-muted"> <rds-label [label]="item.highlights"></rds-label></span>
-          
-            <div class="h-50 mt-5">
-                <span class="fw-bolder">${{item.price}}</span> &minus; <span class="fw-bolder">{{item.qty}}</span>
+            <div class="col-md-10 h-50 ps-5 sm-ps-1 sm-pt-2">
+                <p class="mb-0"><rds-label class="fw-bold" [label]="item.prodname"></rds-label></p>              
+                <p class="mb-0"><span class="text-muted"> <rds-label [label]="item.highlights"></rds-label></span></p>
+                <div class="h-50 mt-5">
+                    <span class="fw-bolder">${{item.price}}</span> &minus; <span class="fw-bolder">{{item.qty}}</span>
+                </div>
             </div>
-        </div>
     </div>
         </div>
         </div>
