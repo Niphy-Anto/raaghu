@@ -2,13 +2,13 @@
     <div class="row">
 
         <div class="col-md-2 sm-p-0 d-flex align-items-center">
-            <rds-datepicker name="date-picker" [Label]="''" [placeholder]="translate.instant('Start Date')"
+            <rds-datepicker name="date-picker" [placeholder]="translate.instant('Start Date')"
                 (change)="startDateModify($event)" [(ngModel)]="startDate" [value]="startDate"
                 floatinginputLabel="">
             </rds-datepicker>
         </div>
         <div class="col-md-2 sm-p-0 d-flex align-items-center">
-            <rds-datepicker name="date-picker" [Label]="''" [placeholder]="translate.instant('End Date')"
+            <rds-datepicker name="date-picker" [placeholder]="translate.instant('End Date')"
                 (change)="endDateModify($event)" [(ngModel)]="endDate" [value]="endDate"
                 floatinginputLabel="">
             </rds-datepicker>
@@ -38,14 +38,14 @@
     <div class="row mt-4">
         <div class="col-md-2 sm-p-0 mt-1 d-flex align-items-center">
                 <rds-select-list (selectListChange)="httpMethodModify($event)" class="w-100"
-                [itemList]="httpMethodList"  id="httpMethod"  [placeholderText]="translate.instant('Http Method')"
-                [labelText]="" name="httpMethod">
+                [itemList]="httpMethodList"  id="httpMethod"  [placeholder]="translate.instant('Http Method')"
+                [label]="" name="httpMethod">
              </rds-select-list>
         </div>
         <div class="col-md-2 sm-p-0 mt-1 d-flex align-items-center">
             <rds-select-list (selectListChange)="httpStatusModify($event)" class="w-100"
-            [itemList]="httpStatusList" id="httpStatus" [placeholderText]="translate.instant('Http Status Code')"
-            [labelText]="" name="httpStatus">
+            [itemList]="httpStatusList" id="httpStatus" [placeholder]="translate.instant('Http Status Code')"
+            [label]="" name="httpStatus">
          </rds-select-list>
         </div>
         
@@ -62,8 +62,8 @@
         </div> 
         <div class="col-md-2 sm-p-0 mt-1 d-flex align-items-center">
             <rds-select-list (selectListChange)="hasExceptionModify($event)" class="w-100"
-            [itemList]="hasExceptionList" id="hasException" [placeholderText]="translate.instant('Has Exception')"
-            [labelText]="" name="hasException">
+            [itemList]="hasExceptionList" id="hasException" [placeholder]="translate.instant('Has Exception')"
+            [label]="" name="hasException">
          </rds-select-list>
         </div>
     </div>
@@ -93,7 +93,7 @@
               <div class="col-md-6">
                   <div class="form-group mb-3">
                     <rds-badge *ngIf="!selectedRowData.exception" [label]="'200'" size="small" Types="SUCCESS"
-                    label="9" [colorVariant]="'dark'" [pillBadges]="false"></rds-badge>
+                    label="9" [colorVariant]="'dark'" ></rds-badge>
                       <!-- <span>{{selectedRowData.httpStatus}}</span> -->
                   </div>
               </div>
@@ -108,7 +108,7 @@
               <div class="col-md-6">
                   <div class="form-group mb-3">
                     <rds-badge *ngIf="!selectedRowData.exception" [label]="'POST'" size="small" Types="SUCCESS"
-                    label="9" [colorVariant]="'success'" [pillBadges]="false"></rds-badge>
+                    label="9" [colorVariant]="'success'" ></rds-badge>
                       <span>{{selectedRowData.httpMethod}}</span>
                   </div>
               </div>
@@ -307,7 +307,7 @@
   </rds-nav-tab>
    
   <div class="footer-buttons my-2">
-    <rds-button [label]="translate.instant('Cancel')" (click)="onClose()" [colorVariant]="'outline-primary'"
+    <rds-button [label]="translate.instant('Cancel')" (click)="onClose()" [colorVariant]="'primary'"
       [size]="'small'" data-bs-dismiss="offcanvas">
     </rds-button>
   </div>
