@@ -177,7 +177,7 @@ horizontalAlignment="start"
         <div class="tab-pane fade show active" id="Previewofnavtabpillsofvertical" role="tabpanel" aria-labelledby="PreviewBasic-tab">
          <div class="contents  p-5">
               <div class="row">
-              <!-- <img src="/images/navtabs-tabs.png" class="img-fluid w-75"> -->
+              <img src="/images/vertical-navtabs.png" class="img-fluid w-75">
            </div>
                        
   </div>
