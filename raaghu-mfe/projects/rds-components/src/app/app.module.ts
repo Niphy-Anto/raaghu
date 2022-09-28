@@ -150,6 +150,8 @@ import { RdsCompNotificationSettingsComponent } from './rds-comp-notification-se
 import { RdsCompTenantBasicProfileRightComponent } from './rds-comp-tenant-basic-profile-right/rds-comp-tenant-basic-profile-right.component';
 import { RdsCompTenantListNewComponent } from './rds-comp-tenant-list-new/rds-comp-tenant-list-new.component';
 import { RdsCompTenantFeaturesComponent } from './rds-comp-tenant-features/rds-comp-tenant-features.component';
+import { RdsCompUserBasicProfileRightComponent } from './rds-comp-user-basic-profile-right/rds-comp-user-basic-profile-right.component';
+import { RdsCompUserPermissionsNewComponent } from './rds-comp-user-permissions-new/rds-comp-user-permissions-new.component';
 
 @NgModule({
   declarations: [	
@@ -289,6 +291,8 @@ import { RdsCompTenantFeaturesComponent } from './rds-comp-tenant-features/rds-c
     RdsCompApplyForPositionComponent,
     RdsCompOpenPositionComponent,
     RdsCompNotificationSettingsComponent,
+    RdsCompUserBasicProfileRightComponent,
+    RdsCompUserPermissionsNewComponent,
     RdsCompTenantBasicProfileRightComponent,
     RdsCompTenantListNewComponent,
     RdsCompTenantFeaturesComponent,

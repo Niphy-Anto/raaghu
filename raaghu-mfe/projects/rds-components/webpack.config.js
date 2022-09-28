@@ -104,9 +104,14 @@ module.exports = {
         './RdsCompIntegration': './projects/rds-components/src/app/rds-comp-integration/rds-comp-integration.component.ts',
         './RdsCompContactUs': './projects/rds-components/src/app/rds-comp-contact-us/rds-comp-contact-us.component.ts',
         './RdsCompTenantListNew': './projects/rds-components/src/app/rds-comp-tenant-list-new/rds-comp-tenant-list-new.component.ts'
+       
+         './RdsCompUserPermissionsNew': './projects/rds-components/src/app/rds-comp-user-permissions-new/rds-comp-user-permissions-new.component.ts'
+        './RdsCompContactUs': './projects/rds-components/src/app/rds-comp-contact-us/rds-comp-contact-us.component.ts',
+        './RdsCompOpenPosition': './projects/rds-components/src/app/rds-comp-open-position/rds-comp-open-position.component.ts',
+        './RdsCompApplyForPosition': './projects/rds-components/src/app/rds-comp-apply-for-position/rds-comp-apply-for-position.component.ts'
       },
 
-
+      
       shared: share({
         "@angular/core": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
         "@angular/common": { singleton: true, strictVersion: true, requiredVersion: 'auto' },

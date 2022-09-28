@@ -382,7 +382,7 @@ export class AppComponent implements OnInit {
     input.organizationUnitId = data;
     input.filter = "";
     input.skipCount = 0;
-    input.maxResultCount = 10;
+    input.maxResultCount = 1000;
     this.store.dispatch(getOrganizationUnitUsersList(input));
     this.store.select(selectOrganizationUnitUsersList).subscribe((res) => {
       this.isAnimation = false;
@@ -412,7 +412,7 @@ export class AppComponent implements OnInit {
     input.organizationUnitId = data;
     input.filter = "";
     input.skipCount = 0;
-    input.maxResultCount = 10;
+    input.maxResultCount = 1000;
     this.store.dispatch(getOrganizationUnitRolesList(input));
     this.store.select(selectOrganizationUnitRolesList).subscribe((res) => {
       this.isAnimation = false;
