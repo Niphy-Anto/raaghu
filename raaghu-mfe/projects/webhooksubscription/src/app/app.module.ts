@@ -11,6 +11,8 @@ import { EffectsModule } from '@ngrx/effects';
 import { RdsFabMenuModule } from 'projects/libs/rds-elements/src/rds-fab-menu/src/public-api';
 import { RdsWebhooksSubscriptionShimmerComponent } from './rds-webhooks-subscription-shimmer/rds-webhooks-subscription-shimmer.component';
 import { NgxShimmerLoadingModule } from 'ngx-shimmer-loading';
+import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -18,10 +20,11 @@ import { NgxShimmerLoadingModule } from 'ngx-shimmer-loading';
     AppComponent,
     WebhooksubscriptionComponent,
     RdsWebhooksSubscriptionShimmerComponent,
-
+    
   ],
   imports: [
     //BrowserModule,
+    CommonModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,

@@ -239,9 +239,10 @@ function buildDependentElements() {
     console.log('Building dependent \x1b[32m' + dependentElements.toString() + '\x1b[0m elements...');
     let commandline = 'concurrently ';
     for (const element of dependentElements) {
+        // execSync(`npm run build ${element}`, { cwd: ngElementsDir, stdio: 'inherit' });
         commandline = commandline + ' \"npm run build ' + element + '\"';
     }
-    execSync(`${commandline} > $null`, { cwd: ngElementsDir, stdio: 'inherit' });
+    execSync(`${commandline}`, { cwd: ngElementsDir, stdio: 'inherit' });
 
     console.log("Coping element's build folder...");
     fse.copySync(path.join(ngElementsDir, 'rds-elements'), path.join(currentDir, 'rds-elements'), { overwrite: true });
