@@ -1,10 +1,8 @@
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
-import { RdsBadgeModule, RdsButtonModule, RdsCardModule, RdsLabelModule } from '@libs/rds-elements';
+import { RdsBadgeModule, RdsButtonModule, RdsCardModule, RdsColorModule, RdsLabelModule, RdsRatingModule } from '@libs/rds-elements';
 import { RdsCompProductListComponent } from './rds-comp-product-list.component';
-import { RdsColorModule } from 'projects/libs/rds-elements/src/rds-color/src/public-api';
 import { RdsIconModule } from '@libs/rds-icon';
-import { RdsRatingModule } from 'projects/libs/rds-elements/src/rds-rating/src/public-api';
 
 export default {
   title: 'Components/Product List',
@@ -13,7 +11,7 @@ export default {
     moduleMetadata({
       imports: [
         FormsModule, ReactiveFormsModule, RdsButtonModule, RdsLabelModule, RdsCardModule, RdsBadgeModule,
-        RdsColorModule, RdsRatingModule, RdsIconModule
+        RdsColorModule, RdsRatingModule, RdsIconModule,RdsLabelModule
       ],
       providers: [
         FormBuilder

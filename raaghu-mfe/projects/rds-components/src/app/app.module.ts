@@ -291,11 +291,11 @@ import { RdsCompUserPermissionsNewComponent } from './rds-comp-user-permissions-
     RdsCompApplyForPositionComponent,
     RdsCompOpenPositionComponent,
     RdsCompNotificationSettingsComponent,
-    RdsCompUserBasicProfileRightComponent,
-    RdsCompUserPermissionsNewComponent,
     RdsCompTenantBasicProfileRightComponent,
     RdsCompTenantListNewComponent,
     RdsCompTenantFeaturesComponent,
+    RdsCompUserBasicProfileRightComponent,
+    RdsCompUserPermissionsNewComponent,
   
   ],
   imports: [
