@@ -95,8 +95,8 @@
 <div class="footer-buttons my-2 shadow-none">
   <div class="row">
     <div class="col-sm-12">
-      <rds-button [submit]="false" [block]="false" [size]="'medium'" [disabled]="false"
-                  [colorVariant]="'outline-primary'" [roundedButton]="false" (click)="onCancel()"  [label]="translate.instant('Cancel')"></rds-button>
+      <rds-button [submit]="false" [block]="false" [size]="'medium'" [disabled]="false" [outlineButton]="true"
+                  [colorVariant]="'primary'" [roundedButton]="false" (click)="onCancel()"  [label]="translate.instant('Cancel')"></rds-button>
       <rds-button [disabled]="changePasswordForm.invalid||isPasswordMismatch" [label]="translate.instant('Save')" type="button" [showLoadingSpinner]="buttonSpinner"
                   [size]="'medium'" class="px-2" [colorVariant]="'primary'" (click)="saveProfile(changePasswordForm)">
       </rds-button>

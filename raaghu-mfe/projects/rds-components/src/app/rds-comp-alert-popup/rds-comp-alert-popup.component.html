@@ -1,5 +1,5 @@
-<rds-modal [backdropstatic]="'static'" [modalId]="alertID" [modalData]="alertData"
-    [modalClasses]="'centered'" [isModalHeader]="false" [isModalFooter]="false">
+<rds-modal [modalBackdrop]="'static'" [modalId]="alertID" 
+    [verticallyCenterd]="true">
     <div Modalbody class="text-center py-5">
         <p>
             <!-- <img [src]="Dataset.iconUrl" class="img-fluid"> -->
@@ -10,7 +10,7 @@
         <p>{{Dataset.messageAlert|translate}}</p>
         <div class="mt-4">
             <rds-button (click)="CancelClick($event,false)" [label]="translate.instant(Dataset.CancelButtonLabel)" [size]="'small'"
-                class="px-2" [colorVariant]="'outline-primary'" [attr.data-bs-dismiss]="'modal'">
+                class="px-2" [colorVariant]="'primary'" [outlineButton]="true" [attr.data-bs-dismiss]="'modal'">
             </rds-button>
             <rds-button [label]="translate.instant(Dataset.DeleteButtonLabel)" [size]="'small'" class="px-2" [colorVariant]="'primary'"
                 (click)="DeleteClick($event,true)" [attr.data-bs-dismiss]="'modal'">

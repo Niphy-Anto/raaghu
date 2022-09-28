@@ -15,11 +15,11 @@ export default {
   ],
   argTypes: {
     colorVariant: {
-      options: ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark', 'white'],
+      options: ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark'],
       control: { type: 'select' }
     },
     subTitleColorVariant: {
-      options: ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'dark', 'white'],
+      options: ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'dark', 'light'],
       control: { type: 'select' }
     },
     textAlign: {
@@ -34,13 +34,17 @@ const Template: Story<RdsBigNumberWidgetComponent> = (args: RdsBigNumberWidgetCo
   props: args,
   template: `<div class="col-sm-3">
 <rds-big-number-widget [bigNumber]="'$13,20,21'" [subText]="'+$1,203'"
-[icon]="'triangle_up'"  [iconHeigt]="'20px'" [iconWidth]="'20px'" [colorVariant]="colorVariant" [subTitleColorVariant]="subTitleColorVariant" [textAlign]="textAlign"></rds-big-number-widget>
+[icon]="'triangle_up'" [iconFill]="iconFill" [iconFill]="iconFill" [iconHeight]="iconHeight" [iconWidth]="iconWidth" [colorVariant]="colorVariant" [subTitleColorVariant]="subTitleColorVariant" [textAlign]="textAlign"></rds-big-number-widget>
   </div>`
 });
 
 export const Default = Template.bind({})
 Default.args = {
-  colorVariant: 'white',
+  colorVariant: 'info',
   textAlign: 'text-start',
-  subTitleColorVariant: 'danger'
+  subTitleColorVariant: 'danger',
+  iconFill:true,
+  iconStroke:true,
+  iconHeight:'15px',
+  iconWidth:'15px'
 }

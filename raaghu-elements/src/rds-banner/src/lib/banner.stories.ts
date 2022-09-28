@@ -13,18 +13,22 @@ export default {
       options: ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark'],
       control: { type: 'select' }
     },
+    align: {
+      options: ['start', 'center', 'end'],
+      control: { type: 'select' }
+    },
   }
 } as Meta
 
 const Template: Story<RdsBannerComponent> = (args: RdsBannerComponent) => ({
-    props: args
+  props: args
 });
 
 export const Default = Template.bind({})
-Default.args = { 
-  alignCenter: false,
+Default.args = {
+  align: 'start',
   bannerText: 'Big news! We are excited to announce a brand new product.',
   sticky: false,
   position: 'top',
-  colorVariant:'light'
+  colorVariant: 'info'
 }

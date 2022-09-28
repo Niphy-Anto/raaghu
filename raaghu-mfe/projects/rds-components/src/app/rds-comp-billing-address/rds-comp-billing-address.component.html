@@ -47,8 +47,7 @@
                 Country <span class="text-danger">*</span>
             </div>
             <rds-select-list [(ngModel)]="country" [value]="country"
-            [placeholderText]="'Select Country'" ngDefaultControl
-            [customIcon]="'bi bi-chevron-down'" (change)="SelectCountry($event)"
+            [placeholder]="'Select Country'" ngDefaultControl (change)="SelectCountry($event)"
              name="countryInfo" required
             [itemList]="countryList">
         </rds-select-list>
