@@ -1,594 +1,80 @@
-[0] npmnpm ERR! code EPERM
-[5] npm ERR! syscall rename
-[5] npm ERR! path C:\Users\RohitKulkarni\.config\configstore\update-notifier-npm.json.424816834
-[5] npm ERR! dest C:\Users\RohitKulkarni\.config\configstore\update-notifier-npm.json
-[5] npm ERR! errno -4048
-[5] npm ERR! Error: EPERM: operation not permitted, rename 'C:\Users\RohitKulkarni\.config\configstore\update-notifier-npm.json.424816834' -> 'C:\Users\RohitKulkarni\.config\configstore\update-notifier-npm.json'
-[5] npm ERR!     at Object.renameSync (fs.js:794:3)
-[5] npm ERR!     at Function.writeFileSync [as sync] (C:\Program Files\nodejs\node_modules\npm\node_modules\write-file-atomic\index.js:224:8)
-[5] npm ERR!     at Configstore.set all [as all] (C:\Program Files\nodejs\node_modules\npm\node_modules\configstore\index.js:58:20)
-[5] npm ERR!     at Configstore.delete (C:\Program Files\nodejs\node_modules\npm\node_modules\configstore\index.js:98:12)
-[5] npm ERR!     at UpdateNotifier.check (C:\Program Files\nodejs\node_modules\npm\node_modules\update-notifier\index.js:87:22)
-[5] npm ERR!     at module.exports (C:\Program Files\nodejs\node_modules\npm\node_modules\update-notifier\index.js:151:17)
-[5] npm ERR!     at EventEmitter.<anonymous> (C:\Program Files\nodejs\node_modules\npm\bin\npm-cli.js:87:48)
-[5] npm ERR!     at processTicksAndRejections (internal/process/task_queues.js:77:11)
-[5] npm ERR!  Error: EPERM: operation not permitted, rename 'C:\Users\RohitKulkarni\.config\configstore\update-notifier-npm.json.424816834' -> 'C:\Users\RohitKulkarni\.config\configstore\update-notifier-npm.json'
-[5] npm ERR!     at Object.renameSync (fs.js:794:3)
-[5] npm ERR!     at Function.writeFileSync [as sync] (C:\Program Files\nodejs\node_modules\npm\node_modules\write-file-atomic\index.js:224:8)
-[5] npm ERR!     at Configstore.set all [as all] (C:\Program Files\nodejs\node_modules\npm\node_modules\configstore\index.js:58:20)
-[5] npm ERR!     at Configstore.delete (C:\Program Files\nodejs\node_modules\npm\node_modules\configstore\index.js:98:12)
-[5] npm ERR!     at UpdateNotifier.check (C:\Program Files\nodejs\node_modules\npm\node_modules\update-notifier\index.js:87:22)
-[5] npm ERR!     at module.exports (C:\Program Files\nodejs\node_modules\npm\node_modules\update-notifier\index.js:151:17)
-[5] npm ERR!     at EventEmitter.<anonymous> (C:\Program Files\nodejs\node_modules\npm\bin\npm-cli.js:87:48)
-[5] npm ERR!     at processTicksAndRejections (internal/process/task_queues.js:77:11) {
-[5] npm ERR!   errno: -4048,
-[5] npm ERR!   syscall: 'rename',
-[5] npm ERR!   code: 'EPERM',
-[5] npm ERR!   path: 'C:\\Users\\RohitKulkarni\\.config\\configstore\\update-notifier-npm.json.424816834',
-[5] npm ERR!   dest: 'C:\\Users\\RohitKulkarni\\.config\\configstore\\update-notifier-npm.json'
-[5] npm ERR! }
-[5] npm ERR! 
-[5] npm ERR! The operation was rejected by your operating system.
-[5] npm ERR! It's possible that the file was already in use (by a text editor or antivirus),
-[5] npm ERR! or that you lack permissions to access it.
-[5] npm ERR! 
-[5] npm ERR! If you believe this might be a permissions issue, please double-check the
-[5] npm ERR! permissions of the file and its containing directories, or try running
-[5] npm ERR! the command again as root/Administrator.
-[0]  ERR! code EPERM
-[0] npm ERR! syscall rename
-[0] npm ERR! path C:\Users\RohitKulkarni\.config\configstore\update-notifier-npm.json.3751265532
-[0] npm ERR! dest C:\Users\RohitKulkarni\.config\configstore\update-notifier-npm.json
-[0] npm ERR! errno -4048
-[0] npm ERR! Error: EPERM: operation not permitted, rename 'C:\Users\RohitKulkarni\.config\configstore\update-notifier-npm.json.3751265532' -> 'C:\Users\RohitKulkarni\.config\configstore\update-notifier-npm.json'
-[0] npm ERR!     at Object.renameSync (fs.js:794:3)
-[0] npm ERR!     at Function.writeFileSync [as sync] (C:\Program Files\nodejs\node_modules\npm\node_modules\write-file-atomic\index.js:224:8)
-[0] npm ERR!     at Configstore.set all [as all] (C:\Program Files\nodejs\node_modules\npm\node_modules\configstore\index.js:58:20)
-[0] npm ERR!     at Configstore.delete (C:\Program Files\nodejs\node_modules\npm\node_modules\configstore\index.js:98:12)
-[0] npm ERR!     at UpdateNotifier.check (C:\Program Files\nodejs\node_modules\npm\node_modules\update-notifier\index.js:87:22)
-[0] npm ERR!     at module.exports (C:\Program Files\nodejs\node_modules\npm\node_modules\update-notifier\index.js:151:17)
-[0] npm ERR!     at EventEmitter.<anonymous> (C:\Program Files\nodejs\node_modules\npm\bin\npm-cli.js:87:48)
-[0] npm ERR!     at processTicksAndRejections (internal/process/task_queues.js:77:11)
-[0] npm ERR!  Error: EPERM: operation not permitted, rename 'C:\Users\RohitKulkarni\.config\configstore\update-notifier-npm.json.3751265532' -> 'C:\Users\RohitKulkarni\.config\configstore\update-notifier-npm.json'
-[0] npm ERR!     at Object.renameSync (fs.js:794:3)
-[0] npm ERR!     at Function.writeFileSync [as sync] (C:\Program Files\nodejs\node_modules\npm\node_modules\write-file-atomic\index.js:224:8)
-[0] npm ERR!     at Configstore.set all [as all] (C:\Program Files\nodejs\node_modules\npm\node_modules\configstore\index.js:58:20)
-[0] npm ERR!     at Configstore.delete (C:\Program Files\nodejs\node_modules\npm\node_modules\configstore\index.js:98:12)
-[0] npm ERR!     at UpdateNotifier.check (C:\Program Files\nodejs\node_modules\npm\node_modules\update-notifier\index.js:87:22)
-[0] npm ERR!     at module.exports (C:\Program Files\nodejs\node_modules\npm\node_modules\update-notifier\index.js:151:17)
-[0] npm ERR!     at EventEmitter.<anonymous> (C:\Program Files\nodejs\node_modules\npm\bin\npm-cli.js:87:48)
-[0] npm ERR!     at processTicksAndRejections (internal/process/task_queues.js:77:11) {
-[0] npm ERR!   errno: -4048,
-[0] npm ERR!   syscall: 'rename',
-[0] npm ERR!   code: 'EPERM',
-[0] npm ERR!   path: 'C:\\Users\\RohitKulkarni\\.config\\configstore\\update-notifier-npm.json.3751265532',
-[0] npm ERR!   dest: 'C:\\Users\\RohitKulkarni\\.config\\configstore\\update-notifier-npm.json'
-[0] npm ERR! }
-[0] npm ERR! 
-[0] npm ERR! The operation was rejected by your operating system.
-[0] npm ERR! It's possible that the file was already in use (by a text editor or antivirus),
-[0] npm ERR! or that you lack permissions to access it.
-[0] npm ERR! 
-[0] npm ERR! If you believe this might be a permissions issue, please double-check the
-[0] npm ERR! permissions of the file and its containing directories, or try running
-[0] npm ERR! the command again as root/Administrator.
-[5] 
-[5] npm ERR! A complete log of this run can be found in:
-[5] npm ERR!     C:\Users\RohitKulkarni\AppData\Roaming\npm-cache\_logs\2022-09-27T03_37_49_987Z-debug.log
-[0] 
-[0] npm ERR! A complete log of this run can be found in:
-[0] npm ERR!     C:\Users\RohitKulkarni\AppData\Roaming\npm-cache\_logs\2022-09-27T03_37_49_985Z-debug.log
-[4] npm ERR! code EPERM
-npm ERR! syscall rename
-[4] npm ERR! path C:\Users\RohitKulkarni\.config\configstore\update-notifier-npm.json.2087871166
-[4] npm ERR! dest C:\Users\RohitKulkarni\.config\configstore\update-notifier-npm.json
-[4] npm ERR! errno -4048
-[4] npm ERR! Error: EPERM: operation not permitted, rename 'C:\Users\RohitKulkarni\.config\configstore\update-notifier-npm.json.2087871166' -> 'C:\Users\RohitKulkarni\.config\configstore\update-notifier-npm.json'
-[4] npm ERR!     at Object.renameSync (fs.js:794:3)
-[4] npm ERR!     at Function.writeFileSync [as sync] (C:\Program Files\nodejs\node_modules\npm\node_modules\write-file-atomic\index.js:224:8)
-[4] npm ERR!     at Configstore.set all [as all] (C:\Program Files\nodejs\node_modules\npm\node_modules\configstore\index.js:58:20)
-[4] npm ERR!     at Configstore.delete (C:\Program Files\nodejs\node_modules\npm\node_modules\configstore\index.js:98:12)
-[4] npm ERR!     at UpdateNotifier.check (C:\Program Files\nodejs\node_modules\npm\node_modules\update-notifier\index.js:87:22)
-[4] npm ERR!     at module.exports (C:\Program Files\nodejs\node_modules\npm\node_modules\update-notifier\index.js:151:17)
-[4] npm ERR!     at EventEmitter.<anonymous> (C:\Program Files\nodejs\node_modules\npm\bin\npm-cli.js:87:48)
-[4] npm ERR!     at processTicksAndRejections (internal/process/task_queues.js:77:11)
-[4] npm ERR!  Error: EPERM: operation not permitted, rename 'C:\Users\RohitKulkarni\.config\configstore\update-notifier-npm.json.2087871166' -> 'C:\Users\RohitKulkarni\.config\configstore\update-notifier-npm.json'
-[4] npm ERR!     at Object.renameSync (fs.js:794:3)
-[4] npm ERR!     at Function.writeFileSync [as sync] (C:\Program Files\nodejs\node_modules\npm\node_modules\write-file-atomic\index.js:224:8)
-[4] npm ERR!     at Configstore.set all [as all] (C:\Program Files\nodejs\node_modules\npm\node_modules\configstore\index.js:58:20)
-[4] npm ERR!     at Configstore.delete (C:\Program Files\nodejs\node_modules\npm\node_modules\configstore\index.js:98:12)
-[4] npm ERR!     at UpdateNotifier.check (C:\Program Files\nodejs\node_modules\npm\node_modules\update-notifier\index.js:87:22)
-[4] npm ERR!     at module.exports (C:\Program Files\nodejs\node_modules\npm\node_modules\update-notifier\index.js:151:17)
-[4] npm ERR!     at EventEmitter.<anonymous> (C:\Program Files\nodejs\node_modules\npm\bin\npm-cli.js:87:48)
-[4] npm ERR!     at processTicksAndRejections (internal/process/task_queues.js:77:11) {
-[4] npm ERR!   errno: -4048,
-[4] npm ERR!   syscall: 'rename',
-[4] npm ERR!   code: 'EPERM',
-npm ERR!   path: 'C:\\Users\\RohitKulkarni\\.config\\configstore\\update-notifier-npm.json.2087871166',
-[4] npm ERR!   dest: 'C:\\Users\\RohitKulkarni\\.config\\configstore\\update-notifier-npm.json'
-[4] npm ERR! }
-npm ERR! 
-[4] npm ERR! The operation was rejected by your operating system.
-[4] npm ERR! It's possible that the file was already in use (by a text editor or antivirus),
-[4] npm ERR! or that you lack permissions to access it.
-[4] npm ERR! 
-[4] npm ERR! If you believe this might be a permissions issue, please double-check the
-npm ERR! permissions of the file and its containing directories, or try running
-[4] npm ERR! the command again as root/Administrator.
-[3] npm ERR! code EPERM
-[3] npm ERR! syscall rename
-npm ERR! path C:\Users\RohitKulkarni\.config\configstore\update-notifier-npm.json.4084164238
-[3] npm ERR! dest C:\Users\RohitKulkarni\.config\configstore\update-notifier-npm.json
-[3] npm ERR! errno -4048
+[0] npm WARN config global `--global`, `--local` are deprecated. Use `--location=global` instead.
+[1] npm WARN config global `--global`, `--local` are deprecated. Use `--location=global` instead.
+[2] npm WARN config global `--global`, `--local` are deprecated. Use `--location=global` instead.
+[4] npm WARN config global `--global`, `--local` are deprecated. Use `--location=global` instead.
+[3] npm WARN config global `--global`, `--local` are deprecated. Use `--location=global` instead.
+[5] npm WARN config global `--global`, `--local` are deprecated. Use `--location=global` instead.
+[9] npmnpm WARN config global `--global`, `--local` are deprecated. Use `--location=global` instead.
+[8]  WARN config global `--global`, `--local` are deprecated. Use `--location=global` instead.
+[6] npm WARN config global `--global`, `--local` are deprecated. Use `--location=global` instead.
+[10] npm WARN config global `--global`, `--local` are deprecated. Use `--location=global` instead.
+[7] npm WARN config global `--global`, `--local` are deprecated. Use `--location=global` instead.
+[12] npm WARN config global `--global`, `--local` are deprecated. Use `--location=global` instead.
+[11] npm WARN config global `--global`, `--local` are deprecated. Use `--location=global` instead.
+[15] npm WARN config global `--global`, `--local` are deprecated. Use `--location=global` instead.
+[14] npm WARN config global `--global`, `--local` are deprecated. Use `--location=global` instead.
+[13] npm WARN config global `--global`, `--local` are deprecated. Use `--location=global` instead.
 [4] 
-[4] npm ERR! A complete log of this run can be found in:
-[4] npm ERR!     C:\Users\RohitKulkarni\AppData\Roaming\npm-cache\_logs\2022-09-27T03_37_50_065Z-debug.log
-[3] npm ERR! Error: EPERM: operation not permitted, rename 'C:\Users\RohitKulkarni\.config\configstore\update-notifier-npm.json.4084164238' -> 'C:\Users\RohitKulkarni\.config\configstore\update-notifier-npm.json'
-[3] npm ERR!     at Object.renameSync (fs.js:794:3)
-[3] npm ERR!     at Function.writeFileSync [as sync] (C:\Program Files\nodejs\node_modules\npm\node_modules\write-file-atomic\index.js:224:8)
-[3] npm ERR!     at Configstore.set all [as all] (C:\Program Files\nodejs\node_modules\npm\node_modules\configstore\index.js:58:20)
-[3] npm ERR!     at Configstore.delete (C:\Program Files\nodejs\node_modules\npm\node_modules\configstore\index.js:98:12)
-[3] npm ERR!     at UpdateNotifier.check (C:\Program Files\nodejs\node_modules\npm\node_modules\update-notifier\index.js:87:22)
-[3] npm ERR!     at module.exports (C:\Program Files\nodejs\node_modules\npm\node_modules\update-notifier\index.js:151:17)
-[3] npm ERR!     at EventEmitter.<anonymous> (C:\Program Files\nodejs\node_modules\npm\bin\npm-cli.js:87:48)
-[3] npm ERR!     at processTicksAndRejections (internal/process/task_queues.js:77:11)
-[3] npm ERR!  Error: EPERM: operation not permitted, rename 'C:\Users\RohitKulkarni\.config\configstore\update-notifier-npm.json.4084164238' -> 'C:\Users\RohitKulkarni\.config\configstore\update-notifier-npm.json'
-npm ERR!     at Object.renameSync (fs.js:794:3)
-[3] npm ERR!     at Function.writeFileSync [as sync] (C:\Program Files\nodejs\node_modules\npm\node_modules\write-file-atomic\index.js:224:8)
-[3] npm ERR!     at Configstore.set all [as all] (C:\Program Files\nodejs\node_modules\npm\node_modules\configstore\index.js:58:20)
-[3] npm ERR!     at Configstore.delete (C:\Program Files\nodejs\node_modules\npm\node_modules\configstore\index.js:98:12)
-[3] npm ERR!     at UpdateNotifier.check (C:\Program Files\nodejs\node_modules\npm\node_modules\update-notifier\index.js:87:22)
-npm ERR!     at module.exports (C:\Program Files\nodejs\node_modules\npm\node_modules\update-notifier\index.js:151:17)
-[3] npm ERR!     at EventEmitter.<anonymous> (C:\Program Files\nodejs\node_modules\npm\bin\npm-cli.js:87:48)
-[3] npm ERR!     at processTicksAndRejections (internal/process/task_queues.js:77:11) {
-[3] npm ERR!   errno: -4048,
-[3] npm ERR!   syscall: 'rename',
-[3] npm ERR!   code: 'EPERM',
-[3] npm ERR!   path: 'C:\\Users\\RohitKulkarni\\.config\\configstore\\update-notifier-npm.json.4084164238',
-[3] npm ERR!   dest: 'C:\\Users\\RohitKulkarni\\.config\\configstore\\update-notifier-npm.json'
-[3] npm ERR! }
-[3] npm ERR! 
-npm ERR! The operation was rejected by your operating system.
-[3] npm ERR! It's possible that the file was already in use (by a text editor or antivirus),
-[3] npm ERR! or that you lack permissions to access it.
-[3] npm ERR! 
-[3] npm ERR! If you believe this might be a permissions issue, please double-check the
-[3] npm ERR! permissions of the file and its containing directories, or try running
-npm ERR! the command again as root/Administrator.
-[3] 
-[3] npm ERR! A complete log of this run can be found in:
-[3] npm ERR!     C:\Users\RohitKulkarni\AppData\Roaming\npm-cache\_logs\2022-09-27T03_37_50_099Z-debug.log
-[7] 
-[7] ┌────────────────────────────────────────────────────────────────────┐
-[7] │                      npm update check failed                       │
-[7] │                Try running with sudo or get access                 │
-[7] │                to the local update config store via                │
-[7] │ sudo chown -R $USER:$(id -gn $USER) C:\Users\RohitKulkarni\.config │
-[7] └────────────────────────────────────────────────────────────────────┘
-[2] 
-[2] ┌────────────────────────────────────────────────────────────────────┐
-[2] │                      npm update check failed                       │
-[2] │                Try running with sudo or get access                 │
-[2] │                to the local update config store via                │
-[2] │ sudo chown -R $USER:$(id -gn $USER) C:\Users\RohitKulkarni\.config │
-[2] └────────────────────────────────────────────────────────────────────┘
-[6] 
-[6] ┌────────────────────────────────────────────────────────────────────┐
-[6] │                      npm update check failed                       │
-[6] │                Try running with sudo or get access                 │
-[6] │                to the local update config store via                │
-[6] │ sudo chown -R $USER:$(id -gn $USER) C:\Users\RohitKulkarni\.config │
-[6] └────────────────────────────────────────────────────────────────────┘
-[13] 
-[13] ┌────────────────────────────────────────────────────────────────────┐
-[13] │                      npm update check failed                       │
-[13] │                Try running with sudo or get access                 │
-[13] │                to the local update config store via                │
-[13] │ sudo chown -R $USER:$(id -gn $USER) C:\Users\RohitKulkarni\.config │
-[13] └────────────────────────────────────────────────────────────────────┘
-[5] 
-[5] > rds-elements-base@1.0.0 build D:\rds-fork-rohit\raaghu\raaghu-elements
-[5] > ng build "rds-rating"
-[5] 
-[3] 
-[3] > rds-elements-base@1.0.0 build D:\rds-fork-rohit\raaghu\raaghu-elements
-[3] > ng build "rds-avatar"
-[3] 
-[4] 
-[4] > rds-elements-base@1.0.0 build D:\rds-fork-rohit\raaghu\raaghu-elements
+[4] > rds-elements-base@1.0.0 build
 [4] > ng build "rds-like-dislike"
 [4] 
-[12] 
-[12] > rds-elements-base@1.0.0 build D:\rds-fork-rohit\raaghu\raaghu-elements
-[12] > ng build "rds-stepper"
-[12] 
-[8] 
-[8] > rds-elements-base@1.0.0 build D:\rds-fork-rohit\raaghu\raaghu-elements
-[8] > ng build "rds-icon-label"
-[8] 
 [0] 
-[0] > rds-elements-base@1.0.0 build D:\rds-fork-rohit\raaghu\raaghu-elements
+[0] > rds-elements-base@1.0.0 build
 [0] > ng build "rds-icon"
 [0] 
+[1] 
+[1] > rds-elements-base@1.0.0 build
+[1] > ng build "rds-badge"
+[1] 
+[2] 
+[2] > rds-elements-base@1.0.0 build
+[2] > ng build "rds-button"
+[2] 
+[10] 
+[10] > rds-elements-base@1.0.0 build
+[10] > ng build "rds-radio-button"
+[10] 
+[6] 
+[6] > rds-elements-base@1.0.0 build
+[6] > ng build "rds-label"
+[6] 
+[3] 
+[3] > rds-elements-base@1.0.0 build
+[3] > ng build "rds-avatar"
+[3] 
+[5] 
+[5] > rds-elements-base@1.0.0 build
+[5] > ng build "rds-rating"
+[5] 
+[12] 
+[12] > rds-elements-base@1.0.0 build
+[12] > ng build "rds-stepper"
+[12] 
+[7] 
+[7] > rds-elements-base@1.0.0 build
+[7] > ng build "rds-checkbox"
+[7] 
+[8] 
+[8] > rds-elements-base@1.0.0 build
+[8] > ng build "rds-icon-label"
+[8] 
 [9] 
-[9] > rds-elements-base@1.0.0 build D:\rds-fork-rohit\raaghu\raaghu-elements
+[9] > rds-elements-base@1.0.0 build
 [9] > ng build "rds-select-list"
 [9] 
 [11] 
-[11] > rds-elements-base@1.0.0 build D:\rds-fork-rohit\raaghu\raaghu-elements
+[11] > rds-elements-base@1.0.0 build
 [11] > ng build "rds-product-image"
 [11] 
-[10] 
-[10] > rds-elements-base@1.0.0 build D:\rds-fork-rohit\raaghu\raaghu-elements
-[10] > ng build "rds-radio-button"
-[10] 
-[1] 
-[1] > rds-elements-base@1.0.0 build D:\rds-fork-rohit\raaghu\raaghu-elements
-[1] > ng build "rds-badge"
-[1] 
-[6] 
-[6] > rds-elements-base@1.0.0 build D:\rds-fork-rohit\raaghu\raaghu-elements
-[6] > ng build "rds-label"
-[6] 
+[14] 
+[14] > rds-elements-base@1.0.0 build
+[14] > ng build "rds-team-member"
+[14] 
+[15] 
+[15] > rds-elements-base@1.0.0 build
+[15] > ng build "rds-nav-tab"
+[15] 
 [13] 
-[13] > rds-elements-base@1.0.0 build D:\rds-fork-rohit\raaghu\raaghu-elements
+[13] > rds-elements-base@1.0.0 build
 [13] > ng build "rds-app-details"
 [13] 
-[2] 
-[2] > rds-elements-base@1.0.0 build D:\rds-fork-rohit\raaghu\raaghu-elements
-[2] > ng build "rds-button"
-[2] 
-[7] 
-[7] > rds-elements-base@1.0.0 build D:\rds-fork-rohit\raaghu\raaghu-elements
-[7] > ng build "rds-checkbox"
-[7] 
-[0] Building Angular PackageBuilding Angular Package
-[0] 
-[2] Building Angular PackageBuilding Angular Package
-[2] 
-[5] Building Angular Package
-[7] Building Angular Package
-[13] Building Angular Package
-[4] Building Angular PackageBuilding Angular Package
-[3] 
-[6] Building Angular PackageBuilding Angular PackageBuilding Angular PackageBuilding Angular Package
-[10] Building Angular Package
-[12] 
-[10] 
-[6] 
-[13] 
-------------------------------------------------------------------------------
-[13] Building entry point 'rds-app-details'
-[13] ------------------------------------------------------------------------------
-[13] - Compiling with Angular sources in Ivy partial compilation mode.
-[3] 
-------------------------------------------------------------------------------
-[3] Building entry point 'rds-avatar'
-[3] ------------------------------------------------------------------------------
-[3] - Compiling with Angular sources in Ivy partial compilation mode.
-[6] 
-------------------------------------------------------------------------------
-[6] Building entry point 'rds-label'
-[6] ------------------------------------------------------------------------------
-[5] 
-------------------------------------------------------------------------------
-[5] Building entry point 'rds-rating'
-[5] ------------------------------------------------------------------------------
-[1] 
-------------------------------------------------------------------------------
-[1] Building entry point 'rds-badge'
-[1] ------------------------------------------------------------------------------
-[6] - Compiling with Angular sources in Ivy partial compilation mode.
-[5] - Compiling with Angular sources in Ivy partial compilation mode.
-[1] - Compiling with Angular sources in Ivy partial compilation mode.
-[4] 
-------------------------------------------------------------------------------
-[4] Building entry point 'rds-like-dislike'
-[4] ------------------------------------------------------------------------------
-[8] 
-------------------------------------------------------------------------------
-[8] Building entry point 'rds-icon-label'
-[8] ------------------------------------------------------------------------------
-[11] 
-------------------------------------------------------------------------------- Compiling with Angular sources in Ivy partial compilation mode.
-[11] 
-[11] Building entry point 'rds-product-image'
-[11] ------------------------------------------------------------------------------
-[8] - Compiling with Angular sources in Ivy partial compilation mode.
-[10] 
-------------------------------------------------------------------------------
-[11] - Compiling with Angular sources in Ivy partial compilation mode.
-[10] Building entry point 'rds-radio-button'
-[10] ------------------------------------------------------------------------------
-[10] - Compiling with Angular sources in Ivy partial compilation mode.
-[7] 
-------------------------------------------------------------------------------
-[7] Building entry point 'rds-checkbox'
-[7] ------------------------------------------------------------------------------
-[2] 
-------------------------------------------------------------------------------
-[2] Building entry point 'rds-button'
-[2] ------------------------------------------------------------------------------
-[7] - Compiling with Angular sources in Ivy partial compilation mode.
-[2] - Compiling with Angular sources in Ivy partial compilation mode.
-[9] 
-------------------------------------------------------------------------------
-[9] Building entry point 'rds-select-list'
-[9] ------------------------------------------------------------------------------
-[9] - Compiling with Angular sources in Ivy partial compilation mode.
-[12] 
-------------------------------------------------------------------------------
-[12] Building entry point 'rds-stepper'
-[12] ------------------------------------------------------------------------------
-[12] - Compiling with Angular sources in Ivy partial compilation mode.
-[0] 
-------------------------------------------------------------------------------
-[0] Building entry point 'rds-icon'
-[0] ------------------------------------------------------------------------------
-[0] - Compiling with Angular sources in Ivy partial compilation mode.
-[8] √ Compiling with Angular sources in Ivy partial compilation mode.
-[11] √ Compiling with Angular sources in Ivy partial compilation mode.
-[6] √ Compiling with Angular sources in Ivy partial compilation mode.
-[1] √ Compiling with Angular sources in Ivy partial compilation mode.
-[13] √ Compiling with Angular sources in Ivy partial compilation mode.
-[4] √ Compiling with Angular sources in Ivy partial compilation mode.
-[3] √ Compiling with Angular sources in Ivy partial compilation mode.
-[6] - Writing FESM bundles
-[5] √ Compiling with Angular sources in Ivy partial compilation mode.
-[6] √ Writing FESM bundles
-[6] - Copying assets
-[7] √ Compiling with Angular sources in Ivy partial compilation mode.
-[12] √ Compiling with Angular sources in Ivy partial compilation mode.
-[8] - Writing FESM bundles
-[6] √ Copying assets
-[6] - Writing package manifest
-[6] √ Writing package manifest
-[6] √ Built rds-label
-[6] 
-------------------------------------------------------------------------------
-[6] Built Angular Package
-[6]  - from: D:\rds-fork-rohit\raaghu\raaghu-elements\src\rds-label
-[6]  - to:   D:\rds-fork-rohit\raaghu\raaghu-elements\rds-elements\rds-label
-[6] ------------------------------------------------------------------------------
-[6] 
-[6] Build at: 2022-09-27T03:40:24.065Z - Time: 21714ms
-[6] 
-[10] √ Compiling with Angular sources in Ivy partial compilation mode.
-[2] √ Compiling with Angular sources in Ivy partial compilation mode.
-[1] - Writing FESM bundles
-[9] √ Compiling with Angular sources in Ivy partial compilation mode.
-[6] npm run build rds-label exited with code 0
-[1] √ Writing FESM bundles
-[1] - Copying assets
-[8] √ Writing FESM bundles
-[8] - Copying assets
-[8] √ Copying assets
-[8] - Writing package manifest
-[8] √ Writing package manifest
-[8] √ Built rds-icon-label
-[8] 
-[8] ------------------------------------------------------------------------------
-[8] Built Angular Package
-[8]  - from: D:\rds-fork-rohit\raaghu\raaghu-elements\src\rds-icon-label
-[8]  - to:   D:\rds-fork-rohit\raaghu\raaghu-elements\rds-elements\rds-icon-label
-[8] ------------------------------------------------------------------------------
-[8] 
-[8] Build at: 2022-09-27T03:40:24.204Z - Time: 21851ms
-[8] 
-[11] - Writing FESM bundles
-[1] √ Copying assets
-[1] - Writing package manifest
-[1] √ Writing package manifest
-[1] √ Built rds-badge
-[1] 
-------------------------------------------------------------------------------
-[1] Built Angular Package
-[1]  - from: D:\rds-fork-rohit\raaghu\raaghu-elements\src\rds-badge
-[1]  - to:   D:\rds-fork-rohit\raaghu\raaghu-elements\rds-elements\rds-badge
-[1] ------------------------------------------------------------------------------
-[1] 
-[1] Build at: 2022-09-27T03:40:24.233Z - Time: 22016ms
-[1] 
-[11] √ Writing FESM bundles
-[11] - Copying assets
-[1] npm run build rds-badge exited with code 0
-[11] √ Copying assets
-[11] - Writing package manifest
-[11] √ Writing package manifest
-[11] √ Built rds-product-image
-[11] 
-[11] ------------------------------------------------------------------------------
-[11] Built Angular Package
-[11]  - from: D:\rds-fork-rohit\raaghu\raaghu-elements\src\rds-product-image
-[11]  - to:   D:\rds-fork-rohit\raaghu\raaghu-elements\rds-elements\rds-product-image
-[11] ------------------------------------------------------------------------------
-[11] 
-[11] Build at: 2022-09-27T03:40:24.348Z - Time: 21998ms
-[11] 
-[8] 
-[8] ┌────────────────────────────────────────────────────────────────────┐
-[8] │                      npm update check failed                       │
-[8] │                Try running with sudo or get access                 │
-[8] │                to the local update config store via                │
-[8] │ sudo chown -R $USER:$(id -gn $USER) C:\Users\RohitKulkarni\.config │
-[8] └────────────────────────────────────────────────────────────────────┘
-[8] npm run build rds-icon-label exited with code 0
-[13] - Writing FESM bundles
-[11] npm run build rds-product-image exited with code 0
-[3] - Writing FESM bundles
-[5] - Writing FESM bundles
-[5] √ Writing FESM bundles
-[5] - Copying assets
-[12] - Writing FESM bundles
-[3] √ Writing FESM bundles
-[3] - Copying assets
-[12] √ Writing FESM bundles
-[12] - Copying assets
-[13] √ Writing FESM bundles
-[13] - Copying assets
-[5] √ Copying assets
-[5] - Writing package manifest
-[5] √ Writing package manifest
-[5] √ Built rds-rating
-[3] √ Copying assets
-[3] - Writing package manifest
-[4] - Writing FESM bundles
-[0] √ Compiling with Angular sources in Ivy partial compilation mode.
-[5] 
-[5] ------------------------------------------------------------------------------
-[5] Built Angular Package
-[5]  - from: D:\rds-fork-rohit\raaghu\raaghu-elements\src\rds-rating
-[5]  - to:   D:\rds-fork-rohit\raaghu\raaghu-elements\rds-elements\rds-rating
-[5] ------------------------------------------------------------------------------
-[5] 
-[5] Build at: 2022-09-27T03:40:24.525Z - Time: 22308ms
-[5] 
-[3] √ Writing package manifest
-[3] √ Built rds-avatar
-[3] 
-[3] ------------------------------------------------------------------------------
-[3] Built Angular Package
-[3]  - from: D:\rds-fork-rohit\raaghu\raaghu-elements\src\rds-avatar
-[3]  - to:   D:\rds-fork-rohit\raaghu\raaghu-elements\rds-elements\rds-avatar
-[3] ------------------------------------------------------------------------------
-[3] 
-[3] Build at: 2022-09-27T03:40:24.540Z - Time: 22189ms
-[3] 
-[12] √ Copying assets
-[12] - Writing package manifest
-[12] √ Writing package manifest
-[12] √ Built rds-stepper
-[12] 
-[12] ------------------------------------------------------------------------------
-[12] Built Angular Package
-[12]  - from: D:\rds-fork-rohit\raaghu\raaghu-elements\src\rds-stepper
-[12]  - to:   D:\rds-fork-rohit\raaghu\raaghu-elements\rds-elements\rds-stepper
-[12] ------------------------------------------------------------------------------
-[12] 
-[12] Build at: 2022-09-27T03:40:24.578Z - Time: 22225ms
-[12] 
-[4] √ Writing FESM bundles
-[4] - Copying assets
-[10] - Writing FESM bundles
-[10] √ Writing FESM bundles
-[2] - Writing FESM bundles
-[10] - Copying assets
-[5] npm run build rds-rating exited with code 0
-[10] √ Copying assets
-[10] - Writing package manifest
-[4] √ Copying assets
-[4] - Writing package manifest
-[10] √ Writing package manifest
-[10] √ Built rds-radio-button
-[2] √ Writing FESM bundles
-[2] - Copying assets
-[10] 
-------------------------------------------------------------------------------
-[10] Built Angular Package
-[10]  - from: D:\rds-fork-rohit\raaghu\raaghu-elements\src\rds-radio-button
-[10]  - to:   D:\rds-fork-rohit\raaghu\raaghu-elements\rds-elements\rds-radio-button
-[10] ------------------------------------------------------------------------------
-[10] 
-[10] Build at: 2022-09-27T03:40:24.640Z - Time: 22287ms
-[10] 
-[4] √ Writing package manifest
-[4] √ Built rds-like-dislike
-[3] npm run build rds-avatar exited with code 0
-[4] 
-[4] ------------------------------------------------------------------------------
-[4] Built Angular Package
-[4]  - from: D:\rds-fork-rohit\raaghu\raaghu-elements\src\rds-like-dislike
-[4]  - to:   D:\rds-fork-rohit\raaghu\raaghu-elements\rds-elements\rds-like-dislike
-[4] ------------------------------------------------------------------------------
-[4] 
-[4] Build at: 2022-09-27T03:40:24.652Z - Time: 22301ms
-[4] 
-[12] npm run build rds-stepper exited with code 0
-[7] - Writing FESM bundles
-[2] √ Copying assets
-[2] - Writing package manifest
-[13] √ Copying assets
-[13] - Writing package manifest
-[13] √ Writing package manifest
-[13] √ Built rds-app-details
-[13] 
-[13] ------------------------------------------------------------------------------
-[13] Built Angular Package
-[13]  - from: D:\rds-fork-rohit\raaghu\raaghu-elements\src\rds-app-details
-[13]  - to:   D:\rds-fork-rohit\raaghu\raaghu-elements\rds-elements\rds-app-details
-[13] ------------------------------------------------------------------------------
-[13] 
-[13] Build at: 2022-09-27T03:40:24.715Z - Time: 22482ms
-[13] 
-[9] - Writing FESM bundles
-[2] √ Writing package manifest
-[2] √ Built rds-button
-[9] √ Writing FESM bundles
-[9] - Copying assets
-[2] 
-------------------------------------------------------------------------------
-[2] Built Angular Package
-[2]  - from: D:\rds-fork-rohit\raaghu\raaghu-elements\src\rds-button
-[2]  - to:   D:\rds-fork-rohit\raaghu\raaghu-elements\rds-elements\rds-button
-[2] ------------------------------------------------------------------------------
-[2] 
-[2] Build at: 2022-09-27T03:40:24.723Z - Time: 22506ms
-[2] 
-[10] npm run build rds-radio-button exited with code 0
-[7] √ Writing FESM bundles
-[7] - Copying assets
-[4] npm run build rds-like-dislike exited with code 0
-[9] √ Copying assets
-[9] - Writing package manifest
-[9] √ Writing package manifest
-[9] √ Built rds-select-list
-[9] 
-------------------------------------------------------------------------------
-[9] Built Angular Package
-[9]  - from: D:\rds-fork-rohit\raaghu\raaghu-elements\src\rds-select-list
-[9]  - to:   D:\rds-fork-rohit\raaghu\raaghu-elements\rds-elements\rds-select-list
-[9] ------------------------------------------------------------------------------
-[9] 
-[9] Build at: 2022-09-27T03:40:24.752Z - Time: 22535ms
-[9] 
-[7] √ Copying assets
-[7] - Writing package manifest
-[7] √ Writing package manifest
-[7] √ Built rds-checkbox
-[7] 
-[7] ------------------------------------------------------------------------------
-[7] Built Angular Package
-[7]  - from: D:\rds-fork-rohit\raaghu\raaghu-elements\src\rds-checkbox
-[7]  - to:   D:\rds-fork-rohit\raaghu\raaghu-elements\rds-elements\rds-checkbox
-[7] ------------------------------------------------------------------------------
-[7] 
-[7] Build at: 2022-09-27T03:40:24.759Z - Time: 22542ms
-[7] 
-[13] npm run build rds-app-details exited with code 0
-[2] npm run build rds-button exited with code 0
-[7] npm run build rds-checkbox exited with code 0
-[9] 
-[9] ┌────────────────────────────────────────────────────────────────────┐
-[9] │                      npm update check failed                       │
-[9] │                Try running with sudo or get access                 │
-[9] │                to the local update config store via                │
-[9] │ sudo chown -R $USER:$(id -gn $USER) C:\Users\RohitKulkarni\.config │
-[9] └────────────────────────────────────────────────────────────────────┘
-[9] npm run build rds-select-list exited with code 0
-[0] - Writing FESM bundles
-[0] √ Writing FESM bundles
-[0] - Copying assets
-[0] √ Copying assets
-[0] - Writing package manifest
-[0] √ Writing package manifest
-[0] √ Built rds-icon
-[0] 
-------------------------------------------------------------------------------
-[0] Built Angular Package
-[0]  - from: D:\rds-fork-rohit\raaghu\raaghu-elements\src\rds-icon
-[0]  - to:   D:\rds-fork-rohit\raaghu\raaghu-elements\rds-elements\rds-icon
-[0] ------------------------------------------------------------------------------
-[0] 
-[0] Build at: 2022-09-27T03:40:25.389Z - Time: 23172ms
-[0] 
-[0] npm run build rds-icon exited with code 0
