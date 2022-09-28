@@ -75,6 +75,14 @@
       "@libs/rds-product-image": [
         "rds-elements/rds-product-image/public-api",
         "rds-elements/rds-product-image"
+      ],
+      "@libs/rds-edition": [
+        "rds-elements/rds-edition/public-api",
+        "rds-elements/rds-edition"
+      ],
+      "@libs/rds-card": [
+        "rds-elements/rds-card/public-api",
+        "rds-elements/rds-card"
       ]
     },
     "skipLibCheck": true,

@@ -77,6 +77,10 @@
       "@libs/rds-counter": [
         "rds-elements/rds-counter/public-api",
         "rds-elements/rds-counter"
+      ],
+      "@libs/rds-card": [
+        "rds-elements/rds-card/public-api",
+        "rds-elements/rds-card"
       ]
     },
     "baseUrl": "./",
