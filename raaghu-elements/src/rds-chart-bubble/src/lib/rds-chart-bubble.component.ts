@@ -24,11 +24,10 @@ export class RdsChartBubbleComponent implements OnInit, OnChanges, AfterViewInit
   ctx: any;
   //@Input() chartId = 'ChartBubble' + RdsChartBubbleComponent.count;
   @Input() chartId:string='ChartBubble0';
-  @Input() chartWidth = 400;
-  @Input() chartStyle?: any;
+  @Input() chartWidth :number= 400;
+  @Input() chartHeight :number= 600;
   @Input() chartLabels?: any;
-  @Input() canvasBackgroundColor?: any;
-  @Input() ChartDataSets?: ChartDataSetBubble[] | any;
+  @Input() ChartDataSets?: ChartDataSetBubble[] | any=[];
   @Input() chartOptions?: any;
   style: CSSStyleDeclaration | undefined;
 
@@ -50,15 +49,6 @@ export class RdsChartBubbleComponent implements OnInit, OnChanges, AfterViewInit
     this.ChartDataSets[0].backgroundColor[9] = this.style.getPropertyValue('--chartColor10');
   }
 
-  public get classes(): string[] {
-    var classes = ['res-width']
-    if (this.chartStyle === "Dark") {
-      classes.push('dark-mode')
-      return classes
-    }
-    return classes
-  }
-
   ngOnChanges(): void {
     this.ChartBubbleBrowser();
   }
@@ -74,9 +64,9 @@ export class RdsChartBubbleComponent implements OnInit, OnChanges, AfterViewInit
     }
     this.canvas = document.getElementById(this.chartId);
     if (this.canvas !== null) {
-      this.canvas.style.backgroundColor = this.canvasBackgroundColor;
+      // this.canvas.style.backgroundColor = this.canvasBackgroundColor;
       this.ctx = this.canvas.getContext('2d');
-      const canvas = new Chart(this.ctx, {
+      const boolChart = new Chart(this.ctx, {
         type: 'bubble',
         data: {
           labels: this.chartLabels,
@@ -84,6 +74,10 @@ export class RdsChartBubbleComponent implements OnInit, OnChanges, AfterViewInit
         },
         options: this.chartOptions
       });
+      if (boolChart !== null) {
+        boolChart.canvas.style.height = this.chartHeight + 'px';
+        boolChart.canvas.style.width = this.chartWidth + 'px';
+      }
     }
   }
 

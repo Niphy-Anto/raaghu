@@ -26,9 +26,8 @@ export class RdsChartDoughnutComponent implements OnInit {
   @Input() chartId:string='doughnutChart0';
   @Input() chartWidth = 400;
   @Input() chartHeight = 400;
-  @Input() chartStyle?: any;
   @Input() chartLabels?: any
-  @Input() canvasBackgroundColor?: any;
+  // @Input() canvasBackgroundColor?: any;
   @Input() ChartDataSets?: ChartDataSetDoughnut[] | any;
   @Input() chartOptions?: any;
   @Input() titleText = '';

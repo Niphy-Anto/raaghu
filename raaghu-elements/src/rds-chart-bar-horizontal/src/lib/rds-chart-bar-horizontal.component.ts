@@ -26,7 +26,6 @@ export class RdsChartBarHorizontalComponent implements OnInit {
   @Input() chartId:string='horizontalChart0';
   @Input() chartWidth = 100;
   @Input() chartHeight = 350;
-  @Input() chartStyle?: any;
   @Input() chartLabels?: any
   @Input() ChartDataSets?: ChartDataSetBar[] | any;
   @Input() chartOptions?: any;
@@ -56,15 +55,7 @@ export class RdsChartBarHorizontalComponent implements OnInit {
     this.barChartBrowser();
   }
 
-  public get classes(): string[] {
-    var classes = ['res-width']
-    if (this.chartStyle === "Dark") {
-      classes.push('dark-mode')
-      return classes
-    }
 
-    return classes
-  }
 
   barChartBrowser(): void {
     let chartStatus = Chart.getChart(this.chartId);

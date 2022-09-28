@@ -30,29 +30,16 @@ export class RdsChartBoolComponent implements OnInit, AfterViewInit {
   ctx: any;
   value: any;
 
-  CanvasbackgroundColor: any;
-
   chartdata: any;
   //chartId = 'mychart' + RdsChartBoolComponent.count;
   @Input() chartId: string = 'mychart0';
-  @Input()
-  chartWidth = 400;
+  @Input() chartWidth = 400;
   @Input() chartHeight = 400;
-  @Input() chartBackgroundColor: string = ''
-  @Input()
-  ChartStyle?: any;
-  @Input()
-  chartLabels?: any
+  @Input() chartLabels?: any;
   @Input() centerIconName: string = '';
+  @Input() ChartDataSets?: ChartDataSetBool[] | any;
 
-  @Input()
-  ChartDataSets?: ChartDataSetBool[] | any;
-
-  @Input()
-  chartType: 'bar' | 'line' | 'pie' | 'doughnut' | 'radar' | 'polarArea' | 'bubble' | 'scatter' = 'bar';
-
-  @Input()
-  chartOptions?: any;
+  @Input() chartOptions?: any;
   @Input() centerSvg: any;
   static inload: boolean;
   style: CSSStyleDeclaration | undefined;
@@ -72,15 +59,6 @@ export class RdsChartBoolComponent implements OnInit, AfterViewInit {
     // this.ChartDataSets[0].backgroundColor[9] = this.style.getPropertyValue('--chartColor3');
   }
 
-  public get classes(): string[] {
-    var classes = ['res-width']
-    if (this.ChartStyle === "Dark") {
-      classes.push('dark-mode')
-      return classes
-    }
-
-    return classes
-  }
 
   ngOnChanges(changes: SimpleChanges) {
 
@@ -89,18 +67,18 @@ export class RdsChartBoolComponent implements OnInit, AfterViewInit {
     //   this.ChartDataSets[0].backgroundColor[0] = this.style.getPropertyValue(this.chartBackgroundColor);
     // }
     // console.log(this.chartId);
-    var canvass = document.getElementById(this.chartId) as HTMLCanvasElement;
-    if (changes['canvasBackgroundColor']) {
-      this.CanvasbackgroundColor = changes['canvasBackgroundColor'].currentValue
+    // var canvass = document.getElementById(this.chartId) as HTMLCanvasElement;
+    // if (changes['canvasBackgroundColor']) {
+    //   this.CanvasbackgroundColor = changes['canvasBackgroundColor'].currentValue
 
-    }
+    // }
 
   }
 
   // tslint:disable-next-line:typedef
   ngAfterViewChecked() {
-    this.canvas = document.getElementById(this.chartId);
-    this.canvas.style.backgroundColor = this.CanvasbackgroundColor;
+    // this.canvas = document.getElementById(this.chartId);
+    // this.canvas.style.backgroundColor = this.CanvasbackgroundColor;
   }
 
   ngAfterViewInit() {
@@ -115,8 +93,7 @@ export class RdsChartBoolComponent implements OnInit, AfterViewInit {
           element.backgroundColor[index] = (this.style.getPropertyValue(bg)) ? this.style.getPropertyValue(bg) : bg
         }
       });
-    }); 
-    console.log(this.ChartDataSets);
+    });
     let svg = ChartIcons[this.centerIconName];
     let blob = new Blob([svg], { type: 'image/svg+xml' });
     let url = URL.createObjectURL(blob);
@@ -135,7 +112,7 @@ export class RdsChartBoolComponent implements OnInit, AfterViewInit {
 
     };
     const myChart = new Chart(this.ctx, {
-      type: this.chartType,
+      type:'doughnut',
       data: {
         labels: this.chartLabels,
         datasets: this.ChartDataSets,
@@ -150,10 +127,10 @@ export class RdsChartBoolComponent implements OnInit, AfterViewInit {
     }
   }
 
-  setCanvasBackground(): void {
-    this.canvas = document.getElementById(this.chartId);
-    // console.log(this.chartId);
-    this.canvas.style.backgroundColor = this.CanvasbackgroundColor;
-    this.ctx = this.canvas.getContext('2d');
-  }
+  // setCanvasBackground(): void {
+  //   this.canvas = document.getElementById(this.chartId);
+  //   // console.log(this.chartId);
+  //   this.canvas.style.backgroundColor = this.CanvasbackgroundColor;
+  //   this.ctx = this.canvas.getContext('2d');
+  // }
 }

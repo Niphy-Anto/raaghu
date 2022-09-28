@@ -39,18 +39,24 @@ HorizontalBarChart.args = {
     }
   ],
   chartLabels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-  chartWidth: 100,
+  chartWidth: 500,
+  chartHeight: 400,
   chartOptions: {
-    maintainAspectRatio: false,    
+    responsive: true,
+    aspectRatio: 2,
+    maintainAspectRatio: false,
     indexAxis: 'y',
     elements: {
       bar: {
-        borderWidth: 0,
+        borderWidth: 2,
       }
+    },
+    layout:{
+      padding:3
     },
     plugins: {
       legend: {
-        position: 'right',
+        position: 'top',
         pointStyle: "line",
 
         labels: {
@@ -92,7 +98,7 @@ VerticalBarChart.args = {
   chartWidth: 100,
   chartOptions: {
     responsive: true,
-    maintainAspectRatio: false,    
+    maintainAspectRatio: false,
     plugins: {
       legend: {
         position: 'top',
@@ -134,7 +140,7 @@ StackedBarChart.args = {
       },
     },
     responsive: true,
-    maintainAspectRatio: false,    
+    maintainAspectRatio: false,
     scales: {
       x: {
         stacked: true,
@@ -171,7 +177,7 @@ BarChartWithBorderRadius.args = {
   chartWidth: 100,
   chartOptions: {
     responsive: true,
-    maintainAspectRatio: false,    
+    maintainAspectRatio: false,
     plugins: {
       legend: {
         position: 'top',

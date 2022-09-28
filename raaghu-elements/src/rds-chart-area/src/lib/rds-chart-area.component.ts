@@ -22,11 +22,10 @@ export class RdsChartAreaComponent implements OnInit, OnChanges, AfterViewInit {
   static count = 0;
   canvas: any;
   ctx: any;
- // chartId = 'ChartArea' + RdsChartAreaComponent.count;
-  @Input() chartId:string='ChartArea0';
-  @Input() chartWidth = 400;
-
-  @Input() chartStyle?: any;
+  // chartId = 'ChartArea' + RdsChartAreaComponent.count;
+  @Input() chartId: string = 'ChartArea0';
+  @Input() chartWidth: number = 400;
+  @Input() chartHeight: number = 400;
   @Input() chartLabels?: any
   @Input() ChartDataSets?: ChartDataSetArea[] | any;
   @Input() chartOptions?: any;
@@ -58,15 +57,6 @@ export class RdsChartAreaComponent implements OnInit, OnChanges, AfterViewInit {
     this.ChartAreaBrowser();
   }
 
-  public get classes(): string[] {
-    var classes = ['res-width']
-    if (this.chartStyle === "Dark") {
-      classes.push('dark-mode')
-      return classes
-    }
-    return classes
-  }
-
   ChartAreaBrowser(): void {
     let chartStatus = Chart.getChart(this.chartId);
     if (chartStatus != undefined) {
@@ -83,6 +73,10 @@ export class RdsChartAreaComponent implements OnInit, OnChanges, AfterViewInit {
         },
         options: this.chartOptions
       });
+      if (areaCanvas !== null) {
+        areaCanvas.canvas.style.height = this.chartHeight + 'px';
+        areaCanvas.canvas.style.width = this.chartWidth + 'px';
+      }
     }
   }
 
