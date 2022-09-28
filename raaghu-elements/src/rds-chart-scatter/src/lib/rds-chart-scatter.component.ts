@@ -25,9 +25,11 @@ export class RdsChartScatterComponent implements OnInit, AfterViewInit {
   //chartId = 'scatterChart' + RdsChartScatterComponent.count;
   @Input() chartId:string='scatterChart0';
   @Input() chartWidth = 400;
-  @Input() chartStyle?: any;
+  @Input() chartHeight = 400;
+
+  // @Input() chartStyle?: any;
   @Input() chartLabels?: any
-  @Input() canvasBackgroundColor?: any;
+  // @Input() canvasBackgroundColor?: any;
   @Input() ChartDataSets?: ChartDataSetScatter[] | any;
   @Input() chartOptions?: any;
   style: CSSStyleDeclaration | undefined;
@@ -48,14 +50,14 @@ export class RdsChartScatterComponent implements OnInit, AfterViewInit {
     this.ChartDataSets[0].backgroundColor[9] = this.style.getPropertyValue('--chartColor10');
   }
 
-  public get classes(): string[] {
-    var classes = ['res-width']
-    if (this.chartStyle === "Dark") {
-      classes.push('dark-mode')
-      return classes
-    }
-    return classes
-  }
+  // public get classes(): string[] {
+  //   var classes = ['res-width']
+  //   if (this.chartStyle === "Dark") {
+  //     classes.push('dark-mode')
+  //     return classes
+  //   }
+  //   return classes
+  // }
   ngOnChanges(): void {
     this.scatterChartBrowser();
   }
@@ -71,9 +73,9 @@ export class RdsChartScatterComponent implements OnInit, AfterViewInit {
     }
     this.canvas = document.getElementById(this.chartId);
     if (this.canvas !== null) {
-      this.canvas.style.backgroundColor = this.canvasBackgroundColor;
+      // this.canvas.style.backgroundColor = this.canvasBackgroundColor;
       this.ctx = this.canvas.getContext('2d');
-      const areaCanvas = new Chart(this.ctx, {
+      const scatterChart = new Chart(this.ctx, {
         type: 'scatter',
         data: {
           labels: this.chartLabels,
@@ -81,6 +83,10 @@ export class RdsChartScatterComponent implements OnInit, AfterViewInit {
         },
         options: this.chartOptions
       });
+      if(scatterChart !== null){
+        scatterChart.canvas.style.height = this.chartHeight+'px'; 
+        scatterChart.canvas.style.width = this.chartWidth+'px';
+      } 
     }
   }
 

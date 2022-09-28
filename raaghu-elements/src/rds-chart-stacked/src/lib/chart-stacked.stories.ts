@@ -7,11 +7,11 @@ export default {
 
   component: RdsChartStackedComponent,
   argTypes: {
-    canvasBackgroundColor: { control: 'color' },
-    chartStyle: {
-      options: ['Dark', 'light'],
-      control: 'radio'
-    }
+    // canvasBackgroundColor: { control: 'color' },
+    // chartStyle: {
+    //   options: ['Dark', 'light'],
+    //   control: 'radio'
+    // }
   },
 
 } as Meta;
@@ -48,6 +48,8 @@ Default.args = {
   chartLabels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
   chartWidth: 1000,
   chartOptions: {
+    responsive: true,
+    maintainAspectRatio: false,
     radius: 3,
     pointStyle: 'triangle',
     plugins: {

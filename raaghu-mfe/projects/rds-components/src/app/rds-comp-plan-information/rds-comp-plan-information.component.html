@@ -1,26 +1,15 @@
-
- <div class="py-3">
+<div class="py-3">
   <div class="d-flex align-items-center">
-        <rds-icon
-        [disabled]="false"
-        [fill]="false"
-        [stroke]="true"
-        name="subscription_premium"
-        colorVariant=""
-        opacity=""
-        [width]="'128px'"
-        [height]="'128px'"
-      style="stroke-width: 0.2;"></rds-icon>
-
-
+    <rds-icon [disabled]="false" [fill]="false" [stroke]="true" name="subscription_premium" opacity=""
+      [width]="'128px'" [height]="'128px'" style="stroke-width: 0.2;"></rds-icon>
+    <div>
       <div>
-        <div>
-          {{EditionData.displayName|translate}}
-        </div>
-        <div class="text-warning small">
-        <rds-label [label]="translate.instant('1 year')"></rds-label> 
-        </div>  
+        {{EditionData.displayName|translate}}
       </div>
+      <div class="text-warning small">
+        <rds-label [label]="translate.instant('1 year')"></rds-label>
+      </div>
+    </div>
   </div>
 
 
@@ -45,20 +34,15 @@
   </div>
 
   <div class="mt-3 pb-3">
-    <rds-label
-  label="What's included in your plan"
-  [multiline]="false"
-  [bold]="true"
-  [italic]="false"
-></rds-label>
-    <div class="pt-2"  *ngFor="let item of EditionData.featureValues">
-      
+    <rds-label label="What's included in your plan" [multiline]="false" [bold]="true" [italic]="false"></rds-label>
+    <div class="pt-2" *ngFor="let item of EditionData.featureValues">
+
       <ul class="p-0 mb-0">
         <li class="list-group-item border-0 p-1">
-          <rds-icon name="tick_circle"  height="15px"  width="15px" class="text-success"></rds-icon>
+          <rds-icon name="tick_circle" height="15px" width="15px" class="text-success"></rds-icon>
           <span class="ps-2">{{item}}</span>
         </li>
-       </ul>
+      </ul>
     </div>
     <!-- <div class="col-md-6 mt-3">
       <rds-button [outlineButton]="false" [label]="translate.instant('Upgrade')" type="button" [size]="'medium'"
@@ -68,19 +52,19 @@
   </div>
 
 
-<div class="g-0 py-2">
-   <div>
-      <rds-button class="d-grid" [outlineButton]="false" [label]="translate.instant('Upgrade')" type="button" [size]="'small'"
-                  [colorVariant]="'primary'" [block]="false">
+  <div class="g-0 py-2">
+    <div>
+      <rds-button class="d-grid" [outlineButton]="false" [label]="translate.instant('Upgrade')" type="button"
+        [size]="'small'" [colorVariant]="'primary'" [block]="false">
       </rds-button>
     </div>
-</div>
-
- 
+  </div>
 
 
 
-<!--<rds-card class="rounded-avatar-basic">
+
+
+  <!--<rds-card class="rounded-avatar-basic">
         <div header class="">
           <label class="fw-bold py-2 px-3">Your Plan</label>
         </div>
@@ -88,8 +72,8 @@
         <div body class="py-2">
           <div class="d-flex">
             <div class="col-md-1">-->
-<!-- <img src="../../../../rds-components/src/assets/rocketImage.png"> -->
-<!--<rds-icon name="subscription"></rds-icon>
+  <!-- <img src="../../../../rds-components/src/assets/rocketImage.png"> -->
+  <!--<rds-icon name="subscription"></rds-icon>
             </div>
             <div class="col-md-1 text-center mt-4">
               <strong>Edition</strong>
@@ -110,8 +94,8 @@
           <ul>
             <li class="list-group-item border-0 p-0" *ngFor="let item of EditionData.featureValues">
               <span>-->
-<!-- <i class="bi bi-check-circle m-2 text-success"></i> -->
-<!--<rds-icon name="subscription_tickmark2" class="text-success"></rds-icon>
+  <!-- <i class="bi bi-check-circle m-2 text-success"></i> -->
+  <!--<rds-icon name="subscription_tickmark2" class="text-success"></rds-icon>
               </span>
               {{item}}
             </li>

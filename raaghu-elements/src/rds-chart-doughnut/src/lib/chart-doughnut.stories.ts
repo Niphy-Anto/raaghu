@@ -6,11 +6,11 @@ export default {
   title: 'Charts/Doughnut Chart',
   component: RdsChartDoughnutComponent,
   argTypes: {
-    canvasBackgroundColor: { control: 'color' },
-    chartStyle: {
-      options: ['Dark', 'light'],
-      control: 'radio'
-    }
+    // canvasBackgroundColor: { control: 'color' },
+    // chartStyle: {
+    //   options: ['Dark', 'light'],
+    //   control: 'radio'
+    // }
   },
 
 } as Meta;
@@ -46,7 +46,7 @@ Default.args = {
     options: {
       responsive: true,
       maintainAspectRatio: false,
-    plugins: {
+      plugins: {
         legend: {
           position: 'top',
         },

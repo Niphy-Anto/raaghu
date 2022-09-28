@@ -25,9 +25,11 @@ export class RdsChartStackedComponent implements OnInit {
   //chartId = 'stackChart' + RdsChartStackedComponent.count;
   @Input() chartId:string='stackChart0';
   @Input() chartWidth = 400;
-  @Input() chartStyle?: any;
+  @Input() chartHeight:number = 400;
+
+  // @Input() chartStyle?: any;
   @Input() chartLabels?: any
-  @Input() canvasBackgroundColor?: any;
+  // @Input() canvasBackgroundColor?: any;
   @Input() ChartDataSets?: ChartDataSetStacked[] | any;
   @Input() chartOptions?: any;
   style: CSSStyleDeclaration | undefined;
@@ -50,15 +52,15 @@ export class RdsChartStackedComponent implements OnInit {
     this.ChartDataSets[0].backgroundColor[9] = this.style.getPropertyValue('--chartColor10');
   }
 
-  public get classes(): string[] {
-    var classes = ['res-width']
-    if (this.chartStyle === "Dark") {
-      classes.push('dark-mode')
-      return classes
-    }
+  // public get classes(): string[] {
+  //   var classes = ['res-width']
+  //   if (this.chartStyle === "Dark") {
+  //     classes.push('dark-mode')
+  //     return classes
+  //   }
 
-    return classes
-  }
+  //   return classes
+  // }
   ngOnChanges(): void {
     this.barChartBrowser();
   }
@@ -74,9 +76,9 @@ export class RdsChartStackedComponent implements OnInit {
     }
     this.canvas = document.getElementById(this.chartId);
     if (this.canvas !== null) {
-      this.canvas.style.backgroundColor = this.canvasBackgroundColor;
+      // this.canvas.style.backgroundColor = this.canvasBackgroundColor;
       this.ctx = this.canvas.getContext('2d');
-      const canvas = new Chart(this.ctx, {
+      const stackedChart = new Chart(this.ctx, {
         type: 'line',
         data: {
           labels: this.chartLabels,
@@ -84,6 +86,10 @@ export class RdsChartStackedComponent implements OnInit {
         },
         options: this.chartOptions
       });
+      if(stackedChart !== null){
+        stackedChart.canvas.style.height = this.chartHeight+'px'; 
+        stackedChart.canvas.style.width = this.chartWidth+'px';
+      } 
     }
   }
 

@@ -13,7 +13,8 @@ export class RdsBadgeComponent implements OnInit {
   @Input() positioned: boolean = false
   @Input() badgeType: 'rectangle' | 'circle' | 'pill' = 'rectangle'
   @Input() colorVariant: 'primary' | 'success' | 'warning' | 'danger' | 'info' | 'dark' | 'light' | 'secondary' | undefined = undefined;
-
+  @Input() showClose: boolean = false;
+  @Output() onClose = new EventEmitter<Event>();
 
   constructor() { }
 
@@ -23,11 +24,11 @@ export class RdsBadgeComponent implements OnInit {
 
   public get classList(): string[] {
     var clsList: string[] = ['badge']
-    if(this.colorVariant){
+    if (this.colorVariant) {
       const bgColor = 'badge-' + `${this.colorVariant}`;
       clsList.push(bgColor);
     }
- 
+
 
     if (this.positioned === true) {
       clsList.push('position-absolute start-100 top-0 translate-middle')
@@ -45,5 +46,9 @@ export class RdsBadgeComponent implements OnInit {
 
     return clsList
   }
+  onClosed(event:any){
+    this.onClose.emit(event);
+  }
+
 
 }

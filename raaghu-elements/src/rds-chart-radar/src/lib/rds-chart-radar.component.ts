@@ -25,9 +25,8 @@ export class RdsChartRadarComponent implements OnInit {
  // chartId = 'radarChart' + RdsChartRadarComponent.count;
   @Input() chartId:string='radarChart0';
   @Input() chartWidth = 400;
-  @Input() chartStyle?: any;
+  @Input() chartHeight = 400;
   @Input() chartLabels?: any
-  @Input() canvasBackgroundColor?: any;
   @Input() ChartDataSets?: ChartDataSetRadar[] | any;
   @Input() chartOptions?: any;
   static inload: boolean;
@@ -49,14 +48,14 @@ export class RdsChartRadarComponent implements OnInit {
     this.ChartDataSets[0].backgroundColor[9] = this.style.getPropertyValue('--chartColor10');
   }
 
-  public get classes(): string[] {
-    var classes = ['res-width']
-    if (this.chartStyle === "Dark") {
-      classes.push('dark-mode')
-      return classes
-    }
-    return classes
-  }
+  // public get classes(): string[] {
+  //   var classes = ['res-width']
+  //   if (this.chartStyle === "Dark") {
+  //     classes.push('dark-mode')
+  //     return classes
+  //   }
+  //   return classes
+  // }
 
   ngOnChanges(): void {
     this.radarChartBrowser();
@@ -73,9 +72,9 @@ export class RdsChartRadarComponent implements OnInit {
     }
     this.canvas = document.getElementById(this.chartId);
     if (this.canvas !== null) {
-      this.canvas.style.backgroundColor = this.canvasBackgroundColor;
+      // this.canvas.style.backgroundColor = this.canvasBackgroundColor;
       this.ctx = this.canvas.getContext('2d');
-      const polarAreaCanvas = new Chart(this.ctx, {
+      const radarChart = new Chart(this.ctx, {
         type: 'radar',
         data: {
           labels: this.chartLabels,
@@ -83,6 +82,10 @@ export class RdsChartRadarComponent implements OnInit {
         },
         options: this.chartOptions
       });
+      if(radarChart !== null){
+        radarChart.canvas.style.height = this.chartHeight+'px'; 
+        radarChart.canvas.style.width = this.chartWidth+'px';
+      } 
     }
   }
 

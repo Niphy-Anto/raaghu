@@ -53,9 +53,10 @@ Default.args = {
     ],
     chartLabels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July'],
     chartWidth: 400,
-
+    chartHeight: 400,
     chartOptions: {
-        responsive: false,
+        responsive: true,
+        maintainAspectRatio: false,
         chartArea: {
             backgroundColor: 'rgba(251, 85, 85, 0.4)'
         },
@@ -66,8 +67,8 @@ Default.args = {
                 text: 'Radar Chart'
             },
             legend: {
-                position: 'left',
-                align: "start",
+                position: 'top',
+                align: "center",
 
                 pointStyle: 'rectRot',
                 pointRadius: 5,
