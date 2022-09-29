@@ -273,17 +273,17 @@ export const APP_ROUTES: Routes = [
             exposedModule: './AppModule',
           }).then((m) => m.AppModule),
       },
-      // {
-      //   path: 'cart',
-      //   loadChildren: () =>
-      //     loadRemoteModule({
-      //       type: 'module',
-      //       remoteEntry: MfeConfig.cart.url,
-      //       exposedModule: './AppModule',
-      //     }).then((m) => m.AppModule),
-      //   data: { permission: 'Pages.DemoUiComponents' },
+      {
+        path: 'auditLog-new',
+        loadChildren: () =>
+          loadRemoteModule({
+            type: 'module',
+            remoteEntry: MfeConfig.auditLognew.url,
+            exposedModule: './AppModule',
+          }).then((m) => m.AppModule),
+        data: { permission: 'Pages.DemoUiComponents' },
 
-      // },
+      },
         {
         path: 'products-details',
         loadChildren: () =>

@@ -12,19 +12,21 @@ const filesToReplace = [
 ];
 const dependentElements = [
     'rds-icon',
+    'rds-label',
+    'rds-icon-label',
+    'rds-checkbox',
+    'rds-radio-button',
+    'rds-select-list',
     'rds-badge',
     'rds-button',
     'rds-avatar',
     'rds-like-dislike',
     'rds-rating',
-    'rds-label',
-    'rds-checkbox',
-    'rds-icon-label',
-    'rds-select-list',
-    'rds-radio-button',
     'rds-product-image',
     'rds-stepper',
-    'rds-app-details'
+    'rds-app-details',
+    'rds-team-member',
+    'rds-nav-tab'
 ];
 
 function replaceFiles() {
@@ -195,6 +197,26 @@ function mergeTSConfigJson() {
         };
         changesDone = true;
     };
+    if (ngElementsFile.compilerOptions.paths["@libs/rds-team-member"] == undefined) {
+        ngElementsFile.compilerOptions.paths = {
+            ...ngElementsFile.compilerOptions.paths,
+            "@libs/rds-team-member": [
+                "rds-elements/rds-team-member/public-api",
+                "rds-elements/rds-team-member"
+            ]
+        };
+        changesDone = true;
+    };
+    if (ngElementsFile.compilerOptions.paths["@libs/rds-nav-tab"] == undefined) {
+        ngElementsFile.compilerOptions.paths = {
+            ...ngElementsFile.compilerOptions.paths,
+            "@libs/rds-nav-tab": [
+                "rds-elements/rds-nav-tab/public-api",
+                "rds-elements/rds-nav-tab"
+            ]
+        };
+        changesDone = true;
+    };
     if (changesDone) {
         console.log('Updating tsconfig.json file...');
         fse.writeFileSync(path.join(currentDir, 'tsconfig.json'), JSON.stringify(ngElementsFile, null, 2));
@@ -215,11 +237,12 @@ function copyProjects() {
 
 function buildDependentElements() {
     console.log('Building dependent \x1b[32m' + dependentElements.toString() + '\x1b[0m elements...');
-    let commandline = 'concurrently ';
+    // let commandline = 'concurrently ';
     for (const element of dependentElements) {
-        commandline = commandline + ' \"npm run build ' + element + '\"';
+        execSync(`npm run build ${element} > $null &`, { cwd: ngElementsDir, stdio: 'inherit' });
+        // commandline = commandline + ' \"npm run build ' + element + '\"';
     }
-    execSync(`${commandline} > $null`, { cwd: ngElementsDir, stdio: 'inherit' });
+    // execSync(`${commandline}`, { cwd: ngElementsDir, stdio: 'inherit' });
 
     console.log("Coping element's build folder...");
     fse.copySync(path.join(ngElementsDir, 'rds-elements'), path.join(currentDir, 'rds-elements'), { overwrite: true });
