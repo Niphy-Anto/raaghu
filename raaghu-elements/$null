@@ -446,3 +446,327 @@
 [14] Build at: 2022-09-28T10:43:03.451Z - Time: 7469ms
 [14] 
 [14] npm run build rds-team-member exited with code 0
+
+> rds-elements-base@1.0.0 build
+> ng build "rds-icon"
+
+Building Angular Package
+
+------------------------------------------------------------------------------
+Building entry point 'rds-icon'
+------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------
+Built Angular Package
+ - from: E:\raaghuu-new\raaghu\raaghu-elements\src\rds-icon
+ - to:   E:\raaghuu-new\raaghu\raaghu-elements\rds-elements\rds-icon
+------------------------------------------------------------------------------
+
+Build at: 2022-09-28T12:27:00.130Z - Time: 22059ms
+
+
+> rds-elements-base@1.0.0 build
+> ng build "rds-label"
+
+Building Angular Package
+
+------------------------------------------------------------------------------
+Building entry point 'rds-label'
+------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------
+Built Angular Package
+ - from: E:\raaghuu-new\raaghu\raaghu-elements\src\rds-label
+ - to:   E:\raaghuu-new\raaghu\raaghu-elements\rds-elements\rds-label
+------------------------------------------------------------------------------
+
+Build at: 2022-09-28T12:27:10.758Z - Time: 2659ms
+
+
+> rds-elements-base@1.0.0 build
+> ng build "rds-icon-label"
+
+Building Angular Package
+
+------------------------------------------------------------------------------
+Building entry point 'rds-icon-label'
+------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------
+Built Angular Package
+ - from: E:\raaghuu-new\raaghu\raaghu-elements\src\rds-icon-label
+ - to:   E:\raaghuu-new\raaghu\raaghu-elements\rds-elements\rds-icon-label
+------------------------------------------------------------------------------
+
+Build at: 2022-09-28T12:27:22.759Z - Time: 4071ms
+
+
+> rds-elements-base@1.0.0 build
+> ng build "rds-checkbox"
+
+Building Angular Package
+
+------------------------------------------------------------------------------
+Building entry point 'rds-checkbox'
+------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------
+Built Angular Package
+ - from: E:\raaghuu-new\raaghu\raaghu-elements\src\rds-checkbox
+ - to:   E:\raaghuu-new\raaghu\raaghu-elements\rds-elements\rds-checkbox
+------------------------------------------------------------------------------
+
+Build at: 2022-09-28T12:27:33.705Z - Time: 2962ms
+
+
+> rds-elements-base@1.0.0 build
+> ng build "rds-radio-button"
+
+Building Angular Package
+
+------------------------------------------------------------------------------
+Building entry point 'rds-radio-button'
+------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------
+Built Angular Package
+ - from: E:\raaghuu-new\raaghu\raaghu-elements\src\rds-radio-button
+ - to:   E:\raaghuu-new\raaghu\raaghu-elements\rds-elements\rds-radio-button
+------------------------------------------------------------------------------
+
+Build at: 2022-09-28T12:27:44.217Z - Time: 2654ms
+
+
+> rds-elements-base@1.0.0 build
+> ng build "rds-select-list"
+
+Building Angular Package
+
+------------------------------------------------------------------------------
+Building entry point 'rds-select-list'
+------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------
+Built Angular Package
+ - from: E:\raaghuu-new\raaghu\raaghu-elements\src\rds-select-list
+ - to:   E:\raaghuu-new\raaghu\raaghu-elements\rds-elements\rds-select-list
+------------------------------------------------------------------------------
+
+Build at: 2022-09-28T12:27:57.869Z - Time: 5559ms
+
+
+> rds-elements-base@1.0.0 build
+> ng build "rds-badge"
+
+Building Angular Package
+
+------------------------------------------------------------------------------
+Building entry point 'rds-badge'
+------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------
+Built Angular Package
+ - from: E:\raaghuu-new\raaghu\raaghu-elements\src\rds-badge
+ - to:   E:\raaghuu-new\raaghu\raaghu-elements\rds-elements\rds-badge
+------------------------------------------------------------------------------
+
+Build at: 2022-09-28T12:28:08.847Z - Time: 3080ms
+
+
+> rds-elements-base@1.0.0 build
+> ng build "rds-button"
+
+Building Angular Package
+
+------------------------------------------------------------------------------
+Building entry point 'rds-button'
+------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------
+Built Angular Package
+ - from: E:\raaghuu-new\raaghu\raaghu-elements\src\rds-button
+ - to:   E:\raaghuu-new\raaghu\raaghu-elements\rds-elements\rds-button
+------------------------------------------------------------------------------
+
+Build at: 2022-09-28T12:28:20.326Z - Time: 3489ms
+
+
+> rds-elements-base@1.0.0 build
+> ng build "rds-avatar"
+
+Building Angular Package
+
+------------------------------------------------------------------------------
+Building entry point 'rds-avatar'
+------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------
+Built Angular Package
+ - from: E:\raaghuu-new\raaghu\raaghu-elements\src\rds-avatar
+ - to:   E:\raaghuu-new\raaghu\raaghu-elements\rds-elements\rds-avatar
+------------------------------------------------------------------------------
+
+Build at: 2022-09-28T12:28:30.989Z - Time: 2787ms
+
+
+> rds-elements-base@1.0.0 build
+> ng build "rds-like-dislike"
+
+Building Angular Package
+
+------------------------------------------------------------------------------
+Building entry point 'rds-like-dislike'
+------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------
+Built Angular Package
+ - from: E:\raaghuu-new\raaghu\raaghu-elements\src\rds-like-dislike
+ - to:   E:\raaghuu-new\raaghu\raaghu-elements\rds-elements\rds-like-dislike
+------------------------------------------------------------------------------
+
+Build at: 2022-09-28T12:28:41.317Z - Time: 2870ms
+
+
+> rds-elements-base@1.0.0 build
+> ng build "rds-rating"
+
+Building Angular Package
+
+------------------------------------------------------------------------------
+Building entry point 'rds-rating'
+------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------
+Built Angular Package
+ - from: E:\raaghuu-new\raaghu\raaghu-elements\src\rds-rating
+ - to:   E:\raaghuu-new\raaghu\raaghu-elements\rds-elements\rds-rating
+------------------------------------------------------------------------------
+
+Build at: 2022-09-28T12:28:52.230Z - Time: 3412ms
+
+
+> rds-elements-base@1.0.0 build
+> ng build "rds-product-image"
+
+Building Angular Package
+
+------------------------------------------------------------------------------
+Building entry point 'rds-product-image'
+------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------
+Built Angular Package
+ - from: E:\raaghuu-new\raaghu\raaghu-elements\src\rds-product-image
+ - to:   E:\raaghuu-new\raaghu\raaghu-elements\rds-elements\rds-product-image
+------------------------------------------------------------------------------
+
+Build at: 2022-09-28T12:29:05.425Z - Time: 5469ms
+
+
+> rds-elements-base@1.0.0 build
+> ng build "rds-stepper"
+
+Building Angular Package
+
+------------------------------------------------------------------------------
+Building entry point 'rds-stepper'
+------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------
+Built Angular Package
+ - from: E:\raaghuu-new\raaghu\raaghu-elements\src\rds-stepper
+ - to:   E:\raaghuu-new\raaghu\raaghu-elements\rds-elements\rds-stepper
+------------------------------------------------------------------------------
+
+Build at: 2022-09-28T12:29:15.804Z - Time: 2925ms
+
+
+> rds-elements-base@1.0.0 build
+> ng build "rds-app-details"
+
+Building Angular Package
+
+------------------------------------------------------------------------------
+Building entry point 'rds-app-details'
+------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------
+Built Angular Package
+ - from: E:\raaghuu-new\raaghu\raaghu-elements\src\rds-app-details
+ - to:   E:\raaghuu-new\raaghu\raaghu-elements\rds-elements\rds-app-details
+------------------------------------------------------------------------------
+
+Build at: 2022-09-28T12:29:26.721Z - Time: 3011ms
+
+
+> rds-elements-base@1.0.0 build
+> ng build "rds-team-member"
+
+Building Angular Package
+
+------------------------------------------------------------------------------
+Building entry point 'rds-team-member'
+------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------
+Built Angular Package
+ - from: E:\raaghuu-new\raaghu\raaghu-elements\src\rds-team-member
+ - to:   E:\raaghuu-new\raaghu\raaghu-elements\rds-elements\rds-team-member
+------------------------------------------------------------------------------
+
+Build at: 2022-09-28T12:30:52.790Z - Time: 78223ms
+
+
+> rds-elements-base@1.0.0 build
+> ng build "rds-nav-tab"
+
+Building Angular Package
+
+------------------------------------------------------------------------------
+Building entry point 'rds-nav-tab'
+------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------
+Built Angular Package
+ - from: E:\raaghuu-new\raaghu\raaghu-elements\src\rds-nav-tab
+ - to:   E:\raaghuu-new\raaghu\raaghu-elements\rds-elements\rds-nav-tab
+------------------------------------------------------------------------------
+
+Build at: 2022-09-28T12:31:06.424Z - Time: 5782ms
+
+
+> rds-elements-base@1.0.0 build
+> ng build "rds-app-details"
+
+Building Angular Package
+
+------------------------------------------------------------------------------
+Building entry point 'rds-app-details'
+------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------
+Built Angular Package
+ - from: E:\raaghuu-new\raaghu\raaghu-elements\src\rds-app-details
+ - to:   E:\raaghuu-new\raaghu\raaghu-elements\rds-elements\rds-app-details
+------------------------------------------------------------------------------
+
+Build at: 2022-09-28T12:31:15.842Z - Time: 1791ms
+
+
+> rds-elements-base@1.0.0 build
+> ng build "rds-card"
+
+Building Angular Package
+
+------------------------------------------------------------------------------
+Building entry point 'rds-card'
+------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------
+Built Angular Package
+ - from: E:\raaghuu-new\raaghu\raaghu-elements\src\rds-card
+ - to:   E:\raaghuu-new\raaghu\raaghu-elements\rds-elements\rds-card
+------------------------------------------------------------------------------
+
+Build at: 2022-09-28T12:31:26.442Z - Time: 3004ms
+
