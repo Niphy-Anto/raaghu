@@ -12,7 +12,7 @@ const buildAllProjects = async (projects) => {
     }
   }
   console.log('Building projects \x1b[32mALL\x1b[0m...');
-  execSync(`${commandline} > $null`, { cwd: process.cwd(), stdio: 'inherit' });
+  execSync(`${commandline} > output.log`, { cwd: process.cwd(), stdio: 'inherit' });
 }
 
 function getProjects() {

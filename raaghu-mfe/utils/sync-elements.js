@@ -12,16 +12,16 @@ const filesToReplace = [
 ];
 const dependentElements = [
     'rds-icon',
+    'rds-label',
+    'rds-icon-label',
+    'rds-checkbox',
+    'rds-radio-button',
+    'rds-select-list',
     'rds-badge',
     'rds-button',
     'rds-avatar',
     'rds-like-dislike',
     'rds-rating',
-    'rds-label',
-    'rds-checkbox',
-    'rds-icon-label',
-    'rds-select-list',
-    'rds-radio-button',
     'rds-product-image',
     'rds-stepper',
     'rds-app-details',
@@ -236,12 +236,13 @@ function copyProjects() {
 }
 
 function buildDependentElements() {
-    let commandline = 'concurrently ';
-    for (const element of dependentElements) {
-        commandline = commandline + ' \"npm run build ' + element + '\"';
-    }
     console.log('Building dependent \x1b[32m' + dependentElements.toString() + '\x1b[0m elements...');
-    execSync(`${commandline} > $null`, { cwd: ngElementsDir, stdio: 'inherit' });
+    // let commandline = 'concurrently ';
+    for (const element of dependentElements) {
+        execSync(`npm run build ${element} > output.log &`, { cwd: ngElementsDir, stdio: 'inherit' });
+        // commandline = commandline + ' \"npm run build ' + element + '\"';
+    }
+    // execSync(`${commandline}`, { cwd: ngElementsDir, stdio: 'inherit' });
 
     console.log("Coping element's build folder...");
     fse.copySync(path.join(ngElementsDir, 'rds-elements'), path.join(currentDir, 'rds-elements'), { overwrite: true });
