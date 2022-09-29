@@ -27,7 +27,7 @@ export class RdsChartRadarComponent implements OnInit {
   @Input() chartWidth = 400;
   @Input() chartHeight = 400;
   @Input() chartLabels?: any
-  @Input() ChartDataSets?: ChartDataSetRadar[] | any;
+  @Input() chartDataSets?: ChartDataSetRadar[] | any;
   @Input() chartOptions?: any;
   static inload: boolean;
   style: CSSStyleDeclaration | undefined;
@@ -36,16 +36,16 @@ export class RdsChartRadarComponent implements OnInit {
 
   ngOnInit(): void {
     this.style = getComputedStyle(document.body);
-    this.ChartDataSets[0].backgroundColor[0] = this.style.getPropertyValue('--chartColor1');
-    this.ChartDataSets[0].backgroundColor[1] = this.style.getPropertyValue('--chartColor2');
-    this.ChartDataSets[0].backgroundColor[2] = this.style.getPropertyValue('--chartColor3');
-    this.ChartDataSets[0].backgroundColor[3] = this.style.getPropertyValue('--chartColor4');
-    this.ChartDataSets[0].backgroundColor[4] = this.style.getPropertyValue('--chartColor5');
-    this.ChartDataSets[0].backgroundColor[5] = this.style.getPropertyValue('--chartColor6');
-    this.ChartDataSets[0].backgroundColor[6] = this.style.getPropertyValue('--chartColor7');
-    this.ChartDataSets[0].backgroundColor[7] = this.style.getPropertyValue('--chartColor8');
-    this.ChartDataSets[0].backgroundColor[8] = this.style.getPropertyValue('--chartColor9');
-    this.ChartDataSets[0].backgroundColor[9] = this.style.getPropertyValue('--chartColor10');
+    this.chartDataSets[0].backgroundColor[0] = this.style.getPropertyValue('--chartColor1');
+    this.chartDataSets[0].backgroundColor[1] = this.style.getPropertyValue('--chartColor2');
+    this.chartDataSets[0].backgroundColor[2] = this.style.getPropertyValue('--chartColor3');
+    this.chartDataSets[0].backgroundColor[3] = this.style.getPropertyValue('--chartColor4');
+    this.chartDataSets[0].backgroundColor[4] = this.style.getPropertyValue('--chartColor5');
+    this.chartDataSets[0].backgroundColor[5] = this.style.getPropertyValue('--chartColor6');
+    this.chartDataSets[0].backgroundColor[6] = this.style.getPropertyValue('--chartColor7');
+    this.chartDataSets[0].backgroundColor[7] = this.style.getPropertyValue('--chartColor8');
+    this.chartDataSets[0].backgroundColor[8] = this.style.getPropertyValue('--chartColor9');
+    this.chartDataSets[0].backgroundColor[9] = this.style.getPropertyValue('--chartColor10');
   }
 
   // public get classes(): string[] {
@@ -78,7 +78,7 @@ export class RdsChartRadarComponent implements OnInit {
         type: 'radar',
         data: {
           labels: this.chartLabels,
-          datasets: this.ChartDataSets,
+          datasets: this.chartDataSets,
         },
         options: this.chartOptions
       });

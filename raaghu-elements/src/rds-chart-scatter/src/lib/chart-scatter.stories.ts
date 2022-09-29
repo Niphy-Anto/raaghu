@@ -20,7 +20,7 @@ const Template: Story<RdsChartScatterComponent> = (args: RdsChartScatterComponen
 
 export const Default = Template.bind({});
 Default.args = {
-  ChartDataSets: [
+  chartDataSets: [
     {
       type: 'scatter',
       label: 'Scatter Dataset',
@@ -87,7 +87,7 @@ Default.args = {
 };
 export const ScatterChartWithMultiAxis = Template.bind({});
 ScatterChartWithMultiAxis.args = {
-  ChartDataSets: [
+  chartDataSets: [
     {
       label: 'Scatter Dataset 1',
       data: [

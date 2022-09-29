@@ -20,7 +20,7 @@ const Template: Story<RdsChartBarHorizontalComponent> = (args: RdsChartBarHorizo
 var delayed: any;
 export const HorizontalBarChart = Template.bind({});
 HorizontalBarChart.args = {
-  ChartDataSets: [
+  chartDataSets: [
     {
       label: 'Dataset 1',
       data: [20, 30, 50, 80, 98, 95, 55],
@@ -76,7 +76,7 @@ HorizontalBarChart.args = {
 };
 export const VerticalBarChart = Template.bind({});
 VerticalBarChart.args = {
-  ChartDataSets: [
+  chartDataSets: [
     {
       label: 'Dataset 1',
       data: [20, 30, 50, 80, 98, 95, 55],
@@ -112,7 +112,7 @@ VerticalBarChart.args = {
 };
 export const StackedBarChart = Template.bind({});
 StackedBarChart.args = {
-  ChartDataSets: [
+  chartDataSets: [
     {
       label: 'Dataset 1',
       data: [20, 30, 50, 80, 98, 95, 55],
@@ -153,7 +153,7 @@ StackedBarChart.args = {
 };
 export const BarChartWithBorderRadius = Template.bind({});
 BarChartWithBorderRadius.args = {
-  ChartDataSets: [
+  chartDataSets: [
     {
       label: 'Fully Rounded',
       data: [20, 30, 50, 80, 98, 95, 55],

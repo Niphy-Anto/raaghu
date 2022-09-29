@@ -356,12 +356,13 @@ export class RdsCompDemouiComponent implements OnInit {
     "pointStyle": "star",
     "radius": 7,
     "responsive": true,
+    maintainAspectRatio: false,
     "backgroundColor": [
       "#EDB371"
     ],
     "plugins": {
       "legend": {
-        "position": "left",
+        "position": "top",
         "align": "start",
         "pointStyle": "bottom",
         "labels": {
@@ -500,7 +501,7 @@ export class RdsCompDemouiComponent implements OnInit {
   // area chart start
 
 
-  chartDAtaSetsArea = [
+  chartDataSetsArea = [
     {
       "label": "Dataset 1",
       "data": [
@@ -531,17 +532,18 @@ export class RdsCompDemouiComponent implements OnInit {
 
   chartOptionsArea = {
     "pointStyle": "star",
+    maintainAspectRatio: false,
     "radius": 7,
     chartWidth: 650,
     chartHeight: 350,
-    "responsive": true,
+    responsive: true,
     "backgroundColor": [
       "#01AE9D",
       // "#E1E1E1"
     ],
     "plugins": {
       "legend": {
-        "position": "left",
+        "position": "top",
         "align": "start",
         "pointStyle": "bottom",
         "labels": {
@@ -782,7 +784,7 @@ export class RdsCompDemouiComponent implements OnInit {
     }
   }
 
-  ChartDataSetsBubble = [
+  chartDataSetsBubble = [
     {
       "label": "Dataset 1",
       "data": [
@@ -973,28 +975,51 @@ export class RdsCompDemouiComponent implements OnInit {
     }
   }
 
-  ChartDataSetsDoughnut = [
-    {
-      "label": "Dataset 1",
-      "data": [
-        20,
-        10,
-        30,
-        40,
-        45
-      ],
-      "backgroundColor": [
-        "#ff6384",
-        "#ff9f40",
-        "#ffcd56",
-        "#4bc0c0"
-      ],
-      "borderColor": [
-        "#fff"
-      ],
-      borderWidth: 1,
-      cutout: '80%',
+  // chartDataSetsDoughnut = [
+  //   {
+  //     "label": "Dataset 1",
+  //     "data": [
+  //       20,
+  //       10,
+  //       30,
+  //       40,
+  //       45
+  //     ],
+  //     "backgroundColor": [
+  //       "#ff6384",
+  //       "#ff9f40",
+  //       "#ffcd56",
+  //       "#4bc0c0"
+  //     ],
+  //     "borderColor": [
+  //       "#fff"
+  //     ],
+  //     borderWidth: 1,
+  //     cutout: '80%',
 
+  //   }
+  // ];
+
+  // chartLabelsDoughnut = [
+  //   "Persian Green",
+  //   "Portage",
+  //   "Carrot Orange",
+  //   "Shamrock",
+  //   "Blue"
+  // ];
+  chartDataSetsDoughnut = [
+    {
+      label: 'Dataset 1',
+      data: [20, 10, 30, 15, 25],
+      backgroundColor: [
+        '#ff6384',
+        '#ff9f40',
+        '#ffcd56',
+        '#4bc0c0'
+      ],
+      borderColor: [
+        '#fff',
+      ],
     }
   ];
 
@@ -1005,59 +1030,75 @@ export class RdsCompDemouiComponent implements OnInit {
     "Shamrock",
     "Blue"
   ];
-
   chartOptionsDoughnut = {
-    "type": "doughnut",
-    maintainAspectRatio: true,
-    responsive: true,
-    chartWidth: 120,
-    "options": {
-      "responsive": true,
-      "plugins": {
-        "legend": {
-          "position": "top"
+    maintainAspectRatio: false,
+    type: 'doughnut',
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          position: 'top',
         },
-        "title": {
-          "display": true,
-          // "text": "Chart.js Doughnut Chart"
+        title: {
+          display: true,
+          text: 'Chart.js Doughnut Chart'
         }
       }
     },
-    plugins: {
-
-      series: {
-        label: {
-          position: "inside",
-          text: 'total', // or "inside" | "outside"
-          display: false
-        }
-      },
-      doughnutlabel: {
-        labels: [{
-          text: '550',
-          font: {
-            size: 20,
-            weight: 'bold'
-          }
-        }, {
-          text: 'total'
-        }
-        ]
-      },
-      legend: {
-        display: true,
-        align: "middle",
-        position: 'right',
-        labels: {
-          boxWidth: 15,
-          padding: 20
-        },
-      },
-    },
-    "scales": {}
   };
+  // chartOptionsDoughnut = {
+  //   "type": "doughnut",
+  //   maintainAspectRatio: true,
+  //   responsive: true,
+  //   chartWidth: 120,
+  //   "options": {
+  //     "responsive": true,
+  //     "plugins": {
+  //       "legend": {
+  //         "position": "top"
+  //       },
+  //       "title": {
+  //         "display": true,
+  //         // "text": "Chart.js Doughnut Chart"
+  //       }
+  //     }
+  //   },
+  //   plugins: {
 
-  ChartDataSetsLine = [
+  //     series: {
+  //       label: {
+  //         position: "inside",
+  //         text: 'total', // or "inside" | "outside"
+  //         display: false
+  //       }
+  //     },
+  //     doughnutlabel: {
+  //       labels: [{
+  //         text: '550',
+  //         font: {
+  //           size: 20,
+  //           weight: 'bold'
+  //         }
+  //       }, {
+  //         text: 'total'
+  //       }
+  //       ]
+  //     },
+  //     legend: {
+  //       display: true,
+  //       align: "middle",
+  //       position: 'right',
+  //       labels: {
+  //         boxWidth: 15,
+  //         padding: 20
+  //       },
+  //     },
+  //   },
+  //   "scales": {}
+  // };
+
+  chartDataSetsLine = [
     {
       "label": "My First Dataset",
       "data": [
@@ -1341,7 +1382,7 @@ export class RdsCompDemouiComponent implements OnInit {
 
   // barchart thickline end
 
-  ChartDataSetsChartMixed = [
+  chartDataSetsChartMixed = [
     {
       "type": "bar",
       "label": "Bar Dataset",
@@ -1516,7 +1557,7 @@ export class RdsCompDemouiComponent implements OnInit {
     "Blue"
   ];
 
-  ChartDataSetsPieChat = [
+  chartDataSetsPieChat = [
     {
       "label": "Dataset1",
       "data": [
@@ -1639,7 +1680,7 @@ export class RdsCompDemouiComponent implements OnInit {
     "Blue"
   ];
 
-  ChartDataSetsPolar = [
+  chartDataSetsPolar = [
     {
       "label": "Dataset 1",
       "data": [
@@ -1778,7 +1819,7 @@ export class RdsCompDemouiComponent implements OnInit {
     "July"
   ];
 
-  ChartDataSetsRadar = [
+  chartDataSetsRadar = [
     {
       "label": "Dataset 1",
       "data": [
@@ -1961,7 +2002,7 @@ export class RdsCompDemouiComponent implements OnInit {
     "April"
   ];
 
-  ChartDataSetsScatter = [
+  chartDataSetsScatter = [
     {
       "type": "scatter",
       "label": "Scatter Dataset",
@@ -2120,7 +2161,7 @@ export class RdsCompDemouiComponent implements OnInit {
 
   chartLabelsScatterMulti = ['January', 'February', 'March', 'April'];
 
-  ChartDataSetsScatterMulti = [
+  chartDataSetsScatterMulti = [
     {
       label: 'Scatter Dataset 1',
       data: [
@@ -2185,7 +2226,7 @@ export class RdsCompDemouiComponent implements OnInit {
     "Dec"
   ];
 
-  ChartDataSetsStacked = [
+  chartDataSetsStacked = [
     {
       "label": "My Second dataset",
       "data": [

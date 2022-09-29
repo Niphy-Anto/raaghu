@@ -37,7 +37,7 @@ export class RdsChartBoolComponent implements OnInit, AfterViewInit {
   @Input() chartHeight = 400;
   @Input() chartLabels?: any;
   @Input() centerIconName: string = '';
-  @Input() ChartDataSets?: ChartDataSetBool[] | any;
+  @Input() chartDataSets?: ChartDataSetBool[] | any;
 
   @Input() chartOptions?: any;
   @Input() centerSvg: any;
@@ -48,15 +48,15 @@ export class RdsChartBoolComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
 
-    // this.ChartDataSets[0].backgroundColor[1] = this.style.getPropertyValue('--chartColor2');
-    // this.ChartDataSets[0].backgroundColor[2] = this.style.getPropertyValue('--chartColor1');
-    // this.ChartDataSets[0].backgroundColor[3] = this.style.getPropertyValue('--chartColor4');
-    // this.ChartDataSets[0].backgroundColor[4] = this.style.getPropertyValue('--chartColor5');
-    // this.ChartDataSets[0].backgroundColor[5] = this.style.getPropertyValue('--chartColor6');
-    // this.ChartDataSets[0].backgroundColor[6] = this.style.getPropertyValue('--chartColor7');
-    // this.ChartDataSets[0].backgroundColor[7] = this.style.getPropertyValue('--chartColor8');
-    // this.ChartDataSets[0].backgroundColor[8] = this.style.getPropertyValue('--chartColor9');
-    // this.ChartDataSets[0].backgroundColor[9] = this.style.getPropertyValue('--chartColor3');
+    // this.chartDataSets[0].backgroundColor[1] = this.style.getPropertyValue('--chartColor2');
+    // this.chartDataSets[0].backgroundColor[2] = this.style.getPropertyValue('--chartColor1');
+    // this.chartDataSets[0].backgroundColor[3] = this.style.getPropertyValue('--chartColor4');
+    // this.chartDataSets[0].backgroundColor[4] = this.style.getPropertyValue('--chartColor5');
+    // this.chartDataSets[0].backgroundColor[5] = this.style.getPropertyValue('--chartColor6');
+    // this.chartDataSets[0].backgroundColor[6] = this.style.getPropertyValue('--chartColor7');
+    // this.chartDataSets[0].backgroundColor[7] = this.style.getPropertyValue('--chartColor8');
+    // this.chartDataSets[0].backgroundColor[8] = this.style.getPropertyValue('--chartColor9');
+    // this.chartDataSets[0].backgroundColor[9] = this.style.getPropertyValue('--chartColor3');
   }
 
 
@@ -64,7 +64,7 @@ export class RdsChartBoolComponent implements OnInit, AfterViewInit {
 
     // if (this.chartBackgroundColor) {
     //   this.style = getComputedStyle(document.body);
-    //   this.ChartDataSets[0].backgroundColor[0] = this.style.getPropertyValue(this.chartBackgroundColor);
+    //   this.chartDataSets[0].backgroundColor[0] = this.style.getPropertyValue(this.chartBackgroundColor);
     // }
     // console.log(this.chartId);
     // var canvass = document.getElementById(this.chartId) as HTMLCanvasElement;
@@ -87,7 +87,7 @@ export class RdsChartBoolComponent implements OnInit, AfterViewInit {
     //this.canvas.style.backgroundColor=this.CanvasbackgroundColor;
     this.ctx = this.canvas.getContext('2d');
     this.style = getComputedStyle(document.body);
-    this.ChartDataSets.forEach((element: any) => {
+    this.chartDataSets.forEach((element: any) => {
       element.backgroundColor.forEach((bg: any, index: number) => {
         if (bg && this.style) {
           element.backgroundColor[index] = (this.style.getPropertyValue(bg)) ? this.style.getPropertyValue(bg) : bg
@@ -115,7 +115,7 @@ export class RdsChartBoolComponent implements OnInit, AfterViewInit {
       type:'doughnut',
       data: {
         labels: this.chartLabels,
-        datasets: this.ChartDataSets,
+        datasets: this.chartDataSets,
       },
 
       options: this.chartOptions,

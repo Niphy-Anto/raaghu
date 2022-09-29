@@ -22,7 +22,7 @@ const Template: Story<RdsChartStackedComponent> = (args: RdsChartStackedComponen
 });
 export const Default = Template.bind({});
 Default.args = {
-  ChartDataSets: [
+  chartDataSets: [
     {
       label: 'My Second dataset',
       data: [131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142],

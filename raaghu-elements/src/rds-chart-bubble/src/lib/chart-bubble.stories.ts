@@ -21,7 +21,7 @@ const Template: Story<RdsChartBubbleComponent> = (args: RdsChartBubbleComponent)
 
 export const Default = Template.bind({});
 Default.args = {
-  ChartDataSets: [
+  chartDataSets: [
     {
       label: 'Dataset 1',
       data: [90, 97, 20, 30, 40, 50, 60, 70],

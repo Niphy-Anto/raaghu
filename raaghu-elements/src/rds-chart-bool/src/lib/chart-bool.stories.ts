@@ -18,7 +18,7 @@ const Template: Story<RdsChartBoolComponent> = (args: RdsChartBoolComponent) => 
 
 export const Default = Template.bind({});
 Default.args = {
-  ChartDataSets: [
+  chartDataSets: [
     {
       label: 'Dataset 1',
       data: [20, 10],
