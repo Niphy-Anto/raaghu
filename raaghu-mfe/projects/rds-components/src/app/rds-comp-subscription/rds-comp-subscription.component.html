@@ -13,7 +13,7 @@
 <div class="row mt-2">
   <div class="col-md-12 text-center">
     <div class="px-2 my-4" *ngFor="let item of Dataset">
-      <rds-card [Data]="subscriptionData" [borderCard]="true" [colorVariant]="item.name" class="border-top-0">
+      <rds-card [colorVariant]="item.name">
         <div class="p-2 bg-primary" header>
           <span class="p-2 text-white">{{item.name}}</span>
         </div>

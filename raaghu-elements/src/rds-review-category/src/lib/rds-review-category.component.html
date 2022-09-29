@@ -15,7 +15,7 @@
         </div>
         <div class="col-md-3">
          <div class="mb-3">
-          <rds-rating [WithNoOfReviews]="false" [rating]="5" Size="medium" [colorVariant]="'review'">
+          <rds-rating  [rating]="5" Size="medium" colorVariant="review">
           </rds-rating>
          </div>
         </div>
@@ -65,8 +65,8 @@
             <rds-label [label]="item.name" [multiline]="false" [bold]="true" [italic]="false" class="my-1"></rds-label>
           </div>
           <div>
-            <rds-rating [withNoOfReviews]="false" [rating]="4" [noOfReview]="123" Size="small"
-              [colorVariant]="'review'"></rds-rating>
+            <rds-rating [rating]="4" [noOfReview]="123" Size="small"
+              colorVariant="review"></rds-rating>
           </div>
           <div class="mt-3">
             <rds-like-dislike [likeCount]="0" [dislikeCount]="0" [min]="0" (onClick)="onClick($event)">
