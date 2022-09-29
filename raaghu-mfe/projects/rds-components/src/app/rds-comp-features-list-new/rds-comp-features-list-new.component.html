@@ -2,10 +2,12 @@
 <div class="row mt-5 flex-row flex-code"   >
     <div class="col-md-2 " *ngFor="let item of EditionData" >
        
-            <rds-card   [custClass]="true" 
-               [customTopBottom]="false"  >
-             <ng-template #header>
-                    <div class="text-center mt-3">
+            <rds-card [showHeader]=""
+            [showBody]=""
+            [showFooter]=""  [custClass]="true" [borderColor]="'primary'"
+             [customTopBottom]="false"  >
+             <div showHeader header>
+                    <div class="text-center mt-3 ">
                   
                         <rds-label [bold]="true" [label]="item.EditionName"></rds-label>
                         <p class="titleClass fw-bold text-muted">{{item.EditionTitle}}</p>
@@ -17,49 +19,50 @@
                             </div>
                             
                   </div>
-                </ng-template>
-                <ng-template #body>
+                </div>
+                <div body>
                     <!-- <div class="row ">
                         <ul>
                             <li class="fs-6">{{item.features.label}}</li>
                            
                           </ul> 
                     </div> -->
-                </ng-template>
-                <ng-template #footer>
-                    <div class="row mt-2">
+                </div>
+                <div footer>
+                    <div class="row mb-3 ms-2 " >
                         <div class="col-md-2">
                             <rds-button colorVariant="primary" [block]="false" size="small" [outlineButton]="true"
                                 [roundedButton]="true" [roundedCorner]="true" [iconStroke]="true" [iconFill]="false" 
                                 buttonType="iconLabel" icon="pencil" iconHeight="12px" iconWidth="12px" (click)="onEdit()"></rds-button>
                         </div>
-                        <div class="col-md-2 ms-1">
+                        <div class="col-md-2 ms-1 ">
                             <rds-button colorVariant="danger" size="small" [outlineButton]="true" [roundedButton]="true"
                                 [roundedCorner]="true" [iconStroke]="true" [iconFill]="false" buttonType="iconLabel" iconHeight="12px" iconWidth="12px"
                                 icon="delete" (click)="openConfirmationPopup()"></rds-button>
                         </div>
                     </div>
-                </ng-template>
+                </div>
             </rds-card>
        
       </div>
-    <div class="col-md-2 mt-1 ">
-        <rds-card   [custClass]="true"
-         [customTopBottom]="false" class="add">
+    <div class="col-md-2  ">
+        <rds-card [showHeader]=""
+        [showBody]=""
+        [showFooter]=""  [custClass]="true" [borderColor]="'primary'" [customTopBottom]="false" >
         
-        <ng-template #header>
+        <div header>
             <div class="mb-5"></div>
-        </ng-template>
-        <ng-template #body class="ms-5 mt-3 ">
-              <div class=" ms-5 mt-4"><rds-button [label]="'NEW EDITION'" class="ms-3" type="button" [colorVariant]="'primary'" (click)="openCanvas()"
+        </div>
+        <div body class="ms-5 mt-3 ">
+              <div class=" mb-5 mt-4"><rds-button [label]="'NEW EDITION'" class="ms-3" type="button" [colorVariant]="'primary'" (click)="openCanvas()"
                 [attr.aria-controls]="'addNewEdition'" [icon]="'plus'" iconHeight="12px"   [roundedButton]="true"  iconWidth="12px" [size]="'small'">
             </rds-button>
           </div>
                 
-        </ng-template>
-        <ng-template #footer>
-            <div class="mb-5"></div>
-        </ng-template>
+        </div>
+        <div footer class="mt-5">
+            
+        </div>
         </rds-card>
         
     </div>
@@ -94,7 +97,7 @@
         </div>
     </div>
     <div class="footer-buttons my-2">
-        <rds-button [label]="'Cancel'" [colorVariant]="'primary'" [outlineButton]="true" [size]="'small'" (click)="closeMoveTenantCanvas()"
+        <rds-button [label]="'Cancel'" [colorVariant]="'primary'" [size]="'small'" [outlineButton]="true" (click)="closeMoveTenantCanvas()"
                     data-bs-dismiss="offcanvas">
         </rds-button>
         <rds-button [label]="'Create'" [size]="'small'" class="ms-2" (click)="onSave()"

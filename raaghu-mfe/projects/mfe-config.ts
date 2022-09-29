@@ -131,7 +131,5 @@ export const MfeConfig = {
   auditLognew: {
     url: 'http://localhost:5061/remoteEntry.js',
   },
-  editionnew: {
-    url: 'http://localhost:5062/remoteEntry.js',
-  }
+ 
 };

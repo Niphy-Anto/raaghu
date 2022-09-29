@@ -20,7 +20,7 @@ export class RdsCompFeaturesListNewComponent implements OnInit {
   @Input() public PlanList: any = [];
   @Input() editionData: any;
   @Input() public EditionList: any = [];
-  @Output() saveEditionData = new EventEmitter<any>();
+  @Output() onEditionSave = new EventEmitter<any>();
   public editionBasic: any = {
     editionData: undefined,
     featuresData: undefined
@@ -144,7 +144,7 @@ export class RdsCompFeaturesListNewComponent implements OnInit {
   }
   onSave():void{
     console.log(this.editionBasic);
-    this.saveEditionData.emit(this.editionBasic)
+    this.onEditionSave.emit(this.editionBasic)
       this.isReset = true;
       this.activePage = 0;
       this.close();
