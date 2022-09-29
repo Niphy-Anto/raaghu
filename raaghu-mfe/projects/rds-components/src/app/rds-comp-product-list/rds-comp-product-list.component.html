@@ -306,7 +306,7 @@
     </div>
     <div *ngSwitchCase="'cardWithFullDetails'">
       <div class="row">
-        <div class="col-md-4" *ngFor="let item of productListItems">
+        <div class="col-md-4 mb-3" *ngFor="let item of productListItems">
           <rds-card [header]="header" [body]="body" [borderCard]="true" [footer]="footer" [custClass]="true"
             [custSidePadding]="false" class="rounded-avatar-basic">
             <ng-template #header>
