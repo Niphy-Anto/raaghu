@@ -170,7 +170,6 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
 
 
     this.userAuthService.getPermissions().subscribe(res => {
-      debugger
       if (res) {
         this.filterNavItems(this.sidenavItemsOriginal, res, this.sidenavItems);
       }

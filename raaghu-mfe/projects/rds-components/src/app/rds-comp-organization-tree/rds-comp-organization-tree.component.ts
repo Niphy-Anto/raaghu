@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Injector, Input, OnInit, Output, SimpleChanges } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormControlName, FormGroup, NgForm, Validators } from '@angular/forms';
 import { ComponentLoaderOptions, MfeBaseComponent } from '@libs/shared';
 import { OrganizationTreeLabeles, OrganizationTreeNode, OrganizationTreeType } from '../../models/organization-tree.model';
 import { AlertPopupData } from '../rds-comp-alert-popup/rds-comp-alert-popup.component';
@@ -17,12 +17,17 @@ export class RdsOrganizationTreeComponent extends MfeBaseComponent implements On
     super(injector);
   }
   public rdsAlertMfeConfig: ComponentLoaderOptions;
+  nodeForm :  FormGroup
+   ItemsDescription: FormControl;
   ngOnInit(): void {
-
-    this.nodeForm = this.formBuilder.group({
-      itemCodeData: ['', Validators.required],
-      ItemDescription: ['', Validators.required]
-    })
+ this.ItemsDescription= new FormControl('',[Validators.required,Validators.minLength(10)]);
+ this.nodeForm= new FormGroup({
+  'ItemsDescription': this.ItemsDescription
+ })
+    // this.nodeForm = this.formBuilder.group({
+    //   itemCodeData: ['', Validators.required],
+    //   ItemDescription: ['', Validators.required]
+    // })
     this.nodeEditForm = this.formBuilder.group({
       ItemDescription: ['', Validators.required]
     })
@@ -56,7 +61,8 @@ export class RdsOrganizationTreeComponent extends MfeBaseComponent implements On
 
 
 
-  public nodeForm = new FormGroup({})
+  
+  //public nodeForm = new FormGroup({})
   public nodeEditForm = new FormGroup({})
   public NetednodeForm = new FormGroup({})
   disableSaveButton: boolean;
@@ -116,6 +122,7 @@ export class RdsOrganizationTreeComponent extends MfeBaseComponent implements On
   nodeLabel!: string;
   itemCode: any;
   ItemDescription: any;
+
   itemcodeRequiredMessage: boolean;
   DescriptionRequiredMessage: boolean;
   offcanvasTitleModel: string = "New Organization Unit";
@@ -132,10 +139,10 @@ export class RdsOrganizationTreeComponent extends MfeBaseComponent implements On
     this.ItemDescription = '';
     this.selectedNestedNode = node;
   }
-
-
+formSubmitted=false;
   pushNode() {
     this.onChildSave.emit({ parentId: this.itemCode, displayName: this.ItemDescription })
+    this.formSubmitted=true;
   }
 
   pushNestedNode() {
@@ -156,11 +163,7 @@ export class RdsOrganizationTreeComponent extends MfeBaseComponent implements On
     return true;
   }
 
-  selectNode(node: OrganizationTreeNode, event: any) {
-    node.selected = event.target.checked;
-    this.SelectAll = this.checkAllSelectorNot()
-    this.onSelectnode.emit({ item: node })
-  }
+
 
   onClicknode(node: any) {
     this.unselectAllNode(this.organizationTreeData);

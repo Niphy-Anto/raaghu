@@ -13,7 +13,7 @@
 // import { EditionsComboboxState, TenantFeatureState, TenantInfoState, TenantState } from './state/tenant/tenant.reducer';
 // import { AuditLogsState } from './state/audit-logs/audit-logs.reducer';
 // import { AllDynamicEntitySate, AllDynamicPropertyEntitySate, DynamicEntityState, DynamicPermissionState, DynamicPropertyState, EditDynampicPropertState, InputPropertynameState } from './state/dynamic-property-management/dynamic-property.reducer';
-// import { OrganizationUnitState } from './state/organization-unit/organization-unit.reducer';
+ import { OrganizationUnitState } from './state/organization-unit/organization-unit.reducer';
 // import { EditUserPermissionSate, EditUserSate, UserPermissionFilterState, UsersState } from './state/user/user.reducer';
 // //import { SettingsState, ValidateTenantState } from '../public-api';
 // import { MLAState } from './state/mla/mla.reducer';
@@ -30,7 +30,7 @@ export interface AppState {
   // webhookSubscriptions: WebhookSubscriptionState,
   // profile: profileState,
   // dynamicProperty: DynamicPropertyState,
-  // organizationUnit: OrganizationUnitState
+   organizationUnit: OrganizationUnitState
   // dynamicEntity: DynamicEntityState,
   // editions: EditionsState,
   // roles: RolesState,
