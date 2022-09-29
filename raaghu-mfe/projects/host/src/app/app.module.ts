@@ -88,7 +88,7 @@ export function getRemoteServiceBaseUrl(): any {
       <img class="pe-3" src="{{image}}" width=\"80px\" ></img>
       <span id="cookieconsent:desc" class="cc-message">{{message}} </span>
       `,  
-  }, 
+  },
   content: {    
     policy: 'Rds Cookies',
     image: '../assets/cookie.svg',   

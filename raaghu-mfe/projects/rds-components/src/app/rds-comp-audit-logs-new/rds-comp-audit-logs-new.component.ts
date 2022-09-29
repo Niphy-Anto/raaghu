@@ -21,29 +21,30 @@ export class RdsCompAuditLogsNewComponent implements OnInit {
   maxDuration: any;
   httpStatus:any;
   httpStatusList: any=[  
-  { value: 1, displayText: '100-Continue' },
-  { value: 2, displayText: '101-Switching Protocols' },
-  { value: 3, displayText: '102-Processing' },
-  { value: 4, displayText: '103-Early Hints' },
-  { value: 5, displayText: '200-Ok' },
-  { value: 6, displayText: '201-Created' }
+  { value: '100-Continue', displayText: '100-Continue' },
+  { value: '101-Switching Protocols', displayText: '101-Switching Protocols' },
+  { value: '102-Processing', displayText: '102-Processing' },
+  { value: '103-Early Hints', displayText: '103-Early Hints' },
+  { value: '200-Ok', displayText: '200-Ok' },
+  { value: '201-Created', displayText: '201-Created' }
 ];
   httpMethod:any;
   httpMethodList: any= [
-    { value: 1, displayText: 'GET' },
-    { value: 2, displayText: 'POST' },
-    { value: 3, displayText: 'DELETE' },
-    { value: 4, displayText: 'PUT' },
-    { value: 5, displayText: 'HEAD' },
-    { value: 6, displayText: 'TRACE' }
+    { value: 'GET', displayText: 'GET' },
+    { value: 'POST', displayText: 'POST' },
+    { value: 'DELETE', displayText: 'DELETE' },
+    { value: 'PUT', displayText: 'PUT' },
+    { value: 'HEAD', displayText: 'HEAD' },
+    { value: 'TRACE', displayText: 'TRACE' }
   ];
   hasExceptionList:any=[
-    { value: 1, displayText: 'Yes' },
-    { value: 2, displayText: 'No' }
+    { value: true, displayText: 'Yes' },
+    { value: false, displayText: 'No' }
   ];
   hasException:any='';
   appName:any='';
   correlationID:any='';
+  browserInfo:any = '';
   selectedRowData: any;
   activePage: number = 0;
   actions: TableAction[] = [{ id: 'details', displayName: this.translate.instant('Details') },];
@@ -58,7 +59,7 @@ export class RdsCompAuditLogsNewComponent implements OnInit {
   viewAuditLogsCanvas: boolean = false;
   constructor( private sharedService:SharedService,
     public translate:TranslateService) { }
-
+  
   ngOnInit(): void {
   }
   startDateModify(event) {
@@ -104,21 +105,19 @@ export class RdsCompAuditLogsNewComponent implements OnInit {
     if (this.startDate && this.endDate) {
       this.parameterData.emit({
         startDate: this.startDate, endDate: this.endDate, userName: this.user, urlFilter : this.urlFilter, MinDuration: this.minDuration,MaxDuration: this.maxDuration,
-        HttpStatus: this.httpStatus,HttpMethod:this.httpMethod,AppName:this.appName,CorrelationID: this.correlationID,HasException:this.hasException
-        // minExecutionDuration: this.from, maxExecutionDuration: this.to, MethodName: this.action, HasException: this.status, BrowserInfo: this.browserInfo
+        HttpStatus: this.httpStatus,HttpMethod:this.httpMethod,AppName:this.appName,CorrelationID: this.correlationID,HasException:this.hasException,BrowserInfo: this.browserInfo
       })
+      
     }
   }
   onActionSelect(event: any): void {
     if (event.actionId === 'details') {
       console.log(event.selectedData);
       this.selectedRowData = event.selectedData;
-      // this.deleteEdition.emit(event.selectedData);
       this.showAuditLogDetail();
     }
   }
   delete(event: any): void {
-
     this.deleteEvent.emit(event);
   }
   onClose(): void {
