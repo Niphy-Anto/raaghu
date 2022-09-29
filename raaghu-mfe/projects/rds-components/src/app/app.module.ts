@@ -147,6 +147,9 @@ import { RdsCompTimelineComponent } from './rds-comp-timeline/rds-comp-timeline.
 import { RdsCompApplyForPositionComponent } from './rds-comp-apply-for-position/rds-comp-apply-for-position.component';
 import { RdsCompOpenPositionComponent } from './rds-comp-open-position/rds-comp-open-position.component';
 import { RdsCompNotificationSettingsComponent } from './rds-comp-notification-settings/rds-comp-notification-settings.component';
+import { RdsCompUserBasicProfileRightComponent } from './rds-comp-user-basic-profile-right/rds-comp-user-basic-profile-right.component';
+import { RdsCompUserPermissionsNewComponent } from './rds-comp-user-permissions-new/rds-comp-user-permissions-new.component';
+import { RdsCompAuditLogsNewComponent } from './rds-comp-audit-logs-new/rds-comp-audit-logs-new.component';
 
 @NgModule({
   declarations: [	
@@ -286,6 +289,9 @@ import { RdsCompNotificationSettingsComponent } from './rds-comp-notification-se
     RdsCompApplyForPositionComponent,
     RdsCompOpenPositionComponent,
     RdsCompNotificationSettingsComponent,
+    RdsCompUserBasicProfileRightComponent,
+    RdsCompUserPermissionsNewComponent,
+    RdsCompAuditLogsNewComponent,
   
   ],
   imports: [

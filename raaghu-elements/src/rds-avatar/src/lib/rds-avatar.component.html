@@ -1,8 +1,7 @@
 <div [ngClass]="{ 'd-flex': !verticallyAlligned }">
   <div *ngIf="withProfilePic" class="flex-grow-0 d-flex align-items-center">
-    <img [src]="profilePic" class="rounded-circle avatar" [ngClass]="classes" *ngIf="!verticallyAlligned" />
-    <img [src]="profilePic" class="mx-4 rounded-circle avatar" [ngClass]="classes"
-      *ngIf="verticallyAlligned" />
+    <img [src]="profilePic"  class="avatar w-100" [ngClass]="classes"  />
+
   </div>
   <div *ngIf="!withProfilePic" class="d-flex justify-content-center align-items-center avatar rounded-circle"
     [ngClass]="classes">
@@ -13,11 +12,10 @@
 
         {{ this.firstName.charAt(0).toUpperCase() }}{{ this.lastName.charAt(0).toUpperCase() }}
       </div>
-
     </div>
   </div>
 
-  <div class="flex-grow-1 align-items-center" [ngClass]="{ 'ms-2': !verticallyAlligned }">
+  <!-- <div class="flex-grow-1 align-items-center" [ngClass]="{ 'ms-2': !verticallyAlligned }">
     <ng-content></ng-content>
-  </div>
+  </div> -->
 </div>
