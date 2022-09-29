@@ -1,4 +1,4 @@
-import { RdsLabelModule } from "@libs/rds-elements";
+import { RdsButtonModule, RdsLabelModule } from "@libs/rds-elements";
 import { Meta, moduleMetadata, Story } from "@storybook/angular";
 import { RdsCompBackgroundImageComponent } from "./rds-comp-background-image.component";
 
@@ -10,7 +10,7 @@ export default {
         moduleMetadata({
             declarations: [RdsCompBackgroundImageComponent],
             imports: [
-                RdsLabelModule
+                RdsLabelModule,RdsButtonModule
             ],
         })
     ]
