@@ -2,8 +2,8 @@
 <div class="row mt-5 flex-row flex-code"   >
     <div class="col-md-2 " *ngFor="let item of EditionData" >
        
-            <rds-card [header]="header" [body]="body" [custClass]="true" [borderCard]="true"
-                [footer]="footer" [customTopBottom]="false"  >
+            <rds-card   [custClass]="true" 
+               [customTopBottom]="false"  >
              <ng-template #header>
                     <div class="text-center mt-3">
                   
@@ -44,8 +44,8 @@
        
       </div>
     <div class="col-md-2 mt-1 ">
-        <rds-card [header]="header" [body]="body"  [custClass]="true" [borderCard]="true"
-        [footer]="footer" [customTopBottom]="false" class="add">
+        <rds-card   [custClass]="true"
+         [customTopBottom]="false" class="add">
         
         <ng-template #header>
             <div class="mb-5"></div>
@@ -94,7 +94,7 @@
         </div>
     </div>
     <div class="footer-buttons my-2">
-        <rds-button [label]="'Cancel'" [colorVariant]="'outline-primary'" [size]="'small'" (click)="closeMoveTenantCanvas()"
+        <rds-button [label]="'Cancel'" [colorVariant]="'primary'" [outlineButton]="true" [size]="'small'" (click)="closeMoveTenantCanvas()"
                     data-bs-dismiss="offcanvas">
         </rds-button>
         <rds-button [label]="'Create'" [size]="'small'" class="ms-2" (click)="onSave()"

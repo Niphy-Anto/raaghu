@@ -12,9 +12,9 @@
         </div>
         <div class="col-md-6">
             <div class="form-group">
-                <rds-select-list [labelText]="'Plan'"
+                <rds-select-list [label]="'Plan'"
                     [isRequired]=true  ngDefaultControl LabelType="Top"
-                    name="edition" [itemList]="PlanList" required [placeholderText]="'Select Plan'"
+                    name="edition" [itemList]="PlanList" required [placeholder]="'Select Plan'"
                     [(ngModel)]="editionData.editionPlan" #editionPlan="ngModel">
                
 
