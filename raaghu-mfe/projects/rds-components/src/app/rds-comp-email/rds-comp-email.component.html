@@ -1,4 +1,4 @@
-<div class="container pt-5 ps-0" *ngIf="!editShimmer">
+<div class="pt-5 ps-0" *ngIf="!editShimmer">
   <!--<app-rds-comp-open-position [item]="openPositions"></app-rds-comp-open-position>-->
 
   <form #emailForm="ngForm">
@@ -75,7 +75,7 @@
       <div class="col-md-6">
         <div class="form-group mb-3 mt-1 pt-4">
           <rds-button [tooltipPlacement]="'bottom'" (click)="sendTestmail()" [id]="'sendTestEmail'" [tooltipTitle]="translate.instant('SEND TEST EMAIL')" [label]="translate.instant('SEND TEST EMAIL')"
-                      type="button" [size]="'Small'" [colorVariant]="'primary'" [outlineButton]="false"></rds-button>
+                      type="button" [size]="'small'" [colorVariant]="'primary'" [outlineButton]="false"></rds-button>
         </div>
       </div>
     </div>

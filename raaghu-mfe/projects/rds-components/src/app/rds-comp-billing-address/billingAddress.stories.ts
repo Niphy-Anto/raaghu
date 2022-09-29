@@ -6,7 +6,7 @@ import { RdsCompBillingAddressComponent } from './rds-comp-billing-address.compo
 
 
 export default {
-    title: 'Components/Billing Adress',
+    title: 'Components/Billing Address',
     component: RdsCompBillingAddressComponent,
     decorators: [
         moduleMetadata({
@@ -28,9 +28,17 @@ const Template: Story<RdsCompBillingAddressComponent> = (args: RdsCompBillingAdd
         ...args
     }
 });
-export const Template1 = Template.bind({});
+export const Default = Template.bind({});
 
-Template1.args = {
-    countryList:["India","China","Canada","Japan","Australia","USA","UK"]
+Default.args = {
+    countryList:[
+        {value: "1", displayText: "India", isSelected: false}
+        ,{value: "2", displayText: "China", isSelected: false}
+        ,{value: "3", displayText: "Canada", isSelected: false}
+        ,{value: "4", displayText: "Japan", isSelected: false}
+        ,{value: "5", displayText: "Australia", isSelected: false}
+        ,{value: "6", displayText: "USA", isSelected: false}
+        ,{value: "7", displayText: "UK", isSelected: false}
+        ]
 }
 

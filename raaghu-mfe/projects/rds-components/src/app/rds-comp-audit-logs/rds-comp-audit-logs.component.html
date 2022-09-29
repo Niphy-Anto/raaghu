@@ -3,11 +3,11 @@
         <div class="col-md-12  text-end position-relative">
             <div class="position-absolute  end-0">
                 <rds-button #operationlog class="action mb-0" *ngIf="selectedIndex==0"
-                    [colorVariant]="'outline-primary'" [size]="'small'" (click)="exportToExcel('operation-logs')"
+                    [colorVariant]="'primary'" [outlineButton]="true" [size]="'small'" (click)="exportToExcel('operation-logs')"
                     [label]="translate.instant('Export To Excel')">
                     <rds-icon left name="export_data" height="18px" width="15px"></rds-icon>
                 </rds-button>
-                <rds-button #changelog class="action" *ngIf="selectedIndex==1" [colorVariant]="'outline-primary'"
+                <rds-button #changelog class="action" [outlineButton]="true" *ngIf="selectedIndex==1" [colorVariant]="'primary'"
                     [size]="'small'" (click)="exportToExcel('change-logs')"
                     [label]="translate.instant('Export To Excel')">
                     <!-- <i left class="bi bi-arrow-down"></i> -->
@@ -15,7 +15,8 @@
                 </rds-button>
             </div>
             <rds-nav-tab [navtabsItems]="getNavTabItems()" [horizontalAlignment]="'start'" [verticalAlignment]="false"
-                [pills]="false" [tabs]="true" [fill]="false" (onClicktab)="onSelectnode($event)" [justified]="false"></rds-nav-tab>
+                [pills]="false" [tabs]="true" [fill]="false" (onClicktab)="onSelectnode($event)" [justified]="false">
+            </rds-nav-tab>
         </div>
 
     </div>
@@ -29,13 +30,13 @@
                 <div class="row">
 
                     <div class="col-md-2 sm-p-0 d-flex align-items-center">
-                        <rds-datepicker name="date-picker" [Label]="''" [placeholder]="translate.instant('Start Date')"
+                        <rds-datepicker name="date-picker" [label]="''" [placeholder]="translate.instant('Start Date')"
                             (change)="startDateModify($event)" [(ngModel)]="startDate" [value]="startDate"
                             floatinginputLabel="">
                         </rds-datepicker>
                     </div>
                     <div class="col-md-2 sm-p-0 d-flex align-items-center">
-                        <rds-datepicker name="date-picker" [Label]="''" [placeholder]="translate.instant('End Date')"
+                        <rds-datepicker name="date-picker" [label]="''" [placeholder]="translate.instant('End Date')"
                             (change)="endDateModify($event)" [(ngModel)]="endDate" [value]="endDate"
                             floatinginputLabel="">
                         </rds-datepicker>
@@ -51,7 +52,7 @@
                             (onChange)="showAdvancedFilter()">
                         </rds-checkbox>
                     </div>
-                    
+
                 </div>
 
                 <div class="mobile-btn position-fixed bottom-0 end-0 my-5 me-5">
@@ -91,8 +92,8 @@
                 </div>
                 <div class="col-md-2 mt-2 sm-p-0">
                     <rds-select-list [(ngModel)]="status" (selectListChange)="exceptionModify($event)" [value]="status"
-                        ngDefaultControl name="Property" labelTextHide="false"
-                        [placeholderText]="translate.instant('Select Property')" [itemList]="statusList">
+                        ngDefaultControl name="Property" [placeholder]="translate.instant('Select Property')"
+                        [itemList]="statusList">
 
                     </rds-select-list>
                 </div>
@@ -117,13 +118,13 @@
             <div class="m-1">
                 <div class="row">
                     <div class="col-md-2 sm-p-0 d-flex align-items-center">
-                        <rds-datepicker name="date-picker" [Label]="''" [placeholder]="translate.instant('Date Range')"
+                        <rds-datepicker name="date-picker" [label]="''" [placeholder]="translate.instant('Date Range')"
                             (change)="changelogefiltermodify($event)" [(ngModel)]="changeLogStartdate"
                             [value]="changeLogStartdate">
                         </rds-datepicker>
                     </div>
                     <div class="col-md-2 sm-p-0 d-flex align-items-center">
-                        <rds-datepicker name="date-picker" [Label]="''" [placeholder]="translate.instant('Date Range')"
+                        <rds-datepicker name="date-picker" [label]="''" [placeholder]="translate.instant('Date Range')"
                             (change)="changelogefiltermodify($event)" [(ngModel)]="changeLogEndDate"
                             [value]="changeLogEndDate">
                         </rds-datepicker>
@@ -145,7 +146,7 @@
                             <option>HasError</option>
                         </rds-select-list>
                     </div>
-                   
+
                 </div>
 
                 <div class="mobile-btn position-fixed bottom-0 end-0 my-5 me-5">
@@ -314,10 +315,10 @@
             <div class="col-md-6">
                 <div class="form-group mb-3">
 
-                    <rds-badge *ngIf="!selectedRowData.exception" [label]="'success'" size="small" Types="SUCCESS"
-                        label="9" [colorVariant]="'success'" [pillBadges]="false"></rds-badge>
-                    <rds-badge *ngIf="selectedRowData.exception" [label]="'HasError'" size="smallest" Types="SUCCESS"
-                        label="9" [pillBadges]="false"></rds-badge>
+                    <rds-badge *ngIf="!selectedRowData.exception" [label]="'success'" size="small" label="9"
+                        [colorVariant]="'success'"></rds-badge>
+                    <rds-badge *ngIf="selectedRowData.exception" [label]="'HasError'" size="small" label="9">
+                    </rds-badge>
                 </div>
             </div>
         </div>
