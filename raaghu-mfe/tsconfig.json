@@ -85,11 +85,8 @@
       "@libs/rds-nav-tab": [
         "rds-elements/rds-nav-tab/public-api",
         "rds-elements/rds-nav-tab"
-      ],
-      "@libs/rds-card": [
-        "rds-elements/rds-card/public-api",
-        "rds-elements/rds-card"
       ]
+      
     },
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",

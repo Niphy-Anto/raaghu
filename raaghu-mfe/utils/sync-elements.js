@@ -26,9 +26,7 @@ const dependentElements = [
     'rds-stepper',
     'rds-app-details',
     'rds-team-member',
-    'rds-nav-tab',
-    'rds-app-details',
-    'rds-card'
+    'rds-nav-tab'    
 ];
 
 function replaceFiles() {
@@ -215,16 +213,6 @@ function mergeTSConfigJson() {
             "@libs/rds-nav-tab": [
                 "rds-elements/rds-nav-tab/public-api",
                 "rds-elements/rds-nav-tab"
-            ]
-        };
-        changesDone = true;
-    };
-    if (ngElementsFile.compilerOptions.paths["@libs/rds-card"] == undefined) {
-        ngElementsFile.compilerOptions.paths = {
-            ...ngElementsFile.compilerOptions.paths,
-            "@libs/rds-card": [
-                "rds-elements/rds-card/public-api",
-                "rds-elements/rds-card"
             ]
         };
         changesDone = true;

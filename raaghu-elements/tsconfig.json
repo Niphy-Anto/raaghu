@@ -80,14 +80,7 @@
         "rds-elements/rds-product-image/public-api",
         "rds-elements/rds-product-image"
       ],
-      "@libs/rds-edition": [
-        "rds-elements/rds-edition/public-api",
-        "rds-elements/rds-edition"
-      ],
-      "@libs/rds-card": [
-        "rds-elements/rds-card/public-api",
-        "rds-elements/rds-card"
-      ],
+     
       "@libs/rds-team-member": [
         "rds-elements/rds-team-member/public-api",
         "rds-elements/rds-team-member"
