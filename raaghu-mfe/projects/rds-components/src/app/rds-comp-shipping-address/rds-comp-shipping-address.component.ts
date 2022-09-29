@@ -23,20 +23,20 @@ export class RdsCompShippingAddressComponent implements OnInit {
   @Input() buttonSpinner : boolean =true;
   
   public emailPattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  
+
   ngOnInit(): void {
   }
-  
-  continue(){
-    this.buttonSpinner=true;
+
+  continue() {
+    this.buttonSpinner = true;
 
   }
-  
-  back(){
-    this.buttonSpinner=false;
+
+  back() {
+    this.buttonSpinner = false;
   }
-  SelectCountry(event){
+  SelectCountry(event) {
     console.log(event);
   }
-  
+
 }

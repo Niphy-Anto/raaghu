@@ -36,6 +36,7 @@
     "@ngrx/store-devtools": "13.0.2",
     "@ngx-translate/core": "14.0.0",
     "@ngx-translate/http-loader": "7.0.0",
+    "@popperjs/core": "^2.11.6",
     "angular-draggable-droppable": "^6.1.0",
     "angular-resizable-element": "^5.0.0",
     "autoprefixer": "10.4.5",

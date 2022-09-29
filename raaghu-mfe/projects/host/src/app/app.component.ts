@@ -18,7 +18,7 @@ import { RdsCookieConsentConfig } from 'projects/libs/rds-cookieconsent/src/lib/
 })
 export class AppComponent implements OnInit {
   constructor(
-    public translate: TranslateService, 
+    public translate: TranslateService,   
     private store: Store, 
     private ccService: RdsCookieConsentService,  
     public config: RdsCookieConsentConfig,
@@ -69,7 +69,6 @@ export class AppComponent implements OnInit {
     this.statusChangeSubscription.unsubscribe();
     this.revokeChoiceSubscription.unsubscribe();
     this.noCookieLawSubscription.unsubscribe();
-    this.ccService.destroy();
   }
 }
 

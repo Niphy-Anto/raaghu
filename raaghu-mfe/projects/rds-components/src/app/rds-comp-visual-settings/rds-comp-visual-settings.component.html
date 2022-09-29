@@ -80,8 +80,8 @@
           <div class="row">
             <div class="col-md-4">
               <div class="form-group mb-3">
-                <rds-select-list [value]="visualSettingsMenu.asideSkin" [customIcon]="'chevron-down'" name="Listskin"
-                  [labelText]="translate.instant('Skin')"  LabelType="Top" placeholderText="Select Skin" [itemList]="listskin" [(ngModel)]="visualSettingsMenu.asideSkin">
+                <rds-select-list [value]="visualSettingsMenu.asideSkin"  name="Listskin"
+                  [label]="translate.instant('Skin')"  labelPosition="top" placeholderText="Select Skin" [itemList]="listskin" [(ngModel)]="visualSettingsMenu.asideSkin">
                 </rds-select-list>
               </div>
               <div class="mb-2">
@@ -131,8 +131,8 @@
           <div class="row">
             <div class="col-md-4">
               <div class="form-group mb-3">
-                <rds-select-list [value]="visualSettingsMenu.asideSkin" [customIcon]="'chevron-down'" name="Listskin"
-                  [labelText]="translate.instant('Skin')" [itemList]="listskin" placeholderText="Selct Skin" LabelType="Top" [(ngModel)]="visualSettingsMenu.asideSkin">
+                <rds-select-list [value]="visualSettingsMenu.asideSkin"  name="Listskin"
+                  [label]="translate.instant('Skin')" [itemList]="listskin" placeholderText="Selct Skin" labelPosition="top" [(ngModel)]="visualSettingsMenu.asideSkin">
                 </rds-select-list>
               </div>
               <div class="form-group mb-3">
@@ -157,8 +157,8 @@
 
               </div>
               <div class="form-group mb-3">
-                <rds-select-list [value]="visualSettingsMenu.submenuToggle" [customIcon]="'chevron-down'"
-                  name="ListSubmenu" [labelText]="translate.instant('Submenu Toggle')" placeholderText="Selct Submenu" LabelType="Top" LabelType="Top" [itemList]="listSubmenu"
+                <rds-select-list [value]="visualSettingsMenu.submenuToggle"
+                  name="ListSubmenu" [label]="translate.instant('Submenu Toggle')" placeholderText="Selct Submenu" labelPosition="top"  [itemList]="listSubmenu"
                   [(ngModel)]="visualSettingsMenu.submenuToggle">
 
                 </rds-select-list>
