@@ -353,6 +353,16 @@ export const APP_ROUTES: Routes = [
           }).then((m) => m.AppModule),
 
       },
+      // {
+      //   path: 'editionnew',
+      //   loadChildren: () =>
+      //     loadRemoteModule({
+      //       type: 'module',
+      //       remoteEntry: MfeConfig.editionnew.url,
+      //       exposedModule: './AppModule',
+      //     }).then((m) => m.AppModule),
+
+      // },
      
       // {
       //  path: 'orderdetails',
