@@ -36,21 +36,21 @@ const Template: Story<RdsCompAuditLogsNewComponent> = (args: RdsCompAuditLogsNew
   export const AuditlogNew = Template.bind({});
 
   AuditlogNew.args = {
-    httpMethodList:[
-      { value: 1, displayText: 'GET' },
-      { value: 2, displayText: 'POST' },
-      { value: 3, displayText: 'DELETE' },
-      { value: 4, displayText: 'PUT' },
-      { value: 5, displayText: 'HEAD' },
-      { value:6, displayText: 'TRACE' }
+    httpMethodList: [
+      { value: 'GET', displayText: 'GET' },
+      { value: 'POST', displayText: 'POST' },
+      { value: 'DELETE', displayText: 'DELETE' },
+      { value: 'PUT', displayText: 'PUT' },
+      { value: 'HEAD', displayText: 'HEAD' },
+      { value: 'TRACE', displayText: 'TRACE' }
     ],
-    httpStatusList:[
-      { value: 1, displayText: '100-Continue' },
-      { value: 2, displayText: '101-Switching Protocols' },
-      { value: 3, displayText: '102-Processing' },
-      { value: 4, displayText: '103-Early Hints' },
-      { value: 5, displayText: '200-Ok' },
-      { value:6, displayText: '201-Created' }
+    httpStatusList: [  
+      { value: '100-Continue', displayText: '100-Continue' },
+      { value: '101-Switching Protocols', displayText: '101-Switching Protocols' },
+      { value: '102-Processing', displayText: '102-Processing' },
+      { value: '103-Early Hints', displayText: '103-Early Hints' },
+      { value: '200-Ok', displayText: '200-Ok' },
+      { value: '201-Created', displayText: '201-Created' }
     ],
     operationLogs : [
       {
