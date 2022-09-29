@@ -4,6 +4,13 @@
            
         <div class="card-body  pt-0">
             <div class="row  p-3">
+        <div id="invoice" class="d-flex justify-content-end">
+            <rds-label label="View Invoice"></rds-label>
+            
+            <span class="ms-2"><rds-icon height="20px" width="15px" [fill]= true
+                [stroke]=true name="arrow_left"></rds-icon></span>
+            
+        </div>        
         <div class="col-md-12">
 
             <table id="table" class="w-100 p-4 mt-3 table-responsive" >
@@ -33,6 +40,7 @@
                                     <rds-address-detail header="Shopping Address" addressLine1="Brookland house,"
                                         addressLine2="5439,Rose Mills Road," addressLine3="Santa Clara, CA95054">
                                     </rds-address-detail>
+
                                 </td>
                             </div>
                             <div class="col-md-2">
@@ -41,6 +49,10 @@
                                     <div class="mt-2 text-muted" >
                                          <rds-label [label]="item.emailId"></rds-label>
                                          <rds-label [label]="item.phoneNo"></rds-label>
+                                    </div>
+                                    <div class="mt-2">
+                                        <rds-text-editor id="edit" editorData="Edit">Edit</rds-text-editor>
+                                       
                                     </div>
                                  </td>
                             </div>
