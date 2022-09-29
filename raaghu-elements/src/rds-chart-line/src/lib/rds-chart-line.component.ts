@@ -21,15 +21,15 @@ export class RdsChartLineComponent implements OnInit {
 
   canvas: any;
   ctx: any;
-  gradientcolor:any=['rgba(48,22,194,76%)', 'rgba(12,5,47,18%)'];
+  gradientcolor: any = ['rgba(48,22,194,76%)', 'rgba(12,5,47,18%)'];
   static count = 0;
   //chartId = 'lineChart' + RdsChartLineComponent.count;;
-  @Input() chartId:string='lineChart0';
+  @Input() chartId: string = 'lineChart0';
   @Input() chartWidth = 200;
   @Input() chartHeight = 100;
   @Input() chartStyle?: any;
   @Input() chartLabels?: any
-  @Input() gradient:boolean=false;
+  @Input() gradient: boolean = false;
   @Input() canvasBackgroundColor?: any;
   @Input() chartDataSets?: ChartDataSetLine[] | any;
   @Input() chartOptions?: any;
@@ -38,10 +38,10 @@ export class RdsChartLineComponent implements OnInit {
 
   constructor() {
     this.style = getComputedStyle(document.body);
-   }
+  }
 
   ngOnInit(): void {
-    
+
     this.chartDataSets[0].backgroundColor[0] = this.style.getPropertyValue('--chartColor1');
     this.chartDataSets[0].backgroundColor[1] = this.style.getPropertyValue('--chartColor2');
     this.chartDataSets[0].backgroundColor[2] = this.style.getPropertyValue('--chartColor3');
@@ -95,17 +95,17 @@ export class RdsChartLineComponent implements OnInit {
     if (this.canvas !== null) {
       this.canvas.style.backgroundColor = this.canvasBackgroundColor;
       this.ctx = this.canvas.getContext('2d');
-      // const gradientFill = this.ctx.createLinearGradient(0, 25, 0, 200);
-      // gradientFill.addColorStop(1, this.style.getPropertyValue('--chartgradient9'));
-      // gradientFill.addColorStop(0.10, this.style.getPropertyValue('--chartgradient4'));
-      // this.chartDataSets[0].backgroundColor=gradientFill
-      // this.chartDataSets[1].backgroundColor=gradientFill
-       // if(this.gradient){
+      const gradientFill = this.ctx.createLinearGradient(0, 25, 0, 200);
+      gradientFill.addColorStop(1, this.style.getPropertyValue('--chartgradient9'));
+      gradientFill.addColorStop(0.10, this.style.getPropertyValue('--chartgradient4'));
+      this.chartDataSets[0].backgroundColor = gradientFill;
+      this.chartDataSets[1].backgroundColor = gradientFill;
+      // if(this.gradient){
       //   if( this.chartDataSets.length>0){
       //   let i=0;
       //     this.chartDataSets.forEach((element: any) => {
       //       const gradientFill = this.ctx.createLinearGradient(500, 0, 100, 0);
-            
+
       //         gradientFill.addColorStop(i,this.gradientcolor[i]); 
       //         i=i+1;   
       //         gradientFill.addColorStop(i,this.gradientcolor[i]); 
@@ -123,10 +123,10 @@ export class RdsChartLineComponent implements OnInit {
         },
         options: this.chartOptions
       });
-      if(lineCanvas !== null){
-        lineCanvas.canvas.style.height = this.chartHeight+'px'; 
-        lineCanvas.canvas.style.width = this.chartWidth+'px';
-      } 
+      if (lineCanvas !== null) {
+        lineCanvas.canvas.style.height = this.chartHeight + 'px';
+        lineCanvas.canvas.style.width = this.chartWidth + 'px';
+      }
     }
   }
 

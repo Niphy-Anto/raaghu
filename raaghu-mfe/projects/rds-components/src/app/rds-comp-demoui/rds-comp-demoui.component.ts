@@ -1,6 +1,7 @@
 import { DOCUMENT } from '@angular/common';
 import { Component, Inject, Input, OnInit, Renderer2, TemplateRef } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import Chart from 'chart.js/auto';
 
 @Component({
   selector: 'app-rds-comp-demoui',
@@ -363,7 +364,7 @@ export class RdsCompDemouiComponent implements OnInit {
     "plugins": {
       "legend": {
         "position": "top",
-        "align": "start",
+        "align": "center",
         "pointStyle": "bottom",
         "labels": {
           "usePointStyle": true
@@ -544,7 +545,7 @@ export class RdsCompDemouiComponent implements OnInit {
     "plugins": {
       "legend": {
         "position": "top",
-        "align": "start",
+        "align": "center",
         "pointStyle": "bottom",
         "labels": {
           "usePointStyle": true
@@ -735,7 +736,7 @@ export class RdsCompDemouiComponent implements OnInit {
   ];
 
   chartOptionsBool = {
-    maintainAspectRatio: true,
+    maintainAspectRatio: false,
     "elements": {
       "center": {
         "text": "50%"
@@ -746,7 +747,6 @@ export class RdsCompDemouiComponent implements OnInit {
       "display": false
     },
     "responsive": true,
-
     "plugins": {
       "series": {
         "label": {
@@ -771,8 +771,8 @@ export class RdsCompDemouiComponent implements OnInit {
       },
       "legend": {
         "display": false,
-        "align": "start",
-        "position": "right"
+        "align": "center",
+        "position": "top"
       }
     },
     "scales": {
@@ -848,6 +848,7 @@ export class RdsCompDemouiComponent implements OnInit {
     "plugins": {
       "legend": {
         "position": "top",
+        align: 'center',
         "pointStyle": "line",
         "labels": {
           "usePointStyle": true
@@ -1031,21 +1032,18 @@ export class RdsCompDemouiComponent implements OnInit {
     "Blue"
   ];
   chartOptionsDoughnut = {
+    responsive: true,
     maintainAspectRatio: false,
-    type: 'doughnut',
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: {
-        legend: {
-          position: 'top',
-        },
-        title: {
-          display: true,
-          text: 'Chart.js Doughnut Chart'
-        }
+    plugins: {
+      legend: {
+        position: 'top',
+        align: 'center'
+      },
+      title: {
+        display: true,
+        text: 'Chart.js Doughnut Chart'
       }
-    },
+    }
   };
   // chartOptionsDoughnut = {
   //   "type": "doughnut",
@@ -1127,8 +1125,8 @@ export class RdsCompDemouiComponent implements OnInit {
   chartOptionsLine = {
     "plugins": {
       "legend": {
-        "position": "right",
-        "align": "start",
+        "position": "top",
+        "align": "center",
         "pointStyle": "line",
         "labels": {
           "usePointStyle": true
@@ -1303,7 +1301,7 @@ export class RdsCompDemouiComponent implements OnInit {
       },
       legend: {
         position: 'top',
-        align: "end",
+        align: "center",
         pointStyle: "circle",
         labels: {
           usePointStyle: true,
@@ -1358,7 +1356,8 @@ export class RdsCompDemouiComponent implements OnInit {
     maintainAspectRatio: false,
     plugins: {
       legend: {
-        position: '',
+        position: 'top',
+        align: 'center',
         pointStyle: "line",
         labels: {
           usePointStyle: true
@@ -1423,8 +1422,8 @@ export class RdsCompDemouiComponent implements OnInit {
     "pointStyle": "triangle",
     "plugins": {
       "legend": {
-        "position": "left",
-        "align": "start",
+        "position": "top",
+        "align": "center",
         "pointStyle": "bottom",
         "labels": {
           "usePointStyle": true
@@ -1582,6 +1581,7 @@ export class RdsCompDemouiComponent implements OnInit {
   ];
 
   chartOptionsPieChat = {
+    maintainAspectRatio: false,
     "circumference": 360,
     "radius": 100,
     "animation": {
@@ -1592,6 +1592,7 @@ export class RdsCompDemouiComponent implements OnInit {
     "plugins": {
       "legend": {
         "position": "top",
+        align: 'center',
         "pointStyle": "line",
         "labels": {
           "usePointStyle": true
@@ -1604,73 +1605,145 @@ export class RdsCompDemouiComponent implements OnInit {
     },
     "scales": {}
   };
-
-  pieChartMultiLabel = [
-    "Overall Yay",
-    "Overall Nay",
-    "Group A Yay",
-    "Group A Nay",
-    "Group B Yay",
-    "Group B Nay",
-    "Group C Yay",
-    "Group C Nay"
-  ];
-
   pieChartMultiDataSets = [
     {
-      "backgroundColor": [
-        "#AAA",
-        "#777"
-      ],
-      "data": [
-        21,
-        79
-      ]
+      backgroundColor: ['#AAA', '#777'],
+      data: [21, 79]
     },
     {
-      "backgroundColor": [
-        "hsl(0, 100%, 60%)",
-        "hsl(0, 100%, 35%)"
-      ],
-      "data": [
-        33,
-        67
-      ]
+      backgroundColor: ['hsl(0, 100%, 60%)', 'hsl(0, 100%, 35%)'],
+      data: [33, 67]
     },
     {
-      "backgroundColor": [
-        "hsl(100, 100%, 60%)",
-        "hsl(100, 100%, 35%)"
-      ],
-      "data": [
-        20,
-        80
-      ]
+      backgroundColor: ['hsl(100, 100%, 60%)', 'hsl(100, 100%, 35%)'],
+      data: [20, 80]
     },
     {
-      "backgroundColor": [
-        "hsl(180, 100%, 60%)",
-        "hsl(180, 100%, 35%)"
-      ],
-      "data": [
-        10,
-        90
-      ]
+      backgroundColor: ['hsl(180, 100%, 60%)', 'hsl(180, 100%, 35%)'],
+      data: [10, 90]
     }
   ];
+  pieChartMultiLabel = ['Overall Yay', 'Overall Nay', 'Group A Yay', 'Group A Nay', 'Group B Yay', 'Group B Nay', 'Group C Yay', 'Group C Nay'];
 
   pieChartMultiOptions = {
-    "responsive": true,
-    "plugins": {
-      "legend": {
-        "labels": {}
+    maintainAspectRatio: false,
+    responsive: true,
+    plugins: {
+      legend: {
+        labels: {
+          generateLabels: function (chart: any) {
+            // Get the default label list
+            const original = Chart.overrides.pie.plugins.legend.labels.generateLabels;
+            const labelsOriginal = original.call(this, chart);
+
+            // Build an array of colors used in the datasets of the chart
+            var datasetColors = chart.data.datasets.map(function (e: any) {
+              return e.backgroundColor;
+            });
+            datasetColors = datasetColors.flat();
+
+            // Modify the color and hide state of each label
+            labelsOriginal.forEach((label: any) => {
+              // There are twice as many labels as there are datasets. This converts the label index into the corresponding dataset index
+              label.datasetIndex = (label.index - label.index % 2) / 2;
+
+              // The hidden state must match the dataset's hidden state
+              label.hidden = !chart.isDatasetVisible(label.datasetIndex);
+
+              // Change the color to match the dataset
+              label.fillStyle = datasetColors[label.index];
+            });
+
+            return labelsOriginal;
+          }
+        },
+        onClick: function (mouseEvent: any, legendItem: any, legend: any) {
+          // toggle the visibility of the dataset from what it currently is
+          legend.chart.getDatasetMeta(
+            legendItem.datasetIndex
+          ).hidden = legend.chart.isDatasetVisible(legendItem.datasetIndex);
+          legend.chart.update();
+        }
       },
-      "tooltip": {
-        "callbacks": {}
+      tooltip: {
+        callbacks: {
+          label: function (context: any) {
+            const labelIndex = (context.datasetIndex * 2) + context.dataIndex;
+            return context.chart.data.labels[labelIndex] + ': ' + context.formattedValue;
+          }
+        }
       }
-    },
-    "scales": {}
+    }
   };
+
+  // pieChartMultiLabel = [
+  //   "Overall Yay",
+  //   "Overall Nay",
+  //   "Group A Yay",
+  //   "Group A Nay",
+  //   "Group B Yay",
+  //   "Group B Nay",
+  //   "Group C Yay",
+  //   "Group C Nay"
+  // ];
+
+  // pieChartMultiDataSets = [
+  //   {
+  //     "backgroundColor": [
+  //       "#AAAAAA",
+  //       "#777777"
+  //     ],
+  //     "data": [
+  //       21,
+  //       79
+  //     ]
+  //   },
+  //   {
+  //     "backgroundColor": [
+  //       "#ff3333",
+  //       "#b30000"
+  //     ],
+  //     "data": [
+  //       33,
+  //       67
+  //     ]
+  //   },
+  //   {
+  //     "backgroundColor": [
+  //       "#77ff33",
+  //       "#3bb300"
+  //     ],
+  //     "data": [
+  //       20,
+  //       80
+  //     ]
+  //   },
+  //   {
+  //     "backgroundColor": [
+  //       "#33ffff",
+  //       "#00b2b3"
+  //     ],
+  //     "data": [
+  //       10,
+  //       90
+  //     ]
+  //   }
+  // ];
+
+  // pieChartMultiOptions = {
+  //   "responsive": true,
+  //   "plugins": {
+  //     "legend": {
+  //       position: 'top',
+  //       align: 'center',
+  //       "labels": {}
+  //     },
+  //     "tooltip": {
+  //       "callbacks": {}
+  //     }
+  //   },
+  //   "scales": {}
+  // };
 
   chartLabelsPolar = [
     "Persian Green",
@@ -1710,11 +1783,12 @@ export class RdsCompDemouiComponent implements OnInit {
       "animateScale": false
     },
     "responsive": true,
+    maintainAspectRatio: false,
     "plugins": {
       "legend": {
-        "position": "right",
+        "position": "top",
         "pointStyle": "line",
-        "align": "middle",
+        "align": "center",
         "labels": {
           "usePointStyle": true,
           boxWidth: 15,
@@ -1887,7 +1961,8 @@ export class RdsCompDemouiComponent implements OnInit {
   ];
 
   chartOptionsRadar = {
-    "responsive": false,
+    "responsive": true,
+    maintainAspectRatio: false,
     chartWidth: 350,
     "chartArea": {
       "backgroundColor": "rgba(251, 85, 85, 0.4)"
@@ -1898,8 +1973,8 @@ export class RdsCompDemouiComponent implements OnInit {
         // "text": "Radar Chart"
       },
       "legend": {
-        "position": "left",
-        "align": "start",
+        "position": "top",
+        "align": "center",
         "pointStyle": "rectRot",
         "pointRadius": 5,
         "labels": {
@@ -2033,8 +2108,8 @@ export class RdsCompDemouiComponent implements OnInit {
     "radius": 10,
     "plugins": {
       "legend": {
-        "position": "bottom",
-        "align": "start",
+        "position": "top",
+        "align": "center",
         "pointStyle": "line",
         "labels": {
           "usePointStyle": true
@@ -2291,6 +2366,8 @@ export class RdsCompDemouiComponent implements OnInit {
 
   chartOptionsStacked = {
     "radius": 3,
+    responsive: true,
+    maintainAspectRatio: false,
     "pointStyle": "triangle",
     "plugins": {
       "title": {
@@ -2301,6 +2378,8 @@ export class RdsCompDemouiComponent implements OnInit {
         "mode": "index"
       },
       "legend": {
+        position: 'top',
+        align: 'center',
         "pointStyle": "circle",
         "labels": {
           "usePointStyle": true

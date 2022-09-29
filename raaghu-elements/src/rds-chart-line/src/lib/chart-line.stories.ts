@@ -33,7 +33,7 @@ Default.args = {
   ],
   chartLabels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
   chartWidth: 600,
-  chartHeight:400,
+  chartHeight: 400,
   chartOptions: {
     responsive: true,
     maintainAspectRatio: false,
@@ -94,10 +94,10 @@ MultiAxis.args = {
   ],
   chartLabels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
   chartWidth: 600,
-  chartHeight:400,
+  chartHeight: 400,
   chartOptions: {
     responsive: true,
-    maintainAspectRatio: false,    
+    maintainAspectRatio: false,
     interaction: {
       mode: 'index',
       intersect: false,
@@ -150,10 +150,10 @@ Stepped.args = {
   ],
   chartLabels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
   chartWidth: 600,
-  chartHeight:400,
+  chartHeight: 400,
   chartOptions: {
     responsive: true,
-    maintainAspectRatio: false,    
+    maintainAspectRatio: false,
     interaction: {
       mode: 'index',
       intersect: false,
@@ -195,10 +195,10 @@ LineStyling.args = {
   ],
   chartLabels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
   chartWidth: 600,
-  chartHeight:400,
+  chartHeight: 400,
   chartOptions: {
     responsive: true,
-    maintainAspectRatio: false,    
+    maintainAspectRatio: false,
     interaction: {
       mode: 'index',
       intersect: false,
@@ -257,8 +257,10 @@ LineChartWithAnimation.args = {
   ],
   chartLabels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
   chartWidth: 600,
+  chartHeight:400,
   chartOptions: {
-
+    responsive: true,
+    maintainAspectRatio: false,
     plugins: {
       legend: {
         position: 'right',

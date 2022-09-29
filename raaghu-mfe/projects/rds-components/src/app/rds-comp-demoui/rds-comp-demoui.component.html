@@ -1788,7 +1788,7 @@
       <div class="col-md-6 ">
         <h5 class="py-3">Doughnut Chart</h5>
         <div class="border p-2 h-100 align-items-center justify-content-center">
-          <rds-chart-doughnut [chartWidth]="400" [chartLabels]="chartLabelsDoughnut"
+          <rds-chart-doughnut [chartWidth]="400" [chartHeight]="300" [chartLabels]="chartLabelsDoughnut"
             [chartDataSets]="chartDataSetsDoughnut" [chartOptions]="chartOptionsDoughnut" chartId="doughnutChart">
           </rds-chart-doughnut>
         </div>
@@ -1796,7 +1796,7 @@
       <div class="col-md-6 ">
         <h5 class="py-3">Pie Chart </h5>
         <div class="border p-2 h-100 align-items-center justify-content-center">
-          <rds-chart-pie [chartWidth]="400" [chartLabels]="chartLabelsPieChat" [chartDataSets]="chartDataSetsPieChat"
+          <rds-chart-pie [chartWidth]="400" [chartHeight]="300" [chartLabels]="chartLabelsPieChat" [chartDataSets]="chartDataSetsPieChat"
             [chartOptions]="chartOptionsPieChat" chartId="pieChart"></rds-chart-pie>
         </div>
       </div>
@@ -1806,7 +1806,7 @@
       <div class="col-md-6 ">
         <h5 class="py-3">Boolean Chart</h5>
         <div class="border p-2 h-100 align-items-center justify-content-center">
-          <rds-chart-bool [chartWidth]="400" [chartHeight]="600" [chartLabels]="chartLablesBool"
+          <rds-chart-bool [chartWidth]="400" [chartHeight]="300" [chartLabels]="chartLablesBool"
             [chartDataSets]="ChartDatasSetsBool" [chartOptions]="chartOptionsBool"
             chartId="boolChart"></rds-chart-bool>
         </div>
@@ -1814,23 +1814,23 @@
       <div class="col-md-6 ">
         <h5 class="py-3">Multi Series Pie chart</h5>
         <div class="border p-2 h-100  align-items-center justify-content-center">
-          <rds-chart-pie [chartWidth]="400" chartId="multiPieChart" [chartLabels]="pieChartMultiLabel"
+          <rds-chart-pie [chartWidth]="400" [chartHeight]="300" chartId="multiPieChart" [chartLabels]="pieChartMultiLabel"
             [chartDataSets]="pieChartMultiDataSets" [chartOptions]="pieChartMultiOptions"></rds-chart-pie>
         </div>
-      </div>
+      </div> 
     </div>
     <div class="row p-4 mb-4">
       <div class="col-md-6">
         <h5 class="py-3">Polar Chart</h5>
         <div class="border p-2 h-100 align-items-center justify-content-center">
-          <rds-chart-polar-area [chartWidth]="400" [chartLabels]="chartLabelsPolar" [chartDataSets]="chartDataSetsPolar"
+          <rds-chart-polar-area [chartWidth]="400" [chartHeight]="400"  [chartLabels]="chartLabelsPolar" [chartDataSets]="chartDataSetsPolar"
             [chartOptions]="chartOptionsPolar" chartId=polarChart></rds-chart-polar-area>
         </div>
       </div>
       <div class="col-md-6 ">
         <h5 class="py-3">Radar Chart</h5>
         <div class="border p-2 h-100 align-items-center justify-content-center text-center ">
-          <rds-chart-radar [chartWidth]="400" [chartLabels]="chartLabelsRadar" [chartDataSets]="chartDataSetsRadar"
+          <rds-chart-radar [chartWidth]="400" [chartHeight]="400"  [chartLabels]="chartLabelsRadar" [chartDataSets]="chartDataSetsRadar"
             [chartOptions]="chartOptionsRadar" chartId="radarChart"></rds-chart-radar>
         </div>
       </div>
