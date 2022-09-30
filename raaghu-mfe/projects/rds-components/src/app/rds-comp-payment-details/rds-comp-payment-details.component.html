@@ -2,10 +2,11 @@
     <p class="heading">
         Payment details
     </p>
-    <div>
-        <input type="checkbox" name="favorite_pet" value="Cats"> Credit Card<br>      
-        <input type="checkbox" name="favorite_pet" value="Dogs"> Paypal<br>      
-        <input type="checkbox" name="favorite_pet" value="Birds"> eTransfer<br> 
+     <div class="row">
+      <div class="col-md-4">
+        <rds-radio-button [switch]="false" [inline]="false" [isInputGroup]="false"
+          [itemList]="paymentModeList"></rds-radio-button>
+      </div>
     </div>
     
     <div class="my-3">

@@ -86,6 +86,7 @@
         "rds-elements/rds-nav-tab/public-api",
         "rds-elements/rds-nav-tab"
       ]
+      
     },
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
