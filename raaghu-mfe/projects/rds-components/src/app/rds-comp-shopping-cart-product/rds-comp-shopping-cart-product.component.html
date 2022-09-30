@@ -1,7 +1,7 @@
 <div [ngSwitch]="role">
    <div *ngSwitchCase="'basic'">
       <div class="row border-bottom mb-3" [ngClass]="{'active': closedata === i}" *ngFor="let item of itemList; index as i ">
-         <div class="col-md-2 mb-3">
+         <div class="col-md-2 mb-3 ps-0">
             <img [src]="item.image" width="100px">
          </div>
          <div class="col-md-10 mb-3 d-flex justify-content-between">
