@@ -80,6 +80,7 @@
         "rds-elements/rds-product-image/public-api",
         "rds-elements/rds-product-image"
       ],
+     
       "@libs/rds-team-member": [
         "rds-elements/rds-team-member/public-api",
         "rds-elements/rds-team-member"
