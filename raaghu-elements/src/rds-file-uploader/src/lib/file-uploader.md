@@ -9,7 +9,7 @@ title: "Elements > File-uploader"
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/style-elements.css">
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/main.css">
 
-#### File Uploaders
+#### File Uploader
 
 <p class="checkbox-def">File uploaders allow users to select one or more files to upload to a specific location.</p>
 
@@ -69,7 +69,7 @@ role="default"
             <button class="nav-link active" id="PreviewMultiple-tab" data-bs-toggle="tab" data-bs-target="#PreviewMultiple" type="button" role="tab" aria-controls="PreviewMultiple" aria-selected="true">Preview </button>
           </li>
           <li class="nav-item" role="presentation">
-            <button class="nav-link" id="AngularMultiple-tab" data-bs-toggle="tab" data-bs-target="#AngularMultiple" type="button" role="tab" aria-controls="AngularMultiple" aria-selected="false"><i class="bi bi-code-slash" style="font-size:1.0rem"></i>Angular</button>
+            <button class="nav-link" id="angularmultiple-tab" data-bs-toggle="tab" data-bs-target="#angularmultiple" type="button" role="tab" aria-controls="angularmultiple" aria-selected="false"><i class="bi bi-code-slash" style="font-size:1.0rem"></i>Angular</button>
           </li>
         </ul>
       </div>
@@ -78,15 +78,15 @@ role="default"
           <div class="contents bg-light p-5">
             <div class="row">
                <div class="contents bg-light p-5">
-                                       <div class="row">
-                                           <img src="/images/file-uploader-advanced.png" class="img-thumbnail w-75">
-                                       </div>
+                 <div class="row">
+                     <img src="/images/file-uploader-advanced.png" class="img-thumbnail w-75">
+                 </div>
             </div>
           </div>
         </div>
-        <div class="tab-pane fade show" id="AngularMultiple" role="tabpanel" aria-labelledby="AngularMultiple-tab">
-          <div class="contents bg-light">
-<div class="row bg-dark text-white m-0 p-4">
+            <div class="tab-pane fade show" id="angularmultiple" role="tabpanel" aria-labelledby="angularmultiple-tab">
+          <div class="contents bg-code">
+<div class="row m-0">
 
 ```html
 <rds-file-uploader
@@ -100,7 +100,7 @@ role="default"
 (onItemClick)="onItemClick($event)">
 </rds-file-uploader>
 ```
-
+</div>
 </div>
           </div>
         </div>
@@ -118,7 +118,7 @@ role="default"
                               <div class="card border p-5">
                                  <div class="row">
                                     <div class="col-md-12">
-                                       <img src="https://portal.raaghu.io/images/components/_file-uploaders/img-1.png" class="img-fluid">
+                                       <img src="/images/file-uploader-skeleton.png" class="img-fluid">
                                     </div> 
                                  </div>
                               </div>

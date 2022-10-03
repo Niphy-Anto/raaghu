@@ -69,7 +69,7 @@ title: "Elements > Avatar"
                               <div class="card border p-5">
                                  <div class="row">
                                     <div class="col-md-9 col-12">
-                                       <img src="https://portal.raaghu.io/images/components/_avatar/img-2.png" class="img-fluid">
+                                       <img src="/images/avatar-skeleton.png" class="img-fluid">
                                     </div>
                                  </div>
                               </div>
