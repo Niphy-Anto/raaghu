@@ -257,7 +257,7 @@ title: "Elements > Button"
         </ul>
       </div>
       <div class="tab-content card border" id="myTabContent">
-        <div class="tab-pane fade show active" id="Angulartooltip" role="tabpanel" aria-labelledby="Previewtooltip-tab">
+        <div class="tab-pane fade show active" id="Previewtooltip" role="tabpanel" aria-labelledby="Previewtooltip-tab">
          <div class="row">
          <div class="col-md-12">
          <div class="contents p-5">

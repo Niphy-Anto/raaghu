@@ -42,15 +42,11 @@ title: "Elements > File-uploader"
 
 ```html
 <rds-file-uploader
-size="medium"
-label="Upload Files"
-[multipleFiles]="false"
-maxfilesize="5"
-sizeType=""
-role="default"
-(click)="click($event)"
-(onItemClick)="onItemClick($event)">
-</rds-file-uploader>
+  size="medium"
+  label="Upload Files"
+  [multipleFiles]="false"
+  role="default"
+></rds-file-uploader>
 ```
 
 </div>
@@ -75,32 +71,28 @@ role="default"
       </div>
       <div class="tab-content card border" id="myTabContent">
         <div class="tab-pane fade show active" id="PreviewMultiple" role="tabpanel" aria-labelledby="PreviewMultiple-tab">
-          <div class="contents bg-light p-5">
+          <div class="contents p-5">
             <div class="row">
-               <div class="contents bg-light p-5">
-                 <div class="row">
-                     <img src="/images/file-uploader-advanced.png" class="img-thumbnail w-75">
-                 </div>
+                 <div class="col-md-12">
+                    <img src="/images/file-uploader-advanced.png" class="img-fluid w-75">
+                 </div>                   
             </div>
           </div>
         </div>
-            <div class="tab-pane fade show" id="angularmultiple" role="tabpanel" aria-labelledby="angularmultiple-tab">
+        <div class="tab-pane fade show" id="angularmultiple" role="tabpanel" aria-labelledby="angularmultiple-tab">
           <div class="contents bg-code">
-<div class="row m-0">
+<div class="row  m-0 p-4">
 
 ```html
 <rds-file-uploader
-size="medium"
-label="Upload Files"
-[multipleFiles]="false"
-maxfilesize="5"
-sizeType=""
-role="default"
-(click)="click($event)"
-(onItemClick)="onItemClick($event)">
-</rds-file-uploader>
+  size="medium"
+  label="Upload Files"
+  [multipleFiles]="true"
+  role="fileUpload"
+  extensions="png, jpg, doc, ,pdf, ppt"
+></rds-file-uploader>
 ```
-</div>
+
 </div>
           </div>
         </div>
