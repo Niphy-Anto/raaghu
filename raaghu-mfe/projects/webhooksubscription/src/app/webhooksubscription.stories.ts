@@ -89,14 +89,7 @@ const Template: Story<WebHookSubscriptionComponent> = (args: WebHookSubscription
         </div>
     </div>
 
-    <div class="mobile-btn position-absolute bottom-0 end-0 my-5 me-5">
-        <!-- <rds-button [id]="'yes'" [size]="'small'" [tooltipPlacement]="'top'" [colorVariant]="'primary'" [label]="''"
-            (click)="openCanvas()" [attr.data-bs-target]="'#addwebhook'" [attr.aria-controls]="'addwebhook'"
-            [roundedButton]="true" icon="plus" iconHeight="12px" iconWidth="12px">
-        </rds-button> -->
-        <rds-fab-menu [listItems]="listItems" [menuicon]="'plus'" [colorVariant]="'primary'" [menuiconWidth]="'12px'"
-            [menuiconHeight]="'12px'" (onSelect)="onSelectMenu($event)"></rds-fab-menu>
-    </div>
+    
 
     <rds-offcanvas [canvasTitle]="'NEW WEBHOOK SUBSCRIPTION'" [offId]="'addwebhook'"
         *ngIf="viewCanvas" [placement]="'end'"  [offcanvaswidth]="600" (onClose)="closeCanvas()">
