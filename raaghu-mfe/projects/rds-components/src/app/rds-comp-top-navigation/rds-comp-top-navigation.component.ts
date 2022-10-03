@@ -26,7 +26,7 @@ export class RdsTopNavigationComponent extends MfeBaseComponent implements OnIni
   @Input()
   LoginAttempts: any = {};
   @Input() LinkAccounts: []
-  @Input() logo: string = '';
+  @Input() logo: string = '/static/media/.storybook/assets/raaghu-logo.svg';
   @Input() projectName: string = '';
   @Input() sideMenuCollapsed: boolean = false;
   @Input() isPageWrapper: boolean = false;
@@ -42,7 +42,7 @@ export class RdsTopNavigationComponent extends MfeBaseComponent implements OnIni
   @Input() offCanvasId: string = ''
   @Input() profileLink: string = '';
   @Input() UserName: string = 'Wai Technologies';
-  @Input() profilePic: string = '../assets/profile-picture-circle.svg';
+  @Input() profilePic: string = 'https://demo.raaghu.io/assets/profile-picture-circle.svg';
   @Input() notificationLink: string = '';
   @Input() profileData: any;
   @Input() rdsDeligateTableData: any = [];
