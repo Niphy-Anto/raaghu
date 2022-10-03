@@ -21,7 +21,7 @@
           <div class="card-header bg-transparent" *ngIf="selectedTreeNode == 0">
             <h5 class="card-title">{{'Select an organization unit to see members' | translate}}</h5>
           </div>
-          
+
           <div [@fadeAnimation]="isAnimation ? 'fadeAnimation' : ''">
             <div class="">
               <div *ngIf="selectedTreeNode != 0">
@@ -137,5 +137,38 @@
         </div>
       </div>
     </form>
+  </div>
+</rds-offcanvas>
+
+<rds-offcanvas [canvasTitle]="translate.instant(canvasTitle)" [offId]="'addNodeOffcanvas'" [placement]="'end'"
+  *ngIf="viewCreateOrganisationCanvas" [offcanvaswidth]="550">
+  <div class="tab-content">
+    <div class="row form-style mt-2">
+      <div class="col-md-12">
+        <form #nodeForm="ngForm" novalidate>
+          <div class="form-group mb-3">
+            <rds-input size="default" [Title]="translate.instant('Name')" [TitleType]="'Top'" [placeholder]="'Name'"
+              [(ngModel)]="node" id="txtDescription" name="node_name" [isRequired]="true" required ngDefaultControl
+              #nodeName="ngModel">
+            </rds-input>
+            <div class="form-control-feedback" *ngIf="nodeName.errors && (nodeName.dirty || nodeName.touched)">
+              <span class="text-danger" *ngIf="nodeName.errors.required">{{"Name is required"|translate}}</span>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="footer-buttons my-2">
+    <div class="row">
+      <div class="col-md-12">
+        <rds-button [label]="translate.instant('Cancel')" (click)="onCancelOrganisation()" [outlineButton]="true"
+          type="button" [colorVariant]="'primary'" [size]="'small'" data-bs-target="#addNodeOffcanvas" data-bs-dismiss="offcanvas">
+        </rds-button>
+        <rds-button [disabled]="!nodeForm.valid" [label]="translate.instant('Save')" [submit]="true" type="submit"
+          [size]="'small'" class="px-2" [colorVariant]="'primary'" (click)="saveNode(nodeForm)">
+        </rds-button>
+      </div>
+    </div>
   </div>
 </rds-offcanvas>
