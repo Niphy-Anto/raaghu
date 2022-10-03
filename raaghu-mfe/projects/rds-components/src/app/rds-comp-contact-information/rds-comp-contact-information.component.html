@@ -3,12 +3,12 @@
         Contact information
     </h3>
     <div class="my-1">
-        <rds-input Title="Email Address" [isRequired]=true required size="'default'" name="emailAddress" id="txtUsername" #emailAddress="ngModel" [pattern]="emailPattern"
+        <rds-input Title="Email Address" [TitleType]="'Top'" [isRequired]=true required size="'default'" name="emailAddress" id="txtUsername" #emailAddress="ngModel" [pattern]="emailPattern"
             ngDefaultControl [(ngModel)]="EmailID" required>
         </rds-input>
     </div>
     <div class="my-3">
-        <rds-input Title="Contact Number" [isRequired]=true required size="'default'" name="emailAddress" id="txtUsername" #emailAddress="ngModel" [pattern]="emailPattern"
+        <rds-input Title="Contact Number" [TitleType]="'Top'" [isRequired]=true required size="'default'" name="emailAddress" id="txtUsername" #emailAddress="ngModel" [pattern]="emailPattern"
             ngDefaultControl [(ngModel)]="EmailID" required>
         </rds-input>
     </div>

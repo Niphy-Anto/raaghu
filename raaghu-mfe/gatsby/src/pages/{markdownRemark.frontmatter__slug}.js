@@ -203,7 +203,7 @@ export default function Template({
     if(index>0){
       navigate('/'+data[index-1].url)
     }
-    console.log(data,frontmatter);
+    console.log(index);
 
 
   }

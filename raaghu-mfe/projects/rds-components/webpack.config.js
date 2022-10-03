@@ -103,11 +103,15 @@ module.exports = {
         './RdsCompCardDetailList': './projects/rds-components/src/app/rds-comp-card-detail-list/rds-comp-card-detail-list.component.ts',
         './RdsCompIntegration': './projects/rds-components/src/app/rds-comp-integration/rds-comp-integration.component.ts',
         './RdsCompContactUs': './projects/rds-components/src/app/rds-comp-contact-us/rds-comp-contact-us.component.ts',
-        './RdsCompOpenPosition': './projects/rds-components/src/app/rds-comp-open-position/rds-comp-open-position.component.ts',
+        './RdsCompEditionNewBasic': './projects/rds-components/src/app/rds-comp-edition-new-basic/rds-comp-edition-new-basic.component.ts',
+        './RdsCompEditionNewFeatures': './projects/rds-components/src/app/rds-comp-edition-new-features/rds-comp-edition-new-features.component.ts',
+        './RdsCompFeaturesListNew': './projects/rds-components/src/app/rds-comp-features-list-new/rds-comp-features-list-new.component.ts',
+        './RdsCompUserPermissionsNew': './projects/rds-components/src/app/rds-comp-user-permissions-new/rds-comp-user-permissions-new.component.ts',
+       './RdsCompOpenPosition': './projects/rds-components/src/app/rds-comp-open-position/rds-comp-open-position.component.ts',
         './RdsCompApplyForPosition': './projects/rds-components/src/app/rds-comp-apply-for-position/rds-comp-apply-for-position.component.ts'
       },
 
-      
+
       shared: share({
         "@angular/core": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
         "@angular/common": { singleton: true, strictVersion: true, requiredVersion: 'auto' },

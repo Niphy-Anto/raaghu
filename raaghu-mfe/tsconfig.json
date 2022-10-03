@@ -77,7 +77,16 @@
       "@libs/rds-counter": [
         "rds-elements/rds-counter/public-api",
         "rds-elements/rds-counter"
+      ],
+      "@libs/rds-team-member": [
+        "rds-elements/rds-team-member/public-api",
+        "rds-elements/rds-team-member"
+      ],
+      "@libs/rds-nav-tab": [
+        "rds-elements/rds-nav-tab/public-api",
+        "rds-elements/rds-nav-tab"
       ]
+      
     },
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
