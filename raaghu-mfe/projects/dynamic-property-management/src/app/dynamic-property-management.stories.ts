@@ -75,7 +75,7 @@ const Template: Story<DynamicPropertyManagment> = (args: DynamicPropertyManagmen
       </rds-button>
     </div>
   </div>
-  <div class="mobile-btn position-absolute bottom-0 end-0 my-5 me-5" style="z-index: 1;">
+  <div class="mobile-btn stbk-mobile-btn position-absolute bottom-0 end-0 my-5 me-5" style="z-index: 1;">
     <!-- <rds-button
         [label]=""
         type="button"
