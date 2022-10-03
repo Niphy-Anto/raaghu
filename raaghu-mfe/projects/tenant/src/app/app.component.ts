@@ -171,7 +171,7 @@ export class AppComponent {
       }
     })
 
-    this.store.dispatch(getTenants(30));
+    this.store.dispatch(getTenants());
     this.store.select(selectAllTenants).subscribe((res: any) => {
       this.tenantTableData = [];
       if (res && res.tenants.items && res.status == "success") {
