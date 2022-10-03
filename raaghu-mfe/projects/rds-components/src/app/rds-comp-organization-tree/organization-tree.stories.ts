@@ -7,6 +7,7 @@ import { OrganizationTreeNode, OrganizationTreeLabeles, OrganizationTreeType } f
 import { NgxTranslateModule, SharedModule } from '@libs/shared';
 import { RdsIconModule } from '@libs/rds-icon';
 import { RdsCompAlertPopupComponent } from '../rds-comp-alert-popup/rds-comp-alert-popup.component';
+import { NestGroupDirective } from '../rds-comp-hierarchy/node-label.directive';
 
 export default {
   title: 'Components/Organization Tree',
@@ -23,9 +24,12 @@ export default {
         NgxTranslateModule,
         RdsIconModule,
         SharedModule,
-        RdsIconModule
+        RdsIconModule,
       ],
-      declarations: [RdsCompAlertPopupComponent],
+
+      declarations: [RdsCompAlertPopupComponent,
+        NestGroupDirective
+      ],
       providers: [
         FormBuilder
       ],
