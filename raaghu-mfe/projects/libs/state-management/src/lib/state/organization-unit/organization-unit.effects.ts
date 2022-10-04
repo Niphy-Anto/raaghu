@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AlertService, IdentityServiceProxy, OrganizationUnitsServiceProxy } from '@libs/shared';
+import { AlertService, ServiceProxy } from '@libs/shared';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
 import { from, of } from 'rxjs';
@@ -22,8 +22,7 @@ import { addRolesToOrganizationUnit, addUsersToOrganizationUnit, createTreeUnit,
 export class OrganizationUnitEffects {
   constructor(
     private actions$: Actions,
-    private organizationUnitService: OrganizationUnitsServiceProxy,
-    private identityServiceProxy: IdentityServiceProxy,
+    private organizationUnitService: ServiceProxy,
     private alertService: AlertService,
     private store: Store
   ) { }
@@ -32,7 +31,7 @@ export class OrganizationUnitEffects {
       ofType(getOrganizationUnitTree),
       switchMap(() =>
         // Call the getTodos method, convert it to an observable
-        from(this.organizationUnitService.all()).pipe(
+        from(this.organizationUnitService.all2()).pipe(
           // Take the returned value and return a new success action containing the todos
           map((organizationUnitTree) => {
             return getOrganizationUnitTreeSuccess({
@@ -50,7 +49,7 @@ export class OrganizationUnitEffects {
       ofType(getOrganizationUnitMembers),
       switchMap((data) =>
         // Call the getTodos method, convert it to an observable
-        from(this.organizationUnitService.membersGet(data.id,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined, 0, 1000)).pipe(
+        from(this.organizationUnitService.membersGET(data.id,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined, 0, 1000)).pipe(
           // Take the returned value and return a new success action containing the todos
           map((organizationUnitMembers) => {
             return getOrganizationUnitMembersSuccess({
@@ -68,7 +67,7 @@ export class OrganizationUnitEffects {
       ofType(getOrganizationUnitRoles),
       switchMap((data) =>
         // Call the getTodos method, convert it to an observable
-        from(this.organizationUnitService.rolesGet(data.id, 0, 1000, undefined)).pipe(
+        from(this.organizationUnitService.rolesGET(data.id, 0, 1000, undefined)).pipe(
           // Take the returned value and return a new success action containing the todos
           map((organizationUnitRoles) => {
             return getOrganizationUnitRolesSuccess({
@@ -118,7 +117,7 @@ export class OrganizationUnitEffects {
     this.actions$.pipe(
       ofType(createTreeUnit),
       mergeMap((data) =>
-        this.identityServiceProxy.organizationUnitsPost(data).pipe(map((res) => {
+        this.organizationUnitService.organizationUnitsPOST(data).pipe(map((res) => {
           this.store.dispatch(getOrganizationUnitTree());
           this.alertService.showAlert('Success', 'Organization unit node created successfully','success' )  
           }),
@@ -136,7 +135,7 @@ export class OrganizationUnitEffects {
     this.actions$.pipe(
       ofType(updateUnitTree),
       mergeMap((data) =>
-        this.identityServiceProxy.organizationUnitsPut(data.id, data.body).pipe(
+        this.organizationUnitService.organizationUnitsPUT(data.id, data.body).pipe(
           map((res) => {
             this.store.dispatch(getOrganizationUnitTree());
             this.alertService.showAlert('Success', 'Organization unit node updated successfully','success' )
@@ -155,7 +154,7 @@ export class OrganizationUnitEffects {
     this.actions$.pipe(
       ofType(deleteUnitTree),
       mergeMap((data) =>
-      this.identityServiceProxy.organizationUnitsDelete(data.id).pipe(map((res: any) => {
+      this.organizationUnitService.organizationUnitsDELETE(data.id).pipe(map((res: any) => {
         this.store.dispatch(getOrganizationUnitTree());
           this.alertService.showAlert('Success', 'Organization unit node deleted successfully','success' )
         }),
@@ -169,29 +168,29 @@ export class OrganizationUnitEffects {
     }
   );
 
-//   addRolesToOrganizationUnit$ = createEffect(() =>
-//   this.actions$.pipe(
-//     ofType(addRolesToOrganizationUnit),
-//     mergeMap((data) =>
-//       this.organizationUnitService.addRolesToOrganizationUnit(data).pipe(map((res: any) => {
-//         this.store.dispatch(getOrganizationUnitRoles(data.organizationUnitId));
-//         this.alertService.showAlert('Success', 'Role added successfully', 'success');
-//       }),
-//         catchError((error: any) => of(
-//         ))
-//       )
-//     )
-//   ),
-//   {
-//     dispatch: false
-//   }
-// );
+  addRolesToOrganizationUnit$ = createEffect(() =>
+  this.actions$.pipe(
+    ofType(addRolesToOrganizationUnit),
+    mergeMap((data) =>
+      this.organizationUnitService.availableRoles(undefined,undefined,undefined,0,1000).pipe(map((res: any) => {
+        this.store.dispatch(getOrganizationUnitRoles(data.organizationUnitId));
+        this.alertService.showAlert('Success', 'Role added successfully', 'success');
+      }),
+        catchError((error: any) => of(
+        ))
+      )
+    )
+  ),
+  {
+    dispatch: false
+  }
+);
 
 addUsersToOrganizationUnit$ = createEffect(() =>
 this.actions$.pipe(
   ofType(addUsersToOrganizationUnit),
   mergeMap((data) =>
-    this.identityServiceProxy.usersGet(undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,0,1000).pipe(map((res: any) => {
+    this.organizationUnitService.availableUsers(undefined,undefined,undefined,0,1000).pipe(map((res: any) => {
       //this.store.dispatch(getOrganizationUnitMembers(data.organizationUnitId));
       this.alertService.showAlert('Success', 'Member added successfully', 'success');
 

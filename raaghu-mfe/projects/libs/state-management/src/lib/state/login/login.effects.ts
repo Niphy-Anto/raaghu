@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
 import { Store } from "@ngrx/store";
-import { AbpServiceProxy, AccountServiceProxy } from "projects/libs/shared/src/lib/service-proxies";
+import { ServiceProxy } from "projects/libs/shared/src/lib/service-proxies";
 import { from, of } from "rxjs";
 import { catchError, map, mergeMap, switchMap } from "rxjs/operators";
 import { getCurrentLoginInformation, getCurrentLoginInformationFailure, getCurrentLoginInformationSuccess, GetProfilePicture, GetProfilePictureFailure, GetProfilePictureSuccess, GetSubscriptionExpiringData, GetSubscriptionExpiringDataFailure, GetSubscriptionExpiringDataSuccess, ValidateTenantNameFailure, ValidateTenantNameSuccess } from "./login.actions";
@@ -12,7 +12,7 @@ import { getCurrentLoginInformation, getCurrentLoginInformationFailure, getCurre
 export class LoginEffects {
     constructor(
         private actions$: Actions,
-        private AccountService: AbpServiceProxy,
+        private AccountService: ServiceProxy,
         //private _sessionService: SessionServiceProxy,
         ///private GetSubscriptionExpiringDataProxy: HostDashboardServiceProxy,
         //private GetProfilePictureProxy: ProfileServiceProxy,

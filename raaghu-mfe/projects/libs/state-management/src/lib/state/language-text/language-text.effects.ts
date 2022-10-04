@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { AlertService, LanguagesServiceProxy } from "@libs/shared";
+import { AlertService, ServiceProxy } from "@libs/shared";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
 import { Store } from "@ngrx/store";
 import { from, of } from "rxjs";
@@ -9,26 +9,26 @@ import { getLanguageTextFailure, getLanguageTextSuccess, updateLanguageText } fr
 
 @Injectable()
 export class LanguageTextEffects {
-    constructor(private actions$: Actions, private languageService: LanguagesServiceProxy, private store: Store, private alertService: AlertService) { }
-    getLanguageTexts$ = createEffect(() =>
-        this.actions$.pipe(
-            ofType(),
-            switchMap(({}) => {
+    constructor(private actions$: Actions, private languageService: ServiceProxy, private store: Store, private alertService: AlertService) { }
+    // getLanguageTexts$ = createEffect(() =>
+    //     this.actions$.pipe(
+    //         ofType(),
+    //         switchMap(({}) => {
 
-                // Call the getTodos method, convert it to an observable
-                return (this.languageService.all()).pipe(
-                    // Take the returned value and return a new success action containing the todos
-                    map((languageText) => {
-                        return getLanguageTextSuccess({ languageText })
-                    }),
-                    // Or... if it errors return a new failure action containing the error
-                    catchError((error) => of(getLanguageTextFailure({ error })))
-                )
-            }
+    //             // Call the getTodos method, convert it to an observable
+    //             return (this.languageService.all()).pipe(
+    //                 // Take the returned value and return a new success action containing the todos
+    //                 map((languageText) => {
+    //                     return getLanguageTextSuccess({ languageText })
+    //                 }),
+    //                 // Or... if it errors return a new failure action containing the error
+    //                 catchError((error) => of(getLanguageTextFailure({ error })))
+    //             )
+    //         }
 
-            )
-        )
-    );
+    //         )
+    //     )
+    // );
 
   //   updateLanguageText$ = createEffect(() =>
   //   this.actions$.pipe(

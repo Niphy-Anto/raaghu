@@ -37,7 +37,7 @@
       "useTransformOptionsMethod": false,
       "useTransformResultMethod": false,
       "generateDtoTypes": true,
-      "operationGenerationMode": "MultipleClientsFromPathSegments",
+      "operationGenerationMode": "MultipleClientsFromOperationId",
       "markOptionalProperties": false,
       "generateCloneMethod": false,
       "typeStyle": "Class",

@@ -11,7 +11,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { MultipleMfeComponent } from './multiple-mfe/multiple-mfe.component';
 import { EffectsModule } from '@ngrx/effects';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SharedModule, UserAuthModule, NgxTranslateModule, API_BASE_URL, UserAuthService, OrganizationUnitsServiceProxy } from '@libs/shared';
+import { SharedModule, UserAuthModule, NgxTranslateModule, API_BASE_URL, UserAuthService } from '@libs/shared';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { DatePipe } from '@angular/common';
 import {
@@ -137,7 +137,6 @@ const cookieConfig: RdsCookieConsentConfig = {
     { provide: API_BASE_URL, useFactory: getRemoteServiceBaseUrl },
     UserAuthService,
     OAuthModule,
-    OrganizationUnitsServiceProxy
     ],
   bootstrap: [AppComponent],
 })

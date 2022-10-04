@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 import { AppSessionService } from './app-session.service';
 import { Store } from '@ngrx/store';
 import { XmlHttpRequestHelper } from './XmlHttpRequestHelper';
-import { AbpServiceProxy, API_BASE_URL } from './service-proxies';
+import { ServiceProxy, API_BASE_URL } from './service-proxies';
 
 
 @Injectable()
@@ -24,7 +24,7 @@ export class UserAuthService implements OnInit {
     private localStorage: LocalStorageService,
     private router: Router,
     private store: Store,
-    private abpserviceProxy: AbpServiceProxy,
+    private abpserviceProxy: ServiceProxy,
     @Optional() @Inject(API_BASE_URL) baseUrl?: string
   ) {
     this.getApplicationConfiguration();
