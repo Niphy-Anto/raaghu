@@ -32,10 +32,9 @@ title: "Elements > List-group"
               <div class="row">
                <div class="col-md-12">
                   <img src="/images/list-group-basic.png" class="img-fluid w-50">
-               </div>                           
-           </div>
-                       
-  </div>
+              </div>               
+            </div>
+          </div>
         </div>
         <div class="tab-pane fade show" id="AngularBasic" role="tabpanel" aria-labelledby="AngularBasic-tab">
           <div class="contents bg-code">
@@ -50,13 +49,13 @@ label=""
 (onClick)="onClick($event)">
 </rds-list-group>
 ```
+
 </div>
-</div>
-  </div>
+          </div>
         </div>
       </div>
     </div>
-  </section>
+</section>
 
 <!-- List group with multiselect -->
 <section class="py-4">
