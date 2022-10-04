@@ -24,8 +24,14 @@ import { downloadState } from './state/DownloadData/download-data.reducer';
 
 import { ValidateTenantState } from "./state/login/login.reducer";
 import { LanguagesState } from './state/language/language.reducer';
+import { UsersState } from './state/user/user.reducer';
+import { RolesState } from './state/role/role.reducer';
 
 export interface AppState {
+    EditRoleSateI: any;
+    UserPermissionFilterI: any;
+    UserEditI: any;
+    // users: User;
   // products: ProductState,
   // webhookSubscriptions: WebhookSubscriptionState,
   // profile: profileState,
@@ -33,8 +39,8 @@ export interface AppState {
    organizationUnit: OrganizationUnitState
   // dynamicEntity: DynamicEntityState,
   // editions: EditionsState,
-  // roles: RolesState,
-  // users: UsersState,
+  roles: RolesState,
+   users: UsersState,
    languages: LanguagesState,
   // Subscription: SubscriptionState,
   // SubscriptionInformation: SubscriptionInformationState,

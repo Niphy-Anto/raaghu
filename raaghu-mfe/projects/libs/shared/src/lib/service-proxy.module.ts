@@ -23,7 +23,7 @@ import * as ApiServiceProxies from './service-proxies';
         ApiServiceProxies.OrganizationUnitsServiceProxy,
         // ApiServiceProxies.PermissionServiceProxy,
         // ApiServiceProxies.ProfileServiceProxy,
-        // ApiServiceProxies.RoleServiceProxy,
+        ApiServiceProxies.RolesServiceProxy,
         // ApiServiceProxies.SessionServiceProxy,
         // ApiServiceProxies.TenantServiceProxy,
         // ApiServiceProxies.TenantDashboardServiceProxy,

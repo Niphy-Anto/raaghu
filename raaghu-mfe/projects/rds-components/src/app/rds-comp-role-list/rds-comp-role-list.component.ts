@@ -97,6 +97,7 @@ export class RdsCompRoleListComponent implements OnInit {
   ngDoCheck(): void {
 
     this.tableData = [...this.roleList];
+    console.log(this.roleList)
   }
  
   getNavTabItems(): any {

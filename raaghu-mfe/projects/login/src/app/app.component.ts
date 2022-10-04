@@ -78,7 +78,7 @@ export class AppComponent extends MfeBaseComponent implements OnInit {
   //   });
   // }
   ngOnInit(): void {
-    //this.oauthService.initCodeFlow();
+    // this.oauthService.initCodeFlow();
     this.subscribeToAlerts();
     const tenantInfo = JSON.parse(localStorage.getItem('tenantInfo'));
     var tenancyName = tenantInfo ? tenantInfo.name : 'Not Selected';

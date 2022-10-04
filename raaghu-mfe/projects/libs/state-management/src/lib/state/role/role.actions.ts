@@ -1,9 +1,8 @@
 //import { CreateOrUpdateRoleInput } from "@libs/shared";
 import { createAction, props } from "@ngrx/store";
-import { PermissionData, PostRole, Role } from "./role.models";
+// import { PermissionData, PostRole, Role } from "./role.models";
 
-export const getRoles = createAction('[Role Page] Get Roles',
-(selectedPermissions: any) => ({ selectedPermissions }));
+export const getRoles = createAction('[Role Page] Get Roles');
 
 export const getRoleSuccess = createAction(
     '[Role Page] Get Role Success',
@@ -20,16 +19,16 @@ export const saveRole = createAction(
 );
 
 
-export const getPermission = createAction('[Role Page] Get Permissions');
+// export const getPermission = createAction('[Role Page] Get Permissions');
 
-export const getPermissionSuccess = createAction(
-    '[Role Page] get Permission Success',
-    props<{ PermissionI: PermissionData }>()
-);
-export const deleteRole = createAction(
-    '[Role Page] Delete Role',
-    (id: number) => ({ id })
-);
+// export const getPermissionSuccess = createAction(
+//     '[Role Page] get Permission Success',
+//     props<{ PermissionI: PermissionData }>()
+// );
+// export const deleteRole = createAction(
+//     '[Role Page] Delete Role',
+//     (id: number) => ({ id })
+// );
 
 export const getRolByEdit = createAction('[Role Page] Get RolByEdit',
 (id: number) => ({ id }));

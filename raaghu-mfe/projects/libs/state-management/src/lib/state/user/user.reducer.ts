@@ -4,13 +4,13 @@ import { User } from "./user.models";
 
 
 export interface UsersState {
-    users: User;
+    users: any;
     error: string;
     status: 'pending' | 'loading' | 'error' | 'success';
 }
 
 export const userInitialState: UsersState = {
-    users: { items: [] },
+    users: null,
     error: null,
     status: 'pending',
 };

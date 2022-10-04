@@ -2,11 +2,12 @@ import { createAction, props } from "@ngrx/store";
 import { User } from "./user.models";
 
 export const getUsers = createAction('[User Page] Get Users',
-(selectedPermissions: any) => ({ selectedPermissions }));
+// (selectedPermissions: any) => ({ selectedPermissions })
+);
 
 export const getUserSuccess = createAction(
     '[User Page] Get User Success',
-    props<{ users: User }>()
+    props<{ users: any }>()
 );
 
 export const getUserFailure = createAction(

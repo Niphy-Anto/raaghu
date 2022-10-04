@@ -29,6 +29,8 @@ import { RdsCookieConsentModule } from 'projects/libs/rds-cookieconsent/src/lib/
 import { OAuthModule, OAuthService, OAuthStorage } from 'angular-oauth2-oidc';
 import { OrganizationUnitReducer } from 'projects/libs/state-management/src/lib/state/organization-unit/organization-unit.reducer';
 import { OrganizationUnitEffects } from 'projects/libs/state-management/src/lib/state/organization-unit/organization-unit.effects';
+import { RoleReducer } from 'projects/libs/state-management/src/lib/state/role/role.reducer';
+import { RoleEffects } from 'projects/libs/state-management/src/lib/state/role/role.effects';
 export function getRemoteServiceBaseUrl(): any {
   let URL = demodata.remoteServiceBaseUrl
   return URL;
@@ -83,6 +85,7 @@ const cookieConfig: RdsCookieConsentConfig = {
       // Entities: GetAllDynamicProperty,
       // PropertiesEntitie: GetAllDynamicPropertyEntites,
       organizationUnit: OrganizationUnitReducer,
+      roles: RoleReducer,
       // Delegation: DelegationsReducer,
       // mla: MLAReducer,
       validateTenant: ValidateTenantReducer,
@@ -110,6 +113,7 @@ const cookieConfig: RdsCookieConsentConfig = {
       OrganizationUnitEffects, 
       //MaintenanceEffects, DelegationsEffects, 
       LanguageTextEffects, 
+      RoleEffects,
       DownloadEffects,
       LoginEffects
     ]),
