@@ -3,7 +3,7 @@ import { ConstantPool } from '@angular/compiler';
 import { Component, Injector, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { mergeMap as _observableMergeMap, catchError as _observableCatch } from 'rxjs/operators';
-import { AccountServiceProxy, AlertService, AlertTypes, AppSessionService, ComponentLoaderOptions, LinkUserServiceProxy, MfeBaseComponent, UserAuthService, UserLoginInfo } from '@libs/shared';
+import { AlertService, AlertTypes, ComponentLoaderOptions, MfeBaseComponent, UserAuthService, UserLoginInfo } from '@libs/shared';
 //import { AuthenticateModel, AuthenticateResultModel, TokenAuthServiceProxy } from '@libs/shared';
 import { Store } from '@ngrx/store';
 import { getCurrentLoginInformation, GetProfilePicture, GetSubscriptionExpiringData } from 'projects/libs/state-management/src/lib/state/login/login.actions';
@@ -45,12 +45,8 @@ export class AppComponent extends MfeBaseComponent implements OnInit {
     private injector: Injector,
     private _userAuthService: UserAuthService,
     private _router: Router,
-    private _tokenAuthService: AccountServiceProxy,
     private store: Store,
-    private http: HttpClient,
-    //private authStorage: OAuthStorage,
     private alertService: AlertService,
-    private tokensService: LinkUserServiceProxy,
     private oauthService: OAuthService
   ) {
     super(injector);
