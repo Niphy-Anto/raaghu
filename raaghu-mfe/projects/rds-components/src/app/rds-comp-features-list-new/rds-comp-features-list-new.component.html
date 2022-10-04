@@ -1,6 +1,6 @@
 <!-- <rds-label [label]="'Edition List'"></rds-label> -->
 <div class="row mt-5 flex-row flex-code"   >
-    <div class="col-md-2 " *ngFor="let item of EditionData" >
+    <div class="col-md-6 mb-3" *ngFor="let item of EditionData" >
        
             <rds-card [showHeader]=""
             [showBody]=""
@@ -9,13 +9,13 @@
              <div showHeader header>
                     <div class="text-center mt-3 ">
                   
-                        <rds-label [bold]="true" [label]="item.EditionName"></rds-label>
-                        <p class="titleClass fw-bold text-muted">{{item.EditionTitle}}</p>
+                        <rds-label [bold]="false" [label]="item.EditionName" class="fs-4 fw-bold"></rds-label>
+                        <p class="fw-medium text-muted pt-2">{{item.EditionTitle}}</p>
                     </div>
-                    <div class="row ">
-                        <div class="col-md-12 text-center">
-                            <p class="text-info fw-bold fs-3 h-25"> <sup>&#x24;</sup>{{item.Price}}</p>
-                           <span class="text-muted titleClass">{{item.Plan}}</span>
+                    <div class="pt-3">
+                        <div class="text-center">
+                            <h1 class="text-primary fw-bold"> <sup>&#x24;</sup>{{item.Price}}</h1>
+                           <span class="text-muted fw-medium">{{item.Plan}}</span>
                             </div>
                             
                   </div>
@@ -29,13 +29,13 @@
                     </div> -->
                 </div>
                 <div footer>
-                    <div class="row mb-3 ms-2 " >
-                        <div class="col-md-2">
+                    <div class="d-flex gap-2 p-4">
+                        <div>
                             <rds-button colorVariant="primary" [block]="false" size="small" [outlineButton]="true"
                                 [roundedButton]="true" [roundedCorner]="true" [iconStroke]="true" [iconFill]="false" 
                                 buttonType="iconLabel" icon="pencil" iconHeight="12px" iconWidth="12px" (click)="onEdit()"></rds-button>
                         </div>
-                        <div class="col-md-2 ms-1 ">
+                        <div>
                             <rds-button colorVariant="danger" size="small" [outlineButton]="true" [roundedButton]="true"
                                 [roundedCorner]="true" [iconStroke]="true" [iconFill]="false" buttonType="iconLabel" iconHeight="12px" iconWidth="12px"
                                 icon="delete" (click)="openConfirmationPopup()"></rds-button>
@@ -45,18 +45,20 @@
             </rds-card>
        
       </div>
-    <div class="col-md-2  ">
-        <rds-card [showHeader]=""
+    <div class="col-md-6 mb-3">
+        <div>
+            <rds-card [showHeader]=""
         [showBody]=""
-        [showFooter]=""  [custClass]="true" [borderColor]="'primary'" [customTopBottom]="false" >
+        [showFooter]="" [custClass]="true" [borderColor]="'primary'" [customTopBottom]="false">
         
         <div header>
             <div class="mb-5"></div>
         </div>
-        <div body class="ms-5 mt-3 ">
-              <div class=" mb-5 mt-4"><rds-button [label]="'NEW EDITION'" class="ms-3" type="button" [colorVariant]="'primary'" (click)="openCanvas()"
-                [attr.aria-controls]="'addNewEdition'" [icon]="'plus'" iconHeight="12px"   [roundedButton]="true"  iconWidth="12px" [size]="'small'">
-            </rds-button>
+        <div body class="">
+              <div class="d-flex justify-content-center feature-empty-card align-items-center">
+                <rds-button [label]="'NEW EDITION'" type="button" [colorVariant]="'primary'" (click)="openCanvas()"
+                    [attr.aria-controls]="'addNewEdition'" [icon]="'plus'" iconHeight="12px"   [roundedButton]="true"  iconWidth="12px" [size]="'small'">
+                </rds-button>
           </div>
                 
         </div>
@@ -64,7 +66,7 @@
             
         </div>
         </rds-card>
-        
+        </div>
     </div>
 </div>
 

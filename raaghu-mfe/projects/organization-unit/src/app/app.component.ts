@@ -9,6 +9,7 @@ import { TableHeader } from 'projects/rds-components/src/models/table-header.mod
 import { selectDefaultLanguage } from '@libs/state-management';
 import { TranslateService } from '@ngx-translate/core';
 import { transition, trigger, query, style, animate, } from '@angular/animations';
+import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 
 declare var bootstrap: any;
 
@@ -56,11 +57,15 @@ export class AppComponent implements OnInit {
   userUniqueId: any;
   roleUniqueId: any;
   viewCanvas: boolean = false;
+  nodeForm: FormGroup
+  ItemsDescription: FormControl;
   activePage: number = 0;
+  viewCreateOrganisationCanvas: boolean = false;
   usercanvasTitle: string = 'Select User';
   rolecanvasTitle: string = 'Select Role';
   selectedTreeNode: number = 0;
   offcanvasId: string = 'org_canvas';
+  canvasTitle: string = 'New Organization Unit';
   navtabsItems: any = [
     {
       label: this.translate.instant('Members'),
@@ -232,6 +237,9 @@ export class AppComponent implements OnInit {
   addedDataRole: boolean = false;
   addedDataMember: boolean = false;
   treeData2: any;
+  node: string = '';
+  selectedParent: any = null;
+  selectedNodeInfo: any;
   constructor(
     private store: Store,
     private _arrayToTreeConverterService: ArrayToTreeConverterService,
@@ -241,6 +249,7 @@ export class AppComponent implements OnInit {
   ) {
   }
   ngOnInit(): void {
+
 
     this.isAnimation = true;
     this.store.select(selectDefaultLanguage).subscribe((res: any) => {
@@ -260,22 +269,27 @@ export class AppComponent implements OnInit {
         ButtonLabel: "",
       },
       output: {
-        onChildSave: (childEventData) => {
-          this.store.dispatch(createTreeUnit(childEventData))
-          this.updateOrganizationTree();
-        },
-        onUpdateUnitTree: (data) => {
-          console.log(data);
-          this.store.dispatch(updateUnitTree(data));
-          this.updateOrganizationTree();
-        },
-
-        onDeleteNode: (data
-        ) => {
+         onDeleteNode: (data: any) => {
           this.store.dispatch(deleteUnitTree(data));
           this.updateOrganizationTree();
         },
-
+        getSelectedParent: (parent) => {
+          this.selectedParent = parent;
+          this.canvasTitle = 'New Organization Unit';
+          this.viewCreateOrganisationCanvas = true;
+          setTimeout(() => {
+            this.openCanvas();
+          }, 100);
+        },
+        onNodeEdit: (node: any) => {
+          this.canvasTitle = 'Edit Organization Unit';
+          this.viewCreateOrganisationCanvas = true;
+          this.selectedNodeInfo = node;
+          this.node = node.data.displayName;
+          setTimeout(() => {
+            this.openCanvas();
+          }, 100);
+        },
         onSelectnode: (onSelectnodeevent) => {
           this.selectedTreeNode = onSelectnodeevent.item.data.id;
           this.organizationName = onSelectnodeevent.item.data.displayName;
@@ -284,6 +298,7 @@ export class AppComponent implements OnInit {
           this.updateMembersTable();
           this.updateRolesTable();
         },
+
       }
     };
 
@@ -518,5 +533,38 @@ export class AppComponent implements OnInit {
     this.navtabsItems[0].label = this.translate.instant('Members');
     this.navtabsItems[1].label = this.translate.instant('Roles');
     return this.navtabsItems;
+  }
+
+  saveNode(nodeForm: NgForm): void {
+    if (!nodeForm.valid) {
+      return;
+    }
+    if (this.selectedNodeInfo && this.selectedNodeInfo && this.selectedNodeInfo.data.id) {
+      const data: any = { data: { id: this.selectedNodeInfo.data.id, displayName: this.node } }
+      this.store.dispatch(updateUnitTree(data));
+    } else {
+      const data: any = { parentId: this.selectedParent, displayName: this.node }
+      this.store.dispatch(createTreeUnit(data))
+    }
+
+    // this.updateOrganizationTree();
+  }
+
+  onCancelOrganisation(): void {
+    this.viewCreateOrganisationCanvas = false;
+  }
+
+  openCanvas(): void {
+    var offcanvas = document.getElementById('addNodeOffcanvas');
+    if (offcanvas) {
+      var bsOffcanvas = new bootstrap.Offcanvas(offcanvas);
+      bsOffcanvas.show();
+      offcanvas.addEventListener('hidden.bs.offcanvas', event => {
+        this.viewCreateOrganisationCanvas = false;
+        this.selectedParent = null;
+        this.selectedNodeInfo = undefined;
+        this.node = '';
+      })
+    }
   }
 }

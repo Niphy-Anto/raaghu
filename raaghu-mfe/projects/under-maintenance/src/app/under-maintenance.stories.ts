@@ -16,6 +16,7 @@ export default {
       RdsCompAlertComponent],
       imports: [
         RdsButtonModule,
+        RdsIconModule,
         SharedModule,NgxTranslateModule
       ],
       providers: [
@@ -29,25 +30,38 @@ const Template: Story<underMaintenance> = (args: underMaintenance) => ({
       ...args
   },
   template:`
+  <div>
   <div class="row">
   <div class="col-md-12">
-    <div class="card p-2 justify-content-center border-0 rounded-0 page-full-height">
+    <div class="pt-4 border-0">
       <div class="container-fluid justify-content-center ">
-        <div class="row  ">
-          <div class="col-md-6 offset-md-3">
             <div class="text-center">
-              <h1 class="fw-bold mt-5">The site is currently down for maintenance</h1>
-              <p class="text-opacity-25 text-secondary mt-5 mb-4">Nulla metus metus ullamcorper vel tincidunt set euismod</p>
+              <img src="static/media/.storybook/assets/raaghu-logo.svg" alt="Raaghu" class="raaghu-lg2">
+              <h1 class="fw-bold pt-3 pb-3 sm-w-50 mx-auto sm-w-100">The site is currently down for maintenance</h1>
+              <p class="text-opacity-25 fw-medium text-secondary mb-4">Nulla metus metus ullamcorper vel tincidunt set euismod</p>
               <div class="mt-5 mb-5">
-                <img src="../assets/illustration-maintenance.svg" class="w-75 h-75">
+                <img src="https://stageui.raaghu.io/assets/illustration-maintenance.svg" class="raaghu-maintenance">
               </div>
             </div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
 </div>
+  <footer>
+    <div class="sm-d-flex justify-content-between align-items-center border-top py-3 px-3 bg-grey sm-block">
+      <p class="mb-0">Copyrights @2022 | All rights reserved.</p>
+      <div class="d-flex sm-pt-1">
+      <p class="mb-0">Connect with us :</p>
+      <ul class="list-unstyled d-flex mb-0">
+        <li class="ms-3"><a class="link-dark" href="#"><rds-icon name="twitter" height="18px" colorVariant="primary" width="18px"></rds-icon></a></li>
+        <li class="ms-3"><a class="link-dark" href="#"><rds-icon name="phone" height="18px" colorVariant="primary" width="18px"></rds-icon></a></li>
+        <li class="ms-3"><a class="link-dark" href="#"><rds-icon name="envelope" height="18px" colorVariant="primary" width="18px"></rds-icon></a></li>
+      </ul>
+      </div>
+    </div>
+  </footer>
+</div>
+
 `
   });
 
