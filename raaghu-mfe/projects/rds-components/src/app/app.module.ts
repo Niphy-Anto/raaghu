@@ -42,7 +42,8 @@ import {
   RdsSpinnerModule, RdsToastsModule, RdsChartBubbleModule, RdsChartDoughnutModule, RdsChartMixedModule, RdsChartPolarAreaModule, RdsChartScatterModule, RdsChartStackedModule,
   RdsProgressbarModule, RdsBreadcrumbModule, RdsCarouselModule, RdsDoubleRangeModule, RdsScrollspyModule, RdsCounterModule, RdsFabMenuModule, RdsLabelModule, RdsIconLabelModule,
   CalendarModule, adapterFactory, DateAdapter, RdsRatingModule, RdsLikeDislikeModule, RdsColorModule, RdsFeedModule, RdsVideoPlayerModule, RdsAppDetailsModule, RdsBenefitModule,
-  RdsCardDetailModule, RdsSizeModule, RdsPriceModule, RdsFeatureListModule, RdsProductImageModule, RdsReviewCategoryModule, RdsTeamMemberModule,RdsAddressDetailModule,RdsWebsiteMetricModule,RdsTestimonialModule,RdsStepperModule
+  RdsCardDetailModule, RdsSizeModule, RdsPriceModule, RdsFeatureListModule, RdsProductImageModule, RdsReviewCategoryModule, RdsTeamMemberModule,RdsAddressDetailModule,RdsWebsiteMetricModule,RdsTestimonialModule,
+  RdsStepperModule
 } from '@libs/rds-elements';
 import { RdsCompDemouiComponent } from './rds-comp-demoui/rds-comp-demoui.component';
 import { RdsCompTenantManagementComponent } from './rds-comp-tenant-management/rds-comp-tenant-management.component';
@@ -153,6 +154,9 @@ import { RdsCompTenantFeaturesComponent } from './rds-comp-tenant-features/rds-c
 import { RdsCompUserBasicProfileRightComponent } from './rds-comp-user-basic-profile-right/rds-comp-user-basic-profile-right.component';
 import { RdsCompUserPermissionsNewComponent } from './rds-comp-user-permissions-new/rds-comp-user-permissions-new.component';
 import { RdsCompAuditLogsNewComponent } from './rds-comp-audit-logs-new/rds-comp-audit-logs-new.component';
+import { RdsCompFeaturesListNewComponent } from './rds-comp-features-list-new/rds-comp-features-list-new.component';
+import { RdsCompEditionNewBasicComponent } from './rds-comp-edition-new-basic/rds-comp-edition-new-basic.component';
+import { RdsCompEditionNewFeaturesComponent } from './rds-comp-edition-new-features/rds-comp-edition-new-features.component';
 
 @NgModule({
   declarations: [	
@@ -292,12 +296,18 @@ import { RdsCompAuditLogsNewComponent } from './rds-comp-audit-logs-new/rds-comp
     RdsCompApplyForPositionComponent,
     RdsCompOpenPositionComponent,
     RdsCompNotificationSettingsComponent,
+
     RdsCompTenantBasicProfileRightComponent,
     RdsCompTenantListNewComponent,
     RdsCompTenantFeaturesComponent,
+
+    RdsCompFeaturesListNewComponent,
+    RdsCompEditionNewBasicComponent,
+    RdsCompEditionNewFeaturesComponent,
+    
     RdsCompUserBasicProfileRightComponent,
     RdsCompUserPermissionsNewComponent,
-    RdsCompAuditLogsNewComponent,
+    RdsCompAuditLogsNewComponent
   
   ],
   imports: [
@@ -392,7 +402,7 @@ import { RdsCompAuditLogsNewComponent } from './rds-comp-audit-logs-new/rds-comp
     RdsReviewCategoryModule,
     RdsTeamMemberModule,
     RdsWebsiteMetricModule,
-    RdsTestimonialModule
+    RdsTestimonialModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

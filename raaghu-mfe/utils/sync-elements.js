@@ -26,7 +26,7 @@ const dependentElements = [
     'rds-stepper',
     'rds-app-details',
     'rds-team-member',
-    'rds-nav-tab'
+    'rds-nav-tab'    
 ];
 
 function replaceFiles() {

@@ -1,6 +1,6 @@
 module.exports = {
   "stories": [
-    "../projects/**/*.stories.mdx",
+    "../projects/**/*.stories.@(md|mdx)",
     "../projects/**/*.stories.@(js|jsx|ts|tsx)"
   ],
   "addons": [
@@ -9,7 +9,11 @@ module.exports = {
     "@storybook/addon-interactions"
   ],
   "framework": "@storybook/angular",
+  "staticDirs": [{"from": './assets', "to": '/assets'}],
   "core": {
     "builder": "webpack5"
+  },
+  "features": {
+    "storyStoreV7": true
   }
 }

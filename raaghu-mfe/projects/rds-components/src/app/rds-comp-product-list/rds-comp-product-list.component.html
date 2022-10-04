@@ -1,11 +1,11 @@
 <div [ngSwitch]="role">
-  <div class="container">
+  <div>
     <div *ngSwitchCase="'withInlinePrice'">
       <h5>
         <rds-label label="Customer also purchased" [multiline]="false" [bold]="true" [italic]="false"></rds-label>
       </h5>
       <div class="row">
-        <div class="col-md-3" *ngFor="let item of productListItems">
+        <div class="col-md-3 mb-3" *ngFor="let item of productListItems">
           <rds-card class="rounded-avatar-basic">
             <div header>
               <div class="text-center">
@@ -16,10 +16,11 @@
               <h5 class="custom-title">{{item.title}}</h5>
               <p class="custom-desc">{{item.subTitle}}</p>
             </div>
-            <div footer>
+            <div class="p-3" footer>
               <div class="d-flex justify-content-between">
                 <rds-label [label]="item.price" [multiline]="false" [bold]="true" [italic]="false"></rds-label>
                 <span *ngIf="item.badgeLabel != ''">
+                  <rds-icon name="featured" height="18px" colorVariant="warning" width="18px"></rds-icon>
                   <rds-badge size="small" [label]="item.badgeLabel" [positioned]="false" colorVariant="warning">
                   </rds-badge>
                 </span>
@@ -31,7 +32,7 @@
     </div>
     <div *ngSwitchCase="'simple'">
       <div class="row">
-        <div class="col-md-4" *ngFor="let item of productListItems">
+        <div class="col-md-4 mb-3" *ngFor="let item of productListItems">
           <rds-card  class="rounded-avatar-basic">
             <div header>
               <div class="text-center">
@@ -39,16 +40,17 @@
               </div>
             </div>
             <div body>
-              <div class="p-3">
+              <div>
                 <h5 class="custom-title">{{item.title}}</h5>
                 <h5 class="custom-title">{{item.subTitle}}</h5>
 
               </div>
             </div>
             <div footer>
-              <div class="d-flex justify-content-between">
+              <div class="d-flex justify-content-between p-3">
                 <rds-label [label]="item.price" [multiline]="false" [bold]="true" [italic]="false"></rds-label>
                 <span *ngIf="item.badgeLabel != ''">
+                  <rds-icon name="featured" height="18px" colorVariant="warning" width="18px"></rds-icon>
                   <rds-badge size="small" [label]="item.badgeLabel" [positioned]="false" colorVariant="warning">
                   </rds-badge>
                 </span>
@@ -67,7 +69,7 @@
         ></rds-icon></a>
       </div>
       <div class="row">
-        <div class="col-md-3" *ngFor="let item of productListItems">
+        <div class="col-md-3 mb-3" *ngFor="let item of productListItems">
           <rds-card  class="rounded-avatar-basic">
             <div header>
               <div class="text-center">
@@ -78,10 +80,11 @@
               <h5 class="custom-title">{{item.title}}</h5>
               <p class="custom-desc">{{item.subTitle}}</p>
             </div>
-            <div footer>
+            <div class="p-3" footer>
               <div class="d-flex justify-content-between">
                 <rds-label [label]="item.price" [multiline]="false" [bold]="true" [italic]="false"></rds-label>
                 <span *ngIf="item.badgeLabel != ''">
+                  <rds-icon name="featured" height="18px" colorVariant="warning" width="18px"></rds-icon>
                   <rds-badge size="small" [label]="item.badgeLabel"  [positioned]="false" colorVariant="warning">
                   </rds-badge>
                 </span>
@@ -104,7 +107,7 @@
           </rds-icon></a>
       </div>
       <div class="row">
-        <div class="col-md-3" *ngFor="let item of productListItems">
+        <div class="col-md-3 mb-3" *ngFor="let item of productListItems">
           <rds-card class="rounded-avatar-basic">
             <div header>
               <div class="text-center">
@@ -116,7 +119,7 @@
               <rds-rating [rating]="1" colorVariant="primary" [noOfReview]="123" Size="small"></rds-rating>
               <p class="custom-desc">{{item.subTitle}}</p>
             </div>
-            <div footer>
+            <div class="p-3" footer>
               <div class="d-flex justify-content-between">
                 <rds-label [label]="item.price" [multiline]="false" [bold]="true" [italic]="false"></rds-label>
                 <span *ngIf="item.badgeLabel != ''">
@@ -134,7 +137,7 @@
     </div>
     <div *ngSwitchCase="'withTallImages'">
       <div class="row">
-        <div class="col-md-4" *ngFor="let item of productListItems">
+        <div class="col-md-4 mb-3" *ngFor="let item of productListItems">
           <rds-card  class="rounded-avatar-basic">
             <div header>
               <div class="text-center">
@@ -145,10 +148,11 @@
               <h5 class="custom-title">{{item.title}}</h5>
               <p class="custom-desc">{{item.subTitle}}</p>
             </div>
-            <div footer>
+            <div class="p-3" footer>
               <div class="d-flex justify-content-between">
                 <rds-label [label]="item.price" [multiline]="false" [bold]="true" [italic]="false"></rds-label>
                 <span *ngIf="item.badgeLabel != ''">
+                  <rds-icon name="featured" height="18px" colorVariant="warning" width="18px"></rds-icon>
                   <rds-badge size="small" [label]="item.badgeLabel" colorVariant="warning">
                   </rds-badge>
                 </span>
@@ -163,7 +167,7 @@
         <rds-label label="Customers also bought" [multiline]="false" [bold]="true" [italic]="false"></rds-label>
       </h5>
       <div class="row">
-        <div class="col-md-3" *ngFor="let item of productListItems">
+        <div class="col-md-3 mb-3" *ngFor="let item of productListItems">
           <rds-card  class="rounded-avatar-basic">
             <div header>
               <div class="text-center">
@@ -174,10 +178,11 @@
               <h5 class="custom-title">{{item.title}}</h5>
               <p class="custom-desc">{{item.subTitle}}</p>
             </div>
-            <div footer>
+            <div class="p-3" footer>
               <div class="d-flex justify-content-between">
                 <rds-label [label]="item.price" [multiline]="false" [bold]="true" [italic]="false"></rds-label>
                 <span *ngIf="item.badgeLabel != ''">
+                  <rds-icon name="featured" height="18px" colorVariant="warning" width="18px"></rds-icon>
                   <rds-badge size="small" [label]="item.badgeLabel" colorVariant="warning">
                   </rds-badge>
                 </span>
@@ -200,7 +205,7 @@
       </div>
 
       <div class="row">
-        <div class="col-md-4" *ngFor="let item of productListItems">
+        <div class="col-md-4 mb-3" *ngFor="let item of productListItems">
           <rds-card  class="rounded-avatar-basic">
             <div header>
               <div class="text-center">
@@ -215,10 +220,11 @@
                 [multiline]="true" [bold]="false" [italic]="false"></rds-label>
               <rds-label label="Blue White Checks" [multiline]="false" [bold]="false" [italic]="true"></rds-label>
             </div>
-            <div footer>
+            <div class="p-3" footer>
               <div class="d-flex justify-content-between">
                 <rds-label [label]="item.price" [multiline]="false" [bold]="true" [italic]="false"></rds-label>
                 <span *ngIf="item.badgeLabel != ''">
+                  <rds-icon name="featured" height="18px" colorVariant="warning" width="18px"></rds-icon>
                   <rds-badge size="small" [label]="item.badgeLabel"  colorVariant="warning">
                   </rds-badge>
                 </span>
@@ -239,9 +245,9 @@
             </div>
             <div body>
               <h5 class="custom-title">{{item.title}}</h5>
-              <rds-rating [rating]="1" colorVariant="primary" [noOfReview]="123" Size="small"></rds-rating>
+              <rds-rating [rating]="1" colorVariant="review" [noOfReview]="123" Size="small"></rds-rating>
             </div>
-            <div footer>
+            <div class="p-3" footer>
               <rds-label [label]="item.price" [multiline]="false" [bold]="true" [italic]="false"></rds-label>
             </div>
           </rds-card>
@@ -250,7 +256,7 @@
   </div>
   <div *ngSwitchCase="'withSupportingText'">
     <div class="row">
-      <div class="col-md-3" *ngFor="let item of productListItems">
+      <div class="col-md-3 mb-3" *ngFor="let item of productListItems">
         <rds-card class="rounded-avatar-basic">
           <div header>
             <div class="text-center">
@@ -261,10 +267,11 @@
             <h5 class="custom-title">{{item.title}}</h5>
             <p class="custom-desc">{{item.subTitle}}</p>
           </div>
-          <div footer>
+          <div class="p-3" footer>
             <div class="d-flex justify-content-between">
               <rds-label [label]="item.price" [multiline]="false" [bold]="true" [italic]="false"></rds-label>
               <span *ngIf="item.badgeLabel != ''">
+                <rds-icon name="featured" height="18px" colorVariant="warning" width="18px"></rds-icon>
                 <rds-badge size="small" [label]="item.badgeLabel" colorVariant="warning">
                 </rds-badge>
               </span>
@@ -280,7 +287,7 @@
   </div>
   <div *ngSwitchCase="'cardWithFullDetails'">
     <div class="row">
-      <div class="col-md-4" *ngFor="let item of productListItems">
+      <div class="col-md-4 mb-3" *ngFor="let item of productListItems">
         <rds-card  class="rounded-avatar-basic">
           <div header>
             <div class="text-center">
@@ -289,7 +296,7 @@
           </div>
           <div body>
             <h5 class="custom-title">{{item.title}}</h5>
-            <rds-rating [rating]="1" colorVariant="primary" [noOfReview]="123" Size="small"></rds-rating>
+            <rds-rating [rating]="1" colorVariant="review" [noOfReview]="123" Size="small"></rds-rating>
             <rds-label
               label="Premium Quality Soft T-Shirt White tees stain easily, and black tees fade. This is going to be gray for a while."
               [multiline]="true" [bold]="false" [italic]="false"></rds-label>
@@ -297,9 +304,10 @@
 
           </div>
           <div footer>
-            <div class="d-flex justify-content-between">
+            <div class="d-flex justify-content-between p-3">
               <rds-label [label]="item.price" [multiline]="false" [bold]="true" [italic]="false"></rds-label>
               <span *ngIf="item.badgeLabel != ''">
+                <rds-icon name="featured" height="18px" colorVariant="warning" width="18px"></rds-icon>
                 <rds-badge size="small" [label]="item.badgeLabel"  colorVariant="warning">
                 </rds-badge>
               </span>
@@ -314,7 +322,7 @@
       <div class="col-md-3" *ngFor="let item of productListItems">
         <rds-card  class="rounded-avatar-basic">
           <div header>
-            <div class="text-center p-4">
+            <div class="text-center">
               <img [src]="item.imageUrl" class="card-img-top" width="263.92px" height="256px" alt="">
             </div>
             <div class="mt-3 mb-3 text-center">

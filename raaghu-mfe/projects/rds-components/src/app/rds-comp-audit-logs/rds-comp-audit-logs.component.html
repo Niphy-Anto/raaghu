@@ -1,6 +1,6 @@
 <div class="card p-2 h-100 border-0 rounded-0 vh-88">
     <div class="row m-1">
-        <div class="col-md-12  text-end position-relative">
+        <div class="col-md-12  text-end position-relative desktop-btn">
             <div class="position-absolute  end-0">
                 <rds-button #operationlog class="action mb-0" *ngIf="selectedIndex==0"
                     [colorVariant]="'primary'" [outlineButton]="true" [size]="'small'" (click)="exportToExcel('operation-logs')"
@@ -29,19 +29,19 @@
 
                 <div class="row">
 
-                    <div class="col-md-2 sm-p-0 d-flex align-items-center">
+                    <div class="col-md-2 mb-3 sm-p-0 sm-block d-flex align-items-center">
                         <rds-datepicker name="date-picker" [label]="''" [placeholder]="translate.instant('Start Date')"
                             (change)="startDateModify($event)" [(ngModel)]="startDate" [value]="startDate"
                             floatinginputLabel="">
                         </rds-datepicker>
                     </div>
-                    <div class="col-md-2 sm-p-0 d-flex align-items-center">
+                    <div class="col-md-2 mb-3 sm-p-0 sm-block d-flex align-items-center">
                         <rds-datepicker name="date-picker" [label]="''" [placeholder]="translate.instant('End Date')"
                             (change)="endDateModify($event)" [(ngModel)]="endDate" [value]="endDate"
                             floatinginputLabel="">
                         </rds-datepicker>
                     </div>
-                    <div class="col-md-2 sm-p-0 mt-1 d-flex align-items-center">
+                    <div class="col-md-2 mb-3 sm-p-0 sm-block mt-1 d-flex align-items-center">
                         <rds-input size="default" [inputType]="" [Title]="" [(ngModel)]="user"
                             [placeholder]="translate.instant('User')" id="txtUsername" (change)="userModify($event)"
                             floatinginputLabel="" ngDefaultControl name="userName"></rds-input>
@@ -55,7 +55,7 @@
 
                 </div>
 
-                <div class="mobile-btn position-fixed bottom-0 end-0 my-5 me-5">
+                <div class="mobile-btn position-fixed bottom-0 end-0 pb-2 me-4">
                     <!-- <rds-button class="action" [colorVariant]="'outline-primary'" [size]="'medium'"
                         (click)="exportToExcel('operation-logs')" [roundedButton]="true">
                         <rds-icon left name="export-to-excel" height="12px" width="13.5px"></rds-icon>
