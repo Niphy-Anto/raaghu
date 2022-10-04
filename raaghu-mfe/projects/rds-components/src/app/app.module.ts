@@ -157,6 +157,11 @@ import { RdsCompAuditLogsNewComponent } from './rds-comp-audit-logs-new/rds-comp
 import { RdsCompFeaturesListNewComponent } from './rds-comp-features-list-new/rds-comp-features-list-new.component';
 import { RdsCompEditionNewBasicComponent } from './rds-comp-edition-new-basic/rds-comp-edition-new-basic.component';
 import { RdsCompEditionNewFeaturesComponent } from './rds-comp-edition-new-features/rds-comp-edition-new-features.component';
+import { RdsCompEmailSettingsNewComponent } from './rds-comp-email-settings-new/rds-comp-email-settings-new.component';
+import { RdsCompIdentityManagementNewComponent } from './rds-comp-identity-management-new/rds-comp-identity-management-new.component';
+import { RdsCompThemeNewComponent } from './rds-comp-theme-new/rds-comp-theme-new.component';
+import { RdsCompAccountNewComponent } from './rds-comp-account-new/rds-comp-account-new.component';
+import { RdsCompSettingsNewComponent } from './rds-comp-settings-new/rds-comp-settings-new.component';
 
 @NgModule({
   declarations: [	
@@ -307,7 +312,12 @@ import { RdsCompEditionNewFeaturesComponent } from './rds-comp-edition-new-featu
     
     RdsCompUserBasicProfileRightComponent,
     RdsCompUserPermissionsNewComponent,
-    RdsCompAuditLogsNewComponent
+    RdsCompAuditLogsNewComponent,
+    RdsCompEmailSettingsNewComponent,
+    RdsCompIdentityManagementNewComponent,
+    RdsCompThemeNewComponent,
+    RdsCompAccountNewComponent,
+    RdsCompSettingsNewComponent
   
   ],
   imports: [
