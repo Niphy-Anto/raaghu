@@ -76,10 +76,7 @@ const Template: Story<LanguageComponent> = (args: LanguageComponent) => ({
     </div>
   </div>
 </div>
-<div class="mobile-btn position-absolute bottom-0 end-0 my-4 mx-5">
-  <rds-fab-menu [listItems]="listItems" [menuicon]="'plus'" [colorVariant]="'primary'" [menuiconWidth]="'12px'"
-    [menuiconHeight]="'12px'" (onSelect)="onSelectMenu($event)"></rds-fab-menu>
-</div>
+
 <ng-container *ngIf="viewCanvas">
   <rds-offcanvas [canvasTitle]="translate.instant(languageCanvasTitle)" [offId]="'AddLanguage'"
     (onClose)="closeCanvas()" [offcanvaswidth]="550" [placement]="'end'">
