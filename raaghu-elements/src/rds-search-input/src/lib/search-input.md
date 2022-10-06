@@ -64,7 +64,7 @@ title: "Elements > Search-input"
                               <div class="card border p-5">
                                  <div class="row">
                                     <div class="col-md-5">
-                                       <img src="https://portal.raaghu.io/images/components/_search/img-1.png" class="img-fluid">
+                                       <img src="/images/skel-search.png" class="img-fluid">
                                     </div> 
                                  </div>
                               </div>
