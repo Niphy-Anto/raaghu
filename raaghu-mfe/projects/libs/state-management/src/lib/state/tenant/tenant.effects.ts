@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { AlertService } from "@libs/shared";
+import { AlertService, ServiceProxy } from "@libs/shared";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
 import { Store } from "@ngrx/store";
 import { from, of } from "rxjs";
@@ -8,13 +8,13 @@ import { getTenants, getTenantSuccess, getTenantFailure, deleteTenant, updateTen
 
 @Injectable()
 export class TenantEffects {
-  constructor(private actions$: Actions, private tenantService: TenantServiceProxy, private alertService: AlertService, private store: Store) { }
+  constructor(private actions$: Actions, private tenantService: ServiceProxy, private alertService: AlertService, private store: Store) { }
   getTenants$ = createEffect(() =>
     this.actions$.pipe(
       ofType(getTenants),
       switchMap(() =>
         // Call the getTodos method, convert it to an observable
-        from(this.tenantService.getTenants(undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, 1000,0)).pipe(
+        from(this.tenantService.tenantsGET2(undefined, undefined, undefined, undefined, undefined, undefined, undefined, 0, 1000)).pipe(
           // Take the returned value and return a new success action containing the todos
           map((tenants: any) => {
             return getTenantSuccess({ tenants: tenants })
@@ -62,8 +62,8 @@ export class TenantEffects {
   deleteTenant$ = createEffect(() =>
     this.actions$.pipe(
       ofType(deleteTenant),
-      mergeMap(({ id,maxresult }) =>
-        this.tenantService.deleteTenant(id).pipe(map(() => {
+      mergeMap(({ id }) =>
+        this.tenantService.tenantsDELETE(id).pipe(map(() => {
           this.store.dispatch(getTenants());
           this.alertService.showAlert('Success', 'Tenant deleted successfully', 'success')
 
@@ -81,7 +81,7 @@ export class TenantEffects {
     this.actions$.pipe(
       ofType(updateTenant),
       mergeMap((data) =>
-        this.tenantService.updateTenant(data.tenant).pipe(map((res: any) => {
+        this.tenantService.tenantsPUT(data.id, data.tenant).pipe(map((res: any) => {
           this.store.dispatch(getTenants());
           this.alertService.showAlert('Success', 'Tenant updated successfully', 'success')
 
@@ -96,53 +96,53 @@ export class TenantEffects {
     }
   );
 
-//   getTenantForEdit$ = createEffect(() =>
-//     this.actions$.pipe(
-//       ofType(getTenantForEdit),
-//       switchMap(({ id }) => {
-//         return (this.tenantService.getTenantForEdit(id)).pipe(
-//           map((tenant: any) => {
-//             return getTenantForEditSuccess({ tenantInfo: tenant })
-//           }),
-//           catchError((error) => of(getTenantForEditFailure({ error })))
-//         )
-//       }
-//       )
-//     )
-//   );
-
-//   getTenantFeaturesForEdit$ = createEffect(() =>
-//     this.actions$.pipe(
-//       ofType(getTenantFeaturesForEdit),
-//       switchMap(({ id }) => {
-//         return (this.tenantService.getTenantFeaturesForEdit(id)).pipe(
-//           map((tenantFeature: any) => {
-//             return getTenantFeaturesForEditSuccess({ tenantFeature: tenantFeature })
-//           }),
-//           catchError((error) => of(getTenantFeaturesForEditFailure({ error })))
-//         )
-//       }
-//       )
-//     )
-//   );
-
-  updateTenantFeatureValues$ = createEffect(() =>
+  getTenantForEdit$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(updateTenantFeatureValues),
-      mergeMap((data) =>
-        this.tenantService.updateTenantFeatures(data.feature).pipe(map((res: any) => {
-          this.alertService.showAlert('Success', 'Tenant features updated successfully', 'success');
-
-          // this.store.dispatch(getTenants())
-        }),
-          catchError((error: any) => of(
-          ))
+      ofType(getTenantForEdit),
+      switchMap(({ id }) => {
+        return (this.tenantService.tenantsGET(id)).pipe(
+          map((tenant) => {
+            return getTenantForEditSuccess( {tenant} )
+          }),
+          catchError((error) => of(getTenantForEditFailure({ error })))
         )
+      }
       )
-    ),
-    {
-      dispatch: false
-    }
+    )
   );
+
+  getTenantFeaturesForEdit$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(getTenantFeaturesForEdit),
+      switchMap(({ id }) => {
+        return (this.tenantService.featuresGET("T",id)).pipe(
+          map((tenantFeature: any) => {
+            return getTenantFeaturesForEditSuccess({ tenantFeature: tenantFeature })
+          }),
+          catchError((error) => of(getTenantFeaturesForEditFailure({ error })))
+        )
+      }
+      )
+    )
+  );
+
+  // updateTenantFeatureValues$ = createEffect(() =>
+  //   this.actions$.pipe(
+  //     ofType(updateTenantFeatureValues),
+  //     mergeMap((data) =>
+  //       this.tenantService.updateTenantFeatures(data.feature).pipe(map((res: any) => {
+  //         this.alertService.showAlert('Success', 'Tenant features updated successfully', 'success');
+
+  //         // this.store.dispatch(getTenants())
+  //       }),
+  //         catchError((error: any) => of(
+  //         ))
+  //       )
+  //     )
+  //   ),
+  //   {
+  //     dispatch: false
+  //   }
+  // );
 
 }

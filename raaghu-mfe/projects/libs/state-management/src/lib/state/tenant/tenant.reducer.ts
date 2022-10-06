@@ -71,9 +71,9 @@ export const tenantInfoInitialState: TenantInfoState = {
 export const TenantInfoReducer = createReducer(
     tenantInfoInitialState,
     on(getTenantForEdit, (state) => ({ ...state, status: 'loading' })),
-    on(getTenantForEditSuccess, (state, { tenantInfo }) => ({
+    on(getTenantForEditSuccess, (state, { tenant }) => ({
         ...state,
-        tenantInfo: tenantInfo,
+        tenantInfo: tenant,
         error: null,
         status: 'success',
     })),

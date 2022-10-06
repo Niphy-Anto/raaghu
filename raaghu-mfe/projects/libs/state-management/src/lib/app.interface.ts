@@ -24,8 +24,10 @@ import { downloadState } from './state/DownloadData/download-data.reducer';
 
 import { ValidateTenantState } from "./state/login/login.reducer";
 import { LanguagesState } from './state/language/language.reducer';
-import { UsersState } from './state/user/user.reducer';
+import { EditionsState, TenantCountState } from './state/edition/edition.reducer';
+import { EditionsComboboxState, TenantFeatureState, TenantInfoState, TenantState } from './state/tenant/tenant.reducer';
 import { RolesState } from './state/role/role.reducer';
+import { UsersState } from './state/user/user.reducer';
 
 export interface AppState {
     EditRoleSateI: any;
@@ -36,12 +38,12 @@ export interface AppState {
   // webhookSubscriptions: WebhookSubscriptionState,
   // profile: profileState,
   // dynamicProperty: DynamicPropertyState,
-   organizationUnit: OrganizationUnitState
+  organizationUnit: OrganizationUnitState
   // dynamicEntity: DynamicEntityState,
-  // editions: EditionsState,
+  editions: EditionsState,
   roles: RolesState,
-   users: UsersState,
-   languages: LanguagesState,
+  users: UsersState,
+  languages: LanguagesState,
   // Subscription: SubscriptionState,
   // SubscriptionInformation: SubscriptionInformationState,
   // visualsettings: VisualsettingsState,
@@ -51,7 +53,7 @@ export interface AppState {
   // ManageLinkedAccounts: ManageLinkedAccountsState,
   // loginAttempts: LoginAttemptsState,
   // settings: SettingsState,
-  // tenants: TenantState,
+  tenants: TenantState,
   // auditLogs: AuditLogsState,
   // changeLogs:AuditLogsState
   // PermissionI:PermissionState,
@@ -63,9 +65,9 @@ export interface AppState {
   // mla: MLAState,
   // Entities: AllDynamicEntitySate,
   // PropertiesEntitie: AllDynamicPropertyEntitySate
-  // editionComboboxItem: EditionsComboboxState,
-  // tenantInfo: TenantInfoState,
-  // tenantFeature: TenantFeatureState,
+  editionComboboxItem: EditionsComboboxState,
+  tenantInfo: TenantInfoState,
+  tenantFeature: TenantFeatureState,
   validateTenant: ValidateTenantState,
   // UserEditI: EditUserSate,
   // UserPermissionStateI: EditUserPermissionSate
@@ -74,7 +76,7 @@ export interface AppState {
   // DynanmicPermission: DynamicPermissionState,
   // usernames: UserNameFilterState,
    languageText: LanguageTextsState
-  // tenantCount: TenantCountState,
+   tenantCount: TenantCountState,
   // defaultLanguage: DefaultLanguageState,
   // settingsComboboxItem: SettingsTenantPageComboboxState,
   download:downloadState,

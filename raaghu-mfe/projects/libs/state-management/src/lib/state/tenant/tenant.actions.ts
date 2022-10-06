@@ -16,7 +16,7 @@ export const getTenantFailure = createAction(
 
 export const deleteTenant = createAction(
     '[Tenant Page] Delete Tenant',
-    (id: number,maxresult:number) => ({ id ,maxresult})
+    (id: any) => ({ id})
 );
 
 export const saveTenant = createAction(
@@ -31,7 +31,7 @@ export const updateTenantFeatureValues = createAction(
 
 export const updateTenant = createAction(
     '[Tenant Page] Update Tenant',
-    (tenant: any) => ({ tenant })
+    (tenant: any) => (tenant)
 );
 
 
@@ -46,11 +46,11 @@ export const getEditionComboboxItemsFailure = createAction(
     '[Tenant Page] Get Edition Combobox Items Failure',
     props<{ error: string }>()
 );
-export const getTenantForEdit = createAction('[Tenant Page] Get Tenant For Edit', (id: number | undefined) => ({ id }));
+export const getTenantForEdit = createAction('[Tenant Page] Get Tenant For Edit', (id: any) => ({ id }));
 
 export const getTenantForEditSuccess = createAction(
     '[Tenant Page] Get Tenant For Edit Success',
-    props<{ tenantInfo: any }>()
+    props<{ tenant:any }>()
 );
 
 export const getTenantForEditFailure = createAction(
@@ -58,7 +58,7 @@ export const getTenantForEditFailure = createAction(
     props<{ error: string }>()
 );
 
-export const getTenantFeaturesForEdit = createAction('[Tenant Page] Get Tenant Features For Edit', (id: number | undefined) => ({ id }));
+export const getTenantFeaturesForEdit = createAction('[Tenant Page] Get Tenant Features For Edit', (id: any | undefined) => ({ id }));
 
 export const getTenantFeaturesForEditSuccess = createAction(
     '[Tenant Page] Get Tenant Features For Edit Success',

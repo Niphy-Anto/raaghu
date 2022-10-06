@@ -15,7 +15,7 @@ export const getEditionFailure = createAction(
     props<{ error: string }>()
 );
 
-export const getEditionInfo = createAction('[Edition Page] Get Edition Info', (id: number | undefined) => ({ id }));
+export const getEditionInfo = createAction('[Edition Page] Get Edition Info', (id: any | undefined) => ({ id }));
 
 export const getEditionInfoSuccess = createAction(
     '[Edition Page] Get Edition Info Success',
@@ -30,7 +30,7 @@ export const getEditionInfoFailure = createAction(
 
 export const deleteEdition = createAction(
     '[Edition Page] Delete Edition',
-    (id: number) => ({ id })
+    (id: any) => ({ id })
 );
 
 export const saveEdition = createAction(

@@ -1,45 +1,43 @@
-// import { Injectable } from "@angular/core";
-// import { AlertService, CommonLookupServiceProxy, EditionServiceProxy } from "@libs/shared";
-// import { selectAllEditions } from "@libs/state-management";
-// import { Actions, createEffect, ofType } from "@ngrx/effects";
-// import { Store } from "@ngrx/store";
-// import { from, of } from "rxjs";
-// import { catchError, map, mergeMap, switchMap } from "rxjs/operators";
-// import { deleteEdition, deleteEditionFailure, getEditionFailure, getEditionInfo, getEditionInfoFailure, getEditionInfoSuccess, getEditionPageComboboxItems, getEditionPageComboboxItemsFailure, getEditionPageComboboxItemsSuccess, getEditions, getEditionSuccess, getTenantCount, getTenantCountFailure, getTenantCountSuccess, moveTenant, saveEdition, updateEdition } from "./edition.action";
+import { Injectable } from "@angular/core";
+import { AlertService, ServiceProxy } from "@libs/shared";
+import { Actions, createEffect, ofType } from "@ngrx/effects";
+import { Store } from "@ngrx/store";
+import { from, of } from "rxjs";
+import { catchError, map, mergeMap, switchMap } from "rxjs/operators";
+import { deleteEdition, deleteEditionFailure, getEditionFailure, getEditionInfo, getEditionInfoFailure, getEditionInfoSuccess, getEditionPageComboboxItems, getEditionPageComboboxItemsFailure, getEditionPageComboboxItemsSuccess, getEditions, getEditionSuccess, getTenantCount, getTenantCountFailure, getTenantCountSuccess, moveTenant, saveEdition, updateEdition } from "./edition.action";
 
-// @Injectable()
-// export class EditionEffects {
-//   constructor(private actions$: Actions, private editionService: EditionServiceProxy, private store: Store, private alertService: AlertService,
-//     private commonService: CommonLookupServiceProxy) { }
-//   getEditions$ = createEffect(() =>
-//     this.actions$.pipe(
-//       ofType(getEditions),
-//       switchMap(() => {
-//         return (this.editionService.getEditions()).pipe(
-//           map((editions: any) => {
-//             return getEditionSuccess({ editions: editions })
-//           }),
-//           catchError((error) => of(getEditionFailure({ error })))
-//         )
-//       }
-//       )
-//     )
-//   );
+@Injectable()
+export class EditionEffects {
+  constructor(private actions$: Actions, private store: Store, private alertService: AlertService,
+    private commonService: ServiceProxy) { }
+  getEditions$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(getEditions),
+      switchMap(() => {
+        return (this.commonService.editionsGET2(undefined,undefined,0,1000)).pipe(
+          map((editions: any) => {
+            return getEditionSuccess({ editions: editions })
+          }),
+          catchError((error) => of(getEditionFailure({ error })))
+        )
+      }
+      )
+    )
+  );
 
-//   getEditionFeatures$ = createEffect(() =>
-//     this.actions$.pipe(
-//       ofType(getEditionInfo),
-//       switchMap(({ id }) => {
-//         return (this.editionService.getEditionForEdit(id)).pipe(
-//           map((feature: any) => {
-//             return getEditionInfoSuccess({ editionInfo: feature })
-//           }),
-//           catchError((error) => of(getEditionInfoFailure({ error })))
-//         )
-//       }
-//       )
-//     )
-//   );
+  getEditionFeatures$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(getEditionInfo),
+      switchMap(({ id }) => {
+        return (this.commonService.editionsGET(id)).pipe(
+          map((feature: any) => {
+            return getEditionInfoSuccess({ editionInfo: feature })
+          }),
+          catchError((error) => of(getEditionInfoFailure({ error })))
+        )}
+      )
+    )
+  );
 
 //   deleteEdition$ = createEffect(() =>
 //     this.actions$.pipe(
@@ -172,7 +170,7 @@
 //   );
 
  
-// }
+}
 
 
 

@@ -3,7 +3,7 @@ import { Injectable } from "@angular/core";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
 import { Store } from "@ngrx/store";
 import { AlertService } from "projects/libs/shared/src/lib/alert.service";
-import { IdentityServiceProxy, RolesServiceProxy } from "projects/libs/shared/src/lib/service-proxies";
+import { ServiceProxy } from "projects/libs/shared/src/lib/service-proxies";
 import { from, of } from "rxjs";
 import { catchError, map, mergeMap, switchMap } from "rxjs/operators";
 import { getRolByEdit, getRolByEditFailure, getRolByEditSuccess, getRoleFailure, getRoles, getRoleSuccess, saveRole } from "./role.actions";
@@ -13,8 +13,8 @@ import { getRolByEdit, getRolByEditFailure, getRolByEditSuccess, getRoleFailure,
 export class RoleEffects {
   constructor(private actions$: Actions,
     private alertService: AlertService,
-    private roleEditservice :IdentityServiceProxy,
-    private roleService: RolesServiceProxy, private store: Store) { }
+    private roleEditservice :ServiceProxy,
+    private roleService: ServiceProxy, private store: Store) { }
   selectedPermissions = []
   getRoles$ = createEffect(() =>
     this.actions$.pipe(
@@ -89,7 +89,7 @@ export class RoleEffects {
       ofType(getRolByEdit),
       switchMap(({ id }) =>
         // Call the getTodos method, convert it to an observable
-        from(this.roleEditservice.rolesPut(id,undefined)).pipe(
+        from(this.roleEditservice.rolesPUT(id,undefined)).pipe(
           // Take the returned value and return a new success action containing the todos
           map((RoleEditI) => {
             return getRolByEditSuccess({ EditRoleSateI: RoleEditI })

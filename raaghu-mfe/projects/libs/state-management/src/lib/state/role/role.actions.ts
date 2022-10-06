@@ -31,7 +31,7 @@ export const saveRole = createAction(
 // );
 
 export const getRolByEdit = createAction('[Role Page] Get RolByEdit',
-(id: number) => ({ id }));
+(id: any) => ({ id }));
 
 export const getRolByEditSuccess = createAction(
     '[Role Page] get Rol ByEdit Success',
