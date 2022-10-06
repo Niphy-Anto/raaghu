@@ -6,11 +6,11 @@
     <div class="row mt-4">
         <div class="col-md-6 sm-p-0">
             <div class="form-group mb-4">
-                <rds-input size="default" [Title]="'Required Length (Min)'" [TitleType]="'Top'" inputType="text"
-                    name="requiredLength" [isRequired]=true required [disabled]="false"  [readonly]="false"
-                    [placeholder]="'Enter Length'" [(ngModel)]="identityData.requiredLength"
-                    #identityData="ngModel" ngDefaultControl>
-                </rds-input>
+                <!-- <rds-input size="default" [Title]="'Required Length (Min)'" [TitleType]="'Top'" inputType="text"
+                     [isRequired]=true required [disabled]="false"  [readonly]="false"
+                    [placeholder]="'Enter Length'" [(ngModel)]="identityData.requiredlength"
+                    ngDefaultControl>
+                </rds-input> -->
             </div>
         </div>
         <div class="col-md-6 sm-p-0">
@@ -76,7 +76,7 @@
                 <div class="form-group mb-4">
                     <rds-input size="default" [Title]="'Max Failed Access Attempts'" [TitleType]="'Top'"
                         inputType="text" name="maxAttmpts" [isRequired]=true required [disabled]="false"
-                        [readonly]="false" [placeholder]="'Enter Name'" [(ngModel)]="identityData.maxAttmpts"
+                        [readonly]="false" [placeholder]="'Enter Name'" [(ngModel)]="identityData.MaxAttmpts"
                         #maxAttmpts="ngModel" ngDefaultControl>
                     </rds-input>
                 </div>
