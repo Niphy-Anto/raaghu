@@ -79,6 +79,8 @@
     "@storybook/angular": "^6.1.21",
     "@storybook/builder-webpack5": "^6.5.9",
     "@storybook/manager-webpack5": "^6.5.9",
+    "@storybook/mdx2-csf": "^0.0.3",
+    "@storybook/preset-scss": "^1.0.3",
     "@storybook/testing-library": "^0.0.13",
     "@storybook/ui": "^6.5.9",
     "@types/jasmine": "~3.5.0",
