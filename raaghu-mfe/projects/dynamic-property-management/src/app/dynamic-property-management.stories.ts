@@ -75,21 +75,7 @@ const Template: Story<DynamicPropertyManagment> = (args: DynamicPropertyManagmen
       </rds-button>
     </div>
   </div>
-  <div class="mobile-btn position-absolute bottom-0 end-0 my-5 me-5" style="z-index: 1;">
-    <!-- <rds-button
-        [label]=""
-        type="button"
-        [roundedButton]="true"
-        [size]="'small'"
-        (click)="openCanvas()"
-        style="float: right"
-        [colorVariant]="'primary'"
-        [attr.aria-controls]="'AddDynamic'"
-        [icon]="'plus'" iconHeight="12px" iconWidth="12px"
-      >
-      </rds-button> -->
-      <rds-fab-menu [listItems]="listItems1" [menuicon]="'plus'" [colorVariant]="'primary'" [menuiconWidth]="'12px'" [menuiconHeight]="'12px'" (onSelect)="onSelectMenu($event)"></rds-fab-menu>
-  </div>
+ 
   <div class="row">
     <div class="col-md-12">
       <div class="card border-0 p-2 h-100 rounded-0 card-full-stretch">

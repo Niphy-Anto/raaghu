@@ -85,10 +85,7 @@ const Template: Story<AppComponent> = (args: AppComponent) => ({
 
     <div class="row">
       <div class="col-md-12">
-        <div class="mobile-btn position-absolute bottom-0 end-0 my-5 me-5">
-          <rds-fab-menu [listItems]="listItems1" [menuicon]="'plus'" [colorVariant]="'primary'" [menuiconWidth]="'12px'"
-            [menuiconHeight]="'12px'" (onSelect)="onSelectMenu($event)"></rds-fab-menu>
-        </div>
+        
       </div>
     </div>
     <div class="row">
