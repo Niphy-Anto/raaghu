@@ -1,6 +1,17 @@
 import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
-
+export class identity{
+  requiredLength:number ;
+  defaultAddress:string;
+  nonAlpha:boolean;
+  uppercaserequired:boolean;
+  lowercaserequired:boolean;
+  numbers:boolean;
+  lockoutDuration:string
+  MaxAttmpts:string;
+  uppercase:boolean;
+  lowercase:boolean
+}
 @Component({
   selector: 'app-rds-comp-identity-management-new',
   templateUrl: './rds-comp-identity-management-new.component.html',
