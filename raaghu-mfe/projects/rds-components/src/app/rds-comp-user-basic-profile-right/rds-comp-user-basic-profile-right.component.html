@@ -25,12 +25,14 @@
         </div>
         <div class="col-md-6 text-center cursor-pointer">
           <!-- <rds-label [label]="translate.instant('Profile Picture')"></rds-label> -->
-          <img [src]="userData.imageUrl" width="100" (click)="selectFile.click()" />
-          <input type="file" (change)="getImage($event)" accept="image/*" style="display: none" #selectFile />
+          <!-- <img [src]="userData.imageUrl" width="100" (click)="selectFile.click()" />
+          <input type="file" (change)="getImage($event)" accept="image/*" style="display: none" #selectFile /> -->
           <!-- <i class="bi bi-camera"></i> -->
           <!-- <rds-file-uploader [size]="'small'" [multipleFiles]="true" [role]="'fileUpload'"
                       [label]="'Upload Files'" [extensions]="'png, jpg'"></rds-file-uploader> -->
-        </div>
+                        <img width="100" src="../assets/edit-pic.png" (click)="selectFile.click()">
+                        <input type="file" (change)="getImage($event)" accept="image/*" style="display: none" #selectFile>
+            </div>
       </div>
 
       <div class="row">
