@@ -2579,3 +2579,19 @@ app-rds-comp-product-list .card-body {
 .mt-7 {
   margin-top: 6rem !important;
 }
+
+.mobile-btn{
+  display: none;
+}
+.desktop-btn{
+  display: block;
+}
+
+@media (max-width: 767px){
+  .mobile-btn{
+      display: block;
+  }
+  .desktop-btn{
+      display: none;
+  }
+}

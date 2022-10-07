@@ -21,17 +21,13 @@ export class RdsBadgeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onClosed(event:any){
-    this.onClose.emit(event);
-  }
-
   public get classList(): string[] {
-    var clsList: string[] = ['badge px-2 py-1']
-    if(this.colorVariant){
+    var clsList: string[] = ['badge']
+    if (this.colorVariant) {
       const bgColor = 'badge-' + `${this.colorVariant}`;
       clsList.push(bgColor);
     }
- 
+
 
     if (this.positioned === true) {
       clsList.push('position-absolute start-100 top-0 translate-middle')
@@ -49,5 +45,9 @@ export class RdsBadgeComponent implements OnInit {
 
     return clsList
   }
+  onClosed(event:any){
+    this.onClose.emit(event);
+  }
+
 
 }

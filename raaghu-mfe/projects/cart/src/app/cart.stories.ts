@@ -36,11 +36,11 @@ const Template: Story<CartApp> = (args: CartApp) => ({
       ...args
     },
   template : `<div class="row">
-  <div class="col-8">
+  <div class="col-md-8">
   <rds-comp-shopping-cart-product  [itemList]="itemList"></rds-comp-shopping-cart-product>
    
   </div>
-  <div class="col-4">
+  <div class="col-md-4">
   <rds-comp-order-summary ></rds-comp-order-summary>
   </div>
   </div>`
