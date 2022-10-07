@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit,Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-rds-comp-settings-new',
@@ -15,6 +15,13 @@ export class RdsCompSettingsNewComponent implements OnInit {
     accountData:undefined
    
   };
+  @Input() AuthentiactionList:any;
+  @Input() StyleList:any;
+  @Input() WebList:any;
+  @Input() StatusList:any;
+  @Input() MenuList:any;
+  @Input() VersionList:any;
+
   @Output() onDataSave= new EventEmitter<any>();
   isReset: boolean = false;
   constructor() { }
