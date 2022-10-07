@@ -44,8 +44,8 @@ Admin
 export const Default = Template.bind({});
 Default.args = {
   size: 'medium',
-  firstName: 'Admin',
-  lastName: 'Admin',
+  firstName: 'John',
+  lastName: 'Doe',
   colorVariant: 'warning'
 };
 
@@ -53,22 +53,22 @@ export const profile = Template.bind({});
 profile.args = {
   size: 'medium',
   withProfilePic: true,
-  profilePic: 'https://th.bing.com/th/id/OIP.3IsXMskZyheEWqtE3Dr7JwHaGe?pid=ImgDet&rs=1'
+  profilePic: 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png'
 };
 
 export const avtarWithHorizontallyAllignedInfo = avatarWithInfoTemplate.bind({});
 avtarWithHorizontallyAllignedInfo.args = {
   size: 'medium',
-  firstName: 'Admin',
-  lastName: 'Admin',
+  firstName: 'John',
+  lastName: 'Doe',
   colorVariant: 'warning',
 };
 
 export const avatarWithVerticallyAllignedInfo = avatarWithInfoTemplate.bind({});
 avatarWithVerticallyAllignedInfo.args = {
   size: 'medium',
-  firstName: 'Admin',
-  lastName: 'Admin',
+  firstName: 'John',
+  lastName: 'Doe',
   colorVariant: 'warning',
   verticallyAlligned: true
 };

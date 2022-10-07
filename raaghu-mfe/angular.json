@@ -22,7 +22,8 @@
 							"projects/libs/themes/src/styles/quillEditor.scss",
 							"projects/libs/themes/src/styles/responsive.scss",
 							"projects/host/src/styles.css",
-							"projects/libs/themes/src/styles/default.scss"
+							"projects/libs/themes/src/styles/default.scss",
+							"./node_modules/ngx-videogular/fonts/videogular.css"
 						],
 						"scripts": [
 							"./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
@@ -44,7 +45,8 @@
 							"projects/libs/themes/src/styles/quillEditor.scss",
 							"projects/libs/themes/src/styles/responsive.scss",
 							"projects/host/src/styles.css",
-							"projects/libs/themes/src/styles/default.scss"
+							"projects/libs/themes/src/styles/default.scss",
+							"./node_modules/ngx-videogular/fonts/videogular.css"
 						],
 						"scripts": [
 							"./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
