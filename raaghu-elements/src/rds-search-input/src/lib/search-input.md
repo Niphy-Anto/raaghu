@@ -31,7 +31,7 @@ title: "Elements > Search-input"
         <div class="tab-pane fade show active" id="Preview" role="tabpanel" aria-labelledby="Preview-tab">
           <div class="contents p-5">
             <div class="row">
-              <img src="./search-input.png" class="img-fluid">
+              <img src="/images/search.png" class="img-fluid">
             </div>
           </div>
         </div>
