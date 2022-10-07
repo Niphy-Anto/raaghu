@@ -3,7 +3,7 @@
     <label *ngIf="label" [ngClass]="labelClass" for="Errormessage">{{
       label
       }}<span class="text-danger" *ngIf="isRequired">*</span></label>
-    <div class="input-group border">
+    <div class="input-group border mt-4 ms-3 default-datepicker">
       <input type="text" autocomplete="off" bsDatepicker [datesDisabled]="datesDisabled"
         [class.disable-pointer]="disabled" [disabled]="disabled" [minDate]="minDate" #datepicker="bsDatepicker"
         (onHidden)="onHide.emit($event)" [daysDisabled]="daysDisabled" [isOpen]="isOpen" [bsConfig]="datePickerConfig"
@@ -16,12 +16,11 @@
         [class.disable-pointer]="disabled">
         <rds-icon name="calendar" height="18px" width="18px" [disabled]="disabled"></rds-icon>
       </span>
-
     </div>
   </div>
 </ng-container>
 <ng-container *ngIf="datePickerType==='advanced'">
-  <div class="date-picker">
+  <div class="date-picker pt-2 ps-3">
     <div class="date-picker-a vertical">
 
       <button class="btn border dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
@@ -66,8 +65,8 @@
             #dp="bsDaterangepicker" bsDaterangepicker placement="right" (bsValueChange)="changeDate($event)"
             bsrangeValue>
             Custom <span class="hr-line">|</span>
+            <div class="footerDatepicker" *ngIf="dp.isOpen">Maximum date range limit is <b>30 days</b></div>
           </div>
-          <div class="footerDatepicker" *ngIf="dp.isOpen">Maximum date range limit is <b>30 days</b></div>
         </li>
 
       </ul>

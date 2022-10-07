@@ -35,7 +35,7 @@ const Template: Story<RdsBenefitComponent> = (args: RdsBenefitComponent) => ({
 
 export const Default = Template.bind({});
 Default.args = {
-  display_type: 'Basic',
+  display_type: 'Default',
   item:
   {
     id: 1,
@@ -47,9 +47,9 @@ Default.args = {
   }
 }
 
-export const benefit_type1 = Template.bind({});
-benefit_type1.args = {
-  display_type: 'benefit_type1',
+export const LeftAligned = Template.bind({});
+LeftAligned.args = {
+  display_type: 'Left Aligned',
   item:
   {
     id: 3,
@@ -62,9 +62,9 @@ benefit_type1.args = {
   }
 }
 
-export const benefit_type2 = Template.bind({});
-benefit_type2.args = {
-  display_type: 'benefit_type2',
+export const CentreAligned = Template.bind({});
+CentreAligned.args = {
+  display_type: 'Centre Aligned',
   item:
   {
     id: 6,
@@ -76,9 +76,9 @@ benefit_type2.args = {
   }
 }
 
-export const benefit_type3 = Template.bind({});
-benefit_type3.args = {
-  display_type: 'benefit_type3',
+export const WithLabel = Template.bind({});
+WithLabel.args = {
+  display_type: 'With Label',
   item:
   {
     id: 7,
@@ -91,9 +91,9 @@ benefit_type3.args = {
   }
 }
 
-export const benefit_type4 = Template.bind({});
-benefit_type4.args = {
-  display_type: 'benefit_type4',
+export const WithoutLabel = Template.bind({});
+WithoutLabel.args = {
+  display_type: 'Without Label',
   item:
   {
     id: 7,
@@ -105,9 +105,9 @@ benefit_type4.args = {
   }
 }
 
-export const benefit_type5 = Template.bind({});
-benefit_type5.args = {
-  display_type: 'benefit_type5',
+export const HeadingWithIcon = Template.bind({});
+HeadingWithIcon.args = {
+  display_type: 'Heading With Icon',
   item:
   {
     id: 7,

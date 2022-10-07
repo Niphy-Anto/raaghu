@@ -17,7 +17,8 @@
 						"styles": [
 							"./node_modules/bootstrap/dist/css/bootstrap.min.css",
 							"./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
-							"./src/root/styles-storybook.scss"
+							"./src/root/styles-storybook.scss",
+							"./node_modules/ngx-videogular/fonts/videogular.css"
 						],
 						"scripts": [
 							"./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
