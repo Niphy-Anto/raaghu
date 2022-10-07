@@ -3,12 +3,18 @@
   
     <form #userCreationForm="ngForm" autocomplete="off">
       <div class="row align-items-center">
-        <div class="col-md-3 text-center cursor-pointer">
+        <!-- <div class="col-md-3 text-center cursor-pointer">
           <img [src]="userData.imageUrl" width="100" (click)="selectFile.click()" />
-          <input type="file" (change)="getImage($event)" accept="image/*" style="display: none" #selectFile />
+          <input type="file" (change)="getImage($event)" accept="image/*" style="display: none" #selectFile /> -->
           <!-- <i class="bi bi-camera"></i> -->
           <!-- <rds-file-uploader [size]="'small'" [multipleFiles]="true" [role]="'fileUpload'"
                     [label]="'Upload Files'" [extensions]="'png, jpg'"></rds-file-uploader> -->
+        <!-- </div> -->
+        <div class="col-md-3 text-center cursor-pointer sm-p-0 mb-2">
+          <img width="100" src="../assets/edit-pic.png" (click)="selectFile.click()">
+
+          <input type="file" (change)="getImage($event)" accept="image/*" style="display: none" #selectFile>
+
         </div>
         <div class="col-md-9">
           <div class="form-group mb-3">
@@ -137,6 +143,7 @@
       (click)="next(userCreationForm)" [size]="'small'">
     </rds-button>
   
+  </div>
   </div>
   </div>
   <app-rds-comp-user-basics-shimmer *ngIf="editShimmer"></app-rds-comp-user-basics-shimmer>
