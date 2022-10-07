@@ -1,5 +1,5 @@
 <div *ngIf="!editShimmer">
-  <div class="tab-content">
+  <div class="tab-content pb-4">
   
     <form #userCreationForm="ngForm" autocomplete="off">
       <div class="row align-items-center">
@@ -16,7 +16,7 @@
           <input type="file" (change)="getImage($event)" accept="image/*" style="display: none" #selectFile>
 
         </div>
-        <div class="col-md-9 sm-p">
+        <div class="col-md-9">
           <div class="form-group mb-3">
   
             <rds-input [inputType]="'text'" [Title]="translate.instant('Name')" [(ngModel)]="userData.name" [TitleType]="'Top'" name="name"
@@ -40,7 +40,7 @@
       </div>
   
       <div class="row">
-        <div class="col-md-12 sm-p">
+        <div class="col-md-12">
           <div class="form-group mb-3">
   
             <rds-input [inputType]="'email'" [TitleType]="'Top'" [Title]="translate.instant('Email Id')" [(ngModel)]="userData.emailAddress"
@@ -54,7 +54,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-6 sm-p">
+        <div class="col-md-6">
           <div class="form-group mb-3">
   
             <rds-input [inputType]="'phoneNumber'" [Title]="translate.instant('Phone Number')" [TitleType]="'Top'"
@@ -67,7 +67,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-6 sm-p">
+        <div class="col-md-6">
           <div class="form-group mb-3">
   
             <rds-input [inputType]="'text'" [Title]="translate.instant('User name')" [TitleType]="'Top'" autocomplete="off"
@@ -80,7 +80,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-6 sm-p">
+        <div class="col-md-6">
           <div class="form-group mb-3">
   
             <rds-input [inputType]="'password'" [TitleType]="'Top'" [Title]="translate.instant('Password')" [(ngModel)]="userData.password"
@@ -88,7 +88,7 @@
             </rds-input>
           </div>
         </div>
-        <div class="col-md-6 sm-p">
+        <div class="col-md-6">
           <div class="form-group mb-3">
   
             <rds-input [inputType]="'password'" [TitleType]="'Top'" [Title]="translate.instant('Confirm Password')"

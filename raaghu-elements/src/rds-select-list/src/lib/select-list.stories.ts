@@ -109,14 +109,14 @@ labelPosition.args = {
 
 const tooltipTemplate: Story<RdsSelectListComponent> = (args: RdsSelectListComponent) => ({
   props: args,
-  template: `<div class="row mt-5"><div class="col-md-4"></div><div class="col-md-4"><rds-select-list
+  template: `<rds-select-list
     [size]="size"
     [itemList]="itemList"
     [tooltipPlacement]="tooltipPlacement"
     [tooltipTitle]="tooltipTitle"
     [placeholder]="placeholder"
     [label]="label">
-  </rds-select-list></div></div>`,
+  </rds-select-list>`,
 });
 export const tooltip = tooltipTemplate.bind({});
 tooltip.parameters = { controls: { include: ['itemList',  'label', 'size','placeholder','tooltipTitle','tooltipPlacement'] } };

@@ -7,9 +7,11 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./rds-comp-identity-management-new.component.scss']
 })
 export class RdsCompIdentityManagementNewComponent implements OnInit {
-  @Input() identityData: any;
+  @Input() identityData: {requiredLength: string, defaultAddress:string, nonAlpha:boolean,uppercaserequired:boolean, numbers:boolean, lowercaserequired:boolean
+  , lockoutDuration: string, MaxAttmpts:string, uppercase:boolean, lowercase:boolean,newusers:string };
   @ViewChild('identityDataForm')identityForm: NgForm;
   @Output() identityInfo = new EventEmitter<any>();
+
   constructor() { }
   ngAfterViewInit(): void {
     if (this.identityData && this.identityForm) {
@@ -25,7 +27,7 @@ export class RdsCompIdentityManagementNewComponent implements OnInit {
    
   ngOnInit(): void {
     if (!this.identityData) {
-      this.identityData = {};
+      
       this.identityData['requiredLength'] = '';
       this.identityData['defaultAddress'] = '';
       this.identityData['nonAlpha'] = false;
@@ -41,7 +43,7 @@ export class RdsCompIdentityManagementNewComponent implements OnInit {
   }
   selectIdentity(e: boolean, type: string) {
 
-    this.identityData.emit(this.identityData);
+    this.identityInfo.emit(this.identityData);
     
    }
  
