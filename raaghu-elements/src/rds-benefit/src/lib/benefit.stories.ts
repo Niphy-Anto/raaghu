@@ -19,8 +19,14 @@ export default {
       providers: [
         FormBuilder
       ],
-    })
-  ] 
+     })
+  ] ,
+  argTypes: {
+    display_type: {
+      options: ['Basic', 'benefit_type1', 'benefit_type2', 'benefit_type3', 'benefit_type4', 'benefit_type5'],
+      control: { type: 'select' }
+    },
+  }
 } as Meta;
 
 const Template: Story<RdsBenefitComponent> = (args: RdsBenefitComponent) => ({
