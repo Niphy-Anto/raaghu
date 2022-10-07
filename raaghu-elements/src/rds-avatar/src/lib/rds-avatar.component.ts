@@ -11,7 +11,7 @@ export class RdsAvatarComponent implements OnInit, OnChanges {
   @Input() profilePic: string = "https://th.bing.com/th/id/OIP.3IsXMskZyheEWqtE3Dr7JwHaGe?pid=ImgDet&rs=1";
   @Input() firstName: string = '';
   @Input() lastName: string = '';
-  @Input() size: 'small' | 'large' | 'medium' = 'medium';
+  @Input() size: 'small' | 'large' | 'medium'|undefined = undefined;
   @Input() verticallyAlligned: boolean = false;
   @Input() roundedAvatar: boolean = true;
   @Input() roundedPills: boolean = false;
@@ -30,8 +30,10 @@ export class RdsAvatarComponent implements OnInit, OnChanges {
     const bgColor = 'bg-' + `${this.colorVariant}`;
     classes.push(bgColor);
     if (this.roundedAvatar) {
-      const size = 'avatar-' + `${this.size === 'small' ? 'sm' : this.size === 'large' ? 'lg' : 'md'}`;
-      classes.push(size);
+      if(this.size){
+        const size = 'avatar-' + `${this.size === 'small' ? 'sm' : this.size === 'large' ? 'lg' : 'md'}`;
+        classes.push(size);
+      }
     }
     if (this.roundedPills) {
       classes.push('rounded');

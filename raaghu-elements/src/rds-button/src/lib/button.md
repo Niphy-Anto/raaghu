@@ -10,18 +10,11 @@ title: "Elements > Button"
 
 <link rel="stylesheet" href="../assets/css/main.css">
 
-#  **Buttons**
+#### Buttons
   
-<p class="">A button triggers an event or action. They let users know what will happen next.</p>
-
-<br/>
-
-
-
-  
+<p class="">A button triggers an event or action. They let users know what will happen next.</p> 
 <section class="py-4">
-
- ###### Default State  
+  <h6>Default</h6>
    <div class="py-3">
       <div class="cust-tabs">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -112,10 +105,54 @@ title: "Elements > Button"
     
   </section>
 
+<section class="py-4">
 
+ ###### Icon with label 
+   <div class="py-3">
+      <div class="cust-tabs">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="PreviewIconwithLabel-tab" data-bs-toggle="tab" data-bs-target="#PreviewIconwithLabel" type="button" role="tab" aria-controls="PreviewIcon" aria-selected="true">Preview </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="AngularIconwithLabel-tab" data-bs-toggle="tab" data-bs-target="#AngularIconwithLabel" type="button" role="tab" aria-controls="AngularIcon" aria-selected="false"><i class="bi bi-code-slash" style="font-size:1.0rem"></i>Angular</button>
+          </li>
+        </ul>
+      </div>
+      <div class="tab-content card border" id="myTabContent">
+        <div class="tab-pane fade show active" id="PreviewIconwithLabel" role="tabpanel" aria-labelledby="PreviewIcon-tab">
+         <div class="row">
+         <div class="col-md-12">
+         <div class="contents bg-light p-5">
+          <img src="/images/button-with-label.png">  
+           </div>
+   </div>                          
+   </div>
+   </div>
+        <div class="tab-pane fade show" id="AngularIconwithLabel" role="tabpanel" aria-labelledby="AngularIcon-tab">
+          <div class="contents bg-code">
+<div class="row m-0">
 
+```html
+<rds-button
+  colorVariant="primary"
+  [block]="false"
+  size="medium"
+  [roundedButton]="false"
+  [roundedCorner]="false"
+  iconHeight="18px"
+  iconWidth="18px"
+  icon="plus"
+  label="button"
+></rds-button>
+```
 
-
+</div>
+          </div>
+        </div>
+      </div>
+    
+</section>
 
 <section class="py-4">
 
@@ -220,7 +257,7 @@ title: "Elements > Button"
         </ul>
       </div>
       <div class="tab-content card border" id="myTabContent">
-        <div class="tab-pane fade show active" id="Angulartooltip" role="tabpanel" aria-labelledby="Previewtooltip-tab">
+        <div class="tab-pane fade show active" id="Previewtooltip" role="tabpanel" aria-labelledby="Previewtooltip-tab">
          <div class="row">
          <div class="col-md-12">
          <div class="contents p-5">
@@ -253,23 +290,16 @@ title: "Elements > Button"
 
 
 ###### Skeleton/Specifications
-<div class="mt-4">
-<div class="row">
-<div class="col-md-6">
-<img src="https://portal.raaghu.io/images/components/_buttons/primary-btn-details.png" class="img-fluid">
-</div>
-<div class="col-md-6">
-<img src="https://portal.raaghu.io/images/components/_buttons/text-only-button.png" class="img-fluid">
-</div>
-</div>
-<div class="row mt-4">
-<div class="col-md-6">
-<img src="https://portal.raaghu.io/images/components/_buttons/outlined-button.png" class="img-fluid">
-</div>
-<div class="col-md-6">
-<img src="https://portal.raaghu.io/images/components/_buttons/icon-button.png" class="img-fluid">
-</div>
-</div> 	
+<div class="py-3">
+ <div class="card border p-5">
+  <div class="row">
+      <div class="col-md-12">
+        <img src="/images/button-skeleton.png" class="img-fluid">
+     </div>
+   </div>
+   </div>
+ </div>
+</div>	
 
 
 
