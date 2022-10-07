@@ -83,7 +83,7 @@ export class RdsButtonGroupComponent implements OnInit {
   }
 
   public itemClass(item: any): string {
-    const mode = `${this.outline ? 'btn btn-outline-' + item.colorVariant : 'btn btn-' + item.colorVariant}`;
+    const mode = `${this.outline ? 'btn btn-outline-' + item.colorVariant : 'btn btn-'+ item.colorVariant}`;
     return mode;
   }
 

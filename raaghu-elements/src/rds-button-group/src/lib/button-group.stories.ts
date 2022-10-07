@@ -38,14 +38,14 @@ DefaultFilled.args = {
       label: 'Middle',
       id: '',
       name: '',
-      colorVariant: 'primary'
+      colorVariant: 'danger'
 
     },
     {
       label: 'Right',
       id: '',
       name: '',
-      colorVariant: 'primary'
+      colorVariant: 'warning'
 
     },
   ]
