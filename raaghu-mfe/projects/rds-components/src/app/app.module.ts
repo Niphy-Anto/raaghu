@@ -150,6 +150,8 @@ import { RdsCompNotificationSettingsComponent } from './rds-comp-notification-se
 import { RdsCompUserBasicProfileRightComponent } from './rds-comp-user-basic-profile-right/rds-comp-user-basic-profile-right.component';
 import { RdsCompUserPermissionsNewComponent } from './rds-comp-user-permissions-new/rds-comp-user-permissions-new.component';
 import { RdsCompAuditLogsNewComponent } from './rds-comp-audit-logs-new/rds-comp-audit-logs-new.component';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+
 
 @NgModule({
   declarations: [	
@@ -259,7 +261,6 @@ import { RdsCompAuditLogsNewComponent } from './rds-comp-audit-logs-new/rds-comp
     RdsCompCalendarComponent,
     RdsCompBackgroundImageComponent,
     RdsCompBenefitComponent,
-    RdsCompProductListComponent,
     RdsCompAppDetailsComponent,
     RdsCompCalendarComponent,
     RdsCompProductOverviewComponent,
@@ -291,7 +292,7 @@ import { RdsCompAuditLogsNewComponent } from './rds-comp-audit-logs-new/rds-comp
     RdsCompNotificationSettingsComponent,
     RdsCompUserBasicProfileRightComponent,
     RdsCompUserPermissionsNewComponent,
-    RdsCompAuditLogsNewComponent,
+    RdsCompAuditLogsNewComponent
   
   ],
   imports: [
@@ -384,9 +385,10 @@ import { RdsCompAuditLogsNewComponent } from './rds-comp-audit-logs-new/rds-comp
     RdsAddressDetailModule,
     RdsStepperModule,
     RdsReviewCategoryModule,
-    RdsTeamMemberModule,
     RdsWebsiteMetricModule,
-    RdsTestimonialModule
+    RdsTestimonialModule,
+    InfiniteScrollModule,
+    RdsTeamMemberModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -5,6 +5,7 @@ import { RdsPriceComponent } from './rds-price.component';
 
 export default {
   title: 'Elements/Price',
+  
   component: RdsPriceComponent,
   decorators: [
     moduleMetadata({
@@ -22,4 +23,14 @@ const Template: Story<RdsPriceComponent> = (args: RdsPriceComponent) => ({
 
 export const Default = Template.bind({});
 
+Default.args = {
+  role: 'Basic',
+};
+
+export const withoutDiscount = Template.bind({});
+
+withoutDiscount.args = {
+  role: 'withoutDiscount',
+  numberPricetwo: 0
+};
 

@@ -1,8 +1,9 @@
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
-import { RdsBadgeModule, RdsButtonModule, RdsCardModule, RdsColorModule, RdsLabelModule, RdsRatingModule } from '@libs/rds-elements';
+import { RdsBadgeModule, RdsButtonModule, RdsCardModule, RdsColorModule, RdsLabelModule, RdsPriceModule, RdsProductImageModule, RdsRatingModule } from '@libs/rds-elements';
 import { RdsCompProductListComponent } from './rds-comp-product-list.component';
 import { RdsIconModule } from '@libs/rds-icon';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 export default {
   title: 'Components/Product List',
@@ -11,7 +12,8 @@ export default {
     moduleMetadata({
       imports: [
         FormsModule, ReactiveFormsModule, RdsButtonModule, RdsLabelModule, RdsCardModule, RdsBadgeModule,
-        RdsColorModule, RdsRatingModule, RdsIconModule,RdsLabelModule
+        RdsColorModule, RdsRatingModule, RdsIconModule,RdsLabelModule,RdsProductImageModule,
+        InfiniteScrollModule,RdsPriceModule
       ],
       providers: [
         FormBuilder
@@ -181,6 +183,48 @@ productWithInfo.args = {
   { "title": "Basic Tee 3", "subTitle": "White 2", imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLXV_IPvYFWoOnAfO3IGGxcCrM3Y2Bfgfciw&usqp=CAU' },
   { "title": "Basic Tee", "subTitle": "White",imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLXV_IPvYFWoOnAfO3IGGxcCrM3Y2Bfgfciw&usqp=CAU' }]
 }
+
+export const infiniteproductlist= Template.bind({})
+infiniteproductlist.args = {
+  role: 'infiniteproductlist',
+  productListItems: [{ id: 1, "icon": "heart", "title": "Goggles", "subTitle": "White", "price": "35", "badgeLabel": "", imageUrl: 'https://images.pexels.com/photos/10556653/pexels-photo-10556653.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', iconColor: 'dark', fill: false },
+  { id: 2, "icon": "heart", "title": "Lunch Box", "subTitle": "White 2", "price": "40", "badgeLabel": "", imageUrl: 'https://cdn.pixabay.com/photo/2016/01/15/05/57/lunch-box-1141196_960_720.jpg', iconColor: 'dark', fill: false },
+  { id: 3, "icon": "heart",  "title": "Pencil Box", "subTitle": "White 2", "price": "45", "badgeLabel": "", imageUrl: 'https://cdn.pixabay.com/photo/2022/01/22/10/03/coca-cola-6956750_960_720.jpg', iconColor: 'dark', fill: false },
+  { id: 4, "icon": "heart", "title": "School Bag Black", "subTitle": "White", "price": "35", "badgeLabel": "", imageUrl: 'https://images.pexels.com/photos/842959/pexels-photo-842959.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', iconColor: 'dark', fill: false },
+  { id: 5, "icon": "heart", "title": "School Bag", "subTitle": "White 2", "price": "40", "badgeLabel": "", imageUrl: 'https://images.pexels.com/photos/1152077/pexels-photo-1152077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', iconColor: 'dark', fill: false },
+  { id: 6, "icon": "heart", "title": "Goggles", "subTitle": "White 2", "price": "45", "badgeLabel": "", imageUrl: 'https://images.pexels.com/photos/10556653/pexels-photo-10556653.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', iconColor: 'dark', fill: false },
+  { id: 7, "icon": "heart", "title": "School Bag", "subTitle": "White", "price": "35", "badgeLabel": "", imageUrl: 'https://images.pexels.com/photos/842959/pexels-photo-842959.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', iconColor: 'dark', fill: false },
+  { id: 8, "icon": "heart", "title": "Goggles", "subTitle": "White 2", "price": "40", "badgeLabel": "", imageUrl: 'https://images.pexels.com/photos/10556653/pexels-photo-10556653.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', iconColor: 'dark', fill: false },
+  { id: 9, "icon": "heart", "title": "Lunch Box", "subTitle": "White 2", "price": "40", "badgeLabel": "", imageUrl: 'https://cdn.pixabay.com/photo/2016/01/15/05/57/lunch-box-1141196_960_720.jpg', iconColor: 'dark', fill: false },
+  { id: 10,"icon": "heart",  "title": "Pencil Box", "subTitle": "White 2", "price": "45", "badgeLabel": "", imageUrl: 'https://cdn.pixabay.com/photo/2022/01/22/10/03/coca-cola-6956750_960_720.jpg', iconColor: 'dark', fill: false },
+  { id: 11,"icon": "heart",  "title": "Lunch Box", "subTitle": "White", "price": "35", "badgeLabel": "", imageUrl: 'https://cdn.pixabay.com/photo/2016/01/15/05/57/lunch-box-1141196_960_720.jpg' , iconColor: 'dark', fill: false },
+  { id: 12,"icon": "heart",  "title": "School Bag", "subTitle": "White 2", "price": "40", "badgeLabel": "", imageUrl: 'https://images.pexels.com/photos/842959/pexels-photo-842959.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', iconColor: 'dark', fill: false },
+  { id: 13,"icon": "heart",  "title": "Lunch Box", "subTitle": "White 2", "price": "40", "badgeLabel": "", imageUrl: 'https://cdn.pixabay.com/photo/2016/01/15/05/57/lunch-box-1141196_960_720.jpg', iconColor: 'dark', fill: false },
+  { id: 14,"icon": "heart",  "title": "Pencil Box", "subTitle": "White 2", "price": "45", "badgeLabel": "", imageUrl: 'https://cdn.pixabay.com/photo/2022/01/22/10/03/coca-cola-6956750_960_720.jpg', iconColor: 'dark', fill: false },
+  { id: 15,"icon": "heart",  "title": "Lunch Box", "subTitle": "White", "price": "35", "badgeLabel": "", imageUrl: 'https://cdn.pixabay.com/photo/2016/01/15/05/57/lunch-box-1141196_960_720.jpg' , iconColor: 'dark', fill: false },
+  { id: 16,"icon": "heart",  "title": "School Bag", "subTitle": "White 2", "price": "40", "badgeLabel": "", imageUrl: 'https://images.pexels.com/photos/842959/pexels-photo-842959.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', iconColor: 'dark', fill: false },
+  { id: 17,"icon": "heart",  "title": "Goggles", "subTitle": "White", "price": "35", "badgeLabel": "", imageUrl: 'https://images.pexels.com/photos/10556653/pexels-photo-10556653.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' , iconColor: 'dark', fill: false },
+  { id: 18,"icon": "heart",  "title": "Lunch Box", "subTitle": "White 2", "price": "40", "badgeLabel": "", imageUrl: 'https://cdn.pixabay.com/photo/2016/01/15/05/57/lunch-box-1141196_960_720.jpg', iconColor: 'dark', fill: false }
+],
+  itemListRating: [
+    { id: 1, value: 1 },
+    { id: 2, value: 2 },
+    { id: 3, value: 3 },
+    { id: 4, value: 4 },
+    { id: 5, value: 5 },
+  ],
+}
+
+
+
+
+// productListItems: [
+//   { "title": "Basic Tee", "subTitle": "White", "imageUrl": "https://images.pexels.com/photos/10556653/pexels-photo-10556653.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
+//   { "title": "Basic Tee 2", "subTitle": "White 2", "imageUrl": "https://cdn.pixabay.com/photo/2016/01/15/05/57/lunch-box-1141196_960_720.jpg" },
+//   { "title": "Basic Tee 3", "subTitle": "White 2", "imageUrl": "https://cdn.pixabay.com/photo/2022/01/22/10/03/coca-cola-6956750_960_720.jpg" },
+//   { "title": "Basic Tee", "subTitle": "White","imageUrl": "https://images.pexels.com/photos/842959/pexels-photo-842959.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" }]
+// }
+
 
 
 

@@ -251,7 +251,7 @@
   <div *ngSwitchCase="'withSupportingText'">
     <div class="row">
       <div class="col-md-3" *ngFor="let item of productListItems">
-        <rds-card class="rounded-avatar-basic">
+        <rds-card class="rounded-avatar-basic ">
           <div header>
             <div class="text-center">
               <img [src]="item.imageUrl" class="card-img-top" alt="">
@@ -347,4 +347,100 @@
       </div>
     </div>
   </div>
+
+  
+</div>
+
+<div *ngSwitchCase="'infiniteproductlist'">
+  <!-- starting from here -->
+  <div class="row" *ngIf="productListItems">
+    <div  
+    class="search-result"
+    infiniteScroll
+    [infiniteScrollDistance]="2"
+    [infiniteScrollThrottle]="50"
+    (click)="onScroll()"
+    >
+      <div class="row">
+        <div class="col-md-4 mb-5" *ngFor="let item of Items; let i = index;">
+          <rds-card class="rounded-avatar-basic" [showFooter]="false" [showBody]="false" [borderColor]="'light'">
+            <div header class="h-100">
+              <div class="text-center">
+                <img [src]="item.imageUrl" class="w-100" alt="">
+                <rds-icon class="position-absolute icon-positionheart" [id]="item.id" [colorVariant]="item.iconColor"
+                  (click)="favouriteProd(item.iconColor, i)" [name]="item.icon" width="20px" height="20px" [stroke]="true" 
+                  [fill]="item.fill"
+                  ></rds-icon>
+              </div>
+            </div>
+          </rds-card>
+          <div class="mb-3 mt-2">
+            <h4 class="custom-title"><b>{{item.title}}</b></h4>
+            <div class="d-flex justify-content-between">
+                <div class="">
+                    <!-- <rds-label [label]="item.price" [multiline]="false" [bold]="true" [italic]="false"></rds-label> -->
+                    <rds-price [role]="'withoutDiscount'" [numberPricetwo]="item.price"></rds-price>
+                </div>
+                <div>
+                    <rds-rating [rating]="3.9" colorVariant="primary" [noOfReview]="123" Size="small"  colorVariant="review"></rds-rating>
+                </div>
+            </div>
+            
+          </div>
+      </div>
+    </div>
+    </div>
+    
+  
+  
+  </div>
+  <!-- <div class="row mt-3 text-center">
+    <rds-button class="" [label]="'Load More'" [size]="'medium'" colorVariant="primary" (click)="onScroll()" ></rds-button>
+  </div> -->
+
+  <div class="row justify-content-center">    
+  <div class="col-2">  
+    <rds-button *ngIf="showLoadMore" class="" [label]="'Load More'" [block]="true" [size]="'medium'" colorVariant="primary" (click)="onScroll()"></rds-button>
+  </div>    
+   
+  </div>
+
+  <!--  main code upto here -->
+
+  <!-- <div class="row" *ngIf="productListItems">
+    <div class="col-md-4" *ngFor="let infinite of productListItems">
+      <rds-product-image [display_type]="'Basic'" [itemList]="productListItems"></rds-product-image>
+      <h5 class="custom-title">{{infinite.title}}</h5>
+      <div class="d-flex justify-content-between">
+        <div class="mt-2">
+          <rds-label [label]="infinite.price" [multiline]="false" [bold]="true" [italic]="false"></rds-label>
+        </div>
+        <div>
+          <rds-rating [rating]="1" colorVariant="primary" [noOfReview]="123" Size="small"  colorVariant="review"></rds-rating>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+
+
+
+
+
+
+
+  <!-- <div class="row" *ngIf="productListItems">
+    <div class="col-md-4 mb-5" *ngFor="let item of productListItems">
+      <rds-product-image [display_type]="'Basic'" [itemList]="itemList"></rds-product-image>
+      <h5 class="custom-title">{{item.title}}</h5>
+          <div class="d-flex justify-content-between">
+                <div class="mt-2">
+                    <rds-label [label]="item.price" [multiline]="false" [bold]="true" [italic]="false"></rds-label>
+                </div>
+                <div>
+                    <rds-rating [rating]="1" colorVariant="primary" [noOfReview]="123" Size="small"  colorVariant="review"></rds-rating>
+                </div>
+          </div>
+    </div>
+  </div> -->
 </div>

@@ -37,7 +37,7 @@ Default.args = {
     iconHeight: "35px",
     iconWidth: "35px",
     title: "International delivery",
-    description: "Get your order in 2 years"
+    description: "Get your order in 2 days"
   }
 }
 

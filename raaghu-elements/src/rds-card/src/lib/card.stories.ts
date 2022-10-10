@@ -39,19 +39,19 @@ const Template: Story<RdsCardComponent> = (args: RdsCardComponent) => ({
    </rds-card>`
 });
 export const Default = Template.bind({});
-Default.parameters = { controls: { include: ['colorVariant', 'showHeader', 'showBody', 'showFooter', 'borderColor'] } };
+Default.parameters = { controls: { include: ['colorVariant', 'showHeader', 'showBody', 'showFooter', 'borderColor' ] } };
 
 Default.args = {
   showHeader: true,
   showBody: true,
   showFooter: true,
   colorVariant: undefined,
-  borderColor: undefined
+  borderColor: undefined,
 };
 
 const cardWithImageTemplate: Story<RdsCardComponent> = (args: RdsCardComponent) => ({
   props: args,
-  template: `<rds-card [showHeader]="showHeader" [showBody]="showBody" [showFooter]="showFooter" [colorVariant]="colorVariant" [borderColor]="borderColor">
+  template: `<rds-card [showHeader]="showHeader" [showBody]="showBody" [showFooter]="showFooter" [colorVariant]="colorVariant" [borderColor]="borderColor" >
   <div header>
   <img src="https://picsum.photos/seed/picsum/1200/600" class="card-img-top" alt="">
   </div>
@@ -70,12 +70,12 @@ cardWithImage.args = {
   showBody: true,
   showFooter: true,
   colorVariant: undefined,
-  borderColor: undefined
+  borderColor: undefined,
 };
 
 const avatarTemplate: Story<RdsCardComponent> = (args: RdsCardComponent) => ({
   props: args,
-  template: `<rds-card [showHeader]="showHeader" [showBody]="showBody" [showFooter]="showFooter" [colorVariant]="colorVariant" [borderColor]="borderColor">
+  template: `<rds-card [showHeader]="showHeader" [showBody]="showBody" [showFooter]="showFooter" [colorVariant]="colorVariant" [borderColor]="borderColor" >
   <div header>
   <div class="banner-image1">
   <img src="https://picsum.photos/seed/picsum/1200/600" class="card-img-top" alt="">
@@ -97,12 +97,11 @@ avatar.args = {
   showBody: true,
   showFooter: true,
   colorVariant: undefined,
-  borderColor: undefined
 };
 
 const centeredAvatarTemplate: Story<RdsCardComponent> = (args: RdsCardComponent) => ({
   props: args,
-  template: `<rds-card [showHeader]="showHeader" [showBody]="showBody" [showFooter]="showFooter"  [colorVariant]="colorVariant" [borderColor]="borderColor">
+  template: `<rds-card [showHeader]="showHeader" [showBody]="showBody" [showFooter]="showFooter"  [colorVariant]="colorVariant" [borderColor]="borderColor" >
   <div header class="">
   <div class="banner-image1">
   <img src="https://picsum.photos/seed/picsum/1200/600" class="card-img-top" alt="">
@@ -127,4 +126,5 @@ withCenteredAvatar.args = {
   showFooter: true,
   colorVariant: undefined,
   borderColor: undefined
+
 };
