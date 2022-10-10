@@ -141,3 +141,16 @@ title: "Elements > Breadcrumb"
       </div>
     </div>
   </section>
+
+###### Skeleton / Specifications 
+
+<div class="py-3">
+ <div class="card border p-5">
+  <div class="row">
+      <div class="col-md-12">
+        <img src="/images/breadcrumb-skeleton.png" class="img-fluid">
+     </div>
+   </div>
+   </div>
+ </div>
+</div>

@@ -9,19 +9,19 @@ import { TranslateService } from '@ngx-translate/core';
 export class RdsCompShippingAddressComponent implements OnInit {
 
   constructor(public translate: TranslateService) { }
-  @Input() EmailID: string;
-  @Input() Contact: number;
-  @Input() firstName: string;
-  @Input() lastName: string;
-  @Input() company: string;
-  @Input() phone: number;
-  @Input() address: string;
-  @Input() state: string;
-  @Input() country: string;
-  @Input() countryList: any = [{ displayName: "India", value: 'India' }, { displayName: "Japan", value: 'Japan' }, { displayName: "Canada", value: 'Canada' }, { displayName: "China", value: 'China' }, { displayName: "UK", value: 'UK' }, { displayName: "USA", value: 'USA' }, { displayName: "Australia", value: 'Australia' }];
-  @Input() postalCode: number;
-  @Input() buttonSpinner: boolean = true;
-
+  @Input() EmailID:string;
+  @Input() Contact:number;
+  @Input() firstName:string;
+  @Input() lastName:string;
+  @Input() company:string;
+  @Input() phone:number;
+  @Input() address:string;
+  @Input() state:string;
+  @Input() country:string;
+  @Input() countryList:any[] = [];
+  @Input() postalCode:number;
+  @Input() buttonSpinner : boolean =true;
+  
   public emailPattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
   ngOnInit(): void {

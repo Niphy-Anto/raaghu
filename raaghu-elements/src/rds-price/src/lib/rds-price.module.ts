@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { RdsLabelModule } from '@libs/rds-label';
 import { RdsPriceComponent } from './rds-price.component';
 
 
@@ -9,6 +10,7 @@ import { RdsPriceComponent } from './rds-price.component';
     RdsPriceComponent
   ],
   imports: [
+    RdsLabelModule
     CommonModule
   ],
   exports: [

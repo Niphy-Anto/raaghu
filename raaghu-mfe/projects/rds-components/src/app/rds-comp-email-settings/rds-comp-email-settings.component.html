@@ -62,6 +62,7 @@
 <div class="mt-5 footer-buttons text-end">
     <rds-button [label]="'Cancel'" [outlineButton]="true" [colorVariant]="'primary'" [size]="'small'" class=""  (click)="back()">
     </rds-button>
-    <rds-button [label]="'Save'" [size]="'small'" [colorVariant]="'primary'" class="ms-2" [showLoadingSpinner]="buttonSpinner" >
+    <rds-button [label]="'Save'" [size]="'small'" [colorVariant]="'primary'" class="ms-2" [showLoadingSpinner]="buttonSpinner" 
+    [disabled]="!emailSetting.valid || mismatch">
     </rds-button>
 </div>

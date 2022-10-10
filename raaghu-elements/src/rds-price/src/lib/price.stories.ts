@@ -1,4 +1,5 @@
 
+import { RdsLabelModule } from '@libs/rds-label';
 import { Story, Meta, moduleMetadata } from '@storybook/angular';
 import { RdsPriceComponent } from './rds-price.component';
 
@@ -10,7 +11,9 @@ export default {
   decorators: [
     moduleMetadata({
       declarations: [],
-      imports: [],
+      imports: [
+        RdsLabelModule
+      ],
     }),
   ],
   argTypes: {

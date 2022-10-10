@@ -25,8 +25,8 @@ export class RdsPriceComponent implements OnInit ,OnChanges{
  
 calculateprice(){
 
-  this.withDiscountPrice=this.actualPrice-((this.actualPrice * this.discount)/100);
- this.numberPrice = this.withDiscountPrice ;
+  this.numberPrice=this.actualPrice-((this.actualPrice * this.discount)/100);
+//  this.numberPrice = this.withDiscountPrice ;
 
 }
 }

@@ -33,7 +33,7 @@
   </div>
 
   <div *ngSwitchCase="'advanced'">
-    <div class="container">
+    <div>
       <div [id]="id" [class]="classes" data-bs-ride="carousel" class="carousel">
         <div *ngIf="indicators" class="carousel-indicators">
           <button type="button" *ngFor="let item of carousalItem; index as i" [attr.data-bs-target]="'#'+id"
@@ -59,7 +59,7 @@
               <div>
                 <label class="fw-light">{{item.roleName}}</label>
               </div>
-              <div class="pt-4 w-50 mx-auto">
+              <div class="pt-4 w-75 mx-auto">
                 <label>{{item.subTitle}}</label>
               </div>
             </div>
