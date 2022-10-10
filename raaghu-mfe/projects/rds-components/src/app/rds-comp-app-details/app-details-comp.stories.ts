@@ -32,12 +32,12 @@ Default.args = {
     title: 'Zapier', subtitle: 'Build custom automation and intefrations with app', icon: 'zapier', route: '/home', iconHeight: '18px', iconWidth: '18px', selected: true
   },
   {
-    title: 'Zapier', subtitle: 'Build custom automation and intefrations with app', icon: 'avatar', route: '/home', iconHeight: '18px', iconWidth: '18px', selected: true
+    title: 'Zapier', subtitle: 'Build custom automation and intefrations with app', icon: 'zapier', route: '/home', iconHeight: '18px', iconWidth: '18px', selected: true
   },
   {
-    title: 'Zapier', subtitle: 'Build custom automation and intefrations with app', icon: 'avatar', route: '/home', iconHeight: '18px', iconWidth: '18px', selected: false
+    title: 'Zapier', subtitle: 'Build custom automation and intefrations with app', icon: 'zapier', route: '/home', iconHeight: '18px', iconWidth: '18px', selected: false
   },
   {
-    title: 'Zapier', subtitle: 'Build custom automation and intefrations with app', icon: 'avatar', route: '/home', iconHeight: '18px', iconWidth: '18px', selected: false
+    title: 'Zapier', subtitle: 'Build custom automation and intefrations with app', icon: 'zapier', route: '/home', iconHeight: '18px', iconWidth: '18px', selected: false
   }]
 }

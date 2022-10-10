@@ -104,7 +104,7 @@ module.exports = {
         './RdsCompIntegration': './projects/rds-components/src/app/rds-comp-integration/rds-comp-integration.component.ts',
 
         './RdsCompContactUs': './projects/rds-components/src/app/rds-comp-contact-us/rds-comp-contact-us.component.ts',
-        './RdsCompTenantListNew': './projects/rds-components/src/app/rds-comp-tenant-list-new/rds-comp-tenant-list-new.component.ts'
+        './RdsCompTenantListNew': './projects/rds-components/src/app/rds-comp-tenant-list-new/rds-comp-tenant-list-new.component.ts',
        
         './RdsCompContactUs': './projects/rds-components/src/app/rds-comp-contact-us/rds-comp-contact-us.component.ts',
         './RdsCompEditionNewBasic': './projects/rds-components/src/app/rds-comp-edition-new-basic/rds-comp-edition-new-basic.component.ts',
