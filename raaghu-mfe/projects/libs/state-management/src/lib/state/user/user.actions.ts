@@ -22,8 +22,9 @@ export const saveUser = createAction(
 export const saveUseruccess = createAction(
     '[User Page] Save User Success', props<{ user: any }>()
 );
+
 export const getUserForEdit = createAction('[User Page] Get getUserForEdit',
-(id: number|undefined) => ({ id }));
+(id: any) => ({ id }));
 
 export const getUserForEditSuccess = createAction(
     '[User Page] Get user Edit Success',
@@ -34,11 +35,11 @@ export const getUserEditFailure = createAction(
     props<{ error: string }>()
 );
 export const getUserPermission = createAction('[User Page] Get getUser Permission For Edit',
-(id: number) => ({ id }));
+(id: any) => ({ id }));
 
 export const getUserPermissionSuccess = createAction(
     '[User Page] Get user Edit Success',
-    props<{ UserPermissionStateI: any }>()
+    props<{ UserPermissionI: any }>()
 );
 export const getUsePermissionsFailure = createAction(
     '[User Page] get User Edit Failure',
@@ -53,7 +54,7 @@ export const UpdateUserPermissionSuccess = createAction(
 );
 export const deleteUser = createAction(
     '[User Page] Delete Language',
-    (id: number) => ({ id })
+    (id: any) => ({ id })
 );
 export const getUserPermissionFilterList = createAction('[User Page] Get Permissions For Filter');
 

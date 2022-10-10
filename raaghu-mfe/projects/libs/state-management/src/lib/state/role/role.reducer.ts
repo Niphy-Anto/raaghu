@@ -1,40 +1,27 @@
 import { createReducer, on } from "@ngrx/store";
-import { getRolByEdit, getRolByEditSuccess, getRoleFailure, getRoles, getRoleSuccess } from "./role.actions";
+import { getPermission, getPermissionSuccess, getRolByEdit, getRolByEditSuccess, getRoleFailure, getRoles, getRoleSuccess } from "./role.actions";
 import { PermissionData, Role } from "./role.models";
 
 
 export interface RolesState {
     roles: any;
+    PermissionI: any;
+    EditRoleSateI: any;
     error: string;
     status: 'pending' | 'loading' | 'error' | 'success';
 }
 // export interface PermissionState {
-//     PermissionI: PermissionData;
+//     
 //     error: string;
 //     status: 'pending' | 'loading' | 'error' | 'success';
 // }
 export const roleInitialState: RolesState = {
     roles: null,
+    PermissionI: null,
+    EditRoleSateI:null,
     error: null,
     status: 'pending',
 };
-// export const PermissionitialState: PermissionState = {
-//     PermissionI: { items: [] },
-//     error: null,
-//     status: 'pending',
-// };
-export interface EditRoleSate {
-    EditRoleSateI: any;
-    error: string;
-    status: 'pending' | 'loading' | 'error' | 'success';
-}
-
-export const  EdirRoleInitialState: EditRoleSate = {
-    EditRoleSateI: {  },
-    error: null,
-    status: 'pending',
-};
-
 
 export const RoleReducer = createReducer(
     // Supply the initial state
@@ -53,24 +40,13 @@ export const RoleReducer = createReducer(
         error: error,
         status: 'error',
     })),
-   
-)
-// export const PermissionReducer = createReducer(
-//     // Supply the initial state
-//     PermissionitialState,
-//     on(getPermission, (state) => ({ ...state, status: 'loading' })),
-//     on(getPermissionSuccess, (state, { PermissionI }) => ({
-//         ...state,
-//         PermissionI: PermissionI,
-//         error: null,
-//         status: 'success',
-//     })),
-   
-// )
-
-export const GetRoleforEdit = createReducer(
-    // Supply the initial state
-    EdirRoleInitialState,
+    on(getPermission, (state) => ({ ...state, status: 'loading' })),
+    on(getPermissionSuccess, (state, { PermissionI }) => ({
+        ...state,
+        PermissionI: PermissionI,
+        error: null,
+        status: 'success',
+    })),
     on(getRolByEdit, (state) => ({ ...state, status: 'loading' })),
     on(getRolByEditSuccess, (state, { EditRoleSateI }) => ({
         ...state,
@@ -80,4 +56,5 @@ export const GetRoleforEdit = createReducer(
     })),
    
 )
+
 

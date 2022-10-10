@@ -1,11 +1,7 @@
 import { Injectable } from '@angular/core';
-import { AlertService } from '@libs/shared';
+import { AlertService, ServiceProxy } from '@libs/shared';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
-import {
-  UsersServiceProxy,
-  IdentityServiceProxy,
-} from 'projects/libs/shared/src/lib/service-proxies';
 import { from, of } from 'rxjs';
 import { catchError, map, switchMap } from 'rxjs/operators';
 import {
@@ -34,8 +30,7 @@ import {
 export class UserEffects {
   constructor(
     private actions$: Actions,
-    private userService: UsersServiceProxy,
-    private identityService: IdentityServiceProxy,
+    private userService: ServiceProxy,
     private alertService: AlertService,
     private store: Store
   ) {}
@@ -46,7 +41,7 @@ export class UserEffects {
       switchMap(() =>
         // Call the getTodos method, convert it to an observable
         from(
-          this.identityService.usersGet(
+          this.userService.usersGET2(
             undefined,
             undefined,
             undefined,
@@ -70,107 +65,109 @@ export class UserEffects {
       )
     )
   );
-  //   getOrganizationUnitTree$ = createEffect(() =>
-  //     this.actions$.pipe(
-  //       ofType(getOrganizationUnitTree),
-  //       switchMap(() =>
-  //         // Call the getTodos method, convert it to an observable
-  //         from(this.organizationUnitService.getOrganizationUnits()).pipe(
-  //           // Take the returned value and return a new success action containing the todos
-  //           map((organizationUnitTree) => {
-  //             return getOrganizationUnitTreeSuccess({
-  //               organizationUnitTree
-  //             });
-  //           }),
-  //           // Or... if it errors return a new failure action containing the error
-  //           catchError((error) => of(getOrganizationUnitTreeFailure({ error })))
-  //         )
-  //       )
-  //     )
-  //   );
-  //   saveUser$ = createEffect(() =>
-  //     this.actions$.pipe(
-  //       ofType(saveUser),
-  //       switchMap((data) =>
-  //         this.userService.createOrUpdateUser(data.user).pipe(map((res: any) => {
-  //           this.store.dispatch(getUsers([]));
-  //           this.alertService.showAlert('Success', 'User added successfully', 'success');
+    getOrganizationUnitTree$ = createEffect(() =>
+      this.actions$.pipe(
+        ofType(getOrganizationUnitTree),
+        switchMap(() =>
+          // Call the getTodos method, convert it to an observable
+          from(this.userService.all2()).pipe(
+            // Take the returned value and return a new success action containing the todos
+            map((organizationUnitTree) => {
+              return getOrganizationUnitTreeSuccess({
+                organizationUnitTree
+              });
+            }),
+            // Or... if it errors return a new failure action containing the error
+            catchError((error) => of(getOrganizationUnitTreeFailure({ error })))
+          )
+        )
+      )
+    );
+    saveUser$ = createEffect(() =>
+      this.actions$.pipe(
+        ofType(saveUser),
+        switchMap((data) =>
+          this.userService.usersPOST(data.user).pipe(map((res: any) => {
+            this.store.dispatch(getUsers());
+            this.alertService.showAlert('Success', 'User added successfully', 'success');
 
-  //         }),
-  //           catchError((error: any) => of(
-  //           ))
-  //         )
-  //       )
-  //     ),
-  //     {
-  //       dispatch: false
-  //     }
-  //   );
-  //   getUserForEdit$ = createEffect(() =>
-  //     this.actions$.pipe(
-  //       ofType(getUserForEdit),
-  //       switchMap(({ id }) =>
-  //         // Call the getTodos method, convert it to an observable
-  //         from(this.userService.getUserForEdit(id)).pipe(
-  //           // Take the returned value and return a new success action containing the todos
-  //           map((UserEditI) => {
-  //             return getUserForEditSuccess({ UserEditI: UserEditI })
-  //           }),
-  //           // Or... if it errors return a new failure action containing the error
-  //           catchError((error) => of(getUserEditFailure({ error })))
-  //         )
-  //       )
-  //     )
-  //   );
-  //   getUserPermission$ = createEffect(() =>
-  //     this.actions$.pipe(
-  //       ofType(getUserPermission),
-  //       switchMap(({ id }) =>
-  //         // Call the getTodos method, convert it to an observable
-  //         from(this.userService.getUserPermissionsForEdit(id)).pipe(
-  //           // Take the returned value and return a new success action containing the todos
-  //           map((UserPermissionI) => {
-  //             return getUserPermissionSuccess({ UserPermissionStateI: UserPermissionI })
-  //           }),
-  //           // Or... if it errors return a new failure action containing the error
-  //           catchError((error) => of(getUsePermissionsFailure({ error })))
-  //         )
-  //       )
-  //     )
-  //   );
-  //   UpdateUserPermission$ = createEffect(() =>
-  //     this.actions$.pipe(
-  //       ofType(UpdateUserPermission),
-  //       switchMap((data) =>
-  //         this.userService.updateUserPermissions(data.Permissions).pipe(map((res: any) => {
-  //           this.alertService.showAlert('Success', 'User permission updated successfully', 'success');
+          }),
+            catchError((error: any) => of(
+            ))
+          )
+        )
+      ),
+      {
+        dispatch: false
+      }
+    );
+    getUserForEdit$ = createEffect(() =>
+      this.actions$.pipe(
+        ofType(getUserForEdit),
+        switchMap(({ id }) =>
+          // Call the getTodos method, convert it to an observable
+          from(this.userService.usersGET(id)).pipe(
+            // Take the returned value and return a new success action containing the todos
+            map((UserEditI) => {
+              return getUserForEditSuccess({ UserEditI: UserEditI })
+            }),
+            // Or... if it errors return a new failure action containing the error
+            catchError((error) => of(getUserEditFailure({ error })))
+          )
+        )
+      )
+    );
+    getUserPermission$ = createEffect(() =>
+      this.actions$.pipe(
+        ofType(getUserPermission),
+        switchMap(({ id }) =>
+          // Call the getTodos method, convert it to an observable
+          from(this.userService.permissionsGET("T",id)).pipe(
+            // Take the returned value and return a new success action containing the todos
+            map((UserPermissionI) => {
+              return getUserPermissionSuccess({ UserPermissionI })
+            }),
+            // Or... if it errors return a new failure action containing the error
+            catchError((error) => of(getUsePermissionsFailure({ error })))
+          )
+        )
+      )
+    );
+    UpdateUserPermission$ = createEffect(() =>
+      this.actions$.pipe(
+        ofType(UpdateUserPermission),
+        switchMap((data) =>
+          this.userService.permissionsPUT("T",undefined, data.Permissions).pipe(map((res: any) => {
+            this.alertService.showAlert('Success', 'User permission updated successfully', 'success');
 
-  //         }),
-  //           catchError((error: any) => of(
-  //           ))
-  //         )
-  //       )
-  //     ),
-  //     {
-  //       dispatch: false
-  //     }
-  //   );
-  //   deleteUser$ = createEffect(() =>
-  //     this.actions$.pipe(
-  //       ofType(deleteUser),
-  //       switchMap(({ id }) =>
-  //         this.userService.deleteUser(id).pipe(map(() => {
-  //           this.store.dispatch(getUsers([]));
-  //           this.alertService.showAlert('Success', 'User deleted successfully', 'success');
+          }),
+            catchError((error: any) => of(
+            ))
+          )
+        )
+      ),
+      {
+        dispatch: false
+      }
+    );
 
-  //         }
-  //         ),
-  //           catchError((error) => of())
-  //         )
-  //       )
-  //     ),
-  //     { dispatch: false }
-  //   );
+    deleteUser$ = createEffect(() =>
+      this.actions$.pipe(
+        ofType(deleteUser),
+        switchMap(({ id }) =>
+          this.userService.usersDELETE(id).pipe(map(() => {
+            this.store.dispatch(getUsers());
+            this.alertService.showAlert('Success', 'User deleted successfully', 'success');
+
+          }
+          ),
+            catchError((error) => of())
+          )
+        )
+      ),
+      { dispatch: false }
+    );
+
   //   getUserPermissionFilter$ = createEffect(() =>
   //     this.actions$.pipe(
   //       ofType(getUserPermissionFilterList),

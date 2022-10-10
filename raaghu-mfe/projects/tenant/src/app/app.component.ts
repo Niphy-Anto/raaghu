@@ -13,8 +13,8 @@ import {
   style,
   animate,
 } from '@angular/animations';
-import { selectAllTenants, selectTenantFeature, selectTenantInfo } from 'projects/libs/state-management/src/lib/state/tenant/tenant.selector';
-import { deleteTenant, getTenantFeaturesForEdit, getTenantForEdit, getTenants, saveTenant, updateTenant, updateTenantFeatureValues } from 'projects/libs/state-management/src/lib/state/tenant/tenant.actions';
+import { selectAllTenants, selectEditionComboboxItems, selectTenantFeature, selectTenantInfo } from 'projects/libs/state-management/src/lib/state/tenant/tenant.selector';
+import { deleteTenant, getEditionComboboxItems, getTenantFeaturesForEdit, getTenantForEdit, getTenants, saveTenant, updateTenant, updateTenantFeatureValues } from 'projects/libs/state-management/src/lib/state/tenant/tenant.actions';
 
 @Component({
   selector: 'app-root',
@@ -168,15 +168,15 @@ export class AppComponent {
       }
     };
 
-    // this.store.dispatch(getEditionComboboxItems())
-    // this.store.select(selectEditionComboboxItems).subscribe((res: any) => {
-    //   if (res && res.editions) {
-    //     this.editionList = res.editions;
-    //     const mfeConfig = this.rdsTenantMfeConfig
-    //     mfeConfig.input.editionList = [... this.editionList];
-    //     this.rdsTenantMfeConfig = mfeConfig;
-    //   }
-    // })
+    this.store.dispatch(getEditionComboboxItems())
+    this.store.select(selectEditionComboboxItems).subscribe((res: any) => {
+      if (res && res.editions) {
+        this.editionList = res.editions;
+        const mfeConfig = this.rdsTenantMfeConfig
+        mfeConfig.input.editionList = [... this.editionList];
+        this.rdsTenantMfeConfig = mfeConfig;
+      }
+    })
 
     this.store.dispatch(getTenants());
     this.store.select(selectAllTenants).subscribe((res: any) => {

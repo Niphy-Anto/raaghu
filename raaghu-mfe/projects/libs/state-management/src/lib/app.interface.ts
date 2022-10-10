@@ -24,25 +24,22 @@ import { downloadState } from './state/DownloadData/download-data.reducer';
 
 import { ValidateTenantState } from "./state/login/login.reducer";
 import { LanguagesState } from './state/language/language.reducer';
-import { EditionsState, TenantCountState } from './state/edition/edition.reducer';
+import { EditionsState } from './state/edition/edition.reducer';
 import { EditionsComboboxState, TenantFeatureState, TenantInfoState, TenantState } from './state/tenant/tenant.reducer';
 import { RolesState } from './state/role/role.reducer';
 import { UsersState } from './state/user/user.reducer';
 
 export interface AppState {
-    EditRoleSateI: any;
-    UserPermissionFilterI: any;
-    UserEditI: any;
-    // users: User;
+
+  user:UsersState,
   // products: ProductState,
   // webhookSubscriptions: WebhookSubscriptionState,
   // profile: profileState,
   // dynamicProperty: DynamicPropertyState,
-  organizationUnit: OrganizationUnitState
+  organizationUnit: OrganizationUnitState,
   // dynamicEntity: DynamicEntityState,
   editions: EditionsState,
   roles: RolesState,
-  users: UsersState,
   languages: LanguagesState,
   // Subscription: SubscriptionState,
   // SubscriptionInformation: SubscriptionInformationState,
@@ -69,14 +66,12 @@ export interface AppState {
   tenantInfo: TenantInfoState,
   tenantFeature: TenantFeatureState,
   validateTenant: ValidateTenantState,
-  // UserEditI: EditUserSate,
-  // UserPermissionStateI: EditUserPermissionSate
   // InputTypeNames: InputPropertynameState
   // EditDynamicPropertSateI: EditDynampicPropertState,
   // DynanmicPermission: DynamicPermissionState,
-  // usernames: UserNameFilterState,
+  //  usernames: UserNameFilterState,
    languageText: LanguageTextsState
-   tenantCount: TenantCountState,
+  //  tenantCount: TenantCountState,
   // defaultLanguage: DefaultLanguageState,
   // settingsComboboxItem: SettingsTenantPageComboboxState,
   download:downloadState,

@@ -4,7 +4,7 @@ import { Actions, createEffect, ofType } from "@ngrx/effects";
 import { Store } from "@ngrx/store";
 import { from, of } from "rxjs";
 import { catchError, filter, map, mergeMap, switchMap } from "rxjs/operators";
-import { getTenants, getTenantSuccess, getTenantFailure, deleteTenant, updateTenant, getEditionComboboxItems, getEditionComboboxItemsFailure, getEditionComboboxItemsSuccess, getTenantForEdit, getTenantForEditSuccess, getTenantForEditFailure, getTenantFeaturesForEdit, getTenantFeaturesForEditSuccess, getTenantFeaturesForEditFailure, updateTenantFeatureValues } from "./tenant.actions";
+import { getTenants, getTenantSuccess, getTenantFailure, deleteTenant, updateTenant, getEditionComboboxItems, getEditionComboboxItemsFailure, getEditionComboboxItemsSuccess, getTenantForEdit, getTenantForEditSuccess, getTenantForEditFailure, getTenantFeaturesForEdit, getTenantFeaturesForEditSuccess, getTenantFeaturesForEditFailure, updateTenantFeatureValues, saveTenant } from "./tenant.actions";
 
 @Injectable()
 export class TenantEffects {
@@ -25,39 +25,43 @@ export class TenantEffects {
       )
     )
   );
-//   getEditionComboboxItems$ = createEffect(() =>
-//     this.actions$.pipe(
-//       ofType(getEditionComboboxItems),
-//       switchMap(() => {
-//         return (this.editionService.getEditionComboboxItems(undefined, undefined, undefined)).pipe(
-//           map((editions: any) => {
-//             return getEditionComboboxItemsSuccess({ editionComboboxItem: editions })
-//           }),
-//           catchError((error) => of(getEditionComboboxItemsFailure({ error })))
-//         )
-//       }
-//       )
-//     )
-//   );
-//   saveTenant$ = createEffect(() =>
-//     this.actions$.pipe(
-//       ofType(saveTenant),
-//       mergeMap((data,maxresult) =>
-//         this.tenantService.createTenant(data.tenant).pipe(map((res: any) => {
-//           this.store.dispatch(getTenants());
-//           this.alertService.showAlert('Success', 'Tenant added successfully', 'success')
+  
+  getEditionComboboxItems$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(getEditionComboboxItems),
+      switchMap(() =>
+        // Call the getTodos method, convert it to an observable
+        from(this.tenantService.editionsGET2(undefined, undefined, 0, 1000)).pipe(
+          // Take the returned value and return a new success action containing the todos
+          map((editionComboboxItem) => {
+            return getEditionComboboxItemsSuccess( {editionComboboxItem});
+          }),
+          // Or... if it errors return a new failure action containing the error
+          catchError((error) => of(getEditionComboboxItemsFailure({ error })))
+        )
+      )
+    )
+  );
+
+  saveTenant$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(saveTenant),
+      mergeMap((data,maxresult) =>
+        this.tenantService.tenantsPOST(data.tenant).pipe(map((res: any) => {
+          this.store.dispatch(getTenants());
+          this.alertService.showAlert('Success', 'Tenant added successfully', 'success')
 
 
-//         }),
-//           catchError((error: any) => of(
-//           ))
-//         )
-//       )
-//     ),
-//     {
-//       dispatch: false
-//     }
-//   );
+        }),
+          catchError((error: any) => of(
+          ))
+        )
+      )
+    ),
+    {
+      dispatch: false
+    }
+  );
 
   deleteTenant$ = createEffect(() =>
     this.actions$.pipe(

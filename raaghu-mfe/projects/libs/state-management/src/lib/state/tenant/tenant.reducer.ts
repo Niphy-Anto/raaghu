@@ -33,12 +33,12 @@ export const TenantReducer = createReducer(
     }))
 )
 export interface EditionsComboboxState {
-    editions: any[]
+    editions: any;
     error: string;
     status: 'pending' | 'loading' | 'error' | 'success';
 }
 export const editionComboboxInitialState: EditionsComboboxState = {
-    editions: [],
+    editions: null,
     error: null,
     status: 'pending',
 };
