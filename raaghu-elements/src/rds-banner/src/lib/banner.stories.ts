@@ -1,9 +1,22 @@
-import { Story, Meta } from '@storybook/angular';
+import { FormBuilder } from '@angular/forms';
+import { RdsIconModule } from '@libs/rds-icon';
+import { Story, Meta, moduleMetadata } from '@storybook/angular';
 import { RdsBannerComponent } from './rds-banner.component';
 
 export default {
   title: 'ELEMENTS/Banner',
   component: RdsBannerComponent,
+  decorators: [
+    moduleMetadata({
+      imports: [
+        
+        RdsIconModule
+      ],
+      providers: [
+        FormBuilder
+      ],
+    })
+  ] ,
   argTypes: {
     position: {
       options: ['top', 'bottom'],
@@ -30,5 +43,6 @@ Default.args = {
   bannerText: 'Big news! We are excited to announce a brand new product.',
   sticky: false,
   position: 'top',
-  colorVariant: 'info'
+  colorVariant: 'info',
+  icon:'information'
 }
