@@ -43,7 +43,7 @@ Default.args = {
 };
 
 
-const BadgeWithButton: Story<RdsBadgeComponent> = (args: RdsBadgeComponent) => ({
+const Button: Story<RdsBadgeComponent> = (args: RdsBadgeComponent) => ({
   props: args,
   template:
     `<rds-button [label]="'Button'" [colorVariant]="'primary'">
@@ -55,15 +55,15 @@ const BadgeWithButton: Story<RdsBadgeComponent> = (args: RdsBadgeComponent) => (
      
   `,
 });
-BadgeWithButton.args = {
+Button.args = {
   size: 'medium',
   label: '9',
   colorVariant:'danger',
   badgeType:'rectangle'
 };
-export const badgeWithButton = BadgeWithButton.bind({});
+export const button = Button.bind({});
 
-const BadgePositioned: Story<RdsBadgeComponent> = (args: RdsBadgeComponent) => ({
+const Positioned: Story<RdsBadgeComponent> = (args: RdsBadgeComponent) => ({
   props: args,
   template:
     `<rds-button [colorVariant]="'primary'" size="medium" class="position-relative" [label]="'button'">
@@ -80,8 +80,8 @@ const BadgePositioned: Story<RdsBadgeComponent> = (args: RdsBadgeComponent) => (
 
 });
 
-export const positionedBadgeWithButton = BadgePositioned.bind({});
-positionedBadgeWithButton.args = {
+export const positioned = Positioned.bind({});
+positioned.args = {
   size: 'medium',
   label: '99',
   colorVariant:'danger',
@@ -89,7 +89,7 @@ positionedBadgeWithButton.args = {
   positioned:true
 };
 
-const BadgeIcon: Story<RdsBadgeComponent> = (args: RdsBadgeComponent) => ({
+const WithIcon: Story<RdsBadgeComponent> = (args: RdsBadgeComponent) => ({
   props: args,
   template:
     `<rds-button class="position-relative" [size]="'small'" [id]="'notification'" [roundedButton]="true"
@@ -101,8 +101,8 @@ const BadgeIcon: Story<RdsBadgeComponent> = (args: RdsBadgeComponent) => ({
 
 });
 
-export const badgeWithIcon = BadgeIcon.bind({});
-badgeWithIcon.args = {
+export const withIcon = WithIcon.bind({});
+withIcon.args = {
   size: 'medium',
   label: '9',
   colorVariant:'danger',

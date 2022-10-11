@@ -87,8 +87,9 @@ export class RdsButtonComponent implements AfterViewInit, OnInit, DoCheck {
     const mode = ` btn-${this.size === 'small' ? 'sm' : this.size === 'large' ? 'lg' : 'md'}`;
     const icon = `${this.roundedButton ? ' btn-icon rounded-pill' : ''}`;
     const icon1 = `${this.roundedCorner ? ' rounded-pill' : ''}`;
+    const disabledGrey = `${this.disabled === true ? 'btn btn-secondary' : ''}`
 
-    return outline + mode + icon + icon1;
+    return outline + mode + icon + icon1 + disabledGrey;
   }
 
   public get blockWidth(): string[] {

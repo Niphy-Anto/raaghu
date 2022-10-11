@@ -57,7 +57,6 @@ export const disable = Template.bind({});
 disable.parameters = { controls: { include: ['colorVariant', 'label', 'size', 'disabled'] } };
 disable.args = {
   label: 'Disable',
-  colorVariant: 'primary',
   disabled: true,
   size: 'medium',
 

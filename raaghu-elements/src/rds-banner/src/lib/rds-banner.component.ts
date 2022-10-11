@@ -12,7 +12,12 @@ export class RdsBannerComponent implements OnInit {
   @Input() sticky: boolean = false;;
   @Input() position: 'top' | 'bottom' = 'top';
   @Input() colorVariant:'primary' |'danger'|'success'|'secondary'|'info'|'dark'|'light'|'warning'= 'primary';
-
+  @Input() icon: string = '';
+  @Input() iconHeight: string = '20px';
+  @Input() iconWidth: string = '20px';
+  @Input() iconSize:string ='';
+  @Input() iconStroke: boolean = true;
+  @Input() iconFill: boolean = false;
   constructor() { }
 
   ngOnInit(): void {

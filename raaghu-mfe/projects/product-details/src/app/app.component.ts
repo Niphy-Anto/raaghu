@@ -19,9 +19,9 @@ export class AppComponent extends MfeBaseComponent implements OnInit {
   public rdsprodlistMfeConfig: ComponentLoaderOptions;
   public RdsCompProductOverview: ComponentLoaderOptions;
   public RdsCompReviewCategory: ComponentLoaderOptions;
-  breadCrumbItems: BreadcrumbsItems[] = [{ name: 'Woman', route: '/home', iconClass: 'dashboard', iconWidth: '15px', iconHeight: '15px', disabled: true },
-  { name: 'Clothing', route: '/About', iconClass: 'dashboard', iconWidth: '15px', iconHeight: '15px', disabled: false },
-  { name: 'Basic Tees', route: '/Contact', iconClass: 'dashboard', iconWidth: '15px', iconHeight: '15px', disabled: true }];
+  breadCrumbItems: BreadcrumbsItems[] = [{ name: 'Woman', route: '/home', icon: 'dashboard', iconWidth: '15px', iconHeight: '15px', disabled: true },
+  { name: 'Clothing', route: '/About', icon: 'dashboard', iconWidth: '15px', iconHeight: '15px', disabled: false },
+  { name: 'Basic Tees', route: '/Contact', icon: 'dashboard', iconWidth: '15px', iconHeight: '15px', disabled: true }];
 
 
   itemList = [
