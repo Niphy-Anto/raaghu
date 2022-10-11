@@ -19,9 +19,9 @@ export const Default: Story<RdsModalComponent> = (args) => ({
   show  Modal
 </button>
   <rds-modal  [showModalHeader]="showModalHeader" [showModalFooter]="showModalFooter" [modalBackdrop]="modalBackdrop">
-    <div modalheader class="col-md-12"  >
-      <button style="float:right" type="button"  class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
+    <div modalheader class="d-flex align-items-center">
       <h5 class="modal-title" id="storybookModal">Title</h5>
+      <button style="float:right" type="button"  class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
     </div>
     <div modalbody>
       <p>Modal Body
@@ -47,9 +47,9 @@ export const verticallyCenterd: Story<RdsModalComponent> = (args) => ({
           Show Centered Modal
         </button>
           <rds-modal  [showModalHeader]="showModalHeader" [verticallyCenterd]="verticallyCenterd" [modalBackdrop]="'static'" [showModalFooter]="showModalFooter">
-            <div modalheader class="col-md-12" >
-              <button style="float:right" type="button"  class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
+            <div modalheader class="d-flex align-items-center">
               <h5 class="modal-title" id="storybookModal">Title</h5>
+              <button style="float:right" type="button"  class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
             </div>
             <div modalbody>
               <p>Modal Content</p>
@@ -74,9 +74,9 @@ export const staticBackdropModal: Story<RdsModalComponent> = (args) => ({
           Backdrop Modal
         </button>
           <rds-modal [showModalHeader]="showModalHeader" [modalBackdrop]="modalBackdrop" [showModalFooter]="showModalFooter">
-            <div modalheader class="col-md-12" >
-              <button style="float:right" type="button"  class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
+            <div modalheader class="d-flex align-items-center">
               <h5 class="modal-title" id="storybookModal">Title</h5>
+              <button style="float:right" type="button"  class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
             </div>
             <div modalbody>
               <p>Modal Content</p>
@@ -101,9 +101,10 @@ export const longContentModal: Story<RdsModalComponent> = (args) => ({
 Long Content Modal
 </button>
 <rds-modal [showModalHeader]="showModalHeader" [modalBackdrop]="modalBackdrop" [showModalFooter]="showModalFooter" [scrollable]="scrollable">
-  <div modalheader class="col-md-12" >
-    <button style="float:right" type="button"  class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
+  <div modalheader class="d-flex align-items-center">
+    
     <h5 class="modal-title" id="storybookModal">Title</h5>
+    <button style="float:right" type="button"  class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
   </div>
   <div modalbody>
   <p>This is some placeholder content to show the scrolling behavior for modals. We use repeated line breaks to demonstrate how content can exceed minimum inner height, thereby showing inner scrolling. When content becomes longer than the predefined max-height of modal, content will be cropped and scrollable within the modal This is some placeholder content to show the scrolling behavior for modals. We use repeated line breaks to demonstrate how content can exceed minimum inner height, thereby showing inner scrolling. When content becomes longer than the predefined max-height of modal, content will be cropped and scrollable within the modal This is some placeholder content to show the scrolling behavior for modals. We use repeated line breaks to demonstrate how content can exceed minimum inner height, thereby showing inner scrolling. When content becomes longer than the predefined max-height of modal, content will be cropped and scrollable within the modal

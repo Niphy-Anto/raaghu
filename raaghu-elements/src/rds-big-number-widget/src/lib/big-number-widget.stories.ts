@@ -42,9 +42,9 @@ const Template: Story<RdsBigNumberWidgetComponent> = (args: RdsBigNumberWidgetCo
 
 export const Default = Template.bind({})
 Default.args = {
-  colorVariant: 'info',
+  colorVariant: 'light',
   textAlign: 'text-start',
-  subTitleColorVariant: 'danger',
+  subTitleColorVariant: 'primary',
   iconFill: true,
   iconStroke: true,
   iconHeight: '15px',
@@ -67,7 +67,7 @@ standard.parameters = { controls: { include: ['colorVariant', 'subTitleColorVari
 
 standard.args = {
   colorVariant: 'primary',
-  subTitleColorVariant: 'danger',
+  subTitleColorVariant: 'primary',
   role: 'advanced',
   subText: 'Visitors',
   bigNumber: '2,236'
@@ -132,21 +132,12 @@ histogram.args = {
     maintainAspectRatio: false,
     plugins: {
       legend: {
-        position: '',
-        pointStyle: "line",
-        labels: {
-          usePointStyle: true
-        }
+        display: false
       },
 
       tooltip: {
-        usePointStyle: true,
-        display: false
+        enabled: false // <-- this option disables tooltips
       },
-      title: {
-        display: false,
-        text: 'Daily Sales Growth'
-      }
     },
     scales:
     {
@@ -194,12 +185,12 @@ sparkLine.args = {
   bigNumber: '2,236',
   chartDatasets: [
     {
-      label: 'Sales',
-      data: [190, 200, 133, 231, 112, 125, 135, 135.7, 266, 224, 122, 125],
+      label: '',
+      data: [0, 3, -3, 3],
       borderColor: '#4DCFFF',
-      pointBackgroundColor: '#4DCFFF',
-      fill: true,
-      pointRadius: 3,
+      fill: false,
+      pointRadius: 2,
+      cubicInterpolationMode: 'monotone',
       tension: 0.4,
     },
     // {
@@ -213,7 +204,7 @@ sparkLine.args = {
     //   tension: 0.4,
     // }
   ],
-  chartLabels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+  chartLabels: ['Jan', 'Feb', 'Mar', 'Apr'],
   chartWidth: 50,
   chartHeight: 50,
   chartOptions: {
@@ -227,17 +218,9 @@ sparkLine.args = {
         display: false,
       },
       legend: {
-        position: 'top',
-        align: "end",
-        pointStyle: "circle",
-        labels: {
-          usePointStyle: true,
-          boxWidth: 8,
-          padding: 30,
-          height: 10
-        },
+        display: false
       },
-      tooltip: { enabled: true },
+      tooltip: { enabled: false },
     },
     scales:
     {
@@ -255,3 +238,24 @@ sparkLine.args = {
     },
   }
 }
+const iconTemplate: Story<RdsBigNumberWidgetComponent> = (args: RdsBigNumberWidgetComponent) => ({
+  props: args,
+  template: `<div class="col-sm-3">
+<rds-big-number-widget [bigNumber]="bigNumber" [subText]="subText"
+ [colorVariant]="colorVariant" [subTitleColorVariant]="subTitleColorVariant" [role]="role">
+<rds-icon name="users" colorVariant="subTitleColorVariant" height=20px width=20px></rds-icon>
+ </rds-big-number-widget>
+  </div>`
+});
+
+export const icon = iconTemplate.bind({});
+// delta.parameters = { controls: { include: ['colorVariant', 'subTitleColorVariant', 'role', 'subText', 'bigNumber'] } };
+
+histogram.args = {
+  colorVariant: 'dark',
+  subTitleColorVariant: 'primary',
+  role: 'advanced',
+  subText: 'Average Numbers Of Visitors',
+  bigNumber: '2,236',
+}
+

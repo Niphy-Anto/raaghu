@@ -20,8 +20,8 @@ const Template: Story<RdsButtonGroupComponent> = (args: RdsButtonGroupComponent)
   props: args,
 });
 
-export const Default = Template.bind({});
-Default.args = {
+export const DefaultFilled = Template.bind({});
+DefaultFilled.args = {
   vertical: false,
   size: 'medium',
   colorVariant: 'primary',
@@ -38,21 +38,21 @@ Default.args = {
       label: 'Middle',
       id: '',
       name: '',
-      colorVariant: 'primary'
+      colorVariant: 'danger'
 
     },
     {
       label: 'Right',
       id: '',
       name: '',
-      colorVariant: 'primary'
+      colorVariant: 'warning'
 
     },
   ]
 };
 
-export const vertical = Template.bind({});
-vertical.args = {
+export const VerticalGroupFilled = Template.bind({});
+VerticalGroupFilled.args = {
   vertical: true,
   size: 'medium',
   colorVariant: 'primary',
@@ -85,8 +85,8 @@ vertical.args = {
   ]
 };
 
-export const iconButtonGroup = Template.bind({});
-iconButtonGroup.args = {
+export const IconGroupFilled = Template.bind({});
+IconGroupFilled.args = {
   vertical: false,
   size: 'medium',
   colorVariant: 'primary',
@@ -163,8 +163,8 @@ radioButtonGroup.args = {
   ]
 };
 
-export const checkboxButtonGroup = Template.bind({});
-checkboxButtonGroup.args = {
+export const OutlineButtonGroup = Template.bind({});
+OutlineButtonGroup.args = {
   vertical: false,
   size: 'medium',
   colorVariant: 'primary',

@@ -2587,3 +2587,30 @@ app-rds-comp-product-list .card-body {
 .fs-8 {
   font-size: .50rem !important;
 }
+.mobile-btn{
+  display: none;
+}
+.desktop-btn{
+  display: block;
+}
+
+@media (max-width: 767px){
+  .mobile-btn{
+      display: block;
+  }
+  .desktop-btn{
+      display: none;
+  }
+}
+
+
+// updated css for avatar card
+
+.avatar-pic{
+  bottom: -20px;
+  left: 10px;
+}
+.avatar-pic2{
+  bottom: 25px;
+}
+
