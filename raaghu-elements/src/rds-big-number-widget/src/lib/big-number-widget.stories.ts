@@ -4,6 +4,7 @@ import { RdsBigNumberWidgetComponent } from './rds-big-number-widget.component';
 import { RdsLabelModule } from '@libs/rds-label';
 import { RdsChartBarHorizontalModule } from '@libs/rds-chart-bar-horizontal';
 import { RdsChartLineModule } from '@libs/rds-chart-line';
+import { CommonModule } from '@angular/common';
 export default {
 
   title: 'Elements/Big Number',
@@ -12,7 +13,7 @@ export default {
   decorators: [
     moduleMetadata({
       declarations: [],
-      imports: [RdsIconModule, RdsLabelModule, RdsChartBarHorizontalModule, RdsChartLineModule],
+      imports: [CommonModule, RdsIconModule, RdsLabelModule, RdsChartBarHorizontalModule, RdsChartLineModule],
     }),
   ],
   argTypes: {
@@ -42,7 +43,7 @@ const Template: Story<RdsBigNumberWidgetComponent> = (args: RdsBigNumberWidgetCo
 
 export const Default = Template.bind({})
 Default.args = {
-  colorVariant: 'light',
+  colorVariant: 'info',
   textAlign: 'text-start',
   subTitleColorVariant: 'primary',
   iconFill: true,
@@ -181,7 +182,7 @@ sparkLine.args = {
   colorVariant: 'dark',
   subTitleColorVariant: 'primary',
   role: 'advanced',
-  subText: 'Average Numbers Of Visitors',
+  subText: 'Visitors',
   bigNumber: '2,236',
   chartDatasets: [
     {
@@ -243,7 +244,7 @@ const iconTemplate: Story<RdsBigNumberWidgetComponent> = (args: RdsBigNumberWidg
   template: `<div class="col-sm-3">
 <rds-big-number-widget [bigNumber]="bigNumber" [subText]="subText"
  [colorVariant]="colorVariant" [subTitleColorVariant]="subTitleColorVariant" [role]="role">
-<rds-icon name="users" colorVariant="subTitleColorVariant" height=20px width=20px></rds-icon>
+<rds-icon name="users" [colorVariant]="subTitleColorVariant" [height]="'30px'" [width]="'30px'"></rds-icon>
  </rds-big-number-widget>
   </div>`
 });
@@ -251,11 +252,11 @@ const iconTemplate: Story<RdsBigNumberWidgetComponent> = (args: RdsBigNumberWidg
 export const icon = iconTemplate.bind({});
 // delta.parameters = { controls: { include: ['colorVariant', 'subTitleColorVariant', 'role', 'subText', 'bigNumber'] } };
 
-histogram.args = {
+icon.args = {
   colorVariant: 'dark',
   subTitleColorVariant: 'primary',
   role: 'advanced',
-  subText: 'Average Numbers Of Visitors',
+  subText: 'Visitors',
   bigNumber: '2,236',
 }
 
