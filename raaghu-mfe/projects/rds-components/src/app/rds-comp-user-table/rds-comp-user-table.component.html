@@ -11,7 +11,7 @@
 </div>
 <div class="offcanvas offcanvas-end" tabindex="-1" id="AddUser" aria-labelledby="AddUser" style="width: 340px;">
   <div class="offcanvas-body">
-    <b>{{"Add User"|translate}}</b>
+    <b>{{translate.instant("Add User")}}</b>
     <hr>
     <div class="form-group mb-3">
       <rds-input></rds-input>
@@ -25,12 +25,19 @@
         [withLabel]="true" [switch]="false" [inline]="false" [id]="'Isenabled'"></rds-checkbox>
     </div>
 
-    <rds-button [label]="translate.instant('Cancle')" type="button" [size]="'small'" class="px-2">
-    </rds-button>
-    <rds-button [colorVariant]="'primary'" [label]="translate.instant('Save')" type="button"  [size]="'small'" class="px-2"
-     data-bs-target="#AddUser" data-bs-dismiss="offcanvas">
-    </rds-button>
+    
 
+  </div>
+  <div class="footer-buttons my-2 shadow-none">
+    <div class="row">
+      <div class="col-sm-12">
+        <rds-button [label]="translate.instant('Cancel')" [outlineButton]="true" [colorVariant]="'primary'" type="button" [size]="'small'" class="px-2">
+        </rds-button>
+        <rds-button [colorVariant]="'primary'" [label]="translate.instant('Save')" type="button"  [size]="'small'" class="px-2"
+         data-bs-target="#AddUser" data-bs-dismiss="offcanvas">
+        </rds-button>
+      </div>
+    </div>
   </div>
 </div>
 
