@@ -1,7 +1,7 @@
 <div *ngIf="!editShimmer">
-  <div class="tab-content">
+  <div class="tab-content pb-5">
     <form #userCreationForm="ngForm" autocomplete="off">
-      <div class="row align-items-center">
+      <div class="row align-items-center sm-d-reverse">
         <div class="col-md-6 sm-p">
           <div class="form-group mb-3">
             <rds-input [inputType]="'text'" [Title]="translate.instant('Name')" [(ngModel)]="userData.name"
@@ -82,7 +82,7 @@
       </div>
     </form>
   </div>
-  <div class="footer-buttons my-2">
+  <div class="position-fixed bg-white py-3 bottom-0 w-100">
     <rds-button [label]="translate.instant('Cancel')" [colorVariant]="'primary'" [outlineButton]="true" (click)="onCancelUser()"
       data-bs-dismiss="offcanvas" [size]="'small'">
     </rds-button>
