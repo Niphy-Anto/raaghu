@@ -38,6 +38,22 @@ export const getClaimTypesFailure = createAction(
     props<{ error: string }>()
 );
 
+export const saveClaims = createAction('[Role Page] Save Claims',
+(data: any) => ({ data }));
+
+
+export const savePermissions = createAction('[Role Page] Save Permissions',
+(data) => ({ data }));
+
+export const savePermissionsSuccess = createAction(
+    '[Role Page] Save Permissions Success',
+);
+
+export const savePermissionsFailure = createAction(
+    '[Role Page] Save Permissions Failure',
+    props<{ error: string }>()
+);
+
 
 export const saveRole = createAction(
     '[Role Page] Save Role',
@@ -45,7 +61,7 @@ export const saveRole = createAction(
 );
 
 
-export const getPermission = createAction('[Role Page] Get Permissions',(id: any) => ({ id }));
+export const getPermission = createAction('[Role Page] Get Permissions',(name: any) => ({ name }));
 
 export const getPermissionSuccess = createAction(
     '[Role Page] get Permission Success',
@@ -65,5 +81,4 @@ export const getRolByEditSuccess = createAction(
 );
 export const getRolByEditFailure = createAction(
     '[Role Page] Get Role By EditF Failure',
-    props<{ error: string }>()
-);
+    props<{ error: string }>());

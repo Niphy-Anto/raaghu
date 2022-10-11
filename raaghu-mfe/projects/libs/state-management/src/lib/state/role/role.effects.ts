@@ -6,7 +6,7 @@ import { AlertService } from "projects/libs/shared/src/lib/alert.service";
 import { ServiceProxy } from "projects/libs/shared/src/lib/service-proxies";
 import { from, of } from "rxjs";
 import { catchError, map, mergeMap, switchMap } from "rxjs/operators";
-import { deleteRole, getAllClaimTypes, getAllClaimTypesFailure, getAllClaimTypesSuccess, getClaimTypes, getClaimTypesFailure, getClaimTypesSuccess, getPermission, getPermissionSuccess, getRolByEdit, getRolByEditFailure, getRolByEditSuccess, getRoleFailure, getRoles, getRoleSuccess, saveRole } from "./role.actions";
+import { deleteRole, getAllClaimTypes, getAllClaimTypesFailure, getAllClaimTypesSuccess, getClaimTypes, getClaimTypesFailure, getClaimTypesSuccess, getPermission, getPermissionSuccess, getRolByEdit, getRolByEditFailure, getRolByEditSuccess, getRoleFailure, getRoles, getRoleSuccess, saveClaims, savePermissions, saveRole } from "./role.actions";
 
 
 @Injectable()
@@ -66,14 +66,33 @@ export class RoleEffects {
       )
     )
   );
+  saveClaims$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(saveClaims),
+      switchMap(({data}) =>
+        this.roleService.claims(data.id, data.permissions).pipe(map((res: any) => {
+          this.store.dispatch(getRoles());
+          this.alertService.showAlert('Success',  'Role added successfully', 'success')
+        }),
+          catchError((error: any) => of(
+          ))
+        )
+      )
+    ),
+    {
+      dispatch: false
+    }
+  );
+
+  
   
 
   getPermissions$ = createEffect(() =>
     this.actions$.pipe(
       ofType(getPermission),
-      switchMap(({id}) =>
+      switchMap(({name}) =>
         // Call the getTodos method, convert it to an observable
-        from(this.roleService.permissionsGET("T",id)).pipe(
+        from(this.roleService.permissionsGET("T",name)).pipe(
           // Take the returned value and return a new success action containing the todos
           map((PermissionI) => {
             return getPermissionSuccess({ PermissionI })
@@ -83,6 +102,24 @@ export class RoleEffects {
         )
       )
     )
+  );
+
+  savePermissions$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(savePermissions),
+      switchMap(({data}) =>
+        this.roleService.permissionsPUT("T",data.name, data.permissions).pipe(map((res: any) => {
+          this.store.dispatch(getRoles());
+          this.alertService.showAlert('Success',  'Role added successfully', 'success')
+        }),
+          catchError((error: any) => of(
+          ))
+        )
+      )
+    ),
+    {
+      dispatch: false
+    }
   );
 
   saveRoles$ = createEffect(() =>
