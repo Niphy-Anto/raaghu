@@ -3993,7 +3993,7 @@
 				}
 			}
 		},
-		"cart": {
+		"rds-page-cart": {
 			"projectType": "application",
 			"schematics": {
 				"@schematics/angular:component": {
@@ -4003,28 +4003,28 @@
 					"strict": true
 				}
 			},
-			"root": "projects/cart",
+			"root": "projects/rds-page-cart",
 			"sourceRoot": "projects/cart/src",
 			"prefix": "app",
 			"architect": {
 				"build": {
 					"builder": "ngx-build-plus:browser",
 					"options": {
-						"outputPath": "dist/cart",
-						"index": "projects/cart/src/index.html",
-						"main": "projects/cart/src/main.ts",
-						"polyfills": "projects/cart/src/polyfills.ts",
-						"tsConfig": "projects/cart/tsconfig.app.json",
+						"outputPath": "dist/rds-page-cart",
+						"index": "projects/rds-page-cart/src/index.html",
+						"main": "projects/rds-page-cart/src/main.ts",
+						"polyfills": "projects/rds-page-cart/src/polyfills.ts",
+						"tsConfig": "projects/rds-page-cart/tsconfig.app.json",
 						"inlineStyleLanguage": "scss",
 						"assets": [
-							"projects/cart/src/favicon.ico",
-							"projects/cart/src/assets"
+							"projects/rds-page-cart/src/favicon.ico",
+							"projects/rds-page-cart/src/assets"
 						],
 						"styles": [
-							"projects/cart/src/styles.scss"
+							"projects/rds-page-cart/src/styles.scss"
 						],
 						"scripts": [],
-						"extraWebpackConfig": "projects/cart/webpack.config.js",
+						"extraWebpackConfig": "projects/rds-page-cart/webpack.config.js",
 						"commonChunk": false
 					},
 					"configurations": {
@@ -4043,12 +4043,12 @@
 							],
 							"fileReplacements": [
 								{
-									"replace": "projects/cart/src/environments/environment.ts",
-									"with": "projects/cart/src/environments/environment.prod.ts"
+									"replace": "projects/rds-page-cart/src/environments/environment.ts",
+									"with": "projects/rds-page-cart/src/environments/environment.prod.ts"
 								}
 							],
 							"outputHashing": "all",
-							"extraWebpackConfig": "projects/cart/webpack.prod.config.js"
+							"extraWebpackConfig": "projects/rds-page-cart/webpack.prod.config.js"
 						},
 						"development": {
 							"buildOptimizer": false,
@@ -4065,41 +4065,41 @@
 					"builder": "ngx-build-plus:dev-server",
 					"configurations": {
 						"production": {
-							"browserTarget": "cart:build:production",
-							"extraWebpackConfig": "projects/cart/webpack.prod.config.js"
+							"browserTarget": "rds-page-cart:build:production",
+							"extraWebpackConfig": "projects/rds-page-cart/webpack.prod.config.js"
 						},
 						"development": {
-							"browserTarget": "cart:build:development"
+							"browserTarget": "rds-page-cart:build:development"
 						}
 					},
 					"defaultConfiguration": "development",
 					"options": {
 						"port": 5033,
 						"publicHost": "http://localhost:5033",
-						"extraWebpackConfig": "projects/cart/webpack.config.js"
+						"extraWebpackConfig": "projects/rds-page-cart/webpack.config.js"
 					}
 				},
 				"extract-i18n": {
 					"builder": "ngx-build-plus:extract-i18n",
 					"options": {
-						"browserTarget": "cart:build",
-						"extraWebpackConfig": "projects/cart/webpack.config.js"
+						"browserTarget": "rds-page-cart:build",
+						"extraWebpackConfig": "projects/rds-page-cart/webpack.config.js"
 					}
 				},
 				"test": {
 					"builder": "@angular-devkit/build-angular:karma",
 					"options": {
-						"main": "projects/cart/src/test.ts",
-						"polyfills": "projects/cart/src/polyfills.ts",
-						"tsConfig": "projects/cart/tsconfig.spec.json",
-						"karmaConfig": "projects/cart/karma.conf.js",
+						"main": "projects/rds-page-cart/src/test.ts",
+						"polyfills": "projects/rds-page-cart/src/polyfills.ts",
+						"tsConfig": "projects/rds-page-cart/tsconfig.spec.json",
+						"karmaConfig": "projects/rds-page-cart/karma.conf.js",
 						"inlineStyleLanguage": "scss",
 						"assets": [
-							"projects/cart/src/favicon.ico",
-							"projects/cart/src/assets"
+							"projects/rds-page-cart/src/favicon.ico",
+							"projects/rds-page-cart/src/assets"
 						],
 						"styles": [
-							"projects/cart/src/styles.scss"
+							"projects/rds-page-cart/src/styles.scss"
 						],
 						"scripts": []
 					}

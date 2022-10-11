@@ -28,10 +28,10 @@ module.exports = {
         new ModuleFederationPlugin({
             library: { type: "module" },
 
-            name: "cart",
+            name: "rds-page-cart",
             filename: "remoteEntry.js",
             exposes: {
-                './AppModule': './projects/cart/src/app/app.module.ts',
+                './AppModule': './projects/rds-page-cart/src/app/app.module.ts',
             },
 
 

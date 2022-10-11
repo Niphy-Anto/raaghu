@@ -1,5 +1,5 @@
 ---
-slug: "/cart"
+slug: "/page-cart"
 date: "2019-05-04"
 title: "Pages / cart"
 ---
