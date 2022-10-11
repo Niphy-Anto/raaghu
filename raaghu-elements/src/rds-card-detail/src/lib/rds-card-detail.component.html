@@ -1,14 +1,14 @@
 <div (click)="setAsPaymentMethod(cardData)">
     <rds-label [label]="label" [bold]="true"></rds-label>
-    <div class="d-flex align-items-center">
-        <div class="flex-grow-0 d-flex align-items-center h-50">
+    <div class="d-flex ">
+        <div class="flex-grow-0 d-flex align-items-center h-50 mt-4">
           
             <rds-icon [name]="cardData.cardLogo" width="25" height="25"></rds-icon>
 
         </div>
         <div class="flex-grow-1 d-flex align-items-center ms-4">
             <div>
-                <div class="d-block mt-3" style="font-size: 0.80rem;">{{cardData.cardName}} Ending in {{cardData.cardNumber}}
+                <div class="d-block mt-3 fw-medium" style="font-size: 0.80rem;">{{cardData.cardName}} Ending in {{cardData.cardNumber}}
                 </div>
                 <div class="d-block text-muted" style="font-size: 0.80rem;">Expiry {{cardData.cardExpiry}}</div>
                 <div *ngIf="IsEditAndDefaultFunctionalityRequired" class="d-flex mt-3">
