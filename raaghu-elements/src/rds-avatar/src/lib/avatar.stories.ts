@@ -13,7 +13,9 @@ export default {
     colorVariant: {
       options: ['success', 'warning', 'light', 'danger', 'info', 'dark', 'secondary'],
       control: { type: 'select' }
-    }
+    },
+    height: { control: { type: 'text' } },
+
   },
 } as Meta;
 
@@ -46,19 +48,21 @@ Default.args = {
   size: 'medium',
   firstName: 'John',
   lastName: 'Doe',
-  colorVariant: 'warning'
+  colorVariant: 'warning',  
+  
 };
 
 export const profile = Template.bind({});
 profile.args = {
   size: 'medium',
+  height: '15',
   withProfilePic: true,
   profilePic: 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png'
 };
 
 export const avtarWithHorizontallyAllignedInfo = avatarWithInfoTemplate.bind({});
 avtarWithHorizontallyAllignedInfo.args = {
-  size: 'medium',
+   size: 'medium',
   firstName: 'John',
   lastName: 'Doe',
   colorVariant: 'warning',

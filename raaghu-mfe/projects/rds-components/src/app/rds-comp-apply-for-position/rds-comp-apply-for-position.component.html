@@ -44,7 +44,7 @@
                        [readonly]="false"
                        value=""
                        inputType="text"
-                       [placeholder]="'full name'"
+                       [placeholder]="'John Doe'"
                        required
                        [(ngModel)]="applicantData.applicantFullName" #applicantFullName="ngModel" name="applicantFullName"></rds-input>
 
@@ -88,13 +88,13 @@
           <div class="from-group">
             <rds-input size="default"
                        [disabled]="false"
-                       [Title]="'Applying for Position:'"
+                       [Title]="'Applying for Position'"
                        [TitleType]="'Top'"
                        [readonly]="false"
                        value=""
                        inputType="text"
                        required [isRequired]="false"
-                       [placeholder]="'position name'"
+                       [placeholder]="'Designer'"
                        [(ngModel)]="applicantData.applicantPosition" #applicantPosition="ngModel" name="applicantPosition"></rds-input>
             <div class="form-control-feedback"
                  *ngIf="applicantPosition.errors && (applicantPosition.dirty || applicantPosition.touched)">
@@ -117,7 +117,7 @@
                          [readonly]="false"
                          value=""
                          inputType="text"
-                         [placeholder]="'notice period'"
+                         [placeholder]="'Notice Period'"
                          required [isRequired]="false"
                          [(ngModel)]="applicantData.applicantStartDate" #applicantStartDate="ngModel" name="applicantStartDate"></rds-input>
 
@@ -142,7 +142,7 @@
         </div>
         <div class="col-md-6 mb-3">
           <div class="from-group">
-            <rds-textarea [placeholderText]="'cover letter..'"
+            <rds-textarea [placeholderText]="'Cover Letter'"
                           [label]="'Cover Letter'"
                           rows="8" [isRequired]="false"
                           [(ngModel)]="applicantData.applicantCoverLetter" #applicantCoverLetter="ngModel" name="applicantCoverLetter"></rds-textarea>
