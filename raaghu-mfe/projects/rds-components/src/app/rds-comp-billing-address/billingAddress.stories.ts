@@ -39,6 +39,15 @@ Default.args = {
         ,{value: "5", displayText: "Australia", isSelected: false}
         ,{value: "6", displayText: "USA", isSelected: false}
         ,{value: "7", displayText: "UK", isSelected: false}
-        ]
+        ],
+        stateList:[
+            {value: "1", displayText: "Andhra Pradesh", isSelected: false}
+            ,{value: "2", displayText: "Arunachal Pradesh", isSelected: false}
+            ,{value: "3", displayText: "Assam", isSelected: false}
+            ,{value: "4", displayText: "Bihar", isSelected: false}
+            ,{value: "5", displayText: "Chhattisgarh", isSelected: false}
+            ,{value: "6", displayText: "Goa", isSelected: false}
+            ,{value: "7", displayText: "Gujarat", isSelected: false}
+            ]
 }
 

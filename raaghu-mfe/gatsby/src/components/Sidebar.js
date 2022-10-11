@@ -77,7 +77,7 @@ elementsList.forEach((item) => {
     ) {
       const _item = {
         name: item.name,
-        url: item.name.substring(9),
+        url: item.name.substring(4),
         displayName: item.name.substring(9).replace(/-/g, " "),
       };
       componentsList.push(_item);
@@ -104,7 +104,7 @@ elementsList.forEach((item) => {
   // var elementName=JSON.parse(JSON.stringify(rdsElementList).replace(/-/g,' '));
   var elementsLists = [];
 
-  var elementsExcludesList=["elements","calendar"]
+  var elementsExcludesList=["elements","calendar",'rds-page-']
   elementsList.forEach((item) => {
     if (
       item.name.includes("rds-") &&
@@ -139,7 +139,6 @@ elementsList.forEach((item) => {
   const pageLists = [];
   // find out pages names.
   const pageexcludesList = [
-    "rds-",
     "src",
     "lib",
     "app",
@@ -215,20 +214,34 @@ elementsList.forEach((item) => {
     "webhooksubscription"
     ,    
   ];
-  elementsList.forEach((item, index, self) => {
-    if (
-      !pageexcludesList.some((element) => item.name.includes(element)) &&
-      index === self.findIndex((t) => t.name === item.name)
-    ) {
-      const _item = {
-        name: item.name,
-        url: item.name,
-        displayName: item.name.replace(/-/g, " "),
-      };
-      pageLists.push(_item);
-    }
-  });
 
+  elementsList.forEach((item) => {
+    if (
+      item.name.includes("rds-page-"))
+      {
+        const _item = {
+          name: item.name,
+          url: item.name.substring(4),
+          displayName: item.name.substring(8).replace(/-/g, " "),
+        };
+        pageLists.push(_item);
+      }
+    });
+  
+    // elementsList.forEach((item, index, self) => {
+  //   if (
+  //     item.name.includes("rds-page-") &&
+  //     !pageexcludesList.some((element) => item.name.includes(element)) &&
+  //     index === self.findIndex((t) => t.name === item.name)
+  //   ) {
+  //     const _item = {
+  //       name: item.name,
+  //       url: item.name,
+  //       displayName: item.name.replace(/-/g, " "),
+  //     };
+  //     pageLists.push(_item);
+  //   }
+  // });
 
   pageLists.sort((a, b) => {
     // let fa = a.name.toLowerCase(),

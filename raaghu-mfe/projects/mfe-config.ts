@@ -46,7 +46,7 @@ export const MfeConfig = {
   },
   login: {
     url: 'http://localhost:5011/remoteEntry.js',
-  },
+  },  
   loginprofile: {
     url: 'http://localhost:8006/remoteEntry.js',
   },
@@ -124,11 +124,5 @@ export const MfeConfig = {
   },
   careers: {
     url: 'http://localhost:5056/remoteEntry.js',
-  },
-  usernew: {
-    url: 'http://localhost:5060/remoteEntry.js',
-  },
-  auditLognew: {
-    url: 'http://localhost:5061/remoteEntry.js',
   }
 };
