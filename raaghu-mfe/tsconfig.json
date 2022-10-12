@@ -85,8 +85,15 @@
       "@libs/rds-nav-tab": [
         "rds-elements/rds-nav-tab/public-api",
         "rds-elements/rds-nav-tab"
+      ],
+      "@libs/rds-chart-line": [
+        "rds-elements/rds-chart-line/public-api",
+        "rds-elements/rds-chart-line"
+      ],
+      "@libs/rds-chart-bar-horizontal": [
+        "rds-elements/rds-chart-bar-horizontal/public-api",
+        "rds-elements/rds-chart-bar-horizontal"
       ]
-      
     },
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
