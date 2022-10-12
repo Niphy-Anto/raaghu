@@ -9,7 +9,7 @@ title: "Components > Address-Input"
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/style-elements.css">
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/main.css">
 
-#### Address-Input
+#### Address Input
 
  <section class="py-4">
     <h6>Default</h6>

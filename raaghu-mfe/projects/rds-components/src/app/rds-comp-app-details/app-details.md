@@ -9,7 +9,7 @@ title: "Components > App-Details"
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/style-elements.css">
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/main.css">
 
-#### App-Details
+<h4>App Details</h4>
 
  <section class="py-4">
     <h6>Default</h6>

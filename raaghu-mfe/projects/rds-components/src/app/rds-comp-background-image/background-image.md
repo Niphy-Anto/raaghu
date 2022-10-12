@@ -9,7 +9,7 @@ title: "Components > Background-Image"
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/style-elements.css">
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/main.css">
 
-#### Background-Image
+#### Background Image
 
  <section class="py-4">
     <h6>Default</h6>

@@ -9,7 +9,7 @@ title: "Components > Apply-For-Position"
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/style-elements.css">
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/main.css">
 
-#### Apply-For-Position
+#### Apply For Position
 
  <section class="py-4">
     <h6>Default</h6>

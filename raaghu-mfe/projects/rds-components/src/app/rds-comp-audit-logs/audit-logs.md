@@ -9,7 +9,7 @@ title: "Components > Audit-Logs"
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/style-elements.css">
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/main.css">
 
-#### Audit-Logs
+#### Audit Logs
 
  <section class="py-4">
     <h6>Default</h6>

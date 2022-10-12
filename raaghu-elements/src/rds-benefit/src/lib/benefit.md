@@ -75,7 +75,7 @@ title: "Elements > Benefit"
 <div class="row m-0">
 
 ```html
-   <rds-benefit [item]="item" display_type="Basic"></rds-benefit>
+<rds-benefit [item]="item" display_type="benefit_type1"></rds-benefit>
 ```
 </div>
 </div>
@@ -114,7 +114,7 @@ title: "Elements > Benefit"
 <div class="row m-0">
 
 ```html
-   <rds-benefit [item]="item" display_type="Basic"></rds-benefit>
+  <rds-benefit [item]="item" display_type="benefit_type2"></rds-benefit>
 ```
 </div>
 </div>
@@ -153,7 +153,7 @@ title: "Elements > Benefit"
 <div class="row m-0">
 
 ```html
-   <rds-benefit [item]="item" display_type="Basic"></rds-benefit>
+<rds-benefit [item]="item" display_type="benefit_type3"></rds-benefit>
 ```
 </div>
 </div>
@@ -191,7 +191,7 @@ title: "Elements > Benefit"
 <div class="row m-0">
 
 ```html
-   <rds-benefit [item]="item" display_type="Basic"></rds-benefit>
+  <rds-benefit [item]="item" display_type="benefit_type4"></rds-benefit>
 ```
 </div>
 </div>
@@ -230,7 +230,7 @@ title: "Elements > Benefit"
 <div class="row m-0">
 
 ```html
-   <rds-benefit [item]="item" display_type="Basic"></rds-benefit>
+   <rds-benefit [item]="item" display_type="benefit_type5"></rds-benefit>
 ```
 </div>
 </div>
