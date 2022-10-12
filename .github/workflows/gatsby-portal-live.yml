@@ -1,4 +1,4 @@
-name: Build Gatsby
+name: "Build and deploy Gatsby - Angular"
 
 on:
   push:
