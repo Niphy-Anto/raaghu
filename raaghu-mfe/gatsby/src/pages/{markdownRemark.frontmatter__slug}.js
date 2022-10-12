@@ -58,7 +58,7 @@ export default function Template({
     ) {
       const _item = {
         name: item.name,
-        url: item.name.substring(9),
+        url: item.name.substring(4),
         displayName: item.name.substring(9).replace(/-/g, " "),
       };
       componentsList.push(_item);
