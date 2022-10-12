@@ -19,7 +19,7 @@ export const getCountryList = createAction('[Language Page] Get Country List');
 
 export const getCountryListSuccess = createAction(
     '[Language Page] Get Coutry List Success',
-    props<{ countries: Countries }>()
+    props<{ countries: any }>()
 );
 
 export const getCountryListFailure = createAction(
@@ -34,7 +34,7 @@ export const saveLanguage = createAction(
 
 export const deleteLanguage = createAction(
     '[Language Page] Delete Language',
-    (id: number) => ({ id })
+    (id: any) => ({ id })
 );
 
 export const saveLanguageSuccess = createAction(

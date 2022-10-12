@@ -5,46 +5,51 @@ import { Store } from "@ngrx/store";
 import { from, of } from "rxjs";
 import { catchError, map, mergeMap, switchMap } from "rxjs/operators";
 import { languageText } from "../../app.interface";
-import { getLanguageTextFailure, getLanguageTextSuccess, updateLanguageText } from "./language-text.actions";
+import { getLanguageTextFailure, getLanguageTexts, getLanguageTextSuccess, updateLanguageText } from "./language-text.actions";
 
 @Injectable()
 export class LanguageTextEffects {
-    constructor(private actions$: Actions, private languageService: ServiceProxy, private store: Store, private alertService: AlertService) { }
-    // getLanguageTexts$ = createEffect(() =>
-    //     this.actions$.pipe(
-    //         ofType(),
-    //         switchMap(({}) => {
+  constructor(
+    private actions$: Actions, 
+    private languageService: ServiceProxy, 
+    private store: Store, 
+    private alertService: AlertService) { }
+  getLanguageTexts$ = createEffect(() =>
+      this.actions$.pipe(
+          ofType(getLanguageTexts),
+          switchMap(() => 
 
-    //             // Call the getTodos method, convert it to an observable
-    //             return (this.languageService.all()).pipe(
-    //                 // Take the returned value and return a new success action containing the todos
-    //                 map((languageText) => {
-    //                     return getLanguageTextSuccess({ languageText })
-    //                 }),
-    //                 // Or... if it errors return a new failure action containing the error
-    //                 catchError((error) => of(getLanguageTextFailure({ error })))
-    //             )
-    //         }
+              // Call the getTodos method, convert it to an observable
+              from (this.languageService.languageTextsGET(undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined)).pipe(
+                  // Take the returned value and return a new success action containing the todos
+                  map((languageText) => {
+                      return getLanguageTextSuccess({ languageText })
+                  }),
+                  // Or... if it errors return a new failure action containing the error
+                  catchError((error) => of(getLanguageTextFailure({ error })))
+              )
 
-    //         )
-    //     )
-    // );
+          )
+      )
+  );
 
-  //   updateLanguageText$ = createEffect(() =>
-  //   this.actions$.pipe(
-  //     ofType(updateLanguageText),
-  //     mergeMap((data) =>
-  //       this.languageService.updateLanguageText(data.languageText).pipe(map((res: any) => {
-  //         //this.store.dispatch(getLanguageTexts(languageText));
-  //         this.alertService.showAlert('Success', 'Language text updated successfully','success' )
-  //       }),
-  //         catchError((error: any) => of(
-  //         ))
-  //       )
-  //     )
-  //   ),
-  //   {
-  //     dispatch: false
-  //   }
-  // );
+    updateLanguageText$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(updateLanguageText),
+      switchMap((data) =>
+       from( this.languageService.languageTextsPUT(undefined,undefined,undefined,undefined).pipe(
+        map((res: any) => {
+          //this.store.dispatch(getLanguageTexts(languageText));
+          this.alertService.showAlert('Success', 'Language text updated successfully','success' )
+        }),
+          catchError((error: any) => of(
+          ))
+        )
+       )
+      )
+    ),
+    {
+      dispatch: false
+    }
+  );
 }
