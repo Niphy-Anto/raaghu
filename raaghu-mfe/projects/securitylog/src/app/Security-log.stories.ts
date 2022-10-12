@@ -54,58 +54,58 @@ Default.args={
     {
       id: 1, username: 'admin', identity: 'Kol324i', action: 'GetActiveUserDelegations',
       duration: '1351ms', ipAddress: '103.151.184.6', application: 'Software 1.0',
-      browser: '<div class="row"><div class="col-md-2 mt-2"><img src="assets/firefox.png"  class="image"></div> <div class="col-md-8 title" ><b>Firefox</b><p class="subtitle">Windows NT 10</p></div></div>', 
+      browser: '<div class="row"><div class="col-md-2 mt-2"><img src="assets/firefox.png" width=\"32px\" class="image"></div> <div class="col-md-8 title" ><b>Firefox</b><p class="subtitle">Windows NT 10</p></div></div>', 
       time: '11/15/2021 2:44:52 PM'
     },
     {
       id: 2, username: 'rr', identity: 'Kol324i', action: 'GetActiveUserDelegations',
       duration: '1351ms', ipAddress: '103.151.184.6', application: 'Software 1.0',
-      browser: '<div class="row"><div class="col-md-2 mt-2"><img src="assets/firefox.png" class="image"></div> <div class="col-md-8 title" ><b>Firefox</b><p class="subtitle">Windows NT 10</p></div></div>', time: '11/15/2021 2:44:52 PM'
+      browser: '<div class="row"><div class="col-md-2 mt-2"><img src="assets/firefox.png" width=\"32px\" class="image"></div> <div class="col-md-8 title" ><b>Firefox</b><p class="subtitle">Windows NT 10</p></div></div>', time: '11/15/2021 2:44:52 PM'
     },
     {
       id: 3, username: 'lk', identity: 'Kol324i', action: 'GetActiveUserDelegations',
       duration: '1351ms', ipAddress: '103.151.184.6', application: 'Software 1.0',
-      browser: '<div class="row"><div class="col-md-2 mt-2"><img src="assets/firefox.png" class="image"></div> <div class="col-md-8 title" ><b>Firefox</b><p class="subtitle">Windows NT 10</p></div></div>', time: '11/15/2021 2:44:52 PM'
+      browser: '<div class="row"><div class="col-md-2 mt-2"><img src="assets/firefox.png" width=\"32px\" class="image"></div> <div class="col-md-8 title" ><b>Firefox</b><p class="subtitle">Windows NT 10</p></div></div>', time: '11/15/2021 2:44:52 PM'
     },
     {
       id: 4, username: 'nj', identity: 'Kol324i', action: 'GetActiveUserDelegations',
       duration: '1351ms', ipAddress: '103.151.184.6', application: 'Software 1.0',
-      browser: '<div class="row"><div class="col-md-2 mt-2"><img src="assets/firefox.png" class="image"></div> <div class="col-md-8 title" ><b>Firefox</b><p class="subtitle">Windows NT 10</p></div></div>', time: '11/15/2021 2:44:52 PM'
+      browser: '<div class="row"><div class="col-md-2 mt-2"><img src="assets/firefox.png" width=\"32px\" class="image"></div> <div class="col-md-8 title" ><b>Firefox</b><p class="subtitle">Windows NT 10</p></div></div>', time: '11/15/2021 2:44:52 PM'
     },
     {
       id: 5, username: 'admin', identity: 'Kol324i', action: 'GetActiveUserDelegations',
       duration: '1351ms', ipAddress: '103.151.184.6', application: 'Software 1.0',
-      browser: '<div class="row"><div class="col-md-2 mt-2"><img src="assets/firefox.png" class="image"></div> <div class="col-md-8 title" ><b>Firefox</b><p class="subtitle">Windows NT 10</p></div></div>', time: '11/15/2021 2:44:52 PM'
+      browser: '<div class="row"><div class="col-md-2 mt-2"><img src="assets/firefox.png" width=\"32px\" class="image"></div> <div class="col-md-8 title" ><b>Firefox</b><p class="subtitle">Windows NT 10</p></div></div>', time: '11/15/2021 2:44:52 PM'
     },
     {
       id: 6, username: 'admin', identity: 'Kol324i', action: 'GetActiveUserDelegations',
       duration: '1351ms', ipAddress: '103.151.184.6', application: 'Software 1.0',
-      browser: '<div class="row"><div class="col-md-2 mt-2"><img src="assets/firefox.png" class="image"></div> <div class="col-md-8 title" ><b>Firefox</b><p class="subtitle">Windows NT 10</p></div></div>', time: '11/15/2021 2:44:52 PM'
+      browser: '<div class="row"><div class="col-md-2 mt-2"><img src="assets/firefox.png" width=\"32px\" class="image"></div> <div class="col-md-8 title" ><b>Firefox</b><p class="subtitle">Windows NT 10</p></div></div>', time: '11/15/2021 2:44:52 PM'
     },
     {
       id: 7, username: 'admin', identity: 'Kol324i', action: 'GetActiveUserDelegations',
       duration: '1351ms', ipAddress: '103.151.184.6', application: 'Software 1.0',
-      browser: '<div class="row"><div class="col-md-2 mt-2"><img src="assets/firefox.png" class="image"></div> <div class="col-md-8 title" ><b>Firefox</b><p class="subtitle">Windows NT 10</p></div></div>', time: '11/15/2021 2:44:52 PM'
+      browser: '<div class="row"><div class="col-md-2 mt-2"><img src="assets/firefox.png" width=\"32px\" class="image"></div> <div class="col-md-8 title" ><b>Firefox</b><p class="subtitle">Windows NT 10</p></div></div>', time: '11/15/2021 2:44:52 PM'
     },
     {
       id: 8, username: 'admin', identity: 'Kol324i', action: 'GetActiveUserDelegations',
       duration: '1351ms', ipAddress: '103.151.184.6', application: 'Software 1.0',
-      browser: '<div class="row"><div class="col-md-2 mt-2"><img src="assets/firefox.png" class="image"></div> <div class="col-md-8 title" ><b>Firefox</b><p class="subtitle">Windows NT 10</p></div></div>', time: '11/15/2021 2:44:52 PM'
+      browser: '<div class="row"><div class="col-md-2 mt-2"><img src="assets/firefox.png" width=\"32px\" class="image"></div> <div class="col-md-8 title" ><b>Firefox</b><p class="subtitle">Windows NT 10</p></div></div>', time: '11/15/2021 2:44:52 PM'
     },
     {
       id: 9, username: 'admin', identity: 'Kol324i', action: 'GetActiveUserDelegations',
       duration: '1351ms', ipAddress: '103.151.184.6', application: 'Software 1.0',
-      browser: '<div class="row"><div class="col-md-2 mt-2"><img src="assets/firefox.png" class="image"></div> <div class="col-md-8 title" ><b>Firefox</b><p class="subtitle">Windows NT 10</p></div></div>', time: '11/15/2021 2:44:52 PM'
+      browser: '<div class="row"><div class="col-md-2 mt-2"><img src="assets/firefox.png" width=\"32px\" class="image"></div> <div class="col-md-8 title" ><b>Firefox</b><p class="subtitle">Windows NT 10</p></div></div>', time: '11/15/2021 2:44:52 PM'
     },
     {
       id: 10, username: 'admin', identity: 'Kol324i', action: 'GetActiveUserDelegations',
       duration: '1351ms', ipAddress: '103.151.184.6', application: 'Software 1.0',
-      browser: '<div class="row"><div class="col-md-2 mt-2"><img src="assets/firefox.png" class="image"></div> <div class="col-md-8 title" ><b>Firefox</b><p class="subtitle">Windows NT 10</p></div></div>', time: '11/15/2021 2:44:52 PM'
+      browser: '<div class="row"><div class="col-md-2 mt-2"><img src="assets/firefox.png" width=\"32px\" class="image"></div> <div class="col-md-8 title" ><b>Firefox</b><p class="subtitle">Windows NT 10</p></div></div>', time: '11/15/2021 2:44:52 PM'
     },
     {
       id: 10, username: 'admin', identity: 'Kol324i', action: 'GetActiveUserDelegations',
       duration: '1351ms', ipAddress: '103.151.184.6', application: 'Software 1.0',
-      browser: '<div class="row"><div class="col-md-2 mt-2"><img src="assets/firefox.png" class="image"></div> <div class="col-md-8 title" ><b>Firefox</b><p class="subtitle">Windows NT 10</p></div></div>', time: '11/15/2021 2:44:52 PM'
+      browser: '<div class="row"><div class="col-md-2 mt-2"><img src="assets/firefox.png" width=\"32px\" class="image"></div> <div class="col-md-8 title" ><b>Firefox</b><p class="subtitle">Windows NT 10</p></div></div>', time: '11/15/2021 2:44:52 PM'
     }
   ]
 }
