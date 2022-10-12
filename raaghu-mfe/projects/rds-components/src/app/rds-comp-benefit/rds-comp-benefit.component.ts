@@ -11,7 +11,7 @@ export class RdsCompBenefitComponent implements OnInit {
   constructor() { }
   @Input() itemList :any= [
     {
-      display_type: "Basic",
+      display_type: "Default",
       colSize: 4,
       header: '',
       items: [

@@ -88,6 +88,14 @@
       "@libs/rds-nav-bar": [
         "rds-elements/rds-nav-bar/public-api",
         "rds-elements/rds-nav-bar"
+      ],
+      "@libs/rds-chart-bar-horizontal": [
+        "rds-elements/rds-chart-bar-horizontal/public-api",
+        "rds-elements/rds-chart-bar-horizontal"
+      ],
+      "@libs/rds-chart-line": [
+        "rds-elements/rds-chart-line/public-api",
+        "rds-elements/rds-chart-line"
       ]
     },
     "skipLibCheck": true,

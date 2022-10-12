@@ -156,7 +156,8 @@
         <rds-icon name="file_plus" height="100px" width="100px"></rds-icon>
       </div>
       <div>
-        <h5> {{noDataTitle|translate}} </h5>
+        <!-- <h5> {{noDataTitle|translate}} </h5> -->
+        <h5><rds-label [label]="translate.instant(noDataTitle)"></rds-label></h5>
         <div *ngIf="showNodataSubtitle">
           <small class="text-muted">
             {{noDataSubTitle|translate}}
