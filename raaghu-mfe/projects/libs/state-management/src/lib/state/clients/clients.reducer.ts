@@ -1,5 +1,5 @@
 import { createReducer, on } from "@ngrx/store";
-import { deleteClient, deleteClientSucess,getAllClients, getAllClientsFailure, getAllClientsSuccess, saveClient, saveClientFailure, saveClientSuccess, updateClient, updateClientFailure, updateClientSuccess } from "./clients.actions";
+import { deleteClient, deleteClientSucess,getAllClients, getAllClientsFailure, getAllClientsSuccess, getClient, getClientFailure, getClientSuccess, saveClient, saveClientFailure, saveClientSuccess, updateClient, updateClientFailure, updateClientSuccess } from "./clients.actions";
 
 
 export interface ClientState {
@@ -30,6 +30,20 @@ export const ClientsReducer = createReducer(
     })),
     // Handle todos load failure
     on(getAllClientsFailure, (state, { error }) => ({
+        ...state,
+        error: error,
+        status: 'error',
+    })),
+    on(getClient, (state) => ({ ...state, status: 'loading' })),
+    // Handle successfully loaded todos
+    on(getClientSuccess, (state, { client }) => ({
+        ...state,
+        client: client,   
+        error: null,
+        status: 'success',
+    })),
+    // Handle todos load failure
+    on(getClientFailure, (state, { error }) => ({
         ...state,
         error: error,
         status: 'error',

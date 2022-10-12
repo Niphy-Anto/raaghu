@@ -31,12 +31,16 @@ import { OrganizationUnitReducer } from 'projects/libs/state-management/src/lib/
 import { OrganizationUnitEffects } from 'projects/libs/state-management/src/lib/state/organization-unit/organization-unit.effects';
 import { RoleReducer } from 'projects/libs/state-management/src/lib/state/role/role.reducer';
 import { RoleEffects } from 'projects/libs/state-management/src/lib/state/role/role.effects';
-import { ClaimTypesReducer } from 'projects/libs/state-management/src/lib/state/claim-types/claim-types.reducer';
-import { ClaimTypesEffects } from 'projects/libs/state-management/src/lib/state/claim-types/claim-types.effects';
-import { ClientsEffects } from 'projects/libs/state-management/src/lib/state/clients/clients.effects';
-import { ClientsReducer } from 'projects/libs/state-management/src/lib/state/clients/clients.reducer';
 import { ProductEffects } from 'projects/libs/state-management/src/lib/state/products/product.effects';
 import { productReducer } from 'projects/libs/state-management/src/lib/state/products/product.reducer';
+import { IdentityResourcesEffects } from 'projects/libs/state-management/src/lib/state/identity-resources/identity-resources.effects';
+import { IdentityResourcesReducer } from 'projects/libs/state-management/src/lib/state/identity-resources/identity-resources.reducer';
+import { ClientsReducer } from 'projects/libs/state-management/src/lib/state/clients/clients.reducer';
+import { ClaimTypesReducer } from 'projects/libs/state-management/src/lib/state/claim-types/claim-types.reducer';
+import { ClientsEffects } from 'projects/libs/state-management/src/lib/state/clients/clients.effects';
+import { ClaimTypesEffects } from 'projects/libs/state-management/src/lib/state/claim-types/claim-types.effects';
+import { ApiResourcesReducer } from 'projects/libs/state-management/src/lib/state/api-resources copy/api-resources.reducer';
+import { ApiResourcesEffects } from 'projects/libs/state-management/src/lib/state/api-resources copy/api-resources.effects';
 export function getRemoteServiceBaseUrl(): any {
   let URL = demodata.remoteServiceBaseUrl
   return URL;
@@ -95,6 +99,8 @@ const cookieConfig: RdsCookieConsentConfig = {
       // Delegation: DelegationsReducer,
       // mla: MLAReducer,
       validateTenant: ValidateTenantReducer,
+      identityResources: IdentityResourcesReducer,
+      apiResources: ApiResourcesReducer,
       // InputTypeNames: GetInputnameReducer,
       // EditDynamicPropertSateI: getDynamicPropertyByEditReducer,
       // DynanmicPermission: DynamicPermissionReducer,
@@ -116,9 +122,12 @@ const cookieConfig: RdsCookieConsentConfig = {
     EffectsModule.forRoot([
       ProductEffects,
       //LoginAttemptsEffects, MLAEffects,
-      // languageEffects, ManageLinkedAccountsEffects, DynamicPropertyEffects,
+      // languageEffects, 
+      //ManageLinkedAccountsEffects,
+      // DynamicPropertyEffects,
       // DynamicEntityEffects, ProfileEffects,
-      // 
+      IdentityResourcesEffects,
+      ApiResourcesEffects,
       ClientsEffects,
       ClaimTypesEffects,
       OrganizationUnitEffects, 

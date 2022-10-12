@@ -1,11 +1,14 @@
-// import { createSelector } from '@ngrx/store';
-// import { AppState } from '../../app.interface';
-// import { ClientState } from './clients.reducer';
+import { createSelector } from '@ngrx/store';
+import { AppState } from '../../app.interface';
+import { IdentityResourcesState } from './identity-resources.reducer';
 
-// export const selectClients = (state: AppState) => state.clients;
-// // export const selectDynamicEntity = (state: AppState) => state.dynamicEntity;
+export const selectIdentityResources = (state: AppState) => state.identityResources;
 
-// export const selectAllClients = createSelector(
-//     selectClients,
-//     (state: ClientState) => state.allClient
-// );
+export const selectA = createSelector(
+    selectIdentityResources,
+    (state: IdentityResourcesState) => state.allIdentityResources
+);
+export const selectIdentityResource = createSelector(
+    selectIdentityResources,
+    (state: IdentityResourcesState) => state.identityResource
+);

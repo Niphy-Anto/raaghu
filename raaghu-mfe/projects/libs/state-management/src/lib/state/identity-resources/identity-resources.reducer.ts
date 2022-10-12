@@ -1,67 +1,81 @@
-// import { createReducer, on } from "@ngrx/store";
-// import { deleteClient, deleteClientSucess,getAllClients, getAllClientsFailure, getAllClientsSuccess, saveClient, saveClientFailure, saveClientSuccess, updateClient, updateClientFailure, updateClientSuccess } from "./clients.actions";
+import { createReducer, on } from "@ngrx/store";
+import { deleteIdentityResource, deleteIdentityResourceSucess, getAllIdentityResources, getAllIdentityResourcesFailure, getAllIdentityResourcesSuccess, getIdentityResource, getIdentityResourceFailure, getIdentityResourceSuccess, saveIdentityResource, saveIdentityResourceFailure, saveIdentityResourceSuccess, updateIdentityResource, updateIdentityResourceFailure, updateIdentityResourceSuccess } from "./identity-resources.actions";
 
 
-// export interface ClientState {
-//     allClient:any;
-//     client:any;
-//     error: string;
-//     status: 'pending' | 'loading' | 'error' | 'success';
-// }
+export interface IdentityResourcesState {
+    allIdentityResources:any;
+    identityResource:any;
+    error: string;
+    status: 'pending' | 'loading' | 'error' | 'success';
+}
 
 
-// export const ClientInitialState: ClientState = {
-//     allClient:null,
-//     client:null,
-//     error: null,
-//     status: 'pending',
-// };
+export const IdentityResourcesInitialState: IdentityResourcesState = {
+    allIdentityResources:null,
+    identityResource:null,
+    error: null,
+    status: 'pending',
+};
 
-// export const ClientsReducer = createReducer(
-//     // Supply the initial state
-//     ClientInitialState,
-//     on(getAllClients, (state) => ({ ...state, status: 'loading' })),
-//     // Handle successfully loaded todos
-//     on(getAllClientsSuccess, (state, { allClients }) => ({
-//         ...state,
-//         allClient: allClients,   
-//         error: null,
-//         status: 'success',
-//     })),
-//     // Handle todos load failure
-//     on(getAllClientsFailure, (state, { error }) => ({
-//         ...state,
-//         error: error,
-//         status: 'error',
-//     })),
+export const IdentityResourcesReducer = createReducer(
+    // Supply the initial state
+    IdentityResourcesInitialState,
+    on(getAllIdentityResources, (state) => ({ ...state, status: 'loading' })),
+    // Handle successfully loaded todos
+    on(getAllIdentityResourcesSuccess, (state, { allIdentityResources }) => ({
+        ...state,
+        allIdentityResources: allIdentityResources,   
+        error: null,
+        status: 'success',
+    })),
+    // Handle todos load failure
+    on(getAllIdentityResourcesFailure, (state, { error }) => ({
+        ...state,
+        error: error,
+        status: 'error',
+    })),
+    on(getIdentityResource, (state) => ({ ...state, status: 'loading' })),
+    // Handle successfully loaded todos
+    on(getIdentityResourceSuccess, (state, { identityResource}) => ({
+        ...state,
+        identityResource: identityResource,   
+        error: null,
+        status: 'success',
+    })),
+    // Handle todos load failure
+    on(getIdentityResourceFailure, (state, { error }) => ({
+        ...state,
+        error: error,
+        status: 'error',
+    })),
 
-//     on(saveClient, (state) => ({ ...state, status: 'loading' })),
-//     on(saveClientSuccess, (state) => ({
-//         ...state,
-//         error: null,
-//         status: 'success',
-//     })),
-//     on(saveClientFailure, (state, { error }) => ({
-//         ...state,
-//         error: error,
-//         status: 'error',
-//     })),
+    on(saveIdentityResource, (state) => ({ ...state, status: 'loading' })),
+    on(saveIdentityResourceSuccess, (state) => ({
+        ...state,
+        error: null,
+        status: 'success',
+    })),
+    on(saveIdentityResourceFailure, (state, { error }) => ({
+        ...state,
+        error: error,
+        status: 'error',
+    })),
 
-//     on(deleteClient, (state) => ({ ...state, status: 'loading' })),
-//     on(deleteClientSucess, (state) => ({
-//         ...state,
-//         error: null,
-//         status: 'success',
-//     })),
-//     on(updateClient, (state) => ({ ...state, status: 'loading' })),
-//     on(updateClientSuccess, (state) => ({
-//         ...state,
-//         error: null,
-//         status: 'success',
-//     })),
-//     on(updateClientFailure, (state, {error}) => ({
-//         ...state,
-//         error: error,
-//         status: 'error'
-//     }))
-// )
+    on(deleteIdentityResource, (state) => ({ ...state, status: 'loading' })),
+    on(deleteIdentityResourceSucess, (state) => ({
+        ...state,
+        error: null,
+        status: 'success',
+    })),
+    on(updateIdentityResource, (state) => ({ ...state, status: 'loading' })),
+    on(updateIdentityResourceSuccess, (state) => ({
+        ...state,
+        error: null,
+        status: 'success',
+    })),
+    on(updateIdentityResourceFailure, (state, {error}) => ({
+        ...state,
+        error: error,
+        status: 'error'
+    }))
+)

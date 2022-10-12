@@ -4,7 +4,7 @@ export const getAllIdentityResources = createAction('[Identity-Resources] Get Al
 
 export const getAllIdentityResourcesSuccess = createAction(
     '[Identity-Resources Page] Get All Identity-Resources Success',
-    props<{ allClients: any }>()
+    props<{ allIdentityResources: any }>()
 );
 
 export const getAllIdentityResourcesFailure = createAction(
@@ -12,50 +12,50 @@ export const getAllIdentityResourcesFailure = createAction(
     props<{ error: string }>()
 );
 
-export const getIdentityResources = createAction('[Identity-Resources Page] Get Identity-Resource',
+export const getIdentityResource = createAction('[Identity-Resources Page] Get Identity-Resource',
 (id:any) => ( id ));
 
-export const getIdentityResourcesSuccess = createAction(
+export const getIdentityResourceSuccess = createAction(
     '[Identity-Resources Page] Get Identity-Resource Success',
-    props<{ client: any }>()
+    props<{ identityResource: any }>()
 );
 
-export const getIdentityResourcesFailure = createAction(
+export const getIdentityResourceFailure = createAction(
     '[Identity-Resources Page] Get Identity-Resource Failure',
     props<{ error: string }>()
 );
 
-export const updateIdentityResources = createAction('[Identity-Resources Page] Update Identity-Resource',
+export const updateIdentityResource = createAction('[Identity-Resources Page] Update Identity-Resource',
 (data:any) => (data));
 
-export const updateIdentityResourcesSuccess = createAction(
+export const updateIdentityResourceSuccess = createAction(
     '[Identity-Resources Page] Update Identity-Resource Success',
 );
 
-export const updateIdentityResourcesFailure = createAction(
+export const updateIdentityResourceFailure = createAction(
     '[Identity-Resources Page] Update Identity-Resource Failure',
     props<{ error: string }>()
 );
 
-export const saveIdentityResources = createAction(
+export const saveIdentityResource = createAction(
     '[Identity-Resources Page] Save Identity-Resource Types',
     (data) => ( data )
     );
 
-export const saveIdentityResourcesSuccess = createAction(
+export const saveIdentityResourceSuccess = createAction(
     '[Identity-Resources Page] Save Identity-Resource Success',
 );
 
-export const saveIdentityResourcesFailure = createAction(
+export const saveIdentityResourceFailure = createAction(
     '[Identity-Resources Page] Save Identity-Resource Failure',
     props<{ error: string }>()
 );
 
-export const deleteIdentityResources = createAction(
+export const deleteIdentityResource = createAction(
     '[Identity-Resources Page] Delete Identity-Resource',
     (data) => (data)
 );
-export const deleteIdentityResourcesSucess = createAction(
+export const deleteIdentityResourceSucess = createAction(
     '[Identity-Resources Page] Delete Identity-Resource Success',
 );
 

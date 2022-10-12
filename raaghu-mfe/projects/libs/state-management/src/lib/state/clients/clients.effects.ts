@@ -4,7 +4,7 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
 import { from, of } from 'rxjs';
 import { catchError, map, mergeMap, switchMap } from 'rxjs/operators';
-import { deleteClient, getAllClients, getAllClientsFailure, getAllClientsSuccess, getClient, getClientFailure, getClientSuccess, saveClient, saveClientFailure, saveClientSuccess, updateClient, updateClientSuccess } from './clients.actions';
+import { deleteClient, getAllClients, getAllClientsFailure, getAllClientsSuccess, getClient, getClientFailure, getClientSuccess, saveClient, saveClientFailure, saveClientSuccess, updateClient, updateClientFailure, updateClientSuccess } from './clients.actions';
 
 
 @Injectable()
@@ -80,7 +80,7 @@ export class ClientsEffects {
             return updateClientSuccess();
           }),
           // Or... if it errors return a new failure action containing the error
-          catchError((error) => of(saveClientFailure({ error })))
+          catchError((error) => of(updateClientFailure({ error })))
         )
       )
     )

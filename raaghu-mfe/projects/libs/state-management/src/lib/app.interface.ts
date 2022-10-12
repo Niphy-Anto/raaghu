@@ -28,9 +28,11 @@ import { EditionsState } from './state/edition/edition.reducer';
 import { EditionsComboboxState, TenantFeatureState, TenantInfoState, TenantState } from './state/tenant/tenant.reducer';
 import { RolesState } from './state/role/role.reducer';
 import { UsersState } from './state/user/user.reducer';
-import { ClaimTypesState } from './state/claim-types/claim-types.reducer';
 import { AuditLogsState } from './state/audit-logs/audit-logs.reducer';
+import { IdentityResourcesState } from './state/identity-resources/identity-resources.reducer';
 import { ClientState } from './state/clients/clients.reducer';
+import { ClaimTypesState } from './state/claim-types/claim-types.reducer';
+import { ApiResourcesState } from './state/api-resources copy/api-resources.reducer';
 
 export interface AppState {
 
@@ -66,6 +68,8 @@ export interface AppState {
   tenantInfo: TenantInfoState,
   tenantFeature: TenantFeatureState,
   validateTenant: ValidateTenantState,
+  identityResources: IdentityResourcesState,
+  apiResources: ApiResourcesState,
   // InputTypeNames: InputPropertynameState
   // EditDynamicPropertSateI: EditDynampicPropertState,
   // DynanmicPermission: DynamicPermissionState,
