@@ -550,7 +550,7 @@ input::-webkit-input-placeholder {
 //   overflow: hidden;
 // }
 
-#storybook-preview-wrapper html{
+#storybook-preview-wrapper html {
   overflow-y: scroll;
 }
 
@@ -2580,6 +2580,13 @@ app-rds-comp-product-list .card-body {
   margin-top: 6rem !important;
 }
 
+.fs-7 {
+  font-size: .75rem !important;
+}
+
+.fs-8 {
+  font-size: .50rem !important;
+}
 .mobile-btn{
   display: none;
 }
@@ -2595,3 +2602,15 @@ app-rds-comp-product-list .card-body {
       display: none;
   }
 }
+
+
+// updated css for avatar card
+
+.avatar-pic{
+  bottom: -20px;
+  left: 10px;
+}
+.avatar-pic2{
+  bottom: 25px;
+}
+
