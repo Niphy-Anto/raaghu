@@ -28,6 +28,9 @@ import { EditionsState } from './state/edition/edition.reducer';
 import { EditionsComboboxState, TenantFeatureState, TenantInfoState, TenantState } from './state/tenant/tenant.reducer';
 import { RolesState } from './state/role/role.reducer';
 import { UsersState } from './state/user/user.reducer';
+import { ClaimTypesState } from './state/claim-types/claim-types.reducer';
+import { AuditLogsState } from './state/audit-logs/audit-logs.reducer';
+import { ClientState } from './state/clients/clients.reducer';
 
 export interface AppState {
 
@@ -51,13 +54,10 @@ export interface AppState {
   // loginAttempts: LoginAttemptsState,
   // settings: SettingsState,
   tenants: TenantState,
-  // auditLogs: AuditLogsState,
+   auditLogs: AuditLogsState,
   // changeLogs:AuditLogsState
-  // PermissionI:PermissionState,
   // UserPermissionFilterI:UserPermissionFilterState
   // countries: CountryState,
-  // EditRoleSateI: EditRoleSate,
-  // editionInfo: EditionInfoState,
   // Delegation: DelegationsState,
   // mla: MLAState,
   // Entities: AllDynamicEntitySate,
@@ -70,11 +70,12 @@ export interface AppState {
   // EditDynamicPropertSateI: EditDynampicPropertState,
   // DynanmicPermission: DynamicPermissionState,
   //  usernames: UserNameFilterState,
-   languageText: LanguageTextsState
-  //  tenantCount: TenantCountState,
+   languageText: LanguageTextsState,
+   clients: ClientState,
   // defaultLanguage: DefaultLanguageState,
   // settingsComboboxItem: SettingsTenantPageComboboxState,
   download:downloadState,
+  claimTypes: ClaimTypesState
   // editdynamicProperty:EditDynampicPropertState
 }
 

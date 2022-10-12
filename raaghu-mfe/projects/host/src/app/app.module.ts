@@ -31,6 +31,12 @@ import { OrganizationUnitReducer } from 'projects/libs/state-management/src/lib/
 import { OrganizationUnitEffects } from 'projects/libs/state-management/src/lib/state/organization-unit/organization-unit.effects';
 import { RoleReducer } from 'projects/libs/state-management/src/lib/state/role/role.reducer';
 import { RoleEffects } from 'projects/libs/state-management/src/lib/state/role/role.effects';
+import { ClaimTypesReducer } from 'projects/libs/state-management/src/lib/state/claim-types/claim-types.reducer';
+import { ClaimTypesEffects } from 'projects/libs/state-management/src/lib/state/claim-types/claim-types.effects';
+import { ClientsEffects } from 'projects/libs/state-management/src/lib/state/clients/clients.effects';
+import { ClientsReducer } from 'projects/libs/state-management/src/lib/state/clients/clients.reducer';
+import { ProductEffects } from 'projects/libs/state-management/src/lib/state/products/product.effects';
+import { productReducer } from 'projects/libs/state-management/src/lib/state/products/product.reducer';
 export function getRemoteServiceBaseUrl(): any {
   let URL = demodata.remoteServiceBaseUrl
   return URL;
@@ -78,7 +84,7 @@ const cookieConfig: RdsCookieConsentConfig = {
     FormsModule,
     NgxTranslateModule.forRoot(),
     StoreModule.forRoot({
-      // products: productReducer,
+      products: productReducer,
       // dynamicProperty: DynamicPropertyReducer,
       // dynamicEntity: DynamicEntityReducer,
       // profile: ProfileReducer,
@@ -96,9 +102,11 @@ const cookieConfig: RdsCookieConsentConfig = {
       // loginAttempts: LoginAttemptsReducer,
       // languages: LanguageReducer,
       // countries: CountryListReducer,
+      clients: ClientsReducer,
       languageText: LanguageTextReducer,
       // defaultLanguage: DefaultLanguageReducer,
-       downloadData: downloadReducer
+       downloadData: downloadReducer,
+       claimTypes: ClaimTypesReducer
     }),
 
     StoreDevtoolsModule.instrument({
@@ -106,10 +114,13 @@ const cookieConfig: RdsCookieConsentConfig = {
       logOnly: false,
     }),
     EffectsModule.forRoot([
-      // ProductEffects, LoginAttemptsEffects, MLAEffects,
+      ProductEffects,
+      //LoginAttemptsEffects, MLAEffects,
       // languageEffects, ManageLinkedAccountsEffects, DynamicPropertyEffects,
       // DynamicEntityEffects, ProfileEffects,
       // 
+      ClientsEffects,
+      ClaimTypesEffects,
       OrganizationUnitEffects, 
       //MaintenanceEffects, DelegationsEffects, 
       LanguageTextEffects, 

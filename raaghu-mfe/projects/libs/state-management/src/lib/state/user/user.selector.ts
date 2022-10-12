@@ -21,3 +21,11 @@ export const selectAllUserFilterPermissions = createSelector(
     Userselector,
     (state: UsersState) => state.UserPermissionFilterI
 );
+export const selectAllClaimTypes = createSelector(
+    Userselector,
+    (state: UsersState) => state.allClaimTypes
+);
+export const selectClaimTypes = createSelector(
+    Userselector,
+    (state: UsersState) => state.claimTypes
+);

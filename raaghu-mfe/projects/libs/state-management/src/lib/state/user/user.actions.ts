@@ -2,7 +2,6 @@ import { createAction, props } from "@ngrx/store";
 import { User } from "./user.models";
 
 export const getUsers = createAction('[User Page] Get Users',
-// (selectedPermissions: any) => ({ selectedPermissions })
 );
 
 export const getUserSuccess = createAction(
@@ -12,6 +11,32 @@ export const getUserSuccess = createAction(
 
 export const getUserFailure = createAction(
     '[User Page] Get Users Failure',
+    props<{ error: string }>()
+);
+
+export const assignableRoles = createAction('[User Page] Get Assignable Roles Users',
+);
+
+export const assignableRolesSuccess = createAction(
+    '[User Page] Get Assignable Roles Success',
+    props<{ assignableRoles: any }>()
+);
+
+export const assignableRolesFailure = createAction(
+    '[User Page] Get Assignable Roles Failure',
+    props<{ error: string }>()
+);
+
+export const availbleOrganizationUnit = createAction('[User Page] Get Available Organization Unit Users',
+);
+
+export const availbleOrganizationUnitSuccess = createAction(
+    '[User Page] Get Available Organization Unit Success',
+    props<{ availableOrgUnit: any }>()
+);
+
+export const availbleOrganizationUnitFailure = createAction(
+    '[User Page] Get Available Organization Unit Failure',
     props<{ error: string }>()
 );
 
@@ -61,4 +86,42 @@ export const getUserPermissionFilterList = createAction('[User Page] Get Permiss
 export const getUserPermissionListSuccess = createAction(
     '[Role Page] get Permission Success',
     props<{ UserPermissionFilterI: any }>()
+);
+
+export const getAllClaimTypes = createAction('[Role Page] Get All Claim Types');
+
+export const getAllClaimTypesSuccess = createAction(
+    '[Role Page] Get All Claim Types Success',
+    props<{ allClaimTypes: any }>()
+);
+
+export const getAllClaimTypesFailure = createAction(
+    '[IUser Page] Get All Claim Types Failure',
+    props<{ error: string }>()
+);
+
+export const getClaimTypes = createAction('[Role Page] Get Claim Types',
+(id: any) => ({ id }));
+
+export const getClaimTypesSuccess = createAction(
+    '[User Page] Get Claim Types Success',
+    props<{ claimTypes: any }>()
+);
+
+export const getClaimTypesFailure = createAction(
+    '[User Page] Get Claim Types Failure',
+    props<{ error: string }>()
+);
+
+export const saveClaims = createAction('[User Page] Save Claims',
+(data: any) => ({ data }));
+
+export const changePasswordUser = createAction('[User Page] Change Password User',
+(data) => (data));
+
+export const changePasswordUserSuccess = createAction(
+    '[User Page] Get Change Password User Success',
+);
+export const changePasswordUserFailure = createAction(
+    '[User Page] Change Password User Failure',
 );

@@ -1,11 +1,15 @@
 import { createReducer, on } from "@ngrx/store";
-import { getUserFailure, getUserForEdit, getUserForEditSuccess, getUserPermission, getUserPermissionFilterList, getUserPermissionListSuccess, getUserPermissionSuccess, getUsers, getUserSuccess } from "./user.actions";
+import { assignableRoles, assignableRolesFailure, assignableRolesSuccess, availbleOrganizationUnit, availbleOrganizationUnitFailure, availbleOrganizationUnitSuccess, changePasswordUser, changePasswordUserSuccess, getAllClaimTypes, getAllClaimTypesFailure, getAllClaimTypesSuccess, getClaimTypes, getClaimTypesFailure, getClaimTypesSuccess, getUserFailure, getUserForEdit, getUserForEditSuccess, getUserPermission, getUserPermissionFilterList, getUserPermissionListSuccess, getUserPermissionSuccess, getUsers, getUserSuccess, saveClaims } from "./user.actions";
 import { User } from "./user.models";
 
 
 export interface UsersState {
     users: any;
     UserEditI: any;
+    availableOrgUnit: any;
+    assignableRoles:any;
+    claimTypes:any;
+    allClaimTypes:any;
     UserPermissionStateI: any;
     UserPermissionFilterI:any;
     error: string;
@@ -15,6 +19,10 @@ export interface UsersState {
 export const userInitialState: UsersState = {
     users: null,
     UserEditI:null,
+    availableOrgUnit: null,
+    assignableRoles:null,
+    claimTypes:null,
+    allClaimTypes:null,
     UserPermissionStateI: null,
     UserPermissionFilterI:null,
     error: null,
@@ -38,6 +46,80 @@ export const UserReducer = createReducer(
         error: error,
         status: 'error',
     })),
+    on(availbleOrganizationUnit, (state) => ({ ...state, status: 'loading' })),
+    // Handle successfully loaded todos
+    on(availbleOrganizationUnitSuccess, (state, { availableOrgUnit }) => ({
+        ...state,
+        availableOrgUnit: availableOrgUnit,
+        error: null,
+        status: 'success',
+    })),
+    // Handle todos load failure
+    on(availbleOrganizationUnitFailure, (state, { error }) => ({
+        ...state,
+        availableOrgUnit: null,
+        error: error,
+        status: 'error',
+    })),
+
+    on(assignableRoles, (state) => ({ ...state, status: 'loading' })),
+    // Handle successfully loaded todos
+    on(assignableRolesSuccess, (state, { assignableRoles }) => ({
+        ...state,
+        assignableRoles: assignableRoles,
+        error: null,
+        status: 'success',
+    })),
+    // Handle todos load failure
+    on(assignableRolesFailure, (state, { error }) => ({
+        ...state,
+        assignableRoles: null,
+        error: error,
+        status: 'error',
+    })),
+
+    on(getAllClaimTypes, (state) => ({ ...state, status: 'loading' })),
+    on(getAllClaimTypesSuccess, (state, { allClaimTypes }) => ({
+        ...state,
+        allClaimTypes: allClaimTypes,
+        error: null,
+        status: 'success',
+    })),
+    on(getAllClaimTypesFailure, (state, { error }) => ({
+        ...state,
+        error: error,
+        status: 'error',
+    })),
+
+    on(getClaimTypes, (state) => ({ ...state, status: 'loading' })),
+    on(getClaimTypesSuccess, (state, { claimTypes }) => ({
+        ...state,
+        claimTypes: claimTypes,
+        error: null,
+        status: 'success',
+    })),
+    on(getClaimTypesFailure, (state, { error }) => ({
+        ...state,
+        error: error,
+        status: 'error',
+    })),
+
+    on(saveClaims, (state) => ({
+        ...state,
+        error: null,
+        status: 'success',
+    })),
+    on(changePasswordUser, (state) => ({
+        ...state,
+        error: null,
+        status: 'loading',
+    })),
+    on(changePasswordUserSuccess, (state) => ({
+        ...state,
+        error: null,
+        status: 'success',
+    })),
+
     on(getUserForEdit, (state) => ({ ...state, status: 'loading' })),
     on(getUserForEditSuccess, (state, { UserEditI }) => ({
         ...state,

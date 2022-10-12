@@ -10,7 +10,20 @@ import {
   getOrganizationUnitTreeSuccess,
 } from '../organization-unit/organization-unit.actions';
 import {
+  assignableRoles,
+  assignableRolesFailure,
+  assignableRolesSuccess,
+  availbleOrganizationUnit,
+  availbleOrganizationUnitFailure,
+  availbleOrganizationUnitSuccess,
+  changePasswordUser,
   deleteUser,
+  getAllClaimTypes,
+  getAllClaimTypesFailure,
+  getAllClaimTypesSuccess,
+  getClaimTypes,
+  getClaimTypesFailure,
+  getClaimTypesSuccess,
   getUsePermissionsFailure,
   getUserEditFailure,
   getUserFailure,
@@ -22,6 +35,7 @@ import {
   getUserPermissionSuccess,
   getUsers,
   getUserSuccess,
+  saveClaims,
   saveUser,
   UpdateUserPermission,
 } from './user.actions';
@@ -65,20 +79,38 @@ export class UserEffects {
       )
     )
   );
-    getOrganizationUnitTree$ = createEffect(() =>
+    availableOrganizationUnitTree$ = createEffect(() =>
       this.actions$.pipe(
-        ofType(getOrganizationUnitTree),
+        ofType(availbleOrganizationUnit),
         switchMap(() =>
           // Call the getTodos method, convert it to an observable
-          from(this.userService.all2()).pipe(
+          from(this.userService.availableOrganizationUnits()).pipe(
             // Take the returned value and return a new success action containing the todos
-            map((organizationUnitTree) => {
-              return getOrganizationUnitTreeSuccess({
-                organizationUnitTree
+            map((availableOrgUnit) => {
+              return availbleOrganizationUnitSuccess({
+                availableOrgUnit
               });
             }),
             // Or... if it errors return a new failure action containing the error
-            catchError((error) => of(getOrganizationUnitTreeFailure({ error })))
+            catchError((error) => of(availbleOrganizationUnitFailure({ error })))
+          )
+        )
+      )
+    );
+    assignableRoles$ = createEffect(() =>
+      this.actions$.pipe(
+        ofType(assignableRoles),
+        switchMap(() =>
+          // Call the getTodos method, convert it to an observable
+          from(this.userService.assignableRoles()).pipe(
+            // Take the returned value and return a new success action containing the todos
+            map((assignableRoles) => {
+              return assignableRolesSuccess({
+                assignableRoles
+              });
+            }),
+            // Or... if it errors return a new failure action containing the error
+            catchError((error) => of(assignableRolesFailure({ error })))
           )
         )
       )
@@ -168,6 +200,73 @@ export class UserEffects {
       { dispatch: false }
     );
 
+    getAllClaimTypes$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(getAllClaimTypes),
+      switchMap(() =>
+        // Call the getTodos method, convert it to an observable
+        from(this.userService.allClaimTypes2()).pipe(
+          // Take the returned value and return a new success action containing the todos
+          map((allClaimTypes) => {
+            return getAllClaimTypesSuccess({ allClaimTypes })
+          }),
+          // Or... if it errors return a new failure action containing the error
+          catchError((error) => of(getAllClaimTypesFailure({ error })))
+        )
+      )
+    )
+  );
+
+  getClaimTypes$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(getClaimTypes),
+      switchMap(({id}) =>
+        // Call the getTodos method, convert it to an observable
+        from(this.userService.claimsAll2(id)).pipe(
+          // Take the returned value and return a new success action containing the todos
+          map((claimTypes) => {
+            return getClaimTypesSuccess({ claimTypes })
+          }),
+          // Or... if it errors return a new failure action containing the error
+          catchError((error) => of(getClaimTypesFailure({ error })))
+        )
+      )
+    )
+  );
+  saveClaims$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(saveClaims),
+      switchMap(({data}) =>
+        this.userService.claims2(data.id, data.permissions).pipe(map((res: any) => {
+          this.store.dispatch(getUsers());
+          this.alertService.showAlert('Success',  'Role added successfully', 'success')
+        }),
+          catchError((error: any) => of(
+          ))
+        )
+      )
+    ),
+    {
+      dispatch: false
+    }
+  );
+
+  changePassword$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(changePasswordUser),
+      switchMap(({data}) =>
+        this.userService.changePasswordPUT(data.id, data.newPassword).pipe(map((res: any) => {
+          this.alertService.showAlert('Success',  'Password Changed Successfully', 'success')
+        }),
+          catchError((error: any) => of(
+          ))
+        )
+      )
+    ),
+    {
+      dispatch: false
+    }
+  );
   //   getUserPermissionFilter$ = createEffect(() =>
   //     this.actions$.pipe(
   //       ofType(getUserPermissionFilterList),
