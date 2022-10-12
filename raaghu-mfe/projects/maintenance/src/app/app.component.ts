@@ -75,7 +75,7 @@ export class AppComponent implements OnInit{
       name: 'RdsCompCache',
       input: {
         cashedata: this.cashedata,
-        dataSource: this.cashedata
+        // dataSource: this.cashedata
       },
       output: {
         onClearCache: (eventData: any) => {
@@ -148,7 +148,6 @@ export class AppComponent implements OnInit{
         this.rdswebsiteMfeConfig = mfeConfig;
       }
       this.isShimmer = false;
-      console.log(this.websiteLogData);
     })
     this.store.dispatch(getmaintenances());
     this.store.select(selectAllmaintenance).subscribe((res: any) => {
@@ -163,7 +162,7 @@ export class AppComponent implements OnInit{
         });
         const mfeConfig = this.rdscacheMfeConfig
         mfeConfig.input.cashedata = [...this.cashedata]
-        mfeConfig.input.dataSource = [...this.cashedata]
+        // mfeConfig.input.dataSource = [...this.cashedata]
         this.rdscacheMfeConfig = mfeConfig;
       }
       this.isShimmer = false;
