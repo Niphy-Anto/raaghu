@@ -17,7 +17,7 @@ export class RdsIconComponent implements OnInit, OnChanges {
   @Input() stroke: boolean | undefined = true;
   @Input() width: string = '';
   @Input() name: string = '';
-  @Input() colorVariant: 'warning' | 'review' | 'danger' | 'success' | 'info' | 'primary' | 'secondary' | 'dark' | 'light' | undefined = undefined;
+  @Input() colorVariant: 'warning' | 'review' | 'danger' | 'success' | 'info' | 'primary' | 'secondary' | 'dark' | 'light' | undefined | 'default' = undefined;
   @Input() opacity: string = '';
 
   constructor(private element: ElementRef,

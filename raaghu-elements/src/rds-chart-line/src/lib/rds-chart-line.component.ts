@@ -95,11 +95,14 @@ export class RdsChartLineComponent implements OnInit {
     if (this.canvas !== null) {
       this.canvas.style.backgroundColor = this.canvasBackgroundColor;
       this.ctx = this.canvas.getContext('2d');
-      const gradientFill = this.ctx.createLinearGradient(0, 25, 0, 200);
-      gradientFill.addColorStop(1, this.style.getPropertyValue('--chartgradient9'));
-      gradientFill.addColorStop(0.10, this.style.getPropertyValue('--chartgradient4'));
-      this.chartDataSets[0].backgroundColor = gradientFill;
-      this.chartDataSets[1].backgroundColor = gradientFill;
+      if(this.style.getPropertyValue('--chartgradient9')&&this.style.getPropertyValue('--chartgradient4')){
+        const gradientFill = this.ctx.createLinearGradient(0, 25, 0, 200);
+        gradientFill.addColorStop(1, this.style.getPropertyValue('--chartgradient9'));
+        gradientFill.addColorStop(0.10, this.style.getPropertyValue('--chartgradient4'));
+        this.chartDataSets[0].backgroundColor = gradientFill;
+        this.chartDataSets[1].backgroundColor = gradientFill;
+      }
+
       // if(this.gradient){
       //   if( this.chartDataSets.length>0){
       //   let i=0;

@@ -9,15 +9,16 @@
                [class.disabled]="item.disabled" >
               
                   <rds-icon class="me-2" [name]="item.icon" [height]="iconHeight" [fill]="item.iconFill" [stroke]="item.stroke" [width]="iconWidth"></rds-icon>
+               
                   <!--<div class="p-1 d-flex align-items-center">
                         <rds-icon [name]="item.icon" [height]="iconHeight" [width]="iconWidth"></rds-icon>
                       </div>-->
                       <!--</div>
                       <div class="col-10">-->
-                  <span class="" [ngClass]="{'fw-semibold': item.subText, 'fw-semibold ps-4': !item.icon}">
+                  <span class="" [ngClass]="{'fw-semibold': item.subText || !item.icon}">
                     {{item.label}}
                   </span>
-                  <div class="text-muted fw-light ps-4 ms-2">{{item.subText}}</div>
+                  <div class="text-muted fw-light ms-2" [ngClass]="{'ps-4': item.icon}">{{item.subText}}</div>
               
             </a>
          

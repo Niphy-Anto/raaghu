@@ -2,8 +2,8 @@
   <div class="tab-content py-4 mb-4">
     <form #tenantCreationForm="ngForm">
       <div class="row align-items-center">
-        <div class="col-md-3 text-center cursor-pointer sm-p-0 mb-4">
-          <img width="100" src="https://th.bing.com/th/id/OIP.3IsXMskZyheEWqtE3Dr7JwHaGe?pid=ImgDet&rs=1" (click)="selectFile.click()">
+        <div class="col-md-3 text-center cursor-pointer sm-p-0 mb-2">
+          <img width="100" src="../assets/edit-pic.png" (click)="selectFile.click()">
 
           <input type="file" (change)="getImage($event)" accept="image/*" style="display: none" #selectFile>
 

@@ -8,8 +8,7 @@
         <p style="margin-bottom: 0px;">{{item}}</p>
     </div>
 </div> -->
-
-<div *ngIf="dataSource && dataSource.length > 0; else emptyTemplate">
+<div *ngIf="websiteLogData && websiteLogData.length > 0; else emptyTemplate">
     <div class="px-3" *ngFor="let item of dataSource">
         <div class="d-flex align-items-center gap-3 border-bottom py-3">
             <div>

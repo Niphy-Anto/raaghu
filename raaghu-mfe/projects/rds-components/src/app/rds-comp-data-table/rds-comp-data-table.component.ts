@@ -298,14 +298,14 @@ export class RdsDataTableComponent implements OnInit, DoCheck, OnChanges {
       return this.tableData.length;
     }
   }
-  openSearchModal(): void {
-    var element: any = document.getElementById('search-dropdown');
+  openSearchModal(index:number): void {
+    var element: any = document.getElementById('search-dropdown'+index);
     var bsOffcanvas = new bootstrap.Dropdown(element);
     bsOffcanvas.show();
   }
 
-  openAction(): void {
-    var element: any = document.getElementById('action-dropdown');
+  openAction(index:number): void {
+    var element: any = document.getElementById('action-dropdown'+index);
     var dropdown = new bootstrap.Dropdown(element);
     dropdown.show();
   }
