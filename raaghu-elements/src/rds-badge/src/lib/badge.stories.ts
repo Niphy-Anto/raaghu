@@ -35,7 +35,7 @@ const Template: Story<RdsBadgeComponent> = (args: RdsBadgeComponent) => ({
 
 export const Default = Template.bind({});
 Default.args = {
-  size: 'mid',
+  size: 'medium',
   label: 'badge',
   colorVariant:'danger',
   badgeType:'rectangle'
@@ -55,7 +55,7 @@ const Button: Story<RdsBadgeComponent> = (args: RdsBadgeComponent) => ({
   `,
 });
 Button.args = {
-  size: 'mid',
+  size: 'medium',
   label: '9',
   colorVariant:'danger',
   badgeType:'rectangle'
@@ -81,7 +81,7 @@ const Positioned: Story<RdsBadgeComponent> = (args: RdsBadgeComponent) => ({
 
 export const positioned = Positioned.bind({});
 positioned.args = {
-  size: 'mid',
+  size: 'medium',
   label: '99',
   colorVariant:'danger',
   badgeType:'rectangle',
@@ -102,7 +102,7 @@ const WithIcon: Story<RdsBadgeComponent> = (args: RdsBadgeComponent) => ({
 
 export const withIcon = WithIcon.bind({});
 withIcon.args = {
-  size: 'mid',
+  size: 'medium',
   label: '9',
   colorVariant:'danger',
   badgeType:'circle',
