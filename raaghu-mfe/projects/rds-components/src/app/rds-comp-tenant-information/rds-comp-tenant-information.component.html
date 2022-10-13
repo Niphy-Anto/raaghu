@@ -1,6 +1,6 @@
 <div *ngIf="!editShimmer">
   <div class="tab-content py-4 mb-4">
-    <form #tenantCreationForm="ngForm" class="px-4">
+    <form #tenantCreationForm="ngForm">
       <div class="row align-items-center">
         <div class="col-md-3 text-center cursor-pointer sm-p-0 mb-4">
           <img width="100" src="https://th.bing.com/th/id/OIP.3IsXMskZyheEWqtE3Dr7JwHaGe?pid=ImgDet&rs=1" (click)="selectFile.click()">
@@ -49,7 +49,8 @@
         </div>
         <div class="col-md-6 sm-p-0">
           <div class="form-group mb-3">
-            <rds-select-list [(ngModel)]="tenantData.edition" [label]="translate.instant('Edition')" [isRequired]=true
+            <label for="Edition" class="mb-2">Edition<span class="text-danger">*</span></label>
+            <rds-select-list [(ngModel)]="tenantData.edition" [isRequired]=true
               [value]="tenantData.edition" ngDefaultControl labelPosition="top" name="edition" [itemList]="editionList" [placeholder]="'Select Edition'">
             </rds-select-list>
           </div>
@@ -76,7 +77,7 @@
       </div>
     </form>
   </div>
-  <div class="position-fixed bg-white py-3 bottom-0 w-100 px-4">
+  <div class="position-fixed bg-white py-3 bottom-0 w-100">
     <rds-button [label]="translate.instant('Cancel')" [outlineButton]="true" [colorVariant]="'primary'" [size]="'small'"
       (click)="onCanceled()" data-bs-dismiss="offcanvas">
     </rds-button>
