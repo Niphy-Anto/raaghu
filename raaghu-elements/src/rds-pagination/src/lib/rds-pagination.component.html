@@ -4,7 +4,7 @@
       <ul class="pagination mb-0" [class]="classes">
         <li class="page-item" (click)="setPage(pager.currentPage - 1)" [ngClass]="{disabled:pager.currentPage === 1}"><a
             class="page-link b" href="javascript:void(0);">
-            <rds-icon name="chevron_left" width="15px" height="15px"></rds-icon> <span class="pagination-prev">Prev</span>
+            <rds-icon name="chevron_left" width="15px" height="15px"></rds-icon> <span class="pagination-prev"> Prev</span>
           </a></li>
         <li class="page-item default-li" (click)="setPage(page)" *ngFor="let page of pager.pages"
           [ngClass]="{active:pager.currentPage === page}">
@@ -12,7 +12,7 @@
         </li>
         <li class="page-item" (click)="setPage(pager.currentPage + 1)"
           [ngClass]="{disabled:pager.currentPage === pager.totalPages}"><a class="page-link b"
-            href="javascript:void(0);"><span class="pagination-next">Next</span> <rds-icon name="chevron_right" width="15px" height="15px"></rds-icon></a></li>
+            href="javascript:void(0);"><span class="pagination-next">Next </span> <rds-icon name="chevron_right" width="15px" height="15px"></rds-icon></a></li>
       </ul>
     </nav>
   </div>
@@ -36,7 +36,7 @@
           <a class="page-link btn-arrows1" (click)="setPage(pager.totalPages)" href="javascript:void(0);"
             aria-label="Last Page">&raquo;</a>
         </li> -->
-        <li class="page-item">
+        <li class="page-item" [class]="classes">
           <div class="btn-group dropdown page-counter">
             <select class="form-select form-select-sm custom-select py-2" [(ngModel)]="recordsPerPage"
               (change)="setItemsPerPage(pager.currentPage,$event)">

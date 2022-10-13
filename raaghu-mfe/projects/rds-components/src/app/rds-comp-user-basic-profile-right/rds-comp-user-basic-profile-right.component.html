@@ -30,10 +30,9 @@
           <!-- <i class="bi bi-camera"></i> -->
           <!-- <rds-file-uploader [size]="'small'" [multipleFiles]="true" [role]="'fileUpload'"
                       [label]="'Upload Files'" [extensions]="'png, jpg'"></rds-file-uploader> -->
-                      <img width="100" src="https://demo.raaghu.io/assets/edit-pic.png" (click)="selectFile.click()">
-
-                      <input type="file" (change)="getImage($event)" accept="image/*" style="display: none" #selectFile>
-        </div>
+                        <img width="100" src="../assets/edit-pic.png" (click)="selectFile.click()">
+                        <input type="file" (change)="getImage($event)" accept="image/*" style="display: none" #selectFile>
+            </div>
       </div>
 
       <div class="row">

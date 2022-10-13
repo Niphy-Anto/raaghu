@@ -19,17 +19,21 @@ export default {
         }),
     ],
     argTypes: {
-    },
+        colorVariant: {
+            options: ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark'],
+            control: { type: 'select' }
+          },
+    }
 } as Meta;
 
 const Template: Story<RdsWebsiteMetricComponent> = (args: RdsWebsiteMetricComponent) => ({
     props: args,
 });
 
-export const type1 = Template.bind({})
-type1.args = {
+export const Default = Template.bind({})
+Default.args = {
+    display_type: 'metric_type1',
     item: {
-        display_type: 'metric_type1',
         title: '510+',
         link: 'Learn more',
         subtitle: 'Clients Worked with'
@@ -38,8 +42,8 @@ type1.args = {
 
 export const type2 = Template.bind({})
 type2.args = {
+    display_type: 'metric_type2',
     item: {
-        display_type: 'metric_type2',
         title: '510+',
         link: 'Learn more',
         subtitle: 'Clients Worked with'
@@ -49,30 +53,37 @@ type2.args = {
 
 export const type3 = Template.bind({})
 type3.args = {
+    display_type: 'metric_type3',
     item: {
-        display_type: 'metric_type3',
         title: '510+',
         link: 'Learn more',
-        subtitle: 'Clients Worked with'
-
+        subtitle: 'Clients Worked with',
+        icon:'edit',
+        iconHeight:'20px',
+        iconWidth:'20px'
     }
 }
 export const type4 = Template.bind({})
 type4.args = {
+    display_type: 'metric_type4',
     item: {
-        display_type: 'metric_type4',
         title: '510+',
         link: 'Learn more',
-        subtitle: 'Clients Worked with'
-
+        subtitle: 'Clients Worked with',
+        icon:'edit',
+        iconHeight:'20px',
+        iconWidth:'20px',
 
     }
 }
 export const type5 = Template.bind({})
 type5.args = {
+    display_type: 'metric_type5',
     item: {
-        display_type: 'metric_type5',
         title: '510+',
+        icon:'edit',
+        iconHeight:'20px',
+        iconWidth:'20px',
         link: 'Learn more',
         subtitle: 'Clients Worked with'
 
@@ -81,8 +92,8 @@ type5.args = {
 }
 export const type6 = Template.bind({})
 type6.args = {
+    display_type: 'metric_type6',
     item: {
-        display_type: 'metric_type6',
         title: '510+',
         link: 'Learn more',
         subtitle: 'Clients Worked with',
