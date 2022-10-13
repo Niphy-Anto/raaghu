@@ -17,6 +17,7 @@ export class RdsNavTabComponent implements OnInit {
   @Input() flex?: boolean;
   @Input() iconHeight: string = '20px';
   @Input() iconWidth: string = '20px';
+  @Input() icon: string;
   @Output()
   onClicktab = new EventEmitter<{ evnt: any }>();
   @Input() activepage: number = 0;
