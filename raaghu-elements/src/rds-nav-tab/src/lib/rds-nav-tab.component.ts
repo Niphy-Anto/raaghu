@@ -21,6 +21,7 @@ export class RdsNavTabComponent implements OnInit {
   onClicktab = new EventEmitter<{ evnt: any }>();
   @Input() activepage: number = 0;
   @Input() tabsWithBorderTop?: boolean = true;
+  navIcon : true;
   constructor() { }
 
   ngOnInit(): void {
