@@ -306,7 +306,7 @@ const boolChartTemplate: Story<any> = (args: any) => ({
   template: `  <rds-widget [isRefreshRequired]="isRefreshRequired" [colorVariant]="colorVariant"
   [headerTitle]="headerTitle">
   <div body>
-    <div class="d-flex align-items-center"> 
+    <div class="d-flex align-items-center mt-3"> 
       <div class="">
         <rds-chart-bool chartId="ConnectedCallschart" [centerIconName]="'headset'" [chartDataSets]="ConnectedCallschartDatasets" 
           [chartLabels]="ConnectedCallschartLabels" [chartWidth]="100" [chartHeight]="100"
