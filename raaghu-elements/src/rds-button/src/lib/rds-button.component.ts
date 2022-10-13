@@ -9,7 +9,7 @@ declare var bootstrap: any;
 })
 export class RdsButtonComponent implements AfterViewInit, OnInit, DoCheck {
 
-  @Input() colorVariant: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'dark' | 'light' | 'default' = 'default';
+  @Input() colorVariant: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'dark' | 'light' | 'default' | 'review' = 'default';
   @Input() submit = false;
   static count: number = 0;
   @Input() block: boolean = false;
