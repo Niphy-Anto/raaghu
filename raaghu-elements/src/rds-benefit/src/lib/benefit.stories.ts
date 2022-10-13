@@ -39,7 +39,7 @@ Default.args = {
   item:
   {
     id: 1,
-    icon: 'roles',
+    icon: 'currency_dollar_circle',
     iconHeight: "35px",
     iconWidth: "35px",
     title: "International delivery",
@@ -53,7 +53,7 @@ LeftAligned.args = {
   item:
   {
     id: 3,
-    icon: 'users',
+    icon:"../assets/benefit_type1.svg",
     iconHeight: "40px",
     iconWidth: "40px",
     position: "start",
@@ -70,7 +70,7 @@ CentreAligned.args = {
     id: 6,
     iconHeight: "40px",
     iconWidth: "40px",
-    icon: 'users',
+    icon: 'truck',
     title: "Free shipping",
     description: "Free delivery is our main part of company we just price it into the products. Someone's paying for it, and it's not us."
   }
@@ -82,7 +82,7 @@ WithLabel.args = {
   item:
   {
     id: 7,
-    icon: 'users',
+    icon: "../assets/benefit_type1.svg",
     status: 'Active',
     iconHeight: "40px",
     iconWidth: "40px",
@@ -97,7 +97,7 @@ WithoutLabel.args = {
   item:
   {
     id: 7,
-    icon: 'users',
+    icon: 'truck',
     iconHeight: "40px",
     iconWidth: "40px",
     title: 'Free shipping world wide',
@@ -111,7 +111,7 @@ HeadingWithIcon.args = {
   item:
   {
     id: 7,
-    icon: 'users',
+    icon: 'truck',
     iconHeight: "40px",
     iconWidth: "40px",
     title: 'Free delivery all year long',

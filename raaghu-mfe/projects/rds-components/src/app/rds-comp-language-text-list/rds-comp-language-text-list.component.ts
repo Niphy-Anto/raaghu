@@ -2,7 +2,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
 import { ComponentLoaderOptions } from '@libs/shared';
 import { Store } from '@ngrx/store';
-import { LanguageText } from 'projects/language-text/src/modal/language-text';
+import { LanguageText } from 'projects/rds-page-language-text/src/modal/language-text';
 import { selectAllLanguageTexts } from 'projects/libs/state-management/src/lib/state/language-text/language-text.selector';
 import { TableHeader } from '../../models/table-header.model';
 declare let bootstrap: any;
