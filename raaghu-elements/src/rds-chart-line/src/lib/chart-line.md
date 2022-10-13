@@ -11,6 +11,9 @@ title: "Elements > Chart-line"
 
 #### Line Chart
 
+<p class="">A line chart is created by connecting a set of point through a line representing the change of a variable over a time period.</p>
+
+
 <section class="py-4">
     <h6>Default</h6>
     <div class="py-3">

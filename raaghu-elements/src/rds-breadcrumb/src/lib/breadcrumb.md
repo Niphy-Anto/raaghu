@@ -11,7 +11,7 @@ title: "Elements > Breadcrumb"
 
 #### Breadcrumb
 
-<p class="">A card is a small rectangular module with images and text. It is an entry point for users to learn more details</p>
+<p class="">Breadcrumb is the way to show the current page status in the hierarchy-based information for a site where the separator is automatically added through CSS class.</p>
 <section class="py-4">
     <h6>Default</h6>
     <div class="py-3">

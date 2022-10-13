@@ -10,7 +10,7 @@ title: "Elements > Button"
 
 <link rel="stylesheet" href="../assets/css/main.css">
 
-#### Buttons
+#### Button
   
 <p class="">A button triggers an event or action. They let users know what will happen next.</p> 
 <section class="py-4">

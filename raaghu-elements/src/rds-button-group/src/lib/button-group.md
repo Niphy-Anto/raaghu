@@ -9,7 +9,7 @@ title: "Elements > Button-group"
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/style-elements.css">
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/main.css">
 
-#### Buttons Group
+#### Button Group
 
 <p class="checkbox-def">Button group wraps a series of buttons together into a single line (navbar} or stack in a vertical column.</p>
 
