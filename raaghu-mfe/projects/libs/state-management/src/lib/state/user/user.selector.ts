@@ -13,6 +13,14 @@ export const selectUserForEdit = createSelector(
     Userselector,
     (state: UsersState) => state.UserEditI
 );
+export const selectAvailableOrgUnit = createSelector(
+    Userselector,
+    (state: UsersState) => state.availableOrgUnit
+);
+export const selectAssignableRoles = createSelector(
+    Userselector,
+    (state: UsersState) => state.assignableRoles
+);
 export const selectUserPermissionEdit = createSelector(
     Userselector,
     (state: UsersState) => state.UserPermissionStateI
