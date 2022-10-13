@@ -39,8 +39,10 @@ import { ClientsReducer } from 'projects/libs/state-management/src/lib/state/cli
 import { ClaimTypesReducer } from 'projects/libs/state-management/src/lib/state/claim-types/claim-types.reducer';
 import { ClientsEffects } from 'projects/libs/state-management/src/lib/state/clients/clients.effects';
 import { ClaimTypesEffects } from 'projects/libs/state-management/src/lib/state/claim-types/claim-types.effects';
-import { ApiResourcesReducer } from 'projects/libs/state-management/src/lib/state/api-resources copy/api-resources.reducer';
-import { ApiResourcesEffects } from 'projects/libs/state-management/src/lib/state/api-resources copy/api-resources.effects';
+import { ApiResourcesReducer } from 'projects/libs/state-management/src/lib/state/api-resources/api-resources.reducer';
+import { ApiResourcesEffects } from 'projects/libs/state-management/src/lib/state/api-resources/api-resources.effects';
+import { TextTemplateReducer } from 'projects/libs/state-management/src/lib/state/text-template/text-template.reducer';
+import { TextTemplateEffects } from 'projects/libs/state-management/src/lib/state/text-template/text-template.effects';
 export function getRemoteServiceBaseUrl(): any {
   let URL = demodata.remoteServiceBaseUrl
   return URL;
@@ -96,11 +98,12 @@ const cookieConfig: RdsCookieConsentConfig = {
       // PropertiesEntitie: GetAllDynamicPropertyEntites,
       organizationUnit: OrganizationUnitReducer,
       roles: RoleReducer,
-      // Delegation: DelegationsReducer,
+      texTemplate:TextTemplateReducer,
       // mla: MLAReducer,
       validateTenant: ValidateTenantReducer,
       identityResources: IdentityResourcesReducer,
       apiResources: ApiResourcesReducer,
+      
       // InputTypeNames: GetInputnameReducer,
       // EditDynamicPropertSateI: getDynamicPropertyByEditReducer,
       // DynanmicPermission: DynamicPermissionReducer,
@@ -126,12 +129,12 @@ const cookieConfig: RdsCookieConsentConfig = {
       //ManageLinkedAccountsEffects,
       // DynamicPropertyEffects,
       // DynamicEntityEffects, ProfileEffects,
+      TextTemplateEffects,
       IdentityResourcesEffects,
       ApiResourcesEffects,
       ClientsEffects,
       ClaimTypesEffects,
       OrganizationUnitEffects, 
-      //MaintenanceEffects, DelegationsEffects, 
       LanguageTextEffects, 
       RoleEffects,
       DownloadEffects,

@@ -1,6 +1,6 @@
  import { createAction, props } from "@ngrx/store";
 
-export const getAllApiResources = createAction('[Api-Resources] Get All Api-Resources');
+export const getAllApiResources = createAction('[Api-Resources Page] Get All Api-Resources');
 
 export const getAllApiResourcesSuccess = createAction(
     '[Api-Resources Page] Get All Api-Resources Success',
