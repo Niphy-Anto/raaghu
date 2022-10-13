@@ -18,7 +18,7 @@ export default function Template({
 
   const elementsLists = [];
 
-  const elementsExcludesList=["elements","calendar"]
+  const elementsExcludesList=["elements","calendar","rds-chart-","rds-page-","rds-comp","cookieconsent","edition"]
   elementsList.forEach((item) => {
     if (
       item.name.includes("rds-") &&
@@ -32,9 +32,23 @@ export default function Template({
         displayName: item.name.substring(4).replace(/-/g, " "),
       };
       elementsLists.push(_item);
+      console.log(elementsLists)
     }
   });
   
+  let chartList = [];
+
+  elementsList.forEach((item) => {
+    if (item.name.includes("rds-chart") ) {
+      const _item = {
+        name: item.name,
+        url: item.name.substring(4),
+        displayName: item.name.substring(4).replace(/-/g, " "),
+      };
+      chartList.push(_item);    
+    }
+  });
+
   elementsLists.sort((a, b) => {
     let fa = a.displayName.toLowerCase(),
       fb = b.displayName.toLowerCase();
@@ -136,13 +150,16 @@ export default function Template({
   switch(type){
     case "Components":
       data=componentsList;
-      break;
-      case "Elements":
-        data=elementsLists;
-        break;
-        case "Pages":
-          data=pageLists;
-          break;
+    break;
+    case "Elements":
+      data=elementsLists;
+    break;
+    case "Pages":
+      data=pageLists;
+    break;
+    case "Charts":
+      data=chartList;
+    break;
   }
     const index=data.findIndex((x)=>x.url.toLowerCase()===(frontmatter.slug.split('/')[1]).toLowerCase());
     if(index>0){
@@ -160,13 +177,16 @@ export default function Template({
   switch(type){
     case "Components":
       data=componentsList;
-      break;
-      case "Elements":
-        data=elementsLists;
-        break;
-        case "Pages":
-          data=pageLists;
-          break;
+    break;
+    case "Elements":
+      data=elementsLists;
+    break;
+    case "Pages":
+      data=pageLists;
+    break;
+    case "Charts":
+      data=chartList;
+    break;
   }
    
 
@@ -298,7 +318,7 @@ export default function Template({
                           <nav className="pt-3 px-4">
                             <div>
                               <small className="text-uppercase">
-                                Next Element
+                                Next
                               </small>
                             </div>
                             <ol className="breadcrumb">
