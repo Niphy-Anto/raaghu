@@ -17,3 +17,8 @@ Default.args = {
   spinnerType: false,
 };
 
+export const Growing = Template.bind({});
+Growing.args = {
+  spinnerType: true,
+};
+
