@@ -104,7 +104,7 @@ elementsList.forEach((item) => {
   // var elementName=JSON.parse(JSON.stringify(rdsElementList).replace(/-/g,' '));
   var elementsLists = [];
 
-  var elementsExcludesList=["elements","calendar",'rds-page-']
+  var elementsExcludesList=["elements","calendar","rds-page-","edition","cookieconsent"]
   elementsList.forEach((item) => {
     if (
       item.name.includes("rds-") &&

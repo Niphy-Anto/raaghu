@@ -14,10 +14,10 @@
                       </div>-->
                       <!--</div>
                       <div class="col-10">-->
-                  <!--<span class="" [ngClass]="{'fw-semibold': item.subText, 'fw-semibold': !item.icon}">
+                  <span class="" [ngClass]="{'fw-semibold': item.subText || !item.icon}">
                     {{item.label}}
-                  </span>-->
-                  <div class="text-muted fw-light ps-4 ms-2">{{item.subText}}</div>
+                  </span>
+                  <div class="text-muted fw-light ms-2" [ngClass]="{'ps-4': item.icon}">{{item.subText}}</div>
               
             </a>
          
