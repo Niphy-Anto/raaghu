@@ -1,7 +1,7 @@
 ---
 slug: "/chart-line"
 date: "2019-05-04"
-title: "Elements > Chart-line"
+title: "Charts > Chart-line"
 ---
 
 <!-- CSS only -->
