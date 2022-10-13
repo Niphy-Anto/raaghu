@@ -1,7 +1,7 @@
 ---
 slug: "/chart-bubble"
 date: "2019-05-04"
-title: "Elements > Chart-bubble"
+title: "Charts > Chart-bubble"
 ---
 
 <!-- CSS only -->

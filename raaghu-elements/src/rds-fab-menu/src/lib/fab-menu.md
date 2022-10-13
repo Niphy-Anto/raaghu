@@ -1,5 +1,5 @@
 ---
-slug: "/Fab Menu"
+slug: "/fab-menu"
 date: "2019-05-04"
 title: "Elements > Fab-Menu"
 ---

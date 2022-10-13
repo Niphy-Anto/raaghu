@@ -1,7 +1,7 @@
 ---
-slug: "/illustrations"
+slug: "/illustration"
 date: "2019-05-04"
-title: "Elements > Illustrations"
+title: "Elements > Illustration"
 ---
 
 <!-- CSS only -->
