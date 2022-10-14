@@ -1,7 +1,7 @@
 ---
 slug: "/chart-bool"
 date: "2019-05-04"
-title: "Elements > Chart-bool"
+title: "Charts > Chart-bool"
 ---
 
 <!-- CSS only -->

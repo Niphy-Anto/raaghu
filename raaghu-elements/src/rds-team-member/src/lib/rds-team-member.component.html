@@ -1,7 +1,7 @@
 <div [ngSwitch]="displayType">
   <div *ngSwitchCase="'basic'">
     <div class="row">
-      <div class="col-md-3 card-border mt-7 pt-5" *ngFor="let item of teamItem">
+      <div class="col-md-3 card-border pt-5" *ngFor="let item of teamItem">
         <div class="card h-68 justify-content-end pb-4 pt-5 px-3  teams-card">
           <div class="imgwidth1">
             <rds-avatar [withProfilePic]="true" size="large" [roundedPills]="true"

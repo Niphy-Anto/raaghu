@@ -1,5 +1,3 @@
-
-
 /*
 nav.sidebar ul {
 
@@ -102,7 +100,7 @@ nav.sidebar ul li a span.rotate {
   vertical-align: middle;
 }
 
-#sidebar > ul {
+#sidebar>ul {
   height: calc(100vh - 158px) !important;
   overflow-y: auto;
 }
@@ -152,10 +150,10 @@ nav.sidebar ul li a span.rotate {
   .mobile-toggle {
     display: none !important;
   }
+
   html #sidebar {
     position: absolute !important;
-}
-}
+  }
 
 
 // .show{

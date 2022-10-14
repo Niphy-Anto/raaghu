@@ -1,7 +1,7 @@
 ---
 slug: "/chart-scatter"
 date: "2019-05-04"
-title: "Elements > Chart-scatter"
+title: "Charts > Chart-scatter"
 ---
 
 <!-- CSS only -->

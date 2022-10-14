@@ -8,7 +8,7 @@
             <th *ngIf="enableCheckboxSelection">
               <rds-checkbox [checked]="isAllCheckBoxChecked()" (change)="checkAllCheckBox($event)"></rds-checkbox>
             </th>
-            <ng-container *ngFor="let header of tableHeaders">
+            <ng-container *ngFor="let header of tableHeaders;let i=index">
               <th scope="col" [class.sortable]="header.sortable" [ngStyle]="{'width': header.colWidth}">
                 <div class="header d-flex">
                   <span>{{translate.instant(header.displayName)}}</span>
@@ -21,7 +21,7 @@
                         [ngClass]="getAscIconClass(header)"></rds-icon>
                     </span>
                     <div class="btn-group dropend">
-                      <span class="text-right sort-icons sortable" id="search-dropdown" (click)="openSearchModal()"
+                      <span class="text-right sort-icons sortable" [id]="'search-dropdown'+i" (click)="openSearchModal(i)"
                         *ngIf="header.filterable" data-bs-toggle="dropdown" aria-expanded="false">
                         <rds-icon [name]="'filter'" [height]="'12px'" [width]="'12px'">
                         </rds-icon>
@@ -108,8 +108,8 @@
                   <rds-button [colorVariant]="'default'" [submit]="false" [block]="false" [size]="'small'"
                     [iconFill]="true" [iconStroke]="false" [disabled]="false" [outlineButton]="true"
                     [roundedButton]="true" icon="three_dots" [iconHeight]="'16px'" [iconWidth]="'16px'"
-                    [label]="data?.name+'_action'" tooltipTitle="" tooltipPlacement="bottom" (click)="openAction()"
-                    id="action-dropdown" data-bs-toggle="dropdown" aria-expanded="false"></rds-button>
+                    [label]="data?.name+'_action'" tooltipTitle="" tooltipPlacement="bottom" (click)="openAction(i)"
+                    [attr.id]="'action-dropdown'+i" data-bs-toggle="dropdown" aria-expanded="false"></rds-button>
                   <div class="dropdown-menu" aria-labelledby="action-dropdown">
                     <ng-container *ngFor="let action of actions">
                       <li>
