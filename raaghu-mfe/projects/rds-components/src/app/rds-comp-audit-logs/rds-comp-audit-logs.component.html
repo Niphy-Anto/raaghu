@@ -117,15 +117,15 @@
         <div class="tab-pane fade" id="change-logs" role="tabpanel" aria-labelledby="nav-home-tab">
             <div class="m-1">
 
-                <div class="row">
-                    <div class="col-md-2 mb-3 sm-p-0 d-flex align-items-center">
+                <div class="d-flex gap-4 align-items-center">
+                    <div class="mb-3 sm-p-0 d-flex align-items-center">
                         <rds-datepicker name="date-picker" [style]="'cursor:pointer'" [label]="''" [placeholder]="translate.instant('Date Range')"
                             (change)="changelogefiltermodify($event)" [(ngModel)]="changeLogStartdate"
                             [value]="changeLogStartdate">
                         </rds-datepicker>
                     </div>
 
-                    <div class="col-md-2 mb-3 sm-p-0 d-flex align-items-center">
+                    <div class="mb-3 sm-p-0 d-flex align-items-center">
                         <rds-datepicker name="date-picker" [style]="'cursor:pointer'" [label]="''" [placeholder]="translate.instant('Date Range')"               
                             (change)="changelogefiltermodify($event)" [(ngModel)]="changeLogEndDate"
                             [value]="changeLogEndDate">
