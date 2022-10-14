@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { selectDefaultLanguage } from '@libs/state-management';
+//import { selectDefaultLanguage } from '@libs/state-management';
 import { Store } from '@ngrx/store';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -10,14 +10,17 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class AppComponent implements OnInit {
 
-  constructor(private store: Store, private translate: TranslateService) { }
+  constructor(private store: Store, private translate: TranslateService ) { }
 
   ngOnInit(): void {
-    this.store.select(selectDefaultLanguage).subscribe((res: any) => {
-      if (res) {
-        this.translate.use(res);
-      }
-    })
+    // this.store.select(selectDefaultLanguage).subscribe((res: any) => {
+    //   if (res) {
+    //     this.translate.use(res);
+    //   }
+    // }) 
+  }
+  newapicall(){
+
   }
 
 }

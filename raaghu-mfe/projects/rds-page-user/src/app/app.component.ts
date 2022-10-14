@@ -1,11 +1,11 @@
 import { DatePipe } from '@angular/common';
 import { Component } from '@angular/core';
-import { selectDefaultLanguage } from '@libs/state-management';
+// import { selectDefaultLanguage } from '@libs/state-management';
 import { Store } from '@ngrx/store';
 import { TranslateService } from '@ngx-translate/core';
 import { ArrayToTreeConverterService } from 'projects/libs/shared/src/lib/array-to-tree-converter.service';
-import { getOrganizationUnitTree } from 'projects/libs/state-management/src/lib/state/organization-unit/organization-unit.actions';
-import { selectOrganizationUnitTree } from 'projects/libs/state-management/src/lib/state/organization-unit/organization-unit.selector';
+// import { getOrganizationUnitTree } from 'projects/libs/state-management/src/lib/state/organization-unit/organization-unit.actions';
+// import { selectOrganizationUnitTree } from 'projects/libs/state-management/src/lib/state/organization-unit/organization-unit.selector';
 import {
   deleteUser,
   getUserForEdit,
@@ -127,11 +127,11 @@ export class AppComponent {
     //     });
     this.isAnimation=true;
 
-    this.store.select(selectDefaultLanguage).subscribe((res: any) => {
-      if (res) {
-        this.translate.use(res);
-      }
-    })
+    // this.store.select(selectDefaultLanguage).subscribe((res: any) => {
+    //   if (res) {
+    //     this.translate.use(res);
+    //   }
+    // })
 
     this.subscribeToAlerts();
     this.rdsUserMfeConfig = {
@@ -171,7 +171,7 @@ export class AppComponent {
             const data: any = {
               grantedPermissionNames: this.selectedFilterPermissions,
             };
-            this.store.dispatch(getUsers(this.selectedFilterPermissions));
+            this.store.dispatch(getUsers());
             this.store.select(selectAllUsers).subscribe((res: any) => {
               this.userList = [];
               if (res && res.users && res.users.items) {
@@ -356,8 +356,10 @@ export class AppComponent {
         },
       },
     };
-    this.store.dispatch(getUsers([]));
+    debugger
+    this.store.dispatch(getUsers());
     this.store.select(selectAllUsers).subscribe((res: any) => {
+      console.log("user api binding",res);
       this.userList = [];
       if (res && res.users && res.users.items && res.status == "success") {
         this.isAnimation = false;
@@ -419,45 +421,45 @@ export class AppComponent {
       this.rdsUserMfeConfig = { ...mfeConfig };
     });
 
-    this.updateOrganizationTree();
+    // this.updateOrganizationTree();
 
   }
-  updateOrganizationTree() {
-    this.store.dispatch(getOrganizationUnitTree());
-    this.store.select(selectOrganizationUnitTree).subscribe((res: any) => {
-      if (res && res.items) {
-        this.treeData1 = this._arrayToTreeConverterService.createTree(
-          res.items,
-          'parentId',
-          'code',
-          null,
-          'children',
-          [
-            {
-              target: 'label',
-              source: 'displayName',
-            },
-            {
-              target: 'expandedIcon',
-              value: 'fa fa-folder-open text-warning',
-            },
-            {
-              target: 'collapsedIcon',
-              value: 'fa fa-folder text-warning',
-            },
-            {
-              target: 'expanded',
-              value: true,
-            },
-          ],
-          1
-        );
-        const mfeConfig = this.rdsUserMfeConfig;
-        mfeConfig.input.orgTreeData = [...this.treeData1];
-        this.rdsUserMfeConfig = mfeConfig;
-      }
-    });
-  }
+  // updateOrganizationTree() {
+  //   this.store.dispatch(getOrganizationUnitTree());
+  //   this.store.select(selectOrganizationUnitTree).subscribe((res: any) => {
+  //     if (res && res.items) {
+  //       this.treeData1 = this._arrayToTreeConverterService.createTree(
+  //         res.items,
+  //         'parentId',
+  //         'code',
+  //         null,
+  //         'children',
+  //         [
+  //           {
+  //             target: 'label',
+  //             source: 'displayName',
+  //           },
+  //           {
+  //             target: 'expandedIcon',
+  //             value: 'fa fa-folder-open text-warning',
+  //           },
+  //           {
+  //             target: 'collapsedIcon',
+  //             value: 'fa fa-folder text-warning',
+  //           },
+  //           {
+  //             target: 'expanded',
+  //             value: true,
+  //           },
+  //         ],
+  //         1
+  //       );
+  //       const mfeConfig = this.rdsUserMfeConfig;
+  //       mfeConfig.input.orgTreeData = [...this.treeData1];
+  //       this.rdsUserMfeConfig = mfeConfig;
+  //     }
+  //   });
+  // }
   checkSelectedNodes(treeData: any, node: any) {
     treeData.forEach((item: any) => {
       if (item.data.name === node) {

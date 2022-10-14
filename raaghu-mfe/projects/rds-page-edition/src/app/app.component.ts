@@ -1,12 +1,10 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { AlertService, ComponentLoaderOptions } from '@libs/shared';
-import { deleteEdition, getEditionComboboxItems, getEditionInfo, getEditionPageComboboxItems, getEditions, getTenantCount, moveTenant, saveEdition, selectAllEditions, selectDefaultLanguage, selectEditionInfo, selectEditionPageComboboxItems, selectTenant, updateEdition } from '@libs/state-management';
 import { Store } from '@ngrx/store';
 import { ArrayToTreeConverterService } from 'projects/libs/shared/src/lib/array-to-tree-converter.service';
 import { TreeNode } from 'projects/rds-components/src/models/tree-node.model';
 import { TableHeader } from 'projects/rds-components/src/models/table-header.model';
 import { TranslateService } from '@ngx-translate/core';
-import { HammerGestureConfig } from '@angular/platform-browser';
 import {
   transition,
   trigger,
@@ -14,6 +12,9 @@ import {
   style,
   animate,
 } from '@angular/animations';
+import { deleteEdition, getEditionInfo, getEditions, saveEdition, updateEdition } from 'projects/libs/state-management/src/lib/state/edition/edition.action';
+import { selectAllEditions } from 'projects/libs/state-management/src/lib/state/DownloadData/download-data.selector';
+import { selectEditionInfo } from 'projects/libs/state-management/src/lib/state/edition/edition.selector';
 
 @Component({
   selector: 'app-root',
@@ -88,11 +89,11 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.isAnimation = true;
-    this.store.select(selectDefaultLanguage).subscribe((res: any) => {
-      if (res) {
-        this.translate.use(res);
-      }
-    })
+    // this.store.select(selectDefaultLanguage).subscribe((res: any) => {
+    //   if (res) {
+    //     this.translate.use(res);
+    //   }
+    // })
     this.subscribeToAlerts();
     this.rdsEditionMfeConfig = {
       name: 'RdsCompFeatures',
@@ -137,10 +138,10 @@ export class AppComponent implements OnInit {
           this.store.dispatch(deleteEdition(data.id));
         },
         onMoveTenantAction: (editionId) => {
-          this.store.dispatch(getTenantCount(editionId));
+          // this.store.dispatch(getTenantCount(editionId));
         },
         onMoveTenant: (data) => {
-          this.store.dispatch(moveTenant(data));
+          // this.store.dispatch(moveTenant(data));
         }
       }
     }
@@ -171,7 +172,7 @@ export class AppComponent implements OnInit {
 
     }, (err: any) => {
     })
-    this.store.dispatch(getEditionInfo(undefined))
+    this.store.dispatch(getEditionInfo("asdf"))
     this.store.select(selectEditionInfo).subscribe((res: any) => {
       if (res && res.editionInfo && res.editionInfo.featureValues && res.status == "success") {
         this.featureList = this.convertArraytoTreedata(res.editionInfo.features)
@@ -185,8 +186,8 @@ export class AppComponent implements OnInit {
 
     }, (err: any) => {
     })
-    this.store.dispatch(getEditionPageComboboxItems())
-    this.store.select(selectEditionPageComboboxItems).subscribe((res: any) => {
+    this.store.dispatch(getEditions())
+    this.store.select(selectAllEditions).subscribe((res: any) => {
       if (res && res.editionComboboxItem) {
         this.editionList = [];
         this.freeEditions = [];
@@ -207,13 +208,13 @@ export class AppComponent implements OnInit {
     //    this.rdsEditionMfeConfig = mfeConfig;
     //  }
     //});
-    this.store.select(selectTenant).subscribe((res: any) => {
-      if (res && res.status==='success') {
-        const mfeConfig = this.rdsEditionMfeConfig
-        mfeConfig.input.tenantCount =res.tenantCount;
-        this.rdsEditionMfeConfig = mfeConfig;
-      }
-    })
+    // this.store.select(selectTenant).subscribe((res: any) => {
+    //   if (res && res.status==='success') {
+    //     const mfeConfig = this.rdsEditionMfeConfig
+    //     mfeConfig.input.tenantCount =res.tenantCount;
+    //     this.rdsEditionMfeConfig = mfeConfig;
+    //   }
+    // })
   }
   convertArraytoTreedata(data: any) {
     const treedaTA = this._arrayToTreeConverterService.createTree(

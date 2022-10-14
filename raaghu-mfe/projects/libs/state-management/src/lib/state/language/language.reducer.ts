@@ -3,7 +3,7 @@ import { getCountryList, getCountryListFailure, getCountryListSuccess, getLangua
 import { Countries, Language } from "./language.models";
 
 export interface LanguagesState {
-    languages: Language;
+    languages: any;
     error: string;
     status: 'pending' | 'loading' | 'error' | 'success';
 }
@@ -15,7 +15,7 @@ export interface CountryState {
 }
 
 export interface DefaultLanguageState {
-    defaultLanguage: string;
+    defaultLanguage: any;
 }
 
 export const languageInitialState: LanguagesState = {
