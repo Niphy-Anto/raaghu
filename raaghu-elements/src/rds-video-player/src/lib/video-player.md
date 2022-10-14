@@ -10,9 +10,9 @@ title: "Elements > Video-player"
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/main.css">
 
 
-#### Video-player
+#### Video Player
 
-<p class="checkbox-def">Avatar is known as a visual form representing a user oneself and one's identity wished.</p>
+<p class="checkbox-def">Video player lets user control and play multimedia files on the webpage.</p>
 
 <section class="py-4">
     <h6>Default</h6>
@@ -32,7 +32,7 @@ title: "Elements > Video-player"
          <div class="contents p-5">
             <div class="row">
               <div class="col-md-12">
-                <img src="/images/website-metric-3.png" class="img-fuild w-25">
+                <img src="/images/video-player.png" class="img-fuild w-25">
               </div>
             </div>
           </div>

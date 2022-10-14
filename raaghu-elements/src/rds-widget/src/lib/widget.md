@@ -12,7 +12,7 @@ title: "Elements > Widget"
 
 #### Widget
 
-<p class="checkbox-def">Avatar is known as a visual form representing a user oneself and one's identity wished.</p>
+<p class="checkbox-def">Widgets are the graphical elements containing icons, charts displaying some specific information.</p>
 
 <!-- Basic -->
 <section class="py-4">

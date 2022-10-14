@@ -12,7 +12,7 @@ title: "Elements > Feed"
 
 #### Feed
 
-<p class="">Feed helps the to feature the feedbacks by an user on the website. </p>
+<p class="">Feed is a data format used for providing users with frequently updated content </p>
 <section class="py-4">
     <h6>Default</h6>
     <div class="py-3">
