@@ -1,17 +1,17 @@
 import { createSelector } from '@ngrx/store';
 import { AppState } from '../../app.interface';
-import { ProfileState } from './profile-settings.reducers';
+import { ScopeState } from './api-scope.reducer';
 
 
-export const selectProfile = (state: AppState) => state.profileSettings;
+export const selectScope = (state: AppState) => state.apiScope;
 // export const selectDynamicEntity = (state: AppState) => state.dynamicEntity;
 
 export const selectAllScope = createSelector(
-    selectProfile,
-    (state: ProfileState) => state.profile
+    selectScope,
+    (state: ScopeState) => state.allScope
 );
 
 export const selectApiScope = createSelector(
-    selectProfile,
-    (state: ProfileState) => state.profile
+    selectScope,
+    (state: ScopeState) => state.apiScope
 );

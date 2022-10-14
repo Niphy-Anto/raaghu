@@ -21,12 +21,16 @@ import { TextTemplateState } from './state/text-template/text-template.reducer';
 import { ManageLinkedAccountsState } from './state/manage-linked-accounts/manage-linked-accounts.reducer';
 import { SettingsState } from './state/settings/settings.reducer';
 import { ProductState } from './state/products/product.reducer';
+import { ScopeState } from './state/api-scope/api-scope.reducer';
+import { ProfileState } from './state/profile-settings/profile-settings.reducers';
+import { SecurityState } from './state/security-logs/security-logs.reducer';
 
 export interface AppState {
 
   user:UsersState,
   products: ProductState,
-  // profile: profileState,
+  securityLogs:SecurityState,
+  profileSettings: ProfileState,
   organizationUnit: OrganizationUnitState,
   editions: EditionsState,
   roles: RolesState,
@@ -47,7 +51,7 @@ export interface AppState {
   clients: ClientState,
   download:downloadState,
   claimTypes: ClaimTypesState
-
+  apiScope: ScopeState
 }
 
 export const products = 'products';

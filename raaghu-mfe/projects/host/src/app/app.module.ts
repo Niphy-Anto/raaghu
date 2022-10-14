@@ -43,6 +43,12 @@ import { ApiResourcesReducer } from 'projects/libs/state-management/src/lib/stat
 import { ApiResourcesEffects } from 'projects/libs/state-management/src/lib/state/api-resources/api-resources.effects';
 import { TextTemplateReducer } from 'projects/libs/state-management/src/lib/state/text-template/text-template.reducer';
 import { TextTemplateEffects } from 'projects/libs/state-management/src/lib/state/text-template/text-template.effects';
+import { ScopesReducer } from 'projects/libs/state-management/src/lib/state/api-scope/api-scope.reducer';
+import { ApiScopeEffects } from 'projects/libs/state-management/src/lib/state/api-scope/api-scope-effects';
+import { ProfileReducer } from 'projects/libs/state-management/src/lib/state/profile-settings/profile-settings.reducers';
+import { ProfileEffects } from 'projects/libs/state-management/src/lib/state/profile-settings/profile-settings.effects';
+import { SecurityLogsReducer } from 'projects/libs/state-management/src/lib/state/security-logs/security-logs.reducer';
+import { SecurityLogEffects } from 'projects/libs/state-management/src/lib/state/security-logs/security-logs.effects';
 export function getRemoteServiceBaseUrl(): any {
   let URL = demodata.remoteServiceBaseUrl
   return URL;
@@ -93,7 +99,7 @@ const cookieConfig: RdsCookieConsentConfig = {
       products: productReducer,
       // dynamicProperty: DynamicPropertyReducer,
       // dynamicEntity: DynamicEntityReducer,
-      // profile: ProfileReducer,
+      profile: ProfileReducer,
       // Entities: GetAllDynamicProperty,
       // PropertiesEntitie: GetAllDynamicPropertyEntites,
       organizationUnit: OrganizationUnitReducer,
@@ -103,14 +109,8 @@ const cookieConfig: RdsCookieConsentConfig = {
       validateTenant: ValidateTenantReducer,
       identityResources: IdentityResourcesReducer,
       apiResources: ApiResourcesReducer,
-      
-      // InputTypeNames: GetInputnameReducer,
-      // EditDynamicPropertSateI: getDynamicPropertyByEditReducer,
-      // DynanmicPermission: DynamicPermissionReducer,
-      // usernames: GetUsernameFilterReducer,
-      // loginAttempts: LoginAttemptsReducer,
-      // languages: LanguageReducer,
-      // countries: CountryListReducer,
+      apiScope: ScopesReducer,
+      securityLog: SecurityLogsReducer,
       clients: ClientsReducer,
       languageText: LanguageTextReducer,
       // defaultLanguage: DefaultLanguageReducer,
@@ -124,11 +124,9 @@ const cookieConfig: RdsCookieConsentConfig = {
     }),
     EffectsModule.forRoot([
       ProductEffects,
-      //LoginAttemptsEffects, MLAEffects,
-      // languageEffects, 
-      //ManageLinkedAccountsEffects,
-      // DynamicPropertyEffects,
-      // DynamicEntityEffects, ProfileEffects,
+      ProfileEffects,
+      ApiScopeEffects,
+      SecurityLogEffects,
       TextTemplateEffects,
       IdentityResourcesEffects,
       ApiResourcesEffects,
