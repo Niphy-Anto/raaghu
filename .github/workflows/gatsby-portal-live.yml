@@ -8,11 +8,15 @@ on:
     types: [opened, synchronize, reopened, closed]
     branches:
       - development
+env:
+ AZURE_WEBAPP_PACKAGE_PATH: '.'      # set this to the path to your web app project, defaults to the repository root
+ NODE_VERSION: '16.15.0'                # set this to the node version to use
+ NODE_OPTIONS: "--max_old_space_size=6144"
 
 jobs:
   build_and_deploy_job:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     name: Build and Deploy Job
     steps:
       - uses: actions/checkout@v2
@@ -33,6 +37,7 @@ jobs:
       - name: npm install, build, and test raaghu-mfe
         working-directory: ./raaghu-mfe
         run: |
+         npm cache clean --force  
          npm install
          npm run sync-elements    
 
