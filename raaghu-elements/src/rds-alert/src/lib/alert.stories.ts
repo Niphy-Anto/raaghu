@@ -29,7 +29,7 @@ Default.args = {
   colorVariant:'danger',
   iconFill:false,
   iconStroke:true,
-  iconHeight:'15px',
-  iconWidth:'15px'
+  iconHeight:'25px',
+  iconWidth:'25px'
 }
 
