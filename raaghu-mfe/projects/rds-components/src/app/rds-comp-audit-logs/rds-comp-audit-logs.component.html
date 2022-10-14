@@ -28,16 +28,14 @@
             <div class="excel-btn m-1">
 
                 <div class="d-flex gap-4 align-items-center sm-block">
-                    <div class="col-md-2 mb-3 sm-p-0 sm-block d-flex align-items-center">
-                        <rds-datepicker name="date-picker" [style]="'cursor:pointer'" [label]="''" [placeholder]="translate.instant('Start Date')"
                     <div class="mb-3 sm-p-0 sm-block d-flex align-items-center">
-                        <rds-datepicker name="date-picker" [label]="''" [placeholder]="translate.instant('Start Date')"
+                        <rds-datepicker name="date-picker" [style]="'cursor:pointer'" [label]="''" [placeholder]="translate.instant('Start Date')"
                             (change)="startDateModify($event)" [(ngModel)]="startDate" [value]="startDate"
                             floatinginputLabel="">
                         </rds-datepicker>
                     </div>
 
-                    <div class="col-md-2 mb-3 sm-p-0 sm-block d-flex align-items-center">
+                    <div class="mb-3 sm-p-0 sm-block d-flex align-items-center">
                         <rds-datepicker name="date-picker" [style]="'cursor:pointer'" [label]="''" [placeholder]="translate.instant('End Date')"
                             (change)="endDateModify($event)" [(ngModel)]="endDate" [value]="endDate"
                             floatinginputLabel="">
