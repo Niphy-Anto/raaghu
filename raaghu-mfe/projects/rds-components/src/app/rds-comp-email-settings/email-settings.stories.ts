@@ -30,4 +30,13 @@ const Template: Story<RdsCompEmailSettingsComponent> = (args: RdsCompEmailSettin
     props: args
 });
 
-export const emailSettings = Template.bind({});
+export const Default = Template.bind({});
+Default.args={
+    emailSettings:
+    {
+      currentEmail: 'niphy.anto@waiin.com',
+      newEmail: 'abc@waiin.com',
+      confirmEmail: 'abc@waiin.com'
+    },
+    buttonSpinner:true
+}

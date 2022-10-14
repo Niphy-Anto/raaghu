@@ -35,7 +35,13 @@ const Template: Story<RdsCompInformationComponent> = (args: RdsCompInformationCo
   // const Template: Story<RdsCompEditionComponent> = (args: RdsCompEditionComponent) => ({});
 
   // export const basic = Template.bind({});
-  export const basic = Template.bind({});
-  basic.args ={
-    dynamicPropertiesData: {propertyName:'string', displayName: 'string', inputType: 'string'}
+  export const Default = Template.bind({});
+  Default.args ={
+    dynamicPropertiesData: {propertyName:'string', displayName: 'string', inputType: 'string'},
+    inputTypeList:[
+      {value: "1", displayText: "Input Type 1", isSelected: false}
+      ,{value: "2", displayText: "Input Type 2", isSelected: false}
+      ,{value: "3", displayText: "Input Type 3", isSelected: false}
+      ,{value: "4", displayText: "Input Type 4", isSelected: false}
+        ]
   }

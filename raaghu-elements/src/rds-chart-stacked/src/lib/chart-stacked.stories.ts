@@ -7,11 +7,11 @@ export default {
 
   component: RdsChartStackedComponent,
   argTypes: {
-    canvasBackgroundColor: { control: 'color' },
-    chartStyle: {
-      options: ['Dark', 'light'],
-      control: 'radio'
-    }
+    // canvasBackgroundColor: { control: 'color' },
+    // chartStyle: {
+    //   options: ['Dark', 'light'],
+    //   control: 'radio'
+    // }
   },
 
 } as Meta;
@@ -20,9 +20,9 @@ const Template: Story<RdsChartStackedComponent> = (args: RdsChartStackedComponen
   props: args,
 
 });
-export const Basic = Template.bind({});
-Basic.args = {
-  ChartDataSets: [
+export const Default = Template.bind({});
+Default.args = {
+  chartDataSets: [
     {
       label: 'My Second dataset',
       data: [131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142],
@@ -48,6 +48,8 @@ Basic.args = {
   chartLabels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
   chartWidth: 1000,
   chartOptions: {
+    responsive: true,
+    maintainAspectRatio: false,
     radius: 3,
     pointStyle: 'triangle',
     plugins: {

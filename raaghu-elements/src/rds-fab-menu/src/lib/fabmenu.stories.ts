@@ -13,6 +13,10 @@ export default {
       }),
   ],
   argTypes: { 
+    colorVariant: {
+      options:['warning' , 'danger' , 'success' , 'info' , 'primary' , 'secondary' , 'dark' , 'light'],
+      control: { type: 'select' }}
+
   },
 } as Meta; 
 
@@ -21,10 +25,10 @@ const Template: Story<RdsFabMenuComponent> = (args: RdsFabMenuComponent) => ({
     props: args
   });
   
-  export const basic = Template.bind({});
+  export const Default = Template.bind({});
   
-  basic.args = {
-    colorVariant: 'btn-secondary',
+  Default.args = {
+    colorVariant: 'secondary',
     size: 'default',
     listItems : [
       { value: 'New Role', some: 'value', key: 'new', icon: 'users', iconWidth: '20px', iconHeight: '20px' },

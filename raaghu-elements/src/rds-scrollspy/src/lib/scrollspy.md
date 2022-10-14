@@ -1,7 +1,7 @@
 ---
 slug: "/scrollspy"
 date: "2019-05-04"
-title: "scrollspy"
+title: "Elements > Scrollspy"
 ---
 
 <!-- CSS only -->
@@ -16,7 +16,7 @@ title: "scrollspy"
 
 
 <section class="py-4">
-    <h6>Basic</h6>
+    <h6>Default</h6>
     <div class="py-3">
       <div class="cust-tabs">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -30,9 +30,11 @@ title: "scrollspy"
       </div>
       <div class="tab-content card border" id="myTabContent">
         <div class="tab-pane fade show active" id="PreviewBasic1" role="tabpanel" aria-labelledby="PreviewBasic-tab">
-         <div class="contents bg-light p-5">
+         <div class="contents p-5">
               <div class="row">
-               <img src="\images\scrollspy-basic.png" class="img-thumbnail w-75">
+                 <div class="col-md-12">
+                     <img src="\images\scrollspy-basic.png" class="img-fluid w-75">
+                 </div>              
               </div>
                        
   </div>
@@ -118,7 +120,22 @@ title: "scrollspy"
   </section>
 
 
-
+<!-- Skeleton / Specifications -->
+<section class="py-4">
+                        <h6>
+                           Skeleton / Specifications
+                        </h6>
+                        <div class="py-3">
+                              <!-- Tab panes -->
+                              <div class="card border p-5">
+                                 <div class="row">
+                                    <div class="col-md-12">
+                                       <img src="/images/skel-scrollspy.png" class="img-fluid">
+                                    </div>
+                                 </div>
+                              </div>
+                        </div>
+                     </section>
 
 
 

@@ -1,7 +1,7 @@
 ---
 slug: "/alert"
 date: "2019-05-04"
-title: "alert"
+title: "Elements > Alert"
 ---
 
 <!-- CSS only -->
@@ -9,7 +9,7 @@ title: "alert"
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/style-elements.css">
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/main.css">
 
-### Alert
+#### Alert
 
 <p class="checkbox-def">An alert helps to keeps people informed of the status of the system and may or may not require the user to respond.</p>
 
@@ -29,46 +29,13 @@ title: "alert"
       </div>
       <div class="tab-content card border" id="myTabContent">
         <div class="tab-pane fade show active" id="PreviewBasic" role="tabpanel" aria-labelledby="PreviewBasic-tab">
-              <div class="contents bg-light p-5">
-                                          <div class="row">
-                                             <div class="col-md-5">
-                                                <div class="alert alert-primary alert-dismissible" role="alert">
-                                                  <div class="row ">
-                                                      <div class="col-12">
-                                                         An informational toast. 
-                                                      </div>
-                                                  </div>
-                                                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                                </div>   
-                                                <div class="alert alert-success alert-dismissible" role="alert">
-                                                  <div class="row ">
-                                                      <div class="col-12">
-                                                         A successful toast. 
-                                                      </div>
-                                                  </div>
-                                                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                                </div>
-                                             </div>
-                                             <div class="col-md-5">
-                                                <div class="alert alert-danger alert-dismissible" role="alert">
-                                                  <div class="row">
-                                                      <div class="col-12">
-                                                        A destructive toast.
-                                                      </div>
-                                                  </div>
-                                                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                                </div>
-                                                <div class="alert alert-warning alert-dismissible" role="alert">
-                                                  <div class="row">
-                                                      <div class="col-12">
-                                                         A warning toast. 
-                                                      </div>
-                                                  </div>
-                                                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                                </div> 
-                                             </div>
-                                          </div>
-                                    </div>
+              <div class="contents p-5">
+                <div class="row">
+                     <div class="col-md-12">
+                      <img src="/images/alert.png" class="img-fluid w-100">
+                     </div>                   
+                </div>
+              </div>
         </div>
         <div class="tab-pane fade show" id="AngularBasic" role="tabpanel" aria-labelledby="AngularBasic-tab">
           <div class="contents bg-code">

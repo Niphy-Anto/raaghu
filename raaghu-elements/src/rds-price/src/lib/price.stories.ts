@@ -1,4 +1,5 @@
 
+import { RdsLabelModule } from '@libs/rds-label';
 import { Story, Meta, moduleMetadata } from '@storybook/angular';
 import { RdsPriceComponent } from './rds-price.component';
 
@@ -9,7 +10,9 @@ export default {
   decorators: [
     moduleMetadata({
       declarations: [],
-      imports: [],
+      imports: [
+        RdsLabelModule
+      ],
     }),
   ],
   argTypes: {
@@ -20,6 +23,6 @@ const Template: Story<RdsPriceComponent> = (args: RdsPriceComponent) => ({
   props: args,
 });
 
-export const Basic = Template.bind({});
+export const Default = Template.bind({});
 
 

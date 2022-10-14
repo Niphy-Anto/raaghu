@@ -215,7 +215,7 @@ export class RdsAdminDashboardComponent extends MfeBaseComponent implements OnIn
       },
     }
   ];
-  @Input() pschartLabels = ['Total Sales - 60 %', 'Revenue - 25 %', 'Expenses - 15 %']
+  @Input() pschartLabels = ['Total Sales - 60%', 'Revenue - 25%', 'Expenses - 15%']
   @Input() pschartWidth = 255;
   @Input() pschartHeight = 200;
   @Input() pschartOptions = {
@@ -253,7 +253,7 @@ export class RdsAdminDashboardComponent extends MfeBaseComponent implements OnIn
         position: 'right',
         labels: {
           boxWidth: 15,
-          padding: 20
+          padding: 15
         },
       },
     }

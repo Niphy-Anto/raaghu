@@ -1,7 +1,7 @@
 ---
 slug: "/list-group"
 date: "2019-05-04"
-title: "list-group"
+title: "Elements > List-group"
 ---
 
 <!-- CSS only -->
@@ -14,7 +14,7 @@ title: "list-group"
 <p class="checkbox-def">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore sdavavfgsv</p>
 
 <section class="py-4">
-    <h6>Basic</h6>
+    <h6>Default</h6>
     <div class="py-3">
       <div class="cust-tabs">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -28,13 +28,13 @@ title: "list-group"
       </div>
       <div class="tab-content card border" id="myTabContent">
         <div class="tab-pane fade show active" id="PreviewBasic" role="tabpanel" aria-labelledby="PreviewBasic-tab">
-         <div class="contents bg-light p-5">
+         <div class="contents  p-5">
               <div class="row">
-              <!-- <img src="https://raw.githubusercontent.com/Wai-Technologies/raaghu/main/raaghu-mfe/assets/Edit-Language-Text.png" alt="color"> -->
-              <img src="/images/list-group-basic.png" class="img-thumbnail w-50">
-           </div>
-                       
-  </div>
+               <div class="col-md-12">
+                  <img src="/images/list-group-basic.png" class="img-fluid w-50">
+              </div>               
+            </div>
+          </div>
         </div>
         <div class="tab-pane fade show" id="AngularBasic" role="tabpanel" aria-labelledby="AngularBasic-tab">
           <div class="contents bg-code">
@@ -49,13 +49,13 @@ label=""
 (onClick)="onClick($event)">
 </rds-list-group>
 ```
+
 </div>
-</div>
-  </div>
+          </div>
         </div>
       </div>
     </div>
-  </section>
+</section>
 
 <!-- List group with multiselect -->
 <section class="py-4">
@@ -101,5 +101,20 @@ label=""
       </div>
     </div>
   </section>
+<section class="py-4">
+                        <h6>
+                           Skeleton / Specifications
+                        </h6>
+                        <div class="py-3">
+                              <!-- Tab panes -->
+                              <div class="card border p-5">
+                                 <div class="row">
+                                    <div class="col-md-12">
+                                       <img src="/images/list-group-skeleton.png" class="img-fluid">
+                                    </div> 
+                                 </div>
+                              </div>
+                        </div>
+                     </section>
 
 

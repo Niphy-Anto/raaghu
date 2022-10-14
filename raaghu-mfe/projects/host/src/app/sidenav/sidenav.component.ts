@@ -1,7 +1,7 @@
 import { Component, Inject, Injector, Input, OnInit, SimpleChanges } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { ComponentLoaderOptions, MfeBaseComponent, UserAuthService } from '@libs/shared';
+import { ComponentLoaderOptions, MfeBaseComponent, SharedService, UserAuthService } from '@libs/shared';
 import { Store } from '@ngrx/store';
 // import { changePassword, getLanguages, getProfile, selectAllLanguages, selectDefaultLanguage, selectProfileInfo, setDefaultLanguageForUI } from '@libs/state-management';
 // import { deleteDelegations, getDelegations, getUsername, saveDelegations } from 'projects/libs/state-management/src/lib/state/authority-delegations/authority-delegations.action';
@@ -97,12 +97,11 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
         { label: 'Dynamic Properties', labelTranslationKey: 'Dynamic Properties', id: 'Pages.Administration.DynamicProperties', permissionName: '', icon: 'dynamic_properties', path: '/pages/dynamic-property-management', descriptionTranslationKey: '' },
         { label: 'Settings', labelTranslationKey: 'Settings', id: '', permissionName: 'Pages.Administration.Host.Settings', icon: 'setting', path: '/pages/settings', description: 'Show and change application settings', descriptionTranslationKey: 'Show and change application settings' },
         { label: 'Settings', labelTranslationKey: 'Settings', id: '', permissionName: 'Pages.Administration.Tenant.Settings', icon: 'setting', path: '/pages/settings', description: 'Show and change application settings', descriptionTranslationKey: 'Show and change application settings' },
-
       ],
     },
     { label: 'UI Components', labelTranslationKey: 'UI Components', id: '', permissionName: '', icon: 'demo_ui', path: '/pages/demo-ui', description: '', descriptionTranslationKey: '' },
     // { label: 'Cart', labelTranslationKey: 'Cart', id: 'cart', permissionName: '' ,icon: 'tenant', path: '/pages/cart', description: 'Manage your cart', descriptionTranslationKey: 'Manage your cart' },
-
+   // { label: 'Edition-New', labelTranslationKey: 'Edition-New', id: '', permissionName: '', icon: 'home', path: '/pages/editionnew', description: '', descriptionTranslationKey: '' },
   ];
 
   logo: string = 'https://www.carlogos.org/logo/Volkswagen-logo-2019-640x500.jpg';
@@ -113,8 +112,7 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
   profilePic: string = '../assets/profile-picture-circle.svg';
   offCanvasId: string = 'profileOffCanvas'
   collapseRequired: any = true;
-  @Input() UserRole: string = 'Admin';
-  @Input() UserName: string = 'Wai Technologies';
+  @Input() tenancy: string = 'Host Admin';
   selectedMenu: string = '';
   selectedMenuDescription: string = '';
   sub: Subscription
@@ -123,10 +121,8 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
   activePage: any;
   activesubmenu: any;
   languageItems: any = [];
-  linkedAccount: any = {
-    TableHeader: [{ displayName: 'User Name', key: 'username', dataType: 'text', dataLength: 30, required: true }],
-    tableData: []
-  }
+  linkedAccountData: any = [];
+  linkedAccountHeaders: any = [{ displayName: 'User Name', key: 'username', dataType: 'text', dataLength: 30, required: true }];
   notifications: any[];
   unreadCount: number = 0;
   selectedMode: any;
@@ -136,6 +132,7 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
     
     private alertService: AlertService,
     public translate: TranslateService,
+    private shared: SharedService,
     private injector: Injector,
     private userAuthService: UserAuthService,
     private theme: ThemesService,
@@ -155,7 +152,12 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
   permissions: any;
 
   ngOnInit(): void {
-
+    const tenancy: any = JSON.parse(localStorage.getItem('tenantInfo'));
+    if (tenancy) {
+      this.tenancy = tenancy.name;
+    } else {
+      this.tenancy = 'Host Admin';
+    }
     this.store.dispatch(getLanguages());
     // this.store.select(selectDefaultLanguage).subscribe((res: any) => {
     //   if (res) {
@@ -198,12 +200,14 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
         offCanvasId: this.offCanvasId,
         logo: 'assets/raaghu_icon.png',
         projectName: 'Raaghu',
-        linkedAccounts: this.linkedAccount,
+        linkedAccountData: this.linkedAccountData,
+        linkedAccountHeaders:this.linkedAccountHeaders,
         userList: this.usernameList,
         notificationData: this.notifications,
         unreadCount: this.unreadCount,
         receiveNotifications: this.receiveNotifications,
-        notificationTypes: this.notificationTypes
+        notificationTypes: this.notificationTypes,
+        tenancy: this.tenancy
       },
       output: {
         toggleEvent: () => {
@@ -370,11 +374,20 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
     //this.store.dispatch(getMLATenancyData());
 
     // this.store.select(selectTenancyData).subscribe(res => {
-    //   this.linkedAccount.tableData = [];
+    //   this.linkedAccountData = [];
     //   if (res && res.items) {
-    //     this.linkedAccount.tableData = res.items;
+    //     const data: any = [];
+    //     res.items.forEach((item: any) => {
+    //       const _item: any = {
+    //         id: item.id,
+    //         username: item.username,
+    //         tenancyName: item.tenancyName,
+    //         tenantId: item.tenantId
+    //       }
+    //       this.linkedAccountData.push(_item);
+    //     });
     //     const mfe = this.rdsTopNavigationMfeConfig;
-    //     mfe.input.linkedAccount = { ...this.linkedAccount };
+    //     mfe.input.linkedAccountData = [ ...this.linkedAccountData ];
     //     this.rdsTopNavigationMfeConfig = mfe;
 
     //   }
@@ -468,6 +481,9 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
 
   }
   redirectPath(event): void {
+    const rdsAlertMfeConfig = this.rdsAlertMfeConfig;
+    rdsAlertMfeConfig.input.currentAlerts = [];
+    this.rdsAlertMfeConfig = rdsAlertMfeConfig;
     this.rdsTopNavigationMfeConfig.input.selectedMenu = event.label;
     this.rdsTopNavigationMfeConfig.input.selectedMenuDescription = event.description;
     this.router.navigate([event.path]);
@@ -476,6 +492,7 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
       var alert = bootstrap.Alert.getInstance(alertNode);
       alert.close();
     }
+    this.shared.setTopNavTitle('');
 
   }
   redirect(event): void {

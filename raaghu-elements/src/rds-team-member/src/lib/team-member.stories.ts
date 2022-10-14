@@ -2,9 +2,11 @@ import { moduleMetadata } from '@storybook/angular';
 import { Story, Meta } from '@storybook/angular';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { RdsTeamMemberComponent } from '../public-api';
 import { RdsIconModule } from '@libs/rds-icon';
 import { RdsProductImageModule } from '@libs/rds-product-image';
+import { RdsTeamMemberComponent } from './rds-team-member.component';
+import { RdsLabelModule } from '@libs/rds-label';
+import { RdsAvatarModule } from '@libs/rds-avatar';
 // import { RdsProductImageModule } from '@libs/rds-product-image';
 export default {
   title: 'Elements/Team-member',
@@ -12,7 +14,7 @@ export default {
   decorators: [
     moduleMetadata({
 
-      imports: [CommonModule, FormsModule,RdsIconModule , RdsProductImageModule],
+      imports: [CommonModule, FormsModule, RdsIconModule, RdsProductImageModule,RdsLabelModule,RdsAvatarModule],
     }),
   ],
 } as Meta
@@ -21,34 +23,30 @@ const Template: Story<RdsTeamMemberComponent> = (args: RdsTeamMemberComponent) =
   props: args,
 });
 
-export const basic = Template.bind({});
-basic.args ={
-  displayType: 'Basic',
-  teamItem :[
+export const Default = Template.bind({});
+Default.args = {
+  displayType: 'basic',
+  teamItem: [
     {
       title: 'Tina',
       subTitle: 'Web Developer',
-      imgLink:'https://uxwing.com/wp-content/themes/uxwing/download/peoples-avatars/no-profile-picture-icon.png?W=100',
-      twitterIcon: 'twitter',
-      linkdineIcon: 'linkedin',
+      imgLink: 'https://uxwing.com/wp-content/themes/uxwing/download/peoples-avatars/no-profile-picture-icon.png?W=100',
       description: 'Lorem ipsum dolor sit amet conr adipiscing elit'
-    } 
+    }
   ]
 
 }
 
 export const advance = Template.bind({});
-advance.args ={
-  displayType: 'Advance',
-  teamItem :[
+advance.args = {
+  displayType: 'advanced',
+  teamItem: [
     {
       title: 'Tina',
       subTitle: 'Web Developer',
-      imgLink:'https://uxwing.com/wp-content/themes/uxwing/download/peoples-avatars/no-profile-picture-icon.png?W=100',
-      twitterIcon: 'star',
-      linkdineIcon: 'star',
+      imgLink: 'https://uxwing.com/wp-content/themes/uxwing/download/peoples-avatars/no-profile-picture-icon.png?W=100',
       description: 'Lorem ipsum dolor sit amet conr adipiscing elit'
-    } 
+    }
   ]
 
 }

@@ -6,30 +6,82 @@ export default {
   title: 'Elements/Avatar',
   component: RdsAvatarComponent,
   argTypes: {
+    size: {
+      options: ['small', 'medium', 'large'],
+      control: 'radio'
+    },
     colorVariant: {
-      options: ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark'],
+      options: ['success', 'warning', 'light', 'danger', 'info', 'dark', 'secondary'],
       control: { type: 'select' }
     },
-    // Size: {
-    //   options: ['Small', 'Medium', 'Large'],
-    //   control: { type: 'radio' },
-    // },
+    height: { control: { type: 'text' } },
+
   },
 } as Meta;
 
 const Template: Story<RdsAvatarComponent> = (args: RdsAvatarComponent) => ({
   props: args,
+
 });
 
-export const Basic = Template.bind({});
-Basic.args = {
-  Size: 'medium',
-  WithProfilePic: true,
-  FirstName: '',
-  LastName: '',
-  WithUserRole: false,
-  userRole: '',
-  VerticalTitleWithProfilePic:true,
-  profilePic: "https://th.bing.com/th/id/OIP.3IsXMskZyheEWqtE3Dr7JwHaGe?pid=ImgDet&rs=1",
-  colorVariant: 'light'
+const avatarWithInfoTemplate: Story<RdsAvatarComponent> = (args: RdsAvatarComponent) => ({
+  props: {
+    ...args
+  },
+  template: `<rds-avatar
+[firstName]="firstName" 
+[lastName]="lastName" 
+[colorVariant]="colorVariant"
+[verticallyAlligned]="verticallyAlligned"
+>
+{{firstName}} {{lastName}}
+<div>
+Admin
+</div>
+
+</rds-avatar>`
+
+});
+
+export const Default = Template.bind({});
+Default.args = {
+  size: 'medium',
+  firstName: 'John',
+  lastName: 'Doe',
+  colorVariant: 'warning',  
+  
 };
+
+export const profile = Template.bind({});
+profile.args = {
+  size: 'medium',
+  height: '15',
+  withProfilePic: true,
+  profilePic: 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png'
+};
+
+export const avtarWithHorizontallyAllignedInfo = avatarWithInfoTemplate.bind({});
+avtarWithHorizontallyAllignedInfo.args = {
+   size: 'medium',
+  firstName: 'John',
+  lastName: 'Doe',
+  colorVariant: 'warning',
+};
+
+export const avatarWithVerticallyAllignedInfo = avatarWithInfoTemplate.bind({});
+avatarWithVerticallyAllignedInfo.args = {
+  size: 'medium',
+  firstName: 'John',
+  lastName: 'Doe',
+  colorVariant: 'warning',
+  verticallyAlligned: true
+};
+
+
+
+// Default.argTypes = {
+//   colorVariant: {
+//     options: ['success', 'warning', 'light', 'danger', 'info', 'dark', 'secondary'],
+//     control: { type: 'select' }
+//   }
+// }

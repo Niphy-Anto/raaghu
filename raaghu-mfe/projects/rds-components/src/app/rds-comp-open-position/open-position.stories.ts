@@ -35,8 +35,8 @@ const Template: Story<RdsCompOpenPositionComponent> = (args: RdsCompOpenPosition
   props: { ...args }
 });
 
-export const basic = Template.bind({});
-basic.args = {
+export const Default = Template.bind({});
+Default.args = {
   item: {
     titleHeader: "Open Positions",
     navtabsItems: [
@@ -67,20 +67,26 @@ basic.args = {
     ],
     descriptions: [
       {
-        type:"marketing",
+        type: "developer",
         roleName: "Android Developer",
+        roleDescription: "Designing and developing advanced applications for the Android platform · Unit-testing code for robustness, ...",
+        buttonLabel: "Apply Now"
+      },
+      {
+        type: "marketing",
+        roleName: "Sales",
         roleDescription: "Designing and developing advanced applications for the Android platform · Unit-testing code for robustness, ...",
         buttonLabel: "Apply Now"
       },
       {
         type: "designer",
-        roleName: "Android Developer",
+        roleName: "UI/UX",
         roleDescription: "Designing and developing advanced applications for the Android platform · Unit-testing code for robustness, ...",
         buttonLabel: "Apply Now"
       },
       {
         type: "researcher",
-        roleName: "Android Developer",
+        roleName: "Tester",
         roleDescription: "Designing and developing advanced applications for the Android platform · Unit-testing code for robustness, ...",
         buttonLabel: "Apply Now"
       },

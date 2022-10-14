@@ -1,7 +1,7 @@
 ---
 slug: "/chart-bool"
 date: "2019-05-04"
-title: "chart-bool"
+title: "Elements > Chart-bool"
 ---
 
 <!-- CSS only -->
@@ -9,11 +9,11 @@ title: "chart-bool"
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/style-elements.css">
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/main.css">
 
-#### Boolean-Chart
+#### Boolean Chart
 
 <p class="">A card is a small rectangular module with images and text. It is an entry point for users to learn more details</p>
 <section class="py-4">
-    <h6>Basic</h6>
+    <h6>Default</h6>
     <div class="py-3">
       <div class="cust-tabs">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -29,17 +29,16 @@ title: "chart-bool"
         <div class="tab-pane fade show active" id="PreviewBasic" role="tabpanel" aria-labelledby="PreviewBasic-tab">
          <div class="contents bg-light p-5">
               <div class="row">
-                                                <div class="col-md-8 col-12">
-                                                     <img src="/images/boolean-chart.png" class="img-fluid">
-                                                </div> 
-                                             </div>
-           </div>
-                       
-  </div>
+                <div class="col-md-12">
+                     <img src="/images/boolean-chart.png"class="img-thumbnail w-50">
+                </div>
+              </div>
+          </div>
         </div>
         <div class="tab-pane fade show" id="AngularBasic" role="tabpanel" aria-labelledby="AngularBasic-tab">
           <div class="contents bg-code">
 <div class="row m-0">
+
 
 ```html
   <rds-chart-bool
@@ -56,6 +55,5 @@ title: "chart-bool"
   </div>
         </div>
       </div>
-    </div>
   </section>
    

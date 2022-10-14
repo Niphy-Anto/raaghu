@@ -1,7 +1,7 @@
 ---
 slug: "/Table"
 date: "2019-05-04"
-title: "Table"
+title: "Elements > Table"
 ---
 
 <!-- CSS only -->
@@ -14,7 +14,7 @@ title: "Table"
 <p class="checkbox-def">Tables are a designed for displaying large amounts of data in rows and columns.</p>
 
 <section class="py-4">
-    <h6>Basic Table</h6>
+    <h6>Default</h6>
     <div class="py-3">
       <div class="cust-tabs">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -31,12 +31,12 @@ title: "Table"
           <div class="contents p-5">
           <div class="row">
             <div class="col-md-12">
-                <img src="/images/table.png" class="img-fuild w-100">
+                <img src="/images/table.png" class="img-fluid w-100">
             </div>
           </div>                                
             </div>
         </div>
-        <div class="tab-pane fade show" id="Preview" role="tabpanel" aria-labelledby="Preview-tab">
+        <div class="tab-pane fade show" id="angular" role="tabpanel" aria-labelledby="Preview-tab">
           <div class="contents bg-code">
 <div class="row  m-0 p-4">
 
@@ -49,3 +49,35 @@ title: "Table"
   colorVariant="primary"
 ></rds-table>
 ```
+<rds-table
+  [tableBorder]="false"
+  [tableHeader]="true"
+  [tableHeaderItems]="tableHeaderItems"
+  [tableBodyItems]="tableBodyItems"
+  colorVariant="light"
+></rds-table>
+
+</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+<!-- Skeleton / Specifications -->
+<section class="py-4">
+                        <h6>
+                           Skeleton / Specifications
+                        </h6>
+                        <div class="py-3">
+                              <!-- Tab panes -->
+                              <div class="card border p-5">
+                                 <div class="row">
+                                    <div class="col-md-12">
+                                       <img src="/images/skel-Table.png" class="img-fluid">
+                                    </div>
+                                 </div>
+                              </div>
+                        </div>
+                     </section>

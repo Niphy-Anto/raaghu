@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { AppComponent } from './app.component';
+import { AppComponent} from './app.component';
 import { HomeComponent } from './home/home.component';
 import { APP_ROUTES } from './app.routes';
 import { NotFoundComponent } from './not-found.component';
@@ -14,12 +14,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule, UserAuthModule, NgxTranslateModule, API_BASE_URL, UserAuthService } from '@libs/shared';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { DatePipe } from '@angular/common';
-import {
-  LoginEffects,
-   ValidateTenantReducer,downloadReducer,DownloadEffects
- 
 
-} from '@libs/state-management';
+
 import { LanguageTextEffects } from 'projects/libs/state-management/src/lib/state/language-text/language-text.effects';
 import { RdsSideNavModule } from '@libs/rds-elements';
 import { LanguageTextReducer } from 'projects/libs/state-management/src/lib/state/language-text/language-text.reducer';
@@ -49,43 +45,43 @@ import { ProfileReducer } from 'projects/libs/state-management/src/lib/state/pro
 import { ProfileEffects } from 'projects/libs/state-management/src/lib/state/profile-settings/profile-settings.effects';
 import { SecurityLogsReducer } from 'projects/libs/state-management/src/lib/state/security-logs/security-logs.reducer';
 import { SecurityLogEffects } from 'projects/libs/state-management/src/lib/state/security-logs/security-logs.effects';
+import { DownloadEffects, downloadReducer, LoginEffects, ValidateTenantReducer } from '@libs/state-management';
+import { LanguageEffects } from 'projects/libs/state-management/src/lib/state/language/language.effects';
+import { ManageLinkedAccountsEffects } from 'projects/libs/state-management/src/lib/state/manage-linked-accounts/manage-linked-accounts.effects';
 export function getRemoteServiceBaseUrl(): any {
-  let URL = demodata.remoteServiceBaseUrl
+  let URL = demodata.remoteServiceBaseUrl;
   return URL;
 }
-const cookieConfig: RdsCookieConsentConfig = {
+ const cookieConfig: RdsCookieConsentConfig = {
   cookie: {
     domain: location.hostname,
     name: 'rds_cookie_status'
   },
-  position: "bottom",
-  theme: "classic",
+  position: 'bottom',
+  theme: 'classic',
   palette: {
     popup: {
-      background: "#e8ebf9ed",
-      text: "#000000",
+      background: '#e8ebf9ed',
+      text: '#000000',
     },
     button: {
-      background: "#012fffb5",
-      text: "#000000",
-      border: "transparent"
-    }
+      background: '#012fffb5',
+      text: '#000000',
+      border: 'transparent',
+    },
   },
-  type: "opt-in",
+  type:'opt-in',
   elements: {
     messagelink: `
-     <img class="pe-3" src="{{image}}" width=\"80px\" ></img>
-      <span id="cookieconsent:desc" class="cc-message" >{{message}}</span>
-      `
-    },
-  content: {
-    policy: "Cookie Policy",
-    image: "../assets/cookie.svg",
-    
-  }
+      <img class="pe-3" src="{{image}}" width=\"80px\" ></img>
+      <span id="cookieconsent:desc" class="cc-message">{{message}} </span>
+      `,  
+  },
+  content: {    
+    policy: 'Rds Cookies',
+    image: '../assets/cookie.svg',   
+  } 
 };
-
-
 @NgModule({
   imports: [
     BrowserModule,
@@ -136,13 +132,19 @@ const cookieConfig: RdsCookieConsentConfig = {
       LanguageTextEffects, 
       RoleEffects,
       DownloadEffects,
-      LoginEffects
+      LoginEffects,
+      LanguageEffects,
+      ManageLinkedAccountsEffects,
+      ProfileEffects,
+      OrganizationUnitEffects,
+      LoginEffects,
+      LanguageTextEffects,
+      DownloadEffects,
     ]),
     SharedModule,
     UserAuthModule,
     BrowserAnimationsModule,
-    RdsSideNavModule
-
+    RdsSideNavModule,
   ],
   declarations: [
     AppComponent,
@@ -161,5 +163,4 @@ const cookieConfig: RdsCookieConsentConfig = {
     ],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
-
+export class AppModule {}

@@ -4,20 +4,22 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
 import { from, of } from 'rxjs';
 import { catchError, map, mergeMap, switchMap } from 'rxjs/operators';
-import { addRolesToOrganizationUnit, addUsersToOrganizationUnit, createTreeUnit, createTreeUnitFailure, createTreeUnitSuccess,
+import {
+  addRolesToOrganizationUnit, addUsersToOrganizationUnit, createTreeUnit, createTreeUnitFailure, createTreeUnitSuccess,
   deleteMemberFromOrgUnit,
   deleteMemberFromOrgUnitFailure,
   deleteMemberFromOrgUnitSuccess,
   deleteRoleFromOrgUnit,
   deleteRoleFromOrgUnitFailure,
   deleteRoleFromOrgUnitSuccess,
-  deleteUnitTree, deleteUnitTreeFailure, deleteUnitTreeSuccess, getOrganizationUnitMembers, getOrganizationUnitMembersSuccess, getOrganizationUnitRoles, 
-  getOrganizationUnitRolesFailure, getOrganizationUnitRolesList, getOrganizationUnitRolesListFailure, getOrganizationUnitRolesListSuccess, 
-  getOrganizationUnitRolesSuccess, getOrganizationUnitTree, getOrganizationUnitTreeFailure, getOrganizationUnitTreeSuccess, 
-  getOrganizationUnitUsersList, getOrganizationUnitUsersListFailure, getOrganizationUnitUsersListSuccess, updateUnitTree, 
-  updateUnitTreeFailure, updateUnitTreeSuccess } from './organization-unit.actions';
+  deleteUnitTree, deleteUnitTreeFailure, deleteUnitTreeSuccess, getOrganizationUnitMembers, getOrganizationUnitMembersSuccess, getOrganizationUnitRoles,
+  getOrganizationUnitRolesFailure, getOrganizationUnitRolesList, getOrganizationUnitRolesListFailure, getOrganizationUnitRolesListSuccess,
+  getOrganizationUnitRolesSuccess, getOrganizationUnitTree, getOrganizationUnitTreeFailure, getOrganizationUnitTreeSuccess,
+  getOrganizationUnitUsersList, getOrganizationUnitUsersListFailure, getOrganizationUnitUsersListSuccess, updateUnitTree,
+  updateUnitTreeFailure, updateUnitTreeSuccess
+} from './organization-unit.actions';
 
-
+declare var bootstrap: any;
 @Injectable()
 export class OrganizationUnitEffects {
   constructor(
@@ -119,18 +121,21 @@ export class OrganizationUnitEffects {
       mergeMap((data) =>
         this.organizationUnitService.organizationUnitsPOST(data).pipe(map((res) => {
           this.store.dispatch(getOrganizationUnitTree());
-          this.alertService.showAlert('Success', 'Organization unit node created successfully','success' )  
-          }),
+          this.alertService.showAlert('Success', 'Organization unit node created successfully', 'success');
+          var offcanvasEl = document.getElementById('addNodeOffcanvas');
+          var offcanvas = bootstrap.Offcanvas.getInstance(offcanvasEl)
+          offcanvas.hide();
+        }),
           catchError((error: any) => of(
-            ))
-          )
+          ))
         )
-      ),
-      {
-        dispatch: false
-      }
+      )
+    ),
+    {
+      dispatch: false
+    }
   );
-  
+
   updateUnitTree$ = createEffect(() =>
     this.actions$.pipe(
       ofType(updateUnitTree),
@@ -138,16 +143,19 @@ export class OrganizationUnitEffects {
         this.organizationUnitService.organizationUnitsPUT(data.id, data.body).pipe(
           map((res) => {
             this.store.dispatch(getOrganizationUnitTree());
-            this.alertService.showAlert('Success', 'Organization unit node updated successfully','success' )
+            var offcanvasEl = document.getElementById('addNodeOffcanvas');
+            var offcanvas = bootstrap.Offcanvas.getInstance(offcanvasEl)
+            offcanvas.hide();
+            this.alertService.showAlert('Success', 'Organization unit node updated successfully', 'success')
           }),
           catchError((error: any) => of(
-            ))
-          )
+          ))
         )
-      ),
-      {
-        dispatch: false
-      }
+      )
+    ),
+    {
+      dispatch: false
+    }
   );
 
   deleteUnitTree$ = createEffect(() =>
@@ -194,16 +202,16 @@ this.actions$.pipe(
       //this.store.dispatch(getOrganizationUnitMembers(data.organizationUnitId));
       this.alertService.showAlert('Success', 'Member added successfully', 'success');
 
-    }),
-      catchError((error: any) => of(
-      ))
-    )
-  )
-),
-{
-  dispatch: false
-}
-);
+        }),
+          catchError((error: any) => of(
+          ))
+        )
+      )
+    ),
+    {
+      dispatch: false
+    }
+  );
 
 // deleteMemberFromOrgUnit$ = createEffect(() =>
 //     this.actions$.pipe(

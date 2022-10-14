@@ -1,7 +1,7 @@
 ---
 slug: "/Accordion"
 date: "2019-05-04"
-title: "Accordion"
+title: "Elements > Accordion"
 ---
 
 <!-- CSS only -->
@@ -16,7 +16,7 @@ title: "Accordion"
 
 <!-- Basic -->
   <section class="py-4">
-    <h6>Basic</h6>
+    <h6>Default</h6>
     <div class="py-3">
       <div class="cust-tabs">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -30,24 +30,11 @@ title: "Accordion"
       </div>
       <div class="tab-content card border" id="myTabContent">
         <div class="tab-pane fade show active" id="PreviewBasic" role="tabpanel" aria-labelledby="PreviewBasic-tab">
-          <div class="contents bg-light p-5">
+          <div class="contents p-5">
             <div class="row">
-              <div class="col-md-5 col-12 mb-5">
-                <div class="accordion" id="accordionExample">
-                  <div class="accordion-item">
-                    <h2 class="accordion-header" id="heading1">
-                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
-                        Accordion Item #1
-                      </button>
-                    </h2>
-                    <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="heading1" data-bs-parent="#accordionExample" style="">
-                      <div class="accordion-body">
-                        <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <b> .accordion-body</b>, though the transition does limit overflow.
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <div class="col-md-12">
+                <img src="/images/accordion-basic.png" class="img-fluid">
+              </div>               
             </div>
           </div>
         </div>
@@ -93,30 +80,17 @@ title: "Accordion"
       </div>
       <div class="tab-content card border" id="myTabContent">
         <div class="tab-pane fade show active" id="PreviewOutlined" role="tabpanel" aria-labelledby="PreviewOutlined-tab">
-          <div class="contents bg-light p-5">
+          <div class="contents  p-5">
             <div class="row">
-              <div class="col-md-5 col-12 mb-5">
-                <div class="accordion outline" id="accordionExample2">
-                                                     <div class="accordion-item">
-                                                       <h2 class="accordion-header" id="heading2">
-                                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
-                                                           Accordion Item #1
-                                                         </button>
-                                                       </h2>
-                                                       <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2" data-bs-parent="#accordionExample2">
-                                                         <div class="accordion-body">
-                                                           <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <b>.accordion-body</b>, though the transition does limit overflow.
-                                                         </div>
-                                                       </div>
-                                                     </div>
-                                                   </div>
+               <div class="col-md-12">
+                  <img src="/images/accordion-basic.png" class="img-fluid">
+               </div>          
               </div>
-            </div>
           </div>
         </div>
         <div class="tab-pane fade show" id="AngularOutlined" role="tabpanel" aria-labelledby="AngularOutlined-tab">
-          <div class="contents bg-light">
-<div class="row bg-dark text-white m-0 p-4">
+          <div class="contents bg-code">
+    <div class="row m-0">
 
 ```html
 <rds-accordian [flush]="flush">
@@ -137,7 +111,52 @@ title: "Accordion"
         </div>
       </div>
     </div>
-  </section>
+</section>
+<!-- Accoradtion with product overview -->
+  <section class="py-4">
+    <h6>With Product Overview</h6>
+    <div class="py-3">
+      <div class="cust-tabs">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="PreviewOutlined-tab" data-bs-toggle="tab" data-bs-target="#productoverview" type="button" role="tab" aria-controls="PreviewOutlined" aria-selected="true">Preview </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="AngularOutlined-tab" data-bs-toggle="tab" data-bs-target="#productoverviewcode" type="button" role="tab" aria-controls="AngularOutlined" aria-selected="false"><i class="bi bi-code-slash" style="font-size:1.0rem"></i>Angular</button>
+          </li>
+        </ul>
+      </div>
+      <div class="tab-content card border" id="myTabContent">
+        <div class="tab-pane fade show active" id="productoverview" role="tabpanel" aria-labelledby="productoverview-tab">
+          <div class="contents  p-5">
+            <div class="row">
+               <div class="col-md-12">
+                  <img src="/images/accordion-product-overview.png" class="img-fluid">
+               </div>          
+              </div>
+          </div>
+        </div>
+        <div class="tab-pane fade show" id="productoverviewcode" role="tabpanel" aria-labelledby="productoverviewcode-tab">
+          <div class="contents bg-light">
+    <div class="row m-0">
+
+```html
+<rds-accordian [border]="true" [outline]="false" [id]="id">
+  <accordion-item title="Section 1 title" [accordionId]="id">
+    <h3>Custom</h3>
+  </accordion-item>
+  <accordion-item title="Section 2 title" [accordionId]="id">
+    <h3>Custom</h3>
+  </accordion-item>
+</rds-accordian>
+```
+
+</div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
 
 
 <!-- Skeleton / Specifications -->
@@ -150,7 +169,7 @@ title: "Accordion"
                               <div class="card border p-5">
                                  <div class="row">
                                     <div class="col-md-12">
-                                       <img src="https://portal.raaghu.io/images/components/_accordion/img-1.png" class="img-fluid">
+                                       <img src="/images/accoradtion-sketch.png" class="img-fluid">
                                     </div>
                                  </div>
                               </div>

@@ -6,11 +6,11 @@ export default {
   title: 'Charts/Doughnut Chart',
   component: RdsChartDoughnutComponent,
   argTypes: {
-    canvasBackgroundColor: { control: 'color' },
-    chartStyle: {
-      options: ['Dark', 'light'],
-      control: 'radio'
-    }
+    // canvasBackgroundColor: { control: 'color' },
+    // chartStyle: {
+    //   options: ['Dark', 'light'],
+    //   control: 'radio'
+    // }
   },
 
 } as Meta;
@@ -20,9 +20,9 @@ const Template: Story<RdsChartDoughnutComponent> = (args: RdsChartDoughnutCompon
 
 });
 
-export const Basic = Template.bind({});
-Basic.args = {
-  ChartDataSets: [
+export const Default = Template.bind({});
+Default.args = {
+  chartDataSets: [
     {
       label: 'Dataset 1',
       data: [20, 10, 30, 40],
@@ -46,7 +46,7 @@ Basic.args = {
     options: {
       responsive: true,
       maintainAspectRatio: false,
-    plugins: {
+      plugins: {
         legend: {
           position: 'top',
         },

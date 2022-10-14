@@ -27,9 +27,9 @@ const Template: Story<RdsCompShoppingCartProductComponent> = (args: RdsCompShopp
   }
 });
 
-export const basic = Template.bind({});
+export const Default = Template.bind({});
 
-basic.args = {
+Default.args = {
   role: 'basic',
   isCheckout: true,
   itemList:[
@@ -54,7 +54,7 @@ basic.args = {
 
       ,
       highlights: {
-        icon: 'check_mark',
+        icon: 'check',
         label: 'In Stock'
       },
 
@@ -103,7 +103,7 @@ basic.args = {
         { value: 10, displayText: 'Qty 10' }
       ],
       highlights: {
-        icon: 'check_mark',
+        icon: 'check',
         label: 'In Stock'
       },
 

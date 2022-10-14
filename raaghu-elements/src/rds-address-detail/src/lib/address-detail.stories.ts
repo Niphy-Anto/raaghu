@@ -1,4 +1,5 @@
 
+import { RdsIconModule } from '@libs/rds-icon';
 import { Story, Meta, moduleMetadata } from '@storybook/angular';
 import { RdsAddressDetailComponent } from './rds-address-detail.component';
 
@@ -8,7 +9,9 @@ export default {
   decorators: [
     moduleMetadata({
       declarations: [],
-      imports: [],
+      imports: [
+        RdsIconModule
+      ],
     }),
   ],
   argTypes: {},
@@ -18,8 +21,8 @@ const Template: Story<RdsAddressDetailComponent> = (args: RdsAddressDetailCompon
   props: args,
 });
 
-export const Basic = Template.bind({});
-Basic.args = {
+export const Default = Template.bind({});
+Default.args = {
   header: 'Address Header',
   addressLine1: 'Address Line 1',
   addressLine2: 'Address Line 2',

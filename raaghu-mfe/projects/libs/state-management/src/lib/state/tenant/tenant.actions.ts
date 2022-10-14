@@ -10,7 +10,7 @@ export const getTenantSuccess = createAction(
 );
 
 export const getTenantFailure = createAction(
-    '[Tenant Page] Get Languages Failure',
+    '[Tenant Page] Get Tenants Failure',
     props<{ error: string }>()
 );
 

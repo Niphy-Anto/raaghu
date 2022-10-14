@@ -3,14 +3,19 @@ import { Story, Meta, moduleMetadata } from '@storybook/angular';
 import { RdsColorComponent } from './rds-color.component';
 export default {
 
-  title: 'Elements/Color',
+  title: 'Elements/Color Switcher',
   component: RdsColorComponent,
   decorators: [
     moduleMetadata({
       imports: [],
     }),
   ],
-  argTypes: {},
+  argTypes: {
+    displaytype: {
+      options: ['rounded', 'square'],
+      control: { type: 'select' }
+    }
+  }
 } as Meta;
 
 const Template: Story<RdsColorComponent> = (args: RdsColorComponent) => ({
@@ -18,10 +23,11 @@ const Template: Story<RdsColorComponent> = (args: RdsColorComponent) => ({
 });
 
 
-export const Basic: Story<RdsColorComponent> = (args) => ({
+export const Default: Story<RdsColorComponent> = (args) => ({
   props: args,
 });
-Basic.args = {
+Default.args = {
+  displaytype:'rounded',
   header: 'Color',
   defaultValue: 1,
   itemList: [

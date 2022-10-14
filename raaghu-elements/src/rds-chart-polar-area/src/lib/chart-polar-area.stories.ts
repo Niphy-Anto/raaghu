@@ -5,11 +5,11 @@ export default {
   title: 'Charts/Polar Area Chart',
   component: RdsChartPolarAreaComponent,
   argTypes: {
-    canvasBackgroundColor: { control: 'color' },
-    chartStyle: {
-      options: ['Dark', 'light'],
-      control: 'radio'
-    }
+    // canvasBackgroundColor: { control: 'color' },
+    // chartStyle: {
+    //   options: ['Dark', 'light'],
+    //   control: 'radio'
+    // }
   },
 
 } as Meta;
@@ -19,9 +19,9 @@ const Template: Story<RdsChartPolarAreaComponent> = (args: RdsChartPolarAreaComp
 
 });
 
-export const Basic = Template.bind({});
-Basic.args = {
-  ChartDataSets: [
+export const Default = Template.bind({});
+Default.args = {
+  chartDataSets: [
     {
       label: 'Dataset 1',
       data: [100, 70, 80, 96, 87, 77],
@@ -40,7 +40,9 @@ Basic.args = {
   ],
   chartLabels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
   chartWidth: 400,
+  chartHeight:400,
   chartOptions: {
+    maintainAspectRatio:false,
     animation: {
       animateRotate: true,
       animateScale: false

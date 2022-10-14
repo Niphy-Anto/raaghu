@@ -1,7 +1,7 @@
 ---
 slug: "/collapse"
 date: "2019-05-04"
-title: "collapse"
+title: "Elements > Collapse"
 ---
 
 <!-- CSS only -->
@@ -9,12 +9,12 @@ title: "collapse"
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/style-elements.css">
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/main.css">
 
-#### Collapse Button
+#### Collapse
 
 <p class="checkbox-def">It is used to show and hide content. Buttons are used as triggers that are mapped to specific elements you toggle.</p>
 
 <section class="py-4">
-    <h6>Basic</h6>
+    <h6>Default</h6>
     <div class="py-3">
       <div class="cust-tabs">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -28,9 +28,11 @@ title: "collapse"
       </div>
       <div class="tab-content card border" id="myTabContent">
         <div class="tab-pane fade show active" id="PreviewBasic" role="tabpanel" aria-labelledby="PreviewBasic-tab">
-           <div class="contents bg-light p-5">
-              <div class="row">              
-              <img src="/images/collapse-basic.png" class="img-thumbnail w-50">
+           <div class="contents  p-5">
+              <div class="row">
+               <div class="col-md-12">
+                   <img src="/images/collapse-basic.png" class="img-fluid w-100">
+               </div>                           
            </div>
                        
   </div>
@@ -61,7 +63,7 @@ title: "collapse"
 
 
   <section class="py-4">
-    <h6>Collapse with Multiple-Target</h6>
+    <h6>Collapse with Multiple Target</h6>
     <div class="py-3">
       <div class="cust-tabs">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -73,17 +75,19 @@ title: "collapse"
           </li>
         </ul>
       </div>
-      <div class="tab-content card border" id="myTabContent">
+ <div class="tab-content card border" id="myTabContent">
         <div class="tab-pane fade show active" id="PreviewHorizontal" role="tabpanel" aria-labelledby="PreviewHorizontal-tab">
-          <div class="contents bg-light p-5">
-            <div class="row">
-              <div class="col-md-12 col-6">
-                <img src="/images/collapse-multiple-target.png" class="img-thumbnail w-50">
-              </div>
-          </div>
+           <div class="contents  p-5">
+              <div class="row">
+               <div class="col-md-12">
+                   <img src="/images/collapse-basic.png" class="img-fluid w-100">
+               </div>                           
+           </div>
+                       
+  </div>
         </div>
         <div class="tab-pane fade show" id="AngularHorizontal" role="tabpanel" aria-labelledby="AngularHorizontal-tab">
-<div class="contents bg-code">
+          <div class="contents bg-code">
 <div class="row  m-0 p-4">
 
 ```html
@@ -111,19 +115,17 @@ title: "collapse"
     </div>
   </section>
 
-  <section class="py-4">
+ <!-- Skeleton / Specifications -->
+<section class="py-4">
                         <h6>
                            Skeleton / Specifications
                         </h6>
                         <div class="py-3">
                               <!-- Tab panes -->
-                              <div class="">
+                              <div class="card border p-5">
                                  <div class="row">
-                                    <div class="col-md-6">
-                                       <img src="https://portal.raaghu.io/images/components/_collapse-button/img-1.png" class="img-fluid">
-                                    </div>
-                                    <div class="col-md-6 ">
-                                       <img src="https://portal.raaghu.io/images/components/_collapse-button/img-2.png" class="img-fluid">
+                                    <div class="col-md-12">
+                                       <img src="/images/collapse-skeleton.png" class="img-fluid">
                                     </div>
                                  </div>
                               </div>

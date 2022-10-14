@@ -1,6 +1,6 @@
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
-import { RdsButtonModule, RdsIconModule, RdsModalModule } from '@libs/rds-elements';
+import { RdsButtonModule, RdsIconModule, RdsLabelModule, RdsModalModule } from '@libs/rds-elements';
 import { RdsCompAlertPopupComponent } from './rds-comp-alert-popup.component';
 import { NgxTranslateModule } from '@libs/shared';
 
@@ -10,7 +10,7 @@ export default {
   decorators: [
     moduleMetadata({
       imports: [
-        FormsModule, ReactiveFormsModule, RdsButtonModule, RdsModalModule, NgxTranslateModule, RdsIconModule
+        FormsModule, ReactiveFormsModule, RdsButtonModule, RdsModalModule, NgxTranslateModule, RdsIconModule,RdsLabelModule
       ],
       providers: [
         FormBuilder
@@ -22,7 +22,7 @@ export default {
 const Template: Story<RdsCompAlertPopupComponent> = (args: RdsCompAlertPopupComponent) => ({
   props: args,
 });
-export const basic: Story<RdsCompAlertPopupComponent> = (args) => ({
+export const Default: Story<RdsCompAlertPopupComponent> = (args) => ({
   props: args,
   template:
     `    <rds-button [label]="'Delete'"
@@ -34,7 +34,7 @@ export const basic: Story<RdsCompAlertPopupComponent> = (args) => ({
     `,
 
 });
-basic.args = {
+Default.args = {
   
   alertData:  {
     iconUrl: "delete",

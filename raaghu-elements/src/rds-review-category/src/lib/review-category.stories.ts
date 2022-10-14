@@ -32,14 +32,14 @@ const Template: Story<RdsReviewCategoryComponent> = (args: RdsReviewCategoryComp
   props: args,
 });
 
-export const basic = Template.bind({});
-basic.args = {
+export const Default = Template.bind({});
+Default.args = {
   display_type:'Basic',
   item: {
     name: 'Jems Rock',
     date: new Date(),
     reviewRate: 4,
-    reviewTitle: 'dasfsdfdg',
+    reviewTitle: 'Very good and color also nice & fresh look',
     reviewSubTitle:'After a quick chat with support team, I had a good feeling about this shirt and ordered there of them.',
     description:'Less than 48 hours later, my delivery arrived. I have not worn anything else since that day! These shirts are so comfortable,yet look classy enough that I can wear them at work or even some formal events.Thank you!' 
   }

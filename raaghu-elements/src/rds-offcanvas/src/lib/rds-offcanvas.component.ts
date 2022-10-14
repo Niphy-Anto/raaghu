@@ -9,13 +9,14 @@ export class RdsOffcanvasComponent implements OnInit {
 
 
   @Input() buttonTitle = 'Button'
-  @Input() placement?: 'start' | 'end' | 'top' | 'bottom' = 'start';
-  @Input() backDrop?: boolean = true;
-  @Input() scrolling?: boolean = true;
+  @Input() placement: 'start' | 'end' | 'top' | 'bottom' = 'start';
+  @Input() backDrop: 'static' | true | false = 'static';
+  @Input() scrolling: boolean = false;
+  @Input() preventEscapeKey: boolean = false;
   @Input() offId = 'canvasExample';
   @Input() canvasTitle: string = '';
   @Input() offcanvaswidth = 250;
-  @Input() colorVariant?: 'light';
+  @Input() colorVariant: 'light' | 'primary' | 'secondary' | 'danger' | 'warning' = 'light';
   @Input() bodySpacing: boolean = true;
   @Output() onShow = new EventEmitter<Event>();
   @Output() onClose = new EventEmitter<Event>();
@@ -27,8 +28,8 @@ export class RdsOffcanvasComponent implements OnInit {
 
   public get classes(): string {
     let align = ` offcanvas offcanvas-${this.placement}`;
-    if (`${this.colorVariant}` !== undefined && `${this.colorVariant}` !== "" && `${this.colorVariant}` !== "undefined") {
-      align = align + ' offcanvas-bg-color ';
+    if (this.colorVariant !== undefined) {
+      align = align + ' text-bg-' + this.colorVariant;
     }
     return align;
   }

@@ -3,10 +3,10 @@
 @import "./node_modules/bootstrap/scss/mixins";
 @import "./node_modules/bootstrap/scss/_utilities";
 
+
 html {
   $theme-colors: ("primary": $primary, "secondary": $secondary, "success": $success, "info": $info, "warning": $warning, "danger": $danger, "light": $light, "dark": $dark ) !default;
   $min-contrast-ratio: 4.5 !default;
-
   $input-focus-border-color: tint-color($primary, 50%) !default;
   $input-bg: $body-bg !default;
 
@@ -195,11 +195,110 @@ html {
   $card-bg-color: $white !default;
   $card-border-color: $gray-200 !default;
   --bs-body-color: gray;
+  $datepicker-bg: $white !default;
+  $datepicker-head: $white !default;
+  $notification-header-bg: $light !default;
+  $input-group-addon-bg: $input-bg;
+
+  .notification-header {
+    background-color: $notification-header-bg;
+  }
+
+  .bs-datepicker-head {
+    background-color: $datepicker-head;
+  }
+
+  .dropdown-divider {
+    margin: 0rem 0;
+    border-bottom: 1px solid $gray-200;
+  }
+
+
+  .date-picker .date-picker-c {
+    border: 1px solid $gray-200;
+  }
+
+  .dropdown-item.active {
+    background-color: tint-color($primary, 90%);
+    color:$primary;
+
+    span.hr-line {
+      color: $primary;
+      background-color: $primary;
+    }
+  }
+
+  .bs-datepicker button:active,
+  .bs-datepicker-body table td span.selected,
+  .bs-datepicker-body table td.selected span,
+  .bs-datepicker-body table td span[class*="select-"]:after,
+  .bs-datepicker-body table td[class*="select-"] span:after,
+  .bs-datepicker-body table td.active-week span:hover {
+    background-color: $primary;
+    color: $white;
+  }
+
+  .bs-datepicker-body table td.week span {
+    color: $gray-300;
+  }
+
+  .bs-datepicker-body {
+
+    .days.weeks {
+
+      span.in-range:not(.select-start):before {
+        background: tint-color($primary, 50%);
+      }
+    }
+
+    table {
+
+      th {
+        color: #999999;
+      }
+
+      td {
+        color: #212529;
+
+
+        .is-highlighted:not(.disabled):not(.selected) span, span.is-highlighted:not(.disabled):not(.selected) {
+          background-color: #5c82e3;
+          color: #fff;
+        }
+
+        .custom-today-class {
+          background-color: $primary;
+          color: #fff;
+        }
+      }
+    }
+
+    .months span.selected {
+      background-color: #ed585f;
+      color: #fff;
+    }
+
+    .years span.selected {
+      background-color: #ed585f;
+      color: #fff;
+    }
+  }
+
 
   .form-select[size]:not([size="1"]) {
     padding-right: 1.25rem;
     background-position: right 0.15rem center;
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+  }
+
+  .profileMenu {
+    background-color: $light;
+  }
+
+
+
+  .login {
+    color: #212529;
   }
 
   .rds-scrollable-wrapper {
@@ -546,7 +645,6 @@ html {
 
   .dropdown-item {
     border-bottom-color: $dropdown-border-bottom;
-    white-space: normal;
 
     &:hover {
       // background-color: $dropdown-bg-color;
@@ -614,7 +712,20 @@ html {
           width: 22px;
           height: 22px;
           fill: none;
-          stroke: currentColor;
+          stroke: $gray-700;
+
+          polyline.icon {
+            stroke: $gray-700;
+          }
+
+          polygon.icon {
+            stroke: $gray-700;
+          }
+
+
+          ellipse.icon {
+            stroke: $gray-700;
+          }
 
           path.icon {
             stroke: $gray-700;
@@ -639,7 +750,19 @@ html {
           width: 22px;
           height: 22px;
           fill: none;
-          stroke: currentColor;
+          stroke: $primary;
+
+          polyline.icon {
+            stroke: $primary;
+          }
+
+          polygon.icon {
+            stroke: $primary;
+          }
+
+          ellipse.icon {
+            stroke: $primary;
+          }
 
           path.icon {
             stroke: $primary;
@@ -726,7 +849,19 @@ html {
             width: 22px;
             height: 22px;
             fill: none;
-            stroke: currentColor;
+            stroke: $gray-700;
+
+            polyline.icon {
+              stroke: $gray-700;
+            }
+
+            polygon.icon {
+              stroke: $gray-700;
+            }
+
+            ellipse.icon {
+              stroke: $gray-700;
+            }
 
             path.icon {
               stroke: $gray-700;
@@ -741,6 +876,10 @@ html {
             }
 
             circle.icon {
+              stroke: $gray-700;
+            }
+
+            ellipse.icon {
               stroke: $gray-700;
             }
           }
@@ -753,7 +892,19 @@ html {
             width: 22px;
             height: 22px;
             fill: none;
-            stroke: currentColor;
+            stroke: $primary;
+
+            polyline.icon {
+              stroke: $primary;
+            }
+
+            polygon.icon {
+              stroke: $primary;
+            }
+
+            ellipse.icon {
+              stroke: $primary;
+            }
 
             path.icon {
               stroke: $primary;
@@ -768,6 +919,10 @@ html {
             }
 
             circle.icon {
+              stroke: $primary;
+            }
+
+            ellipse.icon {
               stroke: $primary;
             }
           }
@@ -1006,7 +1161,19 @@ html {
         width: 22px;
         height: 22px;
         fill: none;
-        stroke: currentColor;
+        stroke: $color;
+
+        polygon.icon {
+          stroke: $color;
+        }
+
+        polyline.icon {
+          stroke: $color;
+        }
+
+        ellipse.icon {
+          stroke: $color;
+        }
 
         path.icon {
           stroke: $color;
@@ -1040,7 +1207,19 @@ html {
         width: 22px;
         height: 22px;
         fill: none;
-        stroke: currentColor;
+        stroke: $color;
+
+        polygon.icon {
+          stroke: $color;
+        }
+
+        polyline.icon {
+          stroke: $color;
+        }
+
+        ellipse.icon {
+          stroke: $color;
+        }
 
         path.icon {
           stroke: $color;
@@ -1079,7 +1258,19 @@ html {
         width: 22px;
         height: 22px;
         fill: none;
-        stroke: currentColor;
+        stroke: $alert-color;
+
+        polyline.icon {
+          stroke: $alert-color;
+        }
+
+        polygon.icon {
+          stroke: $alert-color;
+        }
+
+        ellipse.icon {
+          stroke: $alert-color;
+        }
 
         path.icon {
           stroke: $alert-color;
@@ -1113,7 +1304,7 @@ html {
   }
 
   .theme-green .bs-datepicker-body table td span.selected {
-    background-color: #5c82e3;
+    background-color: $primary;
   }
 
   html #sidebar ul li a.active small {
@@ -1155,7 +1346,19 @@ html {
         width: 22px;
         height: 22px;
         fill: none;
-        stroke: currentColor;
+        stroke: $icon-color;
+
+        polyline.icon {
+          stroke: $icon-color;
+        }
+
+        polygon.icon {
+          stroke: $icon-color;
+        }
+
+        ellipse.icon {
+          stroke: $icon-color;
+        }
 
         path.icon {
           stroke: $icon-color;
@@ -1183,10 +1386,10 @@ html[theme=dark] {
 
   $input-focus-border-color: tint-color($primary, 50%) !default;
 
-  $border-color: $gray-800;
+  $border-color: $gray-700 !default;
 
   $btn-close-width: 1em !default;
-  $btn-close-color: $gray-100 !default;
+  $btn-close-color: $gray-900 !default;
   $btn-close-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$btn-close-color}'><path d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/></svg>") !default;
 
   /*accordion color variables*/
@@ -1304,7 +1507,7 @@ html[theme=dark] {
   /*input search properrties*/
   $input-bg: $dark-100;
   $input-border-color: $input-bg;
-  $form-select-bg: $input-bg;
+  $form-select-bg: $input-bg !default;
   $form-select-border-color: $input-bg;
 
   $form-group-bg-color: $gray-200 !default;
@@ -1390,13 +1593,37 @@ html[theme=dark] {
   $profileMenuBgColor: #252839 !default;
   $trhoverbg-color: $dark-400 !default;
   $nav-li-border: $white !default;
+  $datepicker-bg: $gray-800 !default;
+  $datepicker-head: $gray-800 !default;
 
   .sidenav-footer {
     background-color: $body-wrapper-bg;
   }
 
+  .date-picker .date-picker-c {
+    border: 1px solid $gray-700;
+  }
+
+  .bs-datepicker-body {
+
+    .days.weeks {
+
+      span.in-range:not(.select-start):before {
+        background: tint-color($primary, 20%);
+      }
+    }
+  }
+
+  .bs-datepicker-head {
+    background-color: $datepicker-head;
+  }
+
+  .profileMenu {
+    background-color: $offcanvasbg;
+  }
+
   .form-select[size]:not([size="1"]) {
-    border-color: $input-bg;
+    border-color: tint-color($input-border-color, 60%);
     padding-right: 1.25rem;
     background-position: right 0.15rem center;
     background-color: $input-bg;
@@ -1410,6 +1637,25 @@ html[theme=dark] {
     .card-header {
       background-color: transparent;
     }
+  }
+
+  .dropdown-item.active {
+    background-color: tint-color($gray-900, 10%);
+
+
+    span.hr-line {
+      color: $primary;
+      background-color: $primary;
+    }
+  }
+
+  .date-picker .dropdown-item.active, .date-picker .dropdown-item:active {
+    color: $white;
+  }
+
+  .dropdown-divider {
+    margin: 0rem 0;
+    border-bottom: 1px solid $gray-700;
   }
 
   .navbar {
@@ -1844,7 +2090,19 @@ html[theme=dark] {
       .nav-link {
         svg {
           fill: none;
-          stroke: currentColor;
+          stroke: $gray-700;
+
+          polyline.icon {
+            stroke: $gray-700;
+          }
+
+          polygon.icon {
+            stroke: $gray-700;
+          }
+
+          ellipse.icon {
+            stroke: $gray-700;
+          }
 
           path.icon {
             stroke: $gray-700;
@@ -1870,7 +2128,19 @@ html[theme=dark] {
 
         svg {
           fill: none;
-          stroke: currentColor;
+          stroke: $primary;
+
+          polyline.icon {
+            stroke: $primary;
+          }
+
+          polygon.icon {
+            stroke: $primary;
+          }
+
+          ellipse.icon {
+            stroke: $primary;
+          }
 
           path.icon {
             stroke: $primary;
@@ -1975,7 +2245,19 @@ html[theme=dark] {
 
           svg {
             fill: none;
-            stroke: currentColor;
+            stroke: $gray-700;
+
+            polyline.icon {
+              stroke: $gray-700;
+            }
+
+            polygon.icon {
+              stroke: $gray-700;
+            }
+
+            ellipse.icon {
+              stroke: $gray-700;
+            }
 
             path.icon {
               stroke: $gray-700;
@@ -1990,6 +2272,10 @@ html[theme=dark] {
             }
 
             circle.icon {
+              stroke: $gray-700;
+            }
+
+            ellipse.icon {
               stroke: $gray-700;
             }
           }
@@ -2005,9 +2291,17 @@ html[theme=dark] {
 
           svg {
             fill: none;
-            stroke: currentColor;
+            stroke: $primary;
 
-            * {
+            polyline.icon {
+              stroke: $primary;
+            }
+
+            polygon.icon {
+              stroke: $primary;
+            }
+
+            ellipse.icon {
               stroke: $primary;
             }
 
@@ -2024,6 +2318,10 @@ html[theme=dark] {
             }
 
             circle.icon {
+              stroke: $primary;
+            }
+
+            ellipse.icon {
               stroke: $primary;
             }
           }
@@ -2294,7 +2592,19 @@ html[theme=dark] {
 
       svg {
         fill: none;
-        stroke: currentColor;
+        stroke: $color;
+
+        polyline.icon {
+          stroke: $color;
+        }
+
+        polygon.icon {
+          stroke: $color;
+        }
+
+        ellipse.icon {
+          stroke: $color;
+        }
 
         path.icon {
           stroke: $color;
@@ -2331,7 +2641,19 @@ html[theme=dark] {
     .alert {
       svg {
         fill: none;
-        stroke: currentColor;
+        stroke: $alert-color;
+
+        polyline.icon {
+          stroke: $alert-color;
+        }
+
+        polygon.icon {
+          stroke: $alert-color;
+        }
+
+        ellipse.icon {
+          stroke: $alert-color;
+        }
 
         path.icon {
           stroke: $alert-color;
@@ -2393,12 +2715,6 @@ html[theme=dark] {
     background-color: transparent;
   }
 
-  .form-control {
-    background-color: $input-bg;
-    border: $input-border-color;
-    color: $white;
-  }
-
   .form-select {
     /*    background-color: $form-select-bg;
     border-color: $form-select-bg;*/
@@ -2406,8 +2722,6 @@ html[theme=dark] {
   }
 
   .input-group-text {
-    background-color: $input-group-addon-bg;
-    border-color: $input-group-addon-border-color;
     color: $white;
   }
 
@@ -2448,7 +2762,7 @@ html[theme=dark] {
   }
 
   .bs-datepicker {
-    background: #333D6A;
+    background-color: $datepicker-bg;
   }
 
   .theme-green .bs-datepicker-head {

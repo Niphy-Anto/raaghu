@@ -19,9 +19,9 @@ const Template: Story<RdsChartBubbleComponent> = (args: RdsChartBubbleComponent)
 
 });
 
-export const Basic = Template.bind({});
-Basic.args = {
-  ChartDataSets: [
+export const Default = Template.bind({});
+Default.args = {
+  chartDataSets: [
     {
       label: 'Dataset 1',
       data: [90, 97, 20, 30, 40, 50, 60, 70],
@@ -37,9 +37,11 @@ Basic.args = {
   ],
   chartLabels: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
   chartWidth: 500,
+  chartHeight:400,
   chartOptions: {
     responsive: true,
     radius: 10,
+    maintainAspectRatio: false,
     pointStyle: 'triangle',
     plugins: {
 
