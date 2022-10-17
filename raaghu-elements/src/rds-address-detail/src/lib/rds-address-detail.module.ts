@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RdsIconModule } from '@libs/rds-icon';
+import { RdsCardModule } from '../../../root/public-api';
 import { RdsAddressDetailComponent } from './rds-address-detail.component';
 
 
@@ -9,7 +10,8 @@ import { RdsAddressDetailComponent } from './rds-address-detail.component';
     RdsAddressDetailComponent
   ],
   imports: [
-    RdsIconModule
+    RdsIconModule,
+    RdsCardModule,
   ],
   exports: [
     RdsAddressDetailComponent

@@ -27,26 +27,26 @@
 
             <div class="excel-btn m-1">
 
-                <div class="row">
-
-                    <div class="col-md-2 mb-3 sm-p-0 sm-block d-flex align-items-center">
+                <div class="d-flex gap-4 align-items-center sm-block">
+                    <div class="mb-3 sm-p-0 sm-block d-flex align-items-center">
                         <rds-datepicker name="date-picker" [style]="'cursor:pointer'" [label]="''" [placeholder]="translate.instant('Start Date')"
                             (change)="startDateModify($event)" [(ngModel)]="startDate" [value]="startDate"
                             floatinginputLabel="">
                         </rds-datepicker>
                     </div>
-                    <div class="col-md-2 mb-3 sm-p-0 sm-block d-flex align-items-center">
+
+                    <div class="mb-3 sm-p-0 sm-block d-flex align-items-center">
                         <rds-datepicker name="date-picker" [style]="'cursor:pointer'" [label]="''" [placeholder]="translate.instant('End Date')"
                             (change)="endDateModify($event)" [(ngModel)]="endDate" [value]="endDate"
                             floatinginputLabel="">
                         </rds-datepicker>
                     </div>
-                    <div class="col-md-2 mb-3 sm-p-0 sm-block mt-1 d-flex align-items-center">
+                    <div class="mb-3 sm-p-0 sm-block mt-1 d-flex align-items-center">
                         <rds-input size="default" [inputType]="" [Title]="" [(ngModel)]="user"
                             [placeholder]="translate.instant('User')" id="txtUsername" (change)="userModify($event)"
                             floatinginputLabel="" ngDefaultControl name="userName"></rds-input>
                     </div>
-                    <div class="col-md-3 d-flex align-items-center sm-p-0">
+                    <div class="d-flex align-items-center sm-p-0 mb-3">
                         <rds-checkbox [disabled]="false" [label]="translate.instant('Advanced Filters')" [checked]=""
                             [withLabel]="true" [switch]="false" [inline]="false" [id]="'rememeberMe'"
                             (onChange)="showAdvancedFilter()">
@@ -116,6 +116,7 @@
 
         <div class="tab-pane fade" id="change-logs" role="tabpanel" aria-labelledby="nav-home-tab">
             <div class="m-1">
+
                 <div class="row">
                     <div class="col-md-2 sm-p-0 d-flex align-items-center">
                         <rds-datepicker name="date-picker" [style]="'cursor:pointer'" [label]="''" [placeholder]="translate.instant('Date Range')"
@@ -123,14 +124,15 @@
                             [value]="changeLogStartdate">
                         </rds-datepicker>
                     </div>
+
                     <div class="col-md-2 sm-p-0 d-flex align-items-center">
-                        <rds-datepicker name="date-picker" [style]="'cursor:pointer'" [label]="''" [placeholder]="translate.instant('Date Range')"
+                        <rds-datepicker name="date-picker" [style]="'cursor:pointer'" [label]="''" [placeholder]="translate.instant('Date Range')"               
                             (change)="changelogefiltermodify($event)" [(ngModel)]="changeLogEndDate"
                             [value]="changeLogEndDate">
                         </rds-datepicker>
                     </div>
 
-                    <div class="col-md-2 sm-p-0 d-flex align-items-center">
+                    <div class="sm-p-0 mb-3">
                         <rds-input size="default" [inputType]="" [Title]="" [(ngModel)]="changeLogUsername"
                             [placeholder]="translate.instant('User name')" id="txtchangeLogUsername"
                             floatinginputLabel="" ngDefaultControl name="changeLogUsername"></rds-input>
@@ -140,8 +142,8 @@
                             id="txtUsername"   (change)="userModify($event)"  floatinginputLabel="" ngDefaultControl name="userName"></rds-input>
                     </div> -->
                     
-                    <div class="col-md-3 sm-p-0 mt-2 d-flex align-items-center">
-                        <rds-select-list class="w-75" [(ngModel)]="status" (selectListChange)="exceptionModify($event)" [value]="status"
+                    <div class="sm-p-0 mt-2 d-flex align-items-center mb-3">
+                        <rds-select-list class="w-100" [(ngModel)]="status" (selectListChange)="exceptionModify($event)" [value]="status"
                         ngDefaultControl name="Property"
                         [itemList]="statusList">
 
