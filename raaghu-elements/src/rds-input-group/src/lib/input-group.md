@@ -9,9 +9,9 @@ title: "Elements > Input-Group"
 
 
 
-#### Input-Group
+#### Input Group
 
-<p class="">A card is a small rectangular module with images and text. It is an entry point for users to learn more details</p>
+<p class="">Input group is an input field with a button placed at the end of it.</p>
 <section class="py-4">
     <h6>Default</h6>
     <div class="py-3">

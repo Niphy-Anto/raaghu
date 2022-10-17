@@ -10,7 +10,7 @@ title: "Elements > Double-range"
 
 #### Double Range
 
-<p class="">A card is a small rectangular module with images and text. It is an entry point for users to learn more details</p>
+<p class="">Double Range allows an user to specify a numerical value from the given range using the slider.</p>
 <section class="py-4">
     <h6>Default</h6>
     <div class="py-3">

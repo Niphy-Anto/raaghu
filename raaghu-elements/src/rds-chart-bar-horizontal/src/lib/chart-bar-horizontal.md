@@ -9,7 +9,7 @@ title: "Charts > Chart-Bar-Horizontal"
 
 #### Bar Chart
 
-<p class="">A card is a small rectangular module with images and text. It is an entry point for users to learn more details</p>
+<p class="">Horizontal charts are series of horizontals bars extending along the x-axis measuring the size of the observation they represent. It is commonly used to compare the observations against a fixed parameter.</p>
 
 <!-- Bar Chart with Border Radius -->
 

@@ -9,7 +9,7 @@ title: "Components > Alert-Popup"
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/style-elements.css">
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/main.css">
 
-#### Alert-Popup
+#### Alert Popup
 
  <section class="py-4">
     <h6>Default</h6>

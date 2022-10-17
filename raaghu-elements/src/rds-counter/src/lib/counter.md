@@ -11,8 +11,7 @@ title: "Elements > Counter"
 
 #### Counter
 
-<p class="checkbox-def">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore sdavavfgsv</p>
-
+<p class="checkbox-def">Counter helps in specifying the required product quantity for an user.</p>
 
 <section class="py-4">
     <h6>Default</h6>

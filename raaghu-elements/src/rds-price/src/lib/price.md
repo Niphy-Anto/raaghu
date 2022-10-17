@@ -12,6 +12,7 @@ title: "Elements > Price"
 
 #### Price
 
+<p class="">Price your products and discounted price using the price element.</p>
 <section class="py-4">
     <h6>Default</h6>
     <div class="py-3">
