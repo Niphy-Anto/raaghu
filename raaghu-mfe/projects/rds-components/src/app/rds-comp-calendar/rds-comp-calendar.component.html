@@ -19,6 +19,7 @@
         [(viewDate)]="viewDate"
         (viewDateChange)="closeOpenMonthViewDay()"
         [icon]="'chevron_left'"
+        [roundedButton]="true"
         [iconHeight]="'18px'"
         [iconWidth]="'18px'"
       >
@@ -34,6 +35,7 @@
         (viewDateChange)="closeOpenMonthViewDay()"
         [icon]="'chevron_right'"
         [iconHeight]="'18px'"
+        [roundedButton]="true"
         [iconWidth]="'18px'"
       >
       </rds-button>
@@ -92,7 +94,6 @@
     [viewDate]="viewDate"
     [events]="events"
     [refresh]="refreshed"
-    [activeDayIsOpen]="activeDayIsOpen"
     (dayClicked)="dayClicked($event.day)"
     (eventClicked)="handleEvent('Clicked', $event.event)"
     (eventTimesChanged)="eventTimesChanged($event)"
@@ -196,7 +197,6 @@
       </rds-button>
       <rds-button
         [label]="translate.instant('Delete Event')"
-        *ngIf="selectedId"
         [disabled]="!eventCreationForm.valid"
         [colorVariant]="'danger'"
         [outlineButton]="true"
