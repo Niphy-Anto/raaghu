@@ -33,7 +33,7 @@ title: "Elements > Website-Metric"
          <div class="contents p-5">
             <div class="row">
               <div class="col-md-12">
-                <img src="/images/website-metric.png" class=" img-fluid w-100">
+                <img src="/images/website-metric.png" class=" img-fluid w-50">
               </div>
             </div>
           </div>
@@ -43,7 +43,10 @@ title: "Elements > Website-Metric"
 <div class="row m-0">
 
 ```html
-<rds-website-metric [item]="item"></rds-website-metric>
+<rds-website-metric
+  [item]="item"
+  display_type="metric_type1"
+></rds-website-metric>
 ```
 
 </div>
@@ -54,7 +57,7 @@ title: "Elements > Website-Metric"
   </section>
 
   <section class="py-4">
-    <h6>Type 1</h6>
+    <h6>Type 2</h6>
     <div class="py-3">
       <div class="cust-tabs">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -81,7 +84,10 @@ title: "Elements > Website-Metric"
 <div class="row m-0">
 
 ```html
-<rds-website-metric [item]="item"></rds-website-metric>
+<rds-website-metric
+  [item]="item"
+  display_type="metric_type2"
+></rds-website-metric>
 ```
 
 </div>
@@ -109,7 +115,7 @@ title: "Elements > Website-Metric"
          <div class="contents p-5">
             <div class="row">
               <div class="col-md-12">
-                <img src="/images/website-metric-3.png" class=" img-fluid w-100">
+                <img src="/images/website-metric-3.png" class=" img-fluid w-50">
               </div>
             </div>
           </div>
@@ -119,7 +125,10 @@ title: "Elements > Website-Metric"
 <div class="row m-0">
 
 ```html
-<rds-website-metric [item]="item"></rds-website-metric>
+<rds-website-metric
+  [item]="item"
+  display_type="metric_type3"
+></rds-website-metric>
 ```
 
 </div>
@@ -147,7 +156,7 @@ title: "Elements > Website-Metric"
          <div class="contents p-5">
             <div class="row">
               <div class="col-md-12">
-                <img src="/images/website-metric-4.png" class=" img-fluid w-100">
+                <img src="/images/website-metric-4.png" class=" img-fluid w-50">
               </div>
             </div>
           </div>
@@ -157,7 +166,10 @@ title: "Elements > Website-Metric"
 <div class="row m-0">
 
 ```html
-<rds-website-metric [item]="item"></rds-website-metric>
+<rds-website-metric
+  [item]="item"
+  display_type="metric_type4"
+></rds-website-metric>
 ```
 
 </div>
@@ -185,7 +197,7 @@ title: "Elements > Website-Metric"
          <div class="contents p-5">
             <div class="row">
               <div class="col-md-12">
-                <img src="/images/website-metric-5.png" class=" img-fluid w-100">
+                <img src="/images/website-metric-5.png" class=" img-fluid w-50">
               </div>
             </div>
           </div>
@@ -195,7 +207,10 @@ title: "Elements > Website-Metric"
 <div class="row m-0">
 
 ```html
-<rds-website-metric [item]="item"></rds-website-metric>
+<rds-website-metric
+  [item]="item"
+  display_type="metric_type5"
+></rds-website-metric>
 ```
 
 </div>
@@ -233,7 +248,10 @@ title: "Elements > Website-Metric"
 <div class="row m-0">
 
 ```html
-<rds-website-metric [item]="item"></rds-website-metric>
+<rds-website-metric
+  [item]="item"
+  display_type="metric_type6"
+></rds-website-metric>
 ```
 
 </div>

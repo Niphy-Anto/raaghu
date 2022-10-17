@@ -32,7 +32,7 @@ title: "Elements > Video-player"
          <div class="contents p-5">
             <div class="row">
               <div class="col-md-12">
-                <img src="/images/video-player.png" class="img-fuild w-25">
+                <img src="/images/video-player.png" class="img-fuild w-100">
               </div>
             </div>
           </div>

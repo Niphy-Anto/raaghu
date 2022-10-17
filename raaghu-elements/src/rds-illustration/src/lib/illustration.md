@@ -11,7 +11,7 @@ title: "Elements > Illustration"
 
 #### Illustrations
 
-<p class="checkbox-def"></p>
+<p class="checkbox-def">Illustration is used when the no selections are made by user.</p>
 
 <section class="py-4">
     <h6>Default</h6>
