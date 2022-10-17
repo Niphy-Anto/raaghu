@@ -19,6 +19,7 @@ export class RdsCompLanguageTextListComponent implements OnInit {
   baselanguage: string;
   TargetCulturename: string
   source: string
+  viewCanvas:boolean;
   targetValue: string;
   languagetextTableHeader: TableHeader[] = [
     { displayName: 'Key', key: 'Key', dataType: 'text', dataLength: 30, sortable: true, required: true },

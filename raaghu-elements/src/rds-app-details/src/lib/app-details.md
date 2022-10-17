@@ -12,7 +12,7 @@ title: "Elements > App-Details"
 
 #### App Details
 
-<p class=""></p>
+<p class="">App Details helps an user to showcase deatils of the app integration for the webpage.</p>
 <section class="py-4">
     <h6>Default</h6>
     <div class="py-3">
@@ -42,7 +42,7 @@ title: "Elements > App-Details"
 <div class="row m-0">
 
 ```html
-   <rds-app-details [item]="item"></rds-app-details>
+  <rds-app-details [item]="item"></rds-app-details>
 ```
 </div>
 </div>
