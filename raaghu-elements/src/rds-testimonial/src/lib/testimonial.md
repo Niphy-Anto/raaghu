@@ -12,7 +12,7 @@ title: "Elements > Testimonial"
 
 #### Testimonial
 
-<p class="checkbox-def">Avatar is known as a visual form representing a user oneself and one's identity wished.</p>
+<p class="checkbox-def">Testimonial is way to showcase testimony of the users.</p>
 
 <!-- Basic -->
 <section class="py-4">
