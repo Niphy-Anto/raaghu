@@ -390,7 +390,6 @@
   display: block;
   position: absolute;
   color: white;
-  max-width: 3.3%;
   background: #5c82e3;
   border-top: 0;
   border-left: 0;
@@ -400,6 +399,9 @@
   z-index: 1;
   padding-left: 6px;
   margin-left: -7px;
+  width: 39px;
+    text-align: center;
+    max-width: 100%;
 }
 
 
@@ -442,7 +444,7 @@
   width: 8px;
   height: 8px;
   left: 10px;
-  bottom: 29px;
+  bottom: 26px;
   transform: rotate(225deg);
 }
 .val1PositionType2 {
