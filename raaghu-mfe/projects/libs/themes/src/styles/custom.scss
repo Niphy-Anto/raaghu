@@ -425,7 +425,7 @@ html[theme=light] {
 .rds-scrollable-wrapper {
   width: 100%;
   padding-right: 20px;
-  height: calc(100vh - 57px) !important;
+  height: 100vh !important;
   overflow: auto;
   overflow-x: hidden;
 }
