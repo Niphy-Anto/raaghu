@@ -1,7 +1,9 @@
 ---
-slug: "/comp-dynamic-entity-properties"
+
+slug: "/comp-dynamic-enity-properties"
 date: "2019-05-04"
-title: "Components > dynamic-entity-properties"
+title: "Components > dynamic-enity-properties"
+
 ---
 
 <!-- CSS only -->

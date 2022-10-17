@@ -9,7 +9,7 @@ title: "Components > Claims"
 
 #### Claims
 
-<p class="">A card is a small rectangular module with images and text. It is an entry point for users to learn more details</p>
+<p>Provides a multiple checkboxes with the range of selection alphabetically</p>
 <section class="py-4">
     <h6>Default</h6>
     <div class="py-3">
