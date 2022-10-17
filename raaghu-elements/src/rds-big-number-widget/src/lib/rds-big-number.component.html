@@ -1,10 +1,30 @@
-<div class="card border-0" [ngClass]="classes">
-  <div [ngClass]="alignclasses">
-    <h1>{{bigNumber}}</h1>
-    <h6 [ngClass]="subTitleClasses">
-      <rds-icon *ngIf="icon" class="ms-1" [name]="icon" [fill]="iconFill" [stroke]="iconStroke" [colorVariant]="iconColor"
-        [height]="iconHeight" [width]="iconWidth"></rds-icon>
-      {{subText}}
-    </h6>
+<ng-container [ngSwitch]="role">
+  <div class="card border-0" [ngClass]="classes" *ngSwitchCase="'basic'">
+    <div [ngClass]="alignclasses">
+      <h1>{{bigNumber}}</h1>
+      <h6 [ngClass]="subTitleClasses">
+        <rds-icon *ngIf="icon" class="ms-1" [name]="icon" [fill]="iconFill" [stroke]="iconStroke"
+          [colorVariant]="iconColor" [height]="iconHeight" [width]="iconWidth"></rds-icon>
+        {{subText}}
+      </h6>
+    </div>
   </div>
-</div>
+  <div class="border-top  border-3 border-{{subTitleColorVariant}} d-flex justify-content-center align-items-center big-number p-3 gap-4"
+    *ngSwitchCase="'advanced'">
+    <!-- <div [ngClass]="alignclasses" class="row"> -->
+    <div class="">
+      <div class="fs-1 text-center">
+        <p class="mb-0"><b>{{bigNumber}}</b></p>
+        <p [ngClass]="subTitleClasses" class="fs-6 mb-0">
+          {{subText}}
+        </p>
+      </div>
+      
+    </div>
+    <div class="">
+      <div class="align-items-center justify-content-center d-flex">
+        <ng-content></ng-content>
+      </div>
+    </div>
+  </div>
+</ng-container>
