@@ -38,15 +38,6 @@ title: "Components > Forgot-password"
 <div class="row m-0">
 
 ```html
-<rds-forgot-password>
-[mailID]=""
-[Email]=""
-[buttonColorType]=""
-[buttonLabel]=""
-[loginRouterLink]=""
-[resendLink]=""
-[showMailSuccess]=""
-</rds-forgot-password>
 ```
 </div>
 </div>

@@ -9,7 +9,7 @@ title: "Components > Download-collection"
 
 #### Download collection
 
-<p></p>
+<p>Provies a set of dates</p>
 <section class="py-4">                                                                                             
     <div class="py-3">
       <div class="cust-tabs">

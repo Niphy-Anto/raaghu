@@ -1,7 +1,7 @@
 ---
 slug: "/comp-tenant-list-new"
 date: "2019-05-04"
-title: "Pages > Tenant-list-new"
+title: "Components > Tenant-list-new"
 ---
 
 <!-- CSS only -->
@@ -10,8 +10,8 @@ title: "Pages > Tenant-list-new"
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/main.css">
 
 #### Tenant-list-new
-        <div class="ps-5">
+<div class="ps-5">
             <h3>The component is currently down under construction</h3>
             <img src="\images\under-construction.png" class="img-fluid ps-5">
-        </div>
+ </div>
   </section>
