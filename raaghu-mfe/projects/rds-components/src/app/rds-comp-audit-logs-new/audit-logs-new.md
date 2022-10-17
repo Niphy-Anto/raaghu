@@ -1,7 +1,7 @@
 ---
-slug: "/comp-account-new"
+slug: "/comp-audit-logs-new"
 date: "2019-05-04"
-title: "Components > Account-New"
+title: "Components > audit-logs-new"
 ---
 
 <!-- CSS only -->
@@ -9,7 +9,7 @@ title: "Components > Account-New"
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/style-elements.css">
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/main.css">
 
-#### Account New
+#### Audit-logs-new
 
  <section class="py-5">
         <div class="ps-5">

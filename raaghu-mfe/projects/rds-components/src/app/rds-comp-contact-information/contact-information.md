@@ -9,9 +9,8 @@ title: "Components > Contact-Information"
 
 #### Contact-Information
 
-<p class="">A card is a small rectangular module with images and text. It is an entry point for users to learn more details</p>
+<p>Requires a necessary personal details from a person and acceptance of the terms and conditions</p>
 <section class="py-4">
-    <h6>Contact-Information</h6>
     <div class="py-3">
       <div class="cust-tabs">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
