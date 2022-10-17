@@ -9,7 +9,7 @@ title: "Componets > Plan-information"
 
 #### Plan Information
 
-<p class="">A card is a small rectangular module with images and text. It is an entry point for users to learn more details</p>
+<p>It gives details on the duration of a subscription</p>
 <section class="py-4">
     <h6>Default</h6>
     <div class="py-3">

@@ -9,7 +9,7 @@ title: "Components > Forgot-password"
 
 #### Forgot Password
 
-<p class="">A card is a small rectangular module with images and text. It is an entry point for users to learn more details</p>
+<p>Provides a card with the details neededed to restore an account</p>
 <section class="py-4">
     <h6>Default</h6>
     <div class="py-3">
