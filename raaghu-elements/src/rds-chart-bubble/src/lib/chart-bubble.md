@@ -11,7 +11,7 @@ title: "Charts > Chart-bubble"
 
 #### Bubble Chart 
 
-<p class="">A card is a small rectangular module with images and text. It is an entry point for users to learn more details</p>
+<p class="">A bubble is an extension of the scatter plot. It is used to visualize relationship for an observation with respect to three variables represented by the vertical, horizontal axis and the size of the bubble.</p>
 <section class="py-4">
     <h6>Default</h6>
     <div class="py-3">

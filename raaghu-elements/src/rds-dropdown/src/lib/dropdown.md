@@ -11,7 +11,7 @@ title: "Elements > Dropdown"
 
 
 #### Dropdown
-<p class="">A card is a small rectangular module with images and text. It is an entry point for users to learn more details</p>
+<p class="">Dropdown is a contextual overlay containing list of content, tiggered by clicking the button.</p>
 <section class="py-4">
     <h6>Default</h6>
     <div class="py-3">

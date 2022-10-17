@@ -45,7 +45,7 @@
 
 <div class="dropdown w-100" [class]="classes">
   <span [ngClass]="button1" class="dropdown-toggle gap-2" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
-    size="small" aria-expanded="false">
+    size="small" aria-expanded="false" [attr.data-bs-offset]="xOffset + ',' + yOffset" >
     <rds-icon *ngIf="icon" [name]="icon" [height]="iconHeight" [width]="iconWidth" [fill]="iconFill"
       [stroke]="iconStroke" class="pe-1"></rds-icon>
     <span *ngIf="!entity || checkedCategoryList.length < 1">{{(value)? value:placeholder}}</span>

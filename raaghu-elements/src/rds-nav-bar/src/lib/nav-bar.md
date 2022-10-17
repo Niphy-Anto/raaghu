@@ -9,9 +9,9 @@ title: "Elements > Nav-bar"
 
 
 
-#### Nav-bar
+#### Nav Bar
 
-<p class="">A card is a small rectangular module with images and text. It is an entry point for users to learn more details</p>
+<p class="">A nav bar is a visually appeling manner for displaying navigation header having support for branding and navigation.  </p>
 <section class="py-4">
     <h6>Default</h6>
     <div class="py-3">
