@@ -9,10 +9,9 @@ title: "Components > Basic-Resource"
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/style-elements.css">
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/main.css">
 
-#### Basic Resource
-
+#### Basic-Resource
+<p>Provides an API information of a user with its different details</p>
  <section class="py-4">
-    <h6>Default</h6>
     <div class="py-3">
       <div class="cust-tabs">
         <ul class="nav nav-tabs" id="myTab" role="tablist">

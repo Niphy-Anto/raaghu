@@ -11,6 +11,8 @@ title: "Components > Address-Input"
 
 #### Address Input
 
+<p>Enables a user to add/edit description on relevant address with respective location </p>
+
  <section class="py-4">
     <div class="py-3">
       <div class="cust-tabs">

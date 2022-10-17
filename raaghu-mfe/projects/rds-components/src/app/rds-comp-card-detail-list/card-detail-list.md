@@ -9,9 +9,8 @@ title: "Components > Card-detail-list"
 
 #### Card Detail List
 
-<p class="">A card is a small rectangular module with images and text. It is an entry point for users to learn more details</p>
+<p>Gives relevant information about the different payment options of saved cards</p>
 <section class="py-4">
-    <h6>Default</h6>
     <div class="py-3">
       <div class="cust-tabs">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
