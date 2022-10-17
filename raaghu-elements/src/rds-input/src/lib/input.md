@@ -12,7 +12,7 @@ title: "Elements > Input"
 
 #### Input
 
-<p class="">A card is a small rectangular module with images and text. It is an entry point for users to learn more details</p>
+<p class="">Input is a blank tab used to obtain user's data.</p>
 
 <section class="py-4">
     <h6>Default</h6>

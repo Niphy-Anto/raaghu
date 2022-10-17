@@ -12,7 +12,7 @@ title: "Elements > Accordion"
 
 #### Accordion
 
-<p class="checkbox-def">It is list of collapsible panels with clickable heading or down arrow, expands </p>
+<p class="checkbox-def">It is list of collapsible panels with clickable heading or down arrow, expanding to reveal hidden content. </p>
 
 <!-- Basic -->
   <section class="py-4">

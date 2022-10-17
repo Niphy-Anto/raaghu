@@ -12,7 +12,7 @@ title: "Elements > Icon-Label"
 
 #### Icon Label
 
-<p class="">A card is a small rectangular module with images and text. It is an entry point for users to learn more details</p>
+<p class="">Icon Label is an appealing manner to show the content with an icon. </p>
 <section class="py-4">
     <h6>Default</h6>
     <div class="py-3">
