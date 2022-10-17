@@ -1,22 +1,19 @@
 <nav class="navbar navbar-expand-sm fixed-top p-0">
   <div class="container-fluid mobile-fluid">
-    <!-- <span class="navbar-brand p-0 m-0" href="#">
-      <img class="image" [src]="logo" width="70" /><span class="title fw-bold text-lowercase"><b>{{ projectName
-          }}</b></span> 
-    </span> -->
+    
     <button (click)="onToggleButton()" class="navbar-toggler px-2" id="humbreger-btn" type="button"
       data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
       aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="py-0 m-0 breadcrumbs">
-      <!-- <div>
+      <div>
         <a class="nav-link active p-0" aria-current="page" href="#">{{
           selectedMenu|translate
           }}<span *ngIf="tabName" class="mx-2"><b class="text-primary pt-1">></b> {{tabName}}</span></a>
       </div>
       <div class="mob-description">
-        <!-- <a class="nav-link text-muted p-0 fs-6" href="#">{{selectedMenuDescription|translate}}</a> -->
+         <a class="nav-link text-muted p-0 fs-6" href="#">{{selectedMenuDescription|translate}}</a>
       </div>
     </div>
 
@@ -116,7 +113,7 @@
         </li>
       </ul>
     </div>
-  </div>
+    </div>
 </nav>
 <app-rds-comp-profile [MenuItems]="navtabItems" [Profileurl]="profilePic" [viewCanvas]="showOffcanvas"
   [tableWidth]="tableWidth" [id]="offCanvasId" [userList]="userList" [languageItems]="languageItems"
