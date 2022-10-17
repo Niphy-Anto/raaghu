@@ -36,9 +36,8 @@ jobs:
        
       - name: npm install, build, and test raaghu-mfe
         working-directory: ./raaghu-mfe
-        run: |
-         npm cache clean --force  
-         npm install
+        run: | 
+         npm install --force
          npm run sync-elements    
 
       - name: npm install gatsby
