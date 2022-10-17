@@ -26,7 +26,7 @@ export default {
       options: ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark'],
       control: { type: 'select' }
     },
-    align: {
+    textAlign: {
       options: ['start', 'center', 'end'],
       control: { type: 'select' }
     },
@@ -39,7 +39,7 @@ const Template: Story<RdsBannerComponent> = (args: RdsBannerComponent) => ({
 
 export const Default = Template.bind({})
 Default.args = {
-  align: 'start',
+  textAlign: 'start',
   bannerText: 'Big news! We are excited to announce a brand new product.',
   sticky: false,
   position: 'top',

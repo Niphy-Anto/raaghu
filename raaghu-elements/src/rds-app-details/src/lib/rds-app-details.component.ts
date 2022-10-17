@@ -5,8 +5,8 @@ export interface appDetailsItems {
   subtitle: string;
   route: string;
   selected: boolean;
-  iconHeight: string;
-  iconWidth: string;
+  iconHeight: "38px",
+  iconWidth: "38px";
   iconFill: boolean;
   iconStroke: boolean;
 };

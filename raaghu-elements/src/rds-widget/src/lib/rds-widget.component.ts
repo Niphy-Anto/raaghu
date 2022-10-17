@@ -7,9 +7,9 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class RdsWidgetComponent implements OnInit {
 
-  @Input() headerTitle: string = 'Widget'
+  @Input() headerTitle: string = 'Widget';
   @Input() isRefreshRequired: boolean = true;
-  @Input() colorVariant = '';
+  @Input() colorVariant: 'primary' | 'success' | 'danger' | 'warning' | 'light' | 'info' | 'secondary' | 'dark' | 'gradient-primary' = 'light';
   @Output() onRefresh = new EventEmitter<Event>();
   //@Input() cardheight = 'card-stretch';
 
@@ -22,8 +22,8 @@ export class RdsWidgetComponent implements OnInit {
 
     const bgColor = 'bg-' + `${this.colorVariant}`;
     classes.push(bgColor);
-    if (`${this.colorVariant}` !== 'light' && `${this.colorVariant}` !== 'warning' && `${this.colorVariant}` !== 'info' && `${this.colorVariant}` !== 'white' && `${this.colorVariant}` !== '') {
-      classes.push('text-white bg-gradient-primary');
+    if (`${this.colorVariant}` == 'gradient-primary') {
+      classes.push('text-white');
     }
     //var heightclass=`${this.cardheight}`;
     //classes.push(heightclass);

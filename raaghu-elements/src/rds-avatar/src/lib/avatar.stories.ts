@@ -13,7 +13,9 @@ export default {
     colorVariant: {
       options: ['success', 'warning', 'light', 'danger', 'info', 'dark', 'secondary'],
       control: { type: 'select' }
-    }
+    },
+    height: { control: { type: 'text' } },
+
   },
 } as Meta;
 
@@ -28,14 +30,13 @@ const avatarWithInfoTemplate: Story<RdsAvatarComponent> = (args: RdsAvatarCompon
   },
   template: `<rds-avatar
 [firstName]="firstName" 
-[lastName]="lastName" 
+[lastName]="lastName"
+[size]="size"
 [colorVariant]="colorVariant"
 [verticallyAlligned]="verticallyAlligned"
 >
 {{firstName}} {{lastName}}
-<div>
-Admin
-</div>
+
 
 </rds-avatar>`
 
@@ -44,31 +45,32 @@ Admin
 export const Default = Template.bind({});
 Default.args = {
   size: 'medium',
-  firstName: 'John',
-  lastName: 'Doe',
+  firstName: 'Allen',
+  lastName: 'Russel',
   colorVariant: 'warning'
 };
 
 export const profile = Template.bind({});
 profile.args = {
   size: 'medium',
+  height: '15',
   withProfilePic: true,
-  profilePic: 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png'
+  profilePic: 'https://t4.ftcdn.net/jpg/04/10/43/77/240_F_410437733_hdq4Q3QOH9uwh0mcqAhRFzOKfrCR24Ta.jpg'
 };
 
 export const avtarWithHorizontallyAllignedInfo = avatarWithInfoTemplate.bind({});
 avtarWithHorizontallyAllignedInfo.args = {
   size: 'medium',
-  firstName: 'John',
-  lastName: 'Doe',
+  firstName: 'King',
+  lastName: 'John',
   colorVariant: 'warning',
 };
 
 export const avatarWithVerticallyAllignedInfo = avatarWithInfoTemplate.bind({});
 avatarWithVerticallyAllignedInfo.args = {
   size: 'medium',
-  firstName: 'John',
-  lastName: 'Doe',
+  firstName: 'James',
+  lastName: 'Potter',
   colorVariant: 'warning',
   verticallyAlligned: true
 };
