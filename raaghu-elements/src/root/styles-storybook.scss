@@ -2569,7 +2569,7 @@ app-rds-comp-product-list .card-body {
 }
 
 .h-68 {
-  height: 68%;
+  height: 53%;
 }
 
 .mt-6 {
@@ -2606,4 +2606,8 @@ app-rds-comp-product-list .card-body {
 .avatar-pic2{
   bottom: 25px;
 }
-
+// css for table
+.table>thead {
+  font-size: .875rem;
+  text-transform: capitalize;
+}

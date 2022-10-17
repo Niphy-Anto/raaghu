@@ -10,7 +10,7 @@ import { RdsPriceComponent } from './rds-price.component';
     RdsPriceComponent
   ],
   imports: [
-    RdsLabelModule
+    RdsLabelModule,
     CommonModule
   ],
   exports: [

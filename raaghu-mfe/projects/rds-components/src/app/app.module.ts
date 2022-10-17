@@ -318,7 +318,7 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     RdsCompIdentityManagementNewComponent,
     RdsCompThemeNewComponent,
     RdsCompAccountNewComponent,
-    RdsCompSettingsNewComponent
+    RdsCompSettingsNewComponent,
     RdsCompAuditLogsNewComponent
   
   ],

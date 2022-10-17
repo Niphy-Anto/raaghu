@@ -15,7 +15,7 @@
     <li *ngFor="let item of stepparList; index as pi" >
       <div class="panel-item p-2" >
         <a class="text-decoration-none" class="p-1 d-flex" [attr.data-bs-target]="item.tablink" data-bs-toggle="tab" [attr.aria-controls]="item.ariacontrols">
-          <div class="circle d-flex">
+          <div class="circle d-flex pb-1">
             <div class="mx-auto number align-self-center" *ngIf="pi<10">0{{pi+1}}</div>
             <div class="mx-auto number align-self-center" *ngIf="pi>=10">{{pi+1}}</div>
             <svg class="align-self-center" xmlns="http://www.w3.org/2000/svg" width="14" height="14" class="bi bi-check-lg" viewBox="0 0 16 16">
@@ -127,7 +127,7 @@
     <div>
       <li class="d-flex my-3 gap-3" *ngFor="let item of stepparList; index as i">
         <div class="bullet-text-circle align-self-center d-flex" [attr.data-bs-target]="item.tablink" data-bs-toggle="tab" [attr.aria-controls]="item.ariacontrols">
-          <div class="bullet-inner-circle">
+          <div class="bullet-inner-circle pb-3">
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" class="bi bi-check-lg" viewBox="0 0 16 16">
               <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
             </svg>

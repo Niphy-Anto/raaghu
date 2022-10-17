@@ -17,6 +17,15 @@ export default {
       imports: [CommonModule, FormsModule, RdsIconModule, RdsProductImageModule,RdsLabelModule,RdsAvatarModule],
     }),
   ],
+  argTypes:{
+    colorVariant: {
+
+      options: ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light'],
+
+      control: { type: 'select' }
+
+    },
+  }
 } as Meta
 
 const Template: Story<RdsTeamMemberComponent> = (args: RdsTeamMemberComponent) => ({
@@ -40,12 +49,14 @@ Default.args = {
 export const advance = Template.bind({});
 advance.args = {
   displayType: 'advanced',
+  colorVariant: 'primary',
   teamItem: [
     {
       title: 'Tina',
       subTitle: 'Web Developer',
       imgLink: 'https://uxwing.com/wp-content/themes/uxwing/download/peoples-avatars/no-profile-picture-icon.png?W=100',
-      description: 'Lorem ipsum dolor sit amet conr adipiscing elit'
+      description: 'Lorem ipsum dolor sit amet conr adipiscing elit',
+      
     }
   ]
 
