@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class RdsBannerComponent implements OnInit {
 
-  @Input() align: 'start' | 'end' | 'center' = 'start';
+  @Input() textAlign: 'start' | 'end' | 'center' = 'start';
   @Input() bannerText: string = 'Sample Banner';
   @Input() sticky: boolean = false;;
   @Input() position: 'top' | 'bottom' = 'top';
@@ -25,8 +25,8 @@ export class RdsBannerComponent implements OnInit {
 
   public get classes(): string[] {
     let classes: string[] = [];
-    if (this.align) {
-      classes.push('justify-content-' + this.align);
+    if (this.textAlign) {
+      classes.push('justify-content-' + this.textAlign);
     }
 
 

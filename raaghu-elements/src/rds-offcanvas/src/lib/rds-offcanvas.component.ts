@@ -28,9 +28,9 @@ export class RdsOffcanvasComponent implements OnInit {
 
   public get classes(): string {
     let align = ` offcanvas offcanvas-${this.placement}`;
-    if (this.colorVariant !== undefined) {
-      align = align + ' text-bg-' + this.colorVariant;
-    }
+    // if (this.colorVariant !== undefined) {
+    //   align = align + ' text-bg-' + this.colorVariant;
+    // }
     return align;
   }
   public get bodyClasses(): string {

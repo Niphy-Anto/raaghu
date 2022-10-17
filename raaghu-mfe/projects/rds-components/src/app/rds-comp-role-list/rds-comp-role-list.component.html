@@ -75,7 +75,7 @@
       [colorVariant]="'primary'" [size]="'small'" [outlineButton]="true" data-bs-dismiss="offcanvas">
     </rds-button>
     <rds-button [label]="translate.instant('Select')" [class.disabled]="disableButton()" class="ms-2" [colorVariant]="'primary'" [size]="'small'" [id]="'savePermission'"
-      [disabled]="disableButton()"
+      [disabled]="!selectedFilterPermissionList"
       (click)="saveFilterPermission()">
     </rds-button>
   </div>

@@ -73,7 +73,7 @@ export class RdsToastsComponent implements OnInit, AfterViewInit, OnChanges {
     }
   }
 
-  public get backgroudClass(): string | undefined {
+  public get backgroudClass(): any {
     if (this.colorVariant) {
       return 'text-bg-' + `${this.colorVariant}`
     }

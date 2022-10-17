@@ -2,22 +2,31 @@
 
 <form #resourceForm="ngForm">
   <div class="form-group col-sm-12 mb-3 me-2 pt-3">
-    <rds-input size="default" value="" [Title]="'Name'" [TitleType]="'Top'" inputType="text"
-      [(ngModel)]="ResourceData.Name" [disabled]="false" [readonly]="false" ngDefaultControl #name="ngModel"
-      name="resourcename">
-    </rds-input>
+    <rds-input [inputType]="'text'" [Title]="translate.instant('Name')" #scope_name="ngModel"
+    [(ngModel)]="scopeBasics.name" [TitleType]="'Top'" name="scopeName" [isRequired]=false required [placeholder]="translate.instant('Enter Name')">
+  </rds-input>
+  <div class="form-control-feedback" *ngIf="scope_name.errors && (scope_name.dirty || scope_name.touched)">
+    <span class="text-danger" *ngIf="scope_name.errors.required">{{"Name is required"|translate}}</span>
+  </div>
   </div>
   <div class="form-group col-sm-12 mb-3">
-    <rds-input size="default" value="" [TitleType]="'Top'" [Title]="'Display Name'" inputType="text"
-      [(ngModel)]="ResourceData.Displayname" [disabled]="false" [readonly]="false" ngDefaultControl
-      #DisplayName="ngModel" name="DisplayName">
-    </rds-input>
+    <rds-input [inputType]="'text'" [Title]="translate.instant('Display Name')" #displayname="ngModel"
+    [(ngModel)]="scopeBasics.displayName" name="displayName" [TitleType]="'Top'" [isRequired]=false  required
+    [placeholder]="translate.instant('Enter Display Name')">
+  </rds-input>
+  <div class="form-control-feedback" *ngIf="displayname.errors && (displayname.dirty || displayname.touched)">
+    <span class="text-danger" *ngIf="displayname.errors.required">{{"Display Name is required"|translate}}</span>
+  </div>
   </div>
 
   <div class="form-group col-sm-12 mb-3">
-    <rds-input size="default" value="" [TitleType]="'Top'" [Title]="'Description'" inputType="text" [(ngModel)]="ResourceData.Description"
-      [disabled]="false" [readonly]="false" ngDefaultControl #Description="ngModel" name="Description">
-    </rds-input>
+    <rds-textarea #description="ngModel" [placeholderText]="translate.instant('Enter Description')"
+          [label]="translate.instant('Description')" [value]="scopeBasics.description"
+          [(ngModel)]="scopeBasics.description" name="desc" required>
+        </rds-textarea>
+        <div class="form-control-feedback" *ngIf="description.errors && (description.dirty || description.touched)">
+          <span class="text-danger" *ngIf="description.errors.required">{{"Description is required"|translate}}</span>
+        </div>
 
   </div>
 
@@ -45,7 +54,8 @@
     [id]="'showindiscovery'"></rds-checkbox>
   </div>
 
-    <div class="d-flex w-100 bg-white position-fixed bottom-0 py-2">
+  <!-- <div class="footer">
+    <div class="d-flex">
       <div class="m-2">
         <rds-button [label]="'Cancel'" [colorVariant]="'primary'" [outlineButton]="true" data-bs-dismiss="offcanvas"
           [size]="'small'">
@@ -57,4 +67,5 @@
         </rds-button>
       </div>
     </div>
+  </div> -->
 </form>

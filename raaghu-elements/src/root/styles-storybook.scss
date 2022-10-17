@@ -151,20 +151,20 @@
   list-style: none;
 }
 
-.small {
+/*.small {
   font-size: 0.875rem;
   padding: 0;
 }
 
-.medium {
-  font-size: 1rem;
-  padding: 0px;
-}
+// .medium {
+//   font-size: 1rem;
+//   padding: 0px;
+// }
 
 .large {
   font-size: 1.25rem;
   padding: 0;
-}
+}*/
 
 // ==============================================================
 .square-tags {
@@ -550,7 +550,7 @@ input::-webkit-input-placeholder {
 //   overflow: hidden;
 // }
 
-#storybook-preview-wrapper html{
+#storybook-preview-wrapper html {
   overflow-y: scroll;
 }
 
@@ -1598,6 +1598,9 @@ input::-webkit-input-placeholder {
 .form-select {
   font-size: $font-size-sm;
 }
+.form-select[multiple], .form-select[size]:not([size="1"]){
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+}
 
 .navbar {
   font-size: $font-size-base rem;
@@ -2580,6 +2583,13 @@ app-rds-comp-product-list .card-body {
   margin-top: 6rem !important;
 }
 
+.fs-7 {
+  font-size: .75rem !important;
+}
+
+.fs-8 {
+  font-size: .50rem !important;
+}
 .mobile-btn{
   display: none;
 }
@@ -2607,3 +2617,44 @@ app-rds-comp-product-list .card-body {
   bottom: 25px;
 }
 
+#sidebar {
+  display: block !important;
+}
+.sidenav-footer {
+  left: 10px;
+}
+a {
+  text-decoration: none;
+}
+html #sidebar {
+  background-color: #f5f5fa;
+  border-right-color: #e9ecef;
+}
+html #sidebar ul li a {
+  color: #6c757d;
+}
+#sidebar > ul {
+  height: calc(100vh - 158px) !important;
+  overflow-y: auto;
+}
+#sidebar ul li {
+  border-top-color: #fff;
+}
+html #sidebar ul li a.active {
+  color: #212529;
+}
+html #sidebar ul li a {
+  color: #6c757d;
+  border-left-color: transparent;
+}
+#sidebar ul li a {
+  height: 35px;
+  font-size: .875rem;
+}
+html #sidebar ul li a.active svg path.icon {
+  stroke: #7e2eef;
+}
+.bd-links .child::after {
+  content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e ");
+  padding-left: 10px;
+}
