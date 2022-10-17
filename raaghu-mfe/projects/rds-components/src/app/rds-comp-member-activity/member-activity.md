@@ -9,9 +9,8 @@ title: "Components > Member Activity"
 
 #### Member Activity
 
-<p class="">A card is a small rectangular module with images and text. It is an entry point for users to learn more details</p>
+<p >A table with the necessary statistics about a user </p>
 <section class="py-4">                                                                                             
-    <h6>Default</h6>
     <div class="py-3">
       <div class="cust-tabs">
         <ul class="nav nav-tabs" id="myTab" role="tablist">

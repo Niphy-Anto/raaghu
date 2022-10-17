@@ -10,9 +10,7 @@ title: "Pages > Page Not Found"
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/main.css">
 
 #### Page Not Found
-
  <section class="py-4">
-    <h6>Default</h6>
     <div class="py-3">
       <div class="cust-tabs">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
