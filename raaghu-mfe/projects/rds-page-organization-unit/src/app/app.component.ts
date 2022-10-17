@@ -267,7 +267,7 @@ export class AppComponent implements OnInit {
         ButtonLabel: "",
       },
       output: {
-         onDeleteNode: (data: any) => {
+        onDeleteNode: (data: any) => {
           this.store.dispatch(deleteUnitTree(data));
           this.updateOrganizationTree();
         },
@@ -391,12 +391,8 @@ export class AppComponent implements OnInit {
     })
   }
   updateUsersListTable(data) {
-    // const input = new FindOrganizationUnitUsersInput();
-    // input.organizationUnitId = data;
-    // input.filter = "";
-    // input.skipCount = 0;
-    // input.maxResultCount = 1000;
-    //this.store.dispatch(getOrganizationUnitUsersList());
+    let input: {organizationUnitId: any,filter:any, skipCount:any, maxResultCount:any};
+    this.store.dispatch(getOrganizationUnitUsersList(input));
     this.store.select(selectOrganizationUnitUsersList).subscribe((res) => {
       this.isAnimation = false;
       // if (res && res.items.length > 0) {
