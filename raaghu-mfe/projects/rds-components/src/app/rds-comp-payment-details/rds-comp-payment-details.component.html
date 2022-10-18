@@ -28,7 +28,7 @@
             </rds-input>
         </div>
         <div class="col-3">
-            <rds-input Title="CVC" [TitleType]="'Top'" [isRequired]=true  required size="'default'" name="cvc" id="txtCvc"
+            <rds-input Title="CVV" [TitleType]="'Top'" [isRequired]=true  required size="'default'" name="cvc" id="txtCvc"
                 ngDefaultControl [(ngModel)]="cvc" required>
             </rds-input>
         </div>
@@ -37,12 +37,12 @@
     <div class="my-4 pt-4 row">
         <div class="col-6">
             <rds-button [block]="true" [size]="'medium'" [outlineButton]="true" [colorVariant]="'primary'"  
-            [label]="translate.instant('back')" (click)="back()" >
+            [label]="translate.instant('cancel')" (click)="back()" >
         </rds-button>
         </div>
         <div class="col-6">
             <rds-button [block]="true" [size]="'medium'" [colorVariant]="'primary'"  [showLoadingSpinner]="buttonSpinner"
-            [label]="translate.instant('Continue')" (click)="continue()">
+            [label]="translate.instant('confirm')" (click)="continue()">
         </rds-button>
         </div>
         
