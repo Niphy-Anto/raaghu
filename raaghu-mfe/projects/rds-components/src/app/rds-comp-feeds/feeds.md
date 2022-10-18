@@ -7,7 +7,7 @@ title: "Components > Feeds"
 
 ### Feeds
 
-<p>integrates activity in the project with the help of reviews</p>
+<p>Integrates activities in the project with the help of reviews</p>
 
 <section class="py-4">
     <div class="py-3">

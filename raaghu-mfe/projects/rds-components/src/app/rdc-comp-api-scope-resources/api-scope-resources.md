@@ -1,7 +1,7 @@
 ---
-slug: "/comp-background-image"
+slug: "/comp-api-scope-resources
 date: "2019-05-04"
-title: "Components > Background-Image"
+title: "Components > Api-scope-basics"
 ---
 
 <!-- CSS only -->
@@ -9,10 +9,11 @@ title: "Components > Background-Image"
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/style-elements.css">
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/main.css">
 
-#### Background Image
-<p>Gives an available caption that can be edited along with the button and a background image</p>
+#### Api-Scope-basics
+
+<p>Gives a user an option for selecting multiple checkboxes with a alphabetical range</p>
+
  <section class="py-4">
-    <h6>Default</h6>
     <div class="py-3">
       <div class="cust-tabs">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -26,11 +27,11 @@ title: "Components > Background-Image"
       </div>
       <div class="tab-content card border" id="myTabContent">
         <div class="tab-pane fade show active" id="PreviewBasic1" role="tabpanel" aria-labelledby="PreviewBasic-tab">
-         <div class="contents  p-5">
+         <div class="contents p-5">
               <div class="row">
-                 <div class="col-md-12">
-                     <img src="\images\background-image1.png" class="img-fluid">
-                 </div>              
+               <div class="col-md-12">
+                  <img src="\images\api-scope-resource.png" class="img-fluid">
+               </div>               
               </div>
                        
   </div>
@@ -40,14 +41,7 @@ title: "Components > Background-Image"
 <div class="row m-0">
 
 ```html
-<app-rds-comp-background-image
-  imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLXV_IPvYFWoOnAfO3IGGxcCrM3Y2Bfgfciw&usqp=CAU"
-  title="New arrivals are here"
-  btnLabel="CHECK NEW ARRIVALS HERE"
-  subtitle="The new arrivals have, well newly arrived. Check out the latest options from our summer small-batch release while they are still in stock."
-  backgroundRepeat="no-repeat"
-  backgroundSize="cover"
-></app-rds-comp-background-image>
+
 ```
 </div>
 </div>
