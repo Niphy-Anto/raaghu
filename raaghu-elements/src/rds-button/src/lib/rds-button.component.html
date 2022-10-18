@@ -7,7 +7,7 @@
 
   <ng-content select="[left]"></ng-content>
   <!--<span *ngIf="buttonType!='labelOnly'" class="me-2">-->
-    <rds-icon *ngIf ="icon" [class.me-2]="icon && label" [name]="icon" [width]="iconWidth" [height]="iconHeight" [fill]="iconFill"
+    <rds-icon *ngIf ="icon" [class]="icon && label" [name]="icon" [width]="iconWidth" [height]="iconHeight" [fill]="iconFill"
               [stroke]="iconStroke"></rds-icon>
   <!--</span>-->
   <span *ngIf="label" class="btn-text">{{label}}</span>
