@@ -12,7 +12,7 @@ title: " Elements > Stepper"
 
 #### Stepper
 
-<p class="checkbox-def">Avatar is known as a visual form representing a user oneself and one's identity wished.</p>
+<p class="checkbox-def">Stepper is a process map having user defined milestones to inform user of the steps involved in the process.</p>
 
 <!-- Basic -->
 <section class="py-4">

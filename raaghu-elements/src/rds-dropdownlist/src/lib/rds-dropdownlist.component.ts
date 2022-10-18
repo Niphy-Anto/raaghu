@@ -29,7 +29,8 @@ export class RdsDropdownlistComponent implements OnInit, OnChanges {
   @Input()  iconStroke: boolean = true;
   @Input() iconFill: boolean = false;
   @Input() icon: string = '';
-
+  @Input() xOffset: string = '';
+  @Input() yOffset: string = '';
   @Input()
   colorVariant?: string;
 

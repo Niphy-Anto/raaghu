@@ -12,7 +12,7 @@ title: "Elements > Size"
 
 #### Size
 
-<p class="">A card is a small rectangular module with images and text. It is an entry point for users to learn more details</p>
+<p class="">Size is a list of the sizes available for any product on the e-commerce website.</p>
 <section class="py-4">
     <h6>Default</h6>
     <div class="py-3">
@@ -31,7 +31,7 @@ title: "Elements > Size"
          <div class="contents  p-5">
               <div class="row">
                  <div class="col-md-12">
-                     <img src="/images/size.png" class="img-fuild">
+                     <img src="/images/size.png" class="img-fluid w-100">
                  </div>                           
            </div>
                        
@@ -42,9 +42,7 @@ title: "Elements > Size"
 <div class="row m-0">
 
 ```html
-   <div class="col-md-12">
   <rds-size [sizeType]="sizeType"></rds-size>
-</div>
 ```
 </div>
 </div>

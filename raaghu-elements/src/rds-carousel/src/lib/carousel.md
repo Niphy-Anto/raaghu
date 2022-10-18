@@ -11,7 +11,7 @@ title: "Elements > Carousel"
 
 #### Carousel
 
-<p class="">A card is a small rectangular module with images and text. It is an entry point for users to learn more details</p>
+<p class="">A carousel is a slideshow that cycles through a collection of pictures, text, or unique markup.</p>
 <section class="py-4">
     <h6>Default</h6>
     <div class="py-3">
