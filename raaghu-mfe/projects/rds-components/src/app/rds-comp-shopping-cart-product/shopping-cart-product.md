@@ -1,7 +1,7 @@
 ---
 slug: "/comp-shopping-cart-product"
 date: "2019-05-04"
-title: "Componets > Shopping-Cart-Product"
+title: "Components > Shopping-Cart-Product"
 ---
 
 <!-- CSS only -->

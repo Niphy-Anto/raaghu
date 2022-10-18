@@ -1,7 +1,7 @@
 ---
 slug: "/comp-theme-new"
 date: "2019-05-04"
-title: "Pages > Theme-new"
+title: "Components > Theme-new"
 ---
 
 <!-- CSS only -->

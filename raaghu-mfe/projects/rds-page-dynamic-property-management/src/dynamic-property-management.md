@@ -1,5 +1,5 @@
 ---
-slug: "/page-dynamic-property-management "
+slug: "/page-dynamic-property-management"
 date: "2019-05-04"
 title: "Pages > Dynamic-Property-Management"
 ---

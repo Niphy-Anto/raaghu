@@ -38,6 +38,7 @@ title: "Components > Forgot-password"
 <div class="row m-0">
 
 ```html
+<rds-forgot-password></rds-forgot-password>
 ```
 </div>
 </div>
