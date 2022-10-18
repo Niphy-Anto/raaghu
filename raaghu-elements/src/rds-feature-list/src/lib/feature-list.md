@@ -1,5 +1,5 @@
 ---
-slug: "/Feature-List"
+slug: "/feature-list"
 date: "2019-05-04"
 title: "Elements > Feature-List"
 ---
@@ -11,7 +11,7 @@ title: "Elements > Feature-List"
 
 
 #### Feature List
-<p class="">A card is a small rectangular module with images and text. It is an entry point for users to learn more details</p>
+<p class="">Feature list consists of an unordered list listing the features of a product.</p>
 <section class="py-4">
     <h6>Default</h6>
     <div class="py-3">

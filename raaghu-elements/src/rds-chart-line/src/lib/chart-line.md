@@ -1,7 +1,7 @@
 ---
 slug: "/chart-line"
 date: "2019-05-04"
-title: "Elements > Chart-line"
+title: "Charts > Chart-line"
 ---
 
 <!-- CSS only -->
@@ -10,6 +10,9 @@ title: "Elements > Chart-line"
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/main.css">
 
 #### Line Chart
+
+<p class="">A line chart is created by connecting a set of point through a line representing the change of a variable over a time period.</p>
+
 
 <section class="py-4">
     <h6>Default</h6>

@@ -10,9 +10,9 @@ title: "Elements > Text-editor"
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/main.css">
 
 
-#### Text-editor
+#### Text Editor
 
-<p class="checkbox-def">Avatar is known as a visual form representing a user oneself and one's identity wished.</p>
+<p class="checkbox-def">Text editor lets the user to user to edit and style the text.</p>
 
 <!-- Basic -->
 <section class="py-4">
@@ -36,6 +36,7 @@ title: "Elements > Text-editor"
                  <img src="/images/text-editor.png" class="img-fluid">
                 </div>
           </div>
+        </div>
         </div>
         <div class="tab-pane fade show" id="AngularBasic" role="tabpanel" aria-labelledby="AngularBasic-tab">
           <div class="contents bg-code">

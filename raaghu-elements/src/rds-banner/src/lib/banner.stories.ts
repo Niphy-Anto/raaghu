@@ -26,7 +26,7 @@ export default {
       options: ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark'],
       control: { type: 'select' }
     },
-    align: {
+    textAlign: {
       options: ['start', 'center', 'end'],
       control: { type: 'select' }
     },
@@ -41,7 +41,7 @@ export const Default = Template.bind({})
 Default.parameters = { controls: { include: ['align', 'bannerText', 'sticky', 'position', 'colorVariant', 'icon',
  'iconHeight', 'iconWidth', 'iconSize', 'iconStroke', 'iconFill'] } };
 Default.args = {
-  align: 'start',
+  textAlign: 'start',
   bannerText: 'Big news! We are excited to announce a brand new product.',
   sticky: false,
   position: 'top',

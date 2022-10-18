@@ -27,8 +27,8 @@ const Template: Story<RdsProgressbarComponent> = (args: RdsProgressbarComponent)
   props: args,
 });
 
-export const Progressbar = Template.bind({});
-Progressbar.args = {
+export const Default = Template.bind({});
+Default.args = {
   colorVariant: 'default',
   striped: 'default',
   progressWidth: 40,

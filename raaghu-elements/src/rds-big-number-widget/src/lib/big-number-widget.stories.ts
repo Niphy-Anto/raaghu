@@ -38,7 +38,7 @@ export default {
 
 const Template: Story<RdsBigNumberWidgetComponent> = (args: RdsBigNumberWidgetComponent) => ({
   props: args,
-  template: `<div class="col-sm-3">
+  template: `<div>
 <rds-big-number-widget [bigNumber]="bigNumber" [subText]="subText"
 [icon]="icon" [iconFill]="iconFill" [iconStroke]="iconStroke" [iconHeight]="iconHeight" [iconWidth]="iconWidth" [colorVariant]="colorVariant" [subTitleColorVariant]="subTitleColorVariant" [textAlign]="textAlign"></rds-big-number-widget>
   </div>`
@@ -62,8 +62,9 @@ Default.args = {
 
 const standardTemplate: Story<RdsBigNumberWidgetComponent> = (args: RdsBigNumberWidgetComponent) => ({
   props: args,
-  template: `<div class="col-sm-3">
-<rds-big-number-widget [bigNumber]="bigNumber" [subText]="subText" [subTitleColorVariant]="subTitleColorVariant" [role]="role"></rds-big-number-widget>
+  template: `<div>
+<rds-big-number-widget [bigNumber]="bigNumber" [subText]="subText"
+ [colorVariant]="colorVariant" [subTitleColorVariant]="subTitleColorVariant" [role]="role"></rds-big-number-widget>
   </div>`
 });
 
@@ -79,8 +80,9 @@ standard.args = {
 
 const deltaTemplate: Story<RdsBigNumberWidgetComponent> = (args: RdsBigNumberWidgetComponent) => ({
   props: args,
-  template: `<div class="col-sm-3">
-<rds-big-number-widget [bigNumber]="bigNumber" [subText]="subText" [subTitleColorVariant]="subTitleColorVariant" [role]="role">
+  template: `<div>
+<rds-big-number-widget [bigNumber]="bigNumber" [subText]="subText"
+ [colorVariant]="colorVariant" [subTitleColorVariant]="subTitleColorVariant" [role]="role">
  <rds-icon  class="ms-1" [name]="'triangle_up'" [stroke]="true" [fill]="true" [colorVariant]="subTitleColorVariant"
  [height]="'15px'" [width]="'15px'"></rds-icon><rds-label  label="75%" class="ps-2 text-{{subTitleColorVariant}} fs-5" ></rds-label>
  </rds-big-number-widget>
@@ -100,8 +102,9 @@ delta.args = {
 
 const histogramTemplate: Story<RdsBigNumberWidgetComponent> = (args: RdsBigNumberWidgetComponent) => ({
   props: args,
-  template: `<div class="col-sm-3">
-<rds-big-number-widget [bigNumber]="bigNumber" [subText]="subText" [subTitleColorVariant]="subTitleColorVariant" [role]="role">
+  template: `<div>
+<rds-big-number-widget [bigNumber]="bigNumber" [subText]="subText"
+ [colorVariant]="colorVariant" [subTitleColorVariant]="subTitleColorVariant" [role]="role">
  <rds-chart-bar-horizontal [chartLabels]="chartLabels" [chartWidth]="chartWidth" [chartHeight]="chartHeight"
  [chartDataSets]="chartDatasets" [chartOptions]="chartOptions">
 </rds-chart-bar-horizontal>
@@ -166,8 +169,9 @@ histogram.args = {
 
 const sparkLineTemplate: Story<RdsBigNumberWidgetComponent> = (args: RdsBigNumberWidgetComponent) => ({
   props: args,
-  template: `<div class="col-sm-3">
-<rds-big-number-widget [bigNumber]="bigNumber" [subText]="subText" [subTitleColorVariant]="subTitleColorVariant" [role]="role">
+  template: `<div>
+  <rds-big-number-widget [bigNumber]="bigNumber" [subText]="subText"
+ [colorVariant]="colorVariant" [subTitleColorVariant]="subTitleColorVariant" [role]="role">
  <rds-chart-line [chartLabels]="chartLabels" [chartWidth]="chartWidth" [chartHeight]="chartHeight"
  [chartDataSets]="chartDatasets" [chartOptions]="chartOptions"></rds-chart-line>
  </rds-big-number-widget>
@@ -240,8 +244,9 @@ sparkLine.args = {
 }
 const iconTemplate: Story<RdsBigNumberWidgetComponent> = (args: RdsBigNumberWidgetComponent) => ({
   props: args,
-  template: `<div class="col-sm-3">
-<rds-big-number-widget [bigNumber]="bigNumber" [subText]="subText" [subTitleColorVariant]="subTitleColorVariant" [role]="role">
+  template: `<div>
+<rds-big-number-widget [bigNumber]="bigNumber" [subText]="subText"
+ [colorVariant]="colorVariant" [subTitleColorVariant]="subTitleColorVariant" [role]="role">
 <rds-icon name="users" [colorVariant]="subTitleColorVariant" [height]="'30px'" [width]="'30px'"></rds-icon>
  </rds-big-number-widget>
   </div>`
