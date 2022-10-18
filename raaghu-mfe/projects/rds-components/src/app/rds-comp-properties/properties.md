@@ -1,7 +1,7 @@
 ---
 slug: "/comp-properties"
 date: "2019-05-04"
-title: "Componenets > Properties"
+title: "Components > Properties"
 ---
 
 <!-- CSS only -->

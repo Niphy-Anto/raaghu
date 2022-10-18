@@ -37,9 +37,7 @@ title: "Components > Forgot-password"
           <div class="contents bg-code">
 <div class="row m-0">
 
-```html
 
-```
 </div>
 </div>
   </div>

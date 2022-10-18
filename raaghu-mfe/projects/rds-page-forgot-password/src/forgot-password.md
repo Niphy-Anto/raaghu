@@ -1,7 +1,7 @@
 ---
 slug: "/page-forgot-password"
 date: "2019-05-04"
-title: "Pages > Forgot Password"
+title: "Pages > Forgot-Password"
 ---
 
 <!-- CSS only -->

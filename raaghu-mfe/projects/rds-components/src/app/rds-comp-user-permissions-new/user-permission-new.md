@@ -1,7 +1,7 @@
 ---
-slug: "/comp-user-permission-new"
+slug: "/comp-user-permissions-new"
 date: "2019-05-04"
-title: "Pages > User-permission-new"
+title: "Components > User-Permissions-New"
 ---
 
 <!-- CSS only -->
