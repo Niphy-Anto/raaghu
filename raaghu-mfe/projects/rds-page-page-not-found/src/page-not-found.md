@@ -1,5 +1,5 @@
 ---
-slug: "/page-not-found"
+slug: "/page-page-not-found"
 date: "2019-05-04"
 title: "Pages > Page Not Found"
 ---
