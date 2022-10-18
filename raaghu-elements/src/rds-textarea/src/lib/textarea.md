@@ -12,7 +12,7 @@ title: "Elements > Textarea"
 
 #### Textarea
 
-<p class="checkbox-def">Avatar is known as a visual form representing a user oneself and one's identity wished.</p>
+<p class="checkbox-def">Textarea is an input field for a large text value. </p>
 
 <!-- Basic -->
 <section class="py-4">

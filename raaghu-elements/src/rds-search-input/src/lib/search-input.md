@@ -9,9 +9,9 @@ title: "Elements > Search-input"
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/style-elements.css">
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/main.css">
 
-#### Search
+#### Search Input
 
-<p class="checkbox-def">Search enables users to specify a word or a phrase to find relevant pieces of content without the use of navigation.</p>
+<p class="checkbox-def">Search input enables users to specify a word or a phrase to find relevant pieces of content without the use of navigation.</p>
 
 <!-- Default State -->
 <section class="py-4">
@@ -40,12 +40,15 @@ title: "Elements > Search-input"
 <div class="row  m-0 p-4">
   
 ```html
-<rds-search-input
-  Placeholder="Search"
-  icon="bi bi-search"
-  size="small" 
-  (onClick)="onClick($event)"
-></rds-search-input>
+<rds-rating
+  [itemList]="itemList"
+  [withNoOfReviews]="true"
+  ratingPosition="left"
+  [rating]="2"
+  colorVariant="review"
+  [noOfReview]="123"
+  size="medium"
+></rds-rating>
 ```
 
  </div>

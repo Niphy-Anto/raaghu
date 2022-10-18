@@ -11,7 +11,7 @@ title: "Elements > Tags"
 
 #### Tag
 
-<p class="checkbox-def">Tables are a designed for displaying large amounts of data in rows and columns.</p>
+<p class="checkbox-def">Tags are used to label, categorize, or organise items using different keywords that describe them.</p>
 
 <section class="py-4">
     <h6>Default</h6>

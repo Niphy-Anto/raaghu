@@ -11,7 +11,7 @@ title: "Charts > Chart-doughnut"
 
 #### Doughnut Chart
 
-<p class="">A card is a small rectangular module with images and text. It is an entry point for users to learn more details</p>
+<p class="">Donut chart typically displays the percentages of categorical data, with the proportion of each category being communicated by the size of each component of the donut.</p>
 
 <section class="py-4">
      <h6>Default</h6>
