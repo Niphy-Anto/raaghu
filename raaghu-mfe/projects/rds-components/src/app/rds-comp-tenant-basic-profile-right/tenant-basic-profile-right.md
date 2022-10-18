@@ -1,7 +1,7 @@
 ---
 slug: "/comp-tenant-basic-profile-right"
 date: "2019-05-04"
-title: "Pages > Tenant-basic-profile-right"
+title: "Components > Tenant-basic-profile-right"
 ---
 
 <!-- CSS only -->

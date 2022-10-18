@@ -1,5 +1,5 @@
 ---
-slug: "/page-language "
+slug: "/page-language"
 date: "2019-05-04"
 title: "Pages > Language"
 ---

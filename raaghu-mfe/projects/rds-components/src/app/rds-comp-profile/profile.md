@@ -1,7 +1,7 @@
 ---
 slug: "/comp-profile"
 date: "2019-05-04"
-title: "Pages > Profile"
+title: "Components > Profile"
 ---
 
 <!-- CSS only -->
