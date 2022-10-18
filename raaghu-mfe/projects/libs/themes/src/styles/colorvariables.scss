@@ -1378,6 +1378,19 @@ html {
       }
     }
   }
+  .card {
+    background-color: $card-bg-color;
+    border-color: $card-border-color;
+
+    .card-header {
+      background-color: transparent;
+    }
+
+    .card-footer {
+      background-color: $white;
+      border-top-color: $gray-300;
+    }
+  }
 }
 
 html[theme=dark] {

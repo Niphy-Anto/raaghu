@@ -11,14 +11,6 @@ export default {
 
 const Template: Story<RdsDoubleRangeComponent> = (args: RdsDoubleRangeComponent) => ({
   props: {...args},
-  template: `
-    <rds-double-range 
-      [role]="role" 
-      [val1]="val1" 
-      [val2]="val2" 
-      [min]="min" 
-      [max]="max">
-    </rds-double-range>`
 });
 export const DoubleRange = Template.bind({})
 DoubleRange.args = {
