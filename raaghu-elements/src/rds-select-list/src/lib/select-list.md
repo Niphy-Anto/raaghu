@@ -84,7 +84,7 @@ title: "Elements > Select-list"
         <div class="tab-pane fade show active" id="PreviewBasic1" role="tabpanel" aria-labelledby="PreviewBasic-tab">
          <div class="contents bg-light p-5">
               <div class="row">
-               <img src="\images\select-list-tooltip.png" class="img-fluid w-50">
+               <img src="\images\select-list-tooltip.png" class="img-fluid w-100">
               </div>
                        
   </div>

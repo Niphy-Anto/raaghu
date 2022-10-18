@@ -78,8 +78,7 @@ role="dropdown-button"
         <div class="tab-pane fade show active" id="PreviewAdvanced" role="tabpanel" aria-labelledby="PreviewBasic-tab">
          <div class="contents bg-light p-5">
               <div class="row">
-              <!-- <img src="https://raw.githubusercontent.com/Wai-Technologies/raaghu/main/raaghu-mfe/assets/Edit-Language-Text.png" alt="color"> -->
-              <!-- <img src="/images/dropdown-basic.png" class="img-thumbnail w-25"> -->
+              <img src="/images/dropdown-split.png" class="img-thumbnail w-25">
            </div>
                        
   </div>

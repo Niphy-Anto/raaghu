@@ -111,7 +111,7 @@ title: "Elements > Benefit"
          <div class="contents  p-5">
               <div class="row">
                 <div class="col-md-12">
-                  <img src="/images/benefit-heading.png" class="img-fuild w-75">
+                  <img src="/images/benefit-heading.png" class="img-fuild w-50">
                 </div>               
            </div>
                        
@@ -134,7 +134,7 @@ title: "Elements > Benefit"
   </section>
 
   <section class="py-4">
-    <h6>Benefit type-3</h6>
+    <h6>Left Aligned</h6>
     <div class="py-3">
       <div class="cust-tabs">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -151,7 +151,7 @@ title: "Elements > Benefit"
          <div class="contents  p-5">
               <div class="row">
                  <div class="col-md-12">
-                    <img src="/images/benefit-type-3.png" class="img-fuild w-75">
+                    <img src="/images/benefit-type-3.png" class="img-fuild w-50">
                  </div>              
            </div>
                        
@@ -162,7 +162,7 @@ title: "Elements > Benefit"
 <div class="row m-0">
 
 ```html
-<rds-benefit [item]="item" display_type="benefit_type3"></rds-benefit>
+<rds-benefit [item]="item" display_type="Left Aligned"></rds-benefit>
 ```
 </div>
 </div>
@@ -172,7 +172,7 @@ title: "Elements > Benefit"
     </div>
   </section>
   <section class="py-4">
-    <h6>Benefit type-4</h6>
+    <h6>With Label</h6>
     <div class="py-3">
       <div class="cust-tabs">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -189,7 +189,7 @@ title: "Elements > Benefit"
          <div class="contents  p-5">
               <div class="row">
                <div class="col-md-12">
-                   <img src="/images/benefit-type-4.png" class="img-fuild w-75">
+                   <img src="/images/benefit-type-4.png" class="img-fuild w-50">
                </div>              
            </div>
                        
@@ -200,7 +200,7 @@ title: "Elements > Benefit"
 <div class="row m-0">
 
 ```html
-  <rds-benefit [item]="item" display_type="benefit_type4"></rds-benefit>
+<rds-benefit [item]="item" display_type="With Label"></rds-benefit>
 ```
 </div>
 </div>
@@ -230,7 +230,7 @@ title: "Elements > Benefit"
          <div class="contents  p-5">
               <div class="row">
                <div class="col-md-12">
-                   <img src="/images/benefit-without-label.png" class="img-fuild w-75">
+                   <img src="/images/benefit-without-label.png" class="img-fuild w-50">
                </div>             
            </div>
                        

@@ -44,7 +44,7 @@ title: "Elements > Address-Detail"
 <div class="row m-0">
 
 ```html
-     <rds-address-detail
+<rds-address-detail
   header="Address Header"
   addressLine1="Address Line 1"
   addressLine2="Address Line 2"

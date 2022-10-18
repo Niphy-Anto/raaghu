@@ -40,15 +40,7 @@ title: "Elements > Search-input"
 <div class="row  m-0 p-4">
   
 ```html
-<rds-rating
-  [itemList]="itemList"
-  [withNoOfReviews]="true"
-  ratingPosition="left"
-  [rating]="2"
-  colorVariant="review"
-  [noOfReview]="123"
-  size="medium"
-></rds-rating>
+<rds-search-input placeholder="Search" size="small"></rds-search-input>
 ```
 
  </div>

@@ -60,15 +60,15 @@ title: "Elements > Team-member"
       <div class="cust-tabs">
         <ul class="nav nav-tabs" id="myTabOne" role="tablist">
           <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="PreviewBasicOne-tab" data-bs-toggle="tab" data-bs-target="#PreviewBasicOne" type="button" role="tab" aria-controls="PreviewBasic" aria-selected="true">Preview </button>
+            <button class="nav-link active" id="PreviewAdvance-tab" data-bs-toggle="tab" data-bs-target="#PreviewAdvance" type="button" role="tab" aria-controls="PreviewAdvance" aria-selected="true">Preview </button>
           </li>
           <li class="nav-item" role="presentation">
-            <button class="nav-link" id="AngularBasicOne-tab" data-bs-toggle="tab" data-bs-target="#AngularBasicOne" type="button" role="tab" aria-controls="AngularBasic" aria-selected="false"><i class="bi bi-code-slash" style="font-size:1.0rem"></i>Angular</button>
+            <button class="nav-link" id="AngularAdvance-tab" data-bs-toggle="tab" data-bs-target="#AngularAdvance" type="button" role="tab" aria-controls="AngularAdvance" aria-selected="false"><i class="bi bi-code-slash" style="font-size:1.0rem"></i>Angular</button>
           </li>
         </ul>
       </div>
       <div class="tab-content card border" id="myTabContent">
-        <div class="tab-pane fade show active" id="PreviewBasic" role="tabpanel" aria-labelledby="PreviewBasic-tab">
+        <div class="tab-pane fade show active" id="PreviewAdvance" role="tabpanel" aria-labelledby="PreviewAdvance-tab">
          <div class="contents p-5">
               <div class="row"> 
                  <div class="col-md-12">
@@ -78,7 +78,7 @@ title: "Elements > Team-member"
                        
   </div>
         </div>
-        <div class="tab-pane fade show" id="AngularBasic" role="tabpanel" aria-labelledby="AngularBasic-tab">
+        <div class="tab-pane fade show" id="AngularAdvance" role="tabpanel" aria-labelledby="AngularAdvance-tab">
           <div class="contents bg-code">
 <div class="row m-0">
 

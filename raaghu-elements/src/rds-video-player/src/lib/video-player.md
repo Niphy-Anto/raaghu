@@ -42,7 +42,9 @@ title: "Elements > Video-player"
 <div class="row m-0">
 
 ```html
-<rds-website-metric [item]="item"></rds-website-metric>
+<rds-video-player
+  videoLink="http://static.videogular.com/assets/videos/videogular.mp4"
+></rds-video-player>
 ```
 
 </div>

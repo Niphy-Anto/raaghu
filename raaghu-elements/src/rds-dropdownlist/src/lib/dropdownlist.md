@@ -11,7 +11,7 @@ title: "Elements > Dropdownlist"
 
 #### Dropdown List
 
-<p class="checkbox-def">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore sdavavfgsv</p>
+<p class="checkbox-def">Dropdown list is a blocked dropdown containing the list of contents.</p>
 
 <section class="py-4">
     <h6>Default</h6>
