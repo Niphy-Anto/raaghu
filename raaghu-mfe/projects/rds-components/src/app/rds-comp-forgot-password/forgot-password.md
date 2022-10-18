@@ -28,7 +28,7 @@ title: "Components > Forgot-password"
          <div class="contents bg-light p-5">
               <div class="row">
              <div class="col-md-12">
-              <img src="/images/forgot-password.png" class="img-fluid w-50">
+              <img src="/images/forgot-password.png" class="img-fluid">
            </div>
                        
   </div>
@@ -37,9 +37,7 @@ title: "Components > Forgot-password"
           <div class="contents bg-code">
 <div class="row m-0">
 
-```html
-<rds-forgot-password></rds-forgot-password>
-```
+
 </div>
 </div>
   </div>

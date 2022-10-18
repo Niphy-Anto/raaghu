@@ -9,7 +9,7 @@ title: "Components > New Dynamic Entity Property"
 
 #### New Dynamic Entity Property
 
-<p></p>
+<p>provides a dropdown selection on entity and property</p>
 <section class="py-4">                                                                                             
     <div class="py-3">
       <div class="cust-tabs">
