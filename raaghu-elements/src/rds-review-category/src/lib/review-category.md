@@ -10,7 +10,9 @@ title: "Elements > Review-category"
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/main.css">
 
 
-#### Review-category
+#### Review Category
+
+<p class="">Review category consists of predefined templates that helps user feature the reviews for the products.</p>
 
  <section class="py-4">
     <h6>Default</h6>

@@ -11,7 +11,7 @@ title: "Charts > Chart-mixed"
 
 #### Mixed Chart
 
-<p class="">A card is a small rectangular module with images and text. It is an entry point for users to learn more details</p>
+<p class="">Mixed chart is the combination two chart types that are bar and line containing multiple data sets. It helps in the differentiating different types of data in a single chart.</p>
 
 <section class="py-4">
     <h6>Default</h6>

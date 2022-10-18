@@ -11,7 +11,7 @@ title: "Charts > Chart-scatter"
 
 #### Scatter Chart
 
-<p class="">A card is a small rectangular module with images and text. It is an entry point for users to learn more details</p>
+<p class="">Scatter chart is used to represent the relationship between the two variables in a data-set.</p>
 
 <section class="py-4">
     <h6>Default</h6>
