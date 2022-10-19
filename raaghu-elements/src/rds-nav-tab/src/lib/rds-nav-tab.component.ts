@@ -9,18 +9,17 @@ export class RdsNavTabComponent implements OnInit {
 
   @Input() navtabsItems?: any
   @Input() horizontalAlignment: 'start' | 'center' | 'end' = 'start';
-  @Input() verticalAlignment?: boolean;
-  @Input() pills?: boolean;
-  @Input() tabs?: boolean;
-  @Input() fill?: boolean;
-  @Input() justified?: boolean;
-  @Input() flex?: boolean;
+  @Input() verticalAlignment: boolean=false;
+  @Input() pills: boolean=false;
+  @Input() tabs: boolean=false;
+  @Input() fill: boolean=false;
+  @Input() justified: boolean=false;
+  // @Input() flex?: boolean;
   @Input() iconHeight: string = '20px';
   @Input() iconWidth: string = '20px';
-  @Output()
-  onClicktab = new EventEmitter<{ evnt: any }>();
-  @Input() activepage: number = 0;
-  @Input() tabsWithBorderTop?: boolean = true;
+  @Output() onClicktab = new EventEmitter<{ evnt: any }>();
+  @Input() activeTab: number = 0;
+  // @Input() tabsWithBorderTop?: boolean = true;
   constructor() { }
 
   ngOnInit(): void {
@@ -28,20 +27,20 @@ export class RdsNavTabComponent implements OnInit {
   }
 
   onClick(i: any): void {
-    this.activepage = i;
+    this.activeTab = i;
     this.onClicktab.emit(i)
   }
 
   public get classes(): string {
     const align = ` justify-content-${this.horizontalAlignment}`;
     const vertical = `${this.verticalAlignment ? ' flex-column vertical-tab' : ' flex '}`;
-    const pill = `${this.pills ? 'nav nav-pills' : ''}`;
-    const tab = `${this.tabs ? ' rds-tab-2' : ''}`;
+    const pill = `${this.pills ? 'nav-pills' : ''}`;
+    const tab = `${this.tabs ? ' nav-tabs' : ''}`;
     const fill = `${this.fill ? ' nav-pills nav-fill' : ''}`;
     const justify = `${this.justified ? ' nav-pills nav-justified' : ''}`;
-    const flex = `${this.flex ? 'nav-pills flex-column flex-sm-row' : ''}`
-    const border = `${this.tabsWithBorderTop ? '' : ' rds-tab-2'}`;
-    return align + vertical + pill + tab + border + fill + justify + flex;
+    // const flex = `${this.flex ? 'nav-pills flex-column flex-sm-row' : ''}`
+    // const border = `${this.tabsWithBorderTop ? '' : ' rds-tab-2'}`;
+    return align + vertical + pill + tab  + fill + justify;
   }
 
 

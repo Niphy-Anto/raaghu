@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output, TemplateRef, ViewEncapsulation } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
+import { Dropdown } from 'bootstrap'
 
 @Component({
   selector: 'rds-fab-menu',
@@ -17,15 +18,15 @@ import { NG_VALUE_ACCESSOR } from '@angular/forms';
 export class RdsFabMenuComponent implements OnInit {
 
   @Input() colorVariant: 'warning' | 'danger' | 'success' | 'info' | 'primary' | 'secondary' | 'dark' | 'light' | undefined = undefined;
-
+  @Input() id: string = 'fabMenu';
   @Input()
-  size?:  'small' | 'large' | 'default';
-  @Input() menuicon: string = 'list';
-  @Input() menuiconWidth!: string;
-  @Input() menuiconHeight!: string;
+  size?: 'small' | 'large' | 'default';
+  @Input() show: boolean = false;
+  @Input() menuicon: string = 'plus';
+  @Input() menuiconWidth: string = '12px';
+  @Input() menuiconHeight: string = '12px';
   @Input()
   DropdownItems!: TemplateRef<any>;
-  show = '';
   @Input()
   listItems = [
     { value: 'New Role', some: 'value', key: 'new', icon: 'users', iconWidth: '20px', iconHeight: '20px' },
@@ -43,7 +44,7 @@ export class RdsFabMenuComponent implements OnInit {
   }
 
   public get customClasses(): any[] {
-    var customClasses=[''];
+    var customClasses = [''];
 
     if (this.size === 'small') {
       customClasses.push('btn-sm');
@@ -62,7 +63,10 @@ export class RdsFabMenuComponent implements OnInit {
     this.listItems[item]
     this.onSelect.emit(item);
   }
-  onClickshow(){
-    this.show == '' ?  this.show = 'show' : this.show = 'show' ? this.show = '' : '';
-    }
+  open() {
+    this.show = !this.show;
+    var element: any = document.getElementById(this.id);
+    var dropdown = new Dropdown(element);
+    dropdown.show();
   }
+}

@@ -50,7 +50,6 @@ export const Default = Template.bind({});
 Default.args = {
   colorVariant: 'primary',
   size: 'default',
-  darkDropdown: false,
   listItems: [
     { value: 'Export to excel', some: 'value', id: 1, href: '', icon: 'circle', iconWidth: '20px', iconHeight: '20px', iconStroke: true, iconFill: false },
     { value: 'Import from excel', some: 'value', id: 2, href: '', icon: 'download_data', iconWidth: '20px', iconHeight: '20px', iconStroke: true, iconFill: false },
@@ -58,7 +57,6 @@ Default.args = {
   ],
   label: 'EXCEL OPERATIONS',
   direction: 'Drop-down',
-  dropdownAlignment: [],
   role: 'dropdown-button',
 };
 
@@ -67,7 +65,6 @@ export const Dropdown_with_split = Template.bind({});
 Dropdown_with_split.args = {
   colorVariant: 'primary',
   size: 'default',
-  darkDropdown: false,
   listItems :  [
     { value: 'Export to excel', some: 'value', id: 1, href: '', icon: 'circle', iconWidth: '20px', iconHeight: '20px', iconStroke: true, iconFill: false },
     { value: 'Import from excel', some: 'value', id: 2, href: '', icon: 'download_data', iconWidth: '20px', iconHeight: '20px', iconStroke: true, iconFill: false },
@@ -75,6 +72,5 @@ Dropdown_with_split.args = {
   ],
   label: 'EXCEL OPERATIONS',
   direction: 'Drop-down',
-  dropdownAlignment: [],
   role: 'with_split',
 };

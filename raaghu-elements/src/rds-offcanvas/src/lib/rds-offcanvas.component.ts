@@ -16,8 +16,8 @@ export class RdsOffcanvasComponent implements OnInit {
   @Input() offId = 'canvasExample';
   @Input() canvasTitle: string = '';
   @Input() offcanvaswidth = 250;
-  @Input() colorVariant: 'light' | 'primary' | 'secondary' | 'danger' | 'warning' = 'light';
-  @Input() bodySpacing: boolean = true;
+  // @Input() colorVariant: 'light' | 'primary' | 'secondary' | 'danger' | 'warning' = 'light';
+  // @Input() bodySpacing: boolean = true;
   @Output() onShow = new EventEmitter<Event>();
   @Output() onClose = new EventEmitter<Event>();
 
@@ -28,13 +28,13 @@ export class RdsOffcanvasComponent implements OnInit {
 
   public get classes(): string {
     let align = ` offcanvas offcanvas-${this.placement}`;
-    if (this.colorVariant !== undefined) {
-      align = align + ' text-bg-' + this.colorVariant;
-    }
+    // if (this.colorVariant !== undefined) {
+    //   align = align + ' text-bg-' + this.colorVariant;
+    // }
     return align;
   }
-  public get bodyClasses(): string {
-    let spacing = `${this.bodySpacing === false ? ' p-0' : ''}`;
-    return spacing;
-  }
+  // public get bodyClasses(): string {
+  //   let spacing = `${this.bodySpacing === false ? ' p-0' : ''}`;
+  //   return spacing;
+  // }
 }
