@@ -9,7 +9,7 @@
               <p class="mt-2 text-secondary">{{item.date | date:'MMM dd,y'}}</p>
             </div>
             <div>
-              <rds-like-dislike [likeCount]="0" [dislikeCount]="0" [min]="0" (onClick)="onClick($event)">
+              <rds-like-dislike [likeCount]="0" [dislikeCount]="0" (onClick)="onClick($event)">
               </rds-like-dislike>
             </div>
           </div>
@@ -51,7 +51,7 @@
             class="text-secondary"></rds-label>
         </div>
         <div class="mt-2">
-          <rds-like-dislike [likeCount]="0" [dislikeCount]="0" [min]="0" (onClick)="onClick($event)"></rds-like-dislike>
+          <rds-like-dislike [likeCount]="0" [dislikeCount]="0" (onClick)="onClick($event)"></rds-like-dislike>
         </div>
       </div>
 
@@ -70,7 +70,7 @@
             <rds-rating [rating]="4" [noOfReview]="123" Size="small" colorVariant="review"></rds-rating>
           </div>
           <div class="mt-3">
-            <rds-like-dislike [likeCount]="0" [dislikeCount]="0" [min]="0" (onClick)="onClick($event)">
+            <rds-like-dislike [likeCount]="0" [dislikeCount]="0"  (onClick)="onClick($event)">
             </rds-like-dislike>
           </div>
         </div>

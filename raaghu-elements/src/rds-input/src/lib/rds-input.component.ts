@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, forwardRef, Input, OnInit, ViewEncapsulation } from '@angular/core';
-import {  NG_VALUE_ACCESSOR } from '@angular/forms';
+import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { Tooltip } from 'bootstrap'
 
 
@@ -26,9 +26,9 @@ export class RdsInputComponent implements AfterViewInit {
   @Input() labelPosition: 'top' | 'bottom' | 'floating' = 'top';
   @Input() readonly: boolean = false;
   @Input() value = '';
-  @Input() inputType: 'email' | 'text' | 'password' | 'number' = 'text';
+  @Input() inputType: string = 'text';
   @Input() placeholder: string = 'Enter a value';
-  @Input() icon:String = '';
+  @Input() icon: string = '';
   @Input() iconCursor = '';
   @Input() iconHeight: string = '16px';
   @Input() iconWidth: string = '16px';

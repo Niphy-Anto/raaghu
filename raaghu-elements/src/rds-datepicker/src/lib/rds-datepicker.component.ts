@@ -3,11 +3,9 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { BsDatepickerConfig, BsDatepickerViewMode, DatepickerDateTooltipText } from 'ngx-bootstrap/datepicker';
 
-export class selectedRange {
-  constructor(
-    startDate: string,
-    endDate: string
-  ) { }
+export interface selectedRange {
+  startDate?: any,
+  endDate?: any
 }
 
 @Component({
@@ -46,7 +44,6 @@ export class RdsDatepickerComponent implements OnInit, ControlValueAccessor {
   @Input() isRequired: boolean = false;
 
 
-  selectedDate!: Date;
   bsInlineValue!: Date;
   bsInlineRangeValue?: Date[];
   currentDate!: Date;
@@ -63,12 +60,10 @@ export class RdsDatepickerComponent implements OnInit, ControlValueAccessor {
   newDate?: 'currentDate' | 'yesterdayDate' | 'lastSevendate' | 'lastFourteendate' | 'custom' = 'currentDate';
   @Input() label: string = "";
   @Input() format: string = 'MM-dd-YYYY';
-  selectedRange: any;
   @Output() change = new EventEmitter<any>();
   @Input() TitleType: 'Top' | 'Floating' | 'Bottom' = 'Top';
 
   constructor() {
-    this.selectedDate = new Date();
     this.bsInlineValue = new Date();
     this.currentDate = new Date();
     this.yesterdayDate = new Date();

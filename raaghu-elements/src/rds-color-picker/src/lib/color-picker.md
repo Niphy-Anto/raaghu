@@ -10,7 +10,7 @@ title: "Elements > Color-picker"
 
 #### Color Picker
 
-<p class="">A card is a small rectangular module with images and text. It is an entry point for users to learn more details</p>
+<p class="">Color picker allows an user to visually customize and select color for the usage.</p>
 <section class="py-4">
     <h6>Default</h6>
     <div class="py-3">

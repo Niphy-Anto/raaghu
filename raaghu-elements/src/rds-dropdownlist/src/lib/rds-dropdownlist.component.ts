@@ -32,6 +32,8 @@ export class RdsDropdownlistComponent implements OnInit, OnChanges {
   @Input() show: boolean = false;
   @Input() borderDropdown: boolean = false;
 
+  @Input() xOffset: string = '';
+  @Input() yOffset: string = '';
   @Input()
   listItems: any = [
     { value: 'Export to excel', some: 'value', id: 1, href: '', icon: 'export_to_excel', iconWidth: '20px', iconHeight: '25px', iconStroke: true, iconFill: false },

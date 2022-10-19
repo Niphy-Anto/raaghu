@@ -580,7 +580,7 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
       this.theme.theme = 'dark'
     }
     else {
-      this.theme.theme = ''
+      this.theme.theme = 'light'
     }
   }
 

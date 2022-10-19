@@ -9,24 +9,24 @@
       "children": [
         {
           "id": 1,
-          "image": "images/default.png",
-          "title": "Buttons",
+          "image": "images/Landing page-Elements/Button.png",
+          "title": "Button",
           "text": " Buttons with predefined styles (warning, info, danger) for  multiple button types.",
           "link": "/button"
         },
         {
           "id": 2,
-          "image": "images/default.png",
+          "image": "images/Landing page-Elements/button-group.png",
           "title": "Buttons Group",
           "text": "  Button group wraps a series of buttons together into a single line (navbar} or stack in a vertical column. ",
-          "link": "/Buttons Group"
+          "link": "/button-group"
         },
         {
           "id": 3,
-          "image": "images/collapse-button.png",
+          "image": "images/Landing page-Elements/Collapse Button.png",
           "title": "Collapse Button",
           "text": " It is used to show and hide content. Buttons are used as triggers that are mapped to specific elements you toggle",
-          "link": "/Collapse Button"
+          "link": "/collapse"
         },
         {
           "id": 4,
@@ -37,10 +37,10 @@
         },
         {
           "id": 5,
-          "image": "images/button-dropdown.png",
+          "image": "images/Landing page-Elements/Dropdown.png",
           "title": "Button Dropdown",
           "text": "  Button Dropdowns present a list of options from which a user can select one option.",
-          "link": "/button Dropdown"
+          "link": "/dropdown"
         }
       ]
     },
@@ -50,66 +50,59 @@
       "children": [
         {
           "id": 1,
-          "image": "images/checkbox.png",
+          "image": "images/Landing page-Elements/Checkbox.png",
           "title": "Checkbox",
           "text": " Checkboxes are used when there are multiple items to select in a list.",
           "link": "/checkbox"
         },
         {
           "id": 2,
-          "image": "images/radio-button.png",
+          "image": "images/Landing page-Elements/Radio Buttons.png",
           "title": "Radio",
           "text": "  Radio buttons are group of mutually exclusive choices and only one selection from the group is allowed.",
-          "link": "/radio"
+          "link": "/radio-button"
         },
         {
           "id": 3,
-          "image": "images/date-picker.png",
+          "image": "images/Landing page-Elements/Datepicker.png",
           "title": "Date-Time Picker",
           "text": " Date and time pickers allow users to select a single or a range of dates and times.",
-          "link": "/Date-Time Picker"
+          "link": "/datepicker"
         },
         {
           "id": 4,
-          "image": "images/dropdown-list.png",
+          "image": "images/Landing page-Elements/Dropdown List.png",
           "title": "Dropdown list ",
           "text": " It is list of options for selection. A selected option can represent a value in a form, or can be used as an action",
-          "link": "/dropdown list"
+          "link": "/dropdownlist"
         },
         {
           "id": 5,
-          "image": "images/file-uploaders.png",
+          "image": "images/Landing page-Elements/File Uploaders.png",
           "title": "File Uploader",
           "text": "  File uploaders allow users to select one or more files to upload to a specific location.",
-          "link": "/file Uploader"
+          "link": "/file-uploader"
         },
         {
           "id": 6,
-          "image": "images/text-input.png",
+          "image": "images/Landing page-Elements/Input-Group.png",
           "title": "Input",
           "text": "  Text inputs enable the user to interact with and input content and data.  ",
           "link": "/input"
         },
         {
           "id": 7,
-          "image": "images/search.png",
+          "image": "images/Landing page-Elements/Search.png",
           "title": "Search",
           "text": " Search enables users to specify a word or a phrase to find relevant pieces of content without the use of navigation.",
-          "link": "/search"
-        },
-        {
-          "id": 8,
-          "image": "images/floating-labels.png",
-          "title": "Floating Labels",
-          "text": " A floating label is a text label which appears inside the input field at full font-size",
-          "link": "/floating Labels"
-        },
+          "link": "/search-input"
+        },       
         {
           "id": 9,
-          "image": "images/range-slider.png",
+          "image": "images/Landing page-Elements/Range Slider.png",
           "title": "Range Slider",
           "text": "It is an input field that merchants can use to select a numeric value within a given range (min and max values).",
-          "link": "/range Slider"
+          "link": "/range"
         }
       ]
     },
@@ -119,28 +112,28 @@
       "children": [
         {
           "id": 1,
-          "image": "images/Breadcrumb.png",
+          "image": "images/Landing page-Elements/Breadcrumbs.png",
           "title": "Breadcrumbs",
           "text": " Breadcrumbs are a list of links representing the current page and its “ancestors”.",
-          "link": "/breadcrumbs"
+          "link": "/breadcrumb"
         },
         {
           "id": 2,
-          "image": "images/pagination.png",
+          "image": "images/Landing page-Elements/Pagination.png",
           "title": "Pagination",
           "text": " Pagination allows you to divide large amounts of content into smaller chunks across multiple pages.",
           "link": "/pagination"
         },
         {
           "id": 3,
-          "image": "images/tabs.png",
-          "title": "Tabs",
+          "image": "images/Landing page-Elements/Nav Tabs.png",
+          "title": "Nav Tabs",
           "text": " Tabs are a way of navigating between multiple panels, reducing clutter and fitting more into a smaller space.",
-          "link": "/tabs"
+          "link": "/nav-tab"
         },
         {
           "id": 4,
-          "image": "images/icon.png",
+          "image": "images/Landing page-Elements/Icon.png",
           "title": "Icon ",
           "text": "  Icon is a graphic symbol that represents some real, fantasy or abstract motive, entity or action.",
           "link": "/icon"
@@ -153,59 +146,59 @@
       "children": [
         {
           "id": 1,
-          "image": "images/accordion.png",
+          "image": "images/Landing page-Elements/Accordion.png",
           "title": "Accordion",
           "text": " It is list of collapsible panels  with clickable heading or down arrow, expands to show rolled up content. ",
           "link": "/accordion"
         },
         {
           "id": 2,
-          "image": "images/default.png",
+          "image": "images/Landing page-Elements/Avatar.png",
           "title": "Avatar",
           "text": " Avatar is known as a visual form representing a user oneself and one's identity wished.",
           "link": "/avatar"
         },
         {
           "id": 3,
-          "image": "images/cards.png",
+          "image": "images/Landing page-Elements/Card.png",
           "title": "Card",
           "text": " A card is a small rectangular module with images and text. It is an entry point for users to learn more details.",
-          "link": "/Date-Time Picker"
+          "link": "/card"
         },
         {
           "id": 4,
           "image": "images/chart.png",
-          "title": "Chats ",
+          "title": "Charts ",
           "text": "A Chart is an embedded component inserted within a worksheet. use a Chart component to better visualize and present your data",
-          "link": "/dropdown list"
+          "link": "/dropdownlist"
         },
         {
           "id": 5,
           "image": "images/carousel.png",
           "title": "Carousel",
           "text": " It is referred as the 'slider' or 'slides'. Carousel works by rotating a group of images that can house text, static images or video content. ",
-          "link": "/date-time picker"
+          "link": "/carousel"
         },
         {
           "id": 6,
-          "image": "images/popover.png",
+          "image": "images/Landing page-Elements/Popover.png",
           "title": "Popover",
           "text": "   Popovers are used to provide supplemental, useful, unique information about an element, including one or multiple actionable elements.",
           "link": "/popover"
         },
         {
           "id": 7,
-          "image": "images/list-group.png",
+          "image": "images/Landing page-Elements/List Group.png",
           "title": "List Group",
           "text": "  Lists are vertical groupings of related content. List items begin with either a number or a bullet.",
           "link": "/list-group"
         },
         {
           "id": 8,
-          "image": "images/table.png",
+          "image": "images/Landing page-Elements/Table.png",
           "title": "Table",
           "text": " Tables are a designed for displaying large amounts of data in rows and columns.",
-          "link": "/Date-Time Picker"
+          "link": "/table"
         },
         {
           "id": 9,
@@ -229,24 +222,24 @@
       "children": [
         {
           "id": 1,
-          "image": "images/alerts.png",
+          "image": "images/Landing page-Elements/Alert.png",
           "title": "Alert",
           "text": "  An alert helps to keeps people informed of the status of the system and may or may not require the user to respond.",
           "link": "/alert"
         },
         {
           "id": 2,
-          "image": "images/progress-bar.png",
+          "image": "images/Landing page-Elements/Progressbar.png",
           "title": "Progress Bar",
           "text": " Progress bars show continuous progress through a process, such as a percentage value. ",
-          "link": "/Pagination"
+          "link": "/progressbar"
         },
         {
           "id": 3,
-          "image": "images/collapse-button.png",
+          "image": "images/Landing page-Elements/Toast.png",
           "title": "Toast Message",
           "text": "  Toasts are time-based window elements used to display short messages. It will disappear after a few seconds.",
-          "link": "/Date-Time Picker"
+          "link": "/toasts"
         }
       ]
     },
@@ -256,17 +249,17 @@
       "children": [
         {
           "id": 1,
-          "image": "images/tags.png",
+          "image": "images/Landing page-Elements/Tag.png",
           "title": "Tags",
           "text": "  Tags are used to label, organize, or categorize objects. Tags can also serve as a label for content or display counts.",
-          "link": "/Breadcrumbs"
+          "link": "/tags"
         },
         {
           "id": 2,
-          "image": "images/badge.png",
+          "image": "images/Landing page-Elements/Badge.png",
           "title": "Badge",
           "text": "  Use the Badge Component Symbol to draw attention to another interface element or to display a notification. ",
-          "link": "/Pagination"
+          "link": "/badge"
         }
       ]
     },
@@ -276,24 +269,24 @@
       "children": [
         {
           "id": 1,
-          "image": "images/offcanvas.png",
+          "image": "images/Landing page-Elements/Offcanvas.png",
           "title": "Offcanvas",
           "text": "  Offcanvas is a sidebar that can be toggled via JavaScript to appear from the left, right, or bottom edge of the viewport.",
-          "link": "/Breadcrumbs"
+          "link": "/offcanvas"
         },
         {
           "id": 2,
-          "image": "images/scrollspy.png",
-          "title": "scrollspy",
+          "image": "images/Landing page-Elements/Scrollspy.png",
+          "title": "Scrollspy",
           "text": "  Scrollspy is a navigation mechanism that automatically highlights the nav links based on the scroll position",
-          "link": "/Pagination"
+          "link": "/scrollspy"
         },
         {
           "id": 3,
-          "image": "images/modal-popups.png",
+          "image": "images/Landing page-Elements/Modal Popups.png",
           "title": "Modal Popups",
           "text": " It is a dialog box/popup window that is displayed on top of the current page",
-          "link": "/Date-Time Picker"
+          "link": "/modal"
         }
       ]
     },
@@ -303,42 +296,42 @@
       "children": [
         {
           "id": 1,
-          "image": "images/default.png",
+          "image": "images/Landing page-Elements/Breadcrumbs.png",
           "title": "Breadcrumbs",
           "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-          "link": "/Breadcrumbs"
+          "link": "/breadcrumbs"
         },
         {
           "id": 2,
-          "image": "images/default.png",
+          "image": "images/Landing page-Elements/Address-Detail.png",
           "title": "Address detail",
           "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           "link": "/address-detail"
         },
         {
           "id": 3,
-          "image": "images/default.png",
+          "image": "images/Landing page-Elements/App-Details.png",
           "title": "App details",
           "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           "link": "/app-details"
         },
         {
           "id": 4,
-          "image": "images/default.png",
+          "image": "images/Landing page-Elements/App-Details.png",
           "title": "Banner",
           "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           "link": "/banner"
         },
         {
           "id": 5,
-          "image": "images/default.png",
+          "image": "images/Landing page-Elements/Benefit.png",
           "title": "Benefit",
           "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           "link": "/benefit"
         },
         {
           "id": 6,
-          "image": "images/default.png",
+          "image": "images/Landing page-Elements/big-number.png",
           "title": "Big Number Widget",
           "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           "link": "/big-number-widget"
@@ -352,126 +345,126 @@
         },
         {
           "id": 8,
-          "image": "images/default.png",
+          "image": "images/Landing page-Elements/Color.png",
           "title": "Color",
           "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           "link": "/color"
         },
         {
           "id": 9,
-          "image": "images/default.png",
+          "image": "images/Landing page-Elements/Counter.png",
           "title": "Counter",
           "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           "link": "/counter"
         },
         {
           "id": 10,
-          "image": "images/default.png",
+          "image": "images/Landing page-Elements/Fab Menu.png",
           "title": "Fab Menu",
           "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           "link": "/fab-menu"
         },
         {
           "id": 11,
-          "image": "images/default.png",
+          "image": "images/Landing page-Elements/Feature List.png",
           "title": "Feature List",
           "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           "link": "/feature-list"
         },
         {
           "id": 12,
-          "image": "images/default.png",
+          "image": "images/Landing page-Elements/Feeds.png",
           "title": "Feed",
           "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           "link": "/feed"
         },
         {
           "id": 13,
-          "image": "images/default.png",
+          "image": "images/Landing page-Elements/Icon-Label.png",
           "title": "Icon Label",
           "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           "link": "/icon-label"
         },
         {
           "id": 14,
-          "image": "images/default.png",
+          "image": "images/Landing page-Elements/Illustration - Empty State.png",
           "title": "Illustration",
           "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           "link": "/illustration"
         },
         {
           "id": 15,
-          "image": "images/default.png",
+          "image": "images/Landing page-Elements/Label.png",
           "title": "Label",
           "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           "link": "/label"
         },
         {
           "id": 16,
-          "image": "images/default.png",
+          "image": "images/Landing page-Elements/Like Dislike.png",
           "title": "Like Dislike",
           "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           "link": "/like-dislike"
         },
         {
           "id": 17,
-          "image": "images/default.png",
+          "image": "images/Landing page-Elements/Nav-bar.png",
           "title": "Nav Bar",
           "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           "link": "/nav-bar"
         },
         {
           "id": 18,
-          "image": "images/default.png",
+          "image": "images/Landing page-Elements/Nav Tabs.png",
           "title": "Nav Tabs",
           "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           "link": "/nav-tab"
         },
         {
           "id": 19,
-          "image": "images/default.png",
+          "image": "images/Landing page-Elements/Popular Pages.png",
           "title": "Popular Pages",
           "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           "link": "/popular-pages"
         },
         {
           "id": 20,
-          "image": "images/default.png",
+          "image": "images/Landing page-Elements/Price.png",
           "title": "Price",
           "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           "link": "/price"
         },
         {
           "id": 21,
-          "image": "images/default.png",
+          "image": "images/Landing page-Elements/Product images.png",
           "title": "Product Image",
           "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           "link": "/product-image"
         },
         {
           "id": 22,
-          "image": "images/default.png",
+          "image": "images/Landing page-Elements/Rating.png",
           "title": "Rating",
           "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           "link": "/rating"
         },
         {
           "id": 23,
-          "image": "images/default.png",
+          "image": "images/Landing page-Elements/Review-category.png",
           "title": "Review Category",
           "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           "link": "/review-category"
         },
         {
           "id": 24,
-          "image": "images/default.png",
+          "image": "images/Landing page-Elements/Select-list.png",
           "title": "Select List",
           "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           "link": "/select-list"
         },
         {
           "id": 25,
-          "image": "images/default.png",
+          "image": "images/Landing page-Elements/Side-nav.png",
           "title": "Side Nav",
           "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           "link": "/side-nav"
@@ -485,42 +478,42 @@
         },
         {
           "id": 27,
-          "image": "images/default.png",
+          "image": "images/Landing page-Elements/Spinner.png",
           "title": "Spinner",
           "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           "link": "/spinner"
         },
         {
           "id": 28,
-          "image": "images/default.png",
+          "image": "images/Landing page-Elements/Stat.png",
           "title": "Stat",
           "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           "link": "/stat"
         },
         {
           "id": 29,
-          "image": "images/default.png",
+          "image": "images/Landing page-Elements/Stepper.png",
           "title": "Stepper",
           "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           "link": "/stepper"
         },
         {
           "id": 30,
-          "image": "images/default.png",
+          "image": "images/Landing page-Elements/Team-member.png",
           "title": "Team Member",
           "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           "link": "/team-member"
         },
         {
           "id": 31,
-          "image": "images/default.png",
+          "image": "images/Landing page-Elements/Testimonial.png",
           "title": "Testimonial",
           "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           "link": "/testimonial"
         },
         {
           "id": 32,
-          "image": "images/default.png",
+          "image": "images/Landing page-Elements/Textarea.png",
           "title": "Textarea",
           "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           "link": "/textarea"
@@ -534,21 +527,21 @@
         },
         {
           "id": 34,
-          "image": "images/default.png",
+          "image": "images/Landing page-Elements/Video-player.png",
           "title": "Video Player",
           "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           "link": "/video-player"
         },
         {
           "id": 35,
-          "image": "images/default.png",
+          "image": "images/Landing page-Elements/Website-Metric.png",
           "title": "Website Metric",
           "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           "link": "/website-metric"
         },
         {
           "id": 36,
-          "image": "images/default.png",
+          "image": "images/Landing page-Elements/Widget.png",
           "title": "Widget",
           "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
           "link": "/widget"

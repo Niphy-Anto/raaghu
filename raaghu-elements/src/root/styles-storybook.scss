@@ -151,20 +151,20 @@
   list-style: none;
 }
 
-// .small {
-//   font-size: 0.875rem;
-//   padding: 0;
-// }
+/*.small {
+  font-size: 0.875rem;
+  padding: 0;
+}
 
 // .medium {
 //   font-size: 1rem;
 //   padding: 0px;
 // }
 
-// .large {
-//   font-size: 1.25rem;
-//   padding: 0;
-// }
+.large {
+  font-size: 1.25rem;
+  padding: 0;
+}*/
 
 // ==============================================================
 .square-tags {
@@ -2622,4 +2622,71 @@ app-rds-comp-product-list .card-body {
 }
 .sidenav-footer {
   left: 10px;
+}
+a {
+  text-decoration: none;
+}
+html #sidebar {
+  background-color: #f5f5fa;
+  border-right-color: #e9ecef;
+}
+html #sidebar ul li a {
+  color: #6c757d;
+}
+#sidebar > ul {
+  height: calc(100vh - 158px) !important;
+  overflow-y: auto;
+}
+#sidebar ul li {
+  border-top-color: #fff;
+}
+html #sidebar ul li a.active {
+  color: #212529;
+}
+html #sidebar ul li a {
+  color: #6c757d;
+  border-left-color: transparent;
+}
+#sidebar ul li a {
+  height: 35px;
+  font-size: .875rem;
+}
+html #sidebar ul li a.active svg path.icon {
+  stroke: #7e2eef;
+}
+.bd-links .child::after {
+  content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e ");
+  padding-left: 10px;
+}
+
+// .sb-show-main {
+//   background-color: #F8F8F8;
+// }
+
+body.light-theme{
+  background-color: #F8F8F8;  
+}
+
+body.dark-theme{
+  background-color: #333333;
+  color:#fff;
+  .accordion-button {
+    background: #32343B;
+    color: #fff;
+  }
+  .accordion-header {
+    background: #7E2EEf;
+    border-color: #7e2eef;
+  }
+//   .accordion-item:last-of-type {
+//     border-bottom-right-radius:0.25rem;
+//     border-bottom-left-radius:0.25rem;
+//   }
+//   .accordion-button:after {
+//     position: absolute;
+//     right:-2.875rem;
+//     background-position:0.938rem 1.25rem;
+//     background-image: url("data:image/svg+xml,svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' path d='M19413.9-9696l7 7 7-7' transform='translate-19412.486 9697.414' fill='none' stroke='fff' stroke-linecap='round' stroke-width='2'/ec/svge)";
+//     background-size:1.1375rem;
+// }
 }

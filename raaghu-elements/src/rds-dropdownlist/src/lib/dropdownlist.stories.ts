@@ -19,7 +19,7 @@ export default {
       control: { type: 'select' }
     },
     size: {
-      options: [ 'small', 'large'],
+      options: ['small', 'large'],
       control: { type: 'radio' }
     },
 
@@ -46,7 +46,7 @@ export const Default: Story<RdsDropdownlistComponent> = (args) => ({
   >
     </rds-dropdownlist>`
 });
-Default.parameters = { controls: { include: ['placeholder', 'icon', 'size','iconHeight','iconWidth','multiSelect','listItems'] } };
+Default.parameters = { controls: { include: ['placeholder', 'icon', 'size', 'iconHeight', 'iconWidth', 'multiSelect', 'listItems'] } };
 
 Default.args = {
   placeholder: 'Filter',
@@ -54,6 +54,33 @@ Default.args = {
   icon: 'plus',
   iconHeight: '12px',
   iconWidth: '12px',
+  multiSelect: false,
+  listItems: [
+    { value: 'Export to excel', some: 'value', id: 1, href: '', icon: 'export', iconWidth: '20px', iconHeight: '25px', iconStroke: true, iconFill: false },
+    { value: 'Import from excel', some: 'value', id: 2, href: '', icon: 'download_data', iconWidth: '20px', iconHeight: '20px', iconStroke: true, iconFill: false },
+    { value: 'Click here download sample import file.', some: 'value', id: 3, href: '', icon: 'download_data', iconWidth: '20px', iconHeight: '20px', iconStroke: true, iconFill: false },
+  ]
+};
+
+
+export const WithOffset: Story<RdsDropdownlistComponent> = (args) => ({
+  props: args,
+  template:
+    `<rds-dropdownlist 
+    [listItems]="listItems"
+    [placeholder]="placeholder"
+    [size]="size"
+    [multiSelect]="multiSelect"
+    [xOffset] = "xOffset"
+    [yOffset] = "yOffset"
+  >
+    </rds-dropdownlist>`
+});
+WithOffset.args = {
+  placeholder: 'Filter',
+  xOffset: '0',
+  yOffset: '0',
+  size: 'small',
   multiSelect: false,
   listItems: [
     { value: 'Export to excel', some: 'value', id: 1, href: '', icon: 'export', iconWidth: '20px', iconHeight: '25px', iconStroke: true, iconFill: false },

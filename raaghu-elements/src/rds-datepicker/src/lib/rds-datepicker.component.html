@@ -14,7 +14,7 @@
         class="form-control border-0" />
       <span class="input-group-text border" id="basic-addon1" (click)="datepicker.show()"
         [class.disable-pointer]="disabled">
-        <rds-icon name="calendar" height="18px" width="18px" [disabled]="disabled"></rds-icon>
+        <rds-icon name="calendar" height="18px" width="18px"></rds-icon>
       </span>
     </div>
     <label *ngIf="label&&TitleType==='Bottom'" class="mt-2">{{
@@ -34,7 +34,7 @@
         <span *ngIf="selectdate.length>0&&selectdate[0].startDate"
           class="ms-2">{{selectdate[0].startDate|date:format}}</span> <span
           *ngIf="selectdate.length>0&&selectdate[0].endDate"> - {{selectdate[0].endDate|date:format}}</span>
-        <span *ngIf="placeholder&&(!selectdate||selectdate.length===0||selectdate==='[]')" class="date-range  ms-2">
+        <span *ngIf="placeholder&&(!selectdate||selectdate.length===0)" class="date-range  ms-2">
           {{placeholder
           }}</span>
       </button>

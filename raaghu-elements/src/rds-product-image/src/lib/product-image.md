@@ -12,6 +12,7 @@ title: "Elements > Product-image"
 
 #### Product image
 
+<p class="">Use the product image to display the images of the products in the pre-designed templates.</p>
 <section class="py-4">
     <h6>Default</h6>
     <div class="py-3">

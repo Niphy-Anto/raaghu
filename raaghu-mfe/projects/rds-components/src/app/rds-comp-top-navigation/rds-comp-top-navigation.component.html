@@ -24,11 +24,11 @@
       <ul class="navbar-nav d-flex align-items-center ms-auto">
         <rds-dropdownlist [placeholder]="'Select theme'" [value]="themes.value" [borderDropdown]="false"
           [listItems]="themes" (onSelect)="onThemeSelect($event.item.value)"></rds-dropdownlist>
-        <rds-dropdownlist class="ms-2" [placeholder]="'Languages'" [value]="selectedLanguage.language"
+        <rds-dropdownlist class="ms-2" [placeholder]="'Languages'" [value]="selectedLanguage.language" [xOffset]="'-90'" [yOffset]="'0'"
           [icon]="selectedLanguage.icon" [borderDropdown]="false" [iconHeight]="'18px'" [iconWidth]="'18px'"
           [listItems]="languageItems" (onSelect)="onLanguageSelect($event)">
         </rds-dropdownlist>
-        <li class="nav-item dropdown border-end px-2">
+        <li class="nav-item dropdown border-end pe-3 ps-2 me-1">
           <a class="nav-link py-0" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
             aria-expanded="false">
             <span>
@@ -56,9 +56,9 @@
             <!-- <mfe-loader [config]="rdsNotoficationMfeConfig"></mfe-loader> -->
           </div>
         </li>
-        <li class="nav-item border-end px-2">
+        <!-- <li class="nav-item border-end px-2">
           <rds-icon width="20px" height="20px" name="chevron_down_arrow"></rds-icon>
-        </li>
+        </li> -->
       </ul>
     </div>
     <div class="mobile-ms">
