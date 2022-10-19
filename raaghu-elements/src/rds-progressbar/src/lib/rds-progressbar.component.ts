@@ -14,7 +14,7 @@ export class RdsProgressbarComponent implements OnInit {
   @Input() progressWidth: number;
   @Input() progressbar_MaxWidth: number = 100;
   @Input() role: 'single' | 'multiple' = 'single';
-  @Input() progressvalues = [{ progressWidth: "50", colorVariant: 'success', stripe: 'progress-bar-striped', animation: 'progress-bar-animated' }, { progressWidth: "20", colorVariant: 'danger' }, { progressWidth: "30", colorVariant: 'info' }];
+  @Input() progressvalues = [{ progressWidth: 50, colorVariant: 'success', stripe: 'progress-bar-striped', animation: 'progress-bar-animated' }, { progressWidth: 20, colorVariant: 'danger' }, { progressWidth: 30, colorVariant: 'info' }];
   @Input() showLabels: boolean = true;
   constructor() { }
 

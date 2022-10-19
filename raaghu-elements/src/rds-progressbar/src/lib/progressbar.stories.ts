@@ -45,6 +45,6 @@ multi_Progressbar.parameters = { controls: { include: ['progressvalues', 'role',
 multi_Progressbar.args = {
   role: 'multiple',
   height: 15,
-  progressvalues: [{ progressWidth: "50", colorVariant: 'success', stripe: 'progress-bar-striped', animation: 'progress-bar-animated' }, { progressWidth: "20", colorVariant: 'danger' }, { progressWidth: "30", colorVariant: 'info' }],
+  progressvalues: [{ progressWidth: 50, colorVariant: 'success', stripe: 'progress-bar-striped', animation: 'progress-bar-animated' }, { progressWidth: 20, colorVariant: 'danger' }, { progressWidth: 30, colorVariant: 'info' }],
 };
 
