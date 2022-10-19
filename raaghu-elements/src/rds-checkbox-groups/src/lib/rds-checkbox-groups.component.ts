@@ -17,18 +17,13 @@ export class RdsCheckboxGroupsComponent implements OnInit {
   value = ''
   onChange!: (value: string) => void;
   onTouched!: () => void
-  @Input() label?: string;
   // @Output() onChange = new EventEmitter<boolean>();
 
-  @Input() checked!: boolean;
-  @Input() disabled!: boolean;
 
   @Input() switch!: boolean;
 
   @Input() inline!: boolean;
-  // @Input() itemList:any = [];
 
-  @Input() id?: string
   @Input() withLabel!: boolean;
   @Output() onCheck: EventEmitter<void> = new EventEmitter<void>();
   @Output() onUncheck: EventEmitter<void> = new EventEmitter<void>();
@@ -84,7 +79,7 @@ export class RdsCheckboxGroupsComponent implements OnInit {
 
   getValue(event: any) {
     this.onClick.emit({ evnt: event, item: event.target.value });
-    this.onChange(event.target.click)
+    this.onChange(event.target.checked)
     this.onTouched();
 
     // new logic
@@ -92,10 +87,6 @@ export class RdsCheckboxGroupsComponent implements OnInit {
     //   this.selectedItemData.emit(this.selectdataItem);
     // }
 
-  }
-  stateChanged() {
-    console.log('clicked')
-    this.checked ? this.onCheck.emit() : this.onUncheck.emit();
   }
 
 }

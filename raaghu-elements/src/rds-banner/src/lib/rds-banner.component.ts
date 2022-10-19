@@ -29,7 +29,6 @@ export class RdsBannerComponent implements OnInit {
       classes.push('justify-content-' + this.textAlign);
     }
 
-
     if (this.sticky === true) {
       if (this.position) {
         const position = `${this.position === 'top' ? 'fixed-top' : ' fixed-bottom bottom-0'}`;
