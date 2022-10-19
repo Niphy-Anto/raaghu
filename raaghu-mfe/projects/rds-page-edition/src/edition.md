@@ -1,5 +1,5 @@
 ---
-slug: "/page-edition "
+slug: "/page-edition"
 date: "2019-05-04"
 title: "Pages > Edition"
 ---

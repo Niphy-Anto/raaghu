@@ -1,7 +1,7 @@
 ---
 slug: "/comp-tenant-features"
 date: "2019-05-04"
-title: "Pages > Tenant-features"
+title: "Components > Tenant-features"
 ---
 
 <!-- CSS only -->

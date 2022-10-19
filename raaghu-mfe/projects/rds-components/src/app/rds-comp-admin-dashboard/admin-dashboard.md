@@ -13,8 +13,6 @@ title: "Components > Admin-Dashboard"
 
 <p>Gives a user a graphical and statistical representation of a particular objective</p>
 
-<p>Gives a user a graphical and statistical representation of a particular objective</p>
-
  <section class="py-4">
     <div class="py-3">
       <div class="cust-tabs">

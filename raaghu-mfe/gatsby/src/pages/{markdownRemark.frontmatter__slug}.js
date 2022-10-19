@@ -14,11 +14,11 @@ export default function Template({
   const elementsList = JSON.parse(JSON.stringify(data.allDirectory.nodes)); 
 
   const componentsList = [];
-  const componentsExcludesList = ["-shimmer", "nents","client-basics"];
+  const componentsExcludesList = ["-shimmer", "nents","client-basics","rds-page-"];
 
   const elementsLists = [];
 
-  const elementsExcludesList=["elements","calendar","rds-chart-","rds-page-","rds-comp","cookieconsent","edition"]
+  const elementsExcludesList=["elements","calendar","rds-chart-","rds-page-","rds-comp","cookieconsent"]
   elementsList.forEach((item) => {
     if (
       item.name.includes("rds-") &&
@@ -122,6 +122,7 @@ export default function Template({
           displayName: item.name.substring(8).replace(/-/g, " "),
         };
         pageLists.push(_item);
+        console.log(pageLists)
       }
     });
 
