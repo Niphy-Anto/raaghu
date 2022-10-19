@@ -297,11 +297,11 @@ export default function Template({
         <div className="row">
           <div className="col-md-8 offset-2 justify-content-between bg-white">
             <div>
-              <div className="px-3 bg-white bottom-0 d-flex justify-content-between page-navigation position-fixed py-4 px-4 footerbutton">
+              <div className="px-3 bg-white bottom-0 d-flex justify-content-between page-navigation position-fixed py-3 px-4 footerbutton">
                 <a onClick={backToPrev} className="text-decoration-none">
                   <ul className="d-flex align-items-center">
                     <li>
-                      <img src="images/prev-arrow.png" alt="next-arrow" className="" width="40px" />
+                      <img src="images/prev-arrow.png" alt="next-arrow" className="" width="25px" />
                     </li>
                     <li>
                       <nav className="pt-3 px-4">
@@ -336,7 +336,7 @@ export default function Template({
                         </nav>
                       </li>
                       <li>
-                        <img src="images/next-arrow.png" alt="next-arrow" className="" width="40px" />
+                        <img src="images/next-arrow.png" alt="next-arrow" className="" width="25px" />
                       </li>
                     </ul>
                   </a>

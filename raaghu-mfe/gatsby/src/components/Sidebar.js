@@ -206,7 +206,7 @@ elementsList.forEach((item) => {
       <div className="position-sticky sidebar-sticky">
         <ul defaultActiveKey={query} className="nav flex-column px-1 my-3 me-2">
           <li eventKey="0" className="nav-item mb-2">
-            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed w-100 position-relative" data-bs-toggle="collapse" data-bs-target="#element-collapse" aria-expanded="true">
+            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed w-100 position-relative ps-0" data-bs-toggle="collapse" data-bs-target="#element-collapse" aria-expanded="true">
               <img
                 src={elements}
                 className="img-fluid"
@@ -225,7 +225,7 @@ elementsList.forEach((item) => {
             </div>
           </li>
           <li eventKey="1" class="nav-item mb-2">
-            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed w-100 position-relative" data-bs-toggle="collapse" data-bs-target="#chart-collapse" aria-expanded="false">
+            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed w-100 position-relative ps-0" data-bs-toggle="collapse" data-bs-target="#chart-collapse" aria-expanded="false">
               <img
                 src={pages}
                 className="img-fluid"
@@ -244,7 +244,7 @@ elementsList.forEach((item) => {
             </div>                        
           </li>
           <li eventKey="2" class="nav-item mb-2">
-            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed w-100 position-relative" data-bs-toggle="collapse" data-bs-target="#component-collapse" aria-expanded="false">
+            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed w-100 position-relative ps-0" data-bs-toggle="collapse" data-bs-target="#component-collapse" aria-expanded="false">
               <img
                 src={components}
                 className="img-fluid"
@@ -264,7 +264,7 @@ elementsList.forEach((item) => {
             </div>
           </li>
           <li eventKey="3" class="nav-item mb-2">
-            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed w-100 position-relative" data-bs-toggle="collapse" data-bs-target="#pages-collapse" aria-expanded="false">
+            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed w-100 position-relative ps-0" data-bs-toggle="collapse" data-bs-target="#pages-collapse" aria-expanded="false">
               <img
                 src={pages}
                 className="img-fluid"
