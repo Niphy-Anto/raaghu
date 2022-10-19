@@ -1,10 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { RdsAvatarModule } from '@libs/rds-avatar';
-import { RdsIconModule } from '@libs/rds-icon';
-import { RdsLabelModule } from '@libs/rds-label';
-import { RdsLikeDislikeModule } from '@libs/rds-like-dislike';
-import { RdsRatingModule } from '@libs/rds-rating';
+import { RdsAvatarModule } from 'rds-elements/rds-avatar/lib/rds-avatar.module';
+import { RdsIconModule } from 'rds-elements/rds-icon/lib/rds-icon.module';
+import { RdsLabelModule } from 'rds-elements/rds-label/lib/rds-label.module';
+import { RdsLikeDislikeModule } from 'rds-elements/rds-like-dislike/lib/rds-like-dislike.module';
+import { RdsRatingModule } from 'rds-elements/rds-rating/lib/rds-rating.module';
 import { RdsReviewCategoryComponent } from './rds-review-category.component';
 
 @NgModule({

@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { RdsLabelModule } from '@libs/rds-label';
-import { RdsAvatarModule } from '@libs/rds-avatar';
 import { RdsFeedComponent } from './rds-feed.component';
-import { RdsIconModule } from '@libs/rds-icon';
-import { RdsRatingModule } from '@libs/rds-rating';
-import { RdsLikeDislikeModule } from '@libs/rds-like-dislike';
+import { RdsAvatarModule } from 'rds-elements/rds-avatar/lib/rds-avatar.module';
+import { RdsLikeDislikeModule } from 'rds-elements/rds-like-dislike/lib/rds-like-dislike.module';
+import { RdsRatingModule } from 'rds-elements/rds-rating/lib/rds-rating.module';
+import { RdsIconModule } from 'rds-elements/rds-icon/lib/rds-icon.module';
+import { RdsLabelModule } from 'rds-elements/rds-label/lib/rds-label.module';
 
 @NgModule({
   declarations: [
