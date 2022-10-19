@@ -92,17 +92,12 @@
        [id]="'claim_p_to_z'"></rds-checkbox>
     </div>
 </div>
-<div class="footer">
-    <div class="d-flex">
-        <div class="m-2">
+
+<div class="position-fixed bottom-0 bg-white w-100 my-2 sm-p-0">
     <rds-button [label]="'Cancel'"
     [colorVariant]="'primary'" data-bs-dismiss="offcanvas" [outlineButton]="true" [size]="'small'">
   </rds-button>
-        </div>
-  <div class="m-2">
-        <rds-button  [id]="'yes'" [size]="'small'" [tooltipPlacement]="'top'"
-        [colorVariant]="'primary'"  [label]="'CREATE'" (click)="SaveClaimData()">
-    </rds-button>
+  <rds-button  [id]="'yes'" [size]="'small'" [tooltipPlacement]="'top'" class="ms-2"
+  [colorVariant]="'primary'"  [label]="'CREATE'" (click)="SaveClaimData()">
+</rds-button>
   </div>
-</div>
-</div>
