@@ -54,7 +54,14 @@ jobs:
       with:
         name: node-app
         path: ./raaghu-mfe/dist
-
+    
+    - uses: microsoft/variable-substitution@v1 
+      with:
+        files: '**/appconfig.json'
+      env:
+        appBaseUrl: ${{ secrets.APPBASEURL }}
+        remoteServiceBaseUrl: ${{ secrets.REMOTESERVICEBASEURL }}
+            
   deploy:
     permissions:
       contents: none
