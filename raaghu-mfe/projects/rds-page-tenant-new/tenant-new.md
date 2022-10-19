@@ -1,7 +1,7 @@
 ---
-slug: "/tenant-new"
+slug: "/page-tenant-new"
 date: "2019-05-04"
-title: "Pages > Tenant"
+title: "Pages > Tenant-new"
 ---
 
 <!-- CSS only -->
@@ -12,11 +12,10 @@ title: "Pages > Tenant"
 
 #### Tenant-new
 
-<p class="checkbox-def">Avatar is known as a visual form representing a user oneself and one's identity wished.</p>
+<p>A page having different columns with tenants and necessary actions</p>
 
 <!-- Basic -->
 <section class="py-4">
-    <h6>Basic</h6>
     <div class="py-3">
       <div class="cust-tabs">
         <ul class="nav nav-tabs" id="myTab" role="tablist">

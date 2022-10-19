@@ -4301,8 +4301,8 @@
 					},
 					"defaultConfiguration": "development",
 					"options": {
-						"port": 5033,
-						"publicHost": "http://localhost:5033",
+						"port": 5034,
+						"publicHost": "http://localhost:5034",
 						"extraWebpackConfig": "projects/rds-page-order-summary/webpack.config.js"
 					}
 				},

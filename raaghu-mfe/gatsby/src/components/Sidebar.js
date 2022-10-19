@@ -69,7 +69,7 @@ elementsList.forEach((item) => {
 
 
   const componentsList = [];
-  const componentsExcludesList = ["-shimmer", "nents","client-basics"];
+  const componentsExcludesList = ["-shimmer", "nents","client-basics","demoui"];
   elementsList.forEach((item) => {
     if (
       item.name.includes("rds-comp") &&
@@ -157,8 +157,7 @@ elementsList.forEach((item) => {
   const pageLists = [];
   // find out pages names.
   const pageexcludesList = [
-    "demo-ui"
-    ,    
+    "demo-ui",    
   ];
 
   elementsList.forEach((item) => {

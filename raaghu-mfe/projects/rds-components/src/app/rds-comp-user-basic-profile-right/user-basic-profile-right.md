@@ -1,7 +1,7 @@
 ---
 slug: "/comp-user-basic-profile-right"
 date: "2019-05-04"
-title: "Pages > User-basic-profile-right"
+title: "Components > User-basic-profile-right"
 ---
 
 <!-- CSS only -->

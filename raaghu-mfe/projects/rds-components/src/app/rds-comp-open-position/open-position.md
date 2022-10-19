@@ -1,7 +1,7 @@
 ---
 slug: "/comp-open-position"
 date: "2019-05-04"
-title: "Component > Open Position"
+title: "Components > Open Position"
 ---
 
 
