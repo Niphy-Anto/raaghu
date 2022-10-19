@@ -2606,7 +2606,7 @@ export class RdsCompDemouiComponent implements OnInit {
     { label: 'Administration', id: 'administration', icon: 'administration', path: '', children: [{ label: 'Role', icon: 'roles', path: 'role' }, { label: 'Users', icon: 'users', path: 'users' }] },
     { label: 'UI Components', id: '', icon: 'demo_ui_components', path: 'components' },
   ]
-  progressvalues = [{ progressWidth: 50, colorVariant: 'success', stripe: 'progress-bar-striped', animation: 'progress-bar-animated' }, { progressWidth: 20, colorVariant: 'danger' }, { progressWidth: 30, colorVariant: 'info' }];
+  progressvalues = [{ progressWidth: 50, colorVariant: 'success', stripe: 'progress-bar-striped', animation: 'progress-bar-animated' }, { progressWidth: 20, colorVariant: 'danger', stripe: '', animation: '' }, { progressWidth: 30, colorVariant: 'info', stripe: '', animation: '' }];
 
 
   onClickShowAlert() {
