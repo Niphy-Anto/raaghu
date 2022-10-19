@@ -29,6 +29,9 @@ export default {
       options: ['text-start', 'text-center', 'text-end'],
       control: { type: 'select' }
     },
+    role: {table: {disable: true}}
+
+
   },
 
 } as Meta
@@ -37,11 +40,13 @@ const Template: Story<RdsBigNumberWidgetComponent> = (args: RdsBigNumberWidgetCo
   props: args,
   template: `<div>
 <rds-big-number-widget [bigNumber]="bigNumber" [subText]="subText"
-[icon]="icon" [iconFill]="iconFill" [iconFill]="iconFill" [iconHeight]="iconHeight" [iconWidth]="iconWidth" [colorVariant]="colorVariant" [subTitleColorVariant]="subTitleColorVariant" [textAlign]="textAlign"></rds-big-number-widget>
+[icon]="icon" [iconFill]="iconFill" [iconStroke]="iconStroke" [iconHeight]="iconHeight" [iconWidth]="iconWidth" [colorVariant]="colorVariant" [subTitleColorVariant]="subTitleColorVariant" [textAlign]="textAlign"></rds-big-number-widget>
   </div>`
 });
 
 export const Default = Template.bind({})
+Default.parameters = { controls: { include: ['colorVariant', 'textAlign', 'subTitleColorVariant', 'iconFill', 'iconHeight', 'iconStroke',
+'iconWidth','bigNumber','subText','icon'] } };
 Default.args = {
   colorVariant: 'info',
   textAlign: 'text-start',
@@ -64,10 +69,9 @@ const standardTemplate: Story<RdsBigNumberWidgetComponent> = (args: RdsBigNumber
 });
 
 export const standard = standardTemplate.bind({});
-standard.parameters = { controls: { include: ['colorVariant', 'subTitleColorVariant', 'role', 'subText', 'bigNumber'] } };
+standard.parameters = { controls: { include: ['subTitleColorVariant', 'role', 'subText', 'bigNumber'] } };
 
 standard.args = {
-  colorVariant: 'primary',
   subTitleColorVariant: 'primary',
   role: 'advanced',
   subText: 'Visitors',
@@ -86,10 +90,9 @@ const deltaTemplate: Story<RdsBigNumberWidgetComponent> = (args: RdsBigNumberWid
 });
 
 export const delta = deltaTemplate.bind({});
-delta.parameters = { controls: { include: ['colorVariant', 'subTitleColorVariant', 'role', 'subText', 'bigNumber'] } };
+delta.parameters = { controls: { include: ['subTitleColorVariant', 'role', 'subText', 'bigNumber'] } };
 
 delta.args = {
-  colorVariant: 'primary',
   subTitleColorVariant: 'primary',
   role: 'advanced',
   subText: 'Visitors',
@@ -110,10 +113,10 @@ const histogramTemplate: Story<RdsBigNumberWidgetComponent> = (args: RdsBigNumbe
 });
 
 export const histogram = histogramTemplate.bind({});
-// delta.parameters = { controls: { include: ['colorVariant', 'subTitleColorVariant', 'role', 'subText', 'bigNumber'] } };
+histogram.parameters = { controls: { include: ['subTitleColorVariant', 'role', 'subText', 'bigNumber',
+'chartLabels', 'chartWidth', 'chartHeight', 'chartOptions', 'chartDatasets'] } };
 
 histogram.args = {
-  colorVariant: 'dark',
   subTitleColorVariant: 'primary',
   role: 'advanced',
   subText: 'Average Numbers Of Visitors',
@@ -176,10 +179,10 @@ const sparkLineTemplate: Story<RdsBigNumberWidgetComponent> = (args: RdsBigNumbe
 });
 
 export const sparkLine = sparkLineTemplate.bind({});
-// sparkLine.parameters = { controls: { include: ['colorVariant', 'subTitleColorVariant', 'role', 'subText', 'bigNumber'] } };
+histogram.parameters = { controls: { include: ['subTitleColorVariant', 'role', 'subText', 'bigNumber', 'chartDatasets',
+'chartLabels', 'chartWidth', 'chartHeight', 'chartOptions'] } };
 
 sparkLine.args = {
-  colorVariant: 'dark',
   subTitleColorVariant: 'primary',
   role: 'advanced',
   subText: 'Visitors',
@@ -250,10 +253,9 @@ const iconTemplate: Story<RdsBigNumberWidgetComponent> = (args: RdsBigNumberWidg
 });
 
 export const icon = iconTemplate.bind({});
-// delta.parameters = { controls: { include: ['colorVariant', 'subTitleColorVariant', 'role', 'subText', 'bigNumber'] } };
+icon.parameters = { controls: { include: ['subTitleColorVariant', 'role', 'subText', 'bigNumber'] } };
 
 icon.args = {
-  colorVariant: 'dark',
   subTitleColorVariant: 'primary',
   role: 'advanced',
   subText: 'Visitors',
