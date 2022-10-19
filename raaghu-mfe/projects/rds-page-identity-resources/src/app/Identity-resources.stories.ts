@@ -63,7 +63,7 @@ const Template: Story<IdentityResources> = (args: IdentityResources) => ({
         [attr.data-bs-toggle]="'offcanvas'" [attr.data-bs-target]="'#addnewIdentityresource'"
         [attr.aria-controls]="'addnewIdentityresource'">
       </rds-button>
-    </div>
+    </div> 
     <div class="row  mt-2">
     <app-rds-data-table
     [tableData]="ResourceTableData"
@@ -212,5 +212,6 @@ Default.args = {
     claim_ato_e: 'undefined',
     claim_f_to_o: 'undefined',
     claim_p_to_z: 'undefined'
-  }
+  },
+  activePage: 0,
 };
