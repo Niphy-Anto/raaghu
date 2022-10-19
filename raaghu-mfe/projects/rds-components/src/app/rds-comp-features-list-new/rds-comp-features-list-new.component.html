@@ -2,9 +2,8 @@
 <div class="row mt-5 flex-row flex-code">
     <div class="col-md-6 mb-3" *ngFor="let item of EditionData">
 
-        <rds-card [showHeader]="" [showBody]="" [showFooter]="" [custClass]="true" [borderColor]="'primary'"
-            [customTopBottom]="false">
-            <div showHeader header>
+        <rds-card [borderColor]="'primary'" [topBottomPadding]="true">
+            <div header>
                 <div class="text-center mt-3 ">
 
                     <rds-label [bold]="false" [label]="item.EditionName" class="fs-4 fw-bold"></rds-label>
@@ -17,6 +16,13 @@
                     </div>
 
                 </div>
+            </div>
+            <div class="pt-3">
+                <div class="text-center">
+                    <h1 class="text-primary fw-bold"> <sup>&#x24;</sup>{{item.Price}}</h1>
+                    <span class="text-muted fw-medium">{{item.Plan}}</span>
+                </div>
+
             </div>
             <div body>
                 <!-- <div class="row ">
@@ -47,8 +53,7 @@
     </div>
     <div class="col-md-6 mb-3">
         <div>
-            <rds-card [showHeader]="" [showBody]="" [showFooter]="" [custClass]="true" [borderColor]="'primary'"
-                [customTopBottom]="false">
+            <rds-card [borderColor]="'primary'" [topBottomPadding]="true">
 
                 <div header>
                     <div class="mb-5"></div>

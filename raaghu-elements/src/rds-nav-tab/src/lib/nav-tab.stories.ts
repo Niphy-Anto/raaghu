@@ -46,10 +46,10 @@ export const withIcon: Story<RdsNavTabComponent> = (args) => ({
 withIcon.parameters = { controls: { include: ['navtabsItems', 'horizontalAlignment'] } };
 withIcon.args = {
     navtabsItems: [
-        { label: 'Home', tablink: '#nav-home', ariacontrols: 'nav-home', icon: 'home', iconHeight: '20px', iconWidth: '20px' },
-        { label: 'Administration', tablink: '#nav-profile', ariacontrols: 'nav-profile' , icon: 'administration', iconHeight: '20px', iconWidth: '20px'},
-        { label: 'Contact', tablink: '#nav-contact', ariacontrols: 'nav-contact', icon: 'phone', iconHeight: '20px', iconWidth: '20px' },
-        { label: 'Disabled', tablink: '#nav-deabled', disabled: "true", icon: 'users', iconHeight: '20px', iconWidth: '20px' },
+        { label: 'Home', tablink: '#nav-home', ariacontrols: 'nav-home', icon: 'home', iconHeight: '20px', iconWidth: '20px', iconStroke: true, iconFill: false },
+        { label: 'Administration', tablink: '#nav-profile', ariacontrols: 'nav-profile', icon: 'administration', iconHeight: '20px', iconWidth: '20px', iconStroke: true, iconFill: false },
+        { label: 'Contact', tablink: '#nav-contact', ariacontrols: 'nav-contact', icon: 'phone', iconHeight: '20px', iconWidth: '20px', iconStroke: true, iconFill: false },
+        { label: 'Disabled', tablink: '#nav-deabled', disabled: "true", icon: 'users', iconHeight: '20px', iconWidth: '20px', iconStroke: true, iconFill: false },
     ],
     horizontalAlignment: 'start'
 }

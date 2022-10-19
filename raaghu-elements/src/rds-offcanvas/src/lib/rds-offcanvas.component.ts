@@ -17,7 +17,7 @@ export class RdsOffcanvasComponent implements OnInit {
   @Input() canvasTitle: string = '';
   @Input() offcanvaswidth = 250;
   // @Input() colorVariant: 'light' | 'primary' | 'secondary' | 'danger' | 'warning' = 'light';
-  // @Input() bodySpacing: boolean = true;
+  @Input() bodySpacing: boolean = true;
   @Output() onShow = new EventEmitter<Event>();
   @Output() onClose = new EventEmitter<Event>();
 
@@ -33,8 +33,8 @@ export class RdsOffcanvasComponent implements OnInit {
     // }
     return align;
   }
-  // public get bodyClasses(): string {
-  //   let spacing = `${this.bodySpacing === false ? ' p-0' : ''}`;
-  //   return spacing;
-  // }
+  public get bodyClasses(): string {
+    let spacing = `${this.bodySpacing === false ? ' p-0' : ''}`;
+    return spacing;
+  }
 }

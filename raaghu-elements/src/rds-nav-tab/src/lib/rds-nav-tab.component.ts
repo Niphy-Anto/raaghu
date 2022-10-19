@@ -9,19 +9,15 @@ export class RdsNavTabComponent implements OnInit {
 
   @Input() navtabsItems?: any
   @Input() horizontalAlignment: 'start' | 'center' | 'end' = 'start';
-  @Input() verticalAlignment: boolean=false;
+  @Input() verticalAlignment?: boolean=false;
   @Input() pills: boolean=false;
-  @Input() tabs: boolean=false;
-  @Input() fill: boolean=false;
-  @Input() justified: boolean=false;
-  // @Input() flex?: boolean;
-  @Input() iconHeight: string = '20px';
-  @Input() iconWidth: string = '20px';
-  @Output() onClicktab = new EventEmitter<{ evnt: any }>();
-  @Input() activeTab: number = 0;
-  // @Input() tabsWithBorderTop?: boolean = true;
-  @Input() icon: string;
+  @Input() tabs?: boolean=false;
+  @Input() fill?: boolean=false;
+  @Input() justified?: boolean=false;
+  @Input() flex?: boolean=false;
   @Output()
+  onClicktab = new EventEmitter<{ evnt: any }>();
+  @Input() activeTab: number = 0;
   @Input() tabsWithBorderTop?: boolean = true;
   navIcon : true;
   constructor() { }
@@ -38,13 +34,13 @@ export class RdsNavTabComponent implements OnInit {
   public get classes(): string {
     const align = ` justify-content-${this.horizontalAlignment}`;
     const vertical = `${this.verticalAlignment ? ' flex-column vertical-tab' : ' flex '}`;
-    const pill = `${this.pills ? 'nav-pills' : ''}`;
-    const tab = `${this.tabs ? ' nav-tabs' : ''}`;
+    const pill = `${this.pills ? 'nav nav-pills' : ''}`;
+    const tab = `${this.tabs ? ' rds-tab-2' : ''}`;
     const fill = `${this.fill ? ' nav-pills nav-fill' : ''}`;
     const justify = `${this.justified ? ' nav-pills nav-justified' : ''}`;
-    // const flex = `${this.flex ? 'nav-pills flex-column flex-sm-row' : ''}`
-    // const border = `${this.tabsWithBorderTop ? '' : ' rds-tab-2'}`;
-    return align + vertical + pill + tab  + fill + justify;
+    const flex = `${this.flex ? 'nav-pills flex-column flex-sm-row' : ''}`
+    const border = `${this.tabsWithBorderTop ? '' : ' rds-tab-2'}`;
+    return align + vertical + pill + tab  + fill + justify ;
   }
 
 
