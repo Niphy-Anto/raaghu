@@ -35,9 +35,9 @@ jobs:
         cache-dependency-path: './raaghu-mfe'  
    
     - uses: microsoft/variable-substitution@v1 
-       with:
-         files: '**/appconfig.json'
-       env:
+      with:
+        files: '**/appconfig.json'
+      env:
         appBaseUrl: ${{ secrets.APPBASEURL }}
         remoteServiceBaseUrl: ${{ secrets.REMOTESERVICEBASEURL }}
 
