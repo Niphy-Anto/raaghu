@@ -33,6 +33,13 @@ jobs:
         with:
           name: node-app
           path: .
+          
+      - uses: microsoft/variable-substitution@v1 
+        with:
+          files: '**/appconfig.json'
+        env:
+          appBaseUrl: ${{ secrets.APPBASEURL }}
+          remoteServiceBaseUrl: ${{ secrets.REMOTESERVICEBASEURL }}
 
   deploy:
     runs-on: ubuntu-latest
