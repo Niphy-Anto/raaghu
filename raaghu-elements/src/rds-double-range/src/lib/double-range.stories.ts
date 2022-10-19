@@ -6,7 +6,7 @@ import { RdsDoubleRangeComponent } from './rds-double-range.component';
 export default {
   title: 'Elements/Double Range',
   component: RdsDoubleRangeComponent,
-  decorators: [componentWrapperDecorator((story: any) => `<div style="margin: 3em">${story}</div>`)]
+  decorators: [componentWrapperDecorator((story: any) => `<div class="px-3">${story}</div>`)]
 } as Meta
 
 const Template: Story<RdsDoubleRangeComponent> = (args: RdsDoubleRangeComponent) => ({

@@ -28,7 +28,7 @@
     "@types/bootstrap": "^5.1.10",
     "angular-draggable-droppable": "^6.1.0",
     "angular-resizable-element": "^5.0.0",
-    "bootstrap": "^5.2.1",
+    "bootstrap": "^5.2.2",
     "calendar-utils": "^0.9.0",
     "chart.js": "^3.8.0",
     "date-fns": "^2.29.1",
@@ -49,6 +49,7 @@
     "@compodoc/compodoc": "^1.1.19",
     "@mdx-js/react": "^2.1.1",
     "@storybook/addon-actions": "^6.5.7",
+    "@storybook/addon-backgrounds": "^6.5.12",
     "@storybook/addon-essentials": "^6.5.7",
     "@storybook/addon-interactions": "^6.5.7",
     "@storybook/addon-links": "^6.5.7",
@@ -67,6 +68,7 @@
     "karma-jasmine": "4.0.0",
     "karma-jasmine-html-reporter": "1.7.0",
     "ng-packagr": "^13.0.0",
+    "storybook-addon-themes": "^6.1.0",
     "typescript": "4.5.2"
   }
 }

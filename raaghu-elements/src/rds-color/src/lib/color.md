@@ -9,7 +9,7 @@ title: "Elements > Color"
 
 #### Color
 
-<p class="">A card is a small rectangular module with images and text. It is an entry point for users to learn more details</p>
+<p class="">Color allows an user to display color variants available for the products in e-commerce website.</p>
 <section class="py-4">
     <h6>Default</h6>
     <div class="py-3">

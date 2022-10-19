@@ -10,7 +10,10 @@ title: "Elements > Select-list"
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/main.css">
 
 
-#### Select-list
+#### Select List
+
+
+<p class="">Select list is a collapsable list containing different values that can be selected.</p>
 
  <section class="py-4">
     <h6>Default</h6>

@@ -11,7 +11,7 @@ export default {
     parameters: {
         layout: 'padded'
     },
-    decorators: [componentWrapperDecorator((story: any) => `<div style="margin: 3em">${story}</div>`)]
+    decorators: [componentWrapperDecorator((story: any) => `<div class="px-2">${story}</div>`)]
 } as Meta
 
 const Template: Story<RdsRangeComponent> = (args: RdsRangeComponent) => ({
