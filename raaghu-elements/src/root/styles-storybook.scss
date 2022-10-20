@@ -2751,3 +2751,6 @@ body.dark-theme{
 //     background-size:1.1375rem;
 // }
 }
+.accordion-button:focus{
+    box-shadow:none;
+}
