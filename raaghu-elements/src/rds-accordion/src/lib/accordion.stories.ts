@@ -38,6 +38,7 @@ export const Default: Story<RdsAccordionComponent> = (args) => ({
   </accordion-item>
 </rds-accordian>`,
 });
+Default.parameters = { controls: { include: ['expanded', 'id'] } };
 Default.args = {
   expanded: false,
   id: "accordionBasic"
@@ -54,6 +55,7 @@ export const withFlush: Story<RdsAccordionComponent> = (args) => ({
     </accordion-item>
   </rds-accordian>`,
 });
+withFlush.parameters = { controls: { include: ['flush', 'expand', 'id'] } };
 withFlush.args = {
   flush: true,
   expand: false,
@@ -73,6 +75,7 @@ export const alwaysOpen: Story<RdsAccordionComponent> = (args) => ({
       </accordion-item>
     </rds-accordian>`,
 });
+alwaysOpen.parameters = { controls: { include: ['expand', 'alwaysOpen'] } };
 alwaysOpen.args = {
   expand: false,
   alwaysOpen: true
@@ -89,6 +92,7 @@ export const ProductOverviewAccordion: Story<RdsAccordionComponent> = (args) => 
   </accordion-item>
 </rds-accordian>`,
 });
+ProductOverviewAccordion.parameters = { controls: { include: ['expand', 'alwaysOpen', 'flush', 'outline', 'border'] } };
 ProductOverviewAccordion.args = {
   expand: false,
   alwaysOpen: true,
