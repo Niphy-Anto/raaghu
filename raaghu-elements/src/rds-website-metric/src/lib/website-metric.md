@@ -33,7 +33,7 @@ title: "Elements > Website-Metric"
          <div class="contents p-5">
             <div class="row">
               <div class="col-md-12">
-                <img src="/images/website-metric.png" class=" img-fluid w-50">
+                <img src="/images/website-metric.png" class=" img-fluid">
               </div>
             </div>
           </div>
@@ -115,7 +115,7 @@ title: "Elements > Website-Metric"
          <div class="contents p-5">
             <div class="row">
               <div class="col-md-12">
-                <img src="/images/website-metric-3.png" class=" img-fluid w-50">
+                <img src="/images/website-metric-3.png" class=" img-fluid">
               </div>
             </div>
           </div>
@@ -156,7 +156,7 @@ title: "Elements > Website-Metric"
          <div class="contents p-5">
             <div class="row">
               <div class="col-md-12">
-                <img src="/images/website-metric-4.png" class=" img-fluid w-50">
+                <img src="/images/website-metric-4.png" class=" img-fluid">
               </div>
             </div>
           </div>
@@ -197,7 +197,7 @@ title: "Elements > Website-Metric"
          <div class="contents p-5">
             <div class="row">
               <div class="col-md-12">
-                <img src="/images/website-metric-5.png" class=" img-fluid w-50">
+                <img src="/images/website-metric-5.png" class=" img-fluid">
               </div>
             </div>
           </div>
@@ -238,7 +238,7 @@ title: "Elements > Website-Metric"
          <div class="contents p-5">
             <div class="row">
               <div class="col-md-12">
-                <img src="/images/website-metric-6.png" class=" img-fluid w-100">
+                <img src="/images/website-metric-6.png" class=" img-fluid">
               </div>
             </div>
           </div>

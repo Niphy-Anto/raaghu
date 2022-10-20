@@ -38,8 +38,8 @@ jobs:
       with:
         files: '**/appconfig.json'
       env:
-        appBaseUrl: ${{ secrets.APPBASEURL }}
-        remoteServiceBaseUrl: ${{ secrets.REMOTESERVICEBASEURL }}
+        appBaseUrl: ${{ secrets.APPBASEURL_STAGING }}
+        remoteServiceBaseUrl: ${{ secrets.REMOTESERVICEBASEURL_STAGING }}
 
    
     - name: npm install raaghu-elements

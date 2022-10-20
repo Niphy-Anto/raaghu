@@ -651,7 +651,7 @@
 
       <div class="col-6">
         <h6 class="mb-3">{{"Dropdown List Without Icon"|translate}}</h6>
-        <rds-dropdownlist [listItems]="listItems" size="default" class="text-dark" [placeholder]="'Select Country'">
+        <rds-dropdownlist [listItems]="listItems"  class="text-dark" [placeholder]="'Select Country'">
           <ng-template #DropdownItems let-val let-index="index">
             <li [class.active]="index === 1">
               <div class="d-flex align-items-center bind-center-div1 group-list">
@@ -669,7 +669,7 @@
 
       <div class="col-6">
         <h6 class="mb-3">{{"Dropdown List With Icon"|translate}}</h6>
-        <rds-dropdownlist [listItems]="listItemsCountryCode" size="default" class="text-dark"
+        <rds-dropdownlist [listItems]="listItemsCountryCode"  class="text-dark"
           [placeholder]="'Select Country Code'">
           <ng-template #DropdownItems let-val let-index="index">
             <li [class.active]="index === 1">
@@ -842,39 +842,39 @@
     <div class="row border p-4 m-2">
       <div class="col-2">
         <h6 class="mb-3">{{"Input - With Auto Tooltip"|translate}}</h6>
-        <rds-input size="default" [disabled]="false" Title="" TitleType="text" [readonly]="false" value=""
-          inputType="text" placeholder="Add placeholder" inputName="Field_name" icon="" tooltipTitle="Auto"
-          tooltipPlacement="auto"></rds-input>
+        <rds-input size="medium" [disabled]="false" [readonly]="false" value="" inputType="text"
+          placeholder="Add placeholder" inputName="Field_name" icon="" tooltipTitle="Auto" tooltipPlacement="bottom">
+        </rds-input>
       </div>
       <div class="col-2">
         <h6 class="mb-3">{{"Input - Basic"|translate}}</h6>
-        <rds-input size="default" [disabled]="false" Title="" TitleType="text" [readonly]="false" value=""
-          inputType="text" placeholder="Add placeholder" inputName="Field_name" icon="" tooltipTitle=""
-          tooltipPlacement="top"></rds-input>
+        <rds-input size="medium" [disabled]="false" [readonly]="false" value="" inputType="text"
+          placeholder="Add placeholder" inputName="Field_name" icon="" tooltipTitle="" tooltipPlacement="top">
+        </rds-input>
       </div>
       <div class="col-2">
         <h6 class="mb-3">{{"Input - Bottom tooltip"|translate}}</h6>
-        <rds-input size="default" [disabled]="false" Title="" TitleType="text" [readonly]="false" value=""
-          inputType="text" placeholder="Add placeholder" inputName="Field_name" icon="" tooltipTitle="Bottom"
-          tooltipPlacement="bottom"></rds-input>
+        <rds-input size="medium" [disabled]="false" [readonly]="false" value="" inputType="text"
+          placeholder="Add placeholder" inputName="Field_name" icon="" tooltipTitle="Bottom" tooltipPlacement="bottom">
+        </rds-input>
       </div>
       <div class="col-2">
         <h6 class="mb-3">{{"Input - left tooltip"|translate}}</h6>
-        <rds-input size="default" [disabled]="false" Title="" TitleType="text" [readonly]="false" value=""
-          inputType="text" placeholder="Add placeholder" inputName="Field_name" icon="" tooltipTitle="Left"
-          tooltipPlacement="left"></rds-input>
+        <rds-input size="medium" [disabled]="false" [readonly]="false" value="" inputType="text"
+          placeholder="Add placeholder" inputName="Field_name" icon="" tooltipTitle="Left" tooltipPlacement="left">
+        </rds-input>
       </div>
       <div class="col-2">
         <h6 class="mb-3">{{"Input - right tootip"|translate}}</h6>
-        <rds-input size="default" [disabled]="false" Title="" TitleType="text" [readonly]="false" value=""
-          inputType="text" placeholder="Add placeholder" inputName="Field_name" icon="" tooltipTitle="Right"
-          tooltipPlacement="right"></rds-input>
+        <rds-input size="medium" [disabled]="false" [readonly]="false" value="" inputType="text"
+          placeholder="Add placeholder" inputName="Field_name" icon="" tooltipTitle="Right" tooltipPlacement="right">
+        </rds-input>
       </div>
       <div class="col-2">
         <h6 class="mb-3">{{"Input- top-tooltip"|translate}}</h6>
-        <rds-input size="default" [disabled]="false" Title="" TitleType="text" [readonly]="false" value=""
-          inputType="text" placeholder="Add placeholder" inputName="Field_name" icon="" tooltipTitle="Top"
-          tooltipPlacement="top"></rds-input>
+        <rds-input size="medium" [disabled]="false" [readonly]="false" value="" inputType="text"
+          placeholder="Add placeholder" inputName="Field_name" icon="" tooltipTitle="Top" tooltipPlacement="top">
+        </rds-input>
 
       </div>
     </div>
@@ -1106,7 +1106,7 @@
         <h6 class="mb-3">{{"Nav Tab - Basic"|translate}}</h6>
         <div class="col-md-12">
           <rds-nav-tab [navtabsItems]="navtabsItems" horizontalAlignment="start" [verticalAlignment]="false"
-            [pills]="false" [tabs]="false" [fill]="false" [justified]="false" [flex]="false"></rds-nav-tab>
+            [pills]="false" [tabs]="false" [fill]="false" [justified]="false" ></rds-nav-tab>
           <div naveContent class="tab-content" id="nav-tabContent">
             <div class="tab-pane fade show active p-2" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
               <p>
@@ -1144,7 +1144,7 @@
         <h6 class="mb-3">{{"Nav Tab - Tabs"|translate}}</h6>
         <div class="col-md-12">
           <rds-nav-tab [navtabsItems]="navtabsItemsTabs" horizontalAlignment="start" [verticalAlignment]="false"
-            [pills]="false" [tabs]="true" [fill]="false" [justified]="false" [flex]="false"></rds-nav-tab>
+            [pills]="false" [tabs]="true" [fill]="false" [justified]="false" ></rds-nav-tab>
           <div naveContent class="tab-content" id="nav-tabContent-tabs">
             <div class="tab-pane fade show active p-2" id="nav-home-tabs" role="tabpanel"
               aria-labelledby="nav-home-tab">
@@ -1184,7 +1184,7 @@
         <h6 class="mb-3">{{"Nav Tab - pills"|translate}}</h6>
         <div class="col-md-12">
           <rds-nav-tab [navtabsItems]="navtabsItemsPills" horizontalAlignment="start" [verticalAlignment]="false"
-            [pills]="true" [tabs]="false" [fill]="false" [justified]="false" [flex]="false"></rds-nav-tab>
+            [pills]="true" [tabs]="false" [fill]="false" [justified]="false" ></rds-nav-tab>
           <div naveContent class="tab-content" id="nav-tabContent-pills">
             <div class="tab-pane fade show active p-2" id="nav-home-pills" role="tabpanel"
               aria-labelledby="nav-home-tab">
@@ -1281,12 +1281,12 @@
     <div class="row border p-4 m-2">
       <div class="col-4">
         <h6>{{"Pagination - Advanced"|translate}}</h6>
-        <rds-pagination [totalRecords]="20" [recordsPerPage]="5" alignmentType="start" role="Advanced" [reset]="false">
+        <rds-pagination [totalRecords]="20" [recordsPerPage]="5" alignmentType="start" role="Advanced">
         </rds-pagination>
       </div>
       <div class="col-4">
         <h6>{{"Pagination - Basic"|translate}}</h6>
-        <rds-pagination [totalRecords]="20" [recordsPerPage]="5" alignmentType="start" role="Basic" [reset]="false">
+        <rds-pagination [totalRecords]="20" [recordsPerPage]="5" alignmentType="start" role="Basic">
         </rds-pagination>
 
       </div>
@@ -1351,13 +1351,13 @@
     <div class="row border p-4 m-2">
       <div class="col-md-6">
         <h6 class="mb-3">{{"Progress Bar - Single"|translate}}</h6>
-        <rds-progressbar [animation]="false" height="15" colorVariant="default" striped="default" [progressWidth]="40"
-          progressbar_MaxWidth="100" [label]="false" role="single"></rds-progressbar>
+        <rds-progressbar [animation]="false" [height]="15" colorVariant="default" striped="default" [progressWidth]="40"
+          [progressbar_MaxWidth]="100"  role="single"></rds-progressbar>
       </div>
       <div class="col-md-6">
         <h6 class="mb-3">{{"Progress Bar - Multiple"|translate}}</h6>
-        <rds-progressbar [animation]="true" height="15" colorVariant="default" striped="progress-bar-striped"
-          [progressWidth]="10" progressbar_MaxWidth="70" [label]="false" role="multiple"
+        <rds-progressbar [animation]="true" [height]="15" colorVariant="default" striped="progress-bar-striped"
+          [progressWidth]="10" [progressbar_MaxWidth]="70"  role="multiple"
           [progressvalues]="progressvalues"></rds-progressbar>
       </div>
 
@@ -1625,7 +1625,7 @@
       <div class="col-4">
         <!--<h6 class="mb-3">{{"Textarea"|translate}}</h6>-->
         <rds-textarea value="" [disabled]="false" rows="3" [readonly]="false" label="Text area" floatinginputLabel=""
-          placeholderText="Add Placeholder" tooltipTitle="Text Area" tooltipPlacement="auto"></rds-textarea>
+          placeholderText="Add Placeholder" tooltipTitle="Text Area" tooltipPlacement="bottom"></rds-textarea>
       </div>
     </div>
 
@@ -1650,8 +1650,8 @@
       <div class="col-4">
         <h6 class="mb-3">{{"Toast With Position"|translate}}</h6>
         <div aria-live="polite" aria-atomic="true" style="position: relative; min-height: 200px;">
-          <rds-toasts position="Top-Left" colorVariant="info" headerTitle="Bootstrap" time="11 Seconds ago" [show]="true"
-            [toastId]="'Toast-position'" [role]="'basic'"></rds-toasts>
+          <rds-toasts position="Top-Left" colorVariant="info" headerTitle="Bootstrap" time="11 Seconds ago"
+            [show]="true" [toastId]="'Toast-position'" [role]="'basic'"></rds-toasts>
         </div>
       </div>
       <div class="col-4">
@@ -1796,8 +1796,9 @@
       <div class="col-md-6 ">
         <h5 class="py-3">Pie Chart </h5>
         <div class="border p-2 h-100 align-items-center justify-content-center">
-          <rds-chart-pie [chartWidth]="400" [chartHeight]="300" [chartLabels]="chartLabelsPieChat" [chartDataSets]="chartDataSetsPieChat"
-            [chartOptions]="chartOptionsPieChat" chartId="pieChart"></rds-chart-pie>
+          <rds-chart-pie [chartWidth]="400" [chartHeight]="300" [chartLabels]="chartLabelsPieChat"
+            [chartDataSets]="chartDataSetsPieChat" [chartOptions]="chartOptionsPieChat" chartId="pieChart">
+          </rds-chart-pie>
         </div>
       </div>
     </div>
@@ -1807,31 +1808,33 @@
         <h5 class="py-3">Boolean Chart</h5>
         <div class="border p-2 h-100 align-items-center justify-content-center">
           <rds-chart-bool [chartWidth]="400" [chartHeight]="300" [chartLabels]="chartLablesBool"
-            [chartDataSets]="ChartDatasSetsBool" [chartOptions]="chartOptionsBool"
-            chartId="boolChart"></rds-chart-bool>
+            [chartDataSets]="ChartDatasSetsBool" [chartOptions]="chartOptionsBool" chartId="boolChart"></rds-chart-bool>
         </div>
       </div>
       <div class="col-md-6 ">
         <h5 class="py-3">Multi Series Pie chart</h5>
         <div class="border p-2 h-100  align-items-center justify-content-center">
-          <rds-chart-pie [chartWidth]="400" [chartHeight]="300" chartId="multiPieChart" [chartLabels]="pieChartMultiLabel"
-            [chartDataSets]="pieChartMultiDataSets" [chartOptions]="pieChartMultiOptions"></rds-chart-pie>
+          <rds-chart-pie [chartWidth]="400" [chartHeight]="300" chartId="multiPieChart"
+            [chartLabels]="pieChartMultiLabel" [chartDataSets]="pieChartMultiDataSets"
+            [chartOptions]="pieChartMultiOptions"></rds-chart-pie>
         </div>
-      </div> 
+      </div>
     </div>
     <div class="row p-4 mb-4">
       <div class="col-md-6">
         <h5 class="py-3">Polar Chart</h5>
         <div class="border p-2 h-100 align-items-center justify-content-center">
-          <rds-chart-polar-area [chartWidth]="400" [chartHeight]="400"  [chartLabels]="chartLabelsPolar" [chartDataSets]="chartDataSetsPolar"
-            [chartOptions]="chartOptionsPolar" chartId=polarChart></rds-chart-polar-area>
+          <rds-chart-polar-area [chartWidth]="400" [chartHeight]="400" [chartLabels]="chartLabelsPolar"
+            [chartDataSets]="chartDataSetsPolar" [chartOptions]="chartOptionsPolar" chartId=polarChart>
+          </rds-chart-polar-area>
         </div>
       </div>
       <div class="col-md-6 ">
         <h5 class="py-3">Radar Chart</h5>
         <div class="border p-2 h-100 align-items-center justify-content-center text-center ">
-          <rds-chart-radar [chartWidth]="400" [chartHeight]="400"  [chartLabels]="chartLabelsRadar" [chartDataSets]="chartDataSetsRadar"
-            [chartOptions]="chartOptionsRadar" chartId="radarChart"></rds-chart-radar>
+          <rds-chart-radar [chartWidth]="400" [chartHeight]="400" [chartLabels]="chartLabelsRadar"
+            [chartDataSets]="chartDataSetsRadar" [chartOptions]="chartOptionsRadar" chartId="radarChart">
+          </rds-chart-radar>
         </div>
       </div>
     </div>

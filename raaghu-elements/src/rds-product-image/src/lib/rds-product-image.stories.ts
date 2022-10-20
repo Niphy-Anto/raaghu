@@ -17,7 +17,9 @@ const Template: Story<RdsProductImageComponent> = (args: RdsProductImageComponen
   props: args,
 });
 
-export const Default = Template.bind({})
+export const Default = Template.bind({});
+Default.parameters = { controls: { include: ['display_type', 'itemList'] } };
+
 Default.args ={
   display_type: 'Basic',
   itemList:[
@@ -27,7 +29,8 @@ Default.args ={
 }
 
 
-export const Product_overview1 = Template.bind({})
+export const Product_overview1 = Template.bind({});
+Product_overview1.parameters = { controls: { include: ['display_type', 'itemList'] } };
 Product_overview1.args ={
   display_type: 'Product_overview1',
   itemList:[
@@ -38,7 +41,8 @@ Product_overview1.args ={
   ]
 }
 
-export const Product_overview2 = Template.bind({})
+export const Product_overview2 = Template.bind({});
+Product_overview2.parameters = { controls: { include: ['display_type', 'itemList'] } };
 Product_overview2.args ={
   display_type: 'Product_overview2',
   itemList:[

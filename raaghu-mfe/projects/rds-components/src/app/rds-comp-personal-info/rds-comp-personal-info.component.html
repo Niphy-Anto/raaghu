@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="form-group mb-3">
-                        <rds-input [inputType]="'text'" [Title]="'First name'" [TitleType]="'Top'"
+                        <rds-input [inputType]="'text'" [label]="'First name'" [labelPosition]="'top'"
                             [(ngModel)]="personalData.firstName" name="f_name" required [placeholder]="'First name'"
                             [isRequired]=true #first_name="ngModel">
                         </rds-input>
@@ -20,7 +20,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="form-group mb-3">
-                        <rds-input [inputType]="'text'" [Title]="'Last name'" [TitleType]="'Top'"
+                        <rds-input [inputType]="'text'" [label]="'Last name'" [labelPosition]="'top'"
                             [(ngModel)]="personalData.lastName" name="l_name" required [placeholder]="'Last name'"
                             [isRequired]=true #last_name="ngModel">
                         </rds-input>
@@ -32,7 +32,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="form-group mb-3">
-                        <rds-input [inputType]="'text'" [Title]="'Profile name'" [TitleType]="'Top'"
+                        <rds-input [inputType]="'text'" [label]="'Profile name'" [labelPosition]="'top'"
                             [(ngModel)]="personalData.profileName" name="pro_name" required [placeholder]="'Profile name'"
                             [isRequired]=true #profile_name="ngModel">
                         </rds-input>
@@ -47,7 +47,7 @@
             <div class="row pt-2">
                 <div class="col-md-4">
                     <div class="form-group mb-3">
-                        <rds-input [inputType]="'text'" [Title]="'Phone Number'" [TitleType]="'Top'"
+                        <rds-input [inputType]="'text'" [label]="'Phone Number'" [labelPosition]="'top'"
                             [(ngModel)]="personalData.firstName" name="f_name" required [placeholder]="'First name'"
                             [isRequired]=true #first_name="ngModel">
                         </rds-input>
@@ -60,9 +60,9 @@
                 </div>
                 <div class="col-md-8">
                     <div class="form-group mb-3">
-                        <rds-input [Title]="'Email address'" name="e_address" [placeholder]="'Email address'" id="emailadd"
+                        <rds-input [label]="'Email address'" name="e_address" [placeholder]="'Email address'" id="emailadd"
                             #email_address="ngModel" [pattern]="emailPattern" ngDefaultControl
-                            [(ngModel)]="personalData.emailAddress" required [isRequired]=true [TitleType]="'Top'">
+                            [(ngModel)]="personalData.emailAddress" required [isRequired]=true [labelPosition]="'top'">
         
                         </rds-input>
                         <div class="form-control-feedback"
