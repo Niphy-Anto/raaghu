@@ -72,14 +72,6 @@
       </div>
     </div>
     <div *ngSwitchCase="'withCTALink'">
-      <div class="d-flex justify-content-between">
-        <h5>
-          <rds-label label="Trending products" [multiline]="false" [bold]="true" [italic]="false"></rds-label>
-        </h5>
-        <a href="" class="text-decoration-none">Shop the collection <rds-icon height="" [fill]="false" [stroke]="true" width="" name=""
-        <a href="">Shop the collection <rds-icon height="16px" [fill]="false" [stroke]="true" width="16px" name="right" [colorVariant]="'primary'"
-        ></rds-icon></a>
-      </div>
       <div class="row">
         <div class="col-md-3 mb-3" *ngFor="let item of productListItems let i =index;">
           <rds-card  class="rounded-avatar-basic">
@@ -116,14 +108,6 @@
       </div>
     </div>
     <div *ngSwitchCase="'withColorSwatchesAndHorizontalScrolling'">
-      <div class="d-flex justify-content-between">
-        <h5>
-          <rds-label label="Trending products" [multiline]="false" [bold]="true" [italic]="false"></rds-label>
-        </h5>
-        <a href="" class="text-decoration-none mb-3">See everything <rds-icon height="" [fill]="false" [stroke]="true" width="" name="" >
-        <a href="">See everything <rds-icon height="16px" [fill]="false" [stroke]="true" width="16px" name="right" [colorVariant]="'primary'" >
-          </rds-icon></a>
-      </div>
       <div class="row mt-3">
         <div class="col-md-3 mb-3" *ngFor="let item of productListItems; let i = index;">
           <rds-card class="rounded-avatar-basic">
@@ -137,9 +121,6 @@
               </div>
             </div>
             <div body>
-              <h5 class="custom-title">{{item.title}}</h5>
-              <rds-rating [rating]="1" colorVariant="review" [noOfReview]="123" Size="small"></rds-rating>
-              <p class="custom-desc">{{item.subTitle}}</p>
               <!-- <h5 class="custom-title">{{item.title}}</h5> -->
               <h4 class="custom-title">{{item.title}}</h4>
               <!-- <rds-rating [rating]="1" colorVariant="primary" [noOfReview]="123" Size="small"></rds-rating> -->
@@ -242,7 +223,6 @@
         <h5>
           <rds-label label="Our Favorites" [multiline]="false" [bold]="true" [italic]="false"></rds-label>
         </h5>
-        <a href="" class="text-decoration-none">Browse all favorites<rds-icon height="" [fill]="false" [stroke]="true" width="" name=""></rds-icon></a>
         <a href="">Browse all favorites<rds-icon height="16px" [fill]="false" [stroke]="true" width="16px" name="right" [colorVariant]="'primary'"  ></rds-icon></a>
       </div>
 
@@ -259,9 +239,6 @@
               </div>
             </div>
             <div body>
-              <h5 class="custom-title">{{item.title}}</h5>
-              <rds-rating [rating]="1" colorVariant="review" [noOfReview]="123" Size="small"></rds-rating>
-              <rds-label
               <!-- <h5 class="custom-title">{{item.title}}</h5> -->
               <h4 class="custom-title">{{item.title}}</h4>
               <!-- <rds-rating [rating]="1" colorVariant="primary" [noOfReview]="123" Size="small" ></rds-rating> -->
@@ -389,29 +366,27 @@
   </div>
   <div *ngSwitchCase="'ImageWithTitle'">
     <div class="row mt-4" *ngIf="productListItems">
-      <div class="col-md-3 mb-3" *ngFor="let item of productListItems">
-        <rds-card  class="rounded-avatar-basic">
-      <div class="col-md-3" *ngFor="let item of productListItems; let i = index">
-        <rds-card  class="rounded-avatar-basic" [showBody]="false">
-          <div header>
-            <div class="text-center">
-              <img [src]="item.imageUrl" class="card-img-top" width="263.92px" height="256px" alt="">
-              <rds-icon class="position-absolute icon-positionheart" [id]="item.id" [colorVariant]="item.iconColor"
-                  (click)="favouriteProd(item.iconColor, i)" [name]="item.icon" width="20px" height="20px" [stroke]="true" 
-                  [fill]="item.fill"
-                  ></rds-icon>
-            </div>
-            <div class="mt-3 mb-3 text-center">
-              <rds-label [label]="item.title" class="fs-4"></rds-label>
-            </div>
-          </div>
-        </rds-card>
-
-
-      </div>
+                <div class="col-md-3" *ngFor="let item of productListItems; let i = index">
+                    <rds-card class="rounded-avatar-basic" [showBody]="false">
+                        <div header>
+                            <div class="text-center">
+                                <img [src]="item.imageUrl" class="card-img-top" width="263.92px" height="256px" alt="">
+                                <rds-icon class="position-absolute icon-positionheart" [id]="item.id"
+                                    [colorVariant]="item.iconColor" (click)="favouriteProd(item.iconColor, i)"
+                                    [name]="item.icon" width="20px" height="20px" [stroke]="true" [fill]="item.fill">
+                                </rds-icon>
+                            </div>
+                            <div class="mt-3 mb-3 text-center">
+                                <rds-label [label]="item.title" class="fs-4"></rds-label>
+                            </div>
+                        </div>
+                    </rds-card>
+                </div>
     </div>
-  </div>
-  <div *ngSwitchCase="'ImageWithInfo'">
+</div>
+
+
+<div *ngSwitchCase="'ImageWithInfo'">
     <div class="row" *ngIf="productListItems">
       <div class="col-md-4 mb-3" *ngFor="let item of productListItems; let i = index;">
         <rds-card  class="rounded-avatar-basic" [showBody]="false">
@@ -436,9 +411,6 @@
       </div>
     </div>
   </div>
-
-  
-</div>
 
 <div *ngSwitchCase="'infiniteproductlist'">
   <!-- starting from here -->
