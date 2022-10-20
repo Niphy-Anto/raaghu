@@ -30,7 +30,7 @@ title: "Elements > Dropdown"
          <div class="contents p-5">
               <div class="row">
                  <div class="col-md-12">
-                     <img src="/images/dropdown-basic.png" class="img-fluid w-25">
+                     <img src="/images/dropdown-basic.png" class="img-fluid">
                  </div>                           
            </div>
                        
