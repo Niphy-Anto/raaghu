@@ -23,7 +23,14 @@ export default {
 const Template: Story<RdsPriceComponent> = (args: RdsPriceComponent) => ({
   props: args,
 });
-
 export const Default = Template.bind({});
+Default.args = {
+  actualPrice: 100,
+  discount: 10,
+  withDiscount: true
+};
+Default.parameters = { controls: { include: ['actualPrice', 'discount', 'withDiscount'] } };
+
+
 
 

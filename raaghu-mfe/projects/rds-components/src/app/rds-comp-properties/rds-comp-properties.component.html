@@ -14,10 +14,10 @@
         <div class="mt-4 row pb-5">
           <div class="col-md-5 mb-3">
             <rds-input
-              size="default"
+              size="medium"
               value=""
-              TitleType="'Top'"
-              [Title]="'Key'"
+              [labelPosition]="'top'"
+              [label]="'Key'"
               inputType="text"
               [(ngModel)]="PropertiesData.key"
               [disabled]="false"
@@ -27,10 +27,10 @@
           </div>
           <div class="col-md-5 mb-3">
             <rds-input
-              size="default"
+              size="medium"
               value=""
-              TitleType="'Top'"
-              [Title]="'Value'"
+              [labelPosition]="'top'"
+              [label]="'Value'"
               inputType="text"
               [(ngModel)]="PropertiesData.value"
               [disabled]="false"
