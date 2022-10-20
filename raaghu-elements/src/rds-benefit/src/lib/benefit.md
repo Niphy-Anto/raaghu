@@ -111,7 +111,7 @@ title: "Elements > Benefit"
          <div class="contents  p-5">
               <div class="row">
                 <div class="col-md-12">
-                  <img src="/images/benefit-heading.png" class="img-fuild w-50">
+                  <img src="/images/benefit-heading.png" class="img-fuild w-25">
                 </div>               
            </div>
                        

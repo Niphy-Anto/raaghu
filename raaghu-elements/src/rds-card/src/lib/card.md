@@ -33,7 +33,7 @@ title: "Elements > Card"
          <div class="contents  p-5">
               <div class="row">
                <div class="col-md-12">
-                <img src="/images/card-basic.png" class="img-fluid w-50"></div>
+                <img src="/images/card-basic.png" class="img-fluid w-100"></div>
               </div>
              </div>
         </div>

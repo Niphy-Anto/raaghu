@@ -76,7 +76,7 @@ role="dropdown-button"
       </div>
       <div class="tab-content card border" id="myTabContent">
         <div class="tab-pane fade show active" id="PreviewAdvanced" role="tabpanel" aria-labelledby="PreviewBasic-tab">
-         <div class="contents bg-light p-5">
+         <div class="contents p-5">
               <div class="row">
               <img src="/images/dropdown-split.png" class="img-thumbnail w-25">
            </div>

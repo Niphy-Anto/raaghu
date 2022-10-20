@@ -53,5 +53,48 @@ title: "Elements > Spinner"
       </div>
     </div>
   </section>
+
+
+<section class="py-4">
+    <h6>Glowing</h6>
+    <div class="py-3">
+      <div class="cust-tabs">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="PreviewGlow-tab" data-bs-toggle="tab" data-bs-target="#PreviewGlow" type="button" role="tab" aria-controls="PreviewGlow" aria-selected="true">Preview </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="AngularGlow-tab" data-bs-toggle="tab" data-bs-target="#AngularGlow" type="button" role="tab" aria-controls="AngularGlow" aria-selected="false"><i class="bi bi-code-slash" style="font-size:1.0rem"></i>Angular</button>
+          </li>
+        </ul>
+      </div>
+      <div class="tab-content card border" id="myTabContent">
+        <div class="tab-pane fade show active" id="PreviewGlow" role="tabpanel" aria-labelledby="PreviewGlow-tab">
+         <div class="contents p-5">
+              <div class="row">
+                 <div class="col-md-12">
+                    <img src="/images/spinner-glowing.png" class="img-fluid w-25">
+                 </div>                           
+           </div>
+                       
+  </div>
+        </div>
+        <div class="tab-pane fade show" id="AngularGlow" role="tabpanel" aria-labelledby="AngularGlow-tab">
+          <div class="contents bg-code">
+<div class="row m-0">
+
+```html
+   <div class="col-md-12">
+<rds-spinner [spinnerType]="true"></rds-spinner>
+</div>
+```
+</div>
+</div>
+  </div>
+        </div>
+      </div>
+  </section>
+   
+  
    
   

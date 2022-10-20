@@ -12,7 +12,7 @@ title: "Elements > Stat"
 
 #### Stat
 
-<p class="checkbox-def">Stat </p>
+<p class="checkbox-def">Stat Stat is used to highlight the features of website.</p>
 
 <!-- Basic -->
 <section class="py-4">

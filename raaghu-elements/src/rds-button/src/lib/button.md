@@ -124,7 +124,7 @@ title: "Elements > Button"
          <div class="row">
          <div class="col-md-12">
          <div class="contents p-5">
-          <img src="/images/button-icon.png" class=" img-fluid w-25">  
+          <img src="/images/button-icon.png" class=" img-fluid w-15">  
            </div>
    </div>                          
    </div>

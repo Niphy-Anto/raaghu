@@ -44,7 +44,7 @@ title: "Elements > Team-member"
 <div class="row m-0">
 
 ```html
-   <rds-team-member displayType="Basic" [teamItem]="teamItem"></rds-team-member>
+<rds-team-member displayType="basic" [teamItem]="teamItem"></rds-team-member>
 ```
 </div>
 </div>

@@ -51,4 +51,45 @@ title: "Elements > Size"
       </div>
     </div>
   </section>
+
+<section class="py-4">
+    <h6>With Description</h6>
+    <div class="py-3">
+      <div class="cust-tabs">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="PreviewDesc-tab" data-bs-toggle="tab" data-bs-target="#PreviewDesc" type="button" role="tab" aria-controls="PreviewDesc" aria-selected="true">Preview </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="AngularDesc-tab" data-bs-toggle="tab" data-bs-target="#AngularDesc" type="button" role="tab" aria-controls="AngularDesc" aria-selected="false"><i class="bi bi-code-slash" style="font-size:1.0rem"></i>Angular</button>
+          </li>
+        </ul>
+      </div>
+      <div class="tab-content card border" id="myTabContent">
+        <div class="tab-pane fade show active" id="PreviewDesc" role="tabpanel" aria-labelledby="PreviewDesc-tab">
+         <div class="contents  p-5">
+              <div class="row">
+                 <div class="col-md-12">
+                     <img src="/images/size-with-description.png" class="img-fluid w-100">
+                 </div>                           
+           </div>
+                       
+  </div>
+        </div>
+        <div class="tab-pane fade show" id="AngularDesc" role="tabpanel" aria-labelledby="AngularDesc-tab">
+          <div class="contents bg-code">
+<div class="row m-0">
+
+```html
+<div class="col-md-12">
+  <rds-size [sizeType]="sizeType"></rds-size>
+</div>
+```
+</div>
+</div>
+  </div>
+        </div>
+      </div>
+    </div>
+  </section>
    
