@@ -1,5 +1,5 @@
 {
-     "remoteServiceBaseUrl": "https://demoapi.raaghu.io",
-     "appBaseUrl": "https://stageui.raaghu.io",
+     "remoteServiceBaseUrl": "https://anzdemoapi.raaghu.io",
+     "appBaseUrl": "https://anzstageui.raaghu.io",
      "replaceUrl": "true"
 }
