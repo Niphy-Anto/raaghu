@@ -5,7 +5,7 @@
             [height]="height" [stroke]="true" [width]="width"></rds-icon>
     </ng-container>
     <div class="mt-1" *ngIf="ratingPosition==='right'" [ngClass]="colorSelection">{{rating}}</div>
-    <span [ngClass]="colorSelection" *ngIf="withNoOfReviews&&noOfReview!==undefined" class="d-block mt-1">See
+    <a [ngClass]="colorSelection" *ngIf="withNoOfReviews&&noOfReview!==undefined" class="d-block mt-1">See
         all
         {{noOfReview}} review</a>
 
