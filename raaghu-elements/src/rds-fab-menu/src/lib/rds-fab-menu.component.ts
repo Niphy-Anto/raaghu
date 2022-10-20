@@ -17,7 +17,7 @@ import { Dropdown } from 'bootstrap'
 })
 export class RdsFabMenuComponent implements OnInit {
 
-  @Input() colorVariant: 'warning' | 'danger' | 'success' | 'info' | 'primary' | 'secondary' | 'dark' | 'light' | undefined = undefined;
+  @Input() colorVariant: 'warning' | 'danger' | 'success' | 'info' | 'primary' | 'secondary' | 'dark' | 'light' = 'primary';
   @Input() id: string = 'fabMenu';
   @Input()
   size?: 'small' | 'large' | 'default';
@@ -36,6 +36,8 @@ export class RdsFabMenuComponent implements OnInit {
     { value: 'Click here download sample import file.', some: 'value', key: 'download', icon: '', iconWidth: '20px', iconHeight: '20px' },
   ];
 
+  @Input() withColorVariant = true;
+
   @Output() onSelect = new EventEmitter<any>();
 
   constructor() { }
@@ -50,11 +52,12 @@ export class RdsFabMenuComponent implements OnInit {
       customClasses.push('btn-sm');
     } else if (this.size === 'large') {
       customClasses.push('btn-lg');
+    }  else  if (this.withColorVariant) {
+      customClasses.push('btn-' + `${this.colorVariant}`);
+    } else if (!this.withColorVariant) {
+      customClasses.push('');
     } else {
       customClasses.push('');
-    }
-    if (`${this.colorVariant}`) {
-      customClasses.push('btn-' + `${this.colorVariant}`);
     }
     return customClasses;
   }
