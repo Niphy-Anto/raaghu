@@ -11,7 +11,7 @@ title: "Elements > Fab-Menu"
 
 #### Fab Menu
 
-<p class="checkbox-def">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore sdavavfgsv</p>
+<p class="checkbox-def">Fab menu is a dropdown button containing a list of links.</p>
 
 <section class="py-4">
     <h6>Default</h6>
@@ -31,7 +31,7 @@ title: "Elements > Fab-Menu"
          <div class="contents p-5">
               <div class="row">
                 <div class="col-md-12">
-                   <img src="/images/fab-menu.png" class="img-fluid w-100">
+                   <img src="/images/fab-menu.png" class="img-fluid">
                 </div>              
               </div>                     
   </div>

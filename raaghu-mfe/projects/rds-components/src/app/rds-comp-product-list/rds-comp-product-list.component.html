@@ -76,6 +76,7 @@
         <h5>
           <rds-label label="Trending products" [multiline]="false" [bold]="true" [italic]="false"></rds-label>
         </h5>
+        <a href="" class="text-decoration-none">Shop the collection <rds-icon height="" [fill]="false" [stroke]="true" width="" name=""
         <a href="">Shop the collection <rds-icon height="16px" [fill]="false" [stroke]="true" width="16px" name="right" [colorVariant]="'primary'"
         ></rds-icon></a>
       </div>
@@ -119,6 +120,7 @@
         <h5>
           <rds-label label="Trending products" [multiline]="false" [bold]="true" [italic]="false"></rds-label>
         </h5>
+        <a href="" class="text-decoration-none mb-3">See everything <rds-icon height="" [fill]="false" [stroke]="true" width="" name="" >
         <a href="">See everything <rds-icon height="16px" [fill]="false" [stroke]="true" width="16px" name="right" [colorVariant]="'primary'" >
           </rds-icon></a>
       </div>
@@ -135,6 +137,9 @@
               </div>
             </div>
             <div body>
+              <h5 class="custom-title">{{item.title}}</h5>
+              <rds-rating [rating]="1" colorVariant="review" [noOfReview]="123" Size="small"></rds-rating>
+              <p class="custom-desc">{{item.subTitle}}</p>
               <!-- <h5 class="custom-title">{{item.title}}</h5> -->
               <h4 class="custom-title">{{item.title}}</h4>
               <!-- <rds-rating [rating]="1" colorVariant="primary" [noOfReview]="123" Size="small"></rds-rating> -->
@@ -237,6 +242,7 @@
         <h5>
           <rds-label label="Our Favorites" [multiline]="false" [bold]="true" [italic]="false"></rds-label>
         </h5>
+        <a href="" class="text-decoration-none">Browse all favorites<rds-icon height="" [fill]="false" [stroke]="true" width="" name=""></rds-icon></a>
         <a href="">Browse all favorites<rds-icon height="16px" [fill]="false" [stroke]="true" width="16px" name="right" [colorVariant]="'primary'"  ></rds-icon></a>
       </div>
 
@@ -253,6 +259,9 @@
               </div>
             </div>
             <div body>
+              <h5 class="custom-title">{{item.title}}</h5>
+              <rds-rating [rating]="1" colorVariant="review" [noOfReview]="123" Size="small"></rds-rating>
+              <rds-label
               <!-- <h5 class="custom-title">{{item.title}}</h5> -->
               <h4 class="custom-title">{{item.title}}</h4>
               <!-- <rds-rating [rating]="1" colorVariant="primary" [noOfReview]="123" Size="small" ></rds-rating> -->
@@ -380,6 +389,8 @@
   </div>
   <div *ngSwitchCase="'ImageWithTitle'">
     <div class="row mt-4" *ngIf="productListItems">
+      <div class="col-md-3 mb-3" *ngFor="let item of productListItems">
+        <rds-card  class="rounded-avatar-basic">
       <div class="col-md-3" *ngFor="let item of productListItems; let i = index">
         <rds-card  class="rounded-avatar-basic" [showBody]="false">
           <div header>

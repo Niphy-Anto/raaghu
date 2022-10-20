@@ -1,5 +1,5 @@
 ---
-slug: "/page-edition "
+slug: "/page-edition"
 date: "2019-05-04"
 title: "Pages > Edition"
 ---
@@ -12,7 +12,7 @@ title: "Pages > Edition"
 
 #### Edition
 
-<p class="checkbox-def">Avatar is known as a visual form representing a user oneself and one's identity wished.</p>
+<p></p>
 
 <!-- Basic -->
 <section class="py-4">

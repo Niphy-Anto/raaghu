@@ -11,7 +11,7 @@ title: "Elements > Feature-List"
 
 
 #### Feature List
-<p class="">A card is a small rectangular module with images and text. It is an entry point for users to learn more details</p>
+<p class="">Feature list consists of an unordered list listing the features of a product.</p>
 <section class="py-4">
     <h6>Default</h6>
     <div class="py-3">
@@ -30,7 +30,7 @@ title: "Elements > Feature-List"
          <div class="contents  p-5">
               <div class="row">
                <div class="col-md-12">
-                    <img src="/images/feature-list.png" class="img-fluid w-50">
+                    <img src="/images/feature-list.png" class="img-fluid">
                </div>            
            </div>
                        

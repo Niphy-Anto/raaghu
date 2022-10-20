@@ -162,6 +162,7 @@ import { RdsCompIdentityManagementNewComponent } from './rds-comp-identity-manag
 import { RdsCompThemeNewComponent } from './rds-comp-theme-new/rds-comp-theme-new.component';
 import { RdsCompAccountNewComponent } from './rds-comp-account-new/rds-comp-account-new.component';
 import { RdsCompSettingsNewComponent } from './rds-comp-settings-new/rds-comp-settings-new.component';
+import { RdsCompLanguageTextListComponent } from './rds-comp-language-text-list/rds-comp-language-text-list.component';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 
@@ -280,7 +281,7 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     RdsCompCustomerReviewsComponent,
     RdsCompPricingTableComponent,
     RdsCompOrderDetailsComponent,
-    //RdsCompLanguageTextListComponent,
+    RdsCompLanguageTextListComponent,
     RdsCompContactInformationComponent,
     RdsCompShippingAddressComponent,
     RdsCompPaymentDetailsComponent,

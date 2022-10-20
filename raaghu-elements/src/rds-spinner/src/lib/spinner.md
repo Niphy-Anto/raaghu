@@ -12,7 +12,7 @@ title: "Elements > Spinner"
 
 #### Spinner
 
-<p class="">A card is a small rectangular module with images and text. It is an entry point for users to learn more details</p>
+<p class="">Spinner is an animated element indicating the loading of a page.</p>
 <section class="py-4">
     <h6>Default</h6>
     <div class="py-3">
@@ -31,7 +31,7 @@ title: "Elements > Spinner"
          <div class="contents p-5">
               <div class="row">
                  <div class="col-md-12">
-                    <img src="/images/spinner.png" class="img-fluid w-25">
+                    <img src="/images/spinner.png" class="img-fluid">
                  </div>                           
            </div>
                        

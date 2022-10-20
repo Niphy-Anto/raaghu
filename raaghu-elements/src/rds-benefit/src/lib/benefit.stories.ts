@@ -34,6 +34,7 @@ const Template: Story<RdsBenefitComponent> = (args: RdsBenefitComponent) => ({
 });
 
 export const Default = Template.bind({});
+Default.parameters = { controls: { include: ['display_type', 'item'] } };
 Default.args = {
   display_type: 'Default',
   item:
@@ -48,6 +49,7 @@ Default.args = {
 }
 
 export const LeftAligned = Template.bind({});
+LeftAligned.parameters = { controls: { include: ['display_type', 'item'] } };
 LeftAligned.args = {
   display_type: 'Left Aligned',
   item:
@@ -63,6 +65,7 @@ LeftAligned.args = {
 }
 
 export const CentreAligned = Template.bind({});
+CentreAligned.parameters = { controls: { include: ['display_type', 'item'] } };
 CentreAligned.args = {
   display_type: 'Centre Aligned',
   item:
@@ -77,6 +80,7 @@ CentreAligned.args = {
 }
 
 export const WithLabel = Template.bind({});
+WithLabel.parameters = { controls: { include: ['display_type', 'item'] } };
 WithLabel.args = {
   display_type: 'With Label',
   item:
@@ -92,6 +96,7 @@ WithLabel.args = {
 }
 
 export const WithoutLabel = Template.bind({});
+WithoutLabel.parameters = { controls: { include: ['display_type', 'item'] } };
 WithoutLabel.args = {
   display_type: 'Without Label',
   item:
@@ -106,6 +111,7 @@ WithoutLabel.args = {
 }
 
 export const HeadingWithIcon = Template.bind({});
+HeadingWithIcon.parameters = { controls: { include: ['display_type', 'item'] } };
 HeadingWithIcon.args = {
   display_type: 'Heading With Icon',
   item:
