@@ -19,7 +19,7 @@ env:
 
 permissions:
   contents: read
-
+   
 jobs:
   build:
     runs-on: windows-latest
@@ -33,7 +33,15 @@ jobs:
         node-version: ${{ env.NODE_VERSION }}
         cache: 'npm'
         cache-dependency-path: './raaghu-mfe'  
-        
+   
+    - uses: microsoft/variable-substitution@v1 
+      with:
+        files: '**/appconfig.json'
+      env:
+        appBaseUrl: ${{ secrets.APPBASEURL }}
+        remoteServiceBaseUrl: ${{ secrets.REMOTESERVICEBASEURL }}
+
+   
     - name: npm install raaghu-elements
       working-directory: raaghu-elements
       run: |
