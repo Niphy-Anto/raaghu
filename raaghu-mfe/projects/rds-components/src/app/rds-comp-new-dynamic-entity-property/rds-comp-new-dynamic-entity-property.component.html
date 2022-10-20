@@ -15,8 +15,7 @@
       <div class="mb-2 mt-4 pt-2">
         <rds-label label="Parameter"></rds-label>
       </div>
-
-      <rds-dropdownlist  [borderDropdown]="true" class="text-dark"
+      <rds-dropdownlist  [borderDropdown]="true" class="text-dark" [id]="'paramer-dropdowm'"
         [resetFormSubject]="resetFormSubject" size="small" [reset]="resetDropdown" [resetPlaceholder]="placeholderReset"
         [placeholder]="Placeholder" [value]=" " required [multiSelect]="true" [selectAll]="false" [entity]="true"
         [listItems]="parameterList" (onSelect)="onPropertySelect($event)"></rds-dropdownlist>
