@@ -41,6 +41,7 @@ export class RdsCompProductListComponent implements OnInit {
   
 
   @Input() productListItems: any[] = [];
+  @Input() productlist: any;
   Items: any[] = [];
 
   @Input()  itemListColor: any = [];

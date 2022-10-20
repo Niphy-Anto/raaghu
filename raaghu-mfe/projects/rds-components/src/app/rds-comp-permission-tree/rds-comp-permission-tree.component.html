@@ -29,7 +29,7 @@
                         (onChange)="selectNode(node,$event)" [id]="'selectNode'"></rds-checkbox>
                     <div *ngIf="node.level !== 1" class="horizontal-dotted-line"></div>
                 </div>
-                <span #nodeLabel class="node-label text-nowrap cursor-pointer">
+                <span #nodeLabel class="node-label text-nowrap cursor-pointer ms-2">
                     <span class="mr-4" (click)="onClicknode(node.data.displayName)">{{ node.data.displayName
                         }}</span>
                 </span>
