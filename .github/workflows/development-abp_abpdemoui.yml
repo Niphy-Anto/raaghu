@@ -6,7 +6,7 @@ name: Build and deploy ABP-DEMO-UI Azure Web App - abpdemoui.raaghu.io
 on:
   push:
     branches:
-      - development-abp
+      - main-abp
   workflow_dispatch:
 
 jobs:
