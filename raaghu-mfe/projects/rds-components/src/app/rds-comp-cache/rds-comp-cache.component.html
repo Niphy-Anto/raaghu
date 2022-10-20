@@ -12,7 +12,7 @@
     </div>
   </div>
   <div class="pt-2">
-    <rds-pagination [reset]="resetPagination" (onPageChange)="onPagination($event)" [recordsPerPage]="+recordsPerPage"
+    <rds-pagination  (onPageChange)="onPagination($event)" [recordsPerPage]="+recordsPerPage"
       [totalRecords]="getTotalRecords()" [alignmentType]="alignmentType" [role]="role"></rds-pagination>
   </div>
 

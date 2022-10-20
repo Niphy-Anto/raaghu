@@ -7,7 +7,7 @@ export default {
   component: RdsModalComponent,
   argTypes: {
     modalBackdrop: {
-      options: [false, 'static'],
+      options: [true, 'static'],
       control: 'radio'
     },
   },
@@ -18,7 +18,7 @@ export const Default: Story<RdsModalComponent> = (args) => ({
     `<button type="button"  class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#modalId">
   show  Modal
 </button>
-  <rds-modal  [showModalHeader]="showModalHeader" [showModalFooter]="showModalFooter" [modalBackdrop]="modalBackdrop">
+  <rds-modal  [showModalHeader]="showModalHeader" [showModalFooter]="showModalFooter" [modalBackdrop]="true">
     <div modalheader class="d-flex align-items-center">
       <h5 class="modal-title" id="storybookModal">Title</h5>
       <button style="float:right" type="button"  class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
@@ -34,11 +34,10 @@ export const Default: Story<RdsModalComponent> = (args) => ({
   </rds-modal>
 `,
 });
-Default.parameters = { controls: { include: ['showModalFooter', 'showModalHeader', 'modalBackdrop'] } };
+Default.parameters = { controls: { include: ['showModalFooter', 'showModalHeader'] } };
 Default.args = {
   showModalFooter: true,
   showModalHeader: true,
-  modalBackdrop: false
 };
 export const verticallyCenterd: Story<RdsModalComponent> = (args) => ({
   props: args,
@@ -46,7 +45,7 @@ export const verticallyCenterd: Story<RdsModalComponent> = (args) => ({
     `<button type="button"  class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalId">
           Show Centered Modal
         </button>
-          <rds-modal  [showModalHeader]="showModalHeader" [verticallyCenterd]="verticallyCenterd" [modalBackdrop]="'static'" [showModalFooter]="showModalFooter">
+          <rds-modal  [showModalHeader]="showModalHeader" [verticallyCenterd]="verticallyCenterd" [modalBackdrop]="true" [showModalFooter]="showModalFooter">
             <div modalheader class="d-flex align-items-center">
               <h5 class="modal-title" id="storybookModal">Title</h5>
               <button style="float:right" type="button"  class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
@@ -100,7 +99,7 @@ export const longContentModal: Story<RdsModalComponent> = (args) => ({
     `<button type="button"  class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalId">
 Long Content Modal
 </button>
-<rds-modal [showModalHeader]="showModalHeader" [modalBackdrop]="modalBackdrop" [showModalFooter]="showModalFooter" [scrollable]="scrollable">
+<rds-modal [showModalHeader]="showModalHeader"  [showModalFooter]="showModalFooter" [modalBackdrop]="true" [scrollable]="scrollable">
   <div modalheader class="d-flex align-items-center">
     
     <h5 class="modal-title" id="storybookModal">Title</h5>
@@ -116,11 +115,10 @@ Long Content Modal
 </rds-modal>
 `,
 });
-longContentModal.parameters = { controls: { include: ['showModalFooter', 'showModalHeader', 'scrollable', 'modalBackdrop'] } };
+longContentModal.parameters = { controls: { include: ['showModalFooter', 'showModalHeader', 'scrollable'] } };
 longContentModal.args = {
   showModalFooter: true,
   showModalHeader: true,
   scrollable: true,
-  modalBackdrop: 'static',
 
 };

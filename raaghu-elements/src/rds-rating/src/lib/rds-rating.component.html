@@ -1,11 +1,11 @@
 <div class="d-flex gap-2" [ngClass]="classes">
-    <div class="mt-1" *ngIf="ratingPosition==='left'" [ngClass]="colorSelection">{{rating}}</div>
+    <div class="mt-1" *ngIf="ratingPosition==='left'">{{rating}}</div>
     <ng-container *ngFor="let item of itemList">
         <rds-icon [fill]="item.value <= rating.toFixed() ? true : false" [colorVariant]="colorVariant" [name]="'star'"
             [height]="height" [stroke]="true" [width]="width"></rds-icon>
     </ng-container>
     <div class="mt-1" *ngIf="ratingPosition==='right'" [ngClass]="colorSelection">{{rating}}</div>
-    <a  [ngClass]="colorSelection" *ngIf="withNoOfReviews&&noOfReview!==undefined" class="d-block mt-1 text-primary">See
+    <span [ngClass]="colorSelection" *ngIf="withNoOfReviews&&noOfReview!==undefined" class="d-block mt-1">See
         all
         {{noOfReview}} review</a>
 

@@ -20,28 +20,38 @@ const Template: Story<RdsNavTabComponent> = (args: RdsNavTabComponent) => ({
 export const Default: Story<RdsNavTabComponent> = (args) => ({
     props: args,
     template:
-        `
-        <rds-nav-tab 
+        ` <rds-nav-tab 
         [navtabsItems]="navtabsItems"
-        horizontalAlignment="start"
-        [verticalAlignment]="verticalAlignment"
-        [pills]="pills"
-        [tabs]="tabs"
-        [fill]="fill"
-        [justified]="justified"
-        [flex]="false"
-        ></rds-nav-tab>
-       
-    `,
-
+        [horizontalAlignment]="horizontalAlignment"
+        ></rds-nav-tab>`,
 });
+Default.parameters = { controls: { include: ['navtabsItems', 'horizontalAlignment'] } };
 Default.args = {
     navtabsItems: [
-        { label: 'Active', tablink: '#nav-home', ariacontrols: 'nav-home', icon: 'administration', subText: 'Active subtext' },
-        { label: 'Link', tablink: '#nav-profile', ariacontrols: 'nav-profile' },
-        { label: 'Link', tablink: '#nav-contact', ariacontrols: 'nav-contact', icon: 'setting', subText: 'Home subtext' },
-        { label: 'Disabled', tablink: '#nav-deabled', disabled: "true", icon: 'users', subText: 'Disble subtext' },
-    ]
+        { label: 'Active', tablink: '#nav-home', ariacontrols: 'nav-home' },
+        { label: 'Link1', tablink: '#nav-profile', ariacontrols: 'nav-profile' },
+        { label: 'Link2', tablink: '#nav-contact', ariacontrols: 'nav-contact' },
+        { label: 'Disabled', tablink: '#nav-deabled', disabled: "true" },
+    ],
+    horizontalAlignment: 'start'
+}
+export const withIcon: Story<RdsNavTabComponent> = (args) => ({
+    props: args,
+    template:
+        ` <rds-nav-tab 
+        [navtabsItems]="navtabsItems"
+        [horizontalAlignment]="horizontalAlignment"
+        ></rds-nav-tab>`,
+});
+withIcon.parameters = { controls: { include: ['navtabsItems', 'horizontalAlignment'] } };
+withIcon.args = {
+    navtabsItems: [
+        { label: 'Home', tablink: '#nav-home', ariacontrols: 'nav-home', icon: 'home', iconHeight: '20px', iconWidth: '20px', iconStroke: true, iconFill: false },
+        { label: 'Administration', tablink: '#nav-profile', ariacontrols: 'nav-profile', icon: 'administration', iconHeight: '20px', iconWidth: '20px', iconStroke: true, iconFill: false },
+        { label: 'Contact', tablink: '#nav-contact', ariacontrols: 'nav-contact', icon: 'phone', iconHeight: '20px', iconWidth: '20px', iconStroke: true, iconFill: false },
+        { label: 'Disabled', tablink: '#nav-deabled', disabled: "true", icon: 'users', iconHeight: '20px', iconWidth: '20px', iconStroke: true, iconFill: false },
+    ],
+    horizontalAlignment: 'start'
 }
 export const Tabs: Story<RdsNavTabComponent> = (args) => ({
     props: args,
@@ -49,28 +59,23 @@ export const Tabs: Story<RdsNavTabComponent> = (args) => ({
         `
         <rds-nav-tab 
         [navtabsItems]="navtabsItems"
-        horizontalAlignment="start"
-        [verticalAlignment]="verticalAlignment"
-        [pills]="pills"
-        [tabs]="true"
-        [fill]="fill"
-        [justified]="justified"
-        [flex]="false"
-        [tabsWithBorderTop]="true"
-        ></rds-nav-tab>
-        
-    `,
-
+        [horizontalAlignment]="horizontalAlignment"
+        [tabs]="tabs"
+                ></rds-nav-tab>
+            `,
 });
 Tabs.args = {
-     tabs: true,
+    tabs: true,
     navtabsItems: [
         { label: 'Active', tablink: '#nav-home', ariacontrols: 'nav-home' },
         { label: 'Link', tablink: '#nav-profile', ariacontrols: 'nav-profile' },
         { label: 'Link', tablink: '#nav-contact', ariacontrols: 'nav-contact' },
         { label: 'Disabled', tablink: '#nav-deabled', disabled: "true" },
-    ]
+    ],
+    horizontalAlignment: 'start'
 }
+Tabs.parameters = { controls: { include: ['navtabsItems', 'horizontalAlignment', 'tabs'] } };
+
 export const Pills: Story<RdsNavTabComponent> = (args) => ({
     props: args,
     template:
@@ -78,14 +83,13 @@ export const Pills: Story<RdsNavTabComponent> = (args) => ({
         <rds-nav-tab 
         [navtabsItems]="navtabsItems"
         [horizontalAlignment]="horizontalAlignment"
-        [verticalAlignment]="verticalAlignment"
-        [tabs]="tabs"
-        [pills]="true"  
+        [pills]="pills" 
+        [fill]="fill"
+        [justified]="justified" 
         ></rds-nav-tab>
-        
     `,
-
 });
+Pills.parameters = { controls: { include: ['navtabsItems', 'horizontalAlignment', 'pills', 'fill', 'justified'] } };
 Pills.args = {
     pills: true,
     navtabsItems: [
@@ -93,31 +97,21 @@ Pills.args = {
         { label: 'Link', tablink: '#nav-profile', ariacontrols: 'nav-profile' },
         { label: 'Link', tablink: '#nav-contact', ariacontrols: 'nav-contact' },
         { label: 'Disabled', tablink: '#nav-deabled', disabled: "true" },
-    ]
+    ],
+    fill: true,
+    justified: true
 }
-
 export const Vertical: Story<RdsNavTabComponent> = (args) => ({
     props: args,
     template:
         `
         <rds-nav-tab 
-        class="tab-elements"
         [navtabsItems]="navtabsItems"
-        [flex]="false"
-        [verticalAlignment]="true"
-        [pills]="pills"
-        [tabs]="tabs"
-        [fill]="fill"
-        [justified]="justified"
-        [flex]="true"
-        ></rds-nav-tab>
-        
-    `,
-    
-
+        [verticalAlignment]="verticalAlignment">
+        </rds-nav-tab>`,
 });
 Vertical.args = {
-     verticalAlignment: true,
+    verticalAlignment: true,
     navtabsItems: [
         { label: 'Active', tablink: '#nav-home', ariacontrols: 'nav-home' },
         { label: 'Link', tablink: '#nav-profile', ariacontrols: 'nav-profile' },
@@ -125,5 +119,7 @@ Vertical.args = {
         { label: 'Disabled', tablink: '#nav-deabled', disabled: "true" },
     ]
 }
+Vertical.parameters = { controls: { include: ['navtabsItems', 'verticalAlignment'] } };
+
 
 
