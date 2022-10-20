@@ -31,7 +31,7 @@ title: "Elements > Checkbox-groups"
          <div class="contents p-5">
               <div class="row">   
                  <div class="col-md-12">
-                    <img src="/images/checkbox-group-basic.png" class="img-fluid w-25">
+                    <img src="/images/checkbox-group-basic.png" class="img-fluid">
                  </div>                         
            </div>
                        

@@ -30,7 +30,7 @@ title: "Elements > Feature-List"
          <div class="contents  p-5">
               <div class="row">
                <div class="col-md-12">
-                    <img src="/images/feature-list.png" class="img-fluid w-50">
+                    <img src="/images/feature-list.png" class="img-fluid">
                </div>            
            </div>
                        
