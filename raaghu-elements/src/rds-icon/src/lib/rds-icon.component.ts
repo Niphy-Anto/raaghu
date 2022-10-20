@@ -12,7 +12,7 @@ export class RdsIconComponent implements OnInit, OnChanges {
   private svgIcon!: SVGElement;
   title = 'rds-icon';
   @Input() height: string = '';
-  @Input() disabled: boolean | undefined = false;
+  // @Input() disabled: boolean | undefined = false;
   @Input() fill: boolean | undefined = false;
   @Input() stroke: boolean | undefined = true;
   @Input() width: string = '';
@@ -67,9 +67,9 @@ export class RdsIconComponent implements OnInit, OnChanges {
     if (this.width) {
       svg.style.width = this.width;
     }
-    if (this.disabled) {
-      svg.classList.add('disabled');
-    }
+    // if (this.disabled) {
+    //   svg.classList.add('disabled');
+    // }
     if (this.opacity) {
       svg.style.opacity = this.opacity;
     }

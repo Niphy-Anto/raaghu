@@ -44,16 +44,14 @@ export const Default: Story<RdsOffcanvasComponent> = (args) => ({
   </rds-offcanvas> `,
 
 });
-Default.parameters = { controls: { include: ['canvasTitle', 'placement', 'colorVariant', 'backDrop', 'offId','offcanvaswidth','bodySpacing'] } };
+Default.parameters = { controls: { include: ['canvasTitle', 'placement', 'colorVariant', 'backDrop', 'offId','offcanvaswidth'] } };
 
 Default.args = {
   offId: 'canvasExample',
   canvasTitle: 'Offcanvas Title',
-  placement: 'end',
-  colorVariant: 'light',
+  placement: 'top',
   backDrop: 'static',
   offcanvaswidth:650,
-  bodySpacing:true
 };
 
 // export const basic = Template.bind({});

@@ -32,7 +32,7 @@ title: "Elements > Toasts"
           <div class="contents p-5">
              <div class="row">
                 <div class="col-md-12">
-                  <img src="images/toast.png" class="w-50">
+                  <img src="images/toast.png" class="img-fluid">
                 </div>                 
               </div>
             </div>
@@ -75,7 +75,7 @@ title: "Elements > Toasts"
           <div class="contents p-5">
               <div class="row">
                  <div class="col-md-12">
-                     <img src="images/toast.png" class="img-fluid w-50">
+                     <img src="images/toast.png" class="img-fluid">
                  </div>                
                 </div>
              </div>
@@ -119,7 +119,7 @@ title: "Elements > Toasts"
         <div class="tab-pane fade show active" id="PreviewAction2" role="tabpanel" aria-labelledby="PreviewAction2-tab">
           <div class="contents bg-light p-5">
             <div class="row">
-             <img src="images/toast.png" class="w-50">
+             <img src="images/toast.png" class="img-fluid">
                </div>
            </div>
         </div>

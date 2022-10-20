@@ -1,7 +1,5 @@
 import { AfterViewInit, Component, DoCheck, EventEmitter, Input, OnInit, Output } from '@angular/core';
-// import { Tooltip } from 'bootstrap'
 import { Tooltip } from 'bootstrap'
-declare var bootstrap: any;
 @Component({
   selector: 'rds-button',
   templateUrl: './rds-button.component.html',
@@ -13,7 +11,7 @@ export class RdsButtonComponent implements AfterViewInit, OnInit, DoCheck {
   @Input() submit = false;
   static count: number = 0;
   @Input() block: boolean = false;
-  @Input() size: 'small' | 'medium' | 'large' = 'small';
+  @Input() size: 'small' | 'medium' | 'large' | undefined = 'small';
   @Input() disabled = false;
   @Input() outlineButton = false;
   @Input() roundedButton = false;
@@ -84,7 +82,7 @@ export class RdsButtonComponent implements AfterViewInit, OnInit, DoCheck {
 
   public get classes(): string {
     const outline = `${this.outlineButton ? ' btn btn-outline-' + this.colorVariant : ' btn btn-' + this.colorVariant}`;
-    const mode = ` btn-${this.size === 'small' ? 'sm ' : this.size === 'large' ? 'lg ' : 'md '}`;
+    const mode = this.size ? ` btn-${this.size === 'small' ? 'sm ' : this.size === 'large' ? 'lg ' : 'md '}` : '';
     const icon = `${this.roundedButton ? ' btn-icon rounded-pill ' : ''}`;
     const icon1 = `${this.roundedCorner ? ' rounded-pill ' : ''}`;
     const disabledGrey = `${this.disabled === true ? 'btn ' : ''}`

@@ -16,7 +16,7 @@ export class RdsOffcanvasComponent implements OnInit {
   @Input() offId = 'canvasExample';
   @Input() canvasTitle: string = '';
   @Input() offcanvaswidth = 250;
-  @Input() colorVariant: 'light' | 'primary' | 'secondary' | 'danger' | 'warning' = 'light';
+  // @Input() colorVariant: 'light' | 'primary' | 'secondary' | 'danger' | 'warning' = 'light';
   @Input() bodySpacing: boolean = true;
   @Output() onShow = new EventEmitter<Event>();
   @Output() onClose = new EventEmitter<Event>();

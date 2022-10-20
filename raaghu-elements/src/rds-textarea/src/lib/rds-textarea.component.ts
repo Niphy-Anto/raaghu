@@ -26,9 +26,10 @@ export class RdsTextareaComponent implements AfterViewInit, ControlValueAccessor
   @Input() readonly?: boolean = false;
   @Input() label: string = '';
   @Input() isFloatingInputLabel: boolean = false;
-  @Input() placeholderText :string= '';
+  @Input() placeholderText: string = '';
   @Input() tooltipTitle: string = '';
-  @Input() tooltipPlacement: string = 'bottom';
+  @Input() tooltipPlacement: 'top' | 'bottom' | 'right' | 'left' = 'bottom';
+  @Input() labelPosition: 'top' | 'bottom' = 'top';
   @Input() id: string = 'textareaId';
 
   constructor() {

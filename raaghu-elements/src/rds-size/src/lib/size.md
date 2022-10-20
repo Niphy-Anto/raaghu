@@ -31,7 +31,7 @@ title: "Elements > Size"
          <div class="contents  p-5">
               <div class="row">
                  <div class="col-md-12">
-                     <img src="/images/size.png" class="img-fluid w-100">
+                     <img src="/images/size.png" class="img-fluid">
                  </div>                           
            </div>
                        

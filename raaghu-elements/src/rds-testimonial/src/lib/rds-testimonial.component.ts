@@ -9,7 +9,9 @@ import { Component, Input, OnInit } from '@angular/core';
 export class RdsTestimonialComponent implements OnInit {
 
   @Input() testimonialItems: any[] = [];
- 
+  @Input() iconHeight: string = '30px';
+  @Input() iconWidth: string = '30px';
+
   constructor() { }
 
   ngOnInit(): void {
