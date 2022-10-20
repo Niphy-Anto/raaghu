@@ -9,7 +9,7 @@ import { TableHeader } from 'projects/rds-components/src/models/table-header.mod
 import { TranslateService } from '@ngx-translate/core';
 import { transition, trigger, query, style, animate, } from '@angular/animations';
 import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
-import { ComponentLoaderOptions } from '@libs/shared';
+import { ComponentLoaderOptions, OrganizationUnitCreateDto, OrganizationUnitDto, OrganizationUnitUpdateDto } from '@libs/shared';
 
 declare var bootstrap: any;
 
@@ -157,7 +157,7 @@ export class AppComponent implements OnInit {
         this.selectedUsers = [];
         checkedItems.forEach((item: any) => {
           if (item) {
-            this.selectedUsers.push(+item.id)
+            this.selectedUsers.push(item.id)
           }
         });
       }
@@ -182,7 +182,7 @@ export class AppComponent implements OnInit {
         this.selectedRoles = [];
         checkedItems.forEach((item: any) => {
           if (item) {
-            this.selectedRoles.push(+item.id)
+            this.selectedRoles.push(item.id)
           }
         });
       }
@@ -365,7 +365,7 @@ export class AppComponent implements OnInit {
 
       const mfeConfig = this.rdsDataTableForMemberMfeConfig
       mfeConfig.input.tableData = [...this.tableDataForMember];
-      //mfeConfig.input.refresh = true;
+      mfeConfig.input.refresh = true;
       this.rdsDataTableForMemberMfeConfig = { ...mfeConfig };
     })
   }
@@ -386,7 +386,7 @@ export class AppComponent implements OnInit {
       }
       const mfeConfig = this.rdsDataTableForRoleMfeConfig
       mfeConfig.input.tableData = [...this.tableDataForRoles];
-      //mfeConfig.input.refresh = true;
+      mfeConfig.input.refresh = true;
       this.rdsDataTableForRoleMfeConfig = { ...mfeConfig };
     })
   }
@@ -395,55 +395,57 @@ export class AppComponent implements OnInit {
     this.store.dispatch(getOrganizationUnitUsersList(input));
     this.store.select(selectOrganizationUnitUsersList).subscribe((res) => {
       this.isAnimation = false;
-      // if (res && res.items.length > 0) {
-      //   this.addedDataMember = true;
-      //   let tableDataForUserList = [];
-      //   res.items.forEach((element: any) => {
-      //     const item: any = {
-      //       id: element.value,
-      //       name: element.name,
-      //     }
-      //     tableDataForUserList.push(item);
-      //   });
-      //   const mfeConfig = this.rdsDataTableForUserListMfeConfig
-      //   mfeConfig.input.tableData = [...tableDataForUserList];
-      //   //mfeConfig.input.refresh = true;
-      //   this.rdsDataTableForUserListMfeConfig = { ...mfeConfig };
-      // }
-      // else {
-      //   this.addedDataMember = false;
-      // }
+      if (res && res.items.length > 0) {
+        this.addedDataMember = true;
+        let tableDataForUserList = [];
+        res.items.forEach((element: any) => {
+          if(!this.tableDataForMember.some(r => r.id === element.id)){
+            const item: any = {
+              id: element.id,
+              name: element.name,
+            }
+            tableDataForUserList.push(item);
+          }
+        });
+        const mfeConfig = this.rdsDataTableForUserListMfeConfig;
+
+        mfeConfig.input.tableData = [...tableDataForUserList];
+        mfeConfig.input.refresh = true;
+        this.rdsDataTableForUserListMfeConfig = { ...mfeConfig };
+      }
+      else {
+        this.addedDataMember = false;
+      }
     })
   }
 
   updateRolesListTable(data) {
     let input: {organizationUnitId: any,filter:any, skipCount:any, maxResultCount:any};
-    input.organizationUnitId = data;
-    input.filter = "";
-    input.skipCount = 0;
-    input.maxResultCount = 1000;
     this.store.dispatch(getOrganizationUnitRolesList(input));
     this.store.select(selectOrganizationUnitRolesList).subscribe((res) => {
       this.isAnimation = false;
-      // if (res && res.items.length > 0) {
-      //   this.addedDataRole = true;
-      //   let tableDataForRoles1 = [];
-      //   res.items.forEach((element: any) => {
-      //     const item: any = {
-      //       id: element.value,
-      //       displayName: element.name,
-      //       name: element.name.trim()
-      //     }
-      //     tableDataForRoles1.push(item);
-      //   });
-      //   const mfeConfig = this.rdsDataTableForRoleListMfeConfig
-      //   mfeConfig.input.tableData = [...tableDataForRoles1];
-      //   //mfeConfig.input.refresh = true;
-      //   this.rdsDataTableForRoleListMfeConfig = { ...mfeConfig };
-      // }
-      // else {
-      //   this.addedDataRole = false;
-      // }
+      if (res && res.items.length > 0) {
+        this.addedDataRole = true;
+        let tableDataForRoles1 = [];
+        res.items.forEach((element: any) => {
+          if(!this.tableDataForRoles.some(r => r.id === element.id)){
+            const item: any = {
+              id: element.id,
+              displayName: element.name,
+              name: element.name.trim()
+            }
+            tableDataForRoles1.push(item);
+          }
+        });
+        
+        const mfeConfig = this.rdsDataTableForRoleListMfeConfig
+        mfeConfig.input.tableData = [...tableDataForRoles1];
+        //mfeConfig.input.refresh = true;
+        this.rdsDataTableForRoleListMfeConfig = { ...mfeConfig };
+      }
+      else {
+        this.addedDataRole = false;
+      }
     })
   }
 
@@ -460,7 +462,7 @@ export class AppComponent implements OnInit {
 
 
   pushUser() {
-    var AddUsersToOrganizationUnitInput = { userIds: this.selectedUsers, organizationUnitId: this.selectedTreeNode }
+    var AddUsersToOrganizationUnitInput = { body: {userIds:this.selectedUsers}, id: this.selectedTreeNode }
     this.store.dispatch(addUsersToOrganizationUnit(AddUsersToOrganizationUnitInput));
     const self = this;
     var timesRun = 0;
@@ -473,7 +475,7 @@ export class AppComponent implements OnInit {
     }, 100);
   }
   pushRole() {
-    var AddRolesToOrganizationUnitInput = { roleIds: this.selectedRoles, organizationUnitId: this.selectedTreeNode }
+    var AddRolesToOrganizationUnitInput = {body: { roleIds: this.selectedRoles}, id: this.selectedTreeNode }
     this.store.dispatch(addRolesToOrganizationUnit(AddRolesToOrganizationUnitInput));
     const self = this;
     var timesRun = 0;
@@ -534,7 +536,7 @@ export class AppComponent implements OnInit {
       return;
     }
     if (this.selectedNodeInfo && this.selectedNodeInfo && this.selectedNodeInfo.data.id) {
-      const data: any = { data: { id: this.selectedNodeInfo.data.id, displayName: this.node } }
+      const data: any = { id: this.selectedNodeInfo.data.id, body:{displayName:this.node} };
       this.store.dispatch(updateUnitTree(data));
     } else {
       const data: any = { parentId: this.selectedParent, displayName: this.node }
