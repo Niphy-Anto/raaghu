@@ -6,7 +6,7 @@ name: "Build and deploy anzdemoui.raaghu.io"
 on:
   push:
     branches:
-      - "main"
+      - "main-abp"
   workflow_dispatch:
 
 env:
