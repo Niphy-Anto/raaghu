@@ -2,7 +2,7 @@ name: "Build and deploy storybook - Angular"
 
 on:
   push:
-    branches: [main]
+    branches: [development]
     
   workflow_dispatch:
 
