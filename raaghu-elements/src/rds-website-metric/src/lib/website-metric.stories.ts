@@ -40,8 +40,8 @@ Default.args = {
     }
 }
 
-export const type2 = Template.bind({})
-type2.args = {
+export const withTopBorder = Template.bind({})
+withTopBorder.args = {
     display_type: 'metric_type2',
     item: {
         title: '510+',
@@ -51,8 +51,8 @@ type2.args = {
     }
 }
 
-export const type3 = Template.bind({})
-type3.args = {
+export const leftAligned = Template.bind({})
+leftAligned.args = {
     display_type: 'metric_type3',
     item: {
         title: '510+',
@@ -63,8 +63,8 @@ type3.args = {
         iconWidth:'20px'
     }
 }
-export const type4 = Template.bind({})
-type4.args = {
+export const withLeftAlignedIcon = Template.bind({})
+withLeftAlignedIcon.args = {
     display_type: 'metric_type4',
     item: {
         title: '510+',
@@ -76,8 +76,8 @@ type4.args = {
 
     }
 }
-export const type5 = Template.bind({})
-type5.args = {
+export const withCenterAlignedIcon = Template.bind({})
+withCenterAlignedIcon.args = {
     display_type: 'metric_type5',
     item: {
         title: '510+',
@@ -90,8 +90,8 @@ type5.args = {
 
     }
 }
-export const type6 = Template.bind({})
-type6.args = {
+export const centerAligned = Template.bind({})
+centerAligned.args = {
     display_type: 'metric_type6',
     item: {
         title: '510+',

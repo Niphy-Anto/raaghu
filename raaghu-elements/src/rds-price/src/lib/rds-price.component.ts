@@ -5,25 +5,27 @@ import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/cor
   templateUrl: './rds-price.component.html',
   styleUrls: ['./rds-price.component.scss']
 })
-export class RdsPriceComponent implements OnInit ,OnChanges{
+export class RdsPriceComponent implements OnInit, OnChanges {
   @Input() discount: number = 0;
   @Input() actualPrice: number = 0;
+  @Input() withDiscount: boolean = true;
   // withDiscountPrice?:number;
-  numberPrice?:number= 0;
-  
+  numberPrice?: number = 0;
+
   constructor() { }
   ngOnChanges(): void {
-    this.calculateprice();
   }
 
   ngOnInit(): void {
-    
+
   }
- 
-calculateprice(){
 
-  this.numberPrice=this.actualPrice-((this.actualPrice * this.discount)/100);
-//  this.numberPrice = this.withDiscountPrice ;
+  calculateprice() {
+    if (this.withDiscount) {
+      return this.actualPrice - ((this.actualPrice * this.discount) / 100);
+    }
+    return this.actualPrice;
+    //  this.numberPrice = this.withDiscountPrice ;
 
-}
+  }
 }
