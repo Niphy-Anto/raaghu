@@ -53,8 +53,8 @@ jobs:
         with:
           files: '**/appconfig.json'
         env:
-          appBaseUrl: ${{ secrets.APPBASEURL }}
-          remoteServiceBaseUrl: ${{ secrets.REMOTESERVICEBASEURL }}
+          appBaseUrl: ${{ secrets.APPBASEURL_ABP_DEMO }}
+          remoteServiceBaseUrl: ${{ secrets.REMOTESERVICEBASEURL_ABP_DEMO }}
 
   deploy:
     runs-on: ubuntu-latest
