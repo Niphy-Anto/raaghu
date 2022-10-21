@@ -30,11 +30,11 @@ export const Default: Story<RdsAccordionComponent> = (args) => ({
   props: args,
   template: `
   <rds-accordian [id]="id" >
-  <accordion-item title="Section 1 title" [accordionId]="id" [expanded]="false" >
-  <h3>Custom </h3>
+  <accordion-item [parentId]="id" title="Section 1 title" [expanded]="false" >
+  <h3 accordianBody>Custom </h3>
   </accordion-item>
-  <accordion-item title="Section 2 title" [accordionId]="id" >
-  <h3>Custom </h3>
+  <accordion-item title="Section 2 title" [parentId]="id" >
+  <h3 accordianBody>Custom </h3>
   </accordion-item>
 </rds-accordian>`,
 });
@@ -46,11 +46,11 @@ export const withFlush: Story<RdsAccordionComponent> = (args) => ({
   props: args,
   template: `
     <rds-accordian [flush]= "flush" [id]="id">
-    <accordion-item title="Section 1 title" [accordionId]="id" >
-    <h3>Custom </h3>
+    <accordion-item title="Section 1 title" [parentId]="id" >
+    <h3 accordianBody>Custom </h3>
     </accordion-item>
-    <accordion-item title="Section 2 title" [accordionId]="id" >
-    <h3>Custom </h3>
+    <accordion-item title="Section 2 title" [parentId]="id" >
+    <h3 accordianBody>Custom </h3>
     </accordion-item>
   </rds-accordian>`,
 });
@@ -81,11 +81,11 @@ export const ProductOverviewAccordion: Story<RdsAccordionComponent> = (args) => 
   props: args,
   template: `
   <rds-accordian  [border]= "true" [outline]= "false" [id]="id">
-  <accordion-item title="Section 1 title" [accordionId]="id" >
-  <h3>Custom </h3>
+  <accordion-item title="Section 1 title" [parentId]="id" >
+  <h3 accordianBody>Custom </h3>
   </accordion-item>
-  <accordion-item title="Section 2 title" [accordionId]="id" >
-  <h3>Custom </h3>
+  <accordion-item title="Section 2 title" [parentId]="id" >
+  <h3 accordianBody>Custom </h3>
   </accordion-item>
 </rds-accordian>`,
 });

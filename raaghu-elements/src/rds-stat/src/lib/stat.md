@@ -12,7 +12,7 @@ title: "Elements > Stat"
 
 #### Stat
 
-<p class="checkbox-def">Avatar is known as a visual form representing a user oneself and one's identity wished.</p>
+<p class="checkbox-def">Stat Stat is used to highlight the features of website.</p>
 
 <!-- Basic -->
 <section class="py-4">
@@ -78,7 +78,7 @@ title: "Elements > Stat"
         </div>
         <div class="tab-pane fade show" id="AngularAdvance" role="tabpanel" aria-labelledby="AngularAdvance-tab">
           <div class="contents bg-code">
-<div class="row m-0">
+<div class="row m-0 py-3">
 
 ```html
 <rds-stat [statItems]="statItems" display_type="Advanced"></rds-stat>

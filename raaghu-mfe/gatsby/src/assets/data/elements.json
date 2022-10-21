@@ -298,252 +298,245 @@
           "id": 1,
           "image": "images/Landing page-Elements/Breadcrumbs.png",
           "title": "Breadcrumbs",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+          "text": " Breadcrumbs are a list of links representing the current page and its “ancestors”.",
           "link": "/breadcrumbs"
         },
         {
           "id": 2,
           "image": "images/Landing page-Elements/Address-Detail.png",
           "title": "Address detail",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+          "text": " Address detail is way to input details of address of a user.",
           "link": "/address-detail"
         },
         {
           "id": 3,
           "image": "images/Landing page-Elements/App-Details.png",
           "title": "App details",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+          "text": " App Details helps an user to showcase deatils of the app integration for the webpage.",
           "link": "/app-details"
         },
         {
           "id": 4,
-          "image": "images/Landing page-Elements/App-Details.png",
+          "image": "images/Landing page-Elements/Banner.png",
           "title": "Banner",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+          "text": " A banner adds-up information regarding any upcoming updates on the webpage.",
           "link": "/banner"
         },
         {
           "id": 5,
           "image": "images/Landing page-Elements/Benefit.png",
           "title": "Benefit",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+          "text": "Benefit lists the value addition for an user for associating with the webpage.",
           "link": "/benefit"
         },
         {
           "id": 6,
           "image": "images/Landing page-Elements/big-number.png",
           "title": "Big Number Widget",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+          "text": " Big number widget lets you visualize dataset based on the different metrics at a glance view.",
           "link": "/big-number-widget"
-        },
-        {
-          "id": 7,
-          "image": "images/default.png",
-          "title": "Calendar",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-          "link": "/calendar"
-        },
+        },        
         {
           "id": 8,
-          "image": "images/Landing page-Elements/Color.png",
+          "image": "images/default.png",
           "title": "Color",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+          "text": "Color allows an user to display color variants available for the products in e-commerce website.",
           "link": "/color"
         },
         {
           "id": 9,
           "image": "images/Landing page-Elements/Counter.png",
           "title": "Counter",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+          "text": "Counter helps in specifying the required product quantity for an user.",
           "link": "/counter"
         },
         {
           "id": 10,
           "image": "images/Landing page-Elements/Fab Menu.png",
           "title": "Fab Menu",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+          "text": "Fab menu is a dropdown button containing a list of links.",
           "link": "/fab-menu"
         },
         {
           "id": 11,
           "image": "images/Landing page-Elements/Feature List.png",
           "title": "Feature List",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+          "text": " Feature list consists of an unordered list listing the features of a product.",
           "link": "/feature-list"
         },
         {
           "id": 12,
           "image": "images/Landing page-Elements/Feeds.png",
           "title": "Feed",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+          "text": " Feed is a data format used for providing users with frequently updated content.",
           "link": "/feed"
         },
         {
           "id": 13,
           "image": "images/Landing page-Elements/Icon-Label.png",
           "title": "Icon Label",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+          "text": " Icon Label is an appealing manner to show the content with an icon.",
           "link": "/icon-label"
         },
         {
           "id": 14,
           "image": "images/Landing page-Elements/Illustration - Empty State.png",
           "title": "Illustration",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+          "text": " Illustration is used when the no selections are made by user.",
           "link": "/illustration"
         },
         {
           "id": 15,
           "image": "images/Landing page-Elements/Label.png",
           "title": "Label",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+          "text": " Label can be used to define the state of an object(ex. process or user) in a webpage.",
           "link": "/label"
         },
         {
           "id": 16,
           "image": "images/Landing page-Elements/Like Dislike.png",
           "title": "Like Dislike",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+          "text": " Like Dislike measures the counts of likes and dislikes for a product.",
           "link": "/like-dislike"
         },
         {
           "id": 17,
           "image": "images/Landing page-Elements/Nav-bar.png",
           "title": "Nav Bar",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+          "text": " A nav bar is a visually appeling manner for displaying navigation header having support for branding and navigation.",
           "link": "/nav-bar"
         },
         {
           "id": 18,
           "image": "images/Landing page-Elements/Nav Tabs.png",
           "title": "Nav Tabs",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+          "text": "Tabs are a way of navigating between multiple panels, reducing clutter and fitting more into a smaller space.",
           "link": "/nav-tab"
         },
         {
           "id": 19,
           "image": "images/Landing page-Elements/Popular Pages.png",
           "title": "Popular Pages",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+          "text": " Tabs are a way of navigating between multiple panels, reducing clutter and fitting more into a smaller space.",
           "link": "/popular-pages"
         },
         {
           "id": 20,
           "image": "images/Landing page-Elements/Price.png",
           "title": "Price",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+          "text": "Price your products and discounted price using the price element.",
           "link": "/price"
         },
         {
           "id": 21,
           "image": "images/Landing page-Elements/Product images.png",
           "title": "Product Image",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+          "text": " Use the product image to display the images of the products in the pre-designed templates.",
           "link": "/product-image"
         },
         {
           "id": 22,
           "image": "images/Landing page-Elements/Rating.png",
           "title": "Rating",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+          "text": " Rating helps an user to keep track of the popularity of an product.",
           "link": "/rating"
         },
         {
           "id": 23,
           "image": "images/Landing page-Elements/Review-category.png",
           "title": "Review Category",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+          "text": " Rating helps an user to keep track of the popularity of an product.",
           "link": "/review-category"
         },
         {
           "id": 24,
           "image": "images/Landing page-Elements/Select-list.png",
           "title": "Select List",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+          "text": " Select list is a collapsable list containing different values that can be selected.",
           "link": "/select-list"
         },
         {
           "id": 25,
           "image": "images/Landing page-Elements/Side-nav.png",
           "title": "Side Nav",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+          "text": "Side nav is navigating tool containing different pages providing a clear navigation through complex website.",
           "link": "/side-nav"
         },
         {
           "id": 26,
           "image": "images/default.png",
           "title": "Size",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+          "text": " Size is a list of the sizes available for any product on the e-commerce website.",
           "link": "/size"
         },
         {
           "id": 27,
           "image": "images/Landing page-Elements/Spinner.png",
           "title": "Spinner",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+          "text": "Spinner is an animated element indicating the loading of a page.",
           "link": "/spinner"
         },
         {
           "id": 28,
           "image": "images/Landing page-Elements/Stat.png",
           "title": "Stat",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+          "text": " Stat is used to highlight the features of website.",
           "link": "/stat"
         },
         {
           "id": 29,
           "image": "images/Landing page-Elements/Stepper.png",
           "title": "Stepper",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+          "text": "Stepper is a process map having user defined milestones to inform user of the steps involved in the process.",
           "link": "/stepper"
         },
         {
           "id": 30,
           "image": "images/Landing page-Elements/Team-member.png",
           "title": "Team Member",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+          "text": "Team member is a card containing the details of the team member working for a team.",
           "link": "/team-member"
         },
         {
           "id": 31,
           "image": "images/Landing page-Elements/Testimonial.png",
           "title": "Testimonial",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+          "text": "Testimonial is way to showcase testimony of the users.",
           "link": "/testimonial"
         },
         {
           "id": 32,
           "image": "images/Landing page-Elements/Textarea.png",
           "title": "Textarea",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+          "text": " Textarea is an input field for a large text value.",
           "link": "/textarea"
         },
         {
           "id": 33,
           "image": "images/default.png",
           "title": "Text Editor",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+          "text": " Text editor lets the user to user to edit and style the text.",
           "link": "/text-editor"
         },
         {
           "id": 34,
           "image": "images/Landing page-Elements/Video-player.png",
           "title": "Video Player",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+          "text": " Text editor lets the user to user to edit and style the text.",
           "link": "/video-player"
         },
         {
           "id": 35,
           "image": "images/Landing page-Elements/Website-Metric.png",
           "title": "Website Metric",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+          "text": "Website Metric keeps a check of the customer who availed the services of the webpage.",
           "link": "/website-metric"
         },
         {
           "id": 36,
           "image": "images/Landing page-Elements/Widget.png",
           "title": "Widget",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+          "text": "Widgets are the graphical elements containing icons, charts displaying some specific information.",
           "link": "/widget"
         }
       ]
