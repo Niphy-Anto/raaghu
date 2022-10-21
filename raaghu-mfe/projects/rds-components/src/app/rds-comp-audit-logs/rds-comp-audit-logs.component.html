@@ -43,7 +43,7 @@
                             [(ngModel)]="endDate" [value]="endDate" floatinginputLabel="">
                         </rds-datepicker>
                     </div>
-                    <div class="mb-3 sm-p-0 sm-block mt-1 ">
+                    <div class="mb-3 sm-p-0 sm-block">
                         <rds-input size="medium" [inputType]="" [(ngModel)]="user"
                             [placeholder]="translate.instant('User')" id="txtUsername" (change)="userModify($event)"
                             floatinginputLabel="" ngDefaultControl name="userName"></rds-input>
@@ -134,13 +134,13 @@
                         </rds-datepicker>
                     </div>
 
-                    <div class="sm-p-0 mb-3">
-                        <rds-input size="medium" [ [(ngModel)]="changeLogUsername"
+                    <div class="sm-p-0">
+                        <rds-input size="medium" [(ngModel)]="changeLogUsername"
                             [placeholder]="translate.instant('User name')" id="txtchangeLogUsername"
                             floatinginputLabel="" ngDefaultControl name="changeLogUsername"></rds-input>
                     </div>
 
-                    <div class="sm-p-0 mt-2 d-flex align-items-center mb-3">
+                    <div class="sm-p-0 mt-2 d-flex align-items-center">
                         <rds-select-list class="w-100" [(ngModel)]="status" (selectListChange)="exceptionModify($event)"
                             [value]="status" ngDefaultControl name="Property" [itemList]="statusList">
 
