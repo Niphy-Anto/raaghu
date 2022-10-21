@@ -1,4 +1,4 @@
-name: Build and deploy gatsby portal CI/CD
+name: Build and deploy gatsby portal
 
 on:
   push:
