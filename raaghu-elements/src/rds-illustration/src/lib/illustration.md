@@ -31,7 +31,7 @@ title: "Elements > Illustration"
          <div class="contents  p-5">
               <div class="row">
                  <div class="col-md-12">
-                    <img src="/images/illustration.png" class="img-fluid w-100">
+                    <img src="/images/illustration.png" class="img-fluid w-50">
                  </div>               
               </div>                       
   </div>

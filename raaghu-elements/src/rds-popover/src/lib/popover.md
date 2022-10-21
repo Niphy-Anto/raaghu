@@ -116,7 +116,7 @@ title: "Elements > Popover"
                               <div class="card border p-5">
                                  <div class="row">
                                     <div class="col-md-12">
-                                       <img src="/images/skel-popover.png" class="img-fluid">
+                                       <img src="/images/skel-popove.png" class="img-fluid">
                                     </div>
                                  </div>
                               </div>
