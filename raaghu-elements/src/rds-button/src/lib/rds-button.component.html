@@ -6,13 +6,11 @@
   [class.spinner]="showLoadingSpinner" [ngClass]="blockWidth" [attr.aria-label]="label">
 
   <ng-content select="[left]"></ng-content>
-  <!--<span *ngIf="buttonType!='labelOnly'" class="me-2">-->
+  <span *ngIf="buttonType!='labelOnly'" [ngClass]="buttonType == 'iconLabel' ? 'me-2' :  ''">
     <rds-icon *ngIf ="icon" [class]="icon && label" [name]="icon" [width]="iconWidth" [height]="iconHeight" [fill]="iconFill"
               [stroke]="iconStroke"></rds-icon>
-  <!--</span>-->
+  </span>
   <span *ngIf="label" class="btn-text">{{label}}</span>
   <ng-content></ng-content>
   <ng-content select="[right]"></ng-content>
-
-
 </button>

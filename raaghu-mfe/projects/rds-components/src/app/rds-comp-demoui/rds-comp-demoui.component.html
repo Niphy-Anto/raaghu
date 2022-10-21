@@ -9,30 +9,23 @@
     <div class="row border p-4 m-2">
       <div class="col-6">
         <h6 class="mb-3">{{"Accordion - Basic"|translate}}</h6>
-        <rds-accordian id="basicAccordion">
-          <accordion-item title="Section 1 title" accordionId="basicAccordion">
-            <strong>{{"This is the first item's accordion body."|translate}}</strong>
-            {{
-            "It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each
-            element. These classes control the overall appearance, as well as the showing and hiding via CSS
-            transitions.
-            You can modify any of this with custom CSS or overriding our default variables."|translate
-            }}
+        <rds-accordian [id]="'basicAccordian'" >
+          <accordion-item [parentId]="'basicAccordian'" title="Section 1 title" [expanded]="false" >
+          <h3 accordianBody>Custom </h3>
           </accordion-item>
-          <accordion-item title="Section 2 title" accordionId="basicAccordion">
-            <h3>{{"Custom"|translate}}</h3>
+          <accordion-item title="Section 2 title" [parentId]="'basicAccordian'" >
+          <h3 accordianBody>Custom </h3>
           </accordion-item>
         </rds-accordian>
       </div>
       <div class="col-6">
         <h6 class="mb-3">{{"Accordion - With Flush"|translate}}</h6>
-        <rds-accordian [flush]="true" id="accordionWithFlush">
-          <accordion-item title="Section 1 title" accordionId="accordionWithFlush">
-            {{"this is content updated"|translate}}
-
+        <rds-accordian [flush]= "true" [id]="'myaccordian'">
+          <accordion-item title="Section 1 title" [parentId]="'myaccordian'" >
+          <h3 accordianBody>Custom </h3>
           </accordion-item>
-          <accordion-item title="Section 2 title" accordionId="accordionWithFlush">
-            <h3>{{"Custom"|translate}} </h3>
+          <accordion-item title="Section 2 title" [parentId]="'myaccordian'" >
+          <h3 accordianBody>Custom </h3>
           </accordion-item>
         </rds-accordian>
       </div>
@@ -554,8 +547,24 @@
     <div class="card card-body mb-3">
       <div class="container border p-4 m-2">
         <h6>Multi-Collapse example</h6>
-        <rds-collapse collapseId="collapseExample4" label="collapse button" [multipleButton]="true"
-          content="placeholder content for collapse. Its hidden by default and shown when triggered."></rds-collapse>
+        <rds-collapse [buttonList]="buttonList">
+          <div class="row mt-4">
+          <div class="col">
+            <div class="collapse" id="collapseExample">
+              <div class="card card-body">
+                Some placeholder content for the first collapse component of this multi-collapse example. This panel is hidden by default but revealed when the user activates the relevant trigger.
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="collapse multi-collapse" id="collapseExample1">
+              <div class="card card-body">
+                Some placeholder content for the second collapse component of this multi-collapse example. This panel is hidden by default but revealed when the user activates the relevant trigger.
+              </div>
+            </div>
+          </div>
+        </div>
+          </rds-collapse>
       </div>
 
     </div>

@@ -30,7 +30,7 @@ title: "Elements > Carousel"
          <div class="contents  p-5">
               <div class="row">
                  <div class="col-md-12">
-                     <img src="/images/carousel-basic.png" class="img-fluid">
+                     <img src="/images/carousel-basic.png" class="img-fluid w-50">
                  </div>                           
            </div>
                        

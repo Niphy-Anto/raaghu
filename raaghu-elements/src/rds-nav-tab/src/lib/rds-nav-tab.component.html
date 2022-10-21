@@ -5,7 +5,7 @@
         <a class="nav-link" [class.active]="activeTab==i" aria-current="page" href="#" (click)="onClick(i)"
           [attr.data-bs-target]="item.tablink" data-bs-toggle="tab" [attr.aria-controls]="item.ariacontrols"
           [class.disabled]="item.disabled">
-          <rds-icon class="me-2 pe-4" *ngIf="item.icon" [fill]="item.iconFill" [stroke]="item.iconStroke" [name]="item.icon" [height]="item.iconHeight" [fill]="item.iconFill"
+          <rds-icon class="me-2" *ngIf="item.icon" [fill]="item.iconFill" [stroke]="item.iconStroke" [name]="item.icon" [height]="item.iconHeight" [fill]="item.iconFill"
             [stroke]="item.stroke" [width]="item.iconWidth"></rds-icon>
           <span class="" [ngClass]="{'fw-semibold': item.subText || !item.icon}">
             {{item.label}}

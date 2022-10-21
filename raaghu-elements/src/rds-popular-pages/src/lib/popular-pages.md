@@ -11,7 +11,7 @@ title: "Elements > Popular-Pages"
 
 #### Popular Pages
 
-<p class="">A card is a small rectangular module with images and text. It is an entry point for users to learn more details</p>
+<p class="">Popular pages is a list of frequent visited pages visited on the webpage.</p>
 <section class="py-4">
     <h6>Default</h6>
     <div class="py-3">
@@ -30,7 +30,7 @@ title: "Elements > Popular-Pages"
          <div class="contents p-5">
               <div class="row">
                  <div class="col-md-12">
-                    <img src="/images/popular-pages.png" class="img-fluid w-50">
+                    <img src="/images/popular-pages.png" class="img-fluid w-100">
                  </div>              
            </div>
                        
