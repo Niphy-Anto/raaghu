@@ -26,11 +26,11 @@ jobs:
           npm run patch-dev-server
           npm run sync-elements
           npm run build-storybook
-      - name: Upload artifact for deployment job
-        uses: actions/upload-artifact@v3
-        with:
-          name: node-app
-          path: ./raaghu-mfe/storybook-static
+      # - name: Upload artifact for deployment job
+      #  uses: actions/upload-artifact@v3
+      #  with:
+      #    name: node-app
+      #   path: ./storybook-static
           
   deploy_job:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
