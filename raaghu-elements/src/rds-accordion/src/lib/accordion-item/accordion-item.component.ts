@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges, TemplateRef, ViewEncapsulation } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges, TemplateRef, ViewEncapsulation } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { RdsAccordionService } from '../rds-accordion.service';
 import { Collapse } from 'bootstrap';
@@ -9,7 +9,7 @@ import { Collapse } from 'bootstrap';
   styleUrls: ['./accordion-item.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class AccordionItemComponent implements OnInit, OnChanges {
+export class AccordionItemComponent implements OnInit, OnChanges, AfterViewInit {
 
   // static accordionItemCount = 0;
   // @Input() id = AccordionItemComponent.accordionItemCount;
@@ -74,6 +74,17 @@ export class AccordionItemComponent implements OnInit, OnChanges {
   border: boolean = false
   constructor(private rdsservice: RdsAccordionService) {
     AccordionItemComponent.accordionItemCount++;
+  }
+  ngAfterViewInit(): void {
+    const myCollapsible = document.getElementById('collapse' + this.id);
+    if (myCollapsible) {
+      myCollapsible.addEventListener('hide.bs.collapse', event => {
+        this.expanded = false;
+      });
+      myCollapsible.addEventListener('show.bs.collapse', event => {
+        this.expanded = true;
+      })
+    }
   }
 
   ngOnChanges(changes: SimpleChanges): void {
