@@ -19,7 +19,7 @@ export const Default: Story<RdsModalComponent> = (args) => ({
   show  Modal
 </button>
   <rds-modal  [showModalHeader]="showModalHeader" [showModalFooter]="showModalFooter" [modalBackdrop]="true">
-    <div modalheader class="d-flex align-items-center">
+    <div modalheader class="d-flex align-items-center w-100 justify-content-between">
       <h5 class="modal-title" id="storybookModal">Title</h5>
       <button style="float:right" type="button"  class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
     </div>
@@ -46,7 +46,7 @@ export const verticallyCenterd: Story<RdsModalComponent> = (args) => ({
           Show Centered Modal
         </button>
           <rds-modal  [showModalHeader]="showModalHeader" [verticallyCenterd]="verticallyCenterd" [modalBackdrop]="true" [showModalFooter]="showModalFooter">
-            <div modalheader class="d-flex align-items-center">
+            <div modalheader class="d-flex align-items-center  w-100 justify-content-between">
               <h5 class="modal-title" id="storybookModal">Title</h5>
               <button style="float:right" type="button"  class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
             </div>
@@ -73,7 +73,7 @@ export const staticBackdropModal: Story<RdsModalComponent> = (args) => ({
           Backdrop Modal
         </button>
           <rds-modal [showModalHeader]="showModalHeader" [modalBackdrop]="modalBackdrop" [showModalFooter]="showModalFooter">
-            <div modalheader class="d-flex align-items-center">
+            <div modalheader class="d-flex align-items-center  w-100 justify-content-between">
               <h5 class="modal-title" id="storybookModal">Title</h5>
               <button style="float:right" type="button"  class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
             </div>
@@ -100,7 +100,7 @@ export const longContentModal: Story<RdsModalComponent> = (args) => ({
 Long Content Modal
 </button>
 <rds-modal [showModalHeader]="showModalHeader"  [showModalFooter]="showModalFooter" [modalBackdrop]="true" [scrollable]="scrollable">
-  <div modalheader class="d-flex align-items-center">
+  <div modalheader class="d-flex align-items-center  w-100 justify-content-between">
     
     <h5 class="modal-title" id="storybookModal">Title</h5>
     <button style="float:right" type="button"  class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>

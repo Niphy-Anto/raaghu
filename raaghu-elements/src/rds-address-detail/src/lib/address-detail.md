@@ -44,7 +44,7 @@ title: "Elements > Address-Detail"
 <div class="row m-0">
 
 ```html
-     <rds-address-detail
+<rds-address-detail
   header="Address Header"
   addressLine1="Address Line 1"
   addressLine2="Address Line 2"
@@ -58,4 +58,19 @@ title: "Elements > Address-Detail"
       </div>
     </div>
   </section>
-   
+  <!-- Skeleton / Specifications -->
+<section class="py-4">
+                        <h6>
+                           Skeleton / Specifications
+                        </h6>
+                        <div class="py-3">
+                              <!-- Tab panes -->
+                              <div class="card border p-5">
+                                 <div class="row">
+                                    <div class="col-md-12">
+                                       <img src="/images/address-detail-skeleton.png" class="img-fluid">
+                                    </div>
+                                 </div>
+                              </div>
+                        </div>
+                     </section>
