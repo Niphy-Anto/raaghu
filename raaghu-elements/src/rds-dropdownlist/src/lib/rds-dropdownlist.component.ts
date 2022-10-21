@@ -82,7 +82,7 @@ export class RdsDropdownlistComponent implements OnInit, OnChanges {
       customClasses.push('form-control-lg')
     }
     if (this.borderDropdown === false) {
-      customClasses.push('border-0')
+      customClasses.push('')
     }
 
 
