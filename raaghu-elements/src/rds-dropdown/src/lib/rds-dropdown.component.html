@@ -31,7 +31,7 @@
         [attr.aria-expanded]="show">
           {{ label }}
         </button>
-        <ul [ngClass]="menu" aria-labelledby="dropdownMenuButton1">
+        <ul [ngClass]="menu" [attr.aria-labelledby]="id">
 
           <li (click)="onclick($event,item)" *ngFor="let item of listItems; index as i;">
             <a class="dropdown-item">
