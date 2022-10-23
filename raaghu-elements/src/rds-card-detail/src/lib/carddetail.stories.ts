@@ -22,18 +22,19 @@ export default {
 const Template: Story<RdsCardDetailComponent> = (args: RdsCardDetailComponent) => ({
   props: args,
   template: `<rds-card-detail [cardData]=cardData [IsEditAndDefaultFunctionalityRequired]="IsEditAndDefaultFunctionalityRequired"
-  [IsSelectionRequired]="IsSelectionRequired">
+  [IsSelectionRequired]="IsSelectionRequired" [label]="label">
    </rds-card-detail>`
 });
 
 // const teletext = "some text"
 export const BankCardDetail = Template.bind({});
-BankCardDetail.parameters = { controls: { include: ['cardData', 'IsEditAndDefaultFunctionalityRequired', 'IsSelectionRequired'] } };
+BankCardDetail.parameters = { controls: { include: ['cardData', 'IsEditAndDefaultFunctionalityRequired', 'IsSelectionRequired', 'label'] } };
 BankCardDetail.args = {
   cardData: {
     cardID: '1011', cardName: 'MasterCard', cardExpiry: '11/2027', cardLogo:'editions', cardNumber: 3596, isDefault:false,radioItems: [{id: 1011, checked: false, name: "Radio-Button"}]
   },
   IsEditAndDefaultFunctionalityRequired:true,
-  IsSelectionRequired:true
+  IsSelectionRequired: true,
+  label: 'Label card'
 };
 

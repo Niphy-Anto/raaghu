@@ -1,4 +1,4 @@
-<div class="d-flex gap-2" [ngClass]="classes">
+<div class="d-flex gap-2 align-items-center" [ngClass]="classes">
     <div class="mt-1" *ngIf="ratingPosition==='left'">{{rating}}</div>
     <ng-container *ngFor="let item of itemList">
         <rds-icon [fill]="item.value <= rating.toFixed() ? true : false" [colorVariant]="colorVariant" [name]="'star'"

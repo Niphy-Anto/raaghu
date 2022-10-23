@@ -2607,6 +2607,7 @@ export class RdsCompDemouiComponent implements OnInit {
     { label: 'UI Components', id: '', icon: 'demo_ui_components', path: 'components' },
   ]
   progressvalues = [{ progressWidth: 50, colorVariant: 'success', stripe: 'progress-bar-striped', animation: 'progress-bar-animated' }, { progressWidth: 20, colorVariant: 'danger', stripe: '', animation: '' }, { progressWidth: 30, colorVariant: 'info', stripe: '', animation: '' }];
+  buttonList= [{ colorVariant: 'primary', label: 'Toggle First Element', id: 'collapseExample', }, { colorVariant: 'primary', label: 'Toggle Second Element', id: 'collapseExample1' }, { colorVariant: 'primary', label: 'Toggle Both Element', id: 'collapseExample,collapseExample1', }];
 
 
   onClickShowAlert() {

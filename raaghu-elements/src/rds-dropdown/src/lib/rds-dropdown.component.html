@@ -23,7 +23,7 @@
     </div>
   </div>
 <div class="row ">
-  <div class="col-md-12 ">
+  <div class="col-md-12 text-center p-3 pt-5">
 
     <div *ngSwitchCase="'dropdown-button'">
       <div [ngClass]="dropdownDirection">
@@ -31,7 +31,7 @@
         [attr.aria-expanded]="show">
           {{ label }}
         </button>
-        <ul [ngClass]="menu" aria-labelledby="dropdownMenuButton1">
+        <ul [ngClass]="menu" [attr.aria-labelledby]="id">
 
           <li (click)="onclick($event,item)" *ngFor="let item of listItems; index as i;">
             <a class="dropdown-item">

@@ -1,5 +1,5 @@
 ---
-slug: "/comp-api-scope-resources
+slug: "/comp-api-scope-resources"
 date: "2019-05-04"
 title: "Components > Api-scope-basics"
 ---
