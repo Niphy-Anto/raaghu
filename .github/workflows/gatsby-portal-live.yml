@@ -44,8 +44,8 @@ jobs:
     - name: build gatsby
       working-directory: ./raaghu-mfe/gatsby      
       run: |
-          gatsby clean
           npm run build
+          
     - name: Build And Deploy
       id: builddeploy
       uses: Azure/static-web-apps-deploy@v1
