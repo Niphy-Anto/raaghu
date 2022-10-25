@@ -1,3 +1,4 @@
+
 <div>
   <span class="fw-bold fs-4">${{numberPrice}}</span>
   <span class="text-muted m-2 text-decoration-line-through fs-5" *ngIf="withDiscount"> ${{actualPrice}}</span>
@@ -21,4 +22,10 @@
         <h4 class="fs-4">${{numberPricetwo}}</h4>
       </div>
     </div>
+
+
+<span class="fw-bold fs-4">${{numberPrice}}</span>
+<span class="text-muted m-2 text-decoration-line-through fs-5" *ngIf="withDiscount"> ${{actualPrice}}</span>
+<span class="fs-6 text-primary" *ngIf="withDiscount">{{discount}}% off</span>
+<rds-icon class="px-2" [name]="'question'" [width]="'16px'"></rds-icon>
 

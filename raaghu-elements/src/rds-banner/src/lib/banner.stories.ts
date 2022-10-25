@@ -9,7 +9,6 @@ export default {
   decorators: [
     moduleMetadata({
       imports: [
-        
         RdsIconModule
       ],
       providers: [
@@ -18,10 +17,10 @@ export default {
     })
   ] ,
   argTypes: {
-    position: {
-      options: ['top', 'bottom'],
-      control: { type: 'radio' }
-    },
+    // position: {
+    //   options: ['top', 'bottom'],
+    //   control: { type: 'radio' }
+    // },
     colorVariant: {
       options: ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark'],
       control: { type: 'select' }
@@ -30,6 +29,7 @@ export default {
       options: ['start', 'center', 'end'],
       control: { type: 'select' }
     },
+    position: { control: 'radio', if: { arg: 'sticky' } },
   }
 } as Meta
 
@@ -38,7 +38,7 @@ const Template: Story<RdsBannerComponent> = (args: RdsBannerComponent) => ({
 });
 
 export const Default = Template.bind({})
-Default.parameters = { controls: { include: ['align', 'bannerText', 'sticky', 'position', 'colorVariant', 'icon',
+Default.parameters = { controls: { include: ['textAlign', 'bannerText', 'sticky', 'position', 'colorVariant', 'icon',
  'iconHeight', 'iconWidth', 'iconSize', 'iconStroke', 'iconFill'] } };
 Default.args = {
   textAlign: 'start',

@@ -18,19 +18,27 @@ export default {
     }),
   ],
   argTypes: {
+    withDiscount: {table: {disable: true,},},
   },
 } as Meta;
 
 const Template: Story<RdsPriceComponent> = (args: RdsPriceComponent) => ({
   props: args,
 });
-export const Default = Template.bind({});
-Default.args = {
+export const WithDiscount = Template.bind({});
+WithDiscount.parameters = { controls: { include: ['actualPrice', 'discount', 'withDiscount'] } };
+WithDiscount.args = {
   actualPrice: 100,
   discount: 10,
   withDiscount: true
 };
-Default.parameters = { controls: { include: ['actualPrice', 'discount', 'withDiscount'] } };
+
+export const WithoutDiscount = Template.bind({});
+WithoutDiscount.parameters = { controls: { include: ['actualPrice', 'withDiscount'] } };
+WithoutDiscount.args = {
+  actualPrice: 100,
+  withDiscount: false
+};
 
 
 
