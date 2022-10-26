@@ -10,7 +10,6 @@
                 <rds-button #changelog class="action" [outlineButton]="true" *ngIf="selectedIndex==1"
                     [colorVariant]="'primary'" [size]="'small'" (click)="exportToExcel('change-logs')"
                     [label]="translate.instant('Export To Excel')">
-                    <!-- <i left class="bi bi-arrow-down"></i> -->
                     <rds-icon left name="export_data" width="15px" height="18px"></rds-icon>
                 </rds-button>
             </div>
@@ -22,21 +21,15 @@
     </div>
 
     <div naveContent class="row tab-content m-2" id="nav-tabContent">
-
         <div class="tab-pane fade show active" id="operation-logs" role="tabpanel" aria-labelledby="nav-home-tab">
-
             <div class="excel-btn m-1">
-
                 <div class="d-flex gap-4 align-items-center sm-block">
                     <div class="mb-3 sm-p-0 sm-block d-flex align-items-center gap-4">
-                        <!-- <rds-datepicker name="date-picker" [style]="'cursor:pointer'" [label]="''" [placeholder]="translate.instant('Start Date')" -->
-                        <!-- <div class="mb-3 sm-p-0 sm-block "> -->
                         <rds-datepicker name="date-picker" [label]="''" [placeholder]="translate.instant('Start Date')"
                             (change)="startDateModify($event)" [(ngModel)]="startDate" [value]="startDate"
                             floatinginputLabel="">
                         </rds-datepicker>
                     </div>
-
                     <div class="mb-3 sm-p-0 sm-block ">
                         <rds-datepicker name="date-picker" [style]="'cursor:pointer'" [label]="''"
                             [placeholder]="translate.instant('End Date')" (change)="endDateModify($event)"
@@ -56,20 +49,13 @@
                     </div>
 
                 </div>
-
                 <div class="mobile-btn position-fixed bottom-0 end-0 pb-2 me-4">
-                    <!-- <rds-button class="action" [colorVariant]="'outline-primary'" [size]="'medium'"
-                        (click)="exportToExcel('operation-logs')" [roundedButton]="true">
-                        <rds-icon left name="export-to-excel" height="12px" width="13.5px"></rds-icon>
-                    </rds-button> -->
                     <rds-fab-menu [listItems]="listItem1" [menuicon]="'plus'" [colorVariant]="'primary'"
                         [menuiconWidth]="'12px'" [menuiconHeight]="'12px'" (onSelect)="onSelectMenu($event)">
                     </rds-fab-menu>
                 </div>
             </div>
-
             <div class="row" *ngIf="showFilters">
-
                 <div class="col-md-2 sm-p-0">
                     <rds-input size="medium" [(ngModel)]="service" [placeholder]="translate.instant('Service')"
                         (change)="serviceModify($event)" id="service" floatinginputLabel="" ngDefaultControl
@@ -104,10 +90,8 @@
                         [itemList]="browserList" (selectListChange)="SelectBroser($event)" name="browserInfo">
 
                     </rds-select-list>
-
                 </div>
             </div>
-
             <div class="row">
                 <app-rds-data-table [tableData]="operationLogs" (deleteEvent)="delete($event)" [pagination]="true"
                     [noDataTitle]="translate.instant('Currently you do not have operation log')" [recordsPerPage]="10"
@@ -118,7 +102,6 @@
 
         <div class="tab-pane fade" id="change-logs" role="tabpanel" aria-labelledby="nav-home-tab">
             <div class="m-1">
-
                 <div class="d-flex gap-4 align-items-center sm-block">
                     <div class="sm-p-0">
                         <rds-datepicker name="date-picker" [style]="'cursor:pointer'" [label]="''"
@@ -126,16 +109,14 @@
                             [(ngModel)]="changeLogStartdate" [value]="changeLogStartdate">
                         </rds-datepicker>
                     </div>
-
                     <div class="sm-p-0">
                         <rds-datepicker name="date-picker" [style]="'cursor:pointer'" [label]="''"
                             [placeholder]="translate.instant('Date Range')" (change)="changelogefiltermodify($event)"
                             [(ngModel)]="changeLogEndDate" [value]="changeLogEndDate">
                         </rds-datepicker>
                     </div>
-
                     <div class="sm-p-0 mb-3">
-                        <rds-input size="medium" [ [(ngModel)]="changeLogUsername"
+                        <rds-input size="medium" [(ngModel)]="changeLogUsername"
                             [placeholder]="translate.instant('User name')" id="txtchangeLogUsername"
                             floatinginputLabel="" ngDefaultControl name="changeLogUsername"></rds-input>
                     </div>
@@ -143,24 +124,14 @@
                     <div class="sm-p-0 mt-2 d-flex align-items-center mb-3">
                         <rds-select-list class="w-100" [(ngModel)]="status" (selectListChange)="exceptionModify($event)"
                             [value]="status" ngDefaultControl name="Property" [itemList]="statusList">
-
                         </rds-select-list>
                     </div>
-
                 </div>
-
                 <div class="mobile-btn position-fixed bottom-0 end-0 my-5 me-5">
-
-                    <!-- <rds-button class="action" [colorVariant]="'outline-primary'" [size]="'medium'"
-                        (click)="exportToExcel('change-logs')" [roundedButton]="true">
-                        <rds-icon left name="export-to-excel" width="12px" height="12px"></rds-icon>
-                    </rds-button> -->
                     <rds-fab-menu [listItems]="listItem2" [menuicon]="'plus'" [colorVariant]="'primary'"
                         [menuiconWidth]="'12px'" [menuiconHeight]="'12px'" (onSelect)="onSelectMenu($event)">
                     </rds-fab-menu>
                 </div>
-
-
                 <div class="row">
                     <app-rds-data-table [tableData]="changeLogs" [actions]="actionForChangeLogs"
                         (onActionSelection)="onChangeActionSelect($event)" [pagination]="true" [recordsPerPage]="10"
@@ -168,18 +139,9 @@
                         [tableHeaders]="changeLogsHeaders">
                     </app-rds-data-table>
                 </div>
-
-
             </div>
         </div>
-
     </div>
-
-    <!-- <rds-offcanvas [canvasTitle]="auditLogsCanvasTitle" [offId]="'auditLogCanvas'" [placement]="'end'" 
-               [offcanvaswidth]="600" *ngIf="viewAuditLogsCanvas" >
-  
-  <b>Open Canvas</b>
-</rds-offcanvas> -->
 </div>
 
 <rds-offcanvas [canvasTitle]="translate.instant(auditLogsCanvasTitle)" [offId]="'auditLogCanvas'" [offcanvaswidth]="550"
