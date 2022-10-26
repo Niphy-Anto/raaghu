@@ -21,12 +21,12 @@
                         [ngClass]="getAscIconClass(header)"></rds-icon>
                     </span>
                     <div class="btn-group dropend">
-                      <span class="text-right sort-icons sortable" [id]="'search-dropdown'+i" (click)="openSearchModal(i)"
+                      <span class="text-right sort-icons sortable" [id]="'search-dropdown'+i+id" (click)="openSearchModal(i)"
                         *ngIf="header.filterable" data-bs-toggle="dropdown" aria-expanded="false">
                         <rds-icon [name]="'filter'" [height]="'12px'" [width]="'12px'">
                         </rds-icon>
                       </span>
-                      <ul class="dropdown-menu searchModal p-1 border-0" aria-labelledby="dropdownMenuButton1">
+                      <ul class="dropdown-menu searchModal p-1 border-0" [attr.aria-labelledby]="'search-dropdown'+i+id">
                         <div>
                           <div>
                             <rds-input [placeholder]="translate.instant('Search here')+' ...'"
@@ -109,8 +109,8 @@
                     [iconFill]="true" [iconStroke]="false" [disabled]="false" [outlineButton]="true"
                     [roundedButton]="true" icon="three_dots" [iconHeight]="'16px'" [iconWidth]="'16px'"
                     [label]="data?.name+'_action'" tooltipTitle="" tooltipPlacement="bottom" (click)="openAction(i)"
-                    [attr.id]="'action-dropdown'+i" data-bs-toggle="dropdown" aria-expanded="false"></rds-button>
-                  <div class="dropdown-menu" aria-labelledby="action-dropdown">
+                    [attr.id]="'action-dropdown'+i+id" data-bs-toggle="dropdown" aria-expanded="false"></rds-button>
+                  <div class="dropdown-menu" [attr.aria-labelledby]="'action-dropdown'+i+id">
                     <ng-container *ngFor="let action of actions">
                       <li>
                         <a class="dropdown-item" [attr.aria-label]="'Update'+action.displayName+data?.name"

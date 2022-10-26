@@ -140,7 +140,6 @@ export class RdsCompAuditLogsComponent implements OnInit {
 
   onActionSelect(event: any): void {
     if (event.actionId === 'view') {
-      console.log(event.selectedData);
       this.selectedRowData = event.selectedData;
       // this.deleteEdition.emit(event.selectedData);
       this.showAuditLogDetail();
