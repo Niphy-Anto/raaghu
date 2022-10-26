@@ -22,10 +22,7 @@ export default {
      })
   ] ,
   argTypes: {
-    display_type: {
-      options: ['Basic', 'benefit_type1', 'benefit_type2', 'benefit_type3', 'benefit_type4', 'benefit_type5'],
-      control: { type: 'select' }
-    },
+    display_type: {table: {disable: true,},},
   }
 } as Meta;
 

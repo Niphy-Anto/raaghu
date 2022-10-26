@@ -43,10 +43,11 @@ export const Default: Story<RdsDropdownlistComponent> = (args) => ({
      [icon]="icon"
     [iconWidth]="iconWidth"
     [iconHeight]="iconHeight"
+    [borderDropdown]="borderDropdown"
   >
     </rds-dropdownlist>`
 });
-Default.parameters = { controls: { include: ['placeholder', 'icon', 'size', 'iconHeight', 'iconWidth', 'multiSelect', 'listItems'] } };
+Default.parameters = { controls: { include: ['placeholder', 'icon', 'size', 'iconHeight', 'iconWidth', 'multiSelect', 'listItems', 'borderDropdown'] } };
 
 Default.args = {
   placeholder: 'Filter',
@@ -59,7 +60,8 @@ Default.args = {
     { value: 'Export to excel', some: 'value', id: 1, href: '', icon: 'export', iconWidth: '20px', iconHeight: '25px', iconStroke: true, iconFill: false },
     { value: 'Import from excel', some: 'value', id: 2, href: '', icon: 'download_data', iconWidth: '20px', iconHeight: '20px', iconStroke: true, iconFill: false },
     { value: 'Click here download sample import file.', some: 'value', id: 3, href: '', icon: 'download_data', iconWidth: '20px', iconHeight: '20px', iconStroke: true, iconFill: false },
-  ]
+  ],
+  borderDropdown: false
 };
 
 
@@ -73,9 +75,11 @@ export const WithOffset: Story<RdsDropdownlistComponent> = (args) => ({
     [multiSelect]="multiSelect"
     [xOffset] = "xOffset"
     [yOffset] = "yOffset"
+    [borderDropdown]="borderDropdown"
   >
     </rds-dropdownlist>`
 });
+WithOffset.parameters = { controls: { include: ['placeholder', 'xOffset', 'yOffset', 'size', 'iconWidth', 'multiSelect', 'listItems', 'borderDropdown'] } };
 WithOffset.args = {
   placeholder: 'Filter',
   xOffset: '0',
@@ -86,5 +90,6 @@ WithOffset.args = {
     { value: 'Export to excel', some: 'value', id: 1, href: '', icon: 'export', iconWidth: '20px', iconHeight: '25px', iconStroke: true, iconFill: false },
     { value: 'Import from excel', some: 'value', id: 2, href: '', icon: 'download_data', iconWidth: '20px', iconHeight: '20px', iconStroke: true, iconFill: false },
     { value: 'Click here download sample import file.', some: 'value', id: 3, href: '', icon: 'download_data', iconWidth: '20px', iconHeight: '20px', iconStroke: true, iconFill: false },
-  ]
+  ],
+  borderDropdown: false
 };
