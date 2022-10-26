@@ -11,10 +11,6 @@ export default {
       options: ['static', true, false],
       control: { type: 'select' },
     },
-    colorVariant: {
-      options: ['primary', 'secondary', 'danger', 'success', 'warning', 'info', 'light', 'dark'],
-      control: { type: 'select' },
-    },
     placement: {
       options: ['start', 'end', 'top', 'bottom'],
       control: { type: 'select' },
@@ -33,7 +29,6 @@ export const Default: Story<RdsOffcanvasComponent> = (args) => ({
    Button
   </button>
   <rds-offcanvas
-  [colorVariant]=[colorVariant]
   [placement]=[placement]
   [canvasTitle]="canvasTitle"
   [backDrop]="backDrop"
@@ -44,7 +39,7 @@ export const Default: Story<RdsOffcanvasComponent> = (args) => ({
   </rds-offcanvas> `,
 
 });
-Default.parameters = { controls: { include: ['canvasTitle', 'placement', 'colorVariant', 'backDrop', 'offId','offcanvaswidth'] } };
+Default.parameters = { controls: { include: ['canvasTitle', 'placement', 'backDrop', 'offId','offcanvaswidth'] } };
 
 Default.args = {
   offId: 'canvasExample',

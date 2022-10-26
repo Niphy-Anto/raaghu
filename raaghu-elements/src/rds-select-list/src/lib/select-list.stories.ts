@@ -26,6 +26,7 @@ export default {
       options: ['small', 'medium', 'large'],
       control: { type: 'radio' }
     },
+    multiple: {table: {disable: true,},},
   },
 } as Meta;
 
