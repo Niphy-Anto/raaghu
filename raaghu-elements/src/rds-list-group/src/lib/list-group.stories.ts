@@ -9,6 +9,7 @@ export default {
       options: ['top', 'bottom'],
       control: { type: 'select' },
     },
+    multiSelect: {table: {disable: true,},},
     // labelPosition: {
     //   options: [ 'start', 'top', 'end', 'bottom'],
     //   control: { type: 'select' }
