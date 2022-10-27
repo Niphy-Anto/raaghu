@@ -127,10 +127,10 @@ export class RdsCounterComponent implements OnInit {
   public get inputPosition(): string[] {
     var inputClass = ['input-group'];
     if (this.position === 'top') {
-      inputClass.push('mt-4');
+      inputClass.push('mt-2');
     }
     else if (this.position === 'bottom') {
-      inputClass.push('mb-4');
+      inputClass.push('mb-2');
     }
     return inputClass;
   }
