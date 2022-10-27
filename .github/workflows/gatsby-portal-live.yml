@@ -2,12 +2,7 @@ name: Build and deploy gatsby portal
 
 on:
   push:
-    branches:
-      - development
-  pull_request:
-    types: [closed]
-    branches:
-      - development
+    branches: [development]
 
 jobs:
   build:
