@@ -1,4 +1,4 @@
-import { Component, EventEmitter, forwardRef, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
+import { Component, EventEmitter, forwardRef, Input, OnInit, Output, ViewEncapsulation, DoCheck } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
@@ -39,6 +39,10 @@ export class RdsCounterComponent implements OnInit {
   iconHeight: string = "20px";
 
   constructor() { }
+  
+  ngOnInit(): void {
+    this.width < 110 ? this.width = 110 : this.width = this.width;
+  }
 
   writeValue(obj: any): void {
     this.counterValue = obj;
@@ -63,8 +67,6 @@ export class RdsCounterComponent implements OnInit {
   }
 
 
-  ngOnInit(): void {
-  }
 
   public get classList(): string[] {
     var clsList: string[] = [];

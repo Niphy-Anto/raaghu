@@ -33,7 +33,7 @@ export class RdsBadgeComponent implements OnInit {
       clsList.push('position-absolute start-100 top-0 translate-middle')
     }
     if (this.badgeType === 'rectangle') {
-      clsList.push('rounded-0')
+      clsList.push('rounded')
     }
     if (this.badgeType === 'circle') {
       clsList.push('rounded-circle')
