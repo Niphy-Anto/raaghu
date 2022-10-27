@@ -13,11 +13,7 @@ export default {
     }),
   ],
   argTypes: {
-    colorVariant: {
-      options: ['warning', 'danger', 'success', 'info', 'primary', 'secondary', 'dark', 'light'],
-      control: { type: 'select' }
-    }
-
+    colorVariant: { control: 'select', if: { arg: 'withColorVariant' } },
   },
 } as Meta;
 
@@ -27,9 +23,10 @@ const Template: Story<RdsFabMenuComponent> = (args: RdsFabMenuComponent) => ({
 });
 
 export const Default = Template.bind({});
-Default.parameters = { controls: { include: ['colorVariant', 'menuicon', 'menuiconHeight', 'menuiconWidth', 'size', 'listItems'] } };
+Default.parameters = { controls: { include: ['withColorVariant','colorVariant', 'menuicon', 'menuiconHeight', 'menuiconWidth', 'size', 'listItems'] } };
 
 Default.args = {
+  withColorVariant: false,
   colorVariant: 'primary',
   menuicon: 'plus',
   menuiconHeight: '12px',
@@ -41,5 +38,5 @@ Default.args = {
     { value: 'Export to excel', some: 'value', key: 'export', icon: 'export', iconWidth: '20px', iconHeight: '20px' },
     { value: 'Delete', some: 'value', key: 'delete', icon: 'delete', iconWidth: '20px', iconHeight: '20px' },
     { value: 'Click here download sample import file.', some: 'value', key: 'download', icon: 'download', iconWidth: '20px', iconHeight: '20px' },
-  ]
+  ],
 };

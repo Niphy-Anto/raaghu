@@ -21,7 +21,7 @@ export class RdsCounterComponent implements OnInit {
   @Input() label = '';
   @Input() min = 0;
   @Input() max = 40;
-  @Input() width = 124;
+  @Input() width = 110;
   @Input() colorVariant?: string;
   @Input() position: 'start' | 'end' | 'top' | 'bottom' = 'start';
 
