@@ -35,6 +35,7 @@ const Template: Story<RdsCollapseComponent> = (args: RdsCollapseComponent) => ({
 
 });
 export const Default = Template.bind({});
+Default.parameters = { controls: { include: ['buttonList'] } };
 Default.args = {
   buttonList: [{ colorVariant: 'primary', label: 'Toggle Element', id: 'collapseExample', }]
 };
@@ -64,6 +65,7 @@ const multiToggleTemplate: Story<RdsCollapseComponent> = (args: RdsCollapseCompo
 });
 
 export const multiToggle = multiToggleTemplate.bind({});
+multiToggle.parameters = { controls: { include: ['buttonList'] } };
 multiToggle.args = {
   buttonList: [{ colorVariant: 'primary', label: 'Toggle First Element', id: 'collapseExample', }, { colorVariant: 'primary', label: 'Toggle Second Element', id: 'collapseExample1' }, { colorVariant: 'primary', label: 'Toggle Both Element', id: 'collapseExample,collapseExample1', }]
 };
@@ -84,6 +86,7 @@ const horizontalTemplate: Story<RdsCollapseComponent> = (args: RdsCollapseCompon
 });
 
 export const horizontalCollapse = horizontalTemplate.bind({});
+horizontalCollapse.parameters = { controls: { include: ['buttonList'] } };
 horizontalCollapse.args = {
   buttonList: [{ colorVariant: 'primary', label: 'Toggle Element', id: 'collapseExample', }]
 };

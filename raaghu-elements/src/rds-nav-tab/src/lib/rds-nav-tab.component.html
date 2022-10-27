@@ -1,6 +1,6 @@
 <div class="row">
   <div [ngClass]="flexClass">
-    <ul class="nav nav-tabs mobile-ul-tabs" [ngClass]="classes">
+    <ul class="nav mobile-ul-tabs" [ngClass]="classes">
       <li class="nav-item mobile-nav-item p-0" *ngFor="let item of navtabsItems; index as i">
         <a class="nav-link" [class.active]="activeTab==i" aria-current="page" href="#" (click)="onClick(i)"
           [attr.data-bs-target]="item.tablink" data-bs-toggle="tab" [attr.aria-controls]="item.ariacontrols"

@@ -14,7 +14,7 @@ export class RdsCollapseComponent implements OnInit {
   // tslint:disable-next-line:no-output-on-prefix
   @Output() onShow: EventEmitter<any> = new EventEmitter<any>();
 
-  @Input() show: boolean = false;
+  show: boolean = false;
   @Input() buttonList: any = [];
   constructor() { }
 

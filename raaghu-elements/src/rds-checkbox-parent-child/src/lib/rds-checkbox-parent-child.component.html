@@ -3,7 +3,7 @@
     <li class="input-group-item mb-3" >
       <div [class]="inline === true ? 'd-flex' : ''">
         <div [class]="inline === true ? 'px-3' : ''" *ngFor="let item of itemList">
-          <input class="form-check-input mt-1" type="checkbox" [(ngModel)]="item.isSelected" name="list_name"
+          <input [class]="state === 'errorcheckbox' ? 'form-check-input form-check-input-error mt-1 ' : 'form-check-input mt-1 '" type="checkbox" [(ngModel)]="item.isSelected" name="list_name"
           [value]="item.id" [checked]="item.isSelected" [id]="item.id" [disabled]="item.disabled"
           (ngModelChange)="parentCheck(item, $event)"
           [ngClass]="item.isIntermediate === false ? 'form-check-input' : 'form-check-input form-check-input-intermediate'"
@@ -15,7 +15,7 @@
         <div class="child-list">
           <ul class="list-unstyled level-two" [class]="isInputGroup ? 'ps-4' : 'px-4'">
             <li class="input-group-item level-two" *ngFor="let itemChild of item.childList">
-              <input class="form-check-input mt-1" type="checkbox" [(ngModel)]="itemChild.isSelected"
+              <input [class]="state === 'errorcheckbox' ? 'form-check-input form-check-input-error mt-1 ' : 'form-check-input mt-1 '" type="checkbox" [(ngModel)]="itemChild.isSelected"
                 [checked]="itemChild.checked" [id]="itemChild.id" [disabled]="itemChild.disabled" name="list_name_child"
                 [value]="itemChild.id" (ngModelChange)="childCheck(item,item.childList, $event)"
                 (input)="getValueChild($event)" />
