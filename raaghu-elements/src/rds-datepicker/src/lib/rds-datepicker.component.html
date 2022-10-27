@@ -12,7 +12,7 @@
         name="date-picker" [minMode]="minMode" (bsValueChange)="onDateChane($event)" [datesEnabled]="datesEnabled"
         [datesDisabled]="datesDisabled" [outsideClick]="outsideClick" [placement]="placement"
         class="form-control border-0" />
-      <span class="input-group-text border" id="basic-addon1" (click)="datepicker.show()"
+      <span class="input-group-text border cursor-pointer" id="basic-addon1" (click)="datepicker.show()"
         [class.disable-pointer]="disabled">
         <rds-icon name="calendar" height="18px" width="18px"></rds-icon>
       </span>
