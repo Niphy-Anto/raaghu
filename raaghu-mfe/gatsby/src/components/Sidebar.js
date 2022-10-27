@@ -1,6 +1,5 @@
 import * as React from "react";
 import { Link, useStaticQuery, graphql } from "gatsby";
-import Accordion from "react-bootstrap/Accordion";
 import elements from "../images/logo/element-icon1.svg";
 import components from "../images/logo/comp-icon.svg";
 import pages from "../images/logo/page.svg";
@@ -135,11 +134,13 @@ elementsList.forEach((item) => {
   });
 
   function onLinkSelect(array, node) {
+    const isBrowser = typeof window !== "undefined";
+    if (!isBrowser) { return; }
     let pathSplitted = window.location.pathname.split('/');
     let path = pathSplitted[pathSplitted.length - 1];
     if (path) {
       array.forEach((item) => {
-        if (item.url == path) {
+        if (item.url === path) {
           console.log(path, item.url);
 
           console.log(true);
@@ -215,7 +216,7 @@ elementsList.forEach((item) => {
               /><span className="px-3"> Elements </span>
             </button>
             <div class="collapse show" id="element-collapse">
-              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 text-capitalize">
                 {elementsLists.map((node) => (
                   <li key={node.url} className={node.isActive ? 'active' : ''}>
                     <Link class="nav-link rounded" click={onLinkSelect(elementsLists, node)} href={node.url + "?eventkey=0"}>{node.displayName}</Link>
@@ -234,7 +235,7 @@ elementsList.forEach((item) => {
               /><span className="px-3"> Charts </span>
             </button>
             <div class="collapse" id="chart-collapse">
-              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 text-capitalize">
                 {chartList.map((node) => (
                   <li key={node.url} className={node.isActive ? 'active' : ''}>
                     <Link class="nav-link rounded" activeClassName="active" click={onLinkSelect(chartList, node)} href={node.url + "?eventkey=1"}>{node.displayName}</Link>
@@ -254,7 +255,7 @@ elementsList.forEach((item) => {
             </button>
              
             <div class="collapse" id="component-collapse">
-              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 text-capitalize">
                 {componentsList.map((node) => (
                   <li key={node.url} className={node.isActive ? 'active' : ''} >
                     <Link className="nav-link rounded" href={node.url + "?eventkey=2"} click={onLinkSelect(componentsList, node)}>{node.displayName}</Link>
@@ -273,7 +274,7 @@ elementsList.forEach((item) => {
               /><span className="px-3"> Pages </span>
             </button>
             <div class="collapse" id="pages-collapse">
-              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 text-capitalize">
                 {pageLists.map((node) => (
                   <li key={node.url} className={node.isActive ? 'active' : ''}>
                     <Link class="nav-link rounded" href={node.url + "?eventkey=3"} click={onLinkSelect(pageLists, node)}>{node.displayName}</Link>
