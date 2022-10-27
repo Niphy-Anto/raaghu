@@ -255,19 +255,15 @@ title: "Elements > Button-group"
                         </h6>
                         <div class="py-3">
                               <!-- Tab panes -->
-                              <div class="">
+                              <div class="card border p-5">
                                  <div class="row">
-                                    <div class="col-md-6">
-                                       <img src="https://portal.raaghu.io/images/components/_button-group/_btn-group1.png" class="img-fluid">
-                                    </div>
-                                    <div class="col-md-6 ">
-                                       <img src="https://portal.raaghu.io/images/components/_button-group/_btn-group2.png" class="img-fluid">
+                                    <div class="col-md-9 col-12">
+                                       <img src="/images/skel-button-group.png" class="img-fluid">
                                     </div>
                                  </div>
                               </div>
                         </div>
                      </section>
-
 
 
 

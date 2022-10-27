@@ -552,38 +552,38 @@
        
         {
           "id": 2,
-          "image": "images/visual-settings.png",
+          "image": "images/visualsettings1.png",
           "title": "Visual Settings",
-          "text": "  Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": " Allows a user to have a option to select different themes ",
           "link": "/comp-visual-settings"
         },
         
         {
           "id": 4,
-          "image": "images/data-table.png",
+          "image": "images/data-table2.png",
           "title": "Data Table",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": "Categorised the table based on types of plans along with the price",
           "link": "/comp-data-table"
         },
         {
           "id": 5,
-          "image": "images/default.png",
+          "image": "images/subscription1.png",
           "title": "Subscription",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": "A card having different subscription plans with thier respective price ",
           "link": "/comp-subscription"
         },
         {
           "id": 6,
-          "image": "images/default.png",
+          "image": "images/edition1.png",
           "title": "Edition",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": "Gives a price details about a subscription plan along with its benefits",
           "link": "/comp-features"
         },      
         {
           "id": 8,
-          "image": "images/tree.png",
+          "image": "images/hierarchy1.png",
           "title": "Hierarchy",
-          "text": "  Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": " Provides a description on the ranking according to the ranking. ",
           "link": "/comp-hierarchy"
         }
 
@@ -600,170 +600,170 @@
       "children": [
         {
           "id": 1,
-          "image": "images/default.png",
+          "image": "images/Alert1.png",
           "title": "Alert",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+          "text": " Pops up a relevant information a user requires",
           "link": "/comp-alert"
         },
         {
           "id": 2,
-          "image": "images/default.png",
+          "image": "images/alert-popup1.png",
           "title": "Alert popup ",
-          "text": "  Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": " Pops out whether a user wants to keep the relevant information or delete it",
           "link": "/comp-alert-popup"
         },
         {
           "id": 3,
-          "image": "images/default.png",
+          "image": "images/apply-for-position1.png",
           "title": "Apply for position",
-          "text": "  Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": " Gives a necessary details to the user needed for the mentioned action",
           "link": "/comp-apply-for-position"
         },
         {
           "id": 4,
-          "image": "images/default.png",
+          "image": "images/audit-log1.png",
           "title": "Audit logs",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": "It enables a user to have security relevant set of records that gives a documentary evidence of the sequence of sctivities",
           "link": "/comp-audit-logs"
         },
         {
           "id": 5,
           "image": "images/default.png",
           "title": "Background images ",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": "Gives an available caption that can be edited along with the button and a background image",
           "link": "/comp-background-image"
         },
         {
           "id": 6,
-          "image": "images/default.png",
+          "image": "images/app-details1.png",
           "title": "App details",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": "Supercharge your workflow and connect the tool you use every day",
           "link": "/comp-app-details"
         },
         {
           "id": 7,
           "image": "images/default.png",
           "title": "Admin Dashboard",
-          "text": "  Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": " Gives a user a graphical and statistical representation of a particular objective",
           "link": "/comp-admin-dashboard"
         },
         {
           "id": 8,
-          "image": "images/default.png",
+          "image": "images/address-input1.png",
           "title": "Address Input",
-          "text": "  Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": "Enables a user to add/edit description on relevant address with respective location ",
           "link": "/comp-address-input"
         },
         {
           "id": 9,
           "image": "images/default.png",
           "title": "Basic resources",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+          "text": "Provides an API information of a user with its different details",
           "link": "/comp-basic-resources"
         },
         {
           "id": 10,
-          "image": "images/default.png",
+          "image": "images/Benefit1.png",
           "title": "Benefit",
-          "text": "  Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": "Gives description on the cart delivery ",
           "link": "/comp-benefit"
         },
         {
           "id": 11,
-          "image": "images/default.png",
+          "image": "images/billing1.png",
           "title": "Billing",
-          "text": "  Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": "This card provides a user with different subscriptions plan as well as its benefits",
           "link": "/comp-billing"
         },
         {
           "id": 12,
-          "image": "images/default.png",
+          "image": "images/billing-address1.png",
           "title": "Billing address",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": "Extracts the necessary details needed for the bill of a customer",
           "link": "/comp-billing-address"
         },
         {
           "id": 13,
-          "image": "images/default.png",
+          "image": "images/cache1.png",
           "title": "Cache ",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": "It gives an information on the temporary data created at different medium",
           "link": "/comp-cache"
         },
         {
           "id": 14,
-          "image": "images/default.png",
+          "image": "images/calender1.png",
           "title": "Calendar",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": "",
           "link": "/comp-calender"
         },
         {
           "id": 15,
-          "image": "images/default.png",
+          "image": "images/card-details-list1.png",
           "title": "Card detail list",
-          "text": "  Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": "Gives relevant information about the different payment options of saved cards",
           "link": "/comp-card-details-list"
         },
         {
           "id": 16,
-          "image": "images/default.png",
+          "image": "images/claims1.png",
           "title": "Claims",
           "text": "  Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
           "link": "/comp-claims"
         },
         {
           "id": 17,
-          "image": "images/default.png",
+          "image": "images/client-basics1.png",
           "title": "Client basic",
           "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry",
           "link": "/comp-client-basic"
         },
         {
           "id": 18,
-          "image": "images/default.png",
+          "image": "images/client-resource1.png",
           "title": "Client resources",
-          "text": "  Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": " Gives a details about the checkboxes in a alphabetical range",
           "link": "/comp-client-resources"
         },
         {
           "id": 19,
-          "image": "images/default.png",
+          "image": "images/contact-information1.png",
           "title": "Contact information",
-          "text": "  Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": "Requires a necessary personal details from a person and acceptance of the terms and conditions",
           "link": "/comp-contact-information"
         },
         {
           "id": 20,
-          "image": "images/default.png",
+          "image": "images/contact-us1.png",
           "title": "Contact us",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": "Provides a necessary details needed to describe it in a form of a message",
           "link": "/comp-contact-us"
         },
         {
           "id": 21,
-          "image": "images/default.png",
+          "image": "images/customer-reviews1.png",
           "title": "Customer review",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": "Provides a card with different ratings and it's percentage of different level of reviews",
           "link": "/comp-customer-review"
         },
         {
           "id": 22,
-          "image": "images/default.png",
+          "image": "images/delivery-method1.png",
           "title": "Delivery method",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": "The card provides a details on the type of costs based on the delivery estimation",
           "link": "/comp-delivery-method"
         },
         {
           "id": 23,
-          "image": "images/default.png",
+          "image": "images/under-construction.png",
           "title": "Demo ui",
-          "text": "  Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": " Under construction",
           "link": "/comp-demoui"
         },
         {
           "id": 24,
-          "image": "images/default.png",
+          "image": "images/download-collection1.png",
           "title": "Download collection",
-          "text": "  Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": "Provies a set of dates",
           "link": "/comp-download-collection"
         },
         {
@@ -775,51 +775,51 @@
         },
         {
           "id": 26,
-          "image": "images/default.png",
+          "image": "images/dynamic-properties1.png",
           "title": "Dynamic properties",
           "text": "  Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
           "link": "/comp-dynamic-properties"
         },
         {
           "id": 27,
-          "image": "images/default.png",
+          "image": "images/edit-language-text1.png",
           "title": "Edit language text",
-          "text": "  Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": "Provides the details on the selection of a target language from the user base language ",
           "link": "/comp-edit-language-text"
         },
         {
           "id": 28,
-          "image": "images/default.png",
+          "image": "images/edition1.png",
           "title": "Edition",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": " Gives a price details about a subscription plan along with its benefits ",
           "link": "/comp-edition"
         },
         {
           "id": 29,
-          "image": "images/default.png",
+          "image": "images/edition-list1.png",
           "title": "Edition table",
           "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
           "link": "/comp-edition-table"
         },
         {
           "id": 30,
-          "image": "images/default.png",
+          "image": "images/email1.png",
           "title": "Email",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": "Allows a user to edit credentials like name and email ",
           "link": "/comp-email"
         },
         {
           "id": 31,
-          "image": "images/default.png",
+          "image": "images/email-settings1.png",
           "title": "Email settings",
-          "text": "  Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": " Provides multiple text boxes for the confirmation of email",
           "link": "/comp-email-settings"
         },
         {
           "id": 32,
-          "image": "images/default.png",
+          "image": "images/faq1.png",
           "title": "Faq",
-          "text": "  Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": " Gives a card on frequently asked questions",
           "link": "/comp-faq"
         },
         {
@@ -831,93 +831,93 @@
         },
         {
           "id": 34,
-          "image": "images/default.png",
+          "image": "images/feeds1.png",
           "title": "Feeds",
-          "text": "  Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": "Integrates activities in the project with the help of reviews ",
           "link": "/comp-feeds"
         },
         {
           "id": 35,
-          "image": "images/default.png",
+          "image": "images/forgot-password1.png",
           "title": "Forgot Password",
-          "text": "  Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": " Provides a card with the details neededed to restore an account",
           "link": "/comp-forgot-password"
         },
         {
           "id": 36,
-          "image": "images/default.png",
+          "image": "images/information1.png",
           "title": "Information",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": "It allows a user with a card having details with relevant information boxes ",
           "link": "/comp-information"
         },
         {
           "id": 37,
-          "image": "images/default.png",
+          "image": "images/integration1.png",
           "title": "Integration",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": "gives a user for integration of multiple apps in a one card",
           "link": "/comp-integration"
         },
         {
           "id": 38,
-          "image": "images/default.png",
+          "image": "images/invoice1.png",
           "title": "Invoice",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": " Provides a card with the relevant informations on Invoice ",
           "link": "/comp-invoice"
         },
         {
           "id": 39,
-          "image": "images/default.png",
+          "image": "images/language-text-list1.png",
           "title": "Language Text List",
-          "text": "  Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": " Gives a table on the respective language along with dropdowns options ",
           "link": "/comp-language-text-list"
         },
         {
           "id": 40,
-          "image": "images/default.png",
+          "image": "images/linked-accounts1.png",
           "title": "Linked Accounts",
-          "text": "  Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": " A card useful to link accounts by adding credentials of a user ",
           "link": "/comp-linked-accounts"
         },
         {
           "id": 41,
-          "image": "images/default.png",
+          "image": "images/login1.png",
           "title": "Login",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+          "text": " A card having details for necessary fields like login and password",
           "link": "/comp-login"
         },
         {
           "id": 42,
-          "image": "images/default.png",
+          "image": "images/login-attempts1.png",
           "title": "Login Attempts",
-          "text": "  Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": "Provides a necessary details about the login ",
           "link": "/comp-login-attempts"
         },
         {
           "id": 43,
-          "image": "images/default.png",
+          "image": "images/marketing-website-newsletter1.png",
           "title": "Marketing Website Newsletter",
-          "text": "  Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": "  Provides a card with different buttons as an option selector ",
           "link": "/comp-marketing-website-newsletter"
         },
         {
           "id": 44,
-          "image": "images/default.png",
+          "image": "images/member-activity1.png",
           "title": "Member Activity",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": " A table with the necessary statistics about a user",
           "link": "/comp-member-activity"
         },
         {
           "id": 45,
-          "image": "images/default.png",
+          "image": "images/my-settings1.png",
           "title": "Mysettings",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": "Provides a card with its neccessary details to change a password ",
           "link": "/comp-mysettings"
         },
         {
           "id": 46,
-          "image": "images/default.png",
+          "image": "images/new-claim-type1.png",
           "title": "New Claim Type",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": "A card with neccessary details and description at different fields",
           "link": "/comp-new-claim-type"
         },
         {
@@ -929,219 +929,219 @@
         },
         {
           "id": 48,
-          "image": "images/default.png",
+          "image": "images/new-language1.png",
           "title": "New Language",
-          "text": "  Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": " Provides a card with different dropdown options on language and country code",
           "link": "/comp-new-language"
         },
         {
           "id": 49,
-          "image": "images/default.png",
+          "image": "images/new-role1.png",
           "title": "New Role",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+          "text": "A card having a mandatory edit section",
           "link": "/comp-new-role"
         },
         {
           "id": 50,
-          "image": "images/default.png",
+          "image": "images/notification1.png",
           "title": "Notification",
           "text": "  Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
           "link": "/comp-notification"
         },
         {
           "id": 51,
-          "image": "images/default.png",
+          "image": "images/notification-settings1.png",
           "title": "Notification Settings",
-          "text": "  Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": " Allowers a user to save a notificaton to a user based on requirements ",
           "link": "/comp-notification-settings"
         },
         {
           "id": 52,
-          "image": "images/default.png",
+          "image": "images/open-position1.png",
           "title": "Open Position",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": " A card with different select menu and a select button ",
           "link": "/comp-open-position"
         },
         {
           "id": 53,
-          "image": "images/default.png",
+          "image": "images/order-details1.png",
           "title": "Order Details",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": " Provides a details on the product and the shipping address ",
           "link": "/comp-order-details"
         },
         {
           "id": 54,
-          "image": "images/default.png",
+          "image": "images/order-summary1.png",
           "title": "Order Summary",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": " Provides a description on the amount calculated in different process of final shipment",
           "link": "/comp-order-summary"
         },
         {
           "id": 55,
-          "image": "images/default.png",
+          "image": "images/organization-tree1.png",
           "title": "Organization Tree",
-          "text": "  Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": " Organization trees are used to create a list of organizations for use in some of the mass change flows ",
           "link": "/comp-organization-tree"
         },
         {
           "id": 56,
-          "image": "images/default.png",
+          "image": "images/other-settings1.png",
           "title": "Other Settings",
-          "text": "  Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": " provides a checkbox to have the option selected or unselected ",
           "link": "/comp-other-settings"
         },
         {
           "id": 57,
-          "image": "images/default.png",
+          "image": "images/Page not found1.png",
           "title": "Page Not Found",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+          "text": " Shows a user about when a page is not loaded or found",
           "link": "/comp-page-not-found"
         },
         {
           "id": 58,
-          "image": "images/default.png",
+          "image": "images/password-setting1.png",
           "title": "Password Settings",
-          "text": "  Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": " Gives a user an access to change the password ",
           "link": "/comp-password-settings"
         },
         {
           "id": 59,
-          "image": "images/default.png",
+          "image": "images/Payment details1.png",
           "title": "Payment Details",
-          "text": "  Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": " Provides user a card on the details regarding different methods of transaction ",
           "link": "/comp-payment-details"
         },
         {
           "id": 60,
-          "image": "images/default.png",
+          "image": "images/permission-tree1.png",
           "title": "Permission Tree",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": " Provides a select box having different options that can be selected in single/multiple way ",
           "link": "/comp-permission-tree"
         },
         {
           "id": 61,
-          "image": "images/default.png",
+          "image": "images/personal-info1.png",
           "title": "Personal Info",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": " Provides a card with newcessary details to be filled by a user along with upload options ",
           "link": "/comp-personal-info"
         },
         {
           "id": 62,
-          "image": "images/default.png",
+          "image": "images/plan-information1.png",
           "title": "Plan Information",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": " It gives details on the duration of a subscription",
           "link": "/comp-plan-information"
         },
         {
           "id": 63,
-          "image": "images/default.png",
+          "image": "images/pricing-table1.png",
           "title": "Pricing Table",
-          "text": "  Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": " Gives a card on tables categorized into different subscription plan categories with different pricing details",
           "link": "/comp-pricing-table"
         },
         {
           "id": 64,
-          "image": "images/default.png",
+          "image": "images/product-list1.png",
           "title": "Product List",
-          "text": "  Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": " Provides different features on selecting a product along with different buttons ",
           "link": "/comp-product-list"
         },
         {
           "id": 65,
-          "image": "images/default.png",
+          "image": "images/product-overview1.png",
           "title": "Product Overview",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+          "text": " Gives the details on the product selected along with the user requirement on size",
           "link": "/comp-product-overview"
         },
         {
           "id": 66,
-          "image": "images/default.png",
+          "image": "images/profile1.png",
           "title": "Profile",
-          "text": "  Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": " Gives a description about a user profile details with profile pic ",
           "link": "/comp-profile"
         },
         {
           "id": 67,
-          "image": "images/default.png",
+          "image": "images/properties1.png",
           "title": "Properties",
-          "text": "  Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": " A card having tables of different users with their respective analytics  ",
           "link": "/comp-properties"
         },
         {
           "id": 68,
-          "image": "images/default.png",
+          "image": "images/review-category1.png",
           "title": "Review Category",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": " Provides a card with the details of differnet user and their rating and remark regarding a product ",
           "link": "/comp-review-category"
         },
         {
           "id": 69,
-          "image": "images/default.png",
+          "image": "images/role-list1.png",
           "title": "Role List",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": " Provides a card with tables and action to edit or delete",
           "link": "/comp-role"
         },
         {
           "id": 70,
-          "image": "images/default.png",
+          "image": "images/secrets1.png",
           "title": "Secrets",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": " Provides a card with different edit boxes ",
           "link": "/comp-secrets"
         },
         {
           "id": 71,
-          "image": "images/default.png",
+          "image": "images/security1.png",
           "title": "Security",
-          "text": "  Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": " Gives a user an access on how a password should be set and after how many failed password attempts an account should be locked with its duration of locking period ",
           "link": "/comp-security"
         },
         {
           "id": 72,
-          "image": "images/default.png",
+          "image": "images/Shipping Address1.png",
           "title": "Shipping Address",
-          "text": "  Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": "Gives the details of a user and necessary fields required during shipment",
           "link": "/comp-shipping-address"
         },
         {
           "id": 73,
-          "image": "images/default.png",
+          "image": "images/shopping-cart1.png",
           "title": "Shopping Cart Product",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+          "text": " It gives the details about a product and the quantity selected",
           "link": "/comp-shopping-cart-product"
         },
         {
           "id": 74,
-          "image": "images/default.png",
+          "image": "images/subscription1.png",
           "title": "Subscription",
-          "text": "  Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": " A card having different subscription plans with thier respective price ",
           "link": "/comp-subscription"
         },
         {
           "id": 75,
-          "image": "images/default.png",
+          "image": "images/teams1.png",
           "title": "Teams",
-          "text": "  Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": " A visual representation displaying various types of visual data in one place",
           "link": "/comp-teams"
         },
         {
           "id": 76,
-          "image": "images/default.png",
+          "image": "images/tenant-dashboard1.png",
           "title": "Tenant Dashboard",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": " graphical user interface which often provides at-a-glance views of key performance indicators relevant to a particular objective or business process ",
           "link": "/comp-tenant-dashboard"
         },
         {
           "id": 77,
-          "image": "images/default.png",
+          "image": "images/tenant-information1.png",
           "title": "Tenant Information",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": " Provides a card with relevant information and necessary details of a user with image ",
           "link": "/comp-tenant-information"
         },
         {
           "id": 78,
-          "image": "images/default.png",
+          "image": "images/tenant-list1.png",
           "title": "Tenant List",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": " A card having details ina form of a table with necessary information and actions ",
           "link": "/comp-tenant-list"
         },
         {
@@ -1153,86 +1153,86 @@
         },
         {
           "id": 80,
-          "image": "images/default.png",
+          "image": "images/tenant-settings1.png",
           "title": "Tenant Settings",
-          "text": "  Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": " A card used for setting a password of a user along with different relevant checkboxes ",
           "link": "/comp-tenant-settings"
         },
         {
           "id": 81,
-          "image": "images/default.png",
+          "image": "images/testimonials1.png",
           "title": "Testimonials",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+          "text": "A card used to show potential customers on how someone experience the servies or product",
           "link": "/comp-testimonials"
         },
         {
           "id": 82,
-          "image": "images/default.png",
+          "image": "images/timeline1.png",
           "title": "Timeline",
-          "text": "  Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": "Gives a detail about the updates done in a day at different phases",
           "link": "/comp-timeline"
         },
         {
           "id": 83,
-          "image": "images/default.png",
+          "image": "images/top-navigation1.png",
           "title": "Top Navigation",
-          "text": "  Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": "Provides an information on different icons like notifications,settings,etc ",
           "link": "/comp-top-navigation"
         },
         {
           "id": 84,
-          "image": "images/default.png",
+          "image": "images/user-basics1.png",
           "title": "User Basics",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": "Provides a card having details of a user and password option ",
           "link": "/comp-user-basics"
         },
         {
           "id": 85,
-          "image": "images/default.png",
+          "image": "images/user-delegations1.png",
           "title": "User Delegations",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": "A card having a details in a form of dropdown along with the duration available in a calendar form  ",
           "link": "/comp-user-delegations"
         },
         {
           "id": 86,
-          "image": "images/default.png",
+          "image": "images/user-management1.png",
           "title": "User Management",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": "Provides a checkbox that can be selected either single/multiple ",
           "link": "/comp-user-management"
         },
         {
           "id": 87,
-          "image": "images/default.png",
+          "image": "images/user-permissions1.png",
           "title": "User Permissions",
-          "text": "  Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": "Gives a tabular details of a user and its respective role",
           "link": "/comp-user-permissions"
         },
         {
           "id": 88,
-          "image": "images/default.png",
+          "image": "images/user-table1.png",
           "title": "User Table",
-          "text": "  Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": " It gives an information about an organisation details of a user ",
           "link": "/comp-user-table"
         },
         {
           "id": 89,
-          "image": "images/default.png",
+          "image": "images/webhook-subscription1.png",
           "title": "Webhook Subscription",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": "Provides a card with necessary details to be filled",
           "link": "/comp-webhook-subscription"
         },
         {
           "id": 90,
-          "image": "images/default.png",
+          "image": "images/websitelog1.png",
           "title": "Website Log",
-          "text": "  Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": "Provides a diagnostic operation of a running application",
           "link": "/comp-website-log"
         },
         {
           "id": 91,
-          "image": "images/default.png",
+          "image": "images/user-claims1.png",
           "title": "User Claims",
-          "text": "  Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": " Gives a mandatory fields that need to be filled by a user",
           "link": "/comp-user-claims"
         }
 

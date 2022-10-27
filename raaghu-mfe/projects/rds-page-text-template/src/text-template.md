@@ -12,7 +12,7 @@ title: "Pages > Text-Template"
 
 #### Text-Template
 
-<p></p>
+<p>Gives description about the status and necessary actions required </p>
 
 <!-- Basic -->
 <section class="py-4">
