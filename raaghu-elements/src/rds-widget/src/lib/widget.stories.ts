@@ -47,10 +47,11 @@ const Template: Story<RdsWidgetComponent> = (args: RdsWidgetComponent) => ({
 });
 
 export const Default = Template.bind({})
+Default.parameters = { controls: { include: ['headerTitle', 'isRefreshRequired', 'colorVariant'] } };
 Default.args = {
   headerTitle: 'Sales',
   isRefreshRequired: false,
-  colorVariant: 'light'
+  colorVariant: ''
 }
 
 const barChartTemplate: Story<any> = (args: any) => ({
@@ -66,10 +67,12 @@ const barChartTemplate: Story<any> = (args: any) => ({
 </rds-widget>`
 });
 export const withBarChart = barChartTemplate.bind({})
+withBarChart.parameters = { controls: { include: ['headerTitle', 'isRefreshRequired', 'colorVariant', 'barHrChartDatasets',
+'barHrChartLabels', 'barHrChartWidth', 'barHrchartHeight','barHrChartOptions'] } };
 withBarChart.args = {
   headerTitle: 'Daily Sales Growth',
   isRefreshRequired: true,
-  colorVariant: 'light',
+  colorVariant: '',
   barHrChartDatasets: [
     {
       label: 'Sales Growth',
@@ -88,7 +91,7 @@ withBarChart.args = {
   barHrChartOptions: {
     indexAxis: 'x',
     elements: {
-      bar: {
+    bar: {
         borderWidth: 0,
         width: 1
       }
@@ -131,10 +134,12 @@ const lineChartTemplate: Story<any> = (args: any) => ({
 </rds-widget>`
 });
 export const withLineChart = lineChartTemplate.bind({})
+withLineChart.parameters = { controls: { include: ['headerTitle', 'isRefreshRequired', 'colorVariant', 'monthlySummaryDataSets',
+'monthlySummaryLabels', 'monthlySummarychartWidth', 'monthlySummarychartHeight','monthlySummarychartOptions'] } };
 withLineChart.args = {
   headerTitle: 'Monthly Summary',
   isRefreshRequired: false,
-  colorVariant: 'light',
+  colorVariant: '',
   monthlySummaryDataSets: [
     {
       label: 'Sales',
@@ -226,10 +231,12 @@ const doughnutChartTemplate: Story<any> = (args: any) => ({
 </rds-widget>`
 });
 export const withDoughnutChart = doughnutChartTemplate.bind({})
+withDoughnutChart.parameters = { controls: { include: ['headerTitle', 'isRefreshRequired', 'colorVariant', 'pschartDatasets',
+'pschartLabels', 'pschartWidth', 'pschartHeight','pschartOptions'] } };
 withDoughnutChart.args = {
   headerTitle: 'Profit Share',
   isRefreshRequired: false,
-  colorVariant: 'light',
+  colorVariant: '',
   pschartDatasets: [
     {
       label: 'Dataset 1',
@@ -332,10 +339,13 @@ const boolChartTemplate: Story<any> = (args: any) => ({
 </rds-widget>`
 });
 export const withBoolChart = boolChartTemplate.bind({})
+withBoolChart.parameters = { controls: { include: ['headerTitle', 'isRefreshRequired', 'colorVariant', 'ClientCallschartDatasets',
+'ClientCallschartLabels', 'ClientCallschartWidth', 'ClientCallschartOptions','ConnectedCallschartDatasets', 'ConnectedCallschartLabels',
+'ConnectedCallschartWidth', 'ConnectedCallschartOptions'] } };
 withBoolChart.args = {
   headerTitle: 'Call Overview',
   isRefreshRequired: false,
-  colorVariant: 'light',
+  colorVariant: '',
   ClientCallschartDatasets: [
     {
       label: 'Dataset 1',

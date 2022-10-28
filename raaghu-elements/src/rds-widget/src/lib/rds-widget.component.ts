@@ -9,13 +9,16 @@ export class RdsWidgetComponent implements OnInit {
 
   @Input() headerTitle: string = 'Widget';
   @Input() isRefreshRequired: boolean = true;
-  @Input() colorVariant: 'primary' | 'success' | 'danger' | 'warning' | 'light' | 'info' | 'secondary' | 'dark' | 'gradient-primary' | 'transparent' = 'transparent';
+  @Input() colorVariant: 'primary' | 'success' | 'danger' | 'warning' | 'light' | 'info' | 'secondary' | 'dark' | 'gradient-primary' | '' = '';
   @Output() onRefresh = new EventEmitter<Event>();
   //@Input() cardheight = 'card-stretch';
 
   constructor() { }
 
   ngOnInit(): void {
+    if (this.colorVariant == '' || !this.colorVariant) {
+      this.colorVariant = '';
+    }
   }
   public get classes(): string[] {
     let classes: string[] = [];
@@ -24,6 +27,8 @@ export class RdsWidgetComponent implements OnInit {
     classes.push(bgColor);
     if (`${this.colorVariant}` == 'gradient-primary') {
       classes.push('text-white');
+    } else if (this.colorVariant == '') {
+      classes.push('');
     }
     //var heightclass=`${this.cardheight}`;
     //classes.push(heightclass);

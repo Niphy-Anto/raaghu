@@ -68,6 +68,13 @@ export class RdsCheckboxGroupsComponent implements OnInit {
     }
   }
 
+  formState(){
+    const checkboxState = `${this.state === 'checkbox' ? 'form-check-input' : 
+      this.state === 'Indeterminate' ? 'form-check-input-intermediate' : 
+      this.state === 'errorcheckbox' ? 'form-check-input-error' : ''}`;
+    
+    return checkboxState;
+  }
 
   getValue(event: any) {
     this.onClick.emit({ evnt: event, item: event.target.value });

@@ -24,7 +24,7 @@ export default {
       options: ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light'],
       control: { type: 'select' }
     },
-
+    positioned: {table: {disable: true,},},
   },
 
 } as Meta;

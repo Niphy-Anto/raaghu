@@ -9,6 +9,9 @@ export default {
   decorators: [
     
   ],
+  argTypes: {
+    display_type: {table: {disable: true,},},
+  }
   
   
 } as Meta
