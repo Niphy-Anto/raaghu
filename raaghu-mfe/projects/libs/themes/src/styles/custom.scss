@@ -1142,3 +1142,12 @@ rds-product-image .imgWidth {
 .fs-8 {
   font-size: .50rem !important;
 }
+.btn-md.spinner {
+  height: 2.1875rem;
+  position:relative;
+
+ 
+}
+.btn-md.spinner:before {
+  top: 6px;
+}

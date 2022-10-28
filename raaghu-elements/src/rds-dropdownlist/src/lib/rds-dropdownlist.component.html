@@ -67,7 +67,7 @@
 
     <li *ngFor="let item of listItems; index as i;" (click)="initAllSelect($event, item)">
       <a class="dropdown-item" [class.active]="value===item.some">
-        <div class="d-flex">
+        <div class="d-flex justify-content-between">
           <div>
             <input class="form-check-input me-2" type="checkbox" [(ngModel)]="item.isSelected"
               (change)="isAllSelected();" *ngIf="multiSelect" />
@@ -79,7 +79,7 @@
               </div>
             </label>
           </div>
-          <div class="text-white">
+          <div>
             <rds-icon *ngIf="value===item.some" [name]="'check'" [height]="'15px'" [width]="'15px'"></rds-icon>
           </div>
         </div>
