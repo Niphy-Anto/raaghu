@@ -1,4 +1,4 @@
-<rds-offcanvas [offId]="id" [offcanvaswidth]="offCanvasWidth" [placement]="'end'" [bodySpacing]="false">
+<rds-offcanvas [offId]="id" [offcanvaswidth]="offCanvasWidth" [placement]="'end'" [bodySpacing]="false" [scrolling]="true">
   <button type="button" class="btn-close text-reset closetabs" (click)="close()" aria-label="Close"></button>
   <div class="d-lg-flex d-sm-block h-100 overflow-hidden">
     <div naveContent class="tab-content profileMenuContent" [ngClass]="{ 'd-none': !isAnyProfileMenuSelected }"
@@ -30,7 +30,7 @@
       </div>
       <div class="tab-pane fade h-100" [ngClass]="{ 'show active': activePage === 3 }" id="nav-Settings" role="tabpanel"
         aria-labelledby="nav-Settings">
-        <app-rds-mysettings [ProfileData]="ProfileData" (onProfileSave)="onProfileSave.emit($event)"
+        <app-rds-mysettings [ProfileData]="ProfileData" (onProfileSave)="onProfileSave.emit($event)" 
           (onProfileClose)="onClickCloseTabContent()">
         </app-rds-mysettings>
       </div>
