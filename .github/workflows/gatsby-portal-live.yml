@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
     - name: Checkout raaghu code
       uses: actions/checkout@v3
@@ -28,8 +28,8 @@ jobs:
     - name: npm install, build, and test raaghu-mfe
       working-directory: ./raaghu-mfe
       run: |
-        npm install
-        npm run sync-elements
+        nvm install
+        nvm run sync-elements
         
     - name: npm install gatsby
       working-directory: ./raaghu-mfe/gatsby      
@@ -63,7 +63,7 @@ jobs:
          # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
          
          app_location: "./raaghu-mfe" # App source code path
-         app_build_command: "npm run sync-elements && npm run build"
+        # app_build_command: "npm run sync-elements && npm run build"
          api_location: "" # Api source code path - optional
          output_location: "public" # Built app content directory - optional
          ###### End of Repository/Build Configurations ######
