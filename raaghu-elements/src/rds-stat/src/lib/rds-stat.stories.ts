@@ -22,6 +22,7 @@ const Template: Story<RdsStatComponent> = (args: RdsStatComponent) => ({
 });
 
 export const Default = Template.bind({});
+Default.parameters = { controls: { include: ['display_type', 'statItems'] } };
 Default.args = {
   display_type: 'basic',
   statItems: [
@@ -39,6 +40,7 @@ Default.args = {
 }
 
 export const advanced = Template.bind({});
+advanced.parameters = { controls: { include: ['display_type', 'statItems'] } };
 advanced.args = {
   display_type: 'advanced',
   statItems: [

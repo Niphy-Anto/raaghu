@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, OnInit, OnChanges, SimpleChanges, ElementRef, DoCheck } from '@angular/core';
 
 @Component({
   selector: 'rds-price',
@@ -9,15 +9,18 @@ export class RdsPriceComponent implements OnInit, OnChanges {
   @Input() discount: number = 0;
   @Input() actualPrice: number = 0;
   @Input() withDiscount: boolean = true;
+  @Input() originalPrice = 0;
   // withDiscountPrice?:number;
-  numberPrice?: number = 0;
+  // numberPrice?: number = 0;
 
-  constructor() { }
+  constructor(private el: ElementRef) { }
+
   ngOnChanges(): void {
+    
   }
 
   ngOnInit(): void {
-
+    this.discount < 0 ? this.discount = 0 : this.discount > 100 ? this.discount = 100 : this.discount = this.discount;
   }
 
   calculateprice() {
@@ -28,4 +31,5 @@ export class RdsPriceComponent implements OnInit, OnChanges {
     //  this.numberPrice = this.withDiscountPrice ;
 
   }
+
 }

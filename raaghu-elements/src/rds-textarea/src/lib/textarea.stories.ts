@@ -20,6 +20,8 @@ export default {
       options: ['top', 'bottom'],
       control: { type: 'radio' }
     },
+    disabled: { table: { disable: true, }, },
+    readonly: { table: { disable: true, }, },
   }
 } as Meta
 

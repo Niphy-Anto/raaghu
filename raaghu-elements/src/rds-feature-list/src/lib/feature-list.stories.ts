@@ -29,6 +29,7 @@ const Template: Story<RdsFeatureListComponent> = (args: RdsFeatureListComponent)
 });
 
 export const Default = Template.bind({})
+Default.parameters = { controls: { include: ['header', 'listItems', 'columns'] } };
 Default.args = {
     header: 'Features',
     display_type: 'basic',
