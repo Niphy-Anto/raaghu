@@ -5,12 +5,12 @@
                 <rds-button #operationlog class="action mb-0" *ngIf="selectedIndex==0" [colorVariant]="'primary'"
                     [outlineButton]="true" [size]="'small'" (click)="exportToExcel('operation-logs')"
                     [label]="translate.instant('Export To Excel')">
-                    <rds-icon left name="export_data" height="18px" width="15px"></rds-icon>
+                    <rds-icon left name="export_data" height="18px" width="15px" class="me-2"></rds-icon>
                 </rds-button>
                 <rds-button #changelog class="action" [outlineButton]="true" *ngIf="selectedIndex==1"
                     [colorVariant]="'primary'" [size]="'small'" (click)="exportToExcel('change-logs')"
                     [label]="translate.instant('Export To Excel')">
-                    <rds-icon left name="export_data" width="15px" height="18px"></rds-icon>
+                    <rds-icon left name="export_data" width="15px" class="me-2" height="18px"></rds-icon>
                 </rds-button>
             </div>
             <rds-nav-tab [navtabsItems]="getNavTabItems()" [horizontalAlignment]="'start'" [verticalAlignment]="false"
@@ -23,25 +23,25 @@
     <div naveContent class="row tab-content m-2" id="nav-tabContent">
         <div class="tab-pane fade show active" id="operation-logs" role="tabpanel" aria-labelledby="nav-home-tab">
             <div class="excel-btn m-1">
-                <div class="d-flex gap-4 align-items-center sm-block">
-                    <div class="mb-3 sm-p-0 sm-block d-flex align-items-center gap-4">
-                        <rds-datepicker name="date-picker" [style]="'cursor:pointer'" [label]="''" [placeholder]="translate.instant('Start Date')"
+                <div class="row mb-1">
+                    <div class="col-md-3 col-sm-6 mt-1">
+                        <rds-datepicker name="date-picker" [label]="''" [placeholder]="translate.instant('Start Date')"
                             (change)="startDateModify($event)" [(ngModel)]="startDate" [value]="startDate"
                             floatinginputLabel="">
                         </rds-datepicker>
                     </div>
-                    <div class="mb-3 sm-p-0 sm-block ">
+                    <div class="col-md-3  col-sm-6 mt-1">
                         <rds-datepicker name="date-picker" [style]="'cursor:pointer'" [label]="''"
                             [placeholder]="translate.instant('End Date')" (change)="endDateModify($event)"
                             [(ngModel)]="endDate" [value]="endDate" floatinginputLabel="">
                         </rds-datepicker>
                     </div>
-                    <div class="mb-3 sm-p-0 sm-block">
+                    <div class="col-md-3  col-sm-6 mt-1">
                         <rds-input size="medium" [inputType]="" [(ngModel)]="user"
                             [placeholder]="translate.instant('User')" id="txtUsername" (change)="userModify($event)"
                             floatinginputLabel="" ngDefaultControl name="userName"></rds-input>
                     </div>
-                    <div class=" sm-p-0 mb-3">
+                    <div class="col-md-3  col-sm-6 d-flex align-items-center mt-1">
                         <rds-checkbox [disabled]="false" [label]="translate.instant('Advanced Filters')" [checked]=""
                             [withLabel]="true" [switch]="false" [inline]="false" [id]="'rememeberMe'"
                             (onChange)="showAdvancedFilter()">
@@ -51,7 +51,7 @@
                 </div>
                 <div class="mobile-btn position-fixed bottom-0 end-0 pb-2 me-4">
                     <rds-fab-menu [listItems]="listItem1" [menuicon]="'plus'" [colorVariant]="'primary'"
-                        [menuiconWidth]="'12px'" [menuiconHeight]="'12px'" (onSelect)="onSelectMenu($event)">
+                        [menuiconWidth]="'15px'" [menuiconHeight]="'15px'" (onSelect)="onSelectMenu($event)">
                     </rds-fab-menu>
                 </div>
             </div>
@@ -102,27 +102,26 @@
 
         <div class="tab-pane fade" id="change-logs" role="tabpanel" aria-labelledby="nav-home-tab">
             <div class="m-1">
-                <div class="d-flex gap-4 align-items-center sm-block">
-                    <div class="sm-p-0">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6 mt-1">
                         <rds-datepicker name="date-picker" [style]="'cursor:pointer'" [label]="''"
                             [placeholder]="translate.instant('Date Range')" (change)="changelogefiltermodify($event)"
                             [(ngModel)]="changeLogStartdate" [value]="changeLogStartdate">
                         </rds-datepicker>
                     </div>
-                    <div class="sm-p-0">
+                    <div class="col-md-3 col-sm-6 mt-1">
                         <rds-datepicker name="date-picker" [style]="'cursor:pointer'" [label]="''"
                             [placeholder]="translate.instant('Date Range')" (change)="changelogefiltermodify($event)"
                             [(ngModel)]="changeLogEndDate" [value]="changeLogEndDate">
                         </rds-datepicker>
                     </div>
-
-                    <div class="sm-p-0 mb-3">
+                    <div class="col-md-3 col-sm-6 mt-1">
                         <rds-input size="medium" [(ngModel)]="changeLogUsername"
                             [placeholder]="translate.instant('User name')" id="txtchangeLogUsername"
                             floatinginputLabel="" ngDefaultControl name="changeLogUsername"></rds-input>
                     </div>
 
-                    <div class="sm-p-0 mt-2 d-flex align-items-center">
+                    <div class="col-md-3 col-sm-6 mt-1">
                         <rds-select-list class="w-100" [(ngModel)]="status" (selectListChange)="exceptionModify($event)"
                             [value]="status" ngDefaultControl name="Property" [itemList]="statusList">
                         </rds-select-list>
@@ -130,7 +129,7 @@
                 </div>
                 <div class="mobile-btn position-fixed bottom-0 end-0 my-5 me-5">
                     <rds-fab-menu [listItems]="listItem2" [menuicon]="'plus'" [colorVariant]="'primary'"
-                        [menuiconWidth]="'12px'" [menuiconHeight]="'12px'" (onSelect)="onSelectMenu($event)">
+                        [menuiconWidth]="'15px'" [menuiconHeight]="'15px'" (onSelect)="onSelectMenu($event)">
                     </rds-fab-menu>
                 </div>
                 <div class="row">

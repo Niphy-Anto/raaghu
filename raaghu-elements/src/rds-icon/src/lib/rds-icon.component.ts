@@ -19,6 +19,7 @@ export class RdsIconComponent implements OnInit, OnChanges {
   @Input() name: string = '';
   @Input() colorVariant: 'warning' | 'review' | 'danger' | 'success' | 'info' | 'primary' | 'secondary' | 'dark' | 'light' | undefined | 'default' = undefined;
   @Input() opacity: string = '';
+  @Input() strokeWidth: string = '';
 
   constructor(private element: ElementRef,
     @Optional() @Inject(DOCUMENT) private document: any) {
@@ -63,6 +64,9 @@ export class RdsIconComponent implements OnInit, OnChanges {
     const svg = div.querySelector('svg');
     if (this.height) {
       svg.style.height = this.height;
+    }
+    if (this.strokeWidth) {
+      svg.style['stroke-width'] = this.strokeWidth;
     }
     if (this.width) {
       svg.style.width = this.width;
