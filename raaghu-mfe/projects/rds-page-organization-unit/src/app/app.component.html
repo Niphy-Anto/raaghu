@@ -1,9 +1,9 @@
 <div>
-  <div [class.card]="selectedTreeNode==0">
+  <div [class]="selectedTreeNode==0">
     <div class="row" [class.card-body]="selectedTreeNode==0">
       <div class="col-md-6 gutter-b">
         <div>
-          <div class="card p-2 border-0 rounded-0 vh-88" [@fadeAnimation]="isAnimation ? 'fadeAnimation' : ''">
+          <div class="card p-2 vh-88" [@fadeAnimation]="isAnimation ? 'fadeAnimation' : ''">
 
             <div class="card-header bg-transparent">
               <h5 class="card-title">{{'Organization Tree'| translate}}</h5>
@@ -17,7 +17,7 @@
       </div>
 
       <div class="col-md-6 gutter-b">
-        <div class="card p-2 border-0 rounded-0 vh-88">
+        <div class="card p-2  vh-88">
           <div class="card-header bg-transparent" *ngIf="selectedTreeNode == 0">
             <h5 class="card-title">{{'Select an organization unit to see members' | translate}}</h5>
           </div>
