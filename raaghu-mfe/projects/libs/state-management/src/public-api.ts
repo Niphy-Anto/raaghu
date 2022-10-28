@@ -75,3 +75,6 @@ export * from './lib/state/language-text/language-text.effects';
 export * from './lib/state/language-text/language-text.reducer';
 export * from './lib/state/DownloadData/download-data.effects';
 export * from './lib/state/DownloadData/download-data.reducer';
+export * from './lib/state/audit-logs/audit-logs.reducer';
+export * from './lib/state/audit-logs-new/audit-logs-new.reducers';
+export * from './lib/state/audit-logs/audit-logs.effects';
