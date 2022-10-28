@@ -14,7 +14,7 @@ import {
 } from '@angular/animations';
 import { getAuditLogs, getEntityChanges } from 'projects/libs/state-management/src/lib/state/audit-logs/audit-logs.actions';
 import { selectAllAuditLogs, selectAllchangeLogs } from 'projects/libs/state-management/src/lib/state/audit-logs/audit-logs.selector';
-import { selectDefaultLanguage } from 'projects/libs/state-management/src/lib/state/language/language.selector';
+import { selectAllLanguages } from 'projects/libs/state-management/src/lib/state/language/language.selector';
 
 @Component({
   selector: 'app-root',
@@ -79,7 +79,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.isAnimation = true;
-    this.store.select(selectDefaultLanguage).subscribe((res: any) => {
+    this.store.select(selectAllLanguages).subscribe((res: any) => {
 
       if (res) {
 
@@ -118,7 +118,6 @@ export class AppComponent implements OnInit {
         }
       }
     };
-    console.log("check for filters",this.rdsauditLogMfeConfig);
     let date = new Date();
     let lastday=new Date(Date.now() - 86400000);
     const auditLogParamsData: any = {
