@@ -15,7 +15,6 @@ title: "Elements > Review-category"
 <p class="">Review category consists of predefined templates that helps user feature the reviews for the products.</p>
 
  <section class="py-4">
-    <h6>Default</h6>
     <div class="py-3">
       <div class="cust-tabs">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -136,3 +135,21 @@ title: "Elements > Review-category"
       </div>
     </div>
   </section>
+
+
+<!-- Skeleton / Specifications -->
+<section class="py-4">
+                        <h6>
+                           Skeleton / Specifications
+                        </h6>
+                        <div class="py-3">
+                              <!-- Tab panes -->
+                              <div class="card border p-5">
+                                 <div class="row">
+                                    <div class="col-md-12">
+                                       <img src="/images/skel-review_category.png" class="img-fluid">
+                                    </div>
+                                 </div>
+                              </div>
+                        </div>
+                     </section>
