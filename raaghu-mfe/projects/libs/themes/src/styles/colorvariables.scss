@@ -204,6 +204,10 @@ html {
     background-color: $notification-header-bg;
   }
 
+  navbar {
+    background-color:white;
+  }
+
   .bs-datepicker-head {
     background-color: $datepicker-head;
   }
@@ -1378,6 +1382,7 @@ html {
       }
     }
   }
+
   .card {
     background-color: $card-bg-color;
     border-color: $card-border-color;

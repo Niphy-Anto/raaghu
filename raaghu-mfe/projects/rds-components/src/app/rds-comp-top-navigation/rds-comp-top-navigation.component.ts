@@ -23,6 +23,7 @@ export class RdsTopNavigationComponent extends MfeBaseComponent implements OnIni
     { value: 'green', some: 'green', id: 4 },
     { value: 'orange', some: 'orange', id: 5 }
   ]
+  selectedTheme: string = 'default';
   @Input()
   LoginAttempts: any = {};
   @Input() LinkAccounts: []
@@ -191,8 +192,7 @@ export class RdsTopNavigationComponent extends MfeBaseComponent implements OnIni
     this.toggleEvent.emit();
   }
   onThemeSelect(event: any) {
-
-    console.log(event)
+    this.selectedTheme = event;
     const headEl = this.document.getElementsByTagName('head')[0];
     const existingLinkEl = this.document.getElementById('client-theme') as HTMLLinkElement;
     const newLinkEl = this.document.createElement('link');
