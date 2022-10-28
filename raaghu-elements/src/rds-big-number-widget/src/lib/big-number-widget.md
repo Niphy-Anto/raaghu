@@ -311,7 +311,7 @@ title: "Elements > Big-number-widget"
  <div class="card border p-5">
   <div class="row">
       <div class="col-md-12">
-        <img src="/images/big-number-widget-skeleto.png" class="img-fluid">
+        <img src="/images/big-number-widget-skeleton.png" class="img-fluid">
      </div>
    </div>
    </div>

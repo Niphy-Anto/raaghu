@@ -166,13 +166,6 @@
           "link": "/card"
         },
         {
-          "id": 4,
-          "image": "images/chart.png",
-          "title": "Charts ",
-          "text": "A Chart is an embedded component inserted within a worksheet. use a Chart component to better visualize and present your data",
-          "link": "/dropdownlist"
-        },
-        {
           "id": 5,
           "image": "images/carousel.png",
           "title": "Carousel",
@@ -543,6 +536,109 @@
     }]
    },
    {
+    "name": "Charts",
+    "image": "images/comp-main-icon.svg",
+    "description": "Our collection of Charts can be used to represent data sets in countless variations.",
+    "submenu": [{
+      "id": "comp",
+      "children": [
+       
+        {
+          "id": 2,
+          "image": "images/Landing page-Elements/area-chart.png",
+          "title": "Area Chart",
+          "text": " An area chart is used to represent change of one or more variables over the progression of the second variable i.e., typically time.",
+          "link": "/chart-area"
+
+        },
+        {
+          "id": 3,
+          "image": "images/Landing page-Elements/bar-chart.png",
+          "title": "Bar Chart",
+          "text": " Horizontal charts are series of horizontals bars extending along the x-axis measuring the size of the observation they represent. It is commonly used to compare the observations against a fixed parameter.",
+          "link": "/chart-bar-horizontal"
+
+        },
+        {
+          "id": 4,
+          "image": "images/Landing page-Elements/boolean-chart.png",
+          "title": "Boolean Chart",
+          "text": " An area chart is used to represent change of one or more variables over the progression of the second variable i.e., typically time.",
+          "link": "/chart-bool"
+
+        },
+        {
+          "id": 4,
+          "image": "images/Landing page-Elements/bubble-chart.png",
+          "title": "Bubble Chart",
+          "text": "A bubble is an extension of the scatter plot. It is used to visualize relationship for an observation with respect to three variables represented by the vertical, horizontal axis and the size of the bubble.",
+          "link": "/chart-bubble"
+
+        },
+        {
+          "id": 5,
+          "image": "images/Landing page-Elements/Doughnut-chart.png",
+          "title": "Doughnut Chart",
+          "text": " Horizontal charts are series of horizontals bars extending along the x-axis measuring the size of the observation they represent. It is commonly used to compare the observations against a fixed parameter.",
+          "link": "/chart-doughnut"
+
+        },
+        {
+          "id": 6,
+          "image": "images/Landing page-Elements/line-chart.png",
+          "title": "Line Chart",
+          "text": " Horizontal charts are series of horizontals bars extending along the x-axis measuring the size of the observation they represent. It is commonly used to compare the observations against a fixed parameter.",
+          "link": "/chart-line"
+
+        },
+        {
+          "id": 7,
+          "image": "images/Landing page-Elements/mixed-chart.png",
+          "title": "Mixed Chart",
+          "text": " Mixed chart is the combination two chart types that are bar and line containing multiple data sets. It helps in the differentiating different types of data in a single chart.",
+          "link": "/chart-mixed"
+
+        },
+        {
+          "id": 8,
+          "image": "images/Landing page-Elements/pie-chart.png",
+          "title": "Pie Chart",
+          "text": " Horizontal charts are series of horizontals bars extending along the x-axis measuring the size of the observation they represent. It is commonly used to compare the observations against a fixed parameter.",
+          "link": "/chart-pie"
+
+        },
+        {
+          "id": 9,
+          "image": "images/Landing page-Elements/polar-area-chart.png",
+          "title": "Polar Chart",
+          "text": " Mixed chart is the combination two chart types that are bar and line containing multiple data sets. It helps in the differentiating different types of data in a single chart.",
+          "link": "/chart-polar-area"
+        },
+        {
+          "id": 10,
+          "image": "images/Landing page-Elements/radar-chart.png",
+          "title": "Radar Chart",
+          "text": "Radar chart shows the variation of the two or more datasets with respect to multiple variables.",
+          "link": "/chart-radar"
+        },
+        {
+          "id": 10,
+          "image": "images/Landing page-Elements/scatter-chart.png",
+          "title": "Scatter Chart",
+          "text": "Scatter chart is used to represent the relationship between the two variables in a data-set.",
+          "link": "/chart-scatter"
+        },
+        {
+          "id": 11,
+          "image": "images/Landing page-Elements/stacked-chart.png",
+          "title": "Stacked Chart",
+          "text": "A stacked chart represents the changes and trends over the period of time.",
+          "link": "/chart-stacked"
+        }
+      ]
+    }]
+   },
+   {
     "name": "Components",
     "image": "images/comp-main-icon.svg",
     "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
@@ -754,7 +850,7 @@
         },
         {
           "id": 23,
-          "image": "images/under-construction.png",
+          "image": "images/under-construction-dark.png",
           "title": "Demo ui",
           "text": " Under construction",
           "link": "/comp-demoui"
