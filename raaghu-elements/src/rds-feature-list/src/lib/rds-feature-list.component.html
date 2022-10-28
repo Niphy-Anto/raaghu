@@ -17,7 +17,7 @@
     </ul>
 </ng-template>
 <ng-template #advancedFeatureListTemplate let-list="list" let-iconInfo="iconInfo">
-    <div *ngFor="let item of list" class="ms-4">
+    <div *ngFor="let item of list" [class.ms-4]="item.depth!==0">
         <rds-icon [name]="iconInfo.icon" [colorVariant]="iconInfo.colorVariant" [fill]="iconInfo.fill"
             [width]="iconInfo.width" [height]="iconInfo.height" [strokeWidth]="iconInfo.strokeWidth" class="me-2">
         </rds-icon>{{item.value}}
