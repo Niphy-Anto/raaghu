@@ -35,11 +35,12 @@ export const Default: Story<RdsOffcanvasComponent> = (args) => ({
   [offId]="offId"
   [offcanvaswidth]="offcanvaswidth"
   [bodySpacing]="bodySpacing"
+  [preventEscapeKey]="preventEscapeKey"
   >
   </rds-offcanvas> `,
 
 });
-Default.parameters = { controls: { include: ['canvasTitle', 'placement', 'backDrop', 'offId','offcanvaswidth'] } };
+Default.parameters = { controls: { include: ['canvasTitle', 'placement', 'backDrop', 'offId','offcanvaswidth', 'preventEscapeKey'] } };
 
 Default.args = {
   offId: 'canvasExample',
@@ -47,6 +48,7 @@ Default.args = {
   placement: 'top',
   backDrop: 'static',
   offcanvaswidth:650,
+  preventEscapeKey: true
 };
 
 // export const basic = Template.bind({});
