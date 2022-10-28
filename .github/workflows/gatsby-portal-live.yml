@@ -28,6 +28,7 @@ jobs:
     - name: npm install, build, and test raaghu-mfe
       working-directory: ./raaghu-mfe
       run: |
+        curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.3/install.sh | bash
         nvm install
         nvm run sync-elements
         
