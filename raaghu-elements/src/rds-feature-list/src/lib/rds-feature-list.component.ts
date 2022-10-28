@@ -1,16 +1,23 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'rds-feature-list',
   templateUrl: './rds-feature-list.component.html',
   styleUrls: ['./rds-feature-list.component.scss'],
 })
-export class RdsFeatureListComponent implements OnInit {
+export class RdsFeatureListComponent implements OnInit, OnChanges {
   @Input() header!: string;
   @Input() listItems: any;
   @Input() columns!: number;
   @Input() display_type: 'basic' | 'advanced' = 'basic';
   constructor() { }
+  ngOnChanges(changes: SimpleChanges): void {
+    if (this.listItems) {
+      this.listItems.forEach((element, index) => {
+        this.assignDepth(this.listItems, 0, index);
+      });
+    }
+  }
 
   ngOnInit(): void {
     this.listItems.forEach((element, index) => {
@@ -18,6 +25,8 @@ export class RdsFeatureListComponent implements OnInit {
     });
 
   }
+
+
 
   public assignDepth(arr, depth = 0, index = 0): any {
     if (index < arr.length) {
@@ -47,7 +56,7 @@ export class RdsFeatureListComponent implements OnInit {
       height: '5px',
       colorVariant: '',
       fill: false,
-      strokeWidth:'1px'
+      strokeWidth: '1px'
     }
   }
 
