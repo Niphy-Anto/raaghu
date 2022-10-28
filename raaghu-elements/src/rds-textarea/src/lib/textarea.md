@@ -151,7 +151,7 @@ title: "Elements > Textarea"
   </section>
 
    <section class="py-4">
-    <h6>Disabled</h6>
+    <h6>Readonly</h6>
     <div class="py-3">
       <div class="cust-tabs">
         <ul class="nav nav-tabs" id="myTab" role="tablist">

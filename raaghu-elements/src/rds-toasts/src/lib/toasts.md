@@ -119,7 +119,7 @@ title: "Elements > Toasts"
         <div class="tab-pane fade show active" id="PreviewAction2" role="tabpanel" aria-labelledby="PreviewAction2-tab">
           <div class="contents bg-light p-5">
             <div class="row">
-             <img src="images/toast.png" class="img-fluid">
+             <img src="images/toast.png" class="img-fluid w-50">
                </div>
            </div>
         </div>
