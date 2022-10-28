@@ -84,12 +84,10 @@ export const Pills: Story<RdsNavTabComponent> = (args) => ({
         [navtabsItems]="navtabsItems"
         [horizontalAlignment]="horizontalAlignment"
         [pills]="pills" 
-        [fill]="fill"
-        [justified]="justified" 
         ></rds-nav-tab>
     `,
 });
-Pills.parameters = { controls: { include: ['navtabsItems', 'horizontalAlignment', 'pills', 'fill', 'justified'] } };
+Pills.parameters = { controls: { include: ['navtabsItems', 'horizontalAlignment', 'pills'] } };
 Pills.args = {
     pills: true,
     navtabsItems: [
@@ -98,9 +96,50 @@ Pills.args = {
         { label: 'Link', tablink: '#nav-contact', ariacontrols: 'nav-contact' },
         { label: 'Disabled', tablink: '#nav-deabled', disabled: "true" },
     ],
-    fill: true,
+}
+export const justified: Story<RdsNavTabComponent> = (args) => ({
+    props: args,
+    template:
+        `
+        <rds-nav-tab 
+        [navtabsItems]="navtabsItems"
+        [horizontalAlignment]="horizontalAlignment"
+        [justified]="justified" 
+        ></rds-nav-tab>
+    `,
+});
+justified.parameters = { controls: { include: ['navtabsItems', 'horizontalAlignment','justified'] } };
+justified.args = {
+    navtabsItems: [
+        { label: 'Active', tablink: '#nav-home', ariacontrols: 'nav-home' },
+        { label: 'Much longer nav link', tablink: '#nav-profile', ariacontrols: 'nav-profile' },
+        { label: 'Link', tablink: '#nav-contact', ariacontrols: 'nav-contact' },
+        { label: 'Disabled', tablink: '#nav-deabled', disabled: "true" },
+    ],
     justified: true
 }
+export const fill: Story<RdsNavTabComponent> = (args) => ({
+    props: args,
+    template:
+        `
+        <rds-nav-tab 
+        [navtabsItems]="navtabsItems"
+        [horizontalAlignment]="horizontalAlignment"
+        [fill]="fill" 
+        ></rds-nav-tab>
+    `,
+});
+fill.parameters = { controls: { include: ['navtabsItems', 'horizontalAlignment','fill'] } };
+fill.args = {
+    navtabsItems: [
+        { label: 'Active', tablink: '#nav-home', ariacontrols: 'nav-home' },
+        { label: 'Much longer nav link', tablink: '#nav-profile', ariacontrols: 'nav-profile' },
+        { label: 'Link', tablink: '#nav-contact', ariacontrols: 'nav-contact' },
+        { label: 'Disabled', tablink: '#nav-deabled', disabled: "true" },
+    ],
+    fill: true
+}
+
 export const Vertical: Story<RdsNavTabComponent> = (args) => ({
     props: args,
     template:

@@ -14,6 +14,7 @@ export default {
   ],
   argTypes: {
     readOnly: { table: { disable: true, }, },
+    stepperType: { table: { disable: true, }, },
 
   },
 } as Meta;

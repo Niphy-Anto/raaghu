@@ -23,10 +23,7 @@ export default {
       options: ['Drop-down', 'Drop-up', 'Drop-end', 'Drop-start'],
       control: { type: 'radio' },
     },
-    role: {
-      options: ['dropdown-button', 'with_split'],
-      control: { type: 'radio' },
-    }
+    role: {table: {disable: true,},},
   },
 } as Meta;
 
@@ -46,7 +43,7 @@ const Template: Story<RdsDropdownComponent> = (args: RdsDropdownComponent) => ({
 });
 
 export const Default = Template.bind({});
-
+Default.parameters = { controls: { include: ['colorVariant', 'size', 'listItems', 'label', 'direction', 'role'] } };
 Default.args = {
   colorVariant: 'primary',
   size: 'default',
@@ -61,7 +58,7 @@ Default.args = {
 };
 
 export const Dropdown_with_split = Template.bind({});
-
+Dropdown_with_split.parameters = { controls: { include: ['colorVariant', 'size', 'listItems', 'label', 'direction', 'role'] } };
 Dropdown_with_split.args = {
   colorVariant: 'primary',
   size: 'default',

@@ -22,10 +22,7 @@ export default {
       options: ['square', 'round'],
       control: { type: 'radio' }
     },
-    role: {
-      options: ['basic', 'tagWithScroll'],
-      control: { type: 'radio' }
-    },
+    role: { table: { disable: true, }, },
   }
 } as Meta
 
