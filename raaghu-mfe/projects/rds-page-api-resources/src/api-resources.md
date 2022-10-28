@@ -9,9 +9,8 @@ title: "Pages > Api-Resources"
 
 #### Api Resources
 
-<p class="">A card is a small rectangular module with images and text. It is an entry point for users to learn more details</p>
+<p>Api Resource list provides a tabular representation of various names and their sub categories as well as necessary action required </p>
 <section class="py-4">                                                                                             
-    <h6>Api resources</h6>
     <div class="py-3">
       <div class="cust-tabs">
         <ul class="nav nav-tabs" id="myTab" role="tablist">

@@ -641,7 +641,7 @@
    {
     "name": "Components",
     "image": "images/comp-main-icon.svg",
-    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+    "description": "Components are the building blocks of our site that runs independently and adds to your application.Components enable you to use interchangeable pieces and swap them without affecting the applications business logic, allowing you to take components apart and recompose them into different UIs as needed. ",
     "submenu": [{
       "id": "comp",
       "children": [
@@ -690,7 +690,7 @@
    {
     "name": "New Components",
     "image": "images/comp-main-icon.svg",
-    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+    "description": "",
     "submenu": [{
       "id": "comp",
       "children": [
@@ -857,7 +857,7 @@
         },
         {
           "id": 24,
-          "image": "images/download-collection1.png",
+          "image": "images/default.png",
           "title": "Download collection",
           "text": "Provies a set of dates",
           "link": "/comp-download-collection"
@@ -941,7 +941,7 @@
         },
         {
           "id": 36,
-          "image": "images/information1.png",
+          "image": "images/default.png",
           "title": "Information",
           "text": "It allows a user with a card having details with relevant information boxes ",
           "link": "/comp-information"
@@ -1053,7 +1053,7 @@
         },
         {
           "id": 52,
-          "image": "images/open-position1.png",
+          "image": "images/default.png",
           "title": "Open Position",
           "text": " A card with different select menu and a select button ",
           "link": "/comp-open-position"
@@ -1081,7 +1081,7 @@
         },
         {
           "id": 56,
-          "image": "images/other-settings1.png",
+          "image": "images/default.png",
           "title": "Other Settings",
           "text": " provides a checkbox to have the option selected or unselected ",
           "link": "/comp-other-settings"
@@ -1172,7 +1172,7 @@
         },
         {
           "id": 69,
-          "image": "images/role-list1.png",
+          "image": "images/default.png",
           "title": "Role List",
           "text": " Provides a card with tables and action to edit or delete",
           "link": "/comp-role"
@@ -1284,7 +1284,7 @@
         },
         {
           "id": 85,
-          "image": "images/user-delegations1.png",
+          "image": "images/default.png",
           "title": "User Delegations",
           "text": "A card having a details in a form of dropdown along with the duration available in a calendar form  ",
           "link": "/comp-user-delegations"
@@ -1345,51 +1345,51 @@
       "children": [
         {
           "id": 1,
-          "image": "images/layout-grid-container.png",
+          "image": "images/dashboard_page.png",
           "title": "Dashboard",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+          "text": " graphical user interface which often provides at-a-glance views of key performance indicators relevant to a particular objective or business process",
           "link": "/Widgets"
         },
         {
           "id": 2,
-          "image": "images/layout-grid-container.png",
+          "image": "images/tenant_page.png",
           "title": "Tenants",
-          "text": "  Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": "A page having multiple dropdown options and necessary action required for tenant ",
           "link": "/Visual Settings"
         },
         {
           "id": 3,
-          "image": "images/layout-grid-container.png",
+          "image": "images/default.png",
           "title": "My Settings",
           "text": "  Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
           "link": "/Buttons Group"
         },
         {
           "id": 4,
-          "image": "images/layout-grid-container.png",
+          "image": "images/role_page.png",
           "title": "Roles",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": " A page with different roles along with necessary options and actions ",
           "link": "/Buttons Group"
         },
         {
           "id": 5,
-          "image": "images/layout-grid-container.png",
+          "image": "images/user_page.png",
           "title": "Users",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": "It gives a card having different tables options with status and necessary actions required Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
           "link": "/Buttons Group"
         },
         {
           "id": 6,
-          "image": "images/layout-grid-container.png",
+          "image": "images/language_page.png",
           "title": "Language",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": " gives a description on different languages along with their code and action on edit or delete",
           "link": "/Buttons Group"
         },
         {
           "id": 7,
-          "image": "images/layout-grid-container.png",
+          "image": "images/audit-log_page.png",
           "title": "Audit Logs",
-          "text": "  Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": "It provides a representation in form of a table that represents organisational details ",
           "link": "/Buttons Group"
         }
         
@@ -1408,37 +1408,37 @@
       "children": [
         {
           "id": 1,
-          "image": "images/layout-grid-container.png",
+          "image": "images/api-resources_page.png",
           "title": "Api Resources",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+          "text": " Api Resource list provides a tabular representation of various names and their sub categories as well as necessary action required ",
           "link": "/page-api-resources"
         },
         {
           "id": 2,
-          "image": "images/layout-grid-container.png",
+          "image": "images/api-scope_page.png",
           "title": "Api Scope",
           "text": "  Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
           "link": "/page-api-scope"
         },
         {
           "id": 3,
-          "image": "images/layout-grid-container.png",
+          "image": "images/cart_page.png",
           "title": "Cart",
-          "text": "  Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": "  A card is a small rectangular module with images and text. It is an entry point for users to learn more details ",
           "link": "/page-cart"
         },
         {
           "id": 4,
-          "image": "images/layout-grid-container.png",
+          "image": "images/claim-types_page.png",
           "title": "Claimtypes",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": " A tabular representation of a card with different categories and necessary action required for them ",
           "link": "/page-claimtypes"
         },
         {
           "id": 5,
-          "image": "images/layout-grid-container.png",
+          "image": "images/client_page.png",
           "title": "Client",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": " Represents a card with a table representation of a client with a unique id and necessary actions ",
           "link": "/page-client"
         },
         {
@@ -1450,16 +1450,16 @@
         },        
         {
           "id": 8,
-          "image": "images/layout-grid-container.png",
+          "image": "images/dynamic-property-management_page.png",
           "title": "Dynamic Property Management",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+          "text": "A representation of a table with different dynamic properties and dynamic entity properties with necessary actions",
           "link": "/page-dynamic-property-management"
         },
         {
           "id": 9,
-          "image": "images/layout-grid-container.png",
+          "image": "images/edition_page.png",
           "title": "Edition",
-          "text": "  Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": " It gives a user an option to take necessary action on edit,delete and moving the tenants to another version ",
           "link": "/page-edition"
         },
         {
@@ -1478,16 +1478,16 @@
         },        
         {
           "id": 13,
-          "image": "images/layout-grid-container.png",
+          "image": "images/identity-resources_page.png",
           "title": "Identity Resources",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": " Gives an important details about a user with other necessary tabular details and actions ",
           "link": "/page-identity-resources"
         },
         {
           "id": 14,
-          "image": "images/layout-grid-container.png",
+          "image": "images/language-text_page.png",
           "title": "Language Text",
-          "text": "  Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": " A card with multiple dropdowns and table with different actions",
           "link": "/page-language-text"
         },
         {
@@ -1499,9 +1499,9 @@
         },
         {
           "id": 16,
-          "image": "images/layout-grid-container.png",
+          "image": "images/maintenance_page.png",
           "title": "Maintenance",
-          "text": "  Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": "Provides a select menu with it's option to delete the necessary field",
           "link": "/page-maintenance"
         },
         {
@@ -1527,9 +1527,9 @@
         },
         {
           "id": 20,
-          "image": "images/layout-grid-container.png",
+          "image": "images/organization-unit_page.png",
           "title": "Organization Unit",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": "Provides an organizational description in tree form with available action",
           "link": "/page-organization-unit"
         },
         {
@@ -1562,23 +1562,23 @@
         },
         {
           "id": 25,
-          "image": "images/layout-grid-container.png",
+          "image": "images/role_page.png",
           "title": "Role",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": "A page with different roles along with necessary options and actions",
           "link": "/page-role"
         },
         {
           "id": 26,
-          "image": "images/layout-grid-container.png",
+          "image": "images/security-log_page.png",
           "title": "Securitylog",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": " A page with table having security details and actions used ",
           "link": "/page-securitylog"
         },
         {
           "id": 27,
-          "image": "images/layout-grid-container.png",
+          "image": "images/settings_page.png",
           "title": "Settings",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": " A page with multiple checkboxes and select menu at the top",
           "link": "/page-settings"
         },
         {
@@ -1597,37 +1597,37 @@
         },
         {
           "id": 30,
-          "image": "images/layout-grid-container.png",
+          "image": "images/text-template_page.png",
           "title": "Text Template",
-          "text": "  Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": " Gives description about the status and necessary actions required",
           "link": "/page-text-template"
         },
         {
           "id": 31,
-          "image": "images/layout-grid-container.png",
+          "image": "images/under-construction_page.png",
           "title": "Under Construction",
-          "text": "  Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": "Gives us the update on current ongoing process on a Page ",
           "link": "/page-under-construction"
         },
         {
           "id": 32,
-          "image": "images/layout-grid-container.png",
+          "image": "images/under-maintenance_page.png",
           "title": "Under Maintenance",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": "Gives the update on the site being under maintenance",
           "link": "/page-under-maintenance"
         },
         {
           "id": 33,
-          "image": "images/layout-grid-container.png",
+          "image": "images/visual-setting_pages.png",
           "title": "Visual Settings",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": "It gives a user with different theme options available",
           "link": "/page-visual-settings"
         },
         {
           "id": 34,
-          "image": "images/layout-grid-container.png",
+          "image": "images/webhook-subscriptions_page.png",
           "title": "Webhook Subscription",
-          "text": " Lorem Ipsum is simply dummy text of the printing and typesetting industry ",
+          "text": "   It gives the status and their events of a server ",
           "link": "/page-webhooksubscription"
         }
       
