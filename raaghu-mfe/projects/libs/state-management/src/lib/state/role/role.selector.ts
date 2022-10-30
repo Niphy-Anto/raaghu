@@ -1,5 +1,5 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { AppState, roles } from '../../app.interface';
+import { AppState } from '../../app.interface';
 
 import { RolesState } from './role.reducer';
 

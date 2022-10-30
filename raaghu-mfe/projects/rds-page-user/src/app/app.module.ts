@@ -28,8 +28,6 @@ export const UsersReducersMap = {
     SharedModule,
     ReactiveFormsModule,
     FormsModule,
-    StoreModule.forFeature('users', UsersReducersMap),
-    EffectsModule.forRoot([UserEffects]),
     NgxTranslateModule.forRoot()
   ],
   providers: [ArrayToTreeConverterService],

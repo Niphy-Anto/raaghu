@@ -34,7 +34,7 @@ export const UserReducer = createReducer(
     userInitialState,
     on(getUsers, (state) => ({ ...state, status: 'loading' })),
     // Handle successfully loaded todos
-    on(getUserSuccess, (state, { users }) => ({
+    on(getUserSuccess, (state, users) => ({
         ...state,
         users: users,
         error: null,

@@ -48,7 +48,7 @@ export class UserEffects {
     private alertService: AlertService,
     private store: Store
   ) {}
-  selectedPermissions = [];
+
   getUsers$ = createEffect(() =>
     this.actions$.pipe(
       ofType(getUsers),
@@ -71,7 +71,7 @@ export class UserEffects {
         ).pipe(
           // Take the returned value and return a new success action containing the todos
           map((users: any) => {
-            return getUserSuccess({ users });
+            return getUserSuccess(users);
           }),
           // Or... if it errors return a new failure action containing the error
           catchError((error) => of(getUserFailure({ error })))
