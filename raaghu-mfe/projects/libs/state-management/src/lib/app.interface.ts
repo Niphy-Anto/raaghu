@@ -26,6 +26,7 @@ import { ProfileState } from './state/profile-settings/profile-settings.reducers
 import { SecurityState } from './state/security-logs/security-logs.reducer';
 
 export interface AppState {
+    changeLogs: any;
 
   user:UsersState,
   products: ProductState,

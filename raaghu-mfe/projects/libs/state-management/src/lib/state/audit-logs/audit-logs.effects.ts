@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
 import { ServiceProxy } from "projects/libs/shared/src/lib/service-proxies";
 import { from, of } from "rxjs";
-import { catchError, map, switchMap } from "rxjs/operators";
+import { catchError, map, mergeMap, switchMap } from "rxjs/operators";
 import { getAuditLogsSuccess, getAuditLogs, getAuditLogsFailure, getEntityChanges, getEntityChangesFailure, getEntityChangesSuccess, getAuditLogDetails } from "./audit-logs.actions";
 
 
@@ -12,9 +12,24 @@ export class AuditLogsEffects {
   getAuditLogs = createEffect(() =>
     this.actions$.pipe(
       ofType(getAuditLogs),
-      switchMap(({auditLogParams}) =>
+      mergeMap(({auditLogParams}) =>
         // Call the getTodos method, convert it to an observable
-        from(this.auditLogsService.auditLogs(auditLogParams.startDate,auditLogParams.endDate,undefined,auditLogParams.userName,undefined,undefined,undefined,undefined,undefined,auditLogParams.maxExecutionDuration,auditLogParams.minExecutionDuration,auditLogParams.HasException,auditLogParams.sorting,auditLogParams.skipCount,auditLogParams.maxResultCount)).pipe(
+     
+        this.auditLogsService.auditLogs(
+          auditLogParams.startDate,
+          auditLogParams.endDate,
+          auditLogParams.url,
+          auditLogParams.userName,
+          auditLogParams.applicationName,
+          auditLogParams.clientIpAddress,
+          auditLogParams.correlationId,
+          auditLogParams.httpMethod,
+          auditLogParams.httpStatusCode,
+          auditLogParams.maxExecutionDuration,
+          auditLogParams.minExecutionDuration,auditLogParams.HasException,
+          auditLogParams.sorting,
+          auditLogParams.skipCount,
+          auditLogParams.maxResultCount).pipe(
           // Take the returned value and return a new success action containing the todos
           map((auditLogs) => {
             return getAuditLogsSuccess({ auditLogs })

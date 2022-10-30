@@ -83,37 +83,37 @@ export class OrganizationUnitEffects {
     )
   );
 
-//   getOrganizationUnitUsersList$ = createEffect(() =>
-//     this.actions$.pipe(
-//       ofType(getOrganizationUnitUsersList),
-//       switchMap((input) =>
-//         from(this.organizationUnitService.findUsers(input.input)).pipe(
-//           map((organizationUnitUsersList) => {
-//             return getOrganizationUnitUsersListSuccess({
-//               organizationUnitUsersList
-//             });
-//           }),
-//           catchError((error) => of(getOrganizationUnitUsersListFailure({ error })))
-//         )
-//       )
-//     )
-//   );
+  getOrganizationUnitUsersList$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(getOrganizationUnitUsersList),
+      switchMap((input) =>
+        from(this.organizationUnitService.usersGET2(undefined,undefined,undefined,undefined,undefined,undefined, undefined, undefined, undefined,0,1000)).pipe(
+          map((organizationUnitUsersList) => {
+            return getOrganizationUnitUsersListSuccess({
+              organizationUnitUsersList
+            });
+          }),
+          catchError((error) => of(getOrganizationUnitUsersListFailure({ error })))
+        )
+      )
+    )
+  );
 
-//   getOrganizationUnitRolesList$ = createEffect(() =>
-//     this.actions$.pipe(
-//       ofType(getOrganizationUnitRolesList),
-//       switchMap((input) =>
-//         from(this.organizationUnitService.findRoles(input.input)).pipe(
-//           map((organizationUnitRolesList) => {
-//             return getOrganizationUnitRolesListSuccess({
-//               organizationUnitRolesList
-//             });
-//           }),
-//           catchError((error) => of(getOrganizationUnitRolesListFailure({ error })))
-//         )
-//       )
-//     )
-//   );
+  getOrganizationUnitRolesList$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(getOrganizationUnitRolesList),
+      switchMap((input) =>
+        from(this.organizationUnitService.rolesGET3(undefined,undefined,0,1000)).pipe(
+          map((organizationUnitRolesList) => {
+            return getOrganizationUnitRolesListSuccess({
+              organizationUnitRolesList
+            });
+          }),
+          catchError((error) => of(getOrganizationUnitRolesListFailure({ error })))
+        )
+      )
+    )
+  );
 
   createTreeUnit$ = createEffect(() =>
     this.actions$.pipe(
@@ -140,7 +140,7 @@ export class OrganizationUnitEffects {
     this.actions$.pipe(
       ofType(updateUnitTree),
       mergeMap((data) =>
-        this.organizationUnitService.organizationUnitsPUT(data.id, data.body).pipe(
+        this.organizationUnitService.organizationUnitsPUT(data.id,data.body).pipe(
           map((res) => {
             this.store.dispatch(getOrganizationUnitTree());
             var offcanvasEl = document.getElementById('addNodeOffcanvas');
@@ -180,8 +180,8 @@ export class OrganizationUnitEffects {
   this.actions$.pipe(
     ofType(addRolesToOrganizationUnit),
     mergeMap((data) =>
-      this.organizationUnitService.availableRoles(undefined,undefined,undefined,0,1000).pipe(map((res: any) => {
-        this.store.dispatch(getOrganizationUnitRoles(data.organizationUnitId));
+      this.organizationUnitService.rolesPUT(data.id,data.body).pipe(map((res: any) => {
+        this.store.dispatch(getOrganizationUnitRoles(data.id));
         this.alertService.showAlert('Success', 'Role added successfully', 'success');
       }),
         catchError((error: any) => of(
@@ -198,8 +198,8 @@ addUsersToOrganizationUnit$ = createEffect(() =>
 this.actions$.pipe(
   ofType(addUsersToOrganizationUnit),
   mergeMap((data) =>
-    this.organizationUnitService.availableUsers(undefined,undefined,undefined,0,1000).pipe(map((res: any) => {
-      //this.store.dispatch(getOrganizationUnitMembers(data.organizationUnitId));
+    this.organizationUnitService.membersPUT(data.id, data.body).pipe(map((res: any) => {
+      this.store.dispatch(getOrganizationUnitMembers(data.id));
       this.alertService.showAlert('Success', 'Member added successfully', 'success');
 
         }),

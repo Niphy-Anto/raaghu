@@ -59,6 +59,29 @@
                 </div>             
             </div>
         </div>
+        
+        <div class="col-md-6 mt-3">
+            <div class="form-group">
+                <!-- <label>Logo URL</label> -->
+                 <rds-input [inputType]="'text'" [Title]="translate.instant('CallBack URL')" #callback_url="ngModel" [TitleType]="'Top'" [(ngModel)]="clientBasics.callBackUrl" name="callBackUrl" [isRequired]=true 
+                    required [placeholder]="'Enter URL'">
+                </rds-input>
+                <div class="form-control-feedback" *ngIf="callback_url.errors && (callback_url.dirty || callback_url.touched)">
+                    <span class="text-danger" *ngIf="callback_url.errors.required">Logo URL is required</span>
+                </div>             
+            </div>
+        </div>
+        <div class="col-md-6 mt-3">
+            <div class="form-group">
+                <!-- <label>Logo URL</label> -->
+                 <rds-input [inputType]="'text'" [Title]="translate.instant('Logout URL')" #logout_url="ngModel" [TitleType]="'Top'" [(ngModel)]="clientBasics.logoutUrl" name="logoUrl" [isRequired]=true 
+                    required [placeholder]="'Enter URL'">
+                </rds-input>
+                <div class="form-control-feedback" *ngIf="logout_url.errors && (logout_url.dirty || logout_url.touched)">
+                    <span class="text-danger" *ngIf="logout_url.errors.required">Logo URL is required</span>
+                </div>             
+            </div>
+        </div>
         <div class="col-md-12 mt-3">
             <div class="form-group">
                 <!-- <label>Required Consent*</label> -->
