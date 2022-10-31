@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 import { AppSessionService } from './app-session.service';
 import { Store } from '@ngrx/store';
 import { XmlHttpRequestHelper } from './XmlHttpRequestHelper';
-import { ServiceProxy, API_BASE_URL } from './service-proxies';
+import { ServiceProxy, API_BASE_URL, LanguageInfo } from './service-proxies';
 
 
 @Injectable()
@@ -18,7 +18,7 @@ export class UserAuthService implements OnInit {
   localization: Observable<any>;
   baseUrl: string;
   userAuthenticated: boolean = false;
-  language: Observable<any>;
+  language: Observable<LanguageInfo[]>;
   sources: Observable<any>;
   constructor(
     private localStorage: LocalStorageService,
@@ -59,15 +59,16 @@ export class UserAuthService implements OnInit {
         localStorage.setItem('storedPermissions', JSON.stringify(result.auth.grantedPolicies));
         // this.localization = result.localization;
         // this.sources=result.localization.sources
-        //     this.language=result.localization.languages
-        // if (login == 'login') {
-        //   this.router.navigateByUrl('/pages/dashboard');
-        // }
-        // if (login == 'logout') {
-        //   localStorage.removeItem('storedPermissions');
-        //   this.router.navigateByUrl('/login');
-        // }
-      })
+            this.language=of(result.localization.languages);
+      //   if (login == 'login') {
+      //     this.router.navigateByUrl('/pages/dashboard');
+      //   }
+      //   if (login == 'logout') {
+      //     localStorage.removeItem('storedPermissions');
+      //     this.router.navigateByUrl('/login');
+      //   }
+      // }
+    })
 
   }
 
