@@ -153,6 +153,7 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
     } else {
       this.tenancy = 'Host Admin';
     }
+    this.theme.theme='light';
     this.store.dispatch(getLanguages());
     this.store.select(selectDefaultLanguage).subscribe((res: any) => {
       if (res) {
