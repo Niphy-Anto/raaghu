@@ -49,7 +49,6 @@ Default.args = {
   canvasTitle: 'Offcanvas Title',
   buttonTitle: 'Button',
   scrolling: false,
-  preventEscapeKey: false,
   bodySpacing: true,
   placement: 'top',
   backDrop: 'static',
