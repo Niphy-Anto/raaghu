@@ -7,7 +7,7 @@ export default {
   argTypes: {
     onShow: { click: "clicked" },
     onClose: { click: "clicked" },
-    backdrop: {
+    backFdrop: {
       options: ['static', true, false],
       control: { type: 'select' },
     },
