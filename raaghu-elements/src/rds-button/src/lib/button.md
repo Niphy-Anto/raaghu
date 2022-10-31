@@ -34,7 +34,7 @@ title: "Elements > Button"
          <div class="contents  p-5">
          <div class="row">
          <div class="col-md-12">
-           <img src="/images/button-basic.png" class=" img-fluid w-25"> 
+           <img src="/images/button-basic.png" class=" img-fluid w-15"> 
            </div>
    </div>                          
    </div>
@@ -173,7 +173,7 @@ title: "Elements > Button"
          <div class="row">
          <div class="col-md-12">
          <div class="contents bg-light p-5">
-          <img src="/images/button-with-label.png" class=" img-fluid w-25">  
+          <img src="/images/button-with-label.png" class=" img-fluid w-15">  
            </div>
    </div>                          
    </div>
@@ -223,7 +223,7 @@ title: "Elements > Button"
          <div class="row">
          <div class="col-md-12">
          <div class="contents p-5">
-            <img src="/images/button-outline.png" class=" img-fluid w-25">
+            <img src="/images/button-outline.png" class=" img-fluid w-15">
                </div>
    </div>              
    </div>
@@ -270,7 +270,7 @@ title: "Elements > Button"
          <div class="row">
          <div class="col-md-12">
          <div class="contents p-5">
-            <img src="/images/disable-button.png" class=" img-fluid w-25">
+            <img src="/images/disable-button.png" class=" img-fluid w-15">
                </div>
    </div>              
    </div>
@@ -316,7 +316,7 @@ title: "Elements > Button"
          <div class="row">
          <div class="col-md-12">
          <div class="contents p-5">
-            <img src="/images/button-rounded.png" class=" img-fluid w-25">
+            <img src="/images/button-rounded.png" class=" img-fluid w-15">
                </div>
    </div>              
    </div>
@@ -393,7 +393,7 @@ title: "Elements > Button"
  <div class="card border p-5">
   <div class="row">
       <div class="col-md-12">
-        <img src="/images/button-skeleton.png" class=" img-fluid w-25">
+        <img src="/images/button-skeleton.png" class=" img-fluid w-50">
      </div>
    </div>
    </div>

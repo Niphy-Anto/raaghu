@@ -101,7 +101,7 @@ title: "Elements > Datepicker"
                               <div class="card border p-5">
                                  <div class="row">
                                     <div class="col-md-12">
-                                       <img src="/images/datepicker-skeleton.png" class="img-fluid">
+                                       <img src="/images/date-picker-skeleton.png" class="img-fluid">
                                     </div>
                                  </div>
                               </div>
