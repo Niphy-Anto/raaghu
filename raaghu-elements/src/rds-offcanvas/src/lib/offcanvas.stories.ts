@@ -47,7 +47,7 @@ Default.parameters = { controls: { include: ['canvasTitle', 'placement', 'backDr
 Default.args = {
   offId: 'canvasExample',
   canvasTitle: 'Offcanvas Title',
-  buttonTitle: 'Button',
+//  buttonTitle: 'Button',
   scrolling: false,
   bodySpacing: true,
   placement: 'top',
