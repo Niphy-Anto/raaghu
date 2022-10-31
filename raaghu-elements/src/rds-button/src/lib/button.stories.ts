@@ -26,7 +26,8 @@ export default {
     size: {
       options: ['small', 'medium', 'large'],
       control: { type: 'select' }
-    }
+    },
+    buttonType: {table: {disable: true,},},
   }
 } as Meta;
 
@@ -73,7 +74,8 @@ outline.args = {
 
 
 export const rounded_Button_With_Icon = Template.bind({});
-rounded_Button_With_Icon.parameters = { controls: { include: ['roundedButton', 'colorVariant', 'size', 'icon', 'iconHeight', 'iconWidth', 'iconFill', 'iconStroke', 'buttonType'] } };
+rounded_Button_With_Icon.parameters = { controls: { include: ['roundedButton', 'colorVariant', 'size', 'icon', 
+'iconHeight', 'iconWidth', 'iconFill', 'iconStroke', 'buttonType'] } };
 rounded_Button_With_Icon.args = {
   icon: 'plus',
   colorVariant: 'primary',

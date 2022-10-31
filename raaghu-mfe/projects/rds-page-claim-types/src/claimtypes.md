@@ -9,7 +9,7 @@ title: "Pages > claimtypes"
 
 #### Claim Types
 
-<p>A tabular representation of a card with different categories and necessary action required for them</p>
+<p>A tabular representation of a card with different categories and necessary action required for them.</p>
 <section class="py-4">                                                                                             
     <div class="py-3">
       <div class="cust-tabs">

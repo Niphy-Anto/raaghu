@@ -11,11 +11,11 @@ export default {
       control: 'radio'
     },
     colorVariant: {
-      options: ['success', 'warning', 'light', 'danger', 'info', 'dark', 'secondary'],
+      options: ['primary','success', 'warning', 'light', 'danger', 'info', 'dark', 'secondary'],
       control: { type: 'select' }
     },
     height: { control: { type: 'text' } },
-
+    verticallyAlligned: {table: {disable: true,},},
   },
 } as Meta;
 
@@ -43,6 +43,7 @@ const avatarWithInfoTemplate: Story<RdsAvatarComponent> = (args: RdsAvatarCompon
 });
 
 export const Default = Template.bind({});
+Default.parameters = { controls: { include: ['size', 'firstName', 'lastName', 'colorVariant'] } };
 Default.args = {
   size: 'medium',
   firstName: 'Allen',
@@ -51,22 +52,25 @@ Default.args = {
 };
 
 export const profile = Template.bind({});
+profile.parameters = { controls: { include: ['height', 'withProfilePic', 'profilePic'] } };
 profile.args = {
-  size: 'medium',
   height: '15',
   withProfilePic: true,
   profilePic: 'https://t4.ftcdn.net/jpg/04/10/43/77/240_F_410437733_hdq4Q3QOH9uwh0mcqAhRFzOKfrCR24Ta.jpg'
 };
 
 export const avtarWithHorizontallyAllignedInfo = avatarWithInfoTemplate.bind({});
+avtarWithHorizontallyAllignedInfo.parameters = { controls: { include: ['size', 'firstName', 'lastName', 'colorVariant', 'verticallyAlligned'] } };
 avtarWithHorizontallyAllignedInfo.args = {
   size: 'medium',
   firstName: 'King',
   lastName: 'John',
   colorVariant: 'warning',
+  verticallyAlligned: false
 };
 
 export const avatarWithVerticallyAllignedInfo = avatarWithInfoTemplate.bind({});
+avatarWithVerticallyAllignedInfo.parameters = { controls: { include: ['size', 'firstName', 'lastName', 'colorVariant', 'verticallyAlligned'] } };
 avatarWithVerticallyAllignedInfo.args = {
   size: 'medium',
   firstName: 'James',

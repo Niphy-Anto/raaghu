@@ -154,7 +154,7 @@ title: "Elements > Table"
                               <div class="card border p-5">
                                  <div class="row">
                                     <div class="col-md-12">
-                                       <img src="/images/skel-Tabl.png" class="img-fluid">
+                                       <img src="/images/skel-Table1.png" class="img-fluid">
                                     </div>
                                  </div>
                               </div>
