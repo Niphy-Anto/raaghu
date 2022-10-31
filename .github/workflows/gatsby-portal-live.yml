@@ -56,6 +56,7 @@ jobs:
       uses: actions/download-artifact@v3
       with:
         name: node-app
+        path: ./raaghu-mfe/gatsby/public
         
     - name: Build And Deploy
       id: builddeploy   
