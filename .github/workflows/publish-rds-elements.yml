@@ -6,7 +6,6 @@ name: "Build and publish package to npmjs - Angular"
 on:
   release:
     types: [created]
-    branches: [main]
   workflow_dispatch:
     
 env:
