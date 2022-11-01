@@ -55,7 +55,7 @@
   <table [ngClass]="bodyColorClasses" id="table">
     <thead *ngIf="showTableHeader">
       <tr>
-        <th *ngFor="let header of tableHeaders"  [ngStyle]="{'width': header.colWidth}">{{header['displayName']}}</th>
+        <th *ngFor="let header of tableHeaders" [ngClass]="header.class">{{header['displayName']}}</th>
       </tr>
     </thead>
     <tbody>
