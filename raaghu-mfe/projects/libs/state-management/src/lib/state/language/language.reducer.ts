@@ -1,10 +1,10 @@
 import { createReducer, on } from "@ngrx/store";
-import { getCountryList, getCountryListFailure, getCountryListSuccess, getLanguageFailure, getLanguages, getLanguageSuccess, setDefaultLanguage, setDefaultLanguageForUI } from "./language.actions";
+import { getCultureList, getCultureListFailure, getCultureListSuccess, getLanguageFailure, getLanguages, getLanguageSuccess, setDefaultLanguage, setDefaultLanguageForUI } from "./language.actions";
 import { Countries, Language } from "./language.models";
 
 export interface LanguagesState {
     languages: any;
-    countries: any;
+    cultureList: any;
     defaultLanguage: any;
     error: string;
     status: 'pending' | 'loading' | 'error' | 'success';
@@ -12,7 +12,7 @@ export interface LanguagesState {
 
 export const languageInitialState: LanguagesState = {
     languages: null,
-    countries: null,
+    cultureList: null,
     defaultLanguage: null,
     error: null,
     status: 'pending',
@@ -36,15 +36,15 @@ export const LanguageReducer = createReducer(
         error: error,
         status: 'error',
     })),
-    on(getCountryList, (state) => ({ ...state, status: 'loading' })),
+    on(getCultureList, (state) => ({ ...state, status: 'loading' })),
     // Handle successfully loaded todos
-    on(getCountryListSuccess, (state, { countries }) => ({
+    on(getCultureListSuccess, (state, { cultureList }) => ({
         ...state,
-        countries: countries,
+        cultureList: cultureList,
         error: null,
         status: 'success',
     })),
-    on(getCountryListFailure, (state, { error }) => ({
+    on(getCultureListFailure, (state, { error }) => ({
         ...state,
         error: error,
         status: 'error',
