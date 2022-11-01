@@ -22,6 +22,7 @@ export default {
       options: ['square', 'round'],
       control: { type: 'radio' }
     },
+
     role: {
       options: ['basic', 'tagWithScroll'],
       control: { type: 'radio' }
@@ -30,6 +31,9 @@ export default {
     //   options: ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark', 'default'],
     //   control: { type: 'select' }
     // }
+
+    role: { table: { disable: true, }, },
+
   }
 } as Meta
 

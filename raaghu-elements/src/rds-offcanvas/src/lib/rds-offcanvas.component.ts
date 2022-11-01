@@ -8,7 +8,6 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class RdsOffcanvasComponent implements OnInit {
 
 
-  @Input() buttonTitle = 'Button'
   @Input() placement: 'start' | 'end' | 'top' | 'bottom' = 'start';
   @Input() backDrop: 'static' | true | false = 'static';
   @Input() scrolling: boolean = false;

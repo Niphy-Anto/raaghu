@@ -83,7 +83,7 @@ Default.args = {
   ],
 
   pricingTableHeaderItems: [
-    { displayName: 'Plans', dataType: 'html', key: 'name' },
+    { displayName: 'Plans', dataType: 'html', key: 'name',colWidth:'48%' },
     { displayName: 'Regular', dataType: 'icon', key: 'regular' },
     { displayName: 'Professional', dataType: 'icon', key: 'professional' },
     { displayName: 'Ultimate', dataType: 'icon', key: 'ultimate' }],

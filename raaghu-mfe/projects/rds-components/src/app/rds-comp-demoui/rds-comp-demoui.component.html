@@ -10,10 +10,10 @@
       <div class="col-6">
         <h6 class="mb-3">{{"Accordion - Basic"|translate}}</h6>
         <rds-accordian [id]="'basicAccordian'" >
-          <accordion-item [parentId]="'basicAccordian'" title="Section 1 title" [expanded]="false" >
+          <accordion-item [parentId]="'basicAccordian'" title="Section 1 title"  >
           <h3 accordianBody>Custom </h3>
           </accordion-item>
-          <accordion-item title="Section 2 title" [parentId]="'basicAccordian'" >
+          <accordion-item title="Section 2 title" [parentId]="'basicAccordian'"   >
           <h3 accordianBody>Custom </h3>
           </accordion-item>
         </rds-accordian>
@@ -939,7 +939,7 @@
         <rds-button [label]="'Form Modal'" [colorVariant]="'primary'" [size]="'small'" type="button"
           data-bs-toggle="modal" data-bs-target="#storybookModal">
         </rds-button>
-        <rds-modal modalId="storybookModal">
+        <rds-modal modalId="storybookModal" [preventEscapeKey]="true">
           <div modalheader class="col-md-12">
             <rds-button type="button" class="btn-close float-end" colorVariant="default" data-bs-dismiss="modal"
               aria-label="Close">
@@ -1055,7 +1055,7 @@
           type="button" data-bs-toggle="modal" data-bs-target="#storybookLongModal">
         </rds-button>
 
-        <rds-modal modalId="storybookLongModal" [scrollable]="true">
+        <rds-modal modalId="storybookLongModal" [preventEscapeKey]="true" [scrollable]="true">
           <div modalheader class="col-md-12">
             <rds-button type="button" class="btn-close float-end" data-bs-dismiss="modal" aria-label="Close">
             </rds-button>
@@ -1081,7 +1081,7 @@
         </rds-button>
 
 
-        <rds-modal backdropstatic="static" modalId="storybookBackdropModal" backdrop="static">
+        <rds-modal backdropstatic="static" [preventEscapeKey]="true" modalId="storybookBackdropModal" backdrop="static">
           <div modalheader class="col-md-12">
             <rds-button type="button" class="btn-close float-end" data-bs-dismiss="modal" aria-label="Close">
             </rds-button>
@@ -1251,28 +1251,28 @@
           data-bs-toggle="offcanvas" data-bs-target="#canvasExample1" aria-controls="canvasExample1">
 
         </rds-button>
-        <rds-offcanvas [canvasTitle]="'Title'" [offId]="'canvasExample1'" [placement]="'start'"></rds-offcanvas>
+        <rds-offcanvas [canvasTitle]="'Title'" [preventEscapeKey]="true" [offId]="'canvasExample1'" [placement]="'start'"></rds-offcanvas>
       </div>
       <div class="col-3">
         <h6>{{"Offcanvas - end"|translate}}</h6>
         <rds-button [colorVariant]="'primary'" [label]="translate.instant('Button')" [size]="'small'" type="button"
           data-bs-toggle="offcanvas" data-bs-target="#canvasExample" aria-controls="canvasExample">
         </rds-button>
-        <rds-offcanvas [canvasTitle]="'Title'" [placement]="'end'"></rds-offcanvas>
+        <rds-offcanvas [canvasTitle]="'Title'" [preventEscapeKey]="true" [placement]="'end'"></rds-offcanvas>
       </div>
       <div class="col-3">
         <h6>{{"Offcanvas - top"|translate}}</h6>
         <rds-button [colorVariant]="'primary'" [label]="translate.instant('Button')" [size]="'small'" type="button"
           data-bs-toggle="offcanvas" data-bs-target="#canvasExample3" aria-controls="canvasExample3">
         </rds-button>
-        <rds-offcanvas [canvasTitle]="'Ttile'" [placement]="'top'" offId="canvasExample3"></rds-offcanvas>
+        <rds-offcanvas [canvasTitle]="'Ttile'" [preventEscapeKey]="true" [placement]="'top'" offId="canvasExample3"></rds-offcanvas>
       </div>
       <div class="col-3">
         <h6>{{"Offcanvas - bottom"|translate}}</h6>
         <rds-button [colorVariant]="'primary'" [label]="translate.instant('Button')" [size]="'small'" type="button"
           data-bs-toggle="offcanvas" data-bs-target="#canvasExample4" aria-controls="canvasExample4">
         </rds-button>
-        <rds-offcanvas [canvasTitle]="'Title'" [canvasTitle]="'Header'" [placement]="'bottom'" offId="canvasExample4">
+        <rds-offcanvas [canvasTitle]="'Title'" [preventEscapeKey]="true" [canvasTitle]="'Header'" [placement]="'bottom'" offId="canvasExample4">
         </rds-offcanvas>
       </div>
     </div>

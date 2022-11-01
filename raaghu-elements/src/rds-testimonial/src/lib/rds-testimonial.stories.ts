@@ -23,6 +23,7 @@ const Template: Story<RdsTestimonialComponent> = (args: RdsTestimonialComponent)
 });
 
 export const Default = Template.bind({});
+Default.parameters = { controls: { include: ['testimonialItems'] } };
 Default.args = {
   role: 'Default',
   testimonialItems: [

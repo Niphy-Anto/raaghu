@@ -144,11 +144,8 @@ tooltipPlacement="bottom">
                               <!-- Tab panes -->
                               <div class="card border p-5">
                                  <div class="row">
-                                    <div class="col-md-6">
-                                       <img src="https://portal.raaghu.io/images/components/_dropdown-list/img-1.png" class="img-fluid">
-                                    </div>
-                                    <div class="col-md-6 ">
-                                       <img src="https://portal.raaghu.io/images/components/_dropdown-list/img-2.png" class="img-fluid">
+                                    <div class="col-md-12">
+                                       <img src="/images/input-skeleton.png" class="img-fluid">
                                     </div>
                                  </div>
                               </div>

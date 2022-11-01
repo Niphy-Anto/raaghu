@@ -26,17 +26,18 @@ const Template: Story<RdsPriceComponent> = (args: RdsPriceComponent) => ({
   props: args,
 });
 export const WithDiscount = Template.bind({});
-WithDiscount.parameters = { controls: { include: ['actualPrice', 'discount', 'withDiscount'] } };
+WithDiscount.parameters = { controls: { include: ['originalPrice','actualPrice', 'discount', 'withDiscount'] } };
 WithDiscount.args = {
+  originalPrice: 90,
   actualPrice: 100,
   discount: 10,
   withDiscount: true
 };
 
 export const WithoutDiscount = Template.bind({});
-WithoutDiscount.parameters = { controls: { include: ['actualPrice', 'withDiscount'] } };
+WithoutDiscount.parameters = { controls: { include: ['originalPrice', 'withDiscount'] } };
 WithoutDiscount.args = {
-  actualPrice: 100,
+  originalPrice: 90,
   withDiscount: false
 };
 

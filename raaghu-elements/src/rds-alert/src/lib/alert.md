@@ -74,7 +74,7 @@ title: "Elements > Alert"
                               <div class="card border p-5">
                                  <div class="row">
                                     <div class="col-md-12">
-                                       <img src="https://portal.raaghu.io/images/components/_alert/img-1.png" class="img-fluid"> 
+                                       <img src="/images/alert-skeleton.png" class="img-fluid"> 
                                     </div> 
                                  </div>
                               </div>

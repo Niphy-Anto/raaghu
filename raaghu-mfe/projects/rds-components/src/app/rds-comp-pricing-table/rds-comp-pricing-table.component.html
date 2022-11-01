@@ -1,5 +1,5 @@
 <div>
-  <div class="table">
+  <!-- <div class="table">
     <div class="table-body">
       <div class="table-row">
         <div class="table-body-cell w-40">
@@ -25,7 +25,7 @@
           <div class="table-body-cell" *ngFor="let item of selectedPlanInfo.planInfo">
             <div *ngFor="let plan of item|keyvalue">
               <rds-label class="position-relative labelSpace" [ngClass]="plan.key==='price'?'fw-bold':'fw-light'"
-                [label]="planList['label']"></rds-label>
+                [label]="plan.value"></rds-label>
               <span *ngIf="plan.key==='price'" class="ms-2 position-relative labelSpace">{{selectedPlan==='Monthly
                 Plan'?'month':'year'}}</span>
             </div>
@@ -36,18 +36,68 @@
         </ng-container>
       </div>
     </div>
+  </div> -->
+  
+<div class="table-responsive">
+  <table class="table table-responsive">
+    <thead>
+      <tr>
+        <th scope="col" class="w-40">
+          <rds-label class="mb-3" [label]="'Plans'" [bold]="true"></rds-label>
+        </th>
+        <th scope="col"  class="text-center">
+          <rds-label [label]="'Regular'" [bold]="true"></rds-label>
+        </th>
+        <th scope="col"  class="text-center">
+          <rds-label [label]="'Professional'" [bold]="true"></rds-label>
+        </th>
+        <th scope="col"  class="text-center">
+          <rds-label [label]="'Ultimate'" [bold]="true"></rds-label>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="pb-5">
+          <rds-radio-button class="position-relative radioButtonSpace" [switch]="false" [inline]="false"
+            [isInputGroup]="false" [itemList]="planList" (onClick)="onRadioButtonSelect($event)">
+          </rds-radio-button>
+        </td>
+        <ng-container *ngIf="selectedPlanInfo&&selectedPlanInfo.planInfo">
+          <td *ngFor="let item of selectedPlanInfo.planInfo" class="text-center">
+            <ng-container *ngFor="let plan of item|keyvalue">
+              <rds-label class="position-relative labelSpace" [multiline]="true" [ngClass]="plan.key==='price'?'fw-bold':'fw-light'"
+                [label]="plan.value"></rds-label>
+              <rds-label *ngIf="plan.key==='price'" [multiline]="true" class="ms-2">{{selectedPlan==='Monthly
+                Plan'?'month':'year'}}</rds-label>
+            </ng-container>
+          </td>
+        </ng-container>
+      </tr>
+      <tr>
+        <td class="p-3">
+        </td>
+        <td class="text-center p-3">
+          <rds-button colorVariant="info" [block]="false" size="medium" label="Buy Now"></rds-button>
+        </td>
+        <td class="text-center p-3">
+          <rds-button colorVariant="info" [block]="false" size="medium" label="Buy Now"></rds-button>
+        </td>
+        <td class="text-center p-3">
+          <rds-button colorVariant="info" [block]="false" size="medium" label="Buy Now"></rds-button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
   </div>
-  <div class="mt-5">
+  <!-- <div class="mt-5">
     <rds-label class="fw-bold" [label]="'Features'"></rds-label>
-  </div>
-  <hr />
+  </div> -->
+  <!-- <hr /> -->
   <div class="row mt-4">
     <div class="col-md-12">
-      <rds-table [showTableBorder]="false"
-                 [showTableHeader]="true"
-                 [tableHeaders]="pricingTableHeaderItems"
-                 [tableData]="pricingTableBodyItems"
-                 colorVariant="primary"></rds-table>
+      <rds-table [showTableBorder]="false" [showTableHeader]="true" [tableHeaders]="pricingTableHeaderItems"
+        [tableData]="pricingTableBodyItems" colorVariant="primary"></rds-table>
     </div>
 
     <!-- <div class="table">

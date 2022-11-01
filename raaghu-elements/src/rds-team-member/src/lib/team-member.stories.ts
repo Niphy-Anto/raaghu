@@ -17,6 +17,7 @@ export default {
       imports: [CommonModule, FormsModule, RdsIconModule, RdsProductImageModule,RdsLabelModule,RdsAvatarModule],
     }),
   ],
+
   argTypes:{
     colorVariant: {
 
@@ -25,6 +26,10 @@ export default {
       control: { type: 'select' }
 
     },
+
+  argTypes: {
+    displayType: { table: { disable: true, }, },
+
   }
 } as Meta
 
@@ -33,6 +38,7 @@ const Template: Story<RdsTeamMemberComponent> = (args: RdsTeamMemberComponent) =
 });
 
 export const Default = Template.bind({});
+Default.parameters = { controls: { include: ['displayType', 'teamItem'] } };
 Default.args = {
   displayType: 'basic',
   teamItem: [
@@ -47,6 +53,7 @@ Default.args = {
 }
 
 export const advance = Template.bind({});
+advance.parameters = { controls: { include: ['displayType', 'teamItem'] } };
 advance.args = {
   displayType: 'advanced',
   colorVariant: 'primary',

@@ -46,7 +46,7 @@ Default.args = {
 }
 
 export const LeftAligned = Template.bind({});
-LeftAligned.parameters = { controls: { include: ['display_type', 'item'] } };
+LeftAligned.parameters = { controls: { include: ['display_type', 'item', 'position'] } };
 LeftAligned.args = {
   display_type: 'Left Aligned',
   item:
@@ -55,15 +55,14 @@ LeftAligned.args = {
     icon:"../assets/benefit_type1.svg",
     iconHeight: "40px",
     iconWidth: "40px",
-    position: "start",
     title: "Free delivery all year long",
     description: "Name another place that offers year long free delivery? We'll be waiting. Order now and you'll get delivery absolutely free."
-  }
+  },
 }
 
-export const CentreAligned = Template.bind({});
-CentreAligned.parameters = { controls: { include: ['display_type', 'item'] } };
-CentreAligned.args = {
+export const centreAligned = Template.bind({});
+centreAligned.parameters = { controls: { include: ['display_type', 'item'] } };
+centreAligned.args = {
   display_type: 'Centre Aligned',
   item:
   {
