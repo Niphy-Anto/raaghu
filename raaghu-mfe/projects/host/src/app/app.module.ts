@@ -46,8 +46,12 @@ import { ProfileEffects } from 'projects/libs/state-management/src/lib/state/pro
 import { SecurityLogsReducer } from 'projects/libs/state-management/src/lib/state/security-logs/security-logs.reducer';
 import { SecurityLogEffects } from 'projects/libs/state-management/src/lib/state/security-logs/security-logs.effects';
 import { DownloadEffects, downloadReducer, LoginEffects, ValidateTenantReducer } from '@libs/state-management';
-import { LanguageEffects } from 'projects/libs/state-management/src/lib/state/language/language.effects';
+// import { LanguageEffects } from 'projects/libs/state-management/src/lib/state/language/language.effects';
 import { ManageLinkedAccountsEffects } from 'projects/libs/state-management/src/lib/state/manage-linked-accounts/manage-linked-accounts.effects';
+import { UserEffects } from 'projects/libs/state-management/src/lib/state/user/user.effects';
+import { UserReducer } from 'projects/libs/state-management/src/lib/state/user/user.reducer';
+import { LanguageEffects } from 'projects/libs/state-management/src/lib/state/language/language.effects';
+import { LanguageReducer } from 'projects/libs/state-management/src/lib/state/language/language.reducer';
 import { TenantReducer } from 'projects/libs/state-management/src/lib/state/tenant/tenant.reducer';
 import { TenantEffects } from 'projects/libs/state-management/src/lib/state/tenant/tenant.effects';
 export function getRemoteServiceBaseUrl(): any {
@@ -95,6 +99,7 @@ export function getRemoteServiceBaseUrl(): any {
     NgxTranslateModule.forRoot(),
     StoreModule.forRoot({
       products: productReducer,
+      languages:LanguageReducer,
       tenants:TenantReducer,
       // dynamicProperty: DynamicPropertyReducer,
       // dynamicEntity: DynamicEntityReducer,
@@ -113,6 +118,7 @@ export function getRemoteServiceBaseUrl(): any {
       clients: ClientsReducer,
       languageText: LanguageTextReducer,
       // defaultLanguage: DefaultLanguageReducer,
+      user:UserReducer,
        downloadData: downloadReducer,
        claimTypes: ClaimTypesReducer
     }),
@@ -137,13 +143,14 @@ export function getRemoteServiceBaseUrl(): any {
       TenantEffects,
       DownloadEffects,
       LoginEffects,
-      LanguageEffects,
       ManageLinkedAccountsEffects,
       ProfileEffects,
       OrganizationUnitEffects,
       LoginEffects,
       LanguageTextEffects,
       DownloadEffects,
+      UserEffects,
+      LanguageEffects
     ]),
     SharedModule,
     UserAuthModule,

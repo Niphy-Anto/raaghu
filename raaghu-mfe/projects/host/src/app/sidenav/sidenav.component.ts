@@ -20,7 +20,7 @@ import { slideInAnimation } from '../animation';
 import { RouterOutlet } from '@angular/router';
 import * as moment from 'moment';
 import { getLanguages } from 'projects/libs/state-management/src/lib/state/language/language.actions';
-import { selectAllLanguages } from 'projects/libs/state-management/src/lib/state/language/language.selector';
+  import { selectAllLanguages } from 'projects/libs/state-management/src/lib/state/language/language.selector';
 declare var bootstrap: any;
 @Component({
   selector: 'app-sidenav',
@@ -87,6 +87,7 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
         { label: 'Organization Units', labelTranslationKey: 'Organization Units', id: '', permissionName: 'AbpIdentity.OrganizationUnits', icon: 'organization', path: '/pages/organization-unit', description: 'Use organization units to organize users and entities', descriptionTranslationKey: 'Use organization units to organize users and entities' },
         { label: 'Roles', labelTranslationKey: 'Roles', id: '', permissionName: 'AbpIdentity.Roles', icon: 'roles', path: '/pages/role', description: 'Use roles to group permissions', descriptionTranslationKey: 'Use roles to group permissions' },
         { label: 'Users', labelTranslationKey: 'Users', id: '', permissionName: 'AbpIdentity.Users', icon: 'users', path: '/pages/user', description: 'Manage users and permissions', descriptionTranslationKey: 'Manage users and permissions' },
+        { label: 'Clinet', labelTranslationKey: 'Client', id: '', permissionName: 'IdentityServer.Client', icon: 'users', path: '/pages/client', description: 'Manage clients and permissions', descriptionTranslationKey: 'Manage users and permissions' },
         { label: 'Language', labelTranslationKey: 'Language', id: '', permissionName: 'LanguageManagement.Languages', icon: 'languages', path: '/pages/language', description: 'Manage user interface languages', descriptionTranslationKey: 'Statistics and reports' },
         { label: 'Language-Text', labelTranslationKey: 'Language-Text', id: '', permissionName: 'LanguageManagement.LanguagesTexts', icon: 'languages', path: '/pages/languagetext', description: 'Manage user interface languagesText', descriptionTranslationKey: 'Statistics and reports' },
         { label: 'Audit logs', labelTranslationKey: 'Audit logs', id: '', permissionName: 'AuditLogging.AuditLogs', icon: 'audit_logs', path: '/pages/audit-logs', descriptionTranslationKey: '' },
@@ -320,30 +321,7 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
 
 
     this.store.select(selectAllLanguages).subscribe((res: any) => {
-      if (res && res.items && res.items.length > 0) {
-        this.languageItems = [];
-        const languages: any = [];
-        res.items.forEach((item: any) => {
-          let icon: string = item.icon.split(' ')[1];
-          icon = icon.replace('-', '_')
-          this.languageItems.push({ value: item.displayName, name: item.name, some: item.displayName, id: item.id, icon: icon, iconWidth: '21px', iconHeight: '14px' });
-          if (res.defaultLanguageName === item.name) {
-            this.selectedLanguage.language = item.displayName;
-            this.selectedLanguage.icon = item.icon.split(' ')[1];
-          }
-          languages.push(item.name);
-        });
-        if (res.defaultLanguageName) {
-          //this.store.dispatch(setDefaultLanguageForUI(res.defaultLanguageName))
-          this.translate.use(res.defaultLanguageName);
-        }
-
-        // this.translate.addLangs(languages);
-        const mfe = this.rdsTopNavigationMfeConfig;
-        mfe.input.languageItems = [...this.languageItems];
-        mfe.input.defaultLanguage = this.selectedLanguage;
-        this.rdsTopNavigationMfeConfig = mfe;
-      }
+      console.log(res);
     })
     this.on('tenancyDataAgain').subscribe(res => {
     })
