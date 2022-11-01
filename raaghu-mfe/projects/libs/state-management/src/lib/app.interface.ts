@@ -9,7 +9,7 @@ import { downloadState } from './state/DownloadData/download-data.reducer';
 import { ValidateTenantState } from "./state/login/login.reducer";
 import { LanguagesState } from './state/language/language.reducer';
 import { EditionsState } from './state/edition/edition.reducer';
-import { EditionsComboboxState, TenantFeatureState, TenantInfoState, TenantState } from './state/tenant/tenant.reducer';
+import { TenantState } from './state/tenant/tenant.reducer';
 import { RolesState } from './state/role/role.reducer';
 import { UsersState } from './state/user/user.reducer';
 import { AuditLogsState } from './state/audit-logs/audit-logs.reducer';
@@ -41,9 +41,7 @@ export interface AppState {
   tenants: TenantState,
    auditLogs: AuditLogsState,
   textTemplate: TextTemplateState,
-  editionComboboxItem: EditionsComboboxState,
-  tenantInfo: TenantInfoState,
-  tenantFeature: TenantFeatureState,
+
   validateTenant: ValidateTenantState,
   identityResources: IdentityResourcesState,
   apiResources: ApiResourcesState,
