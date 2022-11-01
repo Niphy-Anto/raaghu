@@ -29,7 +29,7 @@ export const getCultureListFailure = createAction(
 
 export const saveLanguage = createAction(
     '[Language Page] Save Language',
-    (language: any) => ({ language })
+    (data: any) => (data)
 );
 
 export const deleteLanguage = createAction(

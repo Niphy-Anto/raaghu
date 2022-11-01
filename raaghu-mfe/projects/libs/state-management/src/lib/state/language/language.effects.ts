@@ -117,22 +117,22 @@ export class LanguageEffects {
     }
   );
 
-  // setDefaultLanguage$ = createEffect(() =>
-  //   this.actions$.pipe(
-  //     ofType(setDefaultLanguage),
-  //     switchMap(({ name }) =>
-  //       this.languageService.setDefaultLanguage(name).pipe(map(() => {
-  //         this.store.dispatch(getLanguages());
-  //         this.alertService.showAlert('Success', 'Default language set successfully', 'success')
+  saveLanguage$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(saveLanguage),
+      switchMap(({ data }) =>
+        this.languageService.languagesPOST(data.body).pipe(map(() => {
+          this.store.dispatch(getLanguages());
+          this.alertService.showAlert('Success', 'added language successfully', 'success')
 
-  //       }
-  //       ),
-  //         catchError((error) => of())
-  //       )
-  //     )
-  //   ),
-  //   { dispatch: false }
-  // );
+        }
+        ),
+          catchError((error) => of())
+        )
+      )
+    ),
+    { dispatch: false }
+  );
 
   // setDefaultLanguageForUI$ = createEffect(() =>
   //   this.actions$.pipe(
