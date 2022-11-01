@@ -26,6 +26,7 @@ import { ProfileState } from './state/profile-settings/profile-settings.reducers
 import { SecurityState } from './state/security-logs/security-logs.reducer';
 
 export interface AppState {
+    changeLogs: any;
 
   user:UsersState,
   products: ProductState,
@@ -55,9 +56,7 @@ export interface AppState {
 }
 
 export const products = 'products';
-export const roles = 'roles';
 export const Validatetenant = 'ValidatetenantState';
-export const users = 'users';
 export const maintenances = 'maintenances';
 export const visualsettings = 'visualsettings';
 export const Subscription = 'Subscription';

@@ -37,25 +37,25 @@ export class LanguageEffects {
   //   )
   // );
 
-  // getLanguages$ = createEffect(() =>
-  //   this.actions$.pipe(
-  //     ofType(getLanguages),
-  //     switchMap(() => {
+  getLanguages$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(getLanguages),
+      switchMap(() => {
 
-  //       // Call the getTodos method, convert it to an observable
-  //       return (this.languageService.getLanguages()).pipe(
-  //         // Take the returned value and return a new success action containing the todos
-  //         map((languages) => {
-  //           return getLanguageSuccess({ languages })
-  //         }),
-  //         // Or... if it errors return a new failure action containing the error
-  //         catchError((error) => of(getLanguageFailure({ error })))
-  //       )
-  //     }
+        // Call the getTodos method, convert it to an observable
+        return (this.languageService.all()).pipe(
+          // Take the returned value and return a new success action containing the todos
+          map((languages) => {
+            return getLanguageSuccess({ languages })
+          }),
+          // Or... if it errors return a new failure action containing the error
+          catchError((error) => of(getLanguageFailure({ error })))
+        )
+      }
 
-  //     )
-  //   )
-  // );
+      )
+    )
+  );
 
   getCountryList$ = createEffect(() =>
     this.actions$.pipe(
@@ -75,26 +75,26 @@ export class LanguageEffects {
     )
   );
 
-  getLanguages$ = createEffect(
-    () =>
-      this.actions$.pipe(
-        ofType(getLanguages),
-        switchMap(() =>
-          this.languageService.all().pipe(
-            map((languages) => {
-              return getLanguageSuccess({languages})
-              //this.store.dispatch(getLanguages());
-              //this.alertService.showAlert('Success', 'Language added successfully', 'success')
-            }),
-            catchError((error: any) => of(getLanguageFailure(error
-              )))
-          )
-        )
-      ),
-    // {
-    //   dispatch: false,
-    // }
-  );
+//   getLanguages$ = createEffect(
+//     () =>
+//       this.actions$.pipe(
+//         ofType(getLanguages),
+//         switchMap(() =>
+//           this.languageService.all().pipe(
+//             map((languages) => {
+//               return getLanguageSuccess({languages})
+//               //this.store.dispatch(getLanguages());
+//               //this.alertService.showAlert('Success', 'Language added successfully', 'success')
+//             }),
+//             catchError((error: any) => of(getLanguageFailure(error
+//               )))
+//           )
+//         )
+//       ),
+//     // {
+//     //   dispatch: false,
+//     // }
+//   );
 
   deleteLanguage$ = createEffect(() =>
     this.actions$.pipe(
