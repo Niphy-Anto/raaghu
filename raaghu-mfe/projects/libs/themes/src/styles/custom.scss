@@ -232,7 +232,7 @@ html[theme=light] {
   grid-template-columns: 15px auto;
 
   .edition {
-    margin-top: $tenant-margin-x;
+    margin-top: $tenant-margin-x; 
     height: $tenant-edition-height;
     width: $tenant-edition-width;
     border: $tenant-edition-border-width;
@@ -428,6 +428,7 @@ html[theme=light] {
   height: 100vh !important;
   overflow: auto;
   overflow-x: hidden;
+  padding-bottom:70px !important;
 }
 
 /* btn-icon */

@@ -10,7 +10,7 @@ export class RdsOffcanvasComponent implements OnInit {
 
   @Input() placement: 'start' | 'end' | 'top' | 'bottom' = 'start';
   @Input() backDrop: 'static' | true | false = 'static';
-  scrolling: boolean = false;
+  @Input() scrolling: boolean = false;
   @Input() preventEscapeKey: boolean = false;
   @Input() offId = 'canvasExample';
   @Input() canvasTitle: string = '';
