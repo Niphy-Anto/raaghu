@@ -22,7 +22,8 @@ export class RdsTopNavigationComponent extends MfeBaseComponent implements OnIni
     { value: 'blue', some: 'blue', id: 3 },
     { value: 'green', some: 'green', id: 4 },
     { value: 'orange', some: 'orange', id: 5 }
-  ]
+  ];
+
   selectedTheme: string = 'default';
   @Input()
   LoginAttempts: any = {};

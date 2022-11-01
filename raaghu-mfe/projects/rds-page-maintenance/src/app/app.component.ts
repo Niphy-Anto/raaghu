@@ -57,11 +57,11 @@ export class AppComponent implements OnInit{
   public rdswebsiteMfeConfig: ComponentLoaderOptions;
 
   @Input() listItems1 = [
-    { value: 'Clear All', some: 'value', key: 'clearall', icon: 'plus', iconWidth: '20px', iconHeight: '20px' },
+    { value: 'Clear All', some: 'value', key: 'clearall', icon: 'delete', iconWidth: '20px', iconHeight: '20px' },
   ];
   @Input() listItems2 = [
     { value: 'Refresh', some: 'value', key: 'refresh', icon: 'refresh', iconWidth: '20px', iconHeight: '20px' },
-    { value: 'Download All', some: 'value', key: 'downloadall', icon: 'funnel', iconWidth: '20px', iconHeight: '20px' },
+    { value: 'Download All', some: 'value', key: 'downloadall', icon: 'download_data', iconWidth: '20px', iconHeight: '20px' },
   ];
   constructor(private store: Store,
     private sharedService:SharedService,
