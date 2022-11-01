@@ -7,8 +7,8 @@ import { from, of } from 'rxjs';
 import { catchError, map, mergeMap, switchMap } from 'rxjs/operators';
 import {
   deleteLanguage,
-  getCountryList,
-  getCountryListSuccess,
+  getCultureList,
+  getCultureListSuccess,
   getLanguageFailure,
   getLanguages,
   getLanguageSuccess,
@@ -57,16 +57,16 @@ export class LanguageEffects {
     )
   );
 
-  getCountryList$ = createEffect(() =>
+  getCultureList$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(getCountryList),
+      ofType(getCultureList),
       switchMap(() =>
 
         // Call the getTodos method, convert it to an observable
         from (this.languageService.cultureList()).pipe(
           // Take the returned value and return a new success action containing the todos
-          map((countries) => {
-            return getCountryListSuccess({ countries })
+          map((cultureList) => {
+            return getCultureListSuccess({ cultureList })
           }),
           // Or... if it errors return a new failure action containing the error
           catchError((error) => of(getLanguageFailure({ error })))

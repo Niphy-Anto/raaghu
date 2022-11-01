@@ -15,14 +15,14 @@ export const getLanguageFailure = createAction(
     props<{ error: string }>()
 );
 
-export const getCountryList = createAction('[Language Page] Get Country List');
+export const getCultureList = createAction('[Language Page] Get Country List');
 
-export const getCountryListSuccess = createAction(
-    '[Language Page] Get Coutry List Success',
-    props<{ countries: any }>()
+export const getCultureListSuccess = createAction(
+    '[Language Page] Get culture List Success',
+    props<{ cultureList: any }>()
 );
 
-export const getCountryListFailure = createAction(
+export const getCultureListFailure = createAction(
     '[Language Page] Get Country List Failure',
     props<{ error: string }>()
 );
