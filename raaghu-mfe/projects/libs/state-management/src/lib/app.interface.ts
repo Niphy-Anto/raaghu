@@ -17,13 +17,13 @@ import { IdentityResourcesState } from './state/identity-resources/identity-reso
 import { ClientState } from './state/clients/clients.reducer';
 import { ClaimTypesState } from './state/claim-types/claim-types.reducer';
 import { ApiResourcesState } from './state/api-resources/api-resources.reducer';
-import { TextTemplateState } from './state/text-template/text-template.reducer';
 import { ManageLinkedAccountsState } from './state/manage-linked-accounts/manage-linked-accounts.reducer';
 import { SettingsState } from './state/settings/settings.reducer';
 import { ProductState } from './state/products/product.reducer';
 import { ScopeState } from './state/api-scope/api-scope.reducer';
 import { ProfileState } from './state/profile-settings/profile-settings.reducers';
 import { SecurityState } from './state/security-logs/security-logs.reducer';
+import { TextTemplateState } from './state/text-template/text-template.reducer';
 
 export interface AppState {
     changeLogs: any;
