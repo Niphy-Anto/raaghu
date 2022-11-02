@@ -4,7 +4,7 @@ export interface TableHeader {
   displayName: string;
   key: string;
   dataType: string;
-  colWidth?:string;
+  class?:string;
 }
 @Component({
   selector: 'rds-table',
@@ -31,17 +31,23 @@ export class RdsTableComponent implements OnInit {
     if (this.showTableBorder === true) {
       bodyClass.push('table-bordered')
     }
-    if (this.borderColorVariant) {
-      bodyClass.push('border-' + this.borderColorVariant)
-    }
-    if (this.colorVariant) {
-      bodyClass.push('table-' + this.colorVariant)
+    // if (this.borderColorVariant) {
+    //   bodyClass.push('border-' + this.borderColorVariant)
+    // }
+    // if (this.colorVariant) {
+    //   bodyClass.push('table-' + this.colorVariant)
 
-    }
+    // }
     return bodyClass;
   }
 
-
+  public get headcolor(): any[]{
+    var tableheadcolor = ['']
+    if(this.colorVariant){
+      tableheadcolor.push('table-' + this.colorVariant)
+    }
+    return tableheadcolor;
+  }
 
   //public get classes(): string[] {
 

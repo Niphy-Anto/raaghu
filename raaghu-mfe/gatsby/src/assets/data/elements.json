@@ -146,7 +146,7 @@
       "children": [
         {
           "id": 1,
-          "image": "images/Landing page-Elements/Accordion.png",
+          "image": "images/Landing page-Elements/accordion.png",
           "title": "Accordion",
           "text": " It is list of collapsible panels  with clickable heading or down arrow, expands to show rolled up content. ",
           "link": "/accordion"
@@ -577,7 +577,7 @@
         },
         {
           "id": 5,
-          "image": "images/Landing page-Elements/Doughnut-chart.png",
+          "image": "images/Landing page-Elements/doughnut-chart.png",
           "title": "Doughnut Chart",
           "text": " Horizontal charts are series of horizontals bars extending along the x-axis measuring the size of the observation they represent. It is commonly used to compare the observations against a fixed parameter.",
           "link": "/chart-doughnut"
