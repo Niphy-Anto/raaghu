@@ -37,19 +37,11 @@ export const deleteLanguage = createAction(
     (id: any) => ({ id })
 );
 
-export const saveLanguageSuccess = createAction(
-    '[Language Page] Save Language Success', props<{ language: PostLanguage }>()
-);
-
 export const setDefaultLanguage = createAction(
     '[Language Page] Set Default Language',
-    (name: any) => ({ name })
+    (data: any) => (data)
 );
 
-export const setDefaultLanguageForUI = createAction(
-    '[Language Page] Set Default Language For UI',
-    (name: string) => ({ name })
-);
 
 export const getLanguageForEdit = createAction(
     '[Language Page] Get Language For Edit',
