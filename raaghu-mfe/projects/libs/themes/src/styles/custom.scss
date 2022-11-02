@@ -1146,9 +1146,35 @@ rds-product-image .imgWidth {
 .btn-md.spinner {
   height: 2.1875rem;
   position:relative;
-
- 
 }
 .btn-md.spinner:before {
   top: 6px;
+}
+.btn-sm.spinner {
+  height: 1.774rem;
+  position: relative;
+}
+
+.btn-sm.spinner:before {
+  top: 4px;
+  left:45%;
+}
+.btn-lg.spinner {
+  height: 2.766rem;
+  position: relative;
+}
+
+.btn-lg.spinner:before {
+  top: 10px;
+  left: 45%;
+}
+.w-225px {
+  width: 225px !important;
+}
+
+.min-w-200px {
+  min-width: 200px !important;
+}
+.w-20 {
+  width: 20%;
 }
