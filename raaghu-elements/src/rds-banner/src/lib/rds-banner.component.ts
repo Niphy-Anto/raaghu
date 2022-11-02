@@ -37,7 +37,7 @@ export class RdsBannerComponent implements OnInit {
       classes.push(' m-auto');
     }
     if (this.colorVariant) {
-      const bgColor = 'bg-' + `${this.colorVariant}`;
+      const bgColor = 'alert-' + `${this.colorVariant}`;
       classes.push(bgColor);
       if (`${this.colorVariant}` !== 'light' && `${this.colorVariant}` !== 'warning' && `${this.colorVariant}` !== 'info') {
         classes.push('text-white');
