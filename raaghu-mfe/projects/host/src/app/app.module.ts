@@ -52,6 +52,8 @@ import { UserEffects } from 'projects/libs/state-management/src/lib/state/user/u
 import { UserReducer } from 'projects/libs/state-management/src/lib/state/user/user.reducer';
 import { LanguageEffects } from 'projects/libs/state-management/src/lib/state/language/language.effects';
 import { LanguageReducer } from 'projects/libs/state-management/src/lib/state/language/language.reducer';
+import { TenantReducer } from 'projects/libs/state-management/src/lib/state/tenant/tenant.reducer';
+import { TenantEffects } from 'projects/libs/state-management/src/lib/state/tenant/tenant.effects';
 export function getRemoteServiceBaseUrl(): any {
   let URL = demodata.remoteServiceBaseUrl;
   return URL;
@@ -98,6 +100,9 @@ export function getRemoteServiceBaseUrl(): any {
     StoreModule.forRoot({
       products: productReducer,
       languages:LanguageReducer,
+      tenants:TenantReducer,
+      // dynamicProperty: DynamicPropertyReducer,
+      // dynamicEntity: DynamicEntityReducer,
       profile: ProfileReducer,
       // Entities: GetAllDynamicProperty,
       // PropertiesEntitie: GetAllDynamicPropertyEntites,
@@ -109,7 +114,7 @@ export function getRemoteServiceBaseUrl(): any {
       identityResources: IdentityResourcesReducer,
       apiResources: ApiResourcesReducer,
       apiScope: ScopesReducer,
-      securityLog: SecurityLogsReducer,
+      securityLogs: SecurityLogsReducer,
       clients: ClientsReducer,
       languageText: LanguageTextReducer,
       // defaultLanguage: DefaultLanguageReducer,
@@ -135,6 +140,7 @@ export function getRemoteServiceBaseUrl(): any {
       OrganizationUnitEffects, 
       LanguageTextEffects, 
       RoleEffects,
+      TenantEffects,
       DownloadEffects,
       LoginEffects,
       ManageLinkedAccountsEffects,

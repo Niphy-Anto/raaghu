@@ -100,8 +100,10 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
         { label: 'Settings', labelTranslationKey: 'Settings', id: '', permissionName: 'Pages.Administration.Tenant.Settings', icon: 'setting', path: '/pages/settings', description: 'Show and change application settings', descriptionTranslationKey: 'Show and change application settings' },
       ],
     },
+    { label: 'Security-logs', labelTranslationKey: 'Security-logs', id: 'Security-logs', permissionName: 'Saas.Security-logs', icon: 'tenant', path: '/pages/Security-logs', description: 'Manage your Security-logs', descriptionTranslationKey: 'Manage your Security-logs' },
+
     { label: 'UI Components', labelTranslationKey: 'UI Components', id: '', permissionName: '', icon: 'demo_ui', path: '/pages/demo-ui', description: '', descriptionTranslationKey: '' },
-    // { label: 'Cart', labelTranslationKey: 'Cart', id: 'cart', permissionName: '' ,icon: 'tenant', path: '/pages/cart', description: 'Manage your cart', descriptionTranslationKey: 'Manage your cart' },
+    { label: 'Security-logs', labelTranslationKey: 'Cart', id: 'cart', permissionName: '' ,icon: 'tenant', path: '/pages/Security-logs', description: 'Manage your cart', descriptionTranslationKey: 'Manage your cart' },
    // { label: 'Edition-New', labelTranslationKey: 'Edition-New', id: '', permissionName: '', icon: 'home', path: '/pages/editionnew', description: '', descriptionTranslationKey: '' },
   ];
 

@@ -106,7 +106,7 @@ module.exports = {
 
         './RdsCompContactUs': './projects/rds-components/src/app/rds-comp-contact-us/rds-comp-contact-us.component.ts',
         './RdsCompTenantListNew': './projects/rds-components/src/app/rds-comp-tenant-list-new/rds-comp-tenant-list-new.component.ts',
-       
+
         './RdsCompContactUs': './projects/rds-components/src/app/rds-comp-contact-us/rds-comp-contact-us.component.ts',
         './RdsCompEditionNewBasic': './projects/rds-components/src/app/rds-comp-edition-new-basic/rds-comp-edition-new-basic.component.ts',
         './RdsCompEditionNewFeatures': './projects/rds-components/src/app/rds-comp-edition-new-features/rds-comp-edition-new-features.component.ts',
@@ -115,7 +115,7 @@ module.exports = {
        './RdsCompOpenPosition': './projects/rds-components/src/app/rds-comp-open-position/rds-comp-open-position.component.ts',
         './RdsCompApplyForPosition': './projects/rds-components/src/app/rds-comp-apply-for-position/rds-comp-apply-for-position.component.ts',
         './RdsCompAuditLogsNew' : './projects/rds-components/src/app/rds-comp-audit-logs-new/rds-comp-audit-logs-new.component.ts',
-
+        './RdsCompLanguageNew' : './projects/rds-components/src/app/rds-comp-language-new/rds-comp-language-new.component.ts',
       },
 
 

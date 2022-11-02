@@ -1,4 +1,3 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
 import { ComponentLoaderOptions } from '@libs/shared';
 import { Store } from '@ngrx/store';
@@ -21,6 +20,7 @@ export class RdsCompLanguageTextListComponent implements OnInit {
   TargetCulturename: string
   source: string
   targetValue: string;
+  viewCanvas : boolean = false;
   languagetextTableHeader: TableHeader[] = [
     { displayName: 'Key', key: 'Key', dataType: 'text', dataLength: 30, sortable: true, required: true },
     { displayName: 'Base Value', key: 'BaseValue', dataType: 'text', dataLength: 30, required: true, sortable: true },
@@ -39,7 +39,7 @@ export class RdsCompLanguageTextListComponent implements OnInit {
   @Input() listTargetCulturename: any[] = [];
   @Input() listsource: any[] = []
   @Input() listTargetValue: any[] = []
-  constructor(private http: HttpClient, private store: Store) {}
+  constructor( private store: Store) {}
   ngOnInit(): void {
     const languageTextDataParams: any = {
       maxResultCount:10,
