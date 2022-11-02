@@ -83,13 +83,13 @@ Default.args = {
   ],
 
   pricingTableHeaderItems: [
-    { displayName: 'Plans', dataType: 'html', key: 'name',colWidth:'48%' },
-    { displayName: 'Regular', dataType: 'icon', key: 'regular' },
-    { displayName: 'Professional', dataType: 'icon', key: 'professional' },
-    { displayName: 'Ultimate', dataType: 'icon', key: 'ultimate' }],
+    { displayName: 'Plans', dataType: 'html', key: 'name', class:'w-250px py-2' },
+    { displayName: 'Regular', dataType: 'icon', key: 'regular', class: 'min-w-200px w-20 text-center py-2' },
+    { displayName: 'Professional', dataType: 'icon', key: 'professional', class: 'min-w-200px w-20 text-center py-2' },
+    { displayName: 'Ultimate', dataType: 'icon', key: 'ultimate', class: 'min-w-200px w-20 text-center py-2' }],
   pricingTableBodyItems:
     [
-      { name: '<b>DESIGN SYSTEM</b>' },
+      { name: { value: '<b>DESIGN SYSTEM</b>', type: 'html' }, regular: { value: '', type: 'text' }, professional: { value: '', type: 'text' }, ultimate: { value: '', type: 'text' } },
       { id: 1, name: 'Host admin screen', regular: 'check', professional: 'check', ultimate: 'check' },
       { id: 2, name: 'Tenant Admin screens', regular: 'check', professional: 'check', ultimate: 'check' },
       { id: 3, name: 'End users screens', regular: 'check', professional: 'check', ultimate: 'check' },
@@ -97,12 +97,12 @@ Default.args = {
       { id: 5, name: 'Downloadable Adobe XD & Figma Kits', regular: 'check', professional: 'check', ultimate: 'check' },
       { id: 6, name: 'Theme - Light & Dark mode', regular: 'check', professional: 'check', ultimate: 'check' },
       { id: 7, name: 'Theme - Accessible (High Contrast)', regular: 'check', professional: 'check', ultimate: 'check' },
-      { name: '<b>Micro Front-end</b>' },
+      { name: { value: '<b>Micro Front-end</b>', type: 'html' }, regular: { value: '', type: 'text' }, professional: { value: '', type: 'text' }, ultimate: { value: '', type: 'text' } },
       { id: 1, name: 'CI/CD for Azure DevOps', regular: 'check', professional: 'check', ultimate: 'check' },
       { id: 2, name: 'Micro Front-end Framework with Angular Support', regular: 'check', professional: 'check', ultimate: 'check' },
       { id: 3, name: 'Integration with Kendo UI Controls', regular: 'check', ultimate: 'check', professional: 'check' },
       { id: 4, name: 'Integration with Syncfusion control integration', regular: 'check', professional: 'check', ultimate: 'check' },
-      { name: '<b>Specification</b>' },
+      { name: { value: '<b>Specification</b>', type: 'html' }, regular: { value: '', type: 'text' }, professional: { value: '', type: 'text' }, ultimate: { value: '', type: 'text' } },
       { id: 1, name: { value: 'Included developer licenses', type: 'text' }, regular: { value: '3', type: 'text' }, professional: { value: '10', type: 'text' }, ultimate: { value: '20', type: 'text' } },
       { id: 2, name: { value: 'Additional developer license', type: 'text' }, regular: { value: '$499', type: 'text' }, professional: { value: '$399', type: 'text' }, ultimate: { value: '$299', type: 'text' } },
       { id: 3, name: { value: 'No of Projects', type: 'text' }, regular: { value: 'Single project', type: 'text' }, professional: { value: '3 project', type: 'text' }, ultimate: { value: '3 project', type: 'text' } },
