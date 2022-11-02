@@ -352,7 +352,8 @@ html[theme=light] {
   // }
 
   .aside {
-    background: $body-wrapper-bg;
+    background-color: $body-wrapper-bg;
+    border-right-color: $sidbar-border-right-color;
   }
 
   .navbar {
@@ -1614,6 +1615,10 @@ html[theme=dark] {
   $datepicker-bg: $gray-800 !default;
   $datepicker-head: $gray-800 !default;
 
+  .bg-gradient-primary {
+    background: transparent linear-gradient(90deg, #7e2eef 0%, #01ae9d 100%) 0% 0% no-repeat padding-box;
+  }
+
   .card {
     background-color: $card-bg-color;
     border-color: $card-border-color;
@@ -2379,6 +2384,11 @@ html[theme=dark] {
         // }
       }
     }
+  }
+
+  .aside {
+    background-color: $body-wrapper-bg;
+    border-right-color: $sidbar-border-right-color;
   }
 
   #sidebar {
