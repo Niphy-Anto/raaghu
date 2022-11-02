@@ -102,7 +102,7 @@ export function getRemoteServiceBaseUrl(): any {
       // PropertiesEntitie: GetAllDynamicPropertyEntites,
       organizationUnit: OrganizationUnitReducer,
       roles: RoleReducer,
-      texTemplate:TextTemplateReducer,
+     texTemplate:TextTemplateReducer,
       // mla: MLAReducer,
       validateTenant: ValidateTenantReducer,
       identityResources: IdentityResourcesReducer,
@@ -141,6 +141,7 @@ export function getRemoteServiceBaseUrl(): any {
       OrganizationUnitEffects,
       LoginEffects,
       LanguageTextEffects,
+      TextTemplateEffects,
       DownloadEffects,
       UserEffects
     ]),
