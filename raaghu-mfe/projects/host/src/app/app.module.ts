@@ -50,6 +50,8 @@ import { DownloadEffects, downloadReducer, LoginEffects, ValidateTenantReducer }
 import { ManageLinkedAccountsEffects } from 'projects/libs/state-management/src/lib/state/manage-linked-accounts/manage-linked-accounts.effects';
 import { UserEffects } from 'projects/libs/state-management/src/lib/state/user/user.effects';
 import { UserReducer } from 'projects/libs/state-management/src/lib/state/user/user.reducer';
+import { LanguageEffects } from 'projects/libs/state-management/src/lib/state/language/language.effects';
+import { LanguageReducer } from 'projects/libs/state-management/src/lib/state/language/language.reducer';
 export function getRemoteServiceBaseUrl(): any {
   let URL = demodata.remoteServiceBaseUrl;
   return URL;
@@ -95,8 +97,7 @@ export function getRemoteServiceBaseUrl(): any {
     NgxTranslateModule.forRoot(),
     StoreModule.forRoot({
       products: productReducer,
-      // dynamicProperty: DynamicPropertyReducer,
-      // dynamicEntity: DynamicEntityReducer,
+      languages:LanguageReducer,
       profile: ProfileReducer,
       // Entities: GetAllDynamicProperty,
       // PropertiesEntitie: GetAllDynamicPropertyEntites,
@@ -143,7 +144,8 @@ export function getRemoteServiceBaseUrl(): any {
       LanguageTextEffects,
       TextTemplateEffects,
       DownloadEffects,
-      UserEffects
+      UserEffects,
+      LanguageEffects
     ]),
     SharedModule,
     UserAuthModule,

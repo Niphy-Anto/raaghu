@@ -46,12 +46,9 @@ export class AppComponent {
   ];
   content!: TemplateRef<any>;
   clientList: any = [];
-  clientSecretList: any = [
-    { id: 1, type: 'SharedSecrets', value: 1121, description: 'Shared Secret Value', expiration: '21/02/2022' },
-    { id: 2, type: 'SharedSecrets', value: 1121, description: 'Shared Secret Value', expiration: '21/02/2022' },
-    { id: 3, type: 'SharedSecrets', value: 1121, description: 'Shared Secret Value', expiration: '21/02/2022' },
-    { id: 4, type: 'SharedSecrets', value: 1121, description: 'Shared Secret Value', expiration: '21/02/2022' }];
-
+  apiResources: any = [];
+  clientSecretList: any = [{}];
+  secrets: any;
   client: any = {};
   canvasTitle: string = 'New Client';
   public navtabsItems: any = [
@@ -138,13 +135,16 @@ export class AppComponent {
               this.rdsClientSecretsMfeConfig = mfeConfig;
             }
           }
+          if(event.actionId === 'edit'){
+            this.secrets = event.selectedData;
+          }
         }
       }
     };
     this.rdsClientBasicsMfeConfig = {
       name: 'RdsCompClientBasics',
       input: {
-        clientInfo: this.client.basicInfo,
+        clientBasics: {},
       },
       output: {
         clientBasicInfo: (eventData: any) => {
@@ -161,13 +161,12 @@ export class AppComponent {
         selectedResources: (eventData: any) => {
           this.getSelectedResources(eventData)
         }
-      }
+      }     
     };
 
 
     this.store.dispatch(getAllClients());
     this.store.select(selectAllClients).subscribe((res) => {
-   
       this.clientList = [];
       if (res && res.items.length > 0) {
         res.items.forEach((element: any) => {
@@ -179,29 +178,29 @@ export class AppComponent {
           this.clientList.push(item);
         });
       }
-
       const mfeConfig = this.rdsClientMfeConfig
       mfeConfig.input.tableData = [...this.clientList];
       mfeConfig.input.refresh = true;
       this.rdsClientMfeConfig = { ...mfeConfig };
     })
+
     this.store.dispatch(getAllApiResources());
     this.store.select(selectAllApiResource).subscribe((res) => {
-   
-      this.clientList = [];
-      if (res && res.items.length > 0) {
+      this.apiResources = [];
+      if (res) {
         res.items.forEach((element: any) => {
           const item: any = {
-            clientId: element.clientId,
-            clientName: element.clientName,
-            description: element.description
+            displayName: element.displayName,
+            name: element.name,
+            left: element.description,
+            id:element.id
           }
-          this.clientList.push(item);
+          this.apiResources.push(item);
         });
       }
 
       const mfeConfig = this.rdsClientMfeConfig
-      mfeConfig.input.tableData = [...this.clientList];
+      mfeConfig.input.apiResources = [...this.apiResources];
       mfeConfig.input.refresh = true;
       this.rdsClientMfeConfig = { ...mfeConfig };
     })

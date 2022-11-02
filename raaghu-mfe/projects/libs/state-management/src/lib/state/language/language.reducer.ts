@@ -1,34 +1,23 @@
 import { createReducer, on } from "@ngrx/store";
-import { getCountryList, getCountryListFailure, getCountryListSuccess, getLanguageFailure, getLanguages, getLanguageSuccess, setDefaultLanguage, setDefaultLanguageForUI } from "./language.actions";
+import { getCultureList, getCultureListFailure, getCultureListSuccess, getLanguageFailure, getLanguages, getLanguageSuccess, setDefaultLanguage, setDefaultLanguageForUI } from "./language.actions";
 import { Countries, Language } from "./language.models";
 
 export interface LanguagesState {
     languages: any;
-    error: string;
-    status: 'pending' | 'loading' | 'error' | 'success';
-}
-
-export interface CountryState {
-    countries: Countries;
-    error: string;
-    status: 'pending' | 'loading' | 'error' | 'success';
-}
-
-export interface DefaultLanguageState {
+    cultureList: any;
     defaultLanguage: any;
+    error: string;
+    status: 'pending' | 'loading' | 'error' | 'success';
 }
 
 export const languageInitialState: LanguagesState = {
-    languages: { items: [] },
+    languages: null,
+    cultureList: null,
+    defaultLanguage: null,
     error: null,
     status: 'pending',
 };
 
-export const countryInitialState: CountryState = {
-    countries: { languageNames: [], flags: [] },
-    error: null,
-    status: 'pending',
-};
 
 export const LanguageReducer = createReducer(
     // Supply the initial state
@@ -46,35 +35,24 @@ export const LanguageReducer = createReducer(
         ...state,
         error: error,
         status: 'error',
-    }))
-)
-
-export const CountryListReducer = createReducer(
-    // Supply the initial state
-    countryInitialState,
-    on(getCountryList, (state) => ({ ...state, status: 'loading' })),
+    })),
+    on(getCultureList, (state) => ({ ...state, status: 'loading' })),
     // Handle successfully loaded todos
-    on(getCountryListSuccess, (state, { countries }) => ({
+    on(getCultureListSuccess, (state, { cultureList }) => ({
         ...state,
-        countries: countries,
+        cultureList: cultureList,
         error: null,
         status: 'success',
     })),
-    on(getCountryListFailure, (state, { error }) => ({
+    on(getCultureListFailure, (state, { error }) => ({
         ...state,
         error: error,
         status: 'error',
-    }))
-
-
-)
-export const defaultLanguageInitialState: DefaultLanguageState = {
-    defaultLanguage: ''
-};
-export const DefaultLanguageReducer = createReducer(
-    defaultLanguageInitialState,
+    })),
     on(setDefaultLanguageForUI, (state, { name }) => ({
         ...state,
         defaultLanguage: name,
-    })),
+    }))
 )
+
+

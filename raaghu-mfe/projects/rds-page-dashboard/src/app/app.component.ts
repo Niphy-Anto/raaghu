@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 //import { selectDefaultLanguage } from '@libs/state-management';
 import { Store } from '@ngrx/store';
 import { TranslateService } from '@ngx-translate/core';
+import { getLanguages } from 'projects/libs/state-management/src/lib/state/language/language.actions';
+import { selectAllLanguages } from 'projects/libs/state-management/src/lib/state/language/language.selector';
 
 @Component({
   selector: 'app-root',
@@ -20,6 +22,10 @@ export class AppComponent implements OnInit {
     // }) 
   }
   newapicall(){
+    this.store.dispatch(getLanguages());
+    this.store.select(selectAllLanguages).subscribe(res=>{
+      console.log(res);
+    })
 
   }
 

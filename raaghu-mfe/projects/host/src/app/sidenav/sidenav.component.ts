@@ -20,7 +20,7 @@ import { slideInAnimation } from '../animation';
 import { RouterOutlet } from '@angular/router';
 import * as moment from 'moment';
 import { getLanguages } from 'projects/libs/state-management/src/lib/state/language/language.actions';
-// import { selectAllLanguages } from 'projects/libs/state-management/src/lib/state/language/language.selector';
+  import { selectAllLanguages } from 'projects/libs/state-management/src/lib/state/language/language.selector';
 declare var bootstrap: any;
 @Component({
   selector: 'app-sidenav',
@@ -321,32 +321,9 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
     // });
 
 
-    // this.store.select(selectAllLanguages).subscribe((res: any) => {
-    //   if (res && res.items && res.items.length > 0) {
-    //     this.languageItems = [];
-    //     const languages: any = [];
-    //     res.items.forEach((item: any) => {
-    //       let icon: string = item.icon.split(' ')[1];
-    //       icon = icon.replace('-', '_')
-    //       this.languageItems.push({ value: item.displayName, name: item.name, some: item.displayName, id: item.id, icon: icon, iconWidth: '21px', iconHeight: '14px' });
-    //       if (res.defaultLanguageName === item.name) {
-    //         this.selectedLanguage.language = item.displayName;
-    //         this.selectedLanguage.icon = item.icon.split(' ')[1];
-    //       }
-    //       languages.push(item.name);
-    //     });
-    //     if (res.defaultLanguageName) {
-    //       //this.store.dispatch(setDefaultLanguageForUI(res.defaultLanguageName))
-    //       this.translate.use(res.defaultLanguageName);
-    //     }
-
-    //     // this.translate.addLangs(languages);
-    //     const mfe = this.rdsTopNavigationMfeConfig;
-    //     mfe.input.languageItems = [...this.languageItems];
-    //     mfe.input.defaultLanguage = this.selectedLanguage;
-    //     this.rdsTopNavigationMfeConfig = mfe;
-    //   }
-    // })
+    this.store.select(selectAllLanguages).subscribe((res: any) => {
+      console.log(res);
+    })
     this.on('tenancyDataAgain').subscribe(res => {
     })
     if (this.router.url) {
