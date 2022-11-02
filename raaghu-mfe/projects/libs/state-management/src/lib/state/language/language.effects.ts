@@ -10,6 +10,9 @@ import {
   getCultureList,
   getCultureListSuccess,
   getLanguageFailure,
+  getLanguageForEdit,
+  getLanguageForEditFailure,
+  getLanguageForEditSuccess,
   getLanguages,
   getLanguageSuccess,
   saveLanguage,
@@ -56,6 +59,25 @@ export class LanguageEffects {
       )
     )
   );
+  getLanguagesForEdit$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(getLanguageForEdit),
+      switchMap(({data}) => {
+        // Call the getTodos method, convert it to an observable
+        return (this.languageService.languagesGET2(data.id)).pipe(
+          // Take the returned value and return a new success action containing the todos
+          map((languageInfo) => {
+            return getLanguageForEditSuccess({ languageInfo })
+          }),
+          // Or... if it errors return a new failure action containing the error
+          catchError((error) => of(getLanguageFailure({ error })))
+        )
+      }
+
+      )
+    )
+  );
+  
 
   getCultureList$ = createEffect(() =>
     this.actions$.pipe(

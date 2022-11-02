@@ -1,11 +1,12 @@
 import { createReducer, on } from "@ngrx/store";
-import { getCultureList, getCultureListFailure, getCultureListSuccess, getLanguageFailure, getLanguages, getLanguageSuccess, setDefaultLanguage, setDefaultLanguageForUI } from "./language.actions";
+import { getCultureList, getCultureListFailure, getCultureListSuccess, getLanguageFailure, getLanguageForEdit, getLanguageForEditSuccess, getLanguages, getLanguageSuccess, setDefaultLanguage, setDefaultLanguageForUI } from "./language.actions";
 import { Countries, Language } from "./language.models";
 
 export interface LanguagesState {
     languages: any;
     cultureList: any;
     defaultLanguage: any;
+    languageInfo:any;
     error: string;
     status: 'pending' | 'loading' | 'error' | 'success';
 }
@@ -13,6 +14,7 @@ export interface LanguagesState {
 export const languageInitialState: LanguagesState = {
     languages: null,
     cultureList: null,
+    languageInfo:null,
     defaultLanguage: null,
     error: null,
     status: 'pending',
@@ -27,6 +29,15 @@ export const LanguageReducer = createReducer(
     on(getLanguageSuccess, (state, { languages }) => ({
         ...state,
         languages: languages,
+        error: null,
+        status: 'success',
+    })),
+    
+    on(getLanguageForEdit, (state) => ({ ...state, status: 'loading' })),
+    // Handle successfully loaded todos
+    on(getLanguageForEditSuccess, (state, { languageInfo }) => ({
+        ...state,
+        languageInfo: languageInfo,
         error: null,
         status: 'success',
     })),

@@ -22,8 +22,7 @@ export const selectAllCountries = createSelector(
     (state: LanguagesState) => state.cultureList
 );
 
-// export const selectDefault = (state: AppState) => state.defaultLanguage;
-// export const selectDefaultLanguage = createSelector(
-//     selectDefault,
-//     (state: DefaultLanguageState) => state.defaultLanguage
-// );
+export const selectDefaultLanguage = createSelector(
+    selectLanguages,
+    (state: LanguagesState) => state.languageInfo
+);
