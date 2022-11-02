@@ -516,8 +516,8 @@ html[theme=light] {
 }
 
 .dropdown-menu {
-  max-height: 600px;
-  //overflow: auto;
+  max-height: 350px;
+  overflow: auto;
 }
 
 .dropdown-toggle::after {

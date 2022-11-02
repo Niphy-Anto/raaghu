@@ -23,11 +23,11 @@
         <div class="col-md-6">
           <div class="col-md-12 col-sm-12">
             <div class="form-group mt-3">
-              <rds-select-list [(ngModel)]="selectedLanguage.icon" [label]="translate.instant('Country Code')"
+              <!-- <rds-select-list [(ngModel)]="selectedLanguage.icon" [label]="translate.instant('Country Code')"
                 #country="ngModel" [value]="selectedLanguage.icon" id="select-list-country" ngDefaultControl name="icon"
                 [isRequired]=true required [placeholder]="'Select Country'" labelPostion="top" [itemList]="flags">
-              </rds-select-list>
-              <!-- <div class="form-group mt-3">
+              </rds-select-list> -->
+              <div class="form-group mt-3">
                 <div class="mb-2">
                   <rds-label label="Country Code"></rds-label>
                 </div>
@@ -35,6 +35,7 @@
                   [icon]="selectedLanguage.icon"
                   [borderDropdown]="true"
                   class="text-dark"
+                  [id]="'country-code-dropdown'"
                   [placeholder]="translate.instant('Country Code')"
                   [value]="selectedLanguage.icon"
                   required
@@ -44,7 +45,7 @@
                   [listItems]="flags"
                   (onSelect)="onCountryCodeSelect($event)"
                 ></rds-dropdownlist>
-              </div> -->
+              </div>
               <div class="form-control-feedback" *ngIf="
                   submitted &&
                   (selectedLanguage.icon === '' || !selectedLanguage.icon)
