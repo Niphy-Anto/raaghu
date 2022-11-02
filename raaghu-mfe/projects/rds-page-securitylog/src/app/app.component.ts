@@ -51,7 +51,7 @@ export class AppComponent implements OnInit  {
   isAnimation: boolean = true;
 
 
-  @Output() deleteEvent = new EventEmitter<any>();
+  // @Output() deleteEvent = new EventEmitter<any>();
    constructor( private store: Store) { }
 
   public securityLogsHeaders: TableHeader[] = [
@@ -62,11 +62,6 @@ export class AppComponent implements OnInit  {
     { key: 'application', displayName: 'Application', dataType: 'html', sortable: true, filterable: true },
     { key: 'identity', displayName: 'Identity', dataType: 'text', sortable: true, filterable: true },
     { key: 'username', displayName: 'Users', dataType: 'text', sortable: true, filterable: true },
-
-
-
-
-
   ];
 
   ngOnInit(): void {
@@ -83,15 +78,15 @@ export class AppComponent implements OnInit  {
       },
       output: {
         onActionSelection: (event: any) => {
-          if (event.actionId === 'delete') {
-            const index = this.securityLogs.findIndex((x: any) => x.id === event.selectedData.id);
-            if (index !== -1) {
-              this.securityLogs.splice(index, 1);
-              const mfeConfig = this.securityLogs
-              mfeConfig.input.tableData = [... this.securityLogs];
-              this.securityLogs = mfeConfig;
-            }
-          }
+          // if (event.actionId === 'delete') {
+          //   const index = this.securityLogs.findIndex((x: any) => x.id === event.selectedData.id);
+          //   if (index !== -1) {
+          //     this.securityLogs.splice(index, 1);
+          //     const mfeConfig = this.securityLogs
+          //     mfeConfig.input.tableData = [... this.securityLogs];
+          //     this.securityLogs = mfeConfig;
+          //   }
+          // }
         }
       }
     };
@@ -164,8 +159,5 @@ export class AppComponent implements OnInit  {
     }
     return str;
   }
-  delete(event: any): void {
 
-    this.deleteEvent.emit(event);
-  }
 }

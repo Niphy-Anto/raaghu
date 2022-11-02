@@ -13,8 +13,8 @@ import {
   animate,
 } from '@angular/animations';
 import { Item } from 'projects/libs/state-management/src/lib/state/language/language.models';
-import { deleteLanguage, getCountryList, getLanguages, saveLanguage, setDefaultLanguage } from 'projects/libs/state-management/src/lib/state/language/language.actions';
-import { selectAllLanguages } from 'projects/libs/state-management/src/lib/state/language/language.selector';
+import { deleteLanguage, getCultureList, getLanguages, saveLanguage, setDefaultLanguage } from 'projects/libs/state-management/src/lib/state/language/language.actions';
+import { selectAllCountries, selectAllLanguages } from 'projects/libs/state-management/src/lib/state/language/language.selector';
 declare var bootstrap: any;
 
 
@@ -82,6 +82,7 @@ export class AppComponent implements OnInit {
     isEnabled: false,
     id: undefined,
   };
+  cultureList: any = [];
   rdsLanguageTableMfeConfig: ComponentLoaderOptions;
   languageTableHeader: TableHeader[] = [
     { displayName: 'Display Name', key: 'languageName', dataType: 'html', dataLength: 30, sortable: true, required: true, filterable: true },
@@ -153,7 +154,7 @@ export class AppComponent implements OnInit {
         }
       }
     };
-    this.store.dispatch(getCountryList());
+    // this.store.dispatch(getCountryList());
     this.store.dispatch(getLanguages());
     // this.store.select(selectAllCountries).subscribe((res: any) => {
     //   if (res) {
@@ -205,6 +206,25 @@ export class AppComponent implements OnInit {
 
       }
     });
+
+    this.store.dispatch(getCultureList())
+    this.store.select(selectAllCountries).subscribe((res: any) => {
+      if (res) {
+        this.cultureList = [];
+          res.items.forEach((element: any) => {
+          const item: any = {
+            value: element.id,
+            displayText: element.cultureName,
+          }
+          this.cultureList.push(item);
+        });
+        
+        const mfeConfig = this.rdsNewLanguageMfeConfig
+        mfeConfig.input.cultureList = [... this.cultureList];
+        this.rdsNewLanguageMfeConfig = mfeConfig;
+      }
+    })
+
     this.subscribeToAlerts();
 
 

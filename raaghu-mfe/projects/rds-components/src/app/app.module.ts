@@ -163,6 +163,7 @@ import { RdsCompThemeNewComponent } from './rds-comp-theme-new/rds-comp-theme-ne
 import { RdsCompAccountNewComponent } from './rds-comp-account-new/rds-comp-account-new.component';
 import { RdsCompSettingsNewComponent } from './rds-comp-settings-new/rds-comp-settings-new.component';
 import { RdsCompLanguageNewComponent } from './rds-comp-language-new/rds-comp-language-new.component';
+import { RdsCompLanguageTextListComponent } from './rds-comp-language-text-list/rds-comp-language-text-list.component';
 
 @NgModule({
   declarations: [	
@@ -280,7 +281,7 @@ import { RdsCompLanguageNewComponent } from './rds-comp-language-new/rds-comp-la
     RdsCompCustomerReviewsComponent,
     RdsCompPricingTableComponent,
     RdsCompOrderDetailsComponent,
-    //RdsCompLanguageTextListComponent,
+    RdsCompLanguageTextListComponent,
     RdsCompContactInformationComponent,
     RdsCompShippingAddressComponent,
     RdsCompPaymentDetailsComponent,
