@@ -77,7 +77,12 @@
               [pills]="false" [tabs]="false" [fill]="false" [justified]="false" [activeTab]="activePage"
               (onClicktab)="onclickMenu($event)">
             </rds-nav-tab>
-            <div></div>
+            <div class="text-center">
+              <rds-button [outlineButton]="true" [label]="translate.instant('LOGOUT')" type="button" [size]="'medium'"
+                          [colorVariant]="'primary'" [iconFill]="false" [iconStroke]="true" (click)="logout()" [icon]="'logout'"
+                          [iconHeight]="'15px'" [iconWidth]="'15px'">
+              </rds-button>
+            </div>
 
             <div class="mobile-header-option">
               <div class="row d-flex align-items-center">
@@ -97,19 +102,7 @@
               </div>
             </div>
           </div>
-          <div class="
-              card-footer
-              border-0
-              bg-transparent
-              d-flex
-              justify-content-center
-              py-3
-            ">
-            <rds-button [outlineButton]="true" [label]="translate.instant('LOGOUT')" type="button" [size]="'medium'"
-              [colorVariant]="'primary'" [iconFill]="false" [iconStroke]="true" (click)="logout()" [icon]="'logout'"
-              [iconHeight]="'15px'" [iconWidth]="'15px'">
-            </rds-button>
-          </div>
+          
         </div>
       </div>
     </div>
