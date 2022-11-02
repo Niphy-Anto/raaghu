@@ -48,7 +48,7 @@
                         </rds-checkbox>
                     </div>
 
-                </div>7
+                </div>
                 <div class="mobile-btn position-fixed bottom-0 end-0 pb-2 me-4">
                     <rds-fab-menu [listItems]="listItem1" [menuicon]="'plus'" [colorVariant]="'primary'"
                         [menuiconWidth]="'15px'" [menuiconHeight]="'15px'" (onSelect)="onSelectMenu($event)">
@@ -56,23 +56,23 @@
                 </div>
             </div>
             <div class="row" *ngIf="showFilters">
-                <div class="col-md-2 sm-p-0">
+                <div class="col-md-2 sm-p-0 mt-2 px-3">
                     <rds-input size="medium" [(ngModel)]="service" [placeholder]="translate.instant('Service')"
                         (change)="serviceModify($event)" id="service" floatinginputLabel="" ngDefaultControl
                         name="service">
                     </rds-input>
                 </div>
-                <div class="col-md-2 sm-p-0">
+                <div class="col-md-2 sm-p-0 mt-2">
                     <rds-input size="medium" [(ngModel)]="from" [placeholder]="translate.instant('From')"
                         (change)="fromModify($event)" id="from" floatinginputLabel="" ngDefaultControl name="from">
                     </rds-input>
                 </div>
-                <div class="col-md-2 sm-p-0">
+                <div class="col-md-2 sm-p-0 mt-2">
                     <rds-input size="medium" [(ngModel)]="to" [placeholder]="translate.instant('To')"
                         (change)="toModify($event)" id="to" floatinginputLabel="" ngDefaultControl name="to">
                     </rds-input>
                 </div>
-                <div class="col-md-2 sm-p-0">
+                <div class="col-md-2 sm-p-0 mt-2">
                     <rds-input size="medium" (change)="actionModify($event)" [(ngModel)]="action"
                         [placeholder]="translate.instant('Action')" id="action" floatinginputLabel="" ngDefaultControl
                         name="action">
