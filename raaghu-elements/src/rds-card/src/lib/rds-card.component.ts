@@ -13,7 +13,7 @@ export class RdsCardComponent implements OnInit {
   @Input() showBody: boolean = true;
   @Input() showFooter: boolean = true;
   @Input() borderColor: 'primary' | 'secondary' | 'danger' | 'success' | 'warning' | 'info' | 'light' | 'dark' | undefined = undefined;
-
+  @Input() colorVariant: 'primary' | 'secondary' | 'danger' | 'success' | 'warning' | 'info' | 'light' | 'dark' | undefined = undefined;
 
   //@Input() cardWidth?: number;
 
