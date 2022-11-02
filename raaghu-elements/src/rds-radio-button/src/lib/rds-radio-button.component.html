@@ -1,6 +1,6 @@
 <div [ngSwitch]="display_type">
-  <div *ngSwitchCase="'Default'">
-    <div [ngClass]="classes" *ngFor="let i of itemList" >
+  <div *ngSwitchCase="'Default'" [class]="inlineGroup()">
+    <div [ngClass]="classes1()"   *ngFor="let i of itemList" >
       <input type="radio" class="form-check-input" [ngClass]="{'ms-1': isInputGroup}" [name]="i.name" [value]="i.label" [checked]="i.checked" [id]="i.id"
         [disabled]="i.disabled" (input)="getValue($event)">
       <label class="form-check-label" [for]="i.id" [ngClass]="{'ms-2': isInputGroup}">
