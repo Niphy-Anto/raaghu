@@ -11,9 +11,17 @@ export class RdsPriceComponent implements OnInit, OnChanges {
   @Input() withDiscount: boolean = true;
   @Input() originalPrice = 0;
   // withDiscountPrice?:number;
-  // numberPrice?: number = 0;
 
-  constructor(private el: ElementRef) { }
+  numberPrice?: number = 0;
+   @Input() numberPricetwo?: number;
+   @Input() role: 'Basic' | 'withoutDiscount' = 'Basic';
+   
+  constructor() { }
+
+  
+
+  
+
 
   ngOnChanges(): void {
     

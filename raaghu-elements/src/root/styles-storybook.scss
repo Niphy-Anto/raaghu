@@ -2567,7 +2567,7 @@ app-rds-comp-product-list .card-body {
 }
 
 .h-68 {
-  height: 68%;
+  height: 53%;
 }
 
 .mt-6 {
@@ -2746,6 +2746,12 @@ body.dark-theme{
 //     background-size:1.1375rem;
 // }
 }
+
+// css for table
+.table>thead {
+  font-size: .875rem;
+  text-transform: capitalize;
+
 .accordion-button:focus{
     box-shadow:none;
 }
@@ -2843,4 +2849,5 @@ body.dark-theme{
   --bs-alert-color: #141619;
   --bs-alert-bg: #d3d3d4;
   --bs-alert-border-color: #bcbebf;
+
 }

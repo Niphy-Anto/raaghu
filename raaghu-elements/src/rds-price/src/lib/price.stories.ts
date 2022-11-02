@@ -7,6 +7,7 @@ import { RdsPriceComponent } from './rds-price.component';
 
 export default {
   title: 'Elements/Price',
+  
   component: RdsPriceComponent,
   decorators: [
     moduleMetadata({
@@ -42,4 +43,14 @@ WithoutDiscount.args = {
 
 
 
+Default.args = {
+  role: 'Basic',
+};
+
+export const withoutDiscount = Template.bind({});
+
+withoutDiscount.args = {
+  role: 'withoutDiscount',
+  numberPricetwo: 0
+};
 
