@@ -11,7 +11,7 @@
         px-0
         main-body
       ">
-      <div class="aside">
+      <div class="aside px-2">
         <rds-side-nav [isPageWrapper]="true" [activepage]="activePage" [activesubmenu]="activesubmenu"
                       (collapsedState)="onCollapse($event)" [collapseRequired]="collapseRequired" [sidenavItems]="getSideNavItems()"
                       (emitPath)="redirectPath($event)" (selectedMode)="toggleBetweenMode($event)"></rds-side-nav>
