@@ -96,31 +96,48 @@ export class LanguageEffects {
 //     // }
 //   );
 
+  // deleteLanguage$ = createEffect(() =>
+  //   this.actions$.pipe(
+  //     ofType(deleteLanguage),
+  //     switchMap(({ id }) =>
+  //       this.languageService.languagesDELETE(undefined).pipe(map(() => {
+
+  //         return deleteLanguage({id})
+  //         // this.store.dispatch(getLanguages());
+  //         // this.alertService.showAlert('Success', 'Language deleted successfully', 'success')
+
+  //       }
+  //       ),
+  //         catchError((error) => of())
+  //       )
+  //     )
+  //   ),
+  //   { 
+  //     dispatch: false 
+  //   }
+  // );
   deleteLanguage$ = createEffect(() =>
-    this.actions$.pipe(
-      ofType(deleteLanguage),
-      switchMap(({ id }) =>
-        this.languageService.languagesDELETE(undefined).pipe(map(() => {
+  this.actions$.pipe(
+    ofType(deleteLanguage),
+    mergeMap(({ id }) =>
+      this.languageService.languagesDELETE(id).pipe(map(() => {
+        this.store.dispatch(getLanguages());
+        this.alertService.showAlert('Success', 'Language deleted successfully', 'success')
 
-          return deleteLanguage({id})
-          // this.store.dispatch(getLanguages());
-          // this.alertService.showAlert('Success', 'Language deleted successfully', 'success')
-
-        }
-        ),
-          catchError((error) => of())
-        )
+      }
+      ),
+        catchError((error) => of())
       )
-    ),
-    { 
-      dispatch: false 
-    }
-  );
+    )
+  ),
+  // Most effects dispatch another action, but this one is just a "fire and forget" effect
+  { dispatch: false }
+);
 
   saveLanguage$ = createEffect(() =>
     this.actions$.pipe(
       ofType(saveLanguage),
-      switchMap(({ data }) =>
+      switchMap((data) =>
         this.languageService.languagesPOST(data.body).pipe(map(() => {
           this.store.dispatch(getLanguages());
           this.alertService.showAlert('Success', 'added language successfully', 'success')

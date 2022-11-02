@@ -1,87 +1,83 @@
-<div class="row" *ngIf="!EditShimmer">
-    <div class="tab-content px-3">
+
+  <div *ngIf="!EditShimmer">
+    <div class="tab-content py-4">
       <form #languageForm="ngForm">
-        <div class="row mb-3">
-          <div class="col-md-6">
-            <div class="col-md-12 col-sm-12">
-              <div class="form-group mt-3">
-                <rds-select-list [(ngModel)]="languageName" [value]="languageName" [placeholder]="'Select Language'"
-                  labelPosition="top" ngDefaultControl [label]="translate.instant('Language Name')" id="select-listlanguage"
-                  name="languageName" #language="ngModel" required [itemList]="languageNames">
-                </rds-select-list>
-                <div class="form-control-feedback" *ngIf="language.errors && (language.dirty || language.touched)">
-                  <span class="text-danger" *ngIf="language.errors.required">{{
-                    "language is
-                    required"
-                    | translate
-                    }}</span>
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <div class="col-md-12 col-sm-12">
+                  <div class="form-group mt-3">
+                   
+                      <rds-select-list [(ngModel)]="selectedLanguageData.cultureName" [label]="translate.instant('Culture Name')" 
+                      [value]="selectedLanguageData.cultureName"  ngDefaultControl LabelType="Top" name="selectedLanguageData.cultureName" [itemList]="cultureList" [placeholder]="'Select Culture Name'">
+                    </rds-select-list> 
+                    <!-- <div class="form-control-feedback" *ngIf="language.errors && (language.dirty || language.touched)">
+                        <span class="text-danger" *ngIf="language.errors.required">{{
+                          "Culture Name is
+                          required"
+                          | translate
+                          }}</span>
+                      </div> -->
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-  
-          <div class="col-md-6">
-            <div class="col-md-12 col-sm-12">
-              <div class="form-group mt-3">
-                <rds-input size="default" [Title]="translate.instant('Display Name')" [disabled]="false" [readonly]="false" [TitleType]="'Top'"
-            value="" name="displayName" [isRequired]=true inputType="text" [placeholder]="translate.instant('Display Name')" #displayName="ngModel"
-            [(ngModel)]="selectedLanguage.displayName" floatinginputLabel="" required ngDefaultControl>
-          </rds-input>
-          <div class="form-control-feedback" *ngIf="displayName.errors && (displayName.dirty || displayName.touched)">
-            <span class="text-danger" *ngIf="displayName.errors.required">{{
-              "display Name is
-              required"
-              | translate
-              }}</span>
-          </div>
+              <div class="col-md-6">
+                <div class="col-md-12 col-sm-12">
+                  <div class="form-group mt-3">
+                    <rds-input size="default" [Title]="translate.instant('Display Name')" [disabled]="false" [readonly]="false" [TitleType]="'Top'"
+                value="selectedLanguageData.displayName" name="displayName" [isRequired]=true inputType="text" [placeholder]="translate.instant('Display Name')" #displayName="ngModel"
+                [(ngModel)]="selectedLanguageData.displayName" floatinginputLabel="" required ngDefaultControl>
+              </rds-input>
+              <div class="form-control-feedback" *ngIf="displayName.errors && (displayName.dirty || displayName.touched)">
+                <span class="text-danger" *ngIf="displayName.errors.required">{{
+                  "display Name is
+                  required"
+                  | translate
+                  }}</span>
               </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12 col-sm-12">
-                <div class="form-group mt-3">
-                  <rds-select-list [(ngModel)]="selectedLanguage.icon" [label]="translate.instant('Country Code')"
-                    #country="ngModel" [value]="selectedLanguage.icon" id="select-list-country" ngDefaultControl name="icon"
-                    [isRequired]=true required [placeholder]="'Select Country'" labelPostion="top" [itemList]="flags">
-                  </rds-select-list>
-                  <div class="form-control-feedback" *ngIf="
-                      submitted &&
-                      (selectedLanguage.icon === '' || !selectedLanguage.icon)
-                    ">
-                    <span class="text-danger">{{
-                      "Country code is
-                      required"
-                      | translate
-                      }}</span>
                   </div>
                 </div>
               </div>
         </div>
+      
         <div class="row">
-          <div class="col-md-6 col-sm-6">
-            <div class="form-group mb-3">
-              <rds-checkbox [label]="translate.instant('Enable Language')" [checked]="selectedLanguage.isEnabled"
-                [withLabel]="true" name="enables" [(ngModel)]="selectedLanguage.isEnabled" ngDefaultControl
-                [id]="'isEnabled'">
-              </rds-checkbox>
+            <div class="col-md-12 col-sm-12">
+                <div class="form-group mt-3">
+                  <rds-select-list [(ngModel)]="selectedLanguageData.uiCultureName" [label]="translate.instant('Ui Culturename Name')" 
+                  [value]="selectedLanguageData.uiCultureName"  ngDefaultControl LabelType="Top" name="selectedLanguageData.uiCultureName" 
+                  [itemList]="uiCultureList" [placeholder]="'Select Ui CultureList Name'" #uiCulturename="ngModel">
+                </rds-select-list> 
+                   <div class="form-control-feedback" *ngIf="uiCulturename.errors && (uiCulturename.dirty || uiCulturename.touched)">
+                        <span class="text-danger" *ngIf="uiCulturename.errors.required">{{
+                          "Culture Name is
+                          required"
+                          | translate
+                          }}</span>
+                      </div>
+                </div>
+              </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-sm-6">
+              <div class="form-group mb-3">
+                <rds-checkbox [label]="translate.instant('Enable Language')" [checked]="selectedLanguageData.isEnabled"
+                  [withLabel]="true" name="enables" [(ngModel)]="selectedLanguageData.isEnabled" ngDefaultControl
+                  [id]="'isEnabled'">
+                </rds-checkbox>
+              </div>
             </div>
           </div>
-        </div>
+
       </form>
     </div>
-    <div class="footer-buttons my-2">
-      <div class="row">
-        <div class="col-md-12">
-          <rds-button [label]="translate.instant('Close')" (click)="closeCanvas()" type="button"
-            [colorVariant]="'primary'" [outlineButton]="true" [size]="'small'">
-          </rds-button>
-          <rds-button [label]="translate.instant('Save')" type="button" [size]="'small'"
-            [showLoadingSpinner]="buttonSpinner" [disabled]="!languageForm.valid" class="ms-2" [colorVariant]="'primary'"
-            (click)="addLanguage(languageForm)">
-          </rds-button>
-        </div>
-      </div>
+    <div class="footer-buttons my-2 sm-p-0">
+      <rds-button [label]="translate.instant('Cancel')" [colorVariant]="'primary'" [size]="'small'"
+        (click)="closeCanvas()" data-bs-dismiss="offcanvas">
+      </rds-button>
+      <rds-button [label]="translate.instant('SAVE')"
+        [disabled]="!languageForm.valid"
+        [size]="'small'" class="ms-2" [colorVariant]="'primary'" (click)="addLanguage(languageForm)" [showLoadingSpinner]="buttonSpinner">
+      </rds-button>
     </div>
   </div>
-  <app-rds-comp-new-role-shimmer *ngIf="EditShimmer"></app-rds-comp-new-role-shimmer>
+
+  <app-rds-comp-tenant-information-shimmer *ngIf="EditShimmer"></app-rds-comp-tenant-information-shimmer>

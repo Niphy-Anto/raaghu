@@ -1,5 +1,5 @@
 import { DatePipe } from '@angular/common';
-import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -13,62 +13,88 @@ export class RdsCompLanguageNewComponent implements OnInit {
   constructor(public datepipe: DatePipe, public translate: TranslateService) { }
   @Output() onLanguageSave = new EventEmitter<any>();
   @Output() onCloseCanvas = new EventEmitter<any>()
+  @Output() LanguageInfo = new EventEmitter<any>();
+
 @Input() buttonSpinner : boolean =true;
-  @Input() flags: any[] = []
-  // @Input() selectedLanguage: any;
-  @Input() languageNames: any[] = []
+  // @Input() flags: any[] = []
+  @Input() cultureList: any[] = []
+  @Input() uiCultureList : any[] = []
   @Input() EditShimmer: boolean = false;
-  listLanguage: any
-  listcountrycode: any
-  LanguageData: any
-  name: string = '';
-  icon: string = '';
-  id: number | undefined = undefined;
-  isEnabled: boolean = false;
-  languageName = [];
-  @Input() selectedLanguage: any = {
-    countryCode: '',
-    icon: '',
-    isEnabled: false,
-    id: undefined,
-    displayName : ''
-  }
-  @Input() public submitted: boolean = false;
-  onChangeIsenabled(event: any) {
 
-  }
-  
-
-  ngOnChanges(changes: SimpleChanges): void {
-
-  }
-
-
+  @Input() selectedLanguageData: any;
+  @ViewChild('languageForm') languageInfoForm: NgForm;
+  // @Input() public submitted: boolean = false;
+  viewCanvas: boolean = false;
 
 
   ngOnInit(): void {
-    this.submitted = false;
- 
+    if (!this.selectedLanguageData) {
+      this.selectedLanguageData = {};
+       this.selectedLanguageData['cultureName'] = [];
+      this.selectedLanguageData['displayName'] = '';
+       this.selectedLanguageData['uiCultureName'] = [];
+      this.selectedLanguageData['isEnabled'] = true ;
+    }
+
+
   }
 
+  ngOnChanges(changes: SimpleChanges): void {
+    if (!this.selectedLanguageData) {
+      this.selectedLanguageData = {};
+      this.selectedLanguageData['cultureName'] = [];
+      this.selectedLanguageData['displayName'] = '';
+       this.selectedLanguageData['uiCultureName'] = [];
+      this.selectedLanguageData['isEnabled'] = true ;
+    }
+
+  }
+  // ngOnInit(): void {
+  //   this.submitted = false;
+ 
+  // }
   addLanguage(languageForm: NgForm): void {
     languageForm.form.markAllAsTouched();
-    this.submitted = true;
     this.buttonSpinner=true;
-    if (languageForm.invalid || !this.selectedLanguage.icon || this.selectedLanguage.icon === '') {
-      return;
-    }
-    const flag: any = this.flags.find((x: any) => x.some === this.selectedLanguage.icon);
-    this.onLanguageSave.emit({ icon: flag.value, isEnabled: this.selectedLanguage.isEnabled, name: this.selectedLanguage.countryCode[0], id: this.selectedLanguage.id , displayName : this.selectedLanguage.displayName });
-
+    this.LanguageInfo.emit(this.selectedLanguageData);
   }
+//   addLanguage(languageForm: NgForm): void {
+//     languageForm.form.markAllAsTouched();
+//     this.submitted = true;
+//     this.buttonSpinner=true;
+//     // this.languageName = []
 
+//     if (languageForm.invalid || !this.selectedLanguageData.icon || this.selectedLanguageData.icon === '') {
+//       return;
+//     }
+//     // const flag: any = this.flags.find((x: any) => x.some === this.selectedLanguageData.icon);
+//     this.onLanguageSave.emit(
+//       {
+//         //  icon: flag.value, 
+//         isEnabled: this.selectedLanguageData.isEnabled,
+//         name: this.selectedLanguageData.countryCode[0],
+//         id: this.selectedLanguageData.id ,
+//         displayName : this.selectedLanguageData.displayName,
+//         languageName : this.selectedLanguageData.languageName
+//       });
+// console.log('Language emit ',this.onLanguageSave);
+
+//   }
+
+onCultureSelect(event: any): void {
+  debugger
+  this.selectedLanguageData.cultureName = event.item.value;
+  
+}
   onCountryCodeSelect(selectedItem: any): void {
-    this.selectedLanguage.icon = selectedItem.item.some;
+    this.selectedLanguageData.uiCulturename = selectedItem.item.some;
   }
 
   closeCanvas(): void {
     this.onCloseCanvas.emit(true);
     this.buttonSpinner=false;
+    this.viewCanvas = false;
+
   }
+
 }
