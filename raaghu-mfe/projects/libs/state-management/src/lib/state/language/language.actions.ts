@@ -51,7 +51,17 @@ export const setDefaultLanguageForUI = createAction(
     (name: string) => ({ name })
 );
 
-// export const setDefaultLanguageForUISuccess = createAction(
-//     '[Language Page] Set Default Language For UI Success',
-//     (name: string) => ({ name })
-// );
+export const getLanguageForEdit = createAction(
+    '[Language Page] Get Language For Edit',
+    (data: any) => (data)
+);
+
+export const getLanguageForEditSuccess = createAction(
+    '[Language Page] Get Language For Edit Success',
+    props<{ languageInfo : any }>()
+);
+
+export const getLanguageForEditFailure = createAction(
+    '[Language Page] Get Language For Edit Success',
+    props<{ error : string }>()
+);
