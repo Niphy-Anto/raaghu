@@ -114,7 +114,7 @@ export function getRemoteServiceBaseUrl(): any {
       identityResources: IdentityResourcesReducer,
       apiResources: ApiResourcesReducer,
       apiScope: ScopesReducer,
-      securityLog: SecurityLogsReducer,
+      securityLogs: SecurityLogsReducer,
       clients: ClientsReducer,
       languageText: LanguageTextReducer,
       // defaultLanguage: DefaultLanguageReducer,
