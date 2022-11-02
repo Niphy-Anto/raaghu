@@ -37,7 +37,7 @@
         <div class="row" *ngIf="!contentOnEdit">
           <div class="col-md-6">
             <div class="form-group mb-3">
-              <rds-input size="medium" [inputType]="'text'" [label]="translate.instant('Edition Name')"
+              <rds-input size="medium" [inputType]="'number'" [label]="translate.instant('Edition Name')"
                 [labelPosition]="'top'" #edition_name="ngModel" [isRequired]=true [placeholder]="translate.instant('Edition Name')" required
                 [(ngModel)]="EditionName" name="edition" ngDefaultControl>
               </rds-input>
@@ -49,7 +49,7 @@
           </div>
           <div class="col-md-6">
             <div class="form-group mb-3">
-              <rds-input size="medium" [inputType]="'text'" [placeholder]="'$ ' + translate.instant('Annual Price')" 
+              <rds-input size="medium" [inputType]="'number'" [placeholder]="'$ ' + translate.instant('Annual Price')" 
                 [labelPosition]="'top'" [label]="translate.instant('Annual Price')" #annual_price="ngModel"
                 [(ngModel)]="AnnualPrice" [isRequired]=true name="annual" required ngDefaultControl               
                 onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57">
