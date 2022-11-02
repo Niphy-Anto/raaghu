@@ -42,7 +42,7 @@ export class RdsChartLineComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.chartDataSets[0].backgroundColor[0] = this.style.getPropertyValue('--chartColor1');
+   /*  this.chartDataSets[0].backgroundColor[0] = this.style.getPropertyValue('--chartColor1');
     this.chartDataSets[0].backgroundColor[1] = this.style.getPropertyValue('--chartColor2');
     this.chartDataSets[0].backgroundColor[2] = this.style.getPropertyValue('--chartColor3');
     this.chartDataSets[0].backgroundColor[3] = this.style.getPropertyValue('--chartColor4');
@@ -61,7 +61,7 @@ export class RdsChartLineComponent implements OnInit {
     this.chartDataSets[0].backgroundColor[16] = this.style.getPropertyValue('--chartgradient7');
     this.chartDataSets[0].backgroundColor[17] = this.style.getPropertyValue('--chartgradient8');
     this.chartDataSets[0].backgroundColor[18] = this.style.getPropertyValue('--chartgradient9');
-    this.chartDataSets[0].backgroundColor[19] = this.style.getPropertyValue('--chartgradient10');
+    this.chartDataSets[0].backgroundColor[19] = this.style.getPropertyValue('--chartgradient10'); */
     // this.gradientcolor.push(this.style.getPropertyValue('--chartgradient1'))
     // this.gradientcolor.push(this.style.getPropertyValue('--chartgradient2'))
     // this.gradientcolor.push(this.style.getPropertyValue('--chartgradient3'))
