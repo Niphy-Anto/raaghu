@@ -62,6 +62,7 @@ module.exports = {
         './RdsCompBasicResource': './projects/rds-components/src/app/rds-comp-basic-resource/rds-comp-basic-resource.component.ts',
         './RdsCompWebhookSubscription': './projects/rds-components/src/app/rds-comp-webhook-subscription/rds-comp-webhook-subscription.component.ts',
         './RdsCompEditLanguageText': './projects/rds-components/src/app/rds-comp-edit-language-text/rds-comp-edit-language-text.component.ts',
+        './RdsCompLanguageTextList': './projects/rds-components/src/app/app-rds-comp-language-text-list/app-rds-comp-language-text-list.component.ts',
         './RdsCompNewLanguage': './projects/rds-components/src/app/rds-comp-new-language/rds-comp-new-language.component.ts',
         './RdsCompClaims': './projects/rds-components/src/app/rds-comp-claims/rds-comp-claims.component.ts',
         './RdsCompProperties': './projects/rds-components/src/app/rds-comp-properties/rds-comp-properties.component.ts',
