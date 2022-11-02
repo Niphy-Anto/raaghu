@@ -38,6 +38,7 @@ const Template: Story<RdsCardComponent> = (args: RdsCardComponent) => ({
 export const Default = Template.bind({});
 Default.parameters = { controls: { include: ['showHeader', 'showBody', 'showFooter', 'borderColor', 'custClass',
 'topBottomPadding', 'sidePadding'] } };
+Default.parameters = { controls: { include: ['colorVariant', 'showHeader', 'showBody', 'showFooter', 'borderColor' ] } };
 
 Default.args = {
   showHeader: true,
@@ -46,12 +47,15 @@ Default.args = {
   borderColor: undefined,
   topBottomPadding: true,
   sidePadding: true
+  colorVariant: undefined,
+  borderColor: undefined,
 };
 
 const cardWithImageTemplate: Story<RdsCardComponent> = (args: RdsCardComponent) => ({
   props: args,
   template: `<rds-card [topBottomPadding]="topBottomPadding" [sidePadding]="sidePadding"
     [showHeader]="showHeader" [showBody]="showBody" [showFooter]="showFooter" [borderColor]="borderColor">
+  template: `<rds-card [showHeader]="showHeader" [showBody]="showBody" [showFooter]="showFooter" [colorVariant]="colorVariant" [borderColor]="borderColor" >
   <div header>
     <img src="https://picsum.photos/seed/picsum/1200/600" class="card-img-top" alt="">
   </div>
@@ -74,12 +78,15 @@ cardWithImage.args = {
   borderColor: undefined,
   topBottomPadding: true,
   sidePadding: true
+  colorVariant: undefined,
+  borderColor: undefined,
 };
 
 const avatarTemplate: Story<RdsCardComponent> = (args: RdsCardComponent) => ({
   props: args,
   template: `<rds-card [topBottomPadding]="topBottomPadding" [sidePadding]="sidePadding"
    [showHeader]="showHeader" [showBody]="showBody" [showFooter]="showFooter" [borderColor]="borderColor">
+  template: `<rds-card [showHeader]="showHeader" [showBody]="showBody" [showFooter]="showFooter" [colorVariant]="colorVariant" [borderColor]="borderColor" >
   <div header>
   <div class="banner-image1 position-relative">
       <div>
@@ -112,12 +119,14 @@ avatar.args = {
   borderColor: undefined,
   topBottomPadding: true,
   sidePadding: true
+  colorVariant: undefined,
 };
 
 const centeredAvatarTemplate: Story<RdsCardComponent> = (args: RdsCardComponent) => ({
   props: args,
   template: `<rds-card [topBottomPadding]="topBottomPadding" [sidePadding]="sidePadding"
     [showHeader]="showHeader" [showBody]="showBody" [showFooter]="showFooter"  [borderColor]="borderColor">
+  template: `<rds-card [showHeader]="showHeader" [showBody]="showBody" [showFooter]="showFooter"  [colorVariant]="colorVariant" [borderColor]="borderColor" >
   <div header class="">
   <div class="banner-image1 position-relative">
       <div>
@@ -152,4 +161,7 @@ withCenteredAvatar.args = {
   borderColor: undefined,
   topBottomPadding: true,
   sidePadding: true
+  colorVariant: undefined,
+  borderColor: undefined
+
 };

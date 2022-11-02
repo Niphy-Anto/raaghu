@@ -1,5 +1,10 @@
-<h6 *ngIf="header">{{header}}</h6>
+
+<h6 class="text-primary">{{header}}</h6>
+<ul class="px-3" [ngStyle]="{'column-count': columns}">
+
+
 <!-- <ul class="px-3" [ngStyle]="{'column-count': columns}">
+
     <li *ngFor="let item of listItems">{{item.value}}</li>
 </ul> -->
 <ng-container *ngIf="display_type=='basic'">
