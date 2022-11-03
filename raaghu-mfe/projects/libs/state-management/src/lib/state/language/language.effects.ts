@@ -19,6 +19,7 @@ import {
   saveLanguageSuccess,
   setDefaultLanguage,
   setDefaultLanguageForUI,
+  updateLanguage,
 } from './language.actions';
 
 @Injectable()
@@ -62,9 +63,9 @@ export class LanguageEffects {
   getLanguagesForEdit$ = createEffect(() =>
     this.actions$.pipe(
       ofType(getLanguageForEdit),
-      switchMap(({data}) => {
+      switchMap(({id}) => {
         // Call the getTodos method, convert it to an observable
-        return (this.languageService.languagesGET2(data.id)).pipe(
+        return (this.languageService.languagesGET2(id)).pipe(
           // Take the returned value and return a new success action containing the todos
           map((languageInfo) => {
             return getLanguageForEditSuccess({ languageInfo })
@@ -97,47 +98,7 @@ export class LanguageEffects {
     )
   );
 
-//   getLanguages$ = createEffect(
-//     () =>
-//       this.actions$.pipe(
-//         ofType(getLanguages),
-//         switchMap(() =>
-//           this.languageService.all().pipe(
-//             map((languages) => {
-//               return getLanguageSuccess({languages})
-//               //this.store.dispatch(getLanguages());
-//               //this.alertService.showAlert('Success', 'Language added successfully', 'success')
-//             }),
-//             catchError((error: any) => of(getLanguageFailure(error
-//               )))
-//           )
-//         )
-//       ),
-//     // {
-//     //   dispatch: false,
-//     // }
-//   );
-
-  // deleteLanguage$ = createEffect(() =>
-  //   this.actions$.pipe(
-  //     ofType(deleteLanguage),
-  //     switchMap(({ id }) =>
-  //       this.languageService.languagesDELETE(undefined).pipe(map(() => {
-
-  //         return deleteLanguage({id})
-  //         // this.store.dispatch(getLanguages());
-  //         // this.alertService.showAlert('Success', 'Language deleted successfully', 'success')
-
-  //       }
-  //       ),
-  //         catchError((error) => of())
-  //       )
-  //     )
-  //   ),
-  //   { 
-  //     dispatch: false 
-  //   }
-  // );
+//   
   deleteLanguage$ = createEffect(() =>
   this.actions$.pipe(
     ofType(deleteLanguage),
@@ -173,6 +134,23 @@ export class LanguageEffects {
     { dispatch: false }
   );
 
+  
+  updateLanguage$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(updateLanguage),
+      switchMap((data) =>
+        this.languageService.languagesPUT(data.id, data.body).pipe(map(() => {
+          this.store.dispatch(getLanguages());
+          this.alertService.showAlert('Success', 'added language successfully', 'success')
+
+        }
+        ),
+          catchError((error) => of())
+        )
+      )
+    ),
+    { dispatch: false }
+  );
   // setDefaultLanguageForUI$ = createEffect(() =>
   //   this.actions$.pipe(
   //     ofType(setDefaultLanguageForUI),

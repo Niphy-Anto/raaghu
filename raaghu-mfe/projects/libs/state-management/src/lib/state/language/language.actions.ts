@@ -31,6 +31,10 @@ export const saveLanguage = createAction(
     '[Language Page] Save Language',
     (data: any) => (data)
 );
+export const updateLanguage = createAction(
+    '[Language Page] Update Language',
+    (data: any) => (data)
+);
 
 export const deleteLanguage = createAction(
     '[Language Page] Delete Language',
@@ -53,7 +57,7 @@ export const setDefaultLanguageForUI = createAction(
 
 export const getLanguageForEdit = createAction(
     '[Language Page] Get Language For Edit',
-    (data: any) => (data)
+    (id: any) => (id)
 );
 
 export const getLanguageForEditSuccess = createAction(

@@ -3,11 +3,11 @@
     <div class="tab-content py-4">
       <form #languageForm="ngForm">
         <div class="row align-items-center">
-            <div class="col-md-6">
+            <div class="col-md-6" *ngIf="!editOffCanvas">
                 <div class="col-md-12 col-sm-12">
                   <div class="form-group mt-3">
                    
-                      <rds-select-list [(ngModel)]="selectedLanguageData.cultureName" [label]="translate.instant('Culture Name')" 
+                      <rds-select-list  [(ngModel)]="selectedLanguageData.cultureName" [label]="translate.instant('Culture Name')" 
                       [value]="selectedLanguageData.cultureName"  ngDefaultControl LabelType="Top" name="selectedLanguageData.cultureName" [itemList]="cultureList" [placeholder]="'Select Culture Name'">
                     </rds-select-list> 
                     <!-- <div class="form-control-feedback" *ngIf="language.errors && (language.dirty || language.touched)">
@@ -39,9 +39,9 @@
               </div>
         </div>
       
-        <div class="row">
+        <div class="row" *ngIf="!editOffCanvas">
             <div class="col-md-12 col-sm-12">
-                <div class="form-group mt-3">
+                <div class="form-group mt-3" >
                   <rds-select-list [(ngModel)]="selectedLanguageData.uiCultureName" [label]="translate.instant('Ui Culturename Name')" 
                   [value]="selectedLanguageData.uiCultureName"  ngDefaultControl LabelType="Top" name="selectedLanguageData.uiCultureName" 
                   [itemList]="uiCultureList" [placeholder]="'Select Ui CultureList Name'" #uiCulturename="ngModel">
@@ -58,7 +58,7 @@
         </div>
         <div class="row">
             <div class="col-md-6 col-sm-6">
-              <div class="form-group mb-3">
+              <div class="form-group mt-3">
                 <rds-checkbox [label]="translate.instant('Enable Language')" [checked]="selectedLanguageData.isEnabled"
                   [withLabel]="true" name="enables" [(ngModel)]="selectedLanguageData.isEnabled" ngDefaultControl
                   [id]="'isEnabled'">
@@ -73,9 +73,13 @@
       <rds-button [label]="translate.instant('Cancel')" [colorVariant]="'primary'" [size]="'small'"
         (click)="closeCanvas()" data-bs-dismiss="offcanvas">
       </rds-button>
-      <rds-button [label]="translate.instant('SAVE')"
+      <rds-button *ngIf="!editOffCanvas" [label]="translate.instant('SAVE')"
         [disabled]="!languageForm.valid"
         [size]="'small'" class="ms-2" [colorVariant]="'primary'" (click)="addLanguage(languageForm)" [showLoadingSpinner]="buttonSpinner">
+      </rds-button>
+      <rds-button *ngIf="editOffCanvas" [label]="translate.instant('EDIT')"
+        [disabled]="!languageForm.valid"
+        [size]="'small'" class="ms-2" [colorVariant]="'primary'" (click)="addLanguageEdit(languageForm)" [showLoadingSpinner]="buttonSpinner">
       </rds-button>
     </div>
   </div>

@@ -14,7 +14,8 @@ export class RdsCompLanguageNewComponent implements OnInit {
   @Output() onLanguageSave = new EventEmitter<any>();
   @Output() onCloseCanvas = new EventEmitter<any>()
   @Output() LanguageInfo = new EventEmitter<any>();
-
+  @Output() LanguageInfoEdit = new EventEmitter<any>();
+@Input() editOffCanvas:boolean =false;
 @Input() buttonSpinner : boolean =true;
   // @Input() flags: any[] = []
   @Input() cultureList: any[] = []
@@ -57,6 +58,11 @@ export class RdsCompLanguageNewComponent implements OnInit {
     languageForm.form.markAllAsTouched();
     this.buttonSpinner=true;
     this.LanguageInfo.emit(this.selectedLanguageData);
+  }
+  addLanguageEdit(languageForm: NgForm){
+    languageForm.form.markAllAsTouched();
+    this.buttonSpinner=true;
+    this.LanguageInfoEdit.emit(this.selectedLanguageData.id);
   }
 //   addLanguage(languageForm: NgForm): void {
 //     languageForm.form.markAllAsTouched();
