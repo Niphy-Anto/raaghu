@@ -14,7 +14,7 @@ import {
 } from '@angular/animations';
 import { Item } from 'projects/libs/state-management/src/lib/state/language/language.models';
 import { deleteLanguage, getCultureList, getLanguageForEdit, getLanguages, saveLanguage, setDefaultLanguage, updateLanguage } from 'projects/libs/state-management/src/lib/state/language/language.actions';
-import { selectAllCountries, selectAllLanguages, selectLanguageInfo } from 'projects/libs/state-management/src/lib/state/language/language.selector';
+import {  selectAllLanguages, selectCultureList, selectLanguageInfo } from 'projects/libs/state-management/src/lib/state/language/language.selector';
 declare var bootstrap: any;
 @Component({
   selector: 'app-root',
@@ -189,7 +189,7 @@ export class AppComponent implements OnInit {
       }
     });
     this.store.dispatch(getCultureList())
-    this.store.select(selectAllCountries).subscribe((res: any) => {
+    this.store.select(selectCultureList).subscribe((res: any) => {
       if (res) {
         this.cultureList = [];
           res.forEach((element: any) => {
