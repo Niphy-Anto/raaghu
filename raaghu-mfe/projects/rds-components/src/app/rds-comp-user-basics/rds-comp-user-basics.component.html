@@ -89,10 +89,9 @@
         </div>
         <div class="col-md-6">
           <div class="form-group mb-3">
-  
             <rds-input [inputType]="'password'" [labelPosition]="'top'" [label]="translate.instant('Confirm Password')"
               [(ngModel)]="userData.confirmPass" name="confirmPass" [isRequired]=true (keyup)='confirmPassword()'
-              [placeholder]="'ConfirmPassword'">
+              [placeholder]="'Confirm Password'">
             </rds-input>
             <div class="form-control-feedback" *ngIf="isPasswordMismatch">
               <span class="text-danger" *ngIf="isPasswordMismatch">{{"Password mismatch found"|translate}}</span>
