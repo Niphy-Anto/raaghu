@@ -8,7 +8,7 @@
           <div class="d-inline-block p-3 pb-0" [ngClass]="{ 'selected' : selectedThemeIndex === '2' }">
             <!--<rds-card class="rounded-avatar-basic" style="cursor:pointer">-->
             <div class="p-0" body (click)="getThemeSettings('2')" style="cursor:pointer">
-              <img src="assets/LightTheme.png" class="w-100">
+              <img src="https://anzstageui.raaghu.io/assets/Dashboard.png" class="w-100">
             </div>
             <div class="col-md-12">
               <h6 class="text-center"></h6>
@@ -23,7 +23,7 @@
           <div class="d-inline-block p-3 pb-0" [ngClass]="{ 'selected' : selectedThemeIndex === '0' }">
             <!--<rds-card class="rounded-avatar-basic" style="cursor:pointer">-->
             <div class="p-0" body (click)="getThemeSettings('0')" style="cursor:pointer">
-              <img src="assets/LightTheme.png" class="w-100">
+              <img src="https://anzstageui.raaghu.io/assets/LightTheme.png" class="w-100">
             </div>
             <!--/rds-card>-->
             <div class="p-3">
@@ -35,7 +35,7 @@
           <div class="d-inline-block p-3 pb-0" [ngClass]="{ 'selected' : selectedThemeIndex === '1' }">
             <!--<rds-card class="rounded-avatar-basic" style="cursor:pointer">-->
             <div class="p-0" body (click)="getThemeSettings('1')" style="cursor:pointer">
-              <img src="assets/Dashboard.png" class="w-100">
+              <img src="https://anzstageui.raaghu.io/assets/Dashboard.png" class="w-100">
             </div>
 
             <!--</rds-card>-->
@@ -100,7 +100,7 @@
                   [inline]="false" [id]="'fixedHeaderMobile'" state="checkbox"
                   [(ngModel)]="visualSettingsHeader.mobileFixedHeader"></rds-checkbox>
               </div>
-              <div class="form-group mb-3">
+              <div class="form-group mb-3 mt-3">
                 <rds-button [tooltipPlacement]="'bottom'" [tooltipTitle]="translate.instant('upgrade')"  [label]="translate.instant('SAVE AS SYSTEM DEFAULT ')"
                   (click)="saveVisualSettings()" type="button" [size]="'small'" [colorVariant]="'primary'" 
                    [outlineButton]="false"></rds-button>
@@ -119,7 +119,7 @@
                   [inline]="false" [id]="'fixedHeaderSubHeader'" state="checkbox"
                   [(ngModel)]="visualSettingsSubHeader.fixedSubHeader"></rds-checkbox>
               </div>
-              <div class="form-group mb-3">
+              <div class="form-group mb-3 position-fixed bottom-0 py-5">
                 <rds-button [tooltipPlacement]="'bottom'" [tooltipTitle]="translate.instant('upgrade')"  [label]="translate.instant('SAVE AS SYSTEM DEFAULT ')"
                   type="button" [size]="'small'" [colorVariant]="'primary'"
                   (click)="saveVisualSettings()" [outlineButton]="false"></rds-button>
@@ -179,7 +179,7 @@
             <rds-checkbox [disabled]="false" [label]="translate.instant('Fixed Footer')" [withLabel]="true" [switch]="false"
               [inline]="false" [id]="'fixedFooter'" [(ngModel)]="visualSettingsFooter.fixedFooter"></rds-checkbox>
           </div>
-          <div class="form-group mb-3">
+          <div class="form-group mb-3 position-fixed bottom-0 py-5">
             <rds-button [tooltipPlacement]="'bottom'" [tooltipTitle]="translate.instant('upgrade')"  [label]="translate.instant('SAVE AS SYSTEM DEFAULT ')"
               (click)="saveVisualSettings()" type="button" [size]="'small'" [colorVariant]="'primary'"  [outlineButton]="false">
             </rds-button>
