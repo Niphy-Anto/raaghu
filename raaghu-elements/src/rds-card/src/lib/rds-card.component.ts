@@ -28,9 +28,9 @@ export class RdsCardComponent implements OnInit {
     if (this.borderColor) {
       custClasses.push('border-' + `${this.borderColor}`);
     }
-    if (this.colorVariant) {
-      custClasses.push('text-bg-' + `${this.colorVariant}`);
-    }
+    // if (this.colorVariant) {
+    //   custClasses.push('text-bg-' + `${this.colorVariant}`);
+    // }
     
       if (this.borderColor) {
         custClasses.push('border-' + `${this.borderColor}`);

@@ -4,6 +4,7 @@
   --bs-font-sans-serif: 'Poppins', sans-serif;
   --bs-font-monospace: 'Fira Code', monospace;
   --bs-body-font-family: var(--bs-font-sans-serif);
+  --bs-datepicker-zindex:1046;
 }
 
 $font-family-sans-serif: 'Poppins', sans-serif !default;
@@ -516,8 +517,8 @@ html[theme=light] {
 }
 
 .dropdown-menu {
-  max-height: 600px;
-  //overflow: auto;
+  max-height: 350px;
+  overflow: auto;
 }
 
 .dropdown-toggle::after {
@@ -1177,4 +1178,7 @@ rds-product-image .imgWidth {
 }
 .w-20 {
   width: 20%;
+}
+bs-datepicker-container {
+  z-index: var(--bs-datepicker-zindex);
 }
