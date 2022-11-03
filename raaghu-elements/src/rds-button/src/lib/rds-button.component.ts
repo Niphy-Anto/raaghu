@@ -1,11 +1,11 @@
-import { AfterViewInit, Component, DoCheck, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { AfterViewInit, Component, DoCheck, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { Tooltip } from 'bootstrap'
 @Component({
   selector: 'rds-button',
   templateUrl: './rds-button.component.html',
   styleUrls: ['./rds-button.component.scss']
 })
-export class RdsButtonComponent implements AfterViewInit, OnInit, DoCheck {
+export class RdsButtonComponent implements AfterViewInit, OnInit, DoCheck, OnChanges {
 
   @Input() colorVariant: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'dark' | 'light' | 'default' | 'review' = 'default';
   @Input() submit = false;
@@ -40,6 +40,9 @@ export class RdsButtonComponent implements AfterViewInit, OnInit, DoCheck {
   constructor() {
     this.id = this.id + RdsButtonComponent.count++;
   }
+  ngOnChanges(changes: SimpleChanges): void {
+    this.labelTemp = this.label;
+  }
 
 
   ngOnInit(): void {
@@ -49,6 +52,8 @@ export class RdsButtonComponent implements AfterViewInit, OnInit, DoCheck {
     this.iconTemp = this.icon;
     this.buttonTypeTemp = this.buttonType;
   }
+
+
 
   ngDoCheck(): void {
     if (this.showLoadingSpinner == true) {
@@ -65,10 +70,10 @@ export class RdsButtonComponent implements AfterViewInit, OnInit, DoCheck {
 
 
   ngAfterViewInit(): void {
-    const tooltipTriggerList: any = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-    if (this.tooltipTitle && tooltipTriggerList) {
-      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new Tooltip(tooltipTriggerEl));
-    }
+    // const tooltipTriggerList: any = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+    // if (this.tooltipTitle && tooltipTriggerList) {
+    //   const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new Tooltip(tooltipTriggerEl)) || '';
+    // }
     // if (this.tooltipPlacement && this.tooltipTitle) {
     //   const tooltipElement: any = document.getElementById(this.id)
     //   // update

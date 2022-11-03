@@ -28,7 +28,7 @@
           [icon]="selectedLanguage.icon" [borderDropdown]="false" [iconHeight]="'18px'" [iconWidth]="'18px'"
           [listItems]="languageItems" (onSelect)="onLanguageSelect($event)">
         </rds-dropdownlist>
-        <li class="nav-item dropdown border-end pe-3 ps-2 me-1">
+        <li class="nav-item dropdown pe-3 ps-2 me-1">
           <a class="nav-link py-0" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
             aria-expanded="false">
             <span>
@@ -56,9 +56,12 @@
             <!-- <mfe-loader [config]="rdsNotoficationMfeConfig"></mfe-loader> -->
           </div>
         </li>
-        <!-- <li class="nav-item border-end px-2">
-          <rds-icon width="20px" height="20px" name="chevron_down_arrow"></rds-icon>
-        </li> -->
+        <li class="nav-item border-end border-start px-3">
+          <!-- <a href="#" this.router.navigate(['/link']);><rds-icon width="20px" height="20px" name="gear"></rds-icon></a> -->
+          <a [routerLink]="['/pages/settings']" >
+            <rds-icon width="20px" height="20px" name="gear"></rds-icon>
+          </a>
+        </li>
       </ul>
     </div>
     <div class="mobile-ms">
@@ -107,8 +110,6 @@
                   </p>
                 </div>
                 <rds-icon name="chevron_down" [height]="'11px'" [width]="'11px'" class="ms-3 mt-2"></rds-icon>
-                
-
               </span>
             </div>
 

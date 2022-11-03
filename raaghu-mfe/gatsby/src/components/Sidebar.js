@@ -4,11 +4,10 @@ import elements from "../images/logo/element-icon1.svg";
 import components from "../images/logo/comp-icon.svg";
 import pages from "../images/logo/page.svg";
 
-
+import { useEffect } from 'react';
 
 const Sidebar = (activeData) => {
   let ChartExpanded = false;
-  let refs = {}
   let pageExpanded = false;
   let componentExpanded = false;
   let elementExpanded = true;
@@ -18,7 +17,7 @@ const Sidebar = (activeData) => {
     let _activeData = activeData.activeData;
     const type = _activeData.markdownRemark.frontmatter.title.split(' >')[0];
     path = _activeData.markdownRemark.frontmatter.slug.split('/')[1].toLowerCase();
-    // console.log(refs);
+
     if (type === 'Charts') {
       ChartExpanded = true;
       elementExpanded = false;
@@ -30,7 +29,6 @@ const Sidebar = (activeData) => {
       elementExpanded = true;
       pageExpanded = false;
       defaultActiveKey = 0;
-
       componentExpanded = false;
     } else if (type === 'Components') {
       ChartExpanded = false;
@@ -48,6 +46,18 @@ const Sidebar = (activeData) => {
 
     }
   }
+  useEffect(() => {
+    if (path) {
+      let activatedElement = document.getElementById(path);
+      // position = activatedElement.getBoundingClientRect();
+      if (activatedElement) {
+        activatedElement.scrollIntoView({ block: "center", inline: "nearest" });
+        // activatedElement.scroll({ top: position.top, left: position.left });
+      }
+    }
+
+
+  }, []);
 
   const data = useStaticQuery(graphql`
     query MyQuery {
@@ -83,7 +93,7 @@ const Sidebar = (activeData) => {
 
 
   const componentsList = [];
-  const componentsExcludesList = ["-shimmer", "nents", "client-basics", "demoui"];
+  const componentsExcludesList = ["-shimmer", "nents", "client-basics", "demoui", "other-settings"];
   elementsList.forEach((item) => {
     if (
       item.name.includes("rds-comp") &&
@@ -147,30 +157,7 @@ const Sidebar = (activeData) => {
     }
     return 0;
   });
-  const scrollTo = (ref) => {
-    if (ref) {
-      console.log(ref);
-    }
-  }
-  function onLinkSelect(array) {
-    const isBrowser = typeof window !== "undefined";
-    if (!isBrowser) { return; }
-    let pathSplitted = window.location.pathname.split('/');
-    let path = pathSplitted[pathSplitted.length - 1];
-    if (path) {
-      array.forEach((item) => {
-        if (item.url === path) {
-          item.isActive = true;
 
-
-        } else {
-          item.isActive = false;
-
-        }
-      })
-    }
-
-  }
 
   // pages
   const pageLists = [];
@@ -254,7 +241,7 @@ const Sidebar = (activeData) => {
           elementCollapse.classList.add('show');
           elementCollapse.classList.remove('hide');
           if (activatedElement && itemType == "Elements") {
-            activatedElement.scrollIntoView();
+            activatedElement.scrollIntoView({ block: "center", inline: "nearest" });
           }
         } else {
           elementCollapse.classList.remove('show');
@@ -276,7 +263,7 @@ const Sidebar = (activeData) => {
           componentCollapse.classList.add('show');
           componentCollapse.classList.remove('hide');
           if (activatedElement && itemType == "Components") {
-            activatedElement.scrollTop();
+            activatedElement.scrollIntoView({ block: "center", inline: "nearest" });
           }
 
         } else {
@@ -304,7 +291,7 @@ const Sidebar = (activeData) => {
           chartCollapse.classList.add('show');
           chartCollapse.classList.remove('hide');
           if (activatedElement && itemType == "Charts") {
-            activatedElement.scrollIntoView();
+            activatedElement.scrollIntoView({ block: "center", inline: "nearest" });
           }
         } else {
           chartCollapse.classList.remove('show');
@@ -342,7 +329,7 @@ const Sidebar = (activeData) => {
           pageCollapse.classList.add('show');
           pageCollapse.classList.remove('hide');
           if (activatedElement && itemType == "Pages") {
-            activatedElement.scrollIntoView();
+            activatedElement.scrollIntoView({ block: "center", inline: "nearest" });
           }
         } else {
           pageCollapse.classList.remove('show');
@@ -378,7 +365,7 @@ const Sidebar = (activeData) => {
             <div className={`collapse ${elementExpanded ? 'show' : 'hide'}`} id="element-collapse" >
               <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 text-capitalize">
                 {elementsLists.map((node) => (
-                  <li key={node.url} className={path == node.url ? 'active' : ''}  id={node.url}>
+                  <li key={node.url} className={path == node.url ? 'active' : ''} id={node.url}>
                     <Link className="nav-link rounded" href={node.url}>{node.displayName}</Link>
                   </li>
                 ))}

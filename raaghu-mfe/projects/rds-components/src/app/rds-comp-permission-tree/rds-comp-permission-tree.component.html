@@ -1,12 +1,11 @@
 <div class="checkedstyle flush-border treeview-flush ">
-    <!--<rds-search-input placeholder="Search" icon="search" size="small">
-    </rds-search-input>-->
-
+    <div class="col-md-12">
+        <rds-search-input placeholder="Search" icon="search" size="small"> </rds-search-input>
+    </div>
     <div *ngIf="multiselectTree" class="d-flex align-items-center checkedstyle mt-3">
 
-
         <div class="node-dot position-relative">
-            <rds-checkbox [attr.id]="'Selectall'" (onChange)="selectAllFeature($event)"
+            <rds-checkbox  [attr.id]="'Selectall'" (onChange)="selectAllFeature($event)"
                 [checked]="checkSelectAll(treeData)" class="position-absolute" [disabled]="false" [switch]="false"
                 [inline]="false" [id]="'checkSelectAll'">
             </rds-checkbox>
@@ -30,7 +29,7 @@
                         (onChange)="selectNode(node,$event)" [id]="'selectNode'"></rds-checkbox>
                     <div *ngIf="node.level !== 1" class="horizontal-dotted-line"></div>
                 </div>
-                <span #nodeLabel class="node-label text-nowrap cursor-pointer">
+                <span #nodeLabel class="node-label text-nowrap cursor-pointer ms-2">
                     <span class="mr-4" (click)="onClicknode(node.data.displayName)">{{ node.data.displayName
                         }}</span>
                 </span>
