@@ -155,7 +155,7 @@ export class AppComponent implements OnInit {
         res.editions.forEach(element => {
           const edition: any = {
             editionname: element.displayName,
-            price: element.annualPrice,
+            price: '$ ' + element.annualPrice,
             trialPeriod: element.trialDayCount,
             expiringEdition: element.expiringEditionDisplayName,
             id: element.id,

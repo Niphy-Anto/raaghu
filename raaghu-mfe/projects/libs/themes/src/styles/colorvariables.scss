@@ -1660,13 +1660,16 @@ html[theme=dark] {
   }
 
   .form-select[size]:not([size="1"]) {
-    border-color: tint-color($input-border-color, 60%);
+    border-color: tint-color($input-border-color, 80%);
     padding-right: 1.25rem;
     background-position: right 0.15rem center;
     background-color: $input-bg;
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
   }
-
+  .default-datepicker.border{
+    border-color: tint-color($input-border-color, 60%);
+  }
+  
   .card {
     background-color: $card-bg-color;
     border-color: $card-border-color;
@@ -2126,10 +2129,15 @@ html[theme=dark] {
     .nav-item {
       .nav-link {
         svg {
+          width: 22px;
+          height: 22px;
           fill: none;
           stroke: $gray-700;
 
           polyline.icon {
+            stroke: $gray-700;
+          }
+          line.icon {
             stroke: $gray-700;
           }
 
