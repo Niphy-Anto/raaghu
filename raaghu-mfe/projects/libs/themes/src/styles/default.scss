@@ -165,6 +165,7 @@ html[theme=dark] {
 
   .input-group-text {
     background-color: $input-group-addon-bg;
+    border-color: tint-color($input-border-color, 60%);
   }
 
   .form-select {
