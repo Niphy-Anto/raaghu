@@ -29,7 +29,18 @@ export interface SideNavItem {
     multi: true
   }]
 })
-export class RdsSideNavComponent implements OnInit {
+export class RdsSideNavComponent implements OnInit, OnChanges {
+  ngOnChanges(changes: SimpleChanges): void {
+    if (this.activesubmenu !== '') {
+      this.showHide = true
+      const x = document.getElementById('menuWithChildren' + this.activesubmenu);
+      if (x) {
+        var dropdown = new Collapse(x);
+        dropdown.show();
+      }
+
+    }
+  }
 
 
   title = 'rds-side-nav';
@@ -47,7 +58,7 @@ export class RdsSideNavComponent implements OnInit {
   @Output() emitPath = new EventEmitter<any>();
   @Output() collapsedState = new EventEmitter<any>();
   @Input() activepage: any = 0;
-  @Input() activesubmenu: any = 0;
+  @Input() activesubmenu: any = '';
   @Output() selectedMode = new EventEmitter<any>();
   activeMenuWithChildren: any = 0;
   isLightMode = true;
@@ -64,7 +75,7 @@ export class RdsSideNavComponent implements OnInit {
     this.activeMenuWithChildren = '';
   }
   onMenuWithChildrenClick(i: number, path: any) {
-    this.showHide=!this.showHide
+    this.showHide = !this.showHide
     const x = document.getElementById('menuWithChildren' + i);
     if (x) {
       var dropdown = new Collapse(x);
@@ -73,18 +84,18 @@ export class RdsSideNavComponent implements OnInit {
 
     if (x !== null)
       // this.openedMenu = x.classList.contains('collapsed');
-    if (!this.openedMenu) {
-      // this.showHide = true;
-      this.activepage = i;
-      this.activesubmenu = 0;
-      this.emitPath.emit(path);
-    }
-    else {
-      // this.showHide = false;
-      this.activepage = i;
-      this.activesubmenu = '';
-      this.activeMenuWithChildren = '';
-    }
+      if (!this.openedMenu) {
+        // this.showHide = true;
+        this.activepage = i;
+        this.activesubmenu = 0;
+        this.emitPath.emit(path);
+      }
+      else {
+        // this.showHide = false;
+        this.activepage = i;
+        this.activesubmenu = '';
+        this.activeMenuWithChildren = '';
+      }
   }
   onClickSubMenu(event: any, i: number, j: number, path: any): void {
     event.preventDefault();
