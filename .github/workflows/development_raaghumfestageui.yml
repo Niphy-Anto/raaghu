@@ -89,6 +89,6 @@ jobs:
       id: deploy-to-webapp
       with:
         app-name: 'raaghumfestageuiapp'
-        slot-name: 'Production'
+        slot-name: 'production'
         publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_392363CA3B8C4905BC10144A553C3367 }}
         package: .
