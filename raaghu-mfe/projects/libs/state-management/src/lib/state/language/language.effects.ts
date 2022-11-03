@@ -20,6 +20,7 @@ import {
   setDefaultLanguage,
   setDefaultLanguageForUI,
   updateLanguage,
+  setDefaultLanguage
 } from './language.actions';
 
 @Injectable()
@@ -30,16 +31,6 @@ export class LanguageEffects {
     private store: Store,
     private alertService: AlertService
   ) {}
-  // getProducts$ = createEffect(() =>
-  //   this.actions$.pipe(
-  //       ofType(ProductActions.getProducts),
-  //       mergeMap(() => {
-  //           return this.productService.getProducts().pipe(
-  //               map(products => ProductActions.getProductsSuccess({ products }))
-  //           );
-  //       }),
-  //   )
-  // );
 
   getLanguages$ = createEffect(() =>
     this.actions$.pipe(
@@ -71,7 +62,7 @@ export class LanguageEffects {
             return getLanguageForEditSuccess({ languageInfo })
           }),
           // Or... if it errors return a new failure action containing the error
-          catchError((error) => of(getLanguageFailure({ error })))
+          catchError((error) => of(getLanguageForEditFailure({ error })))
         )
       }
 
@@ -107,15 +98,34 @@ export class LanguageEffects {
         this.store.dispatch(getLanguages());
         this.alertService.showAlert('Success', 'Language deleted successfully', 'success')
 
-      }
-      ),
-        catchError((error) => of())
+        }
+        ),
+          catchError((error) => of())
+        )
       )
-    )
-  ),
-  // Most effects dispatch another action, but this one is just a "fire and forget" effect
-  { dispatch: false }
-);
+    ),
+    { 
+      dispatch: false 
+    }
+  );
+
+  setDefaultLanguage$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(setDefaultLanguage),
+      switchMap((data) =>
+        this.languageService.setAsDefault(data.id).pipe(map(() => {
+          this.store.dispatch(getLanguages());
+          this.alertService.showAlert('Success', 'Set default language successfully', 'success')
+        }
+        ),
+          catchError((error) => of())
+        )
+      )
+    ),
+    { 
+      dispatch: false 
+    }
+  );
 
   saveLanguage$ = createEffect(() =>
     this.actions$.pipe(

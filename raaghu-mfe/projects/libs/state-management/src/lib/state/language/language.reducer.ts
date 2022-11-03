@@ -1,11 +1,10 @@
 import { createReducer, on } from "@ngrx/store";
-import { getCultureList, getCultureListFailure, getCultureListSuccess, getLanguageFailure, getLanguageForEdit, getLanguageForEditSuccess, getLanguages, getLanguageSuccess, setDefaultLanguage, setDefaultLanguageForUI } from "./language.actions";
+import { getCultureList, getCultureListFailure, getCultureListSuccess, getLanguageFailure, getLanguageForEdit, getLanguageForEditFailure, getLanguageForEditSuccess, getLanguages, getLanguageSuccess } from "./language.actions";
 import { Countries, Language } from "./language.models";
 
 export interface LanguagesState {
     languages: any;
     cultureList: any;
-    defaultLanguage: any;
     languageInfo:any;
     error: string;
     status: 'pending' | 'loading' | 'error' | 'success';
@@ -15,7 +14,6 @@ export const languageInitialState: LanguagesState = {
     languages: null,
     cultureList: null,
     languageInfo:null,
-    defaultLanguage: null,
     error: null,
     status: 'pending',
 };
@@ -42,7 +40,7 @@ export const LanguageReducer = createReducer(
         status: 'success',
     })),
     // Handle todos load failure
-    on(getLanguageFailure, (state, { error }) => ({
+    on(getLanguageForEditFailure, (state, { error }) => ({
         ...state,
         error: error,
         status: 'error',
@@ -59,10 +57,6 @@ export const LanguageReducer = createReducer(
         ...state,
         error: error,
         status: 'error',
-    })),
-    on(setDefaultLanguageForUI, (state, { name }) => ({
-        ...state,
-        defaultLanguage: name,
     }))
 )
 
