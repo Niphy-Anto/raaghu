@@ -3,7 +3,7 @@
     <label *ngIf="label&&TitleType==='Top'" class="mb-2">{{
       label
       }}<span class="text-danger" *ngIf="isRequired">*</span></label>
-    <div class="input-group border default-datepicker"> 
+    <div class="input-group border default-datepicker rounded-2">
       <input type="text" autocomplete="off" bsDatepicker [datesDisabled]="datesDisabled"
         [class.disable-pointer]="disabled" [disabled]="disabled" [minDate]="minDate" #datepicker="bsDatepicker"
         (onHidden)="onHide.emit($event)" [daysDisabled]="daysDisabled" [isOpen]="isOpen" [bsConfig]="datePickerConfig"
@@ -23,7 +23,7 @@
   </div>
 </ng-container>
 <ng-container *ngIf="datePickerType==='advanced'">
-  <div class="date-picker pt-2 ps-3">
+  <div class="date-picker pt-2 ps-3 rounded-2">
     <label class="mb-2" *ngIf="label">{{
       label
       }}<span class="text-danger" *ngIf="isRequired">*</span></label>

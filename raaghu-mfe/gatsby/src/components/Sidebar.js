@@ -68,7 +68,7 @@ elementsList.forEach((item) => {
 
 
   const componentsList = [];
-  const componentsExcludesList = ["-shimmer", "nents","client-basics","demoui"];
+  const componentsExcludesList = ["-shimmer", "nents","client-basics","demoui","other-settings"];
   elementsList.forEach((item) => {
     if (
       item.name.includes("rds-comp") &&

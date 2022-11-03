@@ -12,6 +12,8 @@ export class RdsProductImageComponent implements OnInit {
   // @Input() teamMemeberElement:value1|value2|value3 = value1;
   // @Input() positionClass :boolean= false;
   // @Input() borderRadius : boolean = false;
+    @Input() images: any;
+
   
   constructor() { }
   @Input()

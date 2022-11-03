@@ -163,6 +163,8 @@ import { RdsCompThemeNewComponent } from './rds-comp-theme-new/rds-comp-theme-ne
 import { RdsCompAccountNewComponent } from './rds-comp-account-new/rds-comp-account-new.component';
 import { RdsCompSettingsNewComponent } from './rds-comp-settings-new/rds-comp-settings-new.component';
 import { RdsCompLanguageTextListComponent } from './rds-comp-language-text-list/rds-comp-language-text-list.component';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+
 
 @NgModule({
   declarations: [	
@@ -272,7 +274,6 @@ import { RdsCompLanguageTextListComponent } from './rds-comp-language-text-list/
     RdsCompCalendarComponent,
     RdsCompBackgroundImageComponent,
     RdsCompBenefitComponent,
-    RdsCompProductListComponent,
     RdsCompAppDetailsComponent,
     RdsCompCalendarComponent,
     RdsCompProductOverviewComponent,
@@ -318,7 +319,8 @@ import { RdsCompLanguageTextListComponent } from './rds-comp-language-text-list/
     RdsCompIdentityManagementNewComponent,
     RdsCompThemeNewComponent,
     RdsCompAccountNewComponent,
-    RdsCompSettingsNewComponent
+    RdsCompSettingsNewComponent,
+    RdsCompAuditLogsNewComponent
   
   ],
   imports: [
@@ -411,9 +413,11 @@ import { RdsCompLanguageTextListComponent } from './rds-comp-language-text-list/
     RdsAddressDetailModule,
     RdsStepperModule,
     RdsReviewCategoryModule,
-    RdsTeamMemberModule,
     RdsWebsiteMetricModule,
     RdsTestimonialModule,
+    RdsTestimonialModule,
+    InfiniteScrollModule,
+    RdsTeamMemberModule
   ],
   providers: [],
   bootstrap: [AppComponent],

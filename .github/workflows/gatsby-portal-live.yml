@@ -9,7 +9,7 @@ jobs:
     runs-on: windows-latest
     steps:
     - name: Checkout raaghu code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: Set up Node.js
       uses: actions/setup-node@v3
@@ -27,7 +27,7 @@ jobs:
        
     - name: npm install, build, and test raaghu-mfe
       working-directory: ./raaghu-mfe
-      run: |
+      run: |   
         npm install
         npm run sync-elements
         
