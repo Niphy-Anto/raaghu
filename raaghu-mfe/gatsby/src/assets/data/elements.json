@@ -29,13 +29,6 @@
           "link": "/collapse"
         },
         {
-          "id": 4,
-          "image": "images/links.png",
-          "title": "Links ",
-          "text": "   Links are used as navigational elements. They may appear on their own, within a sentence or paragraph.",
-          "link": "/links"
-        },
-        {
           "id": 5,
           "image": "images/Landing page-Elements/Dropdown.png",
           "title": "Button Dropdown",
