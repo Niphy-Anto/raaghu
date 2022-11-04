@@ -584,14 +584,15 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
 
 
   toggleBetweenMode(event: any) {
+    debugger
     let checked = event;
     if (!checked) {
+      this.theme.theme = 'light';
+      localStorage.setItem('THEME', 'light');   
+    }else {
       this.theme.theme = 'dark';
       localStorage.setItem('THEME', 'dark');
 
-    }else {
-      this.theme.theme = 'light';
-      localStorage.setItem('THEME', 'light');
 
     }
   }
