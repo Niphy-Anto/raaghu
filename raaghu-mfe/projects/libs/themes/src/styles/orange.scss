@@ -141,7 +141,7 @@ $accessible-300: #3a3d5a;
 $accessible-400: #474c74;
 $accessible-500: #4400A4;
 $accessible-600: #282A42;
-$accessible-700: rgb(48, 51, 78);
+$accessible-700: #30334e;
 $accessible-800: #13002E;
 
 $datepicker-bg: $accessible-600 !default;
@@ -153,7 +153,7 @@ $body-wrapper-bg: $accessible-600 !default;
 $sidbar-border-right-color: #1A0339;
 $wrapper-bg: $accessible-600!default;
 
-$card-bg-color: $accessible-700 !default;
+$card-bg-color: white !default;
 
 $offcanvasbg: $accessible-700 !default;
 
@@ -162,7 +162,7 @@ $footer-bgcolor: $accessible-700 !default;
 $nav-tab-bg-active: $accessible-600!default;
 $profileMenuBgColor: $nav-tab-bg-active !default;
 $trhoverbg-color: $accessible-600;
-
+$card-bg-color: $accessible-700 !default;
 $nav-a-color: $white !default;
 $nav-active-color: $white !default;
 
@@ -172,12 +172,8 @@ $link-color: $primary;
   background-color: none;
 }
 
-#sidebar ul li a {
-  padding-left: 10px;
-  width: 100%;
-  border-radius: 10px;
-}
 html[theme=dark] {
+
   $dropdown-color: $white;
   $input-bg: $accessible-300!default;
   $form-select-bg: $input-bg!default;
@@ -185,6 +181,7 @@ html[theme=dark] {
   $notification-header-bg: $accessible-500!default;
   $input-group-addon-bg: $input-bg;
   $input-group-addon-border-color: $accessible-400 !default;
+
 
   .form-control, .form-control:focus {
     background-color: $input-bg;
