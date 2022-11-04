@@ -145,8 +145,7 @@ $accessible-700: rgb(48, 51, 78);
 
 
 $form-select-border-color: $accessible-400 !default;
-
-$input-select-bg: $accessible-400 !default;
+$form-select-bg: $accessible-300!default;
 
 $card-bg-color: $accessible-700 !default;
 
@@ -195,7 +194,6 @@ html[theme=light] {
 html[theme=dark] {
   $input-bg: $accessible-300!default;
   $input-bg-border: $accessible-400 !default;
-  $form-select-bg: $accessible-300 !default;
 
   /* $card-bg-color: $accessible-700 !default;
   $card-border-color: $accessible-500 !default;*/
