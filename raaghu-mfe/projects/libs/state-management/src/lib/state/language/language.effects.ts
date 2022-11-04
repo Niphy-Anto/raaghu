@@ -16,7 +16,13 @@ import {
   getLanguages,
   getLanguageSuccess,
   saveLanguage,
-  setDefaultLanguage
+  setDefaultLanguage,
+  updateLanguage,
+  // saveLanguageSuccess,
+  // setDefaultLanguage,
+  // setDefaultLanguageForUI,
+  // updateLanguage,
+  // setDefaultLanguage
 } from './language.actions';
 
 @Injectable()
@@ -50,9 +56,9 @@ export class LanguageEffects {
   getLanguagesForEdit$ = createEffect(() =>
     this.actions$.pipe(
       ofType(getLanguageForEdit),
-      switchMap(({data}) => {
+      switchMap(({id}) => {
         // Call the getTodos method, convert it to an observable
-        return (this.languageService.languagesGET2(data.id)).pipe(
+        return (this.languageService.languagesGET2(id)).pipe(
           // Take the returned value and return a new success action containing the todos
           map((languageInfo) => {
             return getLanguageForEditSuccess({ languageInfo })
@@ -85,16 +91,14 @@ export class LanguageEffects {
     )
   );
 
-
+//   
   deleteLanguage$ = createEffect(() =>
-    this.actions$.pipe(
-      ofType(deleteLanguage),
-      switchMap(({ id }) =>
-        this.languageService.languagesDELETE(undefined).pipe(map(() => {
-
-          return deleteLanguage({id})
-          // this.store.dispatch(getLanguages());
-          // this.alertService.showAlert('Success', 'Language deleted successfully', 'success')
+  this.actions$.pipe(
+    ofType(deleteLanguage),
+    mergeMap(({ id }) =>
+      this.languageService.languagesDELETE(id).pipe(map(() => {
+        this.store.dispatch(getLanguages());
+        this.alertService.showAlert('Success', 'Language deleted successfully', 'success')
 
         }
         ),
@@ -128,7 +132,7 @@ export class LanguageEffects {
   saveLanguage$ = createEffect(() =>
     this.actions$.pipe(
       ofType(saveLanguage),
-      switchMap(({ data }) =>
+      switchMap((data) =>
         this.languageService.languagesPOST(data.body).pipe(map(() => {
           this.store.dispatch(getLanguages());
           this.alertService.showAlert('Success', 'added language successfully', 'success')
@@ -141,4 +145,32 @@ export class LanguageEffects {
     ),
     { dispatch: false }
   );
+
+  
+  updateLanguage$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(updateLanguage),
+      switchMap((data) =>
+        this.languageService.languagesPUT(data.id, data.body).pipe(map(() => {
+          this.store.dispatch(getLanguages());
+          this.alertService.showAlert('Success', 'added language successfully', 'success')
+
+        }
+        ),
+          catchError((error) => of())
+        )
+      )
+    ),
+    { dispatch: false }
+  );
+  // setDefaultLanguageForUI$ = createEffect(() =>
+  //   this.actions$.pipe(
+  //     ofType(setDefaultLanguageForUI),
+  //     map(({ name }) => {
+  //       return setDefaultLanguageForUISuccess(name)
+  //     }
+
+  //     )
+  //   )
+  // );
 }

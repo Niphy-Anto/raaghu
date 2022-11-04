@@ -14,7 +14,7 @@ export const selectCultureList = createSelector(
     (state: LanguagesState) => state.cultureList
 );
 
-export const selectDefaultLanguage = createSelector(
+export const selectLanguageInfo = createSelector(
     selectLanguages,
     (state: LanguagesState) => state.languageInfo
 );

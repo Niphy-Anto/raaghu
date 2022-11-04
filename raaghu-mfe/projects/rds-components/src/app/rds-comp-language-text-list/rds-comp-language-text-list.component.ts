@@ -14,7 +14,7 @@ import { getLanguageTexts } from 'projects/libs/state-management/src/lib/state/l
   styleUrls: ['./rds-comp-language-text-list.component.scss']
 })
 export class RdsCompLanguageTextListComponent implements OnInit {
-  LanguageText: LanguageText
+  LanguageText: any
   RdsCompLanguageTextList: ComponentLoaderOptions;
   baselanguage: string;
   TargetCulturename: string
