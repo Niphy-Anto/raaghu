@@ -192,19 +192,17 @@ html[theme=light] {
 
   $body-wrapper-bg: #F5F5FA;
   $topnav-link-color: $gray-800;
-  $card-bg-color: $white !default;
+  $card-bg-color: #fff !default;
   $card-border-color: $gray-200 !default;
   --bs-body-color: black;
   $datepicker-bg: $white !default;
   $datepicker-head: $white !default;
-  $notification-header-bg: $light !default;
+  $notification-header-bg: $light-700 !default;
   $input-group-addon-bg: $input-bg;
 
-  .notification-header {
-    background-color: $notification-header-bg;
-  }
+  
 
-  navbar {
+  .navbar {
     background-color: white;
   }
 
@@ -288,7 +286,7 @@ html[theme=light] {
     }
   }
 
-
+ 
   .form-select[size]:not([size="1"]) {
     padding-right: 1.25rem;
     background-position: right 0.15rem center;
@@ -821,14 +819,17 @@ html[theme=light] {
     border-color: $gray-500;
   }
   /*card color styles*/
+
   .card {
     background-color: $card-bg-color;
     border-color: $card-border-color;
 
-    .card-header {
-      background-color: transparent;
-    }
+    // .card-header {
+    //   background-color: transparent;
+    // }
+
   }
+ 
 
   .bg-gradient-primary {
     background: transparent linear-gradient(90deg, #7e2eef 0%, #01ae9d 100%) 0% 0% no-repeat padding-box;
@@ -1385,11 +1386,12 @@ html[theme=light] {
   }
 
   .card {
-    background-color: $card-bg-color;
-    border-color: $card-border-color;
-
     .card-header {
       background-color: transparent;
+      
+    }
+    .card-header.notification-header {
+      background-color: $notification-header-bg;
     }
 
     .card-footer {
@@ -1397,6 +1399,7 @@ html[theme=light] {
       border-top-color: $gray-300;
     }
   }
+  
 }
 
 html[theme=dark] {
@@ -1408,8 +1411,8 @@ html[theme=dark] {
   $border-color: $gray-700 !default;
 
   $btn-close-width: 1em !default;
-  $btn-close-color: $gray-900 !default;
-  $btn-close-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$btn-close-color}'><path d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/></svg>") !default;
+  $btn-close-color: $gray-300 !default;
+  $btn-close-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#fff'><path d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/></svg>") !default;
 
   /*accordion color variables*/
   $accordion-bg: $primary;
@@ -1504,7 +1507,7 @@ html[theme=dark] {
   $dropdown-border-bottom: $gray-500;
   $dropdown-bg-color: $dark-400;
   $dropdown-border-bottom-hover: $gray-100;
-  $dropdown-bghover-color: $dark-400;
+  $dropdown-bghover-color: $dark-300;
 
   /*file uploader color variables*/
   $file-color: $primary;
@@ -1524,8 +1527,8 @@ html[theme=dark] {
   $nav-background-color: $dark-500 !default;
 
   /*input search properrties*/
-  $input-bg: $dark-100;
-  $input-border-color: $input-bg;
+  $input-bg: $dark-200;
+  $input-border-color: $dark-100;
   $form-select-bg: $input-bg !default;
   $form-select-border-color: $input-bg;
 
@@ -1536,7 +1539,8 @@ html[theme=dark] {
   $form-feedback-color: $gray-200 !default;
   $input-group-addon-bg: $input-bg;
   $input-group-addon-border-color: $input-bg;
-
+ /*Notification*/
+ $notification-header:$light-800 !default;
 
   /*sidebar color styles*/
   $nav-ul-bg-color: $light;
@@ -1597,6 +1601,7 @@ html[theme=dark] {
   $body-wrapper-bg: $dark-900 !default;
 
   $topnav-link-color: $white;
+
   $card-bg-color: $dark-500 !default;
   $card-border-color: $card-bg-color !default;
 
@@ -1605,15 +1610,27 @@ html[theme=dark] {
 
   $offcanvasbg: $dark-400 !default;
 
-  $modal-bg-color: #34384F;
+  $modal-bg-color: $dark-900 !default;
   $wrapper-bg: $dark-900 !default;
-  $nav-tab-bg-active: #252839 !default;
+  $nav-tab-bg-active: $dark-900 !default;
   $footer-bgcolor: $dark-400 !default;
-  $profileMenuBgColor: #252839 !default;
+  $profileMenuBgColor: $dark-900 !default;
   $trhoverbg-color: $dark-400 !default;
   $nav-li-border: $white !default;
   $datepicker-bg: $gray-800 !default;
   $datepicker-head: $gray-800 !default;
+
+  .default-datepicker.border {
+    border-color: $input-border-color;
+
+    .border {
+      border-color: $input-border-color;
+    }
+  }
+
+  .action-buttons {
+    background-color: $offcanvasbg;
+  }
 
   .bg-gradient-primary {
     background: transparent linear-gradient(90deg, #7e2eef 0%, #01ae9d 100%) 0% 0% no-repeat padding-box;
@@ -1632,7 +1649,10 @@ html[theme=dark] {
       border-top-color: $card-border-color;
     }
   }
-
+  .card-footer {
+      background-color: $white;
+      border-top-color: $gray-700;
+    }
   .sidenav-footer {
     background-color: $body-wrapper-bg;
   }
@@ -1660,23 +1680,15 @@ html[theme=dark] {
   }
 
   .form-select[size]:not([size="1"]) {
-    border-color: tint-color($input-border-color, 80%);
+    border-color: $input-border-color;
     padding-right: 1.25rem;
     background-position: right 0.15rem center;
     background-color: $input-bg;
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
   }
-  .default-datepicker.border{
-    border-color: tint-color($input-border-color, 60%);
-  }
-  
-  .card {
-    background-color: $card-bg-color;
-    border-color: $card-border-color;
 
-    .card-header {
-      background-color: transparent;
-    }
+  .default-datepicker.border {
+    border-color: tint-color($input-border-color, 60%);
   }
 
   .dropdown-item.active {
@@ -1774,6 +1786,7 @@ html[theme=dark] {
 
   .btn-close {
     background: transparent escape-svg($btn-close-bg) center / $btn-close-width auto no-repeat; // include transparent for button elements
+    filter: invert(1)
   }
 
   .wrapper {
@@ -1804,6 +1817,11 @@ html[theme=dark] {
       //border-color:$primary;
     }
   }
+   /*Notification*/
+  .notification-header{
+    background-color:$light-800;
+  }
+    
   /*avatar color variables*/
   @mixin avatar-variant($background, $border, $color) {
     @include gradient-bg($background);
@@ -2137,6 +2155,7 @@ html[theme=dark] {
           polyline.icon {
             stroke: $gray-700;
           }
+
           line.icon {
             stroke: $gray-700;
           }
@@ -2243,9 +2262,9 @@ html[theme=dark] {
     background-color: $card-bg-color;
     border-color: $card-border-color;
 
-    .card-header {
-      background-color: transparent;
-    }
+    // .card-header {
+    //   background-color: transparent;
+    // }
 
     .card-footer {
       background-color: $white;

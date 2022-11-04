@@ -16,7 +16,8 @@ $font-size-sm: $font-size-base * .875 !default;
 $font-size-lg: $font-size-base * 1.25 !default;
 
 $h6-font-size: $font-size-base * .875 !default;
-
+/*Modal*/
+$modal-sm:350px !default;
 
 /*------- Main accordian variables-------------*/
 $border-radius: .25rem !default;
@@ -409,6 +410,21 @@ html[theme=light] {
   cursor: pointer;
 }
 
+/*modal*/
+
+  .modal-sm{
+    width: $modal-sm;
+    }
+
+/*Notification*/
+
+.scroll-notifications{
+  max-height:100px ;
+  max-height: 215px;
+  min-height: 100px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
 /*card css */
 .vh-75 {
   height: 75vh !important;
@@ -532,7 +548,10 @@ html[theme=light] {
   width: 375px !important;
   box-shadow: 0 0rem 1rem rgb(0 0 0 / 15%) !important;
   left: auto;
+  overflow: inherit;
 }
+
+
 
 /* table */
 
@@ -560,7 +579,7 @@ table thead .header.d-flex {
   position: fixed;
   left: -15px;
   bottom: 0;
-  width: 290px;
+  width: 275px;
   z-index: 99;
   height: 100px;
   padding: 2%;
