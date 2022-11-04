@@ -1595,8 +1595,9 @@ html[theme=dark] {
   $body-wrapper-bg: $dark-900 !default;
 
   $topnav-link-color: $white;
-  $card-bg-color: $dark-500;
-  $card-border-color: $card-bg-color;
+
+  $card-bg-color: $dark-500 !default;
+  $card-border-color: $card-bg-color !default;
 
   $card-dashboard-bg-color: #161618 !default;
   $card-dashboard-border-color: #3C3E47;
@@ -2246,19 +2247,7 @@ html[theme=dark] {
     border-color: $gray-500;
   }
   /*card color styles*/
-  .card {
-    background-color: $card-bg-color;
-    border-color: $card-border-color;
-
-    .card-header {
-      background-color: transparent;
-    }
-
-    .card-footer {
-      background-color: $white;
-      border-top-color: $gray-700;
-    }
-  }
+ 
   /*top nav bar variables*/
   .navbar {
     background-color: $nav-background-color;

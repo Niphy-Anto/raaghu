@@ -175,7 +175,7 @@ $nav-background-color: $accessible-500 !default;
 
 //$body-wrapper-bg:;
 html[theme=dark] {
-  $card-bg-color: $accessible-700 !default;
+  $card-bg-color: $body-wrapper-bg !default;
   $card-border-color: $card-bg-color !default;
   $dropdown-color: $white;
   $input-bg: $accessible-300 !default;
@@ -190,29 +190,23 @@ html[theme=dark] {
     color: $white;
   }
 
-  .card {
-    background-color: $card-bg-color;
-    border-color: $card-border-color;
-
+  .dropdown-menu {
+    --bs-dropdown-color: $dropdown-color;
   }
 
-    .dropdown-menu {
-      --bs-dropdown-color: $dropdown-color;
-    }
-
-    .input-group-text {
-      background-color: $input-group-addon-bg;
-      border-color: $input-group-addon-border-color;
-    }
-
-    .form-select[size]:not([size="1"]) {
-      background-color: $input-bg;
-    }
-
-    .notification-header {
-      background-color: $notification-header-bg;
-    }
+  .input-group-text {
+    background-color: $input-group-addon-bg;
+    border-color: $input-group-addon-border-color;
   }
+
+  .form-select[size]:not([size="1"]) {
+    background-color: $input-bg;
+  }
+
+  .notification-header {
+    background-color: $notification-header-bg;
+  }
+}
 
   @import './custom.scss';
   @import './node_modules/bootstrap/scss/bootstrap';
