@@ -15,36 +15,40 @@ const Sidebar = (activeData) => {
   let path = '';
   if (activeData && activeData.activeData) {
     let _activeData = activeData.activeData;
-    const type = _activeData.markdownRemark.frontmatter.title.split(' >')[0];
-    path = _activeData.markdownRemark.frontmatter.slug.split('/')[1].toLowerCase();
+    if (_activeData.markdownRemark && _activeData.markdownRemark.frontmatter) {
+      const type = _activeData.markdownRemark.frontmatter.title.split(' >')[0];
+      path = _activeData.markdownRemark.frontmatter.slug.split('/')[1].toLowerCase();
 
-    if (type === 'Charts') {
-      ChartExpanded = true;
-      elementExpanded = false;
-      pageExpanded = false;
-      componentExpanded = false;
-      defaultActiveKey = 1;
-    } else if (type === 'Elements') {
-      ChartExpanded = false;
-      elementExpanded = true;
-      pageExpanded = false;
-      defaultActiveKey = 0;
-      componentExpanded = false;
-    } else if (type === 'Components') {
-      ChartExpanded = false;
-      elementExpanded = false;
-      pageExpanded = false;
-      componentExpanded = true;
-      defaultActiveKey = 2;
+      if (type === 'Charts') {
+        ChartExpanded = true;
+        elementExpanded = false;
+        pageExpanded = false;
+        componentExpanded = false;
+        defaultActiveKey = 1;
+      } else if (type === 'Elements') {
+        ChartExpanded = false;
+        elementExpanded = true;
+        pageExpanded = false;
+        defaultActiveKey = 0;
+        componentExpanded = false;
+      } else if (type === 'Components') {
+        ChartExpanded = false;
+        elementExpanded = false;
+        pageExpanded = false;
+        componentExpanded = true;
+        defaultActiveKey = 2;
 
-    } else if (type === 'Pages') {
-      ChartExpanded = false;
-      elementExpanded = false;
-      pageExpanded = true;
-      componentExpanded = false;
-      defaultActiveKey = 3;
+      } else if (type === 'Pages') {
+        ChartExpanded = false;
+        elementExpanded = false;
+        pageExpanded = true;
+        componentExpanded = false;
+        defaultActiveKey = 3;
+
+      }
 
     }
+
   }
   useEffect(() => {
     if (path) {
