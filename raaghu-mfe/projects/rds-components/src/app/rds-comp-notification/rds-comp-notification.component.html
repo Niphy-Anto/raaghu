@@ -1,4 +1,4 @@
-<rds-card class="rounded-avatar-basic notification-card">
+<rds-card [showFooter]="checkUnreadMessage()" class="rounded-avatar-basic notification-card">
   <div header>
     <div class="card-header p-3 notification-header">
       <div class="card-title m-0">
@@ -17,12 +17,12 @@
       </div>
     </div>
   </div>
-  <div body class="scroll-notification align-items-center w-100 m-0">
+  <div body class="scroll-notifications align-items-center w-100 m-0 pt-0">
     <div >
       <ng-container *ngIf="notifications && notifications.length > 0; else emptyTemplate">
         <div *ngFor="let notification of notifications"
           (click)="onNotificationSelect(notification,$event)">
-          <div class="d-flex py-2 px-3">
+          <div class="d-flex py-2">
             <div class="px-3 d-flex ps-0">
               <rds-icon class="notificatioInfo" [colorVariant]="getColor(notification,true)"
                 [name]="getIcon(notification)" width="22px" height="22px"></rds-icon>
@@ -37,9 +37,9 @@
                 <div class="col-md-6">
                   <small class="text-muted">{{ notification.time }}</small>
                 </div>
-                <div class="col-md-6 text-end" *ngIf="notification.state==0">
+                <div class="col-md-6 text-end" *ngIf="notification.state">
                   <span class="text-muted" (click)="setAsRead(notification); $event.stopPropagation()">
-                    <small> {{translate.instant("Set as read")}}  </small>
+                    <small> &sdot; {{translate.instant("Set as read")}} &nbsp; &nbsp; </small>
                   </span>
                 </div>
               </div>

@@ -56,7 +56,7 @@
         <div class="col-md-6">
           <div class="form-group mb-3">
   
-            <rds-input [inputType]="'number'" [label]="translate.instant('Phone Number')" [labelPosition]="'top'"
+            <rds-input [label]="translate.instant('Phone Number')" [labelPosition]="'top'"
               [(ngModel)]="userData.phoneNumber" name="phone" required [isRequired]=true #phone="ngModel" [pattern]="phonePattern"
               [placeholder]="translate.instant('Phone Number')">
             </rds-input>
