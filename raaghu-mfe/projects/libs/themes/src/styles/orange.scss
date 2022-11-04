@@ -144,6 +144,10 @@ $accessible-600: #282A42;
 $accessible-700: #30334e;
 $accessible-800: #13002E;
 
+$form-select-border-color: $accessible-400 !default;
+$form-select-bg: $accessible-300!default;
+
+$card-bg-color: $accessible-700 !default;
 $datepicker-bg: $accessible-600 !default;
 $datepicker-head: $accessible-600 !default;
 $nav-background-color: $accessible-600 !default;
@@ -175,9 +179,10 @@ $link-color: $primary;
 html[theme=dark] {
 
   $dropdown-color: $white;
+
   $input-bg: $accessible-300!default;
-  $form-select-bg: $input-bg!default;
-  $form-select-border-color: $accessible-200!default;
+  $input-bg-border: $accessible-400 !default;
+
   $notification-header-bg: $accessible-500!default;
   $input-group-addon-bg: $input-bg;
   $input-group-addon-border-color: $accessible-400 !default;
