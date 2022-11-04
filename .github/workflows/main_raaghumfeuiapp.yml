@@ -77,5 +77,5 @@ jobs:
       with:
         app-name: 'raaghumfeuiapp'
         slot-name: 'production'
-        publish-profile: ${{ secrets.APPBASEURL_DEMO }}
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_0fd26b4ca0f2471baf6172ffb6bf577c }}
         package: .

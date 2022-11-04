@@ -197,14 +197,12 @@ html[theme=light] {
   --bs-body-color: black;
   $datepicker-bg: $white !default;
   $datepicker-head: $white !default;
-  $notification-header-bg: $light !default;
+  $notification-header-bg: $light-700 !default;
   $input-group-addon-bg: $input-bg;
 
-  .notification-header {
-    background-color: $notification-header-bg;
-  }
+  
 
-  navbar {
+  .navbar {
     background-color: white;
   }
 
@@ -288,7 +286,7 @@ html[theme=light] {
     }
   }
 
-
+ 
   .form-select[size]:not([size="1"]) {
     padding-right: 1.25rem;
     background-position: right 0.15rem center;
@@ -826,15 +824,12 @@ html[theme=light] {
     background-color: $card-bg-color;
     border-color: $card-border-color;
 
-    .card-header {
-      background-color: transparent;
-    }
+    // .card-header {
+    //   background-color: transparent;
+    // }
 
-    .card-footer {
-      background-color: $white;
-      border-top-color: $gray-300;
-    }
   }
+ 
 
   .bg-gradient-primary {
     background: transparent linear-gradient(90deg, #7e2eef 0%, #01ae9d 100%) 0% 0% no-repeat padding-box;
@@ -1391,10 +1386,20 @@ html[theme=light] {
   }
 
 
+    .card-header {
+      background-color: transparent;
+      
+    }
+    .card-header.notification-header {
+      background-color: $notification-header-bg;
+    }
 
-  .action-buttons {
-    background-color: white;
+    .card-footer {
+      background-color: $white;
+      border-top-color: $gray-300;
+    }
   }
+  
 }
 
 html[theme=dark] {
@@ -1534,7 +1539,8 @@ html[theme=dark] {
   $form-feedback-color: $gray-200 !default;
   $input-group-addon-bg: $input-bg;
   $input-group-addon-border-color: $input-bg;
-
+ /*Notification*/
+ $notification-header:$light-800 !default;
 
   /*sidebar color styles*/
   $nav-ul-bg-color: $light;
@@ -1811,6 +1817,11 @@ html[theme=dark] {
       //border-color:$primary;
     }
   }
+   /*Notification*/
+  .notification-header{
+    background-color:$light-800;
+  }
+    
   /*avatar color variables*/
   @mixin avatar-variant($background, $border, $color) {
     @include gradient-bg($background);
@@ -2247,7 +2258,19 @@ html[theme=dark] {
     border-color: $gray-500;
   }
   /*card color styles*/
- 
+  .card {
+    background-color: $card-bg-color;
+    border-color: $card-border-color;
+
+    // .card-header {
+    //   background-color: transparent;
+    // }
+
+    .card-footer {
+      background-color: $white;
+      border-top-color: $gray-700;
+    }
+  }
   /*top nav bar variables*/
   .navbar {
     background-color: $nav-background-color;
