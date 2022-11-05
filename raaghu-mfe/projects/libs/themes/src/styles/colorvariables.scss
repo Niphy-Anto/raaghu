@@ -653,6 +653,10 @@ html[theme=light] {
       // background-color: $dropdown-bg-color;
       border-bottom-color: $dropdown-border-bottom-hover;
     }
+    &:active{
+      background-color: var(--bs-dropdown-link-hover-bg);
+      color: var(--bs-dropdown-link-hover-color);
+    }
   }
   /* list-group color variables*/
   .list-group-item {
@@ -2085,6 +2089,10 @@ html[theme=dark] {
     &:hover {
       background-color: $dropdown-bghover-color;
       border-bottom-color: $dropdown-border-bottom-hover;
+    }
+    &:active{
+      background-color: #1C1D20;
+      border-bottom-color: #f8f9fa;
     }
   }
   /* list-group color variables*/
