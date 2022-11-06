@@ -579,7 +579,7 @@ table thead .header.d-flex {
   position: fixed;
   left: -15px;
   bottom: 0;
-  width: 290px;
+  width: 275px;
   z-index: 99;
   height: 100px;
   padding: 2%;
@@ -1200,4 +1200,7 @@ rds-product-image .imgWidth {
 }
 bs-datepicker-container {
   z-index: var(--bs-datepicker-zindex);
+}
+.form-check-input, .form-check-label{
+  cursor: pointer;
 }

@@ -120,7 +120,7 @@ export class RdsCompDynamicPropertiesComponent implements OnInit, OnChanges {
       } else {
         const DynamicPropery: any = {
           displayName: this.DynamicProperyData.displayName,
-          inputType: this.DynamicProperyData.inputType,
+          inputType: this.DynamicProperyData.inputType[0],
           permission: this.selectedPermissions,
           propertyName: this.DynamicProperyData.propertyName,
           tenantId: null,
