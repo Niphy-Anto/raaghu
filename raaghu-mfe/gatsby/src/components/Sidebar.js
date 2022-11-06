@@ -11,7 +11,6 @@ const Sidebar = (activeData) => {
   let pageExpanded = false;
   let componentExpanded = false;
   let elementExpanded = true;
-  let defaultActiveKey = 0;
   let path = '';
   if (activeData && activeData.activeData) {
     let _activeData = activeData.activeData;
@@ -24,26 +23,21 @@ const Sidebar = (activeData) => {
         elementExpanded = false;
         pageExpanded = false;
         componentExpanded = false;
-        defaultActiveKey = 1;
       } else if (type === 'Elements') {
         ChartExpanded = false;
         elementExpanded = true;
         pageExpanded = false;
-        defaultActiveKey = 0;
         componentExpanded = false;
       } else if (type === 'Components') {
         ChartExpanded = false;
         elementExpanded = false;
         pageExpanded = false;
         componentExpanded = true;
-        defaultActiveKey = 2;
-
       } else if (type === 'Pages') {
         ChartExpanded = false;
         elementExpanded = false;
         pageExpanded = true;
         componentExpanded = false;
-        defaultActiveKey = 3;
 
       }
 
@@ -53,9 +47,10 @@ const Sidebar = (activeData) => {
   useEffect(() => {
     if (path) {
       let activatedElement = document.getElementById(path);
-      // position = activatedElement.getBoundingClientRect();
+      // let position = activatedElement.getBoundingClientRect();
       if (activatedElement) {
-        activatedElement.scrollIntoView({ block: "center", inline: "nearest" });
+        // console.log(position);
+        activatedElement.scrollIntoView({ block: "nearest", inline: "nearest" });
         // activatedElement.scroll({ top: position.top, left: position.left });
       }
     }
@@ -356,9 +351,9 @@ const Sidebar = (activeData) => {
   return (
     <div className="mt-3 ">
       <div className="position-sticky sidebar-sticky">
-        <ul defaultActiveKey={defaultActiveKey} id="nav-bar" className="nav flex-column px-1 my-3 me-2">
-          <li eventKey="0" className="nav-item mb-2">
-            <button type="button" onClick={() => onToggle('elements')} class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed w-100 position-relative ps-0 fw-semibold" data-bs-toggle="collapse" id="element-toggle" aria-expanded={elementExpanded}>
+        <ul  id="nav-bar" className="nav flex-column px-1 my-3 me-2">
+          <li  className="nav-item mb-2">
+            <button type="button" onClick={() => onToggle('elements')} className="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed w-100 position-relative ps-0 fw-semibold" data-bs-toggle="collapse" id="element-toggle" aria-expanded={elementExpanded}>
               <img
                 src={elements}
                 className="img-fluid"
@@ -367,17 +362,17 @@ const Sidebar = (activeData) => {
               /><span className="px-3"> Elements</span>
             </button>
             <div className={`collapse ${elementExpanded ? 'show' : 'hide'}`} id="element-collapse" >
-              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 text-capitalize">
-                {elementsLists.map((node) => (
-                  <li key={node.url} className={path == node.url ? 'active' : ''} id={node.url}>
+              <ul className="btn-toggle-nav list-unstyled fw-normal pb-1 text-capitalize">
+                {elementsLists.map((node,index) => (
+                  <li key={node.url+index} className={path == node.url ? 'active' : ''} id={node.url}>
                     <Link className="nav-link rounded" href={node.url}>{node.displayName}</Link>
                   </li>
                 ))}
               </ul>
             </div>
           </li>
-          <li eventKey="1" class="nav-item mb-2">
-            <button id="chart-toggle" class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed w-100 position-relative ps-0 fw-semibold" data-bs-toggle="collapse" onClick={() => onToggle('charts')} aria-expanded={ChartExpanded}>
+          <li  className="nav-item mb-2">
+            <button id="chart-toggle" className="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed w-100 position-relative ps-0 fw-semibold" data-bs-toggle="collapse" onClick={() => onToggle('charts')} aria-expanded={ChartExpanded}>
               <img
                 src={pages}
                 className="img-fluid"
@@ -395,8 +390,8 @@ const Sidebar = (activeData) => {
               </ul>
             </div>
           </li>
-          <li eventKey="2" class="nav-item mb-2">
-            <button id="component-toggle" class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed w-100 position-relative ps-0 fw-semibold" onClick={() => onToggle('components')} data-bs-toggle="collapse" aria-expanded={componentExpanded}>
+          <li class="nav-item mb-2">
+            <button id="component-toggle" className="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed w-100 position-relative ps-0 fw-semibold" onClick={() => onToggle('components')} data-bs-toggle="collapse" aria-expanded={componentExpanded}>
               <img
                 src={components}
                 className="img-fluid"
@@ -406,17 +401,17 @@ const Sidebar = (activeData) => {
             </button>
 
             <div className={`collapse ${componentExpanded ? 'show' : 'hide'}`} id="component-collapse">
-              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 text-capitalize">
+              <ul className="btn-toggle-nav list-unstyled fw-normal pb-1 text-capitalize">
                 {componentsList.map((node) => (
                   <li key={node.url} className={path == node.url ? 'active' : ''} id={node.url} >
-                    <Link className="nav-link rounded" href={node.url + "?eventkey=2"} >{node.displayName}</Link>
+                    <Link className="nav-link rounded" href={node.url} >{node.displayName}</Link>
                   </li>
                 ))}
               </ul>
             </div>
           </li>
-          <li eventKey="3" class="nav-item mb-2">
-            <button id="page-toggle" class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed w-100 position-relative ps-0 fw-semibold" data-bs-toggle="collapse" onClick={() => onToggle('pages')} aria-expanded={pageExpanded}>
+          <li className="nav-item mb-2">
+            <button id="page-toggle" className="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed w-100 position-relative ps-0 fw-semibold" data-bs-toggle="collapse" onClick={() => onToggle('pages')} aria-expanded={pageExpanded}>
               <img
                 src={pages}
                 className="img-fluid"
@@ -425,10 +420,10 @@ const Sidebar = (activeData) => {
               /><span className="px-3"> Pages </span>
             </button>
             <div className={`collapse ${pageExpanded ? 'show' : 'hide'}`} id="pages-collapse">
-              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 text-capitalize">
+              <ul className="btn-toggle-nav list-unstyled fw-normal pb-1 text-capitalize">
                 {pageLists.map((node) => (
                   <li key={node.url} className={path == node.url ? 'active' : ''} id={node.url}>
-                    <Link class="nav-link rounded" href={node.url} >{node.displayName}</Link>
+                    <Link className="nav-link rounded" href={node.url} >{node.displayName}</Link>
                   </li>
                 ))}
               </ul>

@@ -161,7 +161,6 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
         this.isLightMode = false;
       }
     }
-    console.log(this.isLightMode);
     const tenancy: any = JSON.parse(localStorage.getItem('tenantInfo'));
     if (tenancy) {
       this.tenancy = tenancy.name;
@@ -274,7 +273,6 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
           });
         },
         linkUser: (data: any) => {
-          console.log(data);
           this.store.dispatch(linkToUser(data))
         },
         setAllNotificationAsRead: () => {
