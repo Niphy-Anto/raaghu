@@ -149,7 +149,7 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
 
   ngOnInit(): void {
     const selectedTheme = localStorage.getItem('THEME');
-    if (selectedTheme == "undefined") {
+    if (selectedTheme == "undefined"||selectedTheme==''||selectedTheme==undefined||selectedTheme==null) {
       this.theme.theme = 'light';
       localStorage.setItem('THEME', 'light');
       this.isLightMode = true;
