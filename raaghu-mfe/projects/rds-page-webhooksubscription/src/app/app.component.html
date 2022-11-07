@@ -22,11 +22,17 @@
                     <div class="col-md-12">
                         <rds-banner
                             [bannerText]="translate.instant('Webhooks allow external services to be notified when certain events happen. When the specified events happen, we’ll send a POST request to each of the URLs you provide.')"
-                            [sticky]="false" position="top" colorVariant="primary">
-                            <span class="text-white" left>
+                            [sticky]="false" position="top" colorVariant="primary"
+                            icon="information"
+                            iconHeight="20px"
+                            iconWidth="20px"
+                            iconSize=""
+                            [iconStroke]="true"
+                            [iconFill]="false">
+                            <!-- <span class="text-white" left>
                                 <rds-icon name="info" class="pe-1 " [width]="'20px'" [stroke]="true" [height]="'20px'">
                                 </rds-icon>
-                            </span>
+                            </span> -->
                         </rds-banner>
                     </div>
                 </div>

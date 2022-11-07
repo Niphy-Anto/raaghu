@@ -55,8 +55,8 @@
   </div>
 </div>
 
-<rds-modal [modalId]="'ChangeTenant'" [modalBackdrop]="'static'" (onClose)="onModalClose(tenantForm)">
-  <div modalheader class="d-flex w-100">
+<rds-modal [modalId]="'ChangeTenant'" [modalBackdrop]="'static'" (onClose)="onModalClose(tenantForm)" class="change-tenant">
+  <div modalheader class="d-flex w-100 border-0">
     <h5 class="modal-title"><b> {{"Switch Tenant"|translate}}</b></h5>
     <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
   </div>
@@ -88,7 +88,7 @@
       </div>
     </form>
   </div>
-  <div modalfooter>
+  <div modalfooter class="border-0">
     <rds-button [tooltipPlacement]="'top'" [outlineButton]="true" data-bs-dismiss="modal" [colorVariant]="'primary'"
       [size]="'medium'" (click)="back()" [label]="translate.instant('Cancel')" class="px-2">
     </rds-button>
