@@ -56,7 +56,7 @@
         <div class="col-md-6">
           <div class="form-group mb-3">
   
-            <rds-input [inputType]="'number'" [label]="translate.instant('Phone Number')" [labelPosition]="'top'"
+            <rds-input [label]="translate.instant('Phone Number')" [labelPosition]="'top'"
               [(ngModel)]="userData.phoneNumber" name="phone" required [isRequired]=true #phone="ngModel" [pattern]="phonePattern"
               [placeholder]="translate.instant('Phone Number')">
             </rds-input>
@@ -131,7 +131,7 @@
       </div>
     </form>
   </div>
-  <div class="position-fixed bg-white py-3 bottom-0 w-100">
+  <div class="position-fixed action-buttons py-3 bottom-0 w-100">
     <rds-button [label]="translate.instant('Cancel')" [outlineButton]="true" [colorVariant]="'primary'" (click)="onCancelUser()"
       data-bs-dismiss="offcanvas" [size]="'small'">
     </rds-button>

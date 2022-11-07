@@ -141,6 +141,11 @@ $theme: "green" !default;
 $accessible-700: #30334e;
   $accessible-800: #13002E;
 
+$form-select-border-color: $accessible-400 !default;
+$form-select-bg: $accessible-300!default;
+
+$card-bg-color: $accessible-700 !default;
+
   $nav-background-color: $accessible-600 !default;
 /*  $form-select-bg: $accessible-500 !default;*/
   $card-dashboard-bg-color: $accessible-700 !default;
@@ -179,20 +184,15 @@ $accessible-700: #30334e;
   }
 
 
-  #sidebar ul li a {
-    padding-left: 10px;
-    width: 100%;
-    border-radius: 10px;
-  }
   //$body-wrapper-bg:;
 
 
 html[theme=dark] {
   $dropdown-color: $white;
-  $card-bg-color: $accessible-700 !default;
-  $input-bg: $accessible-300 !default;
-  $form-select-bg: $input-bg!default;
-  $form-select-border-color: $accessible-200!default;
+
+  $input-bg: $accessible-300!default;
+  $input-bg-border: $accessible-400 !default;
+
   $notification-header-bg: $accessible-500!default;
   $input-group-addon-bg: $input-bg;
   $input-group-addon-border-color: $accessible-400 !default;

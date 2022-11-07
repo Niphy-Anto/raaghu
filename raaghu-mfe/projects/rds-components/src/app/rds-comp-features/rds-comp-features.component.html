@@ -37,7 +37,7 @@
         <div class="row" *ngIf="!contentOnEdit">
           <div class="col-md-6">
             <div class="form-group mb-3">
-              <rds-input size="medium" [inputType]="'number'" [label]="translate.instant('Edition Name')"
+              <rds-input size="medium" [inputType]="'text'" [label]="translate.instant('Edition Name')"
                 [labelPosition]="'top'" #edition_name="ngModel" [isRequired]=true [placeholder]="translate.instant('Edition Name')" required
                 [(ngModel)]="EditionName" name="edition" ngDefaultControl>
               </rds-input>
