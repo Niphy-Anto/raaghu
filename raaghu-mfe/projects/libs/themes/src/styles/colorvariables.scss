@@ -111,7 +111,7 @@ html[theme=light] {
 
   /*dropdown Variales */
   $dropdown-border-bottom: $gray-500;
-  $dropdown-bg-color: $gray-100;
+  $dropdown-bg-color: $gray-100 !default;
   $dropdown-border-bottom-hover: $gray-100;
 
 
@@ -168,7 +168,7 @@ html[theme=light] {
   $verticle-border-color: $gray-100 !default;
 
   /* offcanvas-header */
-  $offcanvas-border-color: $gray-200;
+  $offcanvas-border-color: $gray-200 !default;
 
   $btn-transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
 
@@ -200,8 +200,9 @@ html[theme=light] {
   $datepicker-head: $white !default;
   $notification-header-bg: $light-700 !default;
   $input-group-addon-bg: $input-bg;
-  $form-select-bg: #fff;
 
+  $form-select-bg1: $input-bg !default;
+  $form-select-border-color1: $gray-300 !default;
 
   .navbar {
     background-color: white;
@@ -654,7 +655,8 @@ html[theme=light] {
       // background-color: $dropdown-bg-color;
       border-bottom-color: $dropdown-border-bottom-hover;
     }
-    &:active{
+
+    &:active {
       background-color: var(--bs-dropdown-link-hover-bg);
       color: var(--bs-dropdown-link-hover-color);
     }
@@ -1405,7 +1407,13 @@ html[theme=light] {
   .action-buttons {
     background-color: $white;
   }
+
+  .form-select {
+    background-color: $form-select-bg1;
+    border-color: $form-select-border-color1;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e")
   }
+}
 
 html[theme=dark] {
   $theme-colors: ("primary": $primary, "secondary": $secondary, "success": $success, "info": $info, "warning": $warning, "danger": $danger, "light": $light, "dark": $dark ) !default;
@@ -1509,10 +1517,11 @@ html[theme=dark] {
 
 
   /*dropdown Variales */
-  $dropdown-border-bottom: $gray-500;
-  $dropdown-bg-color: $dark-400;
-  $dropdown-border-bottom-hover: $gray-100;
-  $dropdown-bghover-color: $dark-300;
+  $dropdown-border-bottom: $gray-500 !default;
+  $dropdown-bg-color: $dark-400 !default;
+  $dropdown-border-bottom-hover: $gray-100 !default;
+  $dropdown-bghover-color: $dark-300 !default;
+  $dropdown-link-active-bg: $dark-400 !default;
 
   /*file uploader color variables*/
   $file-color: $primary;
@@ -1551,7 +1560,7 @@ html[theme=dark] {
   $nav-a-color: $gray-400;
   $nav-a-color-hover: $dark-900;
   $nav-active-color: $white;
-  $sidbar-border-right-color: $dark-400;
+  $sidbar-border-right-color: $dark-400 !default;
 
   /*edition Variables*/
   $edition-background-color: $gray-800 !default;
@@ -1579,7 +1588,7 @@ html[theme=dark] {
 
   /* offcanvas variables */
   $offcanvas-bg-color: $modal-content-bg !default;
-  $offcanvas-border-color: $border-color;
+  $offcanvas-border-color: $border-color !default;
 
   /*button transition values*/
   $btn-transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
@@ -1624,9 +1633,7 @@ html[theme=dark] {
   $datepicker-head: $gray-800 !default;
 
   $form-select-bg: $dark-900 !default;
-
-  /*  $form-select-bg: $input-bg!default;
-  $form-select-border-color: $form-select-bg !default;*/
+  $form-select-border-color: $form-select-bg !default;
 
   .default-datepicker.border {
     border-color: $input-border-color;
@@ -1685,10 +1692,10 @@ html[theme=dark] {
   }
 
   .form-select[size]:not([size="1"]) {
-    //border-color: $form-select-border-color;
+    border-color: $form-select-border-color;
     padding-right: 1.25rem;
     background-position: right 0.15rem center;
-    // background-color: $form-select-bg;
+    background-color: $form-select-bg;
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
   }
 
@@ -1697,7 +1704,7 @@ html[theme=dark] {
   }
 
   .dropdown-item.active {
-    background-color: tint-color($gray-900, 10%);
+    background-color: $dropdown-link-active-bg;
 
 
     span.hr-line {
@@ -2091,7 +2098,8 @@ html[theme=dark] {
       background-color: $dropdown-bghover-color;
       border-bottom-color: $dropdown-border-bottom-hover;
     }
-    &:active{
+
+    &:active {
       background-color: #1C1D20;
       border-bottom-color: #f8f9fa;
     }
@@ -2446,7 +2454,6 @@ html[theme=dark] {
 
   .form-group.has-search {
     .form-control {
-      background-color: $input-bg;
 
       :focus {
         color: $form-group-color;
@@ -2764,8 +2771,8 @@ html[theme=dark] {
   }
 
   .form-select {
-    /*    background-color: $form-select-bg;
-    border-color: $form-select-bg;*/
+    background-color: $form-select-bg;
+    border-color: $form-select-bg;
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e")
   }
 
