@@ -151,7 +151,7 @@ export class RdsDropdownlistComponent implements OnInit, OnChanges {
       border.push('rounded')
     }
     else {
-      border.push('border-0');
+      border.push('border-1');
     }
     return border;
 
