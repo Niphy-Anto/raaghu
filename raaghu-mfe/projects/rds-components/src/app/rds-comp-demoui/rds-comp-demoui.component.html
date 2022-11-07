@@ -68,13 +68,13 @@
       <div class="col-6">
         <h6 class="mb-3">{{"Avatar"|translate}}</h6>
         <rds-avatar firstName="Admin" lastName="Admin" [size]="'medium'" colorVariant="primary">
-          <div class="ms-4 mt-2">Admin</div>
+          <div class="ms-4">Admin</div>
         </rds-avatar>
       </div>
       <div class="col-6">
         <h6 class="mb-3">{{"Avatar - With Profile pic"|translate}}</h6>
         <rds-avatar [withProfilePic]="true"
-          profilePic="https://th.bing.com/th/id/OIP.3IsXMskZyheEWqtE3Dr7JwHaGe?pid=ImgDet&rs=1" [size]="'medium'"
+          profilePic="../assets/profile-picture.png" [size]="'medium'"
           [verticallyAlligned]="false"></rds-avatar>
       </div>
       <!-- <div class="col-6">
@@ -92,9 +92,9 @@
           <div class="mt-2">Admin</div>
         </rds-avatar>
       </div> -->
-      <div class="col-6 mt-2">
+      <div class="col-6 pt-5">
         <h6 class="mb-3">{{"Avatar in different Sizes - Without Profile picture"|translate}}</h6>
-        <div class="row">
+        <div class="row align-items-center">
           <div class="col-4">
             <rds-avatar firstName="Keanu" [colorVariant]="'primary'" lastName="Foster" [size]="'small'"
               [verticallyAlligned]="false">
@@ -131,7 +131,7 @@
   <div class="card-body  pt-0">
     <div class="row border p-4 m-2">
       <div class="col-3">
-        <h6 class="mb-3">{{"Badge - Basic"|translate}}</h6>
+        <h6 class="mb-3 pb-2">{{"Badge - Basic"|translate}}</h6>
         <rds-badge size="small" colorVariant="primary" [label]="translate.instant('New')" [positioned]="false">
         </rds-badge>
       </div>
@@ -145,7 +145,7 @@
         </rds-button>
       </div>
       <div class="col-3">
-        <h6 class="mb-3">{{"Badge With icon"|translate}}</h6>
+        <h6 class="mb-3 pb-2">{{"Badge With icon"|translate}}</h6>
         <rds-button class="position-relative" [size]="'medium'" [colorVariant]="'primary'" [outlineButton]="false"
           [roundedButton]="true" type="button">
           <rds-icon name="youtube" height="22px" width="22px"></rds-icon>
@@ -154,7 +154,7 @@
         </rds-button>
       </div>
       <div class="col-3">
-        <h6 class="mb-3">{{"Badge With Positioned"|translate}}</h6>
+        <h6 class="mb-3 pb-2">{{"Badge With Positioned"|translate}}</h6>
         <rds-button type="button" class="position-relative" [size]="'medium'" [label]="translate.instant('button')"
           [colorVariant]="'primary'">
           <span right>
@@ -193,7 +193,7 @@
   <div class="card-body  pt-0">
     <div class="row border p-4 m-2">
       <div class="col-6">
-        <h6>{{"Big Number Widget -Center Aligned"|translate}}</h6>
+        <h6 class="mb-3">{{"Big Number Widget -Center Aligned"|translate}}</h6>
         <div>
           <rds-widget [isRefreshRequired]="false" [headerTitle]="'Widget'" cardheight='card-stretch-half'>
             <div body>
@@ -205,10 +205,10 @@
         </div>
       </div>
       <div class="col-6">
-        <h6>{{"Big Number Widget -Left Aligned"|translate}}</h6>
+        <h6 class="mb-3">{{"Big Number Widget -Left Aligned"|translate}}</h6>
         <div>
-          <rds-widget [isRefreshRequired]="false" [headerTitle]="'Widget'" [colorVariant]="'primary'"
-            cardheight='card-stretch-half'>
+          <rds-widget [isRefreshRequired]="false" [headerTitle]="'Widget'" [colorVariant]="'gradient-primary'"
+            cardheight='card-stretch-half'> 
             <div body>
               <rds-big-number-widget [iconFill]="true" [iconStroke]="true" [iconColor]="'primary'"
                 [bigNumber]="'$13,20,21'" [textAlign]="'text-start'" subTitleColorVariant="warning"
@@ -219,7 +219,7 @@
         </div>
       </div>
       <div class="col-6">
-        <h6>{{"Big Number Widget -Right Aligned"|translate}}</h6>
+        <h6 class="mb-3">{{"Big Number Widget -Right Aligned"|translate}}</h6>
 
         <div>
           <rds-widget [isRefreshRequired]="false" [headerTitle]="'Widget'" [colorVariant]="'warning'"
@@ -234,10 +234,10 @@
         </div>
       </div>
       <div class="col-6">
-        <h6>{{"Big Number Widget -Center Aligned"|translate}}</h6>
+        <h6 class="mb-3">{{"Big Number Widget -Center Aligned"|translate}}</h6>
 
         <div>
-          <rds-widget [isRefreshRequired]="false" [headerTitle]="'Widget'" [colorVariant]="'success'"
+          <rds-widget [isRefreshRequired]="false" [headerTitle]="'Widget'" [colorVariant]="'gradient-primary'"
             cardheight='card-stretch-half'>
             <div body>
               <rds-big-number-widget [iconFill]="true" [iconStroke]="true" [iconColor]="'success'"
@@ -284,22 +284,22 @@
   <div class="card-body  pt-0">
     <div class="row border p-4 m-2">
       <div class="row col-8">
-        <div class="col-6 pb-3">
+        <div class="col-6 mb-3 pb-3">
           <h6 class="mb-3">{{"ButtonGroup - Basic"|translate}}</h6>
           <rds-button-group [vertical]="false" [outline]="false" role="button" [buttonGroupItem]="buttonGroupItem">
           </rds-button-group>
         </div>
-        <div class="col-6">
+        <div class="col-6 mb-3">
           <h6 class="mb-3">{{"ButtonGroup - Checkbox"|translate}}</h6>
           <rds-button-group [vertical]="false" [outline]="true" role="checkbox" [buttonGroupItem]="buttonGroupItem">
           </rds-button-group>
         </div>
-        <div class="col-6">
+        <div class="col-6 mb-3">
           <h6 class="mb-3">{{"ButtonGroup - Radio"|translate}}</h6>
           <rds-button-group [vertical]="false" [outline]="true" role="radio" [buttonGroupItem]="buttonGroupItem">
           </rds-button-group>
         </div>
-        <div class="col-6">
+        <div class="col-6 mb-3">
           <h6 class="mb-3">{{"ButtonGroup - Icon"|translate}}</h6>
           <!-- <rds-button-group [vertical]="false" colorVariant="warning" [outline]="false" role="button"
           [buttonGroupItem]="buttonGroupItemWithIcon"></rds-button-group> -->
@@ -386,7 +386,7 @@
           </div>
         </div>
         <h6 class="mt-3 mb-3">Button Icon- Size</h6>
-        <div class="row">
+        <div class="row align-items-center">
           <div class="col-3">
             <rds-button colorVariant="primary" [submit]="false" [size]="'small'" [block]="false" [disabled]="false"
               [outlineButton]="false" [roundedButton]="true" icon="pencil" label="" iconHeight="14px" iconWidth="14px"
@@ -420,8 +420,8 @@
     </h5>
   </div>
   <div class="card-body  pt-0">
-    <div class="row border p-4 m-2">
-      <div class="col-4">
+    <div class="row border pb-5 pt-4 px-4 m-2">
+      <div class="col-4 mb-3">
         <h6 class="mb-3">{{"Card - Basic"|translate}}</h6>
         <rds-card class="rounded-avatar-basic">
           <div class="text-center" header>
@@ -432,11 +432,11 @@
             <p class="custom-desc px-3">{{cardData.cardDescription}}</p>
           </div>
           <div footer>
-            <a href="#" class="btn btn-primary m-3">{{"Go somewhere"|translate}}</a>
+            <a href="#" class="btn btn-primary">{{"Go somewhere"|translate}}</a>
           </div>
         </rds-card>
       </div>
-      <div class="col-4">
+      <div class="col-4 mb-3">
         <h6 class="mb-3">Card - With Avatar</h6>
         <rds-card width="30%" class="rounded-avatar-left">
           <div header>
@@ -450,11 +450,11 @@
             <p class="custom-desc">{{cardData.cardDescription}}</p>
           </div>
           <div footer>
-            <a href="#" class="btn btn-primary m-3">{{"Go somewhere"|translate}}</a>
+            <a href="#" class="btn btn-primary">{{"Go somewhere"|translate}}</a>
           </div>
         </rds-card>
       </div>
-      <div class="col-4">
+      <div class="col-4 mb-3">
         <h6 class="mb-3">{{"Card - With Avatar center"|translate}}</h6>
         <rds-card width="28%" class="rounded-avatar-center">
           <div header>
@@ -469,7 +469,7 @@
             <p class="custom-desc">{{cardData.cardDescription}}</p>
           </div>
           <div footer>
-            <a href="#" class="btn btn-primary m-3">{{"Go somewhere"|translate}}</a>
+            <a href="#" class="btn btn-primary">{{"Go somewhere"|translate}}</a>
           </div>
         </rds-card>
       </div>
@@ -486,7 +486,7 @@
   </div>
   <div class="card-body  pt-0">
     <div class="row border p-4 m-2">
-      <div class="col-6">
+      <div class="col-12">
         <h6 class="mb-3">{{"Carousel"|translate}}</h6>
         <!-- <rds-carousel [crossFade]="true" [darkVariant]="false" [indicators]="true" [controls]="true"
         [imageItem]="imageItem"></rds-carousel> -->
@@ -546,7 +546,7 @@
   <div class="card-body  pt-0">
     <div class="card card-body mb-3">
       <div class="container border p-4 m-2">
-        <h6>Multi-Collapse example</h6>
+        <h6 class="mb-3">Multi-Collapse example</h6>
         <rds-collapse [buttonList]="buttonList">
           <div class="row mt-4">
           <div class="col">
@@ -614,8 +614,8 @@
       </div>
       <div class="col-6">
 
-        <h6 class="mb-3 ms-3">{{"Date Picker - Advanced"|translate}}</h6>
-        <rds-datepicker datePickerType="advanced" label="Date Range"></rds-datepicker>
+        <h6 class="ms-3">{{"Date Picker - Advanced"|translate}}</h6>
+        <rds-datepicker datePickerType="advanced"></rds-datepicker>
 
       </div>
 
@@ -642,7 +642,7 @@
   <div class="card-body  pt-0">
     <div class="row border p-4 m-2">
       <h6 class="mb-3">{{"Double Range"|translate}}</h6>
-      <rds-double-range [min]="50" [max]="100"></rds-double-range>
+      <rds-double-range [min]="0" [max]="100"></rds-double-range>
     </div>
   </div>
 </div>
@@ -772,7 +772,7 @@
         </rds-file-uploader>
       </div>
       <div class="col-6">
-        <h6 class="mb-3">{{"Multiple File Uploader"|translate}}</h6>
+        <h6>{{"Multiple File Uploader"|translate}}</h6>
         <rds-file-uploader label="Upload Files" [multipleFiles]="true" maxfilesize="5" sizeType="" role="fileUpload">
         </rds-file-uploader>
 
@@ -827,14 +827,15 @@
   </div>
   <div class="card-body  pt-0">
     <div class="row border p-4 m-2">
-      <div class="col-5">
+      <div class="col-12">
         <h6 class="mb-3">{{"Input Group"|translate}}</h6>
-        <rds-input-group>
-          <input type="text" class="form-control" id="Errormessage" placeholder="placeholder" />
-          <rds-button id="button-addon1" [label]="'Button'" [colorVariant]="'primary'" [outlineButton]="false"
-            [size]="'medium'" type="button">
-          </rds-button>
-        </rds-input-group>
+        <rds-input-group
+          colorVariant="primary"
+          size="small"
+          position="top"
+          placeholder="placeholder"
+          buttonLabel="button"
+        ></rds-input-group>
       </div>
     </div>
   </div>
@@ -1112,7 +1113,7 @@
   <div class="card-body  pt-0">
     <div class="row border p-4 m-2">
       <div class="col-6 mb-4">
-        <h6 class="mb-3">{{"Nav Tab - Basic"|translate}}</h6>
+        <h6 class="mb-3 pb-1">{{"Nav Tab - Basic"|translate}}</h6>
         <div class="col-md-12">
           <rds-nav-tab [navtabsItems]="navtabsItems" horizontalAlignment="start" [verticalAlignment]="false"
             [pills]="false" [tabs]="false" [fill]="false" [justified]="false" ></rds-nav-tab>
@@ -1190,7 +1191,7 @@
         </div>
       </div>
       <div class="col-6">
-        <h6 class="mb-3">{{"Nav Tab - pills"|translate}}</h6>
+        <h6 class="mb-3 pb-1">{{"Nav Tab - pills"|translate}}</h6>
         <div class="col-md-12">
           <rds-nav-tab [navtabsItems]="navtabsItemsPills" horizontalAlignment="start" [verticalAlignment]="false"
             [pills]="true" [tabs]="false" [fill]="false" [justified]="false" ></rds-nav-tab>
@@ -1254,21 +1255,21 @@
         <rds-offcanvas [canvasTitle]="'Title'" [preventEscapeKey]="true" [offId]="'canvasExample1'" [placement]="'start'"></rds-offcanvas>
       </div>
       <div class="col-3">
-        <h6>{{"Offcanvas - end"|translate}}</h6>
+        <h6 class="mb-3">{{"Offcanvas - end"|translate}}</h6>
         <rds-button [colorVariant]="'primary'" [label]="translate.instant('Button')" [size]="'small'" type="button"
           data-bs-toggle="offcanvas" data-bs-target="#canvasExample" aria-controls="canvasExample">
         </rds-button>
         <rds-offcanvas [canvasTitle]="'Title'" [preventEscapeKey]="true" [placement]="'end'"></rds-offcanvas>
       </div>
       <div class="col-3">
-        <h6>{{"Offcanvas - top"|translate}}</h6>
+        <h6 class="mb-3">{{"Offcanvas - top"|translate}}</h6>
         <rds-button [colorVariant]="'primary'" [label]="translate.instant('Button')" [size]="'small'" type="button"
           data-bs-toggle="offcanvas" data-bs-target="#canvasExample3" aria-controls="canvasExample3">
         </rds-button>
         <rds-offcanvas [canvasTitle]="'Ttile'" [preventEscapeKey]="true" [placement]="'top'" offId="canvasExample3"></rds-offcanvas>
       </div>
       <div class="col-3">
-        <h6>{{"Offcanvas - bottom"|translate}}</h6>
+        <h6 class="mb-3">{{"Offcanvas - bottom"|translate}}</h6>
         <rds-button [colorVariant]="'primary'" [label]="translate.instant('Button')" [size]="'small'" type="button"
           data-bs-toggle="offcanvas" data-bs-target="#canvasExample4" aria-controls="canvasExample4">
         </rds-button>
@@ -1289,12 +1290,12 @@
   <div class="card-body  pt-0">
     <div class="row border p-4 m-2">
       <div class="col-4">
-        <h6>{{"Pagination - Advanced"|translate}}</h6>
+        <h6 class="mb-3">{{"Pagination - Advanced"|translate}}</h6>
         <rds-pagination [totalRecords]="20" [recordsPerPage]="5" alignmentType="start" role="Advanced">
         </rds-pagination>
       </div>
       <div class="col-4">
-        <h6>{{"Pagination - Basic"|translate}}</h6>
+        <h6 class="mb-3">{{"Pagination - Basic"|translate}}</h6>
         <rds-pagination [totalRecords]="20" [recordsPerPage]="5" alignmentType="start" role="Basic">
         </rds-pagination>
 
@@ -1360,13 +1361,13 @@
     <div class="row border p-4 m-2">
       <div class="col-md-6">
         <h6 class="mb-3">{{"Progress Bar - Single"|translate}}</h6>
-        <rds-progressbar [animation]="false" [height]="15" colorVariant="default" striped="default" [progressWidth]="40"
+        <rds-progressbar [animation]="false" [height]="20" colorVariant="default" striped="default" [progressWidth]="40"
           [progressbar_MaxWidth]="100"  role="single"></rds-progressbar>
       </div>
       <div class="col-md-6">
         <h6 class="mb-3">{{"Progress Bar - Multiple"|translate}}</h6>
-        <rds-progressbar [animation]="true" [height]="15" colorVariant="default" striped="progress-bar-striped"
-          [progressWidth]="10" [progressbar_MaxWidth]="70"  role="multiple"
+        <rds-progressbar [animation]="true" [height]="20" colorVariant="default" striped="progress-bar-striped"
+          [progressWidth]="10" [progressbar_MaxWidth]="100"  role="multiple"
           [progressvalues]="progressvalues"></rds-progressbar>
       </div>
 
@@ -1479,7 +1480,7 @@
   <div class="card-body  pt-0">
     <div class="row border p-4 m-2">
       <div class="col-4">
-        <h6>{{"Spinner"|translate}}</h6>
+        <h6 class="mb-3">{{"Spinner"|translate}}</h6>
         <rds-spinner [spinnerType]="false" size="md" [colorVariant]="'primary'"></rds-spinner>
       </div>
       <div class="col-4">
@@ -1898,7 +1899,7 @@
   <div class="card-body  pt-0">
     <div class="row border p-4 m-2">
       <div class="col-md-12">
-        <rds-video-player [videoLink]="video"></rds-video-player>
+        <rds-video-player [videoLink]="video"></rds-video-player> 
       </div>
     </div>
   </div>
