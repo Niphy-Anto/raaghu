@@ -1643,6 +1643,17 @@ html[theme=dark] {
     }
   }
 
+  .login {
+    color: #212529;
+
+    .form-control {
+      color: #212529;
+      background-color: white;
+      border: 1px solid #ced4da;
+
+    }
+  }
+
   .action-buttons {
     background-color: $offcanvasbg;
   }
