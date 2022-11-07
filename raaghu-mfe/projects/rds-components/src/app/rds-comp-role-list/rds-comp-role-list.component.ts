@@ -13,7 +13,7 @@ export class RoleData {
 
 declare let bootstrap: any;
 @Component({
-  selector: 'app-rds-comp-role-list',
+  selector: 'rds-comp-role-list',
   templateUrl: './rds-comp-role-list.component.html',
   styleUrls: ['./rds-comp-role-list.component.scss']
 })

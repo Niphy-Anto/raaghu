@@ -60,9 +60,9 @@
 
 <div class="row">
   <div class="col-md-12 mt-3">
-    <app-rds-data-table [tableData]="additionalheaders" noDataTitle="Currently you do not have webhook header"
+    <rds-data-table [tableData]="additionalheaders" noDataTitle="Currently you do not have webhook header"
       tableStyle="light" [width]="100" [actions]=" [{ id: 'edit', displayName: 'Edit' }]"
-      [tableHeaders]="HeaderTableHeader" [pagination]="true" [recordsPerPage]="10" (onActionSelection)="onActionSelect($event)"></app-rds-data-table>
+      [tableHeaders]="HeaderTableHeader" [pagination]="true" [recordsPerPage]="10" (onActionSelection)="onActionSelect($event)"></rds-data-table>
   </div>
 </div>
 

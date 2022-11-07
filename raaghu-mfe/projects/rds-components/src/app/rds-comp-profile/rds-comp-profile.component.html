@@ -15,11 +15,11 @@
       </div>
       <div class="tab-pane fade h-100" [ngClass]="{ 'show active': activePage === 1 }" id="nav-Deligation"
         role="tabpanel" aria-labelledby="nav-Deligation">
-        <app-rds-user-delegations [rdsDeligateTableHeader]="rdsDeligateTableHeader" [pagination]="pagination"
+        <rds-user-delegations [rdsDeligateTableHeader]="rdsDeligateTableHeader" [pagination]="pagination"
           [delegateTabopened]="delegateTabopened" (onDeligateSave)="onSaveDelegate.emit($event)"
           [tableWidth]="tableWidth" [tableStyle]="tableStyle" [recordsPerpage]="recordsPerpage" [userList]="userList"
           [rdsDeligateTableData]="rdsDeligateTableData" (onCancelDeligate)="cancelDelegate($event)">
-        </app-rds-user-delegations>
+        </rds-user-delegations>
       </div>
 
       <div class="tab-pane fade h-100" [ngClass]="{ 'show active': activePage === 2 }" id="nav-Attempts" role="tabpanel"
@@ -30,12 +30,12 @@
       </div>
       <div class="tab-pane fade h-100" [ngClass]="{ 'show active': activePage === 3 }" id="nav-Settings" role="tabpanel"
         aria-labelledby="nav-Settings">
-        <app-rds-mysettings [ProfileData]="ProfileData" (onProfileSave)="onProfileSave.emit($event)" 
+        <rds-mysettings [ProfileData]="ProfileData" (onProfileSave)="onProfileSave.emit($event)" 
           (onProfileClose)="onClickCloseTabContent()">
-        </app-rds-mysettings>
+        </rds-mysettings>
       </div>
       <div class="tab-pane fade h-100" id="nav-DownLoad" role="tabpanel" aria-labelledby="nav-DownLoad">
-        <!-- <app-rds-comp-download-collection [DownloadTable]="DownloadTable"></app-rds-comp-download-collection> -->
+        <!-- <rds-comp-download-collection [DownloadTable]="DownloadTable"></rds-comp-download-collection> -->
       </div>
 
       <div class="tab-pane fade h-100" id="nav-Attempts" [ngClass]="{ 'show active': activePage === 4 }" role="tabpanel"
@@ -46,11 +46,11 @@
       </div>
       <div class="tab-pane fade h-100" id="nav-Settings" [ngClass]="{ 'show active': activePage === 5 }" role="tabpanel"
         aria-labelledby="nav-Settings">
-        <app-rds-mysettings [ProfileData]="ProfileData" (onProfileSave)="onProfileSave.emit($event)">
-        </app-rds-mysettings>
+        <rds-mysettings [ProfileData]="ProfileData" (onProfileSave)="onProfileSave.emit($event)">
+        </rds-mysettings>
       </div>
       <!-- <div class="tab-pane fade h-100" id="nav-DownLoad" role="tabpanel" aria-labelledby="nav-DownLoad">
-        <app-rds-comp-download-collection [DownloadTable]="DownloadTable"></app-rds-comp-download-collection>
+        <rds-comp-download-collection [DownloadTable]="DownloadTable"></rds-comp-download-collection>
       </div> -->
     </div>
     <div class="pt-6">

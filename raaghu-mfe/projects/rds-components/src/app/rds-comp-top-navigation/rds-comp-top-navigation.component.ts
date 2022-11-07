@@ -7,7 +7,7 @@ import { DOCUMENT } from '@angular/common';
 let that: any;
 declare var bootstrap: any;
 @Component({
-  selector: 'app-rds-top-navigation',
+  selector: 'rds-top-navigation',
   templateUrl: './rds-comp-top-navigation.component.html',
   styleUrls: ['./rds-comp-top-navigation.component.scss']
 })

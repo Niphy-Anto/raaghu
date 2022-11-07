@@ -12,7 +12,7 @@ export class Language {
 }
 
 @Component({
-  selector: 'app-rds-comp-new-language',
+  selector: 'rds-comp-new-language',
   templateUrl: './rds-comp-new-language.component.html',
   styleUrls: ['./rds-comp-new-language.component.scss'],
   providers: [

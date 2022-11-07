@@ -9,7 +9,7 @@ export interface SubscriptionItem {
   features:any[];
 }
 @Component({
-  selector: 'app-rds-comp-subscription',
+  selector: 'rds-comp-subscription',
   templateUrl: './rds-comp-subscription.component.html',
   styleUrls: ['./rds-comp-subscription.component.scss']
 })

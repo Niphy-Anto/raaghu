@@ -16,7 +16,7 @@ export interface notificationData {
 
 
 @Component({
-  selector: 'app-rds-notification',
+  selector: 'rds-notification',
   templateUrl: './rds-comp-notification.component.html',
   styleUrls: ['./rds-comp-notification.component.scss'],
 })

@@ -4,7 +4,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'app-rds-comp-information',
+  selector: 'rds-comp-information',
   templateUrl: './rds-comp-information.component.html',
   styleUrls: ['./rds-comp-information.component.scss'],
 })
