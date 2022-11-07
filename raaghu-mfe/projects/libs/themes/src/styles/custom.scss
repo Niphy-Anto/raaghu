@@ -1201,3 +1201,6 @@ rds-product-image .imgWidth {
 bs-datepicker-container {
   z-index: var(--bs-datepicker-zindex);
 }
+.form-check-input, .form-check-label{
+  cursor: pointer;
+}
