@@ -47,9 +47,9 @@
               mt-2
               p-0
             ">
-            <app-rds-notification [notifications]="notificationData" [unreadCount]="unreadCount"
+            <rds-notification [notifications]="notificationData" [unreadCount]="unreadCount"
               (setAsReadOutput)="setNotificationAsRead.emit($event)"
-              (setAllReadOutput)="setAllNotificationAsRead.emit($event)"></app-rds-notification>
+              (setAllReadOutput)="setAllNotificationAsRead.emit($event)"></rds-notification>
             <!-- <mfe-loader [config]="rdsNotoficationMfeConfig"></mfe-loader> -->
           </div>
         </li>
@@ -85,9 +85,9 @@
               mt-2
               p-0
             ">
-            <app-rds-notification [notifications]="notificationData" [unreadCount]="unreadCount"
+            <rds-notification [notifications]="notificationData" [unreadCount]="unreadCount"
               (setAsReadOutput)="setNotificationAsRead.emit($event)"
-              (setAllReadOutput)="setAllNotificationAsRead.emit($event)"></app-rds-notification>
+              (setAllReadOutput)="setAllNotificationAsRead.emit($event)"></rds-notification>
             <!-- <mfe-loader [config]="rdsNotoficationMfeConfig"></mfe-loader> -->
           </div>
         </li>
@@ -116,7 +116,7 @@
     </div>
   </div>
 </nav>
-<app-rds-comp-profile [MenuItems]="navtabItems" [Profileurl]="profilePic" [viewCanvas]="showOffcanvas"
+<rds-comp-profile [MenuItems]="navtabItems" [Profileurl]="profilePic" [viewCanvas]="showOffcanvas"
   [tableWidth]="tableWidth" [id]="offCanvasId" [userList]="userList" [languageItems]="languageItems"
   [listItemsResult]="listusename" [DownloadTable]="dounloadata" [tableStyle]="tableStyle"
   [LoginAttempts]="LoginAttempts" [ProfileData]="profileData" [selectedLanguage]="selectedLanguage"
@@ -126,7 +126,7 @@
   (onLinkToUser)="saveLinkUsers($event)" (onProfileSave)="onProfileSave.emit($event)"
   (onLoginAttempts)="onLoginAttemptsRefresh.emit($event)" (onDownloadLink)="onDownloadLink.emit($event)"
   [linkedAccountHeaders]="linkedAccountHeaders" [linkedAccountData]="linkedAccountData">
-</app-rds-comp-profile>
-<app-rds-comp-notification-settings [notificationTypes]="notificationTypes"
+</rds-comp-profile>
+<rds-comp-notification-settings [notificationTypes]="notificationTypes"
   [receiveNotifications]="receiveNotifications"
-  (onUpdateNotificationSettings)="onUpdateNotificationSettings.emit($event)"></app-rds-comp-notification-settings>
+  (onUpdateNotificationSettings)="onUpdateNotificationSettings.emit($event)"></rds-comp-notification-settings>
