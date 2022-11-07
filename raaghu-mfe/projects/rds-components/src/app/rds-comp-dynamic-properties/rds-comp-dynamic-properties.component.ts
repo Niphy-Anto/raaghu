@@ -127,7 +127,6 @@ export class RdsCompDynamicPropertiesComponent implements OnInit, OnChanges {
           tenantId: null,
           id: this.id,
         };
-        console.log("close canvas");
         this.closeCanvas();
         this.createOrUpdateDynamic.emit(DynamicPropery);
      
