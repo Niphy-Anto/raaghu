@@ -8,6 +8,7 @@ html[theme=light] {
   $theme-colors: ("primary": $primary, "secondary": $secondary, "success": $success, "info": $info, "warning": $warning, "danger": $danger, "light": $light, "dark": $dark ) !default;
   $min-contrast-ratio: 4.5 !default;
   $input-focus-border-color: tint-color($primary, 50%) !default;
+  $body-bg: white;
   $input-bg: $body-bg !default;
 
   $border-color: $gray-100;
@@ -192,15 +193,15 @@ html[theme=light] {
 
   $body-wrapper-bg: #F5F5FA;
   $topnav-link-color: $gray-800;
-  $card-bg-color: #fff !default;
+  $card-bg-color: #fff;
   $card-border-color: $gray-200 !default;
   --bs-body-color: black;
   $datepicker-bg: $white !default;
   $datepicker-head: $white !default;
   $notification-header-bg: $light-700 !default;
   $input-group-addon-bg: $input-bg;
+  $form-select-bg: #fff;
 
-  
 
   .navbar {
     background-color: white;
@@ -286,7 +287,7 @@ html[theme=light] {
     }
   }
 
- 
+
   .form-select[size]:not([size="1"]) {
     padding-right: 1.25rem;
     background-position: right 0.15rem center;
@@ -827,13 +828,11 @@ html[theme=light] {
   .card {
     background-color: $card-bg-color;
     border-color: $card-border-color;
-
     // .card-header {
     //   background-color: transparent;
     // }
-
   }
- 
+
 
   .bg-gradient-primary {
     background: transparent linear-gradient(90deg, #7e2eef 0%, #01ae9d 100%) 0% 0% no-repeat padding-box;
@@ -1389,22 +1388,24 @@ html[theme=light] {
     }
   }
 
-  .card {
-    .card-header {
-      background-color: transparent;
-      
-    }
-    .card-header.notification-header {
-      background-color: $notification-header-bg;
-    }
 
-    .card-footer {
-      background-color: $white;
-      border-top-color: $gray-300;
-    }
+  .card-header {
+    background-color: transparent;
   }
-  
-}
+
+  .card-header.notification-header {
+    background-color: $notification-header-bg;
+  }
+
+  .card-footer {
+    background-color: $white;
+    border-top-color: $gray-300;
+  }
+
+  .action-buttons {
+    background-color: $white;
+  }
+  }
 
 html[theme=dark] {
   $theme-colors: ("primary": $primary, "secondary": $secondary, "success": $success, "info": $info, "warning": $warning, "danger": $danger, "light": $light, "dark": $dark ) !default;
@@ -1533,8 +1534,6 @@ html[theme=dark] {
   /*input search properrties*/
   $input-bg: $dark-200;
   $input-border-color: $dark-100;
-  $form-select-bg: $input-bg !default;
-  $form-select-border-color: $input-bg;
 
   $form-group-bg-color: $gray-200 !default;
   $form-group-color: $dark !default;
@@ -1543,8 +1542,8 @@ html[theme=dark] {
   $form-feedback-color: $gray-200 !default;
   $input-group-addon-bg: $input-bg;
   $input-group-addon-border-color: $input-bg;
- /*Notification*/
- $notification-header:$light-800 !default;
+  /*Notification*/
+  $notification-header: $light-800 !default;
 
   /*sidebar color styles*/
   $nav-ul-bg-color: $light;
@@ -1624,6 +1623,11 @@ html[theme=dark] {
   $datepicker-bg: $gray-800 !default;
   $datepicker-head: $gray-800 !default;
 
+  $form-select-bg: $dark-900 !default;
+
+  /*  $form-select-bg: $input-bg!default;
+  $form-select-border-color: $form-select-bg !default;*/
+
   .default-datepicker.border {
     border-color: $input-border-color;
 
@@ -1653,10 +1657,7 @@ html[theme=dark] {
       border-top-color: $card-border-color;
     }
   }
-  .card-footer {
-      background-color: $white;
-      border-top-color: $gray-700;
-    }
+
   .sidenav-footer {
     background-color: $body-wrapper-bg;
   }
@@ -1684,10 +1685,10 @@ html[theme=dark] {
   }
 
   .form-select[size]:not([size="1"]) {
-    border-color: $input-border-color;
+    //border-color: $form-select-border-color;
     padding-right: 1.25rem;
     background-position: right 0.15rem center;
-    background-color: $input-bg;
+    // background-color: $form-select-bg;
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
   }
 
@@ -1821,11 +1822,10 @@ html[theme=dark] {
       //border-color:$primary;
     }
   }
-   /*Notification*/
-  .notification-header{
-    background-color:$light-800;
+  /*Notification*/
+  .notification-header {
+    background-color: $light-800;
   }
-    
   /*avatar color variables*/
   @mixin avatar-variant($background, $border, $color) {
     @include gradient-bg($background);
@@ -1939,6 +1939,7 @@ html[theme=dark] {
       tr {
         th {
           color: $white;
+          padding: 1rem 0.5rem;
         }
       }
     }
@@ -2264,20 +2265,6 @@ html[theme=dark] {
   .alert-un {
     background-color: $gray-500 !important;
     border-color: $gray-500;
-  }
-  /*card color styles*/
-  .card {
-    background-color: $card-bg-color;
-    border-color: $card-border-color;
-
-    // .card-header {
-    //   background-color: transparent;
-    // }
-
-    .card-footer {
-      background-color: $white;
-      border-top-color: $gray-700;
-    }
   }
   /*top nav bar variables*/
   .navbar {
