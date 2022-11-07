@@ -148,9 +148,8 @@ $default-100: #F58220;
 }
 
 //$input-select-bg: $dark-200!default;
-$form-select-bg: $dark-200!default;
-$form-select-border: $dark-100!default;
-
+//$form-select-bg: $dark-200!default;
+$modal-bg-color: $dark-200!default;
 
 html[theme=dark] {
   $input-bg: $dark-200!default;
@@ -178,7 +177,7 @@ html[theme=dark] {
   }
 
   .form-select {
-    background-color: $form-select-bg;
+   // background-color: $form-select-bg;
     // border-color: $form-select-border-color;
   }
 }

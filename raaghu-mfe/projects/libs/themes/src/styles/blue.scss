@@ -143,11 +143,11 @@ $accessible-700: rgb(48, 51, 78);
   $accessible-800: #13002E;
 
 
+  $modal-bg-color: $accessible-600 !default;
+  $form-select-border-color: $accessible-400 !default;
 
-$form-select-border-color: $accessible-400 !default;
-$form-select-bg: $accessible-300!default;
 
-$card-bg-color: $accessible-700 !default;
+  $card-bg-color: $accessible-700 !default;
 
   $nav-background-color: $accessible-600 !default;
 /*  $form-select-bg: $accessible-500 !default;*/
@@ -188,18 +188,16 @@ $datepicker-head: $accessible-600 !default;
 
   //$body-wrapper-bg:;
 html[theme=light] {
- /* $card-bg-color: white !default;
+
+  /* $card-bg-color: white !default;
   $card-border-color: $accessible-500 !default;*/
 }
 html[theme=dark] {
+
   $input-bg: $accessible-300!default;
   $input-bg-border: $accessible-400 !default;
 
-  /* $card-bg-color: $accessible-700 !default;
-  $card-border-color: $accessible-500 !default;*/
   $dropdown-color: $white;
-
-
 
   $notification-header-bg: $accessible-500!default;
   $input-group-addon-bg: $input-bg;
@@ -220,10 +218,7 @@ html[theme=dark] {
     border-color: $input-group-addon-border-color;
   }
 
-  .form-select {
-    background-color: $form-select-bg;
-    border-color: $form-select-border-color;
-  }
+  
 
   .notification-header {
     background-color: $notification-header-bg;
