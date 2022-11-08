@@ -2,8 +2,8 @@
     <div class="row">
         <div class="col-md-12 text-end pb-3 desktop-btn">
             <rds-button [label]="translate.instant('New Tenant')" [size]="'small'" [colorVariant]="'primary'"
-                (click)="newTenant($event, true)" [showLoadingSpinner]="buttonSpinnerForNewUser"
-                buttonType="iconLabel" icon="plus" iconWidth="12px" iconHeight="12px">
+                (click)="newTenant($event, true)" [showLoadingSpinner]="showLoadingSpinner" 
+                icon="plus" iconWidth="12px" iconHeight="12px">
             </rds-button>
         </div>
         <div class="col-md-12">
@@ -22,7 +22,7 @@
     </div>
 </div>
 <rds-offcanvas [canvasTitle]="translate.instant(canvasTitle)" [offId]="'tenantOffcanvas'" [offcanvaswidth]="650"
-    [placement]="'end'" *ngIf="viewCanvas"(onClose)="close()">
+    [placement]="'end'" *ngIf="viewCanvas" (onClose)="close()">
     <rds-nav-tab [navtabsItems]="navtabsItems" (onClicktab)="getSelectedNavTab($event)" [activeTab]="activePage"
         [horizontalAlignment]="'start'" [verticalAlignment]="false" [pills]="false" [tabs]="true" [fill]="false"
         [justified]="false">
@@ -51,11 +51,10 @@
                 </div>
                 <div class="footer-buttons">
                     <div class="col-md-12 ">
-                        <rds-button [label]="translate.instant('Cancel')" [outlineButton]="true" [colorVariant]="'primary'"
-                            [size]="'small'" (click)="close()" data-bs-dismiss="offcanvas">
+                        <rds-button [label]="translate.instant('Cancel')" [outlineButton]="true"
+                            [colorVariant]="'primary'" [size]="'small'" (click)="close()" data-bs-dismiss="offcanvas">
                         </rds-button>
                         <rds-button [label]="translate.instant('Save')" [size]="'small'"
-                            [showLoadingSpinner]="buttonSpinnerForSave"
                             [disabled]="!selectedFeatureList||selectedFeatureList.length===0" class="ms-2"
                             [colorVariant]="'primary'" (click)="save()">
                         </rds-button>
