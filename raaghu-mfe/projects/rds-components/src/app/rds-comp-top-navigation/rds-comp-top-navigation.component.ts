@@ -65,6 +65,7 @@ export class RdsTopNavigationComponent extends MfeBaseComponent implements OnIni
   @Output() onUpdateNotificationSettings = new EventEmitter<any>();
   @Input() linkedAccountHeaders: any = [];
   @Input() linkedAccountData: any = [];
+  @Input() FixedHeader :boolean = true
   tabName: string = '';
   navtabItems: any = [
     { label: 'Manage Linked Accounts', translationKey: 'Manage Linked Accounts', tablink: '#nav-LinkAccount', ariacontrols: 'nav-LinkAccount', Image: 'bi bi-pencil-fill', icon: 'manage_linked', subText: 'Manage accounts linked to your account', subtextTranslationKey: 'Manage accounts linked to your account', showoffcanvas: true },
@@ -108,6 +109,7 @@ export class RdsTopNavigationComponent extends MfeBaseComponent implements OnIni
 
 
   @Output() onProfileSave = new EventEmitter<any>();
+  @Output() FixedHeaderStyle = new EventEmitter<any>();
 
   constructor(private router: Router, private injector: Injector,
     private shared: SharedService,
@@ -152,6 +154,10 @@ export class RdsTopNavigationComponent extends MfeBaseComponent implements OnIni
       console.log(res);
       this.emitEvent('tenancyDataReturns', res);
     })
+
+    this.FixedHeaderStyle.emit(this.FixedHeader)
+    console.log('Topnav',this.FixedHeader);
+    
   }
 
 
@@ -206,5 +212,15 @@ export class RdsTopNavigationComponent extends MfeBaseComponent implements OnIni
       newLinkEl.href = event + '.css';
       headEl.appendChild(newLinkEl);
     }
+  }
+
+  public get menu(): string[] {
+    var customMenu = [' navbar navbar-expand-sm p-0 '];
+    if (this.FixedHeader) {
+      customMenu.push(' fixed-top ')
+    } else {
+      customMenu.push('');
+    }
+    return customMenu;
   }
 }

@@ -87,9 +87,13 @@
               <rds-label [label]="translate.instant('Desktop')"></rds-label>
             </div>
               <div class="form-group mb-3">
-                <rds-checkbox [disabled]="false" [label]="translate.instant('Fixed Header')" [withLabel]="true" [switch]="false"
+                <!-- <rds-checkbox [disabled]="false" [label]="translate.instant('Fixed Header')" [withLabel]="true" [switch]="false"
                   [inline]="false" [id]="'fixedHeaderDesktop'" name="check-box" (onChange)="getCheckboxValue($event,'desktopFixedHeader')"
-                  [checked]="desktopFixedHeader"></rds-checkbox>
+                  [checked]="desktopFixedHeader"></rds-checkbox> -->
+                  <rds-checkbox [label]="translate.instant('Fixed Header')" [checked]="desktopFixedHeader"
+                  [withLabel]="true" name="desktopFixedHeader" [checked]="desktopFixedHeader" name="check-box" (onChange)="getCheckboxValue($event,'desktopFixedHeader')"
+                  [id]="'desktopFixedHeader'"></rds-checkbox>
+                  {{desktopFixedHeader}}
               </div>
                <div class="mb-2">
                 <rds-label [label]="translate.instant('Mobile')"></rds-label>
@@ -164,7 +168,7 @@
                 <!-- <rds-select-list [value]="asideSkin"  name="Listskin"
                 [label]="translate.instant('Skin')" [itemList]="listskin" placeholderText="Selct Skin" labelPosition="top" [(ngModel)]="asideSkin">
               </rds-select-list> -->
-                {{submenuToggle}}
+
 
               </div>
               <div class="form-group mb-3">
@@ -197,4 +201,3 @@
   </div>
 </div>
 <app-rds-comp-visual-settings-shimmer *ngIf="isShimmer"></app-rds-comp-visual-settings-shimmer>
-

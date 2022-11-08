@@ -19,6 +19,7 @@ import { DOCUMENT } from '@angular/common';
 import { slideInAnimation } from '../animation';
 import { RouterOutlet } from '@angular/router';
 import * as moment from 'moment';
+import { selectAllVisualsettings } from 'projects/libs/state-management/src/lib/state/Visual-settings/visual-settings.selector';
 declare var bootstrap: any;
 @Component({
   selector: 'app-sidenav',
@@ -124,6 +125,7 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
   selectedMode: any;
   counter: number = 0;
   isLightMode: boolean = true;
+  fixedHeader : boolean = true
   constructor(private router: Router,
     private store: Store,
     private alertService: AlertService,
@@ -148,19 +150,43 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
   permissions: any;
 
   ngOnInit(): void {
-    const selectedTheme = localStorage.getItem('THEME');
-    if (selectedTheme == "undefined") {
-      this.theme.theme = 'light';
-      localStorage.setItem('THEME', 'light');
-      this.isLightMode = true;
-    } else {
-      this.theme.theme = selectedTheme;
-      if (selectedTheme == 'light') {
-        this.isLightMode = true;
-      } else {
-        this.isLightMode = false;
-      }
-    }
+    this.store.select(selectAllVisualsettings).subscribe((res: any) => {
+        if (res) {
+          console.log(res);
+          // this.fixedHeader = res.header.desktopFixedHeader
+          // if(res.visualsettings[12].menu.asideSkin== 'dark'){
+          //   const selectedTheme = localStorage.getItem('THEME');
+          // if (selectedTheme == "undefined") {
+          //   this.theme.theme = 'light';
+          //   localStorage.setItem('THEME', 'light');
+          //   this.isLightMode = true;
+          // } else {
+          //   this.theme.theme = selectedTheme;
+          //   if (selectedTheme == 'light') {
+          //     this.isLightMode = true;
+          //   } else {
+          //     this.isLightMode = false;
+          //   }
+          // }
+          
+          // }
+      
+        }
+      })  
+      
+    // const selectedTheme = localStorage.getItem('THEME');
+          // if (selectedTheme == "undefined") {
+          //   this.theme.theme = 'light';
+          //   localStorage.setItem('THEME', 'light');
+          //   this.isLightMode = true;
+          // } else {
+          //   this.theme.theme = selectedTheme;
+          //   if (selectedTheme == 'light') {
+          //     this.isLightMode = true;
+          //   } else {
+          //     this.isLightMode = false;
+          //   }
+          // }
     console.log(this.isLightMode);
     const tenancy: any = JSON.parse(localStorage.getItem('tenantInfo'));
     if (tenancy) {
@@ -217,7 +243,8 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
         unreadCount: this.unreadCount,
         receiveNotifications: this.receiveNotifications,
         notificationTypes: this.notificationTypes,
-        tenancy: this.tenancy
+        tenancy: this.tenancy,
+        FixedHeader : this.fixedHeader
       },
       output: {
         toggleEvent: () => {
@@ -584,16 +611,14 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
 
 
   toggleBetweenMode(event: any) {
-    debugger
     let checked = event;
     if (!checked) {
-      this.theme.theme = 'light';
-      localStorage.setItem('THEME', 'light');   
-    }else {
       this.theme.theme = 'dark';
-      localStorage.setItem('THEME', 'dark');
-
-
+      localStorage.setItem('THEME', 'dark');  
+    }else { 
+      this.theme.theme = 'light';
+      localStorage.setItem('THEME', 'light'); 
+      
     }
   }
 

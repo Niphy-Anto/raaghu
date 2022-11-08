@@ -53,6 +53,8 @@ import {
   DefaultLanguageReducer,
   downloadReducer,
   DownloadEffects,
+  visualsettingEffects,
+  VisualsettingsReducer,
 } from '@libs/state-management';
 import { LanguageTextEffects } from 'projects/libs/state-management/src/lib/state/language-text/language-text.effects';
 import { RdsSideNavModule } from '@libs/rds-elements';
@@ -124,6 +126,7 @@ export function getRemoteServiceBaseUrl(): any {
       languageText: LanguageTextReducer,
       defaultLanguage: DefaultLanguageReducer,
       downloadData: downloadReducer,
+      visualsettings:VisualsettingsReducer
     }),
 
     StoreDevtoolsModule.instrument({
@@ -145,6 +148,7 @@ export function getRemoteServiceBaseUrl(): any {
       LoginEffects,
       LanguageTextEffects,
       DownloadEffects,
+      visualsettingEffects
     ]),
     SharedModule,
     UserAuthModule,
