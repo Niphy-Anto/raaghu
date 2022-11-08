@@ -52,7 +52,7 @@ const Sidebar = (activeData) => {
     if (path) {
       let activatedElement = document.getElementById(path);
       if (activatedElement) {
-        activatedElement.scrollIntoView({ block: "nearest", inline: "nearest" });
+        activatedElement.scrollIntoView({ block: "center", inline: "nearest" });
       }
     }
 
@@ -202,6 +202,7 @@ const Sidebar = (activeData) => {
         itemType = activeData.activeData.markdownRemark.frontmatter.title.split(' >')[0];
       }
       activatedElement = document.getElementById(activatedPath);
+    }
       if (type === 'elements') {
         elementExpanded = !elementExpanded
         ChartExpanded = false;
@@ -333,7 +334,6 @@ const Sidebar = (activeData) => {
 
 
 
-    }
   }
   return (
     <div className="mt-3 ">
