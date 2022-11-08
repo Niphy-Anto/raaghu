@@ -48,7 +48,6 @@ export class RdsSideNavComponent implements OnInit, OnChanges {
   showHide: boolean = false;
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log(this.activesubmenu );
     if (this.activesubmenu !== ''&&this.activesubmenu !== undefined) {
       this.showHide = true
       const x = document.getElementById('menuWithChildren' + this.activesubmenu);
