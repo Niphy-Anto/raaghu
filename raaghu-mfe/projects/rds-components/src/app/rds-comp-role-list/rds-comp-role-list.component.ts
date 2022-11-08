@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { AlertService, ComponentLoaderOptions } from '@libs/shared';
-import { Store } from '@ngrx/store';
 
 import { TranslateService } from '@ngx-translate/core';
 import { getRoles } from 'projects/libs/state-management/src/lib/state/role/role.actions';
@@ -90,7 +89,6 @@ export class RdsCompRoleListComponent implements OnInit {
   constructor(
     public translate: TranslateService,
     private alertService: AlertService,
-    private store: Store,
   ) { }
 
   ngOnInit(): void {
@@ -264,9 +262,8 @@ export class RdsCompRoleListComponent implements OnInit {
     this.RolesData = event;
   }
   getRoles() {
-    //this.onRefreshRole.emit();
-    this.store.dispatch(getRoles([]));
-  }
+    this.onRefreshRole.emit();
+    }
   onActionSelect(event: any) {
     if (event.actionId === 'delete') {
       this.deleteEvent.emit(event.selectedData);
