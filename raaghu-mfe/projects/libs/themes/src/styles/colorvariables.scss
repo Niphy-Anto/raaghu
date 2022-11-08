@@ -203,6 +203,11 @@ html[theme=light] {
 
   $form-select-bg1: $input-bg !default;
   $form-select-border-color1: $gray-300 !default;
+  $shimmerbg: $light-700 !default;
+
+  .shimmer-loader-container .shimmer-loader .block {
+    background-color: $shimmerbg;
+  }
 
   .navbar {
     background-color: white;
@@ -1634,6 +1639,11 @@ html[theme=dark] {
 
   $form-select-bg: $dark-900 !default;
   $form-select-border-color: $form-select-bg !default;
+  $shimmerbg: $dark-200 !default;
+
+  .shimmer-loader-container .shimmer-loader .block {
+    background-color: $shimmerbg;
+  }
 
   .default-datepicker.border {
     border-color: $input-border-color;
@@ -1650,7 +1660,6 @@ html[theme=dark] {
       color: #212529;
       background-color: white;
       border: 1px solid #ced4da;
-
     }
   }
 
