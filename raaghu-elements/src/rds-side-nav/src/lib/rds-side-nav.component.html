@@ -23,7 +23,7 @@
         </rds-icon><span [ngClass]="{ 'd-none' : collapsed }">{{item.label}}</span>
       </a>
       <div *ngIf="showHide">
-        <div class="collapse pt-2 " [ngClass]="{ 'show' : activepage===i }" [id]="item.id" *ngIf="item.children"
+        <div class="collapse pt-2 " [ngClass]="{ 'show' : showHide }" [id]="item.id" *ngIf="item.children"
           style="margin-left: 1rem;">
           <ul class="list-unstyled fw-normal pb-1 small">
             <li *ngFor="let child of item.children; index as j">
