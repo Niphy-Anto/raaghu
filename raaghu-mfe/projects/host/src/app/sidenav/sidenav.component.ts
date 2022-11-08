@@ -301,7 +301,6 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
           });
         },
         linkUser: (data: any) => {
-          console.log(data);
           this.store.dispatch(linkToUser(data))
         },
         setAllNotificationAsRead: () => {
