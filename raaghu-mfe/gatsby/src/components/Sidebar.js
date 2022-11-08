@@ -51,16 +51,13 @@ const Sidebar = (activeData) => {
   useEffect(() => {
     if (path) {
       let activatedElement = document.getElementById(path);
-      // let position = activatedElement.getBoundingClientRect();
       if (activatedElement) {
-        // console.log(position);
         activatedElement.scrollIntoView({ block: "nearest", inline: "nearest" });
-        // activatedElement.scroll({ top: position.top, left: position.left });
       }
     }
 
 
-  }, []);
+  });
 
   const data = useStaticQuery(graphql`
     query MyQuery {
@@ -228,7 +225,7 @@ const Sidebar = (activeData) => {
           if (elementExpanded) {
             elementCollapse.classList.add('show');
             elementCollapse.classList.remove('hide');
-            if (activatedElement && itemType == "Elements") {
+            if (activatedElement && itemType === "Elements") {
               activatedElement.scrollIntoView({ block: "center", inline: "nearest" });
             }
           } else {
@@ -250,7 +247,7 @@ const Sidebar = (activeData) => {
           if (componentExpanded) {
             componentCollapse.classList.add('show');
             componentCollapse.classList.remove('hide');
-            if (activatedElement && itemType == "Components") {
+            if (activatedElement && itemType === "Components") {
               activatedElement.scrollIntoView({ block: "center", inline: "nearest" });
             }
 
@@ -278,7 +275,7 @@ const Sidebar = (activeData) => {
           if (ChartExpanded) {
             chartCollapse.classList.add('show');
             chartCollapse.classList.remove('hide');
-            if (activatedElement && itemType == "Charts") {
+            if (activatedElement && itemType === "Charts") {
               activatedElement.scrollIntoView({ block: "center", inline: "nearest" });
             }
           } else {
@@ -316,7 +313,7 @@ const Sidebar = (activeData) => {
           if (pageExpanded) {
             pageCollapse.classList.add('show');
             pageCollapse.classList.remove('hide');
-            if (activatedElement && itemType == "Pages") {
+            if (activatedElement && itemType === "Pages") {
               activatedElement.scrollIntoView({ block: "center", inline: "nearest" });
             }
           } else {
@@ -354,7 +351,7 @@ const Sidebar = (activeData) => {
             <div className={`collapse ${elementExpanded ? 'show' : 'hide'}`} id="element-collapse" >
               <ul className="btn-toggle-nav list-unstyled fw-normal pb-1 text-capitalize">
                 {elementsLists.map((node, index) => (
-                  <li key={node.url + index} className={path == node.url ? 'active' : ''} id={node.url}>
+                  <li key={node.url + index} className={path === node.url ? 'active' : ''} id={node.url}>
                     <Link className="nav-link rounded" href={node.url}>{node.displayName}</Link>
                   </li>
                 ))}
@@ -371,16 +368,16 @@ const Sidebar = (activeData) => {
               /><span className="px-3"> Charts </span>
             </button>
             <div className={`collapse ${ChartExpanded ? 'show' : 'hide'}`} id="chart-collapse">
-              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 text-capitalize">
+              <ul className="btn-toggle-nav list-unstyled fw-normal pb-1 text-capitalize">
                 {chartList.map((node) => (
-                  <li key={node.url} className={path == node.url ? 'active' : ''} id={node.url}>
-                    <Link class="nav-link rounded" activeClassName="active" href={node.url}>{node.displayName}</Link>
+                  <li key={node.url} className={path === node.url ? 'active' : ''} id={node.url}>
+                    <Link className="nav-link rounded" activeClassName="active" href={node.url}>{node.displayName}</Link>
                   </li>
                 ))}
               </ul>
             </div>
           </li>
-          <li class="nav-item mb-2">
+          <li className="nav-item mb-2">
             <button id="component-toggle" className="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed w-100 position-relative ps-0 fw-semibold" onClick={() => onToggle('components')} data-bs-toggle="collapse" aria-expanded={componentExpanded}>
               <img
                 src={components}
@@ -393,7 +390,7 @@ const Sidebar = (activeData) => {
             <div className={`collapse ${componentExpanded ? 'show' : 'hide'}`} id="component-collapse">
               <ul className="btn-toggle-nav list-unstyled fw-normal pb-1 text-capitalize">
                 {componentsList.map((node) => (
-                  <li key={node.url} className={path == node.url ? 'active' : ''} id={node.url} >
+                  <li key={node.url} className={path === node.url ? 'active' : ''} id={node.url} >
                     <Link className="nav-link rounded" href={node.url} >{node.displayName}</Link>
                   </li>
                 ))}
@@ -412,7 +409,7 @@ const Sidebar = (activeData) => {
             <div className={`collapse ${pageExpanded ? 'show' : 'hide'}`} id="pages-collapse">
               <ul className="btn-toggle-nav list-unstyled fw-normal pb-1 text-capitalize">
                 {pageLists.map((node) => (
-                  <li key={node.url} className={path == node.url ? 'active' : ''} id={node.url}>
+                  <li key={node.url} className={path === node.url ? 'active' : ''} id={node.url}>
                     <Link className="nav-link rounded" href={node.url} >{node.displayName}</Link>
                   </li>
                 ))}

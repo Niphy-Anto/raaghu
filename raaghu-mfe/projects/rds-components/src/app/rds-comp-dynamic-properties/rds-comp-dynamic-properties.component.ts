@@ -126,7 +126,9 @@ export class RdsCompDynamicPropertiesComponent implements OnInit, OnChanges {
           tenantId: null,
           id: this.id,
         };
+        this.closeCanvas();
         this.createOrUpdateDynamic.emit(DynamicPropery);
+     
       }
     } else {
       if (this.DynamicProperyInfo.dynamicProperties?.propertyName && this.DynamicProperyInfo.dynamicProperties.inputType[0] != "" && this.selectedPermissions != "" && this.DynamicProperyInfo.dynamicProperties.propertyName != "") {
