@@ -145,8 +145,10 @@ $accessible-700: #30334e;
 $accessible-800: #13002E;
 
 $form-select-bg: $accessible-300!default;
-$offcanvas-border-color: $accessible-300 !default;
-$nav-tabs-border-color: $accessible-300 !default;
+//$offcanvas-border-color: $accessible-300 !default;
+$offcanvas-bottom-border-color: $accessible-300!default;
+//$nav-tabs-border-color: $accessible-300 !default;
+$nav-tabs-bottom-border-color: $accessible-300!default;
 $form-select-border-color: $accessible-400 !default;
 $dropdown-border-bottom: $accessible-500 !default;
 $dropdown-bg-color: $accessible-400 !default;
