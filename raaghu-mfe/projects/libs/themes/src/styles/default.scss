@@ -146,16 +146,24 @@ $default-100: #F58220;
   --chartgradient10: rgba(25,70,186,1%);
   
 }
+
+//$input-select-bg: $dark-200!default;
+//$form-select-bg: $dark-200!default;
+$modal-bg-color: $dark-200!default;
+
 html[theme=dark] {
-  $dropdown-color: $white;
   $input-bg: $dark-200!default;
-  $input-border-color: $dark-100 !default;
-  $form-select-bg: $input-bg!default;
+  $input-bg-border: $dark-100!default;
+
+  $dropdown-color: $white;
+
+ 
+
   $input-group-addon-bg: $input-bg;
 
   .form-control, .form-control:focus {
     background-color: $input-bg;
-    border: 1px solid $input-border-color;
+    border: 1px solid $input-bg-border;
     color: $white;
   }
 
@@ -165,11 +173,11 @@ html[theme=dark] {
 
   .input-group-text {
     background-color: $input-group-addon-bg;
-    border-color: $input-border-color;
+    border-color: $input-bg-border;
   }
 
   .form-select {
-    background-color: $form-select-bg;
+   // background-color: $form-select-bg;
     // border-color: $form-select-border-color;
   }
 }
