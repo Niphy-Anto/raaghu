@@ -47,7 +47,7 @@ export class RdsCompRoleListComponent implements OnInit {
     { value: 'Filter By Permission', some: 'value', key: 'filterByPermission', icon: 'funnel', iconWidth: '20px', iconHeight: '20px' },
   ];
   @Input() roleList: any[] = [];
-  buttonSpinnerForNewRole: boolean = true;
+  showLoadingSpinner: boolean = false;
   @Output() onSaveRole = new EventEmitter<any>();
   @Output() onRefreshRole = new EventEmitter<any>();
   @Output() onEditRole = new EventEmitter<any>();
@@ -127,7 +127,11 @@ export class RdsCompRoleListComponent implements OnInit {
     var bsOffcanvas = new bootstrap.Offcanvas(offcanvas);
     bsOffcanvas.hide();
     this.viewCanvas = false;
-    this.close();
+    this.Roles = { RolesData: undefined, permissionsList: [] };
+    this.RolesData = undefined;
+    this.onReset.emit(true);
+    this.isRoleDataValid = false;
+    // this.close();
   }
 
 
@@ -146,13 +150,13 @@ export class RdsCompRoleListComponent implements OnInit {
     this.selectedId = '';
     this.viewCanvas = true;
     this.SelectedPermissionValues = [];
-     if (event) {
-      this.buttonSpinnerForNewRole = true;
+    if (event) {
+      this.showLoadingSpinner = true;
       this.canvasTitle = 'NEW ROLE';
       this.Roles = { RolesData: undefined, permissionsList: [] };
       this.RolesData = undefined;
       this.onnewRole.emit(true);
-     }
+    }
     setTimeout(() => {
       var offcanvas = document.getElementById('RoleOffcanvas')
       var bsOffcanvas = new bootstrap.Offcanvas(offcanvas);
@@ -173,7 +177,11 @@ export class RdsCompRoleListComponent implements OnInit {
       } else {
         this.EnableTreeSave = true;
       }
-      this.close();
+      this.viewCanvas = false;
+      this.Roles = { RolesData: undefined, permissionsList: [] };
+      this.RolesData = undefined;
+      this.onReset.emit(true);
+      this.isRoleDataValid = false;
     }
     else {
       this.RoleFromNewRole = eventdata.roledata;
@@ -192,7 +200,7 @@ export class RdsCompRoleListComponent implements OnInit {
     this.RolesData = undefined;
     this.onReset.emit(true);
     this.isRoleDataValid = false;
-    this.buttonSpinnerForNewRole = false;
+    this.showLoadingSpinner = false;
   }
   editTableRowData(event): void {
     this.newRole(undefined);
@@ -284,6 +292,7 @@ export class RdsCompRoleListComponent implements OnInit {
         message: alert.message,
       };
       this.currentAlerts.push(currentAlert);
+      this.showLoadingSpinner = false;
       const rdsAlertMfeConfig = this.rdsAlertMfeConfig;
       rdsAlertMfeConfig.input.currentAlerts = [...this.currentAlerts];
       this.rdsAlertMfeConfig = rdsAlertMfeConfig;
