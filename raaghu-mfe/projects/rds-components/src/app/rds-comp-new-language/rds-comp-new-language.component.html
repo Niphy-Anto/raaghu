@@ -31,20 +31,10 @@
                 <div class="mb-2">
                   <rds-label label="Country Code"></rds-label>
                 </div>
-                <rds-dropdownlist
-                  [icon]="selectedLanguage.icon"
-                  [borderDropdown]="true"
-                  class="text-dark"
-                  [id]="'country-code-dropdown'"
-                  [placeholder]="translate.instant('Country Code')"
-                  [value]="selectedLanguage.icon"
-                  required
-                  [multiSelect]="false"
-                  [selectAll]="false"
-                  [entity]="false"
-                  [listItems]="flags"
-                  (onSelect)="onCountryCodeSelect($event)"
-                ></rds-dropdownlist>
+                <rds-dropdownlist [icon]="selectedLanguage.icon" [borderDropdown]="true" class="text-dark"
+                  [id]="'country-code-dropdown'" [placeholder]="translate.instant('Country Code')"
+                  [value]="selectedLanguage.icon" required [multiSelect]="false" [selectAll]="false" [entity]="false"
+                  [listItems]="flags" (onSelect)="onCountryCodeSelect($event)"></rds-dropdownlist>
               </div>
               <div class="form-control-feedback" *ngIf="
                   submitted &&
@@ -78,9 +68,8 @@
         <rds-button [label]="translate.instant('Cancel')" (click)="closeCanvas()" type="button"
           [colorVariant]="'primary'" [outlineButton]="true" [size]="'small'">
         </rds-button>
-        <rds-button [label]="translate.instant('Save')" type="button" [size]="'small'"
-          [showLoadingSpinner]="buttonSpinner" [disabled]="!languageForm.valid" class="ms-2" [colorVariant]="'primary'"
-          (click)="addLanguage(languageForm)">
+        <rds-button [label]="translate.instant('Save')" type="button" [size]="'small'" [disabled]="!languageForm.valid"
+          class="ms-2" [colorVariant]="'primary'" (click)="addLanguage(languageForm)">
         </rds-button>
       </div>
     </div>

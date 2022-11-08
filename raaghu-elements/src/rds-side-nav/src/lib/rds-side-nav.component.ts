@@ -48,8 +48,7 @@ export class RdsSideNavComponent implements OnInit, OnChanges {
   showHide: boolean = false;
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log(this.activesubmenu );
-    if (this.activesubmenu !== ''&&this.activesubmenu !== undefined) {
+    if (this.activesubmenu !== '' && this.activesubmenu !== undefined) {
       this.showHide = true
       const x = document.getElementById('menuWithChildren' + this.activesubmenu);
       if (x) {
@@ -71,28 +70,40 @@ export class RdsSideNavComponent implements OnInit, OnChanges {
     this.emitPath.emit(path);
     this.activepage = i;
     this.activesubmenu = '';
+    this.showHide = false;
   }
   onMenuWithChildrenClick(i: number, path: any) {
     this.showHide = !this.showHide
     const x = document.getElementById('menuWithChildren' + i);
     if (x) {
       var dropdown = new Collapse(x);
-      dropdown.show();
+      if (this.showHide) {
+        dropdown.show();
+        if (this.activesubmenu == '' || this.activesubmenu == undefined) {
+          this.activesubmenu = 0;
+        }
+        this.activepage = i;
+        this.emitPath.emit(path);
+      } else {
+        dropdown.hide();
+        // this.activesubmenu = '';
+      }
+
     }
 
-    if (x !== null)
-      // this.openedMenu = x.classList.contains('collapsed');
-      if (!this.openedMenu) {
-        // this.showHide = true;
-        this.activepage = i;
-        this.activesubmenu = 0;
-        this.emitPath.emit(path);
-      }
-      else {
-        // this.showHide = false;
-        this.activepage = i;
-        this.activesubmenu = '';
-      }
+    // if (x !== null)
+    //   // this.openedMenu = x.classList.contains('collapsed');
+    //   if (!this.openedMenu) {
+    //     // this.showHide = true;
+    //     this.activepage = i;
+    //     this.activesubmenu = 0;
+    //     this.emitPath.emit(path);
+    //   }
+    //   else {
+    //     // this.showHide = false;
+    //     this.activepage = i;
+    //     this.activesubmenu = '';
+    //   }
   }
   onClickSubMenu(event: any, i: number, j: number, path: any): void {
     event.preventDefault();

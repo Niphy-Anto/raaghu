@@ -149,7 +149,7 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
 
   ngOnInit(): void {
     const selectedTheme = localStorage.getItem('THEME');
-    if (selectedTheme == "undefined") {
+    if (selectedTheme == "undefined"||selectedTheme==''||selectedTheme==undefined||selectedTheme==null) {
       this.theme.theme = 'light';
       localStorage.setItem('THEME', 'light');
       this.isLightMode = true;
@@ -161,7 +161,6 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
         this.isLightMode = false;
       }
     }
-    console.log(this.isLightMode);
     const tenancy: any = JSON.parse(localStorage.getItem('tenantInfo'));
     if (tenancy) {
       this.tenancy = tenancy.name;
@@ -274,7 +273,6 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
           });
         },
         linkUser: (data: any) => {
-          console.log(data);
           this.store.dispatch(linkToUser(data))
         },
         setAllNotificationAsRead: () => {
@@ -584,16 +582,14 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
 
 
   toggleBetweenMode(event: any) {
-    debugger
     let checked = event;
     if (!checked) {
-      this.theme.theme = 'light';
-      localStorage.setItem('THEME', 'light');   
-    }else {
       this.theme.theme = 'dark';
-      localStorage.setItem('THEME', 'dark');
-
-
+      localStorage.setItem('THEME', 'dark');  
+    }else { 
+      this.theme.theme = 'light';
+      localStorage.setItem('THEME', 'light'); 
+      
     }
   }
 

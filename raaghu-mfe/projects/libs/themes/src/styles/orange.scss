@@ -144,6 +144,16 @@ $accessible-600: #282A42;
 $accessible-700: #30334e;
 $accessible-800: #13002E;
 
+$form-select-bg: $accessible-300!default;
+$offcanvas-border-color: $accessible-300 !default;
+$nav-tabs-border-color: $accessible-300 !default;
+$form-select-border-color: $accessible-400 !default;
+$dropdown-border-bottom: $accessible-500 !default;
+$dropdown-bg-color: $accessible-400 !default;
+$dropdown-border-bottom-hover: $accessible-200 !default;
+$dropdown-bghover-color: $accessible-300 !default;
+$dropdown-link-active-bg: $accessible-500 !default;
+$card-bg-color: $accessible-700 !default;
 $datepicker-bg: $accessible-600 !default;
 $datepicker-head: $accessible-600 !default;
 $nav-background-color: $accessible-600 !default;
@@ -175,9 +185,10 @@ $link-color: $primary;
 html[theme=dark] {
 
   $dropdown-color: $white;
+
   $input-bg: $accessible-300!default;
-  $form-select-bg: $input-bg!default;
-  $form-select-border-color: $accessible-200!default;
+  $input-bg-border: $accessible-400 !default;
+
   $notification-header-bg: $accessible-500!default;
   $input-group-addon-bg: $input-bg;
   $input-group-addon-border-color: $accessible-400 !default;
@@ -189,6 +200,12 @@ html[theme=dark] {
     color: $white;
   }
 
+  .form-group.has-search {
+    .form-control {
+      background-color: $input-bg;
+    }
+  }
+
   .dropdown-menu {
     --bs-dropdown-color: $dropdown-color;
   }
@@ -198,10 +215,6 @@ html[theme=dark] {
     border-color: $input-group-addon-border-color;
   }
 
-  .form-select {
-    background-color: $form-select-bg;
-    border-color: $form-select-border-color;
-  }
 
   .notification-header {
     background-color: $notification-header-bg;

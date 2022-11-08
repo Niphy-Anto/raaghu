@@ -142,21 +142,21 @@ export class RdsDropdownlistComponent implements OnInit, OnChanges {
 
     //this.checkedCategoryList = JSON.stringify(this.checkedCategoryList);
   }
-  public get classes(): string[] {
+  // public get classes(): string[] {
 
-    var border = ['border']
-    if (this.borderDropdown == true) {
+  //   var border = ['border']
+  //   if (this.borderDropdown == true) {
 
-      //  border.push('border');
-      border.push('rounded')
-    }
-    else {
-      border.push('border-0');
-    }
-    return border;
+  //     //  border.push('border');
+  //     border.push('rounded')
+  //   }
+  //   else {
+  //     border.push('border-1');
+  //   }
+  //   return border;
 
 
-  }
+  // }
 
 
   open(): void {
