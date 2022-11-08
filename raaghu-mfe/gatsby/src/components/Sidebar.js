@@ -11,39 +11,37 @@ const Sidebar = (activeData) => {
   let pageExpanded = false;
   let componentExpanded = false;
   let elementExpanded = true;
-  let defaultActiveKey = 0;
   let path = '';
+  let type = ''
   if (activeData && activeData.activeData) {
     let _activeData = activeData.activeData;
     if (_activeData.markdownRemark && _activeData.markdownRemark.frontmatter) {
-      const type = _activeData.markdownRemark.frontmatter.title.split(' >')[0];
-      path = _activeData.markdownRemark.frontmatter.slug.split('/')[1].toLowerCase();
-
+      if (_activeData.markdownRemark.frontmatter.title) {
+        type = _activeData.markdownRemark.frontmatter.title.split(' >')[0];
+      }
+      if (_activeData.markdownRemark.frontmatter.slug) {
+        path = _activeData.markdownRemark.frontmatter.slug.split('/')[1].toLowerCase();
+      }
       if (type === 'Charts') {
         ChartExpanded = true;
         elementExpanded = false;
         pageExpanded = false;
         componentExpanded = false;
-        defaultActiveKey = 1;
       } else if (type === 'Elements') {
         ChartExpanded = false;
         elementExpanded = true;
         pageExpanded = false;
-        defaultActiveKey = 0;
         componentExpanded = false;
       } else if (type === 'Components') {
         ChartExpanded = false;
         elementExpanded = false;
         pageExpanded = false;
         componentExpanded = true;
-        defaultActiveKey = 2;
-
       } else if (type === 'Pages') {
         ChartExpanded = false;
         elementExpanded = false;
         pageExpanded = true;
         componentExpanded = false;
-        defaultActiveKey = 3;
 
       }
 
@@ -53,15 +51,13 @@ const Sidebar = (activeData) => {
   useEffect(() => {
     if (path) {
       let activatedElement = document.getElementById(path);
-      // position = activatedElement.getBoundingClientRect();
       if (activatedElement) {
-        activatedElement.scrollIntoView({ block: "center", inline: "nearest" });
-        // activatedElement.scroll({ top: position.top, left: position.left });
+        activatedElement.scrollIntoView({ block: "nearest", inline: "nearest" });
       }
     }
 
 
-  }, []);
+  });
 
   const data = useStaticQuery(graphql`
     query MyQuery {
@@ -124,14 +120,7 @@ const Sidebar = (activeData) => {
     return 0;
   });
 
-  // const rdsElementList = elementsList.filter(
-  //   (item) =>
-  //     item.name.includes("rds-") && !componentsList.find((x) => x === item)
-  // );
-
-  // var elementName=JSON.parse(JSON.stringify(rdsElementList).replace(/-/g,' '));
   var elementsLists = [];
-
   var elementsExcludesList = ["elements", "calendar", "rds-page-", "edition", "cookieconsent"]
   elementsList.forEach((item) => {
     if (
@@ -183,24 +172,8 @@ const Sidebar = (activeData) => {
     }
   });
 
-  // elementsList.forEach((item, index, self) => {
-  //   if (
-  //     item.name.includes("rds-page-") &&
-  //     !pageexcludesList.some((element) => item.name.includes(element)) &&
-  //     index === self.findIndex((t) => t.name === item.name)
-  //   ) {
-  //     const _item = {
-  //       name: item.name,
-  //       url: item.name,
-  //       displayName: item.name.replace(/-/g, " "),
-  //     };
-  //     pageLists.push(_item);
-  //   }
-  // });
 
   pageLists.sort((a, b) => {
-    // let fa = a.name.toLowerCase(),
-    //   fb = b.name.toLowerCase();
     if (a.name.toLowerCase() < b.name.toLowerCase()) {
       return -1;
     }
@@ -218,147 +191,156 @@ const Sidebar = (activeData) => {
     var pageCollapse = document.getElementById('pages-collapse');
     var componentBtnelement = document.getElementById('component-toggle');
     var componentCollapse = document.getElementById('component-collapse');
-    let activatedPath = activeData.activeData.markdownRemark.frontmatter.slug.split('/')[1].toLowerCase();
-    let activatedElement = document.getElementById(activatedPath);
-    let itemType = activeData.activeData.markdownRemark.frontmatter.title.split(' >')[0];
-    if (type === 'elements') {
-      elementExpanded = !elementExpanded
-      ChartExpanded = false;
-      componentExpanded = false;
-      pageExpanded = false;
+    let activatedPath = '';
+    let activatedElement = '';
+    let itemType = '';
+    if (activeData && activeData.activeData && activeData.activeData.markdownRemark && activeData.activeData.markdownRemark.frontmatter) {
+      if (activeData.activeData.markdownRemark.frontmatter.slug) {
+        activatedPath = activeData.activeData.markdownRemark.frontmatter.slug.split('/')[1].toLowerCase();
+      }
+      if (activeData.activeData.markdownRemark.frontmatter.title) {
+        itemType = activeData.activeData.markdownRemark.frontmatter.title.split(' >')[0];
+      }
+      activatedElement = document.getElementById(activatedPath);
+      if (type === 'elements') {
+        elementExpanded = !elementExpanded
+        ChartExpanded = false;
+        componentExpanded = false;
+        pageExpanded = false;
 
-      if (chartCollapse) {
-        chartCollapse.classList.remove('show');
-        chartCollapse.classList.add('hide');
-      }
-      if (componentCollapse) {
-        componentCollapse.classList.remove('show');
-        componentCollapse.classList.add('hide');
-      }
-      if (pageCollapse) {
-        pageCollapse.classList.remove('show');
-        pageCollapse.classList.add('hide');
-      }
+        if (chartCollapse) {
+          chartCollapse.classList.remove('show');
+          chartCollapse.classList.add('hide');
+        }
+        if (componentCollapse) {
+          componentCollapse.classList.remove('show');
+          componentCollapse.classList.add('hide');
+        }
+        if (pageCollapse) {
+          pageCollapse.classList.remove('show');
+          pageCollapse.classList.add('hide');
+        }
 
-      if (elementCollapse) {
-        if (elementExpanded) {
-          elementCollapse.classList.add('show');
-          elementCollapse.classList.remove('hide');
-          if (activatedElement && itemType == "Elements") {
-            activatedElement.scrollIntoView({ block: "center", inline: "nearest" });
+        if (elementCollapse) {
+          if (elementExpanded) {
+            elementCollapse.classList.add('show');
+            elementCollapse.classList.remove('hide');
+            if (activatedElement && itemType === "Elements") {
+              activatedElement.scrollIntoView({ block: "center", inline: "nearest" });
+            }
+          } else {
+            elementCollapse.classList.remove('show');
+            elementCollapse.classList.add('hide');
           }
-        } else {
+        }
+      } else if (type === 'components') {
+        elementExpanded = false
+        ChartExpanded = false;
+        componentExpanded = !componentExpanded;
+        pageExpanded = false;
+
+        if (chartCollapse) {
+          chartCollapse.classList.remove('show');
+          chartCollapse.classList.add('hide');
+        }
+        if (componentCollapse) {
+          if (componentExpanded) {
+            componentCollapse.classList.add('show');
+            componentCollapse.classList.remove('hide');
+            if (activatedElement && itemType === "Components") {
+              activatedElement.scrollIntoView({ block: "center", inline: "nearest" });
+            }
+
+          } else {
+            componentCollapse.classList.remove('show');
+            componentCollapse.classList.add('hide');
+          }
+        }
+        if (pageCollapse) {
+          pageCollapse.classList.remove('show');
+          pageCollapse.classList.add('hide');
+        }
+
+        if (elementCollapse) {
+          elementCollapse.classList.remove('show');
+          elementCollapse.classList.add('hide');
+        }
+      } else if (type === 'charts') {
+        elementExpanded = false
+        ChartExpanded = !ChartExpanded;
+        componentExpanded = false;
+        pageExpanded = false;
+
+        if (chartCollapse) {
+          if (ChartExpanded) {
+            chartCollapse.classList.add('show');
+            chartCollapse.classList.remove('hide');
+            if (activatedElement && itemType === "Charts") {
+              activatedElement.scrollIntoView({ block: "center", inline: "nearest" });
+            }
+          } else {
+            chartCollapse.classList.remove('show');
+            chartCollapse.classList.add('hide');
+          }
+        }
+        if (componentCollapse) {
+          componentCollapse.classList.remove('show');
+          componentCollapse.classList.add('hide');
+        }
+        if (pageCollapse) {
+          pageCollapse.classList.remove('show');
+          pageCollapse.classList.add('hide');
+        }
+
+        if (elementCollapse) {
+          elementCollapse.classList.remove('show');
+          elementCollapse.classList.add('hide');
+        }
+      } else if (type === 'pages') {
+        elementExpanded = false
+        ChartExpanded = false;
+        componentExpanded = false;
+        pageExpanded = !pageExpanded;
+        if (chartCollapse) {
+          chartCollapse.classList.remove('show');
+          chartCollapse.classList.add('hide');
+        }
+        if (componentCollapse) {
+          componentCollapse.classList.remove('show');
+          componentCollapse.classList.add('hide');
+        }
+        if (pageCollapse) {
+          if (pageExpanded) {
+            pageCollapse.classList.add('show');
+            pageCollapse.classList.remove('hide');
+            if (activatedElement && itemType === "Pages") {
+              activatedElement.scrollIntoView({ block: "center", inline: "nearest" });
+            }
+          } else {
+            pageCollapse.classList.remove('show');
+            pageCollapse.classList.add('hide');
+          }
+        }
+        if (elementCollapse) {
           elementCollapse.classList.remove('show');
           elementCollapse.classList.add('hide');
         }
       }
-    } else if (type === 'components') {
-      elementExpanded = false
-      ChartExpanded = false;
-      componentExpanded = !componentExpanded;
-      pageExpanded = false;
+      btnelement.setAttribute('aria-expanded', elementExpanded);
+      chartBtnelement.setAttribute('aria-expanded', ChartExpanded);
+      pageBtnelement.setAttribute('aria-expanded', pageExpanded);
+      componentBtnelement.setAttribute('aria-expanded', componentExpanded);
 
-      if (chartCollapse) {
-        chartCollapse.classList.remove('show');
-        chartCollapse.classList.add('hide');
-      }
-      if (componentCollapse) {
-        if (componentExpanded) {
-          componentCollapse.classList.add('show');
-          componentCollapse.classList.remove('hide');
-          if (activatedElement && itemType == "Components") {
-            activatedElement.scrollIntoView({ block: "center", inline: "nearest" });
-          }
 
-        } else {
-          componentCollapse.classList.remove('show');
-          componentCollapse.classList.add('hide');
-        }
-      }
-      if (pageCollapse) {
-        pageCollapse.classList.remove('show');
-        pageCollapse.classList.add('hide');
-      }
 
-      if (elementCollapse) {
-        elementCollapse.classList.remove('show');
-        elementCollapse.classList.add('hide');
-      }
-    } else if (type === 'charts') {
-      elementExpanded = false
-      ChartExpanded = !ChartExpanded;
-      componentExpanded = false;
-      pageExpanded = false;
-
-      if (chartCollapse) {
-        if (ChartExpanded) {
-          chartCollapse.classList.add('show');
-          chartCollapse.classList.remove('hide');
-          if (activatedElement && itemType == "Charts") {
-            activatedElement.scrollIntoView({ block: "center", inline: "nearest" });
-          }
-        } else {
-          chartCollapse.classList.remove('show');
-          chartCollapse.classList.add('hide');
-        }
-      }
-      if (componentCollapse) {
-        componentCollapse.classList.remove('show');
-        componentCollapse.classList.add('hide');
-      }
-      if (pageCollapse) {
-        pageCollapse.classList.remove('show');
-        pageCollapse.classList.add('hide');
-      }
-
-      if (elementCollapse) {
-        elementCollapse.classList.remove('show');
-        elementCollapse.classList.add('hide');
-      }
-    } else if (type === 'pages') {
-      elementExpanded = false
-      ChartExpanded = false;
-      componentExpanded = false;
-      pageExpanded = !pageExpanded;
-      if (chartCollapse) {
-        chartCollapse.classList.remove('show');
-        chartCollapse.classList.add('hide');
-      }
-      if (componentCollapse) {
-        componentCollapse.classList.remove('show');
-        componentCollapse.classList.add('hide');
-      }
-      if (pageCollapse) {
-        if (pageExpanded) {
-          pageCollapse.classList.add('show');
-          pageCollapse.classList.remove('hide');
-          if (activatedElement && itemType == "Pages") {
-            activatedElement.scrollIntoView({ block: "center", inline: "nearest" });
-          }
-        } else {
-          pageCollapse.classList.remove('show');
-          pageCollapse.classList.add('hide');
-        }
-      }
-      if (elementCollapse) {
-        elementCollapse.classList.remove('show');
-        elementCollapse.classList.add('hide');
-      }
     }
-    btnelement.setAttribute('aria-expanded', elementExpanded);
-    chartBtnelement.setAttribute('aria-expanded', ChartExpanded);
-    pageBtnelement.setAttribute('aria-expanded', pageExpanded);
-    componentBtnelement.setAttribute('aria-expanded', componentExpanded);
-
-
-
   }
   return (
     <div className="mt-3 ">
       <div className="position-sticky sidebar-sticky">
-        <ul defaultActiveKey={defaultActiveKey} id="nav-bar" className="nav flex-column px-1 my-3 me-2">
-          <li eventKey="0" className="nav-item mb-2">
-            <button type="button" onClick={() => onToggle('elements')} class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed w-100 position-relative ps-0 fw-semibold" data-bs-toggle="collapse" id="element-toggle" aria-expanded={elementExpanded}>
+        <ul id="nav-bar" className="nav flex-column px-1 my-3 me-2">
+          <li className="nav-item mb-2">
+            <button type="button" onClick={() => onToggle('elements')} className="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed w-100 position-relative ps-0 fw-semibold" data-bs-toggle="collapse" id="element-toggle" aria-expanded={elementExpanded}>
               <img
                 src={elements}
                 className="img-fluid"
@@ -367,17 +349,17 @@ const Sidebar = (activeData) => {
               /><span className="px-3"> Elements</span>
             </button>
             <div className={`collapse ${elementExpanded ? 'show' : 'hide'}`} id="element-collapse" >
-              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 text-capitalize">
-                {elementsLists.map((node) => (
-                  <li key={node.url} className={path == node.url ? 'active' : ''} id={node.url}>
+              <ul className="btn-toggle-nav list-unstyled fw-normal pb-1 text-capitalize">
+                {elementsLists.map((node, index) => (
+                  <li key={node.url + index} className={path === node.url ? 'active' : ''} id={node.url}>
                     <Link className="nav-link rounded" href={node.url}>{node.displayName}</Link>
                   </li>
                 ))}
               </ul>
             </div>
           </li>
-          <li eventKey="1" class="nav-item mb-2">
-            <button id="chart-toggle" class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed w-100 position-relative ps-0 fw-semibold" data-bs-toggle="collapse" onClick={() => onToggle('charts')} aria-expanded={ChartExpanded}>
+          <li className="nav-item mb-2">
+            <button id="chart-toggle" className="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed w-100 position-relative ps-0 fw-semibold" data-bs-toggle="collapse" onClick={() => onToggle('charts')} aria-expanded={ChartExpanded}>
               <img
                 src={pages}
                 className="img-fluid"
@@ -386,17 +368,17 @@ const Sidebar = (activeData) => {
               /><span className="px-3"> Charts </span>
             </button>
             <div className={`collapse ${ChartExpanded ? 'show' : 'hide'}`} id="chart-collapse">
-              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 text-capitalize">
+              <ul className="btn-toggle-nav list-unstyled fw-normal pb-1 text-capitalize">
                 {chartList.map((node) => (
-                  <li key={node.url} className={path == node.url ? 'active' : ''} id={node.url}>
-                    <Link class="nav-link rounded" activeClassName="active" href={node.url}>{node.displayName}</Link>
+                  <li key={node.url} className={path === node.url ? 'active' : ''} id={node.url}>
+                    <Link className="nav-link rounded" activeClassName="active" href={node.url}>{node.displayName}</Link>
                   </li>
                 ))}
               </ul>
             </div>
           </li>
-          <li eventKey="2" class="nav-item mb-2">
-            <button id="component-toggle" class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed w-100 position-relative ps-0 fw-semibold" onClick={() => onToggle('components')} data-bs-toggle="collapse" aria-expanded={componentExpanded}>
+          <li className="nav-item mb-2">
+            <button id="component-toggle" className="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed w-100 position-relative ps-0 fw-semibold" onClick={() => onToggle('components')} data-bs-toggle="collapse" aria-expanded={componentExpanded}>
               <img
                 src={components}
                 className="img-fluid"
@@ -406,17 +388,17 @@ const Sidebar = (activeData) => {
             </button>
 
             <div className={`collapse ${componentExpanded ? 'show' : 'hide'}`} id="component-collapse">
-              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 text-capitalize">
+              <ul className="btn-toggle-nav list-unstyled fw-normal pb-1 text-capitalize">
                 {componentsList.map((node) => (
-                  <li key={node.url} className={path == node.url ? 'active' : ''} id={node.url} >
-                    <Link className="nav-link rounded" href={node.url + "?eventkey=2"} >{node.displayName}</Link>
+                  <li key={node.url} className={path === node.url ? 'active' : ''} id={node.url} >
+                    <Link className="nav-link rounded" href={node.url} >{node.displayName}</Link>
                   </li>
                 ))}
               </ul>
             </div>
           </li>
-          <li eventKey="3" class="nav-item mb-2">
-            <button id="page-toggle" class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed w-100 position-relative ps-0 fw-semibold" data-bs-toggle="collapse" onClick={() => onToggle('pages')} aria-expanded={pageExpanded}>
+          <li className="nav-item mb-2">
+            <button id="page-toggle" className="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed w-100 position-relative ps-0 fw-semibold" data-bs-toggle="collapse" onClick={() => onToggle('pages')} aria-expanded={pageExpanded}>
               <img
                 src={pages}
                 className="img-fluid"
@@ -425,10 +407,10 @@ const Sidebar = (activeData) => {
               /><span className="px-3"> Pages </span>
             </button>
             <div className={`collapse ${pageExpanded ? 'show' : 'hide'}`} id="pages-collapse">
-              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 text-capitalize">
+              <ul className="btn-toggle-nav list-unstyled fw-normal pb-1 text-capitalize">
                 {pageLists.map((node) => (
-                  <li key={node.url} className={path == node.url ? 'active' : ''} id={node.url}>
-                    <Link class="nav-link rounded" href={node.url} >{node.displayName}</Link>
+                  <li key={node.url} className={path === node.url ? 'active' : ''} id={node.url}>
+                    <Link className="nav-link rounded" href={node.url} >{node.displayName}</Link>
                   </li>
                 ))}
               </ul>
@@ -440,5 +422,4 @@ const Sidebar = (activeData) => {
     </div>
   );
 };
-
 export default Sidebar;
