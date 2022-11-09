@@ -117,7 +117,6 @@ export class RdsCompProfileComponent extends MfeBaseComponent implements OnInit 
   islogout: boolean = false;
   navtabcontentClass: string = "d-none";
   firstcontent: boolean = false;
-
   cancelbutton: boolean = true;
   public classlists = [];
   @Input()
