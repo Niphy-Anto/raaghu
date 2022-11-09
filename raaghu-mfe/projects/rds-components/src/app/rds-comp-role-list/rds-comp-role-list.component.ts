@@ -271,7 +271,7 @@ export class RdsCompRoleListComponent implements OnInit {
   }
   getRoles() {
     this.onRefreshRole.emit();
-  }
+    }
   onActionSelect(event: any) {
     if (event.actionId === 'delete') {
       this.deleteEvent.emit(event.selectedData);
