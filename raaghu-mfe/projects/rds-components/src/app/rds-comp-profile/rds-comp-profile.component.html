@@ -78,8 +78,8 @@
               (onClicktab)="onclickMenu($event)">
             </rds-nav-tab>
             <div class="text-center">
-              <rds-button [outlineButton]="true" [label]="translate.instant('LOGOUT')" type="button" [size]="'medium'"
-                          [colorVariant]="'primary'" [iconFill]="false" [iconStroke]="true" (click)="logout()" [icon]="'logout'"
+              <rds-button [outlineButton]="true" [label]="translate.instant('LOGOUT')" [showLoadingSpinner]="showLoadingSpinner" type="button" [size]="'medium'"
+                          [colorVariant]="'primary'" [iconFill]="false" [iconStroke]="true"  (click)="logout()" [icon]="'logout'"
                           [iconHeight]="'15px'" [iconWidth]="'15px'">
               </rds-button>
             </div>

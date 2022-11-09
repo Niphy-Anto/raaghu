@@ -57,8 +57,8 @@
             <div class="row">
               <div class="col-md-12 sm-p-0">
                 <div class="form-group mb-4">
-
                   <rds-input size="medium" [disabled]="false" [isRequired]=true
+                    [iconCursor]="'pointer'" [icon]="'eye'" [iconOpacity]="'0.4'" [iconHeight]="'18px'"[iconWidth]="'18px'"
                     [label]="translate.instant('Current Password')" [inputType]="'password'" required
                     [placeholder]="'Current Password'" [(ngModel)]="ProfileData.CurrentPassword" #password="ngModel"
                     ngDefaultControl name="password">
@@ -71,8 +71,8 @@
               </div>
               <div class="col-md-12 sm-p-0">
                 <div class="form-group mb-4">
-
                   <rds-input size="medium" [inputType]="'password'" [isRequired]=true
+                    [iconCursor]="'pointer'" [icon]="'eye'" [iconOpacity]="'0.4'" [iconHeight]="'18px'"[iconWidth]="'18px'"
                     [label]="translate.instant('New Password')" [placeholder]="'New Password'"
                     [(ngModel)]="ProfileData.NewPassword" #new_Password="ngModel" ngDefaultControl name="newpassword"
                     (keyup)='confirmPassword()' required>
@@ -87,6 +87,7 @@
               <div class="col-md-12 sm-p-0">
                 <div class="form-group mb-4">
                   <rds-input size="medium" [inputType]="'password'" [isRequired]=true
+                    [iconCursor]="'pointer'" [icon]="'eye'" [iconOpacity]="'0.4'" [iconHeight]="'18px'"[iconWidth]="'18px'"
                     [label]="translate.instant('Confirm new Password')" required [placeholder]="'Confirm Password'"
                     [(ngModel)]="ProfileData.ConFNewPassword" #confirm_Password="ngModel" ngDefaultControl
                     name="chkpass" (keyup)='confirmPassword()'>
