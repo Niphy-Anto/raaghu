@@ -1,11 +1,11 @@
-import { AfterViewInit, Component, DoCheck, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@angular/core';
 import { Tooltip } from 'bootstrap'
 @Component({
   selector: 'rds-button',
   templateUrl: './rds-button.component.html',
   styleUrls: ['./rds-button.component.scss']
 })
-export class RdsButtonComponent implements AfterViewInit, OnInit, DoCheck, OnChanges {
+export class RdsButtonComponent implements AfterViewInit, OnInit {
 
   @Input() colorVariant: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'dark' | 'light' | 'default' | 'review' | '' = 'default';
   @Input() submit = false;
@@ -25,36 +25,15 @@ export class RdsButtonComponent implements AfterViewInit, OnInit, DoCheck, OnCha
   @Input() iconWidth: string = '';
   @Input() iconStroke: boolean = true;
   @Input() iconFill: boolean = false;
-  // @Input() buttonType?: 'iconOnly' | 'labelOnly' | 'iconLabel' = 'iconLabel';
   @Input() icon: string = '';
   @Input() label: string = '';
-  // private labelTemp: string;
-
   @Output() onClick = new EventEmitter<Event>();
-
-
-  // makeSpinnerActive: boolean;
-  // iconTemp: string;
-  // buttonTypeTemp: 'iconOnly' | 'labelOnly' | 'iconLabel' | undefined;
 
   constructor() {
     this.id = this.id + RdsButtonComponent.count++;
   }
-  ngOnChanges(changes: SimpleChanges): void {
-    // this.labelTemp = this.label;
-  }
 
-
-  ngOnInit(): void {
-    
-  }
-
-
-
-  ngDoCheck(): void {
-    
-  }
-
+  ngOnInit(): void {}
 
   ngAfterViewInit(): void {
     const tooltipTriggerList: any = document.querySelectorAll('[data-bs-toggle="tooltip"]')
@@ -70,7 +49,6 @@ export class RdsButtonComponent implements AfterViewInit, OnInit, DoCheck, OnCha
     const icon = `${this.roundedButton ? ' btn-icon rounded-pill ' : ''}`;
     const icon1 = `${this.roundedCorner ? ' rounded-pill ' : ''}`;
     const disabledGrey = `${this.disabled === true ? 'btn ' : ''}`
-
     return outline + mode + icon + icon1 + disabledGrey;
   }
 
@@ -82,7 +60,6 @@ export class RdsButtonComponent implements AfterViewInit, OnInit, DoCheck, OnCha
     }
 
     return classes;
-    // return this.block ? 'd-grid' : '';
   }
 
   public get submitButton(): string {
@@ -94,10 +71,6 @@ export class RdsButtonComponent implements AfterViewInit, OnInit, DoCheck, OnCha
   }
 
   buttonClick(evt: any) {
-    // if (this.makeSpinnerActive) {
-    //   this.showLoadingSpinner = true;
-
-    // }
     if(!this.showLoadingSpinner&&!this.disabled){
       this.onClick.emit(evt);
     }
