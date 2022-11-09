@@ -30,7 +30,7 @@ export class RdsButtonComponent implements AfterViewInit, OnInit, DoCheck, OnCha
   @Input() label: string = '';
   // private labelTemp: string;
 
-  @Output() click = new EventEmitter<Event>();
+  @Output() onClick = new EventEmitter<Event>();
 
 
   // makeSpinnerActive: boolean;
@@ -46,26 +46,13 @@ export class RdsButtonComponent implements AfterViewInit, OnInit, DoCheck, OnCha
 
 
   ngOnInit(): void {
-    // this.makeSpinnerActive = this.showLoadingSpinner;
-    // this.showLoadingSpinner = false;
-    // this.labelTemp = this.label;
-    // this.iconTemp = this.icon;
-    // this.buttonTypeTemp = this.buttonType;
+    
   }
 
 
 
   ngDoCheck(): void {
-    // if (this.showLoadingSpinner == true) {
-    //   this.label = '';
-    //   this.icon = '';
-    //   this.buttonType = 'labelOnly';
-    // }
-    // else {
-    //   this.label = this.labelTemp;
-    //   this.icon = this.iconTemp;
-    //   this.buttonType = this.buttonTypeTemp;
-    // }
+    
   }
 
 
@@ -74,15 +61,7 @@ export class RdsButtonComponent implements AfterViewInit, OnInit, DoCheck, OnCha
     if (this.tooltipTitle && tooltipTriggerList) {
       const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new Tooltip(tooltipTriggerEl)) || '';
     }
-    // if (this.tooltipPlacement && this.tooltipTitle) {
-    //   const tooltipElement: any = document.getElementById(this.id)
-    //   // update
-    //   if (tooltipElement) {
-    //     let bsTooltip = new bootstrap.Tooltip(tooltipElement)
-    //     tooltipElement.title = this.tooltipTitleou
-    //     bsTooltip = new bootstrap.Tooltip(tooltipElement)
-    //   }
-    // }
+    
   }
 
   public get classes(): string {
@@ -120,7 +99,7 @@ export class RdsButtonComponent implements AfterViewInit, OnInit, DoCheck, OnCha
 
     // }
     if(!this.showLoadingSpinner&&!this.disabled){
-      this.click.emit(evt);
+      this.onClick.emit(evt);
     }
   }
 
