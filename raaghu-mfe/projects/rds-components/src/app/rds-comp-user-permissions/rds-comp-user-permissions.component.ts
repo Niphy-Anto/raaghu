@@ -284,14 +284,7 @@ export class RdsCompUserPermissionsComponent implements OnInit {
       event.stopPropagation();
 
 
-    } else {
     }
-    setTimeout(() => {
-      var offcanvas = document.getElementById('userOffcanvas');
-      var bsOffcanvas = new bootstrap.Offcanvas(offcanvas);
-      bsOffcanvas.show();
-    }, 100);
-
     this.activePage = 0;
   }
 
