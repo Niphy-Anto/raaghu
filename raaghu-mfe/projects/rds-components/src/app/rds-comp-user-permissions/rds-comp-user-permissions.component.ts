@@ -495,10 +495,18 @@ export class RdsCompUserPermissionsComponent implements OnInit {
       this.exportToExcel();
     }
     else if (event.key === 'filterByPermission') {
-      console.log(this.openFilterByPermission.nativeElement);
+      console.log("openFilterByPermission",this.openFilterByPermission.nativeElement);
       let el: HTMLElement = this.openFilterByPermission.nativeElement as HTMLElement;
       el.click();
     }
+  }
+  openCanvas(canvasId): void {
+    this.viewCanvas = true;
+    setTimeout(() => {
+      var offcanvas = document.getElementById(canvasId);
+      var bsOffcanvas = new bootstrap.Offcanvas(offcanvas);
+      bsOffcanvas.show();
+    }, 1);
   }
 
 }
