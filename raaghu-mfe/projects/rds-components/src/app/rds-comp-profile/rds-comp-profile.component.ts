@@ -95,11 +95,12 @@ export class RdsCompProfileComponent extends MfeBaseComponent implements OnInit 
 
   @Input() ProfileData: Profile = {
     ProfileName: 'Wai Technologies',
-    EmailAddress: 'contact@waiin.com',
-    UserName: 'admin',
+    emailAddress: 'contact@waiin.com',
+    userName: 'admin',
     CurrentPassword: '',
     NewPassword: '',
-    ConFNewPassword: ''
+    ConFNewPassword: '',
+    name:''
   }
   tabisVisible: boolean = false;
 

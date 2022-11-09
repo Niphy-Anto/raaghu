@@ -100,7 +100,7 @@ export class UserAuthService implements OnInit {
     this.userAuthenticated = false;
     let customHeaders = this.requestHeaders();
     localStorage.removeItem('LoginCredential');
-    // localStorage.removeItem('tenantInfo');
+    localStorage.removeItem('tenantInfo');
     this.sessionService.init();
 
     XmlHttpRequestHelper.ajax(

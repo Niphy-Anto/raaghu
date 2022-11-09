@@ -54,13 +54,13 @@ export class AppComponent extends MfeBaseComponent implements OnInit {
   ngOnInit(): void {
     this.subscribeToAlerts();
     const tenantInfo = JSON.parse(localStorage.getItem('tenantInfo'));
-    this.tenancyName = tenantInfo ? tenantInfo.name : 'Not Selected';
+    var tenancyName = tenantInfo ? tenantInfo.name : 'Not Selected';
 
     this.rdsLoginMfeConfig = {
       name: 'RdsLogin',
       input: {
         rememeberMe: true,
-        TenancyName:this.tenancyName,
+        TenancyName:tenancyName,
         buttonSpinner: false
       },
       output: {
@@ -83,7 +83,6 @@ export class AppComponent extends MfeBaseComponent implements OnInit {
     }
     this.store.select(selectTenant).subscribe(res => {
       if (res) {
-
         const mfeConfig = this.rdsLoginMfeConfig;
         if (res.state === 1 && res.tenantId !== null) {
           mfeConfig.input.TenancyName = this.tenancyName;
@@ -99,8 +98,8 @@ export class AppComponent extends MfeBaseComponent implements OnInit {
           this.alertService.showAlert('Success', 'Switched to tenancy "' + this.tenancyName + '" successfully', AlertTypes.Success)
         } else if (res.state === 0 || res.state > 1) {
           this.alertService.showAlert('Failed', 'Tenancy "' + this.tenancyName + '" is not available', AlertTypes.Error)
-          // localStorage.removeItem('tenantInfo');
-          // mfeConfig.input.TenancyName = 'Not Selected';
+          localStorage.removeItem('tenantInfo');
+          mfeConfig.input.TenancyName = 'Not Selected';
           mfeConfig.input.buttonSpinnerForChangeTenant = false;
           // mfeConfig.input.buttonSpinner = false;
           this.rdsLoginMfeConfig = mfeConfig;
