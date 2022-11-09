@@ -1,4 +1,3 @@
-
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { SharedService } from '@libs/shared';
 import { TranslateService } from '@ngx-translate/core';
@@ -11,21 +10,25 @@ export class RdsCompVisualSettingsComponent implements OnInit {
   constructor(
     public translate: TranslateService,
     private sharedService: SharedService
-  ) { }
+  ) {}
   ngOnInit(): void {
-    if (this.visualsettingsItem && this.visualsettingsItem.length>0) {
-      this.theme = this.visualsettingsItem[12].theme;
-      this.fixedFooter = this.visualsettingsItem[12].footer.fixedFooter;
-      this.desktopFixedHeader = this.visualsettingsItem[12].header.desktopFixedHeader;
-      this.mobileFixedHeader = this.visualsettingsItem[12].header.mobileFixedHeader;
-      this.darkMode = this.visualsettingsItem[12].layout.darkMode;
-      this.asideSkin = this.visualsettingsItem[12].menu.asideSkin;
-      this.fixedAside = this.visualsettingsItem[12].menu.fixedAside;
-      this.allowAsideMinimizing = this.visualsettingsItem[12].menu.allowAsideMinimizing;
-      this.defaultMinimizedAside = this.visualsettingsItem[12].menu.defaultMinimizedAside;
-      this.hoverableAside = this.visualsettingsItem[12].menu.hoverableAside;
-      this.submenuToggle = this.visualsettingsItem[12].menu.submenuToggle;
-      this.fixedSubHeader = this.visualsettingsItem[12].subHeader.fixedSubHeader;
+    if (this.visualsettingsItem && this.visualsettingsItem.length > 0) {
+      this.theme = this.visualsettingsItem[4].theme;
+      this.fixedFooter = this.visualsettingsItem[4].footer.fixedFooter;
+      this.desktopFixedHeader =
+        this.visualsettingsItem[4].header.desktopFixedHeader;
+      this.mobileFixedHeader =
+        this.visualsettingsItem[4].header.mobileFixedHeader;
+      this.darkMode = this.visualsettingsItem[4].layout.darkMode;
+      this.asideSkin = this.visualsettingsItem[4].menu.asideSkin;
+      this.fixedAside = this.visualsettingsItem[4].menu.fixedAside;
+      this.allowAsideMinimizing =
+        this.visualsettingsItem[4].menu.allowAsideMinimizing;
+      this.defaultMinimizedAside =
+        this.visualsettingsItem[4].menu.defaultMinimizedAside;
+      this.hoverableAside = this.visualsettingsItem[4].menu.hoverableAside;
+      this.submenuToggle = this.visualsettingsItem[4].menu.submenuToggle;
+      this.fixedSubHeader = this.visualsettingsItem[4].subHeader.fixedSubHeader;
     }
   }
   selectedThemeIndex: any = '0';
@@ -34,7 +37,7 @@ export class RdsCompVisualSettingsComponent implements OnInit {
   @Input() listskin: any;
   @Input() listSubmenu: any;
   // @Input() theme: string = 'default';
-  private theme: string = 'default';
+  private theme: string = 'theme2';
   @Input() visualSettingsHeader: any = {};
   @Input() visualSettingsSubHeader: any = {};
   // @Input() visualSettingsMenu: any = {};
@@ -42,9 +45,9 @@ export class RdsCompVisualSettingsComponent implements OnInit {
   public fixedFooter: boolean = false;
   public fixedSubHeader: boolean = false;
   public desktopFixedHeader: boolean = false;
-  public mobileFixedHeader: boolean = false
-  public asideSkin :any= ''
-  public fixedAside: boolean = false
+  public mobileFixedHeader: boolean = false;
+  public asideSkin: any = '';
+  public fixedAside: boolean = false;
   public allowAsideMinimizing: boolean = false;
   public defaultMinimizedAside: boolean = false;
   public hoverableAside: boolean = false;
@@ -57,16 +60,23 @@ export class RdsCompVisualSettingsComponent implements OnInit {
 
   @Output() onSaveVisualsettingsData = new EventEmitter<any>();
 
-
   saveVisualSettings() {
+    const header: any = {
+      mobile: this.mobileFixedHeader,
+      desktop: this.desktopFixedHeader,
+    };
     this.onSaveVisualsettingsData.emit({
       theme: this.theme,
       footer: { fixedFooter: this.fixedFooter },
-      header: { desktopFixedHeader: this.desktopFixedHeader, mobileFixedHeader: this.mobileFixedHeader },
+      header: { minimizeDesktopHeaderType: JSON.stringify(header) },
       layout: { darkMode: this.darkMode },
       menu: {
-        asideSkin: this.asideSkin, fixedAside: this.fixedAside, allowAsideMinimizing: this.allowAsideMinimizing,
-        defaultMinimizedAside: this.defaultMinimizedAside, hoverableAside: this.hoverableAside, submenuToggle: this.submenuToggle
+        asideSkin: this.asideSkin,
+        fixedAside: this.fixedAside,
+        allowAsideMinimizing: this.allowAsideMinimizing,
+        defaultMinimizedAside: this.defaultMinimizedAside,
+        hoverableAside: this.hoverableAside,
+        submenuToggle: this.submenuToggle,
       },
       subHeader: { fixedSubHeader: this.fixedSubHeader },
     });
@@ -128,8 +138,6 @@ export class RdsCompVisualSettingsComponent implements OnInit {
       case 'hoverableAside':
         this.hoverableAside = event;
         break;
-
     }
-
   }
 }

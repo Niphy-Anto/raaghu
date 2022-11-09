@@ -3,7 +3,7 @@ import { AlertService, ComponentLoaderOptions } from '@libs/shared';
 import { Store } from '@ngrx/store';
 import {
   getVisualsettings,
-  UpdateDefaultUiManagementSettings,
+  UpdateUiManagementSettings,
 } from 'projects/libs/state-management/src/lib/state/Visual-settings/visual-settings.actions';
 import { selectAllVisualsettings } from 'projects/libs/state-management/src/lib/state/Visual-settings/visual-settings.selector';
 import { TranslateService } from '@ngx-translate/core';
@@ -92,7 +92,7 @@ export class AppComponent implements OnInit {
             //   // this.store.dispatch(changeToLightMode());
             // }
             this.store.dispatch(
-              UpdateDefaultUiManagementSettings(visualsettingsItem)
+              UpdateUiManagementSettings(visualsettingsItem)
             );
           }
         },

@@ -214,13 +214,13 @@ export class RdsTopNavigationComponent extends MfeBaseComponent implements OnIni
     }
   }
 
-  public get menu(): string[] {
-    var customMenu = [' navbar navbar-expand-sm p-0 '];
-    if (this.FixedHeader) {
-      customMenu.push(' fixed-top ')
-    } else {
-      customMenu.push('');
-    }
-    return customMenu;
-  }
+  // public get menu(): string[] {
+  //   var customMenu = [' navbar navbar-expand-sm p-0 '];
+  //   if (this.FixedHeader) {
+  //     customMenu.push(' fixed-top ')
+  //   } else {
+  //     customMenu.push('');
+  //   }
+  //   return customMenu;
+  // }
 }
