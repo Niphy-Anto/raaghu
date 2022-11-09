@@ -275,7 +275,20 @@ export class AppComponent implements OnInit {
     this.store.select(selectSettingsTenantPageComboboxItems).subscribe((res: any) => {
       if (res && res.settingsComboboxItem) {
         this.settingsTenantEditionList = [];
-        this.settingsTenantEditionList = res.settingsComboboxItem;
+        res.settingsComboboxItem.forEach(element => {
+          const data = {
+            value:element.value,
+            some:element.displayText,
+            isSelected:element.isSelected,
+            icon:'',
+            iconWidth:0,
+            iconHeight:0,
+            iconFill:false,
+            iconStroke: true,
+            isFree: element.isFree
+          }
+          this.settingsTenantEditionList.push(data);
+        });         
         //this.settingsTenantEditionList = res.editionComboboxItem.filter((x: any) => x.isFree);
         const mfeConfig = this.rdsCompTenantManageMfeConfig
         mfeConfig.input.settingsTenantEditionList = [...this.settingsTenantEditionList];
