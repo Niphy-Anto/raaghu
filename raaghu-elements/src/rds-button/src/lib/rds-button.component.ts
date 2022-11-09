@@ -7,7 +7,7 @@ import { Tooltip } from 'bootstrap'
 })
 export class RdsButtonComponent implements AfterViewInit, OnInit, DoCheck, OnChanges {
 
-  @Input() colorVariant: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'dark' | 'light' | 'default' | 'review' = 'default';
+  @Input() colorVariant: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'dark' | 'light' | 'default' | 'review' | '' = 'default';
   @Input() submit = false;
   static count: number = 0;
   @Input() block: boolean = false;
@@ -16,7 +16,7 @@ export class RdsButtonComponent implements AfterViewInit, OnInit, DoCheck, OnCha
   @Input() outlineButton = false;
   @Input() roundedButton = false;
   @Input() roundedCorner = false;
-  @Input() tooltipTitle: string = '';
+  @Input() tooltipTitle: string;
   @Input() tooltipPlacement: 'top' | 'bottom' | 'right' | 'left' = 'bottom';
   @Input() id: string = 'buttonId';
   @Input() isLoading: boolean = false;
@@ -70,10 +70,10 @@ export class RdsButtonComponent implements AfterViewInit, OnInit, DoCheck, OnCha
 
 
   ngAfterViewInit(): void {
-    // const tooltipTriggerList: any = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-    // if (this.tooltipTitle && tooltipTriggerList) {
-    //   const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new Tooltip(tooltipTriggerEl)) || '';
-    // }
+    const tooltipTriggerList: any = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+    if (this.tooltipTitle && tooltipTriggerList) {
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new Tooltip(tooltipTriggerEl)) || '';
+    }
     // if (this.tooltipPlacement && this.tooltipTitle) {
     //   const tooltipElement: any = document.getElementById(this.id)
     //   // update
