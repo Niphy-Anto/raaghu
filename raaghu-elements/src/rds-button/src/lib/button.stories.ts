@@ -27,7 +27,7 @@ export default {
       options: ['small', 'medium', 'large'],
       control: { type: 'select' }
     },
-    buttonType: {table: {disable: true,},},
+    buttonType: { table: { disable: true, }, },
   }
 } as Meta;
 
@@ -39,7 +39,8 @@ const tooltipTemplate: Story<RdsButtonComponent> = (args: RdsButtonComponent) =>
   props: args,
   template: `<div class="row m-5">
   <div class="col-md-12 text-center">
-<rds-button [buttonType]="buttonType" [label]="label" [colorVariant]="colorVariant" [size]="size" [tooltipTitle]="tooltipTitle" [tooltipPlacement]="tooltipPlacement"></rds-button>
+<rds-button [buttonType]="buttonType" [label]="label" [colorVariant]="colorVariant" [size]="size" 
+[tooltipTitle]="tooltipTitle" [tooltipPlacement]="tooltipPlacement"></rds-button>
 </div>
 </div>`
 });
@@ -74,11 +75,15 @@ outline.args = {
 
 
 export const rounded_Button_With_Icon = Template.bind({});
-rounded_Button_With_Icon.parameters = { controls: { include: ['roundedButton', 'colorVariant', 'size', 'icon', 
-'iconHeight', 'iconWidth', 'iconFill', 'iconStroke', 'buttonType'] } };
+rounded_Button_With_Icon.parameters = {
+  controls: {
+    include: ['roundedButton', 'colorVariant', 'size', 'icon',
+      'iconHeight', 'iconWidth', 'iconFill', 'iconStroke', 'buttonType']
+  }
+};
 rounded_Button_With_Icon.args = {
   icon: 'plus',
-  colorVariant: 'primary',
+  colorVariant: '',
   size: 'medium',
   iconHeight: '18px',
   iconWidth: '18px',
