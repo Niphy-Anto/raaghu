@@ -47,7 +47,7 @@ export class RdsCompSubscriptionComponent implements OnInit {
     duration: "2 Days",
     iconurl:"standard_subscription",
     recommended:false,
-    features:["Maximum User Count","Test Check feature","Test check feature count 2"]
+    features:["Maximum User Count","Test Check feature","Unlimited Subscription"]
   }];
   Dataset:any[]=[];
  // Dataset:any={};

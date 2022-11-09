@@ -141,10 +141,21 @@
   $accessible-600: #282A42;
 $accessible-700: rgb(48, 51, 78);
   $accessible-800: #13002E;
+$table-border-color: $accessible-200 !default;
+$accordion-button-bg: $accessible-400 !default;
+$offcanvas-border-color: $accessible-300 !default;
+$nav-tabs-border-color: $accessible-300 !default;
 
+$dropdown-border-bottom: $accessible-500 !default;
+$dropdown-bg-color: $accessible-400 !default;
+$dropdown-border-bottom-hover: $accessible-200 !default;
+$dropdown-bghover-color: $accessible-300 !default;
+$dropdown-link-active-bg: $accessible-500 !default;
 
+$form-select-bg: $accessible-300!default;
+$form-select-border-color: $accessible-400 !default;
   $modal-bg-color: $accessible-600 !default;
-  $form-select-border-color: $accessible-400 !default;
+ 
 
 
   $card-bg-color: $accessible-700 !default;
@@ -185,15 +196,14 @@ $datepicker-head: $accessible-600 !default;
     background-color: $accessible-300;
     border: 1px solid $accessible-400;
   }
-
   //$body-wrapper-bg:;
-html[theme=light] {
-
-  /* $card-bg-color: white !default;
+  html[theme=light] {
+    /* $card-bg-color: white !default;
   $card-border-color: $accessible-500 !default;*/
-}
-html[theme=dark] {
+  }
 
+html[theme=dark] {
+  $form-select-bg: $accessible-600 !default;
   $input-bg: $accessible-300!default;
   $input-bg-border: $accessible-400 !default;
 
@@ -209,16 +219,21 @@ html[theme=dark] {
     color: $white;
   }
 
-  .dropdown-menu {
-    --bs-dropdown-color: $dropdown-color;
+  .form-group.has-search {
+    .form-control {
+      background-color: $input-bg;
+    }
+  }
+
+  .accordion-button {
+    background: $accordion-button-bg;
+    color: $white;
   }
 
   .input-group-text {
     background-color: $input-group-addon-bg;
     border-color: $input-group-addon-border-color;
   }
-
-  
 
   .notification-header {
     background-color: $notification-header-bg;

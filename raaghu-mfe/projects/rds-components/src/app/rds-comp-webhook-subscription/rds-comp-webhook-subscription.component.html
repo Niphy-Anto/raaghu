@@ -72,9 +72,9 @@
       <rds-button [label]="translate.instant('Cancel')" type="button" class="me-2" [colorVariant]="'primary'" [outlineButton]="true"
         data-bs-dismiss="offcanvas" [size]="'small'" (click)="close(webhookForm)">
       </rds-button>
-      <rds-button [id]="'yes'" [size]="'medium'" [size]="'small'"
+      <rds-button [id]="'yes'" [size]="'medium'" [size]="'small'" 
         [disabled]="webhookForm.invalid||additionalheaders.length===0" [colorVariant]="'primary'"
-        [label]="translate.instant('Save')" (click)="AddWebhooSubscription(webhookForm)" data-bs-dismiss="offcanvas" [showLoadingSpinner]="buttonSpinner">
+        [label]="translate.instant('Save')" (click)="AddWebhooSubscription(webhookForm)">
       </rds-button>
     </div>
   </div>
