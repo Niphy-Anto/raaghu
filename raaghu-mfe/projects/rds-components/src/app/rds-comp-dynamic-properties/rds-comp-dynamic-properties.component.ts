@@ -92,7 +92,6 @@ export class RdsCompDynamicPropertiesComponent implements OnInit, OnChanges {
     this.IsEdit = false;
     this.selectedPermissionList = [];
     this.viewCanvas = false;
-
   }
   editTableRow(event): void {
     this.activePage = 0;

@@ -509,6 +509,9 @@ export class AppComponent {
         message: alert.message,
       };
       this.currentAlerts.push(currentAlert);
+      const mfeConfigedit = this.rdsUserMfeConfig;
+      mfeConfigedit.input.showLoadingSpinner = false;
+      this.rdsUserMfeConfig = mfeConfigedit;
       const rdsAlertMfeConfig = this.rdsAlertMfeConfig;
       rdsAlertMfeConfig.input.currentAlerts = [...this.currentAlerts];
       this.rdsAlertMfeConfig = rdsAlertMfeConfig;
