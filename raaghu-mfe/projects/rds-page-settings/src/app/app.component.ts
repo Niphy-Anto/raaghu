@@ -42,6 +42,7 @@ export class AppComponent implements OnInit {
   isAnimation: boolean = true;
   currentAlerts: any = [];
   editShimmer: boolean = false;
+  @Input() showLoadingSpinner: boolean = false;
   public rdsAlertMfeConfig: ComponentLoaderOptions = {
     name: 'RdsCompAlert',
     input: {
@@ -391,6 +392,7 @@ export class AppComponent implements OnInit {
 
 
   onSave(): void {
+    this.showLoadingSpinner = true;
     let hostSettingprivate: HostSettingsEditDto = new HostSettingsEditDto();
     hostSettingprivate.tenantManagement = this.tenantmanagementDataEdit ? this.saveHostSetting.tenantManagement : this.hostSetting.tenantManagement;
     hostSettingprivate.billing = this.billingEdit ? this.invoicedata : this.hostSetting.billing;
@@ -425,6 +427,7 @@ export class AppComponent implements OnInit {
         message: alert.message,
       };
       this.currentAlerts.push(currentAlert);
+      this.showLoadingSpinner = false;
       const rdsAlertMfeConfig = this.rdsAlertMfeConfig;
       rdsAlertMfeConfig.input.currentAlerts = [...this.currentAlerts];
       this.rdsAlertMfeConfig = rdsAlertMfeConfig;

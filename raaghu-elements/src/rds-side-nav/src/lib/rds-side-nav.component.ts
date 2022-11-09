@@ -29,16 +29,9 @@ export interface SideNavItem {
     multi: true
   }]
 })
-export class RdsSideNavComponent implements OnInit {
+export class RdsSideNavComponent implements OnInit, OnChanges {
 
-
-  title = 'rds-side-nav';
-
-
-  ngOnInit(): void {
-
-  }
-
+  @Input() isLightMode: boolean = true;
   @Input() sidenavItems: SideNavItem[] = [];
   @Input() isPageWrapper: boolean = false;
   @Input() collapseRequired: boolean = true;
@@ -47,59 +40,84 @@ export class RdsSideNavComponent implements OnInit {
   @Output() emitPath = new EventEmitter<any>();
   @Output() collapsedState = new EventEmitter<any>();
   @Input() activepage: any = 0;
-  @Input() activesubmenu: any = 0;
+  @Input() activesubmenu: any = '';
   @Output() selectedMode = new EventEmitter<any>();
-  activeMenuWithChildren: any = 0;
-  isLightMode = true;
   collapsed = false;
   openedMenu = false;
-
+  title = 'rds-side-nav';
   showHide: boolean = false;
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (this.activesubmenu !== '' && this.activesubmenu !== undefined) {
+      this.showHide = true
+      const x = document.getElementById('menuWithChildren' + this.activesubmenu);
+      if (x) {
+        var dropdown = new Collapse(x);
+        dropdown.show();
+      }
+    }
+  }
+
+
+
+
+  ngOnInit(): void {
+
+  }
   onClick(event: any, i: number, path: any): void {
     event.preventDefault();
     // this.router.navigateByUrl(path);
     this.emitPath.emit(path);
     this.activepage = i;
     this.activesubmenu = '';
-    this.activeMenuWithChildren = '';
+    this.showHide = false;
   }
   onMenuWithChildrenClick(i: number, path: any) {
-    this.showHide=!this.showHide
+    this.showHide = !this.showHide
     const x = document.getElementById('menuWithChildren' + i);
     if (x) {
       var dropdown = new Collapse(x);
-      dropdown.show();
+      if (this.showHide) {
+        dropdown.show();
+        if (this.activesubmenu == '' || this.activesubmenu == undefined) {
+          this.activesubmenu = 0;
+        }
+        this.activepage = i;
+        this.emitPath.emit(path);
+      } else {
+        dropdown.hide();
+        // this.activesubmenu = '';
+      }
+
     }
 
-    if (x !== null)
-      // this.openedMenu = x.classList.contains('collapsed');
-    if (!this.openedMenu) {
-      // this.showHide = true;
-      this.activepage = i;
-      this.activesubmenu = 0;
-      this.emitPath.emit(path);
-    }
-    else {
-      // this.showHide = false;
-      this.activepage = i;
-      this.activesubmenu = '';
-      this.activeMenuWithChildren = '';
-    }
+    // if (x !== null)
+    //   // this.openedMenu = x.classList.contains('collapsed');
+    //   if (!this.openedMenu) {
+    //     // this.showHide = true;
+    //     this.activepage = i;
+    //     this.activesubmenu = 0;
+    //     this.emitPath.emit(path);
+    //   }
+    //   else {
+    //     // this.showHide = false;
+    //     this.activepage = i;
+    //     this.activesubmenu = '';
+    //   }
   }
   onClickSubMenu(event: any, i: number, j: number, path: any): void {
     event.preventDefault();
     this.emitPath.emit(path);
     this.activesubmenu = j;
     this.activepage = i;
-    this.activeMenuWithChildren = i;
   }
   onCollapse() {
     this.collapsed = !this.collapsed;
     this.collapsedState.emit(this.collapsed)
   }
   toggleLightAndDarkMode() {
-    this.isLightMode = !this.isLightMode
-    console.log(this.isLightMode)
+    this.isLightMode = !this.isLightMode;
+    // this.onToggle();
     this.selectedMode.emit(this.isLightMode)
   }
 

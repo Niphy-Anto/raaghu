@@ -97,7 +97,7 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
     },
     { label: 'UI Components', labelTranslationKey: 'UI Components', id: '', permissionName: '', icon: 'demo_ui', path: '/pages/demo-ui', description: '', descriptionTranslationKey: '' },
     // { label: 'Cart', labelTranslationKey: 'Cart', id: 'cart', permissionName: '' ,icon: 'tenant', path: '/pages/cart', description: 'Manage your cart', descriptionTranslationKey: 'Manage your cart' },
-   // { label: 'Edition-New', labelTranslationKey: 'Edition-New', id: '', permissionName: '', icon: 'home', path: '/pages/editionnew', description: '', descriptionTranslationKey: '' },
+    // { label: 'Edition-New', labelTranslationKey: 'Edition-New', id: '', permissionName: '', icon: 'home', path: '/pages/editionnew', description: '', descriptionTranslationKey: '' },
   ];
 
   logo: string = 'https://www.carlogos.org/logo/Volkswagen-logo-2019-640x500.jpg';
@@ -105,7 +105,7 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
   color: string = '#8d9ba9';
   backgroundColor: string = '#F5F5FA';
   collapsedHeaderHeight: any = '40px';
-  profilePic: string = '../assets/profile-picture-circle.svg';
+  profilePic: string = '../assets/profile-picture.png';
   offCanvasId: string = 'profileOffCanvas'
   collapseRequired: any = true;
   @Input() tenancy: string = 'Host Admin';
@@ -123,6 +123,7 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
   unreadCount: number = 0;
   selectedMode: any;
   counter: number = 0;
+  isLightMode: boolean = true;
   constructor(private router: Router,
     private store: Store,
     private alertService: AlertService,
@@ -147,14 +148,25 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
   permissions: any;
 
   ngOnInit(): void {
-    this.theme.theme = 'light';
+    const selectedTheme = localStorage.getItem('THEME');
+    if (selectedTheme == "undefined"||selectedTheme==''||selectedTheme==undefined||selectedTheme==null) {
+      this.theme.theme = 'light';
+      localStorage.setItem('THEME', 'light');
+      this.isLightMode = true;
+    } else {
+      this.theme.theme = selectedTheme;
+      if (selectedTheme == 'light') {
+        this.isLightMode = true;
+      } else {
+        this.isLightMode = false;
+      }
+    }
     const tenancy: any = JSON.parse(localStorage.getItem('tenantInfo'));
     if (tenancy) {
       this.tenancy = tenancy.name;
     } else {
       this.tenancy = 'Host Admin';
     }
-    this.theme.theme='light';
     this.store.dispatch(getLanguages());
     this.store.select(selectDefaultLanguage).subscribe((res: any) => {
       if (res) {
@@ -198,7 +210,7 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
         logo: 'assets/raaghu_icon.png',
         projectName: 'Raaghu',
         linkedAccountData: this.linkedAccountData,
-        linkedAccountHeaders:this.linkedAccountHeaders,
+        linkedAccountHeaders: this.linkedAccountHeaders,
         userList: this.usernameList,
         notificationData: this.notifications,
         unreadCount: this.unreadCount,
@@ -261,7 +273,6 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
           });
         },
         linkUser: (data: any) => {
-          console.log(data);
           this.store.dispatch(linkToUser(data))
         },
         setAllNotificationAsRead: () => {
@@ -383,7 +394,7 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
           this.linkedAccountData.push(_item);
         });
         const mfe = this.rdsTopNavigationMfeConfig;
-        mfe.input.linkedAccountData = [ ...this.linkedAccountData ];
+        mfe.input.linkedAccountData = [...this.linkedAccountData];
         this.rdsTopNavigationMfeConfig = mfe;
 
       }
@@ -566,23 +577,19 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
     return '';
   }
 
-  public currentTheme(): string {
-    return this.theme.current;
-  }
-  public selectTheme(value: string): void {
-    this.theme.current = value;
-  }
-  set dark(enabled: boolean) {
-    this.theme.theme = enabled ? 'dark' : null;
-  }
+
+
+
 
   toggleBetweenMode(event: any) {
     let checked = event;
     if (!checked) {
-      this.theme.theme = 'dark'
-    }
-    else {
-      this.theme.theme = 'light'
+      this.theme.theme = 'dark';
+      localStorage.setItem('THEME', 'dark');
+    }else {
+      this.theme.theme = 'light';
+      localStorage.setItem('THEME', 'light');
+
     }
   }
 

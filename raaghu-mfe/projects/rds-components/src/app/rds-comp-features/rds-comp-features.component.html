@@ -3,7 +3,7 @@
 
 <div class="row">
   <div class="col-md-12 text-end pb-3 desktop-btn">
-    <rds-button [label]="translate.instant('NEW EDITION')" [showLoadingSpinner]="buttonSpinnerForNewEdition" type="button" [colorVariant]="'primary'"
+    <rds-button [label]="translate.instant('NEW EDITION')" [showLoadingSpinner]="showLoadingSpinner" type="button" [colorVariant]="'primary'"
       (click)="openCanvas()" [attr.aria-controls]="'addEdition'" [icon]="'plus'" iconHeight="12px" iconWidth="12px" [size]="'small'">
     </rds-button>
   </div>
@@ -37,7 +37,7 @@
         <div class="row" *ngIf="!contentOnEdit">
           <div class="col-md-6">
             <div class="form-group mb-3">
-              <rds-input size="medium" [inputType]="'number'" [label]="translate.instant('Edition Name')"
+              <rds-input size="medium" [inputType]="'text'" [label]="translate.instant('Edition Name')"
                 [labelPosition]="'top'" #edition_name="ngModel" [isRequired]=true [placeholder]="translate.instant('Edition Name')" required
                 [(ngModel)]="EditionName" name="edition" ngDefaultControl>
               </rds-input>
