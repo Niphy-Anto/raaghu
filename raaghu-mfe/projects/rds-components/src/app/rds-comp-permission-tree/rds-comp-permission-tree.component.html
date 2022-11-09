@@ -1,8 +1,8 @@
 <div class="checkedstyle flush-border treeview-flush ">
-    <div class="col-md-12 mt-3 pt-1">
+    <div class="col-md-12 pt-1">
         <rds-search-input placeholder="Search" icon="search" size="small"> </rds-search-input>
     </div>
-    <div *ngIf="multiselectTree" class="d-flex align-items-center checkedstyle mt-3">
+    <div *ngIf="multiselectTree" class="d-flex align-items-center checkedstyle">
 
         <div class="node-dot position-relative">
             <rds-checkbox  [attr.id]="'Selectall'" (onChange)="selectAllFeature($event)"

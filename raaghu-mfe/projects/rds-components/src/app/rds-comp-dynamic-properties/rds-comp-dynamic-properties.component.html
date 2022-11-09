@@ -13,9 +13,9 @@
         [justified]="false" [activeTab]="activePage">
       </rds-nav-tab>
 
-      <div class="tab-content px-2 py-4">
+      <div class="tab-content px-2 py-2">
         <!-- Dynamic Nav Tabs -->
-        <div naveContent class="row tab-content px-3 py-3 navsm-p-0" id="nav-tabContent">
+        <div naveContent class="row tab-content px-3 navsm-p-0" id="nav-tabContent">
           <!-- Information tab -->
           <div class="tab-pane fade px-0" [ngClass]="{'show active': activePage === 0}" id="information" role="tabpanel"
             aria-labelledby="nav-home-tab">
@@ -40,8 +40,8 @@
       <div class="footer-buttons">
         <div class="row">
           <div class="col-md-12">
-            <rds-button [label]="translate.instant('Cancel')" type="button" [colorVariant]="'primary'" [outlineButton]="true"
-              [size]="'small'" data-bs-dismiss="offcanvas" (click)="closeCanvas()">
+            <rds-button [label]="translate.instant('Cancel')" type="button" [colorVariant]="'primary'"
+              [outlineButton]="true" [size]="'small'" data-bs-dismiss="offcanvas" (click)="closeCanvas()">
             </rds-button>
             <rds-button [disabled]="!DynamicProperyInfo" [label]="translate.instant('Save')" type="button"
               [size]="'small'" class="px-2" [colorVariant]="'primary'" (click)="addDynamic($event)">

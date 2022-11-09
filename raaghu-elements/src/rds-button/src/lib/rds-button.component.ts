@@ -16,7 +16,7 @@ export class RdsButtonComponent implements AfterViewInit, OnInit, DoCheck, OnCha
   @Input() outlineButton = false;
   @Input() roundedButton = false;
   @Input() roundedCorner = false;
-  @Input() tooltipTitle: string = '';
+  @Input() tooltipTitle: string;
   @Input() tooltipPlacement: 'top' | 'bottom' | 'right' | 'left' = 'bottom';
   @Input() id: string = 'buttonId';
   @Input() isLoading: boolean = false;
@@ -25,55 +25,55 @@ export class RdsButtonComponent implements AfterViewInit, OnInit, DoCheck, OnCha
   @Input() iconWidth: string = '';
   @Input() iconStroke: boolean = true;
   @Input() iconFill: boolean = false;
-  @Input() buttonType?: 'iconOnly' | 'labelOnly' | 'iconLabel' = 'iconLabel';
+  // @Input() buttonType?: 'iconOnly' | 'labelOnly' | 'iconLabel' = 'iconLabel';
   @Input() icon: string = '';
   @Input() label: string = '';
-  private labelTemp: string;
+  // private labelTemp: string;
 
-  @Output() onClick = new EventEmitter<Event>();
+  @Output() click = new EventEmitter<Event>();
 
 
-  makeSpinnerActive: boolean;
-  iconTemp: string;
-  buttonTypeTemp: 'iconOnly' | 'labelOnly' | 'iconLabel' | undefined;
+  // makeSpinnerActive: boolean;
+  // iconTemp: string;
+  // buttonTypeTemp: 'iconOnly' | 'labelOnly' | 'iconLabel' | undefined;
 
   constructor() {
     this.id = this.id + RdsButtonComponent.count++;
   }
   ngOnChanges(changes: SimpleChanges): void {
-    this.labelTemp = this.label;
+    // this.labelTemp = this.label;
   }
 
 
   ngOnInit(): void {
-    this.makeSpinnerActive = this.showLoadingSpinner;
-    this.showLoadingSpinner = false;
-    this.labelTemp = this.label;
-    this.iconTemp = this.icon;
-    this.buttonTypeTemp = this.buttonType;
+    // this.makeSpinnerActive = this.showLoadingSpinner;
+    // this.showLoadingSpinner = false;
+    // this.labelTemp = this.label;
+    // this.iconTemp = this.icon;
+    // this.buttonTypeTemp = this.buttonType;
   }
 
 
 
   ngDoCheck(): void {
-    if (this.showLoadingSpinner == true) {
-      this.label = '';
-      this.icon = '';
-      this.buttonType = 'labelOnly';
-    }
-    else {
-      this.label = this.labelTemp;
-      this.icon = this.iconTemp;
-      this.buttonType = this.buttonTypeTemp;
-    }
+    // if (this.showLoadingSpinner == true) {
+    //   this.label = '';
+    //   this.icon = '';
+    //   this.buttonType = 'labelOnly';
+    // }
+    // else {
+    //   this.label = this.labelTemp;
+    //   this.icon = this.iconTemp;
+    //   this.buttonType = this.buttonTypeTemp;
+    // }
   }
 
 
   ngAfterViewInit(): void {
-    // const tooltipTriggerList: any = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-    // if (this.tooltipTitle && tooltipTriggerList) {
-    //   const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new Tooltip(tooltipTriggerEl)) || '';
-    // }
+    const tooltipTriggerList: any = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+    if (this.tooltipTitle && tooltipTriggerList) {
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new Tooltip(tooltipTriggerEl)) || '';
+    }
     // if (this.tooltipPlacement && this.tooltipTitle) {
     //   const tooltipElement: any = document.getElementById(this.id)
     //   // update
@@ -115,11 +115,13 @@ export class RdsButtonComponent implements AfterViewInit, OnInit, DoCheck, OnCha
   }
 
   buttonClick(evt: any) {
-    if (this.makeSpinnerActive) {
-      this.showLoadingSpinner = true;
+    // if (this.makeSpinnerActive) {
+    //   this.showLoadingSpinner = true;
 
+    // }
+    if(!this.showLoadingSpinner&&!this.disabled){
+      this.click.emit(evt);
     }
-    this.onClick.emit(evt);
   }
 
 }

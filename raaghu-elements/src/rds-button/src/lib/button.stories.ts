@@ -75,12 +75,8 @@ outline.args = {
 
 
 export const rounded_Button_With_Icon = Template.bind({});
-rounded_Button_With_Icon.parameters = {
-  controls: {
-    include: ['roundedButton', 'colorVariant', 'size', 'icon',
-      'iconHeight', 'iconWidth', 'iconFill', 'iconStroke', 'buttonType']
-  }
-};
+rounded_Button_With_Icon.parameters = { controls: { include: ['roundedButton', 'colorVariant', 'size', 'icon', 
+'iconHeight', 'iconWidth', 'iconFill', 'iconStroke', 'buttonType', 'tooltipPlacement', 'tooltipTitle',] } };
 rounded_Button_With_Icon.args = {
   icon: 'plus',
   colorVariant: '',
@@ -90,7 +86,9 @@ rounded_Button_With_Icon.args = {
   iconFill: false,
   iconStroke: true,
   roundedButton: true,
-  buttonType: 'iconOnly'
+  buttonType: 'iconOnly',
+  tooltipPlacement: 'right',
+  tooltipTitle: 'This is tooltip',
 };
 
 

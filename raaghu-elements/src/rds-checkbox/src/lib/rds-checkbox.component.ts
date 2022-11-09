@@ -14,7 +14,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 })
 export class RdsCheckboxComponent implements OnInit, ControlValueAccessor {
   private onTouched!: Function;
-  private onChanged!: Function;
+  
   title = "rds-checkbox";
   // onChange!:(value:string) => void;
   // onTouched!:() => void
@@ -71,14 +71,14 @@ export class RdsCheckboxComponent implements OnInit, ControlValueAccessor {
     this.onChange.emit(event)
     this.checked = event
    // this.onTouched(); // <-- mark as touched
-    this.onChanged(this.checked);
+    
   }
 
   writeValue(value: boolean): void {
     this.checked = value;
   }
   registerOnChange(fn: any): void {
-    this.onChanged = fn; // <-- save the function
+    this.onChange = fn; // <-- save the function
   }
   registerOnTouched(fn: any): void {
     this.onTouched = fn; // <-- save the function
