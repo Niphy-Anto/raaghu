@@ -495,7 +495,6 @@ export class RdsCompUserPermissionsComponent implements OnInit {
       this.exportToExcel();
     }
     else if (event.key === 'filterByPermission') {
-      console.log("openFilterByPermission",this.openFilterByPermission.nativeElement);
       let el: HTMLElement = this.openFilterByPermission.nativeElement as HTMLElement;
       el.click();
     }
