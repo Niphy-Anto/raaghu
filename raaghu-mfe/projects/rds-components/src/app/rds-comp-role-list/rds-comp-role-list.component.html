@@ -6,7 +6,7 @@
         iconHeight="12px" iconWidth="12px" class="ms-2">
       </rds-button>
       <rds-button type="button" [size]="'small'" [colorVariant]="'primary'" [roundedButton]="true" icon="refresh"
-        class="ms-2" (click)="getRoles()" iconHeight="18px" iconWidth="26px">
+        class="ms-2" (click)="getRoles()" iconHeight="18px" iconWidth="26px"  buttonType="iconOnly"  [tooltipPlacement]="'bottom'" [tooltipTitle]="'Refresh Filter'">
       </rds-button>
       <rds-button [label]="translate.instant('FILTER BY PERMISSIONS')" type="button"
         (click)="filterByPermission($event)" [size]="'small'" [colorVariant]="'primary'" [outlineButton]="true"
