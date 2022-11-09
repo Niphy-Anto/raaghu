@@ -39,10 +39,13 @@ export class RdsCompInformationComponent implements OnInit {
 
 
   ngOnChanges(changes: SimpleChanges): void {
-    if(this.dynamicPropertiesData.displayName != "" && this.dynamicPropertiesData.propertyName !="" && this.dynamicPropertiesData.inputType != ""){ 
+    if(this.dynamicPropertiesData.displayName && this.dynamicPropertiesData.displayName != "" && this.dynamicPropertiesData.propertyName !="" && this.dynamicPropertiesData.inputType != ""){ 
       this.dynamicPropertiesInfo.emit({
         dynamicProperties: this.dynamicPropertiesData,
       });
     }
+  }
+  getInputTypeData(event){
+    this.dynamicPropertiesData.inputType = event.item.value;
   }
 }

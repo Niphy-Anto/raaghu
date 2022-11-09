@@ -148,7 +148,13 @@ $default-100: #F58220;
 }
 
 //$input-select-bg: $dark-200!default;
-//$form-select-bg: $dark-200!default;
+$form-select-bg: $dark-200!default;
+$form-select-border-color: $dark-100!default;
+//$offcanvas-border-color: $dark-400!default;
+
+$offcanvas-bottom-border-color: $dark-100!default;
+$nav-tabs-bottom-border-color: $dark-100!default;
+
 $modal-bg-color: $dark-200!default;
 
 html[theme=dark] {
@@ -156,9 +162,6 @@ html[theme=dark] {
   $input-bg-border: $dark-100!default;
 
   $dropdown-color: $white;
-
- 
-
   $input-group-addon-bg: $input-bg;
 
   .form-control, .form-control:focus {
@@ -174,11 +177,6 @@ html[theme=dark] {
   .input-group-text {
     background-color: $input-group-addon-bg;
     border-color: $input-bg-border;
-  }
-
-  .form-select {
-   // background-color: $form-select-bg;
-    // border-color: $form-select-border-color;
   }
 }
 
@@ -219,7 +217,7 @@ html[theme=dark] {
 }
 html[theme=dark] .form-select {
   background-color: $dark-100;
-}}*/
+}}
 /*rds-dropdownlist .form-select{
   border: 0;
 }*/
