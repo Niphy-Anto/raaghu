@@ -151,10 +151,30 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
 
   ngOnInit(): void {
     this.store.select(selectAllVisualsettings).subscribe((res: any) => {
-        if (res) {
+        if (res && res.length>0) {
           console.log(res);
-          // this.fixedHeader = res.header.desktopFixedHeader
-          // if(res.visualsettings[12].menu.asideSkin== 'dark'){
+           this.fixedHeader = res[12].header.desktopFixedHeader;
+          const selectedTheme = res[12].menu.asideSkin;
+          // this.theme.theme = res[12].menu.asideSkin;
+          if(res[12].menu.asideSkin == 'light'){
+            this.theme.theme = selectedTheme;
+             this.isLightMode = true;
+          }else {
+            this.theme.theme = selectedTheme;    
+            if (selectedTheme == 'light') {
+              this.isLightMode = true;
+            } else {
+              this.isLightMode = false;
+            }
+          }
+          // this.fixedHeader = res[12]
+
+          // if(res){
+          //   this.theme.theme = res.menu.asideSkin;
+          // }else{
+          //   this.theme.theme = 'light';
+          // }
+          // if(res.menu.asideSkin){
           //   const selectedTheme = localStorage.getItem('THEME');
           // if (selectedTheme == "undefined") {
           //   this.theme.theme = 'light';
@@ -175,18 +195,18 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
       })  
       
     // const selectedTheme = localStorage.getItem('THEME');
-          // if (selectedTheme == "undefined") {
-          //   this.theme.theme = 'light';
-          //   localStorage.setItem('THEME', 'light');
-          //   this.isLightMode = true;
-          // } else {
-          //   this.theme.theme = selectedTheme;
-          //   if (selectedTheme == 'light') {
-          //     this.isLightMode = true;
-          //   } else {
-          //     this.isLightMode = false;
-          //   }
-          // }
+    //       if (selectedTheme == "undefined") {
+    //         this.theme.theme = 'light';
+    //         localStorage.setItem('THEME', 'light');
+    //         this.isLightMode = true;
+    //       } else {
+    //         this.theme.theme = selectedTheme;
+    //         if (selectedTheme == 'light') {
+    //           this.isLightMode = true;
+    //         } else {
+    //           this.isLightMode = false;
+    //         }
+    //       }
     console.log(this.isLightMode);
     const tenancy: any = JSON.parse(localStorage.getItem('tenantInfo'));
     if (tenancy) {
