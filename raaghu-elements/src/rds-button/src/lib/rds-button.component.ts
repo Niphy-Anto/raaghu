@@ -7,7 +7,7 @@ import { Tooltip } from 'bootstrap'
 })
 export class RdsButtonComponent implements AfterViewInit, OnInit {
 
-  @Input() colorVariant: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'dark' | 'light' | 'default' | 'review' = 'default';
+  @Input() colorVariant: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'dark' | 'light' | 'default' | 'review' | '' = 'default';
   @Input() submit = false;
   static count: number = 0;
   @Input() block: boolean = false;
@@ -25,26 +25,22 @@ export class RdsButtonComponent implements AfterViewInit, OnInit {
   @Input() iconWidth: string = '';
   @Input() iconStroke: boolean = true;
   @Input() iconFill: boolean = false;
-  // @Input() buttonType?: 'iconOnly' | 'labelOnly' | 'iconLabel' = 'iconLabel';
   @Input() icon: string = '';
   @Input() label: string = '';
   @Output() onClick = new EventEmitter<Event>();
+
   constructor() {
     this.id = this.id + RdsButtonComponent.count++;
   }
 
-
-
   ngOnInit(): void {}
-
-
 
   ngAfterViewInit(): void {
     const tooltipTriggerList: any = document.querySelectorAll('[data-bs-toggle="tooltip"]')
     if (this.tooltipTitle && tooltipTriggerList) {
       const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new Tooltip(tooltipTriggerEl)) || '';
     }
-   
+    
   }
 
   public get classes(): string {
@@ -53,7 +49,6 @@ export class RdsButtonComponent implements AfterViewInit, OnInit {
     const icon = `${this.roundedButton ? ' btn-icon rounded-pill ' : ''}`;
     const icon1 = `${this.roundedCorner ? ' rounded-pill ' : ''}`;
     const disabledGrey = `${this.disabled === true ? 'btn ' : ''}`
-
     return outline + mode + icon + icon1 + disabledGrey;
   }
 

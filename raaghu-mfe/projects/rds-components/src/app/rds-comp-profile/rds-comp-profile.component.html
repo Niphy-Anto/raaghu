@@ -61,7 +61,7 @@
               <div class="d-inline-block position-relative">
                 <rds-avatar [withProfilePic]="true" [profilePic]="Profileurl" [roundedPills]="true"
                   [verticallyAlligned]="true" [roundedAvatar]="true" [height]="'110'"></rds-avatar>
-                <div class="" *ngIf="ProfileData">
+                <div class="text-center" *ngIf="ProfileData">
                   {{ ProfileData.userName }}
                   <input type="file" (change)="checkFileSize($event); checkExtension($event)" #file
                     (input)="getValue($event)" name="myfile" style="display: none" />

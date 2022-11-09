@@ -54,13 +54,13 @@ export class AppComponent extends MfeBaseComponent implements OnInit {
   ngOnInit(): void {
     this.subscribeToAlerts();
     const tenantInfo = JSON.parse(localStorage.getItem('tenantInfo'));
-    var tenancyName = tenantInfo ? tenantInfo.name : 'Not Selected';
+    this.tenancyName = tenantInfo && tenantInfo.name ? tenantInfo.name : 'Not Selected';
 
     this.rdsLoginMfeConfig = {
       name: 'RdsLogin',
       input: {
         rememeberMe: true,
-        TenancyName:tenancyName,
+        TenancyName: this.tenancyName,
         buttonSpinner: false
       },
       output: {
@@ -88,10 +88,13 @@ export class AppComponent extends MfeBaseComponent implements OnInit {
           mfeConfig.input.TenancyName = this.tenancyName;
           mfeConfig.input.buttonSpinnerForChangeTenant = false;
           this.rdsLoginMfeConfig = mfeConfig;
-          localStorage.setItem('tenantInfo', JSON.stringify({
-            id: res.tenantId,
-            name: this.tenancyName
-          }));
+          if (this.tenancyName && this.tenancyName !== null && this.tenancyName !== 'Not Selected') {
+            localStorage.setItem('tenantInfo', JSON.stringify({
+              id: res.tenantId,
+              name: this.tenancyName
+            }));
+          }
+
           var myModalEl = document.getElementById('ChangeTenant');
           var modal = bootstrap.Modal.getInstance(myModalEl)
           modal.hide();

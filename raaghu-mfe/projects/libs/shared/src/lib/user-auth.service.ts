@@ -83,8 +83,8 @@ export class UserAuthService implements OnInit {
         this.permissions = result.auth.grantedPermissions;
         localStorage.setItem('storedPermissions', JSON.stringify(this.permissions));
         this.localization = result.localization;
-        this.sources=result.localization.sources
-            this.language=result.localization.languages
+        this.sources = result.localization.sources
+        this.language = result.localization.languages
         if (login == 'login') {
           this.router.navigateByUrl('/pages/dashboard');
         }
@@ -117,12 +117,12 @@ export class UserAuthService implements OnInit {
   getLocalization() {
     return _observableOf(this.localization);
   }
-  getLanguages(){
+  getLanguages() {
     return _observableOf(this.language);
 
   }
 
-  getSources(){
+  getSources() {
     return _observableOf(this.sources);
   }
 }

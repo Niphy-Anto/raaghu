@@ -17,7 +17,7 @@ export class RdsMysettingsComponent implements OnInit, OnChanges {
     CurrentPassword: '',
     NewPassword: '',
     ConFNewPassword: '',
-    name:''
+    name: ''
   }
   @Input() buttonSpinner: boolean = false;
   @Output() onProfileClose = new EventEmitter<any>();
