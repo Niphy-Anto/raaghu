@@ -155,6 +155,16 @@
 }
 }
 
+// ipad pro view css
+
+@media screen and (min-width:1024px) and (max-width:1279px){
+  .rounded-avatar-center .profile-image {
+    margin-left: 95px;
+    position: relative;
+    top: -10px;
+}
+}
+
 // ipad and mobile
 @media (max-width: 768px) {
   .rounded-avatar-left .card {
