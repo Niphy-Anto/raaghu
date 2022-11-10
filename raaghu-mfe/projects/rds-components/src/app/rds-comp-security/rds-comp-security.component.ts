@@ -38,6 +38,20 @@ export class RdsSecurityComponent implements OnInit {
 
   @Output() onClick = new EventEmitter<{ evnt: any, settings: any }>();
 
+  @Input()
+  Seccuritysetting: any = {
+    useDefaultPasswordComplexitySettings: false,
+    requireDigit: false,
+    requireLowercase: false,
+    requireAlphaNumeric: false,
+    requireUppercase: false,
+    requiredLength: 0,
+    userLockout: false,
+    maxFailedAccessAttemptsBeforeLockout: 0,
+    defaultAccountLockoutSeconds: 0,
+    twoFactorLogin: false,
+    loginPerUser: false,
+  };
 
   constructor(public translate: TranslateService) { }
 
@@ -102,20 +116,7 @@ export class RdsSecurityComponent implements OnInit {
 
   }
 
-  @Input()
-  Seccuritysetting: any = {
-    useDefaultPasswordComplexitySettings: false,
-    requireDigit: false,
-    requireLowercase: false,
-    requireAlphaNumeric: false,
-    requireUppercase: false,
-    requiredLength: 0,
-    userLockout: false,
-    maxFailedAccessAttemptsBeforeLockout: 0,
-    defaultAccountLockoutSeconds: 0,
-    twoFactorLogin: false,
-    loginPerUser: false,
-  };
+ 
 
 
 

@@ -55,13 +55,13 @@ export class RdsCompTenantManagementComponent implements OnInit, OnChanges {
 
   constructor(public translate:TranslateService) { }
   ngOnChanges(changes: SimpleChanges): void {
-    this.dataset = this.settings;
+    // this.dataset = this.settings;
     
   }
 
 
   ngOnInit(): void {
-    this.dataset = this.settings;   
+    // this.dataset = this.settings;   
   }
 
 
@@ -85,7 +85,7 @@ export class RdsCompTenantManagementComponent implements OnInit, OnChanges {
 
   selectedEdition(item: any) {
     var Result = item
-    this.edition = Result.item.value
+    this.edition = Result.item.value;
   }
 
   getAllowTenants(event) {

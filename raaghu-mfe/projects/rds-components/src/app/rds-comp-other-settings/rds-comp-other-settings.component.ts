@@ -24,7 +24,6 @@ export class RdsCompOtherSettingsComponent implements OnInit {
   
   
   ngOnInit(): void {
-  this.dataset = this.OtherSetting;
   }
   selectAllFeature(e: boolean, type: string) {
     this.OtherSetting.isQuickThemeSelectEnabled = e;

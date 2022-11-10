@@ -58,18 +58,24 @@ export class RdsCompEmailComponent implements OnInit {
   }
   
   ngOnInit(): void {    
-    setTimeout(() => {
-      if (this.EmailData && this.Emailformdata) {
-        this.Emailformdata.statusChanges.subscribe(res => {
-          if (res === 'VALID') {
-            this.EmailtData.emit(this.EmailData);
-          }
-        });
-      }
+    // setTimeout(() => {
+    //   if (this.EmailData && this.Emailformdata) {
+    //     this.Emailformdata.statusChanges.subscribe(res => {
+    //       if (res === 'VALID') {
+    //         this.EmailtData.emit(this.EmailData);
+    //       }
+    //     });
+    //   }
   
-      }, 100);
+    //   }, 100);
   
 
+  }
+
+  onChange():void{
+    if(this.EmailData.defaultFromAddress && this.emailValidator(this.EmailData.defaultFromAddress)){
+      this.EmailtData.emit(this.EmailData);
+    }
   }
 
   emailValidator(data: string) {
@@ -78,8 +84,10 @@ export class RdsCompEmailComponent implements OnInit {
 
     if (!EMAIL_REGEXP.test(data)) {
       this.showEmailValidityMessage = true;
+      return false;
     } else this.showEmailValidityMessage = false;
     this.showEmailValidityMessage = false;
+    return true;
   }
  
   checkEmailValidity() {
