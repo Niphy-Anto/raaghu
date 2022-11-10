@@ -3,7 +3,8 @@ import { FormsModule } from '@angular/forms';
 import { Story, Meta, moduleMetadata } from '@storybook/angular';
 import { RdsIconModule } from '@libs/rds-icon';
 import { RdsInputComponent } from './rds-input.component';
-import { RdsLabelModule } from 'src/public-api';
+import { RdsLabelModule } from '@libs/rds-label';
+
 
 
 
