@@ -476,6 +476,10 @@ html[theme=light] {
   max-height: 34px !important;
 }
 
+html[theme=dark] .btn-primary svg {
+  width: 22px;
+  height: 22px;
+}
 
 .btn-icon.btn-lg {
   padding: 0;

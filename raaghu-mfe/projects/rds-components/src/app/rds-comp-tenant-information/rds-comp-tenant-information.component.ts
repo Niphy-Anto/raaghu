@@ -3,7 +3,7 @@ import { NgForm } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-rds-comp-tenant-information',
+  selector: 'rds-comp-tenant-information',
   templateUrl: './rds-comp-tenant-information.component.html',
   styleUrls: ['./rds-comp-tenant-information.component.scss']
 })

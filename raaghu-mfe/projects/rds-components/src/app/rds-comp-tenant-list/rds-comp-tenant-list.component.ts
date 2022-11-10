@@ -14,7 +14,7 @@ import { TableHeader } from '../../models/table-header.model';
 import { TreeNode } from '../../models/tree-node.model';
 declare let bootstrap: any;
 @Component({
-  selector: 'app-rds-comp-tenant-list',
+  selector: 'rds-comp-tenant-list',
   templateUrl: './rds-comp-tenant-list.component.html',
   styleUrls: ['./rds-comp-tenant-list.component.scss'],
   encapsulation: ViewEncapsulation.None,
