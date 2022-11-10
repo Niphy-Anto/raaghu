@@ -120,9 +120,9 @@
                   </div>
                 </div>
                 <ng-container *ngIf="showConfirmationPopup">
-                  <app-rds-comp-alert-popup [alertID]="'deleteModal'" (onCancel)="close()" (onDelete)="delete()"
+                  <rds-comp-alert-popup [alertID]="'deleteModal'" (onCancel)="close()" (onDelete)="delete()"
                     [alertData]="alertData">
-                  </app-rds-comp-alert-popup>
+                  </rds-comp-alert-popup>
                 </ng-container>
                 <ng-template #editActionTemplate>
                   <div class="d-flex">

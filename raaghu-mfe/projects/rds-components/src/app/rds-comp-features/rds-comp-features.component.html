@@ -9,10 +9,10 @@
   </div>
   <div class="col-md-12">
     <div class="card p-2 h-100 border-0 rounded-0 card-full-stretch">
-      <app-rds-data-table [inlineEdit]="false" [actions]="actions" [recordsPerPage]="recordsPerpage" [pagination]="true"
+      <rds-data-table [inlineEdit]="false" [actions]="actions" [recordsPerPage]="recordsPerpage" [pagination]="true"
         [tableHeaders]="EditionsTableHeader" (onActionSelection)="onActionSelect($event)"
         noDataTitle="Currently you do not have edition" [tableData]="tableData"  [isShimmer]="isShimmer">
-      </app-rds-data-table>
+      </rds-data-table>
     </div>
   </div>
 </div>
@@ -49,7 +49,7 @@
           </div>
           <div class="col-md-6">
             <div class="form-group mb-3">
-              <rds-input size="medium" [inputType]="'number'" [placeholder]="'$ ' + translate.instant('Annual Price')" 
+              <rds-input size="medium"  [placeholder]="'$ ' + translate.instant('Annual Price')" 
                 [labelPosition]="'top'" [label]="translate.instant('Annual Price')" #annual_price="ngModel"
                 [(ngModel)]="AnnualPrice" [isRequired]=true name="annual" required ngDefaultControl               
                 onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57">
@@ -137,10 +137,10 @@
       <div class="row">
         <div class="col-md-12">
           <div>
-            <app-rds-comp-permission-tree [treeData]="featureList" [selectedItems]="selectedFeatures" [permissions]="selectedFeatures"
+            <rds-comp-permission-tree [treeData]="featureList" [selectedItems]="selectedFeatures" [permissions]="selectedFeatures"
               [isEdit]="isEdition"  (getAllselectedPermissions)="getselectedPermissionList($event)"
               [selectAllLabel]="'Select  Features'">
-            </app-rds-comp-permission-tree>
+            </rds-comp-permission-tree>
           </div>
         </div>
       </div>

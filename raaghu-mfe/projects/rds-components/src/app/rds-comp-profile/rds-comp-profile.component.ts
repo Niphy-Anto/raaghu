@@ -10,7 +10,7 @@ declare var $: any;
 declare var bootstrap: any;
 
 @Component({
-  selector: 'app-rds-comp-profile',
+  selector: 'rds-comp-profile',
   templateUrl: './rds-comp-profile.component.html',
   styleUrls: ['./rds-comp-profile.component.scss'],
   providers: [DatePipe]

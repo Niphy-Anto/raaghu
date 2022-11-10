@@ -1,7 +1,7 @@
 <form #loginAttempt="ngForm">
   <div ria-labelledby="nav-LinkAccount" class="h-100">
   <div class="card border-0 h-100">
-    <div class="card-header">
+    <div class="card-header border-bottom">
       <h5 class="card-title">{{"LOGIN ATTEMPTS"|translate}}</h5>
     </div>
     <div class="card-body">
@@ -52,9 +52,9 @@
         </div>
         <div class="row">
           <div class="col-sm-12 sm-p-0 mt-3">
-            <app-rds-data-table [tableData]="operationLogs"  [pagination]="true" *ngIf="showInput"
+            <rds-data-table [tableData]="operationLogs"  [pagination]="true" *ngIf="showInput"
                 [noDataTitle]="translate.instant('Currently you do not have operation log')" [showNodataSubtitle]="false"
-                [refresh]="true" [tableHeaders]="operationLogsHeaders"></app-rds-data-table>
+                [refresh]="true" [tableHeaders]="operationLogsHeaders"></rds-data-table>
           </div>
         </div>
       </div>
