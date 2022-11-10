@@ -46,17 +46,11 @@
           (getAllSelectedNodes)="getSelectedPermissionList($event)" [selectAllLabel]="'Select Permissions'">
         </app-rds-comp-permission-tree>
 
-        <!-- <div class="pt-4 pb-4">
-          <rds-banner 
-            [bannerText]="translate.instant('If you are changing your own permissions, you may need to refresh page (F5) to take effect of permission changes on your own screen!')"
-            [sticky]="false" position="bottom" colorVariant="primary"></rds-banner>
-        </div> -->
+       
         <div class="footer-buttons my-2">
-          <!-- <div class="pt-4 pb-4"> -->
             <rds-banner 
               [bannerText]="translate.instant('If you are changing your own permissions, you may need to refresh page (F5) to take effect of permission changes on your own screen!')"
               [sticky]="false" position="bottom" colorVariant="primary"></rds-banner>
-          <!-- </div> -->
           <rds-button [label]="translate.instant('Cancel')" (click)="close()" [outlineButton]="true" [colorVariant]="'primary'"
             [size]="'small'" data-bs-dismiss="offcanvas">
           </rds-button>
