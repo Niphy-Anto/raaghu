@@ -41,13 +41,27 @@
     <div class="row">
       <div class="col-md-5">
         <div class="form-group mb-2 mt-4">
-          <rds-select-list [(ngModel)]="dataset.defaultEditionId" [label]="translate.instant('Edition')" [value]="dataset.defaultEditionId"
+          <!-- <rds-select-list [(ngModel)]="dataset.defaultEditionId" [label]="translate.instant('Edition')" [value]="dataset.defaultEditionId"
             ngDefaultControl name="defaultEditionId" [labelPosition]="'top'" [itemList]="settingsTenantEditionList"
             (change)="getAllowTenants($event)">
-          </rds-select-list>
+          </rds-select-list> -->
+          <div class="mb-2">
+            <rds-label label="Input Type"></rds-label>
+          </div>
+          <rds-dropdownlist [placeholder]="translate.instant('Input Type')" 
+          [borderDropdown]="true"
+          class="text-dark"
+          [id]="'edition-dropdown'"
+          [(ngModel)]="dataset.defaultEditionId"  
+          [listItems]="settingsTenantEditionList" #inputNameData="ngModel" required
+          [multiSelect]="false"
+          [selectAll]="false"
+          [entity]="false"
+          [value]="dataset.defaultEditionId" ngDefaultControl name="defaultEditionId" >
+          </rds-dropdownlist>
         </div>
       </div>
     </div>
   </li>
 </ul>
-<app-rds-comp-tenant-management-shimmer *ngIf="editShimmer"></app-rds-comp-tenant-management-shimmer>
+<rds-comp-tenant-management-shimmer *ngIf="editShimmer"></rds-comp-tenant-management-shimmer>

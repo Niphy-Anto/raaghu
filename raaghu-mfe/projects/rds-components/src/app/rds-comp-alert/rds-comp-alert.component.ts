@@ -13,7 +13,7 @@ export enum EventTypes {
 }
 
 @Component({
-  selector: 'app-rds-comp-alert',
+  selector: 'rds-comp-alert',
   templateUrl: './rds-comp-alert.component.html',
   styleUrls: ['./rds-comp-alert.component.scss']
 })

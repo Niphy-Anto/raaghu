@@ -42,6 +42,7 @@ export class AppComponent implements OnInit {
   isAnimation: boolean = true;
   currentAlerts: any = [];
   editShimmer: boolean = false;
+  @Input() showLoadingSpinner: boolean = false;
   public rdsAlertMfeConfig: ComponentLoaderOptions = {
     name: 'RdsCompAlert',
     input: {
@@ -274,7 +275,20 @@ export class AppComponent implements OnInit {
     this.store.select(selectSettingsTenantPageComboboxItems).subscribe((res: any) => {
       if (res && res.settingsComboboxItem) {
         this.settingsTenantEditionList = [];
-        this.settingsTenantEditionList = res.settingsComboboxItem;
+        res.settingsComboboxItem.forEach(element => {
+          const data = {
+            value:element.value,
+            some:element.displayText,
+            isSelected:element.isSelected,
+            icon:'',
+            iconWidth:0,
+            iconHeight:0,
+            iconFill:false,
+            iconStroke: true,
+            isFree: element.isFree
+          }
+          this.settingsTenantEditionList.push(data);
+        });         
         //this.settingsTenantEditionList = res.editionComboboxItem.filter((x: any) => x.isFree);
         const mfeConfig = this.rdsCompTenantManageMfeConfig
         mfeConfig.input.settingsTenantEditionList = [...this.settingsTenantEditionList];
@@ -378,6 +392,7 @@ export class AppComponent implements OnInit {
 
 
   onSave(): void {
+    this.showLoadingSpinner = true;
     let hostSettingprivate: HostSettingsEditDto = new HostSettingsEditDto();
     hostSettingprivate.tenantManagement = this.tenantmanagementDataEdit ? this.saveHostSetting.tenantManagement : this.hostSetting.tenantManagement;
     hostSettingprivate.billing = this.billingEdit ? this.invoicedata : this.hostSetting.billing;
@@ -412,6 +427,7 @@ export class AppComponent implements OnInit {
         message: alert.message,
       };
       this.currentAlerts.push(currentAlert);
+      this.showLoadingSpinner = false;
       const rdsAlertMfeConfig = this.rdsAlertMfeConfig;
       rdsAlertMfeConfig.input.currentAlerts = [...this.currentAlerts];
       this.rdsAlertMfeConfig = rdsAlertMfeConfig;

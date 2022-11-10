@@ -22,13 +22,43 @@
       </div>
       <div class="col-md-6">
         <div class=" form-group mb-3 mt-2">
-          <rds-select-list [placeholder]="'Input Type'" [labelPosition]="'top'" [(ngModel)]="dynamicPropertiesData.inputType"
-            [label]="translate.instant('Input Type')" #inputNameData="ngModel" [value]="dynamicPropertiesData.inputType" ngDefaultControl name="inputNameData" 
+          <!-- <rds-select-list [placeholder]="'Input Type'" [labelPosition]="'top'" 
+            [label]="translate.instant('Input Type')" 
             required [itemList]="inputTypeList">
-          </rds-select-list>
+          </rds-select-list> -->
+          <div class="mb-2">
+            <rds-label label="Input Type"></rds-label>
+          </div>
+          <rds-dropdownlist [placeholder]="translate.instant('Input Type')" 
+          [borderDropdown]="true"
+          class="text-dark"
+          [id]="'input-type-dropdown'"
+          [(ngModel)]="dynamicPropertiesData.inputType"   
+          [listItems]="inputTypeList" #inputNameData="ngModel" required
+          [multiSelect]="false"
+          [selectAll]="false"
+          [entity]="false"
+          (onSelect)="getInputTypeData($event)"
+          [value]="dynamicPropertiesData.inputType" ngDefaultControl name="inputNameData" >
+          </rds-dropdownlist>
+          <!-- <rds-dropdownlist
+                  [icon]="selectedLanguage.icon"
+                  [borderDropdown]="true"
+                  class="text-dark"
+                  [id]="'country-code-dropdown'"
+                  [placeholder]="translate.instant('Country Code')"
+                  [value]="selectedLanguage.icon"
+                  required
+                  [multiSelect]="false"
+                  [selectAll]="false"
+                  [entity]="false"
+                  [listItems]="flags"
+                  (onSelect)="onCountryCodeSelect($event)"
+                ></rds-dropdownlist> -->
+                
         </div>
       </div>
     </div>
   </div>
 </form>
-<app-rds-comp-information-shimmer *ngIf="editShimmer"></app-rds-comp-information-shimmer>
+<rds-comp-information-shimmer *ngIf="editShimmer"></rds-comp-information-shimmer>

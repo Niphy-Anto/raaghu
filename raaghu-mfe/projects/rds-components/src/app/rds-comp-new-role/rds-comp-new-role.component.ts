@@ -10,7 +10,7 @@ export class Role {
   creationDate?: string;
 }
 @Component({
-  selector: 'app-rds-comp-new-role',
+  selector: 'rds-comp-new-role',
   templateUrl: './rds-comp-new-role.component.html',
   styleUrls: ['./rds-comp-new-role.component.scss'],
   providers: [
