@@ -1670,6 +1670,11 @@ html[theme=dark] {
       background-color: white;
       border: 1px solid #ced4da;
     }
+
+    .modal-content {
+      background-color: $white;
+      color: #212529;
+    }
   }
 
   .action-buttons {
@@ -1965,7 +1970,7 @@ html[theme=dark] {
         }
 
         td:first-child {
-          color: $white;
+          // color: $white;
         }
       }
     }

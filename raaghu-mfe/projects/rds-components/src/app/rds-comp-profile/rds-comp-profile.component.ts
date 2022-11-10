@@ -79,13 +79,14 @@ export class RdsCompProfileComponent extends MfeBaseComponent implements OnInit 
   @Input() linkedAccountData: any = [];
   @Input() LoginAttempts: any = {};
   @Input() backgroundColor: string;
-  @Input()id: string = 'ProfileCanvas';
+  @Input() id: string = 'ProfileCanvas';
   @Output() onLogout = new EventEmitter<{ islogout: any }>()
   @Output() onImageupload = new EventEmitter<any>();
   @Output() ondeleteLinkaccount = new EventEmitter<any>();
   @Output() onLinkToUser = new EventEmitter<any>();
   @Output() onLoginAttempts = new EventEmitter<any>();
   @Output() onDownloadLink = new EventEmitter<any>();
+  @Input() showLoadingSpinner: boolean = false;
   public Profileform = new FormGroup({})
   offCanvasWidth = 304;
   profileMenu = 1000 + "px";
@@ -94,11 +95,12 @@ export class RdsCompProfileComponent extends MfeBaseComponent implements OnInit 
 
   @Input() ProfileData: Profile = {
     ProfileName: 'Wai Technologies',
-    EmailAddress: 'contact@waiin.com',
-    UserName: 'admin',
+    emailAddress: 'contact@waiin.com',
+    userName: 'admin',
     CurrentPassword: '',
     NewPassword: '',
-    ConFNewPassword: ''
+    ConFNewPassword: '',
+    name:''
   }
   tabisVisible: boolean = false;
 
@@ -115,7 +117,6 @@ export class RdsCompProfileComponent extends MfeBaseComponent implements OnInit 
   islogout: boolean = false;
   navtabcontentClass: string = "d-none";
   firstcontent: boolean = false;
-
   cancelbutton: boolean = true;
   public classlists = [];
   @Input()
@@ -237,6 +238,7 @@ export class RdsCompProfileComponent extends MfeBaseComponent implements OnInit 
   }
 
   logout() {
+    this.showLoadingSpinner = true;
     this.islogout = true;
     this.emitEvent('logout', {
       islogout: true

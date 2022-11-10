@@ -365,7 +365,13 @@ export class AppComponent implements OnInit {
         res.forEach((element: any) => {
           const item: any = {
             value: element,
-            displayText: element,
+            some: element,
+            isSelected:false,
+            icon:'',
+            iconHeight:0,
+            iconWidth:0,
+          iconFill:false,
+          iconStroke:true
           };
           this.inputTypeList.push(item);
         });
