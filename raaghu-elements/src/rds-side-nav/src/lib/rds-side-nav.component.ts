@@ -79,9 +79,7 @@ export class RdsSideNavComponent implements OnInit, OnChanges {
       var dropdown = new Collapse(x);
       if (this.showHide) {
         dropdown.show();
-        if (this.activesubmenu == '' || this.activesubmenu == undefined) {
-          this.activesubmenu = 0;
-        }
+        this.activesubmenu = 0;
         this.activepage = i;
         this.emitPath.emit(path);
       } else {

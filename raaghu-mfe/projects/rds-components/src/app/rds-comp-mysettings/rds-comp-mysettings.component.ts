@@ -92,7 +92,7 @@ export class RdsMysettingsComponent implements OnInit, OnChanges {
     this.onProfileSave.emit({ currentPassword: this.ProfileData.CurrentPassword, newPassword: this.ProfileData.NewPassword });
     setTimeout(() => {
       this.buttonSpinner = false;
-    }, 2000);
+    }, 3000);
   }
   onCancel(): void {
     this.onProfileClose.emit();
