@@ -14,7 +14,7 @@ export interface SettingsData {
     ) { }
   }
 @Component({
-  selector: 'app-rds-comp-user-management',
+  selector: 'rds-comp-user-management',
   templateUrl: './rds-comp-user-management.component.html',
   styleUrls: ['./rds-comp-user-management.component.scss']
 })

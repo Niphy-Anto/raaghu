@@ -21,7 +21,7 @@ import { OrganizationTreeNode } from '../../models/organization-tree.model';
 declare let bootstrap: any;
 
 @Component({
-  selector: 'app-rds-comp-user-permissions',
+  selector: 'rds-comp-user-permissions',
   templateUrl: './rds-comp-user-permissions.component.html',
   styleUrls: ['./rds-comp-user-permissions.component.scss'],
   encapsulation: ViewEncapsulation.None,
@@ -284,14 +284,7 @@ export class RdsCompUserPermissionsComponent implements OnInit {
       event.stopPropagation();
 
 
-    } else {
     }
-    setTimeout(() => {
-      var offcanvas = document.getElementById('userOffcanvas');
-      var bsOffcanvas = new bootstrap.Offcanvas(offcanvas);
-      bsOffcanvas.show();
-    }, 100);
-
     this.activePage = 0;
   }
 

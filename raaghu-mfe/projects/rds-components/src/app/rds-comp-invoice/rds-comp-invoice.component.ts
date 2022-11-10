@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-rds-comp-invoice',
+  selector: 'rds-comp-invoice',
   templateUrl: './rds-comp-invoice.component.html',
   styleUrls: ['./rds-comp-invoice.component.scss']
 })

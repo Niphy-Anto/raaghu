@@ -11,7 +11,7 @@ export class TenantManagement {
   ) { }
 }
 @Component({
-  selector: 'app-rds-comp-tenant-management',
+  selector: 'rds-comp-tenant-management',
   templateUrl: './rds-comp-tenant-management.component.html',
   styleUrls: ['./rds-comp-tenant-management.component.scss']
 })
