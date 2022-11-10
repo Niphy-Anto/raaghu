@@ -49,11 +49,21 @@
         </div>
         <div class="col-md-6 sm-p-0">
           <div class="form-group mb-3">
-            <label for="Edition" class="mb-2">Edition<span class="text-danger">*</span></label>
-            <rds-select-list [(ngModel)]="tenantData.edition" [isRequired]=true [value]="tenantData.edition"
-              ngDefaultControl labelPosition="top" name="edition" [itemList]="editionList"
-              [placeholder]="'Select Edition'">
-            </rds-select-list>
+            <div>
+              <label for="Edition" class="mb-2">Edition<span class="text-danger">*</span></label>
+            </div>
+            <rds-dropdownlist [placeholder]="translate.instant('Select Edition')" 
+            [borderDropdown]="true"
+            class="text-dark"
+            [id]="'edition-dropdown'"
+            [(ngModel)]="tenantData.displayText"
+            [listItems]="editionList" #inputNameData="ngModel" required
+            [multiSelect]="false"
+            [selectAll]="false"
+            [entity]="false"
+            [value]="tenantData.displayText" ngDefaultControl name="tenantData.displayText">
+            </rds-dropdownlist>
+            {{tenantData.displayText}}
           </div>
         </div>
       </div>
