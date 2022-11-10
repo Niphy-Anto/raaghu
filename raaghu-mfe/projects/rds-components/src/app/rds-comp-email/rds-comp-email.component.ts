@@ -9,7 +9,7 @@ export interface EmailData {
 
 }
 @Component({
-  selector: 'app-rds-comp-email',
+  selector: 'rds-comp-email',
   templateUrl: './rds-comp-email.component.html',
   styleUrls: ['./rds-comp-email.component.scss']
 })

@@ -476,6 +476,10 @@ html[theme=light] {
   max-height: 34px !important;
 }
 
+html[theme=dark] .btn-primary svg {
+  width: 22px;
+  height: 22px;
+}
 
 .btn-icon.btn-lg {
   padding: 0;
@@ -1206,7 +1210,4 @@ bs-datepicker-container {
 }
 .change-tenant .modal-header, .change-tenant .modal-footer{
   border-width: 0px;
-}
-#switchTenant .form-switch{
-  padding-left: 0em;
 }
