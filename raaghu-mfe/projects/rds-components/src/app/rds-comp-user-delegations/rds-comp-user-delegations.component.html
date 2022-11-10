@@ -40,10 +40,10 @@
         </form>
         <div class="row" *ngIf="!deligateDivFlag">
           <div class="col-sm-12">
-            <app-rds-data-table [tableData]="rdsDeligateTableData" [pagination]="pagination"
+            <rds-data-table [tableData]="rdsDeligateTableData" [pagination]="pagination"
               (deleteEvent)="deleteDeligateData($event)" [recordsPerPage]="recordsPerpage" [actions]="actions"
               [tableHeaders]="rdsDeligateTableHeader" noDataTitle="Currently you do not have delegate new user">
-            </app-rds-data-table>
+            </rds-data-table>
           </div>
         </div>
       </div>

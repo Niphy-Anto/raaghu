@@ -16,9 +16,9 @@
     <div class="col-md-12">
       <div class="card p-2 h-100 border-0 rounded-0 card-full-stretch">
         <div class="table-responsive">
-          <app-rds-data-table [tableData]="tableData" [inlineEdit]="false" [pagination]="true" [recordsPerPage]="10"
+          <rds-data-table [tableData]="tableData" [inlineEdit]="false" [pagination]="true" [recordsPerPage]="10"
             [actions]="actions" (deleteEvent)="deleteEvent.emit($event)" (onActionSelection)="onActionSelect($event)"
-            [tableHeaders]="roleHeaders" [isShimmer]="isShimmer"></app-rds-data-table>
+            [tableHeaders]="roleHeaders" [isShimmer]="isShimmer"></rds-data-table>
         </div>
       </div>
     </div>
@@ -36,15 +36,15 @@
     <div naveContent class="tab-content" id="nav-tabContent">
       <div class="tab-pane fade" [ngClass]="{'show active': activePage === 0}" id="Role" role="tabpanel"
         aria-labelledby="nav-home-tab">
-        <app-rds-comp-new-role (RoleInfo)="getRoleData($event)" [roleData]="RolesData" (onCancel)="close()"
+        <rds-comp-new-role (RoleInfo)="getRoleData($event)" [roleData]="RolesData" (onCancel)="close()"
           [isReset]="isReset" [EditShimmer]="EditShimmer">
-        </app-rds-comp-new-role>
+        </rds-comp-new-role>
       </div>
       <div class="tab-pane fade" [ngClass]="{'show active': activePage === 1}" id="Permission" role="tabpanel"
         aria-labelledby="nav-home-tab">
-        <app-rds-comp-permission-tree [treeData]="permissionsList" [selectedItems]="SelectedPermissionValues"
+        <rds-comp-permission-tree [treeData]="permissionsList" [selectedItems]="SelectedPermissionValues"
           (getAllSelectedNodes)="getSelectedPermissionList($event)" [selectAllLabel]="'Select Permissions'">
-        </app-rds-comp-permission-tree>
+        </rds-comp-permission-tree>
 
        
         <div class="footer-buttons my-2">
@@ -66,9 +66,9 @@
 <!-- Filter by Permissions Offcanvas -->
 <rds-offcanvas [canvasTitle]="translate.instant(canvasTitle)" [offId]="'PermissionOffcanvas'" [offcanvaswidth]="550"
   [placement]="'end'" *ngIf="viewCanvas" (onClose)="closeFilterPermission()">
-  <app-rds-comp-permission-tree [treeData]="permissionsList" [selectedItems]="SelectedPermissionValues"
+  <rds-comp-permission-tree [treeData]="permissionsList" [selectedItems]="SelectedPermissionValues"
     (getAllselectedPermissions)="getFilterPermissionList($event)" [selectAllLabel]="'Select Permissions'">
-  </app-rds-comp-permission-tree>
+  </rds-comp-permission-tree>
   <div class="footer-buttons my-2">
     <rds-button [label]="translate.instant('Cancel')" (click)="closeFilterPermission()"
       [colorVariant]="'primary'" [size]="'small'" [outlineButton]="true" data-bs-dismiss="offcanvas">
@@ -87,15 +87,15 @@
     <div naveContent class="row tab-content m-2" id="nav-tabContent">
       <div class="tab-pane fade" [ngClass]="{'show active': activePage === 0}" id="Role" role="tabpanel"
         aria-labelledby="nav-home-tab">
-        <app-rds-comp-new-role (RoleInfo)="getRoleData($event)" (RoleDataemit)="onchangeRoldate($event)"
+        <rds-comp-new-role (RoleInfo)="getRoleData($event)" (RoleDataemit)="onchangeRoldate($event)"
           [roleData]="RolesData" (onCancel)="close()">
-        </app-rds-comp-new-role>
+        </rds-comp-new-role>
       </div>
       <div class="tab-pane fade" [ngClass]="{'show active': activePage === 1}" id="Permission" role="tabpanel"
         aria-labelledby="nav-home-tab">
-        <app-rds-comp-permission-tree [treeData]="permissionsList" [selectedItems]="SelectedPermissionValues"
+        <rds-comp-permission-tree [treeData]="permissionsList" [selectedItems]="SelectedPermissionValues"
           (getAllSelectedNodes)="getSelectedPermissionList($event)" [selectAllLabel]="'Select Permissions'">
-        </app-rds-comp-permission-tree>
+        </rds-comp-permission-tree>
 
         <div class="footer-buttons my-2">
           <rds-button [label]="translate.instant('Cancel')" (click)="close()"  [outlineButton]="true" [colorVariant]="'secondary'"
