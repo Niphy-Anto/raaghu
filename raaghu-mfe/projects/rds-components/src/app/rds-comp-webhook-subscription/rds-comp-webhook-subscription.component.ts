@@ -18,7 +18,7 @@ export class Webhooksubscription {
   public additionalHeaders: webhookadditonal[];
 }
 @Component({
-  selector: 'app-rds-comp-webhook-subscription',
+  selector: 'rds-comp-webhook-subscription',
   templateUrl: './rds-comp-webhook-subscription.component.html',
   styleUrls: ['./rds-comp-webhook-subscription.component.scss']
 })
