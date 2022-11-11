@@ -45,7 +45,7 @@
         <div class="col-md-12 pt-3">
           <rds-search-input placeholder="Search" icon="search" size="small"> </rds-search-input>
         </div>
-        <app-rds-comp-permission-tree [treeData]="permissionsList" [selectedItems]="SelectedPermissionValues"
+        <rds-comp-permission-tree [treeData]="permissionsList" [selectedItems]="SelectedPermissionValues"
           (getAllSelectedNodes)="getSelectedPermissionList($event)" [selectAllLabel]="'Select Permissions'">
         </rds-comp-permission-tree>
 
@@ -72,7 +72,7 @@
   <div class="col-md-12 pt-3">
     <rds-search-input placeholder="Search" icon="search" size="small"> </rds-search-input>
   </div>
-  <app-rds-comp-permission-tree [treeData]="permissionsList" [selectedItems]="SelectedPermissionValues"
+  <rds-comp-permission-tree [treeData]="permissionsList" [selectedItems]="SelectedPermissionValues"
     (getAllselectedPermissions)="getFilterPermissionList($event)" [selectAllLabel]="'Select Permissions'">
   </rds-comp-permission-tree>
   <div class="footer-buttons my-2">
