@@ -61,6 +61,6 @@
   <div footer *ngIf="checkUnreadMessage()">
     <rds-button class="m-2 float-end" [tooltipPlacement]="'bottom'" [tooltipTitle]="translate.instant('Mark As Read')"
       [label]="translate.instant('Mark As Read')" type="button" [size]="'small'" [colorVariant]="'primary'"
-      [outlineButton]="false" (click)="setAllReadOutput.emit(true)"></rds-button>
+      [isOutline]="false" (click)="setAllReadOutput.emit(true)"></rds-button>
   </div>
 </rds-card>

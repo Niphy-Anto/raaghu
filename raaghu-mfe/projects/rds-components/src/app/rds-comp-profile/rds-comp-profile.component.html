@@ -79,10 +79,10 @@
               [pills]="false" [tabs]="false" [fill]="false" [justified]="false" [activeTab]="activePage"
               (onClicktab)="onclickMenu($event)">
             </rds-nav-tab>
-            <div class="text-center sm-logout">
-              <rds-button [outlineButton]="true" [label]="translate.instant('LOGOUT')" type="button" [size]="'medium'"
-                [colorVariant]="'primary'" [iconFill]="false" [iconStroke]="true" (click)="logout()" [icon]="'logout'"
-                [iconHeight]="'15px'" [iconWidth]="'15px'">
+            <div class="text-center">
+              <rds-button [isOutline]="true" [label]="translate.instant('LOGOUT')" type="button" [size]="'medium'"
+                          [colorVariant]="'primary'" [isIconFill]="false" [isIconStroke]="true"  (click)="logout()" [icon]="'logout'"
+                          [iconHeight]="'15px'" [iconWidth]="'15px'">
               </rds-button>
             </div>
 
