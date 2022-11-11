@@ -15,7 +15,7 @@ export default {
   argTypes: {
     borderColor: {
       options: ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark'],
-      control: { type: 'select' }
+      control: { type: 'text' }
     },
   },
 } as Meta;
