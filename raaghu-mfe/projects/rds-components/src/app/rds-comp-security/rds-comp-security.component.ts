@@ -20,7 +20,7 @@ export interface SeccuritySetting {
 
 
 @Component({
-  selector: 'app-rds-security',
+  selector: 'rds-security',
   templateUrl: './rds-comp-security.component.html',
   styleUrls: ['./rds-comp-security.component.scss']
 })
