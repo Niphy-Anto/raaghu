@@ -5,7 +5,7 @@ import { TableAction } from '../../models/table-action.model';
 import { TableHeader } from '../../models/table-header.model';
 
 @Component({
-  selector: 'app-rds-user-delegations',
+  selector: 'rds-user-delegations',
   templateUrl: './rds-comp-user-delegations.component.html',
   styleUrls: ['./rds-comp-user-delegations.component.scss']
 })
