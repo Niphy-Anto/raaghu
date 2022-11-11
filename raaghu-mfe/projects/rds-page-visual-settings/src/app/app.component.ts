@@ -5,6 +5,8 @@ import { getVisualsettings, UpdateDefaultUiManagementSettings } from 'projects/l
 import { selectAllVisualsettings } from 'projects/libs/state-management/src/lib/state/Visual-settings/visual-settings.selector';
 import { TranslateService } from '@ngx-translate/core';
 import { selectDefaultLanguage } from '@libs/state-management';
+import { ThemesService } from 'projects/libs/themes/src/public-api';
+
 import {
   transition,
   trigger,
@@ -46,7 +48,8 @@ import {
 })
 export class AppComponent implements OnInit {
   isAnimation: boolean = true;
-  constructor(private store: Store, private alertService: AlertService,public translate:TranslateService) { }
+  constructor(private store: Store, private alertService: AlertService,public translate:TranslateService, private theme: ThemesService,
+    ) { }
   visualsettingsData: any = [];
   rdsvisualsettingsMfeConfig: ComponentLoaderOptions;
   currentAlerts: any = [];
@@ -64,9 +67,7 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.isAnimation = true;
     this.store.select(selectDefaultLanguage).subscribe((res: any) => {
-
       if (res) {
-
         this.translate.use(res);
       }
      })
@@ -84,6 +85,14 @@ export class AppComponent implements OnInit {
       output: {
         onSaveVisualsettingsData: (visualsettingsItem: any) => {
           if (visualsettingsItem) {
+            if(visualsettingsItem.menu.asideSkin == 'dark'){
+              this.theme.theme = 'dark'
+              // this.store.dispatch(changeToDarkMode());
+            }
+            else{
+              this.theme.theme = 'light'
+              // this.store.dispatch(changeToLightMode());
+            } 
             this.store.dispatch(UpdateDefaultUiManagementSettings(visualsettingsItem));
           }
           console.log(visualsettingsItem);
@@ -110,6 +119,7 @@ export class AppComponent implements OnInit {
     { label: 'Subheader', tablink: '#nav-subheader', ariacontrols: 'nav-subheader' },
     { label: 'Menu', tablink: '#nav-Menu', ariacontrols: 'nav-Menu' },
     { label: 'Footer', tablink: '#nav-footer', ariacontrols: 'nav-footer' },
+
   ]
   listskin: any[] = [
     { value: 'dark', displayText: 'Dark'},
