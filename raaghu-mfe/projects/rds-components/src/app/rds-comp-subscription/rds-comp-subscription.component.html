@@ -20,7 +20,7 @@
     </div>
     <span class="subscription-bg-orange text-white rounded px-3 py-1 position-relative top-0" *ngIf="item.recommended">RECOMMENDED
     </span>
-    <rds-card [showFooter]="true" [borderColor]="item.name === 'Basic' ? '#00A443' : item.name === 'Standard' ? '#005FA4' : item.name === 'Premium' ? '#660064' : item.name === 'Professional' ? '#F76161' : undefined" [topBottomPadding]="false" [sidePadding]="false">
+    <rds-card [showFooter]="true" [topBottomPadding]="false" [sidePadding]="false">
       <div class="p-2 subscription-header" [ngClass]="{'subscription-bg-green': item.name === 'Basic',
             'subscription-bg-blue': item.name === 'Standard',
             'subscription-bg-purple': item.name === 'Premium',
