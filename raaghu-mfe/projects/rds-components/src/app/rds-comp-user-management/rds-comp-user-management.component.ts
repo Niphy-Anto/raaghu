@@ -36,21 +36,21 @@ export class RdsCompUserManagementComponent implements OnInit, OnChanges {
 
 
 
-dataset?: any = {};
+// dataset?: any = {};
 @Output() change = new EventEmitter<any>();
 
 
 
 constructor(public translate:TranslateService) { }
   ngOnChanges(changes: SimpleChanges): void {
-    this.dataset = this.Usermanagementsettings;
+    // this.dataset = this.Usermanagementsettings;
   }
 
 
 
 ngOnInit(): void {
   
-this.dataset = this.Usermanagementsettings;
+// this.dataset = this.Usermanagementsettings;
 
 }
  selectAllFeature(e: boolean, type: string) {

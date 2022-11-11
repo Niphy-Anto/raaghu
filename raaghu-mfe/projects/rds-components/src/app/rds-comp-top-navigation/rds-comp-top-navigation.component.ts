@@ -65,6 +65,7 @@ export class RdsTopNavigationComponent extends MfeBaseComponent implements OnIni
   @Output() onUpdateNotificationSettings = new EventEmitter<any>();
   @Input() linkedAccountHeaders: any = [];
   @Input() linkedAccountData: any = [];
+  @Input() showDelegationButtonSpinner: boolean = true;
   tabName: string = '';
   navtabItems: any = [
     { label: 'Manage Linked Accounts', translationKey: 'Manage Linked Accounts', tablink: '#nav-LinkAccount', ariacontrols: 'nav-LinkAccount', Image: 'bi bi-pencil-fill', icon: 'manage_linked', subText: 'Manage accounts linked to your account', subtextTranslationKey: 'Manage accounts linked to your account', showoffcanvas: true },
@@ -205,13 +206,13 @@ export class RdsTopNavigationComponent extends MfeBaseComponent implements OnIni
     }
   }
   openNotification(): void {
-    this.showNotification=!this.showNotification;
+    this.showNotification = !this.showNotification;
     var element: any = document.getElementById('notification-popup-menu');
-    if(element){
-      var dropdown =  new bootstrap.Dropdown(element);
-      if(this.showNotification){
+    if (element) {
+      var dropdown = new bootstrap.Dropdown(element);
+      if (this.showNotification) {
         dropdown.show();
-      }else{
+      } else {
         dropdown.hide();
       }
     }

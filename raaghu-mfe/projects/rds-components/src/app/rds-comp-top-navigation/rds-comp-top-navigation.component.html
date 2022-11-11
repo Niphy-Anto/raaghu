@@ -125,8 +125,9 @@
   (onDeleteDeligate)="deleteDeligateuser.emit($event)" (ondeleteLinkaccount)="deleteLinkaccount.emit($event)"
   (onLinkToUser)="saveLinkUsers($event)" (onProfileSave)="onProfileSave.emit($event)"
   (onLoginAttempts)="onLoginAttemptsRefresh.emit($event)" (onDownloadLink)="onDownloadLink.emit($event)"
-  [linkedAccountHeaders]="linkedAccountHeaders" [linkedAccountData]="linkedAccountData">
+  [linkedAccountHeaders]="linkedAccountHeaders" [linkedAccountData]="linkedAccountData"
+  [showDelegationButtonSpinner]="showDelegationButtonSpinner">
 </rds-comp-profile>
-<rds-comp-notification-settings [notificationTypes]="notificationTypes"
-  [receiveNotifications]="receiveNotifications"
-  (onUpdateNotificationSettings)="onUpdateNotificationSettings.emit($event)"></rds-comp-notification-settings>
+<rds-comp-notification-settings [notificationTypes]="notificationTypes" [receiveNotifications]="receiveNotifications"
+  (onUpdateNotificationSettings)="onUpdateNotificationSettings.emit($event)">
+</rds-comp-notification-settings>

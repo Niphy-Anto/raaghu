@@ -202,6 +202,7 @@ html[theme=light] {
   $input-group-addon-bg: $input-bg;
 
   $form-select-bg1: $input-bg !default;
+
   $form-select-border-color1: $gray-300 !default;
   $shimmerbg: $light-700 !default;
 
@@ -298,7 +299,7 @@ html[theme=light] {
 
 
   .form-select[size]:not([size="1"]) {
-    padding-right: 1.25rem;
+    padding-right: 1.8rem;
     background-position: right 0.15rem center;
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
   }
@@ -1421,8 +1422,7 @@ html[theme=light] {
   .form-select {
     background-color: $form-select-bg1;
     border-color: $form-select-border-color1;
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e")
-  }
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e")  }
 }
 
 html[theme=dark] {
@@ -1532,6 +1532,7 @@ html[theme=dark] {
   $dropdown-border-bottom-hover: $gray-100 !default;
   $dropdown-bghover-color: $dark-300 !default;
   $dropdown-link-active-bg: $dark-400 !default;
+  $dropdown-hover-color:$light-100 !default;
 
   /*file uploader color variables*/
   $file-color: $primary;
@@ -1591,7 +1592,7 @@ html[theme=dark] {
   $check-horizotal-border-color: $primary !default;
   $horizontal-border-color: $gray-100 !default;
   $verticle-border-color: $gray-100 !default;
-
+ 
   /*modal variables*/
 
   $modal-content-bg: $dark-400 !default;
@@ -1692,7 +1693,7 @@ html[theme=dark] {
     .card-header {
       background-color: transparent;
     }
-
+   
     .card-footer {
       background-color: $card-bg-color;
       border-top-color: $card-border-color;
@@ -1739,14 +1740,16 @@ html[theme=dark] {
 
   .dropdown-item.active {
     background-color: $dropdown-link-active-bg;
-
+  
 
     span.hr-line {
       color: $primary;
       background-color: $primary;
     }
   }
-
+ .dropdown-toggle:hover{
+  color:$dropdown-hover-color;
+ }
   .date-picker .dropdown-item.active,
   .date-picker .dropdown-item:active {
     color: $white;

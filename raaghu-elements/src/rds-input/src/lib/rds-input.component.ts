@@ -29,7 +29,9 @@ export class RdsInputComponent implements AfterViewInit {
   @Input() inputType: string = 'text';
   @Input() placeholder: string = 'Enter a value';
   @Input() icon: string = '';
+  @Input() InputId:string='';
   @Input() iconCursor = '';
+  @Input() id:string='rds_inputId_';
   @Input() iconHeight: string = '16px';
   @Input() iconWidth: string = '16px';
   @Input() iconStroke: boolean = true;
@@ -46,11 +48,13 @@ export class RdsInputComponent implements AfterViewInit {
 
   @Input() tooltipPlacement: string = 'bottom';
 
-  id: string = 'inputText';
+  /* id: string = 'inputText'; */
 
   constructor() {
-    this.id = this.id + RdsInputComponent.count++
+   
   }
+  
+
 
   ngAfterViewInit(): void {
     if (this.tooltipPlacement && this.tooltipTitle) {
@@ -58,6 +62,15 @@ export class RdsInputComponent implements AfterViewInit {
       if (this.tooltipTitle && tooltipTriggerList) {
         const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new Tooltip(tooltipTriggerEl));
       }
+    }
+  }
+
+  ngOnInit(){
+    if (this.InputId=='')
+    {this.id = this.id + RdsInputComponent.count++;
+    }
+    else {
+      this.id=this.id+ this.InputId;
     }
   }
 

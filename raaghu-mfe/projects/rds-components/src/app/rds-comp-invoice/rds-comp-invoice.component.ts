@@ -31,17 +31,19 @@ export class RdsCompInvoiceComponent implements OnInit {
       this.InvoiceDataForm['legalName'] = '';
       this.InvoiceDataForm['address'] = '';
     }
-    setTimeout(() => {
-      if (this.InvoiceDataForm && this.InvoiceFormInfo) {
-        this.InvoiceFormInfo.statusChanges.subscribe(res => {
-          if (res === 'VALID') {
-            this.InvoiceData.emit(this.InvoiceDataForm);
-          }
-        });
-      }
-    }, 100);
+    // setTimeout(() => {
+    //   if (this.InvoiceDataForm && this.InvoiceFormInfo) {
+    //     this.InvoiceFormInfo.statusChanges.subscribe(res => {
+    //       if (res === 'VALID') {
+    //         this.InvoiceData.emit(this.InvoiceDataForm);
+    //       }
+    //     });
+    //   }
+    // }, 100);
   }
-
+  onChange():void{
+    this.InvoiceData.emit(this.InvoiceDataForm);
+  }
 
   onAddressChange(event: any, invoiceForm: NgForm): void {
     if (event.target.value.trim().length > 250) {
@@ -72,3 +74,4 @@ export class RdsCompInvoiceComponent implements OnInit {
   sendDataE
 
 }
+
