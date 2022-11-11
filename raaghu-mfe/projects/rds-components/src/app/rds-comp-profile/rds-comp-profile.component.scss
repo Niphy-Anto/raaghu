@@ -88,6 +88,15 @@ hr {
         min-height: 31.8rem;
         padding-top: 70px;
       }
+      .sm-logout{
+        position: fixed;
+        bottom: 50px;
+        display: flex;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+      }
 }
 @media screen and (min-width:768px) and (max-width: 1023px){
     .profileMenuContent{
@@ -106,4 +115,24 @@ hr {
         min-height: 41.8rem;
         padding-top: 70px;
     }
+    .sm-logout{
+        position: fixed;
+        bottom: 50px;
+        display: flex;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+      }
+}
+@media screen and (min-width:1024px) and (max-width:1279px){
+    .sm-logout{
+        position: fixed;
+        bottom: 50px;
+        display: flex;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+        width: 30%;
+      }
 }
