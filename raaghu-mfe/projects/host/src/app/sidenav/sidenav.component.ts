@@ -74,6 +74,7 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
   notificationTypes: any = [];
   sidenavItemsOriginal: any = [
     { label: 'Dashboard', labelTranslationKey: 'Dashboard', id: '', permissionName: 'Pages.Administration.Host.Dashboard', icon: 'home', path: '/pages/dashboard', descriptionTranslationKey: 'Statistics and reports', description: 'Statistics and reports' },
+    { label: 'UI Components', labelTranslationKey: 'UI Components', id: '', permissionName: '', icon: 'demo_ui', path: '/pages/demo-ui', description: '', descriptionTranslationKey: '' },
     { label: 'Dashboard', labelTranslationKey: 'Dashboard', id: '', permissionName: 'Pages.Tenant.Dashboard', icon: 'home', path: '/pages/dashboard', description: 'Statistics and reports', descriptionTranslationKey: 'Statistics and reports' },
     { label: 'Tenants', labelTranslationKey: 'Tenants', id: 'tenants', permissionName: 'Pages.Tenants', icon: 'tenant', path: '/pages/tenant', description: 'Manage your tenants', descriptionTranslationKey: 'Manage your tenants' },
     { label: 'Editions', labelTranslationKey: 'Editions', id: '', permissionName: 'Pages.Editions', icon: 'editions', path: '/pages/edition', description: 'Manage editions and features of the application', descriptionTranslationKey: 'Manage editions and features of the application' },
@@ -95,7 +96,6 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
         { label: 'Settings', labelTranslationKey: 'Settings', id: '', permissionName: 'Pages.Administration.Tenant.Settings', icon: 'setting', path: '/pages/settings', description: 'Show and change application settings', descriptionTranslationKey: 'Show and change application settings' },
       ],
     },
-    { label: 'UI Components', labelTranslationKey: 'UI Components', id: '', permissionName: '', icon: 'demo_ui', path: '/pages/demo-ui', description: '', descriptionTranslationKey: '' },
     // { label: 'Cart', labelTranslationKey: 'Cart', id: 'cart', permissionName: '' ,icon: 'tenant', path: '/pages/cart', description: 'Manage your cart', descriptionTranslationKey: 'Manage your cart' },
     // { label: 'Edition-New', labelTranslationKey: 'Edition-New', id: '', permissionName: '', icon: 'home', path: '/pages/editionnew', description: '', descriptionTranslationKey: '' },
   ];
@@ -591,8 +591,7 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
       localStorage.setItem('THEME', 'dark');
     } else {
       this.theme.theme = 'light';
-      localStorage.setItem('THEME', 'light');
-
+      localStorage.setItem('THEME', 'light'); 
     }
   }
 
