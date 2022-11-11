@@ -127,8 +127,7 @@
   (onLoginAttempts)="onLoginAttemptsRefresh.emit($event)" (onDownloadLink)="onDownloadLink.emit($event)"
   [linkedAccountHeaders]="linkedAccountHeaders" [linkedAccountData]="linkedAccountData"
   [showDelegationButtonSpinner]="showDelegationButtonSpinner">
-  </app-rds-comp-profile>
-  <app-rds-comp-notification-settings [notificationTypes]="notificationTypes"
-    [receiveNotifications]="receiveNotifications"
-    (onUpdateNotificationSettings)="onUpdateNotificationSettings.emit($event)">
-    </rds-comp-notification-settings>
+</rds-comp-profile>
+<rds-comp-notification-settings [notificationTypes]="notificationTypes" [receiveNotifications]="receiveNotifications"
+  (onUpdateNotificationSettings)="onUpdateNotificationSettings.emit($event)">
+</rds-comp-notification-settings>
