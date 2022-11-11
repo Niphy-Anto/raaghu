@@ -40,8 +40,11 @@
           [isReset]="isReset" [EditShimmer]="EditShimmer">
         </app-rds-comp-new-role>
       </div>
-      <div class="tab-pane fade" [ngClass]="{'show active': activePage === 1}" id="Permission" role="tabpanel"
+      <div class="tab-pane fade py-2" [ngClass]="{'show active': activePage === 1}" id="Permission" role="tabpanel"
         aria-labelledby="nav-home-tab">
+        <div class="col-md-12 pt-3">
+          <rds-search-input placeholder="Search" icon="search" size="small"> </rds-search-input>
+        </div>
         <app-rds-comp-permission-tree [treeData]="permissionsList" [selectedItems]="SelectedPermissionValues"
           (getAllSelectedNodes)="getSelectedPermissionList($event)" [selectAllLabel]="'Select Permissions'">
         </app-rds-comp-permission-tree>
@@ -67,6 +70,9 @@
 <!-- Filter by Permissions Offcanvas -->
 <rds-offcanvas [canvasTitle]="translate.instant(canvasTitle)" [offId]="'PermissionOffcanvas'" [offcanvaswidth]="550"
   [placement]="'end'" *ngIf="viewCanvas" (onClose)="closeFilterPermission()">
+  <div class="col-md-12 pt-3">
+    <rds-search-input placeholder="Search" icon="search" size="small"> </rds-search-input>
+  </div>
   <app-rds-comp-permission-tree [treeData]="permissionsList" [selectedItems]="SelectedPermissionValues"
     (getAllselectedPermissions)="getFilterPermissionList($event)" [selectAllLabel]="'Select Permissions'">
   </app-rds-comp-permission-tree>
