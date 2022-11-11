@@ -57,7 +57,7 @@
         [size]="'small'" (click)="onCancel()">
       </rds-button>
       <rds-button [label]="translate.instant('Save')"  type="button" [size]="'small'"
-        (click)="onSave(delegateForm)" class="ms-2" [colorVariant]="'primary'"  [showLoadingSpinner]="buttonSpinner">
+        (click)="onSave(delegateForm)" class="ms-2" [colorVariant]="'primary'"  [showLoadingSpinner]="buttonSpinner&&submitted">
       </rds-button>
     </div>
   </div>
