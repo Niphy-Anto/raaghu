@@ -25,6 +25,7 @@ export class RdsButtonComponent implements AfterViewInit, OnInit {
   @Input() iconWidth: string = '';
   @Input() iconStroke: boolean = true;
   @Input() iconFill: boolean = false;
+  @Input() buttonType?: 'iconOnly' | 'labelOnly' | 'iconLabel' = 'iconLabel';
   @Input() icon: string = '';
   @Input() label: string = '';
   @Output() onClick = new EventEmitter<Event>();
