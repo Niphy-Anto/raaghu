@@ -57,68 +57,69 @@ export class RdsSecurityComponent implements OnInit {
 
   ngOnInit(): void {
 
-    if (!this.dataset) {
-      this.dataset = {};
-      this.dataset['useDefaultPasswordComplexitySettings'] = false;
-      this.dataset['requireDigit'] = false;
-      this.dataset['requireLowercase'] = false;
-      this.dataset['requireAlphaNumeric'] = false;
-      this.dataset['requireUppercase'] = false;
-      this.dataset['requiredLength'] = 0;
-      this.dataset['userLockout'] = false;
-      this.dataset['maxFailedAccessAttemptsBeforeLockout'] = 0;
-      this.dataset['defaultAccountLockoutSeconds'] = 0;
-      this.dataset['twoFactorLogin'] = false;
-      this.dataset['loginPerUser'] = false;
+    // if (!this.dataset) {
+    //   this.dataset = {};
+    //   this.dataset['useDefaultPasswordComplexitySettings'] = false;
+    //   this.dataset['requireDigit'] = false;
+    //   this.dataset['requireLowercase'] = false;
+    //   this.dataset['requireAlphaNumeric'] = false;
+    //   this.dataset['requireUppercase'] = false;
+    //   this.dataset['requiredLength'] = 0;
+    //   this.dataset['userLockout'] = false;
+    //   this.dataset['maxFailedAccessAttemptsBeforeLockout'] = 0;
+    //   this.dataset['defaultAccountLockoutSeconds'] = 0;
+    //   this.dataset['twoFactorLogin'] = false;
+    //   this.dataset['loginPerUser'] = false;
 
-    }
-    if (this.Seccuritysetting) {
-      this.dataset = this.Seccuritysetting;
-    }
-    setTimeout(() => {
-      if (this.dataset && this.securityformdata) {
-        this.securityformdata.statusChanges.subscribe(res => {
-          if (res === 'VALID') {
-            this.securityData.emit(this.Seccuritysetting);
-          }
-        });
-      }
+    // }
+    // if (this.Seccuritysetting) {
+    //   this.dataset = this.Seccuritysetting;
+    // }
+    // setTimeout(() => {
+    //   if (this.dataset && this.securityformdata) {
+    //     this.securityformdata.statusChanges.subscribe(res => {
+    //       if (res === 'VALID') {
+    //         this.securityData.emit(this.Seccuritysetting);
+    //       }
+    //     });
+    //   }
 
-    }, 100);
+    // }, 100);
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (!this.dataset) {
-      this.dataset = {};
-      this.dataset['useDefaultPasswordComplexitySettings'] = false;
-      this.dataset['requireDigit'] = false;
-      this.dataset['requireLowercase'] = false;
-      this.dataset['requireAlphaNumeric'] = false;
-      this.dataset['requireUppercase'] = false;
-      this.dataset['requiredLength'] = 0;
-      this.dataset['userLockout'] = false;
-      this.dataset['maxFailedAccessAttemptsBeforeLockout'] = 0;
-      this.dataset['defaultAccountLockoutSeconds'] = 0;
-      this.dataset['twoFactorLogin'] = false;
-      this.dataset['allowOneConcurrentLoginPerUser'] = false;
+    // if (!this.dataset) {
+    //   this.dataset = {};
+    //   this.dataset['useDefaultPasswordComplexitySettings'] = false;
+    //   this.dataset['requireDigit'] = false;
+    //   this.dataset['requireLowercase'] = false;
+    //   this.dataset['requireAlphaNumeric'] = false;
+    //   this.dataset['requireUppercase'] = false;
+    //   this.dataset['requiredLength'] = 0;
+    //   this.dataset['userLockout'] = false;
+    //   this.dataset['maxFailedAccessAttemptsBeforeLockout'] = 0;
+    //   this.dataset['defaultAccountLockoutSeconds'] = 0;
+    //   this.dataset['twoFactorLogin'] = false;
+    //   this.dataset['allowOneConcurrentLoginPerUser'] = false;
 
-    }
-    setTimeout(() => {
-      if (this.dataset && this.securityformdata) {
-        this.securityformdata.statusChanges.subscribe(res => {
-          if (res === 'VALID') {
-            this.securityData.emit(this.Seccuritysetting);
-          }
-        });
-      }
+    // }
+    // setTimeout(() => {
+    //   if (this.dataset && this.securityformdata) {
+    //     this.securityformdata.statusChanges.subscribe(res => {
+    //       if (res === 'VALID') {
+    //         this.securityData.emit(this.Seccuritysetting);
+    //       }
+    //     });
+    //   }
 
-    }, 100);
+    // }, 100);
 
   }
 
  
-
-
+  onChange():void{
+    this.securityData.emit(this.Seccuritysetting);
+  }
 
   checkUncheckAll() {
     this.checked = !this.checked;
