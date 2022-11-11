@@ -208,7 +208,7 @@ html[theme=light] {
   .ngx-shimmer {
     background-color: $light-600;
     background-image: linear-gradient(to right,$light-800 0,$primary 20%,$light-800 40%,$light-800 100%);
-    opacity:0.1;
+    opacity: 0.1;
   }
 
   .navbar {
@@ -846,7 +846,7 @@ html[theme=light] {
 
 
   .bg-gradient-primary {
-    background: transparent linear-gradient(90deg, #7e2eef 0%, #01ae9d 100%) 0% 0% no-repeat padding-box;
+    background: transparent linear-gradient(90deg, #56B2AA 0%, #0285C9 100%) 0% 0% no-repeat padding-box;
   }
   /*top nav bar variables*/
   /*sidebar color styles*/
@@ -1682,7 +1682,7 @@ html[theme=dark] {
   }
 
   .bg-gradient-primary {
-    background: transparent linear-gradient(90deg, #7e2eef 0%, #01ae9d 100%) 0% 0% no-repeat padding-box;
+    background: transparent linear-gradient(90deg, #56B2AA 0%, #0285C9 100%) 0% 0% no-repeat padding-box;
   }
 
   .card {
