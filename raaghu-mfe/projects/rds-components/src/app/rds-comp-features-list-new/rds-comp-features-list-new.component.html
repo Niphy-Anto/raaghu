@@ -2,8 +2,8 @@
 <div class="row mt-5 flex-row flex-code">
     <div class="col-md-6 mb-3" *ngFor="let item of EditionData">
 
-        <rds-card [borderColor]="'primary'" [topBottomPadding]="true">
-            <div header>
+        <rds-card [showFooter]="false" [showHeader]="false" [borderColor]="'primary'" [topBottomPadding]="true">
+            <div body>
                 <div class="text-center mt-3 ">
 
                     <rds-label [bold]="false" [label]="item.EditionName" class="fs-4 fw-bold"></rds-label>
@@ -15,63 +15,45 @@
                         <span class="text-muted fw-medium">{{item.Plan}}</span>
                     </div>
 
-                </div>
-            </div>
-            <div class="pt-3">
-                <div class="text-center">
-                    <h1 class="text-primary fw-bold"> <sup>&#x24;</sup>{{item.Price}}</h1>
-                    <span class="text-muted fw-medium">{{item.Plan}}</span>
-                </div>
-
-            </div>
-            <div body>
-                <!-- <div class="row ">
+                    <!-- <div body> -->
+                    <!-- <div class="row ">
                         <ul>
                             <li class="fs-6">{{item.features.label}}</li>
                            
                           </ul> 
                     </div> -->
-            </div>
-            <div footer>
-                <div class="d-flex gap-2 p-4">
-                    <div>
-                        <rds-button colorVariant="primary" [block]="false" size="small" [outlineButton]="true"
-                            [roundedButton]="true" [roundedCorner]="true" [iconStroke]="true" [iconFill]="false"
-                            buttonType="iconLabel" icon="pencil" iconHeight="12px" iconWidth="12px" (click)="onEdit()">
-                        </rds-button>
-                    </div>
-                    <div>
-                        <rds-button colorVariant="danger" size="small" [outlineButton]="true" [roundedButton]="true"
-                            [roundedCorner]="true" [iconStroke]="true" [iconFill]="false" buttonType="iconLabel"
-                            iconHeight="12px" iconWidth="12px" icon="delete" (click)="openConfirmationPopup()">
-                        </rds-button>
+                    <!-- </div> -->
+                    <div class="d-flex gap-2 px-2 pt-4">
+                        <div>
+                            <rds-button colorVariant="primary" [block]="false" size="small" [outlineButton]="true"
+                                [roundedButton]="true" [roundedCorner]="true" [iconStroke]="true" [iconFill]="false"
+                                buttonType="iconLabel" icon="pencil" iconHeight="12px" iconWidth="12px"
+                                (click)="onEdit()">
+                            </rds-button>
+                        </div>
+                        <div>
+                            <rds-button colorVariant="danger" size="small" [outlineButton]="true" [roundedButton]="true"
+                                [roundedCorner]="true" [iconStroke]="true" [iconFill]="false" buttonType="iconLabel"
+                                iconHeight="12px" iconWidth="12px" icon="delete" (click)="openConfirmationPopup()">
+                            </rds-button>
+                        </div>
                     </div>
                 </div>
             </div>
+
         </rds-card>
 
     </div>
     <div class="col-md-6 mb-3">
-        <div>
-            <rds-card [borderColor]="'primary'" [topBottomPadding]="true">
+        <rds-card [showFooter]="false" [showHeader]="false" [borderColor]="'primary'" [topBottomPadding]="true">
 
-                <div header>
-                    <div class="mb-5"></div>
-                </div>
-                <div body class="">
-                    <div class="d-flex justify-content-center feature-empty-card align-items-center">
-                        <rds-button [label]="'NEW EDITION'" type="button" [colorVariant]="'primary'"
-                            (click)="openCanvas()" [attr.aria-controls]="'addNewEdition'" [icon]="'plus'"
-                            iconHeight="12px" [roundedButton]="true" iconWidth="12px" [size]="'small'">
-                        </rds-button>
-                    </div>
-
-                </div>
-                <div footer class="mt-5">
-
-                </div>
-            </rds-card>
-        </div>
+            <div body class="d-flex justify-content-center align-items-center h-100">
+                <rds-button type="button" [colorVariant]="'primary'" (click)="openCanvas()"
+                    [attr.aria-controls]="'addNewEdition'" [icon]="'plus'" iconHeight="12px" [roundedButton]="true"
+                    iconWidth="12px" [size]="'small'">
+                </rds-button>
+            </div>
+        </rds-card>
     </div>
 </div>
 
@@ -81,8 +63,8 @@
 
 
 
-<rds-offcanvas [canvasTitle]="canvasTitle" [offId]="'addNewEdition'" [placement]="'end'"
-    [offcanvaswidth]="600" *ngIf="viewCanvas" (onClose)="closeCanvas() ">
+<rds-offcanvas [canvasTitle]="canvasTitle" [offId]="'addNewEdition'" [placement]="'end'" [offcanvaswidth]="600"
+    *ngIf="viewCanvas" (onClose)="closeCanvas() ">
 
     <rds-nav-tab [navtabsItems]="navtabsItems" [horizontalAlignment]="'start'" [activeTab]="activePage"
         [verticalAlignment]="false" [pills]="false" [tabs]="true" [fill]="false" [justified]="false"
