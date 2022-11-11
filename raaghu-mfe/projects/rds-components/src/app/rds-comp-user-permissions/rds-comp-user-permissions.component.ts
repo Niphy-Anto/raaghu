@@ -21,7 +21,7 @@ import { OrganizationTreeNode } from '../../models/organization-tree.model';
 declare let bootstrap: any;
 
 @Component({
-  selector: 'app-rds-comp-user-permissions',
+  selector: 'rds-comp-user-permissions',
   templateUrl: './rds-comp-user-permissions.component.html',
   styleUrls: ['./rds-comp-user-permissions.component.scss'],
   encapsulation: ViewEncapsulation.None,

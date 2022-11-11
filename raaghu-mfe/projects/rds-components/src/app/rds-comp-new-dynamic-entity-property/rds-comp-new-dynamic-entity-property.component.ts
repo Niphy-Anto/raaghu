@@ -14,7 +14,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { Subject } from 'rxjs';
 
 @Component({
-  selector: 'app-rds-comp-new-dynamic-entity-property',
+  selector: 'rds-comp-new-dynamic-entity-property',
   templateUrl: './rds-comp-new-dynamic-entity-property.component.html',
   styleUrls: ['./rds-comp-new-dynamic-entity-property.component.scss'],
 })

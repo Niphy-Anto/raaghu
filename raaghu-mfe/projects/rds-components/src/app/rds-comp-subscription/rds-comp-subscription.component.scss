@@ -1,0 +1,73 @@
+//subscription-page
+
+.subscription-bg-blue {
+    background-color: #005FA4;
+}
+
+.subscription-bg-purple {
+    background-color: #660064;
+}
+
+.subscription-bg-green {
+    background-color: #00A443;
+}
+
+.subscription-bg-orangered {
+    background-color: #F76161;
+}
+
+.subscription-bg-orange {
+    background-color: #F58220;
+}
+
+
+.subscription-border-blue {
+    border: 1px solid #005FA4;
+}
+
+.subscription-border-purple {
+    border: 1px solid #660064;
+}
+
+.subscription-border-green {
+    border: 1px solid #00A443;
+}
+
+.subscription-border-orangered {
+    border: 1px solid #F76161;
+}
+
+.subscription-border-orange {
+    border: 1px solid #F58220;
+}
+
+// ribbon
+.ribbon {
+    position: relative;
+    z-index: 1;
+}
+
+.ribbon2 {
+    width: 26px;
+    position: absolute;
+    top: 21px;
+    left: 74%;
+    text-align: center;
+    background: #F47530;
+}
+
+.ribbon2:before,
+.ribbon2:after {
+    content: "";
+    position: absolute;
+}
+
+.ribbon2:after {
+    height: 0;
+    width: 0;
+    bottom: -5px;
+    left: 0;
+    border-left: 13px solid #F47530;
+    border-right: 13px solid #F47530;
+    border-bottom: 5px solid transparent;
+}

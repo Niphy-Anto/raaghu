@@ -5,7 +5,7 @@ import { TableAction } from '../../models/table-action.model';
 import { TableHeader } from '../../models/table-header.model';
 
 @Component({
-  selector: 'app-rds-user-delegations',
+  selector: 'rds-user-delegations',
   templateUrl: './rds-comp-user-delegations.component.html',
   styleUrls: ['./rds-comp-user-delegations.component.scss']
 })
@@ -20,8 +20,9 @@ export class RdsUserDelegationsComponent implements OnInit, OnChanges, OnDestroy
   actions: TableAction[] = [{ id: 'delete', displayName: 'Delete' }]
   @Input() pagination: boolean = false;
   @Input() tableWidth: string = '100%';
-  @Input() buttonSpinner :boolean =true;
-  @Input() tableStyle: string = 'Light'; 
+  @Input() buttonSpinner: boolean = true;
+  @Input() submitted: boolean = false;
+  @Input() tableStyle: string = 'Light';
   username: any = '';
   startDate: Date = new Date();
   endDate: any = '';
@@ -32,6 +33,10 @@ export class RdsUserDelegationsComponent implements OnInit, OnChanges, OnDestroy
   ngOnChanges(changes: SimpleChanges): void {
     if (this.delegateTabopened) {
       this.deligateDivFlag = false;
+    }
+    if (!this.buttonSpinner) {
+      this.buttonSpinner = true;
+      this.submitted = false;
     }
   }
 
@@ -47,6 +52,7 @@ export class RdsUserDelegationsComponent implements OnInit, OnChanges, OnDestroy
   hideandShowdelegateform() {
     this.endDate = '';
     this.deligateDivFlag = !this.deligateDivFlag;
+    this.submitted = false;
   }
 
 
@@ -57,6 +63,8 @@ export class RdsUserDelegationsComponent implements OnInit, OnChanges, OnDestroy
     if (!delegateForm.valid) {
       return;
     }
+    this.buttonSpinner = true;
+    this.submitted = true;
     const DeligateData: any = {
       endTime: this.endDate,
       startTime: this.startDate,
@@ -71,8 +79,10 @@ export class RdsUserDelegationsComponent implements OnInit, OnChanges, OnDestroy
   }
   onCancel(): void {
     // this.onCancelDeligate.emit(true);
-    this.buttonSpinner=false;
+    this.buttonSpinner = true;
+    this.submitted = false;
     this.deligateDivFlag = false;
+    this.submitted = false;
     // this.onCancelDeligate.emit(true);
   }
 
@@ -85,6 +95,6 @@ export class RdsUserDelegationsComponent implements OnInit, OnChanges, OnDestroy
   }
   ngOnDestroy(): void {
   }
-  
+
 
 }

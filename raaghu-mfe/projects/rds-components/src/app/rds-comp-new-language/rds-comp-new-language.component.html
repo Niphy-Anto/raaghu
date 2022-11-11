@@ -36,11 +36,12 @@
                   [value]="selectedLanguage.icon" required [multiSelect]="false" [selectAll]="false" [entity]="false"
                   [listItems]="flags" (onSelect)="onCountryCodeSelect($event)"></rds-dropdownlist>
               </div>
-              <div class="form-control-feedback" *ngIf="
+
+              <div class="form-control-feedback p-2" *ngIf="
                   submitted &&
                   (selectedLanguage.icon === '' || !selectedLanguage.icon)
                 ">
-                <span class="text-danger">{{
+                <span class="text-danger p-2">{{
                   "Country code is
                   required"
                   | translate
@@ -75,4 +76,4 @@
     </div>
   </div>
 </div>
-<app-rds-comp-new-role-shimmer *ngIf="EditShimmer"></app-rds-comp-new-role-shimmer>
+<rds-comp-new-role-shimmer *ngIf="EditShimmer"></rds-comp-new-role-shimmer>

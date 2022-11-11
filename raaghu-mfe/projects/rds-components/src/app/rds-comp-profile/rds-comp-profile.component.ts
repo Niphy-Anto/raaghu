@@ -10,7 +10,7 @@ declare var $: any;
 declare var bootstrap: any;
 
 @Component({
-  selector: 'app-rds-comp-profile',
+  selector: 'rds-comp-profile',
   templateUrl: './rds-comp-profile.component.html',
   styleUrls: ['./rds-comp-profile.component.scss'],
   providers: [DatePipe]
@@ -95,11 +95,12 @@ export class RdsCompProfileComponent extends MfeBaseComponent implements OnInit 
 
   @Input() ProfileData: Profile = {
     ProfileName: 'Wai Technologies',
-    EmailAddress: 'contact@waiin.com',
-    UserName: 'admin',
+    emailAddress: 'contact@waiin.com',
+    userName: 'admin',
     CurrentPassword: '',
     NewPassword: '',
-    ConFNewPassword: ''
+    ConFNewPassword: '',
+    name: ''
   }
   tabisVisible: boolean = false;
 
@@ -116,7 +117,6 @@ export class RdsCompProfileComponent extends MfeBaseComponent implements OnInit 
   islogout: boolean = false;
   navtabcontentClass: string = "d-none";
   firstcontent: boolean = false;
-
   cancelbutton: boolean = true;
   public classlists = [];
   @Input()
@@ -124,6 +124,7 @@ export class RdsCompProfileComponent extends MfeBaseComponent implements OnInit 
   @Input()
   Usernamefilter: any[] = []
   DatasetDeligate: any = [];
+  @Input() showDelegationButtonSpinner: boolean = true;
   onclickMenu(item: any) {
 
     if (this.MenuItems[item]?.showoffcanvas == false) {
