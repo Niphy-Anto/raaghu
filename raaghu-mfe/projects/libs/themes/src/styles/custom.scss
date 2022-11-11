@@ -1211,3 +1211,6 @@ bs-datepicker-container {
 .change-tenant .modal-header, .change-tenant .modal-footer{
   border-width: 0px;
 }
+.btn.form-select {
+  text-transform: capitalize;
+}
