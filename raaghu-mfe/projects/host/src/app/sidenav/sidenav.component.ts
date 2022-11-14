@@ -1,7 +1,7 @@
 import { Component, Inject, Injector, Input, OnInit, SimpleChanges } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { ComponentLoaderOptions, LinkedUserDto, MfeBaseComponent, SharedService, UserAuthService, UserDelegationServiceProxy } from '@libs/shared';
+import { ComponentLoaderOptions, LinkedUserDto, MfeBaseComponent, SharedService, UserAuthService } from '@libs/shared';
 import { Store } from '@ngrx/store';
 import { changePassword, getLanguages, getProfile, selectAllLanguages, selectDefaultLanguage, selectProfileInfo, setDefaultLanguageForUI } from '@libs/state-management';
 import { deleteDelegations, getDelegations, getUsername, saveDelegations } from 'projects/libs/state-management/src/lib/state/authority-delegations/authority-delegations.action';
@@ -427,6 +427,7 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
     })
     this.store.dispatch(getDelegations());
     this.store.select(selectDelegationsInfo).subscribe((res: any) => {
+      this.rdsDeligateTableData=[];
       if (res && res.items && res.items.length) {
         res.items.forEach((element: any) => {
           const item: any = {

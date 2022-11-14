@@ -18,7 +18,7 @@ export class DelegationsEffects {
     this.actions$.pipe(
       ofType(getDelegations),
       switchMap(() =>
-        from(this.userDelegationServiceProxy.getDelegatedUsers(10, 0, "")).pipe(
+        from(this.userDelegationServiceProxy.getDelegatedUsers(100, 0,  "id desc",)).pipe(
           map((Delegation) => {
             return getDelegationsSuccess({ Delegation })
           }),
@@ -33,7 +33,7 @@ export class DelegationsEffects {
       mergeMap((data) =>
         this.userDelegationServiceProxy.delegateNewUser(data.Delegation).pipe(map((res: any) => {
           this.store.dispatch(getDelegations());
-          this.alertService.showAlert('Success', 'Delegation added successfully', 'success')
+          this.alertService.showAlert('Success', 'Delegation added successfully', 'error')
 
         }),
           catchError((error: any) => of(
