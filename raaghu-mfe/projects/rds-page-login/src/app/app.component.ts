@@ -18,7 +18,8 @@ export class AppComponent extends MfeBaseComponent implements OnInit {
   public rdsAlertMfeConfig: ComponentLoaderOptions = {
     name: 'RdsCompAlert',
     input: {
-      currentAlerts: this.currentAlerts
+      currentAlerts: this.currentAlerts,
+      alertPosition: 'top'
     },
     output: {
       onAlertHide: (event: any) => {
