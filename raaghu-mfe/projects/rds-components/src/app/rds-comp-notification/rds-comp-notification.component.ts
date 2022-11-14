@@ -38,7 +38,7 @@ export class RdsNotificationComponent implements OnInit {
   getColor(notification: notificationData, isIcon: boolean = false): any {
     if (isIcon) {
       if (notification.status == 'info') {
-        return 'primary';
+        return 'notification-sub-text';
       }
       if (notification.status == 'error') {
         return 'danger';
