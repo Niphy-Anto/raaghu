@@ -3,11 +3,11 @@
         <div class="col-md-12  text-end position-relative">
             <div class="position-absolute  end-0 desktop-btn">
                 <rds-button #operationlog class="action mb-0" *ngIf="selectedIndex==0" [colorVariant]="'primary'"
-                    [outlineButton]="true" [size]="'small'" (click)="exportToExcel('operation-logs')"
+                    [isOutline]="true" [size]="'small'" (click)="exportToExcel('operation-logs')"
                     [label]="translate.instant('Export To Excel')">
                     <rds-icon left name="export_data" height="18px" width="15px" class="me-2"></rds-icon>
                 </rds-button>
-                <rds-button #changelog class="action" [outlineButton]="true" *ngIf="selectedIndex==1"
+                <rds-button #changelog class="action" [isOutline]="true" *ngIf="selectedIndex==1"
                     [colorVariant]="'primary'" [size]="'small'" (click)="exportToExcel('change-logs')"
                     [label]="translate.instant('Export To Excel')">
                     <rds-icon left name="export_data" width="15px" class="me-2" height="18px"></rds-icon>

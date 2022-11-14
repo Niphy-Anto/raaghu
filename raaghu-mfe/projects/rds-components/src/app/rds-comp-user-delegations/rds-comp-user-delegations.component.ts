@@ -43,7 +43,7 @@ export class RdsUserDelegationsComponent implements OnInit, OnChanges, OnDestroy
   ngOnInit(): void {
   }
 
-  deleteDeligateData(event: any): void {
+  onActionSelect(event: any): void {
     if (event.actionId === 'delete') {
       this.onDeleteDeligate.emit(event.selectedData);
     }
@@ -53,12 +53,11 @@ export class RdsUserDelegationsComponent implements OnInit, OnChanges, OnDestroy
     this.endDate = '';
     this.deligateDivFlag = !this.deligateDivFlag;
     this.submitted = false;
+    this.username = '';
   }
 
 
-  onUserSelection(event: any): void {
-    this.selectedUser = event.item
-  }
+
   onSave(delegateForm: NgForm): void {
     if (!delegateForm.valid) {
       return;
@@ -68,7 +67,7 @@ export class RdsUserDelegationsComponent implements OnInit, OnChanges, OnDestroy
     const DeligateData: any = {
       endTime: this.endDate,
       startTime: this.startDate,
-      targetUserId: this.username[0]
+      targetUserId: this.username
     }
     this.onDeligateSave.emit(DeligateData);
     this.deligateDivFlag = false;
