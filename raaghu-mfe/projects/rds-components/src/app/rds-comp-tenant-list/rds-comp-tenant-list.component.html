@@ -51,11 +51,11 @@
                 </div>
                 <div class="footer-buttons">
                     <div class="col-md-12 ">
-                        <rds-button [label]="translate.instant('Cancel')" [outlineButton]="true"
+                        <rds-button [label]="translate.instant('Cancel')" [isOutline]="true"
                             [colorVariant]="'primary'" [size]="'small'" (click)="close()" data-bs-dismiss="offcanvas">
                         </rds-button>
                         <rds-button [label]="translate.instant('Save')" [size]="'small'"
-                            [disabled]="!selectedFeatureList||selectedFeatureList.length===0" class="ms-2"
+                            [isDisabled]="!selectedFeatureList||selectedFeatureList.length===0" class="ms-2"
                             [colorVariant]="'primary'" (click)="save()">
                         </rds-button>
                     </div>
