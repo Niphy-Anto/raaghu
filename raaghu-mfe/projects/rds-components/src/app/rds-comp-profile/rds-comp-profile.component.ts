@@ -34,8 +34,10 @@ export class RdsCompProfileComponent extends MfeBaseComponent implements OnInit 
   @Input() defaultLanguage: string = '';
   delegateTabopened: boolean = false;
   manageLinkedAccountsTabOpened: boolean = false;
-
+  
   @Output() onLanguageSelection = new EventEmitter<any>();
+  @Output() onDeleteDeligate = new EventEmitter<any>();
+
   activePage: number;
   public rdsAlertMfeConfig: ComponentLoaderOptions;
   alertData: any = {
