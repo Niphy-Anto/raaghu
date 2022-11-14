@@ -33,7 +33,7 @@ export class DelegationsEffects {
       mergeMap((data) =>
         this.userDelegationServiceProxy.delegateNewUser(data.Delegation).pipe(map((res: any) => {
           this.store.dispatch(getDelegations());
-          this.alertService.showAlert('Success', 'Delegation added successfully', 'error')
+          this.alertService.showAlert('Success', 'Delegation added successfully', 'success')
 
         }),
           catchError((error: any) => of(
