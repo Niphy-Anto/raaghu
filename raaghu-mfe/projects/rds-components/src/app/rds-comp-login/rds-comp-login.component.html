@@ -89,10 +89,10 @@
     </form>
   </div>
   <div modalfooter class="border-0">
-    <rds-button [tooltipPlacement]="'top'" [outlineButton]="true" data-bs-dismiss="modal" [colorVariant]="'primary'"
+    <rds-button [tooltipPlacement]="'top'" [isOutline]="true" data-bs-dismiss="modal" [colorVariant]="'primary'"
       [size]="'medium'" (click)="back()" [label]="translate.instant('Cancel')" class="px-2">
     </rds-button>
-    <rds-button class="mr-1" [id]="'yes'" [disabled]="switchTenant&&!TenantNameData" [size]="'medium'"
+    <rds-button class="mr-1" [id]="'yes'" [isDisabled]="switchTenant&&!TenantNameData" [size]="'medium'"
       (click)="ChangeTenant(tenantForm)" [tooltipPlacement]="'top'" [colorVariant]="'primary'"
       [label]="translate.instant('Switch to the tenant')" [showLoadingSpinner]="buttonSpinnerForChangeTenant">
     </rds-button>
