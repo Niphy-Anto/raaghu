@@ -76,6 +76,9 @@
       <div class="tab-pane fade" [ngClass]="{ 'show active': activePage === 2 }" id="organizationUnits" role="tabpanel"
         aria-labelledby="nav-home-tab">
         <div class="tab-content">
+          <div class="col-md-12">
+            <rds-search-input placeholder="Search" icon="search" size="small"> </rds-search-input>
+          </div>
           <!-- Add Origination Unit  -->
           <rds-comp-permission-tree [treeData]="OrganizationUnit" [selectedItems]="selectedOrganizations"
             (getAllSelectedNodes)="getSelectedorganizationunits($event)"></rds-comp-permission-tree>
@@ -116,6 +119,9 @@
 </rds-offcanvas>
 <rds-offcanvas [canvasTitle]="translate.instant('FILTER BY PERMISSIONS')" [offId]="'canvasFilterPermission'"
   [placement]="'end'" [offcanvaswidth]="600">
+   <div class="col-md-12 pt-3">
+    <rds-search-input placeholder="Search" icon="search" size="small"> </rds-search-input>
+  </div>
   <rds-comp-permission-tree [treeData]="FilterPermissionList"
     (getAllSelectedNodes)="getSelectedUserPermissionFilterList($event)" [selectAllLabel]="'Select All Permissions'">
   </rds-comp-permission-tree>
