@@ -1,4 +1,4 @@
-<div [ngClass]="cardClasses" class="card">
+<div [ngClass]="cardClasses" [ngStyle]="{'border': borderColor ? '1px solid ' + borderColor : undefined}" class="card">
   <div *ngIf="showHeader" >
     <ng-content select="[header]"></ng-content>
   </div>

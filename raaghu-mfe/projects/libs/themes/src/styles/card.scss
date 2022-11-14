@@ -148,6 +148,21 @@
   .rounded-avatar-basic .card {
     width: 100% !important;
   }
+  .rounded-avatar-center .profile-image {
+    margin-left: 215px;
+    position: relative;
+    top: -60px;
+}
+}
+
+// ipad pro view css
+
+@media screen and (min-width:1024px) and (max-width:1279px){
+  .rounded-avatar-center .profile-image {
+    margin-left: 95px;
+    position: relative;
+    top: -10px;
+}
 }
 
 // ipad and mobile
