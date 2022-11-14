@@ -67,9 +67,9 @@
     <div class="row">
       <div class="col-md-12">
         <rds-button [label]="translate.instant('Cancel')" (click)="closeCanvas()" type="button"
-          [colorVariant]="'primary'" [outlineButton]="true" [size]="'small'">
+          [colorVariant]="'primary'" [isOutline]="true" [size]="'small'">
         </rds-button>
-        <rds-button [label]="translate.instant('Save')" type="button" [size]="'small'" [disabled]="!languageForm.valid"
+        <rds-button [label]="translate.instant('Save')" type="button" [size]="'small'" [isDisabled]="!languageForm.valid"
           class="ms-2" [colorVariant]="'primary'" (click)="addLanguage(languageForm)">
         </rds-button>
       </div>

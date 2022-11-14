@@ -1,9 +1,7 @@
 <div class="row" *ngIf="!isShimmer">
   <div class="col-md-12">
     <div class=" card p-2 border-0 rounded-0 vh-88">
-      <div class="row pt-4 theam-cards">
-
-       
+      <div class="row pt-4 theam-cards">       
         <div class="col-md-4 mb-4">
           <div class="d-inline-block p-3 pb-0" [ngClass]="{ 'selected' : selectedThemeIndex === '2' }">
             <!--<rds-card class="rounded-avatar-basic" style="cursor:pointer">-->
@@ -80,30 +78,31 @@
           <div class="row">
             <div class="col-md-4">
               <div class="form-group mb-3">
-                <rds-select-list [value]="visualSettingsMenu.asideSkin"  name="Listskin"
-                  [label]="translate.instant('Skin')"  labelPosition="top" placeholderText="Select Skin" [itemList]="listskin" [(ngModel)]="visualSettingsMenu.asideSkin">
+                <rds-select-list [value]="asideSkin"  name="Listskin"
+                  [label]="translate.instant('Skin')"  labelPosition="top" placeholderText="Select Skin" [itemList]="listskin" [(ngModel)]="asideSkin">
                 </rds-select-list>
               </div>
+
               <div class="mb-2">
               <rds-label [label]="translate.instant('Desktop')"></rds-label>
             </div>
               <div class="form-group mb-3">
                 <rds-checkbox [disabled]="false" [label]="translate.instant('Fixed Header')" [withLabel]="true" [switch]="false"
-                  [inline]="false" [id]="'fixedHeaderDesktop'" state="checkbox"
-                  [(ngModel)]="visualSettingsHeader.desktopFixedHeader"></rds-checkbox>
+                  [inline]="false" [id]="'fixedHeaderDesktop'" name="check-box" (onChange)="getCheckboxValue($event,'desktopFixedHeader')"
+                  [checked]="desktopFixedHeader"></rds-checkbox>
               </div>
                <div class="mb-2">
                 <rds-label [label]="translate.instant('Mobile')"></rds-label>
               </div>
               <div class="form-group mb-3">
                 <rds-checkbox [disabled]="false" [label]="translate.instant('Fixed Header')" [withLabel]="true" [switch]="false"
-                  [inline]="false" [id]="'fixedHeaderMobile'" state="checkbox"
-                  [(ngModel)]="visualSettingsHeader.mobileFixedHeader"></rds-checkbox>
+                  [inline]="false" [id]="'fixedHeaderMobile'" name="check-box" (onChange)="getCheckboxValue($event,'mobileFixedHeader')"
+                 [checked]="mobileFixedHeader"></rds-checkbox>
               </div>
               <div class="form-group mb-3 mt-3">
                 <rds-button [tooltipPlacement]="'bottom'" [tooltipTitle]="translate.instant('upgrade')"  [label]="translate.instant('SAVE AS SYSTEM DEFAULT ')"
                   (click)="saveVisualSettings()" type="button" [size]="'small'" [colorVariant]="'primary'" 
-                   [outlineButton]="false"></rds-button>
+                   [isOutline]="false"></rds-button>
               </div>
             </div>
           </div>
@@ -115,14 +114,14 @@
                 <rds-label [label]="translate.instant('Subheader')"></rds-label>
               </div>
               <div class="form-group mb-3">
-                <rds-checkbox [disabled]="false" [label]="translate.instant('Fixed Header')" [withLabel]="true" [switch]="false"
-                  [inline]="false" [id]="'fixedHeaderSubHeader'" state="checkbox"
-                  [(ngModel)]="visualSettingsSubHeader.fixedSubHeader"></rds-checkbox>
+                <rds-checkbox [disabled]="false" [label]="translate.instant('Fixed SubHeader')" [checked]="fixedSubHeader" name="check-box" 
+                [withLabel]="true" [switch]="false" (onChange)="getCheckboxValue($event,'fixedSubHeader')"
+                  [inline]="false" [id]="'fixedHeaderSubHeader'"></rds-checkbox>
               </div>
               <div class="form-group mb-3 position-fixed bottom-0 py-5">
                 <rds-button [tooltipPlacement]="'bottom'" [tooltipTitle]="translate.instant('upgrade')"  [label]="translate.instant('SAVE AS SYSTEM DEFAULT ')"
                   type="button" [size]="'small'" [colorVariant]="'primary'"
-                  (click)="saveVisualSettings()" [outlineButton]="false"></rds-button>
+                  (click)="saveVisualSettings()" [isOutline]="false"></rds-button>
               </div>
             </div>
           </div>
@@ -131,42 +130,47 @@
           <div class="row">
             <div class="col-md-4">
               <div class="form-group mb-3">
-                <rds-select-list [value]="visualSettingsMenu.asideSkin"  name="Listskin"
-                  [label]="translate.instant('Skin')" [itemList]="listskin" placeholderText="Selct Skin" labelPosition="top" [(ngModel)]="visualSettingsMenu.asideSkin">
+                <rds-select-list [value]="asideSkin"  name="Listskin"
+                  [label]="translate.instant('Skin')" [itemList]="listskin" placeholderText="Selct Skin" labelPosition="top" [(ngModel)]="asideSkin">
                 </rds-select-list>
               </div>
               <div class="form-group mb-3">
                 <rds-checkbox [disabled]="false" [label]="translate.instant('Fixed Aside')" [withLabel]="true" [id]="'fixedAside'"
-                  [(ngModel)]="visualSettingsMenu.fixedAside">
+                  [checked]="fixedAside" (onChange)="getCheckboxValue($event,'fixedAside')" name="check-box">
                 </rds-checkbox>
               </div>
               <div class="form-group mb-3">
                 <rds-checkbox [disabled]="false" [label]="translate.instant('Allow Aside minimizing')" [withLabel]="true" [switch]="false"
-                  [inline]="false" [id]="'allowAsideMinimizing'" state="checkbox"
-                  [(ngModel)]="visualSettingsMenu.allowAsideMinimizing"></rds-checkbox>
+                  [inline]="false" [id]="'allowAsideMinimizing'" state="checkbox" [checked]="allowAsideMinimizing" 
+                  (onChange)="getCheckboxValue($event,'allowAsideMinimizing')" name="check-box"></rds-checkbox>
               </div>
               <div class="form-group mb-3">
-                <rds-checkbox [label]="translate.instant('Default Minimized Aside')" [checked]="visualSettingsMenu.defaultMinimizedAside"
-                  [withLabel]="true" name="defaultMinimizedAside" [id]="'defaultAsideMinimizing'"
-                  [(ngModel)]="visualSettingsMenu.defaultMinimizedAside"></rds-checkbox>
+                <rds-checkbox [label]="translate.instant('Default Minimized Aside')" [checked]="defaultMinimizedAside"
+                  [withLabel]="true" name="defaultMinimizedAside" [id]="'defaultAsideMinimizing'" [checked]="defaultMinimizedAside"
+                  (onChange)="getCheckboxValue($event,'defaultMinimizedAside')" name="check-box"></rds-checkbox>
+               
               </div>
               <div class="form-group mb-3">
-                <rds-checkbox [label]="translate.instant('Expand Menu When Hovered')" [checked]="visualSettingsMenu.hoverableAside"
-                  [withLabel]="true" name="hoverableAside" [(ngModel)]="visualSettingsMenu.hoverableAside"
+                <rds-checkbox [label]="translate.instant('Expand Menu When Hovered')" [checked]="hoverableAside"
+                  [withLabel]="true" name="hoverableAside" [checked]="hoverableAside" name="check-box" (onChange)="getCheckboxValue($event,'hoverableAside')"
                   [id]="'expandMenuOnHover'"></rds-checkbox>
+               
 
               </div>
               <div class="form-group mb-3">
-                <rds-select-list [value]="visualSettingsMenu.submenuToggle"
-                  name="ListSubmenu" [label]="translate.instant('Submenu Toggle')" placeholderText="Selct Submenu" labelPosition="top"  [itemList]="listSubmenu"
-                  [(ngModel)]="visualSettingsMenu.submenuToggle">
-
+                <rds-select-list [value]="submenuToggle" name="ListSubmenu" [label]="translate.instant('Submenu Toggle')" placeholderText="Selct Submenu" labelPosition="top"  [itemList]="listSubmenu"
+                  [(ngModel)]="submenuToggle">
                 </rds-select-list>
+                <!-- <rds-select-list [value]="asideSkin"  name="Listskin"
+                [label]="translate.instant('Skin')" [itemList]="listskin" placeholderText="Selct Skin" labelPosition="top" [(ngModel)]="asideSkin">
+              </rds-select-list> -->
+                {{submenuToggle}}
+
               </div>
               <div class="form-group mb-3">
                 <rds-button [tooltipPlacement]="'bottom'" [tooltipTitle]="translate.instant('upgrade')"  [label]="translate.instant('SAVE AS SYSTEM DEFAULT ')"
                   type="button" [size]="'small'" [colorVariant]="'primary'"
-                  (click)="saveVisualSettings()" [outlineButton]="false"></rds-button>
+                  (click)="saveVisualSettings()" [isOutline]="false"></rds-button>
               </div>
             </div>
           </div>
@@ -176,12 +180,15 @@
             <rds-label [label]="translate.instant('Footer')"></rds-label>
           </div>
           <div class="form-group mb-3">
-            <rds-checkbox [disabled]="false" [label]="translate.instant('Fixed Footer')" [withLabel]="true" [switch]="false"
-              [inline]="false" [id]="'fixedFooter'" [(ngModel)]="visualSettingsFooter.fixedFooter"></rds-checkbox>
+            <!-- <rds-checkbox [disabled]="false" [label]="translate.instant('Fixed Footer')" [withLabel]="true" [switch]="false"
+              [inline]="false" [id]="'fixedFooter'" [(ngModel)]="visualSettingsFooter.fixedFooter"></rds-checkbox> -->
+              <rds-checkbox [disabled]="false" [label]="translate.instant('Fixed Footer')"
+              [checked]="fixedFooter"  name="check-box" (onChange)="getCheckboxValue($event,'fixedFooter')" [withLabel]="true" [switch]="false"
+              [inline]="false" [id]="'fixedFooter'"></rds-checkbox>
           </div>
           <div class="form-group mb-3 position-fixed bottom-0 py-5">
             <rds-button [tooltipPlacement]="'bottom'" [tooltipTitle]="translate.instant('upgrade')"  [label]="translate.instant('SAVE AS SYSTEM DEFAULT ')"
-              (click)="saveVisualSettings()" type="button" [size]="'small'" [colorVariant]="'primary'"  [outlineButton]="false">
+              (click)="saveVisualSettings()" type="button" [size]="'small'" [colorVariant]="'primary'"  [isOutline]="false">
             </rds-button>
           </div>
         </div>

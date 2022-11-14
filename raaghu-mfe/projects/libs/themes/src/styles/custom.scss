@@ -835,7 +835,7 @@ rds-banner {
 
 /*  rds banner */
 .alert {
-  z-index: 999;
+  z-index: 1045;
 }
 
 /*==================================================================================================================================
@@ -1185,6 +1185,7 @@ rds-product-image .imgWidth {
 }
 .btn-md.spinner:before {
   top: 6px;
+  left: 48%;
 }
 .btn-sm.spinner {
   height: 1.774rem;
@@ -1193,7 +1194,7 @@ rds-product-image .imgWidth {
 
 .btn-sm.spinner:before {
   top: 4px;
-  left:45%;
+  left:48%;
 }
 .btn-lg.spinner {
   height: 2.766rem;
@@ -1202,7 +1203,7 @@ rds-product-image .imgWidth {
 
 .btn-lg.spinner:before {
   top: 10px;
-  left: 45%;
+  left: 48%;
 }
 .w-225px {
   width: 225px !important;
@@ -1222,4 +1223,7 @@ bs-datepicker-container {
 }
 .change-tenant .modal-header, .change-tenant .modal-footer{
   border-width: 0px;
+}
+.btn.form-select {
+  text-transform: capitalize;
 }

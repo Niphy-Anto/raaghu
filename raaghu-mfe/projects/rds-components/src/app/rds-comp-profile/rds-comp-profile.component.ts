@@ -34,8 +34,10 @@ export class RdsCompProfileComponent extends MfeBaseComponent implements OnInit 
   @Input() defaultLanguage: string = '';
   delegateTabopened: boolean = false;
   manageLinkedAccountsTabOpened: boolean = false;
-
+  
   @Output() onLanguageSelection = new EventEmitter<any>();
+  @Output() onDeleteDeligate = new EventEmitter<any>();
+
   activePage: number;
   public rdsAlertMfeConfig: ComponentLoaderOptions;
   alertData: any = {
@@ -100,7 +102,7 @@ export class RdsCompProfileComponent extends MfeBaseComponent implements OnInit 
     CurrentPassword: '',
     NewPassword: '',
     ConFNewPassword: '',
-    name:''
+    name: ''
   }
   tabisVisible: boolean = false;
 
@@ -124,6 +126,7 @@ export class RdsCompProfileComponent extends MfeBaseComponent implements OnInit 
   @Input()
   Usernamefilter: any[] = []
   DatasetDeligate: any = [];
+  @Input() showDelegationButtonSpinner: boolean = true;
   onclickMenu(item: any) {
 
     if (this.MenuItems[item]?.showoffcanvas == false) {

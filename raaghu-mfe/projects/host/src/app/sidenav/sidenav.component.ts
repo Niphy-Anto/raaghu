@@ -1,7 +1,7 @@
 import { Component, Inject, Injector, Input, OnInit, SimpleChanges } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { ComponentLoaderOptions, LinkedUserDto, MfeBaseComponent, SharedService, UserAuthService, UserDelegationServiceProxy } from '@libs/shared';
+import { ComponentLoaderOptions, LinkedUserDto, MfeBaseComponent, SharedService, UserAuthService } from '@libs/shared';
 import { Store } from '@ngrx/store';
 import { changePassword, getLanguages, getProfile, selectAllLanguages, selectDefaultLanguage, selectProfileInfo, setDefaultLanguageForUI } from '@libs/state-management';
 import { deleteDelegations, getDelegations, getUsername, saveDelegations } from 'projects/libs/state-management/src/lib/state/authority-delegations/authority-delegations.action';
@@ -74,6 +74,7 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
   notificationTypes: any = [];
   sidenavItemsOriginal: any = [
     { label: 'Dashboard', labelTranslationKey: 'Dashboard', id: '', permissionName: 'Pages.Administration.Host.Dashboard', icon: 'home', path: '/pages/dashboard', descriptionTranslationKey: 'Statistics and reports', description: 'Statistics and reports' },
+    { label: 'UI Components', labelTranslationKey: 'UI Components', id: '', permissionName: '', icon: 'demo_ui', path: '/pages/demo-ui', description: '', descriptionTranslationKey: '' },
     { label: 'Dashboard', labelTranslationKey: 'Dashboard', id: '', permissionName: 'Pages.Tenant.Dashboard', icon: 'home', path: '/pages/dashboard', description: 'Statistics and reports', descriptionTranslationKey: 'Statistics and reports' },
     { label: 'Tenants', labelTranslationKey: 'Tenants', id: 'tenants', permissionName: 'Pages.Tenants', icon: 'tenant', path: '/pages/tenant', description: 'Manage your tenants', descriptionTranslationKey: 'Manage your tenants' },
     { label: 'Editions', labelTranslationKey: 'Editions', id: '', permissionName: 'Pages.Editions', icon: 'editions', path: '/pages/edition', description: 'Manage editions and features of the application', descriptionTranslationKey: 'Manage editions and features of the application' },
@@ -95,7 +96,6 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
         { label: 'Settings', labelTranslationKey: 'Settings', id: '', permissionName: 'Pages.Administration.Tenant.Settings', icon: 'setting', path: '/pages/settings', description: 'Show and change application settings', descriptionTranslationKey: 'Show and change application settings' },
       ],
     },
-    { label: 'UI Components', labelTranslationKey: 'UI Components', id: '', permissionName: '', icon: 'demo_ui', path: '/pages/demo-ui', description: '', descriptionTranslationKey: '' },
     // { label: 'Cart', labelTranslationKey: 'Cart', id: 'cart', permissionName: '' ,icon: 'tenant', path: '/pages/cart', description: 'Manage your cart', descriptionTranslationKey: 'Manage your cart' },
     // { label: 'Edition-New', labelTranslationKey: 'Edition-New', id: '', permissionName: '', icon: 'home', path: '/pages/editionnew', description: '', descriptionTranslationKey: '' },
   ];
@@ -149,7 +149,7 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
 
   ngOnInit(): void {
     const selectedTheme = localStorage.getItem('THEME');
-    if (selectedTheme == "undefined"||selectedTheme==''||selectedTheme==undefined||selectedTheme==null) {
+    if (selectedTheme == "undefined" || selectedTheme == '' || selectedTheme == undefined || selectedTheme == null) {
       this.theme.theme = 'light';
       localStorage.setItem('THEME', 'light');
       this.isLightMode = true;
@@ -427,6 +427,7 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
     })
     this.store.dispatch(getDelegations());
     this.store.select(selectDelegationsInfo).subscribe((res: any) => {
+      this.rdsDeligateTableData=[];
       if (res && res.items && res.items.length) {
         res.items.forEach((element: any) => {
           const item: any = {
@@ -515,6 +516,9 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
         message: alert.message,
       };
       this.currentAlerts.push(currentAlert);
+      const rdsTopNavigationMfeConfig = this.rdsTopNavigationMfeConfig;
+      rdsTopNavigationMfeConfig.input.showDelegationButtonSpinner = false;
+      this.rdsTopNavigationMfeConfig = rdsTopNavigationMfeConfig;
       const rdsAlertMfeConfig = this.rdsAlertMfeConfig;
       rdsAlertMfeConfig.input.currentAlerts = [...this.currentAlerts];
       this.rdsAlertMfeConfig = rdsAlertMfeConfig;
@@ -586,10 +590,9 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
     if (!checked) {
       this.theme.theme = 'dark';
       localStorage.setItem('THEME', 'dark');
-    }else {
+    } else {
       this.theme.theme = 'light';
-      localStorage.setItem('THEME', 'light');
-
+      localStorage.setItem('THEME', 'light'); 
     }
   }
 
