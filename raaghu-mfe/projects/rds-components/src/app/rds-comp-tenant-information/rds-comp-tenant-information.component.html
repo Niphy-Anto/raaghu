@@ -52,18 +52,10 @@
             <div>
               <label for="Edition" class="mb-2">Edition<span class="text-danger">*</span></label>
             </div>
-            <rds-dropdownlist [placeholder]="translate.instant('Select Edition')" 
-            [borderDropdown]="true"
-            class="text-dark"
-            [id]="'edition-dropdown'"
-            [(ngModel)]="tenantData.displayText"
-            [listItems]="editionList" #inputNameData="ngModel" required
-            [multiSelect]="false"
-            [selectAll]="false"
-            [entity]="false"
-            [value]="tenantData.displayText" ngDefaultControl name="tenantData.displayText">
+            <rds-dropdownlist [placeholder]="translate.instant('Select Edition')" [borderDropdown]="true"
+              class="text-dark" [id]="'edition-dropdown'" [(ngModel)]="tenantData.displayText" [listItems]="editionList"
+              required [value]="tenantData.displayText" (onSelect)="onEditionSelect($event)" ngDefaultControl name="edition">
             </rds-dropdownlist>
-            {{tenantData.displayText}}
           </div>
         </div>
       </div>
@@ -92,8 +84,8 @@
     <rds-button [label]="translate.instant('Cancel')" [isOutline]="true" [colorVariant]="'primary'" [size]="'small'"
       (click)="onCanceled()" data-bs-dismiss="offcanvas">
     </rds-button>
-    <rds-button [label]="translate.instant('Next')" [isDisabled]="!tenantCreationForm.valid" [size]="'small'" class="ms-2"
-      [colorVariant]="'primary'" (click)="next(tenantCreationForm)">
+    <rds-button [label]="translate.instant('Next')" [isDisabled]="!tenantCreationForm.valid" [size]="'small'"
+      class="ms-2" [colorVariant]="'primary'" (click)="next(tenantCreationForm)">
     </rds-button>
   </div>
 </div>

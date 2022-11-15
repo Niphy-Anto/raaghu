@@ -138,7 +138,6 @@ export class RdsTopNavigationComponent extends MfeBaseComponent implements OnIni
     // existingLinkEl.href = 'default.css';
     const event = 'default';
     this.onThemeSelect(event);
-
     if (this.defaultLanguage) {
       this.selectedLanguage = this.defaultLanguage;
     }
