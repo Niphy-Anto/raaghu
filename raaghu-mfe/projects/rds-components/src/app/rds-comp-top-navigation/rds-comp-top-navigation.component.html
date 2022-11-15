@@ -82,7 +82,7 @@
                 class="position-relative"
                 [size]="'small'"
                 [id]="'notification'"
-                [roundedButton]="true"
+                [isRounded]="true"
                 [colorVariant]="'default'"
                 type="button"
               >
@@ -116,12 +116,12 @@
               p-0
             "
           >
-            <app-rds-notification
+            <rds-notification
               [notifications]="notificationData"
               [unreadCount]="unreadCount"
               (setAsReadOutput)="setNotificationAsRead.emit($event)"
               (setAllReadOutput)="setAllNotificationAsRead.emit($event)"
-            ></app-rds-notification>
+            ></rds-notification>
             <!-- <mfe-loader [config]="rdsNotoficationMfeConfig"></mfe-loader> -->
           </div>
         </li>
@@ -149,7 +149,7 @@
                 class="position-relative"
                 [size]="'small'"
                 [id]="'notification'"
-                [roundedButton]="true"
+                [isRounded]="true"
                 [colorVariant]="'default'"
                 type="button"
               >
@@ -183,12 +183,12 @@
               p-0
             "
           >
-            <app-rds-notification
+            <rds-notification
               [notifications]="notificationData"
               [unreadCount]="unreadCount"
               (setAsReadOutput)="setNotificationAsRead.emit($event)"
               (setAllReadOutput)="setAllNotificationAsRead.emit($event)"
-            ></app-rds-notification>
+            ></rds-notification>
             <!-- <mfe-loader [config]="rdsNotoficationMfeConfig"></mfe-loader> -->
           </div>
         </li>
@@ -224,7 +224,7 @@
     </div>
   </div>
 </nav>
-<app-rds-comp-profile
+<rds-comp-profile
   [MenuItems]="navtabItems"
   [Profileurl]="profilePic"
   [viewCanvas]="showOffcanvas"
@@ -252,9 +252,9 @@
   [linkedAccountHeaders]="linkedAccountHeaders"
   [linkedAccountData]="linkedAccountData"
 >
-</app-rds-comp-profile>
-<app-rds-comp-notification-settings
+</rds-comp-profile>
+<rds-comp-notification-settings
   [notificationTypes]="notificationTypes"
   [receiveNotifications]="receiveNotifications"
   (onUpdateNotificationSettings)="onUpdateNotificationSettings.emit($event)"
-></app-rds-comp-notification-settings>
+></rds-comp-notification-settings>

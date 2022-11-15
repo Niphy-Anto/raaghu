@@ -154,7 +154,7 @@
                       [size]="'small'"
                       [colorVariant]="'primary'"
                       (click)="saveVisualSettings()"
-                      [outlineButton]="false"
+                      [isOutline]="false"
                     ></rds-button>
                   </div>
                 </div>
@@ -257,7 +257,7 @@
                       [size]="'small'"
                       [colorVariant]="'primary'"
                       (click)="saveVisualSettings()"
-                      [outlineButton]="false"
+                      [isOutline]="false"
                     ></rds-button>
                   </div>
                 </div>
@@ -297,7 +297,7 @@
                   type="button"
                   [size]="'small'"
                   [colorVariant]="'primary'"
-                  [outlineButton]="false"
+                  [isOutline]="false"
                 >
                 </rds-button>
               </div>
@@ -364,7 +364,7 @@
                       type="button"
                       [size]="'small'"
                       [colorVariant]="'primary'"
-                      [outlineButton]="false"
+                      [isOutline]="false"
                     ></rds-button>
                   </div>
                 </div>
@@ -376,6 +376,6 @@
     </div>
   </div>
 </div>
-<app-rds-comp-visual-settings-shimmer
+<rds-comp-visual-settings-shimmer
   *ngIf="isShimmer"
-></app-rds-comp-visual-settings-shimmer>
+></rds-comp-visual-settings-shimmer>
