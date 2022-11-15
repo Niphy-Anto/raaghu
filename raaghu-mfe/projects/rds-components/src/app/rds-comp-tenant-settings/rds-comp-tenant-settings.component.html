@@ -88,11 +88,11 @@
 </div>
 <div class="footer-buttons my-2">
 
-    <rds-button [label]="translate.instant('Cancel')" [outlineButton]="true" [colorVariant]="'primary'" [size]="'small'"
+    <rds-button [label]="translate.instant('Cancel')" [isOutline]="true" [colorVariant]="'primary'" [size]="'small'"
         (click)="onCancelSetting()" data-bs-dismiss="offcanvas">
     </rds-button>
     <rds-button [label]="translate.instant('Save')" [size]="'small'"
-        [disabled]="!tenantSettingsForm.valid||isPasswordMismatch||!isTenantInfoValid" class="ms-2"
+        [isDisabled]="!tenantSettingsForm.valid||isPasswordMismatch||!isTenantInfoValid" class="ms-2"
         [colorVariant]="'primary'" (click)="next(tenantSettingsForm)">
     </rds-button>
 
