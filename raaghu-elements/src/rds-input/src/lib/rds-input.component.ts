@@ -117,6 +117,8 @@ export class RdsInputComponent implements AfterViewInit {
     var classList = [''];
     if (this.labelPosition === 'floating') {
       classList.push('form-floating');
+    } else if (this.labelPosition === 'bottom'){
+      classList.push('d-flex flex-column-reverse mb-2');
     } else {
       classList.push('d-flex flex-column-reverse');
     }

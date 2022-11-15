@@ -1,7 +1,7 @@
 <form #dynamicEnityForm="ngForm">
   <div class="tab-content px-2 navsm-p-0">
     <div class="form-group mb-3">
-      <rds-select-list [value]="dynamicEntityData.entityFullName" ngDefaultControl ngModel name="entityname"
+      <rds-select-list [value]="[dynamicEntityData.entityFullName]" ngDefaultControl ngModel name="entityname"
         #entityname="ngModel" [(ngModel)]="dynamicEntityData.entityFullName" [label]="translate.instant(' Entity')"
         [labelPosition]="'top'" [placeholder]="translate.instant('Select Entity')" [isRequired]=true required
         [itemList]="entityNames">
