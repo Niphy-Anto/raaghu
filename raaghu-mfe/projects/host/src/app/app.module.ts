@@ -43,6 +43,8 @@ import {
   DefaultLanguageReducer,
   downloadReducer,
   DownloadEffects,
+  visualsettingEffects,
+  VisualsettingsReducer,
   DynamicEntityEffects,
   DynamicEntityReducer,
 } from '@libs/state-management';
@@ -109,6 +111,7 @@ export function getRemoteServiceBaseUrl(): any {
       languageText: LanguageTextReducer,
       defaultLanguage: DefaultLanguageReducer,
       downloadData: downloadReducer,
+      visualsettings:VisualsettingsReducer
     }),
 
     StoreDevtoolsModule.instrument({
@@ -128,6 +131,7 @@ export function getRemoteServiceBaseUrl(): any {
       LoginEffects,
       LanguageTextEffects,
       DownloadEffects,
+      visualsettingEffects
     ]),
     SharedModule,
     UserAuthModule,
