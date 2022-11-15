@@ -41,9 +41,9 @@ html[theme=light] {
 
   /*tag mixins color variables*/
 
-  $tag-bg-scale: -80%;
-  $tag-border-scale: -70%;
-  $tag-color-scale: -80%;
+  $tag-bg-scale: -80% !default;
+  $tag-border-scale: -70% !default;
+  $tag-color-scale: -80% !default;
 
   /*avatar mixins color variables*/
   $avatar-bg-scale: -0%;
@@ -199,6 +199,7 @@ html[theme=light] {
   $datepicker-bg: $white !default;
   $datepicker-head: $white !default;
   $notification-header-bg: $light-700 !default;
+  $notification-sub-text:$gray-400 !default;
   $input-group-addon-bg: $input-bg;
 
   $form-select-bg1: $input-bg !default;
@@ -454,6 +455,8 @@ html[theme=light] {
       @include badge-variant($badge-background, $badge-border, $badge-color);
     }
   }
+
+ 
   /*counter color variables*/
 
 
@@ -1104,7 +1107,6 @@ html[theme=light] {
   }
   /*tags color variables*/
   @mixin tag-variant($background, $border, $color) {
-    @include gradient-bg($background);
     border-color: $border;
     color: $color;
   }
@@ -1406,13 +1408,30 @@ html[theme=light] {
     background-color: transparent;
   }
 
-  .card-header.notification-header {
-    background-color: $notification-header-bg;
-  }
-
+ 
   .card-footer {
     background-color: $white;
     border-top-color: $gray-300;
+  }
+ 
+  .notification{
+    .card-header{
+      background-color: $notification-header-bg;
+    }
+    .card-body{
+     
+
+     .notification-border-bottom{
+     
+      border-bottom:1px solid $notification-header-bg;
+     } 
+     .notification-sub-text{
+      color:$notification-sub-text
+     }
+    }
+    .card-footer{
+     
+    }
   }
 
   .action-buttons {
@@ -1422,7 +1441,8 @@ html[theme=light] {
   .form-select {
     background-color: $form-select-bg1;
     border-color: $form-select-border-color1;
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e")  }
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e")
+  }
 }
 
 html[theme=dark] {
@@ -1562,9 +1582,10 @@ html[theme=dark] {
   $form-feedback-color: $gray-200 !default;
   $input-group-addon-bg: $input-bg;
   $input-group-addon-border-color: $input-bg;
-  /*Notification*/
-  $notification-header: $light-800 !default;
-
+  
+   $notification-header-bg: $gray-900 !default;
+   $notification-body-bg: $blue-100 !default;
+   $notification-sub-text:$gray-500 !default;
   /*sidebar color styles*/
   $nav-ul-bg-color: $light;
   $nav-li-border: $white;
@@ -1698,8 +1719,32 @@ html[theme=dark] {
       background-color: $card-bg-color;
       border-top-color: $card-border-color;
     }
+    
+  }
+  
+  .notification{
+    .card-header{
+      background-color: $notification-header-bg;
+    }
+    .card-body{
+      background-color: $notification-body-bg;
+
+     .notification-border-bottom{
+     
+      border-bottom:2px solid $notification-header-bg;
+     } 
+     .notification-sub-text{
+      color:$notification-sub-text
+     }
+    }
+    .card-footer{
+      background-color: $notification-body-bg;
+    }
   }
 
+//.card-body.notification-body.border-bottom{
+ // border-color:$gray-800;
+//}
   .sidenav-footer {
     background-color: $body-wrapper-bg;
   }
@@ -1867,6 +1912,11 @@ html[theme=dark] {
       background: $light;
       //border-color:$primary;
     }
+  }
+
+  .badge {
+    padding: $badge-padding-y $badge-padding-x;
+    @include font-size($badge-font-size);
   }
   /*Notification*/
   .notification-header {
@@ -2128,6 +2178,7 @@ html[theme=dark] {
   .pagination .page-item:nth-last-child(-n+2) .page-link {
     background-color: transparent;
   }
+  
   /*Dropdown*/
   .dropdown-item {
     border-bottom-color: $dropdown-border-bottom;
