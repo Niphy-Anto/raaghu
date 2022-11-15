@@ -9,7 +9,7 @@
         <p class="text-dark"><rds-label [label]="translate.instant(Dataset.messageAlert)"></rds-label></p>
         <div class="mt-5">
             <rds-button (click)="CancelClick($event,false)" [label]="translate.instant(Dataset.CancelButtonLabel)" [size]="'small'"
-                class="px-2" [colorVariant]="'primary'" [outlineButton]="true" [attr.data-bs-dismiss]="'modal'">
+                class="px-2" [colorVariant]="'primary'" [isOutline]="true" [attr.data-bs-dismiss]="'modal'">
             </rds-button>
             <rds-button [label]="translate.instant(Dataset.DeleteButtonLabel)" [size]="'small'" class="px-2" [colorVariant]="'primary'"
                 (click)="DeleteClick($event,true)" [attr.data-bs-dismiss]="'modal'">
