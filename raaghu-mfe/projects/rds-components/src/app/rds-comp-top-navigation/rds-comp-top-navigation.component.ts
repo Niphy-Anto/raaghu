@@ -65,6 +65,7 @@ export class RdsTopNavigationComponent extends MfeBaseComponent implements OnIni
   @Output() onUpdateNotificationSettings = new EventEmitter<any>();
   @Input() linkedAccountHeaders: any = [];
   @Input() linkedAccountData: any = [];
+  @Input() FixedHeader :boolean = true
   @Input() showDelegationButtonSpinner: boolean = true;
   tabName: string = '';
   navtabItems: any = [
@@ -108,6 +109,7 @@ export class RdsTopNavigationComponent extends MfeBaseComponent implements OnIni
 
 
   @Output() onProfileSave = new EventEmitter<any>();
+  @Output() FixedHeaderStyle = new EventEmitter<any>();
 
   constructor(private router: Router, private injector: Injector,
     private shared: SharedService,
@@ -151,6 +153,10 @@ export class RdsTopNavigationComponent extends MfeBaseComponent implements OnIni
       console.log(res);
       this.emitEvent('tenancyDataReturns', res);
     })
+
+    this.FixedHeaderStyle.emit(this.FixedHeader)
+    console.log('Topnav',this.FixedHeader);
+    
   }
 
 
