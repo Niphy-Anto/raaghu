@@ -163,7 +163,6 @@ export class AppComponent extends MfeBaseComponent implements OnInit {
         localStorage.setItem('userNameInfo', JSON.stringify({
           username: this.authenticateModal.userNameOrEmailAddress
         }));
-        // this._router.navigateByUrl('/pages/dashboard');
       },
       error: (err: any) => {
         mfeConfig.input.buttonSpinner = false;

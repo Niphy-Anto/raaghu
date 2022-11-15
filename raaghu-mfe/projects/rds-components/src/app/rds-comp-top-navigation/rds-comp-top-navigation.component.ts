@@ -155,9 +155,7 @@ export class RdsTopNavigationComponent extends MfeBaseComponent implements OnIni
       this.emitEvent('tenancyDataReturns', res);
     })
 
-    this.FixedHeaderStyle.emit(this.FixedHeader)
-    console.log('Topnav',this.FixedHeader);
-    
+
   }
 
 
