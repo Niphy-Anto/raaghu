@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Injector, Input, OnInit, Output } from '@angular/core';
-import { ComponentLoaderOptions, EmailSettingsEditDto, HostBillingSettingsEditDto, HostSettingsEditDto, MfeBaseComponent, OtherSettingsEditDto, PasswordComplexitySetting, SecuritySettingsEditDto, SharedService, TenantManagementSettingsEditDto, TenantSettingsEditDto, UserLockOutSettingsEditDto } from '@libs/shared';
+import { ComponentLoaderOptions, EmailSettingsEditDto, HostBillingSettingsEditDto, HostSettingsEditDto, MfeBaseComponent, OtherSettingsEditDto, PasswordComplexitySetting, SecuritySettingsEditDto, SharedService, TenantManagementSettingsEditDto, TenantSettingsEditDto, TwoFactorLoginSettingsEditDto, UserLockOutSettingsEditDto } from '@libs/shared';
 import { getSettings, getSettingsTenantPageComboboxItems, selectAllSettings, selectDefaultLanguage, selectSettingsTenantPageComboboxItems, sendTestmail, updateSettings } from '@libs/state-management';
 import { Store } from '@ngrx/store';
 import { AlertService } from '@libs/shared';
@@ -181,6 +181,7 @@ export class AppComponent implements OnInit {
       securityData: (event) => {
         this.saveHostSetting.security.passwordComplexity = new PasswordComplexitySetting();
         this.saveHostSetting.security.userLockOut = new UserLockOutSettingsEditDto();
+        this.saveHostSetting.security.twoFactorLogin = new TwoFactorLoginSettingsEditDto();
         this.saveHostSetting.security.passwordComplexity.requireDigit = event.requireDigit;
         this.saveHostSetting.security.passwordComplexity.requiredLength = event.requiredLength;
         this.saveHostSetting.security.passwordComplexity.requireLowercase = event.requireLowercase;
@@ -273,9 +274,24 @@ export class AppComponent implements OnInit {
 
     this.store.dispatch(getSettingsTenantPageComboboxItems())
     this.store.select(selectSettingsTenantPageComboboxItems).subscribe((res: any) => {
-      if (res && res.settingsComboboxItem) {
+    // console.log('tenant dropdown : ', res)
+    if (res && res.settingsComboboxItem) {
         this.settingsTenantEditionList = [];
-        this.settingsTenantEditionList = res.settingsComboboxItem;
+        res.settingsComboboxItem.forEach(el=>{
+          const data = {
+            value:el.value,
+            some:el.displayText,
+            isSelected:el.isSelected,
+            icon:'',
+            iconWidth:0,
+            iconHeight:0,
+            iconFill:false,
+            iconStroke: true,
+            isFree: el.isFree
+          }
+          this.settingsTenantEditionList.push(data);
+        });
+
         //this.settingsTenantEditionList = res.editionComboboxItem.filter((x: any) => x.isFree);
         const mfeConfig = this.rdsCompTenantManageMfeConfig
         mfeConfig.input.settingsTenantEditionList = [...this.settingsTenantEditionList];
@@ -436,6 +452,7 @@ export class AppComponent implements OnInit {
   onSelectMenu(event: any) {
     if (event.key === 'saveall') {
       this.onSave();
+      alert();
     }
   }
 

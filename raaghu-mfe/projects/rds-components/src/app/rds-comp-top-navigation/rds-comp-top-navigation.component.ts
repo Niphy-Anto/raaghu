@@ -7,13 +7,13 @@ import { DOCUMENT } from '@angular/common';
 let that: any;
 declare var bootstrap: any;
 @Component({
-  selector: 'app-rds-top-navigation',
+  selector: 'rds-top-navigation',
   templateUrl: './rds-comp-top-navigation.component.html',
   styleUrls: ['./rds-comp-top-navigation.component.scss']
 })
 export class RdsTopNavigationComponent extends MfeBaseComponent implements OnInit, DoCheck, OnChanges {
   // rdsProfileMfeConfig: ComponentLoaderOptions;
-
+  showNotification: boolean = false;
   showOffcanvas: boolean = false;
   themes: any = [
 
@@ -66,6 +66,7 @@ export class RdsTopNavigationComponent extends MfeBaseComponent implements OnIni
   @Input() linkedAccountHeaders: any = [];
   @Input() linkedAccountData: any = [];
   @Input() FixedHeader :boolean = true
+  @Input() showDelegationButtonSpinner: boolean = true;
   tabName: string = '';
   navtabItems: any = [
     { label: 'Manage Linked Accounts', translationKey: 'Manage Linked Accounts', tablink: '#nav-LinkAccount', ariacontrols: 'nav-LinkAccount', Image: 'bi bi-pencil-fill', icon: 'manage_linked', subText: 'Manage accounts linked to your account', subtextTranslationKey: 'Manage accounts linked to your account', showoffcanvas: true },
@@ -105,7 +106,6 @@ export class RdsTopNavigationComponent extends MfeBaseComponent implements OnIni
     { DateofData: '08/07/2022', NummberofDates: '5days ago', downloadUrl: 'assets/DeleteIcon.jpg' },
     { DateofData: '08/07/2022', NummberofDates: '5days ago', downloadUrl: 'assets/Photp.jpeg' }
   ]
-  openNotification: boolean;
 
 
   @Output() onProfileSave = new EventEmitter<any>();
@@ -169,9 +169,7 @@ export class RdsTopNavigationComponent extends MfeBaseComponent implements OnIni
     this.redirection.emit(type);
   }
 
-  openNotificationComp() {
-    this.openNotification = !this.openNotification;
-  }
+
 
   redirectToSettings() {
     this.router.navigateByUrl('/pages/settings');
@@ -213,14 +211,18 @@ export class RdsTopNavigationComponent extends MfeBaseComponent implements OnIni
       headEl.appendChild(newLinkEl);
     }
   }
+  openNotification(): void {
+    this.showNotification = !this.showNotification;
+    var element: any = document.getElementById('notification-popup-menu');
+    if (element) {
+      var dropdown = new bootstrap.Dropdown(element);
+      if (this.showNotification) {
+        dropdown.show();
+      } else {
+        dropdown.hide();
+      }
+    }
 
-  // public get menu(): string[] {
-  //   var customMenu = [' navbar navbar-expand-sm p-0 '];
-  //   if (this.FixedHeader) {
-  //     customMenu.push(' fixed-top ')
-  //   } else {
-  //     customMenu.push('');
-  //   }
-  //   return customMenu;
-  // }
+
+  }
 }

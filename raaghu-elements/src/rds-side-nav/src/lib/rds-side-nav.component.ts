@@ -67,7 +67,15 @@ export class RdsSideNavComponent implements OnInit {
     const x = document.getElementById('menuWithChildren' + i);
     if (x) {
       var dropdown = new Collapse(x);
-      dropdown.show();
+      if (this.showHide) {
+        dropdown.show();
+        this.activesubmenu = 0;
+        this.activepage = i;
+        this.emitPath.emit(path);
+      } else {
+        dropdown.hide();
+        // this.activesubmenu = '';
+      }
     }
 
     if (x !== null)

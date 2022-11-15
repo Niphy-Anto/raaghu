@@ -36,11 +36,12 @@
                   [value]="selectedLanguage.icon" required [multiSelect]="false" [selectAll]="false" [entity]="false"
                   [listItems]="flags" (onSelect)="onCountryCodeSelect($event)"></rds-dropdownlist>
               </div>
-              <div class="form-control-feedback" *ngIf="
+
+              <div class="form-control-feedback p-2" *ngIf="
                   submitted &&
                   (selectedLanguage.icon === '' || !selectedLanguage.icon)
                 ">
-                <span class="text-danger">{{
+                <span class="text-danger p-2">{{
                   "Country code is
                   required"
                   | translate
@@ -66,13 +67,13 @@
     <div class="row">
       <div class="col-md-12">
         <rds-button [label]="translate.instant('Cancel')" (click)="closeCanvas()" type="button"
-          [colorVariant]="'primary'" [outlineButton]="true" [size]="'small'">
+          [colorVariant]="'primary'" [isOutline]="true" [size]="'small'">
         </rds-button>
-        <rds-button [label]="translate.instant('Save')" type="button" [size]="'small'" [disabled]="!languageForm.valid"
+        <rds-button [label]="translate.instant('Save')" type="button" [size]="'small'" [isDisabled]="!languageForm.valid"
           class="ms-2" [colorVariant]="'primary'" (click)="addLanguage(languageForm)">
         </rds-button>
       </div>
     </div>
   </div>
 </div>
-<app-rds-comp-new-role-shimmer *ngIf="EditShimmer"></app-rds-comp-new-role-shimmer>
+<rds-comp-new-role-shimmer *ngIf="EditShimmer"></rds-comp-new-role-shimmer>

@@ -454,19 +454,18 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
     
     this.selectAllvisualSettings()
     const selectedTheme = localStorage.getItem('THEME');
-          if (selectedTheme == "undefined") {
-            this.theme.theme = 'light';
-            localStorage.setItem('THEME', 'light');
-            this.isLightMode = true;
-          } else {
-            this.theme.theme = selectedTheme;
-            if (selectedTheme == 'light') {
-              this.isLightMode = true;
-            } else {
-              this.isLightMode = false;
-            }
-          }
-    console.log(this.isLightMode);
+    if (selectedTheme == "undefined" || selectedTheme == '' || selectedTheme == undefined || selectedTheme == null) {
+      this.theme.theme = 'light';
+      localStorage.setItem('THEME', 'light');
+      this.isLightMode = true;
+    } else {
+      this.theme.theme = selectedTheme;
+      if (selectedTheme == 'light') {
+        this.isLightMode = true;
+      } else {
+        this.isLightMode = false;
+      }
+    }
     const tenancy: any = JSON.parse(localStorage.getItem('tenantInfo'));
     if (tenancy) {
       this.tenancy = tenancy.name;
@@ -746,6 +745,7 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
     });
     this.store.dispatch(getDelegations());
     this.store.select(selectDelegationsInfo).subscribe((res: any) => {
+      this.rdsDeligateTableData=[];
       if (res && res.items && res.items.length) {
         res.items.forEach((element: any) => {
           const item: any = {
@@ -828,6 +828,9 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
         message: alert.message,
       };
       this.currentAlerts.push(currentAlert);
+      const rdsTopNavigationMfeConfig = this.rdsTopNavigationMfeConfig;
+      rdsTopNavigationMfeConfig.input.showDelegationButtonSpinner = false;
+      this.rdsTopNavigationMfeConfig = rdsTopNavigationMfeConfig;
       const rdsAlertMfeConfig = this.rdsAlertMfeConfig;
       rdsAlertMfeConfig.input.currentAlerts = [...this.currentAlerts];
       this.rdsAlertMfeConfig = rdsAlertMfeConfig;
@@ -904,7 +907,7 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
       localStorage.setItem('THEME', 'dark');
     } else {
       this.theme.theme = 'light';
-      localStorage.setItem('THEME', 'light');
+      localStorage.setItem('THEME', 'light'); 
     }
   }
 

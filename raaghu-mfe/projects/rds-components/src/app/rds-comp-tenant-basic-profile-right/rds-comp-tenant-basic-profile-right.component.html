@@ -91,9 +91,9 @@
         (click)="onCanceled()" data-bs-dismiss="offcanvas">
       </rds-button>
       <rds-button [label]="translate.instant('CREATE')"
-        [disabled]="!tenantCreationForm.valid"
+        [isDisabled]="!tenantCreationForm.valid"
         [size]="'small'" class="ms-2" [colorVariant]="'primary'" (click)="next(tenantCreationForm)" [showLoadingSpinner]="buttonSpinner">
       </rds-button>
     </div>
   </div>
-  <app-rds-comp-tenant-information-shimmer *ngIf="editShimmer"></app-rds-comp-tenant-information-shimmer>
+  <rds-comp-tenant-information-shimmer *ngIf="editShimmer"></rds-comp-tenant-information-shimmer>

@@ -11,7 +11,7 @@ import {
 import { SharedService } from '@libs/shared';
 import { TranslateService } from '@ngx-translate/core';
 @Component({
-  selector: 'app-rds-comp-visual-settings',
+  selector: 'rds-comp-visual-settings',
   templateUrl: './rds-comp-visual-settings.component.html',
   styleUrls: ['./rds-comp-visual-settings.component.scss'],
 })
