@@ -20,6 +20,8 @@
       label
     }} <span class="text-danger" *ngIf="isRequired">*</span>
   </label> -->
-  <rds-label [label]="label"></rds-label>
+  <rds-label [label]="label" [ngClass]="labelClass" *ngIf="labelPosition!=='floating'&&label" class="form-label" for="Errormessage">
+    <span class="text-danger" *ngIf="isRequired">*</span>
+  </rds-label>
 
 </div>
