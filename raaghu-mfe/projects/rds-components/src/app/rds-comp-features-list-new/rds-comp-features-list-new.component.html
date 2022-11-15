@@ -22,6 +22,7 @@
                            
                           </ul> 
                     </div> -->
+                </div>
             </div>
             <div footer>
                 <div class="d-flex gap-2 p-4">
@@ -45,23 +46,22 @@
     <div class="col-md-6 mb-3">
         <rds-card [showFooter]="false" [showHeader]="false" [borderColor]="'primary'" [topBottomPadding]="true">
 
-                <div header>
-                    <div class="mb-5"></div>
+            <div header>
+                <div class="mb-5"></div>
+            </div>
+            <div body class="">
+                <div class="d-flex justify-content-center feature-empty-card align-items-center">
+                    <rds-button [label]="'NEW EDITION'" type="button" [colorVariant]="'primary'" (click)="openCanvas()"
+                        [attr.aria-controls]="'addNewEdition'" [icon]="'plus'" iconHeight="12px" [isFabIcon]="true"
+                        iconWidth="12px" [size]="'small'">
+                    </rds-button>
                 </div>
-                <div body class="">
-                    <div class="d-flex justify-content-center feature-empty-card align-items-center">
-                        <rds-button [label]="'NEW EDITION'" type="button" [colorVariant]="'primary'"
-                            (click)="openCanvas()" [attr.aria-controls]="'addNewEdition'" [icon]="'plus'"
-                            iconHeight="12px" [isFabIcon]="true" iconWidth="12px" [size]="'small'">
-                        </rds-button>
-                    </div>
 
-                </div>
-                <div footer class="mt-5">
+            </div>
+            <div footer class="mt-5">
 
-                </div>
-            </rds-card>
-        </div>
+            </div>
+        </rds-card>
     </div>
 </div>
 
