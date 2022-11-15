@@ -1,5 +1,9 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { AlertService, ComponentLoaderOptions } from '@libs/shared';
+import {
+  AlertService,
+  ComponentLoaderOptions,
+  UserAuthService,
+} from '@libs/shared';
 import { Store } from '@ngrx/store';
 import {
   getVisualsettings,
@@ -42,12 +46,16 @@ import {
 })
 export class AppComponent implements OnInit {
   isAnimation: boolean = true;
+  selectedThemeIndex: any = '0';
   constructor(
     private store: Store,
     private alertService: AlertService,
     public translate: TranslateService,
-    private theme: ThemesService
-  ) {}
+    private theme: ThemesService,
+    private userAuthService: UserAuthService
+  ) {
+
+  }
   visualsettingsData: any = [];
   rdsvisualsettingsMfeConfig: ComponentLoaderOptions;
   currentAlerts: any = [];
@@ -74,7 +82,6 @@ export class AppComponent implements OnInit {
     this.rdsvisualsettingsMfeConfig = {
       name: 'RdsCompVisualSettings',
       input: {
-        navtabItems: this.navtabItems,
         listskin: this.listskin,
         listSubmenu: this.listSubmenu,
         visualsettingsItem: this.visualsettingsData,
@@ -83,17 +90,14 @@ export class AppComponent implements OnInit {
       output: {
         onSaveVisualsettingsData: (visualsettingsItem: any) => {
           if (visualsettingsItem) {
-            // if(visualsettingsItem.menu.asideSkin == 'dark'){
-            //   this.theme.theme = 'dark'
-            //   // this.store.dispatch(changeToDarkMode());
-            // }
-            // else{
-            //   this.theme.theme = 'light'
-            //   // this.store.dispatch(changeToLightMode());
-            // }
-            this.store.dispatch(
-              UpdateUiManagementSettings(visualsettingsItem)
-            );
+            this.store.dispatch(UpdateUiManagementSettings(visualsettingsItem));
+          }
+        },
+        indexEmitter: (value: any) => {
+          this.userAuthService.getVisualSettingIndex(value);
+          if(value == '12'){
+            this.theme.theme = 'light'
+
           }
         },
       },
@@ -111,25 +115,10 @@ export class AppComponent implements OnInit {
       }
     });
   }
-  // @Output()
-  // onSubcribe = new EventEmitter<{ evnt: any, defaultThemeSettings: any }>()
-  navtabItems: any = [
-    {
-      label: 'Header Bar',
-      tablink: '#nav-headerbar',
-      ariacontrols: 'nav-headerbar',
-    },
-    {
-      label: 'Subheader',
-      tablink: '#nav-subheader',
-      ariacontrols: 'nav-subheader',
-    },
-    { label: 'Menu', tablink: '#nav-Menu', ariacontrols: 'nav-Menu' },
-    { label: 'Footer', tablink: '#nav-footer', ariacontrols: 'nav-footer' },
-  ];
+
   listskin: any[] = [
-    { value: 'dark', displayText: 'Dark' },
     { value: 'light', displayText: 'Light' },
+    { value: 'dark', displayText: 'Dark' },
   ];
   listSubmenu: any[] = [
     { value: 'false', displayText: 'Accordian' },
@@ -150,12 +139,5 @@ export class AppComponent implements OnInit {
       this.rdsAlertMfeConfig = rdsAlertMfeConfig;
     });
   }
-  getNavTabItems(): any {
-    this.navtabItems[0].label = this.translate.instant('Header Bar');
-
-    this.navtabItems[1].label = this.translate.instant('Subheader');
-    this.navtabItems[2].label = this.translate.instant('Menu');
-    this.navtabItems[2].label = this.translate.instant('Footer');
-    return this.navtabItems;
-  }
+ 
 }

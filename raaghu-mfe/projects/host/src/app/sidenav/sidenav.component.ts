@@ -76,7 +76,8 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
       outlet && outlet.activatedRouteData && outlet.activatedRouteData.animation
     );
   }
-
+  index: any = '12';
+  FixedHeaderBody: boolean = true;
   toggleSideNav: boolean = false;
   currentAlerts: any = [];
   selectedLanguage: any = { language: '', icon: '' };
@@ -157,7 +158,7 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
       id: '',
       permissionName: 'Pages.Tenant.Dashboard',
       icon: 'home',
-      path: '/pages/dashboard',
+      path: '/pages/dashboard', 
       description: 'Statistics and reports',
       descriptionTranslationKey: 'Statistics and reports',
     },
@@ -371,8 +372,14 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
     private theme: ThemesService,
     @Inject(DOCUMENT) private document: Document
   ) {
+ 
     super(injector);
+    this.index = localStorage.getItem('themeIndex');
+    if(this.index == null){
+      this.index = '12'
+    }
   }
+
 
   ngAfterViewInit() {}
   getdata() {
@@ -382,65 +389,83 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
   sidenavItems = [];
 
   permissions: any;
-
-  ngOnInit(): void {
+  selectAllvisualSettings(){
     this.store.select(selectAllVisualsettings).subscribe((res: any) => {
       if (res && res.length > 0) {
-        const header = JSON.parse(res[4].header.minimizeDesktopHeaderType);
+        const header = JSON.parse(
+          res[this.index].header.minimizeDesktopHeaderType
+        );
         const rdsTopNavigationMfeConfig = this.rdsTopNavigationMfeConfig;
         if (header) {
           rdsTopNavigationMfeConfig.input.FixedHeader = header.desktop;
+          if (header.desktop) {
+            this.document.getElementById('FixedHeaderOverFlow').style.overflow =
+              'scroll';
+            document.getElementsByTagName('html')[0].style.overflow = 'hidden';
+          } else {
+            this.document.getElementById('FixedHeaderOverFlow').style.overflow =
+              'inherit';
+            document.getElementsByTagName('html')[0].style.overflow = 'inherit';
+          }
+          this.FixedHeaderBody = header.desktop;
         }
-        const selectedTheme = res[4].menu.asideSkin;
+        this.collapseRequired = res[this.index].menu.allowAsideMinimizing;
+
+        if (res[this.index].menu.defaultMinimizedAside) {
+          if (this.sideMenuCollapsed == false) {
+            document.getElementById('sidenavCollapsed').click();
+          }
+        } else {
+          if (this.sideMenuCollapsed == true) {
+            document.getElementById('sidenavCollapsed').click();
+          }
+        }
+
+        //  const aside = document.getElementById('aside');
+        // if (
+        //   res[this.index].menu.hoverableAside 
+        // ) {
+        //   aside.addEventListener('mouseenter', () => {
+        //     if (this.sideMenuCollapsed == true) {
+        //       document.getElementById('sidenavCollapsed').click();
+        //     }
+        //   });
+        //   aside.addEventListener('mouseleave', () => {
+        //     if (
+        //       this.sideMenuCollapsed == false
+        //     ) {
+        //       document.getElementById('sidenavCollapsed').click();
+        //     } 
+        //   });
+        // }
+
+        const selectedTheme = res[this.index].menu.asideSkin;
         this.rdsTopNavigationMfeConfig = rdsTopNavigationMfeConfig;
         this.theme.theme = selectedTheme;
-        if (res[4].menu.asideSkin == 'light') {
-          this.isLightMode = true;
-        } else {
-          this.isLightMode = false;
-        }
-        // this.fixedHeader = res[12]
-
-        // if(res){
-        //   this.theme.theme = res.menu.asideSkin;
-        // }else{
-        //   this.theme.theme = 'light';
-        // }
-        // if(res.menu.asideSkin){
-        //   const selectedTheme = localStorage.getItem('THEME');
-        // if (selectedTheme == "undefined") {
-        //   this.theme.theme = 'light';
-        //   localStorage.setItem('THEME', 'light');
-        //   this.isLightMode = true;
-        // } else {
-        //   this.theme.theme = selectedTheme;
-        //   if (selectedTheme == 'light') {
-        //     this.isLightMode = true;
-        //   } else {
-        //     this.isLightMode = false;
-        //   }
-        // }
-
-        // }
-      } else {
-        this.theme.theme = 'light';
-        this.isLightMode = true;
       }
     });
+  }
 
-    // const selectedTheme = localStorage.getItem('THEME');
-    //       if (selectedTheme == "undefined") {
-    //         this.theme.theme = 'light';
-    //         localStorage.setItem('THEME', 'light');
-    //         this.isLightMode = true;
-    //       } else {
-    //         this.theme.theme = selectedTheme;
-    //         if (selectedTheme == 'light') {
-    //           this.isLightMode = true;
-    //         } else {
-    //           this.isLightMode = false;
-    //         }
-    //       }
+  ngOnInit(): void {
+    this.userAuthService.index$.subscribe((value) => {
+      this.index = value;
+      this.selectAllvisualSettings();    
+    });
+    
+    this.selectAllvisualSettings()
+    const selectedTheme = localStorage.getItem('THEME');
+          if (selectedTheme == "undefined") {
+            this.theme.theme = 'light';
+            localStorage.setItem('THEME', 'light');
+            this.isLightMode = true;
+          } else {
+            this.theme.theme = selectedTheme;
+            if (selectedTheme == 'light') {
+              this.isLightMode = true;
+            } else {
+              this.isLightMode = false;
+            }
+          }
     console.log(this.isLightMode);
     const tenancy: any = JSON.parse(localStorage.getItem('tenantInfo'));
     if (tenancy) {
@@ -927,4 +952,5 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
     });
     return sidenavItems;
   }
+
 }
