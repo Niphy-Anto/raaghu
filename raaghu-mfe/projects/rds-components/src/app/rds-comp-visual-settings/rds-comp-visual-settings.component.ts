@@ -1,4 +1,13 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import {
+  AfterViewInit,
+  Component,
+  EventEmitter,
+  Inject,
+  Input,
+  OnInit,
+  Output,
+} from '@angular/core';
 import { SharedService } from '@libs/shared';
 import { TranslateService } from '@ngx-translate/core';
 @Component({
@@ -6,100 +15,229 @@ import { TranslateService } from '@ngx-translate/core';
   templateUrl: './rds-comp-visual-settings.component.html',
   styleUrls: ['./rds-comp-visual-settings.component.scss'],
 })
-export class RdsCompVisualSettingsComponent implements OnInit {
+export class RdsCompVisualSettingsComponent implements OnInit , AfterViewInit {
   constructor(
     public translate: TranslateService,
-    private sharedService: SharedService
-  ) {}
-  ngOnInit(): void {
-    if (this.visualsettingsItem && this.visualsettingsItem.length) {
-      this.theme = this.visualsettingsItem[0].theme;
-      this.fixedFooter = this.visualsettingsItem[0].footer;
-      this.desktopFixedHeader = this.visualsettingsItem[0].header;
-      this.mobileFixedHeader = this.visualsettingsItem[1].header;
-      this.darkMode = this.visualsettingsItem[0].layout;
-      this.asideSkin = this.visualsettingsItem[0].menu;
-      this.fixedAside = this.visualsettingsItem[1].menu;
-      this.allowAsideMinimizing = this.visualsettingsItem[2].menu;
-      this.defaultMinimizedAside = this.visualsettingsItem[3].menu;
-      this.hoverableAside = this.visualsettingsItem[4].menu;
-      this.submenuToggle = this.visualsettingsItem[5].menu;
-      this.fixedSubHeader = this.visualsettingsItem[0].subHeader;
+    private sharedService: SharedService,
+    @Inject(DOCUMENT) private document: Document,
+    
+  ) {
+    this.selectedThemeIndex = localStorage.getItem('themeIndex');
+    if(this.selectedThemeIndex == null){
+      this.selectedThemeIndex = '12';
+    }
+    else{
+      if(this.selectedThemeIndex == '12'){
+        this.getThemeSettings(this.selectedThemeIndex, 'default')
+      }
+      if(this.selectedThemeIndex == '7') {
+        this.getThemeSettings(this.selectedThemeIndex, 'dark')
+      } 
+      if(this.selectedThemeIndex == '4')
+      {
+        this.getThemeSettings(this.selectedThemeIndex, 'accessible')
+      }
+      
     }
   }
-  selectedThemeIndex: any = '0';
+  ngOnInit(): void {
+
+    if (this.visualsettingsItem && this.visualsettingsItem.length > 0) {
+      this.theme = this.visualsettingsItem[this.selectedThemeIndex].theme;
+      this.fixedFooter = this.visualsettingsItem[this.selectedThemeIndex].footer.fixedFooter;
+      this.desktopFixedHeader =
+        this.visualsettingsItem[this.selectedThemeIndex].header.desktopFixedHeader;
+      this.mobileFixedHeader =
+        this.visualsettingsItem[this.selectedThemeIndex].header.mobileFixedHeader;
+      this.darkMode = this.visualsettingsItem[this.selectedThemeIndex].layout.darkMode;
+      this.asideSkin = this.visualsettingsItem[this.selectedThemeIndex].menu.asideSkin;
+      this.fixedAside = this.visualsettingsItem[this.selectedThemeIndex].menu.fixedAside;
+      this.allowAsideMinimizing =
+        this.visualsettingsItem[this.selectedThemeIndex].menu.allowAsideMinimizing;
+      this.defaultMinimizedAside =
+        this.visualsettingsItem[this.selectedThemeIndex].menu.defaultMinimizedAside;
+      this.hoverableAside = this.visualsettingsItem[this.selectedThemeIndex].menu.hoverableAside;
+      this.submenuToggle = this.visualsettingsItem[this.selectedThemeIndex].menu.submenuToggle;
+      this.fixedSubHeader =
+        this.visualsettingsItem[this.selectedThemeIndex].subHeader.fixedSubHeader;
+    }
+  }
+
+  ngAfterViewInit(): void {
+    
+    if (this.visualsettingsItem && this.visualsettingsItem.length > 0) {
+      this.theme = this.visualsettingsItem[this.selectedThemeIndex].theme;
+      this.fixedFooter = this.visualsettingsItem[this.selectedThemeIndex].footer.fixedFooter;
+      this.desktopFixedHeader =
+        this.visualsettingsItem[this.selectedThemeIndex].header.desktopFixedHeader;
+      this.mobileFixedHeader =
+        this.visualsettingsItem[this.selectedThemeIndex].header.mobileFixedHeader;
+      this.darkMode = this.visualsettingsItem[this.selectedThemeIndex].layout.darkMode;
+      this.asideSkin = this.visualsettingsItem[this.selectedThemeIndex].menu.asideSkin;
+      this.fixedAside = this.visualsettingsItem[this.selectedThemeIndex].menu.fixedAside;
+      this.allowAsideMinimizing =
+        this.visualsettingsItem[this.selectedThemeIndex].menu.allowAsideMinimizing;
+      this.defaultMinimizedAside =
+        this.visualsettingsItem[this.selectedThemeIndex].menu.defaultMinimizedAside;
+      this.hoverableAside = this.visualsettingsItem[this.selectedThemeIndex].menu.hoverableAside;
+      this.submenuToggle = this.visualsettingsItem[this.selectedThemeIndex].menu.submenuToggle;
+      this.fixedSubHeader =
+        this.visualsettingsItem[this.selectedThemeIndex].subHeader.fixedSubHeader;
+    }
+  }
+  selectedTheme: string = 'default';
+  selectedThemeIndex: any = '12';
   dataLoaded = false;
-  @Input() navtabItems: any;
+  // @Input() navtabItems: any;
+ navtabItems: any = [
+  
+    { label: 'Subheader', tablink: '#nav-subheader', ariacontrols: 'nav-subheader', translateKey: 'Subheader' },
+
+    { label: 'Menu', tablink: '#nav-Menu', ariacontrols: 'nav-Menu', translateKey: 'Menu' },
+
+    { label: 'Footer', tablink: '#nav-footer', ariacontrols: 'nav-footer', translateKey: 'Footer' }
+
+  ];
   @Input() listskin: any;
   @Input() listSubmenu: any;
-  // @Input() theme: string = 'default';
   private theme: string = 'default';
   @Input() visualSettingsHeader: any = {};
   @Input() visualSettingsSubHeader: any = {};
-  // @Input() visualSettingsMenu: any = {};
   public darkMode: boolean = false;
-  public fixedFooter : boolean = false;
-  public fixedSubHeader : boolean = false;
-  public desktopFixedHeader : boolean = false;
-  public mobileFixedHeader : boolean = false
-  public asideSkin = ''
-  public fixedAside : boolean = false
-  public allowAsideMinimizing : boolean = false;
-  public defaultMinimizedAside : boolean = false ;
-  public hoverableAside : boolean = false;
-  public submenuToggle  ='';
+  public fixedFooter: boolean = false;
+  public fixedSubHeader: boolean = false;
+  public desktopFixedHeader: boolean = false;
+  public mobileFixedHeader: boolean = false;
+  public asideSkin: any = 'light';
+  public fixedAside: boolean = true;
+  public allowAsideMinimizing: boolean = true;
+  public defaultMinimizedAside: boolean = false;
+  public hoverableAside: boolean = false;
+  public submenuToggle = '';
+  selectedTabIndex: number = 0;
   @Input() isShimmer: boolean = false;
-  // @Input() visualSettingsFooter: any = {};
-  // visualSettingsLayout: any = {};
   @Input() public visualsettingsItem: any[] = [];
   @Input() visualsetting: any;
 
   @Output() onSaveVisualsettingsData = new EventEmitter<any>();
 
-  ngDoCheck(): void {
-    // if (this.visualsettingsItem && this.visualsettingsItem.length && !this.dataLoaded) {
-    //   this.theme = JSON.parse(JSON.stringify(this.visualsettingsItem[0].theme));
-    //   this.visualSettingsFooter = JSON.parse(JSON.stringify(this.visualsettingsItem[0].footer));
-    //   this.visualSettingsHeader = JSON.parse(JSON.stringify(this.visualsettingsItem[0].header));
-    //   this.visualSettingsLayout = JSON.parse(JSON.stringify(this.visualsettingsItem[0].layout));
-    //   this.visualSettingsMenu = JSON.parse(JSON.stringify(this.visualsettingsItem[0].menu));
-    //   this.visualSettingsSubHeader = JSON.parse(JSON.stringify(this.visualsettingsItem[0].subHeader));
-    // }
-  }
+  @Output() indexEmitter = new EventEmitter<any>();
 
   saveVisualSettings() {
+    const header: any = {
+      mobile: this.mobileFixedHeader,
+      desktop: this.desktopFixedHeader,
+    };
+    localStorage.setItem('themeIndex', this.selectedThemeIndex);
     this.onSaveVisualsettingsData.emit({
       theme: this.theme,
-      footer: { fixedFooter:this.fixedFooter },
-      header: {desktopFixedHeader: this.desktopFixedHeader,mobileFixedHeader: this.mobileFixedHeader },
+      footer: { fixedFooter: this.fixedFooter },
+      header: { minimizeDesktopHeaderType: JSON.stringify(header) },
       layout: { darkMode: this.darkMode },
-      menu: {asideSkin : this.asideSkin , fixedAside: this.fixedAside , allowAsideMinimizing: this.allowAsideMinimizing, 
-             defaultMinimizedAside: this.defaultMinimizedAside, hoverableAside: this.hoverableAside, submenuToggle: this.submenuToggle},
-      subHeader: {fixedSubHeader:this.fixedSubHeader},
+      menu: {
+        asideSkin: this.asideSkin,
+        fixedAside: this.fixedAside,
+        allowAsideMinimizing: this.allowAsideMinimizing,
+        defaultMinimizedAside: this.defaultMinimizedAside,
+        hoverableAside: this.hoverableAside,
+        submenuToggle: this.submenuToggle,
+      },
+      subHeader: { fixedSubHeader: this.fixedSubHeader },
     });
   }
-  getThemeSettings(index: any) {
+  getThemeSettings(index: any, theme: string | undefined) {
+ 
+    if (theme) {
+      this.selectedTheme = theme;
+      this.selectedThemeIndex = index;
+      const headEl = this.document.getElementsByTagName('head')[0];
+      const existingLinkEl = this.document.getElementById(
+        'client-theme'
+      ) as HTMLLinkElement;
+      const newLinkEl = this.document.createElement('link');
+
+      if (existingLinkEl) {
+        existingLinkEl.href = theme + '.css';
+      } else {
+        newLinkEl.id = 'client-theme';
+        newLinkEl.rel = 'stylesheet';
+        newLinkEl.href = theme + '.css';
+        headEl.appendChild(newLinkEl);
+      }
+
+      if (this.selectedTheme === 'default') {
+      
+        this.navtabItems = [
+         
+          {
+            label: 'Subheader',
+            tablink: '#nav-subheader',
+            ariacontrols: 'nav-subheader',
+            translateKey: 'Subheader',
+          },
+          {
+            label: 'Menu',
+            tablink: '#nav-Menu',
+            ariacontrols: 'nav-Menu',
+            translateKey: 'Menu',
+          },
+
+          {
+            label: 'Footer',
+            tablink: '#nav-footer',
+            ariacontrols: 'nav-footer',
+            translateKey: 'Footer',
+          },
+        ];
+      } else {
+        this.navtabItems = [
+          {
+            label: 'Header Bar',
+            tablink: '#nav-headerbar',
+            ariacontrols: 'nav-headerbar',
+            translateKey: 'Header Bar',
+          },
+        ];
+      }
+
+      this.selectedTabIndex = 0;
+    }
+
     this.dataLoaded = true;
     this.selectedThemeIndex = index;
-    this.theme = this.visualsettingsItem[index].theme;
-    // this.darkMode = darkMode :this.visualsettingsItem[index].layout;
-
-    // this.theme = JSON.parse(JSON.stringify(this.visualsettingsItem[index].theme));
-    // this.visualSettingsFooter = JSON.parse(JSON.stringify(this.visualsettingsItem[index].footer));
-    // this.visualSettingsHeader = JSON.parse(JSON.stringify(this.visualsettingsItem[index].header));
-    // this.visualSettingsLayout = JSON.parse(JSON.stringify(this.visualsettingsItem[index].layout));
-    // this.visualSettingsMenu = JSON.parse(JSON.stringify(this.visualsettingsItem[index].menu));
-    // this.visualSettingsSubHeader = JSON.parse(JSON.stringify(this.visualsettingsItem[index].subHeader));
+    this.indexEmitter.emit(this.selectedThemeIndex);
+    if(this.visualsettingsItem.length){
+      this.theme = this.visualsettingsItem[index].theme;
+    this.fixedFooter = this.visualsettingsItem[index].footer.fixedFooter;
+    this.desktopFixedHeader =
+      this.visualsettingsItem[index].header.desktopFixedHeader;
+    this.mobileFixedHeader =
+      this.visualsettingsItem[index].header.mobileFixedHeader;
+    this.darkMode = this.visualsettingsItem[index].layout.darkMode;
+  
+    this.asideSkin = this.visualsettingsItem[index].menu.asideSkin;
+    this.fixedAside = this.visualsettingsItem[index].menu.fixedAside;
+    this.allowAsideMinimizing =
+      this.visualsettingsItem[index].menu.allowAsideMinimizing;
+    this.defaultMinimizedAside =
+      this.visualsettingsItem[index].menu.defaultMinimizedAside;
+    this.hoverableAside = this.visualsettingsItem[index].menu.hoverableAside;
+    this.submenuToggle = this.visualsettingsItem[index].menu.submenuToggle;
+    this.fixedSubHeader =
+      this.visualsettingsItem[index].subHeader.fixedSubHeader;
+    }
+    
   }
   getNavTabItems(): any {
-    this.navtabItems[0].label = this.translate.instant('Header Bar');
-    this.navtabItems[1].label = this.translate.instant('Sub header');
-    this.navtabItems[2].label = this.translate.instant('Menu');
-    this.navtabItems[3].label = this.translate.instant('Footer');
+    this.navtabItems.forEach((ele: any) => {
+      ele.label = this.translate.instant(ele.translateKey);
+    });
+
     return this.navtabItems;
   }
 
-  onSelectnode(event: any) {
+  onTabSelect(event: any) {
+    this.selectedTabIndex = event;
     if (event > 0) {
       this.sharedService.setTopNavTitle(this.navtabItems[event].label);
     } else {
@@ -124,19 +262,17 @@ export class RdsCompVisualSettingsComponent implements OnInit {
         this.mobileFixedHeader = event;
         break;
       case 'fixedAside':
-          this.fixedAside = event;
-        break; 
+        this.fixedAside = event;
+        break;
       case 'allowAsideMinimizing':
         this.allowAsideMinimizing = event;
         break;
       case 'defaultMinimizedAside':
         this.defaultMinimizedAside = event;
-        break; 
-      case 'hoverableAside' :
+        break;
+      case 'hoverableAside':
         this.hoverableAside = event;
         break;
-
     }
-
   }
 }

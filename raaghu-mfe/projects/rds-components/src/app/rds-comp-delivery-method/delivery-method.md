@@ -10,7 +10,8 @@ title: "Components > Delivery-method"
 #### Delivery Method
 
 <p>The card provides a details on the type of costs based on the delivery estimation</p>
-<section class="py-4">                                                                                             
+<section class="py-4">   
+<h6>Default</h6>                                                                                          
     <div class="py-3">
       <div class="cust-tabs">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
