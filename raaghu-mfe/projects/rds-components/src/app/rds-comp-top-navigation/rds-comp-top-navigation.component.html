@@ -63,11 +63,6 @@
           (onSelect)="onLanguageSelect($event)"
         >
         </rds-dropdownlist>
-        <rds-dropdownlist class="ms-2" [id]="'language-dropdown'" [placeholder]="'Languages'"
-          [value]="selectedLanguage.language" [xOffset]="'-90'" [yOffset]="'0'" [icon]="selectedLanguage.icon"
-          [borderDropdown]="false" [iconHeight]="'18px'" [iconWidth]="'18px'" [listItems]="languageItems"
-          (onSelect)="onLanguageSelect($event)">
-        </rds-dropdownlist>
         <li class="nav-item dropdown pe-3 ps-2 me-1">
           <a
             class="nav-link py-0"
@@ -80,6 +75,7 @@
             <span>
               <rds-button
                 class="position-relative"
+                [isFabIcon]="true"
                 [size]="'small'"
                 [id]="'notification'"
                 [isRounded]="true"
