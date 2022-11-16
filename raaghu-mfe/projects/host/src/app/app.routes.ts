@@ -130,16 +130,6 @@ export const APP_ROUTES: Routes = [
         data: { permission: 'Pages.Administration.Tenant.SubscriptionManagement' },
       },
       {
-        path: 'maintenance',
-        loadChildren: () =>
-          loadRemoteModule({
-            type: 'module',
-            remoteEntry: MfeConfig.maintenance.url,
-            exposedModule: './AppModule',
-          }).then((m) => m.AppModule),
-        data: { permission: 'Pages.Administration.Host.Maintenance' },
-      },
-      {
         path: 'webhooksubscription',
         loadChildren: () =>
           loadRemoteModule({
@@ -343,6 +333,14 @@ export const APP_ROUTES: Routes = [
           }).then((m) => m.AppModule),
 
       },
+      {path: 'maintenance',
+      loadChildren: () =>
+        loadRemoteModule({
+          type: 'module',
+          remoteEntry: MfeConfig.maintenance.url,
+          exposedModule: './AppModule',
+        }).then((m) => m.AppModule),
+},
       // {
       //   path: 'editionnew',
       //   loadChildren: () =>

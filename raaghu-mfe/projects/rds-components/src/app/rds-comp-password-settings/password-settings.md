@@ -11,6 +11,7 @@ title: "Components > Password-settings"
 
 <p>Gives a user an access to change the password</p>
 <section class="py-4">
+    <h6>Default</h6>
     <div class="py-3">
       <div class="cust-tabs">
         <ul class="nav nav-tabs" id="myTab" role="tablist">

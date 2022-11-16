@@ -10,7 +10,12 @@ title: "Components > Properties"
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/main.css">
 
 #### Properties
-<p>A card having tables of different users with their respective analytics</p>
+<section class="py-5">
+        <div class="ps-5">
+            <img src="\images\under-construction.png" class="img-fluid ps-5">
+        </div>
+  </section>
+<!-- <p>A card having tables of different users with their respective analytics</p>
  <section class="py-4">
     <div class="py-3">
       <div class="cust-tabs">
@@ -49,4 +54,4 @@ title: "Components > Properties"
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
