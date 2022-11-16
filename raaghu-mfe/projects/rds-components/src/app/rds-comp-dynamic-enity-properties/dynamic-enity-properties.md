@@ -11,7 +11,7 @@ title: "Components > dynamic-enity-properties"
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/style-elements.css">
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/main.css">
 
-#### Dynamic entity properties
+#### Dynamic Entity Properties
 
 <p class="">A card is a small rectangular module with images and text. It is an entry point for users to learn more details</p>
 <section class="py-4">                                                                                             
