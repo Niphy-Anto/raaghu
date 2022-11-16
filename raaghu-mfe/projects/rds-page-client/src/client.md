@@ -10,7 +10,8 @@ title: "Pages > client"
 #### Client
 
 <p>Represents a card with a table representation of a client with a unique id and necessary actions</p>
-<section class="py-4">                                                                                             
+<section class="py-4">    
+    <h6>Default</h6>                                                                                         
     <div class="py-3">
       <div class="cust-tabs">
         <ul class="nav nav-tabs" id="myTab" role="tablist">

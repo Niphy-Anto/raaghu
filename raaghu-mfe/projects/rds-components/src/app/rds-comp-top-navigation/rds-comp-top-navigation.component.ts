@@ -140,7 +140,6 @@ export class RdsTopNavigationComponent extends MfeBaseComponent implements OnIni
     // existingLinkEl.href = 'default.css';
     const event = 'default';
     this.onThemeSelect(event);
-
     if (this.defaultLanguage) {
       this.selectedLanguage = this.defaultLanguage;
     }
@@ -155,9 +154,7 @@ export class RdsTopNavigationComponent extends MfeBaseComponent implements OnIni
       this.emitEvent('tenancyDataReturns', res);
     })
 
-    this.FixedHeaderStyle.emit(this.FixedHeader)
-    console.log('Topnav',this.FixedHeader);
-    
+
   }
 
 
