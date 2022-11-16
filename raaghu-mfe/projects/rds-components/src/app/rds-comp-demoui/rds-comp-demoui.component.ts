@@ -133,6 +133,17 @@ export class RdsCompDemouiComponent implements OnInit {
       id: 2,
       label: "Child Checkbox 2"
     },
+  ]
+  
+  itemListWithInputGroup = [
+    {
+      id: 1,
+      label: "Child Checkbox 1"
+    },
+    {
+      id: 2,
+      label: "Child Checkbox 2"
+    },
     // {
     //   id: 3,
     //   label: "Child Checkbox 3"
@@ -142,6 +153,61 @@ export class RdsCompDemouiComponent implements OnInit {
     //   label: "Child Checkbox 4"
     // }
   ];
+
+  itemListWithoutInputGroup =[
+    {
+      id: 1,
+      label: "Child Checkbox 1"
+    },
+    {
+      id: 2,
+      label: "Child Checkbox 2"
+    },
+  ]
+
+  checkboxParentChilditemList=[
+    {
+      "id": 1,
+      "label": "Parent Checkbox 1",
+      "isSelected": false,
+      "isIntermediate": false,
+      "isClosed": false,
+      "disabled": false,
+      "childList": [
+        {
+          "id": 1,
+          "parent_id": 1,
+          "label": "Child Checkbox 1",
+          "isSelected": false,
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "label": "Parent Checkbox 2",
+      "isSelected": false,
+      "isIntermediate": false,
+      "isClosed": false,
+      "disabled": false,
+      "childList": [
+        {
+          "id": 1,
+          "parent_id": 1,
+          "label": "Child Checkbox 1",
+          "isSelected": false,
+          "disabled": false
+        },
+        {
+          "id": 2,
+          "parent_id": 1,
+          "label": "Child Checkbox 2",
+          "isSelected": false,
+          "disabled": false
+        }
+      ]
+    }
+  ]
 
   listItems = [
     {
