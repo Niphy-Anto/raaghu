@@ -180,7 +180,7 @@ export class AppComponent extends MfeBaseComponent implements OnInit {
     let refreshTokenExpireDate = this.authenticateModal.rememberClient ? new Date().getTime() + 1000 * this.authenticateResult?.refreshTokenExpireInSeconds : undefined;
 
     if (authenticateResult?.accessToken != undefined) {
-      this._router.navigateByUrl('/pages/dashboard');
+      // this._router.navigateByUrl('/pages/dashboard');
       localStorage.setItem('LoginCredential', JSON.stringify({
         token: this.authenticateResult.accessToken,
         refreshToken: this.authenticateResult.refreshToken,
