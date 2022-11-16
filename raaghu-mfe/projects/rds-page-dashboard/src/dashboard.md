@@ -9,8 +9,9 @@ title: "Pages > dashboard"
 
 #### Dashboard
 
-<p >graphical user interface which often provides at-a-glance views of key performance indicators relevant to a particular objective or business process</p>
-<section class="py-4">                                                                                             
+<p >Graphical user interface which often provides at-a-glance views of key performance indicators relevant to a particular objective or business process</p>
+<section class="py-4">    
+<h6>Default</h6>                                                                                         
     <div class="py-3">
       <div class="cust-tabs">
         <ul class="nav nav-tabs" id="myTab" role="tablist">

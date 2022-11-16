@@ -10,7 +10,8 @@ title: "Components > Billing"
 #### Billing
 
 <p>This card provides a user with different subscriptions plan as well as its benefits</p>
-<section class="py-4">                                                                                             
+<section class="py-4">    
+<h6>Default</h6>                                                                                         
     <div class="py-3">
       <div class="cust-tabs">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
