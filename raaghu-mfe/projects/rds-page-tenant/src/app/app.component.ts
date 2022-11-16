@@ -239,7 +239,7 @@ export class AppComponent {
         this.tenantData['tenancyName'] = res.tenantInfo.tenancyName;
         this.tenantData['tenantName'] = res.tenantInfo.name;
         this.tenantData['adminEmailAddress'] = res.tenantInfo.adminEmailAddress;
-        this.tenantData['displayText'] = (res.tenantInfo.editionId && res.tenantInfo.editionId !== null) ? [res.tenantInfo.editionId.toString()] : res.tenantInfo.editionId;
+        this.tenantData['edition'] = (res.tenantInfo.editionId && res.tenantInfo.editionId !== null) ? res.tenantInfo.editionId.toString(): res.tenantInfo.editionId;
         this.tenantData['unlimitedSubscription'] = (res.tenantInfo.subscriptionEndDateUtc !== null) ? false : true;
         this.tenantData['id'] = res.tenantInfo.id;
         this.tenantData['subscriptionEndDate'] = (res.tenantInfo.subscriptionEndDateUtc) ? new Date(res.tenantInfo.subscriptionEndDateUtc) : null;
