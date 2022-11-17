@@ -780,11 +780,19 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
     this.store.dispatch(getUsername(UsernameFilter));
     this.store.select(selectUserFilter).subscribe((res: any) => {
       if (res && res.items && res.items.length) {
-        res.items.forEach((element: any) => {
-          const item: any = {
-            value: element.value,
-            displayText: element.name,
-          };
+        res.items.forEach((res: any) => {
+          const item: any = {       
+            value:res.value,
+            some:res.name,
+            isSelected:res.isSelected,
+            icon:'',
+            iconWidth:0,
+            iconHeight:0,
+            iconFill:false,
+            iconStroke: true,
+            isFree: res.isFree
+          
+        };
           this.usernameList.push(item);
         });
         const mfeConfig = this.rdsTopNavigationMfeConfig;

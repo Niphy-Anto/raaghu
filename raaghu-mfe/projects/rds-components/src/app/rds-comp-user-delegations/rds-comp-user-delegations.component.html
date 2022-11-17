@@ -17,9 +17,14 @@
           <div class="row" *ngIf="deligateDivFlag">
             <div class="col-md-12">
               <div class="form-group mb-3">
-                <rds-select-list [value]="[username]" [label]="translate.instant('Username')" 
-                  required [labelPosition]="'top'" [(ngModel)]="username" [placeholder]="'Select User'" ngDefaultControl [id]="'user-list'" name="usernameData" [itemList]="userList">
-                </rds-select-list>
+               <div>
+                <rds-label [label]="translate.instant('Username')" ></rds-label>
+               </div>
+                <rds-dropdownlist [placeholder]="translate.instant('Select User')" [borderDropdown]="true" required
+                class="text-dark" [id]="'user-list'" [(ngModel)]="username" [listItems]="userList"
+               [value]="username" (onSelect)="onUsernameSelect($event)" ngDefaultControl name="targetId">
+              </rds-dropdownlist>
+
               </div>
             </div>
             <div class="col-md-6">
