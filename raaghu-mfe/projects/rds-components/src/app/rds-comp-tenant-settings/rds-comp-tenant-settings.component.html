@@ -45,11 +45,9 @@
                         <span class="text-danger" *ngIf="confirmpswd.errors.required">{{"Confirm Password is
                             required"|translate}}</span>
                     </div>
-                </div>
-            </div>
-            <div class="col-12 sm-p-0 text-center">
-                <span class="text-danger" *ngIf="isPasswordMismatch">{{"Password mismatch
+                    <span class="text-danger" *ngIf="isPasswordMismatch">{{"Password mismatch
                         found"|translate}}</span>
+                </div>
             </div>
         </div>
         <div class="row">
