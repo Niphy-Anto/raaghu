@@ -18,9 +18,11 @@
                         [placeholder]="translate.instant('Password')" (keyup)="confirmPasswordValidation()"
                         [(ngModel)]="tenantSettingsInfo.password" [isRequired]=true name="password" required>
                     </rds-input> -->
-                    <rds-input [inputType]="'password'" [iconCursor]="'pointer'" [icon]="'eye'" [iconOpacity]="'0.4'" [iconHeight]="'18px'"
-                        [iconWidth]="'18px'" [label]="translate.instant('Password')" [(ngModel)]="tenantSettingsInfo.password" [labelPosition]="'top'" name="password"
-                        required #newpswd="ngModel" [placeholder]="translate.instant('Password')" [isRequired]="passwordValidation" required>
+                    <rds-input [inputType]="'password'" [iconCursor]="'pointer'" [icon]="'eye'" [iconOpacity]="'0.4'"
+                        [iconHeight]="'18px'" [iconWidth]="'18px'" [label]="translate.instant('Password')"
+                        [(ngModel)]="tenantSettingsInfo.password" [labelPosition]="'top'" name="password" required
+                        #newpswd="ngModel" [placeholder]="translate.instant('Password')"
+                        [isRequired]="passwordValidation" required>
                     </rds-input>
                     <div class="form-control-feedback"
                         *ngIf="newpswd.errors&&(newpswd.dirty||newpswd.touched)&& passwordValidation">
@@ -32,9 +34,11 @@
             <div class="col-md-6 sm-p-0">
                 <div class="form-group mb-3">
                     <rds-input [inputType]="'password'" [iconCursor]="'pointer'" [icon]="'eye'" [iconHeight]="'18px'"
-                        [iconWidth]="'18px'" [iconOpacity]="'0.4'" [label]="translate.instant('Confirm Password')" [labelPosition]="'top'"
-                        [placeholder]="translate.instant('Confirm Password')" #confirmpswd="ngModel" (keyup)="confirmPasswordValidation()"
-                        [(ngModel)]="tenantSettingsInfo.confirmPassword" [isRequired]="passwordValidation" name="cpassword" required>
+                        [iconWidth]="'18px'" [iconOpacity]="'0.4'" [label]="translate.instant('Confirm Password')"
+                        [labelPosition]="'top'" [placeholder]="translate.instant('Confirm Password')"
+                        #confirmpswd="ngModel" (keyup)="confirmPasswordValidation()"
+                        [(ngModel)]="tenantSettingsInfo.confirmPassword" [isRequired]="passwordValidation"
+                        name="cpassword" required>
                     </rds-input>
                     <div class="form-control-feedback"
                         *ngIf="confirmpswd.errors&&(confirmpswd.dirty||confirmpswd.touched)&&passwordValidation">
@@ -43,9 +47,9 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 sm-p-0">
-                <span class="text-danger" *ngIf="isPasswordMismatch"><small>{{"Password mismatch
-                        found"|translate}}</small></span>
+            <div class="col-12 sm-p-0 text-center">
+                <span class="text-danger" *ngIf="isPasswordMismatch">{{"Password mismatch
+                        found"|translate}}</span>
             </div>
         </div>
         <div class="row">
