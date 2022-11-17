@@ -26,6 +26,7 @@ export class RdsUserDelegationsComponent implements OnInit, OnChanges, OnDestroy
   username: any = '';
   startDate: Date = new Date();
   endDate: any = '';
+  targetId = undefined;
   @Output() onDeligateSave = new EventEmitter<any>()
   @Output() onCancelDeligate = new EventEmitter<any>()
   @Output() onDeleteDeligate = new EventEmitter<any>()
@@ -38,6 +39,15 @@ export class RdsUserDelegationsComponent implements OnInit, OnChanges, OnDestroy
       this.buttonSpinner = true;
       this.submitted = false;
     }
+
+    if(this.targetId){
+      this.userList.forEach((res: any) => {
+        if (res && +res.value===+this.targetId) {
+          this.username = res.some;
+        }
+      })
+    }
+
   }
 
   ngOnInit(): void {
@@ -62,18 +72,21 @@ export class RdsUserDelegationsComponent implements OnInit, OnChanges, OnDestroy
     if (!delegateForm.valid) {
       return;
     }
+   
     this.buttonSpinner = true;
     this.submitted = true;
     const DeligateData: any = {
       endTime: this.endDate,
       startTime: this.startDate,
-      targetUserId: this.username
+      targetUserId: this.targetId
     }
+
     this.onDeligateSave.emit(DeligateData);
     this.deligateDivFlag = false;
     this.endDate = new Date();
     this.startDate = new Date();
-    this.username[0] = '';
+    this.username = '';
+
 
   }
   onCancel(): void {
@@ -95,5 +108,9 @@ export class RdsUserDelegationsComponent implements OnInit, OnChanges, OnDestroy
   ngOnDestroy(): void {
   }
 
+  onUsernameSelect(selectedItem: any): void {
+     this.username = selectedItem.item.some;
+    this.targetId = selectedItem.item.value;
+  }
 
 }
