@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
 import { selectDefaultLanguage } from '@libs/state-management';
 import { Store } from '@ngrx/store';
 import { TranslateService } from '@ngx-translate/core';
@@ -40,7 +40,7 @@ import { transition, trigger, query, style, animate, } from '@angular/animations
     ])
   ]
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit, AfterViewInit{
   isAnimation: boolean = true;
 
   title = 'maintenance';
@@ -63,13 +63,22 @@ export class AppComponent implements OnInit{
     { value: 'Refresh', some: 'value', key: 'refresh', icon: 'refresh', iconWidth: '20px', iconHeight: '20px' },
     { value: 'Download All', some: 'value', key: 'downloadall', icon: 'download_data', iconWidth: '20px', iconHeight: '20px' },
   ];
-  constructor(private store: Store,
-    private sharedService:SharedService,
-     public translate: TranslateService) { }
+  tooltipRefresh: string= 'Refresh';
   cashedata: any = []
   websiteLogData: any[];
   isShimmer: boolean = false;
+  
+  constructor(private store: Store,
+    private sharedService:SharedService,
+     public translate: TranslateService) { }
+
+  ngAfterViewInit(): void {
+    this.tooltipRefresh = "Refresh";
+  }
+  
+ 
   ngOnInit(): void {
+    this.tooltipRefresh = "Refresh";
     this.isAnimation = true;
     this.rdscacheMfeConfig = {
       name: 'RdsCompCache',

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { AlertService, ComponentLoaderOptions } from '@libs/shared';
 
 import { TranslateService } from '@ngx-translate/core';
@@ -16,7 +16,7 @@ declare let bootstrap: any;
   templateUrl: './rds-comp-role-list.component.html',
   styleUrls: ['./rds-comp-role-list.component.scss']
 })
-export class RdsCompRoleListComponent implements OnInit {
+export class RdsCompRoleListComponent implements OnInit , AfterViewInit{
   currentAlerts: any = [];
   public rdsAlertMfeConfig: ComponentLoaderOptions = {
     name: 'RdsCompAlert',
@@ -70,6 +70,8 @@ export class RdsCompRoleListComponent implements OnInit {
   RoleFromNewRole: any;
   EnableTreeSave: boolean = true;
   public tableData: any = [];
+
+  tooltipRefresh: string;
   public navtabsItems: any = [
     {
       label: this.translate.instant('Role'),
@@ -89,10 +91,14 @@ export class RdsCompRoleListComponent implements OnInit {
     public translate: TranslateService,
     private alertService: AlertService,
   ) { }
+  ngAfterViewInit(): void {
+    this.tooltipRefresh = "Refresh";
+  }
 
   ngOnInit(): void {
     this.subscribeToAlerts();
     this.activePage = 0;
+    this.tooltipRefresh = "Refresh";
   }
   ngDoCheck(): void {
 
