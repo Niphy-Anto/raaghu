@@ -64,7 +64,7 @@
         </div>
         <div class="row" *ngIf="contentOnEdit">
           <div class="col-md-12">
-            <div class="form-group mb-3">
+            <div class="form-group mb-3 py-2">
               <rds-input size="medium" [inputType]="'text'" [labelPosition]="'top'"
                 [label]="translate.instant('Edition Name')" #edition_name="ngModel" [isRequired]=true [placeholder]="'Edition name'"
                 required [(ngModel)]="EditionName" name="edition" ngDefaultControl>
@@ -164,7 +164,7 @@
 <rds-offcanvas [canvasTitle]="translate.instant(moveTenantCanvasTitle)" [offId]="'moveTenantEdition'" [placement]="'end'" 
   [offcanvaswidth]="600" *ngIf="viewMoveTenantCanvas" (onClose)="closeMoveTenantCanvas()">
   <!-- <b>{{moveTenantCanvasTitle}}</b> -->
-  <div class="tab-content px-3 py-4 navsm-p-0">
+  <div class="tab-content px-3 navsm-p-0">
     <div class="row">
       <div class="col-md-12">
         <div class="text-primary mb-2">{{tenantCount}} {{"Tenants will be moved"|translate}}</div>
