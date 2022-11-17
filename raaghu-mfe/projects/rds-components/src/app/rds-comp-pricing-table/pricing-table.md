@@ -11,6 +11,7 @@ title: "Components > Pricing-table"
 
 <p>Gives a card on tables categorized into different subscription plan categories with different pricing details</p>
 <section class="py-4">
+    <h6>Default</h6>
     <div class="py-3">
       <div class="cust-tabs">
         <ul class="nav nav-tabs" id="myTab" role="tablist">

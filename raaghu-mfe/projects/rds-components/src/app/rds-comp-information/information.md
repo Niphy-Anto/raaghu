@@ -12,6 +12,7 @@ title: "Components > Information"
 
 <p>It allows a user with a card having details with relevant information boxes</p>
 <section class="py-4">
+    <h6>Default</h6>
     <div class="py-3">
       <div class="cust-tabs">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
