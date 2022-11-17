@@ -154,7 +154,7 @@ export class AppComponent implements OnInit {
     name: "Standard",
     price: "25",
     duration: "15 days",
-    iconurl: "professional_subscription",
+    iconurl: "standard_subscription",
     recommended: false,
     features: ["Maximum User Count", "Test Check feature","Test Check feature 2"]
   },
@@ -170,7 +170,7 @@ export class AppComponent implements OnInit {
     name: "Professional",
     price: "22",
     duration: "1 month",
-    iconurl: "standard_subscription",
+    iconurl: "professional_subscription",
     recommended: false,
     features: ["Maximum User Count", "Test Check feature","Test Check feature 2"]
   }];
