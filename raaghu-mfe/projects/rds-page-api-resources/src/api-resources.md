@@ -10,7 +10,8 @@ title: "Pages > Api-Resources"
 #### Api Resources
 
 <p>Api Resource list provides a tabular representation of various names and their sub categories as well as necessary action required </p>
-<section class="py-4">                                                                                             
+<section class="py-4">   
+    <h6>Default</h6>                                                                                       
     <div class="py-3">
       <div class="cust-tabs">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
