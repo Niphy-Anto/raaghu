@@ -9,9 +9,10 @@ title: "Components > Shipping-Address"
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/style-elements.css">
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/main.css">
 
-#### Shipping-Address
+#### Shipping Address
 <p>A card having a user details for shipment of a product</p>
  <section class="py-4">
+ <h6>Tempelate 1</h6>
     <div class="py-3">
       <div class="cust-tabs">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
