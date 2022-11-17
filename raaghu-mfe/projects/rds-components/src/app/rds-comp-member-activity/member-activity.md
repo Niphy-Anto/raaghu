@@ -10,7 +10,8 @@ title: "Components > Member Activity"
 #### Member Activity
 
 <p >A table with the necessary statistics about a user </p>
-<section class="py-4">                                                                                             
+<section class="py-4">       
+    <h6>Default</h6>                                                                                      
     <div class="py-3">
       <div class="cust-tabs">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
