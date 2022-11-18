@@ -606,6 +606,9 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
           if (res.defaultLanguageName === item.name) {
             this.selectedLanguage.language = item.displayName;
             this.selectedLanguage.icon = item.icon.split(' ')[1];
+            const mfe = this.rdsTopNavigationMfeConfig;
+            mfe.input.selectedLanguage = {...this.selectedLanguage};
+            this.rdsTopNavigationMfeConfig = mfe;
           }
           languages.push(item.name);
         });
@@ -617,7 +620,7 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
         // this.translate.addLangs(languages);
         const mfe = this.rdsTopNavigationMfeConfig;
         mfe.input.languageItems = [...this.languageItems];
-        mfe.input.defaultLanguage = this.selectedLanguage;
+        mfe.input.selectedLanguage = {...this.selectedLanguage};
         this.rdsTopNavigationMfeConfig = mfe;
       }
     });
