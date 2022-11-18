@@ -63,6 +63,7 @@ import { slideInAnimation } from '../animation';
 import { RouterOutlet } from '@angular/router';
 import * as moment from 'moment';
 import { selectAllVisualsettings } from 'projects/libs/state-management/src/lib/state/Visual-settings/visual-settings.selector';
+import { getVisualsettings } from 'projects/libs/state-management/src/lib/state/Visual-settings/visual-settings.actions';
 declare var bootstrap: any;
 @Component({
   selector: 'app-sidenav',
@@ -158,7 +159,7 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
       id: '',
       permissionName: 'Pages.Tenant.Dashboard',
       icon: 'home',
-      path: '/pages/dashboard', 
+      path: '/pages/dashboard',
       description: 'Statistics and reports',
       descriptionTranslationKey: 'Statistics and reports',
     },
@@ -371,6 +372,10 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
   counter: number = 0;
   isLightMode: boolean = true;
   fixedHeader: boolean = true;
+  tenancyTableData = [];
+  sidenavItems = [];
+  permissions: any;
+
   constructor(
     private router: Router,
     private store: Store,
@@ -382,100 +387,37 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
     private theme: ThemesService,
     @Inject(DOCUMENT) private document: Document
   ) {
- 
+
     super(injector);
     this.index = localStorage.getItem('themeIndex');
-    if(this.index == null){
+    if (this.index == null) {
       this.index = '12'
     }
   }
 
 
-  ngAfterViewInit() {}
-  getdata() {
-    this.store.select(selectTenancyData).subscribe((res) => console.log(res));
+  ngAfterViewInit() {
+
   }
-  tenancyTableData = [];
-  sidenavItems = [];
 
-  permissions: any;
-  selectAllvisualSettings(){
-    this.store.select(selectAllVisualsettings).subscribe((res: any) => {
-      if (res && res.length > 0) {
-        const header = JSON.parse(
-          res[this.index].header.minimizeDesktopHeaderType
-        );
-        const rdsTopNavigationMfeConfig = this.rdsTopNavigationMfeConfig;
-        if (header) {
-          rdsTopNavigationMfeConfig.input.FixedHeader = header.desktop;
-          if (header.desktop) {
-            this.document.getElementById('FixedHeaderOverFlow').style.overflow =
-              'scroll';
-            document.getElementsByTagName('html')[0].style.overflow = 'hidden';
-          } else {
-            this.document.getElementById('FixedHeaderOverFlow').style.overflow =
-              'inherit';
-            document.getElementsByTagName('html')[0].style.overflow = 'inherit';
-          }
-          this.FixedHeaderBody = header.desktop;
-        }
-        this.collapseRequired = res[this.index].menu.allowAsideMinimizing;
-
-        if (res[this.index].menu.defaultMinimizedAside) {
-          if (this.sideMenuCollapsed == false) {
-            document.getElementById('sidenavCollapsed').click();
-          }
-        } else {
-          if (this.sideMenuCollapsed == true) {
-            document.getElementById('sidenavCollapsed').click();
-          }
-        }
-
-        //  const aside = document.getElementById('aside');
-        // if (
-        //   res[this.index].menu.hoverableAside 
-        // ) {
-        //   aside.addEventListener('mouseenter', () => {
-        //     if (this.sideMenuCollapsed == true) {
-        //       document.getElementById('sidenavCollapsed').click();
-        //     }
-        //   });
-        //   aside.addEventListener('mouseleave', () => {
-        //     if (
-        //       this.sideMenuCollapsed == false
-        //     ) {
-        //       document.getElementById('sidenavCollapsed').click();
-        //     } 
-        //   });
-        // }
-
-        const selectedTheme = res[this.index].menu.asideSkin;
-        this.rdsTopNavigationMfeConfig = rdsTopNavigationMfeConfig;
-        this.theme.theme = selectedTheme;
-      }
-    });
-  }
 
   ngOnInit(): void {
+    this.store.dispatch(getVisualsettings());
+    let selectedTheme = localStorage.getItem('THEME');
+    this.setTheme(selectedTheme);
     this.userAuthService.index$.subscribe((value) => {
       this.index = value;
-      this.selectAllvisualSettings();    
+      // this.selectAllvisualSettings();
     });
-    
-    this.selectAllvisualSettings()
-    const selectedTheme = localStorage.getItem('THEME');
-    if (selectedTheme == "undefined" || selectedTheme == '' || selectedTheme == undefined || selectedTheme == null) {
-      this.theme.theme = 'light';
-      localStorage.setItem('THEME', 'light');
-      this.isLightMode = true;
-    } else {
-      this.theme.theme = selectedTheme;
-      if (selectedTheme == 'light') {
-        this.isLightMode = true;
-      } else {
-        this.isLightMode = false;
+    this.alertService.themes.subscribe((theme) => {
+      if (theme) {
+        this.setTheme(theme);
       }
-    }
+
+    })
+
+    // this.selectAllvisualSettings()
+
     const tenancy: any = JSON.parse(localStorage.getItem('tenantInfo'));
     if (tenancy) {
       this.tenancy = tenancy.name;
@@ -679,7 +621,7 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
         this.rdsTopNavigationMfeConfig = mfe;
       }
     });
-    this.on('tenancyDataAgain').subscribe((res) => {});
+    this.on('tenancyDataAgain').subscribe((res) => { });
     if (this.router.url) {
       let matchRoute: any;
       const index = this.getMatchedRoute(this.sidenavItems);
@@ -755,7 +697,7 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
     });
     this.store.dispatch(getDelegations());
     this.store.select(selectDelegationsInfo).subscribe((res: any) => {
-      this.rdsDeligateTableData=[];
+      this.rdsDeligateTableData = [];
       if (res && res.items && res.items.length) {
         res.items.forEach((element: any) => {
           const item: any = {
@@ -805,8 +747,67 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
       }
     });
   }
+
   ngOnChanges(changes: SimpleChanges): void {
     this.rdsTopNavigationMfeConfig.input.backgroundColor = this.backgroundColor;
+  }
+  getdata() {
+    this.store.select(selectTenancyData).subscribe((res) => console.log(res));
+  }
+
+  selectAllvisualSettings() {
+    this.store.select(selectAllVisualsettings).subscribe((res: any) => {
+      if (res && res.length > 0) {
+        const header = JSON.parse(
+          res[this.index].header.minimizeDesktopHeaderType
+        );
+        const rdsTopNavigationMfeConfig = this.rdsTopNavigationMfeConfig;
+        if (header) {
+          rdsTopNavigationMfeConfig.input.FixedHeader = header.desktop;
+          if (header.desktop) {
+            this.document.getElementById('FixedHeaderOverFlow').style.overflow =
+              'scroll';
+            document.getElementsByTagName('html')[0].style.overflow = 'hidden';
+          } else {
+            this.document.getElementById('FixedHeaderOverFlow').style.overflow =
+              'inherit';
+            document.getElementsByTagName('html')[0].style.overflow = 'inherit';
+          }
+          this.FixedHeaderBody = header.desktop;
+        }
+        this.collapseRequired = res[this.index].menu.allowAsideMinimizing;
+
+        if (res[this.index].menu.defaultMinimizedAside) {
+          if (this.sideMenuCollapsed == false) {
+            document.getElementById('sidenavCollapsed').click();
+          }
+        } else {
+          if (this.sideMenuCollapsed == true) {
+            document.getElementById('sidenavCollapsed').click();
+          }
+        }
+
+        //  const aside = document.getElementById('aside');
+        // if (
+        //   res[this.index].menu.hoverableAside 
+        // ) {
+        //   aside.addEventListener('mouseenter', () => {
+        //     if (this.sideMenuCollapsed == true) {
+        //       document.getElementById('sidenavCollapsed').click();
+        //     }
+        //   });
+        //   aside.addEventListener('mouseleave', () => {
+        //     if (
+        //       this.sideMenuCollapsed == false
+        //     ) {
+        //       document.getElementById('sidenavCollapsed').click();
+        //     } 
+        //   });
+        // }
+
+
+      }
+    });
   }
   redirectPath(event): void {
     const rdsAlertMfeConfig = this.rdsAlertMfeConfig;
@@ -823,7 +824,7 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
     }
     this.shared.setTopNavTitle('');
   }
-  redirect(event): void {}
+  redirect(event): void { }
 
   onCollapse(event): void {
     this.sideMenuCollapsed = event;
@@ -912,13 +913,37 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
 
   toggleBetweenMode(event: any) {
     let checked = event;
+    let selectedTheme: string = 'default';
     if (!checked) {
       this.theme.theme = 'dark';
       localStorage.setItem('THEME', 'dark');
+      selectedTheme = 'dark'
+      localStorage.setItem('themeIndex', '7');
+
     } else {
       this.theme.theme = 'light';
-      localStorage.setItem('THEME', 'light'); 
+      localStorage.setItem('THEME', 'light');
+      selectedTheme = 'default';
+      localStorage.setItem('themeIndex', '12');
+
     }
+    this.alertService.setTheme(selectedTheme);
+    // if (selectedTheme !== undefined && selectedTheme !== '' && selectedTheme !== 'undefined') {
+    //   const headEl = this.document.getElementsByTagName('head')[0];
+    //   const existingLinkEl = this.document.getElementById(
+    //     'client-theme'
+    //   ) as HTMLLinkElement;
+    //   const newLinkEl = this.document.createElement('link');
+
+    //   if (existingLinkEl) {
+    //     existingLinkEl.href = selectedTheme + '.css';
+    //   } else {
+    //     newLinkEl.id = 'client-theme';
+    //     newLinkEl.rel = 'stylesheet';
+    //     newLinkEl.href = selectedTheme + '.css';
+    //     headEl.appendChild(newLinkEl);
+    //   }
+    // }
   }
 
   private filterNavItems(
@@ -964,6 +989,37 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
       }
     });
     return sidenavItems;
+  }
+
+
+  setTheme(selectedTheme: any): void {
+    if (selectedTheme == "undefined" || selectedTheme == '' || selectedTheme == 'light' || selectedTheme == 'default' || selectedTheme == undefined || selectedTheme == null) {
+      this.theme.theme = 'light';
+      localStorage.setItem('THEME', 'light');
+      this.isLightMode = true;
+    } else {
+      this.theme.theme = 'dark';
+      this.isLightMode = false;
+    }
+    if (selectedTheme !== undefined && selectedTheme !== '' && selectedTheme !== 'undefined') {
+      if (selectedTheme == 'light') {
+        selectedTheme = 'default';
+      }
+      const headEl = this.document.getElementsByTagName('head')[0];
+      const existingLinkEl = this.document.getElementById(
+        'client-theme'
+      ) as HTMLLinkElement;
+      const newLinkEl = this.document.createElement('link');
+
+      if (existingLinkEl) {
+        existingLinkEl.href = selectedTheme + '.css';
+      } else {
+        newLinkEl.id = 'client-theme';
+        newLinkEl.rel = 'stylesheet';
+        newLinkEl.href = selectedTheme + '.css';
+        headEl.appendChild(newLinkEl);
+      }
+    }
   }
 
 }

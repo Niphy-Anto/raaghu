@@ -1,6 +1,6 @@
 import { Component, DoCheck, EventEmitter, Inject, Injector, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
-import { ComponentLoaderOptions, MfeBaseComponent, SharedService, ThemeSettingsDto } from '@libs/shared';
+import { AlertService, ComponentLoaderOptions, MfeBaseComponent, SharedService, ThemeSettingsDto } from '@libs/shared';
 import { TranslateService } from '@ngx-translate/core';
 import { TableHeader } from '../../models/table-header.model';
 import { DOCUMENT } from '@angular/common';
@@ -65,7 +65,7 @@ export class RdsTopNavigationComponent extends MfeBaseComponent implements OnIni
   @Output() onUpdateNotificationSettings = new EventEmitter<any>();
   @Input() linkedAccountHeaders: any = [];
   @Input() linkedAccountData: any = [];
-  @Input() FixedHeader :boolean = true
+  @Input() FixedHeader: boolean = true
   @Input() showDelegationButtonSpinner: boolean = true;
   tabName: string = '';
   navtabItems: any = [
@@ -112,6 +112,7 @@ export class RdsTopNavigationComponent extends MfeBaseComponent implements OnIni
   @Output() FixedHeaderStyle = new EventEmitter<any>();
 
   constructor(private router: Router, private injector: Injector,
+    private alertService: AlertService,
     private shared: SharedService,
     public translate: TranslateService, @Inject(DOCUMENT) private document: Document
   ) {
@@ -138,8 +139,21 @@ export class RdsTopNavigationComponent extends MfeBaseComponent implements OnIni
     })
     // const existingLinkEl = this.document.getElementById('client-theme') as HTMLLinkElement;
     // existingLinkEl.href = 'default.css';
-    const event = 'default';
-    this.onThemeSelect(event);
+    let selectedTheme = localStorage.getItem('THEME');
+    if (selectedTheme === 'light' || selectedTheme === 'dark' || selectedTheme === '' || selectedTheme == undefined || selectedTheme == null || selectedTheme === 'undefined') {
+      selectedTheme = 'default';
+    }
+    this.selectedTheme = selectedTheme;
+    // this.onThemeSelect(selectedTheme);
+
+    this.alertService.themes.subscribe((theme) => {
+      if (theme) {
+        // this.onThemeSelect(theme);
+        this.selectedTheme = theme;
+
+      }
+
+    })
     if (this.defaultLanguage) {
       this.selectedLanguage = this.defaultLanguage;
     }
@@ -193,20 +207,21 @@ export class RdsTopNavigationComponent extends MfeBaseComponent implements OnIni
   onToggleButton(): void {
     this.toggleEvent.emit();
   }
-  onThemeSelect(event: any) {
+  onThemeSelect(event: any, isSelected: boolean = false) {
     this.selectedTheme = event;
-    const headEl = this.document.getElementsByTagName('head')[0];
-    const existingLinkEl = this.document.getElementById('client-theme') as HTMLLinkElement;
-    const newLinkEl = this.document.createElement('link');
+    this.alertService.setTheme(this.selectedTheme)
+    // const headEl = this.document.getElementsByTagName('head')[0];
+    // const existingLinkEl = this.document.getElementById('client-theme') as HTMLLinkElement;
+    // const newLinkEl = this.document.createElement('link');
 
-    if (existingLinkEl) {
-      existingLinkEl.href = event + '.css';
-    } else {
-      newLinkEl.id = 'client-theme'
-      newLinkEl.rel = 'stylesheet';
-      newLinkEl.href = event + '.css';
-      headEl.appendChild(newLinkEl);
-    }
+    // if (existingLinkEl) {
+    //   existingLinkEl.href = event + '.css';
+    // } else {
+    //   newLinkEl.id = 'client-theme'
+    //   newLinkEl.rel = 'stylesheet';
+    //   newLinkEl.href = event + '.css';
+    //   headEl.appendChild(newLinkEl);
+    // }
   }
   openNotification(): void {
     this.showNotification = !this.showNotification;
