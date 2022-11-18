@@ -22,12 +22,13 @@ export class RdsCompLoginAttemptsComponent implements OnInit {
   @Input() public operationLogs: any = [];
   @Input() public operationLogsHeaders: TableHeader[] = [];
    showInput:boolean=false;
-
+   @Input() FilterData: any=[]
    
 
-  result:string
-  startDate:any
-  endDate:any
+  result:string;
+  endDate = new Date();
+  startDate = new Date();
+
   @Output() RefreshLoginAttemts = new EventEmitter<any>();
   @Input()
   listItemsResult: any[] = [{ value: '', displayText: 'All'},
@@ -58,6 +59,15 @@ export class RdsCompLoginAttemptsComponent implements OnInit {
     };
    
   }
+
+  startDateModify(event) {
+
+    this.startDate = event;
+  }
+  endDateModify(event) {
+
+    this.endDate = event;
+  }
   ngOnChanges(changes: SimpleChanges): void {
     if (this.rdsLoginTableMfeConfig) {
       this.rdsLoginTableMfeConfig.input.tableData = this.LoginAttempts.LoginDatatable;
@@ -69,19 +79,20 @@ export class RdsCompLoginAttemptsComponent implements OnInit {
  
 Search(loginAttempt:NgForm){
   loginAttempt.form.markAllAsTouched();
-let startdate = this.startDate .toISOString()
-
-let endDate = this.endDate.toISOString()
+  let startdate = this.startDate .toISOString()
+  let endDate = this.endDate.toISOString()
+console.log(" loginAttempt.form.value == ",  loginAttempt.form.value);
   const FilterData:any={
     StartDate:startdate,
     EndDate:endDate,
-    Result:this.result,
+    Result:this.Result,
     Sorting:undefined,
     maxResultCount:10,
     SkipCount:0,
     filter:undefined
   }
 this.RefreshLoginAttemts.emit(FilterData)
+
 }
 
 onClickShowInput()  {
