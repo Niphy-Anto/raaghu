@@ -71,7 +71,7 @@ export class RdsCompRoleListComponent implements OnInit , AfterViewInit{
   EnableTreeSave: boolean = true;
   public tableData: any = [];
 
-  tooltipRefresh: string;
+  tooltipRefresh: string= 'Refresh';
   public navtabsItems: any = [
     {
       label: this.translate.instant('Role'),
