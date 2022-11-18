@@ -37,8 +37,7 @@ export class RdsTopNavigationComponent extends MfeBaseComponent implements OnIni
   @Input() selectedMenuDescription: string = 'Statics and reports';
   @Input() userList: any = [];
   @Input() languageItems = [];
-  @Input() defaultLanguage: string = '';
-  selectedLanguage: any = { language: '', icon: '' };
+  @Input()  selectedLanguage: any = { language: '', icon: '' };
   @Input() notificationData = [];
   @Input() tenancy: string = 'Host Admin';
   @Input() offCanvasId: string = ''
@@ -121,9 +120,7 @@ export class RdsTopNavigationComponent extends MfeBaseComponent implements OnIni
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (this.defaultLanguage) {
-      this.selectedLanguage = this.defaultLanguage;
-    }
+
   }
 
   ngOnInit(): void {
@@ -154,9 +151,7 @@ export class RdsTopNavigationComponent extends MfeBaseComponent implements OnIni
     //   }
 
     // })
-    if (this.defaultLanguage) {
-      this.selectedLanguage = this.defaultLanguage;
-    }
+
 
 
     this.on('logout').subscribe(r => {
