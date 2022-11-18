@@ -42,10 +42,10 @@ title: "Components > dynamic-enity-properties"
 <div class="row m-0">
 
 ```html
-<app-rds-comp-dynamic-enity-properties
+<rds-comp-dynamic-enity-properties
   [DynamicEntityPropertiesTableHeader]="DynamicEntityPropertiesTableHeader"
   [DynamicEntityPropertiesTableData]="DynamicEntityPropertiesTableData"
-></app-rds-comp-dynamic-enity-properties>  
+></rds-comp-dynamic-enity-properties>  
 ```
 </div>
 </div>

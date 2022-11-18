@@ -44,9 +44,9 @@ title: "Components > Properties"
 <div class="row m-0">
 
 ```html
-<app-rds-comp-properties
+<rds-comp-properties
   [PropertyTableData]="PropertyTableData"
-></app-rds-comp-properties>
+></rds-comp-properties>
 ```
 </div>
 </div>

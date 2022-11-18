@@ -38,7 +38,7 @@ title: "Components > tenant-dashboard"
 <div class="row m-0">
 
 ```html
-<app-rds-comp-tenant-dashboard
+<rds-comp-tenant-dashboard
   [ConnectedCallsData]="ConnectedCallsData"
   [ClientCallsData]="ClientCallsData"
   [ProfitShareData]="ProfitShareData"
@@ -64,7 +64,7 @@ title: "Components > tenant-dashboard"
   [ConnectedCallschartLabels]="ConnectedCallschartLabels"
   [ConnectedCallschartWidth]="200"
   [ConnectedCallschartOptions]="ConnectedCallschartOptions"
-></app-rds-comp-tenant-dashboard>
+></rds-comp-tenant-dashboard>
 ```
 </div>
 </div>

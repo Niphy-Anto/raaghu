@@ -41,10 +41,10 @@ title: "Components > Email"
 <div class="row m-0">
 
 ```html
-  <app-rds-comp-email
+  <rds-comp-email
   [editShimmer]="false"
   [EmailData]="EmailData"
-></app-rds-comp-email>
+></rds-comp-email>
 ```
 </div>
 </div>

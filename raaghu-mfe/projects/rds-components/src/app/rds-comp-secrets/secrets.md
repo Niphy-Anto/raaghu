@@ -40,7 +40,7 @@ title: "Components > Secrets"
 <div class="row m-0">
 
 ```html
-<app-rds-comp-secrets></app-rds-comp-secrets>
+<rds-comp-secrets></rds-comp-secrets>
 ```
 </div>
 </div>
