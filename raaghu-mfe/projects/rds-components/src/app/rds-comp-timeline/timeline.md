@@ -42,10 +42,10 @@ title: "Components > Timeline"
 <div class="row m-0">
 
 ```html
-<app-rds-comp-timeline
+<rds-comp-timeline
   displayType="Basic"
   [timelinData]="timelinData"
-></app-rds-comp-timeline>
+></rds-comp-timeline>
 ```
 </div>
 </div>

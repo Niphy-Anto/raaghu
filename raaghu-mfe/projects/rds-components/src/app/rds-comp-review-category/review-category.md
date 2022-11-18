@@ -40,9 +40,9 @@ title: "Components > Review-Category"
 <div class="row m-0">
 
 ```html
-<app-rds-comp-review-category
+<rds-comp-review-category
   [itemList]="itemList"
-></app-rds-comp-review-category>
+></rds-comp-review-category>
 ```
 </div>
 </div>

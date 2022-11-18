@@ -61,14 +61,14 @@ title: "Pages > Language"
   </div>
   <div class="col-md-12">
     <div class="card p-2 h-100 border-0 rounded-0 card-full-stretch">
-      <app-rds-data-table
+      <rds-data-table
         [tableHeaders]="languageTableHeader"
         [tableStyle]="'light'"
         [tableData]="languageTableData"
         [recordsPerPage]="10"
         [pagination]="true"
         [inlineEdit]="false"
-      ></app-rds-data-table>
+      ></rds-data-table>
     </div>
   </div>
 </div>

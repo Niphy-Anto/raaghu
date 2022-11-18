@@ -717,7 +717,7 @@
         },
         {
           "id": 7,
-          "image": "images/admin-dashboard1.png",
+          "image": "images/tenant-dashboard1.png",
           "title": "Admin Dashboard",
           "text": " Gives a user a graphical and statistical representation of a particular objective",
           "link": "/comp-admin-dashboard"

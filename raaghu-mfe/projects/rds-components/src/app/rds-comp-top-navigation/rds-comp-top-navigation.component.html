@@ -40,14 +40,7 @@
       id="navbarSupportedContent1"
     >
       <ul class="navbar-nav d-flex align-items-center ms-auto">
-        <rds-dropdownlist
-          [placeholder]="'Select theme'"
-          [value]="selectedTheme"
-          [id]="'theme-dropdown'"
-          [borderDropdown]="false"
-          [listItems]="themes"
-          (onSelect)="onThemeSelect($event.item.value)"
-        ></rds-dropdownlist>
+       
         <rds-dropdownlist
           class="ms-2"
           [id]="'language-dropdown'"
