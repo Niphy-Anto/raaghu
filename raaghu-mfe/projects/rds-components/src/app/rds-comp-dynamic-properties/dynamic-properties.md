@@ -38,10 +38,10 @@ title: "Components > dynamic-properties"
 <div class="row m-0">
 
 ```html
-<app-rds-comp-dynamic-properties
+<rds-comp-dynamic-properties
   [DynamicPropertiesTableHeader]="DynamicPropertiesTableHeader"
   [DynamicPropertiesTableData]="DynamicPropertiesTableData"
-></app-rds-comp-dynamic-properties>  
+></rds-comp-dynamic-properties>  
 ```
 </div>
 </div>

@@ -38,9 +38,9 @@ title: "Components > subscription"
 <div class="row m-0">
 
 ```html
-<app-rds-comp-subscription
+<rds-comp-subscription
   [subscriptionData]="subscriptionData"
-></app-rds-comp-subscription>
+></rds-comp-subscription>
 ```
 </div>
 </div>

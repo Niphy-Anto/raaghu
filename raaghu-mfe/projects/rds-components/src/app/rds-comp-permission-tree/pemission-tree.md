@@ -39,11 +39,11 @@ title: "Components > Permission-tree"
 <div class="row m-0">
 
 ```html
-<app-rds-comp-permission-tree
+<rds-comp-permission-tree
 [selectedItems]="selectedItems"
 [treeData]="treeData"
 [multiselectTree]="false">
-</app-rds-comp-permission-tree>
+</rds-comp-permission-tree>
 ```
 </div>
 </div>

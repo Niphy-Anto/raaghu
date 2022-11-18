@@ -39,7 +39,7 @@ title: "Components > Billing"
 <div class="row m-0">
 
 ```html
-  <app-rds-comp-billing
+  <rds-comp-billing
   emailId="admin@aspnetzero.com"
   alternativeEmail=""
   [cardList]="cardList"
@@ -49,7 +49,7 @@ title: "Components > Billing"
   [actions]="actions"
   [radioItem]="radioItem"
   [radioItem1]="radioItem1"
-></app-rds-comp-billing>    
+></rds-comp-billing>    
 ```
 </div>
 </div>
