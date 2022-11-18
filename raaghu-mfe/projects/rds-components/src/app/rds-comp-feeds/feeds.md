@@ -41,7 +41,7 @@ title: "Components > Feeds"
 <div class="row m-0">
 
 ```html
- <app-rds-comp-feeds displaytype="Basic"></app-rds-comp-feeds>
+ <rds-comp-feeds displaytype="Basic"></rds-comp-feeds>
 ```
 </div>
 </div>

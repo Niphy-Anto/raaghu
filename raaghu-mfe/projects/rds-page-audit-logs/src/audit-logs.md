@@ -38,10 +38,10 @@ title: "Pages > Audit-logs"
 <div class="row m-0">
 
 ```html
-<app-rds-comp-audit-logs
+<rds-comp-audit-logs
   [operationLogsHeaders]="operationLogsHeaders"
   [operationLogs]="operationLogs"
-></app-rds-comp-audit-logs>
+></rds-comp-audit-logs>
 ```
 </div>
 </div>

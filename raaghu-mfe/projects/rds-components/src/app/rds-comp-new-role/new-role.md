@@ -41,10 +41,10 @@ title: "Components > New Role"
 <div class="row m-0">
 
 ```html
-  <app-rds-comp-new-role
+  <rds-comp-new-role
    roleData=""
    isReset=false
-  ></app-rds-comp-new-role>
+  ></rds-comp-new-role>
 ```
 </div>
 </div>

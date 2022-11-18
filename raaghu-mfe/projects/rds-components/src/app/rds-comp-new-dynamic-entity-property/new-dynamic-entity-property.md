@@ -40,10 +40,10 @@ title: "Components > New Dynamic Entity Property"
 
 ```html
 
-<app-rds-comp-new-dynamic-entity-property
+<rds-comp-new-dynamic-entity-property
 [entityNames]="entityNames"
 [parameterList]="parameterList"
-></app-rds-comp-new-dynamic-entity-property>
+></rds-comp-new-dynamic-entity-property>
 ```
 </div>
 </div>

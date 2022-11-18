@@ -40,7 +40,7 @@ title: "Components > Open Position"
 <div class="row m-0">
 
 ```html
- <app-rds-comp-open-position [item]="item"></app-rds-comp-open-position>
+ <rds-comp-open-position [item]="item"></rds-comp-open-position>
 ```
 </div>
 </div>

@@ -40,7 +40,7 @@ title: "Components > Security"
 <div class="row m-0">
 
 ```html
-<app-rds-comp-security></app-rds-comp-security>
+<rds-comp-security></rds-comp-security>
 ```
 </div>
 </div>

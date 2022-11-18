@@ -38,9 +38,9 @@ title: "Components > Download-collection"
 <div class="row m-0">
 
 ```html
-<app-rds-comp-download-collection
+<rds-comp-download-collection
   [DownloadTable]="DownloadTable"
-></app-rds-comp-download-collection>
+></rds-comp-download-collection>
 ```
 </div>
 </div>

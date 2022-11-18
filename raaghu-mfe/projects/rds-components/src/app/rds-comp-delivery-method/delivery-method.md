@@ -38,9 +38,9 @@ title: "Components > Delivery-method"
 <div class="row m-0">
 
 ```html
-<app-rds-comp-delivery-method
+<rds-comp-delivery-method
   [sizeDataWithDescription]="sizeDataWithDescription"
-></app-rds-comp-delivery-method>  
+></rds-comp-delivery-method>  
 ```
 </div>
 </div>
