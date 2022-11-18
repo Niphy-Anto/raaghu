@@ -39,9 +39,9 @@ title: "Components > Marketing Website Newsletter"
 <div class="row m-0">
 
 ```html
-<app-rds-comp-marketing-website-newsletter
+<rds-comp-marketing-website-newsletter
   templateType="Template_1"
-></app-rds-comp-marketing-website-newsletter>
+></rds-comp-marketing-website-newsletter>
 ```
 </div>
 </div>

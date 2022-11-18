@@ -39,13 +39,13 @@ title: "Components > Payment-details"
 <div class="row m-0">
 
 ```html
-<app-rds-comp-payment-details
+<rds-comp-payment-details
 cvc="123"
 cardNumber="246"
 name="abc"
 expirationDate="567"
 buttonSpinner="true">
-</app-rds-comp-payment-details>
+</rds-comp-payment-details>
 ```
 </div>
 </div>

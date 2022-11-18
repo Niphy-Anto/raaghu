@@ -39,11 +39,11 @@ title: "Components > Organization-Tree"
 
 ```html
  
-<app-rds-organization-tree
+<rds-organization-tree
   [organizationTreeData]="organizationTreeData"
   [mutable]="true"
   [nodeColor]="nodeColor"
-></app-rds-organization-tree>
+></rds-organization-tree>
 ```
 </div>
 </div>
