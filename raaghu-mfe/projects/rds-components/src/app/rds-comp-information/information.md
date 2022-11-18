@@ -40,9 +40,9 @@ title: "Components > Information"
 <div class="row m-0">
 
 ```html
-<app-rds-comp-information
+<rds-comp-information
 [dynamicPropertiesData]="dynamicPropertiesData">
-</app-rds-comp-information>
+</rds-comp-information>
 ```
 </div>
 </div>

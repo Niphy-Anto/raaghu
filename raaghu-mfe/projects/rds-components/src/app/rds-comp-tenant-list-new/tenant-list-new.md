@@ -9,8 +9,8 @@ title: "Components > Tenant-list-new"
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/style-elements.css">
 <link rel="stylesheet" href="../../../../../../../raaghu/src/assets/css/main.css">
 
-#### Tenant list new
+#### Tenant List New
 <div class="ps-5">
-            <img src="\images\under-maintenance.png" class="img-fluid ps-5">
+            <img src="\images\under-construction.png" class="img-fluid ps-5">
  </div>
   </section>
