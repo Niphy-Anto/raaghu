@@ -39,9 +39,9 @@ title: "Components > Webhook-Subscription"
 <div class="row m-0">
 
 ```html
-<app-rds-comp-webhook-subscription
+<rds-comp-webhook-subscription
  [HeaderTableHeader]="HeaderTableHeader"
-></app-rds-comp-webhook-subscription>
+></rds-comp-webhook-subscription>
 ```
 </div>
 </div>

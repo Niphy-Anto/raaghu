@@ -39,7 +39,7 @@ title: "Components > Billing-address"
 <div class="row m-0">
 
 ```html
-<app-rds-comp-billing-address
+<rds-comp-billing-address
   [countryList]="countryList"
   EmailID="admin@aspnetzero.com"
   Contact="" 
@@ -52,7 +52,7 @@ title: "Components > Billing-address"
   country="Country";
   postalCode=123;
   buttonSpinner= true;
-></app-rds-comp-billing-address>   
+></rds-comp-billing-address>   
 ```
 </div>
 </div>

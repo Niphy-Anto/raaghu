@@ -40,9 +40,9 @@ title: "Components > Basic-Resource"
 <div class="row m-0">
 
 ```html
-<app-rds-comp-basic-resource
+<rds-comp-basic-resource
   [ResourceData]="ResourceData"
-></app-rds-comp-basic-resource>
+></rds-comp-basic-resource>
 ```
 </div>
 </div>

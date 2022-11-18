@@ -39,13 +39,13 @@ title: "Components > Website-Log"
 <div class="row m-0">
 
 ```html
-<app-rds-comp-website-log
+<rds-comp-website-log
   [websiteLogData]="websiteLogData"
   role="Advanced"
   alignmentType="end"
   [resetPagination]="false"
   [recordsPerPage]="10"
-></app-rds-comp-website-log>
+></rds-comp-website-log>
 ```
 </div>
 </div>

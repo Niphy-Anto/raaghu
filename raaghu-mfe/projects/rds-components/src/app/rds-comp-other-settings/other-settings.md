@@ -41,9 +41,9 @@ title: "Components > Other-Settings"
 <div class="row m-0">
 
 ```html
- <app-rds-comp-other-settings
+ <rds-comp-other-settings
   [OtherSetting]="OtherSetting"
-></app-rds-comp-other-settings>
+></rds-comp-other-settings>
 ```
 </div>
 </div>

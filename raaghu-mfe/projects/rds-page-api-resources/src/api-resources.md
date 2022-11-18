@@ -58,11 +58,11 @@ title: "Pages > Api-Resources"
   </h5>
 
   <div class="card-body">
-    <app-rds-data-table
+    <rds-data-table
       [tableData]="apiResourceTableData"
       [tableHeaders]=" apiResourceTableHeader"
       [actions]="actions"
-    ></app-rds-data-table>
+    ></rds-data-table>
   </div>
 </div>
 
@@ -95,9 +95,9 @@ title: "Pages > Api-Resources"
         role="tabpanel"
         aria-labelledby="nav-home-tab"
       >
-        <app-api-basics
+        <api-basics
           (onBsicResourceSave)="SaveBasicResource($event)"
-        ></app-api-basics>
+        ></api-basics>
       </div>
 
       <div

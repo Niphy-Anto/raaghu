@@ -39,12 +39,12 @@ title: "Components > Visual-Settings"
 <div class="row m-0">
 
 ```html
-<app-rds-comp-visual-settings
+<rds-comp-visual-settings
   [navtabItems]="navtabItems"
   [listskin]="listskin"
   [listSubmenu]="listSubmenu"
   [visualsettingsItem]="visualsettingsItem"
-></app-rds-comp-visual-settings>
+></rds-comp-visual-settings>
 ```
 </div>
 </div>

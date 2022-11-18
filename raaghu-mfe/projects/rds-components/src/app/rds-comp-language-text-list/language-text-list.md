@@ -39,10 +39,10 @@ title: "Components > language-text-list"
 <div class="row m-0">
 
 ```html
-<app-rds-comp-language-text-list>
+<rds-comp-language-text-list>
 [listbaseLanguage]=""
 [listsource]=""
-</app-rds-comp-language-text-list>
+</rds-comp-language-text-list>
 ```
 </div>
 </div>

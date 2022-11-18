@@ -42,10 +42,10 @@ title: "Components > FAQ"
 <div class="row m-0">
 
 ```html
- <app-rds-comp-faq
+ <rds-comp-faq
   [questionList]="questionList"
   [QuestionHeading]="QuestionHeading"
-></app-rds-comp-faq>
+></rds-comp-faq>
 ```
 </div>
 </div>

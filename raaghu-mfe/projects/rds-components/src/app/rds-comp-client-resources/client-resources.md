@@ -39,7 +39,7 @@ title: "Components > Client resources"
 <div class="row m-0">
 
 ```html
-  <app-rds-comp-client-resources></app-rds-comp-client-resources>    
+  <rds-comp-client-resources></rds-comp-client-resources>    
 ```
 </div>
 </div>
