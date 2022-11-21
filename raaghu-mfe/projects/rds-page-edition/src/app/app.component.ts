@@ -157,7 +157,7 @@ export class AppComponent implements OnInit {
             editionname: element.displayName,
             price: '$ ' + element.annualPrice,
             trialPeriod: element.trialDayCount,
-            expiringEdition: element.expiringEditionDisplayName,
+            expiringEdition: element.waitingDayAfterExpire,
             id: element.id,
             name: element.displayName,
           }
