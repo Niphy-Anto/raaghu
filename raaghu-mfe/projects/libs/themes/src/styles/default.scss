@@ -116,6 +116,9 @@ $default-100: #F58220;
 
   /*Chart color variables*/
 :root {
+  --chart-bool-color1: #FA896B;
+  --chart-bool-color2: #78F7B8;
+
   --chartColor7: #EBEEFB;
   --chartColor2: #BF00BB;
   --chartColor3: #7E2EEF;
@@ -146,7 +149,6 @@ $default-100: #F58220;
   --chartgradient8: rgba(25,70,186,16%);
   --chartgradient9: rgba(25,70,186,8%);
   --chartgradient10: rgba(25,70,186,1%);
-  
 }
 
 //$input-select-bg: $dark-200!default;

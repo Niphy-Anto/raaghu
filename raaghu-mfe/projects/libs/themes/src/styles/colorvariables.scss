@@ -199,7 +199,7 @@ html[theme=light] {
   $datepicker-bg: $white !default;
   $datepicker-head: $white !default;
   $notification-header-bg: $light-700 !default;
-  $notification-sub-text:$gray-400 !default;
+  $notification-sub-text: $gray-400 !default;
   $input-group-addon-bg: $input-bg;
 
   $form-select-bg1: $input-bg !default;
@@ -302,7 +302,10 @@ html[theme=light] {
   .form-select[size]:not([size="1"]) {
     padding-right: 1.8rem;
     background-position: right 0.15rem center;
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+  }
+
+  .dropdownarrow.form-select[size]:not([size="1"])::before {
+    content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
   }
 
   .profileMenu {
@@ -455,8 +458,6 @@ html[theme=light] {
       @include badge-variant($badge-background, $badge-border, $badge-color);
     }
   }
-
- 
   /*counter color variables*/
 
 
@@ -1408,29 +1409,30 @@ html[theme=light] {
     background-color: transparent;
   }
 
- 
+
   .card-footer {
     background-color: $white;
     border-top-color: $gray-300;
   }
- 
-  .notification{
-    .card-header{
+
+  .notification {
+    .card-header {
       background-color: $notification-header-bg;
     }
-    .card-body{
-     
 
-     .notification-border-bottom{
-     
-      border-bottom:1px solid $notification-header-bg;
-     } 
-     .notification-sub-text{
-      color:$notification-sub-text
-     }
+    .card-body {
+
+
+      .notification-border-bottom {
+        border-bottom: 1px solid $notification-header-bg;
+      }
+
+      .notification-sub-text {
+        color: $notification-sub-text
+      }
     }
-    .card-footer{
-     
+
+    .card-footer {
     }
   }
 
@@ -1552,7 +1554,7 @@ html[theme=dark] {
   $dropdown-border-bottom-hover: $gray-100 !default;
   $dropdown-bghover-color: $dark-300 !default;
   $dropdown-link-active-bg: $dark-400 !default;
-  $dropdown-hover-color:$light-100 !default;
+  $dropdown-hover-color: $light-100 !default;
 
   /*file uploader color variables*/
   $file-color: $primary;
@@ -1582,10 +1584,10 @@ html[theme=dark] {
   $form-feedback-color: $gray-200 !default;
   $input-group-addon-bg: $input-bg;
   $input-group-addon-border-color: $input-bg;
-  
-   $notification-header-bg: $gray-900 !default;
-   $notification-body-bg: $blue-100 !default;
-   $notification-sub-text:$gray-500 !default;
+
+  $notification-header-bg: $gray-900 !default;
+  $notification-body-bg: $blue-100 !default;
+  $notification-sub-text: $gray-500 !default;
   /*sidebar color styles*/
   $nav-ul-bg-color: $light;
   $nav-li-border: $white;
@@ -1613,7 +1615,7 @@ html[theme=dark] {
   $check-horizotal-border-color: $primary !default;
   $horizontal-border-color: $gray-100 !default;
   $verticle-border-color: $gray-100 !default;
- 
+
   /*modal variables*/
 
   $modal-content-bg: $dark-400 !default;
@@ -1714,37 +1716,37 @@ html[theme=dark] {
     .card-header {
       background-color: transparent;
     }
-   
+
     .card-footer {
       background-color: $card-bg-color;
       border-top-color: $card-border-color;
     }
-    
   }
-  
-  .notification{
-    .card-header{
+
+  .notification {
+    .card-header {
       background-color: $notification-header-bg;
     }
-    .card-body{
+
+    .card-body {
       background-color: $notification-body-bg;
 
-     .notification-border-bottom{
-     
-      border-bottom:2px solid $notification-header-bg;
-     } 
-     .notification-sub-text{
-      color:$notification-sub-text
-     }
+      .notification-border-bottom {
+        border-bottom: 2px solid $notification-header-bg;
+      }
+
+      .notification-sub-text {
+        color: $notification-sub-text
+      }
     }
-    .card-footer{
+
+    .card-footer {
       background-color: $notification-body-bg;
     }
   }
-
-//.card-body.notification-body.border-bottom{
- // border-color:$gray-800;
-//}
+  //.card-body.notification-body.border-bottom{
+  // border-color:$gray-800;
+  //}
   .sidenav-footer {
     background-color: $body-wrapper-bg;
   }
@@ -1773,10 +1775,9 @@ html[theme=dark] {
 
   .form-select[size]:not([size="1"]) {
     border-color: $form-select-border-color;
-    padding-right: 1.25rem;
     background-position: right 0.15rem center;
     background-color: $form-select-bg;
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+    padding-right: 1.8rem;
   }
 
   .default-datepicker.border {
@@ -1785,16 +1786,18 @@ html[theme=dark] {
 
   .dropdown-item.active {
     background-color: $dropdown-link-active-bg;
-  
+
 
     span.hr-line {
       color: $primary;
       background-color: $primary;
     }
   }
- .dropdown-toggle:hover{
-  color:$dropdown-hover-color;
- }
+
+  .dropdown-toggle:hover {
+    color: $dropdown-hover-color;
+  }
+
   .date-picker .dropdown-item.active,
   .date-picker .dropdown-item:active {
     color: $white;
@@ -2178,7 +2181,6 @@ html[theme=dark] {
   .pagination .page-item:nth-last-child(-n+2) .page-link {
     background-color: transparent;
   }
-  
   /*Dropdown*/
   .dropdown-item {
     border-bottom-color: $dropdown-border-bottom;
@@ -2865,7 +2867,11 @@ html[theme=dark] {
   .form-select {
     background-color: $form-select-bg;
     border-color: $form-select-bg;
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e")
+    // background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e")
+  }
+
+  .dropdownarrow.form-select[size]:not([size="1"])::before {
+    content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%236c757d' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
   }
 
   .input-group-text {
@@ -2941,7 +2947,7 @@ html[theme=dark] {
   }
 }
 
-a {
-  text-decoration: none;
-  color: $primary;
-}
+  a {
+    text-decoration: none;
+    color: $primary;
+  }
