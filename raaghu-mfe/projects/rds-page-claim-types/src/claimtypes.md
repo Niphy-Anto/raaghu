@@ -38,12 +38,12 @@ title: "Pages > claimtypes"
 <div class="row m-0">
 
 ```html
-<app-claim-types></app-claim-types>
-<app-rds-data-table
+<claim-types></claim-types>
+<rds-data-table
   [tableHeaders]="claimtypesHeaders"
   [tableData]="ClaimTypeData"
   [actions]="actions"
-></app-rds-data-table>
+></rds-data-table>
 ```
 </div>
 </div>

@@ -40,7 +40,7 @@ title: "Components > New Claim Type"
 
 ```html
 
-<app-rds-comp-new-claim-type></app-rds-comp-new-claim-type>
+<rds-comp-new-claim-type></rds-comp-new-claim-type>
 ```
 </div>
 </div>

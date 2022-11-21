@@ -38,11 +38,11 @@ title: "Components > User-basics"
 <div class="row m-0">
 
 ```html
-<app-rds-comp-user-basics
+<rds-comp-user-basics
 [userData]="userData",
 editShimmer= false,
 buttonSpinner= true>
-</app-rds-comp-user-basics>
+</rds-comp-user-basics>
 ```
 </div>
 </div>

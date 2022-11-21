@@ -39,9 +39,9 @@ title: "Components > Mysettings"
 <div class="row m-0">
 
 ```html
-<app-rds-mysettings
+<rds-mysettings
   [ProfileData]="ProfileData"
-></app-rds-mysettings>
+></rds-mysettings>
 ```
 </div>
 </div>

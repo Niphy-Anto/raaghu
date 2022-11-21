@@ -23,17 +23,17 @@
 
                </div>
              </div>
-             <div class="col-lg-3 col-md-12 col-sm-12 sm-p-0">
+            <div class="col-lg-3 col-md-12 col-sm-12 sm-p-0">
                <div class="form-group mb-3">
-                 <rds-datepicker name="date-picker" style="cursor: pointer;" [label]="translate.instant('Start Date')" [(ngModel)]="startDate"
-                                 [value]="startDate">
+                 <rds-datepicker name="date-picker1" #start_date_picker2="ngModel"  style="cursor: pointer;" (change)="startDateModify($event)"  [label]="translate.instant('Start Date')" [(ngModel)]="startDate" value="start_date_picker2"
+                 ngDefaultControl >
                  </rds-datepicker>
                </div>
              </div>
              <div class="col-lg-3 col-md-12 col-sm-12 sm-p-0">
                <div class="form-group mb-3">
-                 <rds-datepicker name="date-picker" style="cursor: pointer;" [label]="translate.instant('End Date')" [(ngModel)]="endDate"
-                                 [value]="endDate">
+                 <rds-datepicker name="date-picker2" #end_date_picker2="ngModel" style="cursor: pointer;" (change)="endDateModify($event)" [label]="translate.instant('End Date')" [(ngModel)]="endDate" value="end_date_picker2"
+                 ngDefaultControl >
                  </rds-datepicker>
                </div>
              </div>

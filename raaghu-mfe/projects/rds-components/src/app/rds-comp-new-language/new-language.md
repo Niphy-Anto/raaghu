@@ -40,10 +40,10 @@ title: "Components > New Language"
 
 ```html
 
-<app-rds-comp-new-language
+<rds-comp-new-language
 [flags]="flags"
 [languageNames]="languageNames"
-></app-rds-comp-new-language>
+></rds-comp-new-language>
 ```
 </div>
 </div>

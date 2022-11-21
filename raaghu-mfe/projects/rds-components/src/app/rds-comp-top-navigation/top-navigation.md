@@ -44,11 +44,11 @@ title: "Components > Top Navigation"
 <div class="row m-0">
 
 ```html
- <app-rds-top-navigation
+ <rds-top-navigation
   selectedMenu="Dashboard"
   backgroundColor="rgb(245, 245, 250)"
   UserName="Wai Technologies"
-></app-rds-top-navigation>
+></rds-top-navigation>
 ```
 </div>
 </div>

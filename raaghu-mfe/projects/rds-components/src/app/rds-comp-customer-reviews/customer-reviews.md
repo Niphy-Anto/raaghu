@@ -39,9 +39,9 @@ title: "Components > Customer-reviews"
 
 ```html
 
-<app-rds-comp-customer-reviews
+<rds-comp-customer-reviews
   [itemlist]="itemlist"
-></app-rds-comp-customer-reviews>
+></rds-comp-customer-reviews>
 ```
 </div>
 </div>
