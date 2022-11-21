@@ -204,7 +204,7 @@ Built on a robust tech stack and platform
 
 
 ##  <a name='license'></a> License
-This project is licensed under the Apache License - see the [`LICENSE`](/LICENSE) file for details.
+This project is licensed under the MIT License - see the [`LICENSE`](/LICENSE) file for details.
 
 ##  <a name='contribute'></a> How to Contribute 🤝
 </h2>

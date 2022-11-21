@@ -19,7 +19,8 @@ export class AppComponent extends MfeBaseComponent implements OnInit {
   public rdsAlertMfeConfig: ComponentLoaderOptions = {
     name: 'RdsCompAlert',
     input: {
-      currentAlerts: this.currentAlerts
+      currentAlerts: this.currentAlerts,
+      alertPosition: 'top'
     },
     output: {
       onAlertHide: (event: any) => {
@@ -194,6 +195,7 @@ export class AppComponent extends MfeBaseComponent implements OnInit {
     let refreshTokenExpireDate = this.authenticateResult?.refreshTokenExpireInSeconds ? new Date().getTime() + 1000 * this.authenticateResult?.refreshTokenExpireInSeconds : undefined;
 
     if (authenticateResult?.accessToken != undefined) {
+      // this._router.navigateByUrl('/pages/dashboard');
       localStorage.setItem('LoginCredential', JSON.stringify({
         token: this.authenticateResult.accessToken,
         refreshToken: this.authenticateResult.refreshToken,

@@ -32,7 +32,7 @@ export class RdsCompNewDynamicEntityPropertyComponent implements OnInit, OnChang
   @ViewChild('dynamicEntityForm') dynamicEntityInfoForm: NgForm;
   resetFormSubject: Subject<boolean> = new Subject<boolean>();
   dynamicEntityDataSelect: any[] = [];
-  isHostLogin: boolean = true;
+  // isHostLogin: boolean = true;
   constructor(public translate: TranslateService) { }
   ngOnChanges(changes: SimpleChanges): void {
     this.resetDropdown = this.reset;
@@ -40,12 +40,12 @@ export class RdsCompNewDynamicEntityPropertyComponent implements OnInit, OnChang
   }
 
   ngOnInit(): void {
-    const tenantInfo = JSON.parse(localStorage.getItem('tenantInfo'));
-    if (tenantInfo !== null && tenantInfo.name) {
-      this.isHostLogin = false;
-    } else {
-      this.isHostLogin = true;
-    }
+    // const tenantInfo = JSON.parse(localStorage.getItem('tenantInfo'));
+    // if (tenantInfo !== null && tenantInfo.name) {
+    //   this.isHostLogin = false;
+    // } else {
+    //   this.isHostLogin = true;
+    // }
     this.resetDropdown = this.reset;
     this.Placeholder = "Select Property Name";
   }
@@ -54,16 +54,16 @@ export class RdsCompNewDynamicEntityPropertyComponent implements OnInit, OnChang
     let Data = this.dynamicEntityDataSelect;
     if (Data.length > 0) {
       this.createOrUpdateDynamicEntity.emit(Data);
-      this.dynamicEntityData = { entityFullName: '', PropertyID: '' };
-      this.dynamicEntityDataSelect = [];
-      dynamicEnityForm.resetForm();
-      this.resetDropdownList();
-      this.Placeholder = "Select Property Name";
     }
     else {
-      this.dynamicEntityInfoForm.form.markAllAsTouched();
+      this.createOrUpdateDynamicEntity.emit(this.dynamicEntityData);
+      // this.dynamicEntityInfoForm.form.markAllAsTouched();
     }
-
+    this.dynamicEntityData = { entityFullName: '', PropertyID: '' };
+    this.dynamicEntityDataSelect = [];
+    dynamicEnityForm.resetForm();
+    this.resetDropdownList();
+    this.Placeholder = "Select Property Name";
 
   }
 

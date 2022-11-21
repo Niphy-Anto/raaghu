@@ -252,6 +252,11 @@ html[theme=light] {
   font-size: $font-size-sm;
 }
 
+// /*badge*/
+// .badge {
+//   padding: $badge-padding-y $badge-padding-x;
+
+// }
 //.checkbox-variables
 //tree element
 .dottedstyle {
@@ -420,10 +425,17 @@ html[theme=light] {
 
 .scroll-notifications{
   max-height:100px ;
-  max-height: 215px;
+  max-height: 262px;
   min-height: 100px;
   overflow-y: auto;
   overflow-x: hidden;
+}
+
+.notification{
+  
+  .card-footer{
+    padding:0px !important
+  }
 }
 /*card css */
 .vh-75 {
@@ -823,7 +835,7 @@ rds-banner {
 
 /*  rds banner */
 .alert {
-  z-index: 999;
+  z-index: 1045;
 }
 
 /*==================================================================================================================================
@@ -1173,6 +1185,7 @@ rds-product-image .imgWidth {
 }
 .btn-md.spinner:before {
   top: 6px;
+  left: 48%;
 }
 .btn-sm.spinner {
   height: 1.774rem;
@@ -1181,7 +1194,7 @@ rds-product-image .imgWidth {
 
 .btn-sm.spinner:before {
   top: 4px;
-  left:45%;
+  left:48%;
 }
 .btn-lg.spinner {
   height: 2.766rem;
@@ -1190,7 +1203,7 @@ rds-product-image .imgWidth {
 
 .btn-lg.spinner:before {
   top: 10px;
-  left: 45%;
+  left: 48%;
 }
 .w-225px {
   width: 225px !important;
@@ -1210,4 +1223,7 @@ bs-datepicker-container {
 }
 .change-tenant .modal-header, .change-tenant .modal-footer{
   border-width: 0px;
+}
+.btn.form-select {
+  text-transform: capitalize;
 }

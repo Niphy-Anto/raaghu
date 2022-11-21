@@ -1,6 +1,6 @@
 import { Inject, Injectable, OnInit, Optional } from '@angular/core';
 import { mergeMap as _observableMergeMap, catchError as _observableCatch } from 'rxjs/operators';
-import { throwError as _observableThrow, of as _observableOf, Observable } from 'rxjs';
+import { throwError as _observableThrow, of as _observableOf, Observable, Subject } from 'rxjs';
 import { SendPasswordResetCodeInput } from './service-proxies';
 import { LocalStorageService } from './local-storage.service';
 import { Router } from '@angular/router';
@@ -20,6 +20,7 @@ export class UserAuthService implements OnInit {
   userAuthenticated: boolean = false;
   language: Observable<any>;
   sources: Observable<any>;
+  index$ = new Subject();
   constructor(
     private localStorage: LocalStorageService,
     private router: Router,
@@ -101,6 +102,7 @@ export class UserAuthService implements OnInit {
     let customHeaders = this.requestHeaders();
     localStorage.removeItem('LoginCredential');
     localStorage.removeItem('tenantInfo');
+    localStorage.removeItem('THEME');
     this.sessionService.init();
 
     XmlHttpRequestHelper.ajax(
@@ -132,5 +134,9 @@ export class UserAuthService implements OnInit {
 
   getSources() {
     return _observableOf(this.sources);
+  }
+
+  getVisualSettingIndex(value){
+    this.index$.next(value)
   }
 }
