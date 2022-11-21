@@ -39,7 +39,7 @@ title: "Components > Password-settings"
 <div class="row m-0">
 
 ```html
-<app-rds-comp-password-settings></app-rds-comp-password-settings>
+<rds-comp-password-settings></rds-comp-password-settings>
 ```
 </div>
 </div>

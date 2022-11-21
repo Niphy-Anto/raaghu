@@ -40,7 +40,7 @@ title: "Components > Shipping-Address"
 <div class="row m-0">
 
 ```html
-<app-rds-comp-shipping-address
+<rds-comp-shipping-address
   EmailID=""
   [Contact]=""
   firstName=""
@@ -52,7 +52,7 @@ title: "Components > Shipping-Address"
   country=""
   [countryList]="countryList"
   [postalCode]=""
-></app-rds-comp-shipping-address>
+></rds-comp-shipping-address>
 ```
 </div>
 </div>

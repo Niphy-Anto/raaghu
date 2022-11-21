@@ -41,10 +41,10 @@ title: "Components > Notification Settings"
 <div class="row m-0">
 
 ```html
-<app-rds-comp-notification-settings
+<rds-comp-notification-settings
   [notificationTypes]="notificationTypes"
   [show]="true"
-></app-rds-comp-notification-settings>
+></rds-comp-notification-settings>
 ```
 </div>
 </div>

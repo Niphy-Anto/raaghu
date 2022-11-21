@@ -40,10 +40,10 @@ title: "Components > Member Activity"
 
 ```html
 
-<app-rds-comp-member-activity
+<rds-comp-member-activity
   [inputTypeList]="inputTypeList"
   [memberActivityTableData]="memberActivityTableData"
-></app-rds-comp-member-activity>
+></rds-comp-member-activity>
 ```
 </div>
 </div>

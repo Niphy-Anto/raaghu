@@ -41,9 +41,9 @@ title: "Components > Edition-new-basic"
 
 ```html
  
-<app-rds-comp-edition-new-basic
+<rds-comp-edition-new-basic
   [PlanList]="PlanList">
-</app-rds-comp-edition-new-basic>
+</rds-comp-edition-new-basic>
 ```
 </div>
 </div>

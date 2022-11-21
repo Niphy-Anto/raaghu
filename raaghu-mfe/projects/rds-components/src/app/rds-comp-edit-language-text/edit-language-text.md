@@ -38,9 +38,9 @@ title: "Components > edit-language-text"
 <div class="row m-0">
 
 ```html
-<app-rds-comp-edit-language-text
+<rds-comp-edit-language-text
   [Languagetext]="Languagetext"
-></app-rds-comp-edit-language-text>  
+></rds-comp-edit-language-text>  
 ```
 </div>
 </div>

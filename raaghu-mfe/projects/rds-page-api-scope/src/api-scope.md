@@ -82,7 +82,7 @@ title: "Pages > api-scope"
         role="tabpanel"
         aria-labelledby="nav-home-tab"
       >
-        <app-rdc-comp-api-scope-basics></app-rdc-comp-api-scope-basics>
+        <rdc-comp-api-scope-basics></rdc-comp-api-scope-basics>
       </div>
       <div
         class="tab-pane fade"

@@ -39,9 +39,9 @@ title: "Components > Integration"
 <div class="row m-0">
 
 ```html
-<app-rds-comp-integration
+<rds-comp-integration
 [integrationList]="integrationList">
-</app-rds-comp-integration>
+</rds-comp-integration>
 ```
 </div>
 </div>

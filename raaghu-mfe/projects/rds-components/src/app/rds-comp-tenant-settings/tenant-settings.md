@@ -40,11 +40,11 @@ title: "Components > Tenant-Settings"
 <div class="row m-0">
 
 ```html
- <app-rds-comp-tenant-settings
+ <rds-comp-tenant-settings
    tenantSettingsInfo='',
    isTenantInfoValid=false ,
    showEditData=false
- ></app-rds-comp-tenant-settings>
+ ></rds-comp-tenant-settings>
 ```
 </div>
 </div>

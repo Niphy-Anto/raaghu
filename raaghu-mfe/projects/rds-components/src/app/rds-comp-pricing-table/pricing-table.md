@@ -39,11 +39,11 @@ title: "Components > Pricing-table"
 <div class="row m-0">
 
 ```html
-<app-rds-comp-pricing-table
+<rds-comp-pricing-table
 [itemList]="itemList"
 selectedPlan="Monthly Plan"
 [planList]="planList">
-</app-rds-comp-pricing-table>
+</rds-comp-pricing-table>
 ```
 </div>
 </div>

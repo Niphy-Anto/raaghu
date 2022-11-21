@@ -42,9 +42,9 @@ title: "Components > Edition-new-features"
 
 ```html
  
-<app-rds-comp-edition-new-features
+<rds-comp-edition-new-features
   [EditionList]="EditionList"
-></app-rds-comp-edition-new-features>
+></rds-comp-edition-new-features>
 ```
 </div>
 </div>
