@@ -168,7 +168,7 @@ html[theme=light] {
   $verticle-border-color: $gray-100 !default;
 
   /* offcanvas-header */
-  $offcanvas-border-color: $light-300 !default;
+  // $offcanvas-border-color: red !default;
 
   $btn-transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
 
@@ -192,6 +192,7 @@ html[theme=light] {
   $body-wrapper-bg: $dark-900;
 
   $body-wrapper-bg: #F5F5FA;
+  $table-hover-bg : #F5F5FA;
   $topnav-link-color: $gray-800;
   $card-bg-color: #fff;
   $card-border-color: $gray-200 !default;
@@ -207,10 +208,26 @@ html[theme=light] {
   $form-select-border-color1: $gray-300 !default;
   $shimmerbg: $light-700 !default;
 
+  $offcanvas-bottom-border-color: $light-200!default;
+  $nav-tabs-bottom-border-color: $light-100 !default;
+
+//datatable-first-child-bgcolor
+  $datatable-bgColor : $white!default;
   .ngx-shimmer {
     background-color: $light-600;
     background-image: linear-gradient(to right,$light-800 0,$primary 20%,$light-800 40%,$light-800 100%);
     opacity: 0.1;
+  }
+
+  @media screen and (min-width:1024px) and (max-width:1279px){
+    #sortTable thead th:first-child,
+    #sortTable tbody td:first-child{
+      background-color: $datatable-bgColor;
+    }
+    #sortTable thead tr:hover th:first-child,
+    #sortTable tbody tr:hover td:first-child{
+      background-color: $table-hover-bg
+    }
   }
 
   .navbar {
@@ -719,6 +736,8 @@ html[theme=light] {
   }
 
   .nav-tabs {
+    border-bottom-color: $nav-tabs-bottom-border-color;
+
     .nav-link {
       color: $gray-700;
     }
@@ -1149,7 +1168,7 @@ html[theme=light] {
   }
 
   .offcanvas-header {
-    border-bottom-color: $offcanvas-border-color;
+    border-bottom-color: $offcanvas-bottom-border-color;
   }
   //subscription-page
   .subcription-bg-blue {
@@ -1620,9 +1639,9 @@ html[theme=dark] {
 
   /* offcanvas variables */
   $offcanvas-bg-color: $modal-content-bg !default;
-  $offcanvas-bottom-border-color: $light-300 !default;
+  $offcanvas-bottom-border-color: $dark-300 !default;
 
-  $nav-tabs-bottom-border-color: $light-300 !default;
+  $nav-tabs-bottom-border-color: $dark-400 !default;
 
   /*button transition values*/
   $btn-transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
@@ -1670,10 +1689,24 @@ html[theme=dark] {
   $form-select-border-color: $form-select-bg !default;
   $shimmerbg: $dark-200 !default;
 
+//rds-datatable-firstchild-color
+  $datatable-bgColor : $dark-500!default;
+
   .ngx-shimmer {
     background-color: $dark-0;
     background-image: linear-gradient(to right,$dark-100 0,$primary 20%,$dark-100 40%,$dark-100 100%);
     opacity: 0.1;
+  }
+
+  @media screen and (min-width:1024px) and (max-width:1279px){
+    #sortTable thead th:first-child,
+    #sortTable tbody td:first-child{
+        background-color:  $datatable-bgColor;
+    }
+    #sortTable thead tr:hover th:first-child,
+    #sortTable tbody tr:hover td:first-child{
+      background-color: $trhoverbg-color
+    }
   }
 
   .default-datepicker.border {
@@ -1685,7 +1718,7 @@ html[theme=dark] {
   }
 
   .login {
-    color: #212529;
+    color: #212529;table-hover-bg
 
     .form-control {
       color: #212529;
