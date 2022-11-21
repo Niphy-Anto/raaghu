@@ -1,5 +1,5 @@
 import { createReducer, on } from "@ngrx/store";
-import { getTenants, getTenantSuccess, getTenantFailure, getEditionComboboxItems, getEditionComboboxItemsSuccess, getEditionComboboxItemsFailure, getTenantForEdit, getTenantForEditSuccess, getTenantForEditFailure, getTenantFeaturesForEdit, getTenantFeaturesForEditSuccess, getTenantFeaturesForEditFailure } from "./tenant.actions";
+import { getTenants, getTenantSuccess, getTenantFailure, getEditionComboboxItems, getEditionComboboxItemsSuccess, getEditionComboboxItemsFailure, getTenantForEdit, getTenantForEditSuccess, getTenantForEditFailure, getTenantFeaturesForEdit, getTenantFeaturesForEditSuccess, getTenantFeaturesForEditFailure, getTenantUsers, getTenantUsersSuccess, getTenantUsersFailure, getTenantLogin, getTenantLoginSuccess, getTenantLoginFailure } from "./tenant.actions";
 import { Tenants } from "./tenant.models";
 
 
@@ -58,6 +58,66 @@ export const EditionComboboxReducer = createReducer(
     }))
 
 )
+
+
+export interface TenantUsersState {
+    tenantUsers: any
+    error: string;
+    status: 'pending' | 'loading' | 'error' | 'success';
+}
+
+export const TenantUsersInitialState:  TenantUsersState = {
+    tenantUsers: {},
+    error: null,
+    status: "pending"
+};
+
+export const TenantUsersReducer = createReducer(
+    TenantUsersInitialState,
+    on(getTenantUsers, (state) => ({ ...state, status: 'loading' })),
+    on(getTenantUsersSuccess, (state, { tenantUsers }) => ({
+        ...state,
+        tenantUsers: tenantUsers,
+        error: null,
+        status: 'success',
+    })),
+    on(getTenantUsersFailure, (state, { error }) => ({
+        ...state,
+        error: error,
+        status: 'error',
+    }))
+
+)
+
+export interface TenantLoginState {
+    tenantLogin: any
+    error: string;
+    status: 'pending' | 'loading' | 'error' | 'success';
+}
+
+export const TenantLoginInitialState:  TenantLoginState = {
+    tenantLogin: {},
+    error: null,
+    status: "pending"
+};
+
+export const TenantLoginReducer = createReducer(
+    TenantLoginInitialState,
+    on(getTenantLogin, (state) => ({ ...state, status: 'loading' })),
+    on(getTenantLoginSuccess, (state, { tenantLogin }) => ({
+        ...state,
+        tenantLogin: tenantLogin,
+        error: null,
+        status: 'success',
+    })),
+    on(getTenantLoginFailure, (state, { error }) => ({
+        ...state,
+        error: error,
+        status: 'error',
+    }))
+
+)
+
 export interface TenantInfoState {
     tenantInfo: any
     error: string;

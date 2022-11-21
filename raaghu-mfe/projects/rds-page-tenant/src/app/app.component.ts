@@ -1,7 +1,7 @@
 import { Component, OnDestroy, ViewEncapsulation } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { ArrayToTreeConverterService, ComponentLoaderOptions } from '@libs/shared';
-import { deleteTenant, getEditionComboboxItems, getTenantFeaturesForEdit, getTenantForEdit, getTenants, saveTenant, selectAllTenants, selectDefaultLanguage, selectEditionComboboxItems, selectTenantFeature, selectTenantInfo, updateTenant, updateTenantFeatureValues } from '@libs/state-management';
+import { ArrayToTreeConverterService, ComponentLoaderOptions, ImpersonateTenantInput, UserAuthService } from '@libs/shared';
+import { deleteTenant, getEditionComboboxItems, getTenantFeaturesForEdit, getTenantForEdit, getTenantLogin, getTenants, getTenantUsers, impersonatedAuthenticate, saveTenant, selectAllTenants, selectDefaultLanguage, selectEditionComboboxItems,selecteTeantLoginList,selecteTeantUserList, selectTenantFeature, selectTenantInfo, updateTenant, updateTenantFeatureValues } from '@libs/state-management';
 import { TableHeader } from 'projects/rds-components/src/models/table-header.model';
 import { TranslateService } from '@ngx-translate/core';
 import { DatePipe } from '@angular/common';
@@ -13,6 +13,9 @@ import {
   style,
   animate,
 } from '@angular/animations';
+import { el } from 'date-fns/locale';
+import { data } from 'autoprefixer';
+// import login from 'playwright/model/login';
 
 @Component({
   selector: 'app-root',
@@ -63,6 +66,7 @@ export class AppComponent {
   editionList: any = [];
   tenantFeatures: any = [];
   tenantFeatureValues: any = [];
+  tenantLoginLists: any = [];
   tenantTableHeader: TableHeader[] = [
     { displayName: 'Tenant', key: 'tenantInfoTemplate', dataType: 'html', dataLength: 30, sortable: true, required: true, filterable: true },
     { displayName: 'Edition', key: 'editionTemplate', dataType: 'html', dataLength: 30, sortable: true, required: true, filterable: true },
@@ -70,10 +74,19 @@ export class AppComponent {
     { displayName: 'Subscription End Date', key: 'subscriptionEndDateUtc', dataType: 'html', dataLength: 30, sortable: true, required: true, filterable: true },
 
   ]
+
+  userTableHeader:TableHeader[]=[
+    { displayName: 'Name', key: 'name', dataType: 'html', dataLength: 30, sortable: true, required: true, filterable: true },
+  ]
   isAnimation: boolean = true;
 
-  tenantTableData: any = []
-  constructor(public datepipe: DatePipe, private store: Store, private translate: TranslateService, private _arrayToTreeConverterService: ArrayToTreeConverterService) { }
+  tenantTableData: any = [];
+  userTableData: any = []   
+  loginList:any;
+
+  constructor(public datepipe: DatePipe,   private userAuthService: UserAuthService,
+    private store: Store, private translate: TranslateService, 
+    private _arrayToTreeConverterService: ArrayToTreeConverterService) { }
   ngOnInit(): void {
     this.isAnimation = true;
 
@@ -90,7 +103,10 @@ export class AppComponent {
         editionList: this.editionList,
         noDataTitle: 'Currently you do not have tenant',
         isShimmer: true,
-        editShimmer: true
+        editShimmer: true,
+        tenantHeadersUser:this.userTableHeader,        
+        userList:this.userTableData,
+        tenantLoginList:this.tenantLoginLists
       },
       output: {
         onSaveTenant: (tenant: any) => {
@@ -157,6 +173,18 @@ export class AppComponent {
         },
         onSaveFeatures: (feature: any) => {
           this.store.dispatch(updateTenantFeatureValues(feature))
+        },
+        onSelectTenant:(event:any)=>{
+          this.store.dispatch(getTenantUsers(event));
+        },
+        onTenantLogIn:(event:any)=>{  
+          this.loginList=event.tenantId;                   
+           const data:any={
+            tenantId:this.loginList,
+            userId:event.userId
+           };
+           this.store.dispatch(getTenantLogin(data)); 
+                             
         }
       }
     };
@@ -184,6 +212,30 @@ export class AppComponent {
        
         const mfeConfig = this.rdsTenantMfeConfig
         mfeConfig.input.editionList = [...this.editionList];
+        this.rdsTenantMfeConfig = mfeConfig;
+      }
+    })
+
+    this.store.select(selecteTeantLoginList).subscribe((res: any) => {     
+      if (res && res.tenantLogin  && res.status == "success") {        
+        let targetUrl='http://localhost:8080/login'+'?impersonationToken='+res.tenantLogin.impersonationToken+ '&tenantId=' + this.loginList+ '&tenancyName='+res.tenantLogin.tenancyName;
+      this.userAuthService.unauthenticateUser(true,targetUrl);      
+      }
+    })      
+
+  
+    this.store.select(selecteTeantUserList).subscribe((res: any) => {
+      this.userTableData=[];
+      if (res &&res.tenantUsers&&  res.tenantUsers.items && res.status == "success") {
+        res.tenantUsers.items.forEach((element: any) => {                 
+          const item: any = {
+            name:element.name,
+            id:element.value
+          }
+          this.userTableData.push(item);
+        });
+        const mfeConfig = this.rdsTenantMfeConfig
+        mfeConfig.input.userList = [... this.userTableData];
         this.rdsTenantMfeConfig = mfeConfig;
       }
     })
@@ -217,7 +269,7 @@ export class AppComponent {
             editionDisplayName: element.editionDisplayName,
             editionTemplate: (element.editionDisplayName && element.editionDisplayName !== null) ?editionTemplate : '--',
             id: element.id,
-            name: element.tenancyName
+            name: element.tenancyName,            
             // creationTime: this.datepipe.transform(new Date(element.creationTime),'dd-MM-yyyy h:mm:ss a')
           }
           this.tenantTableData.push(item);
@@ -293,5 +345,7 @@ export class AppComponent {
     );
     return treedaTA;
   }
+
+  
 
 }
