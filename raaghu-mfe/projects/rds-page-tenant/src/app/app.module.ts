@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { NgxTranslateModule, SharedModule } from '@libs/shared';
-import { TenantReducer, TenantEffects, EditionComboboxReducer, TenantInfoReducer, TenantFeatureReducer } from '@libs/state-management';
+import { TenantReducer, TenantEffects, EditionComboboxReducer, TenantInfoReducer, TenantFeatureReducer, TenantUsersReducer, TenantLoginReducer } from '@libs/state-management';
 import { EffectsModule } from '@ngrx/effects';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,7 +11,9 @@ export const featureReducersMap = {
   tenants: TenantReducer,
   tenantInfo: TenantInfoReducer,
   editionComboboxItem: EditionComboboxReducer,
-  tenantFeature: TenantFeatureReducer
+  tenantFeature: TenantFeatureReducer,
+  tenantUsers:TenantUsersReducer,
+  tenantLogin:TenantLoginReducer
 };
 @NgModule({
   declarations: [
