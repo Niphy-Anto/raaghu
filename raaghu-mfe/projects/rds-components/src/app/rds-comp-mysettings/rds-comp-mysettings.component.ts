@@ -28,6 +28,7 @@ export class RdsMysettingsComponent implements OnInit, OnChanges {
   showEmailValidityMessage: boolean = false;
   navtabcontentClass: string = "d-none";
   isPasswordMismatch: boolean = false;
+  cardTitle = "MY SETTINGS";
   public Profileform: FormGroup;
 
   constructor(private formBuilder: FormBuilder, public translate: TranslateService) {
