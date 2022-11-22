@@ -103,9 +103,10 @@ html[theme=light] {
   $pagination-item-bg-hover: $gray-300;
   $pagination-item-last-bg: $white;
   $page-link-color: $gray-800;
-  $pagination-bg-color: $gray-100;
+  $pagination-bg-color: $white;
   $page-link-bg-hover: $gray-800;
-  $pagination-bg-hover-color: $gray-300;
+  $pagination-bg-hover-color: $gray-100;
+  $pagination-bg-active-color:$gray-200;
   $page-link-active-color: $gray-600;
   $pagination-item-bg-active: $gray-800;
 
@@ -640,7 +641,7 @@ html[theme=light] {
 
     .active .page-link {
       color: $page-link-active-color;
-      background-color: $pagination-bg-hover-color;
+      background-color: $pagination-bg-active-color;
     }
   }
 
@@ -653,16 +654,16 @@ html[theme=light] {
       //   color: $pagination-item-color;
       // }
 
-      &:nth-last-child(-n + 2) .page-link {
-        background: $pagination-item-bg;
-        color: $pagination-item-color;
-      }
+      // &:nth-last-child(-n + 2) .page-link {
+      //   background:  $pagination-bg-color;
+      //   color: $pagination-item-color;
+      // }
     }
 
     .page-link {
       color: $pagination-item-color;
       background-color: $pagination-bg-color;
-      // border: 1px solid $pagination-bg-color;
+    // border: 1px solid $pagination-bg-color;
 
       &:hover {
         color: $pagination-item-color;
@@ -672,7 +673,7 @@ html[theme=light] {
 
     .active .page-link {
       color: $page-link-active-color;
-      background-color: $pagination-bg-hover-color;
+      background-color:$pagination-bg-hover-color;
     }
   }
   /*Dropdown*/
@@ -1560,7 +1561,7 @@ html[theme=dark] {
   $pagination-item-last-bg: transparent;
   $page-link-color: $white;
   $pagination-bg-color: $light;
-  $page-link-bg-hover: $gray-800;
+  $page-link-bg-hover: $gray-100;
   $pagination-bg-hover-color: #323E66;
   $page-link-active-color: $white;
 
@@ -2214,13 +2215,6 @@ html[theme=dark] {
     // }
   }
 
-  .pagination .page-item:nth-child(-n+2) .page-link {
-    background-color: transparent;
-  }
-
-  .pagination .page-item:nth-last-child(-n+2) .page-link {
-    background-color: transparent;
-  }
   
   /*Dropdown*/
   .dropdown-item {
