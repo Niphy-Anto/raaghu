@@ -18,7 +18,7 @@
         role="tabpanel" aria-labelledby="nav-Deligation">
         <rds-user-delegations [rdsDeligateTableHeader]="rdsDeligateTableHeader"
           [buttonSpinner]="showDelegationButtonSpinner" [pagination]="pagination"
-          [delegateTabopened]="delegateTabopened" (onDeligateSave)="onSaveDelegate.emit($event)" (onDeleteDeligate)="onDeleteDeligate.emit($event)"
+          [delegateTabopened]="delegateTabopened" (onDeligateSave)="onSaveDelegate.emit($event)" (onDeleteDeligate)="deleteDelegate($event)"
           [tableWidth]="tableWidth" [tableStyle]="tableStyle" [recordsPerpage]="recordsPerpage" [userList]="userList"
           [rdsDeligateTableData]="rdsDeligateTableData" (onCancelDeligate)="cancelDelegate($event)">
         </rds-user-delegations>
@@ -109,8 +109,11 @@
       </div>
     </div>
   </div>
+
 </rds-offcanvas>
 <mfe-loader [config]="rdsAlertMfeConfig"></mfe-loader>
-<!--  </div>
-  </div>
-</rds-offcanvas> -->
+<ng-container *ngIf="showConfirmationPopup">
+  <rds-comp-alert-popup [alertID]="'deleteDelegationModal'" (onCancel)="closeModal()" (onDelete)="delete()"
+    [alertData]="deleteConfirmationData">
+  </rds-comp-alert-popup>
+</ng-container>

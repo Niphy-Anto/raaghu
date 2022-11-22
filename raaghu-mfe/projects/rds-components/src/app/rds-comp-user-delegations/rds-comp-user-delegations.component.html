@@ -45,7 +45,7 @@
         </form>
         <div class="row" *ngIf="!deligateDivFlag">
           <div class="col-sm-12">
-            <rds-data-table [tableData]="rdsDeligateTableData" [pagination]="pagination"
+            <rds-data-table [tableData]="rdsDeligateTableData" [isDeleteConfirmationRequired]="false" [pagination]="pagination"
               (onActionSelection)="onActionSelect($event)" [recordsPerPage]="recordsPerpage" [actions]="actions"
               [tableHeaders]="rdsDeligateTableHeader" noDataTitle="Currently you do not have delegate new user">
             </rds-data-table>
@@ -67,6 +67,7 @@
     </div>
   </div>
 </div>
+
 
 
 
