@@ -148,8 +148,8 @@
       </div>
       <div class="col-lg-3 col-md-6 col-xs-12 mb-4">
         <h6 class="mb-3 pb-2">{{"Badge With icon"|translate}}</h6>
-        <rds-button class="position-relative" [size]="'medium'" [colorVariant]="'primary'" [outlineButton]="false"
-          [roundedButton]="true" type="button">
+        <rds-button class="position-relative" [size]="'medium'" [colorVariant]="'primary'" [isOutline]="false"
+          [isFabIcon]="true" type="button">
           <rds-icon name="youtube" height="22px" width="22px"></rds-icon>
           <rds-badge right size="small" colorVariant="primary" label="9" [positioned]="true">
           </rds-badge>
@@ -325,92 +325,131 @@
       Button
     </h5>
   </div>
-  <div class="card-body pt-0">
-    <div class="row">
-      <div class="col-lg-12 col-xl-12 col-xs-12 col-xxl-12 mb-3">
-        <div class="row mb-3">
-          <div class="col-lg-4 col-md-4 col-xs-6 mb-3">
-            <h6 class="mb-3">{{"Button - Basic"|translate}}</h6>
-            <rds-button colorVariant="primary" [submit]="false" [block]="false" [disabled]="false" [outlineButton]="false"
-              [roundedButton]="false" label="button" tooltipTitle="" tooltipPlacement="bottom">
-            </rds-button>
-          </div>
-          <div class="col-lg-4 col-md-4 col-xs-6 mb-3">
-            <h6 class="mb-3">{{"Button - Disable"|translate}}</h6>
-            <rds-button colorVariant="primary" [submit]="false" [block]="false" [disabled]="true" [outlineButton]="false"
-              [roundedButton]="false" label="Disable" tooltipTitle="" tooltipPlacement="bottom">
-            </rds-button>
-          </div>
-          <div class="col-lg-4 col-md-4 col-xs-6 mb-3">
-            <h6 class="mb-3">{{"Button - Icon With Label"|translate}}</h6>
-            <rds-button colorVariant="primary" [submit]="false" [block]="false" [disabled]="false" [outlineButton]="false"
-              [roundedButton]="false" icon="pencil" iconHeight="18px" iconWidth="18px" label="button" tooltipTitle=""
-              tooltipPlacement="bottom">
-            </rds-button>
+  <div class="card-body  pt-0">
+    <div class="row border p-4 m-2">
+      <div class="row mb-3">
+        <div class="col-lg-12 col-md-12 col-xxl-6">
+          <div class="row">
+            <div class="col-md-4 mb-3">
+              <h6 class="mb-3">{{"Button - Basic"|translate}}</h6>
+              <rds-button colorVariant="primary" [submit]="false" [block]="false" [isDisabled]="false" [isOutline]="false"
+                [isFabIcon]="false" label="button" tooltipTitle="" tooltipPlacement="bottom">
+              </rds-button>
+            </div>
+            <div class="col-md-4 mb-3">
+              <h6 class="mb-3">{{"Button - Disable"|translate}}</h6>
+              <rds-button colorVariant="primary" [submit]="false" [block]="false" [isDisabled]="true" [isOutline]="false"
+                [isFabIcon]="false" label="Disable" tooltipTitle="" tooltipPlacement="bottom">
+              </rds-button>
+            </div>
+            <div class="col-md-4 mb-3">
+              <h6 class="mb-3">{{"Button - Icon With Label"|translate}}</h6>
+              <rds-button colorVariant="primary" [submit]="false" [block]="false" [isDisabled]="false" [isOutline]="false"
+                [isFabIcon]="false" icon="pencil" iconHeight="18px" iconWidth="18px" label="button" tooltipTitle=""
+                tooltipPlacement="bottom">
+              </rds-button>
+            </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-lg-4 col-md-4 col-xs-12 mb-3">
-            <h6 class="mb-3">{{"Button - Outline"|translate}}</h6>
-            <rds-button colorVariant="primary" [submit]="false" [block]="false" [disabled]="false" [outlineButton]="true"
-              [roundedButton]="false" label="outline" tooltipTitle="" tooltipPlacement="bottom">
-            </rds-button>
-          </div>
-          <div class="col-lg-4 col-md-4 col-xs-12 mb-3">
-            <h6 class="mb-3">{{"Button - Tooltip"|translate}}</h6>
-            <rds-button colorVariant="primary" [submit]="false" [block]="false" [disabled]="false" [outlineButton]="false"
-              [roundedButton]="false" label="button" tooltipTitle="This is tooltip" tooltipPlacement="bottom">
-            </rds-button>
-          </div>
-          <div class="col-lg-4 col-md-4 col-xs-12 mb-3">
-            <h6 class="mb-3">{{"Button - icon"|translate}}</h6>
-            <rds-button colorVariant="primary" [submit]="false" [size]="'small'" [block]="false" [disabled]="false"
-              [outlineButton]="false" [roundedButton]="true" icon="pencil" label="" iconHeight="13px" iconWidth="13px"
-              tooltipTitle="" tooltipPlacement="bottom">
-            </rds-button>
+        <div class="col-lg-12 col-md-12 col-xxl-6">
+          <div class="row">
+            <div class="col-md-4 mb-3">
+              <h6 class="mb-3">{{"Button - Outline"|translate}}</h6>
+              <rds-button colorVariant="primary" [submit]="false" [block]="false" [isDisabled]="false" [isOutline]="true"
+                [isFabIcon]="false" label="outline" tooltipTitle="" tooltipPlacement="bottom">
+              </rds-button>
+            </div>
+            <div class="col-md-4 mb-3">
+              <h6 class="mb-3">{{"Button - Tooltip"|translate}}</h6>
+              <rds-button  type="button" colorVariant="primary" [submit]="false" [block]="false" [isDisabled]="false" [isOutline]="false"
+                [isFabIcon]="false" label="button" tooltipTitle="This is tooltip" tooltipPlacement="bottom">
+              </rds-button>      
+            </div>
+            <div class="col-md-4 mb-3">
+              <h6 class="mb-3">{{"Button - icon"|translate}}</h6>
+              <rds-button colorVariant="primary" [submit]="false" [size]="'small'" [block]="false" [isDisabled]="false"
+                [isOutline]="false" [isFabIcon]="true" icon="pencil" label="" iconHeight="13px" iconWidth="13px"
+                tooltipTitle="" tooltipPlacement="bottom">
+              </rds-button>
+            </div>
           </div>
         </div>
       </div>
+      
       <div class="col-lg-12 col-xl-12 col-xs-12 col-xxl-12 mb-3">
-        <h6 class="mb-3">Button - Size</h6>
         <div class="row">
-          <div class="col-lg-4 col-md-4 col-xs-12 mb-3">
-            <rds-button colorVariant="primary" [submit]="false" [block]="false" [disabled]="false"
-              [outlineButton]="false" [roundedButton]="false" label="button" tooltipTitle="This is tooltip"
-              tooltipPlacement="bottom" [size]="'small'"></rds-button>
+          <div class="col-lg-12 col-md-12 col-xxl-6">
+            <h6 class="mb-3">Button - Size</h6>
+            <div class="row">
+              <div class="col-md-4 pb-3">
+                <rds-button colorVariant="primary" [submit]="false" [block]="false" [isDisabled]="false"
+                  [isOutline]="false" [isFabIcon]="false" label="button" tooltipTitle="This is tooltip"
+                  tooltipPlacement="bottom" [size]="'small'"></rds-button>
+              </div>
+              <div class="col-md-4 pb-3">
+                <rds-button colorVariant="primary" [submit]="false" [block]="false" [isDisabled]="false"
+                  [isOutline]="false" [isFabIcon]="false" label="button" tooltipTitle="This is tooltip"
+                  tooltipPlacement="bottom" [size]="'medium'"></rds-button>
+              </div>
+              <div class="col-md-4 pb-3">
+                <rds-button colorVariant="primary" [submit]="false" [block]="false" [isDisabled]="false"
+                  [isOutline]="false" [isFabIcon]="false" label="button" tooltipTitle="This is tooltip"
+                  tooltipPlacement="bottom" [size]="'large'"></rds-button>
+              </div>
+            </div>
           </div>
-          <div class="col-lg-4 col-md-4 col-xs-12 mb-3">
-            <rds-button colorVariant="primary" [submit]="false" [block]="false" [disabled]="false"
-              [outlineButton]="false" [roundedButton]="false" label="button" tooltipTitle="This is tooltip"
-              tooltipPlacement="bottom" [size]="'medium'"></rds-button>
+
+          <div class="col-lg-12 col-md-12 col-xxl-6">
+            <h6 class="mb-3">Button Icon- Size</h6>
+            <div class="row">
+              <div class="col-md-4 pb-3">
+                <rds-button colorVariant="primary" [submit]="false" [size]="'small'" [block]="false" [isDisabled]="false"
+                  [isOutline]="false" [isFabIcon]="true" icon="pencil" label="" iconHeight="14px" iconWidth="14px"
+                  tooltipTitle="" tooltipPlacement="bottom">
+                </rds-button>
+              </div>
+              <div class="col-md-4 pb-3">
+                <rds-button colorVariant="primary" [submit]="false" [size]="'medium'" [block]="false" [isDisabled]="false"
+                  [isOutline]="false" [isFabIcon]="true" icon="pencil" label="" iconHeight="18px" iconWidth="18px"
+                  tooltipTitle="" tooltipPlacement="bottom">
+                </rds-button>
+              </div>
+              <div class="col-md-4 pb-3">
+                <rds-button colorVariant="primary" [submit]="false" [size]="'large'" [block]="false" [isDisabled]="false"
+                  [isOutline]="false" [isFabIcon]="true" icon="pencil" label="" iconHeight="24px" iconWidth="24px"
+                  tooltipTitle="" tooltipPlacement="bottom">
+                </rds-button>
+              </div>
+            </div>
           </div>
-          <div class="col-lg-4 col-md-4 col-xs-12 mb-3">
-            <rds-button colorVariant="primary" [submit]="false" [block]="false" [disabled]="false"
-              [outlineButton]="false" [roundedButton]="false" label="button" tooltipTitle="This is tooltip"
-              tooltipPlacement="bottom" [size]="'large'"></rds-button>
-          </div>
+
+
         </div>
-        <h6 class="mb-3">Button Icon- Size</h6>
+        <!-- <h6 class="mb-3">Button Icon- Size</h6>
         <div class="row align-items-center">
-          <div class="col-lg-4 col-md-4 col-xs-12 mb-3">
-            <rds-button colorVariant="primary" [submit]="false" [size]="'small'" [block]="false" [disabled]="false"
-              [outlineButton]="false" [roundedButton]="true" icon="pencil" label="" iconHeight="14px" iconWidth="14px"
-              tooltipTitle="" tooltipPlacement="bottom">
-            </rds-button>
+          <div class="col-md-6">
+            <div class="row">
+              <div class="col-md-4 pb-3">
+                <rds-button colorVariant="primary" [submit]="false" [size]="'small'" [block]="false" [isDisabled]="false"
+                  [isOutline]="false" [isFabIcon]="true" icon="pencil" label="" iconHeight="14px" iconWidth="14px"
+                  tooltipTitle="" tooltipPlacement="bottom">
+                </rds-button>
+              </div>
+              <div class="col-md-4 pb-3">
+                <rds-button colorVariant="primary" [submit]="false" [size]="'medium'" [block]="false" [isDisabled]="false"
+                  [isOutline]="false" [isFabIcon]="true" icon="pencil" label="" iconHeight="18px" iconWidth="18px"
+                  tooltipTitle="" tooltipPlacement="bottom">
+                </rds-button>
+              </div>
+              <div class="col-md-4 pb-3">
+                <rds-button colorVariant="primary" [submit]="false" [size]="'large'" [block]="false" [isDisabled]="false"
+                  [isOutline]="false" [isFabIcon]="true" icon="pencil" label="" iconHeight="24px" iconWidth="24px"
+                  tooltipTitle="" tooltipPlacement="bottom">
+                </rds-button>
+              </div>
+            </div>
           </div>
-          <div class="col-lg-4 col-md-4 col-xs-12 mb-3">
-            <rds-button colorVariant="primary" [submit]="false" [size]="'medium'" [block]="false" [disabled]="false"
-              [outlineButton]="false" [roundedButton]="true" icon="pencil" label="" iconHeight="18px" iconWidth="18px"
-              tooltipTitle="" tooltipPlacement="bottom">
-            </rds-button>
-          </div>
-          <div class="col-lg-4 col-md-4 col-xs-12 mb-3">
-            <rds-button colorVariant="primary" [submit]="false" [size]="'large'" [block]="false" [disabled]="false"
-              [outlineButton]="false" [roundedButton]="true" icon="pencil" label="" iconHeight="24px" iconWidth="24px"
-              tooltipTitle="" tooltipPlacement="bottom">
-            </rds-button>
-          </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
@@ -519,21 +558,23 @@
         <div>
           <h6 class="mb-3">{{"Checkbox Group"|translate}}</h6>
           <rds-checkbox-groups [switch]="false" [inline]="true" [withLabel]="true"
-            [isInputGroup]="false" [itemList]="itemList" [id]="'checkboxGroup'"></rds-checkbox-groups>
+            [isInputGroup]="false" [itemList]="itemListWithInputGroup" [id]="'checkboxGroup'"></rds-checkbox-groups>
         </div>
       </div>
       <div class="col-lg-4 col-md-4 col-xs-12 mb-3">
         <div>
           <h6 class="mb-3">{{"Checkbox Group"|translate}}</h6>
           <rds-checkbox-groups [switch]="false" [inline]="false" [withLabel]="true"
-            [isInputGroup]="true" [itemList]="itemList" [id]="'checkboxGroup1'"></rds-checkbox-groups>
+            [isInputGroup]="true" [itemList]="itemListWithoutInputGroup" [id]="'checkboxGroup1'"></rds-checkbox-groups>
         </div>
       </div>
       <div class="col-lg-4 col-md-4 col-xs-12 mb-3">
         <h6 class="mb-3">{{"Checkbox -Parent Child"|translate}}</h6>
         <rds-checkbox-parent-child [switch]="false"
-          [inline]="false" [isInputGroup]="false" [id]="'checkboxParentChild'">
+          [inline]="false" [isInputGroup]="false" [itemList]="checkboxParentChilditemList" [id]="'checkboxParentChild'">
         </rds-checkbox-parent-child>
+
+
       </div>
     </div>
   </div>
@@ -896,7 +937,7 @@
             <p>{{modalData.modalContent}}</p>
           </div>
           <div modalfooter>
-            <rds-button class="m-1" [label]="translate.instant('Close')" [outlineButton]="true"
+            <rds-button class="m-1" [label]="translate.instant('Close')" [isOutline]="true"
               [colorVariant]="'primary'" [size]="'small'" type="button" data-bs-dismiss="modal"></rds-button>
             <rds-button [label]="translate.instant('Save Changes')" [colorVariant]="'primary'" [size]="'small'"
               type="button" data-bs-dismiss="modal"></rds-button>
@@ -1013,7 +1054,7 @@
             </p>
           </div>
           <div modalfooter>
-            <rds-button class="m-1" [label]="translate.instant('Close')" [outlineButton]="true"
+            <rds-button class="m-1" [label]="translate.instant('Close')" [isOutline]="true"
               [colorVariant]="'primary'" [size]="'small'" type="button" data-bs-dismiss="modal"></rds-button>
             <rds-button [label]="translate.instant('Save Changes')" [colorVariant]="'primary'" [size]="'small'"
               type="button" data-bs-dismiss="modal"></rds-button>
@@ -1037,7 +1078,7 @@
             <p>{{modalData2.modalContent}}</p>
           </div>
           <div modalfooter>
-            <rds-button class="m-1" [label]="translate.instant('Close')" [outlineButton]="true"
+            <rds-button class="m-1" [label]="translate.instant('Close')" [isOutline]="true"
               [colorVariant]="'primary'" [size]="'small'" type="button" data-bs-dismiss="modal"></rds-button>
             <rds-button [label]="translate.instant('Save Changes')" [colorVariant]="'primary'" [size]="'small'"
               type="button" data-bs-dismiss="modal"></rds-button>
@@ -1542,7 +1583,7 @@
           <div class="mt-2 p-2 border-top" body>
             <rds-button [label]="'Take action'" [colorVariant]="'primary'" [size]="'small'" type="button">
             </rds-button>
-            <rds-button class="mx-2" [label]="'Close'" [colorVariant]="'primary'" [outlineButton]="true"
+            <rds-button class="mx-2" [label]="'Close'" [colorVariant]="'primary'" [isOutline]="true"
               [size]="'small'" type="button" data-bs-dismiss="toast"></rds-button>
           </div>
         </rds-toasts>

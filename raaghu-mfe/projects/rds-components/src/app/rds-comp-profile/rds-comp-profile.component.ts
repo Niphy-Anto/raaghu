@@ -8,6 +8,7 @@ import { TableHeader } from '../../models/table-header.model';
 import { TranslateService } from '@ngx-translate/core';
 import { finalize } from 'rxjs/internal/operators/finalize';
 import { HttpClient, HttpEventType, HttpHeaders } from '@angular/common/http';
+import { AlertPopupData } from '../rds-comp-alert-popup/rds-comp-alert-popup.component';
 declare var $: any;
 declare var bootstrap: any;
 
@@ -34,10 +35,23 @@ export class RdsCompProfileComponent extends MfeBaseComponent implements OnInit 
   @Input() languageItems = [];
   @Input() selectedLanguage: any = { language: '', icon: '' };
   @Input() defaultLanguage: string = '';
+  selectedData: any;
+  deleteConfirmationData: AlertPopupData = {
+    iconUrl: "delete",
+    colorVariant: "danger",
+    alertConfirmation: "Are you sure ?",
+    messageAlert: "The record will be deleted permanently",
+    CancelButtonLabel: "Cancel",
+    DeleteButtonLabel: "Delete"
+  }
+  showConfirmationPopup: boolean = false;
+
   delegateTabopened: boolean = false;
   manageLinkedAccountsTabOpened: boolean = false;
 
   @Output() onLanguageSelection = new EventEmitter<any>();
+  @Output() onDeleteDeligate = new EventEmitter<any>();
+
   activePage: number;
   public rdsAlertMfeConfig: ComponentLoaderOptions;
   alertData: any = {
@@ -391,6 +405,30 @@ public getProfilePicture():void{
       res.subText = this.translate.instant(res.subtextTranslationKey)
     });
     return this.MenuItems;
+  }
+
+  deleteDelegate(event): void {
+    this.selectedData = event;
+    this.showConfirmationPopup = true;
+    setTimeout(() => {
+      var element: any = document.getElementById('deleteDelegationModal');
+      var modal = new bootstrap.Modal(element);
+      modal.show();
+    }, 100);
+  }
+
+  delete(): void {
+    this.onDeleteDeligate.emit(this.selectedData);
+
+  }
+  closeModal(): void {
+    var element: any = document.getElementById('deleteDelegationModal');
+    if (element) {
+      var modal = new bootstrap.Modal(element);
+      modal.hide();
+    }
+    this.selectedData = undefined;
+    this.showConfirmationPopup = false;
   }
 
 }

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges, TemplateRef } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges, TemplateRef } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Dropdown } from 'bootstrap'
 
@@ -7,7 +7,7 @@ import { Dropdown } from 'bootstrap'
   templateUrl: './rds-dropdownlist.component.html',
   styleUrls: ['./rds-dropdownlist.component.scss']
 })
-export class RdsDropdownlistComponent implements OnInit, OnChanges {
+export class RdsDropdownlistComponent implements OnInit, OnChanges, AfterViewInit {
 
   title = 'rds-dropdownlist';
 
@@ -54,6 +54,15 @@ export class RdsDropdownlistComponent implements OnInit, OnChanges {
   constructor() {
     this.isMasterSel = false;
   }
+  ngAfterViewInit(): void {
+    const myDropdown = document.getElementById(this.id);
+    if (myDropdown) {
+      myDropdown.addEventListener('hide.bs.dropdown', event => {
+        this.show = false;
+      })
+    }
+
+  }
 
 
   ngOnInit(): void {
@@ -86,7 +95,7 @@ export class RdsDropdownlistComponent implements OnInit, OnChanges {
       customClasses.push('form-control-lg')
     }
     if (this.borderDropdown) {
-      customClasses.push('border')
+      customClasses.push('')
     } if (!this.borderDropdown) {
       customClasses.push('border-0')
     }

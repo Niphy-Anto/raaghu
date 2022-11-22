@@ -252,6 +252,11 @@ html[theme=light] {
   font-size: $font-size-sm;
 }
 
+// /*badge*/
+// .badge {
+//   padding: $badge-padding-y $badge-padding-x;
+
+// }
 //.checkbox-variables
 //tree element
 .dottedstyle {
@@ -420,10 +425,17 @@ html[theme=light] {
 
 .scroll-notifications{
   max-height:100px ;
-  max-height: 215px;
+  max-height: 262px;
   min-height: 100px;
   overflow-y: auto;
   overflow-x: hidden;
+}
+
+.notification{
+  
+  .card-footer{
+    padding:0px !important
+  }
 }
 /*card css */
 .vh-75 {
@@ -823,7 +835,7 @@ rds-banner {
 
 /*  rds banner */
 .alert {
-  z-index: 1025;
+  z-index: 1045;
 }
 
 /*==================================================================================================================================

@@ -21,6 +21,7 @@ export class RdsCompAlertComponent implements OnInit {
 
   @Input() currentAlerts: ToastEvent[] = [];
   @Output() onAlertHide = new EventEmitter<any>();
+  @Input() alertPosition: 'top' | 'bottom' = 'bottom';
 
 
   constructor(private cdr: ChangeDetectorRef, public translate: TranslateService) { }

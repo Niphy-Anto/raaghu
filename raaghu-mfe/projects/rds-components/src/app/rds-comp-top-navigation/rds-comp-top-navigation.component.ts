@@ -1,6 +1,6 @@
 import { Component, DoCheck, EventEmitter, Inject, Injector, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
-import { ComponentLoaderOptions, MfeBaseComponent, SharedService, ThemeSettingsDto } from '@libs/shared';
+import { AlertService, ComponentLoaderOptions, MfeBaseComponent, SharedService, ThemeSettingsDto } from '@libs/shared';
 import { TranslateService } from '@ngx-translate/core';
 import { TableHeader } from '../../models/table-header.model';
 import { DOCUMENT } from '@angular/common';
@@ -37,8 +37,7 @@ export class RdsTopNavigationComponent extends MfeBaseComponent implements OnIni
   @Input() selectedMenuDescription: string = 'Statics and reports';
   @Input() userList: any = [];
   @Input() languageItems = [];
-  @Input() defaultLanguage: string = '';
-  selectedLanguage: any = { language: '', icon: '' };
+  @Input()  selectedLanguage: any = { language: '', icon: '' };
   @Input() notificationData = [];
   @Input() tenancy: string = 'Host Admin';
   @Input() offCanvasId: string = ''
@@ -65,6 +64,7 @@ export class RdsTopNavigationComponent extends MfeBaseComponent implements OnIni
   @Output() onUpdateNotificationSettings = new EventEmitter<any>();
   @Input() linkedAccountHeaders: any = [];
   @Input() linkedAccountData: any = [];
+  @Input() FixedHeader: boolean = true
   @Input() showDelegationButtonSpinner: boolean = true;
   tabName: string = '';
   navtabItems: any = [
@@ -108,8 +108,10 @@ export class RdsTopNavigationComponent extends MfeBaseComponent implements OnIni
 
 
   @Output() onProfileSave = new EventEmitter<any>();
+  @Output() FixedHeaderStyle = new EventEmitter<any>();
 
   constructor(private router: Router, private injector: Injector,
+    private alertService: AlertService,
     private shared: SharedService,
     public translate: TranslateService, @Inject(DOCUMENT) private document: Document
   ) {
@@ -118,9 +120,7 @@ export class RdsTopNavigationComponent extends MfeBaseComponent implements OnIni
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (this.defaultLanguage) {
-      this.selectedLanguage = this.defaultLanguage;
-    }
+
   }
 
   ngOnInit(): void {
@@ -136,12 +136,22 @@ export class RdsTopNavigationComponent extends MfeBaseComponent implements OnIni
     })
     // const existingLinkEl = this.document.getElementById('client-theme') as HTMLLinkElement;
     // existingLinkEl.href = 'default.css';
-    const event = 'default';
-    this.onThemeSelect(event);
+    // let selectedTheme = localStorage.getItem('THEME');
+    // if (selectedTheme === 'light' || selectedTheme === 'dark' || selectedTheme === '' || selectedTheme == undefined || selectedTheme == null || selectedTheme === 'undefined') {
+    //   selectedTheme = 'default';
+    // }
+    // this.selectedTheme = selectedTheme;
+    // // this.onThemeSelect(selectedTheme);
 
-    if (this.defaultLanguage) {
-      this.selectedLanguage = this.defaultLanguage;
-    }
+    // this.alertService.themes.subscribe((theme) => {
+    //   if (theme) {
+    //     // this.onThemeSelect(theme);
+    //     this.selectedTheme = theme;
+
+    //   }
+
+    // })
+
 
 
     this.on('logout').subscribe(r => {
@@ -152,6 +162,8 @@ export class RdsTopNavigationComponent extends MfeBaseComponent implements OnIni
       console.log(res);
       this.emitEvent('tenancyDataReturns', res);
     })
+
+
   }
 
 
@@ -198,21 +210,22 @@ export class RdsTopNavigationComponent extends MfeBaseComponent implements OnIni
   onToggleButton(): void {
     this.toggleEvent.emit();
   }
-  onThemeSelect(event: any) {
-    this.selectedTheme = event;
-    const headEl = this.document.getElementsByTagName('head')[0];
-    const existingLinkEl = this.document.getElementById('client-theme') as HTMLLinkElement;
-    const newLinkEl = this.document.createElement('link');
+  // onThemeSelect(event: any, isSelected: boolean = false) {
+  //   this.selectedTheme = event;
+  //   this.alertService.setTheme(this.selectedTheme)
+  //   // const headEl = this.document.getElementsByTagName('head')[0];
+  //   // const existingLinkEl = this.document.getElementById('client-theme') as HTMLLinkElement;
+  //   // const newLinkEl = this.document.createElement('link');
 
-    if (existingLinkEl) {
-      existingLinkEl.href = event + '.css';
-    } else {
-      newLinkEl.id = 'client-theme'
-      newLinkEl.rel = 'stylesheet';
-      newLinkEl.href = event + '.css';
-      headEl.appendChild(newLinkEl);
-    }
-  }
+  //   // if (existingLinkEl) {
+  //   //   existingLinkEl.href = event + '.css';
+  //   // } else {
+  //   //   newLinkEl.id = 'client-theme'
+  //   //   newLinkEl.rel = 'stylesheet';
+  //   //   newLinkEl.href = event + '.css';
+  //   //   headEl.appendChild(newLinkEl);
+  //   // }
+  // }
   openNotification(): void {
     this.showNotification = !this.showNotification;
     var element: any = document.getElementById('notification-popup-menu');

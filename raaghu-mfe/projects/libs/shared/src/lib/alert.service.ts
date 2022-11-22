@@ -20,8 +20,12 @@ export class AlertService {
   alertEvents: Observable<AlertEvent>;
   private _alertEvents = new Subject<AlertEvent>();
 
+  themes: Observable<string>;
+  private selectedTheme = new Subject<string>();
+
   constructor() {
     this.alertEvents = this._alertEvents.asObservable();
+    this.themes = this.selectedTheme.asObservable();
   }
 
   /**
@@ -36,5 +40,8 @@ export class AlertService {
       title,
       type
     });
+  }
+  setTheme(theme: string) {
+    this.selectedTheme.next(theme);
   }
 }

@@ -23,13 +23,8 @@ import {
   LanguageEffects,
   ProductEffects,
   productReducer,
-  DynamicEntityEffects,
-  DynamicEntityReducer,
-  DynamicPropertyEffects,
-  DynamicPropertyReducer,
   ProfileEffects,
   ProfileReducer,
-  WebhookSubscriptionEffects,
   LoginEffects,
   ValidateTenantReducer,
   OrganizationUnitReducer,
@@ -41,18 +36,17 @@ import {
   LoginAttemptsEffects,
   DelegationsReducer,
   DelegationsEffects,
-  GetAllDynamicProperty,
-  GetAllDynamicPropertyEntites,
-  GetInputnameReducer,
-  getDynamicPropertyByEditReducer,
-  DynamicPermissionReducer,
   GetUsernameFilterReducer,
   LoginAttemptsReducer,
   LanguageReducer,
   CountryListReducer,
   DefaultLanguageReducer,
   downloadReducer,
-  DownloadEffects
+  DownloadEffects,
+  visualsettingEffects,
+  VisualsettingsReducer,
+  DynamicEntityEffects,
+  DynamicEntityReducer,
 } from '@libs/state-management';
 import { LanguageTextEffects } from 'projects/libs/state-management/src/lib/state/language-text/language-text.effects';
 import { RdsSideNavModule } from '@libs/rds-elements';
@@ -107,18 +101,11 @@ export function getRemoteServiceBaseUrl(): any {
     NgxTranslateModule.forRoot(),
     StoreModule.forRoot({
       products: productReducer,
-      dynamicProperty: DynamicPropertyReducer,
-      dynamicEntity: DynamicEntityReducer,
       profile: ProfileReducer,
-      Entities: GetAllDynamicProperty,
-      PropertiesEntitie: GetAllDynamicPropertyEntites,
       organizationUnit: OrganizationUnitReducer,
       Delegation: DelegationsReducer,
       mla: MLAReducer,
       validateTenant: ValidateTenantReducer,
-      InputTypeNames: GetInputnameReducer,
-      EditDynamicPropertSateI: getDynamicPropertyByEditReducer,
-      DynanmicPermission: DynamicPermissionReducer,
       usernames: GetUsernameFilterReducer,
       loginAttempts: LoginAttemptsReducer,
       languages: LanguageReducer,
@@ -127,7 +114,8 @@ export function getRemoteServiceBaseUrl(): any {
       defaultLanguage: DefaultLanguageReducer,
       downloadData: downloadReducer,
       profilePicture : ProfileReducer,
-      profilepic: ProfilePicReducer
+      profilepic: ProfilePicReducer,
+      visualsettings:VisualsettingsReducer
     }),
 
     StoreDevtoolsModule.instrument({
@@ -140,8 +128,6 @@ export function getRemoteServiceBaseUrl(): any {
       MLAEffects,
       LanguageEffects,
       ManageLinkedAccountsEffects,
-      DynamicPropertyEffects,
-      DynamicEntityEffects,
       ProfileEffects,
       OrganizationUnitEffects,
       MaintenanceEffects,
@@ -149,7 +135,8 @@ export function getRemoteServiceBaseUrl(): any {
       LoginEffects,
       LanguageTextEffects,
       DownloadEffects,
-      ProfilePicEffects
+      ProfilePicEffects,
+      visualsettingEffects
     ]),
     SharedModule,
     UserAuthModule,

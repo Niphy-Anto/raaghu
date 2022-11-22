@@ -1,44 +1,6 @@
-//subscription-page
-
-.subscription-bg-blue {
-    background-color: #005FA4;
-}
-
-.subscription-bg-purple {
-    background-color: #660064;
-}
-
-.subscription-bg-green {
-    background-color: #00A443;
-}
-
-.subscription-bg-orangered {
-    background-color: #F76161;
-}
-
-.subscription-bg-orange {
+// recommended
+.bg-recommended {
     background-color: #F58220;
-}
-
-
-.subscription-border-blue {
-    border: 1px solid #005FA4;
-}
-
-.subscription-border-purple {
-    border: 1px solid #660064;
-}
-
-.subscription-border-green {
-    border: 1px solid #00A443;
-}
-
-.subscription-border-orangered {
-    border: 1px solid #F76161;
-}
-
-.subscription-border-orange {
-    border: 1px solid #F58220;
 }
 
 // ribbon
@@ -51,9 +13,10 @@
     width: 26px;
     position: absolute;
     top: 21px;
-    left: 74%;
+    left: 91.3%;
     text-align: center;
     background: #F47530;
+    border-radius: 0 6px 0 0;
 }
 
 .ribbon2:before,

@@ -10,9 +10,9 @@ import { RolesState, PermissionState, EditRoleSate } from './state/role/role.red
 import { SubscriptionInformationState, SubscriptionState } from './state/subscription/subscription.reducer';
 import { VisualsettingsState } from './state/Visual-settings/visual-settings.reducer';
 import { WebhookSubscriptionState } from './state/webhook-subscription/webhook-subscription.reducer';
-import { EditionsComboboxState, TenantFeatureState, TenantInfoState, TenantState } from './state/tenant/tenant.reducer';
+import { EditionsComboboxState, TenantFeatureState, TenantInfoState, TenantLoginState, TenantState, TenantUsersState } from './state/tenant/tenant.reducer';
 import { AuditLogsState } from './state/audit-logs/audit-logs.reducer';
-import { AllDynamicEntitySate, AllDynamicPropertyEntitySate, DynamicEntityState, DynamicPermissionState, DynamicPropertyState, EditDynampicPropertState, InputPropertynameState } from './state/dynamic-property-management/dynamic-property.reducer';
+import { DynamicPermissionState, DynamicPropertyState, EditDynampicPropertState, InputPropertynameState } from './state/dynamic-property-management/dynamic-property.reducer';
 import { OrganizationUnitState } from './state/organization-unit/organization-unit.reducer';
 import { EditUserPermissionSate, EditUserSate, UserPermissionFilterState, UsersState } from './state/user/user.reducer';
 //import { SettingsState, ValidateTenantState } from '../public-api';
@@ -22,12 +22,13 @@ import { SettingsState, SettingsTenantPageComboboxState } from './state/settings
 import { ValidateTenantState } from './state/login/login.reducer';
 import { downloadState } from './state/DownloadData/download-data.reducer';
 import { ProfilepictureState } from './state/profile-settings/profile-settings.reducers';
+import { AllDynamicEntitySate, AllDynamicPropertyEntitySate, DynamicEntityState } from './state/dynamic-entity/dynamic-entity.reducer';
 
 export interface AppState {
   products: ProductState,
   webhookSubscriptions: WebhookSubscriptionState,
   profile: profileState,
-  dynamicProperty: DynamicPropertyState,
+  properties: DynamicPropertyState,
   organizationUnit: OrganizationUnitState
   dynamicEntity: DynamicEntityState,
   editions: EditionsState,
@@ -71,7 +72,9 @@ export interface AppState {
   settingsComboboxItem: SettingsTenantPageComboboxState,
   download:downloadState,
   editdynamicProperty:EditDynampicPropertState,
-  profilePicture : ProfilepictureState
+  profilePicture : ProfilepictureState,
+  tenantUsers:TenantUsersState,
+  tenantLogin:TenantLoginState
 }
 
 export const products = 'products';
