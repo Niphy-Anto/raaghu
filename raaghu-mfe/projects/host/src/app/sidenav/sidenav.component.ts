@@ -3,7 +3,7 @@ import { NavigationEnd, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { ComponentLoaderOptions, LinkedUserDto, MfeBaseComponent, SharedService, UserAuthService, UserDelegationServiceProxy } from '@libs/shared';
 import { Store } from '@ngrx/store';
-import { changePassword, getLanguages, getProfile, selectAllLanguages, selectDefaultLanguage, selectProfileInfo, setDefaultLanguageForUI } from '@libs/state-management';
+import { changePassword, getLanguages, getProfile, selectAllLanguages, selectDefaultLanguage, selectProfileInfo, setDefaultLanguageForUI, updateTenant } from '@libs/state-management';
 import { deleteDelegations, getDelegations, getUsername, saveDelegations } from 'projects/libs/state-management/src/lib/state/authority-delegations/authority-delegations.action';
 import { selectDelegationsInfo, selectUserFilter } from 'projects/libs/state-management/src/lib/state/authority-delegations/authority-delegations.selector';
 import { selectAllLoginAttempts } from 'projects/libs/state-management/src/lib/state/login-attempts/login-attempts.selector';
@@ -19,6 +19,9 @@ import { DOCUMENT } from '@angular/common';
 import { slideInAnimation } from '../animation';
 import { RouterOutlet } from '@angular/router';
 import * as moment from 'moment';
+import { profileSelector } from 'projects/libs/state-management/src/lib/state/profile-settings/profile-settings.selectors';
+import { getProfilepic, updateProfile } from 'projects/libs/state-management/src/lib/state/profile-settings/profile-settings.actions';
+
 declare var bootstrap: any;
 @Component({
   selector: 'app-sidenav',
@@ -203,7 +206,7 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
         selectedMenuDescription: this.selectedMenuDescription,
         LoginAttempts: this.LoginAttempts,
         isPageWrapper: true,
-        profilePic: this.profilePic,
+        // profilePic: this.profilePic,
         profileData: this.profileData,
         rdsDeligateTableData: this.rdsDeligateTableData,
         offCanvasId: this.offCanvasId,
@@ -283,6 +286,9 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
         },
         onUpdateNotificationSettings: (data: any) => {
           this.store.dispatch(updateNotificationSettings(data));
+        },
+        onProfileData: (event: any) =>{
+          this.store.dispatch(getProfilepic());
         }
       }
     }
@@ -425,6 +431,17 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
         this.rdsTopNavigationMfeConfig = mfe;
       }
     })
+
+    // prfoile pic 
+
+    // this.store.dispatch(getProfilepic());
+     this.store.select(profileSelector).subscribe((res: any)=> {})
+
+
+    //  update profile pic
+    // this.store.dispatch(updateProfile(data));
+
+
     this.store.dispatch(getDelegations());
     this.store.select(selectDelegationsInfo).subscribe((res: any) => {
       if (res && res.items && res.items.length) {

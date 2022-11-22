@@ -62,15 +62,25 @@
             <div class="justify-content-center d-flex align-items-center">
               <div class="d-inline-block position-relative">
                 <rds-avatar [withProfilePic]="true" [profilePic]="Profileurl" [roundedPills]="true"
-                  [verticallyAlligned]="true" [roundedAvatar]="true" [height]="'110'"></rds-avatar>
+                  [verticallyAlligned]="true" [roundedAvatar]="true" [width]="'120'" [height]="'120'"></rds-avatar>
                 <div class="text-center" *ngIf="ProfileData">
                   {{ ProfileData.userName }}
-                  <input type="file" (change)="checkFileSize($event); checkExtension($event)" #file
+                  <input type="file" (change)="onSelectFile($event)" #file
                     (input)="getValue($event)" name="myfile" style="display: none" />
-                  <button class="btn btn-icon upload-icon btn-md rounded-circle" (click)="file.click()"
-                    style="display: none">
-                    <rds-icon name="edit" width="30px" height="30px" text-primary></rds-icon>
-                  </button>
+                  <rds-button class="btn btn-icon upload-icon btn-md rounded-circle" colorVariant="" size="medium" [roundedButton]="true" tooltipTitle="" tooltipPlacement="right" iconHeight="18px"
+                    iconWidth="18px"
+                    [iconStroke]="true"
+                    [iconFill]="false"
+                    buttonType="iconOnly"
+                    icon="pencil"
+                    (click)="file.click()"
+                  ></rds-button>
+
+
+                  <!-- <rds-button class="btn btn-icon upload-icon btn-md rounded-circle" 
+                    >
+                    <rds-icon name="edit" [stroke]="true" [fill]="false" width="15px" height="15px" text-primary></rds-icon>
+                  </rds-button> -->
                 </div>
               </div>
             </div>

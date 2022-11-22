@@ -96,7 +96,9 @@
             <div class="px-2">
               <!-- <rds-icon name="profile_circle" height="20px" width="20px" [stroke]="true"></rds-icon> -->
               <!-- <rds-avatar [WithProfilePic]="true" [profilePic]="profilePic" [Size]="'small'"></rds-avatar> -->
-              <img [src]="profilePic" alt="" height="32px" width="32px">
+              <rds-avatar [withProfilePic]="true" [profilePic]="profilePic" [roundedPills]="true"
+                  [verticallyAlligned]="true" [roundedAvatar]="true" [size]="'small'" [width]="'15px'" [height]="'15px'"></rds-avatar>
+              <!-- <img [src]="profilePic" alt="" height="32px" width="32px"> -->
             </div>
             <div class="pe-auto" *ngIf="profileData">
               <span class="text-decoration-none d-flex" (click)="redirect('profile')">
@@ -125,7 +127,7 @@
   (onDeleteDeligate)="deleteDeligateuser.emit($event)" (ondeleteLinkaccount)="deleteLinkaccount.emit($event)"
   (onLinkToUser)="saveLinkUsers($event)" (onProfileSave)="onProfileSave.emit($event)"
   (onLoginAttempts)="onLoginAttemptsRefresh.emit($event)" (onDownloadLink)="onDownloadLink.emit($event)"
-  [linkedAccountHeaders]="linkedAccountHeaders" [linkedAccountData]="linkedAccountData"
+  [linkedAccountHeaders]="linkedAccountHeaders" [linkedAccountData]="linkedAccountData" (onProfilePicUpdate)="getProfilePic($event)"
   [showDelegationButtonSpinner]="showDelegationButtonSpinner">
 </rds-comp-profile>
 <rds-comp-notification-settings [notificationTypes]="notificationTypes" [receiveNotifications]="receiveNotifications"

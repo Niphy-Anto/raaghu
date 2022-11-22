@@ -21,6 +21,7 @@ import { LanguageTextsState } from './state/language-text/language-text.reducer'
 import { SettingsState, SettingsTenantPageComboboxState } from './state/settings/settings.reducer';
 import { ValidateTenantState } from './state/login/login.reducer';
 import { downloadState } from './state/DownloadData/download-data.reducer';
+import { ProfilepictureState } from './state/profile-settings/profile-settings.reducers';
 
 export interface AppState {
   products: ProductState,
@@ -69,7 +70,8 @@ export interface AppState {
   defaultLanguage: DefaultLanguageState,
   settingsComboboxItem: SettingsTenantPageComboboxState,
   download:downloadState,
-  editdynamicProperty:EditDynampicPropertState
+  editdynamicProperty:EditDynampicPropertState,
+  profilePicture : ProfilepictureState
 }
 
 export const products = 'products';
