@@ -135,7 +135,7 @@ export class AppComponent {
                 sendActivationEmail: tenant.tenantSettings.sendActivationEmail,
                 editionId: +tenant.tenantInfo.edition,
                 isActive: tenant.tenantSettings.isActive,
-                subscriptionEndDateUtc: (tenant.tenantInfo.unlimitedSubscription||!tenant.tenantInfo.subscriptionEndDate||tenant.tenantInfo.subscriptionEndDat==null) ? null : new Date(tenant.tenantInfo.subscriptionEndDate).toISOString(),
+                subscriptionEndDateUtc: (tenant.tenantInfo.unlimitedSubscription||!tenant.tenantInfo.subscriptionEndDate||tenant.tenantInfo.subscriptionEndDate==null) ? null : new Date(tenant.tenantInfo.subscriptionEndDate).toISOString(),
                 isInTrialPeriod: false
               };
               this.store.dispatch(saveTenant(data, 30))
@@ -218,7 +218,7 @@ export class AppComponent {
 
     this.store.select(selecteTeantLoginList).subscribe((res: any) => {     
       if (res && res.tenantLogin  && res.status == "success") {        
-        let targetUrl='http://localhost:8080/login'+'?impersonationToken='+res.tenantLogin.impersonationToken+ '&tenantId=' + this.loginList+ '&tenancyName='+res.tenantLogin.tenancyName;
+        let targetUrl='https://anzstageui.raaghu.io/login'+'?impersonationToken='+res.tenantLogin.impersonationToken+ '&tenantId=' + this.loginList+ '&tenancyName='+res.tenantLogin.tenancyName;
       this.userAuthService.unauthenticateUser(true,targetUrl);      
       }
     })      
