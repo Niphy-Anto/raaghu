@@ -188,7 +188,6 @@ export class RdsTopNavigationComponent extends MfeBaseComponent implements OnIni
   }
   getProfilePic(event: any): void {
     this.profilePic = event;
-    console.log(event)
   }
 
   // onProfileData(event: any){
