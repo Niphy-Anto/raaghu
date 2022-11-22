@@ -218,7 +218,7 @@ export class AppComponent {
 
     this.store.select(selecteTeantLoginList).subscribe((res: any) => {     
       if (res && res.tenantLogin  && res.status == "success") {        
-        let targetUrl='https://anzstageui.raaghu.io/'+'?impersonationToken='+res.tenantLogin.impersonationToken+ '&tenantId=' + this.loginList+ '&tenancyName='+res.tenantLogin.tenancyName;
+        let targetUrl='https://anzstageui.raaghu.io/login'+'?impersonationToken='+res.tenantLogin.impersonationToken+ '&tenantId=' + this.loginList+ '&tenancyName='+res.tenantLogin.tenancyName;
       this.userAuthService.unauthenticateUser(true,targetUrl);      
       }
     })      
