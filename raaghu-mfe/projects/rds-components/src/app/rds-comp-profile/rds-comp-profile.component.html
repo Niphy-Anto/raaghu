@@ -61,10 +61,10 @@
           <div class="card-body h-100 p-0 d-grid">
             <div class="justify-content-center d-flex align-items-center">
               <div class="d-inline-block position-relative">
-                <rds-avatar [withProfilePic]="true" [profilePic]="Profileurl" [roundedPills]="true"
-                  [verticallyAlligned]="true" [roundedAvatar]="true" [height]="'110'"></rds-avatar>
+                <rds-avatar [withProfilePic]="true" [firstName]="'Host Admin'"  [subTitle]="ProfileData.userName" [profilePic]="Profileurl" [roundedPills]="true"
+                  [verticallyAlligned]="true"  [profileContentAlign]="false" [roundedAvatar]="true" [height]="'110'"></rds-avatar>
                 <div class="text-center" *ngIf="ProfileData">
-                  {{ ProfileData.userName }}
+                 
                   <input type="file" (change)="checkFileSize($event); checkExtension($event)" #file
                     (input)="getValue($event)" name="myfile" style="display: none" />
                   <button class="btn btn-icon upload-icon btn-md rounded-circle" (click)="file.click()"

@@ -1,11 +1,18 @@
 <div [ngClass]="{ 'd-flex': !verticallyAlligned }">
-  <div *ngIf="withProfilePic" class="flex-grow-0 d-flex align-items-center">
-    <img [src]="profilePic"  class="avatar w-100" [ngClass]="classes" [ngStyle]="{'height':height + 'px'}" />
-
+  <div *ngIf="withProfilePic" class="" [ngClass]="profileClass" >
+    <img [src]="profilePic" class="avatar " [ngClass]="classes" [ngStyle]="{'height':height + 'px'}" />
+    <span class="flex-grow-1 align-items-center ms-2 fw-bold text-decoration-none d-flex">
+      <div>
+        <span>{{firstName}} {{lastName}}</span>
+        <p class="mb-0 mx-3 text-muted user-role">
+          {{subTitle}}
+        </p>
+      </div>
+    </span>
   </div>
   <div *ngIf="!withProfilePic" class="d-flex justify-content-center align-items-center avatar rounded-circle"
     [ngClass]="classes">
-    <div class="flex-shrink-0 d-flex align-items-center" >
+    <div class="flex-shrink-0 d-flex align-items-center">
 
       <div *ngIf="(firstName !== '' && firstName !== undefined) ||
       (lastName !== '' && lastName !== undefined)">
