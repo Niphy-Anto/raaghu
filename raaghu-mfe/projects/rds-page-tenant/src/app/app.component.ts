@@ -135,7 +135,7 @@ export class AppComponent {
                 sendActivationEmail: tenant.tenantSettings.sendActivationEmail,
                 editionId: +tenant.tenantInfo.edition,
                 isActive: tenant.tenantSettings.isActive,
-                subscriptionEndDateUtc: (tenant.tenantInfo.unlimitedSubscription||!tenant.tenantInfo.subscriptionEndDate||tenant.tenantInfo.subscriptionEndDat==null) ? null : new Date(tenant.tenantInfo.subscriptionEndDate).toISOString(),
+                subscriptionEndDateUtc: (tenant.tenantInfo.unlimitedSubscription||!tenant.tenantInfo.subscriptionEndDate||tenant.tenantInfo.subscriptionEndDate==null) ? null : new Date(tenant.tenantInfo.subscriptionEndDate).toISOString(),
                 isInTrialPeriod: false
               };
               this.store.dispatch(saveTenant(data, 30))
