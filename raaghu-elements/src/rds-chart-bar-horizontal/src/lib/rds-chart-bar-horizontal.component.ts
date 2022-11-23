@@ -1,3 +1,4 @@
+
 import { Component, Input, OnInit } from '@angular/core';
 import Chart from 'chart.js/auto';
 // import { ChartDataSet } from '@rds-common-lib';
@@ -55,14 +56,39 @@ export class RdsChartBarHorizontalComponent implements OnInit {
     }
     this.canvas = document.getElementById(this.chartId);
     if (this.canvas !== null) {
-      this.chartDataSets.forEach((element: any) => {
-        element.backgroundColor.forEach((bg: any, index: number) => {
-          if (this.style) {
-            element.backgroundColor[index] = (this.style.getPropertyValue('--chart-bar-horizontal-color' + (index + 1))) ? this.style.getPropertyValue('--chart-bar-horizontal-color' + (index + 1)) : bg
-          }
-        });
-      });
       this.ctx = this.canvas.getContext('2d');
+
+      //this.chartDataSets.forEach((element: any) => {
+      //  element.backgroundColor.forEach((bg: any, index: number) => {
+      //    if (bg && this.style) {
+      //      element.backgroundColor[index] = (this.style.getPropertyValue('--chart-bar-horizontal-color' + (index + 1))) ? this.style.getPropertyValue('--chart-bar-horizontal-color' + (index + 1)) : bg
+      //    }
+      //  });
+      //});
+      this.chartDataSets.forEach((ele: any, index: number) => {
+        let color = this.style.getPropertyValue('--chart-bar-horizontal-color');
+        const borderColor = this.style.getPropertyValue('--chart-bar-horizontal-border-color');
+        if (color) {
+          if (borderColor) {
+            ele.borderColor = borderColor;
+
+          }
+
+          const gradient = this.ctx.createLinearGradient(0, 50, 0, 300);
+
+          color = color.replace(/[\d\.]+\)$/g, '.76)');
+
+          gradient.addColorStop(0.1, color);
+
+          color = color.replace(/[\d\.]+\)$/g, '.08)');
+
+          gradient.addColorStop(1, color);
+
+          ele.backgroundColor = gradient;
+
+        }
+
+      })
       const canvas = new Chart(this.ctx, {
         type: 'bar',
         data: {
