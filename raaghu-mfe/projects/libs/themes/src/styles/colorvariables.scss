@@ -110,7 +110,7 @@ html[theme=light] {
   $pagination-item-bg-active: $gray-800;
 
   /*dropdown Variales */
-  $dropdown-border-bottom: $gray-500;
+  $dropdown-border-bottom: $gray-500 !default;
   $dropdown-bg-color: $gray-100 !default;
   $dropdown-border-bottom-hover: $gray-100;
 
@@ -204,7 +204,7 @@ html[theme=light] {
 
   $form-select-bg1: $input-bg !default;
 
-  $form-select-border-color1: $gray-300 !default;
+  $form-select-border-color1: $gray-400 !default;
   $shimmerbg: $light-700 !default;
 
   .ngx-shimmer {

@@ -58,7 +58,7 @@ export class RdsChartBarHorizontalComponent implements OnInit {
       this.chartDataSets.forEach((element: any) => {
         element.backgroundColor.forEach((bg: any, index: number) => {
           if (this.style) {
-            element.backgroundColor[index] = (this.style.getPropertyValue('--chart-bar-horizontal-color' + index + 1)) ? this.style.getPropertyValue('--chart-bar-horizontal-color' + index + 1) : bg
+            element.backgroundColor[index] = (this.style.getPropertyValue('--chart-bar-horizontal-color' + (index + 1))) ? this.style.getPropertyValue('--chart-bar-horizontal-color' + (index + 1)) : bg
           }
         });
       });

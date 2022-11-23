@@ -64,7 +64,7 @@ export class RdsChartBoolComponent implements OnInit, AfterViewInit {
     this.chartDataSets.forEach((element: any) => {
       element.backgroundColor.forEach((bg: any, index: number) => {
         if (this.style) {
-          element.backgroundColor[index] = (this.style.getPropertyValue('--chart-bool-color' + index + 1)) ? this.style.getPropertyValue('--chart-bool-color' + index + 1) : bg
+          element.backgroundColor[index] = (this.style.getPropertyValue('--chart-bool-color' + (index + 1))) ? this.style.getPropertyValue('--chart-bool-color' + (index + 1)) : bg
         }
       });
     });
