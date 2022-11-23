@@ -10,7 +10,7 @@ import { RolesState, PermissionState, EditRoleSate } from './state/role/role.red
 import { SubscriptionInformationState, SubscriptionState } from './state/subscription/subscription.reducer';
 import { VisualsettingsState } from './state/Visual-settings/visual-settings.reducer';
 import { WebhookSubscriptionState } from './state/webhook-subscription/webhook-subscription.reducer';
-import { EditionsComboboxState, TenantFeatureState, TenantInfoState, TenantState } from './state/tenant/tenant.reducer';
+import { EditionsComboboxState, TenantFeatureState, TenantInfoState, TenantLoginState, TenantState, TenantUsersState } from './state/tenant/tenant.reducer';
 import { AuditLogsState } from './state/audit-logs/audit-logs.reducer';
 import { DynamicPermissionState, DynamicPropertyState, EditDynampicPropertState, InputPropertynameState } from './state/dynamic-property-management/dynamic-property.reducer';
 import { OrganizationUnitState } from './state/organization-unit/organization-unit.reducer';
@@ -21,6 +21,7 @@ import { LanguageTextsState } from './state/language-text/language-text.reducer'
 import { SettingsState, SettingsTenantPageComboboxState } from './state/settings/settings.reducer';
 import { ValidateTenantState } from './state/login/login.reducer';
 import { downloadState } from './state/DownloadData/download-data.reducer';
+import { ProfilepictureState } from './state/profile-settings/profile-settings.reducers';
 import { AllDynamicEntitySate, AllDynamicPropertyEntitySate, DynamicEntityState } from './state/dynamic-entity/dynamic-entity.reducer';
 
 export interface AppState {
@@ -70,7 +71,10 @@ export interface AppState {
   defaultLanguage: DefaultLanguageState,
   settingsComboboxItem: SettingsTenantPageComboboxState,
   download:downloadState,
-  editdynamicProperty:EditDynampicPropertState
+  editdynamicProperty:EditDynampicPropertState,
+  profilePicture : ProfilepictureState,
+  tenantUsers:TenantUsersState,
+  tenantLogin:TenantLoginState
 }
 
 export const products = 'products';

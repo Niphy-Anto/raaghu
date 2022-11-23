@@ -1,6 +1,5 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 import { AppState } from '../../app.interface';
-import { TenantState } from './tenant.reducer';
 
 // export const selectTenants = (state: AppState) => state.tenants;
 // export const selectAllTenants = createSelector(
@@ -26,3 +25,14 @@ export const selectTenantFeature = createSelector(
   tenantSelector,
   (state: AppState) => state.tenantFeature
 );
+
+export const selecteTeantUserList = createSelector(
+  tenantSelector,
+    (state: AppState) => state.tenantUsers
+);
+
+export const selecteTeantLoginList = createSelector(
+  tenantSelector,
+    (state: AppState) => state.tenantLogin
+);
+

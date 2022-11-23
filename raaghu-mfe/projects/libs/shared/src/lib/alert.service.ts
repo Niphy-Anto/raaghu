@@ -5,6 +5,7 @@ export interface AlertEvent {
   type: any;
   title: string;
   message: string;
+  sticky:boolean;
 }
 export enum AlertTypes {
   Success = 'success',
@@ -34,11 +35,14 @@ export class AlertService {
    * @param message Toast message
    * @param type Toast type
    */
-  showAlert(title: string, message: string, type: string) {
+  showAlert(title: string, message: string, type: string, sticky?: boolean) {
     this._alertEvents.next({
       message,
       title,
-      type
+      type,
+      sticky
+
+
     });
   }
   setTheme(theme: string) {

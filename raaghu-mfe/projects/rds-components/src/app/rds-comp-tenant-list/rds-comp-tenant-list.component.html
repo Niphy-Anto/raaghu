@@ -64,4 +64,24 @@
         </div>
     </rds-nav-tab>
 </rds-offcanvas>
+
+<rds-offcanvas [canvasTitle]="translate.instant(canvasTitle)" [offId]="'loginAsTenantOffcanvas'" [offcanvaswidth]="650"
+    [placement]="'end'" *ngIf="viewLoginAsTenantCanvas" (onClose)="closeLoginAsTenant()">
+    <div class="row">
+        <div class="col-md-12">
+            <rds-data-table [tableData]="userTableData" [inlineEdit]="false" [pagination]="true"
+                    [recordsPerPage]="10" [actions]="userTableActions" (onActionSelection)="onUserDataActionSelect($event)"
+                    noDataTitle="Currently you do not have tenant" [tableHeaders]="tenantHeadersUser"
+                    ></rds-data-table>
+        </div>
+    </div>
+    
+    <div class="footer-buttons">
+        <div class="col-md-12 ">
+            <rds-button [label]="translate.instant('Cancel')" 
+                [colorVariant]="'primary'" [size]="'small'" (click)="closeLoginAsTenant()" data-bs-dismiss="offcanvas">
+            </rds-button>          
+        </div>
+    </div>
+</rds-offcanvas>
 <mfe-loader [config]="rdsAlertMfeConfig"></mfe-loader>
