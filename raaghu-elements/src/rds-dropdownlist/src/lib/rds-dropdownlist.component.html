@@ -56,7 +56,7 @@
   </span>
 
   <ng-template #other_content>Select Property</ng-template>
-  <ul class="dropdown-menu" [attr.aria-labelledby]="id">
+  <ul class="dropdown-menu" [attr.aria-labelledby]="id" [ngStyle]="{'max-height':dropdownHeight === '' || null || undefined ? '155px' : dropdownHeight + 'px'}">
     <li class="list-group-item p-0" *ngIf="selectAll && multiSelect">
       <span class="dropdown-item">
         <input type="checkbox" class="form-check-input me-2" [(ngModel)]="isMasterSel" name="list_name" value="h1"
