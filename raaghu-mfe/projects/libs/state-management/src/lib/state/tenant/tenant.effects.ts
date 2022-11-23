@@ -47,7 +47,7 @@ export class TenantEffects {
       mergeMap((data,maxresult) =>
         this.tenantService.createTenant(data.tenant).pipe(map((res: any) => {
           this.store.dispatch(getTenants());
-          this.alertService.showAlert('Success', 'Tenant added successfully', 'success')
+          this.alertService.showAlert('Success', 'Tenant added successfully', 'success', )
 
 
         }),
