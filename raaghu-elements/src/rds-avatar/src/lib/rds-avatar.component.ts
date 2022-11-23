@@ -16,6 +16,7 @@ export class RdsAvatarComponent implements OnInit, OnChanges {
   @Input() roundedAvatar: boolean = true;
   @Input() roundedPills: boolean = false;
   @Input() height? : string ;
+  @Input() width? : string;
   @Input() subTitle:string = ''
   @Input() profileContentAlign:boolean=false
   constructor() { }

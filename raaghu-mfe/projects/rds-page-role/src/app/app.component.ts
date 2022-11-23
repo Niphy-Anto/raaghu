@@ -348,6 +348,7 @@ export class AppComponent implements OnInit {
         type: alert.type,
         title: alert.title,
         message: alert.message,
+        sticky: alert.sticky,
       };
       this.currentAlerts.push(currentAlert);
       const rdsAlertMfeConfig = this.rdsAlertMfeConfig;

@@ -54,6 +54,8 @@ import { LanguageTextReducer } from 'projects/libs/state-management/src/lib/stat
 import demodata from '../assets/appconfig.json';
 import { RdsCookieConsentConfig } from 'projects/libs/rds-cookieconsent/src/lib/service/cookieconsent-config';
 import { RdsCookieConsentModule } from 'projects/libs/rds-cookieconsent/src/lib/rds-cookieconsent.module';
+import { ProfilePicEffects } from 'projects/libs/state-management/src/lib/state/profile-settings/profile-settings.effects';
+import { ProfilePicReducer } from 'projects/libs/state-management/src/lib/state/profile-settings/profile-settings.reducers';
 export function getRemoteServiceBaseUrl(): any {
   let URL = demodata.remoteServiceBaseUrl;
   return URL;
@@ -111,6 +113,8 @@ export function getRemoteServiceBaseUrl(): any {
       languageText: LanguageTextReducer,
       defaultLanguage: DefaultLanguageReducer,
       downloadData: downloadReducer,
+      profilePicture : ProfileReducer,
+      profilepic: ProfilePicReducer,
       visualsettings:VisualsettingsReducer
     }),
 
@@ -131,6 +135,7 @@ export function getRemoteServiceBaseUrl(): any {
       LoginEffects,
       LanguageTextEffects,
       DownloadEffects,
+      ProfilePicEffects,
       visualsettingEffects
     ]),
     SharedModule,
