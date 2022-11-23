@@ -64,12 +64,11 @@
 
           <li>
             <div class="form-group mb-5">
-              <rds-counter [counterValue]="Seccuritysetting.requiredLength" Title="Required Length"
+              <rds-counter [counterValue]="Seccuritysetting.requiredLength" 
                 colorVariant="primary" (counterChange)="getCounterData($event,'requiredLength')"
                 [(ngModel)]="Seccuritysetting.requiredLength" [min]="0" [max]="26" [width]="124" name="requiredLength"
                 #requiredLength="ngModel" ngDefaultControl (change)="onChange()">
               </rds-counter>
-
             </div>
           </li>
         </ul>
