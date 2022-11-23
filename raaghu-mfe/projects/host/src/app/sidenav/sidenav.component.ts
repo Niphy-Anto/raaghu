@@ -244,7 +244,7 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
           descriptionTranslationKey: '',
         },
         {
-          label: 'subscription',
+          label: 'Subscription',
           labelTranslationKey: 'subscription',
           id: '',
           permissionName: 'Pages.Administration.Tenant.SubscriptionManagement',

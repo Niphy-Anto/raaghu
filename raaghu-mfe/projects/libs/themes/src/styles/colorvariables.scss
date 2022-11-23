@@ -2267,6 +2267,7 @@ html[theme=dark] {
   .nav.nav-pill {
     .nav-link.active {
       border-top: $nav-tabs-border-color;
+       background-color: $primary;
     }
   }
 
@@ -2286,6 +2287,7 @@ html[theme=dark] {
       color: $link-color;
       border-left: 0px;
       border-right: 0px;
+      background-color: transparent;
     }
   }
 
@@ -2894,10 +2896,10 @@ html[theme=dark] {
     background-color: $offcanvasbg;
   }
 
-  .nav-link.active,
-  .nav-item.show .nav-link {
-    background-color: transparent;
-  }
+  // .nav-link.active,
+  // .nav-item.show .nav-link {
+  //   background-color: transparent;
+  // }
 
   .form-select {
     background-color: $form-select-bg;
