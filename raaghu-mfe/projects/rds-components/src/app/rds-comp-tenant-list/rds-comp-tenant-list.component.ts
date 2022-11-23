@@ -380,6 +380,7 @@ public tenantId:any;
         type: alert.type,
         title: alert.title,
         message: alert.message,
+        sticky: alert.sticky
       };
       this.currentAlerts.push(currentAlert);
       this.showLoadingSpinner = false;

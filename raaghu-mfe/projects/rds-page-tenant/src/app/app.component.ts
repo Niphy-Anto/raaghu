@@ -13,6 +13,8 @@ import {
   style,
   animate,
 } from '@angular/animations';
+import { profileSelector } from 'projects/libs/state-management/src/lib/state/profile-settings/profile-settings.selectors';
+import { getProfilepic } from 'projects/libs/state-management/src/lib/state/profile-settings/profile-settings.actions';
 import { el } from 'date-fns/locale';
 import { data } from 'autoprefixer';
 // import login from 'playwright/model/login';
@@ -68,10 +70,10 @@ export class AppComponent {
   tenantFeatureValues: any = [];
   tenantLoginLists: any = [];
   tenantTableHeader: TableHeader[] = [
-    { displayName: 'Tenant', key: 'tenantInfoTemplate', dataType: 'html', dataLength: 30, sortable: true, required: true, filterable: true },
-    { displayName: 'Edition', key: 'editionTemplate', dataType: 'html', dataLength: 30, sortable: true, required: true, filterable: true },
-    { displayName: 'Status', key: 'statusTemplate', dataType: 'html', dataLength: 30, sortable: true, required: true, filterable: true },
-    { displayName: 'Subscription End Date', key: 'subscriptionEndDateUtc', dataType: 'html', dataLength: 30, sortable: true, required: true, filterable: true },
+    { displayName: 'Tenant', key: 'tenantInfoTemplate', dataType: 'html', dataLength: 30, sortable: true, required: true, filterable: true , colWidth: '20%'},
+    { displayName: 'Edition', key: 'editionTemplate', dataType: 'html', dataLength: 30, sortable: true, required: true, filterable: true, colWidth: '20%' },
+    { displayName: 'Status', key: 'statusTemplate', dataType: 'html', dataLength: 30, sortable: true, required: true, filterable: true , colWidth: '20%'},
+    { displayName: 'Subscription End Date', key: 'subscriptionEndDateUtc', dataType: 'html', dataLength: 30, sortable: true, required: true, filterable: true, colWidth: '20%' },
 
   ]
 
@@ -135,7 +137,7 @@ export class AppComponent {
                 sendActivationEmail: tenant.tenantSettings.sendActivationEmail,
                 editionId: +tenant.tenantInfo.edition,
                 isActive: tenant.tenantSettings.isActive,
-                subscriptionEndDateUtc: (tenant.tenantInfo.unlimitedSubscription||!tenant.tenantInfo.subscriptionEndDate||tenant.tenantInfo.subscriptionEndDat==null) ? null : new Date(tenant.tenantInfo.subscriptionEndDate).toISOString(),
+                subscriptionEndDateUtc: (tenant.tenantInfo.unlimitedSubscription||!tenant.tenantInfo.subscriptionEndDate||tenant.tenantInfo.subscriptionEndDate==null) ? null : new Date(tenant.tenantInfo.subscriptionEndDate).toISOString(),
                 isInTrialPeriod: false
               };
               this.store.dispatch(saveTenant(data, 30))
@@ -215,10 +217,13 @@ export class AppComponent {
         this.rdsTenantMfeConfig = mfeConfig;
       }
     })
+    this.store.dispatch(getProfilepic());
+    this.store.select(profileSelector).subscribe((res: any)=> {})
+
 
     this.store.select(selecteTeantLoginList).subscribe((res: any) => {     
       if (res && res.tenantLogin  && res.status == "success") {        
-        let targetUrl='http://localhost:8080/login'+'?impersonationToken='+res.tenantLogin.impersonationToken+ '&tenantId=' + this.loginList+ '&tenancyName='+res.tenantLogin.tenancyName;
+        let targetUrl='https://anzstageui.raaghu.io/login'+'?impersonationToken='+res.tenantLogin.impersonationToken+ '&tenantId=' + this.loginList+ '&tenancyName='+res.tenantLogin.tenancyName;
       this.userAuthService.unauthenticateUser(true,targetUrl);      
       }
     })      

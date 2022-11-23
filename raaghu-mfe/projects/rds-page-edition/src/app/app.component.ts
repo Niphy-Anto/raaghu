@@ -157,7 +157,7 @@ export class AppComponent implements OnInit {
             editionname: element.displayName,
             price: '$ ' + element.annualPrice,
             trialPeriod: element.trialDayCount,
-            expiringEdition: element.expiringEditionDisplayName,
+            expiringEdition: (element.expiringEditionDisplayName && element.expiringEditionDisplayName !== null)?element.expiringEditionDisplayName : ' --',
             id: element.id,
             name: element.displayName,
           }
@@ -188,10 +188,37 @@ export class AppComponent implements OnInit {
     this.store.dispatch(getEditionPageComboboxItems())
     this.store.select(selectEditionPageComboboxItems).subscribe((res: any) => {
       if (res && res.editionComboboxItem) {
-        this.editionList = [];
+        this.editionList  = []
         this.freeEditions = [];
-        this.editionList = res.editionComboboxItem;
-        this.freeEditions = res.editionComboboxItem.filter((x: any) => x.isFree);
+        res.editionComboboxItem.filter((x: any) => x.isFree).forEach(element => {
+          const data = {
+            value:element.value,
+            some:element.displayText,
+            isSelected:element.isSelected,
+            icon:'',
+            iconWidth:0,
+            iconHeight:0,
+            iconFill:false,
+            iconStroke: true,
+            isFree: element.isFree
+          }
+          this.freeEditions.push(data);         
+        }); 
+        res.editionComboboxItem.forEach((res:any)=>{
+          const data = {
+            value:res.value,
+            some:res.displayText,
+            isSelected:res.isSelected,
+            icon:'',
+            iconWidth:0,
+            iconHeight:0,
+            iconFill:false,
+            iconStroke: true,
+            isFree: res.isFree
+          }
+          this.editionList.push(data);
+        });
+        // this.editionList = res.editionComboboxItem;
         const mfeConfig = this.rdsEditionMfeConfig
         mfeConfig.input.editionList = [... this.editionList];
         mfeConfig.input.freeEditions = [...this.freeEditions]

@@ -43,7 +43,7 @@ export class RdsTopNavigationComponent extends MfeBaseComponent implements OnIni
   @Input() offCanvasId: string = ''
   @Input() profileLink: string = '';
   @Input() UserName: string = 'Wai Technologies';
-  @Input() profilePic: string = 'https://stageui.raaghu.io/assets/profile-picture-circle.svg';
+  @Input() profilePic: string = 'https://anzstageui.raaghu.io/assets/profile-picture-circle.svg';
   @Input() notificationLink: string = '';
   @Input() profileData: any;
   @Input() rdsDeligateTableData: any = [];
@@ -186,6 +186,13 @@ export class RdsTopNavigationComponent extends MfeBaseComponent implements OnIni
   saveLinkUsers(event: any) {
     this.linkUser.emit(event);
   }
+  getProfilePic(event: any): void {
+    this.profilePic = event;
+  }
+
+  // onProfileData(event: any){
+  //   this.onProfileData.emit(event)
+  // }
   viewOffcanvas(): void {
     this.showOffcanvas = true;
     var offcanvas = document.getElementById(this.offCanvasId);
