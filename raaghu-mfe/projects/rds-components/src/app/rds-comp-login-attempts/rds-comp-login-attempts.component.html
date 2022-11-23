@@ -18,7 +18,7 @@
                  <label for="Result" class="mb-2">Result</label>
                  <rds-dropdownlist [placeholder]="translate.instant('Select Result')" [borderDropdown]="true" required
                 class="text-dark" [id]="'result-list'" [(ngModel)]="result" [listItems]="listItemsResult"
-               [value]="result" (onSelect)="onResultListSelect($event)" ngDefaultControl name="targetId" #result_name="ngModel">
+               [value]="result" (onSelect)="onResultListSelect($event)" ngDefaultControl name="result" #result_name="ngModel">
               </rds-dropdownlist>
 
                </div>

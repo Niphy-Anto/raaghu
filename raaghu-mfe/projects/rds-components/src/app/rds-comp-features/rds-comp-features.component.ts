@@ -71,8 +71,9 @@ export class RdsCompFeaturesComponent implements OnInit, OnChanges, DoCheck {
   @Input() tenantCount: number = 0;
 
   isReset: boolean = false;
-
-  targetEditionId: string = '';
+  freeEditionId = undefined
+  targetEdition: string = '';
+  targetEditionId = undefined
   sourceEditionId: string = '';
 
 
@@ -124,7 +125,21 @@ export class RdsCompFeaturesComponent implements OnInit, OnChanges, DoCheck {
 
   ngOnInit(): void {
 
+    if(this.freeEditionId){
+      this.freeEditions.forEach((res: any) => {
+        if (res && +res.value===+this.freeEditionId) {
+          this.freeEditon = res.some;
+        }
+      })
+    }
 
+    if(this.targetEditionId){
+      this.editionList.forEach((res : any) => {
+        if(res && +res.value===+this.targetEditionId){
+          this.targetEdition= res.some;
+        }
+      })
+    }
   }
 
   onEdit(event): void {
@@ -171,7 +186,7 @@ export class RdsCompFeaturesComponent implements OnInit, OnChanges, DoCheck {
       body.edition.trialDayCount = this.TrailPeriod;
       body.edition.annualPrice = this.AnnualPrice;
       body.edition.waitingDayAfterExpire = this.ExpiryInterval;
-      body.edition.expiringEditionId = this.freeEditon;
+      body.edition.expiringEditionId = this.freeEditionId;
 
     }
     this.onEditionSave.emit(body);
@@ -350,5 +365,15 @@ export class RdsCompFeaturesComponent implements OnInit, OnChanges, DoCheck {
     if (event.key === 'new') {
       this.openCanvas();
     }
+  }
+
+  onFreeListSelect(event : any){
+    this.freeEditon = event.item.some
+    this.freeEditionId = event.item.value;
+    }
+
+  onTargetListSelect(event : any ){
+    this.targetEdition = event.item.some
+    this.targetEditionId = event.item.value
   }
 }
