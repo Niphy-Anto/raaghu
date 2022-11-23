@@ -1,7 +1,7 @@
 <div class="tab-content">
   <div aria-labelledby="nav-Deligation" class="h-100">
     <div class="card border-0 h-100">
-      <div class="card-header border-bottom">
+      <div class="card-header m-1 border-bottom">
         <h5 class="card-title m-1">{{"MY SETTINGS"|translate}}</h5>
       </div>
       <div class="card-body m-1 card-height">
@@ -12,13 +12,12 @@
               <div class="form-group mb-4">
                 <rds-input size="medium" [value]="ProfileData.name" [label]="translate.instant('Profile Name')"
                   [labelPosition]="'top'" [inputType]="'text'" name="profileName" #profile_Name="ngModel"
-                  [isRequired]=true required [(ngModel)]="ProfileData.name" [placeholder]="'Profile Name'" [disabled]="true"
+                  [isRequired]=true required [(ngModel)]="ProfileData.name" [placeholder]="'Profile Name'" [disabled]="false"
                   ngDefaultControl>
                 </rds-input>
                 <div class="form-control-feedback"
                   *ngIf="profile_Name.errors && (profile_Name.dirty || profile_Name.touched)">
-                  <span class="text-danger" *ngIf="profile_Name.errors.required">{{"Profile Name is
-                    required"|translate}}</span>
+                  <span class="text-danger" *ngIf="profile_Name.errors.required">{{"Profile Name is required"|translate}}</span>
                 </div>
               </div>
             </div>
@@ -27,12 +26,11 @@
                 <rds-input size="medium" [value]="ProfileData.emailAddress" [label]="translate.instant('Email Address')"
                   [labelPosition]="'top'" [inputType]="'email'" [(ngModel)]="ProfileData.emailAddress"
                   (keyup)="emailValidator(ProfileData.emailAddress)" [placeholder]="'Email Address'" ngDefaultControl
-                  #email_Address="ngModel" [isRequired]=true required name="emailAddress" [disabled]="true">
+                  #email_Address="ngModel" [isRequired]=true required name="emailAddress" [disabled]="false">
                 </rds-input>
                 <div class="form-control-feedback"
                   *ngIf="email_Address.errors && (email_Address.dirty || email_Address.touched)">
-                  <small class="text-danger" *ngIf="email_Address.errors.required">{{"Entered invalid Email
-                    Address"|translate}}</small>
+                  <small class="text-danger" *ngIf="email_Address.errors.required">{{"Entered invalid EmailAddress"|translate}}</small>
                 </div>
               </div>
             </div>
@@ -40,11 +38,10 @@
               <div class="form-group mb-4">
                 <rds-input size="medium" [label]="translate.instant('User name')"
                   [value]="ProfileData.userName" [inputType]="'text'" [placeholder]="'User Name'" name="username"
-                  #user_Name="ngModel" [isRequired]=true required  [disabled]="true" [(ngModel)]="ProfileData.userName" ngDefaultControl>
+                  #user_Name="ngModel" [isRequired]=true required  [disabled]="false" [(ngModel)]="ProfileData.userName" ngDefaultControl>
                 </rds-input>
                 <div class="form-control-feedback" *ngIf="user_Name.errors && (user_Name.dirty || user_Name.touched)">
-                  <small class="text-danger" *ngIf="user_Name.errors.required">{{"User Name is
-                    Required"|translate}}</small>
+                  <small class="text-danger" *ngIf="user_Name.errors.required">{{"User Name is Required"|translate}}</small>
                 </div>
               </div>
             </div>
@@ -106,7 +103,7 @@
     </div>
   </div>
 </div>
-<div class="position-sticky action-buttons py-3 bottom-0 px-3 mx-1">
+<div class="action-buttons py-3 bottom-0 px-3 mx-1">
   <div class="row">
     <div class="col-sm-12">
       <rds-button [submit]="false" [block]="false" [size]="'small'" [isDisabled]="false" [isOutline]="true"

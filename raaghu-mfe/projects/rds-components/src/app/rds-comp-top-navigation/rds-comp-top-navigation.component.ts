@@ -43,7 +43,7 @@ export class RdsTopNavigationComponent extends MfeBaseComponent implements OnIni
   @Input() offCanvasId: string = ''
   @Input() profileLink: string = '';
   @Input() UserName: string = 'Wai Technologies';
-  @Input() profilePic: string = '../assets/profile-picture.png';
+  @Input() profilePic: string = 'https://anzstageui.raaghu.io/assets/profile-picture-circle.svg';
   @Input() notificationLink: string = '';
   @Input() profileData: any;
   @Input() rdsDeligateTableData: any = [];
