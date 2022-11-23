@@ -13,6 +13,8 @@ import {
   style,
   animate,
 } from '@angular/animations';
+import { profileSelector } from 'projects/libs/state-management/src/lib/state/profile-settings/profile-settings.selectors';
+import { getProfilepic } from 'projects/libs/state-management/src/lib/state/profile-settings/profile-settings.actions';
 import { el } from 'date-fns/locale';
 import { data } from 'autoprefixer';
 // import login from 'playwright/model/login';
@@ -215,6 +217,9 @@ export class AppComponent {
         this.rdsTenantMfeConfig = mfeConfig;
       }
     })
+    this.store.dispatch(getProfilepic());
+    this.store.select(profileSelector).subscribe((res: any)=> {})
+
 
     this.store.select(selecteTeantLoginList).subscribe((res: any) => {     
       if (res && res.tenantLogin  && res.status == "success") {        

@@ -21,6 +21,7 @@ import { LanguageTextsState } from './state/language-text/language-text.reducer'
 import { SettingsState, SettingsTenantPageComboboxState } from './state/settings/settings.reducer';
 import { ValidateTenantState } from './state/login/login.reducer';
 import { downloadState } from './state/DownloadData/download-data.reducer';
+import { ProfilepictureState } from './state/profile-settings/profile-settings.reducers';
 import { AllDynamicEntitySate, AllDynamicPropertyEntitySate, DynamicEntityState } from './state/dynamic-entity/dynamic-entity.reducer';
 
 export interface AppState {
@@ -71,6 +72,7 @@ export interface AppState {
   settingsComboboxItem: SettingsTenantPageComboboxState,
   download:downloadState,
   editdynamicProperty:EditDynampicPropertState,
+  profilePicture : ProfilepictureState,
   tenantUsers:TenantUsersState,
   tenantLogin:TenantLoginState
 }
