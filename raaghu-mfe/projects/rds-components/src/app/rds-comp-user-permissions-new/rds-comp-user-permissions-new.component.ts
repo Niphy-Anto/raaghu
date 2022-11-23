@@ -22,7 +22,7 @@ export class RdsCompUserPermissionsNewComponent implements OnInit {
   viewCanvas: boolean = false;
   selectedId: any = '';
   selectedOrganizationUnit: any = [];
-  buttonSpinnerForNewUser: boolean = true;
+  buttonSpinnerForNewUser: boolean = false;
   public user: any = {
     userInfo: undefined,
     userSettings: undefined,

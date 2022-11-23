@@ -140,7 +140,7 @@ export class RdsCompUserPermissionsComponent implements OnInit {
       dataType: 'html',
       filterable: true,
       sortable: true,
-      colWidth: '15%'
+      colWidth: '18%'
     },
     {
       key: 'statusTemplate',
