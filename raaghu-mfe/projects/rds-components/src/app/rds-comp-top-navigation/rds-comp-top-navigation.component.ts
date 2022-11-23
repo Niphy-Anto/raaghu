@@ -186,6 +186,13 @@ export class RdsTopNavigationComponent extends MfeBaseComponent implements OnIni
   saveLinkUsers(event: any) {
     this.linkUser.emit(event);
   }
+  getProfilePic(event: any): void {
+    this.profilePic = event;
+  }
+
+  // onProfileData(event: any){
+  //   this.onProfileData.emit(event)
+  // }
   viewOffcanvas(): void {
     this.showOffcanvas = true;
     var offcanvas = document.getElementById(this.offCanvasId);

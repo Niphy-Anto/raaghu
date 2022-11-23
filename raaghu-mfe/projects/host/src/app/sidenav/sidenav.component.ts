@@ -17,25 +17,9 @@ import {
   UserDelegationServiceProxy,
 } from '@libs/shared';
 import { Store } from '@ngrx/store';
-import {
-  changePassword,
-  getLanguages,
-  getProfile,
-  selectAllLanguages,
-  selectDefaultLanguage,
-  selectProfileInfo,
-  setDefaultLanguageForUI,
-} from '@libs/state-management';
-import {
-  deleteDelegations,
-  getDelegations,
-  getUsername,
-  saveDelegations,
-} from 'projects/libs/state-management/src/lib/state/authority-delegations/authority-delegations.action';
-import {
-  selectDelegationsInfo,
-  selectUserFilter,
-} from 'projects/libs/state-management/src/lib/state/authority-delegations/authority-delegations.selector';
+import { changePassword, getLanguages, getProfile, selectAllLanguages, selectDefaultLanguage, selectProfileInfo, setDefaultLanguageForUI, updateTenant } from '@libs/state-management';
+import { deleteDelegations, getDelegations, getUsername, saveDelegations } from 'projects/libs/state-management/src/lib/state/authority-delegations/authority-delegations.action';
+import { selectDelegationsInfo, selectUserFilter } from 'projects/libs/state-management/src/lib/state/authority-delegations/authority-delegations.selector';
 import { selectAllLoginAttempts } from 'projects/libs/state-management/src/lib/state/login-attempts/login-attempts.selector';
 import { DateTime } from 'luxon';
 import { getLoginAttempts } from 'projects/libs/state-management/src/lib/state/login-attempts/login-attempts.actions';
@@ -62,6 +46,8 @@ import { DOCUMENT } from '@angular/common';
 import { slideInAnimation } from '../animation';
 import { RouterOutlet } from '@angular/router';
 import * as moment from 'moment';
+import { profileSelector } from 'projects/libs/state-management/src/lib/state/profile-settings/profile-settings.selectors';
+import { getProfilepic, updateProfile } from 'projects/libs/state-management/src/lib/state/profile-settings/profile-settings.actions';
 import { selectAllVisualsettings } from 'projects/libs/state-management/src/lib/state/Visual-settings/visual-settings.selector';
 import { getVisualsettings } from 'projects/libs/state-management/src/lib/state/Visual-settings/visual-settings.actions';
 declare var bootstrap: any;
@@ -71,7 +57,7 @@ declare var bootstrap: any;
   styleUrls: ['./sidenav.component.scss'],
   animations: [slideInAnimation],
 })
-export class SidenavComponent extends MfeBaseComponent implements OnInit {
+export class SidenavComponent extends MfeBaseComponent {
   prepareRoute(outlet: RouterOutlet) {
     return (
       outlet && outlet.activatedRouteData && outlet.activatedRouteData.animation
@@ -463,7 +449,7 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
         selectedMenuDescription: this.selectedMenuDescription,
         LoginAttempts: this.LoginAttempts,
         isPageWrapper: true,
-        profilePic: this.profilePic,
+        // profilePic: this.profilePic,
         profileData: this.profileData,
         rdsDeligateTableData: this.rdsDeligateTableData,
         offCanvasId: this.offCanvasId,
@@ -546,8 +532,11 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
         onUpdateNotificationSettings: (data: any) => {
           this.store.dispatch(updateNotificationSettings(data));
         },
-      },
-    };
+        onProfileData: (event: any) =>{
+          this.store.dispatch(getProfilepic());
+        }
+      }
+    }
     this.store.dispatch(getNotificationSettings());
     this.store.select(selectNotificationSettings).subscribe((res: any) => {
       if (res && res !== null) {
@@ -697,7 +686,8 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
         mfe.input.profileData = { ...this.profileData };
         this.rdsTopNavigationMfeConfig = mfe;
       }
-    });
+    })
+
     this.store.dispatch(getDelegations());
     this.store.select(selectDelegationsInfo).subscribe((res: any) => {
       this.rdsDeligateTableData = [];
