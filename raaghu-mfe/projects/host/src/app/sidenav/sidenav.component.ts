@@ -89,13 +89,13 @@ export class SidenavComponent extends MfeBaseComponent {
         dataLength: 30,
         required: true,
       },
-      {
-        displayName: 'Client',
-        key: 'clientName',
-        dataType: 'text',
-        dataLength: 30,
-        required: true,
-      },
+      // {
+      //   displayName: 'Client',
+      //   key: 'clientName',
+      //   dataType: 'text',
+      //   dataLength: 30,
+      //   required: true,
+      // },
       {
         displayName: 'Browser',
         key: 'browserInfo',

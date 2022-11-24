@@ -186,7 +186,7 @@
         </div>
         <div class="col-md-6">
             <div class="form-group mb-3">
-                <span>{{selectedRowData.client}}</span>
+                <span>{{selectedRowData.clientIpAddress}}</span>
             </div>
         </div>
     </div>
@@ -253,9 +253,9 @@
                 <span>{{'Parameters' |translate}}: </span>
             </div>
         </div>
-        <div class="col-md-6">
-            <div class="form-group mb-3">
-                <span>{{selectedRowData.parameters}}</span>
+        <div class="col-md-6  ">
+            <div class="form-group p-2 parameter-bg-color fs-6 mb-3 " style="overflow-wrap:anywhere ;">
+               {{selectedRowData.parameters }}
             </div>
         </div>
     </div>
