@@ -1,11 +1,17 @@
 <form #dynamicEnityForm="ngForm">
   <div class="tab-content px-2 navsm-p-0">
     <div class="form-group mb-3">
-      <rds-select-list [value]="[dynamicEntityData.entityFullName]" ngDefaultControl ngModel name="entityname"
+      <!-- <rds-select-list [value]="[dynamicEntityData.entityFullName]" ngDefaultControl ngModel name="entityname"
         #entityname="ngModel" [(ngModel)]="dynamicEntityData.entityFullName" [label]="translate.instant(' Entity')"
         [labelPosition]="'top'" [placeholder]="translate.instant('Select Entity')" [isRequired]=true required
         [itemList]="entityNames">
-      </rds-select-list>
+      </rds-select-list> -->
+
+      <rds-dropdownlist [placeholder]="translate.instant('Select Entity')" [borderDropdown]="true" required ngModel  #entityname="ngModel" 
+      class="text-dark" [id]="'entity-list'" [(ngModel)]="dynamicEntityData.entityFullName" [listItems]="entityNames"
+     [value]="dynamicEntityData.entityFullName" (onSelect)="onEntitySelect($event)" ngDefaultControl name="targetId">
+    </rds-dropdownlist>
+
       <div class="form-control-feedback" *ngIf="entityname.errors&&(entityname.dirty||entityname.touched)">
         <span class="text-danger" *ngIf="entityname.errors.required">{{'Entity Name is required'| translate}}</span>
       </div>

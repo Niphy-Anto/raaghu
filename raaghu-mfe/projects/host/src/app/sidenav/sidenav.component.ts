@@ -230,7 +230,7 @@ export class SidenavComponent extends MfeBaseComponent {
           descriptionTranslationKey: '',
         },
         {
-          label: 'subscription',
+          label: 'Subscription',
           labelTranslationKey: 'subscription',
           id: '',
           permissionName: 'Pages.Administration.Tenant.SubscriptionManagement',
