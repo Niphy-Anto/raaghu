@@ -72,7 +72,7 @@
             [bsConfig]="{ containerClass: 'theme-dark-blue light-mode', customTodayClass: 'custom-today-class'}"
             #dp="bsDaterangepicker" bsDaterangepicker placement="right" (bsValueChange)="changeDate($event)"
             bsrangeValue>
-            Custom <span class="hr-line">|</span>
+            Custom 
             <div class="footerDatepicker" *ngIf="dp.isOpen">Maximum date range limit is <b>30 days</b></div>
           </div>
         </li>

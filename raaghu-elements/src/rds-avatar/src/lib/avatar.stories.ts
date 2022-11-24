@@ -54,7 +54,7 @@ Default.args = {
 export const profile = Template.bind({});
 profile.parameters = { controls: { include: ['height', 'withProfilePic','firstName', 'lastName', 'profilePic','verticallyAlligned','subTitle','profileContentAlign'] } };
 profile.args = {
-  height: '15',
+  height: '35',
   withProfilePic: true,
   firstName: 'Allen',
   lastName: 'Russel',
