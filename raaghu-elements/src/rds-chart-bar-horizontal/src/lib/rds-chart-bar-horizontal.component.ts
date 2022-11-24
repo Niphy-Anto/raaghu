@@ -66,28 +66,29 @@ export class RdsChartBarHorizontalComponent implements OnInit {
       //  });
       //});
       this.chartDataSets.forEach((ele: any, index: number) => {
-        let color = this.style.getPropertyValue('--chart-bar-horizontal-color');
-        const borderColor = this.style.getPropertyValue('--chart-bar-horizontal-border-color');
-        if (color) {
-          if (borderColor) {
-            ele.borderColor = borderColor;
+        if (this.style) {
+          let color = this.style.getPropertyValue('--chart-bar-horizontal-color');
+          const borderColor = this.style.getPropertyValue('--chart-bar-horizontal-border-color');
+          if (color) {
+            if (borderColor) {
+              ele.borderColor = borderColor;
+
+            }
+
+            const gradient = this.ctx.createLinearGradient(0, 50, 0, 300);
+
+            color = color.replace(/[\d\.]+\)$/g, '.76)');
+
+            gradient.addColorStop(0.1, color);
+
+            color = color.replace(/[\d\.]+\)$/g, '.08)');
+
+            gradient.addColorStop(1, color);
+
+            ele.backgroundColor = gradient;
 
           }
-
-          const gradient = this.ctx.createLinearGradient(0, 50, 0, 300);
-
-          color = color.replace(/[\d\.]+\)$/g, '.76)');
-
-          gradient.addColorStop(0.1, color);
-
-          color = color.replace(/[\d\.]+\)$/g, '.08)');
-
-          gradient.addColorStop(1, color);
-
-          ele.backgroundColor = gradient;
-
         }
-
       })
       const canvas = new Chart(this.ctx, {
         type: 'bar',

@@ -1,85 +1,85 @@
-import { AfterViewInit, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import Chart from 'chart.js/auto';
 // import { ChartDataSet } from '@rds-common-lib';
 
-export interface ChartDataSetMixed {
+export interface ChartDataSetRadar {
   label: string,
   data: Array<number>;
   fill: boolean,
   borderColor: string,
-  type: string;
-  order?: number;
   tension: number,
   backgroundColor: Array<string>;
   borderWidth: number;
 }
 
 @Component({
-  selector: 'rds-chart-mixed',
-  templateUrl: './rds-chart-mixed.component.html',
-  styleUrls: ['./rds-chart-mixed.component.scss']
+  selector: 'rds-chart-radar',
+  templateUrl: './rds-chart-radar.component.html',
+  styleUrls: ['./rds-chart-radar.component.scss']
 })
-export class RdsChartMixedComponent implements OnInit, OnChanges, AfterViewInit {
+export class RdsChartRadarComponent implements OnInit {
 
   static count = 0;
   canvas: any;
   ctx: any;
-
-  // chartId = 'mixedchart' + RdsChartMixedComponent.count;
-  @Input() chartId: string = 'mixedchart0';
-  @Input() chartWidth: number = 400;
-  @Input() chartHeight: number = 600;
-
-
-  // @Input() chartStyle?: any;
+  // chartId = 'radarChart' + RdsChartRadarComponent.count;
+  @Input() chartId: string = 'radarChart0';
+  @Input() chartWidth = 400;
+  @Input() chartHeight = 400;
   @Input() chartLabels?: any
-  // @Input() canvasBackgroundColor?: any;
-  @Input() chartDataSets?: ChartDataSetMixed[] | any;
+  @Input() chartDataSets?: ChartDataSetRadar[] | any;
   @Input() chartOptions?: any;
+  static inload: boolean;
   style: CSSStyleDeclaration | undefined;
 
-  constructor() {
-    RdsChartMixedComponent.count++;
-  }
+  constructor() { }
 
   ngOnInit(): void {
     this.style = getComputedStyle(document.body);
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
-    this.mixedChartBrowser();
+  // public get classes(): string[] {
+  //   var classes = ['res-width']
+  //   if (this.chartStyle === "Dark") {
+  //     classes.push('dark-mode')
+  //     return classes
+  //   }
+  //   return classes
+  // }
+
+  ngOnChanges(): void {
+    this.radarChartBrowser();
   }
 
   ngAfterViewInit(): void {
-    this.mixedChartBrowser();
+    this.radarChartBrowser();
   }
 
-  mixedChartBrowser(): void {
+  radarChartBrowser(): void {
     let chartStatus = Chart.getChart(this.chartId);
     if (chartStatus != undefined) {
       chartStatus.destroy();
     }
     this.canvas = document.getElementById(this.chartId);
     if (this.canvas !== null) {
-      this.ctx = this.canvas.getContext('2d');
       this.chartDataSets.forEach((element: any) => {
         element.backgroundColor.forEach((bg: any, index: number) => {
           if (this.style) {
-            element.backgroundColor[index] = (this.style.getPropertyValue('--chart-mixed-color' + (index + 1))) ? this.style.getPropertyValue('--chart-mixed-color' + (index + 1)) : bg
+            element.backgroundColor[index] = (this.style.getPropertyValue('--chart-radar-color' + (index + 1))) ? this.style.getPropertyValue('--chart-radar-color' + (index + 1)) : bg
           }
         });
-      });
-      const mixedChart = new Chart(this.ctx, {
-        type: 'bar',
+      }); this.ctx = this.canvas.getContext('2d');
+      const radarChart = new Chart(this.ctx, {
+        type: 'radar',
         data: {
           labels: this.chartLabels,
           datasets: this.chartDataSets,
         },
         options: this.chartOptions
       });
-      if (mixedChart !== null) {
-        mixedChart.canvas.style.height = this.chartHeight + 'px';
-        mixedChart.canvas.style.width = this.chartWidth + 'px';
+      if (radarChart !== null) {
+        radarChart.canvas.style.height = this.chartHeight + 'px';
+        radarChart.canvas.style.width = this.chartWidth + 'px';
       }
     }
   }
