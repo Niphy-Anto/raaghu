@@ -5,7 +5,10 @@ import { Store } from '@ngrx/store';
 import { TranslateService } from '@ngx-translate/core';
 import { ArrayToTreeConverterService } from 'projects/libs/shared/src/lib/array-to-tree-converter.service';
 import { transition, trigger, query, style, animate, } from '@angular/animations';
-import { selectDefaultLanguage, deleteDynamicProperty, getPermission, selectAllPermissions, getDynamicProperty, deleteDynamicEntity, getDynamicEntity, getAllEntities, selectDynamicEntities, getInputTypeNames, selectInputPropertyNameEntities, UpdateDynamicProperty, saveDynamicProperty, saveDynamicEntity, getDynamicPropertyByEdit, selectDynamicPropertyForEdit, selectAllProperties, selectAllDynamicEntities } from '@libs/state-management';
+import { selectDefaultLanguage } from 'projects/libs/state-management/src/lib/state/language/language.selector';
+import { deleteDynamicProperty, getDynamicProperty, getDynamicPropertyByEdit, getInputTypeNames, getPermission, saveDynamicProperty, UpdateDynamicProperty } from 'projects/libs/state-management/src/lib/state/dynamic-property-management/dynamic-property.actions';
+import { deleteDynamicEntity, getAllEntities, getDynamicEntity, saveDynamicEntity } from 'projects/libs/state-management/src/lib/state/dynamic-entity/dynamic-entity.actions';
+import { selectAllDynamicEntities, selectAllPermissions, selectAllProperties, selectDynamicEntities, selectDynamicPropertyForEdit, selectInputPropertyNameEntities } from 'projects/libs/state-management/src/lib/state/dynamic-property-management/dynamic-property.selector';
 declare let bootstrap: any;
 export class TreeNode {
   constructor(

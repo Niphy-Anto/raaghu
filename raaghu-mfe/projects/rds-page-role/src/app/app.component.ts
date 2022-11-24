@@ -1,7 +1,6 @@
 import { DatePipe } from '@angular/common';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ComponentLoaderOptions } from '@libs/shared';
-import { selectDefaultLanguage } from '@libs/state-management';
 import { Store } from '@ngrx/store';
 import { TranslateService } from '@ngx-translate/core';
 import { AlertService } from 'projects/libs/shared/src/lib/alert.service';
@@ -18,6 +17,7 @@ import {
   style,
   animate,
 } from '@angular/animations';
+import { selectDefaultLanguage } from 'projects/libs/state-management/src/lib/state/language/language.selector';
 
 declare let bootstrap: any;
 
@@ -200,9 +200,9 @@ export class AppComponent implements OnInit {
     this.store.dispatch(getRoles([]));
     this.store.select(selectAllRoles).subscribe((res: any) => {
       this.RoleDatatable = [];
-      if (res && res.roles && res.roles.items && res.status == "success") {
+      if (res && res.items) {
         this.isAnimation = false;
-        res.roles.items.forEach((element: any) => {
+        res.items.forEach((element: any) => {
           const status: string = (element.isStatic) ? '<span class="badge badge-primary p-1 mx-1 rounded">Static</span> ' : '';
           const status1: string = (element.isDefault) ? '<span class="badge badge-success p-1 mx-1 rounded">Default</span> ' : '';
           const roleName: string = (element.displayName);
@@ -224,24 +224,23 @@ export class AppComponent implements OnInit {
       }
     });
     this.store.select(selectRoleForEdit).subscribe((res: any) => {
-      if (res && res.RoleEditI && res.status == 'success') {
+      if (res) {
         this.Roledetails = {}
-
-        if (res.RoleEditI.role) {
+        if (res.role) {
           const itemRole: any = {
-            displayName: res.RoleEditI.role.displayName,
-            id: res.RoleEditI.role.id,
-            isDefault: res.RoleEditI.role.isDefault,
-            name: res.RoleEditI.role.displayName
+            displayName: res.role.displayName,
+            id: res.role.id,
+            isDefault: res.role.isDefault,
+            name: res.role.displayName
           }
           this.Roledetails = itemRole
         }
-        if (res.RoleEditI.permissions) {
-          this.EditPermissionData = res.RoleEditI.permissions
-          this.treeData = this.ConvertArraytoTreedata(res.RoleEditI.permissions)
-          if (this.treeData && res.RoleEditI.grantedPermissionNames) {
+        if (res.permissions) {
+          this.EditPermissionData = res.permissions
+          this.treeData = this.ConvertArraytoTreedata(res.permissions)
+          if (this.treeData && res.grantedPermissionNames) {
             this.selectedPermissions = [];
-            this.checkSelectedNodes(res.RoleEditI.grantedPermissionNames);
+            this.checkSelectedNodes(res.grantedPermissionNames);
           }
         }
         const mfeConfig = this.rdsNewRoleMfeConfig
@@ -249,15 +248,15 @@ export class AppComponent implements OnInit {
         mfeConfig.input.EditShimmer = false;
         mfeConfig.input.permissionsList = this.treeData
         mfeConfig.input.SelectedPermissionValues = [...this.selectedPermissions];
-        mfeConfig.input.SelectedPermissionList = [...res.RoleEditI.grantedPermissionNames]
+        mfeConfig.input.SelectedPermissionList = [...res.grantedPermissionNames]
         this.rdsNewRoleMfeConfig = { ...mfeConfig };
 
       }
 
     });
     this.store.select(selectAllPermissions).subscribe((res: any) => {
-      if (res && res.PermissionI && res.PermissionI.items && res.status == 'success') {
-        this.treeData = this.ConvertArraytoTreedata(res.PermissionI.items)
+      if (res && res.items) {
+        this.treeData = this.ConvertArraytoTreedata(res.items)
         const mfeConfig = this.rdsNewRoleMfeConfig
         mfeConfig.input.permissionsList = [... this.treeData];
         mfeConfig.input.SelectedPermissionValues = [...this.selectedPermissionValues]
