@@ -116,18 +116,19 @@ $default-100: #F58220;
 
   /*Chart color variables*/
 :root {
-  --chart-bool-color1: #FA896B;
-  --chart-bool-color2: #78F7B8;
+  --chart-bool-color1: #E30707;
+  --chart-bool-color2: #EBEEFB;
   --chart-bubble-color1: #FA896B;
   --chart-bubble-color2: #78F7B8;
   --chart-area-color1: #FA896B;
   --chart-area-color2: #78F7B8;
-  --chart-doughnut-color1: #FA896B;
-  --chart-doughnut-color2: #78F7B8;
+  --chart-doughnut-color1: #0085D3;
+  --chart-doughnut-color2: #BF00BB;
+  --chart-doughnut-color3: #7E2EEF;
   --chart-doughnut-text-color: rgba(0, 0, 0, 100%);
   --chart-bar-horizontal-color1: #FA896B;
   --chart-bar-horizontal-color2: #78F7B8;
-  --chart-bar-horizontal-color: rgba(214, 66, 8, 0);
+  --chart-bar-horizontal-color: rgba(7, 150, 227, 5);
   --chart-bar-horizontal-border-color: rgba(214, 66, 8);
   // gradient colors for line chart should be in rgba format and opacity should be zero
   --chart-line-color1: rgba(25, 70, 186, 0);
