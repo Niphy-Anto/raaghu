@@ -336,8 +336,15 @@ export class AppComponent implements OnInit {
       if (res && res.Entities && res.Entities.length > 0) {
         res.Entities.forEach((element: any) => {
           const item: any = {
-            value: element,
-            displayText: element,
+            value:element,
+            some:element,
+            isSelected:element.isSelected,
+            icon:'',
+            iconWidth:0,
+            iconHeight:0,
+            iconFill:false,
+            iconStroke: true,
+            isFree: element.isFree
           };
           this.entityNames.push(item);
         });

@@ -38,7 +38,7 @@ export class RdsCompNewDynamicEntityPropertyComponent implements OnInit, OnChang
     this.resetDropdown = this.reset;
     this.dynamicEntityData = { entityFullName: '', PropertyID: '' };
   }
-
+  targetId = undefined;
   ngOnInit(): void {
     // const tenantInfo = JSON.parse(localStorage.getItem('tenantInfo'));
     // if (tenantInfo !== null && tenantInfo.name) {
@@ -48,6 +48,14 @@ export class RdsCompNewDynamicEntityPropertyComponent implements OnInit, OnChang
     // }
     this.resetDropdown = this.reset;
     this.Placeholder = "Select Property Name";
+
+    if (this.targetId) {
+      this.entityNames.forEach((res: any) => {
+        if (res && +res.value === +this.targetId) {
+          this.dynamicEntityData.entityFullName = res.some;
+        }
+      })
+    }
   }
 
   addEntity(dynamicEnityForm) {
@@ -100,5 +108,10 @@ export class RdsCompNewDynamicEntityPropertyComponent implements OnInit, OnChang
     this.resetDropdown = true;
     this.Placeholder = "Select Property Name";
 
+  }
+
+  onEntitySelect(selectedItem: any): void {
+    this.dynamicEntityData.entityFullName = selectedItem.item.some;
+    this.targetId = selectedItem.item.value;
   }
 }
