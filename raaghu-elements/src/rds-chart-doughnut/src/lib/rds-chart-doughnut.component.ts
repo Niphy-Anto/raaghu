@@ -11,6 +11,7 @@ export interface ChartDataSetDoughnut {
   backgroundColor: Array<string>;
   borderWidth: number;
 }
+let that: any;
 
 @Component({
   selector: 'rds-chart-doughnut',
@@ -36,40 +37,12 @@ export class RdsChartDoughnutComponent implements OnInit {
 
   constructor() {
     RdsChartDoughnutComponent.count++;
+    that = this;
   }
 
   ngOnInit(): void {
     this.style = getComputedStyle(document.body);
-    if (this.style.getPropertyValue('--chartColor1')) {
-      this.chartDataSets[0].backgroundColor[0] = this.style.getPropertyValue('--chartColor1');
-    }
-    if (this.style.getPropertyValue('--chartColor2')) {
-      this.chartDataSets[0].backgroundColor[1] = this.style.getPropertyValue('--chartColor2');
-    }
-    if (this.style.getPropertyValue('--chartColor3')) {
-      this.chartDataSets[0].backgroundColor[2] = this.style.getPropertyValue('--chartColor3');
-    }
-    if (this.style.getPropertyValue('--chartColor4')) {
-      this.chartDataSets[0].backgroundColor[3] = this.style.getPropertyValue('--chartColor4');
-    }
-    if (this.style.getPropertyValue('--chartColor5')) {
-      this.chartDataSets[0].backgroundColor[4] = this.style.getPropertyValue('--chartColor5');
-    }
-    if (this.style.getPropertyValue('--chartColor6')) {
-      this.chartDataSets[0].backgroundColor[5] = this.style.getPropertyValue('--chartColor6');
-    }
-    if (this.style.getPropertyValue('--chartColor7')) {
-      this.chartDataSets[0].backgroundColor[6] = this.style.getPropertyValue('--chartColor7');
-    }
-    if (this.style.getPropertyValue('--chartColor8')) {
-      this.chartDataSets[0].backgroundColor[7] = this.style.getPropertyValue('--chartColor8');
-    }
-    if (this.style.getPropertyValue('--chartColor9')) {
-      this.chartDataSets[0].backgroundColor[8] = this.style.getPropertyValue('--chartColor9');
-    }
-    if (this.style.getPropertyValue('--chartColor10')) {
-      this.chartDataSets[0].backgroundColor[9] = this.style.getPropertyValue('--chartColor10');
-    }
+
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -85,26 +58,52 @@ export class RdsChartDoughnutComponent implements OnInit {
     if (chartStatus != undefined) {
       chartStatus.destroy();
     }
+    let textColor: any;
+    if (this.style && this.style.getPropertyValue('--chart-doughnut-text-color')) {
+
+      textColor = this.style.getPropertyValue('--chart-doughnut-text-color');
+      console.log(textColor);
+    }
     this.canvas = document.getElementById(this.chartId);
     const title = this.titleText;
     const subTitle = this.subTitleText;
+    this.chartDataSets.forEach((element: any) => {
+      element.backgroundColor.forEach((bg: any, index: number) => {
+        if (this.style) {
+          element.backgroundColor[index] = (this.style.getPropertyValue('--chart-doughnut-color' + (index + 1))) ? this.style.getPropertyValue('--chart-doughnut-color' + (index + 1)) : bg
+        }
+      });
+    });
     if (this.canvas !== null) {
-      // this.canvas.style.backgroundColor = this.canvasBackgroundColor;
       this.ctx = this.canvas.getContext('2d');
       const centerText = {
         id: 'counter3',
-        beforeDraw(chart, args, options) {
-          const { ctx, chartArea: { top, right, bottom, left, width, height } } = chart;
-          ctx.save();
-          ctx.font = '500 1.4rem Poppins';
-          ctx.textAlign = 'center';
-          ctx.fillText(title, width / 2, top + (height / 2.0));
-          ctx.restore();
+        beforeDraw: function (chart) {
+          if (chart.config.options.elements.center) {
+            var ctx = chart.ctx;
+            var centerConfig = chart.config.options.elements.center;
+            var txt = centerConfig.text;
+            var color = centerConfig.color || '#000';
+            var lineHeight = centerConfig.lineHeight || 25;
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            var centerX = ((chart.chartArea.left + chart.chartArea.right) / 2);
+            var centerY = ((chart.chartArea.top + chart.chartArea.bottom) / 2);
+            let textColor = that.style.getPropertyValue('--chart-doughnut-text-color');
+            if (textColor) {
+              ctx.fillStyle = textColor;
 
-          ctx.font = '400 0.8rem Poppins';
-          ctx.textAlign = 'center';
-          ctx.fillText(subTitle, width / 2, (height / 0.85) / 2.0 + top);
-          ctx.restore();
+            } else {
+              ctx.fillStyle = color;
+            }
+            centerY -= (txt.length / 2) * lineHeight;
+            for (var n = 0; n < txt.length; n++) {
+              ctx.font = txt[n].font;
+              ctx.fillText(txt[n].text, chart.chartArea.width / 2, centerY + 20);
+              centerY += lineHeight;
+            }
+            //Draw text in center
+          }
         }
       };
       const canvas = new Chart(this.ctx, {

@@ -1,3 +1,4 @@
+
 import { Component, Input, OnInit } from '@angular/core';
 import Chart from 'chart.js/auto';
 // import { ChartDataSet } from '@rds-common-lib';
@@ -23,7 +24,7 @@ export class RdsChartBarHorizontalComponent implements OnInit {
   canvas: any;
   ctx: any;
   //chartId = 'horizontalChart' + RdsChartBarHorizontalComponent.count;
-  @Input() chartId:string='horizontalChart0';
+  @Input() chartId: string = 'horizontalChart0';
   @Input() chartWidth = 100;
   @Input() chartHeight = 350;
   @Input() chartLabels?: any
@@ -35,16 +36,7 @@ export class RdsChartBarHorizontalComponent implements OnInit {
 
   ngOnInit(): void {
     this.style = getComputedStyle(document.body);
-/*     this.chartDataSets[0].backgroundColor[0] = this.style.getPropertyValue('--chartColor1');
-    this.chartDataSets[0].backgroundColor[1] = this.style.getPropertyValue('--chartColor2');
-    this.chartDataSets[0].backgroundColor[2] = this.style.getPropertyValue('--chartColor3');
-    this.chartDataSets[0].backgroundColor[3] = this.style.getPropertyValue('--chartColor4');
-    this.chartDataSets[0].backgroundColor[4] = this.style.getPropertyValue('--chartColor5');
-    this.chartDataSets[0].backgroundColor[5] = this.style.getPropertyValue('--chartColor6');
-    this.chartDataSets[0].backgroundColor[6] = this.style.getPropertyValue('--chartColor7');
-    this.chartDataSets[0].backgroundColor[7] = this.style.getPropertyValue('--chartColor8');
-    this.chartDataSets[0].backgroundColor[8] = this.style.getPropertyValue('--chartColor9');
-    this.chartDataSets[0].backgroundColor[9] = this.style.getPropertyValue('--chartColor10'); */
+
   }
 
   ngOnChanges(): void {
@@ -65,6 +57,39 @@ export class RdsChartBarHorizontalComponent implements OnInit {
     this.canvas = document.getElementById(this.chartId);
     if (this.canvas !== null) {
       this.ctx = this.canvas.getContext('2d');
+
+      //this.chartDataSets.forEach((element: any) => {
+      //  element.backgroundColor.forEach((bg: any, index: number) => {
+      //    if (bg && this.style) {
+      //      element.backgroundColor[index] = (this.style.getPropertyValue('--chart-bar-horizontal-color' + (index + 1))) ? this.style.getPropertyValue('--chart-bar-horizontal-color' + (index + 1)) : bg
+      //    }
+      //  });
+      //});
+      this.chartDataSets.forEach((ele: any, index: number) => {
+        if (this.style) {
+          let color = this.style.getPropertyValue('--chart-bar-horizontal-color');
+          const borderColor = this.style.getPropertyValue('--chart-bar-horizontal-border-color');
+          if (color) {
+            if (borderColor) {
+              ele.borderColor = borderColor;
+
+            }
+
+            const gradient = this.ctx.createLinearGradient(0, 50, 0, 300);
+
+            color = color.replace(/[\d\.]+\)$/g, '.76)');
+
+            gradient.addColorStop(0.1, color);
+
+            color = color.replace(/[\d\.]+\)$/g, '.08)');
+
+            gradient.addColorStop(1, color);
+
+            ele.backgroundColor = gradient;
+
+          }
+        }
+      })
       const canvas = new Chart(this.ctx, {
         type: 'bar',
         data: {
@@ -73,10 +98,10 @@ export class RdsChartBarHorizontalComponent implements OnInit {
         },
         options: this.chartOptions
       });
-      if(canvas !== null){
-        canvas.canvas.style.height = this.chartHeight+'px'; 
-        canvas.canvas.style.width = this.chartWidth+'px';
-      }    
+      if (canvas !== null) {
+        canvas.canvas.style.height = this.chartHeight + 'px';
+        canvas.canvas.style.width = this.chartWidth + 'px';
+      }
     }
   }
 
