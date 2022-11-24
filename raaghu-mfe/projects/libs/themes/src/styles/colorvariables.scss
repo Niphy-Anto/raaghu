@@ -111,10 +111,10 @@ html[theme=light] {
   $pagination-item-bg-active: $gray-800;
 
   /*dropdown Variales */
-  $dropdown-border-bottom: $gray-500 !default;
+  $dropdown-border-bottom: $gray-400 !default;
   $dropdown-bg-color: $gray-100 !default;
   $dropdown-border-bottom-hover: $gray-100;
-
+  $dropdown-border-color:#e9ecf7 !default;
 
   /*file uploader color variables*/
   $file-color: $primary;
@@ -691,6 +691,7 @@ html[theme=light] {
       background-color: var(--bs-dropdown-link-hover-bg);
       color: var(--bs-dropdown-link-hover-color);
     }
+   
   }
   /* list-group color variables*/
   .list-group-item {
@@ -2155,14 +2156,14 @@ html[theme=dark] {
 
     .page-item {
 
-      &:nth-child(-n + 1) .page-link {
-        background: $pagination-item-bg;
-        color: $pagination-item-color;
-      }
+      // &:nth-child(-n + 1) .page-link {
+      //   background: $pagination-item-bg;
+      //   color: $pagination-item-color;
+      // }
 
-      &:nth-last-child(-n + 2) .page-link {
-        background: $pagination-item-last-bg;
-      }
+      // &:nth-last-child(-n + 2) .page-link {
+      //   background: $pagination-item-last-bg;
+      // }
 
       &:nth-child(-n + 1).active .page-link {
         background: $pagination-item-bg;
@@ -2189,7 +2190,7 @@ html[theme=dark] {
   .pagination {
 
     .page-item {
-      border-color: $gray-500;
+      // border-color: $gray-500;
       // &:nth-child(-n + 2) .page-link {
       //   background: $pagination-item-bg;
       //   color: $pagination-item-color;
@@ -2202,6 +2203,7 @@ html[theme=dark] {
         background: $pagination-item-bg;
         color: $pagination-item-color;
       }
+     
     }
 
     .page-link {
@@ -2692,13 +2694,14 @@ html[theme=dark] {
   /*buttons variabes*/
   .form-control {
     &:focus {
-      border-color: $input-focus-border-color;
+      border-color:$input-focus-border-color;
     }
   }
 
   .form-select {
     &:focus {
-      border-color: $input-focus-border-color;
+      border-color:$input-focus-border-color;
+    
     }
   }
 
