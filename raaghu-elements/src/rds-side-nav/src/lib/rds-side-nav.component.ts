@@ -15,7 +15,16 @@ export interface SideNavItem {
     icon: string,
     iconFill?: boolean,
     iconStroke?: boolean,
-    path: string
+    path: string,
+    children?: {
+      label: string,
+      id?: string,
+      icon: string,
+      iconFill?: boolean,
+      iconStroke?: boolean,
+      path: string,
+
+    }[]
   }[]
 }
 @Component({
@@ -46,6 +55,7 @@ export class RdsSideNavComponent implements OnInit {
   openedMenu = false;
 
   showHide: boolean = false;
+  showHideSubmenu: boolean = false;
 
   title = 'rds-side-nav';
 
@@ -106,6 +116,39 @@ export class RdsSideNavComponent implements OnInit {
         this.activeMenuWithChildren = '';
       }
   }
+  onSubMenuWithChildrenClick(i: number, path: any) {
+    this.showHideSubmenu = !this.showHideSubmenu
+    const x = document.getElementById('submenuWithChildren' + i);
+    if (x) {
+      var dropdown = new Collapse(x);
+      if (this.showHide) {
+        dropdown.show();
+        this.activesubmenu = 0;
+        this.activepage = i;
+        this.emitPath.emit(path);
+      } else {
+        dropdown.hide();
+        // this.activesubmenu = '';
+      }
+    }
+
+    if (x !== null)
+      // this.openedMenu = x.classList.contains('collapsed');
+      if (!this.openedMenu) {
+        // this.showHide = true;
+        this.activepage = i;
+        this.activesubmenu = 0;
+        this.emitPath.emit(path);
+      }
+      else {
+        // this.showHide = false;
+        this.activepage = i;
+        this.activesubmenu = '';
+        this.activeMenuWithChildren = '';
+      }
+  }
+
+
   onClickSubMenu(event: any, i: number, j: number, path: any): void {
     event.preventDefault();
     this.emitPath.emit(path);
