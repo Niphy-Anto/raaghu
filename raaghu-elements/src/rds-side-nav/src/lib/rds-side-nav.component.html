@@ -29,18 +29,14 @@
               <a *ngIf="!child.children" [ngClass]="{ 'active' : activesubmenu===j && activepage===i }"
                  (click)="onClickSubMenu($event,i,j,child)" role="button"
                  class="d-inline-flex align-items-center rounded text-decoration-none mb-2">
-                <rds-icon [name]="child.icon" data-bs-toggle="tooltip" [fill]="child.iconFill"
-                          [stroke]="child.iconStroke" [height]="iconHeight" [width]="iconWidth" data-bs-placement="auto"
-                          [title]="child.label" [ngStyle]="{'margin-right': collapsed ? '1.5rem' : '.7rem'}"></rds-icon><span [ngClass]="{ 'd-none' : collapsed }"><small class="font-weight-bold">{{child.label}}</small></span>
+                <span [ngClass]="{ 'd-none' : collapsed }"><small class="font-weight-bold">{{child.label}}</small></span>
               </a>
               <a (click)="onSubMenuWithChildrenClick(i,child.children[0])" *ngIf="child.children"
                  [ngClass]="{ 'active' : activepage===i, 'child' :  !collapsed }" [id]="'submenuWithChildren'+i"
                  class="d-inline-flex align-items-center text-decoration-none text-uppercase " type="button"
                  [attr.data-bs-target]="'#'+child.id" data-bs-toggle="collapse" role="button" [attr.aria-expanded]="showHideSubmenu"
                  [attr.aria-controls]="child.id">
-                <rds-icon [name]="child.icon" [fill]="child.iconFill" [stroke]="child.iconStroke" [height]="iconHeight"
-                          [width]="iconWidth" class="pe-3" data-bs-toggle="tooltip" data-bs-placement="auto" [title]="child.label">
-                </rds-icon><span [ngClass]="{ 'd-none' : collapsed }">{{child.label}}</span>
+                <span [ngClass]="{ 'd-none' : collapsed }">{{child.label}}</span>
               </a>
               <div *ngIf="showHideSubmenu">
                 <div class="collapse pt-2 " [ngClass]="{ 'show' : showHideSubmenu }" [id]="item.id" *ngIf="child.children"
@@ -50,9 +46,7 @@
                       <a [ngClass]="{ 'active' : activesubmenu===j && activepage===i }"
                          (click)="onClickSubMenu($event,i,j,subchild)" role="button"
                          class="d-inline-flex align-items-center rounded text-decoration-none mb-2">
-                        <rds-icon [name]="subchild.icon" data-bs-toggle="tooltip" [fill]="subchild.iconFill"
-                                  [stroke]="subchild.iconStroke" [height]="iconHeight" [width]="iconWidth" data-bs-placement="auto"
-                                  [title]="subchild.label" [ngStyle]="{'margin-right': collapsed ? '1.5rem' : '.7rem'}"></rds-icon><span [ngClass]="{ 'd-none' : collapsed }"><small class="font-weight-bold">{{subchild.label}}</small></span>
+                       <span [ngClass]="{ 'd-none' : collapsed }"><small class="font-weight-bold">{{subchild.label}}</small></span>
                       </a>
                     </li>
                   </ul>

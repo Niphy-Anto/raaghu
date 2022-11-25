@@ -68,16 +68,34 @@ export class RdsChartBoolComponent implements OnInit, AfterViewInit {
         }
       });
     });
-    let svg = ChartIcons[this.centerIconName];
-    let blob = new Blob([svg], { type: 'image/svg+xml' });
-    let url = URL.createObjectURL(blob);
-    let image = document.createElement('img');
-    image.src = url;
+     let svg = ChartIcons[this.centerIconName];
+    const div = document.createElement('DIV');
+    div.innerHTML = svg;
+    const svgContent = div.querySelector('svg');
+    let url = '';
+    if (svgContent) {
+      svgContent.style.height = '20px';
+      svgContent.style.width = '20px';
+      this.style = getComputedStyle(document.body);
+      if (this.style && this.style.getPropertyValue('--chart-icon-color')) {
+        svgContent.style.stroke = this.style.getPropertyValue('--chart-icon-color');
+      } else {
+        svgContent.style.stroke = 'black';
+      }
+      svgContent.style.fill = 'none';
+      const updatedSvg = svgContent.outerHTML;
+      let blob = new Blob([updatedSvg], { type: 'image/svg+xml' });
+      url = URL.createObjectURL(blob);
+      let image = document.createElement('img');
+      image.src = url;
+    }
+
     const centerImage = {
       id: 'counter2',
       beforeDraw(chart, args, options) {
         const { ctx, chartArea: { top, right, bottom, left, width, height } } = chart;
         ctx.save();
+        console.log(url, 'url')
         let img = new Image();
         img.src = url;
         ctx.drawImage(img, 30, 30, 30, 30);
@@ -99,6 +117,6 @@ export class RdsChartBoolComponent implements OnInit, AfterViewInit {
       myChart.canvas.style.height = this.chartHeight + 'px';
       myChart.canvas.style.width = this.chartWidth + 'px';
     }
-  }
 
 }
+  }
