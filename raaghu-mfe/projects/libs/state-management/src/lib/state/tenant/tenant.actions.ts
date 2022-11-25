@@ -1,6 +1,5 @@
 import { createAction, props } from "@ngrx/store";
 import { CreateTenantInput, TenantEditDto, UpdateTenantFeaturesInput } from "projects/libs/shared/src/lib/service-proxies";
-import { Tenants } from "./tenant.models";
 
 export const getTenants = createAction('[Tenant Page] Get Tenants',
 );
