@@ -236,12 +236,12 @@ export class RdsCompUserPermissionsNewComponent implements OnInit {
   }
 
   editTableRowData(event): void {
-    this.canvasTitle = 'EDIT USER';
+    this.canvasTitle = this.translate.instant('EDIT USER');
     this.selectedId = event.id;
 
     this.viewCanvas = true;
     if (event) {
-      this.canvasTitle = 'EDIT USER';
+      this.canvasTitle = this.translate.instant('EDIT USER');
       this.navtabsItems = [
         {
           label: this.translate.instant('Basic'),
