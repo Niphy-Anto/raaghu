@@ -27,9 +27,13 @@ export class RdsCompTenantListComponent implements OnInit, DoCheck {
   selectedId: any = '';
   isTenantInfoValid: boolean = false;
   actions: TableAction[] = [
-    { id: 'loginAsTenant', displayName: this.translate.instant('Login as Tenant') },
+    {
+      id: 'loginAsTenant',
+      displayName: this.translate.instant('Login as Tenant'),
+    },
     { id: 'edit', displayName: this.translate.instant('Edit') },
-    { id: 'delete', displayName: this.translate.instant('Delete') }]
+    { id: 'delete', displayName: this.translate.instant('Delete') },
+  ];
 
   userTableActions:TableAction[] = [
     { id: 'loginIn', displayName: this.translate.instant('Login') },
@@ -38,11 +42,18 @@ export class RdsCompTenantListComponent implements OnInit, DoCheck {
   @Input() tenantData: any;
   @Input() isShimmer: boolean = false;
   @Input() listItems = [
-    { value: 'New Tenant', some: 'value', key: 'new', icon: 'plus', iconWidth: '20px', iconHeight: '20px' },
+    {
+      value: 'New Tenant',
+      some: 'value',
+      key: 'new',
+      icon: 'plus',
+      iconWidth: '20px',
+      iconHeight: '20px',
+    },
   ];
   @Input() tenantFeatures: any = [];
   @Input() tenantFeatureValues: any = [];
-  @Input() editShimmer: boolean = false
+  @Input() editShimmer: boolean = false;
   @Output() onSaveTenant = new EventEmitter<any>();
   @Output() onEditTenant = new EventEmitter<any>();
   @Output() onReset = new EventEmitter<any>();
@@ -50,7 +61,7 @@ export class RdsCompTenantListComponent implements OnInit, DoCheck {
   @Output() onSaveFeatures = new EventEmitter<any>();
   @Output() onSelectTenant = new EventEmitter<any>();
   @Output() onTenantLogIn = new EventEmitter<any>();
-public tenantId:any;
+  public tenantId:any;
 
   public tenant: any = {
     tenantInfo: undefined,
@@ -64,25 +75,14 @@ public tenantId:any;
   @Input() tenantLoginList:any = [];
 
   public tableData: any = [];
-  public userTableData:any=[];
+  public userTableData: any = [];
   @Input() public editionList: any = [];
   showLoadingSpinner: boolean = false;
   // buttonSpinnerForSave : boolean = true;
 
-  viewLoginAsTenantCanvas:boolean=false
+  viewLoginAsTenantCanvas: boolean = false;
 
   currentAlerts: any = [];
-  public rdsAlertMfeConfig: ComponentLoaderOptions = {
-    name: 'RdsCompAlert',
-    input: {
-      currentAlerts: this.currentAlerts
-    },
-    output: {
-      onAlertHide: (event: any) => {
-        this.currentAlerts = event;
-      }
-    }
-  }
 
   public featureList: TreeNode[] = [
     {
@@ -153,8 +153,11 @@ public tenantId:any;
   showEmail: boolean;
   showEmailList: boolean = false;
   showEditData: boolean = false;
-  
-  constructor(public translate: TranslateService, private alertService: AlertService) { }
+
+  constructor(
+    public translate: TranslateService,
+    private alertService: AlertService
+  ) {}
 
   ngOnInit(): void {
     this.activePage = 0;
@@ -163,8 +166,11 @@ public tenantId:any;
 
   ngDoCheck(): void {
     this.tableData = [...this.tenantList];
-    this.userTableData=[...this.userList];
+    this.userTableData = [...this.userList];
   }
+  onAlertHide(event: any): void {
+    this.currentAlerts = event;
+  } 
 
   getSelectedNavTab(event: any): void {
     this.activePage = event;
@@ -220,7 +226,6 @@ public tenantId:any;
     }
   }
   getTenantSettings(event: any): void {
-
     this.tenant.tenantSettings = event.settings;
     if (event.next) {
       this.onSaveTenant.emit(this.tenant);
@@ -251,7 +256,7 @@ public tenantId:any;
       const eventdata: any = {
         newtenant: true,
         reset: true
-      }
+      };
       this.onReset.emit(eventdata);
       this.isTenantInfoValid = false;
     }
@@ -319,41 +324,39 @@ public tenantId:any;
     this.selectedId = event.id;
   }
 
-  loginAsTenant(event):void{
-    this.viewLoginAsTenantCanvas=true;
-    this.tenantId=event.selectedData.id;
-    const data:any={
+  loginAsTenant(event): void {
+    this.viewLoginAsTenantCanvas = true;
+    this.tenantId = event.selectedData.id;
+    const data: any = {
       tenantId: event.selectedData.id,
       excludeCurrentUser: true,
       maxResultCount: 1000,
-      skipCount:0 ,
-      filter: "",           
-    }
+      skipCount: 0,
+      filter: '',
+    };
     this.onSelectTenant.emit(data);
-    console.log(data)
+    console.log(data);
     // this.onTenantLogIn.emit(data);
-    this.canvasTitle="Select a User";
+    this.canvasTitle = 'Select a User';
     setTimeout(() => {
       var offcanvas = document.getElementById('loginAsTenantOffcanvas');
       var bsOffcanvas = new bootstrap.Offcanvas(offcanvas);
       bsOffcanvas.show();
     }, 100);
-
   }
 
-  loginTenant(event):void {     
-    const data:any={
-      tenantId:this.tenantId,
-      userId: event.selectedData.id    
-    }
+  loginTenant(event): void {
+    const data: any = {
+      tenantId: this.tenantId,
+      userId: event.selectedData.id,
+    };
     this.onTenantLogIn.emit(data);
-    this.viewLoginAsTenantCanvas=false;
+    this.viewLoginAsTenantCanvas = false;
     console.log(data);
   }
 
-  closeLoginAsTenant():void{
-    this.viewLoginAsTenantCanvas=false;
-
+  closeLoginAsTenant(): void {
+    this.viewLoginAsTenantCanvas = false;
   }
 
   onActionSelect(event: any): void {
@@ -361,15 +364,14 @@ public tenantId:any;
       this.deleteEvent.emit(event.selectedData);
     } else if (event.actionId === 'edit') {
       this.editTableRowData(event.selectedData);
-    }
-    else if(event.actionId==='loginAsTenant'){
+    } else if (event.actionId === 'loginAsTenant') {
       this.loginAsTenant(event);
     }
   }
 
-  onUserDataActionSelect(event:any):void{
-    if(event.actionId==='loginIn'){
-      this.loginTenant(event)
+  onUserDataActionSelect(event: any): void {
+    if (event.actionId === 'loginIn') {
+      this.loginTenant(event);
     }
   }
 
@@ -380,16 +382,10 @@ public tenantId:any;
         type: alert.type,
         title: alert.title,
         message: alert.message,
-        sticky: alert.sticky
+        sticky: alert.sticky,
       };
       this.currentAlerts.push(currentAlert);
-      this.showLoadingSpinner = false;
-      const rdsAlertMfeConfig = this.rdsAlertMfeConfig;
-      rdsAlertMfeConfig.input.currentAlerts = [...this.currentAlerts];
-      this.rdsAlertMfeConfig = rdsAlertMfeConfig;
     });
-
-
   }
 
   // fabmenu for mobile list

@@ -373,6 +373,7 @@ export class AppComponent implements OnInit {
 
   }
   subscribeToAlerts() {
+    debugger;
     this.alertService.alertEvents.subscribe((alert) => {
       this.currentAlerts = [];
       const currentAlert: any = {
