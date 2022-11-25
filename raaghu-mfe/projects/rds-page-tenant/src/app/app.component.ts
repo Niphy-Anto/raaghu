@@ -1,11 +1,9 @@
 import { Component, OnDestroy, ViewEncapsulation } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { ArrayToTreeConverterService, ComponentLoaderOptions, ImpersonateTenantInput, UserAuthService } from '@libs/shared';
-import { deleteTenant, getEditionComboboxItems, getTenantFeaturesForEdit, getTenantForEdit, getTenantLogin, getTenants, getTenantUsers, impersonatedAuthenticate, saveTenant, selectAllTenants, selectDefaultLanguage, selectEditionComboboxItems,selecteTeantLoginList,selecteTeantUserList, selectTenantFeature, selectTenantInfo, updateTenant, updateTenantFeatureValues } from '@libs/state-management';
 import { TableHeader } from 'projects/rds-components/src/models/table-header.model';
 import { TranslateService } from '@ngx-translate/core';
 import { DatePipe } from '@angular/common';
-import { fadeAnimation } from '../../../libs/shared/src/lib/animation';
 import {
   transition,
   trigger,
@@ -17,6 +15,9 @@ import { profileSelector } from 'projects/libs/state-management/src/lib/state/pr
 import { getProfilepic } from 'projects/libs/state-management/src/lib/state/profile-settings/profile-settings.actions';
 import { el } from 'date-fns/locale';
 import { data } from 'autoprefixer';
+import { selectDefaultLanguage } from 'projects/libs/state-management/src/lib/state/language/language.selector';
+import { deleteTenant, getEditionComboboxItems, getTenantFeaturesForEdit, getTenantForEdit, getTenantLogin, getTenants, getTenantUsers, saveTenant, updateTenant, updateTenantFeatureValues } from 'projects/libs/state-management/src/lib/state/tenant/tenant.actions';
+import { selectAllTenants, selectEditionComboboxItems, selecteTeantLoginList, selecteTeantUserList, selectTenantFeature, selectTenantInfo } from 'projects/libs/state-management/src/lib/state/tenant/tenant.selector';
 // import login from 'playwright/model/login';
 
 @Component({
