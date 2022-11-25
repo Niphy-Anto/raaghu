@@ -286,7 +286,7 @@ export class RdsCompUserPermissionsComponent implements OnInit {
     ];
     this.CreateOrEditUser.emit({ id: undefined });
     if (event) {
-      this.canvasTitle = 'NEW USER';
+      this.canvasTitle = this.translate.instant('New User');
       this.userinfo = undefined;
       event.stopPropagation();
 
@@ -308,12 +308,12 @@ export class RdsCompUserPermissionsComponent implements OnInit {
   }
 
   editTableRowData(event): void {
-    this.canvasTitle = this.translate.instant('EDIT USER');
+    this.canvasTitle = this.translate.instant('Edit User');
     this.selectedId = event.id;
 
     this.viewCanvas = true;
     if (event) {
-      this.canvasTitle = this.translate.instant('EDIT USER');
+      this.canvasTitle = this.translate.instant('Edit User');
       this.navtabsItems = [
         {
           label: this.translate.instant('User Information'),
