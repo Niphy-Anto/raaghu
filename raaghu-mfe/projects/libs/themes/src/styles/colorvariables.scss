@@ -167,7 +167,8 @@ html[theme=light] {
   $check-horizotal-border-color: $primary !default;
   $horizontal-border-color: $gray-100 !default;
   $verticle-border-color: $gray-100 !default;
-
+/*modal*/
+   $delete-modal-text:$black;
   /* offcanvas-header */
   // $offcanvas-border-color: red !default;
 
@@ -448,6 +449,11 @@ html[theme=light] {
       @include avatar-variant($avatar-background, $avatar-border, $avatar-color);
     }
   }
+  /*modal*/
+  .text-color{
+    color:$delete-modal-text;
+  }
+  
   /*badge color variables*/
   .badge {
     padding: $badge-padding-y $badge-padding-x;
@@ -1638,7 +1644,7 @@ html[theme=dark] {
   /*modal variables*/
 
   $modal-content-bg: $dark-400 !default;
-
+  
   /* offcanvas variables */
   $offcanvas-bg-color: $modal-content-bg !default;
   $offcanvas-bottom-border-color: $dark-300 !default;
@@ -1658,6 +1664,8 @@ html[theme=dark] {
   $btn-active-border-tint-amount: 10% !default;
 
   $enable-caret: true !default;
+ /*modal*/
+   $delete-modal-text:$gray-200;
   // scss-docs-end btn-variables
   //subscription-card
   $subcription-bg-blue: #005FA4;
@@ -2596,6 +2604,10 @@ html[theme=dark] {
     .form-control-feedback {
       color: $form-feedback-color;
     }
+  }
+   /*modal*/
+   .text-color{
+    color:$delete-modal-text;
   }
   /*datatable color variables */
   @mixin table-variant($state, $background, $border, $color) {
