@@ -98,7 +98,7 @@
   "Parameters :": "Parameters :",
   "Duration :": "Duur :",
   "Tenant": "Huurder",
-  "Status": "Status",
+  "Status": "Toestand",
   "Tenant Information": "Huurder Informatie",
   "Features": "Functies",
   "Tenancy Name": "Huurnaam",
@@ -539,5 +539,13 @@
   "Change your account settings": "Uw accountinstellingen wijzigen",
   "See recent login attempts for your account": "Bekijk recente inlogpogingen voor uw account",
   "Manage authority accounts": "Autoriteitsaccounts beheren",
-  "Currently you do not have login attempts ": "Momenteel heeft u geen inlogpogingen"
+  "Currently you do not have login attempts ": "Momenteel heeft u geen inlogpogingen",
+  "UI Components": "UI-componenten",
+  "OK":"Oké",
+  "Dark":"Donker",
+  "Light":"Licht",
+  "NEW LINK ACCOUNT":"NIEUW LINKACCOUNT",
+  "Select Result":"Selecteer resultaat", 
+  "Creation Date & Time":"Aanmaakdatum en -tijd"
 }
+   
