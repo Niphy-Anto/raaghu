@@ -17,9 +17,17 @@ import {
   UserDelegationServiceProxy,
 } from '@libs/shared';
 import { Store } from '@ngrx/store';
-import { changePassword, getLanguages, getProfile, selectAllLanguages, selectDefaultLanguage, selectProfileInfo, setDefaultLanguageForUI, updateTenant } from '@libs/state-management';
-import { deleteDelegations, getDelegations, getUsername, saveDelegations } from 'projects/libs/state-management/src/lib/state/authority-delegations/authority-delegations.action';
-import { selectDelegationsInfo, selectUserFilter } from 'projects/libs/state-management/src/lib/state/authority-delegations/authority-delegations.selector';
+
+import {
+  deleteDelegations,
+  getDelegations,
+  getUsername,
+  saveDelegations,
+} from 'projects/libs/state-management/src/lib/state/authority-delegations/authority-delegations.action';
+import {
+  selectDelegationsInfo,
+  selectUserFilter,
+} from 'projects/libs/state-management/src/lib/state/authority-delegations/authority-delegations.selector';
 import { selectAllLoginAttempts } from 'projects/libs/state-management/src/lib/state/login-attempts/login-attempts.selector';
 import { DateTime } from 'luxon';
 import { getLoginAttempts } from 'projects/libs/state-management/src/lib/state/login-attempts/login-attempts.actions';
@@ -50,6 +58,10 @@ import { profileSelector } from 'projects/libs/state-management/src/lib/state/pr
 import { getProfilepic, updateProfile } from 'projects/libs/state-management/src/lib/state/profile-settings/profile-settings.actions';
 import { selectAllVisualsettings } from 'projects/libs/state-management/src/lib/state/Visual-settings/visual-settings.selector';
 import { getVisualsettings } from 'projects/libs/state-management/src/lib/state/Visual-settings/visual-settings.actions';
+import { getLanguages, setDefaultLanguageForUI } from 'projects/libs/state-management/src/lib/state/language/language.actions';
+import { changePassword, getProfile } from 'projects/libs/state-management/src/lib/state/mysettings/mysettings.action';
+import { selectAllLanguages, selectDefaultLanguage } from 'projects/libs/state-management/src/lib/state/language/language.selector';
+import { selectProfileInfo } from 'projects/libs/state-management/src/lib/state/mysettings/mysettings.selector';
 declare var bootstrap: any;
 @Component({
   selector: 'app-sidenav',
@@ -89,13 +101,13 @@ export class SidenavComponent extends MfeBaseComponent {
         dataLength: 30,
         required: true,
       },
-      {
-        displayName: 'Client',
-        key: 'clientName',
-        dataType: 'text',
-        dataLength: 30,
-        required: true,
-      },
+      // {
+      //   displayName: 'Client',
+      //   key: 'clientName',
+      //   dataType: 'text',
+      //   dataLength: 30,
+      //   required: true,
+      // },
       {
         displayName: 'Browser',
         key: 'browserInfo',
@@ -230,7 +242,7 @@ export class SidenavComponent extends MfeBaseComponent {
           descriptionTranslationKey: '',
         },
         {
-          label: 'subscription',
+          label: 'Subscription',
           labelTranslationKey: 'subscription',
           id: '',
           permissionName: 'Pages.Administration.Tenant.SubscriptionManagement',

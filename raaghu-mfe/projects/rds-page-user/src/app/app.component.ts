@@ -1,6 +1,5 @@
 import { DatePipe } from '@angular/common';
 import { Component } from '@angular/core';
-import { selectDefaultLanguage } from '@libs/state-management';
 import { Store } from '@ngrx/store';
 import { TranslateService } from '@ngx-translate/core';
 import { ArrayToTreeConverterService } from 'projects/libs/shared/src/lib/array-to-tree-converter.service';
@@ -34,6 +33,7 @@ import {
 } from '@angular/animations';
 import { getRoles } from 'projects/libs/state-management/src/lib/state/role/role.actions';
 import { selectAllRoles } from 'projects/libs/state-management/src/lib/state/role/role.selector';
+import { selectDefaultLanguage } from 'projects/libs/state-management/src/lib/state/language/language.selector';
 
 @Component({
   selector: 'app-root',
@@ -174,8 +174,8 @@ export class AppComponent {
             this.store.dispatch(getUsers(this.selectedFilterPermissions));
             this.store.select(selectAllUsers).subscribe((res: any) => {
               this.userList = [];
-              if (res && res.users && res.users.items) {
-                res.users.items.forEach((element: any) => {
+              if (res && res.items) {
+                res.items.forEach((element: any) => {
                   const item: any = {
                     userName: element.userName,
                     name: element.name,
@@ -222,9 +222,9 @@ export class AppComponent {
           }
           this.store.dispatch(getUserForEdit(eventData.id));
           this.store.select(selectUserForEdit).subscribe((res: any) => {
-            if (res && res.UserEditI && res.UserEditI.roles && res.UserEditI.roles.length) {
+            if (res && res.roles) {
               this.roles = [];
-              res.UserEditI.roles.forEach((element: any) => {
+              res.roles.forEach((element: any) => {
                 const item: any = {
                   roleDisplayName: element.roleDisplayName,
                   isAssigned: element.isAssigned,
@@ -236,32 +236,32 @@ export class AppComponent {
                 this.roles.push(item);
               });
             }
-            if (res && res.UserEditI && res.UserEditI.user) {
+            if (res && res.user) {
               const item: any = {
-                name: res.UserEditI.user.name,
-                emailAddress: res.UserEditI.user.emailAddress,
-                phoneNumber: res.UserEditI.user.phoneNumber,
-                userName: res.UserEditI.user.userName,
-                password: res.UserEditI.user.password,
-                confirmPass: res.UserEditI.user.confirmPass,
-                id: res.UserEditI.user.id,
-                setRandomPassword: res.UserEditI.user.setRandomPassword,
-                isActive: res.UserEditI.user.isActive,
-                isLockoutEnabled: res.UserEditI.user.isLockoutEnabled,
-                isTwoFactorEnabled: res.UserEditI.user.isTwoFactorEnabled,
+                name: res.user.name,
+                emailAddress: res.user.emailAddress,
+                phoneNumber: res.user.phoneNumber,
+                userName: res.user.userName,
+                password: res.user.password,
+                confirmPass: res.user.confirmPass,
+                id: res.user.id,
+                setRandomPassword: res.user.setRandomPassword,
+                isActive: res.user.isActive,
+                isLockoutEnabled: res.user.isLockoutEnabled,
+                isTwoFactorEnabled: res.user.isTwoFactorEnabled,
                 shouldChangePasswordOnNextLogin:
-                  res.UserEditI.user.shouldChangePasswordOnNextLogin,
-                surname: res.UserEditI.user.surname,
+                  res.user.shouldChangePasswordOnNextLogin,
+                surname: res.user.surname,
                 imageUrl: '../assets/edit-profile.png',
               };
               this.userinfo = item;
             }
-            if (res && res.UserEditI && res.UserEditI.allOrganizationUnits && res.status == "success") {
-              this.resOrganizationUnit = res.UserEditI.allOrganizationUnits
+            if (res && res.allOrganizationUnits) {
+              this.resOrganizationUnit = res.allOrganizationUnits
               this.OrganizationUnit = [];
               this.SelectedOrganizationUnit = [];
               this.OrganizationUnit = this._arrayToTreeConverterService.createTree(
-                res.UserEditI.allOrganizationUnits,
+                res.allOrganizationUnits,
                 'parentId',
                 'id',
                 null,
@@ -288,8 +288,8 @@ export class AppComponent {
               );
               if (this.isEdit) {
                 this.SelectedOrganizationUnit = [];
-                if (res && res.UserEditI && res.UserEditI.memberedOrganizationUnits && res.UserEditI.memberedOrganizationUnits.length && res.status == "success") {
-                  res.UserEditI.memberedOrganizationUnits.forEach((element: any) => {
+                if (res && res.memberedOrganizationUnits) {
+                  res.memberedOrganizationUnits.forEach((element: any) => {
                     this.CheckSelectedOrganizationUnit(element)
                   })
                 }
@@ -317,18 +317,15 @@ export class AppComponent {
               .select(selectUserPermissionEdit)
               .subscribe((result: any) => {
                 if (
-                  result &&
-                  result.UserPermissionI &&
-                  result.UserPermissionI.permissions && result.status == "success"
-                ) {
+                  result && result.permissions) {
                   this.Permission = [];
                   this.selectedPermissions = [];
                   this.Permission = this.ConvertArraytoTreedata(
-                    result.UserPermissionI.permissions
+                    result.permissions
                   );
-                  if (result.UserPermissionI.grantedPermissionNames) {
+                  if (result.grantedPermissionNames) {
                     this.selectedPermissions = [];
-                    result.UserPermissionI.grantedPermissionNames.forEach(
+                    result.grantedPermissionNames.forEach(
                       (item) => {
                         this.checkSelectedNodes(this.Permission, item);
                       }
@@ -358,9 +355,9 @@ export class AppComponent {
     this.store.dispatch(getUsers([]));
     this.store.select(selectAllUsers).subscribe((res: any) => {
       this.userList = [];
-      if (res && res.users && res.users.items && res.status == "success") {
+      if (res && res.items) {
         this.isAnimation = false;
-        res.users.items.forEach((element: any) => {
+        res.items.forEach((element: any) => {
           let statusTemplate;
           if (element.isActive) {
             statusTemplate = `<div><span class="badge badge-success">Active</span></div>`;
@@ -407,9 +404,9 @@ export class AppComponent {
     });
     this.store.dispatch(getUserPermissionFilterList());
     this.store.select(selectAllUserFilterPermissions).subscribe((res: any) => {
-      if (res && res.UserPermissionFilterI && res.UserPermissionFilterI.items)
+      if (res && res.items)
         this.UserPermissionFiltertreeData = this.ConvertArraytoTreedata(
-          res.UserPermissionFilterI.items
+          res.items
         );
       const mfeConfig = this.rdsUserMfeConfig;
       mfeConfig.input.FilterPermissionList = [
@@ -547,7 +544,6 @@ export class AppComponent {
           this.SelectedOrganizationUnit.push(selecteditem)
           // console.log( this.SelectedOrganizationUnit)
         }
-
       })
     }
 

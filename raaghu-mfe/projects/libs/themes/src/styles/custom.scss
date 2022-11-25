@@ -567,7 +567,9 @@ html[theme=dark] .btn-primary svg {
   overflow: inherit;
 }
 
-
+.parameter-bg-color{
+  background-color: #f5f5fc;
+}
 
 /* table */
 
@@ -1146,7 +1148,7 @@ $size: 10;
 
 .member-activity-col .table-responsive {
   overflow-y: scroll;
-  height: 22rem;
+  height: 20rem;
 }
 
 // storybook css temp
@@ -1226,4 +1228,13 @@ bs-datepicker-container {
 }
 .btn.form-select {
   text-transform: capitalize;
+}
+rds-admin-dashboard {
+  .row {
+    --bs-gutter-x: 1rem;
+  }
+
+  .card.card-stretch.gutter-b {
+    height: calc(100% - 1rem);
+  }
 }

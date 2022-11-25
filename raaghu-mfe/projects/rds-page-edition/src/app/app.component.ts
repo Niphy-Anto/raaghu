@@ -1,12 +1,10 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { AlertService, ComponentLoaderOptions } from '@libs/shared';
-import { deleteEdition, getEditionComboboxItems, getEditionInfo, getEditionPageComboboxItems, getEditions, getTenantCount, moveTenant, saveEdition, selectAllEditions, selectDefaultLanguage, selectEditionInfo, selectEditionPageComboboxItems, selectTenant, updateEdition } from '@libs/state-management';
 import { Store } from '@ngrx/store';
 import { ArrayToTreeConverterService } from 'projects/libs/shared/src/lib/array-to-tree-converter.service';
 import { TreeNode } from 'projects/rds-components/src/models/tree-node.model';
 import { TableHeader } from 'projects/rds-components/src/models/table-header.model';
 import { TranslateService } from '@ngx-translate/core';
-import { HammerGestureConfig } from '@angular/platform-browser';
 import {
   transition,
   trigger,
@@ -14,6 +12,9 @@ import {
   style,
   animate,
 } from '@angular/animations';
+import { selectDefaultLanguage } from 'projects/libs/state-management/src/lib/state/language/language.selector';
+import { deleteEdition, getEditionInfo, getEditionPageComboboxItems, getEditions, getTenantCount, moveTenant, saveEdition, updateEdition } from 'projects/libs/state-management/src/lib/state/edition/edition.action';
+import { selectAllEditions, selectEditionInfo, selectEditionPageComboboxItems, selectTenant } from 'projects/libs/state-management/src/lib/state/edition/edition.selector';
 
 @Component({
   selector: 'app-root',
@@ -150,9 +151,9 @@ export class AppComponent implements OnInit {
     this.store.dispatch(getEditions());
     this.store.select(selectAllEditions).subscribe((res: any) => {
       this.EditionDatatable = [];
-      if (res && res.editions && res.editions && res.status == "success") {
+      if (res) {
         this.isAnimation = false;
-        res.editions.forEach(element => {
+        res.forEach(element => {
           const edition: any = {
             editionname: element.displayName,
             price: '$ ' + element.annualPrice,
@@ -173,12 +174,12 @@ export class AppComponent implements OnInit {
     })
     this.store.dispatch(getEditionInfo(undefined))
     this.store.select(selectEditionInfo).subscribe((res: any) => {
-      if (res && res.editionInfo && res.editionInfo.featureValues && res.status == "success") {
-        this.featureList = this.convertArraytoTreedata(res.editionInfo.features)
+      if (res && res.featureValues) {
+        this.featureList = this.convertArraytoTreedata(res.features)
         const rdsEditionMfeConfig = this.rdsEditionMfeConfig;
         rdsEditionMfeConfig.input.featureList = [...this.featureList];
-        rdsEditionMfeConfig.input.selectedFeatures = [...res.editionInfo.featureValues];
-        rdsEditionMfeConfig.input.selectedEdition = { ...res.editionInfo.edition };
+        rdsEditionMfeConfig.input.selectedFeatures = [...res.featureValues];
+        rdsEditionMfeConfig.input.selectedEdition = { ...res.edition };
         rdsEditionMfeConfig.input.editShimmer = false;
         this.rdsEditionMfeConfig = { ...rdsEditionMfeConfig };
       }
@@ -187,10 +188,10 @@ export class AppComponent implements OnInit {
     })
     this.store.dispatch(getEditionPageComboboxItems())
     this.store.select(selectEditionPageComboboxItems).subscribe((res: any) => {
-      if (res && res.editionComboboxItem) {
+      if (res) {
         this.editionList  = []
         this.freeEditions = [];
-        res.editionComboboxItem.filter((x: any) => x.isFree).forEach(element => {
+        res.filter((x: any) => x.isFree).forEach(element => {
           const data = {
             value:element.value,
             some:element.displayText,
@@ -204,7 +205,7 @@ export class AppComponent implements OnInit {
           }
           this.freeEditions.push(data);         
         }); 
-        res.editionComboboxItem.forEach((res:any)=>{
+        res.forEach((res:any)=>{
           const data = {
             value:res.value,
             some:res.displayText,
@@ -235,9 +236,9 @@ export class AppComponent implements OnInit {
     //  }
     //});
     this.store.select(selectTenant).subscribe((res: any) => {
-      if (res && res.status === 'success') {
+      if (res) {
         const mfeConfig = this.rdsEditionMfeConfig
-        mfeConfig.input.tenantCount = res.tenantCount;
+        mfeConfig.input.tenantCount = res;
         this.rdsEditionMfeConfig = mfeConfig;
       }
     })
