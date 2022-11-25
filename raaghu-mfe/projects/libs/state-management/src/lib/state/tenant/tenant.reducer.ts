@@ -1,6 +1,5 @@
 import { createReducer, on } from "@ngrx/store";
-import { getTenants, getTenantSuccess, getTenantFailure, getEditionComboboxItems, getEditionComboboxItemsSuccess, getEditionComboboxItemsFailure, getTenantForEdit, getTenantForEditSuccess, getTenantForEditFailure, getTenantFeaturesForEdit, getTenantFeaturesForEditSuccess, getTenantFeaturesForEditFailure, getTenantUsers, getTenantUsersSuccess, getTenantUsersFailure, getTenantLogin, getTenantLoginSuccess, getTenantLoginFailure } from "./tenant.actions";
-import { Tenants } from "./tenant.models";
+import { getTenants, getTenantSuccess, getTenantFailure, getEditionComboboxItemsSuccess, getEditionComboboxItemsFailure, getTenantForEdit, getTenantForEditSuccess, getTenantForEditFailure, getTenantFeaturesForEdit, getTenantFeaturesForEditSuccess, getTenantFeaturesForEditFailure, getTenantUsers, getTenantUsersSuccess, getTenantUsersFailure, getTenantLogin, getTenantLoginSuccess, getTenantLoginFailure, getEditionComboboxItems } from "./tenant.actions";
 
 
 export interface TenantState {
@@ -41,6 +40,7 @@ export const TenantReducer = createReducer(
         error: error,
         status: 'error',
     })),
+    on(getEditionComboboxItems, (state) => ({ ...state, status: 'loading' })),
     on(getEditionComboboxItemsSuccess, (state, { editionComboboxItem }) => ({
         ...state,
         editionComboboxItem: editionComboboxItem,

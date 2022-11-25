@@ -419,7 +419,7 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     InfiniteScrollModule,
     RdsTeamMemberModule,
   ],
-  providers: [AppSessionService],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

@@ -194,9 +194,9 @@ export class AppComponent {
 
     this.store.dispatch(getEditionComboboxItems())
     this.store.select(selectEditionComboboxItems).subscribe((res: any) => {
-      if (res && res.editions) {
+      if (res) {
         this.editionList  = []
-        res.editions.forEach(element => {
+        res.forEach(element => {
           const data = {
             value:element.value,
             some:element.displayText,
@@ -223,8 +223,8 @@ export class AppComponent {
 
 
     this.store.select(selecteTeantLoginList).subscribe((res: any) => {     
-      if (res && res.tenantLogin  && res.status == "success") {        
-        let targetUrl='https://anzstageui.raaghu.io/login'+'?impersonationToken='+res.tenantLogin.impersonationToken+ '&tenantId=' + this.loginList+ '&tenancyName='+res.tenantLogin.tenancyName;
+      if (res) {        
+        let targetUrl='https://anzstageui.raaghu.io/login'+'?impersonationToken='+res.impersonationToken+ '&tenantId=' + this.loginList+ '&tenancyName='+res.tenancyName;
       this.userAuthService.unauthenticateUser(true,targetUrl);      
       }
     })      
@@ -232,8 +232,8 @@ export class AppComponent {
   
     this.store.select(selecteTeantUserList).subscribe((res: any) => {
       this.userTableData=[];
-      if (res &&res.tenantUsers&&  res.tenantUsers.items && res.status == "success") {
-        res.tenantUsers.items.forEach((element: any) => {                 
+      if (res && res.items) {
+        res.items.forEach((element: any) => {                 
           const item: any = {
             name:element.name,
             id:element.value
@@ -249,9 +249,9 @@ export class AppComponent {
     this.store.dispatch(getTenants());
     this.store.select(selectAllTenants).subscribe((res: any) => {
       this.tenantTableData = [];
-      if (res && res.tenants.items && res.status == "success") {
+      if (res) {
         this.isAnimation = false;
-        res.tenants.items.forEach((element: any) => {
+        res.items.forEach((element: any) => {
           const status: string = (element.isActive) ? 'Active' : 'Inactive';
           // const statusTemplate = `<div class="status ${status}">${status}</div>`;
           let statusTemplate;
@@ -288,19 +288,19 @@ export class AppComponent {
     });
 
     this.store.select(selectTenantInfo).subscribe((res: any) => {
-      if (res && res.tenantInfo && res.status === 'success') {
+      if (res) {
         this.tenantSettingsInfo = {};
         this.tenantData = {};
-        this.tenantSettingsInfo['connectionString'] = res.tenantInfo.connectionString;
-        this.tenantSettingsInfo['isActive'] = res.tenantInfo.isActive;
-        this.tenantSettingsInfo['isInTrialPeriod'] = res.tenantInfo.isInTrialPeriod;
-        this.tenantData['tenancyName'] = res.tenantInfo.tenancyName;
-        this.tenantData['tenantName'] = res.tenantInfo.name;
-        this.tenantData['adminEmailAddress'] = res.tenantInfo.adminEmailAddress;
-        this.tenantData['edition'] = (res.tenantInfo.editionId && res.tenantInfo.editionId !== null) ? res.tenantInfo.editionId.toString(): res.tenantInfo.editionId;
-        this.tenantData['unlimitedSubscription'] = (res.tenantInfo.subscriptionEndDateUtc !== null&&res.tenantInfo.subscriptionEndDateUtc) ? false : true;
-        this.tenantData['id'] = res.tenantInfo.id;
-        this.tenantData['subscriptionEndDate'] = (res.tenantInfo.subscriptionEndDateUtc) ? new Date(res.tenantInfo.subscriptionEndDateUtc) : null;
+        this.tenantSettingsInfo['connectionString'] = res.connectionString;
+        this.tenantSettingsInfo['isActive'] = res.isActive;
+        this.tenantSettingsInfo['isInTrialPeriod'] = res.isInTrialPeriod;
+        this.tenantData['tenancyName'] = res.tenancyName;
+        this.tenantData['tenantName'] = res.name;
+        this.tenantData['adminEmailAddress'] = res.adminEmailAddress;
+        this.tenantData['edition'] = (res.editionId && res.editionId !== null) ? res.editionId.toString(): res.editionId;
+        this.tenantData['unlimitedSubscription'] = (res.subscriptionEndDateUtc !== null&&res.subscriptionEndDateUtc) ? false : true;
+        this.tenantData['id'] = res.id;
+        this.tenantData['subscriptionEndDate'] = (res.subscriptionEndDateUtc) ? new Date(res.subscriptionEndDateUtc) : null;
         const mfeConfig = this.rdsTenantMfeConfig
         mfeConfig.input.tenantData = { ... this.tenantData };
         mfeConfig.input.tenantSettingsInfo = { ... this.tenantSettingsInfo };
@@ -309,9 +309,9 @@ export class AppComponent {
       }
     });
     this.store.select(selectTenantFeature).subscribe((res: any) => {
-      if (res && res.tenantFeature && res.status === 'success') {
-        this.tenantFeatureValues = res.tenantFeature.featureValues;
-        this.tenantFeatures = this.convertArraytoTreedata(res.tenantFeature.features);
+      if (res) {
+        this.tenantFeatureValues = res.featureValues;
+        this.tenantFeatures = this.convertArraytoTreedata(res.features);
 
         // this.editionList = res.editions;
         const mfeConfig = this.rdsTenantMfeConfig
