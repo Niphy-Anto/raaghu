@@ -481,7 +481,7 @@ export class SidenavComponent extends MfeBaseComponent {
         toggleEvent: () => {
           var element = document.getElementById('sidebar');
           element.style.display =
-            element.style.display === 'none' ? 'block' : 'none';
+            element.style.display === 'none' || element.style.display == '' || !element.style.display ? 'block' : 'none';
         },
         onLanguageSelection: (lan) => {
           this.translate.use(lan);
@@ -544,7 +544,7 @@ export class SidenavComponent extends MfeBaseComponent {
         onUpdateNotificationSettings: (data: any) => {
           this.store.dispatch(updateNotificationSettings(data));
         },
-        onProfileData: (event: any) =>{
+        onProfileData: (event: any) => {
           this.store.dispatch(getProfilepic());
         }
       }
@@ -608,7 +608,7 @@ export class SidenavComponent extends MfeBaseComponent {
             this.selectedLanguage.language = item.displayName;
             this.selectedLanguage.icon = item.icon.split(' ')[1];
             const mfe = this.rdsTopNavigationMfeConfig;
-            mfe.input.selectedLanguage = {...this.selectedLanguage};
+            mfe.input.selectedLanguage = { ...this.selectedLanguage };
             this.rdsTopNavigationMfeConfig = mfe;
           }
           languages.push(item.name);
@@ -621,7 +621,7 @@ export class SidenavComponent extends MfeBaseComponent {
         // this.translate.addLangs(languages);
         const mfe = this.rdsTopNavigationMfeConfig;
         mfe.input.languageItems = [...this.languageItems];
-        mfe.input.selectedLanguage = {...this.selectedLanguage};
+        mfe.input.selectedLanguage = { ...this.selectedLanguage };
         this.rdsTopNavigationMfeConfig = mfe;
       }
     });
@@ -728,18 +728,18 @@ export class SidenavComponent extends MfeBaseComponent {
     this.store.select(selectUserFilter).subscribe((res: any) => {
       if (res && res.items && res.items.length) {
         res.items.forEach((res: any) => {
-          const item: any = {       
-            value:res.value,
-            some:res.name,
-            isSelected:res.isSelected,
-            icon:'',
-            iconWidth:0,
-            iconHeight:0,
-            iconFill:false,
+          const item: any = {
+            value: res.value,
+            some: res.name,
+            isSelected: res.isSelected,
+            icon: '',
+            iconWidth: 0,
+            iconHeight: 0,
+            iconFill: false,
             iconStroke: true,
             isFree: res.isFree
-          
-        };
+
+          };
           this.usernameList.push(item);
         });
         const mfeConfig = this.rdsTopNavigationMfeConfig;
@@ -836,6 +836,7 @@ export class SidenavComponent extends MfeBaseComponent {
       alert.close();
     }
     this.shared.setTopNavTitle('');
+    this.shared.setSideBarStatus(true)
   }
   redirect(event): void { }
 
