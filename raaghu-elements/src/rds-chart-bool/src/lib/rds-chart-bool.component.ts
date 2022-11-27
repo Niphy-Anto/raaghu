@@ -38,7 +38,7 @@ export class RdsChartBoolComponent implements OnInit, AfterViewInit {
   @Input() chartLabels?: any;
   @Input() centerIconName: string = '';
   @Input() chartDataSets?: ChartDataSetBool[] | any;
-
+  @Input() iconColor: string = '#000';
   @Input() chartOptions?: any;
   @Input() centerSvg: any;
   static inload: boolean;
@@ -62,17 +62,40 @@ export class RdsChartBoolComponent implements OnInit, AfterViewInit {
     this.ctx = this.canvas.getContext('2d');
     this.style = getComputedStyle(document.body);
     this.chartDataSets.forEach((element: any) => {
-      element.backgroundColor.forEach((bg: any, index: number) => {
-        if (this.style) {
-          element.backgroundColor[index] = (this.style.getPropertyValue('--chart-bool-color' + (index + 1))) ? this.style.getPropertyValue('--chart-bool-color' + (index + 1)) : bg
-        }
-      });
+      if (element.backgroundColor && element.backgroundColor.length > 0) {
+        element.backgroundColor.forEach((bg: any, index: number) => {
+          if (this.style) {
+            const color = this.style.getPropertyValue(element.backgroundColor[index]);
+            if (color) {
+              element.backgroundColor[index] = color;
+            }
+          }
+        });
+      }
+
     });
     let svg = ChartIcons[this.centerIconName];
-    let blob = new Blob([svg], { type: 'image/svg+xml' });
-    let url = URL.createObjectURL(blob);
-    let image = document.createElement('img');
-    image.src = url;
+    const div = document.createElement('DIV');
+    div.innerHTML = svg;
+    const svgContent = div.querySelector('svg');
+    let url = '';
+    if (svgContent) {
+      svgContent.style.height = '20px';
+      svgContent.style.width = '20px';
+      this.style = getComputedStyle(document.body);
+      if (this.style && this.style.getPropertyValue(this.iconColor)) {
+        svgContent.style.stroke = this.style.getPropertyValue(this.iconColor);
+      } else {
+        svgContent.style.stroke = this.iconColor;
+      }
+      svgContent.style.fill = 'none';
+      const updatedSvg = svgContent.outerHTML;
+      let blob = new Blob([updatedSvg], { type: 'image/svg+xml' });
+      url = URL.createObjectURL(blob);
+      let image = document.createElement('img');
+      image.src = url;
+    }
+
     const centerImage = {
       id: 'counter2',
       beforeDraw(chart, args, options) {
@@ -85,6 +108,7 @@ export class RdsChartBoolComponent implements OnInit, AfterViewInit {
       }
 
     };
+
     const myChart = new Chart(this.ctx, {
       type: 'doughnut',
       data: {
