@@ -33,7 +33,7 @@
               </a>
               <a (click)="onSubMenuWithChildrenClick(i,child.children[0])" *ngIf="child.children"
                  [ngClass]="{ 'active' : activepage===i, 'child' :  !collapsed }" [id]="'submenuWithChildren'+i"
-                 class="d-inline-flex align-items-center text-decoration-none text-uppercase " type="button"
+                 class="d-inline-flex align-items-center text-decoration-none" type="button"
                  [attr.data-bs-target]="'#'+child.id" data-bs-toggle="collapse" role="button" [attr.aria-expanded]="showHideSubmenu"
                  [attr.aria-controls]="child.id">
                 <span [ngClass]="{ 'd-none' : collapsed }">{{child.label}}</span>

@@ -351,27 +351,27 @@ export class SidenavComponent extends MfeBaseComponent {
         }
       ],
     }
-    ,
-    {
-      label: 'Apps',
-      labelTranslationKey: 'Apps',
-      id: '',
-      permissionName: '',
-      icon: 'apps',
-      path: '',
-      children: [
-        {
-          label: 'Settings',
-          labelTranslationKey: 'Settings',
-          id: '',
-          permissionName: 'Pages.Administration.Tenant.Settings',
-          icon: 'setting',
-          path: '/pages/settings',
-          description: 'Show and change application settings',
-          descriptionTranslationKey: 'Show and change application settings',
-        },
-      ]
-    }
+    //,
+    //{
+    //  label: 'Apps',
+    //  labelTranslationKey: 'Apps',
+    //  id: '',
+    //  permissionName: '',
+    //  icon: 'apps',
+    //  path: '',
+    //  children: [
+    //    {
+    //      label: 'Settings',
+    //      labelTranslationKey: 'Settings',
+    //      id: '',
+    //      permissionName: 'Pages.Administration.Tenant.Settings',
+    //      icon: 'setting',
+    //      path: '/pages/settings',
+    //      description: 'Show and change application settings',
+    //      descriptionTranslationKey: 'Show and change application settings',
+    //    },
+    //  ]
+    //}
     
     // { label: 'Api Scopes', id: 'ApiScope', permissionName: '', icon: 'settings', path: '/pages/apiScope', description: 'Home > Identity Server > Api Scope' },
     
