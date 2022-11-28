@@ -26,7 +26,7 @@ export const Default = Template.bind({});
 Default.parameters = { controls: { include: ['withColorVariant','colorVariant', 'menuicon', 'menuiconHeight', 'menuiconWidth', 'size', 'listItems'] } };
 
 Default.args = {
-  withColorVariant: false,
+  withColorVariant: true,
   colorVariant: 'primary',
   menuicon: 'plus',
   menuiconHeight: '12px',

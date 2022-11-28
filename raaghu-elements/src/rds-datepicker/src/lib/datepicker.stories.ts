@@ -50,7 +50,7 @@ Default.args = {
   placeholder: 'Date',
   datesDisabled: [new Date()],
   dateTooltipTexts: [{ date: new Date(), tooltipText: 'todays Date' }],
-  daysDisabled: [3],
+  daysDisabled: [],
   maxDate: new Date(new Date().setDate(27)),
   placement: 'bottom',
   label: 'Select Date',
