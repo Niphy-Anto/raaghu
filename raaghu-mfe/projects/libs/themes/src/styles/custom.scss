@@ -1236,3 +1236,11 @@ rds-admin-dashboard {
     height: calc(100% - 1rem);
   }
 }
+#sidebar ul li .collapse li {
+  list-style: disc;
+  margin-left: 37px;
+}
+#sidebar ul li .collapse li .collapse li {
+  list-style: square;
+  margin-left:0px;
+}

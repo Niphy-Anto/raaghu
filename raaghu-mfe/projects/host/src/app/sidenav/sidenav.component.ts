@@ -167,7 +167,7 @@ export class SidenavComponent extends MfeBaseComponent {
       permissionName: '',
       icon: 'icons',
       path: '/pages/icons',
-      description: '',
+      description: 'icons',
       descriptionTranslationKey: '',
     },
     {
@@ -176,7 +176,7 @@ export class SidenavComponent extends MfeBaseComponent {
       id: '',
       permissionName: '',
       icon: 'pages',
-      path: '',
+      path: 'pages',
       children: [
         {
           label: 'Tenants',
@@ -204,7 +204,7 @@ export class SidenavComponent extends MfeBaseComponent {
           labelTranslationKey: 'Administration',
           id: 'admin',
           permissionName: '',
-          icon: 'administration',
+          icon: '',
           path: '',
           children: [
             {
@@ -338,7 +338,8 @@ export class SidenavComponent extends MfeBaseComponent {
           ],
         }
       ],
-    },
+    }
+    ,
     {
       label: 'Apps',
       labelTranslationKey: 'Apps',
