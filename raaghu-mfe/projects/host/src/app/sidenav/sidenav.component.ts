@@ -833,7 +833,9 @@ export class SidenavComponent extends MfeBaseComponent {
     var alertNode = document.querySelector('.alert');
     if (alertNode) {
       var alert = bootstrap.Alert.getInstance(alertNode);
-      alert.close();
+      if(alert){
+        alert.close();
+      }
     }
     this.shared.setTopNavTitle('');
     this.shared.setSideBarStatus(true)

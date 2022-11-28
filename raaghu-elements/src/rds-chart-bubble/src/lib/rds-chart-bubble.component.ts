@@ -56,7 +56,10 @@ export class RdsChartBubbleComponent implements OnInit, OnChanges, AfterViewInit
     this.chartDataSets.forEach((element: any) => {
       element.backgroundColor.forEach((bg: any, index: number) => {
         if (this.style) {
-          element.backgroundColor[index] = (this.style.getPropertyValue('--chart-bubble-color' + (index + 1))) ? this.style.getPropertyValue('--chart-bubble-color' + (index + 1)) : bg
+          const color = this.style.getPropertyValue(element.backgroundColor[index]);
+          if (color) {
+            element.backgroundColor[index] = color;
+          }
         }
       });
     });

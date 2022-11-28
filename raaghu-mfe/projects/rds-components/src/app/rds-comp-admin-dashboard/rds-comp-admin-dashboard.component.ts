@@ -114,35 +114,25 @@ export class RdsAdminDashboardComponent extends MfeBaseComponent implements OnIn
     , { "cases": "<div class=\"d-flex align-items-center justify-content-center\"><div> 13 </div></div>", "member": "<div class=\"d-flex align-items-center\"><div> <img src=../assets/dashboard-data.png width=\"40px\" ></div><div class=\"ms-2 mt-2\"><p class=\"mb-0\"><b>Kath</b></p><small class=\"text-muted\">Manager </small></div></div>", "active": "<div class=\"d-flex align-items-center justify-content-center\"><div> 10 </div></div>", "closed": "<div class=\"d-flex align-items-center justify-content-center\"><div> 3 </div></div>", "rate": "<div class=\"MidRate d-flex align-items-center justify-content-center\">52%</div>" }
   ]
 
-  
+
   @Input() monthlySummaryDataSets = [
     {
       label: 'Sales',
-      data: [190, 200, 133, 231, 112, 125, 135, 135.7, 266, 224, 122, 125],
+      data: [600, 462, 405, 362, 350, 350.5, 320.8, 318, 605, 689, 352, 354],
       borderColor: '#4DCFFF',
-     // pointBackgroundColor: '#4DCFFF',
-      // backgroundColor: '#ECEEF4',
+      pointBackgroundColor: '#4DCFFF',
+      backgroundColor: '--chart-line-color1',
       fill: true,
       pointRadius: 3,
       // fillColor: "rgba(195, 40, 96, 0.1)",
-       tension: 0.4,
-    },
-    {
-      label: 'Revenue',
-      data: [600, 262, 205, 162, 150, 180, 206, 220, 240, 190, 275, 211],
-      borderColor: '#863BFF',
-     // pointBackgroundColor: '#863BFF',
-      // backgroundColor: '#ECEEF4',
-      fill: true,
-      pointRadius: 3,
       tension: 0.4,
     },
     {
       label: 'Revenue',
-      data: [500, 162, 245, 262, 250, 280, 246, 228, 340, 290, 375, 291],
+      data: [250, 780.2, 780.4, 650, 455, 455.5, 455.8, 456, 610, 455, 250, 254],
       borderColor: '#863BFF',
-    //  pointBackgroundColor: '#863BFF',
-      // backgroundColor: '#ECEEF4',
+      pointBackgroundColor: '#863BFF',
+      backgroundColor: '--chart-line-color2',
       fill: true,
       pointRadius: 3,
       tension: 0.4,
@@ -155,7 +145,7 @@ export class RdsAdminDashboardComponent extends MfeBaseComponent implements OnIn
     radius: 0,
     pointStyle: 'circle',
     responsive: true,
-    borderWidth:2,
+    borderWidth: 2,
     maintainAspectRatio: false,
     plugins: {
       title: {
@@ -169,7 +159,7 @@ export class RdsAdminDashboardComponent extends MfeBaseComponent implements OnIn
           usePointStyle: true,
           boxWidth: 8,
           padding: 30,
-          height:10
+          height: 10
         },
       },
       tooltip: { enabled: true },
@@ -177,38 +167,38 @@ export class RdsAdminDashboardComponent extends MfeBaseComponent implements OnIn
     scales:
     {
       y: {
-        beginAtZero:true, 
+        beginAtZero: true,
         legend: {
           labels: {
-           maxheight:10
+            maxheight: 10
           },
         },
         grid: {
           display: false
-        }   
+        }
       },
       x: {
         grid: {
           display: false
         }
       },
-  },
+    },
     tooltip: {
       display: true,
       usePointStyle: true,
     },
   }
-  
+
 
   // DOUGHNUT WITH BOOL
-  @Input() pschartDatasets  = [
+  @Input() pschartDatasets = [
     {
       label: 'Dataset 1',
       data: this.ProfitShareData,
       backgroundColor: [
-        '#ff6384',
-        '#BF00BB',
-        '#4bc0c0'
+        '--chart-doughnut-color1',
+        '--chart-doughnut-color2',
+        '--chart-doughnut-color3'
       ],
       fillStyle: 'blue',
       fillRect: [200, 100, 140, 100],
@@ -270,7 +260,7 @@ export class RdsAdminDashboardComponent extends MfeBaseComponent implements OnIn
     elements: {
       center: {
         text: [{ text: '32 k', font: '500 1.4rem Poppins' }, { text: 'Profit', font: '400 0.8rem Poppins' }],
-        color: '#FF6384', // Default is #000000
+        color: '--chart-doughnut-text-color', // Default is #000000
         fontStyle: 'Arial', // Default is Arial
         sidePadding: 20, // Default is 20 (as a percentage)
         lineHeight: 25 // Default is 25 (in px), used for when text wraps
@@ -283,15 +273,15 @@ export class RdsAdminDashboardComponent extends MfeBaseComponent implements OnIn
     {
       label: 'Sales Growth',
       data: [15, 67, 34, 78, 45, 87, 76, 32, 50, 14, 35, 22],
-      backgroundColor: ['rgba(54, 162, 235, 1)'],
+      backgroundColor: ['--chart-bar-horizontal-color'],
       borderRadius: 10,
-      barThickness : 7,
-      borderSkipped: false,
+      barThickness: 7,
+      borderSkipped: false
     }
   ];
-  @Input() barHrChartLabels = ['10k', '20k','25k', '30k', '40k', '50k', '60k', '70k', '75k', '80k', '90k', '95k'];
+  @Input() barHrChartLabels = ['10k', '20k', '25k', '30k', '40k', '50k', '60k', '70k', '75k', '80k', '90k', '95k'];
   @Input() barHrChartWidth = 300;
-  @Input()barHrchartHeight = 300;
+  @Input() barHrchartHeight = 300;
   @Input() barHrChartOptions = {
     indexAxis: 'x',
     elements: {
@@ -301,7 +291,7 @@ export class RdsAdminDashboardComponent extends MfeBaseComponent implements OnIn
       }
     },
     responsive: true,
-    maintainAspectRatio: false,    
+    maintainAspectRatio: false,
     plugins: {
       legend: {
         position: '',
@@ -313,9 +303,9 @@ export class RdsAdminDashboardComponent extends MfeBaseComponent implements OnIn
       scales:
       {
         y: {
-          beginAtZero:true,    
+          beginAtZero: true,
         }
-    },
+      },
       tooltip: {
         usePointStyle: true,
       },
@@ -335,7 +325,7 @@ export class RdsAdminDashboardComponent extends MfeBaseComponent implements OnIn
       fillRect: [200, 100, 40, 10],
       backgroundColor: [
         '--chartColor9',
-        '--chartColor7' 
+        '--chartColor7'
 
       ],
       borderColor: [
@@ -404,8 +394,9 @@ export class RdsAdminDashboardComponent extends MfeBaseComponent implements OnIn
       backgroundColor: [
         '--chartColor1',
         '--chartColor7'
-        
+
       ],
+      iconColor:'--chart-icon-color',
       borderColor: [
         '#fff',
       ],
@@ -471,7 +462,7 @@ export class RdsAdminDashboardComponent extends MfeBaseComponent implements OnIn
   ]
   tableStyle: string = 'light';
 
-  constructor(private injector: Injector,public translate:TranslateService) { super(injector); }
+  constructor(private injector: Injector, public translate: TranslateService) { super(injector); }
 
   ngOnInit(): void {
     this.rdsMemberActivityTableMfeConfig = {
@@ -482,8 +473,8 @@ export class RdsAdminDashboardComponent extends MfeBaseComponent implements OnIn
         width: '100%',
         tableData: this.memberActivityTableData,
         pagination: false,
-        recordsPerPage:10,
-        noDataTitle:'Currently you do not have member activity'
+        recordsPerPage: 10,
+        noDataTitle: 'Currently you do not have member activity'
       },
     };
   }

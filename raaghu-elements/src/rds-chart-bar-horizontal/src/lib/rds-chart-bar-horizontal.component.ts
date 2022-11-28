@@ -30,6 +30,7 @@ export class RdsChartBarHorizontalComponent implements OnInit {
   @Input() chartLabels?: any
   @Input() chartDataSets?: ChartDataSetBar[] | any;
   @Input() chartOptions?: any;
+  @Input() isGradient: boolean = false;
   style: CSSStyleDeclaration | undefined;
 
   constructor() { }
@@ -57,39 +58,58 @@ export class RdsChartBarHorizontalComponent implements OnInit {
     this.canvas = document.getElementById(this.chartId);
     if (this.canvas !== null) {
       this.ctx = this.canvas.getContext('2d');
-
-      //this.chartDataSets.forEach((element: any) => {
-      //  element.backgroundColor.forEach((bg: any, index: number) => {
-      //    if (bg && this.style) {
-      //      element.backgroundColor[index] = (this.style.getPropertyValue('--chart-bar-horizontal-color' + (index + 1))) ? this.style.getPropertyValue('--chart-bar-horizontal-color' + (index + 1)) : bg
-      //    }
-      //  });
-      //});
       this.chartDataSets.forEach((ele: any, index: number) => {
         if (this.style) {
-          let color = this.style.getPropertyValue('--chart-bar-horizontal-color');
-          const borderColor = this.style.getPropertyValue('--chart-bar-horizontal-border-color');
+
+          let color = this.style.getPropertyValue(ele.backgroundColor);
+          const borderColor = this.style.getPropertyValue(ele.borderColor);
+          const pointBackgroundColor = this.style.getPropertyValue(ele.pointBackgroundColor);
+          if (borderColor) {
+            ele.borderColor = borderColor;
+          }
+          if (pointBackgroundColor) {
+            ele.pointBackgroundColor = pointBackgroundColor;
+          }
           if (color) {
-            if (borderColor) {
-              ele.borderColor = borderColor;
-
+            if (this.isGradient) {
+              const gradient = this.ctx.createLinearGradient(0, 50, 0, 300);
+              color = color.replace(/[\d\.]+\)$/g, '.76)');
+              gradient.addColorStop(0.1, color);
+              color = color.replace(/[\d\.]+\)$/g, '.08)');
+              gradient.addColorStop(1, color);
+              ele.backgroundColor = gradient;
+            } else {
+              ele.backgroundColor = color
             }
-
-            const gradient = this.ctx.createLinearGradient(0, 50, 0, 300);
-
-            color = color.replace(/[\d\.]+\)$/g, '.76)');
-
-            gradient.addColorStop(0.1, color);
-
-            color = color.replace(/[\d\.]+\)$/g, '.08)');
-
-            gradient.addColorStop(1, color);
-
-            ele.backgroundColor = gradient;
 
           }
         }
+
       })
+
+      if (this.chartOptions && this.style) {
+        if (this.chartOptions['plugins'] && this.chartOptions['plugins']['legend'] && this.chartOptions['plugins']['legend']['labels']) {
+          const legend = this.style.getPropertyValue(this.chartOptions['plugins']['legend']['labels']['color']);
+          if (legend) {
+            this.chartOptions['plugins']['legend']['labels']['color'] = legend;
+          }
+        }
+
+        if (this.chartOptions['scales']) {
+          Object.keys(this.chartOptions['scales']).forEach((ele, index) => {
+            if (ele) {
+              if (this.chartOptions['scales'][ele] && this.chartOptions['scales'][ele]['ticks'] && this.style) {
+                const tickColor = this.style.getPropertyValue(this.chartOptions['scales'][ele]['ticks']['color'])
+                if (tickColor) {
+                  this.chartOptions['scales'][ele]['ticks']['color'] = tickColor;
+
+                }
+              }
+            }
+          })
+        }
+      }
+
       const canvas = new Chart(this.ctx, {
         type: 'bar',
         data: {

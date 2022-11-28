@@ -23,7 +23,7 @@ export class RdsChartScatterComponent implements OnInit, AfterViewInit {
   canvas: any;
   ctx: any;
   //chartId = 'scatterChart' + RdsChartScatterComponent.count;
-  @Input() chartId:string='scatterChart0';
+  @Input() chartId: string = 'scatterChart0';
   @Input() chartWidth = 400;
   @Input() chartHeight = 400;
 
@@ -55,13 +55,36 @@ export class RdsChartScatterComponent implements OnInit, AfterViewInit {
     this.canvas = document.getElementById(this.chartId);
     if (this.canvas !== null) {
       this.chartDataSets.forEach((element: any) => {
-        element.backgroundColor.forEach((bg: any, index: number) => {
-          if (this.style) {
-            element.backgroundColor[index] = (this.style.getPropertyValue('--chart-scatter-color' + (index + 1))) ? this.style.getPropertyValue('--chart-scatter-color' + (index + 1)) : bg
+        if (this.style) {
+          const color = this.style.getPropertyValue(element.backgroundColor);
+          if(color){
+            element.backgroundColor = color;
           }
-        });
-      });  
-    this.ctx = this.canvas.getContext('2d');
+        }
+      });
+      if (this.chartOptions && this.style) {
+        if (this.chartOptions['plugins'] && this.chartOptions['plugins']['legend'] && this.chartOptions['plugins']['legend']['labels']) {
+          const legend = this.style.getPropertyValue(this.chartOptions['plugins']['legend']['labels']['color']);
+          if (legend) {
+            this.chartOptions['plugins']['legend']['labels']['color'] = legend;
+          }
+        }
+
+        if (this.chartOptions['scales']) {
+          Object.keys(this.chartOptions['scales']).forEach((ele, index) => {
+            if (ele && this.style) {
+              if (this.chartOptions['scales'][ele] && this.chartOptions['scales'][ele]['ticks']) {
+                const tickColor = this.style.getPropertyValue(this.chartOptions['scales'][ele]['ticks']['color'])
+                if (tickColor) {
+                  this.chartOptions['scales'][ele]['ticks']['color'] = tickColor;
+
+                }
+              }
+            }
+          })
+        }
+      }
+      this.ctx = this.canvas.getContext('2d');
       const scatterChart = new Chart(this.ctx, {
         type: 'scatter',
         data: {
@@ -70,10 +93,10 @@ export class RdsChartScatterComponent implements OnInit, AfterViewInit {
         },
         options: this.chartOptions
       });
-      if(scatterChart !== null){
-        scatterChart.canvas.style.height = this.chartHeight+'px'; 
-        scatterChart.canvas.style.width = this.chartWidth+'px';
-      } 
+      if (scatterChart !== null) {
+        scatterChart.canvas.style.height = this.chartHeight + 'px';
+        scatterChart.canvas.style.width = this.chartWidth + 'px';
+      }
     }
   }
 
