@@ -17,6 +17,7 @@ import { ComponentLoaderOptions } from 'projects/libs/shared/src/lib/component-l
 import { TableAction } from '../../models/table-action.model';
 import { TranslateService } from '@ngx-translate/core';
 import { OrganizationTreeNode } from '../../models/organization-tree.model';
+import { AlertService } from '@libs/shared';
 
 declare let bootstrap: any;
 
@@ -42,6 +43,7 @@ export class RdsCompUserPermissionsComponent implements OnInit {
   };
   rdsOrganizationTreeConfig: ComponentLoaderOptions;
   public navtabsItems: any = [];
+  currentAlerts: any = [];
   listItems = [
     {
       value: 'Export to excel',
@@ -160,7 +162,7 @@ export class RdsCompUserPermissionsComponent implements OnInit {
     },
   ];
   selectedTreeNode: number;
-  constructor(public translate: TranslateService) { }
+  constructor(public translate: TranslateService,  private alertService: AlertService) { }
   @Input() orgTreeData = [];
   nodeColors = ['#6E4D9F', '#0D79AE', '#14A94B', '#FBA919'];
   TreeType: TreeType = {
@@ -197,6 +199,7 @@ export class RdsCompUserPermissionsComponent implements OnInit {
         },
       },
     };
+    this.subscribeToAlerts();
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -204,6 +207,10 @@ export class RdsCompUserPermissionsComponent implements OnInit {
     mfeConfig.input.orgTreeData = [...this.orgTreeData];
     this.rdsOrganizationTreeConfig = mfeConfig;
     this.selectedOrganizationUnit = [];
+  }
+
+  onAlertHide(event: any): void {
+    this.currentAlerts = event;
   }
   getSelectedNavTab(event: any): void {
     this.activePage = event;
@@ -504,6 +511,19 @@ export class RdsCompUserPermissionsComponent implements OnInit {
       var bsOffcanvas = new bootstrap.Offcanvas(offcanvas);
       bsOffcanvas.show();
     }, 1);
+  }
+
+  subscribeToAlerts() {
+    this.alertService.alertEvents.subscribe((alert) => {
+      this.currentAlerts = [];
+      const currentAlert: any = {
+        type: alert.type,
+        title: alert.title,
+        message: alert.message,
+        sticky: alert.sticky,
+      };
+      this.currentAlerts.push(currentAlert);
+    });
   }
 
 }

@@ -38,7 +38,7 @@ export class RdsAlertComponent implements OnInit {
     }
 
     if (this.sticky){
-       const mode2 = `${this.position === 'top' ? ' position-absolute top-0 start-0 m-3' : ' position-absolute bottom-0 start-0 m-3'}`;
+       const mode2 = `${this.position === 'top' ? ' position-absolute top-0 start-0 fullWidth ' : ' position-absolute bottom-0 start-0 fullWidth '}`;
        return mode + mode2 + mode;
       }
       else {

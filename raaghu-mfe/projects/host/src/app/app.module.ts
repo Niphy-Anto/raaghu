@@ -60,6 +60,8 @@ import { settingReducer } from 'projects/libs/state-management/src/lib/state/set
 import { SettingEffects } from 'projects/libs/state-management/src/lib/state/settings/settings.effects';
 import { WebhookSubscriptionReducer } from 'projects/libs/state-management/src/lib/state/webhook-subscription/webhook-subscription.reducer';
 import { WebhookSubscriptionEffects } from 'projects/libs/state-management/src/lib/state/webhook-subscription/webhook-subscription.effects';
+import { TenantReducer } from 'projects/libs/state-management/src/lib/state/tenant/tenant.reducer';
+import { TenantEffects } from 'projects/libs/state-management/src/lib/state/tenant/tenant.effects';
 export function getRemoteServiceBaseUrl(): any {
   let URL = demodata.remoteServiceBaseUrl;
   return URL;
@@ -111,6 +113,7 @@ export function getRemoteServiceBaseUrl(): any {
       mla: MLAReducer,
       user: UserReducer,
       roles: RoleReducer,
+      tenants:TenantReducer,
       validateTenant: ValidateTenantReducer,
       usernames: GetUsernameFilterReducer,
       loginAttempts: LoginAttemptsReducer,
@@ -152,6 +155,7 @@ export function getRemoteServiceBaseUrl(): any {
       visualsettingEffects,
       LanguageEffects,
       UserEffects,
+      TenantEffects,
       AuditLogsEffects,
       WebhookSubscriptionEffects
     ]),
