@@ -37,7 +37,7 @@ export class RdsTopNavigationComponent extends MfeBaseComponent implements OnIni
   @Input() selectedMenuDescription: string = 'Statics and reports';
   @Input() userList: any = [];
   @Input() languageItems = [];
-  @Input()  selectedLanguage: any = { language: '', icon: '' };
+  @Input() selectedLanguage: any = { language: '', icon: '' };
   @Input() notificationData = [];
   @Input() tenancy: string = 'Host Admin';
   @Input() offCanvasId: string = ''
@@ -120,14 +120,25 @@ export class RdsTopNavigationComponent extends MfeBaseComponent implements OnIni
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-
   }
 
   ngOnInit(): void {
     this.shared.getTopNavTitle().subscribe((res: any) => {
       this.tabName = res;
     });
+    this.shared.getSideBarStatus().subscribe((res: any) => {
+      if (res === true) {
+        const element: any = document.querySelector('.navbar-toggler');
+        if (element) {
+          const style = getComputedStyle(element)
+          if (style && style.display && style.display === 'block') {
+            element.click();
+          }
+        }
 
+        this.shared.setSideBarStatus(false);
+      }
+    });
     var notificationDropdown = document.getElementById('navbarDropdownMenuLink')
     notificationDropdown.addEventListener('hide.bs.dropdown', function () {
       that.notificationData.forEach((x: any) => {

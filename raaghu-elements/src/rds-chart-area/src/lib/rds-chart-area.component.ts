@@ -53,11 +53,12 @@ export class RdsChartAreaComponent implements OnInit, OnChanges, AfterViewInit {
       chartStatus.destroy();
     }
     this.chartDataSets.forEach((element: any) => {
-      element.backgroundColor.forEach((bg: any, index: number) => {
-        if (this.style) {
-          element.backgroundColor[index] = (this.style.getPropertyValue('--chart-area-color' + (index + 1))) ? this.style.getPropertyValue('chart-area-color' + (index + 1)) : bg
+      if (element && this.style) {
+        let color = this.style.getPropertyValue(element.backgroundColor);
+        if (color) {
+          element.backgroundColor = color;
         }
-      });
+      }
     });
     this.canvas = document.getElementById(this.chartId);
     if (this.canvas !== null) {

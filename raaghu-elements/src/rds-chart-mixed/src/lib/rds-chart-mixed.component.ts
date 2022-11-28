@@ -71,6 +71,14 @@ export class RdsChartMixedComponent implements OnInit, OnChanges, AfterViewInit 
     }
     this.canvas = document.getElementById(this.chartId);
     if (this.canvas !== null) {
+      this.chartDataSets.forEach((element: any) => {
+          if (this.style) {
+            const color = this.style.getPropertyValue(element.backgroundColor);
+            if (color) {
+              element.backgroundColor = color;
+            }
+          }
+      });
       // this.canvas.style.backgroundColor = this.canvasBackgroundColor;
       this.ctx = this.canvas.getContext('2d');
       const mixedChart = new Chart(this.ctx, {
@@ -81,10 +89,10 @@ export class RdsChartMixedComponent implements OnInit, OnChanges, AfterViewInit 
         },
         options: this.chartOptions
       });
-      if(mixedChart !== null){
-        mixedChart.canvas.style.height = this.chartHeight+'px'; 
-        mixedChart.canvas.style.width = this.chartWidth+'px';
-      } 
+      if (mixedChart !== null) {
+        mixedChart.canvas.style.height = this.chartHeight + 'px';
+        mixedChart.canvas.style.width = this.chartWidth + 'px';
+      }
     }
   }
 

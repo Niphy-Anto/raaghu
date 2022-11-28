@@ -1,10 +1,10 @@
 <div [ngClass]="{ 'd-flex': !verticallyAlligned }">
   <div *ngIf="withProfilePic" class="" [ngClass]="profileClass" >
     <img [src]="profilePic" class="avatar " [ngClass]="classes" [ngStyle]="{'width': width+'px','height':height + 'px'}" />
-    <span class="flex-grow-1 align-items-center ms-2 fw-bold text-decoration-none d-flex">
-      <div>
-        <span>{{firstName}} {{lastName}}</span>
-        <p class="mb-0 mx-3 text-muted user-role">
+    <span class="flex-grow-1 align-items-center ms-2 fw-bold text-decoration-none">
+      <div class="text-center mx-3">
+        <span>{{firstName}}</span>
+        <p class="mb-0 text-muted">
           {{subTitle}}
         </p>
       </div>
