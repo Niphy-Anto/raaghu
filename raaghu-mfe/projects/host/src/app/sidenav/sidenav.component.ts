@@ -171,7 +171,6 @@ export class SidenavComponent extends MfeBaseComponent {
       description: '',
       descriptionTranslationKey: '',
     },
-    ,
     {
       label: 'Icons',
       labelTranslationKey: 'Icons',
