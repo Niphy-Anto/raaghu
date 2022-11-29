@@ -58,9 +58,10 @@ export class RdsDropdownlistComponent implements OnInit, OnChanges, AfterViewIni
   ngAfterViewInit(): void {
     const myDropdown = document.getElementById(this.id);
     if (myDropdown) {
-      myDropdown.addEventListener('hide.bs.dropdown', event => {
+      myDropdown.addEventListener('hide.bs.collapse', event => {
         this.show = false;
       })
+     
     }
 
   }
