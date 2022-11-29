@@ -57,7 +57,7 @@ export class AppComponent implements OnInit {
   ];
   isShimmer: boolean = false;
   EditShimmer: boolean = false;
-  languageCanvasTitle = 'New Language';
+  languageCanvasTitle = this.translate.instant('New Language');
   showLoadingSpinner: boolean = false;
   public rdsAlertMfeConfig: ComponentLoaderOptions = {
     name: 'RdsCompAlert',
@@ -342,9 +342,9 @@ export class AppComponent implements OnInit {
         isEnabled: false,
         id: undefined,
       };
-      this.languageCanvasTitle = 'NEW LANGUAGE';
+      this.languageCanvasTitle = this.translate.instant('New Language');
     } else {
-      this.languageCanvasTitle = 'Edit Language';
+      this.languageCanvasTitle = this.translate.instant('Edit Language');
     }
     const rdsNewLanguageMfeConfig = this.rdsNewLanguageMfeConfig;
     rdsNewLanguageMfeConfig.input.selectedLanguage = this.selectedLanguage;

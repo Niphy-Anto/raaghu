@@ -42,6 +42,7 @@ export class RdsCompUserPermissionsComponent implements OnInit {
     featureList: [],
   };
   rdsOrganizationTreeConfig: ComponentLoaderOptions;
+  selectedFilteredPermissions :  any = []
   public navtabsItems: any = [];
   currentAlerts: any = [];
   listItems = [
@@ -99,9 +100,10 @@ export class RdsCompUserPermissionsComponent implements OnInit {
   Selecteorganizationdata: any = [];
   treeData: [] = [];
   organizationtreeData: [] = [];
-  PermissionFiltertreeData: [] = [];
+  PermissionFiltertreeData: any = [];
   selectedRoles: any = [];
   PermissinFilterSelectedata: any = [];
+  viewCanvasFilter : boolean = false;
   @ViewChild("openFilterByPermission") openFilterByPermission: ElementRef;
   @Input() userHeaders: TableHeader[] = [
     {
@@ -245,6 +247,7 @@ export class RdsCompUserPermissionsComponent implements OnInit {
     bsOffcanvas.hide();
     this.viewCanvas = false;
     this.selectedId = '';
+    this.selectedPermissions = []
   }
 
   getUserData(event: any): void {
@@ -286,7 +289,7 @@ export class RdsCompUserPermissionsComponent implements OnInit {
     ];
     this.CreateOrEditUser.emit({ id: undefined });
     if (event) {
-      this.canvasTitle = 'NEW USER';
+      this.canvasTitle = this.translate.instant('New User');
       this.userinfo = undefined;
       event.stopPropagation();
 
@@ -305,15 +308,17 @@ export class RdsCompUserPermissionsComponent implements OnInit {
     this.userinfo = undefined;
     this.onClose.emit();
     this.showLoadingSpinner = false;
+    this.selectedPermissions = []
+    this.selectedFilteredPermissions = []
   }
 
   editTableRowData(event): void {
-    this.canvasTitle = 'EDIT USER';
+    this.canvasTitle = this.translate.instant('Edit User');
     this.selectedId = event.id;
 
     this.viewCanvas = true;
     if (event) {
-      this.canvasTitle = 'EDIT USER';
+      this.canvasTitle = this.translate.instant('Edit User');
       this.navtabsItems = [
         {
           label: this.translate.instant('User Information'),
@@ -366,7 +371,6 @@ export class RdsCompUserPermissionsComponent implements OnInit {
         permissionlist
       );
     }
-    console.log(permissionlist);
 
   }
 
@@ -404,9 +408,9 @@ export class RdsCompUserPermissionsComponent implements OnInit {
 
 
   getSelectedUserPermissionFilterList(event: any): void {
-    if (event && event.length > 0) {
+    // if (event && event.length > 0) {
       this.PermissionFiltertreeData = event;
-    }
+    // }
   }
   savePermission() {
     this.UpdateUserPermission.emit({
@@ -418,9 +422,9 @@ export class RdsCompUserPermissionsComponent implements OnInit {
     this.searchItem.emit(event.detail);
   }
   FilterUserPermission() {
-    this.FilterPermission.emit({
-      FilterPermission: this.PermissionFiltertreeData,
-    });
+    this.FilterPermission.emit(this.PermissionFiltertreeData);
+    this.viewCanvasFilter = false;
+    this.selectedFilteredPermissions = []
   }
 
   checkSelectedOrganizationUnits() {
@@ -504,8 +508,8 @@ export class RdsCompUserPermissionsComponent implements OnInit {
       el.click();
     }
   }
-  openCanvas(canvasId): void {
-    this.viewCanvas = true;
+  openCanvas(canvasId , viewCanvas : boolean): void {
+    this.viewCanvas = viewCanvas;
     setTimeout(() => {
       var offcanvas = document.getElementById(canvasId);
       var bsOffcanvas = new bootstrap.Offcanvas(offcanvas);
@@ -526,4 +530,13 @@ export class RdsCompUserPermissionsComponent implements OnInit {
     });
   }
 
+  openCanvasFilter(canvasId , viewCanvasFilter : boolean): void{
+    this.viewCanvasFilter = viewCanvasFilter;
+    this.selectedPermissions = []
+    setTimeout(() => {
+      var offcanvas = document.getElementById(canvasId);
+      var bsOffcanvas = new bootstrap.Offcanvas(offcanvas);
+      bsOffcanvas.show();
+    }, 1);
+  }
 }

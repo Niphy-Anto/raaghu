@@ -1,12 +1,14 @@
 <div class="row">
-  <div class="col-md-8">
+  <div class="col-md-6">
     <rds-comp-alert [currentAlerts]="currentAlerts" (onAlertHide)="onAlertHide($event)"></rds-comp-alert>
    </div>
-  <div class="col-md-4 text-end pb-3 desktop-btn">
+  <div class="col-md-6 text-end pb-3 desktop-btn">
     <span  data-bs-toggle="offcanvas" data-bs-target="canvasFilterPermission"
       aria-controls="canvasFilterPermission">
       <rds-button [label]="translate.instant('Filter By Permission')" [size]="'medium'" [colorVariant]="'primary'"
-        [size]="'small'"  (click)= "openCanvas('canvasFilterPermission')" [isOutline]="true" class="me-3">
+        [size]="'small'" 
+        (click)="openCanvasFilter('canvasFilterPermission',true)"
+         [isOutline]="true" class="me-3">
       </rds-button>
     </span>
     <rds-button class="action me-3" [colorVariant]="'primary'" [isOutline]="true" [size]="'small'" (click)="exportToExcel()"
@@ -14,7 +16,7 @@
     </rds-button>
     <rds-button [label]="translate.instant('New User')" [size]="'medium'" [colorVariant]="'primary'"
     [showLoadingSpinner]="showLoadingSpinner" [size]="'small'" (click)="newUser($event)" buttonType="iconLabel"
-      icon="plus" iconWidth="12px"  (click)= "openCanvas('userOffcanvas')" iconHeight="12px">
+      icon="plus" iconWidth="12px"  (click)="openCanvas('userOffcanvas',true)" iconHeight="12px">
 
     </rds-button>
   </div>
@@ -41,6 +43,7 @@
   <rds-fab-menu [listItems]="listItemsm" [menuicon]="'plus'" [colorVariant]="'primary'" [menuiconWidth]="'12px'"
     [menuiconHeight]="'12px'" (onSelect)="onSelectMenu($event)"></rds-fab-menu>
 </div>
+<ng-container *ngIf="viewCanvas">
 <rds-offcanvas [canvasTitle]="translate.instant(canvasTitle)" [offId]="'userOffcanvas'" [offcanvaswidth]="650"
   [placement]="'end'" *ngIf="viewCanvas" (onClose)="close()">
   <rds-nav-tab [navtabsItems]="getNavTabItems()" (onClicktab)="getSelectedNavTab($event)" [activeTab]="activePage"
@@ -122,13 +125,18 @@
     </div>
   </rds-nav-tab>
 </rds-offcanvas>
+</ng-container>
+<ng-container *ngIf="viewCanvasFilter">
 <rds-offcanvas [canvasTitle]="translate.instant('FILTER BY PERMISSIONS')" [offId]="'canvasFilterPermission'"
   [placement]="'end'" [offcanvaswidth]="600">
    <div class="col-md-12 pt-3">
     <rds-search-input placeholder="Search" icon="search" size="small"> </rds-search-input>
   </div>
-  <rds-comp-permission-tree [treeData]="FilterPermissionList"
-    (getAllSelectedNodes)="getSelectedUserPermissionFilterList($event)" [selectAllLabel]="'Select All Permissions'">
+  <rds-comp-permission-tree [treeData]="permissionsList"
+  [selectedItems]="selectedFilteredPermissions"
+  (getAllselectedPermissions)="getSelectedUserPermissionFilterList($event)"
+  [selectAllLabel]="'Select All Permissions'"
+    >
   </rds-comp-permission-tree>
   <div class="footer-buttons my-2">
     <rds-button [label]="translate.instant('Cancel')" [isOutline]="true" (click)="close()" [colorVariant]="'primary'"
@@ -139,3 +147,4 @@
     </rds-button>
   </div>
 </rds-offcanvas>
+</ng-container>

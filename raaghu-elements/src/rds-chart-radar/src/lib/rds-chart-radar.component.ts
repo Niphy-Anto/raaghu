@@ -65,10 +65,37 @@ export class RdsChartRadarComponent implements OnInit {
       this.chartDataSets.forEach((element: any) => {
         element.backgroundColor.forEach((bg: any, index: number) => {
           if (this.style) {
-            element.backgroundColor[index] = (this.style.getPropertyValue('--chart-radar-color' + (index + 1))) ? this.style.getPropertyValue('--chart-radar-color' + (index + 1)) : bg
+            const color = this.style.getPropertyValue(element.backgroundColor[index]);
+            if (color) {
+              element.backgroundColor[index] = color;
+            }
           }
         });
-      }); this.ctx = this.canvas.getContext('2d');
+      });
+
+      if (this.chartOptions && this.style) {
+        if (this.chartOptions['plugins'] && this.chartOptions['plugins']['legend'] && this.chartOptions['plugins']['legend']['labels']) {
+          const legend = this.style.getPropertyValue(this.chartOptions['plugins']['legend']['labels']['color']);
+          if (legend) {
+            this.chartOptions['plugins']['legend']['labels']['color'] = legend;
+          }
+        }
+
+        if (this.chartOptions['scales']) {
+          Object.keys(this.chartOptions['scales']).forEach((ele, index) => {
+            if (ele && this.style) {
+              if (this.chartOptions['scales'][ele] && this.chartOptions['scales'][ele]['ticks']) {
+                const tickColor = this.style.getPropertyValue(this.chartOptions['scales'][ele]['ticks']['color'])
+                if (tickColor) {
+                  this.chartOptions['scales'][ele]['ticks']['color'] = tickColor;
+
+                }
+              }
+            }
+          })
+        }
+      }
+      this.ctx = this.canvas.getContext('2d');
       const radarChart = new Chart(this.ctx, {
         type: 'radar',
         data: {

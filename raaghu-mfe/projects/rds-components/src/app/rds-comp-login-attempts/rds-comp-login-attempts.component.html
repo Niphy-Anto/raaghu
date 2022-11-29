@@ -15,7 +15,7 @@
            <div class="row">
              <div class="col-lg-5 col-md-12 col-sm-12 sm-p-0">
                <div class="form-group mb-3">
-                 <label for="Result" class="mb-2">Result</label>
+                 <label for="Result" class="mb-2">{{"Result"|translate}}</label>
                  <rds-dropdownlist [placeholder]="translate.instant('Select Result')" [borderDropdown]="true" required
                 class="text-dark" [id]="'result-list'" [(ngModel)]="result" [listItems]="listItemsResult"
                [value]="result" (onSelect)="onResultListSelect($event)" ngDefaultControl name="result" #result_name="ngModel">
