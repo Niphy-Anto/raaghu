@@ -11,6 +11,7 @@ export class RdsWidgetComponent implements OnInit {
   @Input() isRefreshRequired: boolean = true;
   @Input() colorVariant: 'primary' | 'success' | 'danger' | 'warning' | 'light' | 'info' | 'secondary' | 'dark' | 'gradient-primary' | '' = '';
   @Output() onRefresh = new EventEmitter<Event>();
+  @Input() isBorder: boolean = true;
   //@Input() cardheight = 'card-stretch';
 
   constructor() { }
