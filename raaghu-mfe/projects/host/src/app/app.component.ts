@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { Subject, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { RdsCookieConsentService } from 'projects/libs/rds-cookieconsent/src/lib/service/cookieconsent.service';
 import { RdsInitializingEvent } from 'projects/libs/rds-cookieconsent/src/lib/event/initializing.event';
 import { RdsInitializationErrorEvent } from 'projects/libs/rds-cookieconsent/src/lib/event/initialization-error.event';

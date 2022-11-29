@@ -12,7 +12,7 @@ html[theme=light] {
   $input-bg: $body-bg !default;
 
   $border-color: $gray-100;
-
+  $toast-btn-close-color:$gray-100 !default;
   $btn-close-width: 1em !default;
   $btn-close-color: $gray-100 !default;
   $btn-close-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$btn-close-color}'><path d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/></svg>") !default;
@@ -161,7 +161,8 @@ html[theme=light] {
   $high-rate-color: $success !default;
   $mid-rate-color: $danger !default;
   $low-rate-color: $warning !default;
-
+ /*toast*/
+  $toast-text-color:$black;
   /*tree checkbox lines*/
   $check-verticle-border-color: $primary !default;
   $check-horizotal-border-color: $primary !default;
@@ -539,6 +540,7 @@ html[theme=light] {
       }
     }
   }
+
   /*table color variables*/
   .table-hover {
     > tbody > tr > td {
@@ -666,9 +668,9 @@ html[theme=light] {
   }
 
   .pagination {
-
+    
     .page-item {
-      border-color: $gray-100;
+      border-color: $white;
       // &:nth-child(-n + 2) .page-link {
       //   background: $pagination-item-bg;
       //   color: $pagination-item-color;
@@ -678,6 +680,9 @@ html[theme=light] {
       //   background:  $pagination-bg-color;
       //   color: $pagination-item-color;
       // }
+      &:nth-child(-n + 1) .page-link {
+        border-color:$white
+      }
     }
 
     .page-link {
@@ -692,8 +697,8 @@ html[theme=light] {
     }
 
     .active .page-link {
-      color: $page-link-active-color;
-      background-color:$pagination-bg-hover-color;
+      color: $white;
+      background-color:$primary;
     }
   }
   /*Dropdown*/
@@ -722,6 +727,13 @@ html[theme=light] {
       }
     }
   }
+  /*toast*/
+  .toast-text{
+    color:$toast-text-color;
+  }
+  // .toast-close{
+  //   color:$toast-btn-close-color;
+  // }
   /*Tabs color variables*/
   .nav-tabs {
 
@@ -1665,7 +1677,8 @@ html[theme=dark] {
   $offcanvas-bottom-border-color: $dark-300 !default;
 
   $nav-tabs-bottom-border-color: $dark-400 !default;
-
+  /*toast*/
+  $toast-text-color:$black;
   /*button transition values*/
   $btn-transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
 
@@ -2144,6 +2157,13 @@ html[theme=dark] {
       }
     }
   }
+   /*toast*/
+   .toast-text{
+    color:$toast-text-color;
+  }
+  // .toast-close{
+  //   color:$toast-btn-close-color;
+  // }
   /*edition color variables*/
   .edition-grid {
     .edition {
@@ -2236,9 +2256,12 @@ html[theme=dark] {
       //     color: $pagination-item-color;
       //   }
       // }
-      &:nth-child(-n + 1).active .page-link {
-        background: $pagination-item-bg;
-        color: $pagination-item-color;
+      // &:nth-child(-n + 1).active .page-link {
+      //   background: $pagination-item-bg;
+      //   color: $pagination-item-color;
+      // }
+      &:nth-child(-n + 1) .page-link {
+        border-color:$gray-500;
       }
      
     }
@@ -2252,10 +2275,10 @@ html[theme=dark] {
         background-color: $pagination-bg-hover-color;
       }
     }
-    // .active .page-link {
-    //   color: $white;
-    //   background-color: $pagination-bg-hover-color;
-    // }
+    .active .page-link {
+      color: $white;
+      background-color: $pagination-bg-hover-color;
+    }
   }
 
   

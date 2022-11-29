@@ -202,20 +202,20 @@ export class RdsCompVisualSettingsComponent implements OnInit, AfterViewInit {
         this.navtabItems = [
 
           {
-            label: 'Subheader',
+            label: this.translate.instant('Subheader'),
             tablink: '#nav-subheader',
             ariacontrols: 'nav-subheader',
             translateKey: 'Subheader',
           },
           {
-            label: 'Menu',
+            label: this.translate.instant('Menu'),
             tablink: '#nav-Menu',
             ariacontrols: 'nav-Menu',
             translateKey: 'Menu',
           },
 
           {
-            label: 'Footer',
+            label: this.translate.instant('Footer'),
             tablink: '#nav-footer',
             ariacontrols: 'nav-footer',
             translateKey: 'Footer',

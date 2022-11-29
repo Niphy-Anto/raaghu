@@ -5,7 +5,6 @@ import { AppComponent} from './app.component';
 import { APP_ROUTES } from './app.routes';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
-import { MultipleMfeComponent } from './multiple-mfe/multiple-mfe.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   SharedModule,
@@ -161,12 +160,10 @@ export function getRemoteServiceBaseUrl(): any {
     ]),
     SharedModule,
     UserAuthModule,
-    BrowserAnimationsModule,
     RdsSideNavModule,
   ],
   declarations: [
     AppComponent,
-    MultipleMfeComponent,
     SidenavComponent,
   ],
 
