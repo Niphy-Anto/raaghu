@@ -669,9 +669,9 @@ html[theme=light] {
   }
 
   .pagination {
-
+    
     .page-item {
-      border-color: $gray-100;
+      border-color: $white;
       // &:nth-child(-n + 2) .page-link {
       //   background: $pagination-item-bg;
       //   color: $pagination-item-color;
@@ -681,6 +681,9 @@ html[theme=light] {
       //   background:  $pagination-bg-color;
       //   color: $pagination-item-color;
       // }
+      &:nth-child(-n + 1) .page-link {
+        border-color:$white
+      }
     }
 
     .page-link {
@@ -695,8 +698,8 @@ html[theme=light] {
     }
 
     .active .page-link {
-      color: $page-link-active-color;
-      background-color:$pagination-bg-hover-color;
+      color: $white;
+      background-color:$primary;
     }
   }
   /*Dropdown*/
@@ -2253,9 +2256,12 @@ html[theme=dark] {
       //     color: $pagination-item-color;
       //   }
       // }
-      &:nth-child(-n + 1).active .page-link {
-        background: $pagination-item-bg;
-        color: $pagination-item-color;
+      // &:nth-child(-n + 1).active .page-link {
+      //   background: $pagination-item-bg;
+      //   color: $pagination-item-color;
+      // }
+      &:nth-child(-n + 1) .page-link {
+        border-color:$gray-500;
       }
      
     }
@@ -2269,10 +2275,10 @@ html[theme=dark] {
         background-color: $pagination-bg-hover-color;
       }
     }
-    // .active .page-link {
-    //   color: $white;
-    //   background-color: $pagination-bg-hover-color;
-    // }
+    .active .page-link {
+      color: $white;
+      background-color: $pagination-bg-hover-color;
+    }
   }
 
   
