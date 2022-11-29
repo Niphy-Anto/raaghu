@@ -86,7 +86,7 @@
                 </div>
                 <div class="col-md-2 mt-2">
                     <rds-dropdownlist [placeholder]="translate.instant('Select browser')" [borderDropdown]="true"
-                    class="text-dark" [id]="'status-list'" [(ngModel)]="browserInfo" [listItems]="browserList"
+                    class="text-dark" [id]="'browserList'" [(ngModel)]="browserInfo" [listItems]="browserList"
                    [value]="browserInfo" (onSelect)="SelectBroser($event)" ngDefaultControl name="browserInfo">
                   </rds-dropdownlist>
                 </div>
@@ -125,7 +125,7 @@
                             [value]="status" ngDefaultControl name="Property" [itemList]="statusList">
                         </rds-select-list> -->
                         <rds-dropdownlist [placeholder]="translate.instant('Select Property')" [borderDropdown]="true"
-                    class="text-dark" [id]="'status-list'" [(ngModel)]="status" [listItems]="statusList"
+                    class="text-dark" [id]="'status'" [(ngModel)]="status" [listItems]="statusList"
                    [value]="status" (onSelect)="exceptionModify($event)" ngDefaultControl name="status">
                   </rds-dropdownlist>
                     </div>
