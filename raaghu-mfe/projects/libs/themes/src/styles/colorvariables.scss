@@ -12,7 +12,7 @@ html[theme=light] {
   $input-bg: $body-bg !default;
 
   $border-color: $gray-100;
-
+  $toast-btn-close-color:$gray-100 !default;
   $btn-close-width: 1em !default;
   $btn-close-color: $gray-100 !default;
   $btn-close-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$btn-close-color}'><path d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/></svg>") !default;
@@ -161,7 +161,8 @@ html[theme=light] {
   $high-rate-color: $success !default;
   $mid-rate-color: $danger !default;
   $low-rate-color: $warning !default;
-
+ /*toast*/
+  $toast-text-color:$black;
   /*tree checkbox lines*/
   $check-verticle-border-color: $primary !default;
   $check-horizotal-border-color: $primary !default;
@@ -231,6 +232,20 @@ html[theme=light] {
       background-color: $table-hover-bg
     }
   }
+  @media screen and (min-width: 768px) and (max-width: 1023px){
+    #sortTable thead th:first-child, 
+    #sortTable tbody td:first-child {
+      position: sticky;
+      left: -1px;
+      background: $datatable-bgColor;
+      z-index: 1;
+      max-width: 190px;
+  }
+  #sortTable thead tr:hover th:first-child,
+  #sortTable tbody tr:hover td:first-child{
+    background-color: $table-hover-bg
+  }
+}
 
   .navbar {
     background-color: white;
@@ -526,6 +541,7 @@ html[theme=light] {
       }
     }
   }
+
   /*table color variables*/
   .table-hover {
     > tbody > tr > td {
@@ -709,6 +725,13 @@ html[theme=light] {
       }
     }
   }
+  /*toast*/
+  .toast-text{
+    color:$toast-text-color;
+  }
+  // .toast-close{
+  //   color:$toast-btn-close-color;
+  // }
   /*Tabs color variables*/
   .nav-tabs {
 
@@ -1652,7 +1675,8 @@ html[theme=dark] {
   $offcanvas-bottom-border-color: $dark-300 !default;
 
   $nav-tabs-bottom-border-color: $dark-400 !default;
-
+  /*toast*/
+  $toast-text-color:$black;
   /*button transition values*/
   $btn-transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
 
@@ -1720,7 +1744,22 @@ html[theme=dark] {
       background-color: $trhoverbg-color
     }
   }
+  @media screen and (min-width: 768px) and (max-width: 1023px){
+    #sortTable thead th:first-child, 
+    #sortTable tbody td:first-child {
+      position: sticky;
+      left: -1px;
+      background: $datatable-bgColor;
+      z-index: 1;
+      max-width: 190px;
+  }
+  #sortTable thead tr:hover th:first-child,
+  #sortTable tbody tr:hover td:first-child{
+    background-color: $trhoverbg-color
+  }
 
+  }
+ 
   .default-datepicker.border {
     border-color: $input-border-color;
 
@@ -2115,6 +2154,13 @@ html[theme=dark] {
       }
     }
   }
+   /*toast*/
+   .toast-text{
+    color:$toast-text-color;
+  }
+  // .toast-close{
+  //   color:$toast-btn-close-color;
+  // }
   /*edition color variables*/
   .edition-grid {
     .edition {

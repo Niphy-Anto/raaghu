@@ -23,9 +23,9 @@ export class RdsChartStackedComponent implements OnInit {
   canvas: any;
   ctx: any;
   //chartId = 'stackChart' + RdsChartStackedComponent.count;
-  @Input() chartId:string='stackChart0';
+  @Input() chartId: string = 'stackChart0';
   @Input() chartWidth = 400;
-  @Input() chartHeight:number = 400;
+  @Input() chartHeight: number = 400;
 
   // @Input() chartStyle?: any;
   @Input() chartLabels?: any
@@ -77,6 +77,38 @@ export class RdsChartStackedComponent implements OnInit {
     this.canvas = document.getElementById(this.chartId);
     if (this.canvas !== null) {
       // this.canvas.style.backgroundColor = this.canvasBackgroundColor;
+
+      this.chartDataSets.forEach((element: any) => {
+        if (this.style) {
+          const color = this.style.getPropertyValue(element.backgroundColor);
+          if (color) {
+            element.backgroundColor = color;
+          }
+        }
+      });
+
+      if (this.chartOptions && this.style) {
+        if (this.chartOptions['plugins'] && this.chartOptions['plugins']['legend'] && this.chartOptions['plugins']['legend']['labels']) {
+          const legend = this.style.getPropertyValue(this.chartOptions['plugins']['legend']['labels']['color']);
+          if (legend) {
+            this.chartOptions['plugins']['legend']['labels']['color'] = legend;
+          }
+        }
+
+        if (this.chartOptions['scales']) {
+          Object.keys(this.chartOptions['scales']).forEach((ele, index) => {
+            if (ele && this.style) {
+              if (this.chartOptions['scales'][ele] && this.chartOptions['scales'][ele]['ticks']) {
+                const tickColor = this.style.getPropertyValue(this.chartOptions['scales'][ele]['ticks']['color'])
+                if (tickColor) {
+                  this.chartOptions['scales'][ele]['ticks']['color'] = tickColor;
+
+                }
+              }
+            }
+          })
+        }
+      }
       this.ctx = this.canvas.getContext('2d');
       const stackedChart = new Chart(this.ctx, {
         type: 'line',
@@ -86,10 +118,10 @@ export class RdsChartStackedComponent implements OnInit {
         },
         options: this.chartOptions
       });
-      if(stackedChart !== null){
-        stackedChart.canvas.style.height = this.chartHeight+'px'; 
-        stackedChart.canvas.style.width = this.chartWidth+'px';
-      } 
+      if (stackedChart !== null) {
+        stackedChart.canvas.style.height = this.chartHeight + 'px';
+        stackedChart.canvas.style.width = this.chartWidth + 'px';
+      }
     }
   }
 

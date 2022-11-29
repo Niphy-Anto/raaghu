@@ -1,4 +1,4 @@
-<rds-modal [modalId]="'notification-settings'" [modalBackdrop]="backdrop" [size]="'large'">
+<rds-modal [modalId]="'notification-settings'" [modalBackdrop]="'static'" [size]="'large'">
     <div modalheader class="d-flex w-100">
         <h5 class="modal-title"><b> {{translate.instant('Notification settings')}}</b></h5>
         <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
@@ -32,10 +32,10 @@
     </div>
     <div modalfooter>
         <rds-button [tooltipPlacement]="'top'" (click)="cancel()" [colorVariant]="'primary'" [isOutline]="true"
-            [size]="'medium'" [label]="translate.instant('Cancel')" class="px-2">
+            [size]="'medium'" [attr.data-bs-dismiss]="'modal'" [label]="translate.instant('Cancel')" class="px-2">
         </rds-button>
         <rds-button class="mr-1" [id]="'notificationSave'" [size]="'medium'" iconHeight="15px" iconWidth="15px"
-            (click)="updateSettings()" [tooltipPlacement]="'top'" [colorVariant]="'primary'" icon="save"
+            (click)="updateSettings()" [attr.data-bs-dismiss]="'modal'" [tooltipPlacement]="'top'" [colorVariant]="'primary'" icon="save"
             [label]="translate.instant('Save')">
         </rds-button>
     </div>

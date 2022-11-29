@@ -166,45 +166,62 @@ export class AppComponent {
           this.store.dispatch(deleteUser(eventData.id));
         },
         FilterPermission: (event: any) => {
-          if (event && event.FilterPermission.length) {
-            this.FilterselectedPermissions(event.FilterPermission);
-            const data: any = {
-              grantedPermissionNames: this.selectedFilterPermissions,
-            };
-            this.store.dispatch(getUsers(this.selectedFilterPermissions));
-            this.store.select(selectAllUsers).subscribe((res: any) => {
-              this.userList = [];
-              if (res && res.items) {
-                res.items.forEach((element: any) => {
-                  const item: any = {
-                    userName: element.userName,
-                    name: element.name,
-                    emailAddress: element.emailAddress,
-                    isEmailConfirmed: element.isEmailConfirmed,
-                    isActive: element.isActive,
-                    creationTime: this.datepipe.transform(new Date(element.creationTime), 'MM/dd/yyyy, hh:mm:ss a'),
-                    id: element.id,
-                  };
-                  if (element && element.roles) {
-                    this.roleName = '';
-                    element.roles.forEach((e: any) => {
-                      if (this.roleName == '') {
-                        this.roleName = e.roleName
-                      }
-                      else {
-                        this.roleName = this.roleName + ' , ' + e.roleName;
-                      }
-                    });
-                    item.roleName = this.roleName
-                  }
-                  this.userList.push(item);
+          // if (event && event.FilterPermission.length) {
+          //   this.FilterselectedPermissions(event.FilterPermission);
+          //   const data: any = {
+          //     grantedPermissionNames: this.selectedFilterPermissions,
+          //   };
+          //   this.store.dispatch(getUsers(this.selectedFilterPermissions));
+          //   // this.store.select(selectAllUsers).subscribe((res: any) => {
+          //   //   this.userList = [];
+          //   //   if (res && res.items) {
+          //   //     res.items.forEach((element: any) => {
+          //   //       const item: any = {
+          //   //         userName: element.userName,
+          //   //         name: element.name,
+          //   //         emailAddress: element.emailAddress,
+          //   //         isEmailConfirmed: element.isEmailConfirmed,
+          //   //         isActive: element.isActive,
+          //   //         creationTime: this.datepipe.transform(new Date(element.creationTime), 'MM/dd/yyyy, hh:mm:ss a'),
+          //   //         id: element.id,
+          //   //       };
+          //   //       if (element && element.roles) {
+          //   //         this.roleName = '';
+          //   //         element.roles.forEach((e: any) => {
+          //   //           if (this.roleName == '') {
+          //   //             this.roleName = e.roleName
+          //   //           }
+          //   //           else {
+          //   //             this.roleName = this.roleName + ' , ' + e.roleName;
+          //   //           }
+          //   //         });
+          //   //         item.roleName = this.roleName
+          //   //       }
+          //   //       this.userList.push(item);
 
-                });
-                const mfeConfig = this.rdsUserMfeConfig;
-                mfeConfig.input.userList = [...this.userList];
-                this.rdsUserMfeConfig = mfeConfig;
-              }
-            });
+          //   //     });
+          //   //     const mfeConfig = this.rdsUserMfeConfig;
+          //   //     mfeConfig.input.userList = [...this.userList];
+          //   //     this.rdsUserMfeConfig = mfeConfig;
+          //   //   }
+          //   // });
+          // }
+          if (event && event.length) {
+            this.FilterselectedPermissions(event)
+              this.selectedFilterPermissions = [];
+              event.forEach((res) => {
+                if (res.value == true) {
+                  this.selectedFilterPermissions.push(res.name);
+                }
+              });
+            const data: any = {
+              grantedPermissionNames: this.selectedFilterPermissions
+            };
+            this.UserPermissionFiltertreeData = event;
+            this.store.dispatch(getUsers(this.selectedFilterPermissions));
+            const mfeConfig = this.rdsUserMfeConfig;
+            mfeConfig.input.selectedFilteredPermissions = [this.selectedFilterPermissions];
+            this.rdsUserMfeConfig = { ...mfeConfig };
           }
         },
         CreateOrEditUser: (eventData: any) => {
@@ -409,7 +426,7 @@ export class AppComponent {
           res.items
         );
       const mfeConfig = this.rdsUserMfeConfig;
-      mfeConfig.input.FilterPermissionList = [
+      mfeConfig.input.permissionsList = [
         ...this.UserPermissionFiltertreeData,
       ];
       this.rdsUserMfeConfig = { ...mfeConfig };
@@ -515,16 +532,18 @@ export class AppComponent {
   }
   FilterselectedPermissions(event: any) {
     this.selectedFilterPermissions = [];
-    for (const n of this.UserPermissionFiltertreeData) {
-      this.selectedPermissionname(n, event);
+    for (const n of event) {
+      this.selectedPermissionname(n);
     }
   }
-  selectedPermissionname(node: any, checked: boolean) {
+  selectedPermissionname(node: any) {
     if (node.selected == true) {
       this.selectedFilterPermissions.push(node.data.name);
     }
-    for (const n of node.children) {
-      this.selectedPermissionname(n, checked);
+    if (node.children) {
+      for (const n of node.children) {
+        this.selectedPermissionname(n);
+      }
     }
   }
   CheckSelectedOrganizationUnit(SelectedCode: any) {

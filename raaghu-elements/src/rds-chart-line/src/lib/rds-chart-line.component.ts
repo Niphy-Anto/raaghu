@@ -33,6 +33,7 @@ export class RdsChartLineComponent implements OnInit {
   @Input() canvasBackgroundColor?: any;
   @Input() chartDataSets?: ChartDataSetLine[] | any;
   @Input() chartOptions?: any;
+  @Input() isGradient: boolean = false;
   static inload: boolean;
   style: CSSStyleDeclaration;
 
@@ -61,41 +62,51 @@ export class RdsChartLineComponent implements OnInit {
       this.canvas.style.backgroundColor = this.canvasBackgroundColor;
       this.ctx = this.canvas.getContext('2d');
       this.chartDataSets.forEach((ele: any, index: number) => {
-        let color = this.style.getPropertyValue('--chart-line-color' + (index + 1));
-        const borderColor = this.style.getPropertyValue('--chart-line-border-color' + (index + 1));
-        const pointBackgroundColor = this.style.getPropertyValue('--chart-line-point-color' + (index + 1));
-        if (color) {
-          if (borderColor) {
-            ele.borderColor = borderColor;
-          }
-          if (pointBackgroundColor) {
-            ele.pointBackgroundColor = pointBackgroundColor;
-          }
-          const gradient = this.ctx.createLinearGradient(0, 25, 0, 210);
-          color = color.replace(/[\d\.]+\)$/g, '.76)');
-          gradient.addColorStop(0.1, color);
-          color = color.replace(/[\d\.]+\)$/g, '.08)');
-          gradient.addColorStop(1, color);
-          ele.backgroundColor = gradient;
+        let color = this.style.getPropertyValue(ele.backgroundColor);
+        const borderColor = this.style.getPropertyValue(ele.borderColor);
+        const pointBackgroundColor = this.style.getPropertyValue(ele.pointBackgroundColor);
+        if (borderColor) {
+          ele.borderColor = borderColor;
         }
+        if (pointBackgroundColor) {
+          ele.pointBackgroundColor = pointBackgroundColor;
+        }
+        if (color) {
+          if (this.isGradient) {
+            const gradient = this.ctx.createLinearGradient(0, 25, 0, 210);
+            color = color.replace(/[\d\.]+\)$/g, '.76)');
+            gradient.addColorStop(0.1, color);
+            color = color.replace(/[\d\.]+\)$/g, '.08)');
+            gradient.addColorStop(1, color);
+            ele.backgroundColor = gradient;
+          } else {
+            ele.backgroundColor = color
+          }
+
+        }
+
       })
 
-      if (this.style.getPropertyValue('--chart-line-legend-color')) {
-        if (this.chartOptions) {
-          const legend = this.style.getPropertyValue('--chart-line-legend-color');
+      if (this.chartOptions) {
+        if (this.chartOptions['plugins'] && this.chartOptions['plugins']['legend'] && this.chartOptions['plugins']['legend']['labels']) {
+          const legend = this.style.getPropertyValue(this.chartOptions['plugins']['legend']['labels']['color']);
           if (legend) {
             this.chartOptions['plugins']['legend']['labels']['color'] = legend;
           }
-          if (this.chartOptions['scales']) {
-            Object.keys(this.chartOptions['scales']).forEach((ele, index) => {
-              if (ele) {
-                if (this.chartOptions['scales'][ele] && this.chartOptions['scales'][ele]['ticks']) {
-                  const tickColor = this.style.getPropertyValue('--chart-line-scale-color' + (index + 1))
+        }
+
+        if (this.chartOptions['scales']) {
+          Object.keys(this.chartOptions['scales']).forEach((ele, index) => {
+            if (ele) {
+              if (this.chartOptions['scales'][ele] && this.chartOptions['scales'][ele]['ticks']) {
+                const tickColor = this.style.getPropertyValue(this.chartOptions['scales'][ele]['ticks']['color'])
+                if (tickColor) {
                   this.chartOptions['scales'][ele]['ticks']['color'] = tickColor;
+
                 }
               }
-            })
-          }
+            }
+          })
         }
       }
 

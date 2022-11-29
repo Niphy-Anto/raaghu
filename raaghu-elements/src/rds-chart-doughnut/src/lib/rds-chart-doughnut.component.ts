@@ -58,28 +58,37 @@ export class RdsChartDoughnutComponent implements OnInit {
     if (chartStatus != undefined) {
       chartStatus.destroy();
     }
-    let textColor: any;
-    if (this.style && this.style.getPropertyValue('--chart-doughnut-text-color')) {
-
-      textColor = this.style.getPropertyValue('--chart-doughnut-text-color');
-      console.log(textColor);
-    }
     this.canvas = document.getElementById(this.chartId);
     const title = this.titleText;
     const subTitle = this.subTitleText;
     this.chartDataSets.forEach((element: any) => {
-      element.backgroundColor.forEach((bg: any, index: number) => {
-        if (this.style) {
-          element.backgroundColor[index] = (this.style.getPropertyValue('--chart-doughnut-color' + (index + 1))) ? this.style.getPropertyValue('--chart-doughnut-color' + (index + 1)) : bg
-        }
-      });
+      if (element.backgroundColor && element.backgroundColor.length > 0) {
+        element.backgroundColor.forEach((bg: any, index: number) => {
+          if (this.style) {
+            const color = this.style.getPropertyValue(element.backgroundColor[index]);
+            if (color) {
+              element.backgroundColor[index] = color;
+            }
+          }
+        });
+      }
+      if (element.borderColor && element.borderColor.length > 0) {
+        element.borderColor.forEach((bg: any, index: number) => {
+          if (this.style) {
+            const color = this.style.getPropertyValue(element.borderColor[index]);
+            if (color) {
+              element.borderColor[index] = color;
+            }
+          }
+        });
+      }
     });
     if (this.canvas !== null) {
       this.ctx = this.canvas.getContext('2d');
       const centerText = {
         id: 'counter3',
         beforeDraw: function (chart) {
-          if (chart.config.options.elements.center) {
+          if (chart.config.options.elements && chart.config.options.elements.center) {
             var ctx = chart.ctx;
             var centerConfig = chart.config.options.elements.center;
             var txt = centerConfig.text;
@@ -89,10 +98,9 @@ export class RdsChartDoughnutComponent implements OnInit {
             ctx.textBaseline = 'middle';
             var centerX = ((chart.chartArea.left + chart.chartArea.right) / 2);
             var centerY = ((chart.chartArea.top + chart.chartArea.bottom) / 2);
-            let textColor = that.style.getPropertyValue('--chart-doughnut-text-color');
+            let textColor = that.style.getPropertyValue(color);
             if (textColor) {
               ctx.fillStyle = textColor;
-
             } else {
               ctx.fillStyle = color;
             }
