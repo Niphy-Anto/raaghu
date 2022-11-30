@@ -89,8 +89,7 @@
                     [(ngModel)]="model.firstName" #firstName="ngModel" [isRequired]="true"
                     [placeholder]="'Enter First Name'" required></rds-input>
                 <div class="form-control-feedback" *ngIf="firstName.errors&&(firstName.dirty||firstName.touched)">
-                    <span class="text-danger" *ngIf="firstName.errors.required">{{"First Name is
-                        required"|translate}}</span>
+                    <span class="text-danger" *ngIf="firstName.errors.required">{{"First Name is required"|translate}}</span>
                 </div>
             </div>
             <div class="col-md-6 mb-3">
@@ -98,8 +97,7 @@
                     [(ngModel)]="model.lastName" #lastName="ngModel" [isRequired]="true" required
                     [placeholder]="'Enter Last Name'"></rds-input>
                 <div class="form-control-feedback" *ngIf="lastName.errors&&(lastName.dirty||lastName.touched)">
-                    <span class="text-danger" *ngIf="lastName.errors.required">{{"Last Name is
-                        required"|translate}}</span>
+                    <span class="text-danger" *ngIf="lastName.errors.required">{{"Last Name is required"|translate}}</span>
                 </div>
             </div>
         </div>
