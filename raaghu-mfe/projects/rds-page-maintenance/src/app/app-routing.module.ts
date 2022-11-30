@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { RdsAlertModule } from '@libs/rds-elements';
 import { AppComponent } from './app.component';
 
  const routes: Routes = [
@@ -21,7 +22,8 @@ import { AppComponent } from './app.component';
 //  //},
 // ];
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [RouterModule.forChild(routes),
+    RdsAlertModule],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
