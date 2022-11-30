@@ -30,7 +30,7 @@ Simple.parameters = { controls: { include: ['sizeType', 'sizeData'] } };
 Simple.args = {
   sizeType: 'withoutDescription',
   sizeData: [
-    { value: 'XL' }, { value: 'L' }, { value: 'M' }, { value: 'S' }, { value: 'XS' }, { value: 'L' }, { value: 'M' }, { value: 'S' }, { value: 'XS' }
+    { value: 'XL' }, { value: 'L' }, { value: 'M' }, { value: 'S' }, { value: 'XS' }
   ]
 };
 
@@ -39,6 +39,6 @@ withDescription.parameters = { controls: { include: ['sizeType', 'sizeDataWithDe
 withDescription.args = {
   sizeType: 'withDescription',
   sizeDataWithDescription: [
-    { value: '15', description: "impoity input and ngonint" }, { value: '15', description: "impoity input and ngonint" }, { value: '14', description: " with the passanger" }
+    { value: '15 L', description: "Perfect for a resonable amount of snacks" }, { value: '20 L', description: "Enough room for a serious amount of snacks" }
   ]
 };

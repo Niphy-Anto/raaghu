@@ -14,8 +14,11 @@
               class="fs-6 me-2">
             </rds-icon>
           </div>   
-        <h1 class="fw-bold mt-4 text-center">
+        <!-- <h1 class="fw-bold mt-4 text-center">
           {{ item.value }}
+        </h1> -->
+        <h1>
+          <label class="fw-bold  mt-4 text-primary text-center">{{ item.value }}</label>
         </h1>
         <div>
           <label class="fs-5 text-muted text-center">
@@ -40,8 +43,9 @@
           stathover
         "
       >
-        <div class="d-block text-center">
-          <h1 class="fw-bold py-2 titlehover">
+        <div class="d-block text-center text-primary">
+          <h1>
+          <label class="fw-bold py-2 titlehover text-primary"></label>
             {{ item.value }}
           </h1>
           <div>

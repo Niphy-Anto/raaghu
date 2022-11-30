@@ -24,7 +24,7 @@ export default {
             control: { type: 'radio' }
         },
         colorVariant: {
-            options: ['warning', 'danger', 'success', 'info', 'primary', 'secondary', 'dark', 'light'],
+            options: ['warning', 'danger', 'success', 'info', 'primary', 'secondary', 'dark'],
             control: { type: 'select' }
         }
 
@@ -41,7 +41,7 @@ Default.args = {
     position: 'top',
     colorVariant: 'primary',
     buttonLabel: 'button',
-    placeholder: 'placeholder'
+    placeholder: 'Placeholder Text'
 }
 
 

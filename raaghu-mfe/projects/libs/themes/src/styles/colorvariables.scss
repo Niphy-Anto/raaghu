@@ -67,9 +67,9 @@ html[theme=light] {
 
   /*tabs color variables*/
   $nav-tabs-border-color: $primary !default;
-  $link-color: $primary !default;
+  $link-color: $black !default;
   $nav-link-color: $link-color !default;
-  $nav-tabs-link-active-color: $black !default;
+  $nav-tabs-link-active-color: $primary !default;
   $nav-pills-link-active-color: $white !default;
   $nav-tabs-thick-border-color: $primary !default;
 
