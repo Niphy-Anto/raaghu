@@ -16,7 +16,7 @@ declare let bootstrap: any;
 export class RdsCompLanguageTextListComponent implements OnInit {
   LanguageText: LanguageText
   rdsLanguagetextTableMfeConfig: ComponentLoaderOptions;
-  baselanguage: string;
+  baselanguage: string="Base Culture Name";
   TargetCulturename: string
   source: string
   viewCanvas:boolean;

@@ -20,7 +20,8 @@
     }
     &:focus {
       box-shadow: none;
-    }
+    };
+    
   }
 
   @keyframes spinner {
@@ -41,4 +42,7 @@
       animation: spinner .8s linear infinite;
       display: inline-grid;
   }
+  .btn{
+    padding-left: 0.3 rem;
+}
 

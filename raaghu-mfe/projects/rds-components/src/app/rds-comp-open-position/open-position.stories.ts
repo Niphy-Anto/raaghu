@@ -79,6 +79,30 @@ Default.args = {
         buttonLabel: "Apply Now"
       },
       {
+        type: "developer",
+        roleName: "IOS Developer",
+        roleDescription: "Designing and build applications for mobile devices running Apple's iOS operating software.They are responsible for designing and coding the, ...",
+        buttonLabel: "Apply Now"
+      },
+      {
+        type: "developer",
+        roleName: "Frontend Developer",
+        roleDescription: "Front end developers are responsible for ensuring the allignment of web desing and user experience requirements, optimizing web pages for maximum efficiency and, ...",
+        buttonLabel: "Apply Now"
+      },
+      {
+        type: "developer",
+        roleName: "Backend Developer",
+        roleDescription: "Compile and analyze data, processes and codes to troubleshoot problems and identity areas for improvement collaborating , ...",
+        buttonLabel: "Apply Now"
+      },
+      {
+        type: "developer",
+        roleName: ".NET Developer",
+        roleDescription: "Translate application storyboards and use cases into functional applications. Design, build and maintain efficient, reusable, and reliable, ...",
+        buttonLabel: "Apply Now"
+      },
+      {
         type: "marketing",
         roleName: "Sales",
         roleDescription: "Designing and developing advanced applications for the Android platform · Unit-testing code for robustness, ...",
