@@ -1,11 +1,7 @@
 
 <div class="login-background" *ngIf="!loadingshimmer">
   <div class="align-items-center d-flex justify-content-center login m-auto" style="max-width: 900px; height: 100vh;">
-    <div style="
-    position: absolute;
-    width: 100%;
-    top: 0px;
-" class="d-flex justify-content-center">
+    <div class="d-flex justify-content-center alertAlignment">
 <ng-container *ngIf="currentAlerts&&currentAlerts.length>0">
   <rds-comp-alert [currentAlerts]="currentAlerts" (onAlertHide)="onAlertHide($event)"></rds-comp-alert>
 </ng-container>
