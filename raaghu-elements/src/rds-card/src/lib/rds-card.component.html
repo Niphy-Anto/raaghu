@@ -1,4 +1,4 @@
-<div [ngClass]="'border-' + borderColor" class="card">
+<div [ngClass]="'border-' + borderColor" class="card"  [class.border]="isBorder">
   <div [class]="'bg-' + borderColor + ' headerClass'" *ngIf="showHeader" >
     <ng-content select="[header]"></ng-content>
   </div>

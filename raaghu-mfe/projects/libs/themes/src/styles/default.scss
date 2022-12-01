@@ -179,6 +179,7 @@ $default-100: #F58220;
 //$input-select-bg: $dark-200!default;
 $form-select-bg: $dark-200!default;
 $form-select-border-color: $dark-100!default;
+$card-darkborder-color : $gray-800 !default;
 //$offcanvas-border-color: $dark-400!default;
 
 // $offcanvas-bottom-border-color: $dark-100!default;
@@ -190,6 +191,7 @@ html[theme=dark] {
   --chart-doughnut-text-color: #fff;
   $input-bg: $dark-200!default;
   $input-bg-border: $dark-100!default;
+ 
 
   $dropdown-color: $white;
   $input-group-addon-bg: $input-bg;

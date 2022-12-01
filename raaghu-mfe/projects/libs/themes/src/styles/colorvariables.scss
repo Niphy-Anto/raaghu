@@ -198,7 +198,6 @@ html[theme=light] {
   $table-hover-bg : #F5F5FA;
   $topnav-link-color: $gray-800;
   $card-bg-color: #fff;
-  $card-border-color: $gray-200 !default;
   --bs-body-color: black;
   $datepicker-bg: $white !default;
   $datepicker-head: $white !default;
@@ -1707,7 +1706,7 @@ html[theme=dark] {
   $topnav-link-color: $white;
 
   $card-bg-color: $dark-500 !default;
-  $card-border-color: $card-bg-color !default;
+  $card-darkborder-color: $gray-100 !default;
 
   $card-dashboard-bg-color: #161618 !default;
   $card-dashboard-border-color: #3C3E47;
@@ -1724,8 +1723,9 @@ html[theme=dark] {
   $datepicker-bg: $gray-800 !default;
   $datepicker-head: $gray-800 !default;
 
-  $form-select-bg: $dark-900 !default;
-  $form-select-border-color: $form-select-bg !default;
+  $form-select-bg: $dark-900  !default;
+  $form-select-bgColor : $dark-500 !default;
+  $form-select-border-color:  $form-select-bg !default;
   $shimmerbg: $dark-200 !default;
 
 //rds-datatable-firstchild-color
@@ -1796,7 +1796,7 @@ html[theme=dark] {
 
   .card {
     background-color: $card-bg-color;
-    border-color: $card-border-color;
+    border-color: $card-darkborder-color;
 
     .card-header {
       background-color: transparent;
@@ -1804,7 +1804,7 @@ html[theme=dark] {
 
     .card-footer {
       background-color: $card-bg-color;
-      border-top-color: $card-border-color;
+      border-top-color: $card-darkborder-color;
     }
   }
 
@@ -1863,7 +1863,7 @@ html[theme=dark] {
       border-color: $form-select-border-color;
       padding-right: 1.8rem;
       background-position: right 0.15rem center;
-      background-color: $dark-500;
+      background-color: $form-select-bgColor;    
        }
   }
 
@@ -3057,5 +3057,10 @@ html[theme=dark] {
 
   a {
     text-decoration: none;
-    color: $primary;
+    color: $gray-800;
+  }
+
+  .routerLinkActive-name{
+    text-decoration: none;
+    color:  $primary
   }
