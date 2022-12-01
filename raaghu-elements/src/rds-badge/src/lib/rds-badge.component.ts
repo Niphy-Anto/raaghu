@@ -25,7 +25,6 @@ export class RdsBadgeComponent implements OnInit {
     var clsList: string[] = ['badge']
     if (this.colorVariant) {
       const bgColor = 'badge-' + `${this.colorVariant}` + ' text-' + `${this.colorVariant}`;
-      const 
       clsList.push(bgColor);
     }
 
