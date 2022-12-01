@@ -1,4 +1,4 @@
-<div class="tab-content py-3">
+<div class="tab-content py-3 p-2">
 
     <form #tenantSettingsForm="ngForm">
         <div class="row" *ngIf="showEditData">
@@ -88,7 +88,7 @@
         </div>
     </form>
 </div>
-<div class="my-2">
+<div class="p-4 footer-buttons">
 
     <rds-button [label]="translate.instant('Cancel')" [isOutline]="true" [colorVariant]="'primary'" [size]="'small'"
         (click)="onCancelSetting()" data-bs-dismiss="offcanvas">

@@ -198,7 +198,6 @@ html[theme=light] {
   $table-hover-bg : #F5F5FA;
   $topnav-link-color: $gray-800;
   $card-bg-color: #fff;
-  $card-border-color: $gray-200 !default;
   --bs-body-color: black;
   $datepicker-bg: $white !default;
   $datepicker-head: $white !default;
@@ -669,9 +668,9 @@ html[theme=light] {
   }
 
   .pagination {
-
+    
     .page-item {
-      border-color: $gray-100;
+      border-color: $white;
       // &:nth-child(-n + 2) .page-link {
       //   background: $pagination-item-bg;
       //   color: $pagination-item-color;
@@ -681,6 +680,9 @@ html[theme=light] {
       //   background:  $pagination-bg-color;
       //   color: $pagination-item-color;
       // }
+      &:nth-child(-n + 1) .page-link {
+        border-color:$white
+      }
     }
 
     .page-link {
@@ -695,8 +697,8 @@ html[theme=light] {
     }
 
     .active .page-link {
-      color: $page-link-active-color;
-      background-color:$pagination-bg-hover-color;
+      color: $white;
+      background-color:$primary;
     }
   }
   /*Dropdown*/
@@ -1704,7 +1706,7 @@ html[theme=dark] {
   $topnav-link-color: $white;
 
   $card-bg-color: $dark-500 !default;
-  $card-border-color: $card-bg-color !default;
+  $card-darkborder-color: $gray-100 !default;
 
   $card-dashboard-bg-color: #161618 !default;
   $card-dashboard-border-color: #3C3E47;
@@ -1721,8 +1723,9 @@ html[theme=dark] {
   $datepicker-bg: $gray-800 !default;
   $datepicker-head: $gray-800 !default;
 
-  $form-select-bg: $dark-900 !default;
-  $form-select-border-color: $form-select-bg !default;
+  $form-select-bg: $dark-900  !default;
+  $form-select-bgColor : $dark-500 !default;
+  $form-select-border-color:  $form-select-bg !default;
   $shimmerbg: $dark-200 !default;
 
   //rds-datatable-firstchild-color
@@ -1794,7 +1797,7 @@ html[theme=dark] {
 
   .card {
     background-color: $card-bg-color;
-    border-color: $card-border-color;
+    border-color: $card-darkborder-color;
 
     .card-header {
       background-color: transparent;
@@ -1802,7 +1805,7 @@ html[theme=dark] {
 
     .card-footer {
       background-color: $card-bg-color;
-      border-top-color: $card-border-color;
+      border-top-color: $card-darkborder-color;
     }
   }
 
@@ -1861,8 +1864,8 @@ html[theme=dark] {
       border-color: $form-select-border-color;
       padding-right: 1.8rem;
       background-position: right 0.15rem center;
-      background-color: $dark-500;
-    }
+      background-color: $form-select-bgColor;    
+       }
   }
 
   .form-select[size]:not([size="1"]) {
@@ -2252,9 +2255,12 @@ html[theme=dark] {
       //     color: $pagination-item-color;
       //   }
       // }
-      &:nth-child(-n + 1).active .page-link {
-        background: $pagination-item-bg;
-        color: $pagination-item-color;
+      // &:nth-child(-n + 1).active .page-link {
+      //   background: $pagination-item-bg;
+      //   color: $pagination-item-color;
+      // }
+      &:nth-child(-n + 1) .page-link {
+        border-color:$gray-500;
       }
     }
 
@@ -2267,10 +2273,10 @@ html[theme=dark] {
         background-color: $pagination-bg-hover-color;
       }
     }
-    // .active .page-link {
-    //   color: $white;
-    //   background-color: $pagination-bg-hover-color;
-    // }
+    .active .page-link {
+      color: $white;
+      background-color: $pagination-bg-hover-color;
+    }
   }
   /*Dropdown*/
   .dropdown-item {
@@ -3046,5 +3052,10 @@ html[theme=dark] {
 
   a {
     text-decoration: none;
-    color: $primary;
+    color: $gray-800;
+  }
+
+  .routerLinkActive-name{
+    text-decoration: none;
+    color:  $primary
   }

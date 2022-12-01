@@ -261,7 +261,7 @@ export class RdsCompTenantListComponent implements OnInit, DoCheck {
       this.isTenantInfoValid = false;
     }
     if (event) {
-      this.canvasTitle = 'NEW TENANT';
+      this.canvasTitle = this.translate.instant('New Tenant'); 
       this.tenantData = undefined;
       this.tenantSettingsInfo = undefined;
       this.showLoadingSpinner = true;
@@ -318,7 +318,7 @@ export class RdsCompTenantListComponent implements OnInit, DoCheck {
     this.showLoadingSpinner = false;
   }
   editTableRowData(event): void {
-    this.canvasTitle = 'EDIT TENANT';
+    this.canvasTitle = this.translate.instant('Edit Tenant'); 
     this.newTenant(undefined);
     this.onEditTenant.emit(event.id);
     this.selectedId = event.id;

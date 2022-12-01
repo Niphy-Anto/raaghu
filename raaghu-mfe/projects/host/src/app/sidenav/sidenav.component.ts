@@ -3,18 +3,15 @@ import {
   Inject,
   Injector,
   Input,
-  OnInit,
   SimpleChanges,
 } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import {
   ComponentLoaderOptions,
-  LinkedUserDto,
   MfeBaseComponent,
   SharedService,
   UserAuthService,
-  UserDelegationServiceProxy,
 } from '@libs/shared';
 import { Store } from '@ngrx/store';
 
@@ -54,8 +51,7 @@ import { DOCUMENT } from '@angular/common';
 import { slideInAnimation } from '../animation';
 import { RouterOutlet } from '@angular/router';
 import * as moment from 'moment';
-import { profileSelector } from 'projects/libs/state-management/src/lib/state/profile-settings/profile-settings.selectors';
-import { getProfilepic, updateProfile } from 'projects/libs/state-management/src/lib/state/profile-settings/profile-settings.actions';
+import { getProfilepic } from 'projects/libs/state-management/src/lib/state/profile-settings/profile-settings.actions';
 import { selectAllVisualsettings } from 'projects/libs/state-management/src/lib/state/Visual-settings/visual-settings.selector';
 import { getVisualsettings } from 'projects/libs/state-management/src/lib/state/Visual-settings/visual-settings.actions';
 import { getLanguages, setDefaultLanguageForUI } from 'projects/libs/state-management/src/lib/state/language/language.actions';
@@ -101,13 +97,6 @@ export class SidenavComponent extends MfeBaseComponent {
         dataLength: 30,
         required: true,
       },
-      // {
-      //   displayName: 'Client',
-      //   key: 'clientName',
-      //   dataType: 'text',
-      //   dataLength: 30,
-      //   required: true,
-      // },
       {
         displayName: 'Browser',
         key: 'browserInfo',
@@ -842,26 +831,6 @@ export class SidenavComponent extends MfeBaseComponent {
             document.getElementById('sidenavCollapsed').click();
           }
         }
-
-        //  const aside = document.getElementById('aside');
-        // if (
-        //   res[this.index].menu.hoverableAside 
-        // ) {
-        //   aside.addEventListener('mouseenter', () => {
-        //     if (this.sideMenuCollapsed == true) {
-        //       document.getElementById('sidenavCollapsed').click();
-        //     }
-        //   });
-        //   aside.addEventListener('mouseleave', () => {
-        //     if (
-        //       this.sideMenuCollapsed == false
-        //     ) {
-        //       document.getElementById('sidenavCollapsed').click();
-        //     } 
-        //   });
-        // }
-
-
       }
     });
   }
@@ -987,22 +956,6 @@ export class SidenavComponent extends MfeBaseComponent {
 
     }
     this.alertService.setTheme(selectedTheme);
-    // if (selectedTheme !== undefined && selectedTheme !== '' && selectedTheme !== 'undefined') {
-    //   const headEl = this.document.getElementsByTagName('head')[0];
-    //   const existingLinkEl = this.document.getElementById(
-    //     'client-theme'
-    //   ) as HTMLLinkElement;
-    //   const newLinkEl = this.document.createElement('link');
-
-    //   if (existingLinkEl) {
-    //     existingLinkEl.href = selectedTheme + '.css';
-    //   } else {
-    //     newLinkEl.id = 'client-theme';
-    //     newLinkEl.rel = 'stylesheet';
-    //     newLinkEl.href = selectedTheme + '.css';
-    //     headEl.appendChild(newLinkEl);
-    //   }
-    // }
   }
 
   private filterNavItems(
