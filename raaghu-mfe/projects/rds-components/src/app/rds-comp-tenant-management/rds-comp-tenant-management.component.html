@@ -46,7 +46,7 @@
             (change)="getAllowTenants($event)">
           </rds-select-list> -->
           <div class="mb-2">
-            <rds-label label="Edition"></rds-label>
+            <rds-label [label]="translate.instant('Edition')"></rds-label>
           </div>
           <rds-dropdownlist [placeholder]="translate.instant('Edition')" 
           [borderDropdown]="true"

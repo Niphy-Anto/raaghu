@@ -151,7 +151,7 @@ export class RdsCompRoleListComponent implements OnInit{
     this.SelectedPermissionValues = [];
     if (event) {
       this.showLoadingSpinner = true;
-      this.canvasTitle = 'NEW ROLE';
+      this.canvasTitle =  this.translate.instant('NEW ROLE'),
       this.Roles = { RolesData: undefined, permissionsList: [] };
       this.RolesData = undefined;
       this.onnewRole.emit(true);
@@ -203,7 +203,7 @@ export class RdsCompRoleListComponent implements OnInit{
   }
   editTableRowData(event): void {
     this.newRole(undefined);
-    this.canvasTitle = 'EDIT ROLE';
+    this.canvasTitle = this.translate.instant('EDIT ROLE');
     this.onEditRole.emit(event.id);
     this.selectedId = event.roleid;
   }
@@ -211,7 +211,7 @@ export class RdsCompRoleListComponent implements OnInit{
   // Filter by permission canvas
   filterByPermission(event): void {
     this.selectedFilterId = '';
-    this.canvasTitle = 'FILTER BY PERMISSIONS';
+    this.canvasTitle = this.translate.instant('FILTER BY PERMISSIONS');
     this.RolesData = undefined;
     this.viewCanvas = true;
     setTimeout(() => {

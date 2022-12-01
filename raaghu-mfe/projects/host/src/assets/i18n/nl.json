@@ -1,6 +1,6 @@
 {
   "name": "Naam: ",
-  "Tenant Name": "Tenant Name",
+  "Tenant Name": "Naam huurder",
   "Please Login or signup for an account": "Gelieve in te loggen of een account aan te maken",
   "Email": "E-mail",
   "Password": "Wachtwoord",
@@ -168,7 +168,7 @@
   "Edit Tenant": "Tenant bewerken",
   "Assign To Another Edition": "Toewijzen aan een andere editie",
   "Deactivate Tenant": "Tenant deactiveren",
-  "The record will be deleted permanently.": "De record wordt permanent verwijderd",
+  "The record will be deleted permanently": "De record wordt permanent verwijderd",
   "Are you sure ?": "Weet je het zeker?",
   "Delete": "Verwijderen",
   "Currently you do not have tenant": "Momenteel heeft u geen tenant",
@@ -570,7 +570,7 @@
   "Offcanvas":"Buiten canvas",
   "Pagination":"Paginering",
   "Popover":"Pop-over",
-  "Progress Bar":"Progress Bar",
+  "Progress Bar":"Voortgangsbalk",
   "Search Input":"Zoek invoer",
   "Select list":"Selecteer lijst",
   "Tag":"Label",
@@ -591,6 +591,16 @@
   "Stacked Line Chart":"Gestapeld lijndiagram",
   "Line Chart":"Lijngrafiek",
   "Bar Chart With Pills":"Staafdiagram Met Pillen",
-  "Video Player":"Video speler"
+  "Video Player":"Video speler",
+  "Select Edition":"Selecteer Editie",
+  "Date":"Datum",
+  "Login as Tenant":"Log in als huurder",
+  "Host Admin":"Host beheerder",
+  "Price":"Prijs",
+  "New-Root-Unit":"Nieuwe-Root-Unit",
+  "Role Name is required":"Rolnaam is vereist",
+  "Security":"Veiligheid",
+  "E-mail(SMTP)":"E-mail (SMTP)",
+  "Avatar":"Avatar"
 }
    
