@@ -7,11 +7,11 @@
   [attr.aria-label]="label">
 
   <ng-content select="[left]"></ng-content>
-  <span *ngIf="icon">
-    <rds-icon *ngIf="icon" class="me-2 ms-2" [name]="icon" [width]="iconWidth" [height]="iconHeight" [fill]="isIconFill"
+  <span *ngIf="icon" [ngClass]="icon&&label ? 'me-2' :  ''" [class.invisible]="showLoadingSpinner">
+    <rds-icon *ngIf="icon" [name]="icon" [width]="iconWidth" [height]="iconHeight" [fill]="isIconFill"
       [stroke]="isIconStroke"></rds-icon>
   </span>
-  <span *ngIf="label" class="btn-text" [ngClass]="icon? 'me-2':''">{{label}}</span>
+  <span *ngIf="label"  [class.invisible]="showLoadingSpinner" class="btn-text">{{label}}</span>
   <ng-content></ng-content>
   <ng-content select="[right]"></ng-content>
 </button>
