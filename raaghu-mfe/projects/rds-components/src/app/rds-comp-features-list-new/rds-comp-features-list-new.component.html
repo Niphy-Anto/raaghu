@@ -11,7 +11,7 @@
                 </div>
                 <div class="pt-3">
                     <div class="text-center">
-                        <h1 class="text-primary fw-bold"> <sup>&#x24;</sup>{{item.Price}}</h1>
+                        <h1 class="text-primary fw-bold">&#x24;{{item.Price}}</h1>
                         <span class="text-muted fw-medium">{{item.Plan}}</span>
                     </div>
 
@@ -90,7 +90,7 @@
 
         </div>
     </div>
-    <div class="footer-buttons my-2">
+    <div class="footer-buttons my-2 position-static">
         <rds-button [label]="'Cancel'" [colorVariant]="'primary'" [size]="'small'" [isOutline]="true"
             (click)="closeMoveTenantCanvas()" data-bs-dismiss="offcanvas">
         </rds-button>
