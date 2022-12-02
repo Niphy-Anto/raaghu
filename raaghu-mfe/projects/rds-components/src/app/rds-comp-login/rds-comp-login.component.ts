@@ -29,6 +29,7 @@ export class RdsLoginComponent implements OnInit, OnChanges {
   @Input() buttonColorType: string = 'secondary';
   @Input() buttonColorTypeUp: string = 'light';
   checkboxTitle: string = 'Remember me';
+  Modallabel : string = 'Switch to the host';
   // @Output() onRememberMeToggle = new EventEmitter<Event>();
   @Output() onClick: EventEmitter<any> = new EventEmitter<any>();
   @Output() onLogin: EventEmitter<any> = new EventEmitter<any>();
@@ -80,8 +81,10 @@ export class RdsLoginComponent implements OnInit, OnChanges {
 
   switchTenanat(event: any) {
     this.switchTenant = event;
+    this.Modallabel = this.translate.instant('Switch to the tenant');
     if (!event) {
       this.TenantNameData = '';
+      this.Modallabel = this.translate.instant('Switch to the host');
     }
   }
   back() {

@@ -52,15 +52,20 @@
         <div class="col-md-12 pt-3">
           <rds-search-input placeholder="Search" (keyup)="filterPermissions($event)" icon="search" size="small"> </rds-search-input>
         </div>
-        <rds-comp-permission-tree [treeData]="permissionsList" [selectedItems]="SelectedPermissionValues"
+        <div class="mb-5">
+          <rds-comp-permission-tree [treeData]="permissionsList" [selectedItems]="SelectedPermissionValues"
           (getAllSelectedNodes)="getSelectedPermissionList($event)" [selectAllLabel]="'Select Permissions'">
         </rds-comp-permission-tree>
+        </div>
+       
 
 
         <div class="footer-buttons my-2">
-          <rds-banner
+            <rds-banner
             [bannerText]="translate.instant('If you are changing your own permissions, you may need to refresh page (F5) to take effect of permission changes on your own screen!')"
-            [sticky]="false" position="bottom" colorVariant="primary"></rds-banner>
+            [sticky]="false" position="bottom" [colorVariant]="'primary'"></rds-banner>
+  
+          
           <rds-button [label]="translate.instant('Cancel')" (click)="close()" [isOutline]="true"
             [colorVariant]="'primary'" [size]="'small'" data-bs-dismiss="offcanvas">
           </rds-button>
