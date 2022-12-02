@@ -160,12 +160,12 @@ withSupportingText.args = {
 export const cardWithFullDetails = Template.bind({})
 cardWithFullDetails.args = {
   role: 'cardWithFullDetails',
-  productListItems: [{ id: 1, "icon": "heart", "title": "Basic Tee", "subTitle": "White", "price": "$35", "badgeLabel": "Quality Assured", imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLXV_IPvYFWoOnAfO3IGGxcCrM3Y2Bfgfciw&usqp=CAU', iconColor: 'dark', fill: false  },
-  { id: 1, "icon": "heart", "title": "Basic Tee 2", "subTitle": "White 2", "price": "$40", "badgeLabel": "", imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLXV_IPvYFWoOnAfO3IGGxcCrM3Y2Bfgfciw&usqp=CAU', iconColor: 'dark', fill: false  },
-  { id: 1, "icon": "heart", "title": "Basic Tee 3", "subTitle": "White 2", "price": "$45", "badgeLabel": "Quality Assured", imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLXV_IPvYFWoOnAfO3IGGxcCrM3Y2Bfgfciw&usqp=CAU', iconColor: 'dark', fill: false  },
-  { id: 1, "icon": "heart", "title": "Basic Tee", "subTitle": "White", "price": "$35", "badgeLabel": "Quality Assured", imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLXV_IPvYFWoOnAfO3IGGxcCrM3Y2Bfgfciw&usqp=CAU', iconColor: 'dark', fill: false  },
-  { id: 1, "icon": "heart", "title": "Basic Tee 2", "subTitle": "White 2", "price": "$40", "badgeLabel": "", imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLXV_IPvYFWoOnAfO3IGGxcCrM3Y2Bfgfciw&usqp=CAU', iconColor: 'dark', fill: false  },
-  { id: 1, "icon": "heart", "title": "Basic Tee 3", "subTitle": "White 2", "price": "$45", "badgeLabel": "Quality Assured", imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLXV_IPvYFWoOnAfO3IGGxcCrM3Y2Bfgfciw&usqp=CAU', iconColor: 'dark', fill: false  },],
+  productListItems: [{ id: 1, "icon": "heart", "title": "Premium Quality Soft T-shirt", "subTitle": "White/Gray", "price": "$35", "badgeLabel": "Quality Assured", imageUrl: 'https://www.linkpicture.com/q/Group-191322@2x_1.png', iconColor: 'dark', fill: false  },
+  { id: 1, "icon": "heart", "title": "Premium Quality Soft T-shirt", "subTitle": "White 2", "price": "$40", "badgeLabel": "", imageUrl: 'https://www.linkpicture.com/q/Group-191323@2x.png', iconColor: 'dark', fill: false  },
+  { id: 1, "icon": "heart", "title": "Premium Quality Soft T-shirt", "subTitle": "White 2", "price": "$45", "badgeLabel": "Quality Assured", imageUrl: 'https://www.linkpicture.com/q/Group-191324@2x.png', iconColor: 'dark', fill: false  },
+  { id: 1, "icon": "heart", "title": "Premium T-shirt", "subTitle": "White", "price": "$35", "badgeLabel": "Quality Assured", imageUrl: 'https://www.linkpicture.com/q/Group-191324@2x.png', iconColor: 'dark', fill: false  },
+  { id: 1, "icon": "heart", "title": "Premium T-shirt 2", "subTitle": "White 2", "price": "$40", "badgeLabel": "", imageUrl: 'https://www.linkpicture.com/q/Group-191325@2x.png', iconColor: 'dark', fill: false  },
+  { id: 1, "icon": "heart", "title": "Premium T-shirt 3", "subTitle": "White 2", "price": "$45", "badgeLabel": "Quality Assured", imageUrl: 'https://www.linkpicture.com/q/Group-191326@2x.png', iconColor: 'dark', fill: false  },],
   itemListRating: [
     { id: 1, value: 1 },
     { id: 2, value: 2 },
@@ -177,10 +177,10 @@ cardWithFullDetails.args = {
 export const ProductImageWithTitle = Template.bind({})
 ProductImageWithTitle.args = {
   role: 'ImageWithTitle',
-  productListItems: [{ id: 1, "icon": "heart", "title": "Basic Tee", imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLXV_IPvYFWoOnAfO3IGGxcCrM3Y2Bfgfciw&usqp=CAU', iconColor: 'dark', fill: false  },
-  {id: 1, "icon": "heart", "title": "Basic Tee 2", imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLXV_IPvYFWoOnAfO3IGGxcCrM3Y2Bfgfciw&usqp=CAU', iconColor: 'dark', fill: false  },
-  {id: 1, "icon": "heart", "title": "Basic Tee 3", imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLXV_IPvYFWoOnAfO3IGGxcCrM3Y2Bfgfciw&usqp=CAU', iconColor: 'dark', fill: false  },
-  {id: 1, "icon": "heart", "title": "Basic Tee", imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLXV_IPvYFWoOnAfO3IGGxcCrM3Y2Bfgfciw&usqp=CAU', iconColor: 'dark', fill: false  }],
+  productListItems: [{ id: 1, "icon": "heart", "title": "Basic Tee", imageUrl: 'https://www.linkpicture.com/q/product_img_with_title_1.png', iconColor: 'dark', fill: false  },
+  {id: 1, "icon": "heart", "title": "Basic Tee 2", imageUrl: 'https://www.linkpicture.com/q/product_img_with_title_1.png', iconColor: 'dark', fill: false  },
+  {id: 1, "icon": "heart", "title": "Basic Tee 3", imageUrl: 'https://www.linkpicture.com/q/product_img_with_title_1.png', iconColor: 'dark', fill: false  },
+  {id: 1, "icon": "heart", "title": "Basic Tee", imageUrl: 'https://www.linkpicture.com/q/product_img_with_title_1.png', iconColor: 'dark', fill: false  }],
 }
 
 export const productWithInfo= Template.bind({})

@@ -3,23 +3,28 @@ import {
   Inject,
   Injector,
   Input,
-  OnInit,
   SimpleChanges,
 } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import {
   ComponentLoaderOptions,
-  LinkedUserDto,
   MfeBaseComponent,
   SharedService,
   UserAuthService,
-  UserDelegationServiceProxy,
 } from '@libs/shared';
 import { Store } from '@ngrx/store';
-import { changePassword, getLanguages, getProfile, selectAllLanguages, selectDefaultLanguage, selectProfileInfo, setDefaultLanguageForUI, updateTenant } from '@libs/state-management';
-import { deleteDelegations, getDelegations, getUsername, saveDelegations } from 'projects/libs/state-management/src/lib/state/authority-delegations/authority-delegations.action';
-import { selectDelegationsInfo, selectUserFilter } from 'projects/libs/state-management/src/lib/state/authority-delegations/authority-delegations.selector';
+
+import {
+  deleteDelegations,
+  getDelegations,
+  getUsername,
+  saveDelegations,
+} from 'projects/libs/state-management/src/lib/state/authority-delegations/authority-delegations.action';
+import {
+  selectDelegationsInfo,
+  selectUserFilter,
+} from 'projects/libs/state-management/src/lib/state/authority-delegations/authority-delegations.selector';
 import { selectAllLoginAttempts } from 'projects/libs/state-management/src/lib/state/login-attempts/login-attempts.selector';
 import { DateTime } from 'luxon';
 import { getLoginAttempts } from 'projects/libs/state-management/src/lib/state/login-attempts/login-attempts.actions';
@@ -46,10 +51,13 @@ import { DOCUMENT } from '@angular/common';
 import { slideInAnimation } from '../animation';
 import { RouterOutlet } from '@angular/router';
 import * as moment from 'moment';
-import { profileSelector } from 'projects/libs/state-management/src/lib/state/profile-settings/profile-settings.selectors';
-import { getProfilepic, updateProfile } from 'projects/libs/state-management/src/lib/state/profile-settings/profile-settings.actions';
+import { getProfilepic } from 'projects/libs/state-management/src/lib/state/profile-settings/profile-settings.actions';
 import { selectAllVisualsettings } from 'projects/libs/state-management/src/lib/state/Visual-settings/visual-settings.selector';
 import { getVisualsettings } from 'projects/libs/state-management/src/lib/state/Visual-settings/visual-settings.actions';
+import { getLanguages, setDefaultLanguageForUI } from 'projects/libs/state-management/src/lib/state/language/language.actions';
+import { changePassword, getProfile } from 'projects/libs/state-management/src/lib/state/mysettings/mysettings.action';
+import { selectAllLanguages, selectDefaultLanguage } from 'projects/libs/state-management/src/lib/state/language/language.selector';
+import { selectProfileInfo } from 'projects/libs/state-management/src/lib/state/mysettings/mysettings.selector';
 declare var bootstrap: any;
 @Component({
   selector: 'app-sidenav',
@@ -85,13 +93,6 @@ export class SidenavComponent extends MfeBaseComponent {
       {
         displayName: 'IP Address',
         key: 'clientIpAddress',
-        dataType: 'text',
-        dataLength: 30,
-        required: true,
-      },
-      {
-        displayName: 'Client',
-        key: 'clientName',
         dataType: 'text',
         dataLength: 30,
         required: true,
@@ -148,167 +149,7 @@ export class SidenavComponent extends MfeBaseComponent {
       path: '/pages/dashboard',
       description: 'Statistics and reports',
       descriptionTranslationKey: 'Statistics and reports',
-    },
-    {
-      label: 'Tenants',
-      labelTranslationKey: 'Tenants',
-      id: 'tenants',
-      permissionName: 'Pages.Tenants',
-      icon: 'tenant',
-      path: '/pages/tenant',
-      description: 'Manage your tenants',
-      descriptionTranslationKey: 'Manage your tenants',
-    },
-    {
-      label: 'Editions',
-      labelTranslationKey: 'Editions',
-      id: '',
-      permissionName: 'Pages.Editions',
-      icon: 'editions',
-      path: '/pages/edition',
-      description: 'Manage editions and features of the application',
-      descriptionTranslationKey:
-        'Manage editions and features of the application',
-    },
-    // { label: 'Api Scopes', id: 'ApiScope', permissionName: '', icon: 'settings', path: '/pages/apiScope', description: 'Home > Identity Server > Api Scope' },
-    {
-      label: 'Administration',
-      labelTranslationKey: 'Administration',
-      id: 'admin',
-      permissionName: '',
-      icon: 'administration',
-      path: '',
-      children: [
-        {
-          label: 'Organization Units',
-          labelTranslationKey: 'Organization Units',
-          id: '',
-          permissionName: 'Pages.Administration.OrganizationUnits',
-          icon: 'organization',
-          path: '/pages/organization-unit',
-          description: 'Use organization units to organize users and entities',
-          descriptionTranslationKey:
-            'Use organization units to organize users and entities',
-        },
-        {
-          label: 'Roles',
-          labelTranslationKey: 'Roles',
-          id: '',
-          permissionName: 'Pages.Administration.Roles',
-          icon: 'roles',
-          path: '/pages/role',
-          description: 'Use roles to group permissions',
-          descriptionTranslationKey: 'Use roles to group permissions',
-        },
-        {
-          label: 'Users',
-          labelTranslationKey: 'Users',
-          id: '',
-          permissionName: 'Pages.Administration.Users',
-          icon: 'users',
-          path: '/pages/user',
-          description: 'Manage users and permissions',
-          descriptionTranslationKey: 'Manage users and permissions',
-        },
-        {
-          label: 'Language',
-          labelTranslationKey: 'Language',
-          id: '',
-          permissionName: 'Pages.Administration.Languages',
-          icon: 'languages',
-          path: '/pages/language',
-          description: 'Manage user interface languages',
-          descriptionTranslationKey: 'Statistics and reports',
-        },
-        {
-          label: 'Audit logs',
-          labelTranslationKey: 'Audit logs',
-          id: '',
-          permissionName: 'Pages.Administration.AuditLogs',
-          icon: 'audit_logs',
-          path: '/pages/audit-logs',
-          descriptionTranslationKey: '',
-        },
-        {
-          label: 'subscription',
-          labelTranslationKey: 'subscription',
-          id: '',
-          permissionName: 'Pages.Administration.Tenant.SubscriptionManagement',
-          icon: 'subscription',
-          path: '/pages/subscription',
-          descriptionTranslationKey: '',
-        },
-        // {
-        //   label: 'Maintenance',
-        //   labelTranslationKey: 'Maintenance',
-        //   id: '',
-        //   permissionName: 'Pages.Administration.Host.Maintenance',
-        //   icon: 'maintenance',
-        //   path: '/pages/maintenance',
-        //   description: 'Statistics and reports',
-        //   descriptionTranslationKey: 'Statistics and reports',
-        // },
-        {
-          label: 'Maintenance',
-          labelTranslationKey: 'Maintenance',
-          id: '',
-          permissionName: '',
-          icon: 'maintenance',
-          path: '/pages/maintenance',
-          description: 'Statistics and reports',
-          descriptionTranslationKey: 'Statistics and reports',
-        },
-        {
-          label: 'Visual Settings',
-          labelTranslationKey: 'Visual Settings',
-          id: '',
-          permissionName: '',
-          icon: 'visual_settings',
-          path: '/pages/visualsettings',
-          description: 'Change the look of UI',
-          descriptionTranslationKey: 'Change the look of UI',
-        },
-        {
-          label: 'Webhook Subscriptions',
-          labelTranslationKey: 'Webhook Subscriptions',
-          id: '',
-          permissionName: 'Pages.Administration.WebhookSubscription',
-          icon: 'webhook_subscription',
-          path: '/pages/webhooksubscription',
-          description: 'Webhook Subsubscription Info',
-          descriptionTranslationKey: 'Statistics and reports',
-        },
-        {
-          label: 'Dynamic Properties',
-          labelTranslationKey: 'Dynamic Properties',
-          id: 'Pages.Administration.DynamicProperties',
-          permissionName: '',
-          icon: 'dynamic_properties',
-          path: '/pages/dynamic-property-management',
-          descriptionTranslationKey: '',
-        },
-        {
-          label: 'Settings',
-          labelTranslationKey: 'Settings',
-          id: '',
-          permissionName: 'Pages.Administration.Host.Settings',
-          icon: 'setting',
-          path: '/pages/settings',
-          description: 'Show and change application settings',
-          descriptionTranslationKey: 'Show and change application settings',
-        },
-        {
-          label: 'Settings',
-          labelTranslationKey: 'Settings',
-          id: '',
-          permissionName: 'Pages.Administration.Tenant.Settings',
-          icon: 'setting',
-          path: '/pages/settings',
-          description: 'Show and change application settings',
-          descriptionTranslationKey: 'Show and change application settings',
-        },
-      ],
-    },
+    }, 
     {
       label: 'UI Components',
       labelTranslationKey: 'UI Components',
@@ -319,6 +160,209 @@ export class SidenavComponent extends MfeBaseComponent {
       description: '',
       descriptionTranslationKey: '',
     },
+    {
+      label: 'Icons',
+      labelTranslationKey: 'Icons',
+      id: '',
+      permissionName: '',
+      icon: 'icons',
+      path: '/pages/icons',
+      description: 'icons',
+      descriptionTranslationKey: '',
+    },
+    {
+      label: 'Pages',
+      labelTranslationKey: 'Pages',
+      id: '',
+      permissionName: '',
+      icon: 'pages',
+      path: 'pages',
+      children: [
+        {
+          label: 'Tenants',
+          labelTranslationKey: 'Tenants',
+          id: 'tenants',
+          permissionName: 'Pages.Tenants',
+          icon: 'tenant',
+          path: '/pages/tenant',
+          description: 'Manage your tenants',
+          descriptionTranslationKey: 'Manage your tenants',
+        },
+        {
+          label: 'Editions',
+          labelTranslationKey: 'Editions',
+          id: '',
+          permissionName: 'Pages.Editions',
+          icon: 'editions',
+          path: '/pages/edition',
+          description: 'Manage editions and features of the application',
+          descriptionTranslationKey:
+            'Manage editions and features of the application',
+        },
+        {
+          label: 'Administration',
+          labelTranslationKey: 'Administration',
+          id: 'admin',
+          permissionName: '',
+          icon: '',
+          path: '',
+          children: [
+            {
+              label: 'Organization Units',
+              labelTranslationKey: 'Organization Units',
+              id: '',
+              permissionName: 'Pages.Administration.OrganizationUnits',
+              icon: 'organization',
+              path: '/pages/organization-unit',
+              description: 'Use organization units to organize users and entities',
+              descriptionTranslationKey:
+                'Use organization units to organize users and entities',
+            },
+            {
+              label: 'Roles',
+              labelTranslationKey: 'Roles',
+              id: '',
+              permissionName: 'Pages.Administration.Roles',
+              icon: 'roles',
+              path: '/pages/role',
+              description: 'Use roles to group permissions',
+              descriptionTranslationKey: 'Use roles to group permissions',
+            },
+            {
+              label: 'Users',
+              labelTranslationKey: 'Users',
+              id: '',
+              permissionName: 'Pages.Administration.Users',
+              icon: 'users',
+              path: '/pages/user',
+              description: 'Manage users and permissions',
+              descriptionTranslationKey: 'Manage users and permissions',
+            },
+            {
+              label: 'Language',
+              labelTranslationKey: 'Language',
+              id: '',
+              permissionName: 'Pages.Administration.Languages',
+              icon: 'languages',
+              path: '/pages/language',
+              description: 'Manage user interface languages',
+              descriptionTranslationKey: 'Statistics and reports',
+            },
+            {
+              label: 'Audit logs',
+              labelTranslationKey: 'Audit logs',
+              id: '',
+              permissionName: 'Pages.Administration.AuditLogs',
+              icon: 'audit_logs',
+              path: '/pages/audit-logs',
+              descriptionTranslationKey: '',
+            },
+            {
+              label: 'subscription',
+              labelTranslationKey: 'subscription',
+              id: '',
+              permissionName: 'Pages.Administration.Tenant.SubscriptionManagement',
+              icon: 'subscription',
+              path: '/pages/subscription',
+              descriptionTranslationKey: '',
+            },
+            // {
+            //   label: 'Maintenance',
+            //   labelTranslationKey: 'Maintenance',
+            //   id: '',
+            //   permissionName: 'Pages.Administration.Host.Maintenance',
+            //   icon: 'maintenance',
+            //   path: '/pages/maintenance',
+            //   description: 'Statistics and reports',
+            //   descriptionTranslationKey: 'Statistics and reports',
+            // },
+            {
+              label: 'Maintenance',
+              labelTranslationKey: 'Maintenance',
+              id: '',
+              permissionName: '',
+              icon: 'maintenance',
+              path: '/pages/maintenance',
+              description: 'Statistics and reports',
+              descriptionTranslationKey: 'Statistics and reports',
+            },
+            {
+              label: 'Visual Settings',
+              labelTranslationKey: 'Visual Settings',
+              id: '',
+              permissionName: '',
+              icon: 'visual_settings',
+              path: '/pages/visualsettings',
+              description: 'Change the look of UI',
+              descriptionTranslationKey: 'Change the look of UI',
+            },
+            {
+              label: 'Webhook Subscriptions',
+              labelTranslationKey: 'Webhook Subscriptions',
+              id: '',
+              permissionName: 'Pages.Administration.WebhookSubscription',
+              icon: 'webhook_subscription',
+              path: '/pages/webhooksubscription',
+              description: 'Webhook Subsubscription Info',
+              descriptionTranslationKey: 'Statistics and reports',
+            },
+            {
+              label: 'Dynamic Properties',
+              labelTranslationKey: 'Dynamic Properties',
+              id: 'Pages.Administration.DynamicProperties',
+              permissionName: '',
+              icon: 'dynamic_properties',
+              path: '/pages/dynamic-property-management',
+              descriptionTranslationKey: '',
+            },
+            {
+              label: 'Settings',
+              labelTranslationKey: 'Settings',
+              id: '',
+              permissionName: 'Pages.Administration.Host.Settings',
+              icon: 'setting',
+              path: '/pages/settings',
+              description: 'Show and change application settings',
+              descriptionTranslationKey: 'Show and change application settings',
+            },
+            {
+              label: 'Settings',
+              labelTranslationKey: 'Settings',
+              id: '',
+              permissionName: 'Pages.Administration.Tenant.Settings',
+              icon: 'setting',
+              path: '/pages/settings',
+              description: 'Show and change application settings',
+              descriptionTranslationKey: 'Show and change application settings',
+            },
+          ],
+        }
+      ],
+    }
+    //,
+    //{
+    //  label: 'Apps',
+    //  labelTranslationKey: 'Apps',
+    //  id: '',
+    //  permissionName: '',
+    //  icon: 'apps',
+    //  path: '',
+    //  children: [
+    //    {
+    //      label: 'Settings',
+    //      labelTranslationKey: 'Settings',
+    //      id: '',
+    //      permissionName: 'Pages.Administration.Tenant.Settings',
+    //      icon: 'setting',
+    //      path: '/pages/settings',
+    //      description: 'Show and change application settings',
+    //      descriptionTranslationKey: 'Show and change application settings',
+    //    },
+    //  ]
+    //}
+    
+    // { label: 'Api Scopes', id: 'ApiScope', permissionName: '', icon: 'settings', path: '/pages/apiScope', description: 'Home > Identity Server > Api Scope' },
+    
     // { label: 'Cart', labelTranslationKey: 'Cart', id: 'cart', permissionName: '' ,icon: 'tenant', path: '/pages/cart', description: 'Manage your cart', descriptionTranslationKey: 'Manage your cart' },
     // { label: 'Edition-New', labelTranslationKey: 'Edition-New', id: '', permissionName: '', icon: 'home', path: '/pages/editionnew', description: '', descriptionTranslationKey: '' },
   ];
@@ -469,7 +513,7 @@ export class SidenavComponent extends MfeBaseComponent {
         toggleEvent: () => {
           var element = document.getElementById('sidebar');
           element.style.display =
-            element.style.display === 'none' ? 'block' : 'none';
+            element.style.display === 'none' || element.style.display == '' || !element.style.display ? 'block' : 'none';
         },
         onLanguageSelection: (lan) => {
           this.translate.use(lan);
@@ -532,7 +576,7 @@ export class SidenavComponent extends MfeBaseComponent {
         onUpdateNotificationSettings: (data: any) => {
           this.store.dispatch(updateNotificationSettings(data));
         },
-        onProfileData: (event: any) =>{
+        onProfileData: (event: any) => {
           this.store.dispatch(getProfilepic());
         }
       }
@@ -596,7 +640,7 @@ export class SidenavComponent extends MfeBaseComponent {
             this.selectedLanguage.language = item.displayName;
             this.selectedLanguage.icon = item.icon.split(' ')[1];
             const mfe = this.rdsTopNavigationMfeConfig;
-            mfe.input.selectedLanguage = {...this.selectedLanguage};
+            mfe.input.selectedLanguage = { ...this.selectedLanguage };
             this.rdsTopNavigationMfeConfig = mfe;
           }
           languages.push(item.name);
@@ -609,7 +653,7 @@ export class SidenavComponent extends MfeBaseComponent {
         // this.translate.addLangs(languages);
         const mfe = this.rdsTopNavigationMfeConfig;
         mfe.input.languageItems = [...this.languageItems];
-        mfe.input.selectedLanguage = {...this.selectedLanguage};
+        mfe.input.selectedLanguage = { ...this.selectedLanguage };
         this.rdsTopNavigationMfeConfig = mfe;
       }
     });
@@ -716,18 +760,18 @@ export class SidenavComponent extends MfeBaseComponent {
     this.store.select(selectUserFilter).subscribe((res: any) => {
       if (res && res.items && res.items.length) {
         res.items.forEach((res: any) => {
-          const item: any = {       
-            value:res.value,
-            some:res.name,
-            isSelected:res.isSelected,
-            icon:'',
-            iconWidth:0,
-            iconHeight:0,
-            iconFill:false,
+          const item: any = {
+            value: res.value,
+            some: res.name,
+            isSelected: res.isSelected,
+            icon: '',
+            iconWidth: 0,
+            iconHeight: 0,
+            iconFill: false,
             iconStroke: true,
             isFree: res.isFree
-          
-        };
+
+          };
           this.usernameList.push(item);
         });
         const mfeConfig = this.rdsTopNavigationMfeConfig;
@@ -787,26 +831,6 @@ export class SidenavComponent extends MfeBaseComponent {
             document.getElementById('sidenavCollapsed').click();
           }
         }
-
-        //  const aside = document.getElementById('aside');
-        // if (
-        //   res[this.index].menu.hoverableAside 
-        // ) {
-        //   aside.addEventListener('mouseenter', () => {
-        //     if (this.sideMenuCollapsed == true) {
-        //       document.getElementById('sidenavCollapsed').click();
-        //     }
-        //   });
-        //   aside.addEventListener('mouseleave', () => {
-        //     if (
-        //       this.sideMenuCollapsed == false
-        //     ) {
-        //       document.getElementById('sidenavCollapsed').click();
-        //     } 
-        //   });
-        // }
-
-
       }
     });
   }
@@ -821,9 +845,12 @@ export class SidenavComponent extends MfeBaseComponent {
     var alertNode = document.querySelector('.alert');
     if (alertNode) {
       var alert = bootstrap.Alert.getInstance(alertNode);
-      alert.close();
+      if(alert){
+        alert.close();
+      }
     }
     this.shared.setTopNavTitle('');
+    this.shared.setSideBarStatus(true)
   }
   redirect(event): void { }
 
@@ -929,22 +956,6 @@ export class SidenavComponent extends MfeBaseComponent {
 
     }
     this.alertService.setTheme(selectedTheme);
-    // if (selectedTheme !== undefined && selectedTheme !== '' && selectedTheme !== 'undefined') {
-    //   const headEl = this.document.getElementsByTagName('head')[0];
-    //   const existingLinkEl = this.document.getElementById(
-    //     'client-theme'
-    //   ) as HTMLLinkElement;
-    //   const newLinkEl = this.document.createElement('link');
-
-    //   if (existingLinkEl) {
-    //     existingLinkEl.href = selectedTheme + '.css';
-    //   } else {
-    //     newLinkEl.id = 'client-theme';
-    //     newLinkEl.rel = 'stylesheet';
-    //     newLinkEl.href = selectedTheme + '.css';
-    //     headEl.appendChild(newLinkEl);
-    //   }
-    // }
   }
 
   private filterNavItems(

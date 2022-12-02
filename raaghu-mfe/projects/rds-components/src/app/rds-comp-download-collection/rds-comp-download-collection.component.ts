@@ -15,6 +15,7 @@ export class DownloadData{
 export class RdsCompDownloadCollectionComponent implements OnInit {
   @Input() pagination: boolean = true;
   
+  
   constructor(public translate: TranslateService) { }
 
   ngOnInit(): void {

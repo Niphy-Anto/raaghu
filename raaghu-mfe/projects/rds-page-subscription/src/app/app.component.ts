@@ -6,8 +6,8 @@ import { DatePipe } from '@angular/common';
 import { getsubscription, getsubscriptioninformation } from 'projects/libs/state-management/src/lib/state/subscription/subscription.actions';
 import { selectAllsubscription, selectAllsubscriptionInformation } from 'projects/libs/state-management/src/lib/state/subscription/subscription.selector';
 import { TableHeader } from 'projects/rds-components/src/models/table-header.model';
-import { selectDefaultLanguage } from '@libs/state-management';
 import { TranslateService } from '@ngx-translate/core';
+import { selectDefaultLanguage } from 'projects/libs/state-management/src/lib/state/language/language.selector';
 
 export interface EditionInfo {
   displayName: string;

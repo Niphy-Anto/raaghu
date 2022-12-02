@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { RdsLoginComponent } from './rds-comp-login/rds-comp-login.component';
 import { RdsAddressInputComponent } from './rds-comp-address-input/rds-comp-address-input.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {  HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { SharedModule, NgxTranslateModule, HttpLoaderFactory, AppSessionService } from '@libs/shared';
 import { RdsDataTableComponent } from './rds-comp-data-table/rds-comp-data-table.component';
 import { RdsTopNavigationComponent } from './rds-comp-top-navigation/rds-comp-top-navigation.component';

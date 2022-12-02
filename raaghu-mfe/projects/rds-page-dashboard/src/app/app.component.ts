@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { selectDefaultLanguage } from '@libs/state-management';
 import { Store } from '@ngrx/store';
 import { TranslateService } from '@ngx-translate/core';
+import { selectDefaultLanguage } from 'projects/libs/state-management/src/lib/state/language/language.selector';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +10,7 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class AppComponent implements OnInit {
 
-  constructor(private store: Store, private translate: TranslateService) { }
+  constructor(private translate: TranslateService, private store: Store) { }
 
   ngOnInit(): void {
     this.store.select(selectDefaultLanguage).subscribe((res: any) => {

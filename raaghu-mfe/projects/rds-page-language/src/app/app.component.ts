@@ -2,18 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { DatePipe } from '@angular/common';
 import { AlertService, ComponentLoaderOptions } from '@libs/shared';
 import { Store } from '@ngrx/store';
-import {
-  deleteLanguage,
-  getCountryList,
-  getLanguages,
-  saveLanguage,
-  setDefaultLanguage,
-} from '@libs/state-management';
-import {
-  selectAllCountries,
-  selectAllLanguages,
-  selectDefaultLanguage,
-} from '@libs/state-management';
+
+
 import { TableHeader } from 'projects/rds-components/src/models/table-header.model';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
@@ -24,7 +14,8 @@ import {
   style,
   animate,
 } from '@angular/animations';
-import { Item } from 'projects/libs/state-management/src/lib/state/language/language.models';
+import { deleteLanguage, getCountryList, getLanguages, saveLanguage, setDefaultLanguage } from 'projects/libs/state-management/src/lib/state/language/language.actions';
+import { selectAllCountries, selectAllLanguages, selectDefaultLanguage } from 'projects/libs/state-management/src/lib/state/language/language.selector';
 declare var bootstrap: any;
 
 @Component({
@@ -66,7 +57,7 @@ export class AppComponent implements OnInit {
   ];
   isShimmer: boolean = false;
   EditShimmer: boolean = false;
-  languageCanvasTitle = 'New Language';
+  languageCanvasTitle = this.translate.instant('New Language');
   showLoadingSpinner: boolean = false;
   public rdsAlertMfeConfig: ComponentLoaderOptions = {
     name: 'RdsCompAlert',
@@ -351,9 +342,9 @@ export class AppComponent implements OnInit {
         isEnabled: false,
         id: undefined,
       };
-      this.languageCanvasTitle = 'NEW LANGUAGE';
+      this.languageCanvasTitle = this.translate.instant('New Language');
     } else {
-      this.languageCanvasTitle = 'Edit Language';
+      this.languageCanvasTitle = this.translate.instant('Edit Language');
     }
     const rdsNewLanguageMfeConfig = this.rdsNewLanguageMfeConfig;
     rdsNewLanguageMfeConfig.input.selectedLanguage = this.selectedLanguage;

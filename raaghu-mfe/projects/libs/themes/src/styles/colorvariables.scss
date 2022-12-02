@@ -12,7 +12,7 @@ html[theme=light] {
   $input-bg: $body-bg !default;
 
   $border-color: $gray-100;
-
+  $toast-btn-close-color:$gray-100 !default;
   $btn-close-width: 1em !default;
   $btn-close-color: $gray-100 !default;
   $btn-close-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$btn-close-color}'><path d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/></svg>") !default;
@@ -161,13 +161,15 @@ html[theme=light] {
   $high-rate-color: $success !default;
   $mid-rate-color: $danger !default;
   $low-rate-color: $warning !default;
-
+ /*toast*/
+  $toast-text-color:$black;
   /*tree checkbox lines*/
   $check-verticle-border-color: $primary !default;
   $check-horizotal-border-color: $primary !default;
   $horizontal-border-color: $gray-100 !default;
   $verticle-border-color: $gray-100 !default;
-
+/*modal*/
+   $delete-modal-text:$black;
   /* offcanvas-header */
   // $offcanvas-border-color: red !default;
 
@@ -196,12 +198,11 @@ html[theme=light] {
   $table-hover-bg : #F5F5FA;
   $topnav-link-color: $gray-800;
   $card-bg-color: #fff;
-  $card-border-color: $gray-200 !default;
   --bs-body-color: black;
   $datepicker-bg: $white !default;
   $datepicker-head: $white !default;
   $notification-header-bg: $light-700 !default;
-  $notification-sub-text:$gray-400 !default;
+  $notification-sub-text: $gray-400 !default;
   $input-group-addon-bg: $input-bg;
 
   $form-select-bg1: $input-bg !default;
@@ -230,6 +231,20 @@ html[theme=light] {
       background-color: $table-hover-bg
     }
   }
+  @media screen and (min-width: 768px) and (max-width: 1023px){
+    #sortTable thead th:first-child, 
+    #sortTable tbody td:first-child {
+      position: sticky;
+      left: -1px;
+      background: $datatable-bgColor;
+      z-index: 1;
+      max-width: 190px;
+  }
+  #sortTable thead tr:hover th:first-child,
+  #sortTable tbody tr:hover td:first-child{
+    background-color: $table-hover-bg
+  }
+}
 
   .navbar {
     background-color: white;
@@ -320,7 +335,10 @@ html[theme=light] {
   .form-select[size]:not([size="1"]) {
     padding-right: 1.8rem;
     background-position: right 0.15rem center;
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+  }
+
+  .dropdownarrow.form-select[size]:not([size="1"])::before {
+    content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
   }
 
   .profileMenu {
@@ -448,6 +466,11 @@ html[theme=light] {
       @include avatar-variant($avatar-background, $avatar-border, $avatar-color);
     }
   }
+  /*modal*/
+  .text-color{
+    color:$delete-modal-text;
+  }
+  
   /*badge color variables*/
   .badge {
     padding: $badge-padding-y $badge-padding-x;
@@ -473,8 +496,6 @@ html[theme=light] {
       @include badge-variant($badge-background, $badge-border, $badge-color);
     }
   }
-
- 
   /*counter color variables*/
 
 
@@ -519,6 +540,7 @@ html[theme=light] {
       }
     }
   }
+
   /*table color variables*/
   .table-hover {
     > tbody > tr > td {
@@ -646,9 +668,9 @@ html[theme=light] {
   }
 
   .pagination {
-
+    
     .page-item {
-      border-color: $gray-100;
+      border-color: $white;
       // &:nth-child(-n + 2) .page-link {
       //   background: $pagination-item-bg;
       //   color: $pagination-item-color;
@@ -658,6 +680,9 @@ html[theme=light] {
       //   background:  $pagination-bg-color;
       //   color: $pagination-item-color;
       // }
+      &:nth-child(-n + 1) .page-link {
+        border-color:$white
+      }
     }
 
     .page-link {
@@ -672,8 +697,8 @@ html[theme=light] {
     }
 
     .active .page-link {
-      color: $page-link-active-color;
-      background-color:$pagination-bg-hover-color;
+      color: $white;
+      background-color:$primary;
     }
   }
   /*Dropdown*/
@@ -702,6 +727,13 @@ html[theme=light] {
       }
     }
   }
+  /*toast*/
+  .toast-text{
+    color:$toast-text-color;
+  }
+  // .toast-close{
+  //   color:$toast-btn-close-color;
+  // }
   /*Tabs color variables*/
   .nav-tabs {
 
@@ -1429,29 +1461,30 @@ html[theme=light] {
     background-color: transparent;
   }
 
- 
+
   .card-footer {
     background-color: $white;
     border-top-color: $gray-300;
   }
- 
-  .notification{
-    .card-header{
+
+  .notification {
+    .card-header {
       background-color: $notification-header-bg;
     }
-    .card-body{
-     
 
-     .notification-border-bottom{
-     
-      border-bottom:1px solid $notification-header-bg;
-     } 
-     .notification-sub-text{
-      color:$notification-sub-text
-     }
+    .card-body {
+
+
+      .notification-border-bottom {
+        border-bottom: 1px solid $notification-header-bg;
+      }
+
+      .notification-sub-text {
+        color: $notification-sub-text
+      }
     }
-    .card-footer{
-     
+
+    .card-footer {
     }
   }
 
@@ -1573,7 +1606,7 @@ html[theme=dark] {
   $dropdown-border-bottom-hover: $gray-100 !default;
   $dropdown-bghover-color: $dark-300 !default;
   $dropdown-link-active-bg: $dark-400 !default;
-  $dropdown-hover-color:$light-100 !default;
+  $dropdown-hover-color: $light-100 !default;
 
   /*file uploader color variables*/
   $file-color: $primary;
@@ -1603,10 +1636,10 @@ html[theme=dark] {
   $form-feedback-color: $gray-200 !default;
   $input-group-addon-bg: $input-bg;
   $input-group-addon-border-color: $input-bg;
-  
-   $notification-header-bg: $gray-900 !default;
-   $notification-body-bg: $blue-100 !default;
-   $notification-sub-text:$gray-500 !default;
+
+  $notification-header-bg: $gray-900 !default;
+  $notification-body-bg: $blue-100 !default;
+  $notification-sub-text: $gray-500 !default;
   /*sidebar color styles*/
   $nav-ul-bg-color: $light;
   $nav-li-border: $white;
@@ -1634,17 +1667,18 @@ html[theme=dark] {
   $check-horizotal-border-color: $primary !default;
   $horizontal-border-color: $gray-100 !default;
   $verticle-border-color: $gray-100 !default;
- 
+
   /*modal variables*/
 
   $modal-content-bg: $dark-400 !default;
-
+  
   /* offcanvas variables */
   $offcanvas-bg-color: $modal-content-bg !default;
   $offcanvas-bottom-border-color: $dark-300 !default;
 
   $nav-tabs-bottom-border-color: $dark-400 !default;
-
+  /*toast*/
+  $toast-text-color:$black;
   /*button transition values*/
   $btn-transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
 
@@ -1658,6 +1692,8 @@ html[theme=dark] {
   $btn-active-border-tint-amount: 10% !default;
 
   $enable-caret: true !default;
+ /*modal*/
+   $delete-modal-text:$gray-200;
   // scss-docs-end btn-variables
   //subscription-card
   $subcription-bg-blue: #005FA4;
@@ -1670,7 +1706,7 @@ html[theme=dark] {
   $topnav-link-color: $white;
 
   $card-bg-color: $dark-500 !default;
-  $card-border-color: $card-bg-color !default;
+  $card-darkborder-color: $gray-100 !default;
 
   $card-dashboard-bg-color: #161618 !default;
   $card-dashboard-border-color: #3C3E47;
@@ -1687,12 +1723,13 @@ html[theme=dark] {
   $datepicker-bg: $gray-800 !default;
   $datepicker-head: $gray-800 !default;
 
-  $form-select-bg: $dark-900 !default;
-  $form-select-border-color: $form-select-bg !default;
+  $form-select-bg: $dark-900  !default;
+  $form-select-bgColor : $dark-500 !default;
+  $form-select-border-color:  $form-select-bg !default;
   $shimmerbg: $dark-200 !default;
 
-//rds-datatable-firstchild-color
-  $datatable-bgColor : $dark-500!default;
+  //rds-datatable-firstchild-color
+  $datatable-bgColor: $dark-500!default;
 
   .ngx-shimmer {
     background-color: $dark-0;
@@ -1700,17 +1737,33 @@ html[theme=dark] {
     opacity: 0.1;
   }
 
-  @media screen and (min-width:1024px) and (max-width:1279px){
+  @media screen and (min-width:1024px) and (max-width:1279px) {
     #sortTable thead th:first-child,
-    #sortTable tbody td:first-child{
-        background-color:  $datatable-bgColor;
+    #sortTable tbody td:first-child {
+      background-color: $datatable-bgColor;
     }
+
     #sortTable thead tr:hover th:first-child,
-    #sortTable tbody tr:hover td:first-child{
+    #sortTable tbody tr:hover td:first-child {
       background-color: $trhoverbg-color
     }
   }
+  @media screen and (min-width: 768px) and (max-width: 1023px){
+    #sortTable thead th:first-child, 
+    #sortTable tbody td:first-child {
+      position: sticky;
+      left: -1px;
+      background: $datatable-bgColor;
+      z-index: 1;
+      max-width: 190px;
+  }
+  #sortTable thead tr:hover th:first-child,
+  #sortTable tbody tr:hover td:first-child{
+    background-color: $trhoverbg-color
+  }
 
+  }
+ 
   .default-datepicker.border {
     border-color: $input-border-color;
 
@@ -1744,42 +1797,42 @@ html[theme=dark] {
 
   .card {
     background-color: $card-bg-color;
-    border-color: $card-border-color;
+    border-color: $card-darkborder-color;
 
     .card-header {
       background-color: transparent;
     }
-   
+
     .card-footer {
       background-color: $card-bg-color;
-      border-top-color: $card-border-color;
+      border-top-color: $card-darkborder-color;
     }
-    
   }
-  
-  .notification{
-    .card-header{
+
+  .notification {
+    .card-header {
       background-color: $notification-header-bg;
     }
-    .card-body{
+
+    .card-body {
       background-color: $notification-body-bg;
 
-     .notification-border-bottom{
-     
-      border-bottom:2px solid $notification-header-bg;
-     } 
-     .notification-sub-text{
-      color:$notification-sub-text
-     }
+      .notification-border-bottom {
+        border-bottom: 2px solid $notification-header-bg;
+      }
+
+      .notification-sub-text {
+        color: $notification-sub-text
+      }
     }
-    .card-footer{
+
+    .card-footer {
       background-color: $notification-body-bg;
     }
   }
-
-//.card-body.notification-body.border-bottom{
- // border-color:$gray-800;
-//}
+  //.card-body.notification-body.border-bottom{
+  // border-color:$gray-800;
+  //}
   .sidenav-footer {
     background-color: $body-wrapper-bg;
   }
@@ -1806,12 +1859,12 @@ html[theme=dark] {
     background-color: $offcanvasbg;
   }
 
-  .navbar-nav{
+  .navbar-nav {
     .form-select[size]:not([size="1"]) {
       border-color: $form-select-border-color;
       padding-right: 1.8rem;
       background-position: right 0.15rem center;
-      background-color: $dark-500;
+      background-color: $form-select-bgColor;    
        }
   }
 
@@ -1820,7 +1873,7 @@ html[theme=dark] {
     padding-right: 1.8rem;
     background-position: right 0.15rem center;
     background-color: $form-select-bg;
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+    padding-right: 1.8rem;
   }
 
   .default-datepicker.border {
@@ -1829,16 +1882,18 @@ html[theme=dark] {
 
   .dropdown-item.active {
     background-color: $dropdown-link-active-bg;
-  
+
 
     span.hr-line {
       color: $primary;
       background-color: $primary;
     }
   }
- .dropdown-toggle:hover{
-  color:$dropdown-hover-color;
- }
+
+  .dropdown-toggle:hover {
+    color: $dropdown-hover-color;
+  }
+
   .date-picker .dropdown-item.active,
   .date-picker .dropdown-item:active {
     color: $white;
@@ -2103,6 +2158,13 @@ html[theme=dark] {
       }
     }
   }
+   /*toast*/
+   .toast-text{
+    color:$toast-text-color;
+  }
+  // .toast-close{
+  //   color:$toast-btn-close-color;
+  // }
   /*edition color variables*/
   .edition-grid {
     .edition {
@@ -2151,12 +2213,10 @@ html[theme=dark] {
   .pagination.rounded {
 
     .page-item {
-
       // &:nth-child(-n + 1) .page-link {
       //   background: $pagination-item-bg;
       //   color: $pagination-item-color;
       // }
-
       // &:nth-last-child(-n + 2) .page-link {
       //   background: $pagination-item-last-bg;
       // }
@@ -2195,11 +2255,13 @@ html[theme=dark] {
       //     color: $pagination-item-color;
       //   }
       // }
-      &:nth-child(-n + 1).active .page-link {
-        background: $pagination-item-bg;
-        color: $pagination-item-color;
+      // &:nth-child(-n + 1).active .page-link {
+      //   background: $pagination-item-bg;
+      //   color: $pagination-item-color;
+      // }
+      &:nth-child(-n + 1) .page-link {
+        border-color:$gray-500;
       }
-     
     }
 
     .page-link {
@@ -2211,13 +2273,11 @@ html[theme=dark] {
         background-color: $pagination-bg-hover-color;
       }
     }
-    // .active .page-link {
-    //   color: $white;
-    //   background-color: $pagination-bg-hover-color;
-    // }
+    .active .page-link {
+      color: $white;
+      background-color: $pagination-bg-hover-color;
+    }
   }
-
-  
   /*Dropdown*/
   .dropdown-item {
     border-bottom-color: $dropdown-border-bottom;
@@ -2269,6 +2329,7 @@ html[theme=dark] {
   .nav.nav-pill {
     .nav-link.active {
       border-top: $nav-tabs-border-color;
+       background-color: $primary;
     }
   }
 
@@ -2288,6 +2349,7 @@ html[theme=dark] {
       color: $link-color;
       border-left: 0px;
       border-right: 0px;
+      background-color: transparent;
     }
   }
 
@@ -2427,38 +2489,38 @@ html[theme=dark] {
 
           svg {
             fill: none;
-            stroke: $gray-700;
+            stroke: $light-200;
 
             polyline.icon {
-              stroke: $gray-700;
+              stroke: $light-200;
             }
 
             polygon.icon {
-              stroke: $gray-700;
+              stroke: $light-200;
             }
 
             ellipse.icon {
-              stroke: $gray-700;
+              stroke: $light-200;
             }
 
             path.icon {
-              stroke: $gray-700;
+              stroke: $light-200;
             }
 
             line.icon {
-              stroke: $gray-700;
+              stroke: $light-200;
             }
 
             rect.icon {
-              stroke: $gray-700;
+              stroke: $light-200;
             }
 
             circle.icon {
-              stroke: $gray-700;
+              stroke: $light-200;
             }
 
             ellipse.icon {
-              stroke: $gray-700;
+              stroke: $light-200;
             }
           }
         }
@@ -2597,6 +2659,10 @@ html[theme=dark] {
       color: $form-feedback-color;
     }
   }
+   /*modal*/
+   .text-color{
+    color:$delete-modal-text;
+  }
   /*datatable color variables */
   @mixin table-variant($state, $background, $border, $color) {
     color: shade-color($color, 20%);
@@ -2690,14 +2756,13 @@ html[theme=dark] {
   /*buttons variabes*/
   .form-control {
     &:focus {
-      border-color:$input-focus-border-color;
+      border-color: $input-focus-border-color;
     }
   }
 
   .form-select {
     &:focus {
-      border-color:$input-focus-border-color;
-    
+      border-color: $input-focus-border-color;
     }
   }
 
@@ -2897,15 +2962,19 @@ html[theme=dark] {
     background-color: $offcanvasbg;
   }
 
-  .nav-link.active,
-  .nav-item.show .nav-link {
-    background-color: transparent;
-  }
+  // .nav-link.active,
+  // .nav-item.show .nav-link {
+  //   background-color: transparent;
+  // }
 
   .form-select {
     background-color: $form-select-bg;
     border-color: $form-select-bg;
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e")
+    // background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e")
+  }
+
+  .dropdownarrow.form-select[size]:not([size="1"])::before {
+    content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%236c757d' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
   }
 
   .input-group-text {
@@ -2981,7 +3050,12 @@ html[theme=dark] {
   }
 }
 
-a {
-  text-decoration: none;
-  color: $primary;
-}
+  a {
+    text-decoration: none;
+    color: $gray-800;
+  }
+
+  .routerLinkActive-name{
+    text-decoration: none;
+    color:  $primary
+  }

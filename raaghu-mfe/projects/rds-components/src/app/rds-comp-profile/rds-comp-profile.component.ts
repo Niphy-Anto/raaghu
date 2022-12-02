@@ -81,6 +81,7 @@ export class RdsCompProfileComponent extends MfeBaseComponent implements OnInit 
   @Output() onDownloadLink = new EventEmitter<any>();
   @Output() onProfileData = new EventEmitter<any>();
   @Input() showLoadingSpinner: boolean = false;
+  @Input() tenancy: string = 'Host Admin';
   public Profileform = new FormGroup({})
   offCanvasWidth = 304;
   profileMenu = 1000 + "px";

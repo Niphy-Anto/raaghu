@@ -62,6 +62,7 @@ Default.args = {
       sortable: true,
       required: true,
       filterable: true,
+      
     },
     {
       displayName: 'Code',
@@ -142,8 +143,9 @@ Default.args = {
     { value: 'source1', displayText: 'Source 1' },
     { value: 'source2', displayText: 'Source 2' },
   ],
+  baseLanguage:"Base Culture Name",
   listbaseLanguage: [
-    { value: 'baseLanguage1', displayText: 'Base Language 1' },
+    { value: 'baseLanguage1', displayText: 'Base Language 1'},
     { value: 'baseLanguage2', displayText: 'Base Language 2' },
   ],
   listTargetCulturename: [
