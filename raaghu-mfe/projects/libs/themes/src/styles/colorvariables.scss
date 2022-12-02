@@ -1758,13 +1758,14 @@ html[theme=dark] {
     opacity: 0.1;
   }
 
-  @media screen and (min-width:1024px) and (max-width:1279px){
+  @media screen and (min-width:1024px) and (max-width:1279px) {
     #sortTable thead th:first-child,
-    #sortTable tbody td:first-child{
-        background-color:  $datatable-bgColor;
+    #sortTable tbody td:first-child {
+      background-color: $datatable-bgColor;
     }
+
     #sortTable thead tr:hover th:first-child,
-    #sortTable tbody tr:hover td:first-child{
+    #sortTable tbody tr:hover td:first-child {
       background-color: $trhoverbg-color
     }
   }
@@ -1883,7 +1884,7 @@ html[theme=dark] {
     background-color: $offcanvasbg;
   }
 
-  .navbar-nav{
+  .navbar-nav {
     .form-select[size]:not([size="1"]) {
       border-color: $form-select-border-color;
       padding-right: 1.8rem;
@@ -2247,12 +2248,10 @@ html[theme=dark] {
   .pagination.rounded {
 
     .page-item {
-
       // &:nth-child(-n + 1) .page-link {
       //   background: $pagination-item-bg;
       //   color: $pagination-item-color;
       // }
-
       // &:nth-last-child(-n + 2) .page-link {
       //   background: $pagination-item-last-bg;
       // }
@@ -2298,7 +2297,6 @@ html[theme=dark] {
       &:nth-child(-n + 1) .page-link {
         border-color:$gray-500;
       }
-     
     }
 
     .page-link {
@@ -2315,8 +2313,6 @@ html[theme=dark] {
       background-color: $pagination-bg-hover-color;
     }
   }
-
-  
   /*Dropdown*/
   .dropdown-item {
     border-bottom-color: $dropdown-border-bottom;
@@ -2528,38 +2524,38 @@ html[theme=dark] {
 
           svg {
             fill: none;
-            stroke: $gray-700;
+            stroke: $light-200;
 
             polyline.icon {
-              stroke: $gray-700;
+              stroke: $light-200;
             }
 
             polygon.icon {
-              stroke: $gray-700;
+              stroke: $light-200;
             }
 
             ellipse.icon {
-              stroke: $gray-700;
+              stroke: $light-200;
             }
 
             path.icon {
-              stroke: $gray-700;
+              stroke: $light-200;
             }
 
             line.icon {
-              stroke: $gray-700;
+              stroke: $light-200;
             }
 
             rect.icon {
-              stroke: $gray-700;
+              stroke: $light-200;
             }
 
             circle.icon {
-              stroke: $gray-700;
+              stroke: $light-200;
             }
 
             ellipse.icon {
-              stroke: $gray-700;
+              stroke: $light-200;
             }
           }
         }
@@ -2795,14 +2791,13 @@ html[theme=dark] {
   /*buttons variabes*/
   .form-control {
     &:focus {
-      border-color:$input-focus-border-color;
+      border-color: $input-focus-border-color;
     }
   }
 
   .form-select {
     &:focus {
-      border-color:$input-focus-border-color;
-    
+      border-color: $input-focus-border-color;
     }
   }
 

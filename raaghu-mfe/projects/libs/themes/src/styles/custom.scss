@@ -458,7 +458,7 @@ html[theme=light] {
   height: 100vh !important;
   overflow: auto;
   overflow-x: hidden;
-  padding-bottom:70px !important;
+  padding-bottom:60px !important;
 }
 
 /* btn-icon */
@@ -1228,4 +1228,12 @@ rds-admin-dashboard {
   .card.card-stretch.gutter-b {
     height: calc(100% - 1rem);
   }
+}
+#sidebar ul li .collapse li {
+  list-style: disc;
+  margin-left: 37px;
+}
+#sidebar ul li .collapse li .collapse li {
+  list-style: square;
+  margin-left:0px;
 }
