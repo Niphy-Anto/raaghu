@@ -1,10 +1,12 @@
 <div [ngSwitch]="role">
   <div *ngSwitchCase="'with_split'">
     <div [ngClass]="dropdownDirection">
-      <button [ngClass]="button1" type="button" [attr.id]="id"  class="border">
+      <button [ngClass]="button1" type="button" [attr.id]="id" (click)="open()" data-bs-toggle="dropdown" aria-haspopup="true"
+        [attr.aria-expanded]="show" class="border">
         {{ label }}
       </button>
-      <button type="button" class="border"  class="dropdown-toggle" [ngClass]="classes" [attr.id]="id"  data-bs-toggle="dropdown" [attr.aria-expanded]="show">
+      <button [ngClass]="button1" type="button" [attr.id]="id" (click)="open()" data-bs-toggle="dropdown" aria-haspopup="true"
+      [attr.aria-expanded]="show" class="border">
         <span class="visually-hidden">Toggle Dropdown</span>
       </button>
       <ul [ngClass]="menu" [attr.aria-labelledby]="id">
@@ -26,7 +28,7 @@
 
     <div *ngSwitchCase="'dropdown-button'">
       <div [ngClass]="dropdownDirection">
-        <button [ngClass]="classes" class="dropdown-toggle" type="button" [attr.id]="id" data-bs-toggle="dropdown"
+        <button [ngClass]="classes" type="button" (click)="open()" [attr.id]="id" data-bs-toggle="dropdown"
         [attr.aria-expanded]="show">
           {{ label }}
         </button>

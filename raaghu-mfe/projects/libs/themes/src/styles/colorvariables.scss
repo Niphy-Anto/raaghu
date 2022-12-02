@@ -4,7 +4,8 @@
 @import "./node_modules/bootstrap/scss/_utilities";
 
 
-html[theme=light] {
+body.theme-light {
+  //background-color: white;
   $theme-colors: ("primary": $primary, "secondary": $secondary, "success": $success, "info": $info, "warning": $warning, "danger": $danger, "light": $light, "dark": $dark ) !default;
   $min-contrast-ratio: 4.5 !default;
   $input-focus-border-color: tint-color($primary, 50%) !default;
@@ -1499,7 +1500,8 @@ html[theme=light] {
   }
 }
 
-html[theme=dark] {
+body.theme-dark{
+  background-color: black;
   $theme-colors: ("primary": $primary, "secondary": $secondary, "success": $success, "info": $info, "warning": $warning, "danger": $danger, "light": $light, "dark": $dark ) !default;
   $min-contrast-ratio: 4.5 !default;
 
