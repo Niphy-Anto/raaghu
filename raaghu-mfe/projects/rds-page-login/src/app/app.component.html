@@ -1,11 +1,6 @@
 
 <div class="login-background" *ngIf="!loadingshimmer">
   <div class="align-items-center d-flex justify-content-center login m-auto" style="max-width: 900px; height: 100vh;">
-    <div class="d-flex justify-content-center alertAlignment">
-<ng-container *ngIf="currentAlerts&&currentAlerts.length>0">
-  <rds-comp-alert [currentAlerts]="currentAlerts" (onAlertHide)="onAlertHide($event)"></rds-comp-alert>
-</ng-container>
-</div>
     <div class="container-fluid m-2">
       <div class="bg-white row rounded-3 ">
         <div class="col-md-6">
@@ -51,9 +46,9 @@
     </div>
   </div>
 </div>
-<!-- <ng-container *ngIf="currentAlerts&&currentAlerts.length>0">
+<ng-container *ngIf="currentAlerts&&currentAlerts.length>0">
   <mfe-loader [config]="rdsAlertMfeConfig"></mfe-loader>
-</ng-container> -->
+</ng-container>
 <app-login-shimmer *ngIf="loadingshimmer">
   <mfe-loader [config]="rdsLoginMfeConfig"></mfe-loader>
 </app-login-shimmer>

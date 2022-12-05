@@ -1,9 +1,6 @@
 <div [@fadeAnimation]="isAnimation ? 'fadeAnimation' : ''">
   <div class="row" >
-    <div class="col-md-8">
-      <rds-comp-alert [currentAlerts]="currentAlerts" (onAlertHide)="onAlertHide($event)"></rds-comp-alert>
-    </div>
-    <div class="col-md-4 text-end pb-3">
+    <div class="col-md-12 text-end pb-3">
       <div class="d-flex justify-content-end" *ngIf="tabcash && cashedata && cashedata.length>0">
         <div class="desktop-btn">
           <rds-button (click)="deletAllcasheConfirmation()" [id]="'yes'" [size]="'small'" [tooltipPlacement]="'top'"
@@ -50,7 +47,7 @@
       </div>
     </div>
     </div>
-    <div class="row">
+   
       <div class="col-md-12">
         <div class="card p-2 h-100 border-0 rounded-0 card-full-stretch">
           <rds-nav-tab [navtabsItems]="getNavTabItems()" horizontalAlignment="start" [verticalAlignment]="false"
@@ -69,8 +66,7 @@
       </div>
     </div>
     
-  </div>
-<!-- <mfe-loader [config]="rdsAlertMfeConfig"></mfe-loader> -->
+<mfe-loader [config]="rdsAlertMfeConfig"></mfe-loader>
 <!--<app-rds-maintenance-shimmer *ngIf="isShimmer"></app-rds-maintenance-shimmer>-->
 
 

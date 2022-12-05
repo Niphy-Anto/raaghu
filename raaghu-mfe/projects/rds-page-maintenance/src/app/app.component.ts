@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { TranslateService } from '@ngx-translate/core';
-import { AlertService, ComponentLoaderOptions, SharedService } from '@libs/shared';
+import { ComponentLoaderOptions, SharedService } from '@libs/shared';
 import { clearcache, deletecache, getmaintenances, getWebsitelog } from 'projects/libs/state-management/src/lib/state/maintenance/maintenance.actions';
 import { selectAllmaintenance, selectAllWebsitelog } from 'projects/libs/state-management/src/lib/state/maintenance/maintenance.selector';
 declare var $: any;
@@ -66,12 +66,10 @@ export class AppComponent implements OnInit{
   cashedata: any = []
   websiteLogData: any[];
   isShimmer: boolean = false;
-  currentAlerts: any = [];
   
   constructor(private store: Store,
     private sharedService:SharedService,
-     public translate: TranslateService,
-     private alertService: AlertService) { }
+     public translate: TranslateService) { }
 
  
   
@@ -132,31 +130,13 @@ export class AppComponent implements OnInit{
         }
       }
     },
-    this.subscribeToAlerts();
     this.refreshData();
   }
-
-  onAlertHide(event: any): void {
-    this.currentAlerts = event;
-  } 
 
   getNavTabItems(): any {
     this.navtabItems[0].label = this.translate.instant('Caches');
     this.navtabItems[1].label = this.translate.instant('Website Logs');
     return this.navtabItems;
-  }
-  
-  subscribeToAlerts() {
-    this.alertService.alertEvents.subscribe((alert) => {
-      this.currentAlerts = [];
-      const currentAlert: any = {
-        type: alert.type,
-        title: alert.title,
-        message: alert.message,
-        sticky: alert.sticky,
-      };
-      this.currentAlerts.push(currentAlert);
-    });
   }
 
   refreshData() {

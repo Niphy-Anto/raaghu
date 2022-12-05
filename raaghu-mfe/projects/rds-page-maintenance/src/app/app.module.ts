@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RdsAlertModule, RdsBadgeModule, RdsButtonModule, RdsIconModule, RdsModalModule, RdsNavTabModule } from '@libs/rds-elements';
+import { RdsBadgeModule, RdsButtonModule, RdsIconModule, RdsModalModule, RdsNavTabModule } from '@libs/rds-elements';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgxTranslateModule, SharedModule } from '@libs/shared';
@@ -11,7 +11,6 @@ import { RdsCompAlertComponent } from 'projects/rds-components/src/app/rds-comp-
 @NgModule({
   declarations: [
     AppComponent,    
-    RdsCompAlertComponent
   ],
   imports: [
     CommonModule,
@@ -21,8 +20,7 @@ import { RdsCompAlertComponent } from 'projects/rds-components/src/app/rds-comp-
     RdsIconModule,
     RdsFabMenuModule,
     NgxShimmerLoadingModule,
-    NgxTranslateModule.forRoot(),
-    RdsAlertModule
+    NgxTranslateModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
