@@ -1,14 +1,16 @@
 import { CommonModule } from '@angular/common';
+import { RdsButtonModule } from '@libs/rds-button';
 import { moduleMetadata } from '@storybook/angular';
 import { Story, Meta } from '@storybook/angular';
 import { RdsPopoverComponent } from './rds-popover.component';
+
 
 export default {
   title: 'Elements/Popover',
   component: RdsPopoverComponent,
   decorators: [
     moduleMetadata({
-      imports: [CommonModule],
+      imports: [CommonModule,RdsButtonModule],
     }),
   ],
   argTypes: {

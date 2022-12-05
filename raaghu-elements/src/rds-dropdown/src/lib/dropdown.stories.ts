@@ -47,9 +47,9 @@ Default.args = {
   colorVariant: 'primary',
   size: 'default',
   listItems: [
-    { value: 'Export to excel', some: 'value', id: 1, href: '', icon: 'circle', iconWidth: '20px', iconHeight: '20px', iconStroke: true, iconFill: false },
+    { value: 'Export to excel', some: 'value', id: 1, href: '', icon: 'export', iconWidth: '20px', iconHeight: '20px', iconStroke: true, iconFill: false },
     { value: 'Import from excel', some: 'value', id: 2, href: '', icon: 'download_data', iconWidth: '20px', iconHeight: '20px', iconStroke: true, iconFill: false },
-    { value: 'Click here download sample import file.', some: 'value', id: 3, href: '', icon: 'download', iconWidth: '20px', iconHeight: '20px', iconStroke: true, iconFill: false },
+    { value: 'Click here download sample import file.', some: 'value', id: 3, href: '', icon: '', iconWidth: '20px', iconHeight: '20px', iconStroke: true, iconFill: false },
   ],
   label: 'EXCEL OPERATIONS',
   direction: 'Drop-down',
@@ -62,9 +62,9 @@ Dropdown_with_split.args = {
   colorVariant: 'primary',
   size: 'default',
   listItems :  [
-    { value: 'Export to excel', some: 'value', id: 1, href: '', icon: 'circle', iconWidth: '20px', iconHeight: '20px', iconStroke: true, iconFill: false },
+    { value: 'Export to excel', some: 'value', id: 1, href: '', icon: 'export', iconWidth: '20px', iconHeight: '20px', iconStroke: true, iconFill: false },
     { value: 'Import from excel', some: 'value', id: 2, href: '', icon: 'download_data', iconWidth: '20px', iconHeight: '20px', iconStroke: true, iconFill: false },
-    { value: 'Click here download sample import file.', some: 'value', id: 3, href: '', icon: 'download', iconWidth: '20px', iconHeight: '20px', iconStroke: true, iconFill: false },
+    { value: 'Click here download sample import file.', some: 'value', id: 3, href: '', icon: '', iconWidth: '20px', iconHeight: '20px', iconStroke: true, iconFill: false },
   ],
   label: 'EXCEL OPERATIONS',
   direction: 'Drop-down',
