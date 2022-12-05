@@ -196,7 +196,7 @@ export class RdsCompTenantListNewComponent implements OnInit {
       this.isTenantInfoValid = false;
     }
     if (event) {
-      this.canvasTitle = 'NEW TENANT';
+      this.canvasTitle = this.translate.instant('New Tenant');
       this.tenantData = undefined;
       this.tenantSettingsInfo = undefined;
 

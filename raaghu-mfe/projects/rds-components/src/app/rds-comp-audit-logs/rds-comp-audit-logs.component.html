@@ -91,7 +91,7 @@
                   </rds-dropdownlist>
                 </div>
             </div>
-            <div class="row">
+            <div class="row mt-4 ">
                 <rds-data-table [tableData]="operationLogs" (deleteEvent)="delete($event)" [pagination]="true"
                     [noDataTitle]="translate.instant('Currently you do not have operation log')" [recordsPerPage]="10"
                     (onActionSelection)="onActionSelect($event)" [showNodataSubtitle]="false" [actions]="actions"

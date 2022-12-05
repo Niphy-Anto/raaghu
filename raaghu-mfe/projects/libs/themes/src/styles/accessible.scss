@@ -126,7 +126,7 @@
   --chart-doughnut-color3: #FF6E48;
   --chart-doughnut-color4: #8000B9;
   --chart-doughnut-text-color: rgba(146, 7, 42);
-  --chart-bar-horizontal-color1: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(16,16,138,1) 35%, rgba(0,212,255,1) 100%);
+  --chart-bar-horizontal-color1: #78F7B8;
   --chart-bar-horizontal-color2: #78F7B8;
   --chart-bar-horizontal-color: rgba(255, 29, 177, 0);
   --chart-bar-horizontal-border-color: rgba(255, 29, 177);
@@ -182,8 +182,10 @@
   $accessible-800: #13002E;
 
 $input-select-bg: $accessible-300!default;
-$form-select-bg: $input-select-bg!default;
+$form-select-bg: $accessible-500 !default;
 $card-bg-color: $accessible-700 !default;
+$card-darkborder-color :  $accessible-600 !default;
+$form-select-bgColor : $accessible-500 !default;
 //$offcanvas-border-color: $accessible-300 !default;
 $offcanvas-bottom-border-color: $accessible-300!default;
 $nav-tabs-bottom-border-color: $accessible-300!default;
@@ -215,8 +217,8 @@ $nav-background-color: $accessible-500 !default;
 
 //$body-wrapper-bg:;
 html[theme=dark] {
-
-  $card-border-color: $card-bg-color !default;
+  $card-darkborder-color : $card-bg-color !default;
+  // $card-border-color: $card-bg-color !default;
   $dropdown-color: $white;
   $input-bg: $accessible-300!default;
 
