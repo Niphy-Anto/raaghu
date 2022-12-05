@@ -74,7 +74,7 @@
     [placement]="'end'" *ngIf="viewLoginAsTenantCanvas" (onClose)="closeLoginAsTenant()">
     <div class="row">
         <div class="col-md-12">
-            <rds-data-table [tableData]="userTableData" [inlineEdit]="false" [pagination]="false"
+            <rds-data-table [tableData]="userTableData" [inlineEdit]="false" [pagination]="true"
                     [recordsPerPage]="10" [actions]="userTableActions" (onActionSelection)="onUserDataActionSelect($event)"
                     noDataTitle="Currently you do not have tenant" [tableHeaders]="tenantHeadersUser"
                     ></rds-data-table>
