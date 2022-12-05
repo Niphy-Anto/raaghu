@@ -47,8 +47,8 @@ Default.args = {
   ],
   tableData:
     [{ id: 1, name: 'Standard', icon: 'tick', price: '$20', textNumber: '22aa' },
-    { id: 2, name: 'Premium', icon: 'tick', price: '$20' },
-    { id: 3, name: 'Ultimate', icon: 'tick', price: '$20' },
+    { id: 2, name: 'Premium', icon: 'tick', price: '$20',textNumber: '22aa' },
+    { id: 3, name: 'Ultimate', icon: 'tick', price: '$20',textNumber: '22aa' },
     ],
 }
 export const withoutBorder = Template.bind({});
@@ -64,8 +64,8 @@ withoutBorder.args = {
   ],
   tableData:
     [{ id: 1, name: 'Standard', icon: 'tick', price: '$20', textNumber: '22aa' },
-    { id: 2, name: 'Premium', icon: 'tick', price: '$20' },
-    { id: 3, name: 'Ultimate', icon: 'tick', price: '$20' },
+    { id: 2, name: 'Premium', icon: 'tick', price: '$20',textNumber: '22aa' },
+    { id: 3, name: 'Ultimate', icon: 'tick', price: '$20',textNumber: '22aa' },
     ],
 }
 export const withoutHeader = Template.bind({});
@@ -81,7 +81,7 @@ withoutHeader.args = {
   ],
   tableData:
     [{ id: 1, name: 'Standard', icon: 'tick', price: '$20', textNumber: '22aa' },
-    { id: 2, name: 'Premium', icon: 'tick', price: '$20' },
-    { id: 3, name: 'Ultimate', icon: 'tick', price: '$20' },
+    { id: 2, name: 'Premium', icon: 'tick', price: '$20',textNumber: '22aa' },
+    { id: 3, name: 'Ultimate', icon: 'tick', price: '$20',textNumber: '22aa' },
     ],
 }

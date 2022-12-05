@@ -4,7 +4,8 @@
 @import "./node_modules/bootstrap/scss/_utilities";
 
 
-html[theme=light] {
+body.theme-light {
+  //background-color: white;
   $theme-colors: ("primary": $primary, "secondary": $secondary, "success": $success, "info": $info, "warning": $warning, "danger": $danger, "light": $light, "dark": $dark ) !default;
   $min-contrast-ratio: 4.5 !default;
   $input-focus-border-color: tint-color($primary, 50%) !default;
@@ -67,9 +68,9 @@ html[theme=light] {
 
   /*tabs color variables*/
   $nav-tabs-border-color: $primary !default;
-  $link-color: $primary !default;
+  $link-color: $black !default;
   $nav-link-color: $link-color !default;
-  $nav-tabs-link-active-color: $black !default;
+  $nav-tabs-link-active-color: $primary !default;
   $nav-pills-link-active-color: $white !default;
   $nav-tabs-thick-border-color: $primary !default;
 
@@ -213,6 +214,8 @@ html[theme=light] {
   $offcanvas-bottom-border-color: $light-200!default;
   $nav-tabs-bottom-border-color: $light-100 !default;
 
+  $file-uploder-multiple-bg : $input-bg !default;
+
 //datatable-first-child-bgcolor
   $datatable-bgColor : $white!default;
   .ngx-shimmer {
@@ -244,6 +247,10 @@ html[theme=light] {
   #sortTable tbody tr:hover td:first-child{
     background-color: $table-hover-bg
   }
+}
+
+.file-uploader-multi{
+  background-color: $file-uploder-multiple-bg;
 }
 
   .navbar {
@@ -315,7 +322,7 @@ html[theme=light] {
 
         .custom-today-class {
           background-color: $primary;
-          color: #fff;
+          // color: #fff;
         }
       }
     }
@@ -734,6 +741,17 @@ html[theme=light] {
   // .toast-close{
   //   color:$toast-btn-close-color;
   // }
+
+  a {
+    text-decoration: none;
+    color: $gray-800;
+  }
+
+  .routerLinkActive-name{
+    text-decoration: none;
+    color:  $primary
+  }
+
   /*Tabs color variables*/
   .nav-tabs {
 
@@ -755,6 +773,7 @@ html[theme=light] {
       }
     }
   }
+
 
   .nav.nav-pill {
     .nav-link.active {
@@ -1499,7 +1518,8 @@ html[theme=light] {
   }
 }
 
-html[theme=dark] {
+body.theme-dark{
+  background-color: black;
   $theme-colors: ("primary": $primary, "secondary": $secondary, "success": $success, "info": $info, "warning": $warning, "danger": $danger, "light": $light, "dark": $dark ) !default;
   $min-contrast-ratio: 4.5 !default;
 
@@ -1602,7 +1622,7 @@ html[theme=dark] {
 
   /*dropdown Variales */
   $dropdown-border-bottom: $gray-500 !default;
-  $dropdown-bg-color: $dark-400 !default;
+  $dropdown-bg-color: $dark-300 !default;
   $dropdown-border-bottom-hover: $gray-100 !default;
   $dropdown-bghover-color: $dark-300 !default;
   $dropdown-link-active-bg: $dark-400 !default;
@@ -1728,8 +1748,11 @@ html[theme=dark] {
   $form-select-border-color:  $form-select-bg !default;
   $shimmerbg: $dark-200 !default;
 
-  //rds-datatable-firstchild-color
-  $datatable-bgColor: $dark-500!default;
+  $file-uploder-multiple-bg : $input-bg !default;
+//rds-datatable-firstchild-color
+  $datatable-bgColor : $dark-500!default;
+
+  $profile-upload-icon: $dark-100 !default;
 
   .ngx-shimmer {
     background-color: $dark-0;
@@ -1764,6 +1787,10 @@ html[theme=dark] {
 
   }
  
+  .file-uploader-multi{
+    background-color: $file-uploder-multiple-bg;
+  }
+
   .default-datepicker.border {
     border-color: $input-border-color;
 
@@ -1771,7 +1798,7 @@ html[theme=dark] {
       border-color: $input-border-color;
     }
   }
-
+ 
   .login {
     color: #212529;
 
@@ -1959,6 +1986,16 @@ html[theme=dark] {
   .btn {
     color: $white;
   }
+   
+  a {
+    text-decoration: none;
+    color: $white;
+  }
+
+  .routerLinkActive-name{
+    text-decoration: none;
+    color:  $primary
+  }
 
   svg {
     fill: none;
@@ -1977,7 +2014,7 @@ html[theme=dark] {
   }
 
   .upload-icon {
-    background-color: $white;
+    background-color: $profile-upload-icon;
   }
 
   .btn-close {
@@ -2438,7 +2475,7 @@ html[theme=dark] {
   /* File style */
   .files {
     color: $file-color;
-    background: $file-background-color;
+    background: $file-uploder-multiple-bg;
     border-color: $file-border-color;
 
     :hover {
@@ -3050,12 +3087,3 @@ html[theme=dark] {
   }
 }
 
-  a {
-    text-decoration: none;
-    color: $gray-800;
-  }
-
-  .routerLinkActive-name{
-    text-decoration: none;
-    color:  $primary
-  }

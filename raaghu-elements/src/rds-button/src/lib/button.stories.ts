@@ -59,6 +59,7 @@ export const disable = Template.bind({});
 disable.parameters = { controls: { include: ['buttonId','colorVariant', 'label', 'size', 'isDisabled'] } };
 disable.args = {
   buttonId:'',
+  colorVariant:'primary',
   label: 'Disable',
   isDisabled: true,
   size: 'medium',
@@ -83,7 +84,7 @@ rounded_Button_With_Icon.parameters = { controls: { include: ['buttonId','isFabI
 rounded_Button_With_Icon.args = {
   buttonId:'',
   icon: 'plus',
-  colorVariant: '',
+  colorVariant: 'primary',
   size: 'medium',
   iconHeight: '18px',
   iconWidth: '18px',

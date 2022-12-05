@@ -470,6 +470,7 @@ html[theme=light] {
   padding: 0;
   width: 28px;
   height: 28px;
+
 }
 
 .btn-icon.btn-sm svg {
@@ -1186,28 +1187,17 @@ rds-product-image .imgWidth {
   height: 2.1875rem;
   position:relative;
 }
-.btn-md.spinner:before {
-  top: 6px;
-  left: 48%;
-}
-.btn-sm.spinner {
+
+.btn-sm {
   height: 1.774rem;
   position: relative;
 }
 
-.btn-sm.spinner:before {
-  top: 4px;
-  left:45%;
-}
 .btn-lg.spinner {
   height: 2.766rem;
   position: relative;
 }
 
-.btn-lg.spinner:before {
-  top: 10px;
-  left: 48%;
-}
 .w-225px {
   width: 225px !important;
 }
