@@ -214,13 +214,19 @@ $nav-background-color: $accessible-500 !default;
   $nav-tab-bg-active: $accessible-600 !default;
   $profileMenuBgColor: $nav-tab-bg-active !default;
   $trhoverbg-color: $accessible-600;
+  $file-uploder-multiple-bg : $input-select-bg !default;
+  $profile-upload-icon: $accessible-400 !default;
 
 //$body-wrapper-bg:;
 html[theme=dark] {
   $card-darkborder-color : $card-bg-color !default;
+
+  $profile-upload-icon: $accessible-600 !default;
+
   // $card-border-color: $card-bg-color !default;
   $dropdown-color: $white;
   $input-bg: $accessible-300!default;
+  $file-uploder-multiple-bg : $input-select-bg !default;
 
   $input-bg-border: $accessible-400 !default;
   $form-select-border-color: $input-bg-border !default;
@@ -228,6 +234,10 @@ html[theme=dark] {
   $notification-header-bg: $accessible-500 !default;
   $input-group-addon-bg: $input-bg;
   $input-group-addon-border-color: $accessible-400 !default;
+
+    .file-uploader-multi{
+      background-color: $file-uploder-multiple-bg;
+    }
 
     .form-control,
     .form-control:focus {

@@ -45,8 +45,8 @@ Default.parameters = { controls: { include: ['label', 'icon', 'size', 'colorVari
 Default.args = {
   label: "Contact Number",
   icon: 'phone',
-  size: 'small',
-  colorVariant: 'primary'
+  size: 'medium',
+  colorVariant: 'dark'
 }
 
 const withPositionTemplate: Story<RdsIconLabelComponent> = (args: RdsIconLabelComponent) => ({
@@ -67,8 +67,8 @@ withPosition.parameters = { controls: { include: ['label', 'icon', 'size', 'colo
 withPosition.args = {
   label: "Contact Number",
   icon: 'phone',
-  size: 'small',
-  colorVariant: 'primary',
-  iconposition: 'left'
+  size: 'medium',
+  colorVariant: 'dark',
+  iconposition: 'right'
 }
 

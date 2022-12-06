@@ -33,7 +33,7 @@ Default.parameters = { controls: { include: ['placeholder', 'label', 'size'] } }
 
 Default.args = {
   placeholder: 'Search',
-  size: 'small',
+  size: 'medium',
   label: 'Search Here'
 }
 
