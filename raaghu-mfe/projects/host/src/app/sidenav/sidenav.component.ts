@@ -1,48 +1,19 @@
-import {
-  Component,
-  Inject,
-  Injector,
-  Input,
-  SimpleChanges,
-} from '@angular/core';
+import { Component, Inject, Injector, Input, SimpleChanges } from '@angular/core';
+import * as moment from 'moment';
+import { DateTime } from 'luxon';
 import { NavigationEnd, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import {
-  ComponentLoaderOptions,
-  MfeBaseComponent,
-  SharedService,
-  UserAuthService,
-} from '@libs/shared';
+import { ComponentLoaderOptions, SharedService, UserAuthService, } from '@libs/shared';
 import { Store } from '@ngrx/store';
-
-import {
-  deleteDelegations,
-  getDelegations,
-  getUsername,
-  saveDelegations,
-} from 'projects/libs/state-management/src/lib/state/authority-delegations/authority-delegations.action';
-import {
-  selectDelegationsInfo,
-  selectUserFilter,
-} from 'projects/libs/state-management/src/lib/state/authority-delegations/authority-delegations.selector';
+import { deleteDelegations, getDelegations, getUsername, saveDelegations, } from 'projects/libs/state-management/src/lib/state/authority-delegations/authority-delegations.action';
+import { selectDelegationsInfo, selectUserFilter, } from 'projects/libs/state-management/src/lib/state/authority-delegations/authority-delegations.selector';
 import { selectAllLoginAttempts } from 'projects/libs/state-management/src/lib/state/login-attempts/login-attempts.selector';
-import { DateTime } from 'luxon';
 import { getLoginAttempts } from 'projects/libs/state-management/src/lib/state/login-attempts/login-attempts.actions';
 import {
-  deleteAccount,
-  getMLATenancyData,
-  getNotificationSettings,
-  getUserNotification,
-  linkToUser,
-  SetAllNotificationsAsRead,
-  SetNotificationRead,
-  updateNotificationSettings,
+  deleteAccount, getMLATenancyData, getNotificationSettings, getUserNotification, linkToUser, SetAllNotificationsAsRead,
+  SetNotificationRead, updateNotificationSettings,
 } from 'projects/libs/state-management/src/lib/state/mla/mla.actions';
-import {
-  selectAllNotification,
-  selectNotificationSettings,
-  selectTenancyData,
-} from 'projects/libs/state-management/src/lib/state/mla/mla.selector';
+import { selectAllNotification, selectNotificationSettings, selectTenancyData, } from 'projects/libs/state-management/src/lib/state/mla/mla.selector';
 import { AlertService } from 'projects/libs/shared/src/lib/alert.service';
 import { TranslateService } from '@ngx-translate/core';
 import { ThemesService } from 'projects/libs/themes/src/public-api';
@@ -50,7 +21,6 @@ import { PrepareCollectedData } from 'projects/libs/state-management/src/lib/sta
 import { DOCUMENT } from '@angular/common';
 import { slideInAnimation } from '../animation';
 import { RouterOutlet } from '@angular/router';
-import * as moment from 'moment';
 import { getProfilepic } from 'projects/libs/state-management/src/lib/state/profile-settings/profile-settings.actions';
 import { selectAllVisualsettings } from 'projects/libs/state-management/src/lib/state/Visual-settings/visual-settings.selector';
 import { getVisualsettings } from 'projects/libs/state-management/src/lib/state/Visual-settings/visual-settings.actions';
@@ -58,6 +28,7 @@ import { getLanguages, setDefaultLanguageForUI } from 'projects/libs/state-manag
 import { changePassword, getProfile } from 'projects/libs/state-management/src/lib/state/mysettings/mysettings.action';
 import { selectAllLanguages, selectDefaultLanguage } from 'projects/libs/state-management/src/lib/state/language/language.selector';
 import { selectProfileInfo } from 'projects/libs/state-management/src/lib/state/mysettings/mysettings.selector';
+
 declare var bootstrap: any;
 @Component({
   selector: 'app-sidenav',
@@ -65,7 +36,7 @@ declare var bootstrap: any;
   styleUrls: ['./sidenav.component.scss'],
   animations: [slideInAnimation],
 })
-export class SidenavComponent extends MfeBaseComponent {
+export class SidenavComponent {
   prepareRoute(outlet: RouterOutlet) {
     return (
       outlet && outlet.activatedRouteData && outlet.activatedRouteData.animation
@@ -149,7 +120,7 @@ export class SidenavComponent extends MfeBaseComponent {
       path: '/pages/dashboard',
       description: 'Statistics and reports',
       descriptionTranslationKey: 'Statistics and reports',
-    }, 
+    },
     {
       label: 'UI Components',
       labelTranslationKey: 'UI Components',
@@ -360,9 +331,9 @@ export class SidenavComponent extends MfeBaseComponent {
     //    },
     //  ]
     //}
-    
+
     // { label: 'Api Scopes', id: 'ApiScope', permissionName: '', icon: 'settings', path: '/pages/apiScope', description: 'Home > Identity Server > Api Scope' },
-    
+
     // { label: 'Cart', labelTranslationKey: 'Cart', id: 'cart', permissionName: '' ,icon: 'tenant', path: '/pages/cart', description: 'Manage your cart', descriptionTranslationKey: 'Manage your cart' },
     // { label: 'Edition-New', labelTranslationKey: 'Edition-New', id: '', permissionName: '', icon: 'home', path: '/pages/editionnew', description: '', descriptionTranslationKey: '' },
   ];
@@ -418,7 +389,6 @@ export class SidenavComponent extends MfeBaseComponent {
     @Inject(DOCUMENT) private document: Document
   ) {
 
-    super(injector);
     this.index = localStorage.getItem('themeIndex');
     if (this.index == null) {
       this.index = '12'
@@ -657,7 +627,6 @@ export class SidenavComponent extends MfeBaseComponent {
         this.rdsTopNavigationMfeConfig = mfe;
       }
     });
-    this.on('tenancyDataAgain').subscribe((res) => { });
     if (this.router.url) {
       let matchRoute: any;
       const index = this.getMatchedRoute(this.sidenavItems);
@@ -785,12 +754,6 @@ export class SidenavComponent extends MfeBaseComponent {
       }
     });
 
-    this.on('logout-returns').subscribe((r) => {
-      if (this.counter < 1) {
-        this.userAuthService.unauthenticateUser();
-        this.counter++;
-      }
-    });
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -845,7 +808,7 @@ export class SidenavComponent extends MfeBaseComponent {
     var alertNode = document.querySelector('.alert');
     if (alertNode) {
       var alert = bootstrap.Alert.getInstance(alertNode);
-      if(alert){
+      if (alert) {
         alert.close();
       }
     }

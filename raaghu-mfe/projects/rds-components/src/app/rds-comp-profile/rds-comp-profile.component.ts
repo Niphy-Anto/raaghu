@@ -1,14 +1,13 @@
 import { Component, EventEmitter, Injector, Input, OnInit, Output, SimpleChanges } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, ValidatorFn, Validators } from '@angular/forms';
+import { FormGroup } from '@angular/forms';
 import { DatePipe } from '@angular/common';
-import { DownloadData, LinkedAccount, UserDeligates, LoginAttempts, Profile, success, Account, Deligates, Login } from '../../models/profile.model';
+import { DownloadData, Profile, success } from '../../models/profile.model';
 import { Router } from '@angular/router';
 import { ComponentLoaderOptions, MfeBaseComponent, ProfileServiceProxy, UpdateProfilePictureInput } from '@libs/shared';
 import { TableHeader } from '../../models/table-header.model';
 import { TranslateService } from '@ngx-translate/core';
-import { finalize } from 'rxjs/internal/operators/finalize';
-import { HttpClient, HttpEventType, HttpHeaders } from '@angular/common/http';
-import { AlertPopupData } from '../rds-comp-alert-popup/rds-comp-alert-popup.component';
+import { HttpClient } from '@angular/common/http';
+// import { AlertPopupData } from '../rds-comp-alert-popup/rds-comp-alert-popup.component';
 declare var $: any;
 declare var bootstrap: any;
 
@@ -36,14 +35,14 @@ export class RdsCompProfileComponent extends MfeBaseComponent implements OnInit 
   @Input() selectedLanguage: any = { language: '', icon: '' };
   @Input() defaultLanguage: string = '';
   selectedData: any;
-  deleteConfirmationData: AlertPopupData = {
-    iconUrl: "delete",
-    colorVariant: "danger",
-    alertConfirmation: "Are you sure ?",
-    messageAlert: "The record will be deleted permanently",
-    CancelButtonLabel: "Cancel",
-    DeleteButtonLabel: "Delete"
-  }
+  // deleteConfirmationData: AlertPopupData = {
+  //   iconUrl: "delete",
+  //   colorVariant: "danger",
+  //   alertConfirmation: "Are you sure ?",
+  //   messageAlert: "The record will be deleted permanently",
+  //   CancelButtonLabel: "Cancel",
+  //   DeleteButtonLabel: "Delete"
+  // }
   showConfirmationPopup: boolean = false;
 
   delegateTabopened: boolean = false;
@@ -160,14 +159,14 @@ export class RdsCompProfileComponent extends MfeBaseComponent implements OnInit 
   }
 
 
-public getProfilePicture():void{
-  this._profileService.getProfilePicture().subscribe((result)=>{
-    if (result && result.profilePicture) {
-      this.Profileurl = 'data:image/jpeg;base64,' + result.profilePicture;
-      this.onProfilePicUpdate.emit(this.Profileurl);
+  public getProfilePicture(): void {
+    this._profileService.getProfilePicture().subscribe((result) => {
+      if (result && result.profilePicture) {
+        this.Profileurl = 'data:image/jpeg;base64,' + result.profilePicture;
+        this.onProfilePicUpdate.emit(this.Profileurl);
+      }
+    })
   }
-  })
-}
 
   onclickMenu(item: any) {
 
@@ -292,12 +291,12 @@ public getProfilePicture():void{
       formData.append('fileType', file.type);
       formData.append('fileName', 'ProfilePicture');
       formData.append('fileToken', this.guid());
-  
+
       const upload$ = this.http.post("https://anzdemoapi.raaghu.io/Profile/UploadProfilePicture", formData);
       this.uploadSub = upload$.subscribe((result: any) => {
         this.updateProfilePicture(result.result.fileToken);
-       this.onProfileData.emit(result);
-       console.log(result)
+        this.onProfileData.emit(result);
+        console.log(result)
 
       });
 
@@ -309,11 +308,11 @@ public getProfilePicture():void{
     input.fileToken = fileToken;
 
     this._profileService
-        .updateProfilePicture(input)
-        .subscribe(() => {
-          this.getProfilePicture();
-        });
-}
+      .updateProfilePicture(input)
+      .subscribe(() => {
+        this.getProfilePicture();
+      });
+  }
 
 
   reset(): void {
