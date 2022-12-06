@@ -159,6 +159,7 @@ export class AppComponent extends MfeBaseComponent implements OnInit {
         type: alert.type,
         title: alert.title,
         message: alert.message,
+        sticky : false
       };
       this.currentAlerts.push(currentAlert);
       const rdsAlertMfeConfig = this.rdsAlertMfeConfig;
@@ -167,7 +168,7 @@ export class AppComponent extends MfeBaseComponent implements OnInit {
     });
     // this.alertService.showAlert('title','Invalid user name or password','danger')
   }
-  
+
   authenticate(redirectUrl?: string): void {
     const mfeConfig = this.rdsLoginMfeConfig
     mfeConfig.input.buttonSpinner = true;
