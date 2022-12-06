@@ -30,6 +30,11 @@ export default {
     //  control: { type: 'select' }
     // }
   },
+  parameters: { 
+    actions: {
+      handles: ['click'],
+     }
+   },
 } as Meta;
 
 const Template: Story<RdsBreadcrumbComponent> = (args: RdsBreadcrumbComponent) => ({

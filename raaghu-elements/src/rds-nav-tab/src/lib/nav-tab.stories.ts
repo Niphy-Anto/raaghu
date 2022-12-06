@@ -12,6 +12,11 @@ export default {
     ],
     argTypes: {
     },
+    parameters: { 
+        actions: {
+          handles: ['hide.bs.tab','show.bs.tab'],
+         }
+       },
 } as Meta;
 
 const Template: Story<RdsNavTabComponent> = (args: RdsNavTabComponent) => ({

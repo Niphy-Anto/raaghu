@@ -13,7 +13,11 @@ export default {
       imports: [CommonModule, RdsIconModule],
     }),
   ],
-
+  parameters: { 
+    actions: {
+      handles: ['click .btn'],
+     }
+   },
   argTypes: {
     colorVariant: {
       options: ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark'],
@@ -28,6 +32,7 @@ export default {
       control: { type: 'select' }
     },
     buttonType: { table: { disable: true, }, },
+    // onClick: { actions: 'clicked' },
   }
 } as Meta;
 

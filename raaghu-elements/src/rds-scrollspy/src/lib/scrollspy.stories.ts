@@ -16,6 +16,11 @@ export default {
     argTypes: {
 
     },
+    parameters: { 
+      actions: {
+        handles: ['activate.bs.scrollspy'],
+       }
+     },
 } as Meta
 
 const Template: Story<RdsScrollspyComponent> = (args: RdsScrollspyComponent) => ({
