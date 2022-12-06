@@ -12,11 +12,11 @@ export class RoleData {
 
 declare let bootstrap: any;
 @Component({
-  selector: 'app-rds-comp-role-list',
+  selector: 'rds-comp-role-list',
   templateUrl: './rds-comp-role-list.component.html',
   styleUrls: ['./rds-comp-role-list.component.scss']
 })
-export class RdsCompRoleListComponent implements OnInit {
+export class RdsCompRoleListComponent implements OnInit{
   currentAlerts: any = [];
   public rdsAlertMfeConfig: ComponentLoaderOptions = {
     name: 'RdsCompAlert',
@@ -45,7 +45,7 @@ export class RdsCompRoleListComponent implements OnInit {
     { value: 'Filter By Permission', some: 'value', key: 'filterByPermission', icon: 'funnel', iconWidth: '20px', iconHeight: '20px' },
   ];
   @Input() roleList: any[] = [];
-  buttonSpinnerForNewRole: boolean = true;
+  showLoadingSpinner: boolean = false;
   @Output() onSaveRole = new EventEmitter<any>();
   @Output() onRefreshRole = new EventEmitter<any>();
   @Output() onEditRole = new EventEmitter<any>();
@@ -70,6 +70,7 @@ export class RdsCompRoleListComponent implements OnInit {
   RoleFromNewRole: any;
   EnableTreeSave: boolean = true;
   public tableData: any = [];
+
   public navtabsItems: any = [
     {
       label: this.translate.instant('Role'),
@@ -89,15 +90,15 @@ export class RdsCompRoleListComponent implements OnInit {
     public translate: TranslateService,
     private alertService: AlertService,
   ) { }
+ 
 
   ngOnInit(): void {
     this.subscribeToAlerts();
     this.activePage = 0;
-  }
+     }
   ngDoCheck(): void {
 
     this.tableData = [...this.roleList];
-    console.log(this.roleList)
   }
 
   getNavTabItems(): any {
@@ -125,7 +126,11 @@ export class RdsCompRoleListComponent implements OnInit {
     var bsOffcanvas = new bootstrap.Offcanvas(offcanvas);
     bsOffcanvas.hide();
     this.viewCanvas = false;
-    this.close();
+    this.Roles = { RolesData: undefined, permissionsList: [] };
+    this.RolesData = undefined;
+    this.onReset.emit(true);
+    this.isRoleDataValid = false;
+    // this.close();
   }
 
 
@@ -144,13 +149,13 @@ export class RdsCompRoleListComponent implements OnInit {
     this.selectedId = '';
     this.viewCanvas = true;
     this.SelectedPermissionValues = [];
-     if (event) {
-      this.buttonSpinnerForNewRole = true;
-      this.canvasTitle = 'NEW ROLE';
+    if (event) {
+      this.showLoadingSpinner = true;
+      this.canvasTitle =  this.translate.instant('NEW ROLE'),
       this.Roles = { RolesData: undefined, permissionsList: [] };
       this.RolesData = undefined;
       this.onnewRole.emit(true);
-     }
+    }
     setTimeout(() => {
       var offcanvas = document.getElementById('RoleOffcanvas')
       var bsOffcanvas = new bootstrap.Offcanvas(offcanvas);
@@ -171,7 +176,11 @@ export class RdsCompRoleListComponent implements OnInit {
       } else {
         this.EnableTreeSave = true;
       }
-      this.close();
+      this.viewCanvas = false;
+      this.Roles = { RolesData: undefined, permissionsList: [] };
+      this.RolesData = undefined;
+      this.onReset.emit(true);
+      this.isRoleDataValid = false;
     }
     else {
       this.RoleFromNewRole = eventdata.roledata;
@@ -190,24 +199,20 @@ export class RdsCompRoleListComponent implements OnInit {
     this.RolesData = undefined;
     this.onReset.emit(true);
     this.isRoleDataValid = false;
-    this.buttonSpinnerForNewRole = false;
+    this.showLoadingSpinner = false;
   }
   editTableRowData(event): void {
     this.newRole(undefined);
-    this.canvasTitle = 'EDIT ROLE';
+    this.canvasTitle = this.translate.instant('EDIT ROLE');
     this.onEditRole.emit(event.id);
-    this.selectedId = event.id;
+    this.selectedId = event.roleid;
   }
 
   // Filter by permission canvas
   filterByPermission(event): void {
     this.selectedFilterId = '';
-    this.SelectedPermissionValues = [];
-    //if (event) {
-    this.canvasTitle = 'FILTER BY PERMISSIONS';
-    //  event.stopPropagation();
+    this.canvasTitle = this.translate.instant('FILTER BY PERMISSIONS');
     this.RolesData = undefined;
-    //}
     this.viewCanvas = true;
     setTimeout(() => {
       var offcanvas = document.getElementById('PermissionOffcanvas')
@@ -231,9 +236,9 @@ export class RdsCompRoleListComponent implements OnInit {
   }
 
   saveFilterPermission(): void {
-    if (!this.selectedFilterPermissionList.find((x: any) => x.selected)) {
-      return;
-    }
+    // if (!this.selectedFilterPermissionList.find((x: any) => x.value)) {
+    //   return;
+    // }
     this.onFilterPermission.emit(this.selectedFilterPermissionList);
     this.activePage = 0;
     var offcanvas = document.getElementById('PermissionOffcanvas')
@@ -281,10 +286,58 @@ export class RdsCompRoleListComponent implements OnInit {
         message: alert.message,
       };
       this.currentAlerts.push(currentAlert);
+      this.showLoadingSpinner = false;
       const rdsAlertMfeConfig = this.rdsAlertMfeConfig;
       rdsAlertMfeConfig.input.currentAlerts = [...this.currentAlerts];
       this.rdsAlertMfeConfig = rdsAlertMfeConfig;
     });
+  }
+
+  filterPermissions(event): void {
+    this.filterPermission(this.permissionsList, event.target.value);
+  }
+
+  filterPermission(nodes, filterText): any {
+    nodes.forEach((node) => {
+      if (node.data.displayName.toLowerCase().indexOf(filterText.toLowerCase()) >= 0) {
+        node.styleClass = '';
+        this.showParentNodes(node);
+      } else {
+        node.styleClass = 'd-none';
+      }
+
+      if (node.children) {
+        this.filterPermission(node.children, filterText);
+      }
+    });
+  }
+  showParentNodes(_node): void {
+    if (!_node.data.parentName || _node.data.parentName == null) {
+      return;
+    }
+    // findParent
+    // node.parent.styleClass = '';
+    this.permissionsList.forEach((node: any) => {
+        if (node.data.name === _node.data.parentName) {
+          node.styleClass = '';
+        }else{
+          this.findParent(node.children,_node.data.parentName)
+        }
+    })
+
+  }
+
+  findParent(permissionsList, parentName) {
+    permissionsList.forEach((node) => {
+      if (node.data.name === parentName) {
+        node.styleClass = '';
+        if (node.data.parentName) {
+          this.findParent(this.permissionsList, node.data.parentName)
+        }
+      } else {
+        this.findParent(node.children, parentName);
+      }
+    })
   }
 
 }

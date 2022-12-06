@@ -13,13 +13,14 @@ export class identity{
   lowercase:boolean
 }
 @Component({
-  selector: 'app-rds-comp-identity-management-new',
+  selector: 'rds-comp-identity-management-new',
   templateUrl: './rds-comp-identity-management-new.component.html',
   styleUrls: ['./rds-comp-identity-management-new.component.scss']
 })
 export class RdsCompIdentityManagementNewComponent implements OnInit {
-  @Input() identityData: {requiredLength: string, defaultAddress:string, nonAlpha:boolean,uppercaserequired:boolean, numbers:boolean, lowercaserequired:boolean
-  , lockoutDuration: string, MaxAttmpts:string, uppercase:boolean, lowercase:boolean,newusers:string };
+  @Input() identityData:any= {
+ requiredPassword: '', defaultAddress:'', nonAlpha:false,uppercaserequired:false, numbers:false, lowercaserequired:false,
+lockoutDuration: '', MaxAttmpts:'', uppercase:false, lowercase:false,newusers:'' };
   @ViewChild('identityDataForm')identityForm: NgForm;
   @Output() identityInfo = new EventEmitter<any>();
 
