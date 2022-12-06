@@ -1,6 +1,6 @@
 import { Component, DoCheck, EventEmitter, Inject, Injector, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
-import { AlertService, ComponentLoaderOptions, MfeBaseComponent, SharedService, ThemeSettingsDto } from '@libs/shared';
+import { AlertService, ComponentLoaderOptions, MfeBaseComponent, SharedService } from '@libs/shared';
 import { TranslateService } from '@ngx-translate/core';
 import { TableHeader } from '../../models/table-header.model';
 import { DOCUMENT } from '@angular/common';

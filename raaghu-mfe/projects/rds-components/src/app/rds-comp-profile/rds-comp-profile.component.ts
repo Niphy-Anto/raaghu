@@ -1,9 +1,9 @@
 import { Component, EventEmitter, Injector, Input, OnInit, Output, SimpleChanges } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, ValidatorFn, Validators } from '@angular/forms';
 import { DatePipe } from '@angular/common';
-import { DownloadData, LinkedAccount, UserDeligates, LoginAttempts, Profile, success, Account, Deligates, Login } from '../../models/profile.model';
+import { DownloadData, LinkedAccount, UserDeligates, LoginAttempts, success, Account, Deligates, Login } from '../../models/profile.model';
 import { Router } from '@angular/router';
-import { ComponentLoaderOptions, MfeBaseComponent, ProfileServiceProxy, UpdateProfilePictureInput } from '@libs/shared';
+import { ComponentLoaderOptions, MfeBaseComponent } from '@libs/shared';
 import { TableHeader } from '../../models/table-header.model';
 import { TranslateService } from '@ngx-translate/core';
 import { finalize } from 'rxjs/internal/operators/finalize';
@@ -88,7 +88,7 @@ export class RdsCompProfileComponent extends MfeBaseComponent implements OnInit 
   profileMenuContent: any;
   @Input() isAnyProfileMenuSelected?: boolean = false;
 
-  @Input() ProfileData: Profile = {
+  @Input() ProfileData: any = {
     ProfileName: 'Wai Technologies',
     emailAddress: 'contact@waiin.com',
     userName: 'admin',
@@ -151,8 +151,7 @@ export class RdsCompProfileComponent extends MfeBaseComponent implements OnInit 
   constructor(private injector: Injector,
     public translate: TranslateService,
     private router: Router,
-    private http: HttpClient,
-    private _profileService: ProfileServiceProxy) {
+    private http: HttpClient) {
     super(injector);
   }
   ngOnChanges(changes: SimpleChanges): void {
@@ -161,22 +160,12 @@ export class RdsCompProfileComponent extends MfeBaseComponent implements OnInit 
 
 
 public getProfilePicture():void{
-  this._profileService.getProfilePicture().subscribe((result)=>{
-    if (result && result.profilePicture) {
-      this.Profileurl = 'data:image/jpeg;base64,' + result.profilePicture;
-      this.onProfilePicUpdate.emit(this.Profileurl);
-  }
-  })
+  
 }
 
   onclickMenu(item: any) {
 
     if (this.MenuItems[item]?.showoffcanvas == false) {
-      // this.offCanvasWidth = 1000;
-      // this.tabisVisible = false;
-      // this.firstcontent = false
-      // this.cancelbutton = true;
-      // this.isAnyProfileMenuSelected = false;
       this.onClickCloseTabContent();
       this.onDownloadLink.emit(item)
       $('#DownloadDatamodal').modal('show');
@@ -305,14 +294,7 @@ public getProfilePicture():void{
   }
 
   updateProfilePicture(fileToken: string): void {
-    const input = new UpdateProfilePictureInput();
-    input.fileToken = fileToken;
-
-    this._profileService
-        .updateProfilePicture(input)
-        .subscribe(() => {
-          this.getProfilePicture();
-        });
+  
 }
 
 

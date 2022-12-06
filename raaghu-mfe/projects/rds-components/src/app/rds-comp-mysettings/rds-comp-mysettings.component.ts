@@ -10,7 +10,7 @@ import { Profile } from '../../models/profile.model';
 })
 export class RdsMysettingsComponent implements OnInit, OnChanges {
 
-  @Input() ProfileData: Profile = {
+  @Input() ProfileData: any = {
     ProfileName: 'Wai Technologies',
     emailAddress: 'contact@waiin.com',
     userName: 'admin',
