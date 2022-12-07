@@ -132,11 +132,13 @@ export class AppComponent implements OnInit{
     },
     this.refreshData();
   }
+
   getNavTabItems(): any {
     this.navtabItems[0].label = this.translate.instant('Caches');
     this.navtabItems[1].label = this.translate.instant('Website Logs');
     return this.navtabItems;
   }
+
   refreshData() {
     this.store.dispatch(getWebsitelog());
     this.store.select(selectAllWebsitelog).subscribe((res: any) => {
