@@ -15,7 +15,12 @@ export default {
   ],
   argTypes: {
     hover: {table: {disable: true,},},
-  }
+  },
+  parameters: { 
+    actions: {
+      handles: ['hide.bs.popover','inserted.bs.popover','show.bs.popover'],
+     }
+   },
 } as Meta;
 
 const Template: Story<RdsPopoverComponent> = (args: RdsPopoverComponent) => ({

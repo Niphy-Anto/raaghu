@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 export default {
       title: 'Elements/Pagination',
       component: RdsPaginationComponent,
+      
       decorators: [
             moduleMetadata({
                   imports: [RdsIconModule, CommonModule, FormsModule]
@@ -17,8 +18,13 @@ export default {
                   table: {
                         disable: true
                   }
-            }
+            },
       },
+      parameters: { 
+            actions: {
+              handles: ['click'],
+             }
+           },
 } as Meta;
 const Template: Story<RdsPaginationComponent> = (args: RdsPaginationComponent) => ({
       props: args,

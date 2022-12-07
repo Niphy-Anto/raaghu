@@ -12,6 +12,11 @@ export default {
       imports: [RdsIconModule],
     }),
   ],
+  parameters: { 
+    actions: {
+      handles: ['close.bs.alert'],
+     }
+   },
   argTypes: {
     position: { control: 'radio',options: ['top', 'bottom'], if: { arg: 'sticky' } },
   },

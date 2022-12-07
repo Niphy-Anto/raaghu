@@ -16,6 +16,11 @@ export default {
       control: { type: 'select' },
     },
   },
+  parameters: { 
+    actions: {
+      handles: ['hide.bs.offcanvas','hidePrevented.bs.offcanvas','show.bs.offcanvas'],
+     }
+   },
 } as Meta;
 const Template: Story<RdsOffcanvasComponent> = (args: RdsOffcanvasComponent) => ({
   props: args,
