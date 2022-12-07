@@ -7,7 +7,9 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./rds-comp-account-new.component.scss']
 })
 export class RdsCompAccountNewComponent implements OnInit {
-  @Input() public AuthentiactionList: any = [];
+  @Input() public AuthentiactionList: any =  [];
+  // AuthentiactionList:any = [  {value:'yes' , displayText:'Yes'},{value:'no', displayText:'No'}];
+
   @Input() public VersionList: any = [];
   @Input() accountData: any;
   @ViewChild('accountForm')accountForm: NgForm;
@@ -33,7 +35,7 @@ export class RdsCompAccountNewComponent implements OnInit {
       this.accountData['browser'] = false;
       this.accountData['imagacaptcha'] = false;
       this.accountData['securityauthentication'] = false;
-      this.accountData['baseUrl'] = '';
+      this.accountData['baseUrl'] = 'http://try';
       this.accountData['version'] = '';
       this.accountData['score'] = '';
       this.accountData['site'] = '';
@@ -44,10 +46,17 @@ export class RdsCompAccountNewComponent implements OnInit {
     }
   }
   
-  selectIdentity(e: boolean, type: string) {
+  selectIdentity() {
   
     this.accountData.emit(this.accountData);
+    console.log(this.accountData,'this.accountData');
     
+    
+   }
+
+   getSelectedValue(event){
+    this.AuthentiactionList.twofactorauthentication = event.value;
+
    }
   
 }

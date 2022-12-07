@@ -19,13 +19,17 @@
         <div class="border-bottom text-muted mt-3 fw-bold">
             <rds-label [label]="'Two Factor Authentication '"></rds-label>
             </div>
-            <div class="mt-4">
-                <label for="value" class="mb-2">Two Factor Authentication<span class="text-danger">*</span></label>
-                <rds-select-list required [isRequired]=true ngDefaultControl LabelType="Top"
+            <div class="col-md-3 mt-4">
+                <!-- <label for="value" class="mb-2">Two Factor Authentication<span class="text-danger">*</span></label>
+                <rds-select-list required [isRequired]=true ngDefaultControl LabelType="Top" (selectListChange)="getSelectedValue($event)"
                     name="twofactorauthentication" [itemList]="AuthentiactionList"  [(ngModel)]="accountData.twofactorauthentication"
                     #twofactorauthentication="ngModel" [placeholder]="'Select'"
                    >
-               </rds-select-list>
+               </rds-select-list> -->
+               <rds-dropdownlist  [borderDropdown]="true" class="text-dark"
+               [id]="'twofactorauthentication'" [placeholder]="'Select'"
+               [value]="accountData.twofactorauthentication" required [multiSelect]="false" [selectAll]="false" [entity]="false"
+               [listItems]="AuthentiactionList"   [(ngModel)]="accountData.twofactorauthentication"></rds-dropdownlist>
             </div>
             <div class="row">
                 <div class="col-md-12 mt-4">
@@ -42,7 +46,7 @@
                 </div>
             </div>
             <div class="border-bottom text-muted mt-4 fw-bold">
-                <rds-label [label]="'Two Factor Authentication '"></rds-label>
+                <rds-label [label]="'Captcha'"></rds-label>
                 </div>
                 <div class="row">
                     <div class="col-md-12 mt-4">
@@ -69,7 +73,7 @@
                           </div>
                      </div>
                      <div class="col-md-4 mt-3">
-                        <label for="value" class="mb-2">Version<span class="text-danger">*</span></label>
+                        <label for="value" class="mb-2">Version<span class="text-danger"></span></label>
                         <rds-select-list required [isRequired]=true ngDefaultControl LabelType="Top"
                             name="version" [itemList]="VersionList"  [(ngModel)]="accountData.version"
                             #version="ngModel" [placeholder]="'Select'"
@@ -128,4 +132,6 @@
                                 #authentication="ngModel" [id]="'ssl'"></rds-checkbox>
                         </div>
                     </div>
+    
+
 </form>

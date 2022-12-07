@@ -39,6 +39,8 @@ export class RdsCompThemeNewComponent implements OnInit {
 selectIdentity(e: boolean, type: string) {
 
   this.themeData.emit(this.themeData);
+  console.log('this.themeData',this.themeData);
+  
   
  }
 }
