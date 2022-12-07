@@ -15,7 +15,7 @@
       >
       <div class="aside" id="aside">
         <div class="mx-2">
-          <rds-side-nav [isPageWrapper]="true" [activepage]="activePage" [activesubmenu]="activesubmenu" [isLightMode]="isLightMode" 
+          <rds-side-nav [isPageWrapper]="true" [activeMenu]="activeMenu" [isLightMode]="isLightMode" 
                         (collapsedState)="onCollapse($event)" [collapseRequired]="collapseRequired" [sidenavItems]="getSideNavItems()"
                         (emitPath)="redirectPath($event)" (selectedMode)="toggleBetweenMode($event)"></rds-side-nav>
         </div>
