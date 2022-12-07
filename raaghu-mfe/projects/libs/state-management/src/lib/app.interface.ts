@@ -12,7 +12,7 @@ import { VisualsettingsState } from './state/Visual-settings/visual-settings.red
 import { WebhookSubscriptionState } from './state/webhook-subscription/webhook-subscription.reducer';
 import { TenantState } from './state/tenant/tenant.reducer';
 import { AuditLogsState } from './state/audit-logs/audit-logs.reducer';
-import { DynamicPermissionState, DynamicPropertyState, EditDynampicPropertState, InputPropertynameState } from './state/dynamic-property-management/dynamic-property.reducer';
+import { DynamicPropertyState } from './state/dynamic-property-management/dynamic-property.reducer';
 import { OrganizationUnitState } from './state/organization-unit/organization-unit.reducer';
 import { UsersState } from './state/user/user.reducer';
 //import { SettingsState, ValidateTenantState } from '../public-api';
@@ -22,7 +22,7 @@ import { SettingsState } from './state/settings/settings.reducer';
 import { ValidateTenantState } from './state/login/login.reducer';
 import { downloadState } from './state/DownloadData/download-data.reducer';
 import { ProfilepictureState } from './state/profile-settings/profile-settings.reducers';
-import { AllDynamicEntitySate, AllDynamicPropertyEntitySate, DynamicEntityState } from './state/dynamic-entity/dynamic-entity.reducer';
+import { DynamicEntityState } from './state/dynamic-entity/dynamic-entity.reducer';
 
 export interface AppState {
   products: ProductState,
@@ -30,7 +30,6 @@ export interface AppState {
   profile: profileState,
   properties: DynamicPropertyState,
   organizationUnit: OrganizationUnitState
-  dynamicEntity: DynamicEntityState,
   editions: EditionsState,
   roles: RolesState,
   user: UsersState,
@@ -50,18 +49,14 @@ export interface AppState {
   countries: CountryState,
   Delegation: DelegationsState,
   mla: MLAState,
-  Entities: AllDynamicEntitySate,
-  PropertiesEntitie: AllDynamicPropertyEntitySate
+  entities: DynamicEntityState,
  
   validateTenant: ValidateTenantState,
-  InputTypeNames: InputPropertynameState
-  EditDynamicPropertSateI: EditDynampicPropertState,
-  DynanmicPermission: DynamicPermissionState,
+
   usernames: UserNameFilterState,
   languageText: LanguageTextsState
   defaultLanguage: DefaultLanguageState,
   download:downloadState,
-  editdynamicProperty:EditDynampicPropertState,
   profilePicture : ProfilepictureState,
 }
 

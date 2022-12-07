@@ -61,6 +61,11 @@ import { WebhookSubscriptionReducer } from 'projects/libs/state-management/src/l
 import { WebhookSubscriptionEffects } from 'projects/libs/state-management/src/lib/state/webhook-subscription/webhook-subscription.effects';
 import { TenantReducer } from 'projects/libs/state-management/src/lib/state/tenant/tenant.reducer';
 import { TenantEffects } from 'projects/libs/state-management/src/lib/state/tenant/tenant.effects';
+import { DynamicPropertyReducer } from 'projects/libs/state-management/src/lib/state/dynamic-property-management/dynamic-property.reducer';
+import { DynamicPropertyEffects } from 'projects/libs/state-management/src/lib/state/dynamic-property-management/dynamic-property.effects';
+import { DynamicEntityReducer } from 'projects/libs/state-management/src/lib/state/dynamic-entity/dynamic-entity.reducer';
+import { DynamicEntityEffects } from 'projects/libs/state-management/src/lib/state/dynamic-entity/dynamic-entity.effects';
+
 export function getRemoteServiceBaseUrl(): any {
   let URL = demodata.remoteServiceBaseUrl;
   return URL;
@@ -128,7 +133,9 @@ export function getRemoteServiceBaseUrl(): any {
       editions:EditionReducer,
       maintenances:MaintenanceReducer,
       settings:settingReducer,
-      webhookSubscriptions: WebhookSubscriptionReducer
+      webhookSubscriptions: WebhookSubscriptionReducer,
+      properties: DynamicPropertyReducer,
+      entities: DynamicEntityReducer
     }),
 
     StoreDevtoolsModule.instrument({
@@ -156,7 +163,9 @@ export function getRemoteServiceBaseUrl(): any {
       UserEffects,
       TenantEffects,
       AuditLogsEffects,
-      WebhookSubscriptionEffects
+      WebhookSubscriptionEffects,
+      DynamicPropertyEffects,
+      DynamicEntityEffects
     ]),
     SharedModule,
     UserAuthModule,

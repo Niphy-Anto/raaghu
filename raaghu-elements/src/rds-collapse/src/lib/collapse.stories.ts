@@ -13,6 +13,11 @@ export default {
       imports: [CommonModule, FormsModule],
     }),
   ],
+  parameters: { 
+    actions: {
+      handles: ['hide.bs.collapse','show.bs.collapse'],
+     }
+   },
   argTypes: {
     colorVariant: {
       options: ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark'],

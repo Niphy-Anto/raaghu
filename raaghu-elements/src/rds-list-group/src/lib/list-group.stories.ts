@@ -4,6 +4,11 @@ import { RdsListGroupComponent } from './rds-list-group.component';
 export default {
   title: 'Elements/List Group',
   component: RdsListGroupComponent,
+  parameters: { 
+    actions: {
+      handles: ['hide.bs.tab','show.bs.tab'],
+     }
+   },
   argTypes: {
     labelPosition: {
       options: ['top', 'bottom'],
