@@ -7,7 +7,7 @@ import { RdsAddressInputComponent } from './rds-comp-address-input/rds-comp-addr
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { SharedModule, NgxTranslateModule, HttpLoaderFactory, AppSessionService } from '@libs/shared';
-import { RdsDataTableComponent } from './rds-comp-data-table/rds-comp-data-table.component';
+// import { RdsDataTableComponent } from './rds-comp-data-table/rds-comp-data-table.component';
 // import { RdsTopNavigationComponent } from './rds-comp-top-navigation/rds-comp-top-navigation.component';
 import { RdsAdminDashboardComponent } from './rds-comp-admin-dashboard/rds-comp-admin-dashboard.component';
 import { RdsForgotPasswordComponent } from './rds-comp-forgot-password/rds-comp-forgot-password.component';
@@ -24,7 +24,7 @@ import { RdsCompSubscriptionComponent } from './rds-comp-subscription/rds-comp-s
 import { RdsUserDelegationsComponent } from './rds-comp-user-delegations/rds-comp-user-delegations.component';
 import { RdsMysettingsComponent } from './rds-comp-mysettings/rds-comp-mysettings.component';
 import { RdsCompDownloadCollectionComponent } from './rds-comp-download-collection/rds-comp-download-collection.component';
-import { RdsCompAlertPopupComponent } from './rds-comp-alert-popup/rds-comp-alert-popup.component';
+// import { RdsCompAlertPopupComponent } from './rds-comp-alert-popup/rds-comp-alert-popup.component';
 // import { RdsLinkedAccountsComponent } from './rds-comp-linked-accounts/rds-comp-linked-accounts.component';
 import { RdsCompAuditLogsComponent } from './rds-comp-audit-logs/rds-comp-audit-logs.component';
 import { RdsCompTenantListComponent } from './rds-comp-tenant-list/rds-comp-tenant-list.component';
@@ -172,7 +172,7 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     AppComponent,
     RdsLoginComponent,
     RdsAddressInputComponent,
-    RdsDataTableComponent,
+    // RdsDataTableComponent,
     // RdsTopNavigationComponent,
     RdsAdminDashboardComponent,
     // RdsCompProfileComponent,
@@ -186,7 +186,7 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     RdsCompSubscriptionComponent,
     RdsCompHierarchyComponent,
     RdsCompDownloadCollectionComponent,
-    RdsCompAlertPopupComponent,
+    // RdsCompAlertPopupComponent,
     // RdsLinkedAccountsComponent,
     RdsCompAuditLogsComponent,
     RdsCompTenantListComponent,
