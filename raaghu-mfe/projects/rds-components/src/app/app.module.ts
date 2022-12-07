@@ -73,7 +73,7 @@ import { RdsCompVisualSettingsComponent } from './rds-comp-visual-settings/rds-c
 import { RdcCompApiScopeBasicsComponent } from './rdc-comp-api-scope-basics/rdc-comp-api-scope-basics.component';
 import { RdcCompApiScopeResourcesComponent } from './rdc-comp-api-scope-resources/rdc-comp-api-scope-resources.component';
 import { RdsCompNewRoleComponent } from './rds-comp-new-role/rds-comp-new-role.component';
-import { RdsCompPermissionTreeComponent } from './rds-comp-permission-tree/rds-comp-permission-tree.component';
+// import { RdsCompPermissionTreeComponent } from './rds-comp-permission-tree/rds-comp-permission-tree.component';
 import { RdsCompTenantDashboardComponent } from './rds-comp-tenant-dashboard/rds-comp-tenant-dashboard.component';
 // import { RdsCompAlertComponent } from './rds-comp-alert/rds-comp-alert.component';
 import { RdsCompRoleListComponent } from './rds-comp-role-list/rds-comp-role-list.component';
@@ -223,7 +223,7 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     RdsCompNewRoleComponent,
     RdcCompApiScopeBasicsComponent,
     RdcCompApiScopeResourcesComponent,
-    RdsCompPermissionTreeComponent,
+    // RdsCompPermissionTreeComponent,
     RdsCompTenantDashboardComponent,
     // RdsCompAlertComponent,
     RdsCompRoleListComponent,
