@@ -7,7 +7,6 @@ import { RdsFabMenuModule } from 'projects/libs/rds-elements/src/rds-fab-menu/sr
 
 import { NgxShimmerLoadingModule } from 'ngx-shimmer-loading';
 import { CommonModule } from '@angular/common';
-import { RdsCompAlertComponent } from 'projects/rds-components/src/app/rds-comp-alert/rds-comp-alert.component';
 @NgModule({
   declarations: [
     AppComponent,    

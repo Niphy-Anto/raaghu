@@ -12,8 +12,6 @@ import { LoginShimmerComponent } from './login-shimmer/login-shimmer.component';
         AppComponent,
         LoginShimmerComponent,
         ],
-    providers: [TokenAuthServiceProxy],
-    bootstrap: [AppComponent],
     imports: [
         BrowserModule,
         AppRoutingModule,
@@ -24,8 +22,8 @@ import { LoginShimmerComponent } from './login-shimmer/login-shimmer.component';
         // StoreModule.forFeature('ValidatetenantState', ValidatetenantMap
         // ),
         // EffectsModule.forRoot([LoginEffects]),
-        
-        
-    ]
+    ],
+    providers: [TokenAuthServiceProxy],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
