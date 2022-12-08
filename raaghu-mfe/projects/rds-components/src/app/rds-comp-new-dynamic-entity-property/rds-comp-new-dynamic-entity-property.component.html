@@ -13,7 +13,7 @@
     </rds-dropdownlist>
 
       <div class="form-control-feedback" *ngIf="entityname.errors&&(entityname.dirty||entityname.touched)">
-        <span class="text-danger" *ngIf="entityname.errors.required">{{'Entity Name is required'| translate}}</span>
+        <span class="text-danger" *ngIf="entityname.errors.required">{{translate.instant('Entity Name is required')}}</span>
       </div>
     </div>
     <div class="form-group mb-3">

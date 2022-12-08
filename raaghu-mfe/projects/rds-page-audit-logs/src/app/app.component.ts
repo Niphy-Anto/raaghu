@@ -68,8 +68,8 @@ export class AppComponent implements OnInit {
   // { key: 'view', displayName: 'Action', dataType: 'view', sortable: false, filterable: false },
   ];
 
-  auditLogsTableData: any = []
-  
+  auditLogsTableData: any = [];
+  isShimmer: boolean= false;
 
   constructor( private store: Store,public translate:TranslateService) { }
 
@@ -88,28 +88,28 @@ export class AppComponent implements OnInit {
 
       name: 'RdsCompAuditLogs',
       input: {
-        operationLogsHeaders: this.operationLogsHeaders,
-        operationLogs: this.operationLogs,
-        changeLogsHeaders: this.changeLogsHeaders,
-        changeLogs: this.changeLogs,
-        isShimmer:true
+        // operationLogsHeaders: this.operationLogsHeaders,
+        // operationLogs: this.operationLogs,
+        // changeLogsHeaders: this.changeLogsHeaders,
+        // changeLogs: this.changeLogs,
+        // isShimmer:true
       },
       output: {
-        deleteEvent: (eventData) => {
-          const index: number = this.operationLogs.findIndex((x: any) => x.id === eventData.id)
-          const data = this.operationLogs;
-          data.splice(index, 1)
-          this.operationLogs = [...data];
-          this.rdsauditLogMfeConfig.input.operationLogs = [...this.operationLogs];
-        },
+//         deleteEvent: (eventData) => {
+//           const index: number = this.operationLogs.findIndex((x: any) => x.id === eventData.id)
+//           const data = this.operationLogs;
+//           data.splice(index, 1)
+//           this.operationLogs = [...data];
+//           this.rdsauditLogMfeConfig.input.operationLogs = [...this.operationLogs];
+//         },
 
-        parameterData:(eventData) => {
-          this.filterAuditLog(eventData)
-        },
+//         parameterData:(eventData) => {
+//           this.filterAuditLog(eventData)
+//         },
         
-        ChangeLogparameterData:(eventData)=>{
-this.filterChangeLog(eventData);
-        }
+//         ChangeLogparameterData:(eventData)=>{
+// this.filterChangeLog(eventData);
+//         }
       }
     };
     let date = new Date();
@@ -150,10 +150,10 @@ this.filterChangeLog(eventData);
            }
            this.auditLogsTableData.push(item);
          });
-         const mfeConfig = this.rdsauditLogMfeConfig
-         mfeConfig.input.operationLogs = [... this.auditLogsTableData];
-         mfeConfig.input.isShimmer=false;
-         this.rdsauditLogMfeConfig = mfeConfig;
+        //  const mfeConfig = this.rdsauditLogMfeConfig
+        //  mfeConfig.input.operationLogs = [... this.auditLogsTableData];
+        //  mfeConfig.input.isShimmer=false;
+        //  this.rdsauditLogMfeConfig = mfeConfig;
        }
        
      })
@@ -181,13 +181,13 @@ this.filterChangeLog(eventData);
             changeTypeName: element.changeTypeName,
            
           }
-          this.auditLogsTableData.push(item);
+          this.changeLogs.push(item);
         });
        
       }
-      const mfeConfig = this.rdsauditLogMfeConfig
-      mfeConfig.input.changeLogs = [... this.changeLogs];
-      this.rdsauditLogMfeConfig = mfeConfig;
+      // const mfeConfig = this.rdsauditLogMfeConfig
+      // mfeConfig.input.changeLogs = [... this.changeLogs];
+      // this.rdsauditLogMfeConfig = mfeConfig;
     })
   }
 
@@ -232,9 +232,9 @@ this.filterChangeLog(eventData);
         });
        
       }
-      const mfeConfig = this.rdsauditLogMfeConfig
-      mfeConfig.input.operationLogs = [... this.auditLogsTableData];
-      this.rdsauditLogMfeConfig = mfeConfig;
+      // const mfeConfig = this.rdsauditLogMfeConfig
+      // mfeConfig.input.operationLogs = [... this.auditLogsTableData];
+      // this.rdsauditLogMfeConfig = mfeConfig;
     })
 
   }
@@ -256,5 +256,21 @@ this.filterChangeLog(eventData);
   
     return DateTime.fromJSDate(date);
   
+  }
+
+  deleteEvent(eventData) {
+    const index: number = this.operationLogs.findIndex((x: any) => x.id === eventData.id)
+    const data = this.operationLogs;
+    data.splice(index, 1)
+    this.operationLogs = [...data];
+    this.rdsauditLogMfeConfig.input.operationLogs = [...this.operationLogs];
+  }
+
+  parameterData(eventData) {
+    this.filterAuditLog(eventData)
+  }
+  
+  ChangeLogparameterData(eventData){
+this.filterChangeLog(eventData);
   }
 }
