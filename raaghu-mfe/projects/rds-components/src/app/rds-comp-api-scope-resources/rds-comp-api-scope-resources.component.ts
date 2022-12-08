@@ -3,11 +3,11 @@ import { NgForm } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
-  selector: 'rdc-comp-api-scope-resources',
-  templateUrl: './rdc-comp-api-scope-resources.component.html',
-  styleUrls: ['./rdc-comp-api-scope-resources.component.scss']
+  selector: 'rds-comp-api-scope-resources',
+  templateUrl: './rds-comp-api-scope-resources.component.html',
+  styleUrls: ['./rds-comp-api-scope-resources.component.scss']
 })
-export class RdcCompApiScopeResourcesComponent implements OnInit, OnChanges {
+export class RdsCompApiScopeResourcesComponent implements OnInit, OnChanges {
   selectAll: boolean = false;
   @Input() scopeResources: any = [];
   @Output() selectedResources = new EventEmitter<any>();
