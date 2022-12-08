@@ -33,21 +33,21 @@ export class RdsCompCacheComponent implements OnInit,DoCheck,OnChanges {
   constructor() { }
   deletecaheid:any;
   ngOnInit(): void {
-    this.rdsAlertMfeConfig = {
-      name: 'RdsCompAlertPopup',
-      input: {
-        alertID: 'deleteCacheModal',
-        alertData: this.alertData
-      },
-      output: {
-        onDelete: (event) => {
-          this.deletCashe(event);
-        },
-        onCancel: (event) => {     
-          this.deletecaheid = undefined;
-        }
-      }
-    }
+    // this.rdsAlertMfeConfig = {
+    //   name: 'RdsCompAlertPopup',
+    //   input: {
+    //     alertID: 'deleteCacheModal',
+    //     alertData: this.alertData
+    //   },
+    //   output: {
+    //     onDelete: (event) => {
+    //       this.deletCashe(event);
+    //     },
+    //     onCancel: (event) => {     
+    //       this.deletecaheid = undefined;
+    //     }
+    //   }
+    // }
     if (this.cashedata) {
       this.totalRecords = this.cashedata.length;
       // this.dataSource = this.cashedata;
@@ -119,4 +119,13 @@ export class RdsCompCacheComponent implements OnInit,DoCheck,OnChanges {
     this.deletecaheid = undefined;
 
   }
+
+  onDelete (event){
+    this.deletCashe(event);
+  }
+
+  onCancel (event){     
+    this.deletecaheid = undefined;
+  }
 }
+

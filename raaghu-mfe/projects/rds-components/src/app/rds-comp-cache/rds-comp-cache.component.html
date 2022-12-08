@@ -16,7 +16,11 @@
       [totalRecords]="getTotalRecords()" [alignmentType]="alignmentType" [role]="role"></rds-pagination>
   </div>
 
-  <mfe-loader [config]="rdsAlertMfeConfig"></mfe-loader>
+  <!-- <mfe-loader [config]="rdsAlertMfeConfig"></mfe-loader> -->
+  <rds-comp-alert-popup
+  [alertID]="'deleteCacheModal'"
+  [alertData]="alertData">
+  </rds-comp-alert-popup>
 </div>
 <ng-template #emptyTemplate>
   <div class="my-5 py-5 d-flex align-items-center justify-content-center">
