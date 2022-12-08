@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { RdsCompApiScopeResourcesComponent } from './rds-comp-api-scope-resources.component';
 import { RdsCompApiScopeResourcesShimmerComponent } from './rds-comp-api-scope-resources-shimmer/rds-comp-api-scope-resources-shimmer.component';
 import { RdsAccordionModule, RdsCheckboxModule } from '@libs/rds-elements';
@@ -11,6 +12,7 @@ import { RdsAccordionModule, RdsCheckboxModule } from '@libs/rds-elements';
   ],
   imports: [
     CommonModule,
+    FormsModule,
     RdsCheckboxModule,
     RdsAccordionModule,
 
