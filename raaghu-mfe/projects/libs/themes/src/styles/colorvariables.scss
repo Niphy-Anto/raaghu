@@ -15,15 +15,13 @@
   @import './colorvariables-light.scss';
   
   }
-  
-  html[theme=light]{
-  
+
+html[theme=light] {
+  --bs-body-color: black;
   @import './colorvariables-light.scss';
-  
-  }
-  
-  html[theme=dark]{
-  
+}
+
+html[theme=dark] {
+  --bs-body-color: #dee2e6;
   @import './colorvariables-dark.scss';
-  
-  }
+}
