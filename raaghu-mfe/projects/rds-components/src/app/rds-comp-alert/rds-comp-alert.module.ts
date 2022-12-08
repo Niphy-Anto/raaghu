@@ -11,7 +11,7 @@ import { RdsAlertModule } from '@libs/rds-elements';
     CommonModule,
     RdsAlertModule
   ],
-  exports:[
+  exports: [
     RdsCompAlertComponent
   ]
 })

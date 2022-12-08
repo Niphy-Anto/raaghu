@@ -20,8 +20,8 @@ import {
   SharedModule,
 } from '../../../libs/shared/src/public-api';
 import { StoreModule } from '@ngrx/store';
-import { RdcCompApiScopeBasicsComponent } from 'projects/rds-components/src/app/rdc-comp-api-scope-basics/rdc-comp-api-scope-basics.component';
-import { RdcCompApiScopeResourcesComponent } from 'projects/rds-components/src/app/rdc-comp-api-scope-resources/rdc-comp-api-scope-resources.component';
+import { RdcCompApiScopeBasicsComponent } from 'projects/rds-components/src/app/rds-comp-api-scope-basics/rds-comp-api-scope-basics.component';
+import { RdcCompApiScopeResourcesComponent } from 'projects/rds-components/src/app/rds-comp-api-scope-resources/rds-comp-api-scope-resources.component';
 import { RdsDataTableComponent } from 'projects/rds-components/src/app/rds-comp-data-table/rds-comp-data-table.component';
 
 export default {
@@ -88,11 +88,11 @@ const Template: Story<ApiScope> = (args: ApiScope) => ({
 <div naveContent class="row tab-content m-2" id="nav-tabContent">
   <div class="tab-pane fade" [ngClass]="{'show active': activePage === 0}" id="basics" role="tabpanel"
                aria-labelledby="nav-home-tab">
-               <app-rdc-comp-api-scope-basics></app-rdc-comp-api-scope-basics>
+               <app-rds-comp-api-scope-basics></app-rds-comp-api-scope-basics>
           </div>
           <div class="tab-pane fade" [ngClass]="{'show active': activePage === 2}" id="resources" role="tabpanel"
                aria-labelledby="nav-home-tab">
-               <rdc-comp-api-scope-resources></rdc-comp-api-scope-resources>
+               <rds-comp-api-scope-resources></rds-comp-api-scope-resources>
           </div>
 </div>
 </rds-nav-tab>

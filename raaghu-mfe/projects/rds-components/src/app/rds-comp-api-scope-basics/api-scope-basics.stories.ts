@@ -1,7 +1,7 @@
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
  import { HttpClientModule } from '@angular/common/http';
-import { RdcCompApiScopeBasicsComponent } from './rdc-comp-api-scope-basics.component';
+import { RdcCompApiScopeBasicsComponent } from './rds-comp-api-scope-basics.component';
 import { RdsCheckboxModule, RdsInputModule, RdsLabelModule, RdsTextareaModule } from '@libs/rds-elements';
 import { NgxTranslateModule, SharedModule } from '@libs/shared';
   

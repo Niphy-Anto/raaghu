@@ -35,14 +35,7 @@ export class RdsCompProfileComponent extends MfeBaseComponent implements OnInit 
   @Input() selectedLanguage: any = { language: '', icon: '' };
   @Input() defaultLanguage: string = '';
   selectedData: any;
-  // deleteConfirmationData: AlertPopupData = {
-  //   iconUrl: "delete",
-  //   colorVariant: "danger",
-  //   alertConfirmation: "Are you sure ?",
-  //   messageAlert: "The record will be deleted permanently",
-  //   CancelButtonLabel: "Cancel",
-  //   DeleteButtonLabel: "Delete"
-  // }
+ 
   showConfirmationPopup: boolean = false;
 
   delegateTabopened: boolean = false;
@@ -127,6 +120,7 @@ export class RdsCompProfileComponent extends MfeBaseComponent implements OnInit 
   requiredFileType: string;
 
   fileName = '';
+  @Output() logout = new EventEmitter<any>();
   ngOnInit(): void {
     this.on('tenancyData').subscribe(res => {
       this.emitEvent('tenancyDataAgain', res);
@@ -329,12 +323,10 @@ export class RdsCompProfileComponent extends MfeBaseComponent implements OnInit 
     return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
   }
 
-  logout() {
+  logoutFunction() {
     this.showLoadingSpinner = true;
     this.islogout = true;
-    this.emitEvent('logout', {
-      islogout: true
-    });
+    this.logout.emit({});
   }
 
 
@@ -344,6 +336,7 @@ export class RdsCompProfileComponent extends MfeBaseComponent implements OnInit 
     this.ondeleteLinkaccount.emit(event);
   }
   linkToUser(event: any) {
+    debugger
     this.onLinkToUser.emit(event);
   }
 

@@ -3,11 +3,11 @@ import { NgForm } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
-  selector: 'rdc-comp-api-scope-basics',
-  templateUrl: './rdc-comp-api-scope-basics.component.html',
-  styleUrls: ['./rdc-comp-api-scope-basics.component.scss']
+  selector: 'rds-comp-api-scope-basics',
+  templateUrl: './rds-comp-api-scope-basics.component.html',
+  styleUrls: ['./rds-comp-api-scope-basics.component.scss']
 })
-export class RdcCompApiScopeBasicsComponent implements OnInit, AfterViewInit, OnChanges {
+export class RdsCompApiScopeBasicsComponent implements OnInit, AfterViewInit, OnChanges {
   scopeBasics: any = {};
   numberPattern: any = /^[0-9]+$/;
   @Input() scopeInfo: any = undefined;
