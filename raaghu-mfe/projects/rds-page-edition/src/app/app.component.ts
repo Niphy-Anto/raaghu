@@ -63,7 +63,7 @@ export class AppComponent implements OnInit {
       }
     }
   }
-  public rdsEditionMfeConfig: ComponentLoaderOptions;
+  // public rdsEditionMfeConfig: ComponentLoaderOptions;
   constructor(private store: Store, private translate: TranslateService, private _arrayToTreeConverterService: ArrayToTreeConverterService, private alertService: AlertService) { }
   TableHeader: TableHeader[] = [
     { displayName: 'Edition Name', key: 'editionname', dataType: 'text', dataLength: 30, sortable: true, required: true, filterable: true },
@@ -86,6 +86,12 @@ export class AppComponent implements OnInit {
 
   editionList: any = [];
   defaultEditionName: any[] = [];
+  isShimmer: boolean = true;
+  editShimmer: boolean = true;
+  tenantCount: any;
+  selectedFeatures = [];
+  selectedEdition: any;
+
 
   ngOnInit(): void {
     this.isAnimation = true;
@@ -95,59 +101,27 @@ export class AppComponent implements OnInit {
       }
     })
     this.subscribeToAlerts();
-    this.rdsEditionMfeConfig = {
-      name: 'RdsCompFeatures',
-      input: {
-        EditionsTableHeader: this.TableHeader,
-        EditionsTableData: this.EditionDatatable,
-        recordsPerpage: 10,
-        nodeColors: this.nodeColors,
-        treeData: this.treeData,
-        featureList: this.featureList,
-        noDataTitle: 'Currently you do not have edition',
-        editionList: this.editionList,
-        freeEditions: this.freeEditions,
-        tenantCount: 0,
-        isShimmer: true,
-        editShimmer: true
-      },
-      output: {
-        onEditionSave: (data) => {
-          if (data) {
-            if (data.edition.id !== undefined) {
-              this.store.dispatch(updateEdition(data))
-            } else {
-              this.store.dispatch(saveEdition(data))
-            }
-          }
+    // this.rdsEditionMfeConfig = {
+    //   name: 'RdsCompFeatures',
+    //   input: {
+    //     // EditionsTableHeader: this.TableHeader,
+    //     // EditionsTableData: this.EditionDatatable,
+    //     // recordsPerpage: 10,
+    //     // nodeColors: this.nodeColors,
+    //     // treeData: this.treeData,
+    //     // featureList: this.featureList,
+    //     // noDataTitle: 'Currently you do not have edition',
+    //     // editionList: this.editionList,
+    //     // freeEditions: this.freeEditions,
+    //     // tenantCount: 0,
+    //     // isShimmer: true,
+    //     // editShimmer: true
+    //   },
+    //   output: {       
+    //   }
+    // }
 
-        },
-        updateEdition: (id) => {
-          if (id == 0) {
-            const rdsEditionMfeConfig = this.rdsEditionMfeConfig;
-            rdsEditionMfeConfig.input.editShimmer = false;
-            this.rdsEditionMfeConfig = { ...rdsEditionMfeConfig }
-          } else {
-            const rdsEditionMfeConfig = this.rdsEditionMfeConfig;
-            rdsEditionMfeConfig.input.editShimmer = true;
-            this.rdsEditionMfeConfig = { ...rdsEditionMfeConfig }
-          }
-          this.store.dispatch(getEditionInfo(id))
-        },
-        deleteEdition: (data) => {
-          this.store.dispatch(deleteEdition(data.id));
-        },
-        onMoveTenantAction: (editionId) => {
-          this.store.dispatch(getTenantCount(editionId));
-        },
-        onMoveTenant: (data) => {
-          this.store.dispatch(moveTenant(data));
-        }
-      }
-    }
-    const mfeConfig = this.rdsEditionMfeConfig
-    mfeConfig.input.isShimmer = true
-    this.rdsEditionMfeConfig = mfeConfig;
+
     this.store.dispatch(getEditions());
     this.store.select(selectAllEditions).subscribe((res: any) => {
       this.EditionDatatable = [];
@@ -158,16 +132,12 @@ export class AppComponent implements OnInit {
             editionname: element.displayName,
             price: '$ ' + element.annualPrice,
             trialPeriod: element.trialDayCount,
-            expiringEdition: (element.expiringEditionDisplayName && element.expiringEditionDisplayName !== null)?element.expiringEditionDisplayName : ' --',
+            expiringEdition: (element.expiringEditionDisplayName && element.expiringEditionDisplayName !== null) ? element.expiringEditionDisplayName : ' --',
             id: element.id,
             name: element.displayName,
           }
           this.EditionDatatable.push(edition);
         });
-        const rdsEditionMfeConfig = this.rdsEditionMfeConfig;
-        rdsEditionMfeConfig.input.EditionsTableData = this.EditionDatatable;
-        rdsEditionMfeConfig.input.isShimmer = false
-        this.rdsEditionMfeConfig = rdsEditionMfeConfig;
       }
 
     }, (err: any) => {
@@ -176,12 +146,12 @@ export class AppComponent implements OnInit {
     this.store.select(selectEditionInfo).subscribe((res: any) => {
       if (res && res.featureValues) {
         this.featureList = this.convertArraytoTreedata(res.features)
-        const rdsEditionMfeConfig = this.rdsEditionMfeConfig;
-        rdsEditionMfeConfig.input.featureList = [...this.featureList];
-        rdsEditionMfeConfig.input.selectedFeatures = [...res.featureValues];
-        rdsEditionMfeConfig.input.selectedEdition = { ...res.edition };
-        rdsEditionMfeConfig.input.editShimmer = false;
-        this.rdsEditionMfeConfig = { ...rdsEditionMfeConfig };
+        // const rdsEditionMfeConfig = this.rdsEditionMfeConfig;
+        this.featureList = [...this.featureList];
+        this.selectedFeatures = [...res.featureValues];
+        this.selectedEdition = { ...res.edition };
+        this.editShimmer = false;
+        // this.rdsEditionMfeConfig = { ...rdsEditionMfeConfig };
       }
 
     }, (err: any) => {
@@ -189,41 +159,41 @@ export class AppComponent implements OnInit {
     this.store.dispatch(getEditionPageComboboxItems())
     this.store.select(selectEditionPageComboboxItems).subscribe((res: any) => {
       if (res) {
-        this.editionList  = []
+        this.editionList = []
         this.freeEditions = [];
         res.filter((x: any) => x.isFree).forEach(element => {
           const data = {
-            value:element.value,
-            some:element.displayText,
-            isSelected:element.isSelected,
-            icon:'',
-            iconWidth:0,
-            iconHeight:0,
-            iconFill:false,
+            value: element.value,
+            some: element.displayText,
+            isSelected: element.isSelected,
+            icon: '',
+            iconWidth: 0,
+            iconHeight: 0,
+            iconFill: false,
             iconStroke: true,
             isFree: element.isFree
           }
-          this.freeEditions.push(data);         
-        }); 
-        res.forEach((res:any)=>{
+          this.freeEditions.push(data);
+        });
+        res.forEach((res: any) => {
           const data = {
-            value:res.value,
-            some:res.displayText,
-            isSelected:res.isSelected,
-            icon:'',
-            iconWidth:0,
-            iconHeight:0,
-            iconFill:false,
+            value: res.value,
+            some: res.displayText,
+            isSelected: res.isSelected,
+            icon: '',
+            iconWidth: 0,
+            iconHeight: 0,
+            iconFill: false,
             iconStroke: true,
             isFree: res.isFree
           }
           this.editionList.push(data);
         });
         // this.editionList = res.editionComboboxItem;
-        const mfeConfig = this.rdsEditionMfeConfig
-        mfeConfig.input.editionList = [... this.editionList];
-        mfeConfig.input.freeEditions = [...this.freeEditions]
-        this.rdsEditionMfeConfig = mfeConfig;
+        // const mfeConfig = this.rdsEditionMfeConfig
+        this.editionList = [... this.editionList];
+        this.freeEditions = [...this.freeEditions]
+        // this.rdsEditionMfeConfig = mfeConfig;
       }
     });
     //this.store.dispatch(getDefaultEditionName())
@@ -237,9 +207,10 @@ export class AppComponent implements OnInit {
     //});
     this.store.select(selectTenant).subscribe((res: any) => {
       if (res) {
-        const mfeConfig = this.rdsEditionMfeConfig
-        mfeConfig.input.tenantCount = res;
-        this.rdsEditionMfeConfig = mfeConfig;
+        this.tenantCount = res;
+        // const mfeConfig = this.rdsEditionMfeConfig
+        // mfeConfig.input.tenantCount = res;
+        // this.rdsEditionMfeConfig = mfeConfig;
       }
     })
   }
@@ -287,14 +258,52 @@ export class AppComponent implements OnInit {
         message: alert.message,
       };
       this.currentAlerts.push(currentAlert);
-      const rdsAlertMfeConfig = this.rdsAlertMfeConfig;
-      rdsAlertMfeConfig.input.currentAlerts = [...this.currentAlerts];
-      this.rdsAlertMfeConfig = rdsAlertMfeConfig;
-      const rdsEditionMfeConfig = this.rdsEditionMfeConfig;
-      rdsEditionMfeConfig.input['showLoadingSpinner'] = false;
-      this.rdsEditionMfeConfig = rdsEditionMfeConfig;
+      this.currentAlerts=[...this.currentAlerts];
+      // const rdsAlertMfeConfig = this.rdsAlertMfeConfig;
+      // rdsAlertMfeConfig.input.currentAlerts = [...this.currentAlerts];
+      // this.rdsAlertMfeConfig = rdsAlertMfeConfig;
+      // const rdsEditionMfeConfig = this.rdsEditionMfeConfig;
+      // rdsEditionMfeConfig.input['showLoadingSpinner'] = false;
+      // this.rdsEditionMfeConfig = rdsEditionMfeConfig;
     });
 
+  }
+
+  onEditionSave(data) {
+    if (data) {
+      if (data.edition.id !== undefined) {
+        this.store.dispatch(updateEdition(data))
+      } else {
+        this.store.dispatch(saveEdition(data))
+      }
+    }
+  }
+
+  updateEdition(id) {
+    if (id == 0) {
+      this.editShimmer = false;
+      // const rdsEditionMfeConfig = this.rdsEditionMfeConfig;
+      // rdsEditionMfeConfig.input.editShimmer = false;
+      // this.rdsEditionMfeConfig = { ...rdsEditionMfeConfig }
+    } else {
+      this.editShimmer = true
+      // const rdsEditionMfeConfig = this.rdsEditionMfeConfig;
+      // rdsEditionMfeConfig.input.editShimmer = true;
+      // this.rdsEditionMfeConfig = { ...rdsEditionMfeConfig }
+    }
+    this.store.dispatch(getEditionInfo(id))
+  }
+
+  deleteEdition(data) {
+    this.store.dispatch(deleteEdition(data.id));
+  }
+
+  onMoveTenantAction(editionId) {
+    this.store.dispatch(getTenantCount(editionId));
+  }
+
+  onMoveTenant(data) {
+    this.store.dispatch(moveTenant(data));
   }
 
 }

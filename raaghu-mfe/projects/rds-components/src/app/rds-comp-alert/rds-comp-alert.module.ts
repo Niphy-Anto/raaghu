@@ -10,6 +10,9 @@ import { RdsAlertModule } from '@libs/rds-elements';
   imports: [
     CommonModule,
     RdsAlertModule
+  ],
+  exports:[
+    RdsCompAlertComponent
   ]
 })
 export class RdsCompAlertModule { }

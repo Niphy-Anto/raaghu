@@ -52,7 +52,7 @@ import { RdsCompOtherSettingsComponent } from './rds-comp-other-settings/rds-com
 import { RdsCompInvoiceComponent } from './rds-comp-invoice/rds-comp-invoice.component';
 import { RdsCompEmailComponent } from './rds-comp-email/rds-comp-email.component';
 import { RdsSecurityComponent } from './rds-comp-security/rds-comp-security.component';
-import { RdsCompFeaturesComponent } from './rds-comp-features/rds-comp-features.component';
+// import { RdsCompFeaturesComponent } from './rds-comp-features/rds-comp-features.component';
 import { RdsCompMemberActivityComponent } from './rds-comp-member-activity/rds-comp-member-activity.component';
 import { RdsCompNewClaimTypeComponent } from './rds-comp-new-claim-type/rds-comp-new-claim-type.component';
 import { RdsCompBasicResourceComponent } from './rds-comp-basic-resource/rds-comp-basic-resource.component';
@@ -202,7 +202,7 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     RdsCompDemouiComponent,
     RdsCompUserTableComponent,
     RdsCompEditionTableComponent,
-    RdsCompFeaturesComponent,
+    // RdsCompFeaturesComponent,
     RdsCompMemberActivityComponent,
     RdsCompNewClaimTypeComponent,
     RdsCompBasicResourceComponent,
