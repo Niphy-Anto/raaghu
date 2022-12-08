@@ -19,7 +19,12 @@ import { RdsIconModule, RdsButtonModule, RdsPaginationModule } from "@libs/rds-e
     RdsCompAlertPopupModule,
     RdsButtonModule,
     RdsPaginationModule,
-    RdsIconModule
+    RdsIconModule,
+    RdsCompAlertPopupModule,
+    NgxTranslateModule
+  ],
+  exports:[
+    RdsCompCacheComponent
   ]
 })
 export class RdsCompCacheModule { }

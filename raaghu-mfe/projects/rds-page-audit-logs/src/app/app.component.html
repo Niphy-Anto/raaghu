@@ -1,4 +1,10 @@
 <div [@fadeAnimation]="isAnimation ? 'fadeAnimation' : ''">
   <!-- <mfe-loader [config]="rdsauditLogMfeConfig"></mfe-loader> -->
-  
+  <rds-comp-audit-logs
+        [operationLogsHeaders]="operationLogsHeaders"
+        [operationLogs]="auditLogsTableData"
+        [changeLogsHeaders]= "changeLogsHeaders"
+        [changeLogs]= "changeLogs"
+        [isShimmer]= "isShimmer"
+  ></rds-comp-audit-logs>
 </div>

@@ -119,4 +119,13 @@ export class RdsCompCacheComponent implements OnInit, DoCheck, OnChanges {
     this.deletecaheid = undefined;
 
   }
+
+  onDelete (event){
+    this.deletCashe(event);
+  }
+
+  onCancel (event){     
+    this.deletecaheid = undefined;
+  }
 }
+
