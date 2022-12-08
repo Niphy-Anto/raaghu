@@ -8,6 +8,8 @@ import {
 } from '@libs/rds-elements';
 import { RdsCompUserDelegationsModule } from '../rds-comp-user-delegations/rds-comp-user-delegations.module';
 import { RdsCompLoginAttemptsModule } from '../rds-comp-login-attempts/rds-comp-login-attempts.module';
+import { RdsCompMysettingsModule } from '../rds-comp-mysettings/rds-comp-mysettings.module';
+import { RdsCompDownloadCollectionModule } from '../rds-comp-download-collection/rds-comp-download-collection.module';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,10 @@ import { RdsCompLoginAttemptsModule } from '../rds-comp-login-attempts/rds-comp-
     RdsNavTabModule,
     RdsDropdownlistModule,
     RdsCompUserDelegationsModule,
-    RdsCompLoginAttemptsModule
+    RdsCompLoginAttemptsModule,
+    RdsCompMysettingsModule,
+    RdsCompDownloadCollectionModule,
+    
   ]
 })
 export class RdsCompProfileModule { }
