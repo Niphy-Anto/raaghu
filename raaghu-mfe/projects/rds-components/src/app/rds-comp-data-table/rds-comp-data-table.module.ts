@@ -8,8 +8,6 @@ import { RdsCompAlertPopupModule } from '../rds-comp-alert-popup/rds-comp-alert-
 import { NgxTranslateModule } from '@libs/shared';
 import { FormsModule } from '@angular/forms';
 
-
-
 @NgModule({
   declarations: [
     RdsDataTableComponent,

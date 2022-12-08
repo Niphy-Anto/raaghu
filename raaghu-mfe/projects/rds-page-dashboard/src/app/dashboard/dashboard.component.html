@@ -2,5 +2,6 @@
   <mfe-loader [config]="rdsTenantDashboardMfeConfig"></mfe-loader>
 </div>
 <div *ngIf="!istenant">
-  <mfe-loader [config]="rdsAdminDashboardMfeConfig"></mfe-loader>
+  <!-- <mfe-loader [config]="rdsAdminDashboardMfeConfig"></mfe-loader> -->
+  <rds-comp-admin-dashboard></rds-comp-admin-dashboard>
 </div>

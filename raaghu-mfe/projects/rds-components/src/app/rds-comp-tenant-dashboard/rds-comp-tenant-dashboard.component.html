@@ -1,7 +1,8 @@
 <div class="bg-light">
   <div class="row">
     <div class="col-md-6">
-      <rds-widget [isRefreshRequired]="true" [headerTitle]="translate.instant('Monthly Summary')" (onRefresh)="LoadMonthlySummary()">
+      <rds-widget [isRefreshRequired]="true" [headerTitle]="translate.instant('Monthly Summary')"
+        (onRefresh)="LoadMonthlySummary()">
         <div body>
           <rds-chart-line [chartLabels]="monthlySummaryLabels" [chartDataSets]="monthlySummaryDataSets"
             [chartOptions]="monthlySummarychartOptions"></rds-chart-line>
@@ -12,7 +13,8 @@
       <div class="row">
         <div class="col-md-6">
           <div class="mb-3">
-            <rds-widget [isRefreshRequired]="false" [headerTitle]="translate.instant('Sales')" (onRefresh)="LoadSalesData()">
+            <rds-widget [isRefreshRequired]="false" [headerTitle]="translate.instant('Sales')"
+              (onRefresh)="LoadSalesData()">
               <div body>
                 <rds-big-number-widget [bigNumber]="'$' +SalesPrice" [subText]="'+$' +SalesProfit"
                   [icon]="'triangle_up'" iconHeight="12px" iconWidth="12px"></rds-big-number-widget>
@@ -29,7 +31,8 @@
           </div>
         </div>
         <div class="col-md-6">
-          <rds-widget [isRefreshRequired]="true" [headerTitle]="translate.instant('Profit Share')" (onRefresh)="LoadProfitShare()">
+          <rds-widget [isRefreshRequired]="true" [headerTitle]="translate.instant('Profit Share')"
+            (onRefresh)="LoadProfitShare()">
             <div body>
               <rds-big-number-widget [bigNumber]="'$' +ProfitSharePrice"></rds-big-number-widget>
               <div class="col col-sm-12">
@@ -58,7 +61,7 @@
                   </div>
                   <div class="col col-sm-7">
                     <h5 class="custom-title">{{ConnectedCallsData[0]}}%</h5>
-                    <p class="custom-desc">{{"Total Calls Connected"|translate}}</p>
+                    <p class="custom-desc">{{translate.instant("Total Calls Connected")}}</p>
                   </div>
                 </div>
                 <div class="row">
@@ -69,7 +72,7 @@
                   </div>
                   <div class="col col-sm-7">
                     <h5 class="custom-title">{{ClientCallsData[0]}}%</h5>
-                    <p class="custom-desc">{{"Total Clients Called"|translate}}</p>
+                    <p class="custom-desc">{{translate.instant("Total Clients Called")}}</p>
                   </div>
                 </div>
               </div>
@@ -99,9 +102,12 @@
       </div>
     </div>
     <div class="col-md-6">
-      <rds-widget [isRefreshRequired]="true" [headerTitle]="translate.instant('Member Activity')" (onRefresh)="LoadMemberActivityTable()">
+      <rds-widget [isRefreshRequired]="true" [headerTitle]="translate.instant('Member Activity')"
+        (onRefresh)="LoadMemberActivityTable()">
         <div body>
-          <mfe-loader [config]="rdsMemberActivityTableMfeConfig"></mfe-loader>
+          <rds-comp-data-table [tableHeaders]="memberActivityTableHeader" [tableStyle]="tableStyle" [width]="100"
+            [tableData]="memberActivityTableData" [pagination]="false" [recordsPerPage]="10"
+            [noDataTitle]="'Currently you do not have member activity'"></rds-comp-data-table>
         </div>
       </rds-widget>
     </div>
