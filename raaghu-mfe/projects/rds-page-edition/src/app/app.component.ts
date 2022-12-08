@@ -86,12 +86,12 @@ export class AppComponent implements OnInit {
 
   editionList: any = [];
   defaultEditionName: any[] = [];
-  isShimmer: boolean = true;
+  isShimmer: boolean = false;
   editShimmer: boolean = true;
   tenantCount: any;
   selectedFeatures = [];
   selectedEdition: any;
-
+  showLoadingSpinner:boolean=false;
 
   ngOnInit(): void {
     this.isAnimation = true;
@@ -259,6 +259,7 @@ export class AppComponent implements OnInit {
       };
       this.currentAlerts.push(currentAlert);
       this.currentAlerts=[...this.currentAlerts];
+      this.showLoadingSpinner=false;
       // const rdsAlertMfeConfig = this.rdsAlertMfeConfig;
       // rdsAlertMfeConfig.input.currentAlerts = [...this.currentAlerts];
       // this.rdsAlertMfeConfig = rdsAlertMfeConfig;

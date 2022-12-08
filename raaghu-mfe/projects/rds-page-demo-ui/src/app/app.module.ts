@@ -3,6 +3,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgxTranslateModule, SharedModule } from '@libs/shared';
 import { CommonModule } from '@angular/common';
+import { RdsCompDemoUiModule } from 'projects/rds-components/src/app/rds-comp-demoui/rds-comp-demo-ui.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { CommonModule } from '@angular/common';
     AppRoutingModule,
     SharedModule,
     NgxTranslateModule.forRoot(),
-    CommonModule
+    CommonModule,
+    RdsCompDemoUiModule
   ],
   providers: [],
   bootstrap: [AppComponent]
