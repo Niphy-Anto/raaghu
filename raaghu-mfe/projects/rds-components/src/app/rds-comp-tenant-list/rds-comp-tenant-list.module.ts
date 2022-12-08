@@ -8,11 +8,12 @@ import { RdsCompTenantInformationShimmerComponent } from '../rds-comp-tenant-inf
 import { RdsCompTenantInformationModule } from '../rds-comp-tenant-information/rds-comp-tenant-information.module';
 import { RdsCompTenantSettingsModule } from '../rds-comp-tenant-settings/rds-comp-tenant-settings.module';
 import { RdsPermissionTreeModule } from '../rds-comp-permission-tree/rds-permission-tree.module';
+import { NgxShimmerLoadingModule } from 'ngx-shimmer-loading';
 
 
 
 @NgModule({
-  declarations: [RdsCompTenantListComponent,RdsCompTenantInformationShimmerComponent],
+  declarations: [RdsCompTenantListComponent],
   exports: [RdsCompTenantListComponent],
   imports: [
     CommonModule,
@@ -25,6 +26,7 @@ import { RdsPermissionTreeModule } from '../rds-comp-permission-tree/rds-permiss
     RdsCompTenantSettingsModule,
     RdsPermissionTreeModule,
     RdsOffcanvasModule,
+    NgxShimmerLoadingModule
     
   ]
 })

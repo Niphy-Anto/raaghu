@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { RdsButtonModule, RdsCheckboxModule, RdsDatepickerModule, RdsDropdownlistModule, RdsInputModule } from '@libs/rds-elements';
 import { RdsCompTenantInformationShimmerComponent } from './rds-comp-tenant-information-shimmer/rds-comp-tenant-information-shimmer.component';
 import { NgxTranslateModule } from '@libs/shared';
+import { NgxShimmerLoadingModule } from 'ngx-shimmer-loading';
 
 
 
@@ -19,7 +20,8 @@ import { NgxTranslateModule } from '@libs/shared';
     RdsDropdownlistModule,
     RdsCheckboxModule,
     RdsDatepickerModule,
-    NgxTranslateModule.forRoot()
+    NgxTranslateModule.forRoot(),
+    NgxShimmerLoadingModule
   ]
 })
 export class RdsCompTenantInformationModule { }
