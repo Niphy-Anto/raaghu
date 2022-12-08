@@ -50,20 +50,20 @@
                   <div class="tab-pane fade show active" id="Members" role="tabpanel" aria-labelledby="nav-home-tab">
                     <div [@fadeAnimation]="isAnimation ? 'fadeAnimation' : ''"></div>
                     <div class="row">
-                      <rds-data-table [tableData]="tableDataForMember" [tableHeaders]="tableHeadersForMember"
+                      <rds-comp-data-table [tableData]="tableDataForMember" [tableHeaders]="tableHeadersForMember"
                         [recordsPerPage]="10" [pagination]="true" [actions]="actions"
                         [noDataTitle]="'Currently you do not have member'"
                         (onActionSelectionMemeber)="onActionMemeber($event)">
-                      </rds-data-table>
+                      </rds-comp-data-table>
                     </div>
                   </div>
                   <div class="tab-pane fade" id="Roles" role="tabpanel" aria-labelledby="nav-home-tab">
                     <div class="row">
-                      <rds-data-table [tableData]="tableDataForRoles" [tableHeaders]="tableHeadersForRoles"
+                      <rds-comp-data-table [tableData]="tableDataForRoles" [tableHeaders]="tableHeadersForRoles"
                         [recordsPerPage]="10" [pagination]="true" [actions]="actions"
                         [noDataTitle]="'Currently you do not have role'"
                         (onActionSelectionRole)="onActionRole($event)">
-                      </rds-data-table>
+                      </rds-comp-data-table>
                     </div>
                   </div>
                 </div>
@@ -83,11 +83,11 @@
       <div class="tab-content">
         <div class="form-group mb-3">
           <div class="col-md-12  mt-2">
-            <rds-data-table [tableData]="tableDataForUserAdd" [enableCheckboxSelection]="true"
+            <rds-comp-data-table [tableData]="tableDataForUserAdd" [enableCheckboxSelection]="true"
               [tableHeaders]="tableHeadersForUserAdd" [recordsPerPage]="10" [pagination]="true"
               [noDataSubTitle]="'Click on the button above to add'" [noDataTitle]="'Currently you do not have users'"
               (getAllCheckedItems)="getAllCheckedItems($event)">
-            </rds-data-table>
+            </rds-comp-data-table>
           </div>
         </div>
       </div>
@@ -119,11 +119,11 @@
       <div class="tab-content">
         <div class="form-group mb-3">
           <div class="col-md-12 mt-3">
-            <rds-data-table [tableData]="tableDataForRoleAdd" [tableHeaders]="tableHeadersForUserAdd"
+            <rds-comp-data-table [tableData]="tableDataForRoleAdd" [tableHeaders]="tableHeadersForUserAdd"
               [enableCheckboxSelection]="true" [recordsPerPage]="10" [pagination]="true"
               [noDataTitle]="'Currently you do not have roles'" [noDataSubTitle]="'Click on the button above to add'"
               (getAllCheckedItems)="getAllCheckedItems($event)">
-            </rds-data-table>
+            </rds-comp-data-table>
           </div>
         </div>
       </div>
