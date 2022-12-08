@@ -6,6 +6,8 @@ import {
   RdsIconModule, RdsLabelModule, RdsButtonModule, RdsModalModule, RdsOffcanvasModule,
   RdsAvatarModule, RdsNavTabModule, RdsDropdownlistModule
 } from '@libs/rds-elements';
+import { RdsCompUserDelegationsModule } from '../rds-comp-user-delegations/rds-comp-user-delegations.module';
+import { RdsCompLoginAttemptsModule } from '../rds-comp-login-attempts/rds-comp-login-attempts.module';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import {
     RdsCompLinkedAccountsModule,
     RdsAvatarModule,
     RdsNavTabModule,
-    RdsDropdownlistModule
+    RdsDropdownlistModule,
+    RdsCompUserDelegationsModule,
+    RdsCompLoginAttemptsModule
   ]
 })
 export class RdsCompProfileModule { }
