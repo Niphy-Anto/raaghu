@@ -4,7 +4,7 @@
   <h6>
     <rds-label [label]="translate.instant('Please Login for an account')"></rds-label>
   </h6>
-  <small class="pb-5">{{translate.instant("Current Tenant")}} : {{TenancyName}} (<a href="#" data-bs-toggle="modal"
+  <small class="pb-5">{{translate.instant("Current Tenant")}} : {{tenancyName}} (<a href="#" data-bs-toggle="modal"
       class="link-primary" (click)="openTenantModal()">{{translate.instant("Change")}}</a>)</small>
   <div class="pt-5">
     <form #loginForm="ngForm">
@@ -47,9 +47,6 @@
         <rds-button class="d-grid mb-3" colorVariant="primary" [block]="false" [size]="'medium'" [submit]="true"
           [showLoadingSpinner]="buttonSpinner" [label]="translate.instant(buttonLabel)" (click)="submit(loginForm)">
         </rds-button>
-        <!-- <rds-button class="d-grid border" [colorVariant]="buttonColorTypeUp" [block]="false" size="'medium'"
-          [label]="translate.instant(buttonLabelUp)">
-        </rds-button> -->
       </div>
     </form>
   </div>

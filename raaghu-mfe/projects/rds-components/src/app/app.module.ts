@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { StoreModule } from '@ngrx/store';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { RdsLoginComponent } from './rds-comp-login/rds-comp-login.component';
+// import { RdsLoginComponent } from './rds-comp-login/rds-comp-login.component';
 import { RdsAddressInputComponent } from './rds-comp-address-input/rds-comp-address-input.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
@@ -170,7 +170,7 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
   declarations: [	
 
     AppComponent,
-    RdsLoginComponent,
+    // RdsLoginComponent,
     RdsAddressInputComponent,
     // RdsDataTableComponent,
     // RdsTopNavigationComponent,
