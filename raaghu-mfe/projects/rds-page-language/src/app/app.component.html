@@ -1,7 +1,11 @@
 <div class="row">
   <div class="col-md-9">
     <ng-container *ngIf="currentAlerts&&currentAlerts.length>0">
-      <mfe-loader [config]="rdsAlertMfeConfig"></mfe-loader>
+      <!-- <mfe-loader [config]="rdsAlertMfeConfig"></mfe-loader> -->
+      <rds-comp-alert
+      [currentAlerts]="currentAlerts"
+      (onAlertHide)="onAlertHide($event)">
+    </rds-comp-alert>
     </ng-container> 
   </div>
   <div class=" col-md-3 text-end pb-3 desktop-btn d-sm-none d-lg-block">
@@ -15,7 +19,20 @@
   <div class="col-md-12">
     <div class="card p-2 h-100 border-0 rounded-0 card-full-stretch">
       <div [@fadeAnimation]="isAnimation ? 'fadeAnimation' : ''">
-        <mfe-loader [config]="rdsLanguageTableMfeConfig"></mfe-loader>
+        <!-- <mfe-loader [config]="rdsLanguageTableMfeConfig"></mfe-loader> -->
+        <rds-data-table 
+        [tableHeaders]="languageTableHeader"
+        [tableStyle]="tableStyle"
+        [tableData]="languageTableData"
+        [recordsPerPage]="recordsPerpage"
+        [width]="100"
+        [pagination]="true"
+        [inlineEdit]="false"
+        noDataTitle= 'Currently you do not have language'
+        [actions]="actions"
+        [isShimmer]="isShimmer"
+        (onActionSelection)="onActionSelection($event)">      
+        </rds-data-table>
       </div>
     </div>
   </div>
@@ -27,6 +44,14 @@
 <ng-container *ngIf="viewCanvas">
   <rds-offcanvas [canvasTitle]="translate.instant(languageCanvasTitle)" [offId]="'AddLanguage'"
     (onClose)="closeCanvas()" [offcanvaswidth]="550" [placement]="'end'">
-    <mfe-loader [config]="rdsNewLanguageMfeConfig"></mfe-loader>
+    <!-- <mfe-loader [config]="rdsNewLanguageMfeConfig"></mfe-loader> -->
+    <rds-comp-new-language 
+    [flags]="flags"
+    [languageNames]="languageNames"
+    [selectedLanguage]="selectedLanguage"
+    [EditShimmer]="EditShimmer"
+    (onLanguageSave)="onLanguageSave($event)"
+    (onCloseCanvas)="onCloseCanvas($event)">
+    </rds-comp-new-language>
   </rds-offcanvas>
 </ng-container>
