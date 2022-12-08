@@ -78,11 +78,11 @@ const Template: Story<ApiResource> = (args: ApiResource) => ({
     </h5> 
   
     <div class="card-body">
-    <app-rds-data-table
+    <app-rds-comp-data-table
     [tableData]="apiResourceTableData"
     [tableHeaders]=" apiResourceTableHeader"
     [actions]="actions"
-    ></app-rds-data-table>
+    ></app-rds-comp-data-table>
     </div>
   </div>
   

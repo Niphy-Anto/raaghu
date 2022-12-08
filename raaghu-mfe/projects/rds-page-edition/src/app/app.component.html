@@ -1,6 +1,27 @@
-<div [@fadeAnimation]="isAnimation ? 'fadeAnimation' : ''">
+<!-- <div [@fadeAnimation]="isAnimation ? 'fadeAnimation' : ''">
   <mfe-loader [config]="rdsEditionMfeConfig"></mfe-loader>
-</div>
+</div> -->
+
 <!--<ng-container *ngIf="currentAlerts&&currentAlerts.length>0">
   <mfe-loader [config]="rdsAlertMfeConfig"></mfe-loader>
 </ng-container>-->
+<rds-comp-features
+  [EditionsTableHeader]="TableHeader"
+  [EditionsTableData]="EditionDatatable"
+  [recordsPerpage]="10"
+  [nodeColors]="nodeColors"
+  [treeData]="treeData"
+  [featureList]="featureList"
+  noDataTitle='Currently you do not have edition'
+  [editionList]="editionList"
+  [freeEditions]="freeEditions"
+  [isShimmer]="isShimmer"
+  [editShimmer]="editShimmer"
+  [selectedFeatures] = "selectedFeatures"
+  [selectedEdition] ="selectedEdition"
+  (onEditionSave)="onEditionSave($event)"
+  (updateEdition)="updateEdition($event)"
+  (deleteEdition)="deleteEdition($event)"
+  (onMoveTenantAction)="onMoveTenantAction($event)"
+  (onMoveTenant)="onMoveTenant($event)">
+</rds-comp-features>

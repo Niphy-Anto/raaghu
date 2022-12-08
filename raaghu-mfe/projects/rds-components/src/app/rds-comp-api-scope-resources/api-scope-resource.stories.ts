@@ -2,7 +2,7 @@ import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { HttpClientModule } from '@angular/common/http';
 import { RdsAccordionModule, RdsCheckboxModule,} from '@libs/rds-elements';
-import { RdcCompApiScopeResourcesComponent } from './rdc-comp-api-scope-resources.component';
+import { RdcCompApiScopeResourcesComponent } from './rds-comp-api-scope-resources.component';
 import { NgxTranslateModule, SharedModule } from '@libs/shared';
   
 export default {

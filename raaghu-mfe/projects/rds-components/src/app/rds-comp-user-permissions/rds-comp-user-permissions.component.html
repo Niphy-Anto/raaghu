@@ -24,9 +24,9 @@
   <div class="row">
   <div class="col-md-12">
     <div class="card p-2 h-100 border-0 rounded-0 card-full-stretch">
-      <rds-data-table [tableData]="userList" [inlineEdit]="false" (onActionSelection)="onActionSelect($event)"
+      <rds-comp-data-table [tableData]="userList" [inlineEdit]="false" (onActionSelection)="onActionSelect($event)"
         [pagination]="true" [recordsPerPage]="10" [actions]="actions" [isShimmer]="isShimmer"
-        [tableHeaders]="userHeaders" noDataTitle="Currently you do not have user"></rds-data-table>
+        [tableHeaders]="userHeaders" noDataTitle="Currently you do not have user"></rds-comp-data-table>
     </div>
   </div>
 </div>

@@ -41,7 +41,7 @@ title: "Components > Api-scope-basics"
 <div class="row m-0">
 
 ```html
-<rdc-comp-api-scope-basics></rdc-comp-api-scope-basics>
+<rds-comp-api-scope-basics></rds-comp-api-scope-basics>
 ```
 </div>
 </div>

@@ -130,7 +130,7 @@
   (onDeleteDeligate)="deleteDeligateuser.emit($event)" (ondeleteLinkaccount)="deleteLinkaccount.emit($event)"
   (onLinkToUser)="saveLinkUsers($event)" (onProfileSave)="onProfileSave.emit($event)"
   (onLoginAttempts)="onLoginAttemptsRefresh.emit($event)" (onDownloadLink)="onDownloadLink.emit($event)"
-  [linkedAccountHeaders]="linkedAccountHeaders" [linkedAccountData]="linkedAccountData"
+  [linkedAccountHeaders]="linkedAccountHeaders" [linkedAccountData]="linkedAccountData" (logout)="logout($event)"
   (onProfilePicUpdate)="getProfilePic($event)" [showDelegationButtonSpinner]="showDelegationButtonSpinner"
   [tenancy]="tenancy">
 </rds-comp-profile>

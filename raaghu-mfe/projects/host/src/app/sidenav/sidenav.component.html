@@ -3,12 +3,17 @@
     <div class="header align-items-stretch">
       <!-- <mfe-loader [config]="rdsTopNavigationMfeConfig"></mfe-loader> -->
       <rds-top-navigation [backgroundColor]="backgroundColor" [selectedMenu]="selectedMenu"
-        [selectedMenuDescription]="selectedMenuDescription" [LoginAttempts]="LoginAttempts" [isPageWrapper]="true"
+        [selectedMenuDescription]="selectedMenuDescription" [LoginAttempts]="LoginAttempts"
         [profileData]="profileData" [rdsDeligateTableData]="rdsDeligateTableData" [offCanvasId]="offCanvasId"
         [logo]="'assets/raaghu_icon.png'" [projectName]="'Raaghu'" [linkedAccountData]="linkedAccountData"
         [linkedAccountHeaders]="linkedAccountHeaders" [userList]="usernameList" [notificationData]="notifications"
-        [unreadCount]="unreadCount" [receiveNotifications]="receiveNotifications"
-        [notificationTypes]="notificationTypes" [tenancy]="tenancy" [FixedHeader]="fixedHeader">
+        [unreadCount]="unreadCount" [languageItems]="languageItems" [selectedLanguage]="selectedLanguage" [showDelegationButtonSpinner]="showDelegationButtonSpinner" [receiveNotifications]="receiveNotifications"
+        [notificationTypes]="notificationTypes" [tenancy]="tenancy" (onUpdateNotificationSettings)="onUpdateNotificationSettings($event)" 
+        (setNotificationAsRead)="setNotificationAsRead($event)" (deleteDeligateuser)="deleteDeligateuser($event)" (saveDeligate)="saveDeligate($event)"
+        (onProfileSave)="onProfileSave($event)" (deleteLinkaccount)="deleteLinkaccount($event)" (onLoginAttemptsRefresh)="onLoginAttemptsRefresh($event)"
+        (onLanguageSelection)="onLanguageSelection($event)" (onDownloadLink)="onDownloadLink($event)"
+        (setAllNotificationAsRead)="setAllNotificationAsRead($event)" (linkUser)="linkUser($event)" (logoutEmitter)="logoutEmitter($event)" [FixedHeader]="fixedHeader">
+      
       </rds-top-navigation>
     </div>
     <div class="
@@ -21,7 +26,7 @@
       " [class.main-body]="FixedHeaderBody">
       <div class="aside" id="aside">
         <div class="mx-2">
-          <rds-side-nav [isPageWrapper]="true" [activepage]="activePage" [activesubmenu]="activesubmenu"
+          <rds-side-nav [activepage]="activePage" [activesubmenu]="activesubmenu"
             [isLightMode]="isLightMode" (collapsedState)="onCollapse($event)" [collapseRequired]="collapseRequired"
             [sidenavItems]="getSideNavItems()" (emitPath)="redirectPath($event)"
             (selectedMode)="toggleBetweenMode($event)"></rds-side-nav>
