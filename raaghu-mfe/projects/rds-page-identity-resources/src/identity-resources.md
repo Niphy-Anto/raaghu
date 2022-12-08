@@ -56,11 +56,11 @@ title: "Pages > Identity-Resources"
   ></rds-button>
 </div>
 <div class="row mt-2">
-  <rds-data-table
+  <rds-comp-data-table
     [tableData]="ResourceTableData"
     [tableHeaders]=" ResourceTableHeader"
     [actions]="actions"
-  ></rds-data-table>
+  ></rds-comp-data-table>
 </div>
 <rds-offcanvas
   [canvasTitle]="'New Identity Resource'"

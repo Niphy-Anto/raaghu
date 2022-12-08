@@ -74,11 +74,11 @@ const Template: Story<ApiScope> = (args: ApiScope) => ({
 </rds-button>
 </div>
 <div class="row  mt-2">
- <rds-data-table
+ <rds-comp-data-table
   [tableData]="scopeList"
   [tableHeaders]=" scopeTableHeaders"
   [actions]="actions"
-  ></rds-data-table>
+  ></rds-comp-data-table>
 </div>
 
 <rds-offcanvas [canvasTitle]="'NEW API SCOPE'" [offId]="'addnewapiresource'" [offcanvaswidth]="550"
