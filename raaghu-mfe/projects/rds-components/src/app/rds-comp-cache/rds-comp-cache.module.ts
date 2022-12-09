@@ -4,6 +4,7 @@ import { RdsCompCacheComponent } from './rds-comp-cache.component';
 import { RdsCompCacheShimmerComponent } from './rds-comp-cache-shimmer/rds-comp-cache-shimmer.component';
 import { RdsCompAlertPopupModule } from '../rds-comp-alert-popup/rds-comp-alert-popup.module'; 
 import { RdsIconModule, RdsButtonModule, RdsPaginationModule } from "@libs/rds-elements";
+import { NgxTranslateModule } from '@libs/shared';
 
 
 @NgModule({
@@ -22,9 +23,6 @@ import { RdsIconModule, RdsButtonModule, RdsPaginationModule } from "@libs/rds-e
     RdsIconModule,
     RdsCompAlertPopupModule,
     NgxTranslateModule
-  ],
-  exports:[
-    RdsCompCacheComponent
   ]
 })
 export class RdsCompCacheModule { }
