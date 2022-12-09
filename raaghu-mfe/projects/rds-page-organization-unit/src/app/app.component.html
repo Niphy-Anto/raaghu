@@ -10,9 +10,9 @@
             <h5 class="card-title">{{'Organization Tree'| translate}}</h5>
           </div>
           <div class="card-body overflow-auto vh-75">
-            <rds-organization-tree [organizationTreeData]="treeData1" [nodeColor]="nodeColors"  OrganizationTreeType="TreeType"
+            <rds-comp-organization-tree [organizationTreeData]="treeData1" [nodeColor]="nodeColors"  OrganizationTreeType="TreeType"
               [mutable]="true" (onDeleteNode)="onDeleteNode($event)" (getSelectedParent)="getSelectedParent($event)"
-              (onNodeEdit)="onNodeEdit($event)" (onSelectnode)="onSelectnode($event)"></rds-organization-tree>
+              (onNodeEdit)="onNodeEdit($event)" (onSelectnode)="onSelectnode($event)"></rds-comp-organization-tree>
           </div>
         </div>
       </div>
