@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { RdsCompInvoiceComponent } from './rds-comp-invoice.component';
 import { RdsCompInvoiceShimmerComponent } from './rds-comp-invoice-shimmer/rds-comp-invoice-shimmer.component';
 import { RdsInputModule, RdsLabelModule, RdsTextareaModule } from '@libs/rds-elements';
+import { NgxShimmerLoadingModule } from 'ngx-shimmer-loading';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { RdsInputModule, RdsLabelModule, RdsTextareaModule } from '@libs/rds-ele
   imports: [
     CommonModule,
     FormsModule,
+    NgxShimmerLoadingModule,
     RdsLabelModule,
     RdsInputModule,
     RdsTextareaModule
