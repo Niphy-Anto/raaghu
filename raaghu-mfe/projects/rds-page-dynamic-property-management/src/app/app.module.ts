@@ -10,6 +10,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { DynamicEntityEffects, DynamicEntityReducer, DynamicPermissionReducer, DynamicPropertyEffects, DynamicPropertyReducer, GetAllDynamicPropertyReducer, getDynamicPropertyByEditReducer, GetInputnameReducer } from '@libs/state-management';
 import { CommonModule } from '@angular/common';
+import { RdsCompDynamicPropertiesModule } from 'projects/rds-components/src/app/rds-comp-dynamic-properties/rds-comp-dynamic-properties.module';
 export const featureReducersMap = {
   properties: DynamicPropertyReducer,
   InputTypeNames: GetInputnameReducer,
@@ -41,6 +42,7 @@ export const featureReducersMap = {
     StoreModule.forFeature('property', featureReducersMap),
     EffectsModule.forRoot([DynamicPropertyEffects, DynamicEntityEffects,
     ]),
+    RdsCompDynamicPropertiesModule
   ],
   providers: [ArrayToTreeConverterService],
   bootstrap: [AppComponent]
