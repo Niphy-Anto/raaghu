@@ -164,7 +164,7 @@ export class SidenavComponent extends MfeBaseComponent {
       label: 'Icons',
       labelTranslationKey: 'Icons',
       id: '',
-      permissionName: '',
+      permissionName: 'Pages.Tenants',
       icon: 'icons',
       path: '/pages/icons',
       description: 'icons',

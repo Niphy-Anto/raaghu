@@ -5012,7 +5012,211 @@
 					}
 				}
 			}
-		}
+		},
+		"rds-page-icon": {
+			"projectType": "application",
+			"schematics": {
+				"@schematics/angular:component": {
+					"style": "scss"
+				}
+			},
+			"root": "projects/rds-page-icon",
+			"sourceRoot": "projects/rds-page-icon/src",
+			"prefix": "app",
+			"architect": {
+				"build": {
+					"builder": "ngx-build-plus:browser",
+					"options": {
+						"outputPath": "dist/rds-page-icon",
+						"index": "projects/rds-page-icon/src/index.html",
+						"main": "projects/rds-page-icon/src/main.ts",
+						"polyfills": [
+							"zone.js"
+						],
+						"tsConfig": "projects/rds-page-icon/tsconfig.app.json",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							"projects/rds-page-icon/src/favicon.ico",
+							"projects/rds-page-icon/src/assets"
+						],
+						"styles": [
+							"projects/rds-page-icon/src/styles.scss"
+						],
+						"scripts": [],
+						"extraWebpackConfig": "projects/rds-page-icon/webpack.config.js",
+						"commonChunk": false
+					},
+					"configurations": {
+						"production": {
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "500kb",
+									"maximumError": "1mb"
+								},
+								{
+									"type": "anyComponentStyle",
+									"maximumWarning": "2kb",
+									"maximumError": "4kb"
+								}
+							],
+							"outputHashing": "all",
+							"extraWebpackConfig": "projects/rds-page-icon/webpack.prod.config.js"
+						},
+						"development": {
+							"buildOptimizer": false,
+							"optimization": false,
+							"vendorChunk": true,
+							"extractLicenses": false,
+							"sourceMap": true,
+							"namedChunks": true
+						}
+					},
+					"defaultConfiguration": "production"
+				},
+				"serve": {
+					"builder": "ngx-build-plus:dev-server",
+					"configurations": {
+						"production": {
+							"browserTarget": "rds-page-icon:build:production",
+							"extraWebpackConfig": "projects/rds-page-icon/webpack.prod.config.js"
+						},
+						"development": {
+							"browserTarget": "rds-page-icon:build:development"
+						}
+					},
+					"defaultConfiguration": "development",
+					"options": {
+						"port": 5057,
+						"publicHost": "http://localhost:5057",
+						"extraWebpackConfig": "projects/rds-page-icon/webpack.config.js"
+					}
+				},
+				"extract-i18n": {
+					"builder": "ngx-build-plus:extract-i18n",
+					"options": {
+						"browserTarget": "rds-page-icon:build",
+						"extraWebpackConfig": "projects/rds-page-icon/webpack.config.js"
+					}
+				},
+				"test": {
+					"builder": "@angular-devkit/build-angular:karma",
+					"options": {
+						"polyfills": [
+							"zone.js",
+							"zone.js/testing"
+						],
+						"tsConfig": "projects/rds-page-icon/tsconfig.spec.json",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							"projects/rds-page-icon/src/favicon.ico",
+							"projects/rds-page-icon/src/assets"
+						],
+						"styles": [
+							"projects/rds-page-icon/src/styles.scss"
+						],
+						"scripts": []
+					}
+				}
+			}
+    },
+    "undefined": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/undefined",
+      "sourceRoot": "projects/undefined/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/undefined",
+            "index": "projects/undefined/src/index.html",
+            "main": "projects/undefined/src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "projects/undefined/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/undefined/src/favicon.ico",
+              "projects/undefined/src/assets"
+            ],
+            "styles": [
+              "projects/undefined/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "undefined:build:production"
+            },
+            "development": {
+              "browserTarget": "undefined:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "undefined:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/undefined/tsconfig.spec.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/undefined/src/favicon.ico",
+              "projects/undefined/src/assets"
+            ],
+            "styles": [
+              "projects/undefined/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    }
 	},
 	"defaultProject": "host"
 }

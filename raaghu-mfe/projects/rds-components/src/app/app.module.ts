@@ -164,6 +164,7 @@ import { RdsCompAccountNewComponent } from './rds-comp-account-new/rds-comp-acco
 import { RdsCompSettingsNewComponent } from './rds-comp-settings-new/rds-comp-settings-new.component';
 import { RdsCompLanguageTextListComponent } from './rds-comp-language-text-list/rds-comp-language-text-list.component';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { RdsCompIconComponent } from './rds-comp-icon/rds-comp-icon.component';
 
 
 @NgModule({
@@ -320,7 +321,8 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     RdsCompThemeNewComponent,
     RdsCompAccountNewComponent,
     RdsCompSettingsNewComponent,
-    RdsCompAuditLogsNewComponent
+    RdsCompAuditLogsNewComponent,
+    RdsCompIconComponent
   
   ],
   imports: [
