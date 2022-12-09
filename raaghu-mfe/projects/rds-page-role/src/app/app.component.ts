@@ -100,7 +100,6 @@ export class AppComponent implements OnInit {
   isShimmer : boolean = true;
   nodeColors = ['#6E4D9F', '#0D79AE', '#14A94B', '#FBA919'];
   rdsRoleTableMfeConfig: ComponentLoaderOptions;
-  showLoadingSpinner:boolean=true;
 
   ngOnInit(): void {
     this.isAnimation = true;
@@ -135,7 +134,6 @@ export class AppComponent implements OnInit {
     //     //         grantedPermissionNames: [],
     //     //       };
     //     //       this.store.dispatch(saveRole(data));
-
     //     //     }
     //     //   }
     //     // },
