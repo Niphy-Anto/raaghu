@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { RdsCompUserBasicsComponent } from './rds-comp-user-basics.component';
 import { RdsCompUserBasicsShimmerComponent } from './rds-comp-user-basics-shimmer/rds-comp-user-basics-shimmer.component';
 import { RdsInputModule, RdsCheckboxModule, RdsButtonModule } from "@libs/rds-elements";
+import { NgxShimmerLoadingModule } from 'ngx-shimmer-loading';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { RdsInputModule, RdsCheckboxModule, RdsButtonModule } from "@libs/rds-el
     FormsModule,
     RdsInputModule,
     RdsCheckboxModule,
-    RdsButtonModule
+    RdsButtonModule,
+    NgxShimmerLoadingModule
   ],
   exports: [
     RdsCompUserBasicsComponent

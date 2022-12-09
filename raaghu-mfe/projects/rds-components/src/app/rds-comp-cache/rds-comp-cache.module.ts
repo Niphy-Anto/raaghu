@@ -5,6 +5,7 @@ import { RdsCompCacheShimmerComponent } from './rds-comp-cache-shimmer/rds-comp-
 import { RdsCompAlertPopupModule } from '../rds-comp-alert-popup/rds-comp-alert-popup.module';
 import { RdsIconModule, RdsButtonModule, RdsPaginationModule } from "@libs/rds-elements";
 import { NgxShimmerLoadingModule } from 'ngx-shimmer-loading';
+import { NgxTranslateModule } from '@libs/shared';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { NgxShimmerLoadingModule } from 'ngx-shimmer-loading';
     RdsPaginationModule,
     RdsIconModule,
     RdsCompAlertPopupModule,
-    NgxShimmerLoadingModule
+    NgxShimmerLoadingModule,
+    NgxTranslateModule
   ]
 })
 export class RdsCompCacheModule { }
