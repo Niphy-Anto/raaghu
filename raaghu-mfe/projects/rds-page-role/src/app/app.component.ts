@@ -378,13 +378,13 @@ export class AppComponent implements OnInit {
     }
   }
   onEditRole (event: any) {
+    
     if (event) {
       this.store.dispatch(getRolByEdit(event));
       this.isEdit = true;
     } else {
       this.Roledetails = undefined;
       // const mfeConfig = this.rdsNewRoleMfeConfig
-      this.RoleDatatable = { ... this.Roledetails };
       // this.rdsNewRoleMfeConfig = mfeConfig;
     }
   }
@@ -404,7 +404,6 @@ export class AppComponent implements OnInit {
     this.selectedPermissions = [];
     this.selectedPermissionValues = [];
     // const mfeConfig = this.rdsNewRoleMfeConfig
-    this.RoleDatatable = { ... this.Roledetails };
     this.permissionsList = [... this.treeData];
     this.EditShimmer = true;
     // this.rdsNewRoleMfeConfig = mfeConfig;
@@ -430,7 +429,6 @@ export class AppComponent implements OnInit {
     this.selectedPermissions = [];
     this.selectedPermissionValues = [];
     // const mfeConfig = this.rdsNewRoleMfeConfig
-    this.RoleDatatable = { ... this.Roledetails };
     this.permissionsList = [... this.treeData];
     this.selectedPermissionValues = [... this.selectedPermissionValues];
     // this.rdsNewRoleMfeConfig = mfeConfig;
