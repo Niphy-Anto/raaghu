@@ -1,6 +1,22 @@
 <!--<ng-container *ngIf="currentAlerts&&currentAlerts.length>0">
   <mfe-loader [config]="rdsAlertMfeConfig"></mfe-loader>
 </ng-container>-->
-<div [@fadeAnimation]="isAnimation ? 'fadeAnimation' : ''">
+<!-- <div [@fadeAnimation]="isAnimation ? 'fadeAnimation' : ''">
   <mfe-loader [config]="rdsNewRoleMfeConfig"></mfe-loader>
-</div>
+</div> -->
+
+<rds-comp-role-list  [roleHeaders]= "RoleTableHeader"
+[roleList]="RoleDatatable"
+[isShimmer]="isShimmer" 
+[permissionsList]="treeData"
+[SelectedPermissionValues]="selectedPermissions"
+[RolesData]="Roledetails"
+(onSaveRole)="onSaveRole($event)" 
+(onEditRole)="onEditRole($event)"
+(onnewRole)="onnewRole($event)"
+(onRefreshRole)="onRefreshRole()"
+(onReset)="onReset($event)"
+(deleteEvent)="deleteEvent($event)"
+(onFilterPermission)="onFilterPermission($event)"
+(onFilterPermissionReset)="($event)">
+</rds-comp-role-list>
