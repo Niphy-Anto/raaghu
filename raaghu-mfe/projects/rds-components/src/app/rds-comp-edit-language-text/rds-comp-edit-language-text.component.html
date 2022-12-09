@@ -19,7 +19,7 @@
             [(ngModel)]="Languagetext.value" name="targetvalue" required>
           </rds-textarea>
           <div class="form-control-feedback" *ngIf="TargetValue.errors && (TargetValue.dirty || TargetValue.touched)">
-            <span class="text-danger" *ngIf="TargetValue.errors.required">{{"Description is required"|translate}}</span>
+            <span class="text-danger" *ngIf="TargetValue.errors.required">{{translate.instant("Description is required")}}</span>
           </div>
         </div>
       </div>

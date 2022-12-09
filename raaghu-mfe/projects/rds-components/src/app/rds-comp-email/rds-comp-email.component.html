@@ -11,7 +11,7 @@
         <div class="form-control-feedback"
           *ngIf="defaultFromAddress.errors&&(defaultFromAddress.dirty||defaultFromAddress.touched)">
           <span class="text-danger" *ngIf="defaultFromAddress.errors.pattern">
-            {{"Please enter a valid emailId"|translate }}
+            {{translate.instant("Please enter a valid emailId") }}
           </span>
         </div>
       </div>
@@ -68,7 +68,7 @@
 
         <div class="form-control-feedback" *ngIf="smtpDomain.errors&&(smtpDomain.dirty||smtpDomain.touched)">
           <span class="text-danger" *ngIf="smtpDomain.errors.pattern">
-            {{"Please enter a valid emailId"|translate }}
+            {{translate.instant("Please enter a valid emailId") }}
           </span>
         </div>
       </div>

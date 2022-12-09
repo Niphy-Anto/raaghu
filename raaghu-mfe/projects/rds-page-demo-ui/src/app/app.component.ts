@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { TranslateService } from '@ngx-translate/core';
-import { ComponentLoaderOptions } from '@libs/shared';
+// import { ComponentLoaderOptions } from '@libs/shared';
 import { transition, trigger, query, style, animate, } from '@angular/animations';
 import { selectDefaultLanguage } from 'projects/libs/state-management/src/lib/state/language/language.selector';
 
@@ -38,9 +38,9 @@ import { selectDefaultLanguage } from 'projects/libs/state-management/src/lib/st
 })
 export class AppComponent implements OnInit {
   title = 'demo-ui';
-  rdsDemouiMfeConfig: ComponentLoaderOptions = {
-    name: 'RdsCompDemoui',
-  };
+  // rdsDemouiMfeConfig: ComponentLoaderOptions = {
+  //   name: 'RdsCompDemoui',
+  // };
   constructor(private store: Store, private translate: TranslateService) { }
   ngOnInit(): void {
     this.store.select(selectDefaultLanguage).subscribe((res: any) => {
