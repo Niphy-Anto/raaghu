@@ -75,6 +75,7 @@ export class AppComponent implements OnInit {
     icon: '',
     isEnabled: false,
     id: undefined,
+    languageName:''
   };
   rdsLanguageTableMfeConfig: ComponentLoaderOptions;
   languageTableHeader: TableHeader[] = [
@@ -124,7 +125,7 @@ export class AppComponent implements OnInit {
     private store: Store,
     private alertService: AlertService,
     private router: Router
-  ) {}
+  ) { }
   ngOnInit(): void {
     this.isAnimation = true;
 
@@ -151,17 +152,25 @@ export class AppComponent implements OnInit {
         onActionSelection: (event: any) => {
           if (event.actionId === 'delete') {
             this.store.dispatch(deleteLanguage(event.selectedData.id));
-          } else if (event.actionId === 'edit') {     
+          } else if (event.actionId === 'edit') {
             this.languageCanvasTitle = 'Edit Language';
             this.selectedLanguage = JSON.parse(
               JSON.stringify(event.selectedData)
             );
             if (this.selectedLanguage.icon && this.flags.length > 0) {
-              const selectedLanguage = this.flags.find(
+              const selectedFlag = this.flags.find(
                 (x: any) => x.value === this.selectedLanguage.icon
               );
+              if (selectedFlag) {
+                this.selectedLanguage.icon = selectedFlag.some;
+              }
+            }
+            if (this.selectedLanguage.countryCode && this.languageNames.length > 0) {
+              const selectedLanguage = this.languageNames.find(
+                (x: any) => x.value === this.selectedLanguage.countryCode
+              );
               if (selectedLanguage) {
-                this.selectedLanguage.icon = selectedLanguage.some;
+                this.selectedLanguage.languageName = selectedLanguage.some;
               }
             }
             const mfeConfig = this.rdsNewLanguageMfeConfig;
@@ -196,10 +205,12 @@ export class AppComponent implements OnInit {
           bsOffcanvas.hide();
           this.viewCanvas = false;
           this.selectedLanguage = {
-            countryCode: '',
-            icon: '',
+            languageName: '',
+            flag: '',
             isEnabled: false,
             id: undefined,
+            countrycode:'',
+            icon:''
           };
         },
         onCloseCanvas: (event: any) => {
@@ -214,20 +225,20 @@ export class AppComponent implements OnInit {
         this.languageNames = [];
         res.languageNames.forEach(res => {
           const data = {
-            value:res.value,
-            some:res.displayText,
-            isSelected:res.isSelected,
-            icon:'',
-            iconWidth:0,
-            iconHeight:0,
-            iconFill:false,
+            value: res.value,
+            some: res.displayText,
+            isSelected: res.isSelected,
+            icon: '',
+            iconWidth: 0,
+            iconHeight: 0,
+            iconFill: false,
             iconStroke: true,
             isFree: res.isFree
           }
           this.languageNames.push(data);
           // console.log('data' , data);
-          
-        }); 
+
+        });
 
         this.flags = [];
         res.flags.forEach((res: any) => {
@@ -262,24 +273,24 @@ export class AppComponent implements OnInit {
         res.items.forEach((element: any) => {
           const status: any = element.isDisabled
             ? {
-                icon: 'close',
-                width: '24px',
-                height: '16px',
-                colorVariant: 'danger',
-              }
+              icon: 'close',
+              width: '24px',
+              height: '16px',
+              colorVariant: 'danger',
+            }
             : {
-                icon: 'check',
-                width: '24px',
-                height: '16px',
-                colorVariant: 'success',
-              };
+              icon: 'check',
+              width: '24px',
+              height: '16px',
+              colorVariant: 'success',
+            };
           // const statusTemplate = `<div class="fs-3"><i class="bi ${status}"></i></div>`;
           const languageName: string = element.displayName;
           const defaultLanguageTemplate = `<div> ${languageName} <span class="badge badge-success p-1 mx-1 rounded">Default</span></div>`;
           const item: any = {
             id: element.id,
             languageName: element.name === defaultLanguage ? defaultLanguageTemplate
-                : element.displayName,
+              : element.displayName,
             countryCode: element.name,
             isEnabled: element.isDisabled ? false : true,
             statusTemplate: status,
@@ -292,6 +303,7 @@ export class AppComponent implements OnInit {
           };
           this.languageTableData.push(item);
         });
+        console.log(this.languageTableData);
         const mfeConfig = this.rdsLanguageTableMfeConfig;
         mfeConfig.input.tableData = [...this.languageTableData];
         mfeConfig.input.isShimmer = false;
@@ -341,6 +353,7 @@ export class AppComponent implements OnInit {
         icon: '',
         isEnabled: false,
         id: undefined,
+        languageName:''
       };
       this.languageCanvasTitle = this.translate.instant('New Language');
     } else {
@@ -366,6 +379,7 @@ export class AppComponent implements OnInit {
       icon: '',
       isEnabled: false,
       id: undefined,
+      languageName:''
     };
     this.showLoadingSpinner = false;
   }
