@@ -21,12 +21,12 @@ export class RdsCompRoleListComponent implements OnInit{
   public rdsAlertMfeConfig: ComponentLoaderOptions = {
     name: 'RdsCompAlert',
     input: {
-      currentAlerts: this.currentAlerts,
+     // currentAlerts: this.currentAlerts,
     },
     output: {
-      onAlertHide: (event: any) => {
-        this.currentAlerts = event;
-      },
+      // onAlertHide: (event: any) => {
+      //   this.currentAlerts = event;
+      // },
     },
   };
 
@@ -45,7 +45,7 @@ export class RdsCompRoleListComponent implements OnInit{
     { value: 'Filter By Permission', some: 'value', key: 'filterByPermission', icon: 'funnel', iconWidth: '20px', iconHeight: '20px' },
   ];
   @Input() roleList: any[] = [];
-  showLoadingSpinner: boolean = false;
+ showLoadingSpinner: boolean = false;
   @Output() onSaveRole = new EventEmitter<any>();
   @Output() onRefreshRole = new EventEmitter<any>();
   @Output() onEditRole = new EventEmitter<any>();
@@ -96,6 +96,11 @@ export class RdsCompRoleListComponent implements OnInit{
     this.subscribeToAlerts();
     this.activePage = 0;
      }
+
+     onAlertHide (event: any) {
+      this.currentAlerts = event;
+    }
+
   ngDoCheck(): void {
 
     this.tableData = [...this.roleList];
@@ -162,6 +167,7 @@ export class RdsCompRoleListComponent implements OnInit{
       bsOffcanvas.show()
     }, 100);
     this.activePage = 0;
+    
   }
 
   getRoleData(eventdata) {
@@ -284,14 +290,16 @@ export class RdsCompRoleListComponent implements OnInit{
         type: alert.type,
         title: alert.title,
         message: alert.message,
+        sticky: alert.sticky,
       };
       this.currentAlerts.push(currentAlert);
-      this.showLoadingSpinner = false;
-      const rdsAlertMfeConfig = this.rdsAlertMfeConfig;
-      rdsAlertMfeConfig.input.currentAlerts = [...this.currentAlerts];
-      this.rdsAlertMfeConfig = rdsAlertMfeConfig;
+      // this.showLoadingSpinner = false;
+      // const rdsAlertMfeConfig = this.rdsAlertMfeConfig;
+      // rdsAlertMfeConfig.input.currentAlerts = [...this.currentAlerts];
+      // this.rdsAlertMfeConfig = rdsAlertMfeConfig;
     });
   }
+
 
   filterPermissions(event): void {
     this.filterPermission(this.permissionsList, event.target.value);
