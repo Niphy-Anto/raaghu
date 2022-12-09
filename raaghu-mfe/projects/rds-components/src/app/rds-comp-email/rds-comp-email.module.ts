@@ -1,25 +1,25 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 import { RdsCompEmailComponent } from './rds-comp-email.component';
 import { RdsCompEmailShimmerComponent } from './rds-comp-email-shimmer/rds-comp-email-shimmer.component';
-import { RdsButtonModule, RdsInputModule, RdsCheckboxModule } from "@libs/rds-elements";
+import { FormsModule } from '@angular/forms';
+import { NgxShimmerLoadingModule } from 'ngx-shimmer-loading';
+import { NgxTranslateModule } from '@libs/shared';
+import { RdsButtonModule, RdsCheckboxModule, RdsInputModule } from '@libs/rds-elements';
+
 
 
 @NgModule({
-  declarations: [
-    RdsCompEmailComponent,
-    RdsCompEmailShimmerComponent
-  ],
-  exports: [
-    RdsCompEmailComponent
-  ],
+  declarations: [RdsCompEmailComponent,RdsCompEmailShimmerComponent],
+  exports:[RdsCompEmailComponent],
   imports: [
     CommonModule,
     FormsModule,
-    RdsButtonModule,
+    NgxShimmerLoadingModule,
+    NgxTranslateModule.forRoot(),
     RdsInputModule,
-    RdsCheckboxModule
+    RdsCheckboxModule,
+    RdsButtonModule,
   ]
 })
 export class RdsCompEmailModule { }
