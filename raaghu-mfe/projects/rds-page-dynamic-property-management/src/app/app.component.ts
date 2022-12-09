@@ -87,9 +87,9 @@ export class AppComponent implements OnInit {
   rdsDynamicPermissionMfeConfig: ComponentLoaderOptions;
   rdsDynamicEntityPropertiesMfeConfig: ComponentLoaderOptions;
   permissionsList: any;
-  btnLabel: string = 'NEW DYNAMIC PROPERTY';
+  btnLabel: string = 'New Dynamic Property';
   public viewCanvas: boolean = false;
-  canvasTitle: string = this.translate.instant('NEW DYNAMIC PROPERTY');
+  canvasTitle: string = this.translate.instant('New Dynamic Property');
   id: number | undefined = undefined;
   DynamicEntityProperties: any = {
     DynamicEntityPropertiesTableHeader: [
@@ -400,10 +400,10 @@ export class AppComponent implements OnInit {
   btnClick(event) {
     this.selectedTabIndex = event;
     if (this.selectedTabIndex === 1) {
-      this.btnLabel = 'NEW DYNAMIC ENTITY PROPERTY';
+      this.btnLabel = 'New Dynamic Entity Property';
       this.sharedService.setTopNavTitle(this.navtabsItems[this.selectedTabIndex].label)
     } else {
-      this.btnLabel = 'NEW DYNAMIC PROPERTY';
+      this.btnLabel = 'New Dynamic Property';
       this.sharedService.setTopNavTitle('');
 
     }
@@ -533,7 +533,7 @@ export class AppComponent implements OnInit {
 
   openDynamicCanvas(): void {
     this.viewCanvas = true;
-    this.canvasTitle = this.translate.instant('NEW DYNAMIC PROPERTY');
+    this.canvasTitle = this.translate.instant('New Dynamic Property');
     this.id = undefined;
     this.isEdit = false;
     const mfeConfig = this.rdsDynamicPropertiesMfeConfig;
@@ -552,7 +552,7 @@ export class AppComponent implements OnInit {
 
   openEntityCanvas(): void {
     this.viewCanvas = true;
-    this.canvasTitle = this.translate.instant('NEW DYNAMIC ENTITY PROPERTY');
+    this.canvasTitle = this.translate.instant('New Dynamic Entity Property');
     this.id = undefined;
     const mfeConfig = this.rdsDynamicEntityPropertiesMfeConfig;
     mfeConfig.input.reset = true;
