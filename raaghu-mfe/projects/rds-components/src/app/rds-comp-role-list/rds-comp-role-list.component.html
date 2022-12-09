@@ -2,11 +2,12 @@
   <div class="row">
       <div class="col-md-8">
         <ng-container *ngIf="currentAlerts&&currentAlerts.length>0">
-          <mfe-loader [config]="rdsAlertMfeConfig"></mfe-loader>
+          <!-- <mfe-loader [config]="rdsAlertMfeConfig"></mfe-loader> -->
+          <rds-comp-alert [currentAlerts]="currentAlerts" (onAlertHide)="onAlertHide($event)"></rds-comp-alert>
         </ng-container>
     </div>
     <div class="col-md-4 text-end pb-3 desktop-btn">
-      <rds-button [label]="translate.instant('NEW ROLE')" [showLoadingSpinner]="showLoadingSpinner" type="button"
+      <rds-button [label]="translate.instant('NEW ROLE')"  type="button"
         style="float: right" [size]="'small'" [colorVariant]="'primary'" (click)="newRole($event)" [icon]="'plus'"
         iconHeight="12px" iconWidth="12px" class="ms-2">
       </rds-button>
