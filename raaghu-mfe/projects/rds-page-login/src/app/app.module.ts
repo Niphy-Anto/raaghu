@@ -8,22 +8,22 @@ import { AppComponent } from './app.component';
 import { LoginShimmerComponent } from './login-shimmer/login-shimmer.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LoginShimmerComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    SharedModule,
-    HttpClientModule,
-    NgxTranslateModule.forRoot(),
-    NgxShimmerLoadingModule
-    // StoreModule.forFeature('ValidatetenantState', ValidatetenantMap
-    // ),
-    // EffectsModule.forRoot([LoginEffects]),
-  ],
-  providers: [TokenAuthServiceProxy],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        LoginShimmerComponent,
+        ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        SharedModule,
+        HttpClientModule,
+        NgxTranslateModule.forRoot(),
+        NgxShimmerLoadingModule,
+        // StoreModule.forFeature('ValidatetenantState', ValidatetenantMap
+        // ),
+        // EffectsModule.forRoot([LoginEffects]),
+    ],
+    providers: [TokenAuthServiceProxy],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

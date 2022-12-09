@@ -1,6 +1,11 @@
 <div [@fadeAnimation]="isAnimation ? 'fadeAnimation' : ''">
     <div class="row">
-        <div class="col-md-12 text-end pb-3 desktop-btn">
+        <div class="col-md-8">
+            <ng-container *ngIf="currentAlerts&&currentAlerts.length>0">
+                <mfe-loader [config]="rdsAlertMfeConfig"></mfe-loader>
+            </ng-container>
+        </div>
+        <div class="col-md-4 text-end pb-3 desktop-btn">
             <rds-button [id]="'yes'" [size]="'small'" [tooltipPlacement]="'top'" [colorVariant]="'primary'"
                 [label]="translate.instant('NEW WEBHOOK SUBSCRIPTION')" [showLoadingSpinner]="showLoadingSpinner"
                 (click)="openCanvas()" [attr.data-bs-target]="'#addwebhook'" [attr.aria-controls]="'addwebhook'"
@@ -57,6 +62,3 @@
     </rds-offcanvas>
 
 </div>
-<ng-container *ngIf="currentAlerts&&currentAlerts.length>0">
-    <mfe-loader [config]="rdsAlertMfeConfig"></mfe-loader>
-</ng-container>
