@@ -8,9 +8,9 @@ import { ArrayToTreeConverterService } from 'projects/libs/shared/src/lib/array-
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { RdsOrganizationTreeModule } from 'projects/rds-components/src/app/rds-comp-organization-tree/rds-organization-tree.module';
 import { RdsCompDataTableModule } from "../../../rds-components/src/app/rds-comp-data-table/rds-comp-data-table.module";
 import { RdsCompAlertModule } from "../../../rds-components/src/app/rds-comp-alert/rds-comp-alert.module";
+import { RdsCompOrganizationTreeModule } from 'projects/rds-components/src/app/rds-comp-organization-tree/rds-comp-organization-tree.module';
 
 @NgModule({
     declarations: [
@@ -32,7 +32,7 @@ import { RdsCompAlertModule } from "../../../rds-components/src/app/rds-comp-ale
         HttpClientModule,
         NgxTranslateModule.forRoot(),
         RdsIconModule,
-        RdsOrganizationTreeModule,
+        RdsCompOrganizationTreeModule,
         RdsCompDataTableModule,
         RdsCompAlertModule
     ]

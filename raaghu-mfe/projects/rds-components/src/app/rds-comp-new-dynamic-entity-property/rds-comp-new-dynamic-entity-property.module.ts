@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { RdsCompNewDynamicEntityPropertyComponent } from './rds-comp-new-dynamic-entity-property.component';
 import { RdsCompNewDynamicEntityShimmerComponent } from './rds-comp-new-dynamic-entity-shimmer/rds-comp-new-dynamic-entity-shimmer.component';
 import { RdsLabelModule, RdsButtonModule, RdsDropdownlistModule } from "@libs/rds-elements";
+import { NgxShimmerLoadingModule } from 'ngx-shimmer-loading';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { RdsLabelModule, RdsButtonModule, RdsDropdownlistModule } from "@libs/rd
   imports: [
     CommonModule,
     FormsModule,
+    NgxShimmerLoadingModule,
     RdsLabelModule,
     RdsButtonModule,
     RdsDropdownlistModule
