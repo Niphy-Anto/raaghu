@@ -22,7 +22,7 @@ import { NgxTranslateModule } from '@libs/shared';
     RdsPaginationModule,
     RdsIconModule,
     RdsCompAlertPopupModule,
-    NgxShimmerLoadingModule
+    NgxShimmerLoadingModule,
     NgxTranslateModule
   ]
 })
