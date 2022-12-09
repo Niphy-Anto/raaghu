@@ -36,7 +36,17 @@
                         </rds-banner>
                     </div>
                 </div>
-                <mfe-loader [config]="rdswebhookTableMfeConfig"></mfe-loader>
+                <!-- <mfe-loader [config]="rdswebhookTableMfeConfig"></mfe-loader> -->
+                <rds-comp-data-table 
+                [tableHeaders] = "webhookTableHeader"
+                tableStyle = "light"
+                [tableData] = "webhookTableData"
+                [recordsPerPage] = "10"
+                [width]="100"
+                [pagination] = "true"
+                noDataTitle = "Currently you do not have webhook subscription"
+                [isShimmer] = "false"
+                ></rds-comp-data-table>
             </div>
         </div>
     </div>
@@ -46,17 +56,20 @@
             (click)="openCanvas()" [attr.data-bs-target]="'#addwebhook'" [attr.aria-controls]="'addwebhook'"
             [roundedButton]="true" icon="plus" iconHeight="12px" iconWidth="12px">
         </rds-button> -->
-        <rds-fab-menu [listItems]="listItems" [menuicon]="'plus'" [colorVariant]="'primary'" [menuiconWidth]="'12px'"
-            [menuiconHeight]="'12px'" (onSelect)="onSelectMenu($event)"></rds-fab-menu>
+        <!-- <rds-fab-menu [listItems]="listItems" [menuicon]="'plus'" [colorVariant]="'primary'" [menuiconWidth]="'12px'"
+            [menuiconHeight]="'12px'" (onSelect)="onSelectMenu($event)"></rds-fab-menu> -->
     </div>
 
     <rds-offcanvas [canvasTitle]="translate.instant('NEW WEBHOOK SUBSCRIPTION')" [offId]="'addwebhook'"
         [offcanvaswidth]="600" [placement]="'end'" *ngIf="viewCanvas" (onClose)="closeCanvas()">
-        <mfe-loader [config]="rdswebhookSubscriptionMfeConfig"></mfe-loader>
+        <!-- <mfe-loader [config]="rdswebhookSubscriptionMfeConfig"></mfe-loader> -->
+
+        <rds-comp-webhook-subscription  (onSubcriptionSave)="onSubcriptionSave($event)"></rds-comp-webhook-subscription>
         <!-- <app-webhooksubscription (onSubcriptionSave)="Addsubcription($event)" (onCloseCanvas)="closeCanvas()"></app-webhooksubscription> -->
     </rds-offcanvas>
 
 </div>
 <ng-container *ngIf="currentAlerts&&currentAlerts.length>0">
     <mfe-loader [config]="rdsAlertMfeConfig"></mfe-loader>
+    <rds-comp-alert-popup (currentAlerts)="currentAlerts"></rds-comp-alert-popup>
 </ng-container>

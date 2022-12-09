@@ -8,7 +8,7 @@ declare var bootstrap: any;
   templateUrl: './rds-comp-organization-tree.component.html',
   styleUrls: ['./rds-comp-organization-tree.component.scss']
 })
-export class RdsOrganizationTreeComponent implements OnInit {
+export class RdsCompOrganizationTreeComponent implements OnInit {
   public alertData: AlertPopupData = {
     iconUrl: "delete",
     colorVariant: "danger",

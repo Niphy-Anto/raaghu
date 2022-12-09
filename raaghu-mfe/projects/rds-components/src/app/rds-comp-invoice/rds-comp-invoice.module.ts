@@ -3,9 +3,9 @@ import { CommonModule } from '@angular/common';
 import { RdsCompInvoiceComponent } from './rds-comp-invoice.component';
 import { RdsCompInvoiceShimmerComponent } from './rds-comp-invoice-shimmer/rds-comp-invoice-shimmer.component';
 import { FormsModule } from '@angular/forms';
-import { NgxShimmerLoadingModule } from 'ngx-shimmer-loading';
 import { NgxTranslateModule } from '@libs/shared';
 import { RdsInputModule, RdsLabelModule, RdsTextareaModule } from '@libs/rds-elements';
+import { NgxShimmerLoadingModule } from 'ngx-shimmer-loading';
 
 
 

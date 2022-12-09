@@ -35,7 +35,7 @@ export class RdsCompWebhookSubscriptionComponent implements OnInit {
     additionalheadervalue: '',
     name: ''
   }
-  subscriptionData: subscription = {
+  @Input() subscriptionData: subscription = {
     WebhookEndpoint: '',
     WebhookEvents: ''
   }
