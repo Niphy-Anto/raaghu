@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RdsCompWebhookSubscriptionComponent } from './rds-comp-webhook-subscription.component';
-import { RdsButtonModule, RdsInputModule, RdsTextareaModule } from '@libs/rds-elements';
+import { RdsButtonModule, RdsInputModule, RdsLabelModule, RdsTextareaModule } from '@libs/rds-elements';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RdsCompDataTableModule } from '../rds-comp-data-table/rds-comp-data-table.module';
+import { NgxTranslateModule } from '@libs/shared';
 
 
 
@@ -9,9 +12,15 @@ import { RdsButtonModule, RdsInputModule, RdsTextareaModule } from '@libs/rds-el
   declarations: [RdsCompWebhookSubscriptionComponent],
   imports: [
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     RdsInputModule,
     RdsTextareaModule,
-    RdsButtonModule
+    RdsButtonModule,
+    RdsCompDataTableModule,
+    NgxTranslateModule,
+    RdsLabelModule
+  
   ],
   exports: [RdsCompWebhookSubscriptionComponent]
 })

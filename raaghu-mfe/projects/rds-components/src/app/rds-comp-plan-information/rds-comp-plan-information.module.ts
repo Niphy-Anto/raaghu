@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RdsCompPlanInformationComponent } from './rds-comp-plan-information.component';
 import { RdsButtonModule, RdsIconModule, RdsLabelModule } from '@libs/rds-elements';
+import { NgxTranslateModule } from '@libs/shared';
 
 
 
@@ -13,8 +14,9 @@ import { RdsButtonModule, RdsIconModule, RdsLabelModule } from '@libs/rds-elemen
     RdsIconModule,
     RdsLabelModule,
     RdsIconModule,
-    RdsButtonModule
+    RdsButtonModule,
+    NgxTranslateModule
   ],
-  exports:[]
+  exports:[RdsCompPlanInformationComponent]
 })
 export class RdsCompPlanInformationModule { }
