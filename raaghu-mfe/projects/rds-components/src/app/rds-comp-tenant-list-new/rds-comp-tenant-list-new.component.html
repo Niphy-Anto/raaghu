@@ -66,4 +66,8 @@
         [offCanvasId]="offCanvasId" [editShimmer]="editShimmer" [editionList]="editionList" [showEmail]="showEmailList">
     </rds-comp-tenant-features>
 </rds-offcanvas>
-<mfe-loader [config]="rdsAlertMfeConfig"></mfe-loader>
+<!-- <mfe-loader [config]="rdsAlertMfeConfig"></mfe-loader> -->
+<rds-comp-alert
+[currentAlerts]="currentAlerts"
+(onAlertHide)="onAlertHide($event)">
+</rds-comp-alert>
