@@ -58,7 +58,6 @@ import { selectAllTenants, selectEditionComboboxItems, selecteTeantLoginList, se
 export class AppComponent {
 
 
-
   title = 'tenant';
   tenantSettingsInfo: any = {};
   tenantData: any = {};
