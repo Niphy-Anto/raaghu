@@ -62,6 +62,10 @@ import { WebhookSubscriptionReducer } from 'projects/libs/state-management/src/l
 import { WebhookSubscriptionEffects } from 'projects/libs/state-management/src/lib/state/webhook-subscription/webhook-subscription.effects';
 import { TenantReducer } from 'projects/libs/state-management/src/lib/state/tenant/tenant.reducer';
 import { TenantEffects } from 'projects/libs/state-management/src/lib/state/tenant/tenant.effects';
+import { DynamicPropertyReducer } from 'projects/libs/state-management/src/lib/state/dynamic-property-management/dynamic-property.reducer';
+import { DynamicPropertyEffects } from 'projects/libs/state-management/src/lib/state/dynamic-property-management/dynamic-property.effects';
+import { DynamicEntityReducer } from 'projects/libs/state-management/src/lib/state/dynamic-entity/dynamic-entity.reducer';
+import { DynamicEntityEffects } from 'projects/libs/state-management/src/lib/state/dynamic-entity/dynamic-entity.effects';
 
 export function getRemoteServiceBaseUrl(): any {
   let URL = demodata.remoteServiceBaseUrl;
@@ -98,80 +102,85 @@ export function getRemoteServiceBaseUrl(): any {
   } 
 };
 @NgModule({
-    declarations: [
-        AppComponent,
-        SidenavComponent
-    ],
-    providers: [
-        DatePipe,
-        { provide: API_BASE_URL, useFactory: getRemoteServiceBaseUrl },
-    ],
-    bootstrap: [AppComponent],
-    imports: [
-        BrowserModule,
-        BrowserAnimationsModule,
-        RdsCookieConsentModule.forRoot(cookieConfig),
-        RouterModule.forRoot(APP_ROUTES),
-        ReactiveFormsModule,
-        FormsModule,
-        NgxTranslateModule.forRoot(),
-        StoreModule.forRoot({
-            products: productReducer,
-            profile: ProfileReducer,
-            organizationUnit: OrganizationUnitReducer,
-            Delegation: DelegationsReducer,
-            mla: MLAReducer,
-            user: UserReducer,
-            roles: RoleReducer,
-            tenants: TenantReducer,
-            validateTenant: ValidateTenantReducer,
-            usernames: GetUsernameFilterReducer,
-            loginAttempts: LoginAttemptsReducer,
-            languages: LanguageReducer,
-            countries: CountryListReducer,
-            languageText: LanguageTextReducer,
-            defaultLanguage: DefaultLanguageReducer,
-            downloadData: downloadReducer,
-            profilePicture: ProfileReducer,
-            profilepic: ProfilePicReducer,
-            visualsettings: VisualsettingsReducer,
-            auditLogs: AuditLogsReducer,
-            editions: EditionReducer,
-            maintenances: MaintenanceReducer,
-            settings: settingReducer,
-            webhookSubscriptions: WebhookSubscriptionReducer
-        }),
-        StoreDevtoolsModule.instrument({
-            name: 'Raaghu MFE',
-            logOnly: false,
-        }),
-        EffectsModule.forRoot([
-            ProductEffects,
-            EditionEffects,
-            RoleEffects,
-            SettingEffects,
-            LoginAttemptsEffects,
-            MLAEffects,
-            ManageLinkedAccountsEffects,
-            ProfileEffects,
-            OrganizationUnitEffects,
-            MaintenanceEffects,
-            DelegationsEffects,
-            LoginEffects,
-            LanguageTextEffects,
-            DownloadEffects,
-            ProfilePicEffects,
-            visualsettingEffects,
-            LanguageEffects,
-            UserEffects,
-            TenantEffects,
-            AuditLogsEffects,
-            WebhookSubscriptionEffects
-        ]),
-        SharedModule,
-        UserAuthModule,
-        RdsSideNavModule,
-        RdsCompTopNavigationModule
-    ]
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    RdsCookieConsentModule.forRoot(cookieConfig),
+    RouterModule.forRoot(APP_ROUTES),
+    ReactiveFormsModule,
+    FormsModule,
+    NgxTranslateModule.forRoot(),
+    StoreModule.forRoot({
+      products: productReducer,
+      profile: ProfileReducer,
+      organizationUnit: OrganizationUnitReducer,
+      Delegation: DelegationsReducer,
+      mla: MLAReducer,
+      user: UserReducer,
+      roles: RoleReducer,
+      tenants:TenantReducer,
+      validateTenant: ValidateTenantReducer,
+      usernames: GetUsernameFilterReducer,
+      loginAttempts: LoginAttemptsReducer,
+      languages: LanguageReducer,
+      countries: CountryListReducer,
+      languageText: LanguageTextReducer,
+      defaultLanguage: DefaultLanguageReducer,
+      downloadData: downloadReducer,
+      profilePicture : ProfileReducer,
+      profilepic: ProfilePicReducer,
+      visualsettings:VisualsettingsReducer,
+      auditLogs: AuditLogsReducer,
+      editions:EditionReducer,
+      maintenances:MaintenanceReducer,
+      settings:settingReducer,
+      webhookSubscriptions: WebhookSubscriptionReducer,
+      properties: DynamicPropertyReducer,
+      entities: DynamicEntityReducer
+    }),
+
+    StoreDevtoolsModule.instrument({
+      name: 'Raaghu MFE',
+      logOnly: false,
+    }),
+    EffectsModule.forRoot([
+      ProductEffects,
+      EditionEffects,
+      RoleEffects,
+      SettingEffects,
+      LoginAttemptsEffects,
+      MLAEffects,
+      ManageLinkedAccountsEffects,
+      ProfileEffects,
+      OrganizationUnitEffects,
+      MaintenanceEffects,
+      DelegationsEffects,
+      LoginEffects,
+      LanguageTextEffects,
+      DownloadEffects,
+      ProfilePicEffects,
+      visualsettingEffects,
+      LanguageEffects,
+      UserEffects,
+      TenantEffects,
+      AuditLogsEffects,
+      WebhookSubscriptionEffects,
+      DynamicPropertyEffects,
+      DynamicEntityEffects
+    ]),
+    SharedModule,
+    UserAuthModule,
+    RdsSideNavModule,
+  ],
+  declarations: [
+    AppComponent,
+    SidenavComponent,
+  ],
+
+  providers: [
+    DatePipe,
+    { provide: API_BASE_URL, useFactory: getRemoteServiceBaseUrl },
+  ],
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

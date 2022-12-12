@@ -19,9 +19,7 @@ export default {
         RdsLabelModule,
         RdsIconModule,
         SharedModule,
-        NgxTranslateModule,
-        StoreModule.forRoot({})
-        
+        NgxTranslateModule,   
       ],
       providers: [
         FormBuilder

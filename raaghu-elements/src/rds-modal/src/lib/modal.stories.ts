@@ -11,6 +11,11 @@ export default {
       control: 'radio'
     },
   },
+  parameters: { 
+    actions: {
+      handles: ['hide.bs.modal','hidePrevented.bs.modal','show.bs.modal',],
+     }
+   },
 } as Meta;
 export const Default: Story<RdsModalComponent> = (args) => ({
   props: args,
