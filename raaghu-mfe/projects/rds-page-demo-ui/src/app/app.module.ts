@@ -4,6 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgxTranslateModule, SharedModule } from '@libs/shared';
 import { RdsCompDemoUiModule } from 'projects/rds-components/src/app/rds-comp-demoui/rds-comp-demoui.module';
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   declarations: [
@@ -11,6 +12,7 @@ import { RdsCompDemoUiModule } from 'projects/rds-components/src/app/rds-comp-de
   ],
   imports: [    
     CommonModule,
+    BrowserModule,
     AppRoutingModule,
     SharedModule,
     NgxTranslateModule.forRoot(),
