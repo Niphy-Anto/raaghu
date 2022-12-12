@@ -65,7 +65,7 @@
                 <div class="row mt-2">
                     <div class="col-md-4 mt-3">
                         <div class="form-group ">
-                          <rds-input size="default"  [Title]="'Verify Base URL'" [TitleType]="'Top'" inputType="text"
+                          <rds-input size="medium"  [label]="'Verify Base URL'" [labelPosition]="'top'" inputType="text"
                                      name="baseUrl"  [isRequired]=true required [disabled]="false" [readonly]="false"
                                      [placeholder]="'Enter URL'"  [(ngModel)]="accountData.baseUrl"
                                      #baseUrl="ngModel" ngDefaultControl>
@@ -82,7 +82,7 @@
                     </div>
                      <div class="col-md-4 mt-3">
                         <div class="form-group ">
-                          <rds-input size="default"  [Title]="'Score'" [TitleType]="'Top'" inputType="text"
+                          <rds-input size="medium"  [label]="'Score'" [labelPosition]="'top'" inputType="text"
                                      name="score"  [isRequired]=true required [disabled]="false" [readonly]="false"
                                      [placeholder]="'Enter Score'"  [(ngModel)]="accountData.score"
                                      #score="ngModel" ngDefaultControl>
@@ -93,7 +93,7 @@
                 <div class="row mt-2">
                     <div class="col-md-4 mt-3">
                         <div class="form-group ">
-                          <rds-input size="default"  [Title]="'Site Key'" [TitleType]="'Top'" inputType="text"
+                          <rds-input size="medium"  [label]="'Site Key'" [labelPosition]="'top'" inputType="text"
                                      name="site"  [isRequired]=true required [disabled]="false" [readonly]="false"
                                      [placeholder]="'Enter URL'"  [(ngModel)]="accountData.site"
                                      #site="ngModel" ngDefaultControl>
@@ -101,7 +101,7 @@
                           </div>
                      </div>
                      <div class="col-md-4 mt-3">
-                        <rds-input size="default"  [Title]="'Site Secret'" [TitleType]="'Top'" inputType="text"
+                        <rds-input size="medium"  [label]="'Site Secret'" [labelPosition]="'top'" inputType="text"
                         name="secret"  [isRequired]=true required [disabled]="false" [readonly]="false"
                         [placeholder]="'Enter Secret'"  [(ngModel)]="accountData.secret"
                         #secret="ngModel" ngDefaultControl>

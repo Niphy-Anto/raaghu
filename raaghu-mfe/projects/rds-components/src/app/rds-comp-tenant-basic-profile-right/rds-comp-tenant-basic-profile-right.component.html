@@ -4,7 +4,7 @@
         <div class="row align-items-center">
           <div class="col-md-6 sm-p-0">
             <div class="form-group mb-3">
-              <rds-input [inputType]="'text'" [Title]="translate.instant('Name')" [TitleType]="'Top'"
+              <rds-input [inputType]="'text'" [label]="translate.instant('Name')" [labelPosition]="'top'"
                 [(ngModel)]="tenantData.name" name="name" required
                 [placeholder]="translate.instant('Enter Tenant Name')" [isRequired]=true #name="ngModel">
               </rds-input>
@@ -30,7 +30,7 @@
         <div class="row mt-4">
           <div class="col-md-6 sm-p-0">
             <div class="form-group mb-3">
-              <rds-input [inputType]="'email'" [Title]="translate.instant('Email')" [TitleType]="'Top'"
+              <rds-input [inputType]="'email'" [label]="translate.instant('Email')" [labelPosition]="'top'"
                 [(ngModel)]="tenantData.adminEmailAddress" [pattern]="emailPattern" name="adminEmailAddress"
                 [placeholder]="translate.instant('Enter Email')" #adminEmailAddress="ngModel" [isRequired]=true required>
               </rds-input>
@@ -43,7 +43,7 @@
           </div>
           <div class="col-md-6 sm-p-0">
             <div class="form-group mb-3">
-                <rds-input [inputType]="'Password'" [Title]="translate.instant('Password')" [TitleType]="'Top'"
+                <rds-input [inputType]="'Password'" [label]="translate.instant('Password')" [labelPosition]="'top'"
                 [(ngModel)]="tenantData.adminPassword" name="password" required
                 [placeholder]="translate.instant('Enter Password')" [isRequired]=true #adminPassword="ngModel">
               </rds-input>
@@ -96,9 +96,8 @@
         (click)="onCanceled()" data-bs-dismiss="offcanvas">
       </rds-button>
       <rds-button [label]="translate.instant('NEXT')"
-        [disabled]="!tenantCreationForm.valid"
+        [isDisabled]="!tenantCreationForm.valid"
         [size]="'small'" class="ms-2" [colorVariant]="'primary'" (click)="next(tenantCreationForm)" [showLoadingSpinner]="buttonSpinner">
       </rds-button>
     </div>
   </div>
-  <app-rds-comp-tenant-information-shimmer *ngIf="editShimmer"></app-rds-comp-tenant-information-shimmer>

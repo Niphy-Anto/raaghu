@@ -164,6 +164,8 @@ import { RdsCompAccountNewComponent } from './rds-comp-account-new/rds-comp-acco
 import { RdsCompSettingsNewComponent } from './rds-comp-settings-new/rds-comp-settings-new.component';
 import { RdsCompLanguageNewComponent } from './rds-comp-language-new/rds-comp-language-new.component';
 import { RdsCompLanguageTextListComponent } from './rds-comp-language-text-list/rds-comp-language-text-list.component';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+
 
 @NgModule({
   declarations: [	
@@ -270,12 +272,10 @@ import { RdsCompLanguageTextListComponent } from './rds-comp-language-text-list/
     RdsCompNewDynamicEntityShimmerComponent,
     RdsCompOtherSettingsShimmerComponent,
     RdsCompNewLangShimmerComponent,
-    RdsCompCalendarComponent,
     RdsCompBackgroundImageComponent,
     RdsCompBenefitComponent,
     RdsCompProductListComponent,
     RdsCompAppDetailsComponent,
-    RdsCompCalendarComponent,
     RdsCompProductOverviewComponent,
     RdsCompReviewCategoryComponent,
     RdsCompCustomerReviewsComponent,
@@ -320,7 +320,8 @@ import { RdsCompLanguageTextListComponent } from './rds-comp-language-text-list/
     RdsCompThemeNewComponent,
     RdsCompAccountNewComponent,
     RdsCompSettingsNewComponent,
-    RdsCompLanguageNewComponent
+    RdsCompLanguageNewComponent,
+    RdsCompAuditLogsNewComponent
   
   ],
   imports: [
@@ -416,6 +417,9 @@ import { RdsCompLanguageTextListComponent } from './rds-comp-language-text-list/
     RdsTeamMemberModule,
     RdsWebsiteMetricModule,
     RdsTestimonialModule,
+    RdsTestimonialModule,
+    InfiniteScrollModule,
+    RdsTeamMemberModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
