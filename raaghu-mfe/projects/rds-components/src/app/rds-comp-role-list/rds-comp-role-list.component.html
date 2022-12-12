@@ -8,7 +8,7 @@
     </div>
     <div class="col-md-4 text-end pb-3 desktop-btn">
       <rds-button [label]="translate.instant('NEW ROLE')"  type="button"
-        style="float: right" [size]="'small'" [colorVariant]="'primary'" (click)="newRole($event)" [icon]="'plus'"
+        style="float: right" [size]="'small'" [colorVariant]="'primary'" (click)="newRole(false)" [icon]="'plus'"
         iconHeight="12px" iconWidth="12px" class="ms-2">
       </rds-button>
       <rds-button type="button" [size]="'small'" [colorVariant]="'primary'" [isFabIcon]="true" icon="refresh"
@@ -24,7 +24,7 @@
     <div class="col-md-12">
       <div class="card p-2 h-100 border-0 rounded-0 card-full-stretch">
         <div class="table-responsive">
-          <rds-comp-data-table [tableData]="tableData" [inlineEdit]="false" [pagination]="true" [recordsPerPage]="10"
+          <rds-comp-data-table [tableData]="roleList" [inlineEdit]="false" [pagination]="true" [recordsPerPage]="10"
             [actions]="actions" (deleteEvent)="deleteEvent.emit($event)" (onActionSelection)="onActionSelect($event)"
             [tableHeaders]="roleHeaders" [isShimmer]="isShimmer"></rds-comp-data-table>
         </div>

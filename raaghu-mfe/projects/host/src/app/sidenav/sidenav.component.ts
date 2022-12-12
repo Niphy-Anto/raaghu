@@ -479,17 +479,22 @@ export class SidenavComponent {
         this.languageItems = [];
         const languages: any = [];
         res.items.forEach((item: any) => {
-          let icon: string = item.icon.split(' ')[1];
-          icon = icon.replace('-', '_');
-          this.languageItems.push({
-            value: item.displayName,
-            name: item.name,
-            some: item.displayName,
-            id: item.id,
-            icon: icon,
-            iconWidth: '21px',
-            iconHeight: '14px',
-          });
+          if (item) {
+            let icon: string = '';
+            if (item.icon) {
+              icon = item.icon.split(' ')[1];
+              icon = icon.replace('-', '_');
+            }
+            this.languageItems.push({
+              value: item.displayName,
+              name: item.name,
+              some: item.displayName,
+              id: item.id,
+              icon: icon,
+              iconWidth: '21px',
+              iconHeight: '14px',
+            });
+          }
           if (res.defaultLanguageName === item.name) {
             this.selectedLanguage.language = item.displayName;
             this.selectedLanguage.icon = item.icon.split(' ')[1];
@@ -524,7 +529,7 @@ export class SidenavComponent {
           }
         });
       }
-      
+
     }
 
     this.store.dispatch(getMLATenancyData());
@@ -609,7 +614,7 @@ export class SidenavComponent {
           };
           this.usernameList.push(item);
         });
-     
+
       }
     });
     this.sub = this.router.events.subscribe((event) => {
@@ -624,7 +629,7 @@ export class SidenavComponent {
     this.translate.use(lan);
     this.store.dispatch(setDefaultLanguageForUI(lan));
   }
-  deleteDeligateuser(data: any){
+  deleteDeligateuser(data: any) {
     if (data) {
       this.store.dispatch(deleteDelegations(data.id));
     }
@@ -634,24 +639,24 @@ export class SidenavComponent {
       this.store.dispatch(saveDelegations(data));
     }
   }
-  onProfileSave(passwordInfo: any){
+  onProfileSave(passwordInfo: any) {
     if (passwordInfo) {
       this.store.dispatch(changePassword(passwordInfo));
     }
   }
-  logoutEmitter($event){
-      if (this.counter < 1) {
-        this.userAuthService.unauthenticateUser();
-        this.counter++;
-      }
+  logoutEmitter($event) {
+    if (this.counter < 1) {
+      this.userAuthService.unauthenticateUser();
+      this.counter++;
+    }
   }
-  deleteLinkaccount (data: any){
+  deleteLinkaccount(data: any) {
     this.store.dispatch(deleteAccount(data));
   }
-  onDownloadLink(data: any){
+  onDownloadLink(data: any) {
     this.store.dispatch(PrepareCollectedData());
   }
-  onLoginAttemptsRefresh(data: any){
+  onLoginAttemptsRefresh(data: any) {
     this.store.dispatch(getLoginAttempts(data));
     this.store.select(selectAllLoginAttempts).subscribe((res: any) => {
       if (res && res.items) {
@@ -671,26 +676,26 @@ export class SidenavComponent {
       }
     });
   }
-  onAlertHide(event: any){
+  onAlertHide(event: any) {
     this.currentAlerts = event;
   }
-  
-  linkUser(data: any){
+
+  linkUser(data: any) {
     debugger
     this.store.dispatch(linkToUser(data));
   }
-  setAllNotificationAsRead($event){
+  setAllNotificationAsRead($event) {
     this.store.dispatch(SetAllNotificationsAsRead());
   }
-  setNotificationAsRead(data: any){
+  setNotificationAsRead(data: any) {
     this.store.dispatch(
       SetNotificationRead({ id: data.userNotificationId })
     );
   }
-  onUpdateNotificationSettings(data: any){
+  onUpdateNotificationSettings(data: any) {
     this.store.dispatch(updateNotificationSettings(data));
   }
-  onProfileData(event: any){
+  onProfileData(event: any) {
     this.store.dispatch(getProfilepic());
   }
 
