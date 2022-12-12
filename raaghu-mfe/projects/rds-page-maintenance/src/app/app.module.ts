@@ -13,7 +13,6 @@ import { RdsCompAlertPopupModule } from 'projects/rds-components/src/app/rds-com
 @NgModule({
   declarations: [
     AppComponent,    
-
   ],
   imports: [
     CommonModule,

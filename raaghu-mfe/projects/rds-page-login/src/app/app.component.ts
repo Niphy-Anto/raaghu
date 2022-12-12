@@ -131,6 +131,7 @@ export class AppComponent extends MfeBaseComponent implements OnInit {
         type: alert.type,
         title: alert.title,
         message: alert.message,
+        sticky : false
       };
       this.currentAlerts.push(currentAlert);
       const rdsAlertMfeConfig = this.rdsAlertMfeConfig;

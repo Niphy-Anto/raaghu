@@ -17,7 +17,6 @@ import {
 
 import { NgxTranslateModule, SharedModule } from '@libs/shared';
 import { RdsCompLanguageTextListComponent } from './rds-comp-language-text-list.component';
-import { StoreModule } from '@ngrx/store';
 import { RdsCompEditLanguageTextComponent } from '../rds-comp-edit-language-text/rds-comp-edit-language-text.component';
 import { RdsDataTableComponent } from '../rds-comp-data-table/rds-comp-data-table.component';
 import { RdsLabelModule } from '@libs/rds-label';
@@ -36,7 +35,6 @@ export default {
         RdsFabMenuModule,
         NgxTranslateModule,
         RdsInputModule,
-        StoreModule.forRoot({}),
         RdsSelectListModule,
         RdsLabelModule
       ],

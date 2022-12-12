@@ -262,7 +262,7 @@
 							"budgets": [
 								{
 									"type": "initial",
-									"maximumWarning": "1000kb",
+									"maximumWarning": "1mb",
 									"maximumError": "1mb"
 								},
 								{
@@ -4892,8 +4892,5 @@
 			}
 		}
 	},
-  "defaultProject": "host",
-  "cli": {
-    "analytics": false
-  }
+  "defaultProject": "host"
 }

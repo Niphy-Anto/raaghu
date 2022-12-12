@@ -177,6 +177,7 @@ export class AppComponent implements OnInit {
         type: alert.type,
         title: alert.title,
         message: alert.message,
+        sticky: false,
       };
       this.currentAlerts.push(currentAlert);
       this.showLoadingSpinner = false;
