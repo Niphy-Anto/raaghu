@@ -171,6 +171,7 @@ export function getRemoteServiceBaseUrl(): any {
     SharedModule,
     UserAuthModule,
     RdsSideNavModule,
+    RdsCompTopNavigationModule
   ],
   declarations: [
     AppComponent,
