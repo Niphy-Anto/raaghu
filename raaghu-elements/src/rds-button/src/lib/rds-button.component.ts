@@ -29,7 +29,7 @@ export class RdsButtonComponent implements AfterViewInit, OnInit ,OnChanges{
   @Input() isIconFill: boolean = false;
   @Input() icon: string = '';
   @Input() label: string = '';
-  @Output() onClick = new EventEmitter<Event>();
+  @Output() onClick = new EventEmitter<any>();
 
   constructor() {
 
@@ -104,5 +104,6 @@ export class RdsButtonComponent implements AfterViewInit, OnInit ,OnChanges{
       this.onClick.emit(evt);
     }
   }
+
 
 }

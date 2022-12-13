@@ -31,7 +31,7 @@ const Template: Story<RdsPaginationComponent> = (args: RdsPaginationComponent) =
 });
 
 export const Default = Template.bind({});
-Default.parameters = { controls: { include: ['totalRecords', 'recordsPerPage', 'size', 'role', 'alignmentType'] } };
+Default.parameters = { controls: { include: ['totalRecords', 'recordsPerPage', 'size', 'role', 'alignmentType','onPageChange','onRecordsPerPageChange'] } };
 
 Default.args = {
       totalRecords: 10,
@@ -41,7 +41,7 @@ Default.args = {
       alignmentType: 'start'
 };
 export const advanced = Template.bind({});
-advanced.parameters = { controls: { include: ['totalRecords', 'recordsPerPage', 'size', 'role', 'alignmentType'] } };
+advanced.parameters = { controls: { include: ['totalRecords', 'recordsPerPage', 'size', 'role', 'alignmentType','onPageChange','onRecordsPerPageChange'] } };
 
 advanced.args = {
       totalRecords: 101,
