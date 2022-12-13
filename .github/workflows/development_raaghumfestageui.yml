@@ -4,6 +4,8 @@
 name: "Build and deploy anzstageui.raaghu.io"
 
 on:
+  pull_request:
+    types: [closed]
   push:
     branches: [development]
 
