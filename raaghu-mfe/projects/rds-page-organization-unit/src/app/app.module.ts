@@ -32,9 +32,9 @@ import { RdsCompOrganizationTreeModule } from 'projects/rds-components/src/app/r
         HttpClientModule,
         NgxTranslateModule.forRoot(),
         RdsIconModule,
-        RdsCompOrganizationTreeModule,
         RdsCompDataTableModule,
-        RdsCompAlertModule
+        RdsCompAlertModule,
+        RdsCompOrganizationTreeModule
     ]
 })
 export class AppModule { }
