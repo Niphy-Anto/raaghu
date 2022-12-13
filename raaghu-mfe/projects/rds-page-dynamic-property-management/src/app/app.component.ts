@@ -1,6 +1,6 @@
 import { DatePipe } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
-import { AlertService, AppSessionService, ComponentLoaderOptions, SharedService } from '@libs/shared';
+import { AlertService, AppSessionService, SharedService } from '@libs/shared';
 import { Store } from '@ngrx/store';
 import { TranslateService } from '@ngx-translate/core';
 import { ArrayToTreeConverterService } from 'projects/libs/shared/src/lib/array-to-tree-converter.service';
@@ -56,17 +56,17 @@ export class TreeNode {
 export class AppComponent implements OnInit {
   isAnimation: boolean = true;
   currentAlerts: any = [];
-  public rdsAlertMfeConfig: ComponentLoaderOptions = {
-    name: 'RdsCompAlert',
-    input: {
-      currentAlerts: this.currentAlerts,
-    },
-    output: {
-      onAlertHide: (event: any) => {
-        this.currentAlerts = event;
-      },
-    },
-  };
+  // public rdsAlertMfeConfig: ComponentLoaderOptions = {
+  //   name: 'RdsCompAlert',
+  //   input: {
+  //     currentAlerts: this.currentAlerts,
+  //   },
+  //   output: {
+  //     onAlertHide: (event: any) => {
+  //       this.currentAlerts = event;
+  //     },
+  //   },
+  // };
   @Input()
   entityList: any[] = [];
   @Input()
@@ -83,14 +83,16 @@ export class AppComponent implements OnInit {
   InputName: any = '';
   selectedPermission: any;
   selectedDynamicPermission: any = [];
-  rdsDynamicPropertiesMfeConfig: ComponentLoaderOptions;
-  rdsDynamicPermissionMfeConfig: ComponentLoaderOptions;
-  rdsDynamicEntityPropertiesMfeConfig: ComponentLoaderOptions;
+  // rdsDynamicPropertiesMfeConfig: ComponentLoaderOptions;
+  // rdsDynamicPermissionMfeConfig: ComponentLoaderOptions;
+  // rdsDynamicEntityPropertiesMfeConfig: ComponentLoaderOptions;
   permissionsList: any;
   btnLabel: string = 'NEW DYNAMIC PROPERTY';
   public viewCanvas: boolean = false;
   canvasTitle: string = this.translate.instant('NEW DYNAMIC PROPERTY');
   id: number | undefined = undefined;
+  editShimmer: boolean = true;
+  isShimmer: boolean = true;
   DynamicEntityProperties: any = {
     DynamicEntityPropertiesTableHeader: [
       {
@@ -180,12 +182,12 @@ export class AppComponent implements OnInit {
     DynamicPropertiesTableData: [],
   };
 
-  rdsTopNavigationMfeConfig: ComponentLoaderOptions = {
-    name: 'RdsTopNavigation',
-    input: {
-      backgroundColor: this.backgroundColor,
-    },
-  };
+  // rdsTopNavigationMfeConfig: ComponentLoaderOptions = {
+  //   name: 'RdsTopNavigation',
+  //   input: {
+  //     backgroundColor: this.backgroundColor,
+  //   },
+  // };
   isEdit: boolean = false;
   temp: any = [];
   constructor(
@@ -205,63 +207,63 @@ export class AppComponent implements OnInit {
       }
     })
     this.subscribeToAlerts();
-    this.rdsDynamicPropertiesMfeConfig = {
-      name: 'RdsCompDynamicProperties',
-      input: {
-        DynamicPropertiesTableData:
-          this.DynamicProperties.DynamicPropertiesTableData,
-        DynamicPropertiesTableHeader:
-          this.DynamicProperties.DynamicPropertiesTableHeader,
-        inputTypeList: this.inputTypeList,
-        permissionsList: this.permissionsList,
-        isShimmer: true,
-        editShimmer: true
-      },
-      output: {
-        deleteEvent: (eventDataDynamic: any) => {
-          this.store.dispatch(deleteDynamicProperty(eventDataDynamic.id));
-        },
-        createOrUpdateDynamic: (eventData: any) => {
-          this.addDynamic(eventData);
-        },
-        editPropertyTableRowData: (eventData: any) => {
-          const mfeConfig = this.rdsDynamicEntityPropertiesMfeConfig;
+    // this.rdsDynamicPropertiesMfeConfig = {
+    //   name: 'RdsCompDynamicProperties',
+    //   input: {
+    //     DynamicPropertiesTableData:
+    //       this.DynamicProperties.DynamicPropertiesTableData,
+    //     DynamicPropertiesTableHeader:
+    //       this.DynamicProperties.DynamicPropertiesTableHeader,
+    //     inputTypeList: this.inputTypeList,
+    //     permissionsList: this.permissionsList,
+    //     isShimmer: true,
+    //     editShimmer: true
+    //   },
+    //   output: {
+    //     deleteEvent: (eventDataDynamic: any) => {
+    //       this.store.dispatch(deleteDynamicProperty(eventDataDynamic.id));
+    //     },
+    //     createOrUpdateDynamic: (eventData: any) => {
+    //       this.addDynamic(eventData);
+    //     },
+    //     editPropertyTableRowData: (eventData: any) => {
+    //       const mfeConfig = this.rdsDynamicEntityPropertiesMfeConfig;
 
-          mfeConfig.input.editShimmer = true;
+    //       mfeConfig.input.editShimmer = true;
 
-          this.rdsDynamicEntityPropertiesMfeConfig = mfeConfig
-          this.EditDynamicProperty(eventData);
-        },
-      },
-    };
-    this.rdsDynamicEntityPropertiesMfeConfig = {
-      name: 'RdsCompDynamicEnityProperties',
-      input: {
-        DynamicEntityPropertiesTableData:
-          this.DynamicEntityProperties.DynamicEntityPropertiesTableData,
-        DynamicEntityPropertiesTableHeader:
-          this.DynamicEntityProperties.DynamicEntityPropertiesTableHeader,
-        entityNames: this.DynamicEntityProperties.Entity,
-        parameterList: this.DynamicEntityProperties.Parameter,
-        isShimmer: true,
-        editShimmer: true
-      },
-      output: {
-        deleteEvent: (eventDataEntity: any) => {
-          this.store.dispatch(deleteDynamicEntity(eventDataEntity.id));
-        },
-        createOrUpdateDynamicEntitydata: (eventDataEntity: any) => {
-          this.addEntity(eventDataEntity);
-        },
-      },
-    };
+    //       this.rdsDynamicEntityPropertiesMfeConfig = mfeConfig
+    //       this.EditDynamicProperty(eventData);
+    //     },
+    //   },
+    // };
+    // this.rdsDynamicEntityPropertiesMfeConfig = {
+    //   name: 'RdsCompDynamicEnityProperties',
+    //   input: {
+    //     DynamicEntityPropertiesTableData:
+    //       this.DynamicEntityProperties.DynamicEntityPropertiesTableData,
+    //     DynamicEntityPropertiesTableHeader:
+    //       this.DynamicEntityProperties.DynamicEntityPropertiesTableHeader,
+    //     entityNames: this.DynamicEntityProperties.Entity,
+    //     parameterList: this.DynamicEntityProperties.Parameter,
+    //     isShimmer: true,
+    //     editShimmer: true
+    //   },
+    //   output: {
+    //     deleteEvent: (eventDataEntity: any) => {
+    //       this.store.dispatch(deleteDynamicEntity(eventDataEntity.id));
+    //     },
+    //     createOrUpdateDynamicEntitydata: (eventDataEntity: any) => {
+    //       this.addEntity(eventDataEntity);
+    //     },
+    //   },
+    // };
     this.store.dispatch(getPermission());
     this.store.select(selectAllPermissions).subscribe((result: any) => {
       if (result && result.DynanmicPermission && result.DynanmicPermission.items && result.DynanmicPermission.items.length > 0) {
         this.permissionsList = this.ConvertArraytoTreedata(result.DynanmicPermission.items);
-        const mfeConfig = this.rdsDynamicPropertiesMfeConfig;
-        mfeConfig.input.permissionsList = this.permissionsList;
-        this.rdsDynamicPropertiesMfeConfig = mfeConfig;
+        // const mfeConfig = this.rdsDynamicPropertiesMfeConfig;
+        // mfeConfig.input.permissionsList = this.permissionsList;
+        // this.rdsDynamicPropertiesMfeConfig = mfeConfig;
       }
     });
     this.store.dispatch(getDynamicProperty());
@@ -291,25 +293,26 @@ export class AppComponent implements OnInit {
           this.DynamicProperties.DynamicPropertiesTableData.push(item);
         });
 
-        const mfeConfig = this.rdsDynamicPropertiesMfeConfig;
-        mfeConfig.input.DynamicPropertiesTableData = [
-          ...this.DynamicProperties.DynamicPropertiesTableData,
-        ];
-        mfeConfig.input.isShimmer = false;
-        this.rdsDynamicPropertiesMfeConfig = mfeConfig;
-        const mfeConfig1 = this.rdsDynamicEntityPropertiesMfeConfig;
-        mfeConfig1.input.parameterList = [...this.parameterList];
-        this.rdsDynamicEntityPropertiesMfeConfig = mfeConfig1;
+        this.isShimmer = false;
+        // const mfeConfig = this.rdsDynamicPropertiesMfeConfig;
+        // mfeConfig.input.DynamicPropertiesTableData = [
+        //   ...this.DynamicProperties.DynamicPropertiesTableData,
+        // ];
+        // mfeConfig.input.isShimmer = false;
+        // this.rdsDynamicPropertiesMfeConfig = mfeConfig;
+        // const mfeConfig1 = this.rdsDynamicEntityPropertiesMfeConfig;
+        // mfeConfig1.input.parameterList = [...this.parameterList];
+        // this.rdsDynamicEntityPropertiesMfeConfig = mfeConfig1;
 
       }
+      console.log("Data :", this.DynamicProperties, this.DynamicEntityProperties);
 
     });
-
 
     this.store.dispatch(getDynamicEntity());
     this.store.select(selectAllDynamicEntities).subscribe((res: any) => {
       this.DynamicEntityProperties.DynamicEntityPropertiesTableData = [];
-      if (res && res.dynamicEntity.items && res.status == 'success') {
+      if (res && res.dynamicEntity?.items && res.status == 'success') {
         this.isAnimation = false;
         res.dynamicEntity.items.forEach((element: any) => {
           const item: any = {
@@ -322,13 +325,15 @@ export class AppComponent implements OnInit {
             item
           );
         });
-        const mfeConfig = this.rdsDynamicEntityPropertiesMfeConfig;
-        mfeConfig.input.DynamicEntityPropertiesTableData = [
-          ...this.DynamicEntityProperties.DynamicEntityPropertiesTableData,
-        ];
-        mfeConfig.input.isShimmer = false;
-        this.rdsDynamicEntityPropertiesMfeConfig = mfeConfig;
+        this.isShimmer = false;
+        // const mfeConfig = this.rdsDynamicEntityPropertiesMfeConfig;
+        // mfeConfig.input.DynamicEntityPropertiesTableData = [
+        //   ...this.DynamicEntityProperties.DynamicEntityPropertiesTableData,
+        // ];
+        // mfeConfig.input.isShimmer = false;
+        // this.rdsDynamicEntityPropertiesMfeConfig = mfeConfig;
       }
+      this.isShimmer = false;
 
     });
 
@@ -339,22 +344,23 @@ export class AppComponent implements OnInit {
       if (res && res.Entities && res.Entities.length > 0) {
         res.Entities.forEach((element: any) => {
           const item: any = {
-            value:element,
-            some:element,
-            isSelected:element.isSelected,
-            icon:'',
-            iconWidth:0,
-            iconHeight:0,
-            iconFill:false,
+            value: element,
+            some: element,
+            isSelected: element.isSelected,
+            icon: '',
+            iconWidth: 0,
+            iconHeight: 0,
+            iconFill: false,
             iconStroke: true,
             isFree: element.isFree
           };
           this.entityNames.push(item);
         });
-        const mfeConfig = this.rdsDynamicEntityPropertiesMfeConfig;
-        mfeConfig.input.entityNames = [...this.entityNames];
-        mfeConfig.input.isShimmer = false;
-        this.rdsDynamicEntityPropertiesMfeConfig = mfeConfig;
+        this.isShimmer = false;
+        // const mfeConfig = this.rdsDynamicEntityPropertiesMfeConfig;
+        // mfeConfig.input.entityNames = [...this.entityNames];
+        // mfeConfig.input.isShimmer = false;
+        // this.rdsDynamicEntityPropertiesMfeConfig = mfeConfig;
       }
     });
     this.store.dispatch(getInputTypeNames());
@@ -374,16 +380,39 @@ export class AppComponent implements OnInit {
           };
           this.inputTypeList.push(item);
         });
-        const mfeConfig = this.rdsDynamicPropertiesMfeConfig;
-        mfeConfig.input.inputTypeList = [...this.inputTypeList];
-        this.rdsDynamicPropertiesMfeConfig = mfeConfig;
+        // const mfeConfig = this.rdsDynamicPropertiesMfeConfig;
+        // mfeConfig.input.inputTypeList = [...this.inputTypeList];
+        // this.rdsDynamicPropertiesMfeConfig = mfeConfig;
       }
     });
+  }
 
+  deleteDynamic(eventDataDynamic: any) {
+    this.store.dispatch(deleteDynamicProperty(eventDataDynamic.id));
+  }
+
+  createDynamic(eventData: any) {
+    this.addDynamic(eventData);
+  }
+
+  updateDynamic(eventData: any) {
+    // const mfeConfig = this.rdsDynamicEntityPropertiesMfeConfig;
+    // mfeConfig.input.editShimmer = true;
+    // this.rdsDynamicEntityPropertiesMfeConfig = mfeConfig
+    this.EditDynamicProperty(eventData);
+  }
+
+  deleteDynamicEntity(eventDataEntity: any) {
+    this.store.dispatch(deleteDynamicEntity(eventDataEntity.id));
 
   }
+
+  createDynamicEntity(eventDataEntity: any) {
+    this.addEntity(eventDataEntity);
+  }
+
   subscribeToAlerts() {
-    debugger;
+    // debugger;
     this.alertService.alertEvents.subscribe((alert) => {
       this.currentAlerts = [];
       const currentAlert: any = {
@@ -392,9 +421,9 @@ export class AppComponent implements OnInit {
         message: alert.message,
       };
       this.currentAlerts.push(currentAlert);
-      const rdsAlertMfeConfig = this.rdsAlertMfeConfig;
-      rdsAlertMfeConfig.input.currentAlerts = [...this.currentAlerts];
-      this.rdsAlertMfeConfig = rdsAlertMfeConfig;
+      // const rdsAlertMfeConfig = this.rdsAlertMfeConfig;
+      // rdsAlertMfeConfig.input.currentAlerts = [...this.currentAlerts];
+      // this.rdsAlertMfeConfig = rdsAlertMfeConfig;
     });
   }
   btnClick(event) {
@@ -435,7 +464,7 @@ export class AppComponent implements OnInit {
           dynamicPropertyId: 0,
           entityFullName: Data.dynamicEntity.entityFullName,
           tenantId: this.appSessionService.tenantId,
-          dynamicPropertyName:''
+          dynamicPropertyName: ''
         };
         this.store.dispatch(saveDynamicEntity(entityData));
       }
@@ -458,14 +487,15 @@ export class AppComponent implements OnInit {
         };
         this.selectedDynamicPermission = [];
         this.checkSelectedNodes(res.EditDynamicPropertSateI.permission);
-        const mfeConfig = this.rdsDynamicPropertiesMfeConfig;
-        mfeConfig.input.DynamicProperyData = dynamicPropertData;
-        mfeConfig.input.permissionsList = this.permissionsList;
-        mfeConfig.input.selectedPermissionList = [
-          ...this.selectedDynamicPermission,
-        ];
-        mfeConfig.input.editShimmer = false;
-        this.rdsDynamicPropertiesMfeConfig = mfeConfig;
+        // const mfeConfig = this.rdsDynamicPropertiesMfeConfig;
+        // mfeConfig.input.DynamicProperyData = dynamicPropertData;
+        // mfeConfig.input.permissionsList = this.permissionsList;
+        // mfeConfig.input.selectedPermissionList = [
+        //   ...this.selectedDynamicPermission,
+        // ];
+        // mfeConfig.input.editShimmer = false;
+        // this.rdsDynamicPropertiesMfeConfig = mfeConfig;
+        this.editShimmer = false;
       }
     });
     setTimeout(() => {
@@ -524,9 +554,9 @@ export class AppComponent implements OnInit {
           ele.isSelected = false;
         }
       })
-      const mfeConfig1 = this.rdsDynamicEntityPropertiesMfeConfig;
-      mfeConfig1.input.parameterList = [...this.parameterList];
-      this.rdsDynamicEntityPropertiesMfeConfig = mfeConfig1;
+      // const mfeConfig1 = this.rdsDynamicEntityPropertiesMfeConfig;
+      // mfeConfig1.input.parameterList = [...this.parameterList];
+      // this.rdsDynamicEntityPropertiesMfeConfig = mfeConfig1;
       this.openEntityCanvas();
     }
   }
@@ -536,12 +566,11 @@ export class AppComponent implements OnInit {
     this.canvasTitle = this.translate.instant('NEW DYNAMIC PROPERTY');
     this.id = undefined;
     this.isEdit = false;
-    const mfeConfig = this.rdsDynamicPropertiesMfeConfig;
-    mfeConfig.input.DynamicProperyData = {};
-    mfeConfig.input.viewCanvas = true;
-    mfeConfig.input.selectedPermissionList = [];
-    mfeConfig.input.editShimmer = false;
-    this.rdsDynamicPropertiesMfeConfig = mfeConfig;
+    // const mfeConfig = this.rdsDynamicPropertiesMfeConfig;
+    // this.DynamicProperyData = {};
+    this.selectedPermission = [];
+    this.editShimmer = false;
+    // this.rdsDynamicPropertiesMfeConfig = mfeConfig;
 
     setTimeout(() => {
       var offcanvas = document.getElementById('AddDynamic');
@@ -554,9 +583,9 @@ export class AppComponent implements OnInit {
     this.viewCanvas = true;
     this.canvasTitle = this.translate.instant('NEW DYNAMIC ENTITY PROPERTY');
     this.id = undefined;
-    const mfeConfig = this.rdsDynamicEntityPropertiesMfeConfig;
-    mfeConfig.input.reset = true;
-    this.rdsDynamicEntityPropertiesMfeConfig = mfeConfig;
+    // const mfeConfig = this.rdsDynamicEntityPropertiesMfeConfig;
+    // mfeConfig.input.reset = true;
+    // this.rdsDynamicEntityPropertiesMfeConfig = mfeConfig;
 
     setTimeout(() => {
       var offcanvas = document.getElementById('AddEntity');
@@ -565,10 +594,10 @@ export class AppComponent implements OnInit {
     }, 1000);
   }
   resetDynamicProperty() {
-    const mfeConfig = this.rdsDynamicPropertiesMfeConfig;
-    mfeConfig.input.permissionsList = [];
-    mfeConfig.input.selectedPermissionList = [];
-    mfeConfig.input.editShimmer = true;
+    // const mfeConfig = this.rdsDynamicPropertiesMfeConfig;
+    this.permissionsList = [];
+    this.selectedPermission = [];
+    this.editShimmer = true;
   }
   closeCanvas(): void {
     this.viewCanvas = false;
