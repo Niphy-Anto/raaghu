@@ -35,7 +35,7 @@ export class RdsCompTenantListComponent implements OnInit, DoCheck {
     { id: 'delete', displayName: this.translate.instant('Delete') },
   ];
 
-  userTableActions:TableAction[] = [
+  userTableActions: TableAction[] = [
     { id: 'loginIn', displayName: this.translate.instant('Login') },
   ];
   @Input() tenantSettingsInfo: any;
@@ -61,7 +61,7 @@ export class RdsCompTenantListComponent implements OnInit, DoCheck {
   @Output() onSaveFeatures = new EventEmitter<any>();
   @Output() onSelectTenant = new EventEmitter<any>();
   @Output() onTenantLogIn = new EventEmitter<any>();
-  public tenantId:any;
+  public tenantId: any;
 
   public tenant: any = {
     tenantInfo: undefined,
@@ -72,7 +72,7 @@ export class RdsCompTenantListComponent implements OnInit, DoCheck {
 
   @Input() public tenantList: any = [];
   @Input() public userList: any = [];
-  @Input() tenantLoginList:any = [];
+  @Input() tenantLoginList: any = [];
 
   public tableData: any = [];
   public userTableData: any = [];
@@ -157,7 +157,7 @@ export class RdsCompTenantListComponent implements OnInit, DoCheck {
   constructor(
     public translate: TranslateService,
     private alertService: AlertService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.activePage = 0;
@@ -170,7 +170,7 @@ export class RdsCompTenantListComponent implements OnInit, DoCheck {
   }
   onAlertHide(event: any): void {
     this.currentAlerts = event;
-  } 
+  }
 
   getSelectedNavTab(event: any): void {
     this.activePage = event;
@@ -261,7 +261,7 @@ export class RdsCompTenantListComponent implements OnInit, DoCheck {
       this.isTenantInfoValid = false;
     }
     if (event) {
-      this.canvasTitle = this.translate.instant('New Tenant'); 
+      this.canvasTitle = this.translate.instant('New Tenant');
       this.tenantData = undefined;
       this.tenantSettingsInfo = undefined;
       this.showLoadingSpinner = true;
@@ -318,7 +318,7 @@ export class RdsCompTenantListComponent implements OnInit, DoCheck {
     this.showLoadingSpinner = false;
   }
   editTableRowData(event): void {
-    this.canvasTitle = this.translate.instant('Edit Tenant'); 
+    this.canvasTitle = this.translate.instant('Edit Tenant');
     this.newTenant(undefined);
     this.onEditTenant.emit(event.id);
     this.selectedId = event.id;
@@ -385,6 +385,7 @@ export class RdsCompTenantListComponent implements OnInit, DoCheck {
         sticky: alert.sticky,
       };
       this.currentAlerts.push(currentAlert);
+      this.showLoadingSpinner = false;
     });
   }
 

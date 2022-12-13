@@ -213,7 +213,7 @@ export class RdsCompRoleListComponent implements OnInit {
   // Filter by permission canvas
   filterByPermission(event): void {
     this.selectedFilterId = '';
-    this.canvasTitle = this.translate.instant('FILTER BY PERMISSIONS');
+    this.canvasTitle = this.translate.instant('Filter By Permission');
     this.RolesData = undefined;
     this.viewCanvas = true;
     setTimeout(() => {

@@ -38,7 +38,7 @@ const Template: Story<RdsBadgeComponent> = (args: RdsBadgeComponent) => ({
 });
 
 export const Default = Template.bind({});
-Default.parameters = { controls: { include: ['size', 'label', 'colorVariant', 'badgeType'] } };
+Default.parameters = { controls: { include: ['size', 'label', 'colorVariant', 'badgeType','onClose'] } };
 Default.args = {
   size: 'medium',
   label: 'badge',
@@ -68,7 +68,7 @@ Button.args = {
 };
 
 export const button = Button.bind({});
-button.parameters = { controls: { include: ['size', 'label', 'colorVariant', 'badgeType'] } };
+button.parameters = { controls: { include: ['size', 'label', 'colorVariant', 'badgeType','onClose'] } };
 
 const Positioned: Story<RdsBadgeComponent> = (args: RdsBadgeComponent) => ({
   props: args,
@@ -88,7 +88,7 @@ const Positioned: Story<RdsBadgeComponent> = (args: RdsBadgeComponent) => ({
 });
 
 export const positioned = Positioned.bind({});
-positioned.parameters = { controls: { include: ['size', 'label', 'colorVariant', 'badgeType', 'positioned'] } };
+positioned.parameters = { controls: { include: ['size', 'label', 'colorVariant', 'badgeType', 'positioned','onClose'] } };
 positioned.args = {
   size: 'medium',
   label: '99',
@@ -110,7 +110,7 @@ const WithIcon: Story<RdsBadgeComponent> = (args: RdsBadgeComponent) => ({
 });
 
 export const withIcon = WithIcon.bind({});
-withIcon.parameters = { controls: { include: ['size', 'label', 'colorVariant', 'badgeType', 'positioned'] } };
+withIcon.parameters = { controls: { include: ['size', 'label', 'colorVariant', 'badgeType', 'positioned','onClose'] } };
 withIcon.args = {
   size: 'medium',
   label: '9',
