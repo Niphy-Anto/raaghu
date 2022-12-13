@@ -28,7 +28,7 @@ const Template: Story<RdsCardDetailComponent> = (args: RdsCardDetailComponent) =
 
 // const teletext = "some text"
 export const BankCardDetail = Template.bind({});
-BankCardDetail.parameters = { controls: { include: ['cardData', 'IsEditAndDefaultFunctionalityRequired', 'IsSelectionRequired', 'label'] } };
+BankCardDetail.parameters = { controls: { include: ['cardData', 'IsEditAndDefaultFunctionalityRequired', 'IsSelectionRequired', 'label','onSetDefaultcard','onSelectPaymentMethod','onEditCard'] } };
 BankCardDetail.args = {
   cardData: {
     cardID: '1011', cardName: 'MasterCard', cardExpiry: '11/2027', cardLogo:'editions', cardNumber: 3596, isDefault:false,radioItems: [{id: 1011, checked: false, name: "Radio-Button"}]

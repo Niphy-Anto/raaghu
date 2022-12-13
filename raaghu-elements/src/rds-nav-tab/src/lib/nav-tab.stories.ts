@@ -30,7 +30,7 @@ export const Default: Story<RdsNavTabComponent> = (args) => ({
         [horizontalAlignment]="horizontalAlignment"
         ></rds-nav-tab>`,
 });
-Default.parameters = { controls: { include: ['navtabsItems', 'horizontalAlignment'] } };
+Default.parameters = { controls: { include: ['navtabsItems', 'horizontalAlignment','onClicktab'] } };
 Default.args = {
     navtabsItems: [
         { label: 'Active', tablink: '#nav-home', ariacontrols: 'nav-home' },
@@ -48,7 +48,7 @@ export const withIcon: Story<RdsNavTabComponent> = (args) => ({
         [horizontalAlignment]="horizontalAlignment"
         ></rds-nav-tab>`,
 });
-withIcon.parameters = { controls: { include: ['navtabsItems', 'horizontalAlignment'] } };
+withIcon.parameters = { controls: { include: ['navtabsItems', 'horizontalAlignment','onClicktab'] } };
 withIcon.args = {
     navtabsItems: [
         { label: 'Home', tablink: '#nav-home', ariacontrols: 'nav-home', icon: 'home', iconHeight: '20px', iconWidth: '20px', iconStroke: true, iconFill: false },
@@ -79,7 +79,7 @@ Tabs.args = {
     ],
     horizontalAlignment: 'start'
 }
-Tabs.parameters = { controls: { include: ['navtabsItems', 'horizontalAlignment', 'tabs'] } };
+Tabs.parameters = { controls: { include: ['navtabsItems', 'horizontalAlignment', 'tabs','onClicktab'] } };
 
 export const Pills: Story<RdsNavTabComponent> = (args) => ({
     props: args,
@@ -92,7 +92,7 @@ export const Pills: Story<RdsNavTabComponent> = (args) => ({
         ></rds-nav-tab>
     `,
 });
-Pills.parameters = { controls: { include: ['navtabsItems', 'horizontalAlignment', 'pills'] } };
+Pills.parameters = { controls: { include: ['navtabsItems', 'horizontalAlignment', 'pills','onClicktab'] } };
 Pills.args = {
     pills: true,
     navtabsItems: [
@@ -113,7 +113,7 @@ export const justified: Story<RdsNavTabComponent> = (args) => ({
         ></rds-nav-tab>
     `,
 });
-justified.parameters = { controls: { include: ['navtabsItems', 'horizontalAlignment','justified'] } };
+justified.parameters = { controls: { include: ['navtabsItems', 'horizontalAlignment','justified','onClicktab'] } };
 justified.args = {
     navtabsItems: [
         { label: 'Active', tablink: '#nav-home', ariacontrols: 'nav-home' },
@@ -134,7 +134,7 @@ export const fill: Story<RdsNavTabComponent> = (args) => ({
         ></rds-nav-tab>
     `,
 });
-fill.parameters = { controls: { include: ['navtabsItems', 'horizontalAlignment','fill'] } };
+fill.parameters = { controls: { include: ['navtabsItems', 'horizontalAlignment','fill','onClicktab'] } };
 fill.args = {
     navtabsItems: [
         { label: 'Active', tablink: '#nav-home', ariacontrols: 'nav-home' },
@@ -163,7 +163,7 @@ Vertical.args = {
         { label: 'Disabled', tablink: '#nav-deabled', disabled: "true" },
     ]
 }
-Vertical.parameters = { controls: { include: ['navtabsItems', 'verticalAlignment'] } };
+Vertical.parameters = { controls: { include: ['navtabsItems', 'verticalAlignment','onClicktab'] } };
 
 
 

@@ -94,125 +94,135 @@ export class SidenavComponent {
     {
       label: 'Dashboard',
       labelTranslationKey: 'Dashboard',
-      id: '',
+      id: 1,
       permissionName: 'Pages.Administration.Host.Dashboard',
       icon: 'home',
       path: '/pages/dashboard',
       descriptionTranslationKey: 'Statistics and reports',
       description: 'Statistics and reports',
+      parent: null
     },
     {
       label: 'Dashboard',
       labelTranslationKey: 'Dashboard',
-      id: '',
+      id: 2,
       permissionName: 'Pages.Tenant.Dashboard',
       icon: 'home',
       path: '/pages/dashboard',
       description: 'Statistics and reports',
       descriptionTranslationKey: 'Statistics and reports',
+      parent: null
     },
     {
       label: 'UI Components',
       labelTranslationKey: 'UI Components',
-      id: '',
+      id: 3,
       permissionName: '',
       icon: 'demo_ui',
       path: '/pages/demo-ui',
       description: '',
       descriptionTranslationKey: '',
+      parent: null
     },
     {
       label: 'Icons',
       labelTranslationKey: 'Icons',
-      id: '',
+      id: 4,
       permissionName: '',
       icon: 'icons',
       path: '/pages/icons',
       description: 'icons',
       descriptionTranslationKey: '',
+      parent: null
     },
     {
       label: 'Pages',
       labelTranslationKey: 'Pages',
-      id: '',
+      id: 5,
       permissionName: '',
       icon: 'pages',
       path: 'pages',
+      parent: null,
       children: [
         {
           label: 'Tenants',
           labelTranslationKey: 'Tenants',
-          id: 'tenants',
+          id: 51,
           permissionName: 'Pages.Tenants',
           icon: 'tenant',
           path: '/pages/tenant',
           description: 'Manage your tenants',
           descriptionTranslationKey: 'Manage your tenants',
+          parent: 5
         },
         {
           label: 'Editions',
           labelTranslationKey: 'Editions',
-          id: '',
+          id: 52,
           permissionName: 'Pages.Editions',
           icon: 'editions',
           path: '/pages/edition',
           description: 'Manage editions and features of the application',
-          descriptionTranslationKey:
-            'Manage editions and features of the application',
+          descriptionTranslationKey: 'Manage editions and features of the application',
+          parent: 5
         },
         {
           label: 'Administration',
           labelTranslationKey: 'Administration',
-          id: 'admin',
+          id: 53,
           permissionName: '',
           icon: '',
           path: '',
+          parent: 5,
           children: [
             {
               label: 'Organization Units',
               labelTranslationKey: 'Organization Units',
-              id: '',
+              id: 531,
               permissionName: 'Pages.Administration.OrganizationUnits',
               icon: 'organization',
               path: '/pages/organization-unit',
               description: 'Use organization units to organize users and entities',
-              descriptionTranslationKey:
-                'Use organization units to organize users and entities',
+              descriptionTranslationKey: 'Use organization units to organize users and entities',
+              parent: 53
             },
             {
               label: 'Roles',
               labelTranslationKey: 'Roles',
-              id: '',
+              id: 532,
               permissionName: 'Pages.Administration.Roles',
               icon: 'roles',
               path: '/pages/role',
               description: 'Use roles to group permissions',
               descriptionTranslationKey: 'Use roles to group permissions',
+              parent: 53
             },
             {
               label: 'Users',
               labelTranslationKey: 'Users',
-              id: '',
+              id: 533,
               permissionName: 'Pages.Administration.Users',
               icon: 'users',
               path: '/pages/user',
               description: 'Manage users and permissions',
               descriptionTranslationKey: 'Manage users and permissions',
+              parent: 53
             },
             {
               label: 'Language',
               labelTranslationKey: 'Language',
-              id: '',
+              id: 534,
               permissionName: 'Pages.Administration.Languages',
               icon: 'languages',
               path: '/pages/language',
               description: 'Manage user interface languages',
               descriptionTranslationKey: 'Statistics and reports',
+              parent: 53
             },
             {
               label: 'Audit logs',
               labelTranslationKey: 'Audit logs',
-              id: '',
+              id: 535,
               permissionName: 'Pages.Administration.AuditLogs',
               icon: 'audit_logs',
               path: '/pages/audit-logs',
@@ -221,80 +231,83 @@ export class SidenavComponent {
             {
               label: 'subscription',
               labelTranslationKey: 'subscription',
-              id: '',
+              id: 536,
               permissionName: 'Pages.Administration.Tenant.SubscriptionManagement',
               icon: 'subscription',
               path: '/pages/subscription',
               descriptionTranslationKey: '',
-            },
-            // {
-            //   label: 'Maintenance',
-            //   labelTranslationKey: 'Maintenance',
-            //   id: '',
-            //   permissionName: 'Pages.Administration.Host.Maintenance',
-            //   icon: 'maintenance',
-            //   path: '/pages/maintenance',
-            //   description: 'Statistics and reports',
-            //   descriptionTranslationKey: 'Statistics and reports',
-            // },
+              parent: 53
+            }, ,
             {
               label: 'Maintenance',
               labelTranslationKey: 'Maintenance',
-              id: '',
+              id: 537,
               permissionName: '',
               icon: 'maintenance',
               path: '/pages/maintenance',
               description: 'Statistics and reports',
               descriptionTranslationKey: 'Statistics and reports',
+              parent: 53
+
             },
             {
               label: 'Visual Settings',
               labelTranslationKey: 'Visual Settings',
-              id: '',
+              id: 538,
               permissionName: '',
               icon: 'visual_settings',
               path: '/pages/visualsettings',
               description: 'Change the look of UI',
               descriptionTranslationKey: 'Change the look of UI',
+              parent: 53
+
             },
             {
               label: 'Webhook Subscriptions',
               labelTranslationKey: 'Webhook Subscriptions',
-              id: '',
+              id: 539,
               permissionName: 'Pages.Administration.WebhookSubscription',
               icon: 'webhook_subscription',
               path: '/pages/webhooksubscription',
               description: 'Webhook Subsubscription Info',
               descriptionTranslationKey: 'Statistics and reports',
+              parent: 53
+
             },
             {
               label: 'Dynamic Properties',
               labelTranslationKey: 'Dynamic Properties',
-              id: 'Pages.Administration.DynamicProperties',
-              permissionName: '',
+              id: 540,
+              permissionName: 'Pages.Administration.DynamicProperties',
               icon: 'dynamic_properties',
               path: '/pages/dynamic-property-management',
               descriptionTranslationKey: '',
+              parent: 53
+
             },
             {
               label: 'Settings',
               labelTranslationKey: 'Settings',
-              id: '',
+              id: 541,
               permissionName: 'Pages.Administration.Host.Settings',
               icon: 'setting',
               path: '/pages/settings',
               description: 'Show and change application settings',
               descriptionTranslationKey: 'Show and change application settings',
+              parent: 53
+
             },
             {
               label: 'Settings',
               labelTranslationKey: 'Settings',
-              id: '',
+              id: 542,
               permissionName: 'Pages.Administration.Tenant.Settings',
               icon: 'setting',
               path: '/pages/settings',
               description: 'Show and change application settings',
               descriptionTranslationKey: 'Show and change application settings',
+              parent: 53
+
             },
           ],
         }
@@ -343,8 +356,7 @@ export class SidenavComponent {
   selectedMenuDescription: string = '';
   sub: Subscription;
   accountPage = true;
-  activePage: any;
-  activesubmenu: any;
+  activeMenu: any;
   languageItems: any = [];
   linkedAccountData: any = [];
   linkedAccountHeaders: any = [
@@ -402,7 +414,8 @@ export class SidenavComponent {
         this.setTheme(theme);
       }
 
-    })
+    });
+
 
     // this.selectAllvisualSettings()
 
@@ -510,26 +523,7 @@ export class SidenavComponent {
       }
     });
     if (this.router.url) {
-      let matchRoute: any;
-      const index = this.getMatchedRoute(this.sidenavItems);
-      if (index !== -1) {
-        this.activePage = index;
-        this.selectedMenu = this.sidenavItems[index].label;
-        this.selectedMenuDescription = this.sidenavItems[index].description;
-      } else {
-        this.sidenavItems.forEach((menu: any, i: number) => {
-          if (menu.children && menu.children.length > 0) {
-            const index = this.getMatchedRoute(menu.children);
-            if (index !== -1) {
-              this.activePage = i;
-              this.activesubmenu = index;
-              this.selectedMenu = menu.children[index].label;
-              this.selectedMenuDescription = menu.children[index].description;
-            }
-          }
-        });
-      }
-
+      this.getMatchedRoute(this.sidenavItems);
     }
 
     this.store.dispatch(getMLATenancyData());
@@ -547,11 +541,6 @@ export class SidenavComponent {
           };
           this.linkedAccountData.push(_item);
         });
-      }
-    });
-    this.sub = this.router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-        this.accountPage = ['/login', '/forgot-password'].includes(event.url);
       }
     });
     if (this.sidenavItems && this.sidenavItems.length > 0) {
@@ -620,6 +609,7 @@ export class SidenavComponent {
     this.sub = this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.accountPage = ['/login', '/forgot-password'].includes(event.url);
+        this.getMatchedRoute(this.sidenavItems);
       }
     });
 
@@ -765,8 +755,21 @@ export class SidenavComponent {
       this.showDelegationButtonSpinner = false;
     });
   }
-  getMatchedRoute(menus): number {
-    return menus.findIndex((x: any) => x.path === this.router.url);
+  getMatchedRoute(menus): any {
+    menus.forEach((menu: any, _index: number) => {
+      if (menu.path === this.router.url) {
+        this.activeMenu = menu;
+        this.selectedMenu = menu.label;
+        this.selectedMenuDescription = menu.description;
+        // const rdsTopNavigationMfeConfig = this.rdsTopNavigationMfeConfig;
+        // rdsTopNavigationMfeConfig.input.selectedMenu = menu.label;
+        // rdsTopNavigationMfeConfig.input.selectedMenuDescription = menu.description;
+        // this.rdsTopNavigationMfeConfig = rdsTopNavigationMfeConfig;
+      } else if (menu.children) {
+        this.getMatchedRoute(menu.children);
+      }
+    })
+    // return menus.findIndex((x: any) => x.path === this.router.url);
   }
   format(userNotification) {
     let formatted = {
@@ -867,7 +870,9 @@ export class SidenavComponent {
           icon: node.icon,
           path: node.path,
           description: node.description,
+          parent: node.parent,
           labelTranslationKey: node.labelTranslationKey,
+          active: node.active,
         };
 
         if (node.children != undefined) {

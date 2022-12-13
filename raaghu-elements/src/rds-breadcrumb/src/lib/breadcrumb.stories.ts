@@ -43,7 +43,7 @@ const Template: Story<RdsBreadcrumbComponent> = (args: RdsBreadcrumbComponent) =
 });
 
 export const Default = Template.bind({});
-Default.parameters = { controls: { include: ['role', 'breadcrumbsItems'] } };
+Default.parameters = { controls: { include: ['role', 'breadcrumbsItems','onItemClick'] } };
 Default.args = {
   role: 'basic',
   breadcrumbsItems: [{ name: 'Home', route: '/home', icon: 'home', iconWidth: '15px', iconHeight: '15px', disabled: true },
