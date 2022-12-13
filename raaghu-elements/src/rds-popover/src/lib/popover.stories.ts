@@ -36,7 +36,7 @@ const Template: Story<RdsPopoverComponent> = (args: RdsPopoverComponent) => ({
 });
 
 export const PopoverWithButton = Template.bind({});
-PopoverWithButton.parameters = { controls: { include: ['popoverPosition', 'popoverTitle', 'popoverContent'] } };
+PopoverWithButton.parameters = { controls: { include: ['popoverPosition', 'popoverTitle', 'popoverContent','onClick'] } };
 PopoverWithButton.args = {
   popoverPosition: 'left',
   popoverTitle: 'popover title',
@@ -64,7 +64,7 @@ export const PopoverWithLink: Story<RdsPopoverComponent> = (args) => ({
       </rds-popover>
       `,
 });
-PopoverWithLink.parameters = { controls: { include: ['popoverPosition', 'popoverTitle', 'popoverContent', 'hover'] } };
+PopoverWithLink.parameters = { controls: { include: ['popoverPosition', 'popoverTitle', 'popoverContent', 'hover','onClick'] } };
 PopoverWithLink.args = {
   popoverPosition: 'right',
   popoverTitle: 'popover title',

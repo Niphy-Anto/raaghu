@@ -24,7 +24,7 @@ const Template: Story<RdsSideNavComponent> = (args: RdsSideNavComponent) => ({
 });
 
 export const Default = Template.bind({});
-Default.parameters = { controls: { include: ['sidenavItems', 'collapseRequired'] } };
+Default.parameters = { controls: { include: ['sidenavItems', 'collapseRequired','emitPath','collapsedState','selectedMode'] } };
 Default.args = {
   sidenavItems: [
     { label: 'Dashboard', id: '1', parent: null, icon: 'home', path: 'home' },
