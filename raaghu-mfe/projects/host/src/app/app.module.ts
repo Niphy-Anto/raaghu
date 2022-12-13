@@ -16,6 +16,7 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 import { DatePipe } from '@angular/common';
 import { RdsSideNavModule } from '@libs/rds-elements';
 import demodata from '../assets/appconfig.json';
+import { RdsCompTopNavigationModule } from '../../../rds-components/src/app/rds-comp-top-navigation/rds-comp-top-navigation.module';
 import { RdsCookieConsentConfig } from 'projects/libs/rds-cookieconsent/src/lib/service/cookieconsent-config';
 import { RdsCookieConsentModule } from 'projects/libs/rds-cookieconsent/src/lib/rds-cookieconsent.module';
 import { ProfilePicEffects } from 'projects/libs/state-management/src/lib/state/profile-settings/profile-settings.effects';
@@ -170,6 +171,7 @@ export function getRemoteServiceBaseUrl(): any {
     SharedModule,
     UserAuthModule,
     RdsSideNavModule,
+    RdsCompTopNavigationModule
   ],
   declarations: [
     AppComponent,

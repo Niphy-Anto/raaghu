@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { TreeNode, TreeNodeLabeles, TreeType } from '../../models/tree-node.model';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'rds-comp-hierarchy',
@@ -11,7 +12,8 @@ export class RdsCompHierarchyComponent implements OnInit, OnChanges {
   @Input() isReset: boolean = false;
   @Input() selectedItems: TreeNode[] = [];
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder,
+    public translate: TranslateService) {
   }
 
   ngOnInit(): void {

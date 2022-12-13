@@ -47,14 +47,17 @@
            </div> 
         <div class="row">
           <div class="col-sm-12 sm-p-0">
-            <mfe-loader [config]="rdsLoginTableMfeConfig"></mfe-loader>
+            <!-- <mfe-loader [config]="rdsLoginTableMfeConfig"></mfe-loader> -->
+            <rds-comp-data-table [tableData]="this.LoginAttempts.LoginDatatable" [pagination]="true" [recordsPerPage]="10"
+                [noDataTitle]="translate.instant('Currently you do not have login attempts')" [showNodataSubtitle]="false"
+                [refresh]="true" [tableHeaders]="this.LoginAttempts.TableHeader"></rds-comp-data-table>
           </div>
         </div>
         <div class="row">
           <div class="col-sm-12 sm-p-0 mt-3">
-            <rds-data-table [tableData]="operationLogs"  [pagination]="true" *ngIf="showInput"
+            <rds-comp-data-table [tableData]="operationLogs"  [pagination]="true" *ngIf="showInput"
                 [noDataTitle]="translate.instant('Currently you do not have operation log')" [showNodataSubtitle]="false"
-                [refresh]="true" [tableHeaders]="operationLogsHeaders"></rds-data-table>
+                [refresh]="true" [tableHeaders]="operationLogsHeaders"></rds-comp-data-table>
           </div>
         </div>
       </div>

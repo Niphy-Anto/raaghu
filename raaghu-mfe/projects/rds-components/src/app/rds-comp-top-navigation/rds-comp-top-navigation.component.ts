@@ -31,7 +31,7 @@ export class RdsTopNavigationComponent extends MfeBaseComponent implements OnIni
   @Input() logo: string = '../assets/Raaghu-logo-mfe-black.png';
   @Input() projectName: string = '';
   @Input() sideMenuCollapsed: boolean = false;
-  @Input() isPageWrapper: boolean = false;
+  @Input() isPageWrapper: boolean = true;
   @Input() selectedMenu: string = 'Dashboard';
   @Input() backgroundColor: string = 'rgb(245, 245, 250)';
   @Input() selectedMenuDescription: string = 'Statics and reports';
@@ -109,6 +109,8 @@ export class RdsTopNavigationComponent extends MfeBaseComponent implements OnIni
 
   @Output() onProfileSave = new EventEmitter<any>();
   @Output() FixedHeaderStyle = new EventEmitter<any>();
+  @Output() logoutEmitter = new EventEmitter<any>();
+  @Output() tenancyDataEmitter= new EventEmitter<any>();
 
   constructor(private router: Router, private injector: Injector,
     private alertService: AlertService,
@@ -145,35 +147,11 @@ export class RdsTopNavigationComponent extends MfeBaseComponent implements OnIni
         x.selected = false;
       })
     })
-    // const existingLinkEl = this.document.getElementById('client-theme') as HTMLLinkElement;
-    // existingLinkEl.href = 'default.css';
-    // let selectedTheme = localStorage.getItem('THEME');
-    // if (selectedTheme === 'light' || selectedTheme === 'dark' || selectedTheme === '' || selectedTheme == undefined || selectedTheme == null || selectedTheme === 'undefined') {
-    //   selectedTheme = 'default';
-    // }
-    // this.selectedTheme = selectedTheme;
-    // // this.onThemeSelect(selectedTheme);
-
-    // this.alertService.themes.subscribe((theme) => {
-    //   if (theme) {
-    //     // this.onThemeSelect(theme);
-    //     this.selectedTheme = theme;
-
-    //   }
-
-    // })
+    
 
 
 
-    this.on('logout').subscribe(r => {
-      this.emitEvent('logout-returns', {});
-    })
-
-    this.on('tenancyDataAgain').subscribe(res => {
-      console.log(res);
-      this.emitEvent('tenancyDataReturns', res);
-    })
-
+    
 
   }
 
@@ -185,6 +163,14 @@ export class RdsTopNavigationComponent extends MfeBaseComponent implements OnIni
   redirect(type: any) {
     this.redirection.emit(type);
   }
+  logout($event) {
+    this.logoutEmitter.emit({});
+  }
+
+  // this.on('tenancyDataAgain').subscribe(res => {
+  //   this.tenancyDataEmitter.emit(res);
+  // })
+
 
 
 
@@ -195,6 +181,7 @@ export class RdsTopNavigationComponent extends MfeBaseComponent implements OnIni
     this.deleteLinkaccount.emit(event);
   }
   saveLinkUsers(event: any) {
+    debugger
     this.linkUser.emit(event);
   }
   getProfilePic(event: any): void {
