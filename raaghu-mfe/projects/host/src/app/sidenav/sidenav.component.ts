@@ -527,6 +527,7 @@ export class SidenavComponent extends MfeBaseComponent {
           var element = document.getElementById('sidebar');
           element.style.display =
             element.style.display === 'none' || element.style.display == '' || !element.style.display ? 'block' : 'none';
+          this.collapseRequired = false;
         },
         onLanguageSelection: (lan) => {
           this.translate.use(lan);
