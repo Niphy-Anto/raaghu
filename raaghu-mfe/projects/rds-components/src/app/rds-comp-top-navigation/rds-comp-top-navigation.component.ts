@@ -28,7 +28,7 @@ export class RdsTopNavigationComponent extends MfeBaseComponent implements OnIni
   @Input()
   LoginAttempts: any = {};
   @Input() LinkAccounts: []
-  @Input() logo: string = '/static/media/.storybook/assets/raaghu-logo.svg';
+  @Input() logo: string = '../assets/Raaghu-logo-mfe-black.png';
   @Input() projectName: string = '';
   @Input() sideMenuCollapsed: boolean = false;
   @Input() isPageWrapper: boolean = false;
