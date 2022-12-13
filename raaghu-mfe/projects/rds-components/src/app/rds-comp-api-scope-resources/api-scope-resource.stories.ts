@@ -1,25 +1,25 @@
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { HttpClientModule } from '@angular/common/http';
-import { RdsAccordionModule, RdsCheckboxModule,} from '@libs/rds-elements';
-import { RdcCompApiScopeResourcesComponent } from './rds-comp-api-scope-resources.component';
+import { RdsAccordionModule, RdsCheckboxModule } from '@libs/rds-elements';
+import { RdsCompApiScopeResourcesComponent } from './rds-comp-api-scope-resources.component';
 import { NgxTranslateModule, SharedModule } from '@libs/shared';
-  
+
 export default {
   title: 'Components/Api Scope Resource',
-  component: RdcCompApiScopeResourcesComponent,
+  component: RdsCompApiScopeResourcesComponent,
   decorators: [
     moduleMetadata({
-        declarations:[],
-        
+      declarations: [],
+
       imports: [
-        FormsModule, 
+        FormsModule,
         ReactiveFormsModule,
         SharedModule,
         NgxTranslateModule,
         RdsAccordionModule,
         HttpClientModule,
-        RdsCheckboxModule,  
+        RdsCheckboxModule,
       ],
       providers: [
         FormBuilder
@@ -28,7 +28,7 @@ export default {
   ]
 } as Meta;
 
-const Template: Story<RdcCompApiScopeResourcesComponent> = (args: RdcCompApiScopeResourcesComponent) => ({});
+const Template: Story<RdsCompApiScopeResourcesComponent> = (args: RdsCompApiScopeResourcesComponent) => ({});
 
-export const Default= Template.bind({});
+export const Default = Template.bind({});
 

@@ -20,8 +20,8 @@ import {
   SharedModule,
 } from '../../../libs/shared/src/public-api';
 import { StoreModule } from '@ngrx/store';
-import { RdcCompApiScopeBasicsComponent } from 'projects/rds-components/src/app/rds-comp-api-scope-basics/rds-comp-api-scope-basics.component';
-import { RdcCompApiScopeResourcesComponent } from 'projects/rds-components/src/app/rds-comp-api-scope-resources/rds-comp-api-scope-resources.component';
+import { RdsCompApiScopeBasicsComponent } from 'projects/rds-components/src/app/rds-comp-api-scope-basics/rds-comp-api-scope-basics.component';
+import { RdsCompApiScopeResourcesComponent } from 'projects/rds-components/src/app/rds-comp-api-scope-resources/rds-comp-api-scope-resources.component';
 import { RdsDataTableComponent } from 'projects/rds-components/src/app/rds-comp-data-table/rds-comp-data-table.component';
 
 export default {
@@ -30,8 +30,8 @@ export default {
   decorators: [
     moduleMetadata({
       declarations: [
-        RdcCompApiScopeBasicsComponent,
-        RdcCompApiScopeResourcesComponent,
+        RdsCompApiScopeBasicsComponent,
+        RdsCompApiScopeResourcesComponent,
         RdsDataTableComponent,
       ],
       imports: [

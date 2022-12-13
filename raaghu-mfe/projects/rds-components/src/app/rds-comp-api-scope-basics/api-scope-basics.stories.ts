@@ -1,13 +1,13 @@
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
  import { HttpClientModule } from '@angular/common/http';
-import { RdcCompApiScopeBasicsComponent } from './rds-comp-api-scope-basics.component';
+import { RdsCompApiScopeBasicsComponent } from './rds-comp-api-scope-basics.component';
 import { RdsCheckboxModule, RdsInputModule, RdsLabelModule, RdsTextareaModule } from '@libs/rds-elements';
 import { NgxTranslateModule, SharedModule } from '@libs/shared';
   
 export default {
   title: 'Components/Api Scope Basics',
-  component: RdcCompApiScopeBasicsComponent,
+  component: RdsCompApiScopeBasicsComponent,
   decorators: [
     moduleMetadata({
       imports: [
@@ -20,6 +20,6 @@ export default {
   ]
 } as Meta;
 
-const Template: Story<RdcCompApiScopeBasicsComponent> = (args: RdcCompApiScopeBasicsComponent) => ({});
+const Template: Story<RdsCompApiScopeBasicsComponent> = (args: RdsCompApiScopeBasicsComponent) => ({});
 
 export const  Default = Template.bind({});

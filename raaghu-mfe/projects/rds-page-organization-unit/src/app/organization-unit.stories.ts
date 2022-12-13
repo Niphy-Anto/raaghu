@@ -10,7 +10,7 @@ import { NgxTranslateModule, SharedModule } from '@libs/shared';
 import { CommonModule } from '@angular/common';
 import { AppComponent as OrganizationUnit} from './app.component';
 import { RdsDataTableComponent } from '../../../rds-components/src/app/rds-comp-data-table/rds-comp-data-table.component';
-import { RdsOrganizationTreeComponent } from '../../../rds-components/src/app/rds-comp-organization-tree/rds-comp-organization-tree.component';
+import { RdsCompOrganizationTreeComponent } from '../../../rds-components/src/app/rds-comp-organization-tree/rds-comp-organization-tree.component';
 import { StoreModule } from '@ngrx/store';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -21,7 +21,7 @@ export default {
     moduleMetadata({
       declarations: [
         RdsDataTableComponent,
-        RdsOrganizationTreeComponent,
+        RdsCompOrganizationTreeComponent,
         RdsAlertComponent
       ],
       imports: [
