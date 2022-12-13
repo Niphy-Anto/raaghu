@@ -203,7 +203,7 @@ export class RdsCompRoleListComponent implements OnInit{
   }
   editTableRowData(event): void {
     this.newRole(undefined);
-    this.canvasTitle = this.translate.instant('EDIT ROLE');
+    this.canvasTitle = this.translate.instant('Edit Role');
     this.onEditRole.emit(event.id);
     this.selectedId = event.roleid;
   }
@@ -211,7 +211,7 @@ export class RdsCompRoleListComponent implements OnInit{
   // Filter by permission canvas
   filterByPermission(event): void {
     this.selectedFilterId = '';
-    this.canvasTitle = this.translate.instant('FILTER BY PERMISSIONS');
+    this.canvasTitle = this.translate.instant('Filter By Permission');
     this.RolesData = undefined;
     this.viewCanvas = true;
     setTimeout(() => {
