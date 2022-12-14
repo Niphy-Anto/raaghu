@@ -1,8 +1,7 @@
 import { AfterViewInit, Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges, ViewEncapsulation } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { Dropdown } from 'bootstrap'
-declare var $: any;
-let that: any;
+
 export interface SideNavItem {
   label: string,
   id: any,
@@ -44,9 +43,9 @@ export class RdsSideNavComponent implements OnInit, OnChanges {
   showHide: boolean = false;
   showHideSubmenu: boolean = false;
   title = 'rds-side-nav';
-  constructor() {
-    that = this;
-  }
+  
+  constructor() { }
+  
   ngOnChanges(changes: SimpleChanges): void {
     if (this.activeMenu !== '' && this.activeMenu !== undefined) {
       this.activeMenuId = this.activeMenu.id;
