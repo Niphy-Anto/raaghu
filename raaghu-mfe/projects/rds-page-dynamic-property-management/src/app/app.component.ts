@@ -93,28 +93,27 @@ export class AppComponent implements OnInit {
   id: number | undefined = undefined;
   editShimmer: boolean = true;
   isShimmer: boolean = true;
-  DynamicEntityProperties: any = {
-    DynamicEntityPropertiesTableHeader: [
-      {
-        displayName: this.translate.instant('Entity Full Name'),
-        key: 'entityFullName',
-        dataType: 'text',
-        dataLength: 30,
-        required: true,
-        sortable: true,
-      },
-      {
-        displayName: this.translate.instant('Dynamic Property'),
-        key: 'dynamicProperty',
-        dataType: 'text',
-        dataLength: 30,
-        required: true,
-        sortable: true,
-      },
-    ],
+  DynamicEntityPropertiesTableHeader: any = [
+    {
+      displayName: this.translate.instant('Entity Full Name'),
+      key: 'entityFullName',
+      dataType: 'text',
+      dataLength: 30,
+      required: true,
+      sortable: true,
+    },
+    {
+      displayName: this.translate.instant('Dynamic Property'),
+      key: 'dynamicProperty',
+      dataType: 'text',
+      dataLength: 30,
+      required: true,
+      sortable: true,
+    },
+  ];
 
-    DynamicEntityPropertiesTableData: [],
-  };
+  DynamicEntityPropertiesTableData: any = [];
+
   inputTypeList: any[] = [];
   navtabsItems: any = [
     {
@@ -143,44 +142,42 @@ export class AppComponent implements OnInit {
     },
   ];
 
-  DynamicProperties: any = {
-    DynamicPropertiesTableHeader: [
-      {
-        displayName: this.translate.instant('Property Name'),
-        key: 'propertyName',
-        dataType: 'text',
-        dataLength: 30,
-        required: true,
-        sortable: true,
-      },
-      {
-        displayName: this.translate.instant('Display Name'),
-        key: 'displayName',
-        dataType: 'text',
-        dataLength: 30,
-        required: true,
-        sortable: true,
-      },
-      {
-        displayName: this.translate.instant('Input Type'),
-        key: 'inputType',
-        dataType: 'text',
-        dataLength: 30,
-        required: true,
-        sortable: true,
-      },
-      {
-        displayName: this.translate.instant('Permission'),
-        key: 'permission',
-        dataType: 'text',
-        dataLength: 30,
-        required: true,
-        sortable: true,
-      },
-    ],
+  DynamicPropertiesTableHeader: any = [
+    {
+      displayName: this.translate.instant('Property Name'),
+      key: 'propertyName',
+      dataType: 'text',
+      dataLength: 30,
+      required: true,
+      sortable: true,
+    },
+    {
+      displayName: this.translate.instant('Display Name'),
+      key: 'displayName',
+      dataType: 'text',
+      dataLength: 30,
+      required: true,
+      sortable: true,
+    },
+    {
+      displayName: this.translate.instant('Input Type'),
+      key: 'inputType',
+      dataType: 'text',
+      dataLength: 30,
+      required: true,
+      sortable: true,
+    },
+    {
+      displayName: this.translate.instant('Permission'),
+      key: 'permission',
+      dataType: 'text',
+      dataLength: 30,
+      required: true,
+      sortable: true,
+    },
+  ];
 
-    DynamicPropertiesTableData: [],
-  };
+  DynamicPropertiesTableData: any = [];
 
   // rdsTopNavigationMfeConfig: ComponentLoaderOptions = {
   //   name: 'RdsTopNavigation',
@@ -259,8 +256,8 @@ export class AppComponent implements OnInit {
     // };
     this.store.dispatch(getPermission());
     this.store.select(selectAllPermissions).subscribe((result: any) => {
-      if (result && result.DynanmicPermission && result.DynanmicPermission.items && result.DynanmicPermission.items.length > 0) {
-        this.permissionsList = this.ConvertArraytoTreedata(result.DynanmicPermission.items);
+      if (result && result.items && result.items.length > 0) {
+        this.permissionsList = this.ConvertArraytoTreedata(result.items);
         // const mfeConfig = this.rdsDynamicPropertiesMfeConfig;
         // mfeConfig.input.permissionsList = this.permissionsList;
         // this.rdsDynamicPropertiesMfeConfig = mfeConfig;
@@ -268,12 +265,12 @@ export class AppComponent implements OnInit {
     });
     this.store.dispatch(getDynamicProperty());
     this.store.select(selectAllProperties).subscribe((res: any) => {
-      if (res && res.properties && res.properties.items && res.status == "success") {
+      if (res && res.items) {
         this.isAnimation = false;
-        this.DynamicProperties.DynamicPropertiesTableData = [];
+        this.DynamicPropertiesTableData = [];
         this.parameterList = [];
 
-        res.properties.items.forEach((element: any) => {
+        res.items.forEach((element: any) => {
           const item: any = {
             propertyName: element.propertyName,
             displayName: element.displayName,
@@ -290,7 +287,7 @@ export class AppComponent implements OnInit {
             name: item.displayName
           }
           this.parameterList.push(item1);
-          this.DynamicProperties.DynamicPropertiesTableData.push(item);
+          this.DynamicPropertiesTableData.push(item);
         });
 
         this.isShimmer = false;
@@ -305,35 +302,25 @@ export class AppComponent implements OnInit {
         // this.rdsDynamicEntityPropertiesMfeConfig = mfeConfig1;
 
       }
-      console.log("Data :", this.DynamicProperties, this.DynamicEntityProperties);
 
     });
 
     this.store.dispatch(getDynamicEntity());
     this.store.select(selectAllDynamicEntities).subscribe((res: any) => {
-      this.DynamicEntityProperties.DynamicEntityPropertiesTableData = [];
-      if (res && res.dynamicEntity?.items && res.status == 'success') {
+      this.DynamicEntityPropertiesTableData = [];
+      if (res && res.items && res.items.length > 0) {
         this.isAnimation = false;
-        res.dynamicEntity.items.forEach((element: any) => {
+        res.items.forEach((element: any) => {
           const item: any = {
             entityFullName: element.entityFullName,
             dynamicProperty: element.dynamicPropertyName,
             id: element.id,
             name: element.dynamicPropertyName
           };
-          this.DynamicEntityProperties.DynamicEntityPropertiesTableData.push(
-            item
-          );
+          this.DynamicEntityPropertiesTableData.push(item);
         });
         this.isShimmer = false;
-        // const mfeConfig = this.rdsDynamicEntityPropertiesMfeConfig;
-        // mfeConfig.input.DynamicEntityPropertiesTableData = [
-        //   ...this.DynamicEntityProperties.DynamicEntityPropertiesTableData,
-        // ];
-        // mfeConfig.input.isShimmer = false;
-        // this.rdsDynamicEntityPropertiesMfeConfig = mfeConfig;
       }
-      this.isShimmer = false;
 
     });
 
@@ -341,8 +328,8 @@ export class AppComponent implements OnInit {
     this.store.dispatch(getAllEntities());
     this.store.select(selectDynamicEntities).subscribe((res: any) => {
       this.entityNames = [];
-      if (res && res.Entities && res.Entities.length > 0) {
-        res.Entities.forEach((element: any) => {
+      if (res && res.items && res.items.length > 0) {
+        res.items.forEach((element: any) => {
           const item: any = {
             value: element,
             some: element,
@@ -365,9 +352,9 @@ export class AppComponent implements OnInit {
     });
     this.store.dispatch(getInputTypeNames());
     this.store.select(selectInputPropertyNameEntities).subscribe((res: any) => {
-      if (res && res.InputTypeNames && res.InputTypeNames.length > 0) {
+      if (res && res.length > 0) {
         this.inputTypeList = [];
-        res.InputTypeNames.forEach((element: any) => {
+        res.forEach((element: any) => {
           const item: any = {
             value: element,
             some: element,
@@ -399,6 +386,7 @@ export class AppComponent implements OnInit {
     // const mfeConfig = this.rdsDynamicEntityPropertiesMfeConfig;
     // mfeConfig.input.editShimmer = true;
     // this.rdsDynamicEntityPropertiesMfeConfig = mfeConfig
+    this.editShimmer = true;
     this.EditDynamicProperty(eventData);
   }
 

@@ -1,8 +1,8 @@
 <div class="row">
-  <rds-comp-data-table [tableData]="DynamicPropertiesTableData" [inlineEdit]="false" [pagination]="true"
-    [recordsPerPage]="10" [actions]="actions" [tableHeaders]="DynamicPropertiesTableHeader"
-    (onActionSelection)="onActionSelect($event)" [noDataTitle]="'Currently you do not have dynamic properties'"
-    [isShimmer]="isShimmer"></rds-comp-data-table>
+  <rds-comp-data-table [tableData]="DynamicPropertiesTableData" [inlineEdit]="false"
+    [pagination]="DynamicPropertiesTableData.length>5?true:false" [recordsPerPage]="10" [actions]="actions"
+    [tableHeaders]="DynamicPropertiesTableHeader" (onActionSelection)="onActionSelect($event)"
+    [noDataTitle]="'Currently you do not have dynamic properties'" [isShimmer]="isShimmer"></rds-comp-data-table>
 </div>
 <ng-container>
   <rds-offcanvas [canvasTitle]="translate.instant(canvasTitle)" [offId]="'AddDynamic'" [placement]="'end'"
@@ -43,8 +43,9 @@
             <rds-button [label]="translate.instant('Cancel')" type="button" [colorVariant]="'primary'"
               [isOutline]="true" [size]="'small'" data-bs-dismiss="offcanvas" (click)="closeCanvas()">
             </rds-button>
-            <rds-button [isDisabled]="!DynamicProperyInfo?.dynamicProperties?.propertyName" [label]="translate.instant('Save')" type="button"
-              [size]="'small'" class="px-2" [colorVariant]="'primary'" (click)="addDynamic($event)">
+            <rds-button [isDisabled]="!DynamicProperyInfo?.dynamicProperties?.propertyName"
+              [label]="translate.instant('Save')" type="button" [size]="'small'" class="px-2" [colorVariant]="'primary'"
+              (click)="addDynamic($event)">
             </rds-button>
           </div>
         </div>
