@@ -39,11 +39,11 @@ title: "Pages > claimtypes"
 
 ```html
 <claim-types></claim-types>
-<rds-data-table
+<rds-comp-data-table
   [tableHeaders]="claimtypesHeaders"
   [tableData]="ClaimTypeData"
   [actions]="actions"
-></rds-data-table>
+></rds-comp-data-table>
 ```
 </div>
 </div>

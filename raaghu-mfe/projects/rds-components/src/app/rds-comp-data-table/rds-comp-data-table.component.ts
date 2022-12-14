@@ -5,7 +5,7 @@ import { TableHeader } from '../../models/table-header.model';
 import { AlertPopupData } from '../rds-comp-alert-popup/rds-comp-alert-popup.component';
 declare var bootstrap: any;
 @Component({
-  selector: 'rds-data-table',
+  selector: 'rds-comp-data-table',
   templateUrl: './rds-comp-data-table.component.html',
   styleUrls: ['./rds-comp-data-table.component.scss']
 })

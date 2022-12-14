@@ -58,11 +58,11 @@ title: "Pages > Api-Resources"
   </h5>
 
   <div class="card-body">
-    <rds-data-table
+    <rds-comp-data-table
       [tableData]="apiResourceTableData"
       [tableHeaders]=" apiResourceTableHeader"
       [actions]="actions"
-    ></rds-data-table>
+    ></rds-comp-data-table>
   </div>
 </div>
 

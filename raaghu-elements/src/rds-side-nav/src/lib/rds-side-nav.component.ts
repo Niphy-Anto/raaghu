@@ -1,5 +1,6 @@
-import {  Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges, ViewEncapsulation } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges, ViewEncapsulation } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
+import { Dropdown } from 'bootstrap'
 
 export interface SideNavItem {
   label: string,
@@ -26,7 +27,7 @@ export interface SideNavItem {
 export class RdsSideNavComponent implements OnInit, OnChanges {
 
   @Input() sidenavItems: SideNavItem[] = [];
-  @Input() isPageWrapper: boolean = false;
+  @Input() isPageWrapper: boolean = true;
   @Input() collapseRequired: boolean = true;
   @Input() iconHeight: string = '20px';
   @Input() iconWidth: string = '20px';
@@ -45,6 +46,9 @@ export class RdsSideNavComponent implements OnInit, OnChanges {
   toggleOffLabel : string = '☀️';
   toggleOnLabel : string = '🌙';
 
+  
+  constructor() { }
+  
   ngOnChanges(changes: SimpleChanges): void {
     if (this.activeMenu !== '' && this.activeMenu !== undefined) {
       this.activeMenuId = this.activeMenu.id;
@@ -56,6 +60,10 @@ export class RdsSideNavComponent implements OnInit, OnChanges {
   }
 
   ngOnInit(): void {
+
+    // $(document).on('click', '.popover-content a', function (e) {
+    //   alert();
+    // });
   }
 
   findActiveItem(sidenavItems): void {
@@ -140,14 +148,48 @@ export class RdsSideNavComponent implements OnInit, OnChanges {
     this.activeMenuWithChildren = i;
   }
 
+
   onCollapse() {
     this.collapsed = !this.collapsed;
-    this.collapsedState.emit(this.collapsed)
+    this.collapsedState.emit(this.collapsed);
   }
 
   toggleLightAndDarkMode() {
     this.isLightMode = !this.isLightMode
     this.selectedMode.emit(this.isLightMode)
+  }
+
+
+  openSideDropdown(id, item): void {
+    this.collapseDropdown(item.children);
+    var element: any = document.getElementById(id);
+    var dropdown = new Dropdown(element);
+    dropdown.show();
+  }
+
+  collapseDropdown(children): void {
+    children.forEach((child) => {
+      if (child.children) {
+        child.expanded = child.active;
+        this.collapseDropdown(child.children);
+      }
+    })
+  }
+
+  expandMenu(item, id): void {
+    if (item.children && item.children.length > 0) {
+      if (item.expanded) {
+        item.expanded = false
+      } else {
+        item.expanded = true;
+      }
+    } else {
+      this.emitPath.emit(item);
+      var element: any = document.getElementById(id);
+      var dropdown = new Dropdown(element);
+      dropdown.hide();
+    }
+
   }
 
 }

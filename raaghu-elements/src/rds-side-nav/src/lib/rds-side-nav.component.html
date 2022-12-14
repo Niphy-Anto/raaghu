@@ -1,12 +1,12 @@
-<nav id="sidebar" class="bd-links min-vh-100 pt-2 position-relative" [class.side-nav-height]="isPageWrapper"
-  [ngClass]="{ 'toggle' : collapsed }">
+<nav id="sidebar" class="bd-links min-vh-100 pt-2 position-relative" [class.toggle-sidebar-menu]="collapsed"
+  [class.side-nav-height]="isPageWrapper" [ngClass]="{ 'toggle' : collapsed }">
   <ul class="list-unstyled mb-0 py-2 px-4 h-100">
     <li class="mb-2" *ngFor="let item of sidenavItems; let i=index">
       <a (click)="onClick($event,i,item)" *ngIf="!item.children" [ngClass]="{ 'active' : item.active }"
         class="d-inline-flex align-items-center text-decoration-none text-uppercase" role="button"
         aria-expanded="false">
         <rds-icon [name]="item.icon" [fill]="item.iconFill" [stroke]="item.iconStroke" [height]="iconHeight"
-          [width]="iconWidth" class="pe-3"></rds-icon>
+          [width]="iconWidth" [class.pe-3]="!collapsed"></rds-icon>
         <span data-bs-toggle="tooltip" data-bs-placement="auto" [ngClass]="{ 'd-none' : collapsed }">
           {{item.label}}
         </span>
@@ -34,16 +34,17 @@
   </ul>
 </nav>
 <ng-template #childTemplate let-item="item" let-index="index">
-  <a (click)="onMenuWithChildrenClick(index,item)" *ngIf="item.children"
+  <a (click)="onMenuWithChildrenClick(index,item)" *ngIf="item.children&&!collapsed"
     [ngClass]="{ 'active' :item.active, 'child' :  !collapsed }"
     class="d-inline-flex align-items-center text-decoration-none text-uppercase " type="button"
     [attr.id]="item.label+index">
     <rds-icon [name]="item.icon" *ngIf="item.icon" [fill]="item.iconFill" [stroke]="item.iconStroke"
-      [height]="iconHeight" [width]="iconWidth" class="pe-3" data-bs-toggle="tooltip" data-bs-placement="auto"
-      [title]="item.label">
+      [height]="iconHeight" [width]="iconWidth" [class.pe-3]="!collapsed" data-bs-toggle="tooltip"
+      data-bs-placement="auto" [title]="item.label">
     </rds-icon><span [ngClass]="{ 'd-none' : collapsed }">{{item.label}}</span>
   </a>
-  <div class="collapse pt-2" [id]="'menuWithChildren'+index" *ngIf="item.children" style="margin-left: 1rem;">
+  <div class="collapse pt-2" [id]="'menuWithChildren'+index" *ngIf="item.children&&!collapsed"
+    style="margin-left: 1rem;">
     <ul class="list-unstyled fw-normal pb-1 small">
       <li *ngFor="let child of item.children; index as j">
         <a *ngIf="!child.children" [ngClass]="{ 'active' : child.active }"
@@ -55,4 +56,45 @@
       </li>
     </ul>
   </div>
+  <div class="btn-group dropend" *ngIf="item.children&&collapsed">
+    <a type="button" data-bs-toggle="dropdown" [attr.id]="'side-dropdown'+index" data-bs-offset="3,25" data-bs-auto-close="outside"
+      aria-expanded="false" (click)="openSideDropdown('side-dropdown'+index,item)" [ngClass]="{ 'active' : item.active }">
+      <rds-icon [name]="item.icon" *ngIf="item.icon" [fill]="item.iconFill" [stroke]="item.iconStroke"
+        [height]="iconHeight" [width]="iconWidth" data-bs-toggle="tooltip" data-bs-placement="auto">
+      </rds-icon>
+    </a>
+    <ul class="dropdown-menu border-0 shadow-lg  p-3" [attr.aria-labelledby]="'side-dropdown'+index">
+      <li *ngFor="let child of item.children; let i=index">
+        <a [attr.id]="child.label" class="d-flex justify-content-between dropdown-item"
+          (click)="expandMenu(child,'side-dropdown'+index)" [ngClass]="{ 'active' : child.active }" role="button">
+          <span>
+            {{child.label}}</span>
+          <rds-icon *ngIf="child.children" height="12px" width="12px"
+            [name]="!child.expanded?'chevron_down':'chevron_up'"></rds-icon>
+
+        </a>
+        <ng-container *ngIf="child&&child.children&&child.children.length>0&&child.expanded">
+          <ng-container *ngTemplateOutlet="toggleDropdownTemplate; context: { children: child.children,index:index }">
+          </ng-container>
+        </ng-container>
+      </li>
+    </ul>
+  </div>
+</ng-template>
+<ng-template #toggleDropdownTemplate let-children="children" let-index="index">
+  <ul>
+    <li *ngFor="let child of children; index as j">
+      <a [attr.id]="child.label" class="d-flex justify-content-between dropdown-item"
+        (click)="expandMenu(child,'side-dropdown'+index)" [ngClass]="{ 'active' : child.active }" role="button">
+        <span>
+          {{child.label}}</span><rds-icon class="px-5" *ngIf="child.children" height="12px" width="12px"
+          [name]="!child.expanded?'chevron_down':'chevron_up'"></rds-icon>
+
+      </a>
+      <ng-container *ngIf="child&&child.children&&child.children.length>0&&child.expanded">
+        <ng-container *ngTemplateOutlet="toggleDropdownTemplate; context: { children: child.children }">
+        </ng-container>
+      </ng-container>
+    </li>
+  </ul>
 </ng-template>

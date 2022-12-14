@@ -87,7 +87,7 @@ export class AppComponent implements OnInit {
       }
     };
     this.rdsScopeBasicsMfeConfig = {
-      name: 'RdcCompApiScopeBasics',
+      name: 'RdsCompApiScopeBasics',
       input: {
         scopeInfo: this.scope.basicInfo,
       },
@@ -98,7 +98,7 @@ export class AppComponent implements OnInit {
       }
     };
     this.rdsScopeResourcesMfeConfig = {
-      name: 'RdcCompApiScopeResources',
+      name: 'RdsCompApiScopeResources',
       input: {
         scopeResources: this.scope.resources,
       },

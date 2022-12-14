@@ -291,6 +291,10 @@ export class RdsCompTenantListNewComponent implements OnInit {
     var toast = new bootstrap.Toast(toastEl);
     toast.show();
   }
+
+  onAlertHide (event: any) {
+    this.currentAlerts = event;
+  }
 }
 
 

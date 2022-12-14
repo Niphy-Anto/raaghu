@@ -1,7 +1,36 @@
-<!--<ng-container *ngIf="currentAlerts&&currentAlerts.length>0">
-    <mfe-loader [config]="rdsAlertMfeConfig"></mfe-loader>
-</ng-container>-->
-<div [@fadeAnimation]="isAnimation ? 'fadeAnimation' : ''">
-  <mfe-loader [config]="rdsUserMfeConfig"></mfe-loader>
-</div>
+<!-- <div [@fadeAnimation]="isAnimation ? 'fadeAnimation' : ''"> -->
+  <!-- <mfe-loader [config]="rdsUserMfeConfig"></mfe-loader> -->
+  <rds-comp-user-permissions 
+  [userList]="userList" 
+  [roles]="roles" 
+  [isEdit]="false" 
+  [orgTreeData]="orgTreeData"
+  [userinfo]="userinfo"
+  [isShimmer]="isShimmer" 
+  [editShimmer]="editShimmer"
+  [permissionsList]="Permission"
+  [OrganizationUnit]="OrganizationUnit"
+  [selectedOrganizations]="SelectedOrganizationUnit"
+  [selectedPermissions]="selectedPermissions"
+  (Saveuserinfo)="Saveuserinfo($event)"
+  (onClose)="onClose($event)"
+  (deleteUser)="deleteUser($event)"
+  (FilterPermission)="FilterPermission($event)"
+  (CreateOrEditUser)="CreateOrEditUser($event)"
+  (UpdateUserPermission)="UpdateUserPermission($event)"></rds-comp-user-permissions>
+  <!-- <rds-comp-user-permissions [AuthentiactionList]="AuthentiactionList"></rds-comp-user-permissions> -->
+<!-- </div> -->
 
+<!-- <rds-dropdownlist
+  [listItems]="AuthentiactionList"
+  [placeholder]="'Select Authentiaction'"
+  [size]="'small'"
+  [id]="AuthentiactionList"
+  [multiSelect]="false" 
+  [borderDropdown]="false" 
+></rds-dropdownlist> -->
+
+<!-- <rds-dropdownlist [placeholder]="translate.instant('Edition')" [borderDropdown]="true"
+      class="text-dark" [id]="'listItems'"  [listItems]="AuthentiactionList"
+      [placeholder]="'Select Authentiaction'" ngDefaultControl >
+    </rds-dropdownlist> -->
