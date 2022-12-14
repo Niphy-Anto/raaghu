@@ -5,10 +5,49 @@
   vertical-align: middle;
 }
 
-#sidebar > ul {
+#sidebar>ul {
   height: calc(100vh - 158px) !important;
   overflow-y: auto;
-  overflow-x:hidden;
+  overflow-x: hidden;
+}
+
+#sidebar.toggle-sidebar-menu {
+  overflow-x: visible;
+  overflow-y: visible;
+
+  ul {
+    overflow-x: visible;
+    overflow-y: visible;
+
+    ul.dropdown-menu {
+      overflow-y: visible;
+      overflow-x: visible;
+      max-height: max-content;
+      width: 260px;
+
+      li {
+        list-style: disc;
+        margin-left: 20px;
+
+
+        a {
+          padding-left: 5px;
+        }
+
+        ul {
+          margin-left: 0px;
+          padding-left: 0px;
+
+        }
+      }
+
+      ul {
+        li {
+          list-style: circle;
+        }
+      }
+    }
+  }
 }
 
 #sidebar.toggle {
@@ -77,5 +116,5 @@
   #sidebar {
     position: absolute !important;
   }
-  
+
 }

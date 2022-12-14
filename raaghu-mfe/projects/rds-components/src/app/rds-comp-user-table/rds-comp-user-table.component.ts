@@ -27,35 +27,36 @@ export class RdsCompUserTableComponent implements OnInit {
   activePage: number = 0;
   canvasTitle: string = 'New User';
   navtabsItems: any = [];
+  actions:any= [{ id: 'delete', displayName: 'Delete' }]
   constructor(public translate:TranslateService) { }
 
   ngOnInit(): void {
-    this.rdsUserTableMfeConfig = {
-      name: 'RdsDataTable',
-      input: {
-        tableHeaders: this.userTableHeader,
-        tableStyle: this.tableStyle,
-        width: '100%',
-        tableData: this.userTableData,
-        recordsPerPage: this.recordsPerpage,
-        pagination: true,
-        actions: [{ id: 'delete', displayName: 'Delete' }],
-        noDataTitle:'Currently you do not have user'
-      },
-      output: {
-        onActionSelection:(event:any)=>{
-          if(event.actionId==='delete'){
-            const index = this.userTableData.findIndex((x: any) => x.userId === event.data.userId);
-            if (index !== -1) {
-              this.userTableData.splice(index, 1);
-              const mfeConfig = this.rdsUserTableMfeConfig
-              mfeConfig.input.tableData = [... this.userTableData];
-              this.rdsUserTableMfeConfig = mfeConfig;
-            }
-          }
-        }
-      }
-    };
+    // this.rdsUserTableMfeConfig = {
+    //   name: 'RdsDataTable',
+    //   input: {
+    //     tableHeaders: this.userTableHeader,
+    //     tableStyle: this.tableStyle,
+    //     width: '100%',
+    //     tableData: this.userTableData,
+    //     recordsPerPage: this.recordsPerpage,
+    //     pagination: true,
+    //     actions: [{ id: 'delete', displayName: 'Delete' }],
+    //     noDataTitle:'Currently you do not have user'
+    //   },
+    //   output: {
+    //     onActionSelection:(event:any)=>{
+    //       if(event.actionId==='delete'){
+    //         const index = this.userTableData.findIndex((x: any) => x.userId === event.data.userId);
+    //         if (index !== -1) {
+    //           this.userTableData.splice(index, 1);
+    //           const mfeConfig = this.rdsUserTableMfeConfig
+    //           mfeConfig.input.tableData = [... this.userTableData];
+    //           this.rdsUserTableMfeConfig = mfeConfig;
+    //         }
+    //       }
+    //     }
+    //   }
+    // };
   }
 
   onChangeIsenabled(event: any) {
@@ -85,5 +86,17 @@ export class RdsCompUserTableComponent implements OnInit {
   closeCanvas(): void {
     this.viewCanvas = false;
     this.buttonSpinnerForUserTable = false;
+  }
+
+  onActionSelection(event:any){
+    if(event.actionId==='delete'){
+      const index = this.userTableData.findIndex((x: any) => x.userId === event.data.userId);
+      if (index !== -1) {
+        this.userTableData.splice(index, 1);
+        const mfeConfig = this.rdsUserTableMfeConfig
+        mfeConfig.input.tableData = [... this.userTableData];
+        this.rdsUserTableMfeConfig = mfeConfig;
+      }
+    }
   }
 }

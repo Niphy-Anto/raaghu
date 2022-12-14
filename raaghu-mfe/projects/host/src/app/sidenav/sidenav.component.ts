@@ -1,48 +1,19 @@
-import {
-  Component,
-  Inject,
-  Injector,
-  Input,
-  SimpleChanges,
-} from '@angular/core';
+import { Component, Inject, Injector, Input, SimpleChanges } from '@angular/core';
+import * as moment from 'moment';
+import { DateTime } from 'luxon';
 import { NavigationEnd, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import {
-  ComponentLoaderOptions,
-  MfeBaseComponent,
-  SharedService,
-  UserAuthService,
-} from '@libs/shared';
+import { ComponentLoaderOptions, SharedService, UserAuthService, } from '@libs/shared';
 import { Store } from '@ngrx/store';
-
-import {
-  deleteDelegations,
-  getDelegations,
-  getUsername,
-  saveDelegations,
-} from 'projects/libs/state-management/src/lib/state/authority-delegations/authority-delegations.action';
-import {
-  selectDelegationsInfo,
-  selectUserFilter,
-} from 'projects/libs/state-management/src/lib/state/authority-delegations/authority-delegations.selector';
+import { deleteDelegations, getDelegations, getUsername, saveDelegations, } from 'projects/libs/state-management/src/lib/state/authority-delegations/authority-delegations.action';
+import { selectDelegationsInfo, selectUserFilter, } from 'projects/libs/state-management/src/lib/state/authority-delegations/authority-delegations.selector';
 import { selectAllLoginAttempts } from 'projects/libs/state-management/src/lib/state/login-attempts/login-attempts.selector';
-import { DateTime } from 'luxon';
 import { getLoginAttempts } from 'projects/libs/state-management/src/lib/state/login-attempts/login-attempts.actions';
 import {
-  deleteAccount,
-  getMLATenancyData,
-  getNotificationSettings,
-  getUserNotification,
-  linkToUser,
-  SetAllNotificationsAsRead,
-  SetNotificationRead,
-  updateNotificationSettings,
+  deleteAccount, getMLATenancyData, getNotificationSettings, getUserNotification, linkToUser, SetAllNotificationsAsRead,
+  SetNotificationRead, updateNotificationSettings,
 } from 'projects/libs/state-management/src/lib/state/mla/mla.actions';
-import {
-  selectAllNotification,
-  selectNotificationSettings,
-  selectTenancyData,
-} from 'projects/libs/state-management/src/lib/state/mla/mla.selector';
+import { selectAllNotification, selectNotificationSettings, selectTenancyData, } from 'projects/libs/state-management/src/lib/state/mla/mla.selector';
 import { AlertService } from 'projects/libs/shared/src/lib/alert.service';
 import { TranslateService } from '@ngx-translate/core';
 import { ThemesService } from 'projects/libs/themes/src/public-api';
@@ -50,7 +21,6 @@ import { PrepareCollectedData } from 'projects/libs/state-management/src/lib/sta
 import { DOCUMENT } from '@angular/common';
 import { slideInAnimation } from '../animation';
 import { RouterOutlet } from '@angular/router';
-import * as moment from 'moment';
 import { getProfilepic } from 'projects/libs/state-management/src/lib/state/profile-settings/profile-settings.actions';
 import { selectAllVisualsettings } from 'projects/libs/state-management/src/lib/state/Visual-settings/visual-settings.selector';
 import { getVisualsettings } from 'projects/libs/state-management/src/lib/state/Visual-settings/visual-settings.actions';
@@ -58,6 +28,7 @@ import { getLanguages, setDefaultLanguageForUI } from 'projects/libs/state-manag
 import { changePassword, getProfile } from 'projects/libs/state-management/src/lib/state/mysettings/mysettings.action';
 import { selectAllLanguages, selectDefaultLanguage } from 'projects/libs/state-management/src/lib/state/language/language.selector';
 import { selectProfileInfo } from 'projects/libs/state-management/src/lib/state/mysettings/mysettings.selector';
+
 declare var bootstrap: any;
 @Component({
   selector: 'app-sidenav',
@@ -65,7 +36,8 @@ declare var bootstrap: any;
   styleUrls: ['./sidenav.component.scss'],
   animations: [slideInAnimation],
 })
-export class SidenavComponent extends MfeBaseComponent {
+export class SidenavComponent {
+  showDelegationButtonSpinner: boolean;
   prepareRoute(outlet: RouterOutlet) {
     return (
       outlet && outlet.activatedRouteData && outlet.activatedRouteData.animation
@@ -76,17 +48,6 @@ export class SidenavComponent extends MfeBaseComponent {
   toggleSideNav: boolean = false;
   currentAlerts: any = [];
   selectedLanguage: any = { language: '', icon: '' };
-  public rdsAlertMfeConfig: ComponentLoaderOptions = {
-    name: 'RdsCompAlert',
-    input: {
-      currentAlerts: this.currentAlerts,
-    },
-    output: {
-      onAlertHide: (event: any) => {
-        this.currentAlerts = event;
-      },
-    },
-  };
   severity = ['info', 'error', 'success', 'warn', 'fatal'];
   LoginAttempts: any = {
     TableHeader: [
@@ -133,125 +94,135 @@ export class SidenavComponent extends MfeBaseComponent {
     {
       label: 'Dashboard',
       labelTranslationKey: 'Dashboard',
-      id: '',
+      id: 1,
       permissionName: 'Pages.Administration.Host.Dashboard',
       icon: 'home',
       path: '/pages/dashboard',
       descriptionTranslationKey: 'Statistics and reports',
       description: 'Statistics and reports',
+      parent: null
     },
     {
       label: 'Dashboard',
       labelTranslationKey: 'Dashboard',
-      id: '',
+      id: 2,
       permissionName: 'Pages.Tenant.Dashboard',
       icon: 'home',
       path: '/pages/dashboard',
       description: 'Statistics and reports',
       descriptionTranslationKey: 'Statistics and reports',
-    }, 
+      parent: null
+    },
     {
       label: 'UI Components',
       labelTranslationKey: 'UI Components',
-      id: '',
+      id: 3,
       permissionName: '',
       icon: 'demo_ui',
       path: '/pages/demo-ui',
       description: '',
       descriptionTranslationKey: '',
+      parent: null
     },
     {
       label: 'Icons',
       labelTranslationKey: 'Icons',
-      id: '',
-      permissionName: 'Pages.Tenants',
+      id: 4,
+      permissionName: '',
       icon: 'icons',
       path: '/pages/icons',
       description: 'icons',
       descriptionTranslationKey: '',
+      parent: null
     },
     {
       label: 'Pages',
       labelTranslationKey: 'Pages',
-      id: '',
+      id: 5,
       permissionName: '',
       icon: 'pages',
       path: 'pages',
+      parent: null,
       children: [
         {
           label: 'Tenants',
           labelTranslationKey: 'Tenants',
-          id: 'tenants',
+          id: 51,
           permissionName: 'Pages.Tenants',
           icon: 'tenant',
           path: '/pages/tenant',
           description: 'Manage your tenants',
           descriptionTranslationKey: 'Manage your tenants',
+          parent: 5
         },
         {
           label: 'Editions',
           labelTranslationKey: 'Editions',
-          id: '',
+          id: 52,
           permissionName: 'Pages.Editions',
           icon: 'editions',
           path: '/pages/edition',
           description: 'Manage editions and features of the application',
-          descriptionTranslationKey:
-            'Manage editions and features of the application',
+          descriptionTranslationKey: 'Manage editions and features of the application',
+          parent: 5
         },
         {
           label: 'Administration',
           labelTranslationKey: 'Administration',
-          id: 'admin',
+          id: 53,
           permissionName: '',
           icon: '',
           path: '',
+          parent: 5,
           children: [
             {
               label: 'Organization Units',
               labelTranslationKey: 'Organization Units',
-              id: '',
+              id: 531,
               permissionName: 'Pages.Administration.OrganizationUnits',
               icon: 'organization',
               path: '/pages/organization-unit',
               description: 'Use organization units to organize users and entities',
-              descriptionTranslationKey:
-                'Use organization units to organize users and entities',
+              descriptionTranslationKey: 'Use organization units to organize users and entities',
+              parent: 53
             },
             {
               label: 'Roles',
               labelTranslationKey: 'Roles',
-              id: '',
+              id: 532,
               permissionName: 'Pages.Administration.Roles',
               icon: 'roles',
               path: '/pages/role',
               description: 'Use roles to group permissions',
               descriptionTranslationKey: 'Use roles to group permissions',
+              parent: 53
             },
             {
               label: 'Users',
               labelTranslationKey: 'Users',
-              id: '',
+              id: 533,
               permissionName: 'Pages.Administration.Users',
               icon: 'users',
               path: '/pages/user',
               description: 'Manage users and permissions',
               descriptionTranslationKey: 'Manage users and permissions',
+              parent: 53
             },
             {
               label: 'Language',
               labelTranslationKey: 'Language',
-              id: '',
+              id: 534,
               permissionName: 'Pages.Administration.Languages',
               icon: 'languages',
               path: '/pages/language',
               description: 'Manage user interface languages',
               descriptionTranslationKey: 'Statistics and reports',
+              parent: 53
             },
             {
               label: 'Audit logs',
               labelTranslationKey: 'Audit logs',
-              id: '',
+              id: 535,
               permissionName: 'Pages.Administration.AuditLogs',
               icon: 'audit_logs',
               path: '/pages/audit-logs',
@@ -260,80 +231,83 @@ export class SidenavComponent extends MfeBaseComponent {
             {
               label: 'subscription',
               labelTranslationKey: 'subscription',
-              id: '',
+              id: 536,
               permissionName: 'Pages.Administration.Tenant.SubscriptionManagement',
               icon: 'subscription',
               path: '/pages/subscription',
               descriptionTranslationKey: '',
-            },
-            // {
-            //   label: 'Maintenance',
-            //   labelTranslationKey: 'Maintenance',
-            //   id: '',
-            //   permissionName: 'Pages.Administration.Host.Maintenance',
-            //   icon: 'maintenance',
-            //   path: '/pages/maintenance',
-            //   description: 'Statistics and reports',
-            //   descriptionTranslationKey: 'Statistics and reports',
-            // },
+              parent: 53
+            }, ,
             {
               label: 'Maintenance',
               labelTranslationKey: 'Maintenance',
-              id: '',
+              id: 537,
               permissionName: '',
               icon: 'maintenance',
               path: '/pages/maintenance',
               description: 'Statistics and reports',
               descriptionTranslationKey: 'Statistics and reports',
+              parent: 53
+
             },
             {
               label: 'Visual Settings',
               labelTranslationKey: 'Visual Settings',
-              id: '',
+              id: 538,
               permissionName: '',
               icon: 'visual_settings',
               path: '/pages/visualsettings',
               description: 'Change the look of UI',
               descriptionTranslationKey: 'Change the look of UI',
+              parent: 53
+
             },
             {
               label: 'Webhook Subscriptions',
               labelTranslationKey: 'Webhook Subscriptions',
-              id: '',
+              id: 539,
               permissionName: 'Pages.Administration.WebhookSubscription',
               icon: 'webhook_subscription',
               path: '/pages/webhooksubscription',
               description: 'Webhook Subsubscription Info',
               descriptionTranslationKey: 'Statistics and reports',
+              parent: 53
+
             },
             {
               label: 'Dynamic Properties',
               labelTranslationKey: 'Dynamic Properties',
-              id: 'Pages.Administration.DynamicProperties',
-              permissionName: '',
+              id: 540,
+              permissionName: 'Pages.Administration.DynamicProperties',
               icon: 'dynamic_properties',
               path: '/pages/dynamic-property-management',
               descriptionTranslationKey: '',
+              parent: 53
+
             },
             {
               label: 'Settings',
               labelTranslationKey: 'Settings',
-              id: '',
+              id: 541,
               permissionName: 'Pages.Administration.Host.Settings',
               icon: 'setting',
               path: '/pages/settings',
               description: 'Show and change application settings',
               descriptionTranslationKey: 'Show and change application settings',
+              parent: 53
+
             },
             {
               label: 'Settings',
               labelTranslationKey: 'Settings',
-              id: '',
+              id: 542,
               permissionName: 'Pages.Administration.Tenant.Settings',
               icon: 'setting',
               path: '/pages/settings',
               description: 'Show and change application settings',
               descriptionTranslationKey: 'Show and change application settings',
+              parent: 53
+
             },
           ],
         }
@@ -360,9 +334,9 @@ export class SidenavComponent extends MfeBaseComponent {
     //    },
     //  ]
     //}
-    
+
     // { label: 'Api Scopes', id: 'ApiScope', permissionName: '', icon: 'settings', path: '/pages/apiScope', description: 'Home > Identity Server > Api Scope' },
-    
+
     // { label: 'Cart', labelTranslationKey: 'Cart', id: 'cart', permissionName: '' ,icon: 'tenant', path: '/pages/cart', description: 'Manage your cart', descriptionTranslationKey: 'Manage your cart' },
     // { label: 'Edition-New', labelTranslationKey: 'Edition-New', id: '', permissionName: '', icon: 'home', path: '/pages/editionnew', description: '', descriptionTranslationKey: '' },
   ];
@@ -377,14 +351,12 @@ export class SidenavComponent extends MfeBaseComponent {
   profilePic: string = '../assets/profile-picture.png';
   offCanvasId: string = 'profileOffCanvas';
   collapseRequired: any = true;
-  @Input() tenancy: string = 'Host Admin';
+  tenancy: string = 'Host Admin';
   selectedMenu: string = '';
   selectedMenuDescription: string = '';
   sub: Subscription;
-  rdsTopNavigationMfeConfig: ComponentLoaderOptions;
   accountPage = true;
-  activePage: any;
-  activesubmenu: any;
+  activeMenu: any;
   languageItems: any = [];
   linkedAccountData: any = [];
   linkedAccountHeaders: any = [
@@ -412,13 +384,11 @@ export class SidenavComponent extends MfeBaseComponent {
     private alertService: AlertService,
     public translate: TranslateService,
     private shared: SharedService,
-    private injector: Injector,
     private userAuthService: UserAuthService,
     private theme: ThemesService,
     @Inject(DOCUMENT) private document: Document
   ) {
 
-    super(injector);
     this.index = localStorage.getItem('themeIndex');
     if (this.index == null) {
       this.index = '12'
@@ -444,7 +414,8 @@ export class SidenavComponent extends MfeBaseComponent {
         this.setTheme(theme);
       }
 
-    })
+    });
+
 
     // this.selectAllvisualSettings()
 
@@ -485,102 +456,6 @@ export class SidenavComponent extends MfeBaseComponent {
       }
     });
     this.subscribeToAlerts();
-    this.rdsTopNavigationMfeConfig = {
-      name: 'RdsTopNavigation',
-      input: {
-        backgroundColor: this.backgroundColor,
-        selectedMenu: this.selectedMenu,
-        selectedMenuDescription: this.selectedMenuDescription,
-        LoginAttempts: this.LoginAttempts,
-        isPageWrapper: true,
-        // profilePic: this.profilePic,
-        profileData: this.profileData,
-        rdsDeligateTableData: this.rdsDeligateTableData,
-        offCanvasId: this.offCanvasId,
-        logo: 'assets/raaghu_icon.png',
-        projectName: 'Raaghu',
-        linkedAccountData: this.linkedAccountData,
-        linkedAccountHeaders: this.linkedAccountHeaders,
-        userList: this.usernameList,
-        notificationData: this.notifications,
-        unreadCount: this.unreadCount,
-        receiveNotifications: this.receiveNotifications,
-        notificationTypes: this.notificationTypes,
-        tenancy: this.tenancy,
-        FixedHeader: this.fixedHeader,
-      },
-      output: {
-        toggleEvent: () => {
-          var element = document.getElementById('sidebar');
-          element.style.display =
-            element.style.display === 'none' || element.style.display == '' || !element.style.display ? 'block' : 'none';
-        },
-        onLanguageSelection: (lan) => {
-          this.translate.use(lan);
-          this.store.dispatch(setDefaultLanguageForUI(lan));
-        },
-        deleteDeligateuser: (data: any) => {
-          if (data) {
-            this.store.dispatch(deleteDelegations(data.id));
-          }
-        },
-        saveDeligate: (data: any) => {
-          if (data) {
-            this.store.dispatch(saveDelegations(data));
-          }
-        },
-        onProfileSave: (passwordInfo: any) => {
-          if (passwordInfo) {
-            this.store.dispatch(changePassword(passwordInfo));
-          }
-        },
-        deleteLinkaccount: (data: any) => {
-          this.store.dispatch(deleteAccount(data));
-        },
-        onDownloadLink: (data: any) => {
-          this.store.dispatch(PrepareCollectedData());
-        },
-        onLoginAttemptsRefresh: (data: any) => {
-          this.store.dispatch(getLoginAttempts(data));
-          this.store.select(selectAllLoginAttempts).subscribe((res: any) => {
-            if (res && res.items) {
-              res.items.forEach((element: any) => {
-                const item: any = {
-                  browserInfo: element.browserInfo,
-                  clientIpAddress: element.clientIpAddress,
-                  clientName: element.clientName,
-                  creationTime: element.creationTime,
-                  result: element.result,
-                  tenancyName: element.tenancyName,
-                  userNameOrEmail: element.userNameOrEmail,
-                };
-                this.LoginAttempts.LoginDatatable.push(item);
-              });
-              const mfeConfig = this.rdsTopNavigationMfeConfig;
-              mfeConfig.input.LoginAttempts = { ...this.LoginAttempts };
-              this.rdsTopNavigationMfeConfig = mfeConfig;
-            }
-          });
-        },
-        linkUser: (data: any) => {
-          this.store.dispatch(linkToUser(data));
-        },
-        setAllNotificationAsRead: () => {
-          this.store.dispatch(SetAllNotificationsAsRead());
-        },
-        setNotificationAsRead: (data: any) => {
-          this.store.dispatch(
-            SetNotificationRead({ id: data.userNotificationId })
-          );
-        },
-        onUpdateNotificationSettings: (data: any) => {
-          this.store.dispatch(updateNotificationSettings(data));
-        },
-        onProfileData: (event: any) => {
-          this.store.dispatch(getProfilepic());
-        }
-      }
-    }
     this.store.dispatch(getNotificationSettings());
     this.store.select(selectNotificationSettings).subscribe((res: any) => {
       if (res && res !== null) {
@@ -594,11 +469,6 @@ export class SidenavComponent extends MfeBaseComponent {
           };
           this.notificationTypes.push(data);
         });
-        const mfeConfig = this.rdsTopNavigationMfeConfig;
-        mfeConfig.input.receiveNotifications = this.receiveNotifications;
-        mfeConfig.input.notificationTypes = [...this.notificationTypes];
-
-        this.rdsTopNavigationMfeConfig = mfeConfig;
       }
     });
     this.store.dispatch(getUserNotification());
@@ -613,10 +483,6 @@ export class SidenavComponent extends MfeBaseComponent {
         this.notifications.sort(function (a, b) {
           return a.state - b.state;
         });
-        const mfeConfig = this.rdsTopNavigationMfeConfig;
-        mfeConfig.input.notificationData = [...this.notifications];
-        mfeConfig.input.unreadCount = this.unreadCount;
-        this.rdsTopNavigationMfeConfig = mfeConfig;
       }
     });
 
@@ -625,23 +491,25 @@ export class SidenavComponent extends MfeBaseComponent {
         this.languageItems = [];
         const languages: any = [];
         res.items.forEach((item: any) => {
-          let icon: string = item.icon.split(' ')[1];
-          icon = icon.replace('-', '_');
-          this.languageItems.push({
-            value: item.displayName,
-            name: item.name,
-            some: item.displayName,
-            id: item.id,
-            icon: icon,
-            iconWidth: '21px',
-            iconHeight: '14px',
-          });
+          if (item) {
+            let icon: string = '';
+            if (item.icon) {
+              icon = item.icon.split(' ')[1];
+              icon = icon.replace('-', '_');
+            }
+            this.languageItems.push({
+              value: item.displayName,
+              name: item.name,
+              some: item.displayName,
+              id: item.id,
+              icon: icon,
+              iconWidth: '21px',
+              iconHeight: '14px',
+            });
+          }
           if (res.defaultLanguageName === item.name) {
             this.selectedLanguage.language = item.displayName;
             this.selectedLanguage.icon = item.icon.split(' ')[1];
-            const mfe = this.rdsTopNavigationMfeConfig;
-            mfe.input.selectedLanguage = { ...this.selectedLanguage };
-            this.rdsTopNavigationMfeConfig = mfe;
           }
           languages.push(item.name);
         });
@@ -651,36 +519,10 @@ export class SidenavComponent extends MfeBaseComponent {
         }
 
         // this.translate.addLangs(languages);
-        const mfe = this.rdsTopNavigationMfeConfig;
-        mfe.input.languageItems = [...this.languageItems];
-        mfe.input.selectedLanguage = { ...this.selectedLanguage };
-        this.rdsTopNavigationMfeConfig = mfe;
       }
     });
-    this.on('tenancyDataAgain').subscribe((res) => { });
     if (this.router.url) {
-      let matchRoute: any;
-      const index = this.getMatchedRoute(this.sidenavItems);
-      if (index !== -1) {
-        this.activePage = index;
-        this.selectedMenu = this.sidenavItems[index].label;
-        this.selectedMenuDescription = this.sidenavItems[index].description;
-      } else {
-        this.sidenavItems.forEach((menu: any, i: number) => {
-          if (menu.children && menu.children.length > 0) {
-            const index = this.getMatchedRoute(menu.children);
-            if (index !== -1) {
-              this.activePage = i;
-              this.activesubmenu = index;
-              this.selectedMenu = menu.children[index].label;
-              this.selectedMenuDescription = menu.children[index].description;
-            }
-          }
-        });
-      }
-      this.rdsTopNavigationMfeConfig.input.selectedMenu = this.selectedMenu;
-      this.rdsTopNavigationMfeConfig.input.selectedMenuDescription =
-        this.selectedMenuDescription;
+      this.getMatchedRoute(this.sidenavItems);
     }
 
     this.store.dispatch(getMLATenancyData());
@@ -698,14 +540,6 @@ export class SidenavComponent extends MfeBaseComponent {
           };
           this.linkedAccountData.push(_item);
         });
-        const mfe = this.rdsTopNavigationMfeConfig;
-        mfe.input.linkedAccountData = [...this.linkedAccountData];
-        this.rdsTopNavigationMfeConfig = mfe;
-      }
-    });
-    this.sub = this.router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-        this.accountPage = ['/login', '/forgot-password'].includes(event.url);
       }
     });
     if (this.sidenavItems && this.sidenavItems.length > 0) {
@@ -726,9 +560,6 @@ export class SidenavComponent extends MfeBaseComponent {
     this.store.select(selectProfileInfo).subscribe((res: any) => {
       if (res) {
         this.profileData = res;
-        const mfe = this.rdsTopNavigationMfeConfig;
-        mfe.input.profileData = { ...this.profileData };
-        this.rdsTopNavigationMfeConfig = mfe;
       }
     })
 
@@ -745,9 +576,6 @@ export class SidenavComponent extends MfeBaseComponent {
           };
           this.rdsDeligateTableData.push(item);
         });
-        const mfeConfig = this.rdsTopNavigationMfeConfig;
-        mfeConfig.input.rdsDeligateTableData = [...this.rdsDeligateTableData];
-        this.rdsTopNavigationMfeConfig = mfeConfig;
       }
     });
     const UsernameFilter: any = {
@@ -774,30 +602,90 @@ export class SidenavComponent extends MfeBaseComponent {
           };
           this.usernameList.push(item);
         });
-        const mfeConfig = this.rdsTopNavigationMfeConfig;
-        mfeConfig.input.userList = [...this.usernameList];
-        this.rdsTopNavigationMfeConfig = mfeConfig;
+
       }
     });
     this.sub = this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.accountPage = ['/login', '/forgot-password'].includes(event.url);
+        this.getMatchedRoute(this.sidenavItems);
       }
     });
 
-    this.on('logout-returns').subscribe((r) => {
-      if (this.counter < 1) {
-        this.userAuthService.unauthenticateUser();
-        this.counter++;
+  }
+
+  onLanguageSelection(lan) {
+    this.translate.use(lan);
+    this.store.dispatch(setDefaultLanguageForUI(lan));
+  }
+  deleteDeligateuser(data: any) {
+    if (data) {
+      this.store.dispatch(deleteDelegations(data.id));
+    }
+  }
+  saveDeligate(data: any) {
+    if (data) {
+      this.store.dispatch(saveDelegations(data));
+    }
+  }
+  onProfileSave(passwordInfo: any) {
+    if (passwordInfo) {
+      this.store.dispatch(changePassword(passwordInfo));
+    }
+  }
+  logoutEmitter($event) {
+    if (this.counter < 1) {
+      this.userAuthService.unauthenticateUser();
+      this.counter++;
+    }
+  }
+  deleteLinkaccount(data: any) {
+    this.store.dispatch(deleteAccount(data));
+  }
+  onDownloadLink(data: any) {
+    this.store.dispatch(PrepareCollectedData());
+  }
+  onLoginAttemptsRefresh(data: any) {
+    this.store.dispatch(getLoginAttempts(data));
+    this.store.select(selectAllLoginAttempts).subscribe((res: any) => {
+      if (res && res.items) {
+        this.LoginAttempts.LoginDatatable = [];
+        res.items.forEach((element: any) => {
+          const item: any = {
+            browserInfo: element.browserInfo,
+            clientIpAddress: element.clientIpAddress,
+            clientName: element.clientName,
+            creationTime: element.creationTime,
+            result: element.result,
+            tenancyName: element.tenancyName,
+            userNameOrEmail: element.userNameOrEmail,
+          };
+          this.LoginAttempts.LoginDatatable.push(item);
+        });
       }
     });
   }
-
-  ngOnChanges(changes: SimpleChanges): void {
-    this.rdsTopNavigationMfeConfig.input.backgroundColor = this.backgroundColor;
+  onAlertHide(event: any) {
+    this.currentAlerts = event;
   }
-  getdata() {
-    this.store.select(selectTenancyData).subscribe((res) => console.log(res));
+
+  linkUser(data: any) {
+    debugger
+    this.store.dispatch(linkToUser(data));
+  }
+  setAllNotificationAsRead($event) {
+    this.store.dispatch(SetAllNotificationsAsRead());
+  }
+  setNotificationAsRead(data: any) {
+    this.store.dispatch(
+      SetNotificationRead({ id: data.userNotificationId })
+    );
+  }
+  onUpdateNotificationSettings(data: any) {
+    this.store.dispatch(updateNotificationSettings(data));
+  }
+  onProfileData(event: any) {
+    this.store.dispatch(getProfilepic());
   }
 
   selectAllvisualSettings() {
@@ -806,9 +694,8 @@ export class SidenavComponent extends MfeBaseComponent {
         const header = JSON.parse(
           res[this.index].header.minimizeDesktopHeaderType
         );
-        const rdsTopNavigationMfeConfig = this.rdsTopNavigationMfeConfig;
         if (header) {
-          rdsTopNavigationMfeConfig.input.FixedHeader = header.desktop;
+          this.fixedHeader = header.desktop;
           if (header.desktop) {
             this.document.getElementById('FixedHeaderOverFlow').style.overflow =
               'scroll';
@@ -835,17 +722,14 @@ export class SidenavComponent extends MfeBaseComponent {
     });
   }
   redirectPath(event): void {
-    const rdsAlertMfeConfig = this.rdsAlertMfeConfig;
-    rdsAlertMfeConfig.input.currentAlerts = [];
-    this.rdsAlertMfeConfig = rdsAlertMfeConfig;
-    this.rdsTopNavigationMfeConfig.input.selectedMenu = event.label;
-    this.rdsTopNavigationMfeConfig.input.selectedMenuDescription =
-      event.description;
+    this.currentAlerts = [];
+    this.selectedMenu = event.label;
+    this.selectedMenuDescription = event.description;
     this.router.navigate([event.path]);
     var alertNode = document.querySelector('.alert');
     if (alertNode) {
       var alert = bootstrap.Alert.getInstance(alertNode);
-      if(alert){
+      if (alert) {
         alert.close();
       }
     }
@@ -867,16 +751,24 @@ export class SidenavComponent extends MfeBaseComponent {
         message: alert.message,
       };
       this.currentAlerts.push(currentAlert);
-      const rdsTopNavigationMfeConfig = this.rdsTopNavigationMfeConfig;
-      rdsTopNavigationMfeConfig.input.showDelegationButtonSpinner = false;
-      this.rdsTopNavigationMfeConfig = rdsTopNavigationMfeConfig;
-      const rdsAlertMfeConfig = this.rdsAlertMfeConfig;
-      rdsAlertMfeConfig.input.currentAlerts = [...this.currentAlerts];
-      this.rdsAlertMfeConfig = rdsAlertMfeConfig;
+      this.showDelegationButtonSpinner = false;
     });
   }
-  getMatchedRoute(menus): number {
-    return menus.findIndex((x: any) => x.path === this.router.url);
+  getMatchedRoute(menus): any {
+    menus.forEach((menu: any, _index: number) => {
+      if (menu.path === this.router.url) {
+        this.activeMenu = menu;
+        this.selectedMenu = menu.label;
+        this.selectedMenuDescription = menu.description;
+        // const rdsTopNavigationMfeConfig = this.rdsTopNavigationMfeConfig;
+        // rdsTopNavigationMfeConfig.input.selectedMenu = menu.label;
+        // rdsTopNavigationMfeConfig.input.selectedMenuDescription = menu.description;
+        // this.rdsTopNavigationMfeConfig = rdsTopNavigationMfeConfig;
+      } else if (menu.children) {
+        this.getMatchedRoute(menu.children);
+      }
+    })
+    // return menus.findIndex((x: any) => x.path === this.router.url);
   }
   format(userNotification) {
     let formatted = {
@@ -977,7 +869,9 @@ export class SidenavComponent extends MfeBaseComponent {
           icon: node.icon,
           path: node.path,
           description: node.description,
+          parent: node.parent,
           labelTranslationKey: node.labelTranslationKey,
+          active: node.active,
         };
 
         if (node.children != undefined) {
@@ -1032,6 +926,13 @@ export class SidenavComponent extends MfeBaseComponent {
         headEl.appendChild(newLinkEl);
       }
     }
+  }
+
+  toggle(): void {
+    var element = document.getElementById('sidebar');
+    element.style.display =
+      element.style.display === 'none' || element.style.display == '' || !element.style.display ? 'block' : 'none';
+    this.collapseRequired = false;
   }
 
 }

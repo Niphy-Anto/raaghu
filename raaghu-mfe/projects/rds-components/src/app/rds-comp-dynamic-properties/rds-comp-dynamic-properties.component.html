@@ -1,8 +1,8 @@
 <div class="row">
-  <rds-data-table [tableData]="DynamicPropertiesTableData" [inlineEdit]="false" [pagination]="true"
+  <rds-comp-data-table [tableData]="DynamicPropertiesTableData" [inlineEdit]="false" [pagination]="true"
     [recordsPerPage]="10" [actions]="actions" [tableHeaders]="DynamicPropertiesTableHeader"
     (onActionSelection)="onActionSelect($event)" [noDataTitle]="'Currently you do not have dynamic properties'"
-    [isShimmer]="isShimmer"></rds-data-table>
+    [isShimmer]="isShimmer"></rds-comp-data-table>
 </div>
 <ng-container>
   <rds-offcanvas [canvasTitle]="translate.instant(canvasTitle)" [offId]="'AddDynamic'" [placement]="'end'"

@@ -40,10 +40,10 @@ const Template: Story<RdsCompNewClaimTypeComponent> = (args: RdsCompNewClaimType
     </div>
     <div class="row ">
     <app-claim-types></app-claim-types> 
-  <rds-data-table
+  <rds-comp-data-table
    [tableHeaders]="claimtypesHeaders" 
    [tableData]="ClaimTypeData" 
-   [actions]="actions"></rds-data-table>
+   [actions]="actions"></rds-comp-data-table>
      </div>
 </div>
 <rds-offcanvas [canvasTitle]="'NEW CLAIM TYPE'" [offId]="'addnewclaimtype'"

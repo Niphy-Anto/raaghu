@@ -249,7 +249,7 @@ export class RdsCompTenantListNewComponent implements OnInit {
     this.buttonSpinnerForNewUser = false;
   }
   editTableRowData(event): void {
-    this.canvasTitle = 'EDIT TENANT';
+    this.canvasTitle = 'Edit Tenant';
     this.newTenant(undefined);
     this.onEditTenant.emit(event.id);
     this.selectedId = event.id;
@@ -290,6 +290,10 @@ export class RdsCompTenantListNewComponent implements OnInit {
     var toastEl = document.getElementById('liveToast');
     var toast = new bootstrap.Toast(toastEl);
     toast.show();
+  }
+
+  onAlertHide (event: any) {
+    this.currentAlerts = event;
   }
 }
 

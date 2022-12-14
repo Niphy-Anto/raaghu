@@ -32,7 +32,7 @@ export const actionsData = {
 };
 
 export const Default = Template.bind({})
-Default.parameters = { controls: { include: ['switch', 'inline', 'state', 'isInputGroup', 'itemList'] } };
+Default.parameters = { controls: { include: ['switch', 'inline', 'state', 'isInputGroup', 'itemList','onClick'] } };
 Default.args = {
   switch: false,
   inline: false,

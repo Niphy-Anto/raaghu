@@ -65,7 +65,7 @@ export class RdsCompPermissionTreeComponent implements OnInit {
 
 
   checkSelectedNodes(treeData: any, node: any) {
-    treeData.forEach((item: any) => {
+    treeData && treeData.forEach((item: any) => {
       if (item.data.name) {
         if (item.data.name === node.name) {
           item.selected = (node.value === 'true') ? true : (node.value === 'false') ? false : node.value;
@@ -92,7 +92,7 @@ export class RdsCompPermissionTreeComponent implements OnInit {
     if (!this.treeData || this.treeData.length == 0) {
       allSelected = false;
     }
-    this.treeData.forEach((tree: any) => {
+    this.treeData && this.treeData.forEach((tree: any) => {
       if (tree.selected && allSelected) {
         allSelected = this._checkSelectAll(tree.children);
       } else {
@@ -105,7 +105,7 @@ export class RdsCompPermissionTreeComponent implements OnInit {
 
   _checkSelectAll(treeData: any): boolean {
     let allSelected: boolean = true;
-    treeData.forEach((tree: any) => {
+    treeData && treeData.forEach((tree: any) => {
       if (tree.selected && allSelected) {
         allSelected = this._checkSelectAll(tree.children);
       } else {
@@ -214,7 +214,7 @@ export class RdsCompPermissionTreeComponent implements OnInit {
   }
   getSelectedNodes(treeData: any): PermissionNode[] {
     const selectedNodes: any = [];
-    treeData.forEach((tree: any) => {
+    treeData && treeData.forEach((tree: any) => {
       if (tree.selected) {
         tree.selectedChildren = this.getSelectedNodes(tree.children);
         selectedNodes.push(tree);
@@ -223,7 +223,7 @@ export class RdsCompPermissionTreeComponent implements OnInit {
     return selectedNodes;
   }
   getSelectedPermissionNodes(treeData: any) {
-    treeData.forEach((tree: any) => {
+    treeData && treeData.forEach((tree: any) => {
       const itemselected: any = {
         name: tree.data.name,
         value: tree.selected
@@ -237,7 +237,7 @@ export class RdsCompPermissionTreeComponent implements OnInit {
 
   }
   checkForParent(treeData: PermissionNode[], node: any, event: boolean): void {
-    treeData.forEach((tree: any) => {
+    treeData && treeData.forEach((tree: any) => {
       if (tree.data.name === node.data.parentName) {
         const exist: any = tree.children.find((x: any) => x.selected && x.data.name !== node.data.name);
         if (!exist) {
@@ -306,8 +306,10 @@ export class RdsCompPermissionTreeComponent implements OnInit {
   }
 
   selectAllPermissions(event: any) {
-    for (const n of this.treeData) {
-      this.selectAllNode(n, event);
+    if (this.treeData) {
+      for (const n of this.treeData) {
+        this.selectAllNode(n, event);
+      }
     }
     this.SelectAll = event;
     if (event) {

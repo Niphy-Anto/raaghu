@@ -23,7 +23,7 @@ const Template: Story<RdsFabMenuComponent> = (args: RdsFabMenuComponent) => ({
 });
 
 export const Default = Template.bind({});
-Default.parameters = { controls: { include: ['withColorVariant','colorVariant', 'menuicon', 'menuiconHeight', 'menuiconWidth', 'size', 'listItems'] } };
+Default.parameters = { controls: { include: ['withColorVariant','colorVariant', 'menuicon', 'menuiconHeight', 'menuiconWidth', 'size', 'listItems','onSelect'] } };
 
 Default.args = {
   withColorVariant: true,

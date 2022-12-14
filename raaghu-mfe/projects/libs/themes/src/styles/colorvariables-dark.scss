@@ -1648,3 +1648,40 @@ $form-feedback-color: $gray-200;
       }
     }
   }
+}
+#sidebar.toggle-sidebar-menu {
+  ul {
+
+    ul.dropdown-menu {
+      li {
+        a.dropdown-item:hover{
+          background-color: transparent;
+        }
+        a.dropdown-item.active{
+          background-color: transparent;
+        }
+        ul{
+          li{
+            a.dropdown-item:hover{
+              background-color: transparent;
+            }
+            a.dropdown-item.active{
+              background-color: transparent;
+            }
+          }
+        }
+      }
+
+      ul {
+        li {
+          a.dropdown-item:hover{
+            background-color: transparent;
+          }
+          a.dropdown-item.active{
+            background-color: transparent;
+          }
+        }
+      }
+    }
+  }
+}

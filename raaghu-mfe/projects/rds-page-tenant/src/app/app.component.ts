@@ -8,7 +8,7 @@ import {
   transition,
   trigger,
   query,
-  style,
+  style, 
   animate,
 } from '@angular/animations';
 import { profileSelector } from 'projects/libs/state-management/src/lib/state/profile-settings/profile-settings.selectors';
@@ -85,6 +85,8 @@ export class AppComponent {
   tenantTableData: any = [];
   userTableData: any = []   
   loginList:any;
+  isShimmer: boolean=true;
+  editShimmer: boolean=true;
 
   constructor(public datepipe: DatePipe,   private userAuthService: UserAuthService,
     private store: Store, private translate: TranslateService, 
@@ -97,99 +99,7 @@ export class AppComponent {
         this.translate.use(res);
       }
     });
-    this.rdsTenantMfeConfig = {
-      name: 'RdsCompTenantList',
-      input: {
-        tenantHeaders: this.tenantTableHeader,
-        tenantList: this.tenantTableData,
-        editionList: this.editionList,
-        noDataTitle: 'Currently you do not have tenant',
-        isShimmer: true,
-        editShimmer: true,
-        tenantHeadersUser:this.userTableHeader,        
-        userList:this.userTableData,
-        tenantLoginList:this.tenantLoginLists
-      },
-      output: {
-        onSaveTenant: (tenant: any) => {
-          if (tenant && tenant.tenantInfo) {
-            if (tenant.tenantInfo.id) {
-              const data: any = {
-                tenancyName: tenant.tenantInfo.tenancyName,
-                name: tenant.tenantInfo.tenantName,
-                connectionString: tenant.tenantSettings.connectionString,
-                editionId: +tenant.tenantInfo.edition,
-                isActive: tenant.tenantSettings.isActive,
-                subscriptionEndDateUtc: (tenant.tenantInfo.unlimitedSubscription||!tenant.tenantInfo.subscriptionEndDate||tenant.tenantInfo.subscriptionEndDate==null) ? null : new Date(tenant.tenantInfo.subscriptionEndDate).toISOString(),
-                isInTrialPeriod: false,
-                id: tenant.tenantInfo.id
-              };
-              this.store.dispatch(updateTenant(data))
-
-            } else {
-              const data: any = {
-                tenancyName: tenant.tenantInfo.tenancyName,
-                name: tenant.tenantInfo.tenantName,
-                adminEmailAddress: tenant.tenantInfo.adminEmailAddress,
-                adminPassword: tenant.tenantSettings.password,
-                connectionString: tenant.tenantSettings.connectionString,
-                shouldChangePasswordOnNextLogin: tenant.tenantSettings.changePasswordOnNextLogin,
-                sendActivationEmail: tenant.tenantSettings.sendActivationEmail,
-                editionId: +tenant.tenantInfo.edition,
-                isActive: tenant.tenantSettings.isActive,
-                subscriptionEndDateUtc: (tenant.tenantInfo.unlimitedSubscription||!tenant.tenantInfo.subscriptionEndDate||tenant.tenantInfo.subscriptionEndDate==null) ? null : new Date(tenant.tenantInfo.subscriptionEndDate).toISOString(),
-                isInTrialPeriod: false
-              };
-              this.store.dispatch(saveTenant(data, 30))
-
-            }
-
-          }
-
-        },
-        onEditTenant: (selectedTenant: any) => {
-          this.store.dispatch(getTenantForEdit(selectedTenant));
-          this.store.dispatch(getTenantFeaturesForEdit(selectedTenant))
-        },
-        onReset: (event: any) => {
-          this.tenantData = undefined;
-          this.tenantSettingsInfo = undefined;
-          this.tenantFeatureValues = [];
-          this.tenantFeatures = [];
-          const mfeConfig = this.rdsTenantMfeConfig
-          mfeConfig.input.tenantData = { ... this.tenantData };
-          mfeConfig.input.tenantSettingsInfo = { ... this.tenantSettingsInfo };
-          mfeConfig.input.tenantFeatureValues = [... this.tenantFeatureValues];
-          mfeConfig.input.tenantFeatures = [... this.tenantFeatures];
-          if (event.newtenant) {
-            mfeConfig.input.editShimmer = false;
-          } else {
-            mfeConfig.input.editShimmer = true;
-          }
-
-          this.rdsTenantMfeConfig = mfeConfig;
-
-        },
-        deleteEvent: (event: any) => {
-          this.store.dispatch(deleteTenant(event.id, 30))
-        },
-        onSaveFeatures: (feature: any) => {
-          this.store.dispatch(updateTenantFeatureValues(feature))
-        },
-        onSelectTenant:(event:any)=>{
-          this.store.dispatch(getTenantUsers(event));
-        },
-        onTenantLogIn:(event:any)=>{  
-          this.loginList=event.tenantId;                   
-           const data:any={
-            tenantId:this.loginList,
-            userId:event.userId
-           };
-           this.store.dispatch(getTenantLogin(data)); 
-                             
-        }
-      }
-    };
+    
 
     this.store.dispatch(getEditionComboboxItems())
     this.store.select(selectEditionComboboxItems).subscribe((res: any) => {
@@ -208,13 +118,7 @@ export class AppComponent {
             isFree: element.isFree
           }
           this.editionList.push(data);
-          // console.log('data' , data);
-          
         }); 
-       
-        const mfeConfig = this.rdsTenantMfeConfig
-        mfeConfig.input.editionList = [...this.editionList];
-        this.rdsTenantMfeConfig = mfeConfig;
       }
     })
     this.store.dispatch(getProfilepic());
@@ -239,9 +143,7 @@ export class AppComponent {
           }
           this.userTableData.push(item);
         });
-        const mfeConfig = this.rdsTenantMfeConfig
-        mfeConfig.input.userList = [... this.userTableData];
-        this.rdsTenantMfeConfig = mfeConfig;
+        
       }
     })
 
@@ -279,10 +181,8 @@ export class AppComponent {
           }
           this.tenantTableData.push(item);
         });
-        const mfeConfig = this.rdsTenantMfeConfig
-        mfeConfig.input.tenantList = [... this.tenantTableData];
-        mfeConfig.input.isShimmer = false;
-        this.rdsTenantMfeConfig = mfeConfig;
+        this.isShimmer = false;
+       
       }
     });
 
@@ -300,27 +200,88 @@ export class AppComponent {
         this.tenantData['unlimitedSubscription'] = (res.subscriptionEndDateUtc !== null&&res.subscriptionEndDateUtc) ? false : true;
         this.tenantData['id'] = res.id;
         this.tenantData['subscriptionEndDate'] = (res.subscriptionEndDateUtc) ? new Date(res.subscriptionEndDateUtc) : null;
-        const mfeConfig = this.rdsTenantMfeConfig
-        mfeConfig.input.tenantData = { ... this.tenantData };
-        mfeConfig.input.tenantSettingsInfo = { ... this.tenantSettingsInfo };
-        mfeConfig.input.editShimmer = false
-        this.rdsTenantMfeConfig = mfeConfig;
+        this.editShimmer = false
       }
     });
     this.store.select(selectTenantFeature).subscribe((res: any) => {
       if (res) {
         this.tenantFeatureValues = res.featureValues;
         this.tenantFeatures = this.convertArraytoTreedata(res.features);
-
-        // this.editionList = res.editions;
-        const mfeConfig = this.rdsTenantMfeConfig
-        mfeConfig.input.tenantFeatureValues = [... this.tenantFeatureValues];
-        mfeConfig.input.tenantFeatures = [... this.tenantFeatures];
-
-        this.rdsTenantMfeConfig = mfeConfig;
       }
     })
   }
+
+  onSaveTenant(tenant: any){
+    if (tenant && tenant.tenantInfo) {
+      if (tenant.tenantInfo.id) {
+        const data: any = {
+          tenancyName: tenant.tenantInfo.tenancyName,
+          name: tenant.tenantInfo.tenantName,
+          connectionString: tenant.tenantSettings.connectionString,
+          editionId: +tenant.tenantInfo.edition,
+          isActive: tenant.tenantSettings.isActive,
+          subscriptionEndDateUtc: (tenant.tenantInfo.unlimitedSubscription||!tenant.tenantInfo.subscriptionEndDate||tenant.tenantInfo.subscriptionEndDate==null) ? null : new Date(tenant.tenantInfo.subscriptionEndDate).toISOString(),
+          isInTrialPeriod: false,
+          id: tenant.tenantInfo.id
+        };
+        this.store.dispatch(updateTenant(data))
+
+      } else {
+        const data: any = {
+          tenancyName: tenant.tenantInfo.tenancyName,
+          name: tenant.tenantInfo.tenantName,
+          adminEmailAddress: tenant.tenantInfo.adminEmailAddress,
+          adminPassword: tenant.tenantSettings.password,
+          connectionString: tenant.tenantSettings.connectionString,
+          shouldChangePasswordOnNextLogin: tenant.tenantSettings.changePasswordOnNextLogin,
+          sendActivationEmail: tenant.tenantSettings.sendActivationEmail,
+          editionId: +tenant.tenantInfo.edition,
+          isActive: tenant.tenantSettings.isActive,
+          subscriptionEndDateUtc: (tenant.tenantInfo.unlimitedSubscription||!tenant.tenantInfo.subscriptionEndDate||tenant.tenantInfo.subscriptionEndDate==null) ? null : new Date(tenant.tenantInfo.subscriptionEndDate).toISOString(),
+          isInTrialPeriod: false
+        };
+        this.store.dispatch(saveTenant(data, 30))
+
+      }
+
+    }
+
+  }
+  onEditTenant(selectedTenant: any){
+    this.store.dispatch(getTenantForEdit(selectedTenant));
+    this.store.dispatch(getTenantFeaturesForEdit(selectedTenant))
+  }
+  onReset(event){
+    this.tenantData = undefined;
+    this.tenantSettingsInfo = undefined;
+    this.tenantFeatureValues = [];
+    this.tenantFeatures = [];
+    
+    if (event.newtenant) {
+      this.editShimmer = false;
+    } else {
+      this.editShimmer = true;
+    }
+  }
+  deleteEvent(event: any){
+    this.store.dispatch(deleteTenant(event.id, 30))
+  }
+  onSaveFeatures(feature: any){
+    this.store.dispatch(updateTenantFeatureValues(feature))
+  }
+  onSelectTenant(event:any){
+    this.store.dispatch(getTenantUsers(event));
+  }
+  onTenantLogIn(event:any){  
+    this.loginList=event.tenantId;                   
+     const data:any={
+      tenantId:this.loginList,
+      userId:event.userId
+     };
+     this.store.dispatch(getTenantLogin(data)); 
+                       
+  }
+
   convertArraytoTreedata(data: any) {
     const treedaTA = this._arrayToTreeConverterService.createTree(
       data,

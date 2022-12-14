@@ -59,22 +59,24 @@ export class AppComponent implements OnInit {
   EditShimmer: boolean = false;
   languageCanvasTitle = this.translate.instant('New Language');
   showLoadingSpinner: boolean = false;
-  public rdsAlertMfeConfig: ComponentLoaderOptions = {
-    name: 'RdsCompAlert',
-    input: {
-      currentAlerts: this.currentAlerts,
-    },
-    output: {
-      onAlertHide: (event: any) => {
-        this.currentAlerts = event;
-      },
-    },
-  };
+  // public rdsAlertMfeConfig: ComponentLoaderOptions = {
+  //   name: 'RdsCompAlert',
+  //   input: {
+  //     currentAlerts: this.currentAlerts,
+  //   },
+  //   output: {
+  //     onAlertHide: (event: any) => {
+  //       this.currentAlerts = event;
+  //     },
+  //   },
+  // };
+
   selectedLanguage: any = {
     countryCode: '',
     icon: '',
     isEnabled: false,
     id: undefined,
+    languageName:''
   };
   rdsLanguageTableMfeConfig: ComponentLoaderOptions;
   languageTableHeader: TableHeader[] = [
@@ -114,97 +116,104 @@ export class AppComponent implements OnInit {
   ];
   loading: boolean = true;
   languageTableData: any = [];
+  // languageTableData:any=[];
   public rdsNewLanguageMfeConfig: ComponentLoaderOptions;
   public languageNames: any = [];
   public flags: any = [];
   public viewCanvas: boolean = false;
+  actions: any = [
+    { id: 'edit', displayName: 'Edit' },
+    { id: 'changeText', displayName: 'Change Texts' },
+    { id: 'setDefaultLanguage', displayName: 'Set as default language' },
+    { id: 'delete', displayName: 'Delete' },
+  ]
   constructor(
     public datepipe: DatePipe,
     public translate: TranslateService,
     private store: Store,
     private alertService: AlertService,
     private router: Router
-  ) {}
+  ) { }
   ngOnInit(): void {
     this.isAnimation = true;
 
     this.rdsLanguageTableMfeConfig = {
       name: 'RdsDataTable',
       input: {
-        tableHeaders: this.languageTableHeader,
-        tableStyle: this.tableStyle,
-        width: '100%',
-        tableData: this.languageTableData,
-        recordsPerPage: this.recordsPerpage,
-        pagination: true,
-        inlineEdit: false,
-        actions: [
-          { id: 'edit', displayName: 'Edit' },
-          { id: 'changeText', displayName: 'Change Texts' },
-          { id: 'setDefaultLanguage', displayName: 'Set as default language' },
-          { id: 'delete', displayName: 'Delete' },
-        ],
-        noDataTitle: 'Currently you do not have language',
-        isShimmer: true,
+        // tableHeaders: this.languageTableHeader,
+        // tableStyle: this.tableStyle,
+        // width: '100%',
+        // tableData: this.languageTableData,
+        // recordsPerPage: this.recordsPerpage,
+        // pagination: true,
+        // inlineEdit: false,
+        // actions: [
+        //   { id: 'edit', displayName: 'Edit' },
+        //   { id: 'changeText', displayName: 'Change Texts' },
+        //   { id: 'setDefaultLanguage', displayName: 'Set as default language' },
+        //   { id: 'delete', displayName: 'Delete' },
+        // ],
+        // noDataTitle: 'Currently you do not have language',
+        // isShimmer: true,
       },
       output: {
-        onActionSelection: (event: any) => {
-          if (event.actionId === 'delete') {
-            this.store.dispatch(deleteLanguage(event.selectedData.id));
-          } else if (event.actionId === 'edit') {     
-            this.languageCanvasTitle = 'Edit Language';
-            this.selectedLanguage = JSON.parse(
-              JSON.stringify(event.selectedData)
-            );
-            if (this.selectedLanguage.icon && this.flags.length > 0) {
-              const selectedLanguage = this.flags.find(
-                (x: any) => x.value === this.selectedLanguage.icon
-              );
-              if (selectedLanguage) {
-                this.selectedLanguage.icon = selectedLanguage.some;
-              }
-            }
-            const mfeConfig = this.rdsNewLanguageMfeConfig;
-            mfeConfig.input.selectedLanguage = this.selectedLanguage
-            this.rdsNewLanguageMfeConfig = mfeConfig;
-            this.openCanvas(true);
-          } else if (event.actionId === 'setDefaultLanguage') {
-            const data: any = { name: event.selectedData.countryCode };
-            this.store.dispatch(setDefaultLanguage(data));
-          } else if (event.actionId === 'changeText') {
-            this.redirectToLanguageText();
-          }
-        },
+        // onActionSelection: (event: any) => {
+        //   if (event.actionId === 'delete') {
+        //     this.store.dispatch(deleteLanguage(event.selectedData.id));
+        //   } else if (event.actionId === 'edit') {     
+        //     this.languageCanvasTitle = 'Edit Language';
+        //     this.selectedLanguage = JSON.parse(
+        //       JSON.stringify(event.selectedData)
+        //     );
+        //     if (this.selectedLanguage.icon && this.flags.length > 0) {
+        //       const selectedLanguage = this.flags.find(
+        //         (x: any) => x.value === this.selectedLanguage.icon
+        //       );
+        //       if (selectedLanguage) {
+        //         this.selectedLanguage.icon = selectedLanguage.some;
+        //       }
+        //     }
+        //     const mfeConfig = this.rdsNewLanguageMfeConfig;
+        //     mfeConfig.input.selectedLanguage = this.selectedLanguage
+        //     this.rdsNewLanguageMfeConfig = mfeConfig;
+        //     this.openCanvas(true);
+        //   } else if (event.actionId === 'setDefaultLanguage') {
+        //     const data: any = { name: event.selectedData.countryCode };
+        //     this.store.dispatch(setDefaultLanguage(data));
+        //   } else if (event.actionId === 'changeText') {
+        //     this.redirectToLanguageText();
+        //   }
+        // },
       },
     };
     this.rdsNewLanguageMfeConfig = {
       name: 'RdsCompNewLanguage',
       input: {
-        flags: this.flags,
-        languageNames: this.languageNames,
-        selectedLanguage: this.selectedLanguage,
-        EditShimmer: true,
+        // flags: this.flags,
+        // languageNames: this.languageNames,
+        // selectedLanguage: this.selectedLanguage,
+        // EditShimmer: true,
       },
       output: {
-        onLanguageSave: (data: any) => {
-          const body: any = {
-            language: data,
-          };
-          this.store.dispatch(saveLanguage(body));
-          var offcanvas = document.getElementById('AddLanguage');
-          var bsOffcanvas = new bootstrap.Offcanvas(offcanvas);
-          bsOffcanvas.hide();
-          this.viewCanvas = false;
-          this.selectedLanguage = {
-            countryCode: '',
-            icon: '',
-            isEnabled: false,
-            id: undefined,
-          };
-        },
-        onCloseCanvas: (event: any) => {
-          this.closeCanvas();
-        },
+        // onLanguageSave: (data: any) => {
+        //   const body: any = {
+        //     language: data,
+        //   };
+        //   this.store.dispatch(saveLanguage(body));
+        //   var offcanvas = document.getElementById('AddLanguage');
+        //   var bsOffcanvas = new bootstrap.Offcanvas(offcanvas);
+        //   bsOffcanvas.hide();
+        //   this.viewCanvas = false;
+        //   this.selectedLanguage = {
+        //     countryCode: '',
+        //     icon: '',
+        //     isEnabled: false,
+        //     id: undefined,
+        //   };
+        // },
+        // onCloseCanvas: (event: any) => {
+        //   this.closeCanvas();
+        // },
       },
     };
     this.store.dispatch(getCountryList());
@@ -214,20 +223,20 @@ export class AppComponent implements OnInit {
         this.languageNames = [];
         res.languageNames.forEach(res => {
           const data = {
-            value:res.value,
-            some:res.displayText,
-            isSelected:res.isSelected,
-            icon:'',
-            iconWidth:0,
-            iconHeight:0,
-            iconFill:false,
+            value: res.value,
+            some: res.displayText,
+            isSelected: res.isSelected,
+            icon: '',
+            iconWidth: 0,
+            iconHeight: 0,
+            iconFill: false,
             iconStroke: true,
             isFree: res.isFree
           }
           this.languageNames.push(data);
           // console.log('data' , data);
-          
-        }); 
+
+        });
 
         this.flags = [];
         res.flags.forEach((res: any) => {
@@ -241,12 +250,12 @@ export class AppComponent implements OnInit {
           });
         });
 
-        const rdsNewLanguageMfeConfig = this.rdsNewLanguageMfeConfig;
-        rdsNewLanguageMfeConfig.input.flags = [...this.flags];
-        rdsNewLanguageMfeConfig.input.selectedLanguage = this.selectedLanguage;
-        rdsNewLanguageMfeConfig.input.languageNames = [...this.languageNames];
-        rdsNewLanguageMfeConfig.input.EditShimmer = false;
-        this.rdsNewLanguageMfeConfig = rdsNewLanguageMfeConfig;
+        // const rdsNewLanguageMfeConfig = this.rdsNewLanguageMfeConfig;
+        // rdsNewLanguageMfeConfig.input.flags = [...this.flags];
+        // rdsNewLanguageMfeConfig.input.selectedLanguage = this.selectedLanguage;
+        // rdsNewLanguageMfeConfig.input.languageNames = [...this.languageNames];
+        // rdsNewLanguageMfeConfig.input.EditShimmer = false;
+        // this.rdsNewLanguageMfeConfig = rdsNewLanguageMfeConfig;
       }
     });
     this.store.select(selectDefaultLanguage).subscribe((res: any) => {
@@ -262,24 +271,24 @@ export class AppComponent implements OnInit {
         res.items.forEach((element: any) => {
           const status: any = element.isDisabled
             ? {
-                icon: 'close',
-                width: '24px',
-                height: '16px',
-                colorVariant: 'danger',
-              }
+              icon: 'close',
+              width: '24px',
+              height: '16px',
+              colorVariant: 'danger',
+            }
             : {
-                icon: 'check',
-                width: '24px',
-                height: '16px',
-                colorVariant: 'success',
-              };
+              icon: 'check',
+              width: '24px',
+              height: '16px',
+              colorVariant: 'success',
+            };
           // const statusTemplate = `<div class="fs-3"><i class="bi ${status}"></i></div>`;
           const languageName: string = element.displayName;
           const defaultLanguageTemplate = `<div> ${languageName} <span class="badge badge-success p-1 mx-1 rounded">Default</span></div>`;
           const item: any = {
             id: element.id,
             languageName: element.name === defaultLanguage ? defaultLanguageTemplate
-                : element.displayName,
+              : element.displayName,
             countryCode: element.name,
             isEnabled: element.isDisabled ? false : true,
             statusTemplate: status,
@@ -292,10 +301,10 @@ export class AppComponent implements OnInit {
           };
           this.languageTableData.push(item);
         });
-        const mfeConfig = this.rdsLanguageTableMfeConfig;
-        mfeConfig.input.tableData = [...this.languageTableData];
-        mfeConfig.input.isShimmer = false;
-        this.rdsLanguageTableMfeConfig = mfeConfig;
+        // const mfeConfig = this.rdsLanguageTableMfeConfig;
+        // mfeConfig.input.tableData = [...this.languageTableData];
+        // mfeConfig.input.isShimmer = false;
+        // this.rdsLanguageTableMfeConfig = mfeConfig;
       }
     });
     this.subscribeToAlerts();
@@ -324,9 +333,9 @@ export class AppComponent implements OnInit {
       isenabled: this.Isenabled,
       creationTime: this.datepipe.transform(new Date(), 'dd-MM-yyyy'),
     });
-    const mfeConfig = this.rdsLanguageTableMfeConfig;
-    mfeConfig.input.tableData = [...this.languageTableData];
-    this.rdsLanguageTableMfeConfig = mfeConfig;
+    // const mfeConfig = this.rdsLanguageTableMfeConfig;
+    //  this.tableData = [...this.languageTableData];
+    // this.rdsLanguageTableMfeConfig = mfeConfig;
   }
   // addLanguages(language: any) {
   //   this.languageTableData.push(language.NewLanguage)
@@ -341,14 +350,14 @@ export class AppComponent implements OnInit {
         icon: '',
         isEnabled: false,
         id: undefined,
+        languageName:''
       };
       this.languageCanvasTitle = this.translate.instant('New Language');
     } else {
       this.languageCanvasTitle = this.translate.instant('Edit Language');
     }
-    const rdsNewLanguageMfeConfig = this.rdsNewLanguageMfeConfig;
-    rdsNewLanguageMfeConfig.input.selectedLanguage = this.selectedLanguage;
-    this.rdsNewLanguageMfeConfig = rdsNewLanguageMfeConfig;
+    // const rdsNewLanguageMfeConfig = this.rdsNewLanguageMfeConfig;
+    // this.rdsNewLanguageMfeConfig = rdsNewLanguageMfeConfig;
     setTimeout(() => {
       var offcanvas = document.getElementById('AddLanguage');
       var bsOffcanvas = new bootstrap.Offcanvas(offcanvas);
@@ -366,6 +375,7 @@ export class AppComponent implements OnInit {
       icon: '',
       isEnabled: false,
       id: undefined,
+      languageName:''
     };
     this.showLoadingSpinner = false;
   }
@@ -379,9 +389,9 @@ export class AppComponent implements OnInit {
       };
       this.showLoadingSpinner = false;
       this.currentAlerts.push(currentAlert);
-      const rdsAlertMfeConfig = this.rdsAlertMfeConfig;
-      rdsAlertMfeConfig.input.currentAlerts = [...this.currentAlerts];
-      this.rdsAlertMfeConfig = rdsAlertMfeConfig;
+      // // const rdsAlertMfeConfig = this.rdsAlertMfeConfig;
+      // this.currentAlerts = [...this.currentAlerts];
+      // // this.rdsAlertMfeConfig = rdsAlertMfeConfig;
     });
   }
   redirectToLanguageText() {
@@ -401,4 +411,59 @@ export class AppComponent implements OnInit {
   // { languagename: 'India', code: 'IND', isenabled: 'false', creationTime: '12-10-1992' },
   // { languagename: 'India', code: 'IND', isenabled: 'false', creationTime: '12-10-1992' },
   // { languagename: 'India', code: 'IND', isenabled: 'true', creationTime: '12-10-1992' }]
+
+
+  onLanguageSave(data: any) {
+    const body: any = {
+      language: data,
+    };
+    this.store.dispatch(saveLanguage(body));
+    var offcanvas = document.getElementById('AddLanguage');
+    var bsOffcanvas = new bootstrap.Offcanvas(offcanvas);
+    bsOffcanvas.hide();
+    this.viewCanvas = false;
+    this.selectedLanguage = {
+      countryCode: '',
+      icon: '',
+      isEnabled: false,
+      id: undefined,
+    };
+  }
+
+  onCloseCanvas(event: any) {
+    this.closeCanvas();
+  }
+
+  onActionSelection(event: any) {
+    if (event.actionId === 'delete') {
+      this.store.dispatch(deleteLanguage(event.selectedData.id));
+    } else if (event.actionId === 'edit') {
+      this.languageCanvasTitle = 'Edit Language';
+      this.selectedLanguage = JSON.parse(
+        JSON.stringify(event.selectedData)
+      );
+      if (this.selectedLanguage.icon && this.flags.length > 0) {
+        const selectedLanguage = this.flags.find(
+          (x: any) => x.value === this.selectedLanguage.icon
+        );
+        if (selectedLanguage) {
+          this.selectedLanguage.icon = selectedLanguage.some;
+        }
+      }
+      // const mfeConfig = this.rdsNewLanguageMfeConfig;
+      this.selectedLanguage = this.selectedLanguage
+      // this.rdsNewLanguageMfeConfig = mfeConfig;
+      this.openCanvas(true);
+    } else if (event.actionId === 'setDefaultLanguage') {
+      const data: any = { name: event.selectedData.countryCode };
+      this.store.dispatch(setDefaultLanguage(data));
+    } else if (event.actionId === 'changeText') {
+      this.redirectToLanguageText();
+    }
+  }
+
+  onAlertHide(event: any) {
+    this.currentAlerts = event;
+  }
+
 }
