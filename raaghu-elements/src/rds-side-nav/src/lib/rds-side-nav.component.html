@@ -5,7 +5,7 @@
       <a (click)="onClick($event,i,item)" *ngIf="!item.children" [ngClass]="{ 'active' : item.active }"
         class="d-inline-flex align-items-center text-decoration-none text-uppercase" role="button"
         aria-expanded="false">
-        <rds-icon [name]="item.icon" [fill]="item.iconFill" [stroke]="item.iconStroke" [height]="iconHeight"
+        <rds-icon [name]="item.icon+''" [fill]="item.iconFill" [stroke]="item.iconStroke" [height]="iconHeight"
           [width]="iconWidth" [class.pe-3]="!collapsed"></rds-icon>
         <span data-bs-toggle="tooltip" data-bs-placement="auto" [ngClass]="{ 'd-none' : collapsed }">
           {{item.label}}
