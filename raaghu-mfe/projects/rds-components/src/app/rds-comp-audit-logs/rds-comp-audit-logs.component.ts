@@ -39,7 +39,7 @@ export class RdsCompAuditLogsComponent implements OnInit {
   @Input() listItem2 = [
     { value: 'Export To Excel', some: 'value', key: 'change-log', icon: 'export_data', iconWidth: '20px', iconHeight: '20px' },
   ];
-  public changeLogsHeaders: TableHeader[] = [];
+  @Input() public changeLogsHeaders: TableHeader[] = [];
   @Input() public operationLogs: any = [];
   @Output() deleteEvent = new EventEmitter<any>();
   @Output() parameterData = new EventEmitter<any>();

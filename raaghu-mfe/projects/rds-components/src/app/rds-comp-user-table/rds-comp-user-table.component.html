@@ -4,7 +4,11 @@
     [showLoadingSpinner]="buttonSpinnerForUserTable" [size]="'small'" (click)="openCanvas()" [attr.aria-controls]="'AddUser'" [icon]="'plus'" iconHeight="12px" iconWidth="12px" [size]="'small'">
     </rds-button>
   </div>
-<mfe-loader [config]="rdsUserTableMfeConfig"></mfe-loader>
+<!-- <mfe-loader [config]="rdsUserTableMfeConfig"></mfe-loader> -->
+<rds-comp-data-table [inlineEdit]="false" [actions]="actions" [recordsPerPage]="recordsPerpage" [pagination]="true"
+[tableHeaders]="userTableHeader" (onActionSelection)="onActionSelection($event)"
+noDataTitle="Currently you do not have edition" [tableData]="userTableData">
+</rds-comp-data-table>
 </div>
 
 <rds-offcanvas [canvasTitle]="translate.instant(canvasTitle)" [offId]="'AddUser'" [placement]="'end'" 

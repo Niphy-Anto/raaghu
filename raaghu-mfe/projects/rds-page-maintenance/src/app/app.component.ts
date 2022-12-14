@@ -40,7 +40,7 @@ import { selectDefaultLanguage } from 'projects/libs/state-management/src/lib/st
     ])
   ]
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
   isAnimation: boolean = true;
 
   title = 'maintenance';
@@ -66,47 +66,48 @@ export class AppComponent implements OnInit{
   cashedata: any = []
   websiteLogData: any[];
   isShimmer: boolean = false;
-  
+  tableData: any = []
+
   constructor(private store: Store,
-    private sharedService:SharedService,
-     public translate: TranslateService) { }
+    private sharedService: SharedService,
+    public translate: TranslateService) { }
 
- 
-  
- 
+
+
+
   ngOnInit(): void {
-     this.isAnimation = true;
-    this.rdscacheMfeConfig = {
-      name: 'RdsCompCache',
-      input: {
-        cashedata: this.cashedata,
-        // dataSource: this.cashedata
-      },
-      output: {
-        onClearCache: (eventData: any) => {
-          const data: any = {
-            id: eventData
-          }
-          this.store.dispatch(deletecache(data));
-          const index = this.cashedata.findIndex((x: any) => x.name === eventData);
-          if (index !== -1) {
-            this.cashedata.splice(index, 1);
-            const mfeConfig = this.rdscacheMfeConfig
-            mfeConfig.input.tableData = [... this.cashedata];
-            this.rdscacheMfeConfig = { ...mfeConfig };
-          }
-        }
-      }
-    };
-    this.rdswebsiteMfeConfig = {
-      name: 'RdsCompWebsiteLog',
-      input: {
-        websiteLogData: this.websiteLogData
-      },
-      output: {
+    this.isAnimation = true;
+    // this.rdscacheMfeConfig = {
+    //   name: 'RdsCompCache',
+    //   input: {
+    //     cashedata: this.cashedata,
+    //     // dataSource: this.cashedata
+    //   },
+    //   output: {
+    //     onClearCache: (eventData: any) => {
+    //       const data: any = {
+    //         id: eventData
+    //       }
+    //       this.store.dispatch(deletecache(data));
+    //       const index = this.cashedata.findIndex((x: any) => x.name === eventData);
+    //       if (index !== -1) {
+    //         this.cashedata.splice(index, 1);
+    //         const mfeConfig = this.rdscacheMfeConfig
+    //         mfeConfig.input.tableData = [... this.cashedata];
+    //         this.rdscacheMfeConfig = { ...mfeConfig };
+    //       }
+    //     }
+    //   }
+    // };
+    // this.rdswebsiteMfeConfig = {
+    //   name: 'RdsCompWebsiteLog',
+    //   input: {
+    //     websiteLogData: this.websiteLogData
+    //   },
+    //   output: {
 
-      }
-    };
+    //   }
+    // };
     this.store.select(selectDefaultLanguage).subscribe((res: any) => {
       if (res) {
         this.translate.use(res);
@@ -115,21 +116,21 @@ export class AppComponent implements OnInit{
       }
       this.isShimmer = true;
     })
-    this.rdsAlertMfeConfig = {
-      name: 'RdsCompAlertPopup',
-      input: {
-        alertID: 'deleteAllModal',
-        alertData: this.alertData
-      },
-      output: {
-        onDelete: (event) => {
-          this.deletAllcashe();
-        },
-        onCancel: (event) => {
-          this.deletecaheid = undefined;
-        }
-      }
-    },
+    // this.rdsAlertMfeConfig = {
+    //   name: 'RdsCompAlertPopup',
+    //   input: {
+    //     alertID: 'deleteAllModal',
+    //     alertData: this.alertData
+    //   },
+    //   output: {
+    //     onDelete: (event) => {
+    //       this.deletAllcashe();
+    //     },
+    //     onCancel: (event) => {
+    //       this.deletecaheid = undefined;
+    //     }
+    //   }
+    // },
     this.refreshData();
   }
 
@@ -150,9 +151,9 @@ export class AppComponent implements OnInit{
           this.websiteLogData.push(item);
 
         });
-        const mfeConfig = this.rdswebsiteMfeConfig
-        mfeConfig.input.websiteLogData = [...this.websiteLogData]
-        this.rdswebsiteMfeConfig = mfeConfig;
+        // const mfeConfig = this.rdswebsiteMfeConfig
+        // mfeConfig.input.websiteLogData = [...this.websiteLogData]
+        // this.rdswebsiteMfeConfig = mfeConfig;
       }
       this.isShimmer = false;
     })
@@ -167,10 +168,10 @@ export class AppComponent implements OnInit{
           }
           this.cashedata.push(item);
         });
-        const mfeConfig = this.rdscacheMfeConfig
-        mfeConfig.input.cashedata = [...this.cashedata]
-        // mfeConfig.input.dataSource = [...this.cashedata]
-        this.rdscacheMfeConfig = mfeConfig;
+        // const mfeConfig = this.rdscacheMfeConfig
+        // mfeConfig.input.cashedata = [...this.cashedata]
+        // // mfeConfig.input.dataSource = [...this.cashedata]
+        // this.rdscacheMfeConfig = mfeConfig;
       }
       this.isShimmer = false;
     })
@@ -186,6 +187,7 @@ export class AppComponent implements OnInit{
     { label: this.translate.instant('Caches'), tablink: '#nav-Caches', ariacontrols: 'nav-Caches' },
     { label: this.translate.instant('Website Logs'), tablink: '#nav-websiteLogs', ariacontrols: 'nav-websiteLogs' },
   ]
+
 
 
   deleteConfirmation(id: any): void {
@@ -286,4 +288,24 @@ export class AppComponent implements OnInit{
     }
   }
 
+  onClearCache(eventData: any) {
+    const data: any = {
+      id: eventData
+    }
+    this.store.dispatch(deletecache(data));
+    const index = this.cashedata.findIndex((x: any) => x.name === eventData);
+    if (index !== -1) {
+      this.cashedata.splice(index, 1);
+      // const mfeConfig = this.rdscacheMfeConfig
+      this.tableData = [... this.cashedata];
+      // this.rdscacheMfeConfig = { ...mfeConfig };
+    }
+  }
+
+  onDelete(event) {
+    this.deletAllcashe();
+  }
+  onCancel(event) {
+    this.deletecaheid = undefined;
+  }
 }

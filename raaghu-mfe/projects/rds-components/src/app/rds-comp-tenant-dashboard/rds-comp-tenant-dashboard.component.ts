@@ -452,8 +452,7 @@ export class  RdsCompTenantDashboardComponent extends MfeBaseComponent implement
     }
   }
 
-  rdsMemberActivityTableMfeConfig: ComponentLoaderOptions;
-  @Input() memberActivityTableHeader: TableHeader[] = [
+  memberActivityTableHeader: TableHeader[] = [
     { displayName: 'Member', key: 'member', dataType: 'html' },
     { displayName: 'Cases', key: 'cases', dataType: 'html' },
     { displayName: 'Active', key: 'active', dataType: 'html' },
@@ -465,18 +464,7 @@ export class  RdsCompTenantDashboardComponent extends MfeBaseComponent implement
   constructor(private injector: Injector, public translate: TranslateService) { super(injector); }
 
   ngOnInit(): void {
-    this.rdsMemberActivityTableMfeConfig = {
-      name: 'RdsDataTable',
-      input: {
-        tableHeaders: this.memberActivityTableHeader,
-        tableStyle: this.tableStyle,
-        width: '100%',
-        tableData: this.memberActivityTableData,
-        pagination: false,
-        recordsPerPage: 10,
-        noDataTitle: 'Currently you do not have member activity'
-      },
-    };
+
   }
   LoadSalesData() {
 

@@ -28,7 +28,7 @@ export interface SideNavItem {
 export class RdsSideNavComponent implements OnInit, OnChanges {
 
   @Input() sidenavItems: SideNavItem[] = [];
-  @Input() isPageWrapper: boolean = false;
+  @Input() isPageWrapper: boolean = true;
   @Input() collapseRequired: boolean = true;
   @Input() iconHeight: string = '20px';
   @Input() iconWidth: string = '20px';

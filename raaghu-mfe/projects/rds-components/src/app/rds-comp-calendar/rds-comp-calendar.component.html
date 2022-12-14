@@ -177,10 +177,10 @@
           *ngIf="titile.errors && (titile.dirty || titile.touched)"
         >
           <span class="text-danger" *ngIf="titile.errors.required">{{
-            "Title is required" | translate
+            translate.instant("Title is required")
           }}</span>
           <span class="text-danger" *ngIf="titile.errors.pattern"
-            >{{ "Please enter a Title" | translate }}
+            >{{ translate.instant("Please enter a Title") }}
           </span>
         </div>
       </div>

@@ -207,7 +207,7 @@ export class RdsCompUserPermissionsNewComponent implements OnInit {
     ];
     this.CreateOrEditUser.emit({ id: undefined });
     if (event) {
-      this.canvasTitle = 'NEW USER';
+      this.canvasTitle = 'New User';
       this.userinfo = undefined;
       event.stopPropagation();
 

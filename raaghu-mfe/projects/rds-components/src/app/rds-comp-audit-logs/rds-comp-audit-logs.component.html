@@ -92,10 +92,10 @@
                 </div>
             </div>
             <div class="row mt-4 ">
-                <rds-data-table [tableData]="operationLogs" (deleteEvent)="delete($event)" [pagination]="true"
+                <rds-comp-data-table [tableData]="operationLogs" (deleteEvent)="delete($event)" [pagination]="true"
                     [noDataTitle]="translate.instant('Currently you do not have operation log')" [recordsPerPage]="10"
                     (onActionSelection)="onActionSelect($event)" [showNodataSubtitle]="false" [actions]="actions"
-                    [refresh]="true" [tableHeaders]="operationLogsHeaders" [isShimmer]="isShimmer"></rds-data-table>
+                    [refresh]="true" [tableHeaders]="operationLogsHeaders" [isShimmer]="isShimmer"></rds-comp-data-table>
             </div>
         </div>
 
@@ -136,11 +136,11 @@
                     </rds-fab-menu>
                 </div>
                 <div class="row">
-                    <rds-data-table [tableData]="changeLogs" [actions]="actionForChangeLogs"
+                    <rds-comp-data-table [tableData]="changeLogs" [actions]="actionForChangeLogs"
                         (onActionSelection)="onChangeActionSelect($event)" [pagination]="true" [recordsPerPage]="10"
                         [noDataTitle]="'Currently you do not have change log'" [showNodataSubtitle]="false"
                         [tableHeaders]="changeLogsHeaders">
-                    </rds-data-table>
+                    </rds-comp-data-table>
                 </div>
             </div>
         </div>
@@ -150,12 +150,12 @@
 <rds-offcanvas [canvasTitle]="translate.instant(auditLogsCanvasTitle)" [offId]="'auditLogCanvas'" [offcanvaswidth]="550"
     [placement]="'end'" *ngIf="viewAuditLogsCanvas" (onClose)="onClose()">
 
-    <h5><span class="fw-medium">{{'User Information' | translate}}</span></h5>
+    <h5><span class="fw-medium">{{translate.instant('User Information')}}</span></h5>
     <div class="row">
 
         <div class="col-md-6">
             <div class="form-group mb-3">
-                <span>{{'UserName'| translate}}: </span>
+                <span>{{translate.instant('UserName')}}: </span>
             </div>
         </div>
         <div class="col-md-6">
@@ -168,7 +168,7 @@
 
         <div class="col-md-6">
             <div class="form-group mb-3">
-                <span>{{'IP Address' | translate}}:</span>
+                <span>{{translate.instant('IP Address')}}:</span>
             </div>
         </div>
         <div class="col-md-6">
@@ -181,7 +181,7 @@
 
         <div class="col-md-6">
             <div class="form-group mb-3">
-                <span>{{'Client ' | translate}}:</span>
+                <span>{{translate.instant('Client ')}}:</span>
             </div>
         </div>
         <div class="col-md-6">
@@ -194,7 +194,7 @@
 
         <div class="col-md-6">
             <div class="form-group mb-3">
-                <span>{{'Browser ' | translate}}:</span>
+                <span>{{translate.instant('Browser ')}}:</span>
             </div>
         </div>
         <div class="col-md-6">
@@ -205,12 +205,12 @@
     </div>
 
 
-    <h5><span class="fw-medium">{{'Account Information'| translate}}</span></h5>
+    <h5><span class="fw-medium">{{translate.instant('Account Information')}}</span></h5>
     <div class="row">
 
         <div class="col-md-6">
             <div class="form-group mb-3">
-                <span>{{'Service' | translate}}:</span>
+                <span>{{translate.instant('Service')}}:</span>
             </div>
         </div>
         <div class="col-md-6">
@@ -224,7 +224,7 @@
 
         <div class="col-md-6">
             <div class="form-group mb-3">
-                <span>{{'Time' | translate}}:</span>
+                <span>{{translate.instant('Time')}}:</span>
             </div>
         </div>
         <div class="col-md-6">
@@ -237,7 +237,7 @@
 
         <div class="col-md-6">
             <div class="form-group mb-3">
-                <span>{{'Duration' | translate}}:</span>
+                <span>{{translate.instant('Duration')}}:</span>
             </div>
         </div>
         <div class="col-md-6">
@@ -250,7 +250,7 @@
 
         <div class="col-md-6">
             <div class="form-group mb-3">
-                <span>{{'Parameters' |translate}}: </span>
+                <span>{{translate.instant('Parameters')}}: </span>
             </div>
         </div>
         <div class="col-md-6  ">
@@ -259,11 +259,11 @@
             </div>
         </div>
     </div>
-    <h5><span class="fw-medium">{{'Custom Data' | translate}}</span></h5>
+    <h5><span class="fw-medium">{{translate.instant('Custom Data')}}</span></h5>
     <div class="row">
         <div class="col-md-6">
             <div class="form-group mb-3">
-                <span>{{'None' |translate}}</span>
+                <span>{{translate.instant('None')}}</span>
             </div>
         </div>
         <div class="col-md-6">
@@ -275,7 +275,7 @@
     <div class="row">
         <div class="col-md-6">
             <div class="form-group mb-3">
-                <span class="fw-medium">{{'Error State' | translate}}: </span>
+                <span class="fw-medium">{{translate.instant('Error State')}}: </span>
             </div>
             <div class="col-md-6">
                 <div class="form-group mb-3">

@@ -1,48 +1,19 @@
-import {
-  Component,
-  Inject,
-  Injector,
-  Input,
-  SimpleChanges,
-} from '@angular/core';
+import { Component, Inject, Injector, Input, SimpleChanges } from '@angular/core';
+import * as moment from 'moment';
+import { DateTime } from 'luxon';
 import { NavigationEnd, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import {
-  ComponentLoaderOptions,
-  MfeBaseComponent,
-  SharedService,
-  UserAuthService,
-} from '@libs/shared';
+import { ComponentLoaderOptions, SharedService, UserAuthService, } from '@libs/shared';
 import { Store } from '@ngrx/store';
-
-import {
-  deleteDelegations,
-  getDelegations,
-  getUsername,
-  saveDelegations,
-} from 'projects/libs/state-management/src/lib/state/authority-delegations/authority-delegations.action';
-import {
-  selectDelegationsInfo,
-  selectUserFilter,
-} from 'projects/libs/state-management/src/lib/state/authority-delegations/authority-delegations.selector';
+import { deleteDelegations, getDelegations, getUsername, saveDelegations, } from 'projects/libs/state-management/src/lib/state/authority-delegations/authority-delegations.action';
+import { selectDelegationsInfo, selectUserFilter, } from 'projects/libs/state-management/src/lib/state/authority-delegations/authority-delegations.selector';
 import { selectAllLoginAttempts } from 'projects/libs/state-management/src/lib/state/login-attempts/login-attempts.selector';
-import { DateTime } from 'luxon';
 import { getLoginAttempts } from 'projects/libs/state-management/src/lib/state/login-attempts/login-attempts.actions';
 import {
-  deleteAccount,
-  getMLATenancyData,
-  getNotificationSettings,
-  getUserNotification,
-  linkToUser,
-  SetAllNotificationsAsRead,
-  SetNotificationRead,
-  updateNotificationSettings,
+  deleteAccount, getMLATenancyData, getNotificationSettings, getUserNotification, linkToUser, SetAllNotificationsAsRead,
+  SetNotificationRead, updateNotificationSettings,
 } from 'projects/libs/state-management/src/lib/state/mla/mla.actions';
-import {
-  selectAllNotification,
-  selectNotificationSettings,
-  selectTenancyData,
-} from 'projects/libs/state-management/src/lib/state/mla/mla.selector';
+import { selectAllNotification, selectNotificationSettings, selectTenancyData, } from 'projects/libs/state-management/src/lib/state/mla/mla.selector';
 import { AlertService } from 'projects/libs/shared/src/lib/alert.service';
 import { TranslateService } from '@ngx-translate/core';
 import { ThemesService } from 'projects/libs/themes/src/public-api';
@@ -50,7 +21,6 @@ import { PrepareCollectedData } from 'projects/libs/state-management/src/lib/sta
 import { DOCUMENT } from '@angular/common';
 import { slideInAnimation } from '../animation';
 import { RouterOutlet } from '@angular/router';
-import * as moment from 'moment';
 import { getProfilepic } from 'projects/libs/state-management/src/lib/state/profile-settings/profile-settings.actions';
 import { selectAllVisualsettings } from 'projects/libs/state-management/src/lib/state/Visual-settings/visual-settings.selector';
 import { getVisualsettings } from 'projects/libs/state-management/src/lib/state/Visual-settings/visual-settings.actions';
@@ -58,6 +28,7 @@ import { getLanguages, setDefaultLanguageForUI } from 'projects/libs/state-manag
 import { changePassword, getProfile } from 'projects/libs/state-management/src/lib/state/mysettings/mysettings.action';
 import { selectAllLanguages, selectDefaultLanguage } from 'projects/libs/state-management/src/lib/state/language/language.selector';
 import { selectProfileInfo } from 'projects/libs/state-management/src/lib/state/mysettings/mysettings.selector';
+
 declare var bootstrap: any;
 @Component({
   selector: 'app-sidenav',
@@ -65,7 +36,8 @@ declare var bootstrap: any;
   styleUrls: ['./sidenav.component.scss'],
   animations: [slideInAnimation],
 })
-export class SidenavComponent extends MfeBaseComponent {
+export class SidenavComponent {
+  showDelegationButtonSpinner: boolean;
   prepareRoute(outlet: RouterOutlet) {
     return (
       outlet && outlet.activatedRouteData && outlet.activatedRouteData.animation
@@ -76,17 +48,6 @@ export class SidenavComponent extends MfeBaseComponent {
   toggleSideNav: boolean = false;
   currentAlerts: any = [];
   selectedLanguage: any = { language: '', icon: '' };
-  public rdsAlertMfeConfig: ComponentLoaderOptions = {
-    name: 'RdsCompAlert',
-    input: {
-      currentAlerts: this.currentAlerts,
-    },
-    output: {
-      onAlertHide: (event: any) => {
-        this.currentAlerts = event;
-      },
-    },
-  };
   severity = ['info', 'error', 'success', 'warn', 'fatal'];
   LoginAttempts: any = {
     TableHeader: [
@@ -390,11 +351,10 @@ export class SidenavComponent extends MfeBaseComponent {
   profilePic: string = '../assets/profile-picture.png';
   offCanvasId: string = 'profileOffCanvas';
   collapseRequired: any = true;
-  @Input() tenancy: string = 'Host Admin';
+  tenancy: string = 'Host Admin';
   selectedMenu: string = '';
   selectedMenuDescription: string = '';
   sub: Subscription;
-  rdsTopNavigationMfeConfig: ComponentLoaderOptions;
   accountPage = true;
   activeMenu: any;
   languageItems: any = [];
@@ -424,13 +384,11 @@ export class SidenavComponent extends MfeBaseComponent {
     private alertService: AlertService,
     public translate: TranslateService,
     private shared: SharedService,
-    private injector: Injector,
     private userAuthService: UserAuthService,
     private theme: ThemesService,
     @Inject(DOCUMENT) private document: Document
   ) {
 
-    super(injector);
     this.index = localStorage.getItem('themeIndex');
     if (this.index == null) {
       this.index = '12'
@@ -498,103 +456,6 @@ export class SidenavComponent extends MfeBaseComponent {
       }
     });
     this.subscribeToAlerts();
-    this.rdsTopNavigationMfeConfig = {
-      name: 'RdsTopNavigation',
-      input: {
-        backgroundColor: this.backgroundColor,
-        selectedMenu: this.selectedMenu,
-        selectedMenuDescription: this.selectedMenuDescription,
-        LoginAttempts: this.LoginAttempts,
-        isPageWrapper: true,
-        // profilePic: this.profilePic,
-        profileData: this.profileData,
-        rdsDeligateTableData: this.rdsDeligateTableData,
-        offCanvasId: this.offCanvasId,
-        logo: 'assets/raaghu_icon.png',
-        projectName: 'Raaghu',
-        linkedAccountData: this.linkedAccountData,
-        linkedAccountHeaders: this.linkedAccountHeaders,
-        userList: this.usernameList,
-        notificationData: this.notifications,
-        unreadCount: this.unreadCount,
-        receiveNotifications: this.receiveNotifications,
-        notificationTypes: this.notificationTypes,
-        tenancy: this.tenancy,
-        FixedHeader: this.fixedHeader,
-      },
-      output: {
-        toggleEvent: () => {
-          var element = document.getElementById('sidebar');
-          element.style.display =
-            element.style.display === 'none' || element.style.display == '' || !element.style.display ? 'block' : 'none';
-          this.collapseRequired = false;
-        },
-        onLanguageSelection: (lan) => {
-          this.translate.use(lan);
-          this.store.dispatch(setDefaultLanguageForUI(lan));
-        },
-        deleteDeligateuser: (data: any) => {
-          if (data) {
-            this.store.dispatch(deleteDelegations(data.id));
-          }
-        },
-        saveDeligate: (data: any) => {
-          if (data) {
-            this.store.dispatch(saveDelegations(data));
-          }
-        },
-        onProfileSave: (passwordInfo: any) => {
-          if (passwordInfo) {
-            this.store.dispatch(changePassword(passwordInfo));
-          }
-        },
-        deleteLinkaccount: (data: any) => {
-          this.store.dispatch(deleteAccount(data));
-        },
-        onDownloadLink: (data: any) => {
-          this.store.dispatch(PrepareCollectedData());
-        },
-        onLoginAttemptsRefresh: (data: any) => {
-          this.store.dispatch(getLoginAttempts(data));
-          this.store.select(selectAllLoginAttempts).subscribe((res: any) => {
-            if (res && res.items) {
-              res.items.forEach((element: any) => {
-                const item: any = {
-                  browserInfo: element.browserInfo,
-                  clientIpAddress: element.clientIpAddress,
-                  clientName: element.clientName,
-                  creationTime: element.creationTime,
-                  result: element.result,
-                  tenancyName: element.tenancyName,
-                  userNameOrEmail: element.userNameOrEmail,
-                };
-                this.LoginAttempts.LoginDatatable.push(item);
-              });
-              const mfeConfig = this.rdsTopNavigationMfeConfig;
-              mfeConfig.input.LoginAttempts = { ...this.LoginAttempts };
-              this.rdsTopNavigationMfeConfig = mfeConfig;
-            }
-          });
-        },
-        linkUser: (data: any) => {
-          this.store.dispatch(linkToUser(data));
-        },
-        setAllNotificationAsRead: () => {
-          this.store.dispatch(SetAllNotificationsAsRead());
-        },
-        setNotificationAsRead: (data: any) => {
-          this.store.dispatch(
-            SetNotificationRead({ id: data.userNotificationId })
-          );
-        },
-        onUpdateNotificationSettings: (data: any) => {
-          this.store.dispatch(updateNotificationSettings(data));
-        },
-        onProfileData: (event: any) => {
-          this.store.dispatch(getProfilepic());
-        }
-      }
-    }
     this.store.dispatch(getNotificationSettings());
     this.store.select(selectNotificationSettings).subscribe((res: any) => {
       if (res && res !== null) {
@@ -608,11 +469,6 @@ export class SidenavComponent extends MfeBaseComponent {
           };
           this.notificationTypes.push(data);
         });
-        const mfeConfig = this.rdsTopNavigationMfeConfig;
-        mfeConfig.input.receiveNotifications = this.receiveNotifications;
-        mfeConfig.input.notificationTypes = [...this.notificationTypes];
-
-        this.rdsTopNavigationMfeConfig = mfeConfig;
       }
     });
     this.store.dispatch(getUserNotification());
@@ -627,10 +483,6 @@ export class SidenavComponent extends MfeBaseComponent {
         this.notifications.sort(function (a, b) {
           return a.state - b.state;
         });
-        const mfeConfig = this.rdsTopNavigationMfeConfig;
-        mfeConfig.input.notificationData = [...this.notifications];
-        mfeConfig.input.unreadCount = this.unreadCount;
-        this.rdsTopNavigationMfeConfig = mfeConfig;
       }
     });
 
@@ -639,23 +491,25 @@ export class SidenavComponent extends MfeBaseComponent {
         this.languageItems = [];
         const languages: any = [];
         res.items.forEach((item: any) => {
-          let icon: string = item.icon.split(' ')[1];
-          icon = icon.replace('-', '_');
-          this.languageItems.push({
-            value: item.displayName,
-            name: item.name,
-            some: item.displayName,
-            id: item.id,
-            icon: icon,
-            iconWidth: '21px',
-            iconHeight: '14px',
-          });
+          if (item) {
+            let icon: string = '';
+            if (item.icon) {
+              icon = item.icon.split(' ')[1];
+              icon = icon.replace('-', '_');
+            }
+            this.languageItems.push({
+              value: item.displayName,
+              name: item.name,
+              some: item.displayName,
+              id: item.id,
+              icon: icon,
+              iconWidth: '21px',
+              iconHeight: '14px',
+            });
+          }
           if (res.defaultLanguageName === item.name) {
             this.selectedLanguage.language = item.displayName;
             this.selectedLanguage.icon = item.icon.split(' ')[1];
-            const mfe = this.rdsTopNavigationMfeConfig;
-            mfe.input.selectedLanguage = { ...this.selectedLanguage };
-            this.rdsTopNavigationMfeConfig = mfe;
           }
           languages.push(item.name);
         });
@@ -665,13 +519,8 @@ export class SidenavComponent extends MfeBaseComponent {
         }
 
         // this.translate.addLangs(languages);
-        const mfe = this.rdsTopNavigationMfeConfig;
-        mfe.input.languageItems = [...this.languageItems];
-        mfe.input.selectedLanguage = { ...this.selectedLanguage };
-        this.rdsTopNavigationMfeConfig = mfe;
       }
     });
-    this.on('tenancyDataAgain').subscribe((res) => { });
     if (this.router.url) {
       this.getMatchedRoute(this.sidenavItems);
     }
@@ -691,9 +540,6 @@ export class SidenavComponent extends MfeBaseComponent {
           };
           this.linkedAccountData.push(_item);
         });
-        const mfe = this.rdsTopNavigationMfeConfig;
-        mfe.input.linkedAccountData = [...this.linkedAccountData];
-        this.rdsTopNavigationMfeConfig = mfe;
       }
     });
     if (this.sidenavItems && this.sidenavItems.length > 0) {
@@ -714,9 +560,6 @@ export class SidenavComponent extends MfeBaseComponent {
     this.store.select(selectProfileInfo).subscribe((res: any) => {
       if (res) {
         this.profileData = res;
-        const mfe = this.rdsTopNavigationMfeConfig;
-        mfe.input.profileData = { ...this.profileData };
-        this.rdsTopNavigationMfeConfig = mfe;
       }
     })
 
@@ -733,9 +576,6 @@ export class SidenavComponent extends MfeBaseComponent {
           };
           this.rdsDeligateTableData.push(item);
         });
-        const mfeConfig = this.rdsTopNavigationMfeConfig;
-        mfeConfig.input.rdsDeligateTableData = [...this.rdsDeligateTableData];
-        this.rdsTopNavigationMfeConfig = mfeConfig;
       }
     });
     const UsernameFilter: any = {
@@ -762,9 +602,7 @@ export class SidenavComponent extends MfeBaseComponent {
           };
           this.usernameList.push(item);
         });
-        const mfeConfig = this.rdsTopNavigationMfeConfig;
-        mfeConfig.input.userList = [...this.usernameList];
-        this.rdsTopNavigationMfeConfig = mfeConfig;
+
       }
     });
     this.sub = this.router.events.subscribe((event) => {
@@ -774,20 +612,80 @@ export class SidenavComponent extends MfeBaseComponent {
       }
     });
 
+  }
 
-    this.on('logout-returns').subscribe((r) => {
-      if (this.counter < 1) {
-        this.userAuthService.unauthenticateUser();
-        this.counter++;
+  onLanguageSelection(lan) {
+    this.translate.use(lan);
+    this.store.dispatch(setDefaultLanguageForUI(lan));
+  }
+  deleteDeligateuser(data: any) {
+    if (data) {
+      this.store.dispatch(deleteDelegations(data.id));
+    }
+  }
+  saveDeligate(data: any) {
+    if (data) {
+      this.store.dispatch(saveDelegations(data));
+    }
+  }
+  onProfileSave(passwordInfo: any) {
+    if (passwordInfo) {
+      this.store.dispatch(changePassword(passwordInfo));
+    }
+  }
+  logoutEmitter($event) {
+    if (this.counter < 1) {
+      this.userAuthService.unauthenticateUser();
+      this.counter++;
+    }
+  }
+  deleteLinkaccount(data: any) {
+    this.store.dispatch(deleteAccount(data));
+  }
+  onDownloadLink(data: any) {
+    this.store.dispatch(PrepareCollectedData());
+  }
+  onLoginAttemptsRefresh(data: any) {
+    this.store.dispatch(getLoginAttempts(data));
+    this.store.select(selectAllLoginAttempts).subscribe((res: any) => {
+      if (res && res.items) {
+        this.LoginAttempts.LoginDatatable = [];
+        res.items.forEach((element: any) => {
+          const item: any = {
+            browserInfo: element.browserInfo,
+            clientIpAddress: element.clientIpAddress,
+            clientName: element.clientName,
+            creationTime: element.creationTime,
+            result: element.result,
+            tenancyName: element.tenancyName,
+            userNameOrEmail: element.userNameOrEmail,
+          };
+          this.LoginAttempts.LoginDatatable.push(item);
+        });
       }
     });
   }
-
-  ngOnChanges(changes: SimpleChanges): void {
-    this.rdsTopNavigationMfeConfig.input.backgroundColor = this.backgroundColor;
+  onAlertHide(event: any) {
+    this.currentAlerts = event;
   }
-  getdata() {
-    this.store.select(selectTenancyData).subscribe((res) => console.log(res));
+
+  linkUser(data: any) {
+    debugger
+    this.store.dispatch(linkToUser(data));
+  }
+  setAllNotificationAsRead($event) {
+    this.store.dispatch(SetAllNotificationsAsRead());
+  }
+  setNotificationAsRead(data: any) {
+    this.store.dispatch(
+      SetNotificationRead({ id: data.userNotificationId })
+    );
+  }
+  onUpdateNotificationSettings(data: any) {
+    this.store.dispatch(updateNotificationSettings(data));
+  }
+  onProfileData(event: any) {
+    this.store.dispatch(getProfilepic());
   }
 
   selectAllvisualSettings() {
@@ -796,9 +694,8 @@ export class SidenavComponent extends MfeBaseComponent {
         const header = JSON.parse(
           res[this.index].header.minimizeDesktopHeaderType
         );
-        const rdsTopNavigationMfeConfig = this.rdsTopNavigationMfeConfig;
         if (header) {
-          rdsTopNavigationMfeConfig.input.FixedHeader = header.desktop;
+          this.fixedHeader = header.desktop;
           if (header.desktop) {
             this.document.getElementById('FixedHeaderOverFlow').style.overflow =
               'scroll';
@@ -825,9 +722,9 @@ export class SidenavComponent extends MfeBaseComponent {
     });
   }
   redirectPath(event): void {
-    const rdsAlertMfeConfig = this.rdsAlertMfeConfig;
-    rdsAlertMfeConfig.input.currentAlerts = [];
-    this.rdsAlertMfeConfig = rdsAlertMfeConfig;
+    this.currentAlerts = [];
+    this.selectedMenu = event.label;
+    this.selectedMenuDescription = event.description;
     this.router.navigate([event.path]);
     var alertNode = document.querySelector('.alert');
     if (alertNode) {
@@ -854,12 +751,7 @@ export class SidenavComponent extends MfeBaseComponent {
         message: alert.message,
       };
       this.currentAlerts.push(currentAlert);
-      const rdsTopNavigationMfeConfig = this.rdsTopNavigationMfeConfig;
-      rdsTopNavigationMfeConfig.input.showDelegationButtonSpinner = false;
-      this.rdsTopNavigationMfeConfig = rdsTopNavigationMfeConfig;
-      const rdsAlertMfeConfig = this.rdsAlertMfeConfig;
-      rdsAlertMfeConfig.input.currentAlerts = [...this.currentAlerts];
-      this.rdsAlertMfeConfig = rdsAlertMfeConfig;
+      this.showDelegationButtonSpinner = false;
     });
   }
   getMatchedRoute(menus): any {
@@ -868,10 +760,10 @@ export class SidenavComponent extends MfeBaseComponent {
         this.activeMenu = menu;
         this.selectedMenu = menu.label;
         this.selectedMenuDescription = menu.description;
-        const rdsTopNavigationMfeConfig = this.rdsTopNavigationMfeConfig;
-        rdsTopNavigationMfeConfig.input.selectedMenu = menu.label;
-        rdsTopNavigationMfeConfig.input.selectedMenuDescription = menu.description;
-        this.rdsTopNavigationMfeConfig = rdsTopNavigationMfeConfig;
+        // const rdsTopNavigationMfeConfig = this.rdsTopNavigationMfeConfig;
+        // rdsTopNavigationMfeConfig.input.selectedMenu = menu.label;
+        // rdsTopNavigationMfeConfig.input.selectedMenuDescription = menu.description;
+        // this.rdsTopNavigationMfeConfig = rdsTopNavigationMfeConfig;
       } else if (menu.children) {
         this.getMatchedRoute(menu.children);
       }
@@ -1034,6 +926,13 @@ export class SidenavComponent extends MfeBaseComponent {
         headEl.appendChild(newLinkEl);
       }
     }
+  }
+
+  toggle(): void {
+    var element = document.getElementById('sidebar');
+    element.style.display =
+      element.style.display === 'none' || element.style.display == '' || !element.style.display ? 'block' : 'none';
+    this.collapseRequired = false;
   }
 
 }

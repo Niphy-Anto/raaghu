@@ -51,11 +51,11 @@ title: "Pages > api-scope"
   ></rds-button>
 </div>
 <div class="row mt-2">
-  <rds-data-table
+  <rds-comp-data-table
     [tableData]="scopeList"
     [tableHeaders]=" scopeTableHeaders"
     [actions]="actions"
-  ></rds-data-table>
+  ></rds-comp-data-table>
 </div>
 
 <rds-offcanvas
@@ -82,7 +82,7 @@ title: "Pages > api-scope"
         role="tabpanel"
         aria-labelledby="nav-home-tab"
       >
-        <rdc-comp-api-scope-basics></rdc-comp-api-scope-basics>
+        <rds-comp-api-scope-basics></rds-comp-api-scope-basics>
       </div>
       <div
         class="tab-pane fade"
@@ -91,7 +91,7 @@ title: "Pages > api-scope"
         role="tabpanel"
         aria-labelledby="nav-home-tab"
       >
-        <rdc-comp-api-scope-resources></rdc-comp-api-scope-resources>
+        <rds-comp-api-scope-resources></rds-comp-api-scope-resources>
       </div>
     </div>
   </rds-nav-tab>

@@ -34,7 +34,7 @@
                     [(ngModel)]="userName" name="user_name" [isRequired]=true ngDefaultControl>
                   </rds-input>
                   <div class="form-control-feedback" *ngIf="user.errors&&(user.dirty||user.touched)">
-                    <span class="text-danger" *ngIf="user.errors.required">{{"User name is required"|translate}}</span>
+                    <span class="text-danger" *ngIf="user.errors.required">{{"User name is required"}}</span>
                   </div>
                 </div>
               </div>
@@ -47,7 +47,7 @@
                   </rds-input>
                   <div class="form-control-feedback" *ngIf="linkedPswd.errors&&(linkedPswd.dirty||linkedPswd.touched)">
                     <span class="text-danger" *ngIf="linkedPswd.errors.required">{{"Password is
-                      required"|translate}}</span>
+                      required"}}</span>
                   </div>
                 </div>
               </div>
@@ -56,9 +56,9 @@
 
           <div class="row" *ngIf="showNewLinkAccoutButton">
             <div class="col-sm-12">
-              <rds-data-table [tableStyle]="'light'" [actions]="actions" [recordsPerPage]="5"
+              <!-- <rds-comp-data-table [tableStyle]="'light'" [actions]="actions" [recordsPerPage]="5"
                 [noDataTitle]="'Currently you do not have linked accounts'" [pagination]="true" [width]="100"
-                [tableData]="linkedAccountData" [tableHeaders]="linkedAccountHeaders"></rds-data-table>
+                [tableData]="linkedAccountData" [tableHeaders]="linkedAccountHeaders"></rds-comp-data-table> -->
             </div>
           </div>
         </div>
@@ -79,10 +79,10 @@
   </div>
   <!-- <div class="row" *ngIf="!linkedAccountDivFlag">
     <div class="col-sm-12">
-      <rds-data-table [tableData]="rdslinkedAccountTableData" [pagination]="pagination"
+      <rds-comp-data-table [tableData]="rdslinkedAccountTableData" [pagination]="pagination"
         (deleteEvent)="deleteLinkedAccountData($event)" [recordsPerPage]="recordsPerpage" 
         [tableHeaders]="rdsLinkedAccountTableHeader" noDataTitle="Currently you do not have linked Account">
-      </rds-data-table>
+      </rds-comp-data-table>
     </div> 
   </div> -->
 
