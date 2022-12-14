@@ -1,6 +1,6 @@
-<!-- <ng-container *ngIf="currentAlerts&&currentAlerts.length>0">
+<ng-container *ngIf="currentAlerts&&currentAlerts.length>0">
   <rds-comp-alert [currentAlerts]="currentAlerts" (onAlertHide)="onAlertHide($event)"></rds-comp-alert>
-</ng-container> -->
+</ng-container>
 <div>
   <div class="row" [class.card-body]="selectedTreeNode==0">
     <div class="col-md-6 gutter-b">
@@ -10,7 +10,7 @@
             <h5 class="card-title">{{'Organization Tree'| translate}}</h5>
           </div>
           <div class="card-body overflow-auto vh-75">
-            <rds-comp-organization-tree [organizationTreeData]="treeData1" [nodeColor]="nodeColors"  OrganizationTreeType="TreeType"
+            <rds-comp-organization-tree [organizationTreeData]="organizationTreeData" [nodeColor]="nodeColors"
               [mutable]="true" (onDeleteNode)="onDeleteNode($event)" (getSelectedParent)="getSelectedParent($event)"
               (onNodeEdit)="onNodeEdit($event)" (onSelectnode)="onSelectnode($event)"></rds-comp-organization-tree>
           </div>
@@ -53,7 +53,7 @@
                       <rds-comp-data-table [tableData]="tableDataForMember" [tableHeaders]="tableHeadersForMember"
                         [recordsPerPage]="10" [pagination]="true" [actions]="actions"
                         [noDataTitle]="'Currently you do not have member'"
-                        (onActionSelectionMemeber)="onActionMemeber($event)">
+                        (onActionSelection)="onMemberActionSelection($event)">
                       </rds-comp-data-table>
                     </div>
                   </div>
@@ -62,7 +62,7 @@
                       <rds-comp-data-table [tableData]="tableDataForRoles" [tableHeaders]="tableHeadersForRoles"
                         [recordsPerPage]="10" [pagination]="true" [actions]="actions"
                         [noDataTitle]="'Currently you do not have role'"
-                        (onActionSelectionRole)="onActionRole($event)">
+                        (onActionSelection)="onRoleActionSelection($event)">
                       </rds-comp-data-table>
                     </div>
                   </div>
@@ -86,7 +86,7 @@
             <rds-comp-data-table [tableData]="tableDataForUserAdd" [enableCheckboxSelection]="true"
               [tableHeaders]="tableHeadersForUserAdd" [recordsPerPage]="10" [pagination]="true"
               [noDataSubTitle]="'Click on the button above to add'" [noDataTitle]="'Currently you do not have users'"
-              (getAllCheckedItems)="getAllCheckedItems($event)">
+              (getAllCheckedItems)="getAllCheckedItems($event,true)">
             </rds-comp-data-table>
           </div>
         </div>
@@ -119,10 +119,10 @@
       <div class="tab-content">
         <div class="form-group mb-3">
           <div class="col-md-12 mt-3">
-            <rds-comp-data-table [tableData]="tableDataForRoleAdd" [tableHeaders]="tableHeadersForUserAdd"
+            <rds-comp-data-table [tableData]="tableDataForRoleAdd" [tableHeaders]="tableHeadersForRolesAdd"
               [enableCheckboxSelection]="true" [recordsPerPage]="10" [pagination]="true"
               [noDataTitle]="'Currently you do not have roles'" [noDataSubTitle]="'Click on the button above to add'"
-              (getAllCheckedItems)="getAllCheckedItems($event)">
+              (getAllCheckedItems)="getAllCheckedItems($event,false)">
             </rds-comp-data-table>
           </div>
         </div>

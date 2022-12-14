@@ -24,7 +24,7 @@ const Template: Story<RdsButtonGroupComponent> = (args: RdsButtonGroupComponent)
 });
 
 export const DefaultFilled = Template.bind({});
-DefaultFilled.parameters = { controls: { include: ['vertical', 'size', 'buttonGroupItem'] } };
+DefaultFilled.parameters = { controls: { include: ['vertical', 'size', 'buttonGroupItem','onClick'] } };
 DefaultFilled.args = {
   vertical: false,
   size: 'medium',
@@ -54,7 +54,7 @@ DefaultFilled.args = {
 };
 
 export const VerticalGroupFilled = Template.bind({});
-VerticalGroupFilled.parameters = { controls: { include: ['vertical', 'size', 'buttonGroupItem'] } };
+VerticalGroupFilled.parameters = { controls: { include: ['vertical', 'size', 'buttonGroupItem','onClick'] } };
 VerticalGroupFilled.args = {
   vertical: true,
   size: 'medium',
@@ -88,7 +88,7 @@ VerticalGroupFilled.args = {
 };
 
 export const IconGroupFilled = Template.bind({});
-IconGroupFilled.parameters = { controls: { include: ['vertical', 'size', 'buttonGroupItem'] } };
+IconGroupFilled.parameters = { controls: { include: ['vertical', 'size', 'buttonGroupItem','onClick'] } };
 IconGroupFilled.args = {
   vertical: false,
   size: 'medium',
@@ -133,7 +133,7 @@ IconGroupFilled.args = {
 };
 
 export const radioButtonGroup = Template.bind({});
-radioButtonGroup.parameters = { controls: { include: ['vertical', 'size', 'outline','role', 'buttonGroupItem'] } };
+radioButtonGroup.parameters = { controls: { include: ['vertical', 'size', 'outline','role', 'buttonGroupItem','onClick'] } };
 radioButtonGroup.args = {
   vertical: false,
   size: 'medium',
@@ -166,7 +166,7 @@ radioButtonGroup.args = {
 };
 
 export const OutlineButtonGroup = Template.bind({});
-OutlineButtonGroup.parameters = { controls: { include: ['vertical', 'size','outline','role', 'buttonGroupItem'] } };
+OutlineButtonGroup.parameters = { controls: { include: ['vertical', 'size','outline','role', 'buttonGroupItem','onClick'] } };
 OutlineButtonGroup.args = {
   vertical: false,
   size: 'medium',

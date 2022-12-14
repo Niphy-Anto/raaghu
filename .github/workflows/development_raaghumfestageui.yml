@@ -1,11 +1,13 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: "Build and deploy development-component-restructure"
+name: "Build and deploy anzstageui.raaghu.io"
 
 on:
+  pull_request:
+    types: [closed]
   push:
-    branches: [development-component-restructure]
+    branches: [development]
 
   workflow_dispatch:
 

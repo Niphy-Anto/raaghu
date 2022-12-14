@@ -76,6 +76,7 @@ export class AppComponent implements OnInit {
     icon: '',
     isEnabled: false,
     id: undefined,
+    languageName:''
   };
   rdsLanguageTableMfeConfig: ComponentLoaderOptions;
   languageTableHeader: TableHeader[] = [
@@ -349,6 +350,7 @@ export class AppComponent implements OnInit {
         icon: '',
         isEnabled: false,
         id: undefined,
+        languageName:''
       };
       this.languageCanvasTitle = this.translate.instant('New Language');
     } else {
@@ -373,6 +375,7 @@ export class AppComponent implements OnInit {
       icon: '',
       isEnabled: false,
       id: undefined,
+      languageName:''
     };
     this.showLoadingSpinner = false;
   }

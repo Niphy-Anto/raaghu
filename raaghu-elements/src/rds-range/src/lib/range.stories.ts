@@ -19,7 +19,7 @@ const Template: Story<RdsRangeComponent> = (args: RdsRangeComponent) => ({
 });
 
 export const Default = Template.bind({})
-Default.parameters = { controls: { include: ['role', 'value', 'min', 'max'] } };
+Default.parameters = { controls: { include: ['role', 'value', 'min', 'max','rangeValueOne'] } };
 Default.args = {
     role: 'Default',
     min: 0,
@@ -28,7 +28,7 @@ Default.args = {
 }
 
 export const RangeType1 = Template.bind({})
-RangeType1.parameters = { controls: { include: ['role', 'value', 'min', 'max'] } };
+RangeType1.parameters = { controls: { include: ['role', 'value', 'min', 'max','rangeValueOne'] } };
 RangeType1.args = {
     role: 'Range Type 1',
     min: 0,
@@ -37,7 +37,7 @@ RangeType1.args = {
 }
 
 export const RangeType2 = Template.bind({})
-RangeType2.parameters = { controls: { include: ['role', 'value', 'min', 'max'] } };
+RangeType2.parameters = { controls: { include: ['role', 'value', 'min', 'max','rangeValueOne'] } };
 RangeType2.args = {
     role: 'Range Type 2',
     min: 0,

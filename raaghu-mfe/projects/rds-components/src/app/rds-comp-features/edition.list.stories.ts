@@ -18,7 +18,7 @@ export default {
       imports: [
         FormsModule, ReactiveFormsModule, RdsButtonModule, RdsModalModule, RdsPaginationModule,RdsIconModule, 
         SharedModule,RdsFabMenuModule,NgxTranslateModule,RdsInputModule,RdsOffcanvasModule,RdsNavTabModule,
-        RdsSelectListModule,RdsCheckboxModule,RdsDatepickerModule,RdsRadioButtonModule,RdsCounterModule
+        RdsSelectListModule,RdsCheckboxModule,RdsDatepickerModule,RdsRadioButtonModule,RdsCounterModule,RdsNavTabModule,
       ],
       providers: [
         FormBuilder,
@@ -35,6 +35,7 @@ const Template: Story<RdsCompRoleListComponent> = (args: RdsCompRoleListComponen
   export const Default = Template.bind({});
 
   Default.args = {
+    editShimmer:false,
     EditionsTableData: [{editionname: 'Standard', price: null, trialPeriod: null, expiringEdition: null, id: 1},
     {editionname: 'apple', price: 2000, trialPeriod: 10, expiringEdition: 'Standard', id: 5},
    {editionname: 'Apple1', price: 20, trialPeriod: 3, expiringEdition: 'Standard', id: 6},
