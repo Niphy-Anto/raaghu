@@ -42,6 +42,8 @@ export class RdsSideNavComponent implements OnInit, OnChanges {
   showHide: boolean = false;
   showHideSubmenu: boolean = false;
   title = 'rds-side-nav';
+  toggleOffLabel : string = '☀️';
+  toggleOnLabel : string = '🌙';
 
   ngOnChanges(changes: SimpleChanges): void {
     if (this.activeMenu !== '' && this.activeMenu !== undefined) {

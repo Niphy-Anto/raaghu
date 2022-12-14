@@ -97,10 +97,14 @@
       "@libs/rds-chart-bool": [
         "rds-elements/rds-chart-bool/public-api",
         "rds-elements/rds-chart-bool"
-      ] ,
+      ],
       "@libs/rds-chart-doughnut": [
         "rds-elements/rds-chart-doughnut/public-api",
         "rds-elements/rds-chart-doughnut"
+      ],
+      "@libs/rds-toggle": [
+        "rds-elements/rds-toggle/public-api",
+        "rds-elements/rds-toggle"
       ]
     },
     "baseUrl": "./",

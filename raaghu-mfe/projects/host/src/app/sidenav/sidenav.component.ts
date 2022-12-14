@@ -54,7 +54,7 @@ import * as moment from 'moment';
 import { getProfilepic } from 'projects/libs/state-management/src/lib/state/profile-settings/profile-settings.actions';
 import { selectAllVisualsettings } from 'projects/libs/state-management/src/lib/state/Visual-settings/visual-settings.selector';
 import { getVisualsettings } from 'projects/libs/state-management/src/lib/state/Visual-settings/visual-settings.actions';
-import { getLanguages, setDefaultLanguageForUI } from 'projects/libs/state-management/src/lib/state/language/language.actions';
+import { getLanguages, setDefaultLanguage, setDefaultLanguageForUI } from 'projects/libs/state-management/src/lib/state/language/language.actions';
 import { changePassword, getProfile } from 'projects/libs/state-management/src/lib/state/mysettings/mysettings.action';
 import { selectAllLanguages, selectDefaultLanguage } from 'projects/libs/state-management/src/lib/state/language/language.selector';
 import { selectProfileInfo } from 'projects/libs/state-management/src/lib/state/mysettings/mysettings.selector';
@@ -528,9 +528,12 @@ export class SidenavComponent extends MfeBaseComponent {
           element.style.display =
             element.style.display === 'none' || element.style.display == '' || !element.style.display ? 'block' : 'none';
         },
+        
         onLanguageSelection: (lan) => {
           this.translate.use(lan);
           this.store.dispatch(setDefaultLanguageForUI(lan));
+          const data: any = { name: lan };
+          this.store.dispatch(setDefaultLanguage(data));
         },
         deleteDeligateuser: (data: any) => {
           if (data) {
