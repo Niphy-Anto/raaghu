@@ -158,10 +158,20 @@ export class RdsSideNavComponent implements OnInit, OnChanges {
   }
 
 
-  openSideDropdown(id): void {
+  openSideDropdown(id, item): void {
+    this.collapseDropdown(item.children);
     var element: any = document.getElementById(id);
     var dropdown = new Dropdown(element);
     dropdown.show();
+  }
+
+  collapseDropdown(children): void {
+    children.forEach((child) => {
+      if (child.children) {
+        child.expanded = child.active;
+        this.collapseDropdown(child.children);
+      }
+    })
   }
 
   expandMenu(item, id): void {

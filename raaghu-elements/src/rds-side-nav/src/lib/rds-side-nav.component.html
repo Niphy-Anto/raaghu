@@ -59,8 +59,8 @@
     </ul>
   </div>
   <div class="btn-group dropend" *ngIf="item.children&&collapsed">
-    <a type="button" data-bs-toggle="dropdown" [attr.id]="'side-dropdown'+index" data-bs-auto-close="outside"
-      aria-expanded="false" (click)="openSideDropdown('side-dropdown'+index)">
+    <a type="button" data-bs-toggle="dropdown" [attr.id]="'side-dropdown'+index" data-bs-offset="3,25" data-bs-auto-close="outside"
+      aria-expanded="false" (click)="openSideDropdown('side-dropdown'+index,item)" [ngClass]="{ 'active' : item.active }">
       <rds-icon [name]="item.icon" *ngIf="item.icon" [fill]="item.iconFill" [stroke]="item.iconStroke"
         [height]="iconHeight" [width]="iconWidth" data-bs-toggle="tooltip" data-bs-placement="auto">
       </rds-icon>
