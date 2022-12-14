@@ -97,7 +97,7 @@ export class UserAuthService implements OnInit {
     );
   }
 
-  unauthenticateUser(reload?:boolean,returnUrl?:string): void {
+  unauthenticateUser(reload?: boolean, returnUrl?: string): void {
     this.userAuthenticated = false;
     let customHeaders = this.requestHeaders();
     localStorage.removeItem('LoginCredential');
@@ -111,15 +111,15 @@ export class UserAuthService implements OnInit {
       customHeaders,
       null,
       () => {
-        this.getUserConfiguration('logout'); 
-        if(reload){
+        // this.getUserConfiguration('logout'); 
+        if (reload) {
           if (returnUrl) {
             location.href = returnUrl;
-        } else {
-            location.href = '';
-        } 
-        }      
-   
+          } else {
+            this.router.navigateByUrl('/login');
+          }
+        }
+
       }
     );
   }
@@ -136,7 +136,7 @@ export class UserAuthService implements OnInit {
     return _observableOf(this.sources);
   }
 
-  getVisualSettingIndex(value){
+  getVisualSettingIndex(value) {
     this.index$.next(value)
   }
 }

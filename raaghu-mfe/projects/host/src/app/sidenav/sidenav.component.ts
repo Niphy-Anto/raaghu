@@ -635,7 +635,7 @@ export class SidenavComponent {
   }
   logoutEmitter($event) {
     if (this.counter < 1) {
-      this.userAuthService.unauthenticateUser();
+      this.userAuthService.unauthenticateUser(false);
       this.counter++;
     }
   }
