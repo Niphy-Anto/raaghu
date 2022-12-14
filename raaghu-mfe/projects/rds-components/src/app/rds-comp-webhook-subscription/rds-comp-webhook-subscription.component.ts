@@ -90,7 +90,7 @@ export class RdsCompWebhookSubscriptionComponent implements OnInit {
   close(webhookForm: NgForm) {
     webhookForm.resetForm();
     this.additionalheaders = [];
-    this.onCloseCanvas.emit();
+    this.onCloseCanvas.emit(true);
   }
 
 }
