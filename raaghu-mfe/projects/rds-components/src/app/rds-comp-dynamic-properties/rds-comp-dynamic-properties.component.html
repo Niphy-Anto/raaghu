@@ -20,7 +20,7 @@
           <div class="tab-pane fade px-0" [ngClass]="{'show active': activePage === 0}" id="information" role="tabpanel"
             aria-labelledby="nav-home-tab">
             <rds-comp-information [inputTypeList]="inputTypeList" [dynamicPropertiesData]="DynamicProperyData"
-              [resetFormSubject]="resetFormSubject.asObservable()" [editShimmer]="editShimmer"
+              [resetFormSubject]="resetFormSubject.asObservable()" [editShimmer]="false"
               (dynamicPropertiesInfo)="getDynamicPropertyInfo($event)"></rds-comp-information>
           </div>
           <!-- Permission tab -->

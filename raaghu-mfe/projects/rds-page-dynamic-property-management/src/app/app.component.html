@@ -45,6 +45,9 @@
               <app-rds-comp-dynamic-properties
                 [DynamicPropertiesTableData]="DynamicPropertiesTableData"
                 [DynamicPropertiesTableHeader]="DynamicPropertiesTableHeader"
+                [IsEdit]="isEdit"
+                [DynamicProperyData]="DynamicProperyData"
+                [selectedPermissionList]="selectedDynamicPermission"
                 [inputTypeList]="inputTypeList" [permissionsList]="permissionsList" [isShimmer]="isShimmer"
                 [editShimmer]="editShimmer" (deleteEvent)="deleteDynamic($event)"
                 (createOrUpdateDynamic)="createDynamic($event)" (editPropertyTableRowData)="updateDynamic($event)">

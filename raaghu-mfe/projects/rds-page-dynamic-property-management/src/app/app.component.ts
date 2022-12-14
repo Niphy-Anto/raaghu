@@ -76,6 +76,10 @@ export class AppComponent implements OnInit {
   parameterList: any[] = [];
   @Input() dynamicPropertyTableData: any = [];
   @Input() dynamicEntityPropertyTableData: any = [];
+  DynamicProperyData: any = { propertyName: '', displayName: '', inputType: '' };
+  @Input() selectedPermissionList: any = [];
+  @Input() IsEdit: boolean = false;
+
   color: string = '#8d9ba9';
   backgroundColor: string = '#abdbe3';
   selectedTabIndex = 0;
@@ -327,7 +331,7 @@ export class AppComponent implements OnInit {
     // Get All Entities
     this.store.dispatch(getAllEntities());
     this.store.select(selectDynamicEntities).subscribe((res: any) => {
-      this.entityNames = [];
+     this.entityNames = [];
       if (res && res.items && res.items.length > 0) {
         res.items.forEach((element: any) => {
           const item: any = {
@@ -343,6 +347,7 @@ export class AppComponent implements OnInit {
           };
           this.entityNames.push(item);
         });
+        this.entityNames = [...this.entityNames]
         this.isShimmer = false;
         // const mfeConfig = this.rdsDynamicEntityPropertiesMfeConfig;
         // mfeConfig.input.entityNames = [...this.entityNames];
@@ -386,7 +391,7 @@ export class AppComponent implements OnInit {
     // const mfeConfig = this.rdsDynamicEntityPropertiesMfeConfig;
     // mfeConfig.input.editShimmer = true;
     // this.rdsDynamicEntityPropertiesMfeConfig = mfeConfig
-    this.editShimmer = true;
+    this.editShimmer = false;
     this.EditDynamicProperty(eventData);
   }
 
@@ -461,20 +466,21 @@ export class AppComponent implements OnInit {
   }
 
   EditDynamicProperty(event): void {
+    this.editShimmer = false;
     this.resetDynamicProperty();
     this.store.dispatch(getDynamicPropertyByEdit(event));
     this.store.select(selectDynamicPropertyForEdit).subscribe((res: any) => {
-      if (res && res.EditDynamicPropertSateI && res.status == 'success') {
+      if (res) {
         const dynamicPropertData: any = {
-          displayName: res.EditDynamicPropertSateI.displayName,
-          inputType: res.EditDynamicPropertSateI.inputType,
-          permission: res.EditDynamicPropertSateI.permission,
-          propertyName: res.EditDynamicPropertSateI.propertyName,
-          id: res.EditDynamicPropertSateI.id,
-          name: res.EditDynamicPropertSateI.displayName
+          displayName: res.displayName,
+          inputType: res.inputType,
+          permission: res.permission,
+          propertyName: res.propertyName,
+          id: res.id,
+          name: res.displayName
         };
         this.selectedDynamicPermission = [];
-        this.checkSelectedNodes(res.EditDynamicPropertSateI.permission);
+        this.checkSelectedNodes(res.permission);
         // const mfeConfig = this.rdsDynamicPropertiesMfeConfig;
         // mfeConfig.input.DynamicProperyData = dynamicPropertData;
         // mfeConfig.input.permissionsList = this.permissionsList;
@@ -483,6 +489,8 @@ export class AppComponent implements OnInit {
         // ];
         // mfeConfig.input.editShimmer = false;
         // this.rdsDynamicPropertiesMfeConfig = mfeConfig;
+        this.DynamicProperyData = dynamicPropertData;
+        this.selectedPermissionList = this.selectedDynamicPermission
         this.editShimmer = false;
       }
     });
@@ -555,7 +563,7 @@ export class AppComponent implements OnInit {
     this.id = undefined;
     this.isEdit = false;
     // const mfeConfig = this.rdsDynamicPropertiesMfeConfig;
-    // this.DynamicProperyData = {};
+    this.DynamicProperyData = {};
     this.selectedPermission = [];
     this.editShimmer = false;
     // this.rdsDynamicPropertiesMfeConfig = mfeConfig;
@@ -583,7 +591,7 @@ export class AppComponent implements OnInit {
   }
   resetDynamicProperty() {
     // const mfeConfig = this.rdsDynamicPropertiesMfeConfig;
-    this.permissionsList = [];
+    // this.permissionsList = [];
     this.selectedPermission = [];
     this.editShimmer = true;
   }
