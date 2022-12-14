@@ -456,7 +456,6 @@ export class SidenavComponent {
       }
     });
     this.subscribeToAlerts();
-
     this.store.dispatch(getNotificationSettings());
     this.store.select(selectNotificationSettings).subscribe((res: any) => {
       if (res && res !== null) {
@@ -927,6 +926,13 @@ export class SidenavComponent {
         headEl.appendChild(newLinkEl);
       }
     }
+  }
+
+  toggle(): void {
+    var element = document.getElementById('sidebar');
+    element.style.display =
+      element.style.display === 'none' || element.style.display == '' || !element.style.display ? 'block' : 'none';
+    this.collapseRequired = false;
   }
 
 }

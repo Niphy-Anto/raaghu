@@ -3,7 +3,7 @@
     <div class="header align-items-stretch">
       <!-- <mfe-loader [config]="rdsTopNavigationMfeConfig"></mfe-loader> -->
       <rds-top-navigation [backgroundColor]="backgroundColor" [selectedMenu]="selectedMenu"
-        [selectedMenuDescription]="selectedMenuDescription" [LoginAttempts]="LoginAttempts"
+        [selectedMenuDescription]="selectedMenuDescription" [LoginAttempts]="LoginAttempts" (toggleEvent)="toggle()"
         [profileData]="profileData" [rdsDeligateTableData]="rdsDeligateTableData" [offCanvasId]="offCanvasId"
         [logo]="'assets/raaghu_icon.png'" [projectName]="'Raaghu'" [linkedAccountData]="linkedAccountData"
         [linkedAccountHeaders]="linkedAccountHeaders" [userList]="usernameList" [notificationData]="notifications"
