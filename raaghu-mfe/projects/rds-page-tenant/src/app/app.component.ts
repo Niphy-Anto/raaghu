@@ -127,7 +127,10 @@ export class AppComponent {
 
     this.store.select(selecteTeantLoginList).subscribe((res: any) => {
       if (res) {
-        let targetUrl = 'https://anzstageui.raaghu.io/login' + '?impersonationToken=' + res.impersonationToken + '&tenantId=' + this.loginList + '&tenancyName=' + res.tenancyName;
+        let url = window.location.href;
+        url = url.substring(0, url.indexOf("/pages"));
+        let targetUrl = url + '/login' + '?impersonationToken=' + res.impersonationToken + '&tenantId=' + this.loginList + '&tenancyName=' + res.tenancyName;
+        // let targetUrl = 'https://anzstageui.raaghu.io/login' + '?impersonationToken=' + res.impersonationToken + '&tenantId=' + this.loginList + '&tenancyName=' + res.tenancyName;
         this.userAuthService.unauthenticateUser(true, targetUrl);
       }
     })
