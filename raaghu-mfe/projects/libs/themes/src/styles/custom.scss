@@ -1401,3 +1401,16 @@ rds-admin-dashboard {
 #RoleOffcanvas .offcanvas-body{
   height :calc(100vh - 150px);
 }
+
+rds-comp-admin-dashboard {
+  .row {
+    margin-left: calc(-0.5 * 1.2rem);
+    margin-right: calc(-0.5 * 1.2rem);
+  }
+
+  .row > * {
+    padding-left: (1.2rem * 0.5);
+    padding-right: (1.2rem * 0.5);
+  }
+}
+
