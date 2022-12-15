@@ -1,5 +1,5 @@
 import { Component, OnInit, Injector, Input } from '@angular/core';
-import { ComponentLoaderOptions, MfeBaseComponent } from '@libs/shared';
+import { AlertService, ComponentLoaderOptions, MfeBaseComponent } from '@libs/shared';
 import { TranslateService } from '@ngx-translate/core';
 import { TableHeader } from '../../models/table-header.model';
 export class dashboardData {
@@ -268,7 +268,7 @@ export class RdsAdminDashboardComponent extends MfeBaseComponent implements OnIn
     elements: {
       center: {
         text: [{ text: '32 k', font: '500 1.4rem Poppins' }, { text: 'Profit', font: '400 0.8rem Poppins' }],
-        color: '--chart-doughnut-text-color', // Default is #000000
+        color: '--chart-bool-icon-color', // Default is #000000
         fontStyle: 'Arial', // Default is Arial
         sidePadding: 20, // Default is 20 (as a percentage)
         lineHeight: 25 // Default is 25 (in px), used for when text wraps
@@ -404,7 +404,7 @@ export class RdsAdminDashboardComponent extends MfeBaseComponent implements OnIn
         '--chartColor7'
 
       ],
-      iconColor:'--chart-icon-color',
+      iconColor: '--chart-icon-color',
       borderColor: [
         '#fff',
       ],
@@ -470,7 +470,7 @@ export class RdsAdminDashboardComponent extends MfeBaseComponent implements OnIn
   ]
   tableStyle: string = 'light';
 
-  constructor(private injector: Injector, public translate: TranslateService) { super(injector); }
+  constructor(private injector: Injector, public translate: TranslateService, public alertService: AlertService) { super(injector); }
 
   ngOnInit(): void {
     this.rdsMemberActivityTableMfeConfig = {
@@ -500,5 +500,13 @@ export class RdsAdminDashboardComponent extends MfeBaseComponent implements OnIn
   }
   LoadMemberActivityTable() {
 
+  }
+
+  getMode(): string {
+    const mode: string = localStorage.getItem('THEME');
+    if (mode == null || mode == '' || !mode) {
+      return 'light';
+    }
+    return mode;
   }
 }

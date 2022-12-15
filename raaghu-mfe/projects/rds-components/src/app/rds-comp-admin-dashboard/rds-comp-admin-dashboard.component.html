@@ -43,7 +43,7 @@
                 [textAlign]="'text-start'"></rds-big-number-widget>
               <div class="col col-sm-12">
                 <rds-chart-doughnut [chartDataSets]="pschartDatasets" [titleText]="'35 K'" [subTitleText]="'Profit'"
-                  chartId="psChart" [chartWidth]="pschartWidth" [chartHeight]="pschartHeight"
+                  [selectedMode]="getMode()" chartId="psChart" [chartWidth]="pschartWidth" [chartHeight]="pschartHeight"
                   [chartLabels]="pschartLabels" [chartOptions]="pschartOptions" chartType="doughnut">
                 </rds-chart-doughnut>
               </div>
@@ -64,7 +64,8 @@
               <div body>
                 <div class="d-flex align-items-center">
                   <div class="">
-                    <rds-chart-bool chartId="ConnectedCallschart" [centerIconName]="'headset'"
+                    <rds-chart-bool chartId="ConnectedCallschart" [selectedMode]="getMode()"
+                      [iconColor]="'--chart-bool-icon-color'" [centerIconName]="'headset'"
                       [chartDataSets]="ConnectedCallschartDatasets" [chartLabels]="ConnectedCallschartLabels"
                       [chartWidth]="100" [chartHeight]="100"
                       [chartOptions]="ConnectedCallschartOptions"></rds-chart-bool>
@@ -77,8 +78,9 @@
                 <div class="d-flex align-items-center mt-3">
                   <div class="">
                     <rds-chart-bool chartId="ClientCallschart" [centerIconName]="'users'"
-                      [chartDataSets]="ClientCallschartDatasets" [chartLabels]="ClientCallschartLabels"
-                      [chartWidth]="100" [chartHeight]="100" [chartOptions]="ClientCallschartOptions"
+                      [chartDataSets]="ClientCallschartDatasets" [selectedMode]="getMode()"
+                      [iconColor]="'--chart-bool-icon-color'" [chartLabels]="ClientCallschartLabels" [chartWidth]="100"
+                      [chartHeight]="100" [chartOptions]="ClientCallschartOptions"
                       chartType="doughnut"></rds-chart-bool>
                   </div>
                   <div class="ms-2">
