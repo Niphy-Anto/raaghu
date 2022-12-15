@@ -116,6 +116,7 @@ module.exports = {
         './RdsCompApplyForPosition': './projects/rds-components/src/app/rds-comp-apply-for-position/rds-comp-apply-for-position.component.ts',
         './RdsCompAuditLogsNew' : './projects/rds-components/src/app/rds-comp-audit-logs-new/rds-comp-audit-logs-new.component.ts',
         './RdsCompLanguageNew' : './projects/rds-components/src/app/rds-comp-language-new/rds-comp-language-new.component.ts',
+        './RdsCompClaimTypeRole' : './projects/rds-components/src/app/rds-comp-claim-type-role/rds-comp-claim-type-role.component.ts',
       },
 
 

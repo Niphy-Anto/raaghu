@@ -4,6 +4,7 @@ import { AlertService, ComponentLoaderOptions } from '@libs/shared';
 import { TranslateService } from '@ngx-translate/core';
 import { TableAction } from '../../models/table-action.model';
 import { TableHeader } from '../../models/table-header.model';
+import { claims } from '../rds-comp-claim-type-role/rds-comp-claim-type-role.component';
 import { Role } from '../rds-comp-new-role/rds-comp-new-role.component';
 export class RoleData {
   Roles: Role
@@ -30,7 +31,13 @@ export class RdsCompRoleListComponent implements OnInit{
     },
   };
 
-  actions: TableAction[] = [{ id: 'edit', displayName: 'Edit' }, { id: 'delete', displayName: 'Delete' }]
+  actionId!: string;
+  rdsClaimTypeRoleMfeConfig: ComponentLoaderOptions;
+  @Input() claimDisplayArray: any[] = [];
+  @Input() roleTreeDataToConvert: any[] = [];
+
+  actions: TableAction[] = [{ id: 'edit', displayName: 'Edit' }, { id: 'delete', displayName: 'Delete' }];
+  @Input() claimValueData: any[] = [];
   @Input() RolesData: any;
   @Input() permissionsList: any = [];
   @Input() filterPermissionsList: any = [];
@@ -82,9 +89,14 @@ export class RdsCompRoleListComponent implements OnInit{
       tablink: '#Permission',
       ariacontrols: 'Permission',
 
-    }];
+    },
+    {
+      label: this.translate.instant('Claims'),
+      tablink: '#Claims',
+      ariacontrols: 'Claims',
+    }
+  ];
   canvasTitle: string;
-
 
   constructor(
     public translate: TranslateService,
@@ -95,24 +107,34 @@ export class RdsCompRoleListComponent implements OnInit{
   ngOnInit(): void {
     this.subscribeToAlerts();
     this.activePage = 0;
+    this.rdsClaimTypeRoleMfeConfig = {
+      name: 'RdsCompClaimTypeRole',
+      input: {
+        claimValueData: this.claimValueData,
+        claimDisplayArray: this.claimDisplayArray
+      },
+      output: {
+        addClaim: (data: any) => {
+          data.roleId = this.RolesData.id;
+          this.claimDisplayArray.push(data);
+          const mfeConfig = this.rdsClaimTypeRoleMfeConfig;
+          mfeConfig.input.claimDisplayArray = this.claimDisplayArray;
+        },
+        deleteClaim: (index: number) => {
+          this.claimDisplayArray.splice(index, 1);
+        }
+      }
+    }
+  }
      }
   ngDoCheck(): void {
-
     this.tableData = [...this.roleList];
   }
 
   getNavTabItems(): any {
-
-    this.navtabsItems[0].label = this.translate.instant('Role');
-
-    this.navtabsItems[1].label = this.translate.instant('Permission');
-
     return this.navtabsItems;
-
   }
   getSelectedNavTab(event: any): void {
-    this.navtabsItems[0].label = this.translate.instant('Role');
-    this.navtabsItems[1].label = this.translate.instant('Permission');
     this.activePage = event;
   }
   save(): void {
@@ -120,7 +142,14 @@ export class RdsCompRoleListComponent implements OnInit{
       role: this.RoleFromNewRole,
       grantedPermissionNames: this.selectedPermissionList,
     };
-    this.onSaveRole.emit(data);
+    this.onSaveRole.emit({ 
+      data: data, 
+      claimData: {
+        claimDataArray: this.claimDisplayArray,
+        roleId: this.RolesData.id
+      }, 
+      actionId: this.actionId 
+    });
     this.activePage = 0;
     var offcanvas = document.getElementById('RoleOffcanvas')
     var bsOffcanvas = new bootstrap.Offcanvas(offcanvas);
@@ -150,6 +179,8 @@ export class RdsCompRoleListComponent implements OnInit{
     this.viewCanvas = true;
     this.SelectedPermissionValues = [];
     if (event) {
+      this.buttonSpinnerForNewRole = true;
+      this.canvasTitle = 'NEW ROLE';
       this.showLoadingSpinner = true;
       this.canvasTitle =  this.translate.instant('NEW ROLE'),
       this.Roles = { RolesData: undefined, permissionsList: [] };
@@ -170,7 +201,7 @@ export class RdsCompRoleListComponent implements OnInit{
         role: eventdata.role,
         grantedPermissionNames: this.selectedPermissionList,
       }
-      this.onSaveRole.emit(data);
+      this.onSaveRole.emit({ data: data, actionId: this.actionId });
       if (!eventdata) {
         this.EnableTreeSave = false;
       } else {
@@ -203,6 +234,29 @@ export class RdsCompRoleListComponent implements OnInit{
   }
   editTableRowData(event): void {
     this.newRole(undefined);
+    this.canvasTitle = 'EDIT ROLE';
+    this.onEditRole.emit(event);
+    this.selectedId = event.id;
+  }
+
+  // Filter by permission canvas
+  // filterByPermission(event): void {
+  //   this.selectedFilterId = '';
+  //   this.SelectedPermissionValues = [];
+  //   //if (event) {
+  //   this.canvasTitle = 'FILTER BY PERMISSIONS';
+  //   //  event.stopPropagation();
+  //   this.RolesData = undefined;
+  //   //}
+  //   this.viewCanvas = true;
+  //   setTimeout(() => {
+  //     var offcanvas = document.getElementById('PermissionOffcanvas')
+  //     var bsOffcanvas = new bootstrap.Offcanvas(offcanvas);
+  //     bsOffcanvas.show()
+  //   }, 100);
+  //   this.onnewRole.emit(true)
+  //   this.activePage = 0;
+  // }
     this.canvasTitle = this.translate.instant('EDIT ROLE');
     this.onEditRole.emit(event.id);
     this.selectedId = event.roleid;
@@ -231,7 +285,7 @@ export class RdsCompRoleListComponent implements OnInit{
       this.getRoles();
     }
     else if (event.key === 'filterByPermission') {
-      this.filterByPermission(event);
+      // this.filterByPermission(event);
     }
   }
 
@@ -270,6 +324,7 @@ export class RdsCompRoleListComponent implements OnInit{
     this.onRefreshRole.emit();
   }
   onActionSelect(event: any) {
+    this.actionId = event.actionId;
     if (event.actionId === 'delete') {
       this.deleteEvent.emit(event.selectedData);
     } else if (event.actionId === 'edit') {

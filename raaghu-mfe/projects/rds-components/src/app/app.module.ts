@@ -164,8 +164,8 @@ import { RdsCompAccountNewComponent } from './rds-comp-account-new/rds-comp-acco
 import { RdsCompSettingsNewComponent } from './rds-comp-settings-new/rds-comp-settings-new.component';
 import { RdsCompLanguageNewComponent } from './rds-comp-language-new/rds-comp-language-new.component';
 import { RdsCompLanguageTextListComponent } from './rds-comp-language-text-list/rds-comp-language-text-list.component';
+import { RdsCompClaimTypeRoleComponent } from './rds-comp-claim-type-role/rds-comp-claim-type-role.component';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
-
 
 @NgModule({
   declarations: [	
@@ -321,8 +321,8 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     RdsCompAccountNewComponent,
     RdsCompSettingsNewComponent,
     RdsCompLanguageNewComponent,
+    RdsCompClaimTypeRoleComponent,  
     RdsCompAuditLogsNewComponent
-  
   ],
   imports: [
     StoreModule,
@@ -419,7 +419,7 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     RdsTestimonialModule,
     RdsTestimonialModule,
     InfiniteScrollModule,
-    RdsTeamMemberModule,
+    RdsTeamMemberModule
   ],
   providers: [],
   bootstrap: [AppComponent],
