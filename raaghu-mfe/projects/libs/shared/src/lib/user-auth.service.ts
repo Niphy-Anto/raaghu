@@ -118,8 +118,9 @@ export class UserAuthService implements OnInit {
           } else {
             this.router.navigateByUrl('/login');
           }
+        } else {
+          this.router.navigateByUrl('/login');
         }
-
       }
     );
   }

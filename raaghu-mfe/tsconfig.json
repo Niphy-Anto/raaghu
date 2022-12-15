@@ -126,6 +126,8 @@
     "enableI18nLegacyMessageIdFormat": true,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
-    "strictTemplates": true
+    "strictTemplates": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true
   }
 }
