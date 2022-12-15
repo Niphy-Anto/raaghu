@@ -3,12 +3,13 @@ import { FormsModule } from '@angular/forms';
 import { Story, Meta, moduleMetadata } from '@storybook/angular';
 import { RdsIconModule } from '@libs/rds-icon';
 import { RdsSideNavComponent } from './rds-side-nav.component';
+import { RdsToggleModule } from '@libs/rds-toggle';
 
 export default {
   title: 'Elements/Side Navigation',
   decorators: [
     moduleMetadata({
-      imports: [CommonModule, FormsModule, RdsIconModule],
+      imports: [CommonModule, FormsModule, RdsIconModule, RdsToggleModule],
     }),
   ],
   component: RdsSideNavComponent,
