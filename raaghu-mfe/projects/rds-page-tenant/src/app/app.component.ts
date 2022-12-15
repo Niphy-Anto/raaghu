@@ -8,7 +8,7 @@ import {
   transition,
   trigger,
   query,
-  style, 
+  style,
   animate,
 } from '@angular/animations';
 import { profileSelector } from 'projects/libs/state-management/src/lib/state/profile-settings/profile-settings.selectors';
@@ -71,26 +71,26 @@ export class AppComponent {
   tenantFeatureValues: any = [];
   tenantLoginLists: any = [];
   tenantTableHeader: TableHeader[] = [
-    { displayName: 'Tenant', key: 'tenantInfoTemplate', dataType: 'html', dataLength: 30, sortable: true, required: true, filterable: true , colWidth: '20%'},
+    { displayName: 'Tenant', key: 'tenantInfoTemplate', dataType: 'html', dataLength: 30, sortable: true, required: true, filterable: true, colWidth: '20%' },
     { displayName: 'Edition', key: 'editionTemplate', dataType: 'html', dataLength: 30, sortable: true, required: true, filterable: true, colWidth: '20%' },
-    { displayName: 'Status', key: 'statusTemplate', dataType: 'html', dataLength: 30, sortable: true, required: true, filterable: true , colWidth: '20%'},
+    { displayName: 'Status', key: 'statusTemplate', dataType: 'html', dataLength: 30, sortable: true, required: true, filterable: true, colWidth: '20%' },
     { displayName: 'Subscription End Date', key: 'subscriptionEndDateUtc', dataType: 'html', dataLength: 30, sortable: true, required: true, filterable: true, colWidth: '20%' },
 
   ]
 
-  userTableHeader:TableHeader[]=[
+  userTableHeader: TableHeader[] = [
     { displayName: 'Name', key: 'name', dataType: 'html', dataLength: 30, sortable: true, required: true, filterable: true },
   ]
   isAnimation: boolean = true;
 
   tenantTableData: any = [];
-  userTableData: any = []   
-  loginList:any;
-  isShimmer: boolean=true;
-  editShimmer: boolean=true;
+  userTableData: any = []
+  loginList: any;
+  isShimmer: boolean = true;
+  editShimmer: boolean = true;
 
-  constructor(public datepipe: DatePipe,   private userAuthService: UserAuthService,
-    private store: Store, private translate: TranslateService, 
+  constructor(public datepipe: DatePipe, private userAuthService: UserAuthService,
+    private store: Store, private translate: TranslateService,
     private _arrayToTreeConverterService: ArrayToTreeConverterService) { }
   ngOnInit(): void {
     this.isAnimation = true;
@@ -100,51 +100,51 @@ export class AppComponent {
         this.translate.use(res);
       }
     });
-    
+
 
     this.store.dispatch(getEditionComboboxItems())
     this.store.select(selectEditionComboboxItems).subscribe((res: any) => {
       if (res) {
-        this.editionList  = []
+        this.editionList = []
         res.forEach(element => {
           const data = {
-            value:element.value,
-            some:element.displayText,
-            isSelected:element.isSelected,
-            icon:'',
-            iconWidth:0,
-            iconHeight:0,
-            iconFill:false,
+            value: element.value,
+            some: element.displayText,
+            isSelected: element.isSelected,
+            icon: '',
+            iconWidth: 0,
+            iconHeight: 0,
+            iconFill: false,
             iconStroke: true,
             isFree: element.isFree
           }
           this.editionList.push(data);
-        }); 
+        });
       }
     })
     this.store.dispatch(getProfilepic());
-    this.store.select(profileSelector).subscribe((res: any)=> {})
+    this.store.select(profileSelector).subscribe((res: any) => { })
 
 
-    this.store.select(selecteTeantLoginList).subscribe((res: any) => {     
-      if (res) {        
-        let targetUrl='https://anzstageui.raaghu.io/login'+'?impersonationToken='+res.impersonationToken+ '&tenantId=' + this.loginList+ '&tenancyName='+res.tenancyName;
-      this.userAuthService.unauthenticateUser(true,targetUrl);      
+    this.store.select(selecteTeantLoginList).subscribe((res: any) => {
+      if (res) {
+        let targetUrl = 'https://anzstageui.raaghu.io/login' + '?impersonationToken=' + res.impersonationToken + '&tenantId=' + this.loginList + '&tenancyName=' + res.tenancyName;
+        this.userAuthService.unauthenticateUser(true, targetUrl);
       }
-    })      
+    })
 
-  
+
     this.store.select(selecteTeantUserList).subscribe((res: any) => {
-      this.userTableData=[];
+      this.userTableData = [];
       if (res && res.items) {
-        res.items.forEach((element: any) => {                 
+        res.items.forEach((element: any) => {
           const item: any = {
-            name:element.name,
-            id:element.value
+            name: element.name,
+            id: element.value
           }
           this.userTableData.push(item);
         });
-        
+
       }
     })
 
@@ -173,17 +173,17 @@ export class AppComponent {
           const item: any = {
             tenantInfoTemplate: tenantInfoTemplate,
             statusTemplate: statusTemplate,
-            subscriptionEndDateUtc: (element.subscriptionEndDateUtc && element.subscriptionEndDateUtc !== null && element.subscriptionEndDateUtc.ts) ? this.datepipe.transform((new Date(element.subscriptionEndDateUtc.ts)), 'MM/dd/yyyy') : '--',  
+            subscriptionEndDateUtc: (element.subscriptionEndDateUtc && element.subscriptionEndDateUtc !== null && element.subscriptionEndDateUtc.ts) ? this.datepipe.transform((new Date(element.subscriptionEndDateUtc.ts)), 'MM/dd/yyyy') : '--',
             editionDisplayName: element.editionDisplayName,
-            editionTemplate: (element.editionDisplayName && element.editionDisplayName !== null) ?editionTemplate : '--',
+            editionTemplate: (element.editionDisplayName && element.editionDisplayName !== null) ? editionTemplate : '--',
             id: element.id,
-            name: element.tenancyName,            
+            name: element.tenancyName,
             // creationTime: this.datepipe.transform(new Date(element.creationTime),'dd-MM-yyyy h:mm:ss a')
           }
           this.tenantTableData.push(item);
         });
         this.isShimmer = false;
-       
+
       }
     });
 
@@ -197,8 +197,8 @@ export class AppComponent {
         this.tenantData['tenancyName'] = res.tenancyName;
         this.tenantData['tenantName'] = res.name;
         this.tenantData['adminEmailAddress'] = res.adminEmailAddress;
-        this.tenantData['edition'] = (res.editionId && res.editionId !== null) ? res.editionId.toString(): res.editionId;
-        this.tenantData['unlimitedSubscription'] = (res.subscriptionEndDateUtc !== null&&res.subscriptionEndDateUtc) ? false : true;
+        this.tenantData['edition'] = (res.editionId && res.editionId !== null) ? res.editionId.toString() : res.editionId;
+        this.tenantData['unlimitedSubscription'] = (res.subscriptionEndDateUtc !== null && res.subscriptionEndDateUtc) ? false : true;
         this.tenantData['id'] = res.id;
         this.tenantData['subscriptionEndDate'] = (res.subscriptionEndDateUtc) ? new Date(res.subscriptionEndDateUtc) : null;
         this.editShimmer = false
@@ -212,7 +212,7 @@ export class AppComponent {
     })
   }
 
-  onSaveTenant(tenant: any){
+  onSaveTenant(tenant: any) {
     if (tenant && tenant.tenantInfo) {
       if (tenant.tenantInfo.id) {
         const data: any = {
@@ -221,7 +221,7 @@ export class AppComponent {
           connectionString: tenant.tenantSettings.connectionString,
           editionId: +tenant.tenantInfo.edition,
           isActive: tenant.tenantSettings.isActive,
-          subscriptionEndDateUtc: (tenant.tenantInfo.unlimitedSubscription||!tenant.tenantInfo.subscriptionEndDate||tenant.tenantInfo.subscriptionEndDate==null) ? null : new Date(tenant.tenantInfo.subscriptionEndDate).toISOString(),
+          subscriptionEndDateUtc: (tenant.tenantInfo.unlimitedSubscription || !tenant.tenantInfo.subscriptionEndDate || tenant.tenantInfo.subscriptionEndDate == null) ? null : new Date(tenant.tenantInfo.subscriptionEndDate).toISOString(),
           isInTrialPeriod: false,
           id: tenant.tenantInfo.id
         };
@@ -238,7 +238,7 @@ export class AppComponent {
           sendActivationEmail: tenant.tenantSettings.sendActivationEmail,
           editionId: +tenant.tenantInfo.edition,
           isActive: tenant.tenantSettings.isActive,
-          subscriptionEndDateUtc: (tenant.tenantInfo.unlimitedSubscription||!tenant.tenantInfo.subscriptionEndDate||tenant.tenantInfo.subscriptionEndDate==null) ? null : new Date(tenant.tenantInfo.subscriptionEndDate).toISOString(),
+          subscriptionEndDateUtc: (tenant.tenantInfo.unlimitedSubscription || !tenant.tenantInfo.subscriptionEndDate || tenant.tenantInfo.subscriptionEndDate == null) ? null : new Date(tenant.tenantInfo.subscriptionEndDate).toISOString(),
           isInTrialPeriod: false
         };
         this.store.dispatch(saveTenant(data, 30))
@@ -248,39 +248,39 @@ export class AppComponent {
     }
 
   }
-  onEditTenant(selectedTenant: any){
+  onEditTenant(selectedTenant: any) {
     this.store.dispatch(getTenantForEdit(selectedTenant));
     this.store.dispatch(getTenantFeaturesForEdit(selectedTenant))
   }
-  onReset(event){
+  onReset(event) {
     this.tenantData = undefined;
     this.tenantSettingsInfo = undefined;
     this.tenantFeatureValues = [];
     this.tenantFeatures = [];
-    
+
     if (event.newtenant) {
       this.editShimmer = false;
     } else {
       this.editShimmer = true;
     }
   }
-  deleteEvent(event: any){
+  deleteEvent(event: any) {
     this.store.dispatch(deleteTenant(event.id, 30))
   }
-  onSaveFeatures(feature: any){
+  onSaveFeatures(feature: any) {
     this.store.dispatch(updateTenantFeatureValues(feature))
   }
-  onSelectTenant(event:any){
+  onSelectTenant(event: any) {
     this.store.dispatch(getTenantUsers(event));
   }
-  onTenantLogIn(event:any){  
-    this.loginList=event.tenantId;                   
-     const data:any={
-      tenantId:this.loginList,
-      userId:event.userId
-     };
-     this.store.dispatch(getTenantLogin(data)); 
-                       
+  onTenantLogIn(event: any) {
+    this.loginList = event.tenantId;
+    const data: any = {
+      tenantId: this.loginList,
+      userId: event.userId
+    };
+    this.store.dispatch(getTenantLogin(data));
+
   }
 
   convertArraytoTreedata(data: any) {

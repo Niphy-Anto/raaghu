@@ -17,10 +17,12 @@
 }
 
 html[theme=light] {
+  --chart-bool-icon-color: black;
   @import './colorvariables-light.scss';
 
 }
 
 html[theme=dark] {
+  --chart-bool-icon-color: white;
   @import './colorvariables-dark.scss';
 }

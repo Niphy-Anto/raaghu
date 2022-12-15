@@ -847,7 +847,7 @@ export class SidenavComponent {
       localStorage.setItem('themeIndex', '12');
 
     }
-    this.alertService.setTheme(selectedTheme);
+    // this.alertService.setTheme(selectedTheme);
   }
 
   private filterNavItems(
