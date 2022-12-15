@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RdsIconModule } from '@libs/rds-icon';
+import { RdsIconModule } from '@libs/rds-elements';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
