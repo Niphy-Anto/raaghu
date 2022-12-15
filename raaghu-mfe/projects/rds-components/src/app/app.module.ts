@@ -321,7 +321,7 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     RdsCompAccountNewComponent,
     RdsCompSettingsNewComponent,
     RdsCompLanguageNewComponent,
-    RdsCompClaimTypeRoleComponent  
+    RdsCompClaimTypeRoleComponent,  
     RdsCompAuditLogsNewComponent
   ],
   imports: [
@@ -419,7 +419,7 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     RdsTestimonialModule,
     RdsTestimonialModule,
     InfiniteScrollModule,
-    RdsTeamMemberModule,
+    RdsTeamMemberModule
   ],
   providers: [],
   bootstrap: [AppComponent],
