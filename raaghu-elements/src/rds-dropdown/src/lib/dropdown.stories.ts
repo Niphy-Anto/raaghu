@@ -42,7 +42,7 @@ const Template: Story<RdsDropdownComponent> = (args: RdsDropdownComponent) => ({
 });
 
 export const Default = Template.bind({});
-Default.parameters = { controls: { include: ['colorVariant', 'size', 'listItems', 'label', 'direction', 'role','onSelect'] } };
+Default.parameters = { controls: { include: ['colorVariant', 'size', 'listItems', 'label', 'direction', 'role'] } };
 Default.args = {
   colorVariant: 'primary',
   size: 'default',
@@ -57,7 +57,7 @@ Default.args = {
 };
 
 export const Dropdown_with_split = Template.bind({});
-Dropdown_with_split.parameters = { controls: { include: ['colorVariant', 'size', 'listItems', 'label', 'direction', 'role','onSelect'] } };
+Dropdown_with_split.parameters = { controls: { include: ['colorVariant', 'size', 'listItems', 'label', 'direction', 'role'] } };
 Dropdown_with_split.args = {
   colorVariant: 'primary',
   size: 'default',
