@@ -12,6 +12,7 @@ import { NgxTranslateModule } from '@libs/shared';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxShimmerLoadingModule } from 'ngx-shimmer-loading';
 import { RdsCompAlertModule } from '../rds-comp-alert/rds-comp-alert.module';
+import { RdsCompAlertPopupModule } from '../rds-comp-alert-popup/rds-comp-alert-popup.module';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { RdsCompAlertModule } from '../rds-comp-alert/rds-comp-alert.module';
     RdsDropdownlistModule,
     RdsNavTabModule,
     NgxTranslateModule,
-    NgxShimmerLoadingModule
+    NgxShimmerLoadingModule,
+    RdsCompAlertPopupModule
   ],
   exports: [
     RdsCompFeaturesComponent
