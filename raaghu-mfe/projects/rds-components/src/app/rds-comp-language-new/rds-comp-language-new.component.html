@@ -23,7 +23,7 @@
               <div class="col-md-6">
                 <div class="col-md-12 col-sm-12">
                   <div class="form-group mt-3">
-                    <rds-input size="default" [Title]="translate.instant('Display Name')" [disabled]="false" [readonly]="false" [TitleType]="'Top'"
+                    <rds-input [label]="translate.instant('Display Name')" [disabled]="false" [readonly]="false" [labelPosition]="'top'"
                 value="selectedLanguageData.displayName" name="displayName" [isRequired]=true inputType="text" [placeholder]="translate.instant('Display Name')" #displayName="ngModel"
                 [(ngModel)]="selectedLanguageData.displayName" floatinginputLabel="" required ngDefaultControl>
               </rds-input>
@@ -74,14 +74,13 @@
         (click)="closeCanvas()" data-bs-dismiss="offcanvas">
       </rds-button>
       <rds-button *ngIf="!editOffCanvas" [label]="translate.instant('SAVE')"
-        [disabled]="!languageForm.valid"
+        [isDisabled]="!languageForm.valid"
         [size]="'small'" class="ms-2" [colorVariant]="'primary'" (click)="addLanguage(languageForm)" [showLoadingSpinner]="buttonSpinner">
       </rds-button>
       <rds-button *ngIf="editOffCanvas" [label]="translate.instant('EDIT')"
-        [disabled]="!languageForm.valid"
+        [isDisabled]="!languageForm.valid"
         [size]="'small'" class="ms-2" [colorVariant]="'primary'" (click)="addLanguageEdit(languageForm)" [showLoadingSpinner]="buttonSpinner">
       </rds-button>
     </div>
   </div>
 
-  <app-rds-comp-tenant-information-shimmer *ngIf="EditShimmer"></app-rds-comp-tenant-information-shimmer>

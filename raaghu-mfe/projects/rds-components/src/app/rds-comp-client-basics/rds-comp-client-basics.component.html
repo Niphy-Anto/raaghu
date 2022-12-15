@@ -3,7 +3,7 @@
         <div class="col-md-6">
             <div class="form-group">
                 <!-- <label>Client ID</label> -->
-                <rds-input [inputType]="'text'" [Title]="translate.instant('Client ID')" #client_id="ngModel" [TitleType]="'Top'"  [isRequired]=true [(ngModel)]="clientBasics.clientId" name="clientId"
+                <rds-input [inputType]="'text'" [label]="translate.instant('Client ID')" #client_id="ngModel" [labelPosition]="'top'"  [isRequired]=true [(ngModel)]="clientBasics.clientId" name="clientId"
                     required [placeholder]="'Enter ID'">
                 </rds-input>
                 <div class="form-control-feedback" *ngIf="client_id.errors && (client_id.dirty || client_id.touched)">
@@ -15,7 +15,7 @@
         <div class="col-md-6">
             <div class="form-group">
                 <!-- <label>Client Name</label> -->
-                <rds-input [inputType]="'text'" [Title]="translate.instant('Client name')" #client_name="ngModel" [TitleType]="'Top'" [(ngModel)]="clientBasics.clientName"
+                <rds-input [inputType]="'text'" [label]="translate.instant('Client name')" #client_name="ngModel" [labelPosition]="'top'" [(ngModel)]="clientBasics.clientName"
                     name="clientName" [isRequired]=true  required [placeholder]="'Enter Client Name'">
                 </rds-input>
                 <div class="form-control-feedback"
@@ -36,7 +36,7 @@
         <div class="col-md-6 mt-3">
             <div class="form-group">
                 <!-- <label>Client URL</label> -->
-                <rds-input [inputType]="'text'" [Title]="translate.instant('Client Uri')" #client_url="ngModel" [TitleType]="'Top'" [(ngModel)]="clientBasics.clientUri"
+                <rds-input [inputType]="'text'" [label]="translate.instant('Client Uri')" #client_url="ngModel" [labelPosition]="'top'" [(ngModel)]="clientBasics.clientUri"
                     name="clientUrl"  [isRequired]=true [placeholder]="'Enter URL'">
                 </rds-input>
             </div>
@@ -44,7 +44,7 @@
         <div class="col-md-6 mt-3">
             <div class="form-group">
                 <!-- <label>Logo URL</label> -->
-                 <rds-input [inputType]="'text'" [Title]="translate.instant('Logo Uri')" #logo_url="ngModel" [TitleType]="'Top'" [(ngModel)]="clientBasics.logoUri" name="logoUrl"
+                 <rds-input [inputType]="'text'" [label]="translate.instant('Logo Uri')" #logo_url="ngModel" [labelPosition]="'top'" [(ngModel)]="clientBasics.logoUri" name="logoUrl"
                  [placeholder]="'Enter URL'">
                 </rds-input>
                            
@@ -54,7 +54,7 @@
         <div class="col-md-6 mt-3">
             <div class="form-group">
                 <!-- <label>Logo URL</label> -->
-                 <rds-input [inputType]="'text'" [Title]="translate.instant('CallBack URL')" #callback_url="ngModel" [TitleType]="'Top'" [(ngModel)]="clientBasics.callBackUrl" name="callBackUrl"
+                 <rds-input [inputType]="'text'" [label]="translate.instant('CallBack URL')" #callback_url="ngModel" [labelPosition]="'top'" [(ngModel)]="clientBasics.callBackUrl" name="callBackUrl"
                     required [placeholder]="'Enter URL'">
                 </rds-input>
                           
@@ -63,7 +63,7 @@
         <div class="col-md-6 mt-3">
             <div class="form-group">
                 <!-- <label>Logo URL</label> -->
-                 <rds-input [inputType]="'text'" [Title]="translate.instant('Logout URL')" #logout_url="ngModel" [TitleType]="'Top'" [(ngModel)]="clientBasics.logoutUrl" name="logoUrl"
+                 <rds-input [inputType]="'text'" [label]="translate.instant('Logout URL')" #logout_url="ngModel" [labelPosition]="'top'" [(ngModel)]="clientBasics.logoutUrl" name="logoUrl"
                  [placeholder]="'Enter URL'">
                 </rds-input>
                             
