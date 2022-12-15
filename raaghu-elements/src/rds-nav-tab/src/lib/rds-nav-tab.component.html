@@ -6,11 +6,14 @@
           <a class="nav-link" [class.active]="activeTab==i" aria-current="page" href="#" (click)="onClick(i)"
             [attr.data-bs-target]="item.tablink" data-bs-toggle="tab" [attr.aria-controls]="item.ariacontrols"
             [class.disabled]="item.disabled">
-            <rds-icon class="me-2" *ngIf="item.icon" [fill]="item.iconFill" [stroke]="item.iconStroke" [name]="item.icon" [height]="item.iconHeight" [fill]="item.iconFill"
+            <div class="row">
+            <rds-icon class="me-2 col-1" *ngIf="item.icon" [fill]="item.iconFill" [stroke]="item.iconStroke" [name]="item.icon" [height]="item.iconHeight" [fill]="item.iconFill"
               [stroke]="item.stroke" [width]="item.iconWidth"></rds-icon>
-            <span class="" [ngClass]="{'fw-semibold': item.subText || !item.icon}">
+            
+            <div class="col" [ngClass]="{'fw-semibold': item.subText || !item.icon}">
               {{item.label}}
-            </span>
+            </div>
+          </div>
             <div class="text-muted fw-light ms-2" [ngClass]="{'ps-4': item.icon}">{{item.subText}}</div>
           </a>
         </li>
@@ -20,4 +23,3 @@
     <ng-content select="[naveContent]" class="vertical-class"></ng-content>
   </div>
 </div>
-
