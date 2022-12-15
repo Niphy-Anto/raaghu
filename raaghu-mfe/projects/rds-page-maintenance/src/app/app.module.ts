@@ -10,6 +10,7 @@ import { CommonModule } from '@angular/common';
 import { RdsCompCacheModule } from 'projects/rds-components/src/app/rds-comp-cache/rds-comp-cache.module';
 import { RdsCompWebsiteLogModule } from 'projects/rds-components/src/app/rds-comp-website-log/rds-comp-website-log.module';
 import { RdsCompAlertPopupModule } from 'projects/rds-components/src/app/rds-comp-alert-popup/rds-comp-alert-popup.module';
+import { RdsCompAlertModule } from 'projects/rds-components/src/app/rds-comp-alert/rds-comp-alert.module';
 @NgModule({
   declarations: [
     AppComponent,    
@@ -25,7 +26,8 @@ import { RdsCompAlertPopupModule } from 'projects/rds-components/src/app/rds-com
     NgxTranslateModule.forRoot(),
     RdsCompCacheModule,
     RdsCompWebsiteLogModule,
-    RdsCompAlertPopupModule
+    RdsCompAlertPopupModule,
+    RdsCompAlertModule
   ],
   providers: [],
   bootstrap: [AppComponent]

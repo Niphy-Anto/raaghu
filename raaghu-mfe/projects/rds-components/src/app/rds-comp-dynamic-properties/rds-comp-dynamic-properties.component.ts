@@ -20,14 +20,13 @@ declare let bootstrap: any;
 })
 export class RdsCompDynamicPropertiesComponent implements OnInit, OnChanges {
   actions: TableAction[] = [{ id: 'edit', displayName: 'Edit' }, { id: 'delete', displayName: 'Delete' }]
-  @Input()
-  DynamicPropertiesTableHeader: any;
-  @Input() DynamicPropertiesTableData: any;
+  @Input() DynamicPropertiesTableHeader: any = [];
+  @Input() DynamicPropertiesTableData: any = [];
   @Output() deleteEvent = new EventEmitter<any>();
   @Output() editPropertyTableRowData = new EventEmitter<any>();
   @Output() createOrUpdateDynamic = new EventEmitter<any>();
   @Input() permissionsList: any = [];
-  @Input() DynamicProperyData: any = {};
+  @Input() DynamicProperyData: any = { propertyName: '', displayName: '', inputType: '' };
   @Input() IsEdit: boolean = false;
   @Input() selectedPermissionList: any = [];
   @Input() inputTypeList: any;
@@ -54,9 +53,9 @@ export class RdsCompDynamicPropertiesComponent implements OnInit, OnChanges {
   ];
 
 
-  constructor(public translate: TranslateService,private appSessionService: AppSessionService) { }
+  constructor(public translate: TranslateService, private appSessionService: AppSessionService) { }
   ngOnChanges(changes: SimpleChanges): void {
-    this.DynamicProperyData = undefined;
+    //this.DynamicProperyData = undefined;
     var myOffcanvas = document.getElementById('AddDynamic');
     if (myOffcanvas) {
       myOffcanvas.addEventListener('hidden.bs.offcanvas', function () {
@@ -80,7 +79,7 @@ export class RdsCompDynamicPropertiesComponent implements OnInit, OnChanges {
       this.id = undefined;
       this.canvasTitle = this.translate.instant('New Dynamic Property');
       event.stopPropagation();
-      this.DynamicProperyData = undefined;
+      //this.DynamicProperyData = undefined;
     } else {
     }
   }
@@ -113,19 +112,20 @@ export class RdsCompDynamicPropertiesComponent implements OnInit, OnChanges {
           inputType: this.DynamicProperyInfo.dynamicProperties.inputType[0],
           permission: this.selectedPermissions,
           propertyName: this.DynamicProperyInfo.dynamicProperties.propertyName,
-        tenantId: this.appSessionService.tenantId,
+          tenantId: this.appSessionService.tenantId,
           id: this.id,
         };
         this.createOrUpdateDynamic.emit(DynamicPropery);
         this.closeCanvas();
         this.editShimmer = true;
+        
       } else {
         const DynamicPropery: any = {
           displayName: this.DynamicProperyData.displayName,
           inputType: this.DynamicProperyData.inputType,
           permission: this.selectedPermissions,
           propertyName: this.DynamicProperyData.propertyName,
-        tenantId: this.appSessionService.tenantId,
+          tenantId: this.appSessionService.tenantId,
           id: this.id,
         };
         this.closeCanvas();

@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { TranslateService } from '@ngx-translate/core';
-import { ComponentLoaderOptions, SharedService } from '@libs/shared';
+import { AlertService, ComponentLoaderOptions, SharedService } from '@libs/shared';
 import { clearcache, deletecache, getmaintenances, getWebsitelog } from 'projects/libs/state-management/src/lib/state/maintenance/maintenance.actions';
 import { selectAllmaintenance, selectAllWebsitelog } from 'projects/libs/state-management/src/lib/state/maintenance/maintenance.selector';
 declare var $: any;
@@ -66,16 +66,19 @@ export class AppComponent implements OnInit {
   cashedata: any = []
   websiteLogData: any[];
   isShimmer: boolean = false;
-  tableData: any = []
+  tableData: any = [];
+  currentAlerts: any = [];
 
   constructor(private store: Store,
     private sharedService: SharedService,
-    public translate: TranslateService) { }
+    public translate: TranslateService,
+    private alertService: AlertService) { }
 
 
 
 
   ngOnInit(): void {
+    this.subscribeToAlerts();
     this.isAnimation = true;
     // this.rdscacheMfeConfig = {
     //   name: 'RdsCompCache',
@@ -132,6 +135,24 @@ export class AppComponent implements OnInit {
     //   }
     // },
     this.refreshData();
+    
+  }
+
+  onAlertHide(event: any): void {
+    this.currentAlerts = event;
+  } 
+
+  subscribeToAlerts() {
+    this.alertService.alertEvents.subscribe((alert) => {
+      this.currentAlerts = [];
+      const currentAlert: any = {
+        type: alert.type,
+        title: alert.title,
+        message: alert.message,
+        sticky: alert.sticky,
+      };
+      this.currentAlerts.push(currentAlert);
+    });
   }
 
   getNavTabItems(): any {
