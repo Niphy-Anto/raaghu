@@ -164,6 +164,16 @@ export const APP_ROUTES: Routes = [
           }).then((m) => m.AppModule)
       },
       {
+        path: 'icons',
+        loadChildren: () =>
+          loadRemoteModule({
+            type: 'module',
+            remoteEntry: MfeConfig.icons.url,
+            exposedModule: './AppModule',
+          }).then((m) => m.AppModule),
+        data: { permission: 'Pages.Tenants' },
+      },
+      {
         path: 'tenant',
         loadChildren: () =>
           loadRemoteModule({

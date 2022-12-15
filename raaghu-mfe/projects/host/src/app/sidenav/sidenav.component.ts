@@ -25,7 +25,7 @@ import { RouterOutlet } from '@angular/router';
 import { getProfilepic } from 'projects/libs/state-management/src/lib/state/profile-settings/profile-settings.actions';
 import { selectAllVisualsettings } from 'projects/libs/state-management/src/lib/state/Visual-settings/visual-settings.selector';
 import { getVisualsettings } from 'projects/libs/state-management/src/lib/state/Visual-settings/visual-settings.actions';
-import { getLanguages, setDefaultLanguageForUI } from 'projects/libs/state-management/src/lib/state/language/language.actions';
+import { getLanguages, setDefaultLanguage, setDefaultLanguageForUI } from 'projects/libs/state-management/src/lib/state/language/language.actions';
 import { changePassword, getProfile } from 'projects/libs/state-management/src/lib/state/mysettings/mysettings.action';
 import { selectAllLanguages, selectDefaultLanguage } from 'projects/libs/state-management/src/lib/state/language/language.selector';
 import { selectProfileInfo } from 'projects/libs/state-management/src/lib/state/mysettings/mysettings.selector';
@@ -618,6 +618,8 @@ export class SidenavComponent {
   onLanguageSelection(lan) {
     this.translate.use(lan);
     this.store.dispatch(setDefaultLanguageForUI(lan));
+ const data: any = { name: lan };
+          this.store.dispatch(setDefaultLanguage(data));
   }
   deleteDeligateuser(data: any) {
     if (data) {

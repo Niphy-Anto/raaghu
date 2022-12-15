@@ -13,16 +13,17 @@
 .theme-light {
 
   @import './colorvariables-light.scss';
-
-}
+  
+  }
 
 html[theme=light] {
   --chart-bool-icon-color: black;
+  --bs-body-color: black;
   @import './colorvariables-light.scss';
-
 }
 
 html[theme=dark] {
   --chart-bool-icon-color: white;
+  --bs-body-color: #dee2e6;
   @import './colorvariables-dark.scss';
 }

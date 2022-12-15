@@ -118,34 +118,42 @@ export class RdsAdminDashboardComponent extends MfeBaseComponent implements OnIn
   @Input() monthlySummaryDataSets = [
     {
       label: 'Sales',
-      data: [600, 462, 405, 362, 350, 350.5, 320.8, 318, 605, 689, 352, 354],
+      data: [800, 425,  280,  700,  490, 200],
       borderColor: '#4DCFFF',
       pointBackgroundColor: '#4DCFFF',
       backgroundColor: '--chart-line-color1',
       fill: true,
-      pointRadius: 3,
+      pointRadius: 2.5,
+      borderWidth : 1,
       // fillColor: "rgba(195, 40, 96, 0.1)",
       tension: 0.4,
     },
     {
       label: 'Revenue',
-      data: [250, 780.2, 780.4, 650, 455, 455.5, 455.8, 456, 610, 455, 250, 254],
+      // data: [400, 750.2, 782.4, 639, 490, 445, 470, 598, 750, 630, 500, 780.2],
+      data: [400, 782.4, 490, 470,  750, 500],
+      strokeColor : "rgba(151,187,205,1)",
+      pointColor : "rgba(151,187,205,1)",
+      pointStrokeColor : "#fff",
+      pointHighlightFill : "#fff",
+      pointHighlightStroke : "rgba(151,187,205,1)",
       borderColor: '#863BFF',
       pointBackgroundColor: '#863BFF',
       backgroundColor: '--chart-line-color2',
       fill: true,
-      pointRadius: 3,
+      pointRadius: 2.5,
+      borderWidth : 1,
       tension: 0.4,
     }
   ]
-  @Input() monthlySummaryLabels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+  @Input() monthlySummaryLabels = ['Jan',  'Mar',  'May', 'Jul',  'Sep',  'Nov']
   @Input() monthlySummarychartWidth = 650
   @Input() monthlySummarychartHeight = 250
   @Input() monthlySummarychartOptions = {
     radius: 0,
     pointStyle: 'circle',
     responsive: true,
-    borderWidth: 2,
+    borderWidth: 1,
     maintainAspectRatio: false,
     plugins: {
       title: {

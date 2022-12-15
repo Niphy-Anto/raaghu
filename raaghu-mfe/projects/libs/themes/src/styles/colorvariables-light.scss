@@ -1545,3 +1545,53 @@
     }
   }
 }
+
+.bg-icon {
+  background-color: $white;
+  cursor: pointer;
+  transition: background-color 2s ease-out 10ms
+}
+.bg-icon:hover {
+  background-color: $gray-400;
+
+  svg {
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: $primary;
+    transition: transform 0.99s ease-out;
+    transform: rotateZ(360deg);
+
+    polyline.icon {
+      stroke: $primary;
+    }
+
+    polygon.icon {
+      stroke: $primary;
+    }
+
+
+    ellipse.icon {
+      stroke: $primary;
+    }
+
+    path.icon {
+      stroke: $primary;
+    }
+
+    line.icon {
+      stroke: $primary;
+    }
+
+    rect.icon {
+      stroke: $primary;
+    }
+
+    circle.icon {
+      stroke: $primary;
+    }
+  }
+}
+.table-hover > tbody > tr:hover > * {
+  transition: background-color 2s ease-out 10ms
+}
