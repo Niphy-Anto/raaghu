@@ -52,7 +52,6 @@ export class RdsChartBoolComponent implements OnInit, AfterViewInit {
   }
 
   renderChart(): void {
-    debugger;
     let chartStatus = Chart.getChart(this.chartId);
     if (chartStatus != undefined) {
       chartStatus.destroy();
