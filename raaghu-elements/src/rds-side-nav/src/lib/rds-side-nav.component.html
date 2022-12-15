@@ -52,7 +52,7 @@
         <a *ngIf="!child.children" [ngClass]="{ 'active' : child.active }"
           (click)="onClickSubMenu($event,index,j,child)" role="button"
           class="d-inline-flex align-items-center rounded text-decoration-none mb-2">
-          <span [ngClass]="{ 'd-none' : collapsed }"><small class="font-weight-bold">{{child.label}}</small></span>
+          <span [ngClass]="{ 'd-none' : collapsed }">{{child.label}}</span>
         </a>
         <ng-container *ngTemplateOutlet="childTemplate; context: { item: child,index:j }"></ng-container>
       </li>
