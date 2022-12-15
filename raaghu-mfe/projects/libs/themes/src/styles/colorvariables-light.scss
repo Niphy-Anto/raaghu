@@ -1509,3 +1509,89 @@
    border-color: $form-select-border-color1;
    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e")
  }
+ #sidebar.toggle-sidebar-menu {
+  ul {
+
+    ul.dropdown-menu {
+      li {
+        a.dropdown-item:hover{
+          background-color: transparent;
+        }
+        a.dropdown-item.active{
+          background-color: transparent;
+        }
+        ul{
+          li{
+            a.dropdown-item:hover{
+              background-color: transparent;
+            }
+            a.dropdown-item.active{
+              background-color: transparent;
+            }
+          }
+        }
+      }
+
+      ul {
+        li {
+          a.dropdown-item:hover{
+            background-color: transparent;
+          }
+          a.dropdown-item.active{
+            background-color: transparent;
+          }
+        }
+      }
+    }
+  }
+}
+
+.bg-icon {
+  background-color: $white;
+  cursor: pointer;
+  transition: background-color 2s ease-out 10ms
+}
+.bg-icon:hover {
+  background-color: $gray-400;
+
+  svg {
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: $primary;
+    transition: transform 0.99s ease-out;
+    transform: rotateZ(360deg);
+
+    polyline.icon {
+      stroke: $primary;
+    }
+
+    polygon.icon {
+      stroke: $primary;
+    }
+
+
+    ellipse.icon {
+      stroke: $primary;
+    }
+
+    path.icon {
+      stroke: $primary;
+    }
+
+    line.icon {
+      stroke: $primary;
+    }
+
+    rect.icon {
+      stroke: $primary;
+    }
+
+    circle.icon {
+      stroke: $primary;
+    }
+  }
+}
+.table-hover > tbody > tr:hover > * {
+  transition: background-color 2s ease-out 10ms
+}

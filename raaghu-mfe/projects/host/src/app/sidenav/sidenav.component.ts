@@ -1,5 +1,6 @@
 import { Component, Inject, Injector, Input, SimpleChanges } from '@angular/core';
-import * as moment from 'moment';
+import * as moment_ from 'moment';
+const moment = moment_;
 import { DateTime } from 'luxon';
 import { NavigationEnd, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
@@ -456,7 +457,6 @@ export class SidenavComponent {
       }
     });
     this.subscribeToAlerts();
-
     this.store.dispatch(getNotificationSettings());
     this.store.select(selectNotificationSettings).subscribe((res: any) => {
       if (res && res !== null) {
@@ -636,7 +636,7 @@ export class SidenavComponent {
   }
   logoutEmitter($event) {
     if (this.counter < 1) {
-      this.userAuthService.unauthenticateUser();
+      this.userAuthService.unauthenticateUser(false);
       this.counter++;
     }
   }
@@ -927,6 +927,13 @@ export class SidenavComponent {
         headEl.appendChild(newLinkEl);
       }
     }
+  }
+
+  toggle(): void {
+    var element = document.getElementById('sidebar');
+    element.style.display =
+      element.style.display === 'none' || element.style.display == '' || !element.style.display ? 'block' : 'none';
+    this.collapseRequired = false;
   }
 
 }
