@@ -111,7 +111,7 @@ export class UserAuthService implements OnInit {
       customHeaders,
       null,
       () => {
-        // this.getUserConfiguration('logout'); 
+        this.getUserConfiguration('logout'); 
         if (reload) {
           if (returnUrl) {
             location.href = returnUrl;
