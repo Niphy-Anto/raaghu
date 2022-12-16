@@ -63,7 +63,7 @@
         [height]="iconHeight" [width]="iconWidth" data-bs-toggle="tooltip" data-bs-placement="auto">
       </rds-icon>
     </a>
-    <ul class="dropdown-menu border shadow p-3" [attr.aria-labelledby]="'side-dropdown'+index">
+    <ul class="dropdown-menu shadow p-3" [attr.aria-labelledby]="'side-dropdown'+index">
       <li *ngFor="let child of item.children; let i=index">
         <a [attr.id]="child.label" class="d-flex justify-content-between dropdown-item"
           (click)="expandMenu(child,'side-dropdown'+index)" [ngClass]="{ 'active' : child.active }" role="button">
