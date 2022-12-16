@@ -69,7 +69,7 @@ $nav-tabs-thick-border-color: $primary !default;
 
 /*list-group variables*/
 $list-group-active-color: $primary;
-
+$progress-bg: #33383e;
 /*tree variable*/
 $verticle-border-color: $gray-500;
 $horizontal-border-color: $gray-500;
@@ -218,7 +218,7 @@ $offcanvasbg: $dark-400 !default;
 $modal-bg-color: $dark-900 !default;
 $wrapper-bg: $dark-900 !default;
 $nav-tab-bg-active: $dark-900 !default;
-$footer-bgcolor: $dark-400 !default;
+$footer-bgcolor: $dark-900 !default;
 $profileMenuBgColor: $dark-900 !default;
 $trhoverbg-color: $dark-400 !default;
 $nav-li-border: $white !default;
@@ -235,6 +235,10 @@ $file-uploder-multiple-bg : $input-bg !default;
 $datatable-bgColor : $dark-500!default;
 
 $profile-upload-icon: $dark-100 !default;
+
+.progress {
+  background-color: $progress-bg;
+}
 
 .ngx-shimmer {
   background-color: $dark-0;
