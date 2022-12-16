@@ -112,6 +112,13 @@ export class RdsAdminDashboardComponent extends MfeBaseComponent implements OnIn
     , { "cases": "<div class=\"d-flex align-items-center justify-content-center\"><div> 7 </div></div>", "member": "<div class=\"d-flex align-items-center\"><div> <img src=https://anzstageui.raaghu.io/assets/dashboard-data.png width=\"40px\" ></div><div class=\"ms-2 mt-2\"><p class=\"mb-0\"><b>Jane</b></p><small class=\"text-muted\">Sales Executive </small></div></div>", "active": "<div class=\"d-flex align-items-center justify-content-center\"><div> 25 </div></div>", "closed": "<div class=\"d-flex align-items-center justify-content-center\"><div> 5 </div></div>", "rate": "<div class=\"HighRate d-flex align-items-center justify-content-center\">96%</div>" }
     , { "cases": "<div class=\"d-flex align-items-center justify-content-center\"><div> 14 </div></div>", "member": "<div class=\"d-flex align-items-center\"><div> <img src=https://anzstageui.raaghu.io/assets/dashboard-data.png width=\"40px\" ></div><div class=\"ms-2 mt-2\"><p class=\"mb-0\"><b>Brian</b></p><small class=\"text-muted\">Software Developer</small></div></div>", "active": "<div class=\"d-flex align-items-center justify-content-center\"><div> 42 </div></div>", "closed": "<div class=\"d-flex align-items-center justify-content-center\"><div> 42 </div></div>", "rate": "<div class=\"LowRate d-flex align-items-center justify-content-center\">16%</div>" }
     , { "cases": "<div class=\"d-flex align-items-center justify-content-center\"><div> 13 </div></div>", "member": "<div class=\"d-flex align-items-center\"><div> <img src=https://anzstageui.raaghu.io/assets/dashboard-data.png width=\"40px\" ></div><div class=\"ms-2 mt-2\"><p class=\"mb-0\"><b>Kath</b></p><small class=\"text-muted\">Manager </small></div></div>", "active": "<div class=\"d-flex align-items-center justify-content-center\"><div> 10 </div></div>", "closed": "<div class=\"d-flex align-items-center justify-content-center\"><div> 3 </div></div>", "rate": "<div class=\"MidRate d-flex align-items-center justify-content-center\">52%</div>" }
+  ];
+  @Input() toDoListTableData: any = [
+    { "issue": " Activate your account with others intil June 2023", "project": "<div class=\"d-flex align-items-center\"><div class=\"ms-2 mt-2\"><p class=\"mb-0\"><b>Volosoft</b></p><small class=\"text-muted\">Website </small></div></div>", "progress": "<div class=\"progress\"><div class=\"progress-bar w-25\" role=\"progressbar\"  aria-valuenow=\"50\" aria-valuemin=\"0\" aria-valuemax=\"100\"> </div></div><div class=\"text-muted\"><small> Due in two week</small></div>"}
+    , { "issue": "Your Order @22345678 has been confirmed", "project": "<div class=\"d-flex align-items-center\"><div class=\"ms-2 mt-2\"><p class=\"mb-0\"><b>ABP Framework</b></p><small class=\"text-muted\">Modules </small></div></div>", "progress": "<div class=\"progress\"><div class=\"progress-bar w-50 bg-danger\" role=\"progressbar\"  aria-valuenow=\"50\" aria-valuemin=\"0\" aria-valuemax=\"100\"> </div></div><div class=\"text-muted\"><small> Due in one week</small></div>"}
+    , { "issue": "Create a new page for CMS", "project": "<div class=\"d-flex align-items-center\"><div class=\"ms-2 mt-2\"><p class=\"mb-0\"><b>ASPNET Zero</b></p><small class=\"text-muted\">Payment Module </small></div></div>", "progress": "<div class=\"progress\"><div class=\"progress-bar w-75 bg-info\" role=\"progressbar\"  aria-valuenow=\"50\" aria-valuemin=\"0\" aria-valuemax=\"100\"> </div></div><div class=\"text-muted\"><small> Due in two days</small></div>"}
+    , { "issue": "Activate your account with others intil June 2024", "project": "<div class=\"d-flex align-items-center\"><div class=\"ms-2 mt-2\"><p class=\"mb-0\"><b>Volosoft</b></p><small class=\"text-muted\">ABP Framework</small></div></div>", "progress": "<div class=\"progress\"><div class=\"progress-bar w-25\" role=\"progressbar\"  aria-valuenow=\"50\" aria-valuemin=\"0\" aria-valuemax=\"100\"> </div></div><div class=\"text-muted\"><small> Due in two days</small></div>"}
+    , { "issue": "Your Order @22345789 has been confirmed", "project": "<div class=\"d-flex align-items-center\"><div class=\"ms-2 mt-2\"><p class=\"mb-0\"><b>ABP Framework</b></p><small class=\"text-muted\">Website </small></div></div>", "progress": "<div class=\"progress\"><div class=\"progress-bar w-25\" role=\"progressbar\"  aria-valuenow=\"50\" aria-valuemin=\"0\" aria-valuemax=\"100\"> </div></div><div class=\"text-muted\"><small> Due in two days</small></div>" }
   ]
 
 
@@ -468,6 +475,12 @@ export class RdsAdminDashboardComponent extends MfeBaseComponent implements OnIn
     { displayName: 'Closed', key: 'closed', dataType: 'html' },
     { displayName: 'Rate', key: 'rate', dataType: 'html' }
   ]
+  toDoListTableHeader: TableHeader[] = [
+    { displayName: 'Project', key: 'project', dataType: 'html' },
+    { displayName: 'Issue', key: 'issue', dataType: 'html' },
+    { displayName: 'Progress', key: 'progress', dataType: 'html' }
+
+  ]
   tableStyle: string = 'light';
 
   constructor(private injector: Injector, public translate: TranslateService, public alertService: AlertService) { super(injector); }
@@ -501,7 +514,9 @@ export class RdsAdminDashboardComponent extends MfeBaseComponent implements OnIn
   LoadMemberActivityTable() {
 
   }
+  LoadToDoListTable() {
 
+  }
   getMode(): string {
     const mode: string = localStorage.getItem('THEME');
     if (mode == null || mode == '' || !mode) {
