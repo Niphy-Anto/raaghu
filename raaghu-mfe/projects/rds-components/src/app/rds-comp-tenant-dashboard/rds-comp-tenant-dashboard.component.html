@@ -1,4 +1,3 @@
-<div class="dark">
   <div class="row">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xl-6 col-xxl-6">
       <rds-widget [isRefreshRequired]="true" [isBorder]="false" [headerTitle]="translate.instant('Monthly Summary')"
@@ -127,4 +126,13 @@
       </rds-widget>
     </div>
   </div>
-</div>
+  <div class="row">
+    <rds-widget [isRefreshRequired]="true" [isBorder]="false" cardheight='card-stretch'
+                [headerTitle]="translate.instant('To Do List')" (onRefresh)="LoadToDoListTable()">
+      <!-- <mfe-loader [config]="rdsMemberActivityTableMfeConfig"></mfe-loader> -->
+      <rds-comp-data-table [tableHeaders]="toDoListTableHeader" [tableStyle]="tableStyle" [width]="100"
+                           [tableData]="toDoListTableData" [pagination]="false" [recordsPerPage]="10"
+                           [noDataTitle]="'Currently you do not have to do list'"></rds-comp-data-table>
+
+    </rds-widget>
+  </div>

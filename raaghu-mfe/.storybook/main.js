@@ -14,7 +14,7 @@ module.exports = {
   "framework": "@storybook/angular",
   "staticDirs": [{"from": './assets', "to": '/assets'}],
   "core": {
-    "builder": "webpack5"
+    "builder": "@storybook/builder-webpack5"
   },
   "features": {
     "storyStoreV7": false,
