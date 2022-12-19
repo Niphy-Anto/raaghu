@@ -30,7 +30,7 @@ export class RdsDropdownlistComponent implements OnInit, OnChanges, AfterViewIni
   @Input() icon: string = '';
   @Input() placeholder = "Filter by user"
   @Input() show: boolean = false;
-  @Input() borderDropdown: boolean = false;
+  @Input() borderDropdown: boolean = true;
   @Input() dropdownHeight!: string; 
 
   @Input() xOffset: string = '';
