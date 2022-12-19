@@ -6,7 +6,7 @@ import { Store } from '@ngrx/store';
 import { TranslateService } from '@ngx-translate/core';
 import { ArrayToTreeConverterService } from 'projects/libs/shared/src/lib/array-to-tree-converter.service';
 
-import { deleteRole, getAllClaimTypes, getClaimTypes, getPermission, getRolByEdit, getRoles, saveClaims, saveRole, updateRole } from 'projects/libs/state-management/src/lib/state/role/role.actions';
+import { deleteRole, getAllClaimTypes, getClaimTypes, getPermission, getRolByEdit, getRoles, saveClaims, savePermissions, saveRole, updateRole } from 'projects/libs/state-management/src/lib/state/role/role.actions';
 import { selectAllClaimsTypesRoles, selectAllPermissions, selectAllRoles, selectClaimsTypeByRole, selectRoleForEdit } from 'projects/libs/state-management/src/lib/state/role/role.selector';
 import {
   transition,
@@ -119,6 +119,7 @@ export class AppComponent implements OnInit {
   selectedNodeInfo: any;
   RdsCompNewRoleConfig: ComponentLoaderOptions;
   rdsClaimTypeRoleMfeConfig: ComponentLoaderOptions;
+  rdsPermissionRoleMfeConfig: ComponentLoaderOptions;
   selectedPermissionList: any = [];
   actionId: 'edit' | 'new' | 'delete' = 'new';
   isReset: boolean = false;
@@ -132,6 +133,8 @@ export class AppComponent implements OnInit {
   emitClaimData = { claimData: [], id: undefined };
   saveNextBtn = 'Next';
   getOriginalData: any;
+  permissionTreeData: any = [];
+  emitPermissionsData = { name: undefined, permissions: { permissions: [] } };
 
   constructor(
     private store: Store,
@@ -163,12 +166,28 @@ export class AppComponent implements OnInit {
           this.updateOrganizationTree();
         },
         getSelectedParent: (parent: any) => {
+          this.emitRoleData = {};
+          this.emitPermissionsData = { name: undefined, permissions: { permissions: [] } };
+          this.emitClaimData = { claimData: [], id: undefined };
+          this.store.dispatch(getPermission('admin'));
           this.canvasTitle = 'New Role';
           this.viewCreateOrganisationCanvas = true;
           this.actionId = 'new';
           setTimeout(() => {
             this.openCanvas();
           }, 100);
+
+          // Permissions
+          this.store.select(selectAllPermissions).subscribe((res: any) => {
+            if (res && res.groups) {
+              this.permissionTreeData = res.groups;
+              const mfeConfig = this.rdsPermissionRoleMfeConfig
+              mfeConfig.input.treeData = [... this.permissionTreeData];
+              mfeConfig.input.roleName = res.entityDisplayName;
+              mfeConfig.input.isEdit = false;
+              this.rdsPermissionRoleMfeConfig = { ...mfeConfig };
+            }
+          });
 
           // Claim Types
           this.store.dispatch(getAllClaimTypes());
@@ -185,16 +204,20 @@ export class AppComponent implements OnInit {
             }
           });
         },
+
+        // Edit Actio click
         onNodeEdit: (node: any) => {
           this.actionId = 'edit';
           this.viewCreateOrganisationCanvas = true;
           this.canvasTitle = 'Edit Role';
           this.emitRoleData = {};
+          this.emitPermissionsData = { name: undefined, permissions: { permissions: [] } };
           this.emitClaimData = { claimData: [], id: undefined };
           this.claimDisplayArray = [];
           this.claimValueData = [];
           this.selectedNodeInfo = node;
           this.node = node.data.displayName;
+          this.emitPermissionsData.name = node.data.displayName;
           let openCanvasPromise = new Promise<void>((resolve, reject) => {
             setTimeout(() => {
               this.openCanvas();
@@ -204,6 +227,7 @@ export class AppComponent implements OnInit {
           });
           openCanvasPromise.then(() => {
             this.store.dispatch(getRolByEdit(this.emitClaimData.id));
+            this.store.dispatch(getPermission(this.emitPermissionsData.name));
             this.store.dispatch(getAllClaimTypes());
             this.store.dispatch(getClaimTypes(this.emitClaimData.id));
           });
@@ -228,6 +252,18 @@ export class AppComponent implements OnInit {
               mfeConfig.input.EditShimmer = false;
               this.RdsCompNewRoleConfig = { ...mfeConfig };
             };
+          });
+
+          // Bind Edit Permissions
+          this.store.select(selectAllPermissions).subscribe(res => {
+            if (res && res.groups) {
+              this.permissionTreeData = res.groups;
+              const mfeConfig = this.rdsPermissionRoleMfeConfig
+              mfeConfig.input.treeData = [... this.permissionTreeData];
+              mfeConfig.input.roleName = res.entityDisplayName;
+              mfeConfig.input.isEdit = true;
+              this.rdsPermissionRoleMfeConfig = { ...mfeConfig };
+            }
           });
 
           // Bind Edit Claim Types
@@ -283,6 +319,22 @@ export class AppComponent implements OnInit {
       }
     };
 
+    // Permission
+    this.rdsPermissionRoleMfeConfig = {
+      name: 'RdsCompPermissionTree',
+      input: {
+        treeData: this.permissionTreeData,
+        roleName: undefined,
+        isEdit: false
+      },
+      output: {
+        getAllselectedPermissions: (event: any) => {
+          this.emitPermissionsData.permissions.permissions = [];
+          this.emitPermissionsData.permissions.permissions = event;
+        }
+      }
+    }
+
     // Claim Type
     this.rdsClaimTypeRoleMfeConfig = {
       name: 'RdsCompClaimTypeRole',
@@ -331,6 +383,7 @@ export class AppComponent implements OnInit {
                     }
                     resArrayId.push(item);
                   });
+                  this.emitPermissionsData.name = this.emitRoleData.name;
                   const getId = resArrayId.filter(x => x.displayName == this.emitRoleData.name).map(m => m.id).toString();
                   this.emitClaimData.id = getId;
                   this.emitClaimData.claimData = this.claimDisplayArray;
@@ -351,7 +404,10 @@ export class AppComponent implements OnInit {
               this.store.dispatch(updateRole(roleData));
               this.store.dispatch(getRoles());
               this.store.select(selectAllRoles).subscribe(res => {
-                if (res) resolve();
+                if (res) {
+                  this.emitPermissionsData.name = this.emitRoleData.name
+                  resolve();
+                }
               })
             }
           });
@@ -359,8 +415,12 @@ export class AppComponent implements OnInit {
             setTimeout(() => {
               if (this.claimDisplayArray.length > 0) this.store.dispatch(saveClaims(this.emitClaimData));
             }, 1000);
-            this.close();
-          })
+          }).then(() => {
+            setTimeout(() => {
+              if (this.emitPermissionsData.permissions.permissions.length > 0) this.store.dispatch(savePermissions(this.emitPermissionsData));
+              this.close();
+            }, 2000);
+          });
         },
         onCancel: () => {
           this.close();
@@ -374,20 +434,13 @@ export class AppComponent implements OnInit {
     this.activePage = event;
   }
 
-  onCloseCanvas(event: any) {
-
-  }
-
   close(): void {
     this.viewCanvas = false;
+    this.activePage = 0;
     this.Roledetails = undefined;
     this.treeData = [];
     this.selectedPermissions = [];
     this.EditShimmer = false;
-  }
-
-  save(eventdata?: any): void {
-    this.activePage = 2;
   }
 
   updateOrganizationTree() {
@@ -460,6 +513,8 @@ export class AppComponent implements OnInit {
 
   onCancelOrganisation(): void {
     this.viewCreateOrganisationCanvas = false;
+    this.rdsPermissionRoleMfeConfig.input.treeData = [];
+    this.activePage = 0;
   }
 
   openCanvas(): void {

@@ -165,6 +165,8 @@ import { RdsCompSettingsNewComponent } from './rds-comp-settings-new/rds-comp-se
 import { RdsCompLanguageNewComponent } from './rds-comp-language-new/rds-comp-language-new.component';
 import { RdsCompLanguageTextListComponent } from './rds-comp-language-text-list/rds-comp-language-text-list.component';
 import { RdsCompClaimTypeRoleComponent } from './rds-comp-claim-type-role/rds-comp-claim-type-role.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RdsCompClientAdvancedComponent } from './rds-comp-client-advanced/rds-comp-client-advanced.component';
 
 @NgModule({
   declarations: [	
@@ -322,7 +324,8 @@ import { RdsCompClaimTypeRoleComponent } from './rds-comp-claim-type-role/rds-co
     RdsCompAccountNewComponent,
     RdsCompSettingsNewComponent,
     RdsCompLanguageNewComponent,
-    RdsCompClaimTypeRoleComponent  
+    RdsCompClaimTypeRoleComponent,
+    RdsCompClientAdvancedComponent  
   ],
   imports: [
     StoreModule,
@@ -417,6 +420,7 @@ import { RdsCompClaimTypeRoleComponent } from './rds-comp-claim-type-role/rds-co
     RdsTeamMemberModule,
     RdsWebsiteMetricModule,
     RdsTestimonialModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

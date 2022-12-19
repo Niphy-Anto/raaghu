@@ -75,8 +75,8 @@
         aria-labelledby="nav-home-tab">
         <div class="tab-content">
           <!-- Add Origination Unit  -->
-          <app-rds-comp-permission-tree [treeData]="OrganizationUnit" [selectedItems]="selectedOrganizations"
-            (getAllSelectedNodes)="getSelectedorganizationunits($event)"></app-rds-comp-permission-tree>
+          <!-- <app-rds-comp-permission-tree [treeData]="OrganizationUnit" [selectedItems]="selectedOrganizations"
+            (getAllSelectedNodes)="getSelectedorganizationunits($event)"></app-rds-comp-permission-tree> -->
         </div>
         <div class="footer-buttons my-2">
 
@@ -94,9 +94,9 @@
         *ngIf="selectedId" aria-labelledby="nav-home-tab">
         <div class="tab-content">
 
-          <app-rds-comp-permission-tree [treeData]="permissionsList" [selectedItems]="selectedPermissions"
+          <!-- <app-rds-comp-permission-tree [treeData]="permissionsList" [selectedItems]="selectedPermissions"
             (getAllSelectedNodes)="getSelectedPermissionsList($event)" [selectAllLabel]="'Select All Permissions'">
-          </app-rds-comp-permission-tree>
+          </app-rds-comp-permission-tree> -->
         </div>
         <div class="footer-buttons my-2">
 
@@ -115,9 +115,9 @@
 </rds-offcanvas>
 <rds-offcanvas [canvasTitle]="translate.instant('FILTER BY PERMISSIONS')" [offId]="'canvasFilterPermission'"
   [placement]="'end'" [offcanvaswidth]="600">
-  <app-rds-comp-permission-tree [treeData]="FilterPermissionList"
+  <!-- <app-rds-comp-permission-tree [treeData]="FilterPermissionList"
     (getAllSelectedNodes)="getSelectedUserPermissionFilterList($event)" [selectAllLabel]="'Select All Permissions'">
-  </app-rds-comp-permission-tree>
+  </app-rds-comp-permission-tree> -->
   <div class="footer-buttons my-2">
     <rds-button [label]="translate.instant('Cancel')" [outlineButton]="true" (click)="close()" [colorVariant]="'primary'"
       [size]="'small'" data-bs-dismiss="offcanvas">
