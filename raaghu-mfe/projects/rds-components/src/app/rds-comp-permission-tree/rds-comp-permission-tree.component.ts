@@ -5,7 +5,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { Permission, PermissionNode, TreeType } from '../../models/pemission.model';
 
 @Component({
-  selector: 'app-rds-comp-permission-tree',
+  selector: 'rds-comp-permission-tree',
   templateUrl: './rds-comp-permission-tree.component.html',
   styleUrls: ['./rds-comp-permission-tree.component.scss']
 })

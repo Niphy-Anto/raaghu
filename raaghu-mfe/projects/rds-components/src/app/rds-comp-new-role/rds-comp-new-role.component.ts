@@ -1,5 +1,5 @@
 import { DatePipe } from '@angular/common';
-import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges, ViewChild } from '@angular/core';
+import { AfterViewChecked, AfterViewInit, Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, NgForm } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -11,7 +11,7 @@ export class Role {
   creationDate?: string;
 }
 @Component({
-  selector: 'app-rds-comp-new-role',
+  selector: 'rds-comp-new-role',
   templateUrl: './rds-comp-new-role.component.html',
   styleUrls: ['./rds-comp-new-role.component.scss'],
   providers: [
@@ -32,6 +32,7 @@ export class RdsCompNewRoleComponent implements OnInit {
   @Input() buttonSpinner: boolean = true;
   activePage: number = 0;
   treeData: [] = [];
+
   rolenameRequired: boolean = false;
 
 
@@ -57,6 +58,10 @@ export class RdsCompNewRoleComponent implements OnInit {
         });
       }
     }, 100);
+      this.roleData['displayName'] = '';
+      this.roleData['id'] = undefined;
+      this.roleData['isDefault'] = false;
+    }
   }
 
   ngOnChanges(changes: SimpleChanges): void {

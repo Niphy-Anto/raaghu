@@ -26,7 +26,7 @@ export class resorceArray {
 }
 
 @Component({
-  selector: 'app-rds-comp-client-resources',
+  selector: 'rds-comp-client-resources',
   templateUrl: './rds-comp-client-resources.component.html',
   styleUrls: ['./rds-comp-client-resources.component.scss']
 })
