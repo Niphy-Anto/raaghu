@@ -1,5 +1,6 @@
 import { Component, Inject, Injector, Input, SimpleChanges } from '@angular/core';
-import * as moment from 'moment';
+import * as moment_ from 'moment';
+const moment = moment_;
 import { DateTime } from 'luxon';
 import { NavigationEnd, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
@@ -849,7 +850,7 @@ export class SidenavComponent {
       localStorage.setItem('themeIndex', '12');
 
     }
-    this.alertService.setTheme(selectedTheme);
+    // this.alertService.setTheme(selectedTheme);
   }
 
   private filterNavItems(

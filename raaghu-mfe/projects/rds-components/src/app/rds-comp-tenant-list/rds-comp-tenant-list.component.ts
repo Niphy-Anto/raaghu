@@ -165,8 +165,8 @@ export class RdsCompTenantListComponent implements OnInit, DoCheck {
   }
 
   ngDoCheck(): void {
-    this.tableData = [...this.tenantList];
-    this.userTableData = [...this.userList];
+    // this.tableData = [...this.tenantList];
+    // this.userTableData = [...this.userList];
   }
   onAlertHide(event: any): void {
     this.currentAlerts = event;
@@ -335,8 +335,6 @@ export class RdsCompTenantListComponent implements OnInit, DoCheck {
       filter: '',
     };
     this.onSelectTenant.emit(data);
-    console.log(data);
-    // this.onTenantLogIn.emit(data);
     this.canvasTitle = 'Select a User';
     setTimeout(() => {
       var offcanvas = document.getElementById('loginAsTenantOffcanvas');

@@ -1,7 +1,8 @@
 <div [@fadeAnimation]="isAnimation ? 'fadeAnimation' : ''">
   <div class="row">
     <div class="col-md-8">
-      <mfe-loader [config]="rdsAlertMfeConfig"></mfe-loader>
+      <!-- <mfe-loader [config]="rdsAlertMfeConfig"></mfe-loader> -->
+      <rds-comp-alert [currentAlerts]="currentAlerts" (onAlertHide)="onAlertHide($event)"></rds-comp-alert>
     </div>
     <div class="col-md-4 text-end pb-3">
       <div class="d-flex justify-content-end" *ngIf="tabcash && cashedata && cashedata.length>0">

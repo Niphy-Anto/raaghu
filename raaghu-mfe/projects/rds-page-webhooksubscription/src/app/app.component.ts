@@ -208,6 +208,7 @@ export class AppComponent implements OnInit {
   }
   onCloseCanvas() {
     this.closeCanvas();
+    this.viewCanvas = true
   }
 
   onAlertHide(event: any) {

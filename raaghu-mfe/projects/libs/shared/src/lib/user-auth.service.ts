@@ -1,14 +1,12 @@
 import { Inject, Injectable, OnInit, Optional } from '@angular/core';
 import { mergeMap as _observableMergeMap, catchError as _observableCatch } from 'rxjs/operators';
 import { throwError as _observableThrow, of as _observableOf, Observable, Subject } from 'rxjs';
-import { SendPasswordResetCodeInput } from './service-proxies';
+import { API_BASE_URL, SendPasswordResetCodeInput } from './service-proxies';
 import { LocalStorageService } from './local-storage.service';
 import { Router } from '@angular/router';
 import { AppSessionService } from './app-session.service';
 import { Store } from '@ngrx/store';
 import { XmlHttpRequestHelper } from './XmlHttpRequestHelper';
-import { API_BASE_URL } from './service-proxies';
-
 
 @Injectable()
 export class UserAuthService implements OnInit {
@@ -101,9 +99,9 @@ export class UserAuthService implements OnInit {
     this.userAuthenticated = false;
     let customHeaders = this.requestHeaders();
     localStorage.removeItem('LoginCredential');
+    localStorage.removeItem('storedPermissions');
     localStorage.removeItem('tenantInfo');
     localStorage.removeItem('THEME');
-    this.sessionService.init();
 
     XmlHttpRequestHelper.ajax(
       'GET',
@@ -111,15 +109,19 @@ export class UserAuthService implements OnInit {
       customHeaders,
       null,
       () => {
-        // this.getUserConfiguration('logout'); 
+        this.getUserConfiguration('logout');
+        this.sessionService.init();
+        let url = window.location.href;
+        url = url.substring(0, url.indexOf("/pages"));
         if (reload) {
           if (returnUrl) {
             location.href = returnUrl;
           } else {
-            this.router.navigateByUrl('/login');
+            location.href = url + "/login";
           }
+        } else {
+          location.href = url + "/login";
         }
-
       }
     );
   }

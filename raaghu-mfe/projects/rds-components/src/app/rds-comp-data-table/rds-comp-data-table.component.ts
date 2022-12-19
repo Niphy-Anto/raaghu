@@ -87,6 +87,9 @@ export class RdsDataTableComponent implements OnInit, DoCheck, OnChanges {
     if (this.tableData) {
       this.tempData = this.tableData;
       this.totalRecords = this.tableData.length;
+      if (!this.pagination) {
+        this.dataSource = this.tableData;
+      }
     }
   }
 
@@ -95,6 +98,9 @@ export class RdsDataTableComponent implements OnInit, DoCheck, OnChanges {
       this.totalRecords = this.tableData.length;
       this.dataSource = this.tableData;
       this.tempData = this.tableData;
+      if (!this.pagination) {
+        this.dataSource = this.tableData;
+      }
     }
 
   }

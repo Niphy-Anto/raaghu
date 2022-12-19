@@ -5,7 +5,7 @@
       <a (click)="onClick($event,i,item)" *ngIf="!item.children" [ngClass]="{ 'active' : item.active }"
         class="d-inline-flex align-items-center text-decoration-none text-uppercase" role="button"
         aria-expanded="false">
-        <rds-icon [name]="item.icon" [fill]="item.iconFill" [stroke]="item.iconStroke" [height]="iconHeight"
+        <rds-icon [name]="item.icon+''" [fill]="item.iconFill" [stroke]="item.iconStroke" [height]="iconHeight"
           [width]="iconWidth" [class.pe-3]="!collapsed"></rds-icon>
         <span data-bs-toggle="tooltip" data-bs-placement="auto" [ngClass]="{ 'd-none' : collapsed }">
           {{item.label}}
@@ -50,7 +50,7 @@
         <a *ngIf="!child.children" [ngClass]="{ 'active' : child.active }"
           (click)="onClickSubMenu($event,index,j,child)" role="button"
           class="d-inline-flex align-items-center rounded text-decoration-none mb-2">
-          <span [ngClass]="{ 'd-none' : collapsed }"><small class="font-weight-bold">{{child.label}}</small></span>
+          <span [ngClass]="{ 'd-none' : collapsed }">{{child.label}}</span>
         </a>
         <ng-container *ngTemplateOutlet="childTemplate; context: { item: child,index:j }"></ng-container>
       </li>
@@ -63,7 +63,7 @@
         [height]="iconHeight" [width]="iconWidth" data-bs-toggle="tooltip" data-bs-placement="auto">
       </rds-icon>
     </a>
-    <ul class="dropdown-menu border-0 shadow-lg  p-3" [attr.aria-labelledby]="'side-dropdown'+index">
+    <ul class="dropdown-menu shadow p-3" [attr.aria-labelledby]="'side-dropdown'+index">
       <li *ngFor="let child of item.children; let i=index">
         <a [attr.id]="child.label" class="d-flex justify-content-between dropdown-item"
           (click)="expandMenu(child,'side-dropdown'+index)" [ngClass]="{ 'active' : child.active }" role="button">
