@@ -93,12 +93,12 @@ export class RdsAdminDashboardComponent extends MfeBaseComponent implements OnIn
     barHrChartOptions: []
   };
   @Input() borderRadious?: number = 8;
-  @Input() SalesPrice?: string = '3,32,230.00';
+  @Input() SalesPrice: number = 332230.00;
   @Input() SalesProfit?: string = '2203.00';
-  @Input() RevenuePrice?: string = '9,72,900.00';
+  @Input() RevenuePrice: number = 972900.00;
   @Input() RevenueProfit?: string = '1203.00';
-  @Input() ProfitSharePrice?: string = '39,330.00';
-  @Input() DailySalesGrowth?: string = '3,73,960.412';
+  @Input() ProfitSharePrice: number = 39330.00;
+  @Input() DailySalesGrowth: number = 373960.412;
   @Input() SalesGrowthLoss?: string = '5850.75';
   @Input() TotalClientCalls?: string = '75';
   @Input() TotalConnectedCalls?: string = '93';

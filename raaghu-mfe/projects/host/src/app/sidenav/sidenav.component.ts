@@ -228,6 +228,7 @@ export class SidenavComponent {
               icon: 'audit_logs',
               path: '/pages/audit-logs',
               descriptionTranslationKey: '',
+              parent: 53
             },
             {
               label: 'subscription',
