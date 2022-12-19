@@ -2,8 +2,8 @@
     <div class="row">
         <div class="col-md-6">
             <div class="form-group">
-                <rds-input [inputType]="'text'" [Title]="translate.instant('Client ID')" #client_id="ngModel"
-                    [TitleType]="'Top'" [isRequired]=true [(ngModel)]="clientBasics.clientId" name="clientId" required
+                <rds-input [inputType]="'text'" [label]="translate.instant('Client ID')" #client_id="ngModel"
+                    [labelPosition]="'top'" [isRequired]=true [(ngModel)]="clientBasics.clientId" name="clientId" required
                     [placeholder]="'Enter ID'">
                 </rds-input>
                 <div class="form-control-feedback" *ngIf="client_id.errors && (client_id.dirty || client_id.touched)">
@@ -15,8 +15,8 @@
         </div>
         <div class="col-md-6">
             <div class="form-group">
-                <rds-input [inputType]="'text'" [Title]="translate.instant('Client name')" #client_name="ngModel"
-                    [TitleType]="'Top'" [(ngModel)]="clientBasics.clientName" name="clientName" [isRequired]=true
+                <rds-input [inputType]="'text'" [label]="translate.instant('Client name')" #client_name="ngModel"
+                    [labelPosition]="'top'" [(ngModel)]="clientBasics.clientName" name="clientName" [isRequired]=true
                     required [placeholder]="'Enter Client Name'">
                 </rds-input>
                 <div class="form-control-feedback"
@@ -28,7 +28,7 @@
         <div class="col-md-12 mt-3">
             <div class="form-group">
                 <label class="mb-2">Description</label>
-                <rds-textarea #description="ngModel" title="Description" [placeholderText]="'Enter Description'"
+                <rds-textarea #description="ngModel" label="Description" [placeholderText]="'Enter Description'"
                     [value]="clientBasics.description" [(ngModel)]="clientBasics.description" name="desc">
                 </rds-textarea>
 
@@ -36,16 +36,16 @@
         </div>
         <div class="col-md-6 mt-3">
             <div class="form-group">
-                <rds-input [inputType]="'text'" [Title]="translate.instant('Client Uri')" #client_url="ngModel"
-                    [TitleType]="'Top'" [(ngModel)]="clientBasics.clientUri" name="clientUrl" [isRequired]=true
+                <rds-input [inputType]="'text'" [label]="translate.instant('Client Uri')" #client_url="ngModel"
+                    [labelPosition]="'top'" [(ngModel)]="clientBasics.clientUri" name="clientUrl" [isRequired]=true
                     [placeholder]="'Enter URL'">
                 </rds-input>
             </div>
         </div>
         <div class="col-md-6 mt-3">
             <div class="form-group">
-                <rds-input [inputType]="'text'" [Title]="translate.instant('CallBack URL')" #callback_url="ngModel"
-                    [TitleType]="'Top'" [(ngModel)]="clientBasics.callBackUrl" name="callBackUrl" required
+                <rds-input [inputType]="'text'" [label]="translate.instant('CallBack URL')" #callback_url="ngModel"
+                    [labelPosition]="'top'" [(ngModel)]="clientBasics.callBackUrl" name="callBackUrl" required
                     [placeholder]="'Enter URL'">
                 </rds-input>
 
@@ -53,8 +53,8 @@
         </div>
         <div class="col-md-6 mt-3">
             <div class="form-group">
-                <rds-input [inputType]="'text'" [Title]="translate.instant('Logo Uri')" #logo_url="ngModel"
-                    [TitleType]="'Top'" [(ngModel)]="clientBasics.logoUri" name="logoUrl" [placeholder]="'Enter URL'">
+                <rds-input [inputType]="'text'" [label]="translate.instant('Logo Uri')" #logo_url="ngModel"
+                    [labelPosition]="'top'" [(ngModel)]="clientBasics.logoUri" name="logoUrl" [placeholder]="'Enter URL'">
                 </rds-input>
 
             </div>
@@ -62,8 +62,8 @@
 
         <div class="col-md-6 mt-3">
             <div class="form-group">
-                <rds-input [inputType]="'text'" [Title]="translate.instant('Logout URL')" #logout_url="ngModel"
-                    [TitleType]="'Top'" [(ngModel)]="clientBasics.logoutUrl" name="logoUrl" [placeholder]="'Enter URL'">
+                <rds-input [inputType]="'text'" [label]="translate.instant('Logout URL')" #logout_url="ngModel"
+                    [labelPosition]="'top'" [(ngModel)]="clientBasics.logoutUrl" name="logoUrl" [placeholder]="'Enter URL'">
                 </rds-input>
 
             </div>
@@ -72,16 +72,16 @@
         <ng-container *ngIf="isEdit">
             <div class="col-md-6 mt-3">
                 <div class="form-group">
-                    <rds-input [inputType]="'text'" [Title]="translate.instant('Front Channel Logout URL')"
-                        #logout_url="ngModel" [TitleType]="'Top'" [(ngModel)]="clientBasics.frontChannelLogoutUri"
+                    <rds-input [inputType]="'text'" [label]="translate.instant('Front Channel Logout URL')"
+                        #logout_url="ngModel" [labelPosition]="'top'" [(ngModel)]="clientBasics.frontChannelLogoutUri"
                         name="frontChannelLogoutUri" [placeholder]="'Enter URL'">
                     </rds-input>
                 </div>
             </div>
             <div class="col-md-6 mt-3">
                 <div class="form-group">
-                    <rds-input [inputType]="'text'" [Title]="translate.instant('Back Channel Logout URL')"
-                        #logout_url="ngModel" [TitleType]="'Top'" [(ngModel)]="clientBasics.backChannelLogoutUri"
+                    <rds-input [inputType]="'text'" [label]="translate.instant('Back Channel Logout URL')"
+                        #logout_url="ngModel" [labelPosition]="'top'" [(ngModel)]="clientBasics.backChannelLogoutUri"
                         name="backChannelLogoutUri" [placeholder]="'Enter URL'">
                     </rds-input>
                 </div>
@@ -109,8 +109,8 @@
     
             <div class="col-md-6 mt-3">
                 <div class="form-group">
-                    <rds-input [inputType]="'text'" [Title]="translate.instant('Allowed identity token signing algorithms')"
-                        #logout_url="ngModel" [TitleType]="'Top'"
+                    <rds-input [inputType]="'text'" [label]="translate.instant('Allowed identity token signing algorithms')"
+                        #logout_url="ngModel" [labelPosition]="'top'"
                         [(ngModel)]="clientBasics.allowedIdentityTokenSigningAlgorithms"
                         name="allowedIdentityTokenSigningAlgorithms" [placeholder]="'Enter URL'">
                     </rds-input>
@@ -165,8 +165,8 @@
             <!-- Call Back url table -->
             <div class="col-md-12 mt-3">
                 <div class="form-group">
-                    <rds-input [inputType]="'text'" [Title]="translate.instant('Callback URL')" #logout_url="ngModel"
-                        [TitleType]="'Top'" [(ngModel)]="callBackUrl" name="callBackUrl" [placeholder]="'Enter URL'">
+                    <rds-input [inputType]="'text'" [label]="translate.instant('Callback URL')" #logout_url="ngModel"
+                        [labelPosition]="'top'" [(ngModel)]="callBackUrl" name="callBackUrl" [placeholder]="'Enter URL'">
                     </rds-input>
                 </div>
             </div>
@@ -180,7 +180,7 @@
             <!-- Signout Table -->
             <div class="col-md-12 mt-3">
                 <div class="form-group">
-                    <rds-input [inputType]="'text'" [Title]="translate.instant('Signout')" [TitleType]="'Top'"
+                    <rds-input [inputType]="'text'" [label]="translate.instant('Signout')" [labelPosition]="'top'"
                         [(ngModel)]="signoutUrl" name="signoutUrl" [placeholder]="'Enter URL'">
                     </rds-input>
                 </div>
@@ -195,7 +195,7 @@
             <!-- Allowed cors origin -->
             <div class="col-md-12 mt-3">
                 <div class="form-group">
-                    <rds-input [inputType]="'text'" [Title]="translate.instant('Allowed CORS Origin')" [TitleType]="'Top'"
+                    <rds-input [inputType]="'text'" [label]="translate.instant('Allowed CORS Origin')" [labelPosition]="'top'"
                         [(ngModel)]="corsOrigin" name="corsOrigin" [placeholder]="'Enter URL'">
                     </rds-input>
                 </div>

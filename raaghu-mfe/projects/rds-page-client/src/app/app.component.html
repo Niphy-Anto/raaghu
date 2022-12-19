@@ -13,7 +13,7 @@
 <ng-container *ngIf="viewCanvas">
   <rds-offcanvas [canvasTitle]="canvasTitle" [offcanvaswidth]="710" [offId]="offcanvasId" [placement]="'end'"
     (onClose)="close()">
-    <rds-nav-tab [navtabsItems]="getNavTabItems()" [activepage]="activePage" [horizontalAlignment]="'start'"
+    <rds-nav-tab [navtabsItems]="getNavTabItems()" [horizontalAlignment]="'start'"
       [verticalAlignment]="false" [pills]="false" [tabs]="true" [fill]="false" [justified]="false">
       <div naveContent class="row tab-content m-2" id="nav-tabContent">
         <div class="tab-pane fade" [ngClass]="{'show active': activePage === 0}" id="basics" role="tabpanel"
@@ -46,7 +46,7 @@
         </rds-button>
       </div>
       <div class="mx-2">
-        <rds-button [label]="getBtnName()" [colorVariant]="'primary'" [size]="'small'" [disabled]="false"
+        <rds-button [label]="getBtnName()" [colorVariant]="'primary'" [size]="'small'" [isDisabled]="false"
           (click)="save()">
         </rds-button>
       </div>

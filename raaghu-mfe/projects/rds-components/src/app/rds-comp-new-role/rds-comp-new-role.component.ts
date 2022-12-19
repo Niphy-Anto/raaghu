@@ -62,7 +62,7 @@ export class RdsCompNewRoleComponent implements OnInit {
       this.roleData['id'] = undefined;
       this.roleData['isDefault'] = false;
     }
-  }
+  
 
   ngOnChanges(changes: SimpleChanges): void {
     if (!this.roleData) {

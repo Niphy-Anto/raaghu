@@ -171,7 +171,6 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 @NgModule({
   declarations: [	
-
     AppComponent,
     RdsLoginComponent,
     RdsAddressInputComponent,
@@ -419,7 +418,7 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     RdsTeamMemberModule,
     RdsWebsiteMetricModule,
     RdsTestimonialModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
     RdsTestimonialModule,
     InfiniteScrollModule,
     RdsTeamMemberModule

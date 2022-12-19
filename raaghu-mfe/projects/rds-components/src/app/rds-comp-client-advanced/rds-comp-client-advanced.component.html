@@ -6,15 +6,15 @@
         </div>
         <div class="col-md-6 my-2">
             <div class="form-group">
-                <rds-input [inputType]="'number'" [Title]="translate.instant('Access Token Lifetime')"
-                    [TitleType]="'Top'" [(ngModel)]="clientAdvancedObj.accessTokenLifetime" name="accessTokenLifetime"
+                <rds-input [inputType]="'number'" [label]="translate.instant('Access Token Lifetime')"
+                    [labelPosition]="'top'" [(ngModel)]="clientAdvancedObj.accessTokenLifetime" name="accessTokenLifetime"
                     [placeholder]="'Enter Access Token Lifetime'">
                 </rds-input>
             </div>
         </div>
         <div class="col-md-6 my-2">
             <div class="form-group">
-                <rds-input [inputType]="'number'" [Title]="translate.instant('Access Token Type')" [TitleType]="'Top'"
+                <rds-input [inputType]="'number'" [label]="translate.instant('Access Token Type')" [labelPosition]="'top'"
                     [(ngModel)]="clientAdvancedObj.accessTokenType" name="accessTokenType"
                     [placeholder]="'Enter Access Token Type'">
                 </rds-input>
@@ -22,7 +22,7 @@
         </div>
         <div class="col-md-6 my-2">
             <div class="form-group">
-                <rds-input [inputType]="'number'" [Title]="translate.instant('Consent Lifetime')" [TitleType]="'Top'"
+                <rds-input [inputType]="'number'" [label]="translate.instant('Consent Lifetime')" [labelPosition]="'top'"
                     [(ngModel)]="clientAdvancedObj.consentLifetime" name="consentLifetime"
                     [placeholder]="'Enter Consent Lifetime'">
                 </rds-input>
@@ -30,15 +30,15 @@
         </div>
         <div class="col-md-6 my-2">
             <div class="form-group">
-                <rds-input [inputType]="'text'" [Title]="translate.instant('Pair wise Subject Salt')"
-                    [TitleType]="'Top'" [(ngModel)]="clientAdvancedObj.pairWiseSubjectSalt" name="pairWiseSubjectSalt"
+                <rds-input [inputType]="'text'" [label]="translate.instant('Pair wise Subject Salt')"
+                    [labelPosition]="'top'" [(ngModel)]="clientAdvancedObj.pairWiseSubjectSalt" name="pairWiseSubjectSalt"
                     [placeholder]="'Enter Subject Salt'">
                 </rds-input>
             </div>
         </div>
         <div class="col-md-6 my-2">
             <div class="form-group">
-                <rds-input [inputType]="'number'" [Title]="translate.instant('User SSO Lifetime')" [TitleType]="'Top'"
+                <rds-input [inputType]="'number'" [label]="translate.instant('User SSO Lifetime')" [labelPosition]="'top'"
                     [(ngModel)]="clientAdvancedObj.userSsoLifetime" name="userSsoLifetime"
                     [placeholder]="'Enter SSO Lifetime'">
                 </rds-input>
@@ -46,7 +46,7 @@
         </div>
         <div class="col-md-6 my-2">
             <div class="form-group">
-                <rds-input [inputType]="'number'" [Title]="translate.instant('User Code Type')" [TitleType]="'Top'"
+                <rds-input [inputType]="'number'" [label]="translate.instant('User Code Type')" [labelPosition]="'top'"
                     [(ngModel)]="clientAdvancedObj.userCodeType" name="userCodeType"
                     [placeholder]="'Enter User Code Type'">
                 </rds-input>
@@ -54,7 +54,7 @@
         </div>
         <div class="col-md-6 my-2">
             <div class="form-group">
-                <rds-input [inputType]="'number'" [Title]="translate.instant('Device Code Type')" [TitleType]="'Top'"
+                <rds-input [inputType]="'number'" [label]="translate.instant('Device Code Type')" [labelPosition]="'top'"
                     [(ngModel)]="clientAdvancedObj.deviceCodeLifetime" name="deviceCodeLifetime"
                     [placeholder]="'Enter Device Code Type'">
                 </rds-input>
@@ -96,14 +96,14 @@
         </div>
         <div class="col-md-6 my-2">
             <div class="form-group">
-                <rds-input [inputType]="'text'" [Title]="translate.instant('Type')" [TitleType]="'Top'"
+                <rds-input [inputType]="'text'" [label]="translate.instant('Type')" [labelPosition]="'top'"
                     [(ngModel)]="claimsDataObj.type" name="cliamsType" [placeholder]="'Enter Claim Type'">
                 </rds-input>
             </div>
         </div>
         <div class="col-md-6 my-2">
             <div class="form-group">
-                <rds-input [inputType]="'text'" [Title]="translate.instant('Value')" [TitleType]="'Top'"
+                <rds-input [inputType]="'text'" [label]="translate.instant('Value')" [labelPosition]="'top'"
                     [(ngModel)]="claimsDataObj.value" name="cliamsValue" [placeholder]="'Enter Claim Value'">
                 </rds-input>
             </div>
@@ -125,7 +125,7 @@
         <div class="col-md-6 my-2">
             <div class="form-group">
                 <rds-dropdownlist class="mt-2" [placeholder]="'Select Type'" [size]="'large'"
-                    [colorVariant]="'outline-dark'" [listItems]="grantTypeData" (onSelect)="selectedGrantType($event)">
+                     [listItems]="grantTypeData" (onSelect)="selectedGrantType($event)">
                 </rds-dropdownlist>
             </div>
         </div>
@@ -151,7 +151,7 @@
         </div>
         <div class="col-md-12 my-2">
             <div class="form-group">
-                <rds-input [inputType]="'text'" [Title]="translate.instant('Name')" [TitleType]="'Top'"
+                <rds-input [inputType]="'text'" [label]="translate.instant('Name')" [labelPosition]="'top'"
                     [(ngModel)]="restrictionsDataObj.name" name="restrictionsDataName"
                     [placeholder]="'Enter User Code Type'">
                 </rds-input>
@@ -172,14 +172,14 @@
         </div>
         <div class="col-md-6 my-2">
             <div class="form-group">
-                <rds-input [inputType]="'text'" [Title]="translate.instant('Key')" [TitleType]="'Top'"
+                <rds-input [inputType]="'text'" [label]="translate.instant('Key')" [labelPosition]="'top'"
                     [(ngModel)]="propertiesDataObj.key" name="propertiesKey" [placeholder]="'Enter Property Key'">
                 </rds-input>
             </div>
         </div>
         <div class="col-md-6 my-2">
             <div class="form-group">
-                <rds-input [inputType]="'text'" [Title]="translate.instant('Value')" [TitleType]="'Top'"
+                <rds-input [inputType]="'text'" [label]="translate.instant('Value')" [labelPosition]="'top'"
                     [(ngModel)]="propertiesDataObj.value" name="propertiesValue"
                     [placeholder]="'Enter Property Value'">
                 </rds-input>
