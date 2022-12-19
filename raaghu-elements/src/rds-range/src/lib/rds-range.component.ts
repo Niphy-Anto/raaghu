@@ -9,7 +9,7 @@ export class RdsRangeComponent implements AfterViewInit {
 @Input() value: number = 0;
 
   @Input() min = 0
-  @Input() role :'Range Type 2'| 'Default' | 'Range Type 1' ='Default';
+  @Input() role :'Range Below Scale'| 'Default' | 'Range On Scale' ='Default';
   @Input() max = 100
 
   @Output() rangeValueOne = new EventEmitter()
@@ -53,10 +53,10 @@ export class RdsRangeComponent implements AfterViewInit {
   if(this.role==="Default"){
     rangeClass.push('sliderTooltipRangeOne ')
   }
-  else if(this.role==="Range Type 2"){
+  else if(this.role==="Range Below Scale"){
     rangeClass.push('sliderTooltipRangeType2')
   }
-  else if(this.role=== "Range Type 1"){
+  else if(this.role=== "Range On Scale"){
     rangeClass.push(' slider_Type11 sliderTooltipRangeType1')
   }
   return rangeClass

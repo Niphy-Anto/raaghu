@@ -21,26 +21,26 @@ DoubleRange.args = {
   role: 'Default',
   val1: 0,
   val2: 100,
-  min: 0,
-  max: 100
+  /* min: 0,
+  max: 100 */
 }
 
-export const DoubleRangeType1 = Template.bind({})
-DoubleRangeType1.parameters = { controls: { include: ['role', 'val1', 'val2', 'min', 'max','rangeValueOne','rangeValueTwo'] } };
-DoubleRangeType1.args = {
-  role: 'Double Range Type 1',
+export const DoubleRangeOnScale = Template.bind({})
+DoubleRangeOnScale.parameters = { controls: { include: ['role', 'val1', 'val2', 'min', 'max','rangeValueOne','rangeValueTwo'] } };
+DoubleRangeOnScale.args = {
+  role: 'Double Range On Scale',
   val1: 0,
   val2: 100,
-  min: 0,
-  max: 100
+/*   min: 0,
+  max: 100 */
 }
 
-export const DoubleRangeType2 = Template.bind({})
-DoubleRangeType2.parameters = { controls: { include: ['role', 'val1', 'val2', 'min', 'max','rangeValueOne','rangeValueTwo'] } };
-DoubleRangeType2.args = {
-  role: 'Double Range Type 2',
+export const DoubleRangeBelowScale = Template.bind({})
+DoubleRangeBelowScale.parameters = { controls: { include: ['role', 'val1', 'val2', 'min', 'max','rangeValueOne','rangeValueTwo'] } };
+DoubleRangeBelowScale.args = {
+  role: 'Double Range Below Scale',
   val1: 0,
   val2: 100,
-  min: 0,
-  max: 100
+  /* min: 0,
+  max: 100 */
 }
