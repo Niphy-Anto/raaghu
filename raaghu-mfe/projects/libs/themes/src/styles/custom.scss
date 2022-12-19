@@ -1400,4 +1400,19 @@ rds-admin-dashboard {
 
 #RoleOffcanvas .offcanvas-body{
   height :calc(100vh - 150px);
+
+  .footer-buttons {
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+    width: 100%;
+    padding-top: 0.5%;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+    z-index: 1000;
+  }
+}
+
+.visualSettings-buttons{
+  padding-top: 100px;
 }

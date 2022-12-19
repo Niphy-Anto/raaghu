@@ -216,6 +216,7 @@ $nav-background-color: $accessible-500 !default;
   $trhoverbg-color: $accessible-600;
   $file-uploder-multiple-bg : $input-select-bg !default;
   $profile-upload-icon: $accessible-400 !default;
+  $datatable-bgColor : $accessible-700 !default;
 
 //$body-wrapper-bg:;
 html[theme=dark] {
@@ -264,6 +265,31 @@ html[theme=dark] {
     }
   }
 
+  @media screen and (min-width:1024px) and (max-width:1279px) {
+    #sortTable thead th:first-child,
+    #sortTable tbody td:first-child {
+      background-color: $datatable-bgColor;
+    }
+  }
+   
+  @media screen and (max-width:768px){
+    #sortTable thead th:first-child,
+    #sortTable tbody td:first-child{
+      background-color: $datatable-bgColor;
+    }
+  }
+  
+  @media screen and (min-width: 768px) and (max-width: 1023px){
+    #sortTable thead th:first-child, 
+    #sortTable tbody td:first-child {
+      position: sticky;
+      left: -1px;
+      background: $datatable-bgColor;
+      z-index: 1;
+      max-width: 190px;
+  }
+  }
+  
   @import './custom.scss';
   @import './node_modules/bootstrap/scss/bootstrap';
   @import './accordion.scss';

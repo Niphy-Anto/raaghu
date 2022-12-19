@@ -227,6 +227,16 @@
      background-color: $table-hover-bg
    }
  }
+ @media screen and (max-width:768px){
+  #sortTable thead th:first-child,
+  #sortTable tbody td:first-child{
+    background-color: $datatable-bgColor;
+  }
+  #sortTable thead tr:hover th:first-child,
+  #sortTable tbody tr:hover td:first-child{
+    background-color: $table-hover-bg
+  }
+}
  @media screen and (min-width: 768px) and (max-width: 1023px){
    #sortTable thead th:first-child, 
    #sortTable tbody td:first-child {
