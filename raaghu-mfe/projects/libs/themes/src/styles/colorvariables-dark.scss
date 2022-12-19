@@ -266,8 +266,21 @@ $profile-upload-icon: $dark-100 !default;
     background-color: $trhoverbg-color;
   }
 }
-@media screen and (min-width: 768px) and (max-width: 1023px) {
+
+
+@media screen and (max-width:768px){
   #sortTable thead th:first-child,
+  #sortTable tbody td:first-child{
+    background-color: $datatable-bgColor;
+  }
+  #sortTable thead tr:hover th:first-child,
+  #sortTable tbody tr:hover td:first-child{
+    background-color:  $trhoverbg-color
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px){
+  #sortTable thead th:first-child, 
   #sortTable tbody td:first-child {
     position: sticky;
     left: -1px;
@@ -621,12 +634,15 @@ svg {
     }
   }
 }
-// /*table color variables*/
+/*table color variables*/
+
 .table-hover {
   > tbody > tr > td {
-    color: $gray-500;
+    color: $table-hover-bg;
   }
 }
+
+
 
 .table {
   border-color: $table-border-color;
@@ -1286,7 +1302,7 @@ $form-feedback-color: $gray-200;
 .table-hover {
   > tbody > tr:hover > * {
     --bs-table-accent-bg: transparent;
-    background: $trhoverbg-color;
+    background-color: $trhoverbg-color;
   }
 }
 
