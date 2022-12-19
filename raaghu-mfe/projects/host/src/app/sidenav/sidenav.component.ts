@@ -66,7 +66,15 @@ export class SidenavComponent extends MfeBaseComponent implements OnInit {
       { displayName: 'Result', key: 'result', dataType: 'text', dataLength: 30, required: true }],
     LoginDatatable: []
   }
-  profileData: any;
+  profileData: any={
+    ProfileName: '',
+    emailAddress: '',
+    userName: '',
+    CurrentPassword: '',
+    NewPassword: '',
+    ConFNewPassword: '',
+    name: ''
+  };
   rdsDeligateTableData: any = [];
   usernameList: any = []
   sideMenuCollapsed: boolean = false;

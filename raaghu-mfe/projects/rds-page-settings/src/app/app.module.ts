@@ -13,10 +13,10 @@ import { settingReducer } from 'projects/libs/state-management/src/lib/state/set
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-export const featureReducersMap = {
-  settings: settingReducer,
-  // settingsComboboxItem: SettingsTenantPageboxReducer
-};
+// export const featureReducersMap = {
+//   settings: settingReducer,
+//   // settingsComboboxItem: SettingsTenantPageboxReducer
+// };
 
 @NgModule({
   declarations: [
@@ -32,11 +32,9 @@ export const featureReducersMap = {
     NgxShimmerLoadingModule,
     NgxTranslateModule.forRoot(),
     CommonModule,
-    StoreModule.forFeature('settings', featureReducersMap
-    ),
     //StoreModule.forFeature('settings', { settings: settingReducer }),
 
-    EffectsModule.forRoot([SettingEffects]),
+    // EffectsModule.forRoot([SettingEffects]),
 
   ],
   providers: [],

@@ -6,24 +6,33 @@ import { Component, EventEmitter, OnInit, Input, Output } from '@angular/core';
   styleUrls: ['./rds-comp-settings-new.component.scss']
 })
 export class RdsCompSettingsNewComponent implements OnInit {
-  activePage: number = 0;
+
   navtabsItems: any = [];
   public settingData: any = {
     emailSettingsData: undefined,
     identityData: undefined,
     themeData: undefined,
     accountData: undefined
-
   };
-  @Input() AuthentiactionList: any;
-  @Input() StyleList: any;
-  @Input() WebList: any;
-  @Input() StatusList: any;
-  @Input() MenuList: any;
-  @Input() VersionList: any;
+  @Input() accountData: any;
+  @Input() externalProviders: any = [];
+  @Input() emailSettingsData: any;
+  @Input() identiyData: any;
+  @Input() themeData: any;
+  @Input() AuthentiactionList: any = [];
+  @Input() StyleList: any = [];
+  @Input() WebList: any = [];
+  @Input() StatusList: any = [];
+  @Input() MenuList: any = [];
+  @Input() VersionList: any = [];
+  @Output() onDataSaveAccount = new EventEmitter<any>();
+  @Output() onDataSaveEmail = new EventEmitter<any>();
+  @Output() onDataSaveTheme = new EventEmitter<any>();
+  @Output() onDataSaveIdentity = new EventEmitter<any>();
 
-  @Output() onDataSave = new EventEmitter<any>();
+
   isReset: boolean = false;
+  activePage: number = 0;
   constructor() { }
 
 
@@ -52,7 +61,7 @@ export class RdsCompSettingsNewComponent implements OnInit {
     ];
 
   }
-  ngOnChange(): void{
+  ngOnChange(): void {
     this.navtabsItems = [
       {
         label: 'Email Settings',
@@ -115,16 +124,31 @@ export class RdsCompSettingsNewComponent implements OnInit {
   }
   getAccountData(event: any): void {
     this.settingData.accountData = event
-    console.log( event);
-    
+    console.log(event);
+
   }
-  onSave(): void {
-    console.log(this.settingData);
-    this.onDataSave.emit(this.settingData)
+
+  onSaveAccount(): void {
+    this.onDataSaveAccount.emit(this.settingData.accountData)
     this.isReset = true;
     this.activePage = 0;
-
   }
 
+  onSaveEmail(): void {
+    this.onDataSaveEmail.emit(this.settingData.emailSettingsData)
+    this.isReset = true;
+    this.activePage = 0;
+  }
+  onSaveIdentity(): void {
+    console.log(this.settingData.identityData)
+    this.onDataSaveIdentity.emit(this.settingData.identityData)
+    this.isReset = true;
+    this.activePage = 0;
+  }
+  onSaveTheme(): void {
+    this.onDataSaveTheme.emit(this.settingData.themeData)
+    this.isReset = true;
+    this.activePage = 0;
+  }
 
 }

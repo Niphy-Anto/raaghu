@@ -21,21 +21,14 @@ export class RdsCompIdentityManagementNewComponent implements OnInit {
   // @Input() identityData:any= {
   //   requiredPassword: '', defaultAddress:'', nonAlpha:false,uppercaserequired:false, numbers:false, lowercaserequired:false,
   //  lockoutDuration: '', MaxAttmpts:'', uppercase:false, lowercase:false,newusers:'' };
-  @Input() identityData : any;
+  @Input() identityData : any ;
   @ViewChild('identityDataForm')identityForm: NgForm;
   @Output() identityInfo = new EventEmitter<any>();
 
   constructor() { }
   ngAfterViewInit(): void {
-    if (this.identityData && this.identityForm) {
-      this.identityForm.statusChanges.subscribe(res => {
-        if (res === 'VALID') {
-          this.identityInfo.emit(this.identityData);
-        } else {
-          this.identityInfo.emit(undefined);
-        }
-      });
-    }  }
+
+  }
  
    
   ngOnInit(): void {
@@ -43,15 +36,14 @@ export class RdsCompIdentityManagementNewComponent implements OnInit {
 
       this.identityData={};
       this.identityData['requiredlength'] = '';
-      this.identityData['defaultAddress'] = '';
+      this.identityData['splChar'] = '';
       this.identityData['nonAlpha'] = false;
       this.identityData['uppercaserequired'] = false;
       this.identityData['lowercaserequired'] = false;
       this.identityData['numbers'] = false;
       this.identityData['lockoutDuration'] = '';
       this.identityData['MaxAttmpts'] = '';
-      this.identityData['uppercase'] = false;
-      this.identityData['lowercase'] = false;
+      this.identityData['newusers']=false;
       this.identityData['confirmEmail'] = false;
       this.identityData['phoneNumber'] = false;
       this.identityData['confirmPhoneNumber'] = false;
@@ -65,6 +57,14 @@ debugger
     this.identityData.emit(this.identityData);
     
    }
- 
+   onSaveIdentity(){
+//     const data :any = {
+// password : this.identityData.password,
+// lockout : this.identityData,
+// signIn : this.identityData.signIn,
+// user : this.identityData.user
+//     }
+    this.identityInfo.emit(this.identityData)
+   }
   
 }

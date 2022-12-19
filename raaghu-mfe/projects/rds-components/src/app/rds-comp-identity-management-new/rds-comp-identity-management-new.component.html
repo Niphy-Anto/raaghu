@@ -17,8 +17,8 @@
             <div class="form-group mb-4">
                 <rds-input size="medium" [label]="'Required Special Characters (Min)'" [labelPosition]="'top'"
                     inputType="text" name="defaultAddress" [isRequired]=true required [disabled]="false"
-                    [readonly]="false" [placeholder]="'Enter Number'" [(ngModel)]="identityData.defaultAddress"
-                    #defaultAddress="ngModel" ngDefaultControl>
+                    [readonly]="false" [placeholder]="'Enter Number'" [(ngModel)]="identityData.splChar"
+                    #splChar="ngModel" ngDefaultControl>
                 </rds-input>
             </div>
         </div>
@@ -33,14 +33,14 @@
     <div class="row">
         <div class="col-md-12 mt-3">
             <rds-checkbox [disabled]="false" [label]="'Required Upper Case'" name="uppercaserequired" [withLabel]="true"
-                [switch]="false" [inline]="false" [(ngModel)]="identityData.uppercase"
+                [switch]="false" [inline]="false" [(ngModel)]="identityData.uppercaserequired"
                 #uppercaserequired="ngModel" [id]="'uppercase'"></rds-checkbox>
         </div>
     </div>
     <div class="row">
         <div class="col-md-12 mt-3">
             <rds-checkbox [disabled]="false" [label]="'Required Lower Case'" name="lowercaserequired" [withLabel]="true"
-                [switch]="false" [inline]="false" [(ngModel)]="identityData.lowercase"
+                [switch]="false" [inline]="false" [(ngModel)]="identityData.lowercaserequired"
                 #lowercaserequired="ngModel" [id]="'ssl'"></rds-checkbox>
         </div>
     </div>
@@ -125,5 +125,10 @@
                     #changeUserName="ngModel" [id]="'username'"></rds-checkbox>
             </div>
         </div> 
-
+        <div class="footer-buttons my-2 justify-content-end d-flex bottom-0 ">
+            <rds-button [label]="'Cancel'" [colorVariant]="'primary'" [size]="'small'" [isOutline]="true">
+            </rds-button>
+            <rds-button [label]="'Save'" (click)="onSaveIdentity()" [size]="'small'" class="ms-2" [colorVariant]="'primary'">
+            </rds-button>
+        </div>
 </form>
