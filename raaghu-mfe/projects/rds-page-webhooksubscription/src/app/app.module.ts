@@ -10,7 +10,7 @@ import { NgxShimmerLoadingModule } from 'ngx-shimmer-loading';
 import { CommonModule } from '@angular/common';
 import { RdsCompWebhookSubscriptionModule } from 'projects/rds-components/src/app/rds-comp-webhook-subscription/rds-comp-webhook-subscription.module';
 import { RdsCompDataTableModule } from 'projects/rds-components/src/app/rds-comp-data-table/rds-comp-data-table.module';
-import { RdsCompAlertPopupModule } from 'projects/rds-components/src/app/rds-comp-alert-popup/rds-comp-alert-popup.module';
+import { RdsCompAlertModule } from 'projects/rds-components/src/app/rds-comp-alert/rds-comp-alert.module';
 
 
 @NgModule({
@@ -25,9 +25,7 @@ import { RdsCompAlertPopupModule } from 'projects/rds-components/src/app/rds-com
     FormsModule,
     ReactiveFormsModule,
     RdsButtonModule,
-    RdsInputModule,
     RdsFabMenuModule,
-    RdsTextareaModule,
     RdsOffcanvasModule,
     RdsIconModule,
     SharedModule,
@@ -36,7 +34,7 @@ import { RdsCompAlertPopupModule } from 'projects/rds-components/src/app/rds-com
     NgxTranslateModule.forRoot(),
     RdsCompWebhookSubscriptionModule,
     RdsCompDataTableModule,
-    RdsCompAlertPopupModule
+    RdsCompAlertModule
     
   ],
   providers: [],

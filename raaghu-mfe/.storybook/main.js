@@ -17,7 +17,8 @@ module.exports = {
     "builder": "@storybook/builder-webpack5"
   },
   "features": {
-    "storyStoreV7": false,
+    "babelModeV7": true,
+    "storyStoreV7": true,
     "previewMdx2": true
   }
 }

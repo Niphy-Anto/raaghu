@@ -45,23 +45,11 @@ export class AppComponent implements OnInit {
   public viewCanvas: boolean = false;
   currentAlerts: any = [];
   isShimmer: boolean = false;
-  public rdswebhookSubscriptionMfeConfig: ComponentLoaderOptions;
   webhooksEvent: any;
   @Input() listItems = [
     { value: 'New Webhook Subscription', some: 'value', key: 'newwebhook', icon: 'plus', iconWidth: '20px', iconHeight: '20px' },
   ];
-  public rdsAlertMfeConfig: ComponentLoaderOptions = {
-    name: 'RdsCompAlert',
-    input: {
-      // currentAlerts: this.currentAlerts
-    },
-    output: {
-      // onAlertHide: (event: any) => {
-      //   this.currentAlerts = event;
-      // }
-    }
-  }
-  rdswebhookTableMfeConfig: ComponentLoaderOptions;
+
   constructor(private store: Store, private alertService: AlertService, public translate: TranslateService) { }
   webhookTableHeader: TableHeader[] = [
     { displayName: 'Webhook Endpoint', key: 'WebhookEndpoint', dataType: 'text', dataLength: 30, sortable: true, required: true, filterable: true },
@@ -78,42 +66,6 @@ export class AppComponent implements OnInit {
       }
     })
     this.subscribeToAlerts();
-    this.rdswebhookSubscriptionMfeConfig = {
-      name: 'RdsCompWebhookSubscription',
-      input:{
-
-      },
-      output: {
-        // onSubcriptionSave: (webhookSubscriptionData) => {
-        //   if (webhookSubscriptionData) {
-        //     const body: any = { webhookUri: webhookSubscriptionData.subscriptionData.WebhookEndpoint, webhooks: [], headers: {} };
-        //     webhookSubscriptionData.additionalHeaders.forEach((item: any) => {
-        //       body.headers[item.additionalheaderKey] = item.additionalheadervalue;
-        //     })
-        //     body.webhooks.push(webhookSubscriptionData.subscriptionData.WebhookEvents);
-        //     this.store.dispatch(saveWebhookSubscription(body));
-
-        //   }
-        // },
-        // onCloseCanvas: () => {
-        //   this.closeCanvas();
-        // }
-      }
-    };
-    this.rdswebhookTableMfeConfig = {
-      name: 'RdsDataTable',
-      input: {
-        // tableHeaders: this.webhookTableHeader,
-        // tableStyle: 'light',
-        // width: '100%',
-        // tableData: this.webhookTableData,
-        // recordsPerPage: 10,
-        // pagination: true,
-        // noDataTitle: 'Currently you do not have webhook subscription',
-        // isShimmer: true
-      },
-
-    };
     this.store.dispatch(getWebhookSubscription());
     this.store.select(selectAll).subscribe((res: any) => {
       this.webhookTableData = [];
@@ -180,10 +132,7 @@ export class AppComponent implements OnInit {
         sticky: false,
       };
       this.currentAlerts.push(currentAlert);
-      this.showLoadingSpinner = false;
-      const rdsAlertMfeConfig = this.rdsAlertMfeConfig;
-      rdsAlertMfeConfig.input.currentAlerts = [...this.currentAlerts];
-      this.rdsAlertMfeConfig = rdsAlertMfeConfig;
+      this.showLoadingSpinner = false;;
     });
 
   }
@@ -195,7 +144,7 @@ export class AppComponent implements OnInit {
     }
   }
 
-  onSubcriptionSave(webhookSubscriptionData){
+  onSubcriptionSave(webhookSubscriptionData) {
     if (webhookSubscriptionData) {
       const body: any = { webhookUri: webhookSubscriptionData.subscriptionData.WebhookEndpoint, webhooks: [], headers: {} };
       webhookSubscriptionData.additionalHeaders.forEach((item: any) => {
