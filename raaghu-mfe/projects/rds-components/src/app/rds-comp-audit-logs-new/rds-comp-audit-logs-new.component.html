@@ -64,7 +64,8 @@
         </div>
     </div>
     <div class="row">
-        <rds-comp-data-table [tableData]="operationLogs" (deleteEvent)="delete($event)" [pagination]="true"
+        <rds-comp-data-table [tableData]="operationLogs" (deleteEvent)="delete($event)"
+            [pagination]="operationLogs.length>5?true:false"
             [noDataTitle]="translate.instant('Currently you do not have operation log')" [recordsPerPage]="10"
             (onActionSelection)="onActionSelect($event)" [showNodataSubtitle]="false" [actions]="actions"
             [refresh]="true" [tableHeaders]="operationLogsHeaders" [isShimmer]="isShimmer"></rds-comp-data-table>
