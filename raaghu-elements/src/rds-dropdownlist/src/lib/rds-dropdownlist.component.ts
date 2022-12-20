@@ -7,7 +7,7 @@ import { Dropdown } from 'bootstrap'
   templateUrl: './rds-dropdownlist.component.html',
   styleUrls: ['./rds-dropdownlist.component.scss']
 })
-export class RdsDropdownlistComponent implements OnInit, OnChanges, AfterViewInit {
+export class RdsDropdownlistComponent implements OnInit, OnChanges {
 
   title = 'rds-dropdownlist';
 
@@ -61,9 +61,10 @@ export class RdsDropdownlistComponent implements OnInit, OnChanges, AfterViewIni
       myDropdown.addEventListener('hide.bs.dropdown', event => {
         this.show = false;
       })
-     
+      myDropdown.addEventListener('show.bs.dropdown', event => {
+        this.show = true;
+      })
     }
-
   }
 
 
@@ -189,5 +190,7 @@ export class RdsDropdownlistComponent implements OnInit, OnChanges, AfterViewIni
       dropdown.hide();
     }
   }
+
+
 
 }
