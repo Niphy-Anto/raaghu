@@ -629,11 +629,8 @@ export class AppComponent {
     if (eventData.id) {
       this.isEdit = true;
     } else {
-
-      this.editShimmer = false;
       this.userinfo = undefined;
       this.userinfo = { ...this.userinfo };
-
       // const mfeConfigedit = this.rdsUserMfeConfig;
       // mfeConfigedit.input.editShimmer = false;
       // this.userinfo = undefined;
@@ -641,9 +638,11 @@ export class AppComponent {
       // this.rdsUserMfeConfig = { ...mfeConfigedit };
 
     }
+    this.editShimmer = false;
     this.store.dispatch(getUserForEdit(eventData.id));
     this.store.select(selectUserForEdit).subscribe((res: any) => {
       if (res && res.roles) {
+        this.editShimmer = false;
         this.roles = [];
         res.roles.forEach((element: any) => {
           const item: any = {
@@ -742,6 +741,7 @@ export class AppComponent {
         .subscribe((result: any) => {
           if (
             result && result.permissions) {
+            this.editShimmer = false;
             this.Permission = [];
             this.selectedPermissions = [];
             this.Permission = this.ConvertArraytoTreedata(
