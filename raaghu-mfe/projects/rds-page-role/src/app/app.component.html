@@ -26,7 +26,7 @@
     <div class="col-md-8">
       <ng-container *ngIf="currentAlerts&&currentAlerts.length>0">
         <!-- <mfe-loader [config]="rdsAlertMfeConfig"></mfe-loader> -->
-        <rds-comp-alert [currentAlerts]="currentAlerts" (onAlertHide)="onAlertHide($event)" (subscribeToAlerts)="subscribeToAlerts()"></rds-comp-alert>
+        <rds-comp-alert [currentAlerts]="currentAlerts" (onAlertHide)="onAlertHide($event)"></rds-comp-alert>
       </ng-container>
   </div>
   <div class="col-md-4 text-end pb-3 desktop-btn">
