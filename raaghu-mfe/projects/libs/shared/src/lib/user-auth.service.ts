@@ -2,7 +2,6 @@ import { Inject, Injectable, OnInit, Optional } from '@angular/core';
 import { mergeMap as _observableMergeMap, catchError as _observableCatch } from 'rxjs/operators';
 import { throwError as _observableThrow, of as _observableOf, Observable, Subject } from 'rxjs';
 import { API_BASE_URL, SendPasswordResetCodeInput } from './service-proxies';
-import { LocalStorageService } from './local-storage.service';
 import { Router } from '@angular/router';
 import { AppSessionService } from './app-session.service';
 import { Store } from '@ngrx/store';
@@ -20,7 +19,6 @@ export class UserAuthService implements OnInit {
   sources: Observable<any>;
   index$ = new Subject();
   constructor(
-    private localStorage: LocalStorageService,
     private router: Router,
     private sessionService: AppSessionService,
     private store: Store,
