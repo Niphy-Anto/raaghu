@@ -4,10 +4,7 @@
     "strict": false,
     "noImplicitReturns": false,
     "allowJs": true,
-    "target": "es6",
-    "types": [
-      "node"
-    ],
+    "target": "ES2022",
     "allowSyntheticDefaultImports": true,
     "emitDecoratorMetadata": true
   },

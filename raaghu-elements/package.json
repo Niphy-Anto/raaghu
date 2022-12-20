@@ -73,7 +73,6 @@
     "typescript": "4.8.2"
   },
   "browserslist": [
-    "and_chr 108",
     "and_ff 107",
     "and_qq 13.1",
     "and_uc 13.4",

@@ -1,5 +1,13 @@
-
-$theme-colors: ("primary": $primary, "secondary": $secondary, "success": $success, "info": $info, "warning": $warning, "danger": $danger, "light": $light, "dark": $dark ) !default;
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "light": $light,
+  "dark": $dark,
+) !default;
 $min-contrast-ratio: 4.5 !default;
 
 $input-focus-border-color: tint-color($primary, 50%) !default;
@@ -10,56 +18,56 @@ $btn-close-width: 1em !default;
 $btn-close-color: $gray-300 !default;
 $btn-close-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#fff'><path d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/></svg>") !default;
 
-/*accordion color variables*/
+// /*accordion color variables*/
 $accordion-bg: $primary;
 $accordion-button-bg: $input-bg;
 
-/*badge mixins color variables*/
+// /*badge mixins color variables*/
 $badge-bg-scale: -80%;
 $badge-border-scale: -70%;
 $badge-color-scale: -80%;
 
-/*counter mixins color variables*/
+// /*counter mixins color variables*/
 $counter-bg-scale: -20%;
 $counter-border-scale: -70%;
 $counter-color-scale: -80%;
 
-/*alert mixins color variables*/
+// /*alert mixins color variables*/
 $alert-color-scale: 40% !default;
 $alert-bg-scale: -80% !default;
 $alert-border-scale: -70% !default;
 
-/*border color*/
+// /*border color*/
 $utilities-border-colors: $gray-800 !default;
 
-/*icon mixins color variable*/
+// /*icon mixins color variable*/
 $icon-color-scale: 40% !default;
 
-/*tag mixins color variables*/
+// /*tag mixins color variables*/
 
 $tag-bg-scale: -80%;
 $tag-border-scale: -70%;
 $tag-color-scale: -80%;
 
-/*avatar mixins color variables*/
+// /*avatar mixins color variables*/
 $avatar-bg-scale: -0%;
 $avatar-border-scale: -70%;
 $avatar-color-scale: -100%;
 
-/*Breadcrumb color variables*/
+// /*Breadcrumb color variables*/
 $breadcrumb-active-color: $gray-500;
 $breadcrumb-divider-color: $primary;
 
-/*carousal color variables*/
+// /*carousal color variables*/
 $carousel-caption-color: $light !default;
 
-/*table color variables*/
+// /*table color variables*/
 $table-border-color: $gray-800;
 $table-bg-scale: 80% !default;
 $table-header-bg: $primary !default;
 $table-header-color: $light !default;
 
-/*tabs color variables*/
+// /*tabs color variables*/
 $nav-tabs-border-color: $primary !default;
 $link-color: $primary !default;
 $nav-link-color: $link-color !default;
@@ -67,16 +75,17 @@ $nav-tabs-link-active-color: $black !default;
 $nav-pills-link-active-color: $white !default;
 $nav-tabs-thick-border-color: $primary !default;
 
-/*list-group variables*/
+// /*list-group variables*/
 $list-group-active-color: $primary;
 $progress-bg: #33383e;
-/*tree variable*/
+
+// /*tree variable*/
 $verticle-border-color: $gray-500;
 $horizontal-border-color: $gray-500;
 $check-verticle-border-color: $primary;
 $check-horizontal-border-color: $primary;
 
-/*Tenant Variables*/
+// /*Tenant Variables*/
 $edition-background-color: $gray-800 !default;
 $standard-background-color: $primary !default;
 $professional-background-color: $warning !default;
@@ -85,12 +94,12 @@ $basic-background-color: $success !default;
 $status-background-color: $gray-200 !default;
 $status-active-background-color: $gray-100 !default;
 
-/*Member-activity Variables*/
+// /*Member-activity Variables*/
 $high-rate-color: $success;
 $mid-rate-color: $danger;
 $low-rate-color: $warning;
 
-/*Pagination Variables*/
+// /*Pagination Variables*/
 $pagination-border-color: $gray-500;
 $pagination-item-color: $gray-600;
 $pagination-item-bg: transparent;
@@ -98,11 +107,10 @@ $pagination-item-last-bg: transparent;
 $page-link-color: $white;
 $pagination-bg-color: $light;
 $page-link-bg-hover: $gray-100;
-$pagination-bg-hover-color: #323E66;
+$pagination-bg-hover-color: #323e66;
 $page-link-active-color: $white;
 
-
-/*dropdown Variales */
+// /*dropdown Variales */
 $dropdown-border-bottom: $gray-500 !default;
 $dropdown-bg-color: $dark-300 !default;
 $dropdown-border-bottom-hover: $gray-100 !default;
@@ -110,24 +118,24 @@ $dropdown-bghover-color: $dark-300 !default;
 $dropdown-link-active-bg: $dark-400 !default;
 $dropdown-hover-color: $light-100 !default;
 
-/*file uploader color variables*/
+// /*file uploader color variables*/
 $file-color: $primary;
 $file-background-color: $gray-100;
 $file-border-color: $primary;
 
-/*Search color variables*/
+// /*Search color variables*/
 $search-background-color: $gray-200;
 $search-color: $dark;
 $search-border-color: $primary;
 $search-control-feedback-color: $gray-500;
 
-/*carousel variables */
+// /*carousel variables */
 //$carousel-color: $body-bg-dark;
 // $nav-tabs-thick-border-color: $primary !default;
-/*top nav bar variables*/
+// /*top nav bar variables*/
 $nav-background-color: $dark-500 !default;
 
-/*input search properrties*/
+// /*input search properrties*/
 $input-bg: $dark-200;
 $input-border-color: $dark-100;
 
@@ -142,7 +150,7 @@ $input-group-addon-border-color: $input-bg;
 $notification-header-bg: $gray-900 !default;
 $notification-body-bg: $blue-100 !default;
 $notification-sub-text: $gray-500 !default;
-/*sidebar color styles*/
+// /*sidebar color styles*/
 $nav-ul-bg-color: $light;
 $nav-li-border: $white;
 $nav-a-color: $gray-400;
@@ -150,7 +158,7 @@ $nav-a-color-hover: $dark-900;
 $nav-active-color: $white;
 $sidbar-border-right-color: $dark-400 !default;
 
-/*edition Variables*/
+// /*edition Variables*/
 $edition-background-color: $gray-800 !default;
 $standard-background-color: $primary !default;
 $professional-background-color: $warning !default;
@@ -159,30 +167,31 @@ $basic-background-color: $success !default;
 $status-background-color: $gray-200 !default;
 $status-active-background-color: $gray-100 !default;
 
-/*Member-activity Variables*/
+// /*Member-activity Variables*/
 $high-rate-color: $success !default;
 $mid-rate-color: $danger !default;
 $low-rate-color: $warning !default;
 
-/*tree checkbox lines*/
+// /*tree checkbox lines*/
 $check-verticle-border-color: $primary !default;
 $check-horizotal-border-color: $primary !default;
 $horizontal-border-color: $gray-100 !default;
 $verticle-border-color: $gray-100 !default;
 
-/*modal variables*/
+// /*modal variables*/
 
 $modal-content-bg: $dark-400 !default;
 
-/* offcanvas variables */
+// /* offcanvas variables */
 $offcanvas-bg-color: $modal-content-bg !default;
 $offcanvas-bottom-border-color: $dark-300 !default;
 
 $nav-tabs-bottom-border-color: $dark-400 !default;
-/*toast*/
-$toast-text-color:$black;
-/*button transition values*/
-$btn-transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
+// /*toast*/
+$toast-text-color: $black;
+// /*button transition values*/
+$btn-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+  box-shadow 0.15s ease-in-out !default;
 
 $btn-hover-bg-shade-amount: 15% !default;
 $btn-hover-bg-tint-amount: 15% !default;
@@ -194,15 +203,15 @@ $btn-active-border-shade-amount: 25% !default;
 $btn-active-border-tint-amount: 10% !default;
 
 $enable-caret: true !default;
-/*modal*/
- $delete-modal-text:$gray-200;
+// /*modal*/
+$delete-modal-text: $gray-200;
 // scss-docs-end btn-variables
 //subscription-card
-$subcription-bg-blue: #005FA4;
+$subcription-bg-blue: #005fa4;
 $subcription-bg-purple: #660064;
-$subcription-bg-orangered: #F76161;
-$subcription-bg-orange: #F58220;
-$subcription-bg-green: #00A443;
+$subcription-bg-orangered: #f76161;
+$subcription-bg-orange: #f58220;
+$subcription-bg-green: #00a443;
 $body-wrapper-bg: $dark-900 !default;
 
 $topnav-link-color: $white;
@@ -211,7 +220,7 @@ $card-bg-color: $dark-500 !default;
 $card-darkborder-color: $gray-100 !default;
 
 $card-dashboard-bg-color: #161618 !default;
-$card-dashboard-border-color: #3C3E47;
+$card-dashboard-border-color: #3c3e47;
 
 $offcanvasbg: $dark-400 !default;
 
@@ -225,14 +234,14 @@ $nav-li-border: $white !default;
 $datepicker-bg: $gray-800 !default;
 $datepicker-head: $gray-800 !default;
 
-$form-select-bg: $dark-900  !default;
-$form-select-bgColor : $dark-500 !default;
-$form-select-border-color:  $form-select-bg !default;
+$form-select-bg: $dark-900 !default;
+$form-select-bgColor: $dark-500 !default;
+$form-select-border-color: $form-select-bg !default;
 $shimmerbg: $dark-200 !default;
 
-$file-uploder-multiple-bg : $input-bg !default;
+$file-uploder-multiple-bg: $input-bg !default;
 //rds-datatable-firstchild-color
-$datatable-bgColor : $dark-500!default;
+$datatable-bgColor: $dark-500 !default;
 
 $profile-upload-icon: $dark-100 !default;
 
@@ -242,11 +251,11 @@ $profile-upload-icon: $dark-100 !default;
 
 .ngx-shimmer {
   background-color: $dark-0;
-  background-image: linear-gradient(to right,$dark-100 0,$primary 20%,$dark-100 40%,$dark-100 100%);
+  background-image: linear-gradient(to right, $dark-100 0, $primary 20%, $dark-100 40%, $dark-100 100%);
   opacity: 0.1;
 }
 
-@media screen and (min-width:1024px) and (max-width:1279px) {
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
   #sortTable thead th:first-child,
   #sortTable tbody td:first-child {
     background-color: $datatable-bgColor;
@@ -254,9 +263,22 @@ $profile-upload-icon: $dark-100 !default;
 
   #sortTable thead tr:hover th:first-child,
   #sortTable tbody tr:hover td:first-child {
-    background-color: $trhoverbg-color
+    background-color: $trhoverbg-color;
   }
 }
+
+
+@media screen and (max-width:768px){
+  #sortTable thead th:first-child,
+  #sortTable tbody td:first-child{
+    background-color: $datatable-bgColor;
+  }
+  #sortTable thead tr:hover th:first-child,
+  #sortTable tbody tr:hover td:first-child{
+    background-color:  $trhoverbg-color
+  }
+}
+
 @media screen and (min-width: 768px) and (max-width: 1023px){
   #sortTable thead th:first-child, 
   #sortTable tbody td:first-child {
@@ -265,15 +287,14 @@ $profile-upload-icon: $dark-100 !default;
     background: $datatable-bgColor;
     z-index: 1;
     max-width: 190px;
-}
-#sortTable thead tr:hover th:first-child,
-#sortTable tbody tr:hover td:first-child{
-  background-color: $trhoverbg-color
+  }
+  #sortTable thead tr:hover th:first-child,
+  #sortTable tbody tr:hover td:first-child {
+    background-color: $trhoverbg-color;
+  }
 }
 
-}
-
-.file-uploader-multi{
+.file-uploader-multi {
   background-color: $file-uploder-multiple-bg;
 }
 
@@ -305,7 +326,7 @@ $profile-upload-icon: $dark-100 !default;
 }
 
 .bg-gradient-primary {
-  background: transparent linear-gradient(90deg, #56B2AA 0%, #0285C9 100%) 0% 0% no-repeat padding-box;
+  background: transparent linear-gradient(90deg, #56b2aa 0%, #0285c9 100%) 0% 0% no-repeat padding-box;
 }
 
 .card {
@@ -335,7 +356,7 @@ $profile-upload-icon: $dark-100 !default;
     }
 
     .notification-sub-text {
-      color: $notification-sub-text
+      color: $notification-sub-text;
     }
   }
 
@@ -343,9 +364,7 @@ $profile-upload-icon: $dark-100 !default;
     background-color: $notification-body-bg;
   }
 }
-//.card-body.notification-body.border-bottom{
-// border-color:$gray-800;
-//}
+
 .sidenav-footer {
   background-color: $body-wrapper-bg;
 }
@@ -355,9 +374,7 @@ $profile-upload-icon: $dark-100 !default;
 }
 
 .bs-datepicker-body {
-
   .days.weeks {
-
     span.in-range:not(.select-start):before {
       background: tint-color($primary, 20%);
     }
@@ -377,8 +394,8 @@ $profile-upload-icon: $dark-100 !default;
     border-color: $form-select-border-color;
     padding-right: 1.8rem;
     background-position: right 0.15rem center;
-    background-color: $form-select-bgColor;    
-     }
+    background-color: $form-select-bgColor;
+  }
 }
 
 .form-select[size]:not([size="1"]) {
@@ -395,7 +412,6 @@ $profile-upload-icon: $dark-100 !default;
 
 .dropdown-item.active {
   background-color: $dropdown-link-active-bg;
-
 
   span.hr-line {
     color: $primary;
@@ -422,18 +438,18 @@ $profile-upload-icon: $dark-100 !default;
 }
 
 .rds-fileuploader label.file-upload > div {
-  color: #9BACBC;
+  color: #9bacbc;
 }
 
 .rds-fileuploader label.file-upload:active,
 .rds-fileuploader label.file-upload:hover {
-  background: #D7DFE8;
+  background: #d7dfe8;
 }
 
 .rds-fileuploader label.file-upload {
-  border-color: #9BACBC;
+  border-color: #9bacbc;
   background: $input-bg;
-  color: #3D4D60;
+  color: #3d4d60;
 }
 
 .list-group-item {
@@ -445,8 +461,6 @@ $profile-upload-icon: $dark-100 !default;
   border: 0px;
 }
 
-//--bs-body-color: #dee2e6;
-
 html #sidebar ul li a.active small {
   color: $white;
 }
@@ -455,7 +469,7 @@ html #sidebar ul li a.active small {
   background-color: $dropdown-bg-color;
 
   .dropdown-item {
-    color: #C7C7C7;
+    color: #c7c7c7;
   }
 }
 
@@ -472,15 +486,15 @@ html #sidebar ul li a.active small {
 .btn {
   color: $white;
 }
- 
+
 a {
   text-decoration: none;
   color: $white;
 }
 
-.routerLinkActive-name{
+.routerLinkActive-name {
   text-decoration: none;
-  color:  $primary
+  color: $primary;
 }
 
 svg {
@@ -491,7 +505,6 @@ svg {
 .navbar-brand {
   color: $white;
 }
-
 
 .navbar {
   .nav-link {
@@ -505,7 +518,7 @@ svg {
 
 .btn-close {
   background: transparent escape-svg($btn-close-bg) center / $btn-close-width auto no-repeat; // include transparent for button elements
-  filter: invert(1)
+  filter: invert(1);
 }
 
 .wrapper {
@@ -523,17 +536,12 @@ svg {
 }
 
 .outline {
-
   .accordion-button {
     border-right-color: $primary;
-
-    &::after {
-    }
   }
 
   .accordion-header {
     background: $light;
-    //border-color:$primary;
   }
 }
 
@@ -541,11 +549,11 @@ svg {
   padding: $badge-padding-y $badge-padding-x;
   @include font-size($badge-font-size);
 }
-/*Notification*/
+// /*Notification*/
 .notification-header {
   background-color: $light-800;
 }
-/*avatar color variables*/
+// /*avatar color variables*/
 @mixin avatar-variant($background, $border, $color) {
   @include gradient-bg($background);
   border-color: $border;
@@ -564,7 +572,7 @@ svg {
     @include avatar-variant($avatar-background, $avatar-border, $avatar-color);
   }
 }
-/*badge color variables*/
+// /*badge color variables*/
 
 @mixin badge-variant($background, $border, $color) {
   @include gradient-bg($background);
@@ -585,8 +593,7 @@ svg {
     @include badge-variant($badge-background, $badge-border, $badge-color);
   }
 }
-/*counter color variables*/
-
+// /*counter color variables*/
 
 @mixin counter-variant($background, $border, $color) {
   @include gradient-bg($background);
@@ -607,7 +614,7 @@ svg {
     @include badge-variant($counter-background, $counter-border, $counter-color);
   }
 }
-/*breadcrumb color variables*/
+// /*breadcrumb color variables*/
 .withDivider {
   .breadcrumb-item {
     &::before {
@@ -620,21 +627,22 @@ svg {
   }
 }
 
-
 .breadcrumb-item {
   + .breadcrumb-item {
-
     &::before {
       color: $breadcrumb-divider-color;
     }
   }
 }
 /*table color variables*/
+
 .table-hover {
   > tbody > tr > td {
-    color: $gray-500;
+    color: $table-hover-bg;
   }
 }
+
+
 
 .table {
   border-color: $table-border-color;
@@ -644,16 +652,11 @@ svg {
       td {
         color: $gray-600;
       }
-
-      td:first-child {
-        // color: $white;
-      }
     }
   }
 
   > thead {
     background-color: $table-header-bg;
-
 
     tr {
       th {
@@ -675,20 +678,17 @@ svg {
 .table-bordered {
   > :not(caption) > * {
     border-width: $table-border-width 0;
-    // stylelint-disable-next-line selector-max-universal
     > * {
       border-width: 0 0;
     }
   }
 }
- /*toast*/
- .toast-text{
-  color:$toast-text-color;
+// /*toast*/
+.toast-text {
+  color: $toast-text-color;
 }
-// .toast-close{
-//   color:$toast-btn-close-color;
-// }
-/*edition color variables*/
+
+// /*edition color variables*/
 .edition-grid {
   .edition {
     background: $edition-background-color;
@@ -734,16 +734,7 @@ svg {
 }
 /* Pagination Styles */
 .pagination.rounded {
-
   .page-item {
-    // &:nth-child(-n + 1) .page-link {
-    //   background: $pagination-item-bg;
-    //   color: $pagination-item-color;
-    // }
-    // &:nth-last-child(-n + 2) .page-link {
-    //   background: $pagination-item-last-bg;
-    // }
-
     &:nth-child(-n + 1).active .page-link {
       background: $pagination-item-bg;
       color: $pagination-item-color;
@@ -767,23 +758,9 @@ svg {
 }
 
 .pagination {
-
   .page-item {
-    // border-color: $gray-500;
-    // &:nth-child(-n + 2) .page-link {
-    //   background: $pagination-item-bg;
-    //   color: $pagination-item-color;
-    //  &:hover{
-    //     background: $pagination-item-bg-hover;
-    //     color: $pagination-item-color;
-    //   }
-    // }
-    // &:nth-child(-n + 1).active .page-link {
-    //   background: $pagination-item-bg;
-    //   color: $pagination-item-color;
-    // }
     &:nth-child(-n + 1) .page-link {
-      border-color:$gray-500;
+      border-color: $gray-500;
     }
   }
 
@@ -812,7 +789,7 @@ svg {
   }
 
   &:active {
-    background-color: #1C1D20;
+    background-color: #1c1d20;
     border-bottom-color: #f8f9fa;
   }
 }
@@ -852,7 +829,7 @@ svg {
 .nav.nav-pill {
   .nav-link.active {
     border-top: $nav-tabs-border-color;
-     background-color: $primary;
+    background-color: $primary;
   }
 }
 
@@ -918,7 +895,6 @@ svg {
         }
       }
     }
-
 
     .nav-link.active {
       background-color: $nav-tab-bg-active;
@@ -997,8 +973,6 @@ svg {
 /*sidebar color styles*/
 #sidebar {
   ul {
-    //background: $nav-ul-bg-color;
-
     li {
       border-top-color: $nav-li-border;
 
@@ -1095,24 +1069,12 @@ svg {
       }
     }
 
-    ul {
-      li {
-        a {
-          :hover {
-            /*                color: $nav-a-color-hover !important;
-*/
-          }
-        }
-      }
-    }
-
     li.active {
       ul {
-
         li {
           a {
             color: #e6e6e6;
-            border-left-color: transparent
+            border-left-color: transparent;
           }
         }
 
@@ -1124,10 +1086,6 @@ svg {
           }
         }
       }
-      // a {
-      //   background: #1e1e1e;
-      //   border-left-color: #FC5404
-      // }
     }
   }
 }
@@ -1140,13 +1098,6 @@ svg {
 #sidebar {
   background-color: $body-wrapper-bg;
   border-right-color: $sidbar-border-right-color;
-
-  ul {
-
-    li.active {
-      //  background: #1e1e1e;
-    }
-  }
 }
 /*carousel style*/
 
@@ -1170,7 +1121,6 @@ $form-feedback-color: $gray-200;
 
 .form-group.has-search {
   .form-control {
-
     :focus {
       color: $form-group-color;
       background-color: $form-bg-focus;
@@ -1182,9 +1132,9 @@ $form-feedback-color: $gray-200;
     color: $form-feedback-color;
   }
 }
- /*modal*/
- .text-color{
-  color:$delete-modal-text;
+/*modal*/
+.text-color {
+  color: $delete-modal-text;
 }
 /*datatable color variables */
 @mixin table-variant($state, $background, $border, $color) {
@@ -1196,15 +1146,6 @@ $form-feedback-color: $gray-200;
     $table-header-bg: mix($color, $background);
   }
 }
-/*  @mixin alert-variant($background, $border, $color) {
-  color: $color;
-  @include gradient-bg($background);
-  border-color: $border;
-
-  .alert-link {
-    color: shade-color($color, 20%);
-  }
-}*/
 
 .table {
   > :not(caption) > * > * {
@@ -1262,7 +1203,6 @@ $form-feedback-color: $gray-200;
   color: $color;
 }
 
-
 @each $state, $value in $theme-colors {
   $tag-background: shift-color($value, $tag-bg-scale);
   $tag-border: shift-color($value, $tag-border-scale);
@@ -1317,49 +1257,66 @@ $form-feedback-color: $gray-200;
   background-color: $subcription-bg-orange;
 }
 
-
-@mixin button-variant($background, $border, $color: color-contrast($background), $hover-background: if($color ==$color-contrast-light, shade-color($background, $btn-hover-bg-shade-amount), tint-color($background, $btn-hover-bg-tint-amount)), $hover-border: if($color ==$color-contrast-light, shade-color($border, $btn-hover-border-shade-amount), tint-color($border, $btn-hover-border-tint-amount)), $hover-color: color-contrast($hover-background), $active-background: if($color ==$color-contrast-light, shade-color($background, $btn-active-bg-shade-amount), tint-color($background, $btn-active-bg-tint-amount)), $active-border: if($color ==$color-contrast-light, shade-color($border, $btn-active-border-shade-amount), tint-color($border, $btn-active-border-tint-amount)), $active-color: color-contrast($active-background), $disabled-background: $background, $disabled-border: $border, $disabled-color: color-contrast($disabled-background)) {
+@mixin button-variant(
+  $background,
+  $border,
+  $color: color-contrast($background),
+  $hover-background:
+    if(
+      $color ==$color-contrast-light,
+      shade-color($background, $btn-hover-bg-shade-amount),
+      tint-color($background, $btn-hover-bg-tint-amount)
+    ),
+  $hover-border:
+    if(
+      $color ==$color-contrast-light,
+      shade-color($border, $btn-hover-border-shade-amount),
+      tint-color($border, $btn-hover-border-tint-amount)
+    ),
+  $hover-color: color-contrast($hover-background),
+  $active-background:
+    if(
+      $color ==$color-contrast-light,
+      shade-color($background, $btn-active-bg-shade-amount),
+      tint-color($background, $btn-active-bg-tint-amount)
+    ),
+  $active-border:
+    if(
+      $color ==$color-contrast-light,
+      shade-color($border, $btn-active-border-shade-amount),
+      tint-color($border, $btn-active-border-tint-amount)
+    ),
+  $active-color: color-contrast($active-background),
+  $disabled-background: $background,
+  $disabled-border: $border,
+  $disabled-color: color-contrast($disabled-background)
+) {
 }
 
 @each $color, $value in $theme-colors {
   .btn-#{$color} {
     @include button-variant($value, $value);
-    /*      svg {
-      fill: none;
-      stroke: currentColor;
-
-      path.icon {
-        stroke: $color;
-      }
-
-      line.icon {
-        stroke: $color;
-      }
-
-      rect.icon {
-        stroke: $color;
-      }
-
-      circle.icon {
-        stroke: $color;
-      }
-    }*/
   }
 }
 
 .table-hover {
   > tbody > tr:hover > * {
     --bs-table-accent-bg: transparent;
-    background: $trhoverbg-color;
+    background-color: $trhoverbg-color;
   }
 }
 
-@mixin button-outline-variant($color, $color-hover: color-contrast($color), $active-background: $color, $active-border: $color, $active-color: color-contrast($active-background)) {
+@mixin button-outline-variant(
+  $color,
+  $color-hover: color-contrast($color),
+  $active-background: $color,
+  $active-border: $color,
+  $active-color: color-contrast($active-background)
+) {
   background-color: transparent;
   border-color: $gray-500;
   color: $gray-500;
 }
-
 
 @each $color, $value in $theme-colors {
   .btn-outline-#{$color} {
@@ -1452,48 +1409,14 @@ $form-feedback-color: $gray-200;
 @mixin icon-variant($color) {
   color: $color;
 }
-/*  @each $state, $value in $theme-colors {
-  $icon-color: shift-color($value, $icon-color-scale);
-
-  .icon {
-    svg {
-      width: 22px;
-      height: 22px;
-      fill: none;
-      stroke: currentColor;
-
-      path.icon {
-        stroke: $icon-color;
-      }
-
-      path.line.icon {
-        stroke: $icon-color;
-      }
-
-      path.rect.icon {
-        stroke: $icon-color;
-      }
-
-      path.circle.icon {
-        stroke: $icon-color;
-      }
-    }
-  }
-}*/
 
 .offcanvas {
   background-color: $offcanvasbg;
 }
 
-// .nav-link.active,
-// .nav-item.show .nav-link {
-//   background-color: transparent;
-// }
-
 .form-select {
   background-color: $form-select-bg;
   border-color: $form-select-bg;
-  // background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e")
 }
 
 .dropdownarrow.form-select[size]:not([size="1"])::before {
@@ -1513,7 +1436,7 @@ $form-feedback-color: $gray-200;
   border-color: $gray-500;
 }
 
-.form-check-input:checked[type=checkbox] {
+.form-check-input:checked[type="checkbox"] {
   background-color: $primary;
   border-color: $primary;
 }
@@ -1572,7 +1495,6 @@ $form-feedback-color: $gray-200;
   content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e ");
 }
 
-
 .bg-icon {
   background-color: $card-bg-color;
   cursor: pointer;
@@ -1591,7 +1513,6 @@ $form-feedback-color: $gray-200;
     polygon.icon {
       stroke: $white;
     }
-
 
     ellipse.icon {
       stroke: $white;
@@ -1622,306 +1543,8 @@ $form-feedback-color: $gray-200;
     height: 22px;
     fill: none;
     stroke: $primary;
-    -webkit-animation: ring 6s .7s ease-in-out infinite;
-    -webkit-transform-origin: 50% 4px;
-    -moz-animation: ring 6s .7s ease-in-out infinite;
-    -moz-transform-origin: 50% 4px;
-    animation: ring 6s .7s ease-in-out infinite;
-    transform-origin: 50% 4px;
-
-    @-webkit-keyframes ring {
-      0% {
-        -webkit-transform: rotateZ(0);
-      }
-
-      1% {
-        -webkit-transform: rotateZ(30deg);
-      }
-
-      3% {
-        -webkit-transform: rotateZ(-28deg);
-      }
-
-      5% {
-        -webkit-transform: rotateZ(34deg);
-      }
-
-      7% {
-        -webkit-transform: rotateZ(-32deg);
-      }
-
-      9% {
-        -webkit-transform: rotateZ(30deg);
-      }
-
-      11% {
-        -webkit-transform: rotateZ(-28deg);
-      }
-
-      13% {
-        -webkit-transform: rotateZ(26deg);
-      }
-
-      15% {
-        -webkit-transform: rotateZ(-24deg);
-      }
-
-      17% {
-        -webkit-transform: rotateZ(22deg);
-      }
-
-      19% {
-        -webkit-transform: rotateZ(-20deg);
-      }
-
-      21% {
-        -webkit-transform: rotateZ(18deg);
-      }
-
-      23% {
-        -webkit-transform: rotateZ(-16deg);
-      }
-
-      25% {
-        -webkit-transform: rotateZ(14deg);
-      }
-
-      27% {
-        -webkit-transform: rotateZ(-12deg);
-      }
-
-      29% {
-        -webkit-transform: rotateZ(10deg);
-      }
-
-      31% {
-        -webkit-transform: rotateZ(-8deg);
-      }
-
-      33% {
-        -webkit-transform: rotateZ(6deg);
-      }
-
-      35% {
-        -webkit-transform: rotateZ(-4deg);
-      }
-
-      37% {
-        -webkit-transform: rotateZ(2deg);
-      }
-
-      39% {
-        -webkit-transform: rotateZ(-1deg);
-      }
-
-      41% {
-        -webkit-transform: rotateZ(1deg);
-      }
-
-      43% {
-        -webkit-transform: rotateZ(0);
-      }
-
-      100% {
-        -webkit-transform: rotateZ(0);
-      }
-    }
-
-    @-moz-keyframes ring {
-      0% {
-        -moz-transform: rotate(0);
-      }
-
-      1% {
-        -moz-transform: rotate(30deg);
-      }
-
-      3% {
-        -moz-transform: rotate(-28deg);
-      }
-
-      5% {
-        -moz-transform: rotate(34deg);
-      }
-
-      7% {
-        -moz-transform: rotate(-32deg);
-      }
-
-      9% {
-        -moz-transform: rotate(30deg);
-      }
-
-      11% {
-        -moz-transform: rotate(-28deg);
-      }
-
-      13% {
-        -moz-transform: rotate(26deg);
-      }
-
-      15% {
-        -moz-transform: rotate(-24deg);
-      }
-
-      17% {
-        -moz-transform: rotate(22deg);
-      }
-
-      19% {
-        -moz-transform: rotate(-20deg);
-      }
-
-      21% {
-        -moz-transform: rotate(18deg);
-      }
-
-      23% {
-        -moz-transform: rotate(-16deg);
-      }
-
-      25% {
-        -moz-transform: rotate(14deg);
-      }
-
-      27% {
-        -moz-transform: rotate(-12deg);
-      }
-
-      29% {
-        -moz-transform: rotate(10deg);
-      }
-
-      31% {
-        -moz-transform: rotate(-8deg);
-      }
-
-      33% {
-        -moz-transform: rotate(6deg);
-      }
-
-      35% {
-        -moz-transform: rotate(-4deg);
-      }
-
-      37% {
-        -moz-transform: rotate(2deg);
-      }
-
-      39% {
-        -moz-transform: rotate(-1deg);
-      }
-
-      41% {
-        -moz-transform: rotate(1deg);
-      }
-
-      43% {
-        -moz-transform: rotate(0);
-      }
-
-      100% {
-        -moz-transform: rotate(0);
-      }
-    }
-
-    @keyframes ring {
-      0% {
-        transform: rotate(0);
-      }
-
-      1% {
-        transform: rotate(30deg);
-      }
-
-      3% {
-        transform: rotate(-28deg);
-      }
-
-      5% {
-        transform: rotate(34deg);
-      }
-
-      7% {
-        transform: rotate(-32deg);
-      }
-
-      9% {
-        transform: rotate(30deg);
-      }
-
-      11% {
-        transform: rotate(-28deg);
-      }
-
-      13% {
-        transform: rotate(26deg);
-      }
-
-      15% {
-        transform: rotate(-24deg);
-      }
-
-      17% {
-        transform: rotate(22deg);
-      }
-
-      19% {
-        transform: rotate(-20deg);
-      }
-
-      21% {
-        transform: rotate(18deg);
-      }
-
-      23% {
-        transform: rotate(-16deg);
-      }
-
-      25% {
-        transform: rotate(14deg);
-      }
-
-      27% {
-        transform: rotate(-12deg);
-      }
-
-      29% {
-        transform: rotate(10deg);
-      }
-
-      31% {
-        transform: rotate(-8deg);
-      }
-
-      33% {
-        transform: rotate(6deg);
-      }
-
-      35% {
-        transform: rotate(-4deg);
-      }
-
-      37% {
-        transform: rotate(2deg);
-      }
-
-      39% {
-        transform: rotate(-1deg);
-      }
-
-      41% {
-        transform: rotate(1deg);
-      }
-
-      43% {
-        transform: rotate(0);
-      }
-
-      100% {
-        transform: rotate(0);
-      }
-    }
+    transition: transform 0.99s ease-out;
+    transform: rotateZ(360deg);
 
     polyline.icon {
       stroke: $primary;
@@ -1930,7 +1553,6 @@ $form-feedback-color: $gray-200;
     polygon.icon {
       stroke: $primary;
     }
-
 
     ellipse.icon {
       stroke: $primary;
@@ -1955,22 +1577,21 @@ $form-feedback-color: $gray-200;
 }
 #sidebar.toggle-sidebar-menu {
   ul {
-
     ul.dropdown-menu {
         border:1px solid $gray-800;
       li {
-        a.dropdown-item:hover{
+        a.dropdown-item:hover {
           background-color: transparent;
         }
-        a.dropdown-item.active{
+        a.dropdown-item.active {
           background-color: transparent;
         }
-        ul{
-          li{
-            a.dropdown-item:hover{
+        ul {
+          li {
+            a.dropdown-item:hover {
               background-color: transparent;
             }
-            a.dropdown-item.active{
+            a.dropdown-item.active {
               background-color: transparent;
             }
           }
@@ -1979,10 +1600,10 @@ $form-feedback-color: $gray-200;
 
       ul {
         li {
-          a.dropdown-item:hover{
+          a.dropdown-item:hover {
             background-color: transparent;
           }
-          a.dropdown-item.active{
+          a.dropdown-item.active {
             background-color: transparent;
           }
         }
