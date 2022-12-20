@@ -1,9 +1,9 @@
 import { Component, DoCheck, EventEmitter, Inject, Injector, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
-import { Router } from '@angular/router';
 import { AlertService, ComponentLoaderOptions, MfeBaseComponent, SharedService, ThemeSettingsDto } from '@libs/shared';
 import { TranslateService } from '@ngx-translate/core';
 import { TableHeader } from '../../models/table-header.model';
 import { DOCUMENT } from '@angular/common';
+import { Router } from '@angular/router';
 let that: any;
 declare var bootstrap: any;
 @Component({
@@ -62,6 +62,7 @@ export class RdsTopNavigationComponent extends MfeBaseComponent implements OnIni
   @Output() onDownloadLink = new EventEmitter<any>();
   @Output() setNotificationAsRead = new EventEmitter<any>();
   @Output() onUpdateNotificationSettings = new EventEmitter<any>();
+  @Output() backToImpersonateAccount = new EventEmitter<any>();
   @Input() linkedAccountHeaders: any = [];
   @Input() linkedAccountData: any = [];
   @Input() FixedHeader: boolean = true
@@ -236,5 +237,9 @@ export class RdsTopNavigationComponent extends MfeBaseComponent implements OnIni
     }
 
 
+  }
+
+  onBackToAccount(event): void {
+    this.backToImpersonateAccount.emit(event)
   }
 }

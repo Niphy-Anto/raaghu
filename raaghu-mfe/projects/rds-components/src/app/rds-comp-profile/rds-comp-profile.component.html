@@ -85,6 +85,12 @@
               </div>
             </div>
 
+            <div class="justify-content-center align-items-center d-flex" *ngIf="sessionService.impersonatorUserId>0">
+              <rds-button [isOutline]="true" [label]="translate.instant('Back To Account')" type="button" [size]="'small'"
+              [colorVariant]="'primary'" (click)="backAccount()">
+              </rds-button>
+            </div>
+
             <rds-nav-tab [navtabsItems]="getMenuItems()" horizontalAlignment="start" [verticalAlignment]="true"
               [pills]="false" [tabs]="false" [fill]="false" [justified]="false" [activeTab]="activePage"
               (onClicktab)="onclickMenu($event)">
