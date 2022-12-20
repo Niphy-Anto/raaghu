@@ -109,8 +109,8 @@ export class RoleEffects {
       ofType(savePermissions),
       switchMap(({data}) =>
         this.roleService.permissionsPUT("R",data.name, data.permissions).pipe(map((res: any) => {
-          this.store.dispatch(getRoles());
-          this.alertService.showAlert('Success',  'Role added successfully', 'success')
+          // this.store.dispatch(getRoles());
+          // this.alertService.showAlert('Success',  'Role added successfully', 'success')
         }),
           catchError((error: any) => of(
           ))
