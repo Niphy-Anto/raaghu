@@ -16,11 +16,11 @@
   <div class="col-md-12">
     <div class="card p-2 h-100 border-0 rounded-0 card-full-stretch">
       <div [@fadeAnimation]="isAnimation ? 'fadeAnimation' : ''">
-        <!-- <mfe-loader [config]="rdsLanguageTableMfeConfig"></mfe-loader> -->
         <rds-comp-data-table [tableHeaders]="languageTableHeader" [tableStyle]="tableStyle"
-          [tableData]="languageTableData" [recordsPerPage]="recordsPerpage" [width]="100" [pagination]="true"
-          [inlineEdit]="false" noDataTitle='Currently you do not have language' [actions]="actions"
-          [isShimmer]="isShimmer" (onActionSelection)="onActionSelection($event)">
+          [tableData]="languageTableData" [recordsPerPage]="recordsPerpage" [width]="100"
+          [pagination]="languageTableData.length>5?true:false" [inlineEdit]="false"
+          noDataTitle='Currently you do not have language' [actions]="actions" [isShimmer]="isShimmer"
+          (onActionSelection)="onActionSelection($event)">
         </rds-comp-data-table>
       </div>
     </div>

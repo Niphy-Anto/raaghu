@@ -62,7 +62,7 @@ export class RdsCompNewLanguageComponent implements OnInit, OnChanges {
       (x: any) => x.some === this.selectedLanguage.icon
     );
     const language: any = this.languageNames.find(
-      (x: any) => x.some === this.selectedLanguage.languageName
+      (x: any) => x.value === this.selectedLanguage.countryCode
     );
     this.onLanguageSave.emit({
       icon: flag ? flag.value : '',
@@ -88,9 +88,11 @@ export class RdsCompNewLanguageComponent implements OnInit, OnChanges {
       });
       if (selectedLanguage) {
         this.selectedLanguage.languageName = selectedLanguage.some;
+        this.selectedLanguage.countryCode = selectedLanguage.value;
 
       } else {
         this.selectedLanguage.languageName = '';
+        this.selectedLanguage.countryCode = '';
       }
 
     }
@@ -99,6 +101,7 @@ export class RdsCompNewLanguageComponent implements OnInit, OnChanges {
   onLanguageSelect(selectedItem: any): void {
     if (selectedItem && selectedItem.item) {
       this.selectedLanguage.languageName = selectedItem.item.some;
+      this.selectedLanguage.countryCode = selectedItem.item.value;
       const _item = selectedItem.item.value.split('-');
       let selectedCode: string = _item[_item.length - 1];
       selectedCode = selectedCode.toLocaleLowerCase();
