@@ -19,8 +19,15 @@ $btn-close-color: $gray-300 !default;
 $btn-close-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#fff'><path d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/></svg>") !default;
 
 // /*accordion color variables*/
+$popover-header-bg:$primary-600 !default;
+/*accordion color variables*/
+$accordion-body-bg: $dark-100 !default;
+$accordion-body-text: $gray-400 !default;
 $accordion-bg: $primary;
 $accordion-button-bg: $input-bg;
+
+/* address details  color variables */
+$address-body-text: $light-800 !default;
 
 // /*badge mixins color variables*/
 $badge-bg-scale: -80%;
@@ -189,6 +196,7 @@ $offcanvas-bottom-border-color: $dark-300 !default;
 $nav-tabs-bottom-border-color: $dark-400 !default;
 // /*toast*/
 $toast-text-color: $black;
+$popover-header-bg-color:$primary !default;
 // /*button transition values*/
 $btn-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
   box-shadow 0.15s ease-in-out !default;
@@ -335,6 +343,10 @@ $profile-upload-icon: $dark-100 !default;
 
   .card-header {
     background-color: transparent;
+    color: $white;
+  }
+  .card-body{
+    color:$white;
   }
 
   .card-footer {
@@ -500,6 +512,7 @@ a {
 svg {
   fill: none;
   stroke: $white;
+  color: $white;
 }
 
 .navbar-brand {
@@ -534,6 +547,14 @@ svg {
   background: $accordion-bg;
   border-color: $primary;
 }
+.accordion-item{
+  background-color: $accordion-body-bg;
+  border-color:$gray-600;
+}
+.accordion-body{
+  //background-color: $accordion-body-bg;
+  color:$accordion-body-text;
+}
 
 .outline {
   .accordion-button {
@@ -541,13 +562,37 @@ svg {
   }
 
   .accordion-header {
-    background: $light;
+    //background: $light;
   }
+}
+.address-header{
+  color: $white;
+}
+.address-body{
+  color:$address-body-text;
+}
+ /* app-detail avatar */
+ .icon-bg{
+  background: $white;
+ }
+
+.benefit{
+  background: $dark;
+//color:white;
+}
+.card-details{
+  background-color: $dark-100;
+}
+.avatar-initials{
+  color:$white;
 }
 
 .badge {
   padding: $badge-padding-y $badge-padding-x;
   @include font-size($badge-font-size);
+}
+.feature_list{
+  color:light-600;
 }
 // /*Notification*/
 .notification-header {
@@ -687,6 +732,21 @@ svg {
 .toast-text {
   color: $toast-text-color;
 }
+.table-border > :not(caption) > * > * {
+  border-width: 0 1px;
+  border-bottom-width: 1px;
+ }
+ /*toast*/
+ .toast-text{
+  color:$toast-text-color;
+}
+// .toast-close{
+//   color:$toast-btn-close-color;
+// }
+/*edition color variables*/
+.popover-header {
+  background-color:$popover-header-bg-color;
+ }
 
 // /*edition color variables*/
 .edition-grid {
@@ -1110,6 +1170,35 @@ svg {
     border-color: #232933;
   }
 }
+
+.form-control, .form-control:focus{
+  background-color: $dark-0 ;
+  border: 1px solid $dark-100;
+  color:$light-200;
+}
+
+.input-group-text{
+  background-color: $dark-0 ;
+  border : $dark-100;
+}
+
+.scrollspy_body{
+  background-color: $black;
+}
+.scrollspy_item{
+  background-color: $dark-900;
+  color: $white;
+}
+.size-body{
+  background-color: $dark-200;
+}
+.size{
+  color:$white;
+}
+.description{
+  color:$white;
+}
+
 /*input search properrties*/
 
 $form-group-bg-color: $gray-200;
@@ -1148,9 +1237,9 @@ $form-feedback-color: $gray-200;
 }
 
 .table {
-  > :not(caption) > * > * {
+/*   > :not(caption) > * > * {
     background-color: inherit;
-  }
+  } */
 
   > thead {
     background-color: var(--bs-table-bg);
@@ -1610,4 +1699,9 @@ $form-feedback-color: $gray-200;
       }
     }
   }
+}
+//radio button
+.form-check-input:checked{
+  background-color: $primary-400;
+  border-color: $primary-400;
 }

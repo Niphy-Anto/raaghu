@@ -88,7 +88,7 @@ const Template: Story<ApiScope> = (args: ApiScope) => ({
 <div naveContent class="row tab-content m-2" id="nav-tabContent">
   <div class="tab-pane fade" [ngClass]="{'show active': activePage === 0}" id="basics" role="tabpanel"
                aria-labelledby="nav-home-tab">
-               <app-rds-comp-api-scope-basics></app-rds-comp-api-scope-basics>
+               <rdc-comp-api-scope-basics></rdc-comp-api-scope-basics>
           </div>
           <div class="tab-pane fade" [ngClass]="{'show active': activePage === 2}" id="resources" role="tabpanel"
                aria-labelledby="nav-home-tab">

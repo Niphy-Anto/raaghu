@@ -58,7 +58,7 @@ const barChartTemplate: Story<any> = (args: any) => ({
   props: args,
   template: `<rds-widget [isRefreshRequired]="isRefreshRequired"  [headerTitle]="headerTitle" [colorVariant]="colorVariant" >
   <div body>
-    <rds-big-number-widget [iconFill]="true" [iconStroke]="true" [bigNumber]="'$3,73,960.412'" [subText]="'-$5850.75'"
+    <rds-big-number-widget [iconFill]="true" [iconStroke]="true" [bigNumber]="'$3,73,960.412'" [subText]="'-$5850.75'"  [colorVariant]="colorVariant"
       [icon]="'triangle_down'"  [iconHeight]="'12px'" [iconWidth]="'12px'" [textAlign]="'text-start'" subTitleColorVariant="danger"></rds-big-number-widget>
     <rds-chart-bar-horizontal [chartLabels]="barHrChartLabels" [chartWidth]="barHrChartWidth" [chartHeight]="barHrchartHeight"
       [chartDataSets]="barHrChartDatasets" [chartOptions]="barHrChartOptions">

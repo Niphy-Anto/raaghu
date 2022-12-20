@@ -427,7 +427,7 @@ svg {
 }
 
 .accordion-button {
-  background: $accordion-button-bg;
+  //background: $accordion-button-bg;
 }
 
 .accordion-header {
@@ -441,7 +441,7 @@ svg {
   }
 
   .accordion-header {
-    background: $light;
+    background: $primary;
     //border-color:$primary;
   }
 }
