@@ -13,7 +13,7 @@ export class ClaimsComponent implements OnInit {
   public rdsClaimsMfeConfig: ComponentLoaderOptions;
   ngOnInit(): void {
     this.rdsClaimsMfeConfig = {
-      name: 'RdsCompClaims',
+      name: 'RdsCompClientResources',
       input: {
         ClaimData:this.ClaimData
       },
@@ -24,7 +24,7 @@ export class ClaimsComponent implements OnInit {
   }
   ngOnChanges(changes: SimpleChanges): void {
     this.rdsClaimsMfeConfig = {
-      name: 'RdsCompClaims',
+      name: 'RdsCompClientResources',
       input: {
         ClaimData:this.ClaimData
       },

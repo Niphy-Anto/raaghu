@@ -107,7 +107,7 @@ export class AppComponent {
       id: 6,
     },
   ]);
-  Properties: any = ([] = [{ key: 'ShairedSecrets', Value: '12345' }]);
+  //  Properties: any = [{ key: 'ShairedSecrets', Value: '12345' }] 
   claimData: Claims = {
     claim_ato_e: [
       { label: 'Availability', checked: false },
