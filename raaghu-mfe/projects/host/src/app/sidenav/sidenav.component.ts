@@ -2,7 +2,6 @@ import { Component, Inject, Injector, Input, SimpleChanges } from '@angular/core
 import * as moment_ from 'moment';
 const moment = moment_;
 import { DateTime } from 'luxon';
-import { NavigationEnd, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { ComponentLoaderOptions, SharedService, UserAuthService, } from '@libs/shared';
 import { Store } from '@ngrx/store';
@@ -11,6 +10,7 @@ import { selectDelegationsInfo, selectUserFilter, } from 'projects/libs/state-ma
 import { selectAllLoginAttempts } from 'projects/libs/state-management/src/lib/state/login-attempts/login-attempts.selector';
 import { getLoginAttempts } from 'projects/libs/state-management/src/lib/state/login-attempts/login-attempts.actions';
 import {
+  backToImpersonator,
   deleteAccount, getMLATenancyData, getNotificationSettings, getUserNotification, linkToUser, SetAllNotificationsAsRead,
   SetNotificationRead, updateNotificationSettings,
 } from 'projects/libs/state-management/src/lib/state/mla/mla.actions';
@@ -21,7 +21,6 @@ import { ThemesService } from 'projects/libs/themes/src/public-api';
 import { PrepareCollectedData } from 'projects/libs/state-management/src/lib/state/DownloadData/download-data.action';
 import { DOCUMENT } from '@angular/common';
 import { slideInAnimation } from '../animation';
-import { RouterOutlet } from '@angular/router';
 import { getProfilepic } from 'projects/libs/state-management/src/lib/state/profile-settings/profile-settings.actions';
 import { selectAllVisualsettings } from 'projects/libs/state-management/src/lib/state/Visual-settings/visual-settings.selector';
 import { getVisualsettings } from 'projects/libs/state-management/src/lib/state/Visual-settings/visual-settings.actions';
@@ -29,6 +28,7 @@ import { getLanguages, setDefaultLanguage, setDefaultLanguageForUI } from 'proje
 import { changePassword, getProfile } from 'projects/libs/state-management/src/lib/state/mysettings/mysettings.action';
 import { selectAllLanguages, selectDefaultLanguage } from 'projects/libs/state-management/src/lib/state/language/language.selector';
 import { selectProfileInfo } from 'projects/libs/state-management/src/lib/state/mysettings/mysettings.selector';
+import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 
 declare var bootstrap: any;
 @Component({
@@ -936,6 +936,10 @@ export class SidenavComponent {
     element.style.display =
       element.style.display === 'none' || element.style.display == '' || !element.style.display ? 'block' : 'none';
     this.collapseRequired = false;
+  }
+
+  backToImpersonateAccount():void{
+    this.store.dispatch(backToImpersonator());
   }
 
 }
