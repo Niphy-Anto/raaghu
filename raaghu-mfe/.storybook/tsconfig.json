@@ -1,12 +1,10 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
-    "strict": false,
-    "noImplicitReturns": false,
-    "allowJs": true,
-    "target": "ES2022",
-    "allowSyntheticDefaultImports": true,
-    "emitDecoratorMetadata": true
+    "types": [
+      "node"
+    ],
+    "allowSyntheticDefaultImports": true
   },
   "exclude": [
   	"../projects/test.ts",
@@ -21,4 +19,3 @@
     "./typings.d.ts"
   ]
 }
-

@@ -140,7 +140,7 @@ export class RdsCompPermissionTreeComponent implements OnInit {
     return this.nodeColors[(level - 1) % 4];
   }
   setStateBasedOnMutable(lastNode: boolean, node: PermissionNode) {
-    if (!this.mutable && lastNode && node.children.length === 0) {
+    if (!this.mutable && lastNode && node.children && node.children.length === 0) {
       return false;
     }
     return true;
@@ -257,9 +257,12 @@ export class RdsCompPermissionTreeComponent implements OnInit {
   }
   selectAllNode(node: PermissionNode, checked: boolean) {
     node.selected = checked;
-    for (const n of node.children) {
-      this.selectAllNode(n, checked);
+    if (node.children) {
+      for (const n of node.children) {
+        this.selectAllNode(n, checked);
+      }
     }
+
     const selectedNodes: PermissionNode[] = this.getSelectedNodes(this.treeData);
     this.getAllSelectedNodes.emit(selectedNodes);
   }

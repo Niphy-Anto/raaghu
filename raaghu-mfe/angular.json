@@ -17,8 +17,9 @@
       },
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@storybook/angular:start-storybook",
           "options": {
+            "browserTarget": "storybook:build:development",
             "tsConfig": "tsconfig.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -80,8 +81,9 @@
       },
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@storybook/angular:build-storybook",
           "options": {
+            "browserTarget": "build-storybook:build:production",
             "tsConfig": "tsconfig.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -5084,6 +5086,5 @@
         }
       }
     }
-  },
-  "defaultProject": "host"
+  }
 }

@@ -51,7 +51,7 @@
                     <div [@fadeAnimation]="isAnimation ? 'fadeAnimation' : ''"></div>
                     <div class="row">
                       <rds-comp-data-table [tableData]="tableDataForMember" [tableHeaders]="tableHeadersForMember"
-                        [recordsPerPage]="10" [pagination]="true" [actions]="actions"
+                        [recordsPerPage]="10" [pagination]="tableDataForMember.length>5?true:false" [actions]="actions"
                         [noDataTitle]="'Currently you do not have member'"
                         (onActionSelection)="onMemberActionSelection($event)">
                       </rds-comp-data-table>
@@ -60,7 +60,7 @@
                   <div class="tab-pane fade" id="Roles" role="tabpanel" aria-labelledby="nav-home-tab">
                     <div class="row">
                       <rds-comp-data-table [tableData]="tableDataForRoles" [tableHeaders]="tableHeadersForRoles"
-                        [recordsPerPage]="10" [pagination]="true" [actions]="actions"
+                        [recordsPerPage]="10" [pagination]="tableDataForRoles.length>5?true:false" [actions]="actions"
                         [noDataTitle]="'Currently you do not have role'"
                         (onActionSelection)="onRoleActionSelection($event)">
                       </rds-comp-data-table>
@@ -74,7 +74,7 @@
       </div>
     </div>
   </div>
- </div>
+</div>
 
 <rds-offcanvas [canvasTitle]="translate.instant(usercanvasTitle)" [offId]="'addUserModal'" [offcanvaswidth]="550"
   *ngIf="viewCanvas" [placement]="'end'" (onClose)="close()">
@@ -84,7 +84,8 @@
         <div class="form-group mb-3">
           <div class="col-md-12  mt-2">
             <rds-comp-data-table [tableData]="tableDataForUserAdd" [enableCheckboxSelection]="true"
-              [tableHeaders]="tableHeadersForUserAdd" [recordsPerPage]="10" [pagination]="true"
+              [tableHeaders]="tableHeadersForUserAdd" [recordsPerPage]="10"
+              [pagination]="tableDataForUserAdd.length>5?true:false"
               [noDataSubTitle]="'Click on the button above to add'" [noDataTitle]="'Currently you do not have users'"
               (getAllCheckedItems)="getAllCheckedItems($event,true)">
             </rds-comp-data-table>
@@ -120,8 +121,9 @@
         <div class="form-group mb-3">
           <div class="col-md-12 mt-3">
             <rds-comp-data-table [tableData]="tableDataForRoleAdd" [tableHeaders]="tableHeadersForRolesAdd"
-              [enableCheckboxSelection]="true" [recordsPerPage]="10" [pagination]="true"
-              [noDataTitle]="'Currently you do not have roles'" [noDataSubTitle]="'Click on the button above to add'"
+              [enableCheckboxSelection]="true" [recordsPerPage]="10"
+              [pagination]="tableDataForRoleAdd.length>5?true:false" [noDataTitle]="'Currently you do not have roles'"
+              [noDataSubTitle]="'Click on the button above to add'"
               (getAllCheckedItems)="getAllCheckedItems($event,false)">
             </rds-comp-data-table>
           </div>
