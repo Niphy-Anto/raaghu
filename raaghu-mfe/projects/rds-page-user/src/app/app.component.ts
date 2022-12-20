@@ -86,7 +86,7 @@ export class AppComponent {
   orgTreeData: any = [];
   treeData1: any;
 
-  permissionsList:any=[];
+  permissionsList: any = [];
   constructor(
     public datepipe: DatePipe,
     private store: Store,
@@ -107,15 +107,15 @@ export class AppComponent {
   OrganizationUnit: any = [];
   resOrganizationUnit: any = [];
   SelectedOrganizationUnit: any = [];
-  editShimmer:boolean=false;
-  isShimmer:boolean=false;
+  editShimmer: boolean = false;
+  isShimmer: boolean = false;
 
-  AuthentiactionList:any =[
+  AuthentiactionList: any = [
     { value: 'isFree', some: 'isFree', id: 'twofactorauthentication', icon: '', iconWidth: '', iconHeight: '', iconStroke: true, iconFill: false },
-    { value: 'isFree', some: 'isFree', id: 2, icon: '', iconWidth: '', iconHeight: '', iconStroke: true, iconFill: false },   
+    { value: 'isFree', some: 'isFree', id: 2, icon: '', iconWidth: '', iconHeight: '', iconStroke: true, iconFill: false },
   ];
-  
-  
+
+
   ngOnInit(): void {
     // this.store.dispatch(getRoles([]));
     // this.store.select(selectAllRoles).subscribe((res: any) => {
@@ -423,7 +423,7 @@ export class AppComponent {
           }
           this.userList.push(item);
         });
-        this.isShimmer=false;
+        this.isShimmer = false;
         // const mfeConfig = this.rdsUserMfeConfig;
         // mfeConfig.input.userList = [...this.userList];
         // mfeConfig.input.isShimmer = false;
@@ -436,7 +436,7 @@ export class AppComponent {
         this.UserPermissionFiltertreeData = this.ConvertArraytoTreedata(
           res.items
         );
-          this.permissionsList=[...this.UserPermissionFiltertreeData]
+      this.permissionsList = [...this.UserPermissionFiltertreeData]
       // const mfeConfig = this.rdsUserMfeConfig;
       // mfeConfig.input.permissionsList = [
       //   ...this.UserPermissionFiltertreeData,
@@ -477,7 +477,7 @@ export class AppComponent {
           ],
           1
         );
-        this.orgTreeData=[...this.treeData1]
+        this.orgTreeData = [...this.treeData1]
         // const mfeConfig = this.rdsUserMfeConfig;
         // mfeConfig.input.orgTreeData = [...this.treeData1];
         // this.rdsUserMfeConfig = mfeConfig;
@@ -581,7 +581,7 @@ export class AppComponent {
 
   }
 
-  Saveuserinfo (eventData: any){
+  Saveuserinfo(eventData: any) {
     const data: any = {
       user: eventData.item.userInfo,
       assignedRoleNames: eventData.item.roles,
@@ -591,59 +591,58 @@ export class AppComponent {
     };
     this.store.dispatch(saveUser(data));
   }
-  onClose (event: any) {
+  onClose(event: any) {
     this.userinfo = undefined;
-    this.userinfo={...this.userinfo};
-    this.editShimmer=true;
+    this.userinfo = { ...this.userinfo };
+    this.editShimmer = true;
     // const mfeConfigedit = this.rdsUserMfeConfig;
     // mfeConfigedit.input.userinfo = { ...this.userinfo };
     // mfeConfigedit.input.editShimmer = true;
     // this.rdsUserMfeConfig = mfeConfigedit;
   }
-  deleteUser (eventData: any) {
+  deleteUser(eventData: any) {
     this.store.dispatch(deleteUser(eventData.id));
   }
 
-  FilterPermission (event: any) {
-    
+  FilterPermission(event: any) {
+
     if (event && event.length) {
       this.FilterselectedPermissions(event)
-        this.selectedFilterPermissions = [];
-        event.forEach((res) => {
-          if (res.value == true) {
-            this.selectedFilterPermissions.push(res.name);
-          }
-        });
+      this.selectedFilterPermissions = [];
+      event.forEach((res) => {
+        if (res.value == true) {
+          this.selectedFilterPermissions.push(res.name);
+        }
+      });
       const data: any = {
         grantedPermissionNames: this.selectedFilterPermissions
       };
       this.UserPermissionFiltertreeData = event;
       this.store.dispatch(getUsers(this.selectedFilterPermissions));
-      this.selectedFilterPermissions=[this.selectedFilterPermissions]
+      this.selectedFilterPermissions = [this.selectedFilterPermissions]
       // mfeConfig.input.selectedFilteredPermissions = [this.selectedFilterPermissions];
       // this.rdsUserMfeConfig = { ...mfeConfig };
     }
   }
 
-  CreateOrEditUser (eventData: any) {
+  CreateOrEditUser(eventData: any) {
     if (eventData.id) {
       this.isEdit = true;
     } else {
-
-      this.editShimmer = false;
       this.userinfo = undefined;
-      this.userinfo={ ...this.userinfo };
-
-    // const mfeConfigedit = this.rdsUserMfeConfig;
+      this.userinfo = { ...this.userinfo };
+      // const mfeConfigedit = this.rdsUserMfeConfig;
       // mfeConfigedit.input.editShimmer = false;
       // this.userinfo = undefined;
       // mfeConfigedit.input.userinfo = { ...this.userinfo };
       // this.rdsUserMfeConfig = { ...mfeConfigedit };
 
     }
+    this.editShimmer = false;
     this.store.dispatch(getUserForEdit(eventData.id));
     this.store.select(selectUserForEdit).subscribe((res: any) => {
       if (res && res.roles) {
+        this.editShimmer = false;
         this.roles = [];
         res.roles.forEach((element: any) => {
           const item: any = {
@@ -715,8 +714,8 @@ export class AppComponent {
             })
           }
         }
-        this.OrganizationUnit=[this.OrganizationUnit];
-        this.SelectedOrganizationUnit=[...this.SelectedOrganizationUnit];
+        this.OrganizationUnit = this.OrganizationUnit;
+        this.SelectedOrganizationUnit = [...this.SelectedOrganizationUnit];
         // const mfeConfigedit = this.rdsUserMfeConfig;
         // mfeConfigedit.input.OrganizationUnit = [...this.OrganizationUnit];
         // mfeConfigedit.input.selectedOrganizations = [...this.SelectedOrganizationUnit];
@@ -729,9 +728,9 @@ export class AppComponent {
       }
       this.roles = [...this.roles];
       if (this.userinfo) {
-       this.userinfo = { ...this.userinfo };
+        this.userinfo = { ...this.userinfo };
       }
-      this.isEdit=true;
+      this.isEdit = true;
       // mfeConfigedit.input.isEdit = this.isEdit;
       // this.rdsUserMfeConfig = { ...mfeConfigedit };
     });
@@ -742,6 +741,7 @@ export class AppComponent {
         .subscribe((result: any) => {
           if (
             result && result.permissions) {
+            this.editShimmer = false;
             this.Permission = [];
             this.selectedPermissions = [];
             this.Permission = this.ConvertArraytoTreedata(
@@ -768,7 +768,7 @@ export class AppComponent {
     }
   }
 
-  UpdateUserPermission (eventData: any) {
+  UpdateUserPermission(eventData: any) {
     if (eventData.Permission) {
       const data: any = {
         grantedPermissionNames: eventData.Permission,
