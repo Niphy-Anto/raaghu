@@ -88,8 +88,8 @@
             <rds-search-input placeholder="Search" icon="search" size="small"> </rds-search-input>
           </div>
           <!-- Add Origination Unit  -->
-          <rds-comp-permission-tree [treeData]="OrganizationUnit" [selectedItems]="selectedOrganizations"
-            (getAllSelectedNodes)="getSelectedorganizationunits($event)"></rds-comp-permission-tree>
+          <!-- <app-rds-comp-permission-tree [treeData]="OrganizationUnit" [selectedItems]="selectedOrganizations"
+            (getAllSelectedNodes)="getSelectedorganizationunits($event)"></app-rds-comp-permission-tree> -->
         </div>
 
         <div class="footer-buttons my-2">
@@ -106,9 +106,9 @@
         *ngIf="selectedId" aria-labelledby="nav-home-tab">
         <div class="tab-content">
 
-          <rds-comp-permission-tree [treeData]="permissionsList" [selectedItems]="selectedPermissions"
+          <!-- <app-rds-comp-permission-tree [treeData]="permissionsList" [selectedItems]="selectedPermissions"
             (getAllSelectedNodes)="getSelectedPermissionsList($event)" [selectAllLabel]="'Select All Permissions'">
-          </rds-comp-permission-tree>
+          </app-rds-comp-permission-tree> -->
         </div>
         <div class="footer-buttons my-2">
 
@@ -129,15 +129,9 @@
 <ng-container *ngIf="viewCanvasFilter">
 <rds-offcanvas [canvasTitle]="translate.instant('FILTER BY PERMISSIONS')" [offId]="'canvasFilterPermission'"
   [placement]="'end'" [offcanvaswidth]="600">
-   <div class="col-md-12 pt-3">
-    <rds-search-input placeholder="Search" icon="search" size="small"> </rds-search-input>
-  </div>
-  <rds-comp-permission-tree [treeData]="permissionsList"
-  [selectedItems]="selectedFilteredPermissions"
-  (getAllselectedPermissions)="getSelectedUserPermissionFilterList($event)"
-  [selectAllLabel]="'Select All Permissions'"
-    >
-  </rds-comp-permission-tree>
+  <!-- <app-rds-comp-permission-tree [treeData]="FilterPermissionList"
+    (getAllSelectedNodes)="getSelectedUserPermissionFilterList($event)" [selectAllLabel]="'Select All Permissions'">
+  </app-rds-comp-permission-tree> -->
   <div class="footer-buttons my-2">
     <rds-button [label]="translate.instant('Cancel')" [isOutline]="true" (click)="close()" [colorVariant]="'primary'"
       [size]="'small'" data-bs-dismiss="offcanvas">

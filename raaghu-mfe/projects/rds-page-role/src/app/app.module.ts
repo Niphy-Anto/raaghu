@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RdsBannerModule, RdsButtonModule, RdsCheckboxModule, RdsInputModule, RdsNavTabModule, RdsOffcanvasModule, RdsSearchInputModule } from '@libs/rds-elements';
 import { RdsIconModule } from '@libs/rds-icon';
 // import { RdsButtonModule, RdsCheckboxModule, RdsInputModule, RdsNavTabModule, RdsOffcanvasModule, RdsSearchInputModule } from '@libs/rds-elements';
@@ -25,7 +26,7 @@ import { AppComponent } from './app.component';
     AppComponent,
   ],
   imports: [
-    //BrowserModule,
+    BrowserModule,
     AppRoutingModule,
     SharedModule,
     RdsButtonModule,
@@ -38,7 +39,8 @@ import { AppComponent } from './app.component';
     RdsBannerModule,
     CommonModule,
     RdsIconModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
 
   providers: [ArrayToTreeConverterService],

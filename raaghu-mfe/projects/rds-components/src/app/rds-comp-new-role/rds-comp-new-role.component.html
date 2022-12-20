@@ -4,8 +4,8 @@
       <div class="row">
         <div class="col-md-12">
           <div class="form-group mb-3">
-            <rds-input [inputType]="'text'" [Title]="translate.instant('Role Name')" [(ngModel)]="roleData.name"
-              [TitleType]="'Top'" name="name" required #name="ngModel" [placeholder]="translate.instant('Role Name')"
+            <rds-input [inputType]="'text'" [label]="translate.instant('Role Name')" [(ngModel)]="roleData.name"
+              [labelPosition]="'top'" name="name" required #name="ngModel" [placeholder]="translate.instant('Role Name')"
               [isRequired]=true required>
             </rds-input>
             <div class="form-control-feedback" *ngIf="name.errors&&(name.dirty||name.touched)">
@@ -40,9 +40,9 @@
     <rds-button [label]="translate.instant('Cancel')" [isOutline]="true" [colorVariant]="'primary'" [size]="'small'"
       (click)="onCanceledRole(Roleform)" data-bs-dismiss="offcanvas">
     </rds-button>
-    <rds-button [label]="translate.instant('Next')" [disabled]="!Roleform.valid" [size]="'small'" class="ms-2"
+    <rds-button [label]="translate.instant('Next')" [isDisabled]="!Roleform.valid" [size]="'small'" class="ms-2"
       [colorVariant]="'primary'" (click)="addRole(Roleform)" data-bs-target="#AddEdition" [showLoadingSpinner]="false">
     </rds-button>
   </div>
 </div>
-<app-rds-comp-new-role-shimmer *ngIf="EditShimmer"></app-rds-comp-new-role-shimmer> -->
+<!-- <app-rds-comp-new-role-shimmer *ngIf="EditShimmer"></app-rds-comp-new-role-shimmer> -->

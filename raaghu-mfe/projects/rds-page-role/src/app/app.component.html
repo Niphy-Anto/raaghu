@@ -15,7 +15,7 @@
   </div>
 </div>
 
-<rds-offcanvas *ngIf="viewCreateOrganisationCanvas" [placement]="'end'" (onClose)="onCloseCanvas($event)"
+<rds-offcanvas *ngIf="viewCreateOrganisationCanvas" [placement]="'end'" (onClose)="activePage = 0"
   [offId]="'addNodeOffcanvas'" [offcanvaswidth]="550" [canvasTitle]="translate.instant(canvasTitle)">
   <rds-nav-tab [navtabsItems]="getNavTabItems()" (onClicktab)="getSelectedNavTab($event)" [activepage]="activePage"
     [horizontalAlignment]="'start'" [verticalAlignment]="false" [pills]="false" [tabs]="true" [fill]="false"
@@ -27,18 +27,10 @@
       </div>
       <div class="tab-pane fade" [ngClass]="{'show active': activePage === 1}" id="Permission" role="tabpanel"
         aria-labelledby="nav-home-tab">
-        <p>Permission tree</p>
-        <!-- <app-rds-comp-permission-tree [treeData]="permissionsList" [selectedItems]="SelectedPermissionValues"
-          (getAllSelectedNodes)="getSelectedPermissionList($event)" [selectAllLabel]="'Select Permissions'">
-        </app-rds-comp-permission-tree> -->
-        <div class="pt-4 pb-4">
-          <rds-banner
-            [bannerText]="translate.instant('If you are changing your own permissions, you may need to refresh page (F5) to take effect of permission changes on your own screen!')"
-            [sticky]="false" position="bottom" colorVariant="primary"></rds-banner>
-        </div>
+        <mfe-loader [config]="rdsPermissionRoleMfeConfig"></mfe-loader>
       </div>
 
-      <div class="tab-pane fade" [ngClass]="{'show active': activePage === 2}" id="Claims" role="tabpanel"
+      <div class="tab-pane fade pb-5 mb-4" [ngClass]="{'show active': activePage === 2}" id="Claims" role="tabpanel"
         aria-labelledby="nav-home-tab">
         <mfe-loader [config]="rdsClaimTypeRoleMfeConfig"></mfe-loader>
       </div>
@@ -48,12 +40,15 @@
   <div class="footer-buttons my-2" *ngIf="activePage == 1">
     <div class="row">
       <div class="col-md-12">
+        <rds-banner [sticky]="false" position="bottom" colorVariant="primary"
+          [bannerText]="translate.instant('If you are changing your own permissions, you may need to refresh page (F5) to take effect of permission changes on your own screen!')">
+        </rds-banner>
         <rds-button [label]="translate.instant('Cancel')" (click)="onCancelOrganisation()" [outlineButton]="true"
           type="button" [colorVariant]="'primary'" [size]="'small'" data-bs-target="#addNodeOffcanvas"
           data-bs-dismiss="offcanvas">
         </rds-button>
         <rds-button [disabled]="false" [label]="translate.instant(saveNextBtn)" [submit]="true" type="submit"
-          [size]="'small'" class="px-2" [colorVariant]="'primary'" (click)="save()">
+          [size]="'small'" class="px-2" [colorVariant]="'primary'" (click)="activePage = 2">
         </rds-button>
       </div>
     </div>

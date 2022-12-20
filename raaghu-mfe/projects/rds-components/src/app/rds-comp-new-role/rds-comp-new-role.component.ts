@@ -39,29 +39,29 @@ export class RdsCompNewRoleComponent implements OnInit {
   constructor(public datepipe: DatePipe, private formBuilder: FormBuilder, public translate: TranslateService) { }
 
   ngOnInit(): void {
-  //   this.activePage = 0;
-  //   if (!this.roleData) {
-  //     this.roleData = {};
-  //     this.roleData['name'] = '';
-  //     this.roleData['id'] = undefined;
-  //     this.roleData['isDefault'] = false;
-  //     this.roleData['isPublic'] = false;
-  //   }
-  //   setTimeout(() => {
-  //     if (this.roleData && this.Roleform) {
-  //       this.Roleform.statusChanges.subscribe(res => {
-  //         if (res === 'VALID') {
-  //           this.RoleInfo.emit({ roledata: this.roleData, isOnSave: false });
-  //         } else {
-  //           this.RoleInfo.emit({ roledata: undefined, isOnSave: false });
-  //         }
-  //       });
-  //     }
-  //   }, 100);
-  //     this.roleData['displayName'] = '';
-  //     this.roleData['id'] = undefined;
-  //     this.roleData['isDefault'] = false;
-  //   }
+    this.activePage = 0;
+    if (!this.roleData) {
+      this.roleData = {};
+      this.roleData['name'] = '';
+      this.roleData['id'] = undefined;
+      this.roleData['isDefault'] = false;
+      this.roleData['isPublic'] = false;
+    }
+    setTimeout(() => {
+      if (this.roleData && this.Roleform) {
+        this.Roleform.statusChanges.subscribe(res => {
+          if (res === 'VALID') {
+            this.RoleInfo.emit({ roledata: this.roleData, isOnSave: false });
+          } else {
+            this.RoleInfo.emit({ roledata: undefined, isOnSave: false });
+          }
+        });
+      }
+    }, 100);
+      this.roleData['displayName'] = '';
+      this.roleData['id'] = undefined;
+      this.roleData['isDefault'] = false;
+    }
   
 
   // ngOnChanges(changes: SimpleChanges): void {

@@ -48,11 +48,11 @@
             </div>
             <div class="tab-pane fade ms-2" [ngClass]="{'show active': activePage === 2}" id="features" *ngIf="selectedId"
                 role="tabpanel" aria-labelledby="nav-home-tab">
-                <div class="tab-content features">
-                    <rds-comp-permission-tree [treeData]="tenantFeatures" [selectedItems]="tenantFeatureValues"
+                <div class="tab-content features py-4">
+                    <!-- <app-rds-comp-permission-tree [treeData]="tenantFeatures" [selectedItems]="tenantFeatureValues"
                         (getAllselectedPermissions)="getSelectedFeaturesList($event)"
                         [selectAllLabel]="'Select Features'">
-                    </rds-comp-permission-tree>
+                    </app-rds-comp-permission-tree> -->
                 </div>
                 <div class="footer-buttons">
                     <div class="col-md-12 ">
