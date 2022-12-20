@@ -275,6 +275,11 @@
             "main": "projects/host/src/main.ts",
             "polyfills": "projects/host/src/polyfills.ts",
             "tsConfig": "projects/host/tsconfig.app.json",
+            "allowedCommonJsDependencies": [
+              "quill",
+              "moment",
+              "localforage"
+            ],
             "assets": [
               "projects/host/src/favicon.ico",
               "projects/host/src/assets",
@@ -351,6 +356,14 @@
                   "with": "projects/host/src/environments/environment.prod.ts"
                 }
               ],
+              "optimization": {
+                "scripts": true,
+                "styles": {
+                  "minify": true,
+                  "inlineCritical": false
+                },
+                "fonts": true
+              },
               "outputHashing": "all",
               "extraWebpackConfig": "projects/host/webpack.prod.config.js"
             },
@@ -1360,7 +1373,6 @@
             "main": "projects/rds-page-visual-settings/src/main.ts",
             "polyfills": "projects/rds-page-visual-settings/src/polyfills.ts",
             "tsConfig": "projects/rds-page-visual-settings/tsconfig.app.json",
-            "inlineStyleLanguage": "scss",
             "assets": [
               "projects/rds-page-visual-settings/src/favicon.ico",
               "projects/rds-page-visual-settings/src/assets"
