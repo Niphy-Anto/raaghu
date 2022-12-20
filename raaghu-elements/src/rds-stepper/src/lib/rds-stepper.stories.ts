@@ -110,9 +110,9 @@ Panel_Border.args = {
   ]
 };
 
-export const multi_circles_1 = Template.bind({});
-multi_circles_1.parameters = { controls: { include: ['stepperType',  'stepperList'] } };
-multi_circles_1.args = {
+export const multi_circles_with_checks = Template.bind({});
+multi_circles_with_checks.parameters = { controls: { include: ['stepperType',  'stepperList'] } };
+multi_circles_with_checks.args = {
   stepperType: 'multi-circles-1',
   stepperList: [
     { stepname: "step1", steptabname: "Profile", tablink: '#nav-home', ariacontrols: 'nav-home' },
@@ -121,9 +121,9 @@ multi_circles_1.args = {
   ]
 };
 
-export const multi_circles_2 = Template.bind({});
-multi_circles_2.parameters = { controls: { include: ['stepperType',  'stepperList'] } };
-multi_circles_2.args = {
+export const multi_circles_with_numbers = Template.bind({});
+multi_circles_with_numbers.parameters = { controls: { include: ['stepperType',  'stepperList'] } };
+multi_circles_with_numbers.args = {
   stepperType: 'multi-circles-2',
   stepperList: [
     { stepname: "step1", steptabname: "Profile", tablink: '#nav-home', ariacontrols: 'nav-home' },
@@ -132,9 +132,9 @@ multi_circles_2.args = {
   ]
 };
 
-export const multi_circles_3 = Template.bind({});
-multi_circles_3.parameters = { controls: { include: ['stepperType',  'stepperList'] } };
-multi_circles_3.args = {
+export const multi_circles_with_vertical_numbers = Template.bind({});
+multi_circles_with_vertical_numbers.parameters = { controls: { include: ['stepperType',  'stepperList'] } };
+multi_circles_with_vertical_numbers.args = {
   stepperType: 'multi-circles-3',
   stepperList: [
     { stepname: "step1", steptabname: "Profile", tablink: '#nav-home', ariacontrols: 'nav-home', description: 'Vitae sed mi luctus laoreet.' },
