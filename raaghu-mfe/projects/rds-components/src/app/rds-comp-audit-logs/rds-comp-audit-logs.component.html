@@ -80,22 +80,24 @@
                 </div>
                 <div class="col-md-2 mt-2 sm-p-0">
                     <rds-dropdownlist [placeholder]="translate.instant('Select Property')" [borderDropdown]="true"
-                    class="text-dark" [id]="'status-list'" [(ngModel)]="status" [listItems]="statusList"
-                   [value]="status" (onSelect)="exceptionModify($event)" ngDefaultControl name="status">
-                  </rds-dropdownlist>
+                        class="text-dark" [id]="'status-list'" [(ngModel)]="status" [listItems]="statusList"
+                        [value]="status" (onSelect)="exceptionModify($event)" ngDefaultControl name="status">
+                    </rds-dropdownlist>
                 </div>
                 <div class="col-md-2 mt-2">
                     <rds-dropdownlist [placeholder]="translate.instant('Select browser')" [borderDropdown]="true"
-                    class="text-dark" [id]="'browserList'" [(ngModel)]="browserInfo" [listItems]="browserList"
-                   [value]="browserInfo" (onSelect)="SelectBroser($event)" ngDefaultControl name="browserInfo">
-                  </rds-dropdownlist>
+                        class="text-dark" [id]="'browserList'" [(ngModel)]="browserInfo" [listItems]="browserList"
+                        [value]="browserInfo" (onSelect)="SelectBroser($event)" ngDefaultControl name="browserInfo">
+                    </rds-dropdownlist>
                 </div>
             </div>
             <div class="row mt-4 ">
-                <rds-comp-data-table [tableData]="operationLogs" (deleteEvent)="delete($event)" [pagination]="true"
+                <rds-comp-data-table [tableData]="operationLogs" (deleteEvent)="delete($event)"
+                    [pagination]="operationLogs.length>5?true:false"
                     [noDataTitle]="translate.instant('Currently you do not have operation log')" [recordsPerPage]="10"
                     (onActionSelection)="onActionSelect($event)" [showNodataSubtitle]="false" [actions]="actions"
-                    [refresh]="true" [tableHeaders]="operationLogsHeaders" [isShimmer]="isShimmer"></rds-comp-data-table>
+                    [refresh]="true" [tableHeaders]="operationLogsHeaders"
+                    [isShimmer]="isShimmer"></rds-comp-data-table>
             </div>
         </div>
 
@@ -125,9 +127,9 @@
                             [value]="status" ngDefaultControl name="Property" [itemList]="statusList">
                         </rds-select-list> -->
                         <rds-dropdownlist [placeholder]="translate.instant('Select Property')" [borderDropdown]="true"
-                    class="text-dark" [id]="'status'" [(ngModel)]="status" [listItems]="statusList"
-                   [value]="status" (onSelect)="exceptionModify($event)" ngDefaultControl name="status">
-                  </rds-dropdownlist>
+                            class="text-dark" [id]="'status'" [(ngModel)]="status" [listItems]="statusList"
+                            [value]="status" (onSelect)="exceptionModify($event)" ngDefaultControl name="status">
+                        </rds-dropdownlist>
                     </div>
                 </div>
                 <div class="mobile-btn position-fixed bottom-0 end-0 my-5 me-5">
@@ -137,9 +139,9 @@
                 </div>
                 <div class="row">
                     <rds-comp-data-table [tableData]="changeLogs" [actions]="actionForChangeLogs"
-                        (onActionSelection)="onChangeActionSelect($event)" [pagination]="true" [recordsPerPage]="10"
-                        [noDataTitle]="'Currently you do not have change log'" [showNodataSubtitle]="false"
-                        [tableHeaders]="changeLogsHeaders">
+                        (onActionSelection)="onChangeActionSelect($event)" [pagination]="changeLogs.length>5?true:false"
+                        [recordsPerPage]="10" [noDataTitle]="'Currently you do not have change log'"
+                        [showNodataSubtitle]="false" [tableHeaders]="changeLogsHeaders">
                     </rds-comp-data-table>
                 </div>
             </div>
@@ -255,7 +257,7 @@
         </div>
         <div class="col-md-6  ">
             <div class="form-group p-2 parameter-bg-color fs-6 mb-3 " style="overflow-wrap:anywhere ;">
-               {{selectedRowData.parameters }}
+                {{selectedRowData.parameters }}
             </div>
         </div>
     </div>

@@ -84,7 +84,7 @@ export class AppComponent {
 
   tenantTableData: any = [];
   userTableData: any = []
-  loginList: any;
+  tenantId: any;
   isShimmer: boolean = true;
   editShimmer: boolean = true;
 
@@ -129,7 +129,7 @@ export class AppComponent {
       if (res) {
         let url = window.location.href;
         url = url.substring(0, url.indexOf("/pages"));
-        let targetUrl = url + '/login' + '?impersonationToken=' + res.impersonationToken + '&tenantId=' + this.loginList + '&tenancyName=' + res.tenancyName;
+        let targetUrl = url + '/login' + '?impersonationToken=' + res.impersonationToken + '&tenantId=' + this.tenantId + '&tenancyName=' + res.tenancyName;
         // let targetUrl = 'https://anzstageui.raaghu.io/login' + '?impersonationToken=' + res.impersonationToken + '&tenantId=' + this.loginList + '&tenancyName=' + res.tenancyName;
         this.userAuthService.unauthenticateUser(true, targetUrl);
       }
@@ -276,9 +276,9 @@ export class AppComponent {
     this.store.dispatch(getTenantUsers(event));
   }
   onTenantLogIn(event: any) {
-    this.loginList = event.tenantId;
+    this.tenantId = event.tenantId;
     const data: any = {
-      tenantId: this.loginList,
+      tenantId: this.tenantId,
       userId: event.userId
     };
     this.store.dispatch(getTenantLogin(data));
