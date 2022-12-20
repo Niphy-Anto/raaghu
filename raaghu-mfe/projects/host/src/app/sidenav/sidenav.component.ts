@@ -228,6 +228,7 @@ export class SidenavComponent {
               icon: 'audit_logs',
               path: '/pages/audit-logs',
               descriptionTranslationKey: '',
+              parent: 53
             },
             {
               label: 'subscription',
@@ -455,6 +456,19 @@ export class SidenavComponent {
           );
         }
       }
+      if (this.sidenavItems && this.sidenavItems.length > 0) {
+        if (
+          this.sidenavItems[0].children &&
+          this.sidenavItems[0].children.length > 0
+        ) {
+          this.selectedMenu = this.sidenavItems[0].children[0].label;
+          this.selectedMenuDescription =
+            this.sidenavItems[0].children[0].description;
+        } else {
+          this.selectedMenu = this.sidenavItems[0].label;
+          this.selectedMenuDescription = this.sidenavItems[0].description;
+        }
+      }
     });
     this.subscribeToAlerts();
     this.store.dispatch(getNotificationSettings());
@@ -522,6 +536,8 @@ export class SidenavComponent {
         // this.translate.addLangs(languages);
       }
     });
+ 
+
     if (this.router.url) {
       this.getMatchedRoute(this.sidenavItems);
     }
@@ -543,20 +559,7 @@ export class SidenavComponent {
         });
       }
     });
-    if (this.sidenavItems && this.sidenavItems.length > 0) {
-      if (
-        this.sidenavItems[0].children &&
-        this.sidenavItems[0].children.length > 0
-      ) {
-        this.selectedMenu = this.sidenavItems[0].children[0].label;
-        this.selectedMenuDescription =
-          this.sidenavItems[0].children[0].description;
-      } else {
-        this.selectedMenu = this.sidenavItems[0].label;
-        this.selectedMenuDescription = this.sidenavItems[0].description;
-      }
-    }
-
+ 
     this.store.dispatch(getProfile());
     this.store.select(selectProfileInfo).subscribe((res: any) => {
       if (res) {
@@ -726,8 +729,6 @@ export class SidenavComponent {
   }
   redirectPath(event): void {
     this.currentAlerts = [];
-    this.selectedMenu = event.label;
-    this.selectedMenuDescription = event.description;
     this.router.navigate([event.path]);
     var alertNode = document.querySelector('.alert');
     if (alertNode) {

@@ -126,18 +126,18 @@ export class RdsCompFeaturesComponent implements OnInit, OnChanges, DoCheck {
 
   ngOnInit(): void {
 
-    if(this.freeEditionId){
+    if (this.freeEditionId) {
       this.freeEditions.forEach((res: any) => {
-        if (res && +res.value===+this.freeEditionId) {
+        if (res && +res.value === +this.freeEditionId) {
           this.freeEditon = res.some;
         }
       })
     }
 
-    if(this.targetEditionId){
-      this.editionList.forEach((res : any) => {
-        if(res && +res.value===+this.targetEditionId){
-          this.targetEdition= res.some;
+    if (this.targetEditionId) {
+      this.editionList.forEach((res: any) => {
+        if (res && +res.value === +this.targetEditionId) {
+          this.targetEdition = res.some;
         }
       })
     }
@@ -197,7 +197,7 @@ export class RdsCompFeaturesComponent implements OnInit, OnChanges, DoCheck {
     }
     this.onEditionSave.emit(body);
     this.viewCanvas = false;
-    this.resetPermission();  
+    this.resetPermission();
   }
 
   resetPermission() {
@@ -373,12 +373,12 @@ export class RdsCompFeaturesComponent implements OnInit, OnChanges, DoCheck {
     }
   }
 
-  onFreeListSelect(event : any){
+  onFreeListSelect(event: any) {
     this.freeEditon = event.item.some
     this.freeEditionId = event.item.value;
-    }
+  }
 
-  onTargetListSelect(event : any ){
+  onTargetListSelect(event: any) {
     this.targetEdition = event.item.some
     this.targetEditionId = event.item.value
   }
@@ -393,6 +393,7 @@ export class RdsCompFeaturesComponent implements OnInit, OnChanges, DoCheck {
         sticky: alert.sticky,
       };
       this.currentAlerts.push(currentAlert);
+      this.showLoadingSpinner = false;
     });
   }
 }

@@ -10,10 +10,10 @@
         </div>
         <div class="col-md-12">
             <div class="card p-2 h-100 border-0 rounded-0 card-full-stretch">
-                <rds-comp-data-table [tableData]="tableData" [inlineEdit]="false" [pagination]="true"
-                    [recordsPerPage]="10" [actions]="actions" (onActionSelection)="onActionSelect($event)"
-                    noDataTitle="Currently you do not have tenant" [tableHeaders]="tenantHeaders"
-                    [isShimmer]="isShimmer"></rds-comp-data-table>
+                <rds-comp-data-table [tableData]="tableData" [inlineEdit]="false"
+                    [pagination]="tableData.length>5?true:false" [recordsPerPage]="10" [actions]="actions"
+                    (onActionSelection)="onActionSelect($event)" noDataTitle="Currently you do not have tenant"
+                    [tableHeaders]="tenantHeaders" [isShimmer]="isShimmer"></rds-comp-data-table>
             </div>
         </div>
     </div>
@@ -31,9 +31,9 @@
         <div naveContent class="row tab-content m-2" id="nav-tabContent">
             <div class="tab-pane fade px-0" [ngClass]="{'show active': activePage === 0}" id="tenant-information"
                 role="tabpanel" aria-labelledby="nav-home-tab">
-                <rds-comp-tenant-basic-profile-right (tenantInfo)="getTenantData($event)"
-                    [editionList]="editionList" [tenantData]="tenantData" (onCancel)="close()"
-                    [editShimmer]="editShimmer" [showEmail]="showEmailList">
+                <rds-comp-tenant-basic-profile-right (tenantInfo)="getTenantData($event)" [editionList]="editionList"
+                    [tenantData]="tenantData" (onCancel)="close()" [editShimmer]="editShimmer"
+                    [showEmail]="showEmailList">
                 </rds-comp-tenant-basic-profile-right>
             </div>
             <div class="tab-pane fade px-0" [ngClass]="{'show active': activePage === 1}" id="settings" role="tabpanel"
@@ -45,7 +45,7 @@
             </div>
             <div class="tab-pane fade" [ngClass]="{'show active': activePage === 2}" id="features" *ngIf="selectedId"
                 role="tabpanel" aria-labelledby="nav-home-tab">
-               <!--  <div class="footer-buttons">
+                <!--  <div class="footer-buttons">
                     <div class="col-md-12 ">
                         <rds-button [label]="translate.instant('Cancel')" [colorVariant]="'primary'" [size]="'small'"
                             (click)="close()" data-bs-dismiss="offcanvas">
@@ -67,7 +67,5 @@
     </rds-comp-tenant-features>
 </rds-offcanvas>
 <!-- <mfe-loader [config]="rdsAlertMfeConfig"></mfe-loader> -->
-<rds-comp-alert
-[currentAlerts]="currentAlerts"
-(onAlertHide)="onAlertHide($event)">
+<rds-comp-alert [currentAlerts]="currentAlerts" (onAlertHide)="onAlertHide($event)">
 </rds-comp-alert>
