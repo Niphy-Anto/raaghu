@@ -45,8 +45,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "1mb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "1.2mb",
+                  "maximumError": "1.2mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -108,8 +108,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "1mb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "1.2mb",
+                  "maximumError": "1.2mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -275,6 +275,11 @@
             "main": "projects/host/src/main.ts",
             "polyfills": "projects/host/src/polyfills.ts",
             "tsConfig": "projects/host/tsconfig.app.json",
+            "allowedCommonJsDependencies": [
+              "quill",
+              "moment",
+              "localforage"
+            ],
             "assets": [
               "projects/host/src/favicon.ico",
               "projects/host/src/assets",
@@ -336,8 +341,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "1mb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "1.2mb",
+                  "maximumError": "1.2mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -351,6 +356,14 @@
                   "with": "projects/host/src/environments/environment.prod.ts"
                 }
               ],
+              "optimization": {
+                "scripts": true,
+                "styles": {
+                  "minify": true,
+                  "inlineCritical": false
+                },
+                "fonts": true
+              },
               "outputHashing": "all",
               "extraWebpackConfig": "projects/host/webpack.prod.config.js"
             },
@@ -460,7 +473,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "1000kb",
-                  "maximumError": "1mb"
+                  "maximumError": "1.2mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -577,7 +590,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "1000kb",
-                  "maximumError": "1mb"
+                  "maximumError": "1.2mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -691,7 +704,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "1000kb",
-                  "maximumError": "1mb"
+                  "maximumError": "1.2mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -808,7 +821,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "1000kb",
-                  "maximumError": "1mb"
+                  "maximumError": "1.2mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -922,7 +935,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "1000kb",
-                  "maximumError": "1mb"
+                  "maximumError": "1.2mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -1036,7 +1049,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "1000kb",
-                  "maximumError": "1mb"
+                  "maximumError": "1.2mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -1150,7 +1163,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "1000kb",
-                  "maximumError": "1mb"
+                  "maximumError": "1.2mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -1264,7 +1277,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "1000kb",
-                  "maximumError": "1mb"
+                  "maximumError": "1.2mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -1360,7 +1373,6 @@
             "main": "projects/rds-page-visual-settings/src/main.ts",
             "polyfills": "projects/rds-page-visual-settings/src/polyfills.ts",
             "tsConfig": "projects/rds-page-visual-settings/tsconfig.app.json",
-            "inlineStyleLanguage": "scss",
             "assets": [
               "projects/rds-page-visual-settings/src/favicon.ico",
               "projects/rds-page-visual-settings/src/assets"
@@ -1378,7 +1390,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "1000kb",
-                  "maximumError": "1mb"
+                  "maximumError": "1.2mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -1492,7 +1504,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "1000kb",
-                  "maximumError": "1mb"
+                  "maximumError": "1.2mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -1606,7 +1618,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "1000kb",
-                  "maximumError": "1mb"
+                  "maximumError": "1.2mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -1720,7 +1732,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "1000kb",
-                  "maximumError": "1mb"
+                  "maximumError": "1.2mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -1834,7 +1846,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "1000kb",
-                  "maximumError": "1mb"
+                  "maximumError": "1.2mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -1948,7 +1960,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "1000kb",
-                  "maximumError": "1mb"
+                  "maximumError": "1.2mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -2062,7 +2074,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "1000kb",
-                  "maximumError": "1mb"
+                  "maximumError": "1.2mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -2176,7 +2188,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "1000kb",
-                  "maximumError": "1mb"
+                  "maximumError": "1.2mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -2290,7 +2302,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "1000kb",
-                  "maximumError": "1mb"
+                  "maximumError": "1.2mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -2404,7 +2416,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "1000kb",
-                  "maximumError": "1mb"
+                  "maximumError": "1.2mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -2518,7 +2530,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "1000kb",
-                  "maximumError": "1mb"
+                  "maximumError": "1.2mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -2632,7 +2644,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "1000kb",
-                  "maximumError": "1mb"
+                  "maximumError": "1.2mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -2745,7 +2757,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "1000kb",
-                  "maximumError": "1mb"
+                  "maximumError": "1.2mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -2858,7 +2870,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "1000kb",
-                  "maximumError": "1mb"
+                  "maximumError": "1.2mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -2971,7 +2983,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "1000kb",
-                  "maximumError": "1mb"
+                  "maximumError": "1.2mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -3084,7 +3096,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "1000kb",
-                  "maximumError": "1mb"
+                  "maximumError": "1.2mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -3197,7 +3209,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "1000kb",
-                  "maximumError": "1mb"
+                  "maximumError": "1.2mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -3310,7 +3322,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "1000kb",
-                  "maximumError": "1mb"
+                  "maximumError": "1.2mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -3423,7 +3435,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "1000kb",
-                  "maximumError": "1mb"
+                  "maximumError": "1.2mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -3536,7 +3548,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "1000kb",
-                  "maximumError": "1mb"
+                  "maximumError": "1.2mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -3649,7 +3661,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "1000kb",
-                  "maximumError": "1mb"
+                  "maximumError": "1.2mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -3762,7 +3774,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "1000kb",
-                  "maximumError": "1mb"
+                  "maximumError": "1.2mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -3875,7 +3887,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "1000kb",
-                  "maximumError": "1mb"
+                  "maximumError": "1.2mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -3988,7 +4000,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "1000kb",
-                  "maximumError": "1mb"
+                  "maximumError": "1.2mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -4101,7 +4113,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "1000kb",
-                  "maximumError": "1mb"
+                  "maximumError": "1.2mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -4214,7 +4226,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "1000kb",
-                  "maximumError": "1mb"
+                  "maximumError": "1.2mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -4327,7 +4339,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "1000kb",
-                  "maximumError": "1mb"
+                  "maximumError": "1.2mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -4440,7 +4452,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "1000kb",
-                  "maximumError": "1mb"
+                  "maximumError": "1.2mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -4553,7 +4565,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "1000kb",
-                  "maximumError": "1mb"
+                  "maximumError": "1.2mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -4666,7 +4678,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "1000kb",
-                  "maximumError": "1mb"
+                  "maximumError": "1.2mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -4779,7 +4791,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "1000kb",
-                  "maximumError": "1mb"
+                  "maximumError": "1.2mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -4892,7 +4904,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "1000kb",
-                  "maximumError": "1mb"
+                  "maximumError": "1.2mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -5004,7 +5016,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "1000kb",
-                  "maximumError": "1mb"
+                  "maximumError": "1.2mb"
                 },
                 {
                   "type": "anyComponentStyle",
