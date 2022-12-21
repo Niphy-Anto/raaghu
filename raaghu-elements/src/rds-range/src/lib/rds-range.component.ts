@@ -43,7 +43,7 @@ export class RdsRangeComponent implements AfterViewInit {
   fillColor() {
     this.range1 = document.getElementById("range1") as HTMLSpanElement
     let percent1 = ((this.value - this.min) / (this.max - this.min)) * 100;
-    this.sliderTrack.style.background = `linear-gradient(90deg,#5C82E3 ${percent1}%,#D0D7DD 0%)`;
+    this.sliderTrack.style.background = `linear-gradient(90deg,#7E2EEf ${percent1}%,#D0D7DD 0%)`;
      this.range1.style.left = `calc(${percent1}% + (${-5 - percent1 * 0.15}px))`
   }
 

@@ -2,7 +2,7 @@
     <ul *ngSwitchCase="'withDescription'" class="d-flex" id="rds-size">
         <li *ngFor="let data of sizeDataWithDescription" class="me-3 mt-3 border flex-evens">
             <div class="p-3" (click)="onclick(data)">
-                <div class="size text-dark fw-medium">
+                <div class="size fw-medium">
                     {{data.value}}
                 </div>
                 <div class="description">
