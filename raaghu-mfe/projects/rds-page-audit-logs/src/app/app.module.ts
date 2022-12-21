@@ -5,6 +5,7 @@ import { TranslateService, TranslateStore } from '@ngx-translate/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RdsCompAuditLogsModule } from "../../../rds-components/src/app/rds-comp-audit-logs/rds-comp-audit-logs.module";
+import { CommonModule } from '@angular/common';
 
 @NgModule({
     declarations: [
@@ -18,6 +19,7 @@ import { RdsCompAuditLogsModule } from "../../../rds-components/src/app/rds-comp
     imports: [
         AppRoutingModule,
         SharedModule,
+        CommonModule,
         NgxTranslateModule.forRoot(),
         RdsCompAuditLogsModule
     ]

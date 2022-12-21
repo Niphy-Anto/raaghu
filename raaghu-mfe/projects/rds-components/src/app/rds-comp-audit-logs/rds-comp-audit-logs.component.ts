@@ -57,7 +57,7 @@ export class RdsCompAuditLogsComponent implements OnInit {
   browserInfo: any = '';
   statusList: any = [
     { value: '', some: 'All' },
-    { value: true, some: 'Sucsses' },
+    { value: true, some: 'Success' },
     { value: false, some: 'HasError' }]
   browserList: any = [
     { value: '', some: 'Select Browser' },
@@ -77,8 +77,8 @@ export class RdsCompAuditLogsComponent implements OnInit {
   changeLogsCanvasTitle: string = this.translate.instant('Change LOG DETAIL');
 
   constructor(private sanitizer: DomSanitizer,
-    private sharedService:SharedService,
-    public translate:TranslateService) { }
+    private sharedService: SharedService,
+    public translate: TranslateService) { }
 
   ngOnInit(): void { }
 
@@ -224,14 +224,21 @@ export class RdsCompAuditLogsComponent implements OnInit {
     this.sendParameterData();
   }
   SelectBroser(event) {
-     this.browserInfo = event.item.some
+    this.browserInfo = event.item.some
     this.sendParameterData();
   }
   sendParameterData() {
     if (this.startDate && this.endDate) {
+      let status: boolean | undefined = undefined;
+      if (this.status) {
+        const selected = this.statusList.find((item: any) => item.some === this.status);
+        if (selected) {
+          status = selected.value;
+        }
+      }
       this.parameterData.emit({
         startDate: this.startDate, endDate: this.endDate, userName: this.user, serviceName: this.service,
-        minExecutionDuration: this.from, maxExecutionDuration: this.to, MethodName: this.action, HasException: this.status, BrowserInfo: this.browserInfo
+        minExecutionDuration: this.from, maxExecutionDuration: this.to, MethodName: this.action, HasException: status, BrowserInfo: this.browserInfo
       })
     }
   }
