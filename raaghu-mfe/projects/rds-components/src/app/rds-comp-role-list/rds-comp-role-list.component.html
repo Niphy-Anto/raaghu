@@ -52,9 +52,8 @@
       </div>
       <div class="tab-pane fade py-2" [ngClass]="{'show active': activePage === 1}" id="Permission" role="tabpanel"
         aria-labelledby="nav-home-tab">
-        <div class="col-md-12 pt-3">
-          <rds-search-input placeholder="Search" (keyup)="filterPermissions($event)" icon="search" size="small">
-          </rds-search-input>
+        <div class="col-md-12 py-3">
+          <rds-search-input placeholder="Search" (keyup)="filterPermissions($event)" icon="search" size="small"> </rds-search-input>
         </div>
         <div class="mb-5">
           <rds-comp-permission-tree [treeData]="permissionsList" [selectedItems]="SelectedPermissionValues"
@@ -85,7 +84,7 @@
 <!-- Filter by Permissions Offcanvas -->
 <rds-offcanvas [canvasTitle]="translate.instant(canvasTitle)" [offId]="'PermissionOffcanvas'" [offcanvaswidth]="550"
   [placement]="'end'" *ngIf="viewCanvas" (onClose)="closeFilterPermission()">
-  <div class="col-md-12 pt-3">
+  <div class="col-md-12 py-3">
     <rds-search-input placeholder="Search" icon="search" (keyup)="filterPermissions($event)" size="small">
     </rds-search-input>
   </div>
