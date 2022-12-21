@@ -244,6 +244,10 @@ $file-uploder-multiple-bg: $input-bg !default;
 $datatable-bgColor: $dark-500 !default;
 
 $profile-upload-icon: $dark-100 !default;
+body {
+  background-color: $body-wrapper-bg;
+}
+
 
 .progress {
   background-color: $progress-bg;
