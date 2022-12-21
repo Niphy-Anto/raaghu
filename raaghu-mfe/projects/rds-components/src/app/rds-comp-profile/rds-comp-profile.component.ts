@@ -76,7 +76,7 @@ export class RdsCompProfileComponent extends MfeBaseComponent implements OnInit 
   @Input() showLoadingSpinner: boolean = false;
   @Input() tenancy: string = 'Host Admin';
   public Profileform = new FormGroup({})
-  offCanvasWidth = 304;
+  offCanvasWidth = 306;
   profileMenu = 1000 + "px";
   profileMenuContent: any;
   @Input() isAnyProfileMenuSelected?: boolean = false;
@@ -196,7 +196,7 @@ export class RdsCompProfileComponent extends MfeBaseComponent implements OnInit 
     }
   }
   onClickCloseTabContent() {
-    this.offCanvasWidth = 304;
+    this.offCanvasWidth = 306;
     this.isAnyProfileMenuSelected = false;
   }
   onclickCancel() {
