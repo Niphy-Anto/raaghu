@@ -49,7 +49,7 @@ template: `
 
 </div>
   <rds-scrollspy scrollId = "scrollspy">
-  <div class="bg-light mb-5 pb-3 pt-5 px-4">
+  <div class="scrollspy_item  mb-5 pb-3 pt-5 px-4">
   <scrollspy-item scrollItemId="scrollspyHeading1" header = "First header">
     <p>This is some placeholder content for the scrollspy page. Note that as you scroll down the page, the appropriate navigation link is highlighted. It's repeated throughout the component example. We keep adding some more example copy here to emphasize the scrolling and highlighting</p>
     <div class="d-flex justify-content-end">
@@ -57,7 +57,7 @@ template: `
     </div>
   </scrollspy-item>
   </div>
-  <div class="bg-light mb-5 pb-3 pt-5 px-4">
+  <div class="scrollspy_item mb-5 pb-3 pt-5 px-4">
   <scrollspy-item scrollItemId="scrollspyHeading2" header = "Second header">
   <p>This is some placeholder content for the scrollspy page. Note that as you scroll down the page, the appropriate navigation link is highlighted. It's repeated throughout the component example. We keep adding some more example copy here to emphasize the scrolling and highlighting</p>
   <div class="d-flex justify-content-end">
@@ -65,7 +65,7 @@ template: `
   </div>
   </scrollspy-item>
   </div>
-  <div class="bg-light mb-5 pb-3 pt-5 px-4">
+  <div class="scrollspy_item mb-5 pb-3 pt-5 px-4">
   <scrollspy-item scrollItemId="scrollspyHeading3" header = "Third header">
   <p>This is some placeholder content for the scrollspy page. Note that as you scroll down the page, the appropriate navigation link is highlighted. It's repeated throughout the component example. We keep adding some more example copy here to emphasize the scrolling and highlighting</p>
   <div class="d-flex justify-content-end">

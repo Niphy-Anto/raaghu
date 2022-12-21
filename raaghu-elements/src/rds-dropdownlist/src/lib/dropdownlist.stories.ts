@@ -84,7 +84,7 @@ export const WithOffset: Story<RdsDropdownlistComponent> = (args) => ({
   >
     </rds-dropdownlist>`
 });
-WithOffset.parameters = { controls: { include: ['placeholder', 'xOffset', 'yOffset', 'size', 'iconWidth', 'multiSelect', 'listItems', 'borderDropdown','onSelect'] } };
+WithOffset.parameters = { controls: { include: ['placeholder', 'xOffset', 'yOffset', 'size', 'iconWidth', 'multiSelect', 'listItems', 'borderDropdown', 'dropdownHeight','onSelect'] } };
 WithOffset.args = {
   placeholder: 'Filter',
   xOffset: '0',
