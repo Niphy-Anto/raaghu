@@ -175,13 +175,17 @@ export class RdsDataTableComponent implements OnInit, DoCheck, OnChanges {
           let _b = b[header.key];
           if (a[header.key] !== null && a[header.key] !== '' && a[header.key]) {
             _a = a[header.key].toLowerCase();
+          } else {
+            _a = '';
           }
           if (b[header.key] !== null && b[header.key] !== '' && b[header.key]) {
             _b = b[header.key].toLowerCase();
+          } else {
+            _b = '';
           }
           if (_a > _b) {
             return 1;
-          } else if (_b > _b) {
+          } else if (_a < _b) {
             return -1
           } else {
             return 0;
@@ -203,9 +207,13 @@ export class RdsDataTableComponent implements OnInit, DoCheck, OnChanges {
           let _b = b[header.key];
           if (a[header.key] !== null && a[header.key] !== '' && a[header.key]) {
             _a = a[header.key].toLowerCase()
+          } else {
+            _a = '';
           }
           if (b[header.key] !== null && b[header.key] !== '' && b[header.key]) {
             _b = b[header.key].toLowerCase()
+          } else {
+            _b = '';
           }
           if (_a < _b) {
             return 1
