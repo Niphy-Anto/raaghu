@@ -178,32 +178,14 @@ export class RdsCompUserPermissionsComponent implements OnInit {
   };
   ngOnInit(): void {
     this.activePage = 0;
-    this.rdsOrganizationTreeConfig = {
-      name: 'RdsOrganizationTree',
-      input: {
-        organizationTreeData: this.orgTreeData,
-        nodeColor: this.nodeColors,
-        mutable: true,
-        OrganizationTreeType: this.TreeType,
-        OrganizationTreeLabeles: this.TreeNodeLabeles,
-        ButtonLabel: '',
-      },
-      output: {
-        onSelectAll: (onSelectAllevent) => {
-          console.log(onSelectAllevent);
-        },
-        onSelectnode: (onSelectnodeevent) => {
-          this.selectedTreeNode = onSelectnodeevent.item.data.id;
-        },
-      },
-    };
+
     this.subscribeToAlerts();
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    const mfeConfig = this.rdsOrganizationTreeConfig;
-    mfeConfig.input.orgTreeData = [...this.orgTreeData];
-    this.rdsOrganizationTreeConfig = mfeConfig;
+    // const mfeConfig = this.rdsOrganizationTreeConfig;
+    // mfeConfig.input.orgTreeData = [...this.orgTreeData];
+    // this.rdsOrganizationTreeConfig = mfeConfig;
     this.selectedOrganizationUnit = [];
   }
 
@@ -523,6 +505,7 @@ export class RdsCompUserPermissionsComponent implements OnInit {
         sticky: alert.sticky,
       };
       this.currentAlerts.push(currentAlert);
+      this.showLoadingSpinner = false;
     });
   }
 

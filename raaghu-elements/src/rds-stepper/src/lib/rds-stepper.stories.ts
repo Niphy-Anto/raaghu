@@ -29,10 +29,10 @@ const Template: Story<RdsStepperComponent> = (args: RdsStepperComponent) => ({
         <div class="contents">
         <p>This is some placeholder content the Profile tab's associated content. Clicking another tab will toggle the visibility of this one for the next.<br>
          The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other</p></div></div>
-        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"><div class="contents bg-white p-2">This is some placeholder content the Home tab's associated content. Clicking another tab will toggle the visibility of this one for the next.<br>
+        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"><div class="contents  p-2">This is some placeholder content the Home tab's associated content. Clicking another tab will toggle the visibility of this one for the next.<br>
          The  tab JavaScript swaps classes to control the content visibility  tab JavaScript swaps classes to control the content visibility   tab JavaScript swaps classes to control the content visibilityand styling. You can use it with tabs, pills, and any other .nav-powered navigation.</div></div>
-        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab"><div class="contents bg-white p-2">Tab3 is showing with nav tab </div></div>
-        <div class="tab-pane fade" id="nav-deabled" role="tabpanel" aria-labelledby="nav-contact-tab"><div class="contents bg-white p-2">test</div></div>
+        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab"><div class="contents p-2">Tab3 is showing with nav tab </div></div>
+        <div class="tab-pane fade" id="nav-deabled" role="tabpanel" aria-labelledby="nav-contact-tab"><div class="contents p-2">test</div></div>
       </div>
     </div>
     

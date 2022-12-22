@@ -2,18 +2,10 @@ import { Component, OnInit, Input } from '@angular/core';
 import { DatePipe } from '@angular/common';
 import { AlertService, ComponentLoaderOptions } from '@libs/shared';
 import { Store } from '@ngrx/store';
-
-
 import { TableHeader } from 'projects/rds-components/src/models/table-header.model';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import {
-  transition,
-  trigger,
-  query,
-  style,
-  animate,
-} from '@angular/animations';
+import { transition, trigger, query, style, animate } from '@angular/animations';
 import { deleteLanguage, getCountryList, getLanguages, saveLanguage, setDefaultLanguage } from 'projects/libs/state-management/src/lib/state/language/language.actions';
 import { selectAllCountries, selectAllLanguages, selectDefaultLanguage } from 'projects/libs/state-management/src/lib/state/language/language.selector';
 declare var bootstrap: any;
@@ -76,7 +68,7 @@ export class AppComponent implements OnInit {
     icon: '',
     isEnabled: false,
     id: undefined,
-    languageName:''
+    languageName: ''
   };
   rdsLanguageTableMfeConfig: ComponentLoaderOptions;
   languageTableHeader: TableHeader[] = [
@@ -263,6 +255,7 @@ export class AppComponent implements OnInit {
         this.translate.use(res);
       }
     });
+
     this.store.select(selectAllLanguages).subscribe((res: any) => {
       this.languageTableData = [];
       if (res && res.items && res.items.length > 0) {
@@ -350,7 +343,7 @@ export class AppComponent implements OnInit {
         icon: '',
         isEnabled: false,
         id: undefined,
-        languageName:''
+        languageName: ''
       };
       this.languageCanvasTitle = this.translate.instant('New Language');
     } else {
@@ -375,7 +368,7 @@ export class AppComponent implements OnInit {
       icon: '',
       isEnabled: false,
       id: undefined,
-      languageName:''
+      languageName: ''
     };
     this.showLoadingSpinner = false;
   }

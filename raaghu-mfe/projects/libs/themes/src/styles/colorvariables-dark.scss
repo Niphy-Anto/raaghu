@@ -19,8 +19,15 @@ $btn-close-color: $gray-300 !default;
 $btn-close-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#fff'><path d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/></svg>") !default;
 
 // /*accordion color variables*/
+$popover-header-bg:$primary-600 !default;
+/*accordion color variables*/
+$accordion-body-bg: $dark-100 !default;
+$accordion-body-text: $gray-400 !default;
 $accordion-bg: $primary;
 $accordion-button-bg: $input-bg;
+
+/* address details  color variables */
+$address-body-text: $light-800 !default;
 
 // /*badge mixins color variables*/
 $badge-bg-scale: -80%;
@@ -180,7 +187,7 @@ $verticle-border-color: $gray-100 !default;
 
 // /*modal variables*/
 
-$modal-content-bg: $dark-400 !default;
+$modal-content-bg: $dark-500 !default;
 
 // /* offcanvas variables */
 $offcanvas-bg-color: $modal-content-bg !default;
@@ -189,6 +196,7 @@ $offcanvas-bottom-border-color: $dark-300 !default;
 $nav-tabs-bottom-border-color: $dark-400 !default;
 // /*toast*/
 $toast-text-color: $black;
+$popover-header-bg-color:$primary !default;
 // /*button transition values*/
 $btn-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
   box-shadow 0.15s ease-in-out !default;
@@ -222,12 +230,12 @@ $card-darkborder-color: $gray-100 !default;
 $card-dashboard-bg-color: #161618 !default;
 $card-dashboard-border-color: #3c3e47;
 
-$offcanvasbg: $dark-400 !default;
+$offcanvasbg: $dark-500 !default;
 
 $modal-bg-color: $dark-900 !default;
 $wrapper-bg: $dark-900 !default;
 $nav-tab-bg-active: $dark-900 !default;
-$footer-bgcolor: $dark-900 !default;
+$footer-bgcolor: $dark-500 !default;
 $profileMenuBgColor: $dark-900 !default;
 $trhoverbg-color: $dark-400 !default;
 $nav-li-border: $white !default;
@@ -339,6 +347,10 @@ $navbar-light-toggler-border-color : $light !default;
 
   .card-header {
     background-color: transparent;
+    color: $white;
+  }
+  .card-body{
+    color:$white;
   }
 
   .card-footer {
@@ -504,6 +516,7 @@ a {
 svg {
   fill: none;
   stroke: $white;
+  color: $white;
 }
 
 .navbar-brand {
@@ -538,6 +551,14 @@ svg {
   background: $accordion-bg;
   border-color: $primary;
 }
+.accordion-item{
+  background-color: $accordion-body-bg;
+  border-color:$gray-600;
+}
+.accordion-body{
+  //background-color: $accordion-body-bg;
+  color:$accordion-body-text;
+}
 
 .outline {
   .accordion-button {
@@ -545,13 +566,37 @@ svg {
   }
 
   .accordion-header {
-    background: $light;
+    //background: $light;
   }
+}
+.address-header{
+  color: $white;
+}
+.address-body{
+  color:$address-body-text;
+}
+ /* app-detail avatar */
+ .icon-bg{
+  background: $white;
+ }
+
+.benefit{
+  background: $dark;
+//color:white;
+}
+.card-details{
+  background-color: $dark-100;
+}
+.avatar-initials{
+  color:$white;
 }
 
 .badge {
   padding: $badge-padding-y $badge-padding-x;
   @include font-size($badge-font-size);
+}
+.feature_list{
+  color:light-600;
 }
 // /*Notification*/
 .notification-header {
@@ -691,6 +736,21 @@ svg {
 .toast-text {
   color: $toast-text-color;
 }
+.table-border > :not(caption) > * > * {
+  border-width: 0 1px;
+  border-bottom-width: 1px;
+ }
+ /*toast*/
+ .toast-text{
+  color:$toast-text-color;
+}
+// .toast-close{
+//   color:$toast-btn-close-color;
+// }
+/*edition color variables*/
+.popover-header {
+  background-color:$popover-header-bg-color;
+ }
 
 // /*edition color variables*/
 .edition-grid {
@@ -900,9 +960,312 @@ svg {
       }
     }
 
-    .nav-link.active {
-      background-color: $nav-tab-bg-active;
+    .nav-link:hover {
+      svg {
+        -webkit-animation: ring 10s .7s ease-in-out infinite;
+        -webkit-transform-origin: 50% 4px;
+        -moz-animation: ring 10s .7s ease-in-out infinite;
+        -moz-transform-origin: 50% 4px;
+        animation: ring 10s .7s ease-in-out infinite;
+        transform-origin: 50% 4px;
 
+        @-webkit-keyframes ring {
+          0% {
+            -webkit-transform: rotateZ(0);
+          }
+
+          1% {
+            -webkit-transform: rotateZ(30deg);
+          }
+
+          3% {
+            -webkit-transform: rotateZ(-28deg);
+          }
+
+          5% {
+            -webkit-transform: rotateZ(34deg);
+          }
+
+          7% {
+            -webkit-transform: rotateZ(-32deg);
+          }
+
+          9% {
+            -webkit-transform: rotateZ(30deg);
+          }
+
+          11% {
+            -webkit-transform: rotateZ(-28deg);
+          }
+
+          13% {
+            -webkit-transform: rotateZ(26deg);
+          }
+
+          15% {
+            -webkit-transform: rotateZ(-24deg);
+          }
+
+          17% {
+            -webkit-transform: rotateZ(22deg);
+          }
+
+          19% {
+            -webkit-transform: rotateZ(-20deg);
+          }
+
+          21% {
+            -webkit-transform: rotateZ(18deg);
+          }
+
+          23% {
+            -webkit-transform: rotateZ(-16deg);
+          }
+
+          25% {
+            -webkit-transform: rotateZ(14deg);
+          }
+
+          27% {
+            -webkit-transform: rotateZ(-12deg);
+          }
+
+          29% {
+            -webkit-transform: rotateZ(10deg);
+          }
+
+          31% {
+            -webkit-transform: rotateZ(-8deg);
+          }
+
+          33% {
+            -webkit-transform: rotateZ(6deg);
+          }
+
+          35% {
+            -webkit-transform: rotateZ(-4deg);
+          }
+
+          37% {
+            -webkit-transform: rotateZ(2deg);
+          }
+
+          39% {
+            -webkit-transform: rotateZ(-1deg);
+          }
+
+          41% {
+            -webkit-transform: rotateZ(1deg);
+          }
+
+          43% {
+            -webkit-transform: rotateZ(0);
+          }
+
+          100% {
+            -webkit-transform: rotateZ(0);
+          }
+        }
+
+        @-moz-keyframes ring {
+          0% {
+            -moz-transform: rotate(0);
+          }
+
+          1% {
+            -moz-transform: rotate(30deg);
+          }
+
+          3% {
+            -moz-transform: rotate(-28deg);
+          }
+
+          5% {
+            -moz-transform: rotate(34deg);
+          }
+
+          7% {
+            -moz-transform: rotate(-32deg);
+          }
+
+          9% {
+            -moz-transform: rotate(30deg);
+          }
+
+          11% {
+            -moz-transform: rotate(-28deg);
+          }
+
+          13% {
+            -moz-transform: rotate(26deg);
+          }
+
+          15% {
+            -moz-transform: rotate(-24deg);
+          }
+
+          17% {
+            -moz-transform: rotate(22deg);
+          }
+
+          19% {
+            -moz-transform: rotate(-20deg);
+          }
+
+          21% {
+            -moz-transform: rotate(18deg);
+          }
+
+          23% {
+            -moz-transform: rotate(-16deg);
+          }
+
+          25% {
+            -moz-transform: rotate(14deg);
+          }
+
+          27% {
+            -moz-transform: rotate(-12deg);
+          }
+
+          29% {
+            -moz-transform: rotate(10deg);
+          }
+
+          31% {
+            -moz-transform: rotate(-8deg);
+          }
+
+          33% {
+            -moz-transform: rotate(6deg);
+          }
+
+          35% {
+            -moz-transform: rotate(-4deg);
+          }
+
+          37% {
+            -moz-transform: rotate(2deg);
+          }
+
+          39% {
+            -moz-transform: rotate(-1deg);
+          }
+
+          41% {
+            -moz-transform: rotate(1deg);
+          }
+
+          43% {
+            -moz-transform: rotate(0);
+          }
+
+          100% {
+            -moz-transform: rotate(0);
+          }
+        }
+
+        @keyframes ring {
+          0% {
+            transform: rotate(0);
+          }
+
+          1% {
+            transform: rotate(30deg);
+          }
+
+          3% {
+            transform: rotate(-28deg);
+          }
+
+          5% {
+            transform: rotate(34deg);
+          }
+
+          7% {
+            transform: rotate(-32deg);
+          }
+
+          9% {
+            transform: rotate(30deg);
+          }
+
+          11% {
+            transform: rotate(-28deg);
+          }
+
+          13% {
+            transform: rotate(26deg);
+          }
+
+          15% {
+            transform: rotate(-24deg);
+          }
+
+          17% {
+            transform: rotate(22deg);
+          }
+
+          19% {
+            transform: rotate(-20deg);
+          }
+
+          21% {
+            transform: rotate(18deg);
+          }
+
+          23% {
+            transform: rotate(-16deg);
+          }
+
+          25% {
+            transform: rotate(14deg);
+          }
+
+          27% {
+            transform: rotate(-12deg);
+          }
+
+          29% {
+            transform: rotate(10deg);
+          }
+
+          31% {
+            transform: rotate(-8deg);
+          }
+
+          33% {
+            transform: rotate(6deg);
+          }
+
+          35% {
+            transform: rotate(-4deg);
+          }
+
+          37% {
+            transform: rotate(2deg);
+          }
+
+          39% {
+            transform: rotate(-1deg);
+          }
+
+          41% {
+            transform: rotate(1deg);
+          }
+
+          43% {
+            transform: rotate(0);
+          }
+
+          100% {
+            transform: rotate(0);
+          }
+        }
+      }
+    }
+
+    .nav-link.active {
       svg {
         fill: none;
         stroke: $primary;
@@ -1114,6 +1477,35 @@ svg {
     border-color: #232933;
   }
 }
+
+.form-control, .form-control:focus{
+  background-color: $dark-0 ;
+  border: 1px solid $dark-100;
+  color:$light-200;
+}
+
+.input-group-text{
+  background-color: $dark-0 ;
+  border : $dark-100;
+}
+
+.scrollspy_body{
+  background-color: $black;
+}
+.scrollspy_item{
+  background-color: $dark-900;
+  color: $white;
+}
+.size-body{
+  background-color: $dark-200;
+}
+.size{
+  color:$white;
+}
+.description{
+  color:$white;
+}
+
 /*input search properrties*/
 
 $form-group-bg-color: $gray-200;
@@ -1152,9 +1544,9 @@ $form-feedback-color: $gray-200;
 }
 
 .table {
-  > :not(caption) > * > * {
+/*   > :not(caption) > * > * {
     background-color: inherit;
-  }
+  } */
 
   > thead {
     background-color: var(--bs-table-bg);
@@ -1310,18 +1702,6 @@ $form-feedback-color: $gray-200;
   }
 }
 
-@mixin button-outline-variant(
-  $color,
-  $color-hover: color-contrast($color),
-  $active-background: $color,
-  $active-border: $color,
-  $active-color: color-contrast($active-background)
-) {
-  background-color: transparent;
-  border-color: $gray-500;
-  color: $gray-500;
-}
-
 @each $color, $value in $theme-colors {
   .btn-outline-#{$color} {
     @include button-outline-variant($value);
@@ -1458,10 +1838,10 @@ $form-feedback-color: $gray-200;
   background-color: $card-bg-color;
 }
 
-#profileOffCanvas .card {
+/*#profileOffCanvas .card {
   background-color: transparent;
   border-color: transparent;
-}
+}*/
 
 .theme-green .bs-datepicker-body table td span.selected {
   background-color: #5c82e3;
@@ -1547,8 +1927,12 @@ $form-feedback-color: $gray-200;
     height: 22px;
     fill: none;
     stroke: $primary;
-    transition: transform 0.99s ease-out;
-    transform: rotateZ(360deg);
+    -webkit-animation: ring 10s 0.7s ease-in-out infinite;
+    -webkit-transform-origin: 50% 4px;
+    -moz-animation: ring 10s 0.7s ease-in-out infinite;
+    -moz-transform-origin: 50% 4px;
+    animation: ring 10s 0.7s ease-in-out infinite;
+    transform-origin: 50% 4px;
 
     polyline.icon {
       stroke: $primary;
@@ -1620,4 +2004,10 @@ $form-feedback-color: $gray-200;
 }
 .navbar-toggler-icon {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+//radio button
+.form-check-input:checked {
+    background-color: $primary-400;
+    border-color: $primary-400;
 }

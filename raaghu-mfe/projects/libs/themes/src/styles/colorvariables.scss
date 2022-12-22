@@ -4,7 +4,8 @@
 @import "./node_modules/bootstrap/scss/_utilities";
 
 .theme-dark {
-  background-color: #000;
+  background-color: $black;
+  color:$white;
   @import "./colorvariables-dark.scss";
 }
 

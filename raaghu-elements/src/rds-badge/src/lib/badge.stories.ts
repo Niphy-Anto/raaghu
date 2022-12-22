@@ -50,7 +50,7 @@ TextBadge.args = {
 const Button: Story<RdsBadgeComponent> = (args: RdsBadgeComponent) => ({
   props: args,
   template:
-    `<rds-button [label]="'Button'" [colorVariant]="'primary'">
+    `<rds-button [label]="'Button'" [colorVariant]="'primary'"  size="medium">
       <rds-badge
       [size]="size"
       [label]="label"
