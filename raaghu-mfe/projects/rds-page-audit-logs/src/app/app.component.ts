@@ -127,6 +127,8 @@ export class AppComponent implements OnInit {
     }
     this.store.dispatch(getAuditLogs(auditLogParamsData));
     this.store.select(selectAllAuditLogs).subscribe((res: any) => {
+      this.isShimmer = false;
+      this.isAnimation = false;
       this.auditLogsTableData = [];
       const auditLogsTableData = [];
       if (res && res.items && res.items.length > 0) {
@@ -167,6 +169,8 @@ export class AppComponent implements OnInit {
     this.store.dispatch(getEntityChanges(ChangeLogParamsData));
     this.store.select(selectAllchangeLogs).subscribe((res: any) => {
       this.changeLogs = [];
+      this.isShimmer = false;
+      this.isAnimation = false;
       if (res && res.items && res.items.length > 0) {
         res.items.forEach((element: any) => {
           const item: any = {
@@ -187,6 +191,8 @@ export class AppComponent implements OnInit {
   }
 
   filterChangeLog(eventData) {
+    this.isShimmer = true;
+    this.isAnimation = true;
     const ChangeLogParamsData: any = {
       StartDate: this.formatDate(eventData.StartDate, 'yyyy-LL-dd HH:mm:ss'),
       EndDate: this.formatDate(eventData.EndDate, 'yyyy-LL-dd HH:mm:ss'),
@@ -199,6 +205,8 @@ export class AppComponent implements OnInit {
   }
 
   filterAuditLog(eventData) {
+    this.isShimmer = true;
+    this.isAnimation = true;
     const auditLogParamsData: any = {
       startDate: this.formatDate(eventData.startDate, 'yyyy-LL-dd HH:mm:ss'),
       endDate: this.formatDate(eventData.endDate, 'yyyy-LL-dd HH:mm:ss'),
