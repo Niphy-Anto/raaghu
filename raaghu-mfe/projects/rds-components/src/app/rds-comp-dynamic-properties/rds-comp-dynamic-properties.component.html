@@ -13,7 +13,7 @@
         [justified]="false" [activeTab]="activePage">
       </rds-nav-tab>
 
-      <div class="tab-content px-2 py-2">
+      <div class="tab-content px-2 py-4">
         <!-- Dynamic Nav Tabs -->
         <div naveContent class="row tab-content px-3 navsm-p-0" id="nav-tabContent">
           <!-- Information tab -->
@@ -38,7 +38,7 @@
         </div>
       </div>
       <div class="footer-buttons">
-        <div class="row">
+        <div class="row py-3">
           <div class="col-md-12">
             <rds-button [label]="translate.instant('Cancel')" type="button" [colorVariant]="'primary'"
               [isOutline]="true" [size]="'small'" data-bs-dismiss="offcanvas" (click)="closeCanvas()">

@@ -51,7 +51,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12 sm-p-0" *ngIf="showEditData">
+            <div class="col-md-12 pb-2 sm-p-0" *ngIf="showEditData">
                 <div class="form-group mb-3">
                     <rds-checkbox [disabled]="false" [label]="translate.instant('Set Random Password')"
                         [withLabel]="true" (onChange)="getCheckboxValue($event,'ramdomPassword')"
@@ -59,7 +59,7 @@
                         [id]="'setRandomPassword'"></rds-checkbox>
                 </div>
             </div>
-            <div class="col-md-12 sm-p-0" *ngIf="showEditData">
+            <div class="col-md-12 pb-2 sm-p-0" *ngIf="showEditData">
                 <div class="form-group mb-3">
                     <rds-checkbox [disabled]="false" [label]="translate.instant('Should Change Password On Next Login')"
                         [checked]="tenantSettingsInfo.changePasswordOnNextLogin" [withLabel]="true" [switch]="false"
@@ -68,7 +68,7 @@
                     </rds-checkbox>
                 </div>
             </div>
-            <div class="col-md-12 sm-p-0" *ngIf="showEditData">
+            <div class="col-md-12 pb-2 sm-p-0" *ngIf="showEditData">
                 <div class="form-group mb-3">
                     <rds-checkbox [disabled]="false" [checked]="tenantSettingsInfo.sendActivationEmail"
                         [label]="translate.instant('Send Activation Email')"
@@ -77,7 +77,7 @@
                     </rds-checkbox>
                 </div>
             </div>
-            <div class="col-md-12 sm-p-0">
+            <div class="col-md-12 pb-2 sm-p-0">
                 <div class="form-group mb-3">
                     <rds-checkbox [disabled]="false" [label]="translate.instant('Activate')"
                         [checked]="tenantSettingsInfo.isActive" [(ngModel)]="tenantSettingsInfo.isActive"
