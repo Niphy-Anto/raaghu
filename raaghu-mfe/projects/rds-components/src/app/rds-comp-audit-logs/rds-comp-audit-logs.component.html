@@ -1,4 +1,4 @@
-<div class="card p-2 h-100 border-0 rounded-0 vh-88">
+<div class="card p-2 border-0 rounded-0 vh-88">
     <div class="row m-1">
         <div class="col-md-12  text-end position-relative">
             <div class="position-absolute  end-0 desktop-btn">
@@ -22,7 +22,7 @@
 
     <div naveContent class="row tab-content m-2" id="nav-tabContent">
         <div class="tab-pane fade show active" id="operation-logs" role="tabpanel" aria-labelledby="nav-home-tab">
-            <div class="excel-btn m-1">
+            <div class="excel-btn">
                 <div class="row mb-1">
                     <div class="col-md-3 col-sm-6 mt-1">
                         <rds-datepicker name="date-picker" [datePickerType]="'range'" [label]="''"
@@ -56,7 +56,7 @@
                 </div>
             </div>
             <div class="row" *ngIf="showFilters">
-                <div class="col-md-2 sm-p-0 mt-2 px-3">
+                <div class="col-md-2  mt-2">
                     <rds-input size="medium" [(ngModel)]="service" [placeholder]="translate.instant('Service')"
                         (change)="serviceModify($event)" id="service" floatinginputLabel="" ngDefaultControl
                         name="service">
@@ -81,7 +81,7 @@
                         floatinginputLabel="" ngDefaultControl name="to">
                     </rds-input>
                 </div>
-                <div class="col-md-2 sm-p-0 mt-2">
+                <div class="col-md-2  mt-2">
                     <rds-input size="medium" (change)="actionModify($event)" [(ngModel)]="action"
                         [placeholder]="translate.instant('Action')" id="action" floatinginputLabel="" ngDefaultControl
                         name="action">
