@@ -21,7 +21,12 @@ import {
 } from '../../../libs/shared/src/public-api';
 import { StoreModule } from '@ngrx/store';
 import { RdsDataTableComponent } from 'projects/rds-components/src/app/rds-comp-data-table/rds-comp-data-table.component';
-
+import { ApiBasicsComponent } from './api-basics/api-basics.component';
+import { ApiClaimsComponent } from './api-claims/api-claims.component';
+import { ApiSecretsComponent } from './api-secrets/api-secrets.component';
+import { ApiPropertiesComponent } from './api-properties/api-properties.component';
+import { RdsCompClaimsComponent } from 'projects/rds-components/src/app/rds-comp-claims/rds-comp-claims.component';
+import { RdsCompBasicResourceComponent } from 'projects/rds-components/src/app/rds-comp-basic-resource/rds-comp-basic-resource.component';
 export default {
   title: 'Pages/Api-Resources',
   component: ApiResource,
@@ -29,6 +34,8 @@ export default {
     moduleMetadata({
       declarations: [
         RdsDataTableComponent,
+        RdsCompBasicResourceComponent,
+        RdsCompClaimsComponent
       ],
       imports: [
         FormsModule,
@@ -78,11 +85,11 @@ const Template: Story<ApiResource> = (args: ApiResource) => ({
     </h5> 
   
     <div class="card-body">
-    <app-rds-comp-data-table
+    <rds-comp-data-table
     [tableData]="apiResourceTableData"
     [tableHeaders]=" apiResourceTableHeader"
     [actions]="actions"
-    ></app-rds-comp-data-table>
+    ></rds-comp-data-table>
     </div>
   </div>
   
@@ -117,7 +124,7 @@ const Template: Story<ApiResource> = (args: ApiResource) => ({
           role="tabpanel"
           aria-labelledby="nav-home-tab"
         >
-          <app-api-basics (onBsicResourceSave)="SaveBasicResource($event)"></app-api-basics>
+          <rds-comp-basic-resource (onBsicResourceSave)="SaveBasicResource($event)"></rds-comp-basic-resource>
         </div>
   
         <div
@@ -126,7 +133,7 @@ const Template: Story<ApiResource> = (args: ApiResource) => ({
           role="tabpanel"
           aria-labelledby="nav-home-tab"
         >
-          <app-api-claims [ClaimData]="claimData" (onClaimResourceSave)="SaveClaimResource($event)"></app-api-claims>
+          <rds-comp-claims [ClaimData]="claimData" (onClaimResourceSave)="SaveClaimResource($event)"></rds-comp-claims>
         </div>
       </div>
     </rds-offcanvas>
@@ -159,7 +166,7 @@ const Template: Story<ApiResource> = (args: ApiResource) => ({
           role="tabpanel"
           aria-labelledby="nav-home-tab"
         >
-          <app-api-basics [ResourceData]="BasicResource" (onBsicResourceSave)="SaveBasicResource($event)"></app-api-basics>
+          <rds-comp-basic-resource  [ResourceData]="BasicResource" (onBsicResourceSave)="SaveBasicResource($event)"></rds-comp-basic-resource >
         </div>
   
         <div
@@ -168,7 +175,7 @@ const Template: Story<ApiResource> = (args: ApiResource) => ({
           role="tabpanel"
           aria-labelledby="nav-home-tab"
         >
-          <app-api-claims [ClaimData]="claimData" (onClaimResourceSave)="SaveClaimResource($event)"></app-api-claims>
+          <rds-comp-claims [ClaimData]="claimData" (onClaimResourceSave)="SaveClaimResource($event)"></rds-comp-claims>
         </div>
   
         <div
@@ -263,4 +270,70 @@ Default.args = {
     { id: 'edit', displayName: 'Edit' },
     { id: 'delete', displayName: 'Delete' },
   ],
+  navtabsItems:[
+    {
+      label: 'Basics',
+      tablink: '#basics',
+      ariacontrols: 'basics',
+    },
+    {
+      label: 'Claims',
+      tablink: '#claims',
+      ariacontrols: 'claims',
+    },
+  ],
+  navtabsItemsEdit: [
+    {
+      label: 'Basics',
+      tablink: '#editBasics',
+      ariacontrols: 'basics',
+    },
+    {
+      label: 'Claims',
+      tablink: '#editClaims',
+      ariacontrols: 'claims',
+    },
+    {
+      label: 'Secrets',
+      tablink: '#editSecrets',
+      ariacontrols: 'secrets',
+    },
+    {
+      label: 'Properties',
+      tablink: '#editProperties',
+      ariacontrols: 'properties',
+    },
+  ],
+  claimData: {
+    claim_ato_e: [
+      { label: 'Availability', checked: false },
+      { label: 'Apiopolis', checked: false },
+      { label: 'Apigenix', checked: false },
+      { label: 'Best Selector', checked: false },
+      { label: 'Best Selector', checked: false },
+      { label: 'Creative', checked: false },
+      { label: 'ALT Genix Api', checked: false },
+      { label: 'Dev Support Api', checked: false },
+    ],
+    claim_f_to_o: [
+      { label: 'Availability', checked: false },
+      { label: 'Apiopolis', checked: false },
+      { label: 'Apigenix', checked: false },
+      { label: 'Best Selector', checked: false },
+      { label: 'Best Selector', checked: false },
+      { label: 'Creative', checked: false },
+      { label: 'ALT Genix Api', checked: false },
+      { label: 'Dev Support Api', checked: false },
+    ],
+    claim_p_to_z: [
+      { label: 'Availability', checked: false },
+      { label: 'Apiopolis', checked: false },
+      { label: 'Apigenix', checked: false },
+      { label: 'Best Selector', checked: false },
+      { label: 'Best Selector', checked: false },
+      { label: 'Creative', checked: false },
+      { label: 'ALT Genix Api', checked: false },
+      { label: 'Dev Support Api', checked: false },
+    ],
+  }
 };

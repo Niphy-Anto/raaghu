@@ -66,12 +66,12 @@
     </div>
     <div class="mobile-ms">
       <ul class="navbar-nav d-flex align-items-center flex-row gap-2">
-        <li class="nav-item dropdown px-2 mobile-notification">
+        <li class="nav-item dropdown pe-3 ps-2 me-1 mobile-notification">
           <a class="nav-link py-0" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
             aria-expanded="false">
             <span>
-              <rds-button class="position-relative" [size]="'small'" [id]="'notification'" [isRounded]="true"
-                [colorVariant]="'default'" type="button">
+              <rds-button class="position-relative" [isFabIcon]="true" [size]="'small'" [id]="'notification'"
+                [isRounded]="true" [colorVariant]="'default'" type="button">
                 <rds-icon name="notification" width="20px" height="20px"></rds-icon>
                 <rds-badge class="notification-li" right size="smallest" badgeType="circle" colorVariant="primary"
                   [label]="unreadCount" [positioned]="true">
@@ -93,6 +93,12 @@
               (setAllReadOutput)="setAllNotificationAsRead.emit($event)"></rds-notification>
             <!-- <mfe-loader [config]="rdsNotoficationMfeConfig"></mfe-loader> -->
           </div>
+        </li>
+        <li class="nav-item border-end border-start px-3 mobile-notification">
+          <!-- <a href="#" this.router.navigate(['/link']);><rds-icon width="20px" height="20px" name="gear"></rds-icon></a> -->
+          <a routerLinkActive="routerLinkActive-name" [routerLink]="['/pages/settings']" class="setting">
+            <rds-icon width="20px" height="20px" name="gear"></rds-icon>
+          </a>
         </li>
         <li class="nav-item cursor-pointer" (click)="viewOffcanvas()">
           <div class="nav-link align-items-center d-flex">
