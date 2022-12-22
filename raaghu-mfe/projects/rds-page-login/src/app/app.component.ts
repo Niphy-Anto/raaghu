@@ -221,5 +221,9 @@ export class AppComponent extends MfeBaseComponent implements OnInit {
       }
       , this);
   }
+
+  onAlertHide (event: any) {
+    this.currentAlerts = event;
+  }
 }
 
