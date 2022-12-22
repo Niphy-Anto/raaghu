@@ -147,6 +147,7 @@ input::-webkit-input-placeholder {
   font-weight: $input-font-weight;
 }
 
+
 .form-select {
   font-size: $font-size-sm;
   line-height: 1.8;
@@ -521,12 +522,25 @@ html[theme="dark"] .btn-primary svg {
   white-space: normal;
 }
 
+.border_radius{
+  border-radius: 0 10% 10% 0;
+}
 .dropdown-menu {
   max-height: 350px;
   overflow: auto;
 }
 
 .dropdown-toggle::after {
+  float: right;
+  margin: 10px 5px;
+}
+
+.btn-sm .dropdown-toggle::after {
+  float: right;
+  margin: 7px 5px;
+}
+
+.dropdown-toggle-split::after{
   float: right;
   margin: 10px 5px;
 }
@@ -1241,6 +1255,14 @@ rds-admin-dashboard {
 #sidebar ul li .collapse li .collapse li {
   list-style: square;
   margin-left: 0px;
+}
+
+
+.dropdown-center {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  height: 91vh;
 }
 
 #RoleOffcanvas .offcanvas-body{
