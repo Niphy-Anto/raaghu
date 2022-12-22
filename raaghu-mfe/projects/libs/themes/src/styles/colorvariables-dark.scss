@@ -1486,10 +1486,10 @@ svg {
   }
 }
 
-.form-control, .form-control:focus{
-  background-color: $dark-0 ;
+.form-control, .form-control:focus {
+  background-color: $input-bg;
   border: 1px solid $dark-100;
-  color:$light-200;
+  color: $light-200;
 }
 
 .input-group-text{
