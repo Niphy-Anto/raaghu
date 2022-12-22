@@ -41,7 +41,6 @@ export class RdsCompPermissionTreeComponent implements OnInit {
   constructor(public translate: TranslateService) {
   }
   ngOnInit(): void {
-    debugger
     this.treeData =this.treeData;
   }
   ngOnChanges(changes: SimpleChanges): void {
