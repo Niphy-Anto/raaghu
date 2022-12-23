@@ -56,13 +56,13 @@
                 </div>
             </div>
             <div class="row" *ngIf="showFilters">
-                <div class="col-md-2  mt-2">
+                <div class="col-md-2 mt-2">
                     <rds-input size="medium" [(ngModel)]="service" [placeholder]="translate.instant('Service')"
                         (change)="serviceModify($event)" id="service" floatinginputLabel="" ngDefaultControl
                         name="service">
                     </rds-input>
                 </div>
-                <div class="col-md-2 sm-p-0 mt-2">
+                <div class="col-md-2 mt-2">
                     <!-- <rds-input size="medium" [(ngModel)]="from" [inputType]="'number'"
                         [placeholder]="translate.instant('From')" (change)="fromModify($event)" id="from"
                         floatinginputLabel="" ngDefaultControl name="from">
@@ -71,7 +71,7 @@
                         [placeholder]="translate.instant('Duration Condition')" [value]="durationType"
                         [listItems]="durationTypeList" (onSelect)="onDurationTypeChange($event)"></rds-dropdownlist>
                 </div>
-                <div class="col-md-2 sm-p-0 mt-2">
+                <div class="col-md-2 mt-2">
                     <!-- <rds-input size="medium" [(ngModel)]="to" [inputType]="'number'"
                         [placeholder]="translate.instant('To')" (change)="toModify($event)" id="to"
                         floatinginputLabel="" ngDefaultControl name="to">
@@ -81,7 +81,7 @@
                         floatinginputLabel="" ngDefaultControl name="to">
                     </rds-input>
                 </div>
-                <div class="col-md-2  mt-2">
+                <div class="col-md-2 mt-2">
                     <rds-input size="medium" (change)="actionModify($event)" [(ngModel)]="action"
                         [placeholder]="translate.instant('Action')" id="action" floatinginputLabel="" ngDefaultControl
                         name="action">

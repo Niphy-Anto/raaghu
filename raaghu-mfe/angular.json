@@ -259,7 +259,7 @@
       }
     },
     "rds-components": {
-      "projectType": "application",
+      "projectType": "library",
       "root": "projects/rds-components",
       "sourceRoot": "projects/rds-components/src",
 			"prefix": "app"
