@@ -11,6 +11,7 @@ import {
   query,
   style,
   animate,
+  state,
 } from '@angular/animations';
 import { TableAction } from 'projects/rds-components/src/models/table-action.model';
 declare var bootstrap: any;
@@ -21,30 +22,36 @@ declare var bootstrap: any;
   styleUrls: ['./app.component.scss'],
   animations: [
     trigger('fadeAnimation', [
-      transition('* <=> *', [
-        query(':enter',
-          [
-            style({ opacity: 0 })
-          ],
-          { optional: true }
-        ),
-        query(':leave',
-          [
-            style({ opacity: 1 }),
-            animate('0.4s', style({ opacity: 0 }))
-          ],
-          { optional: true }
-        ),
-        query(':enter',
-          [
-            style({ opacity: 0 }),
-            animate('0.4s', style({ opacity: 1 }))
-          ],
-          { optional: true }
-        )
-      ])
-    ])
+      state('void', style({
+        opacity: 0
+      })),
+      transition('void <=> *', animate(1000)),
+    ]),
   ]
+  // trigger('fadeAnimation', [
+  //   transition('* <=> *', [
+  //     query(':enter',
+  //       [
+  //         style({ opacity: 0 })
+  //       ],
+  //       { optional: true }
+  //     ),
+  //     query(':leave',
+  //       [
+  //         style({ opacity: 1 }),
+  //         animate('0.4s', style({ opacity: 0 }))
+  //       ],
+  //       { optional: true }
+  //     ),
+  //     query(':enter',
+  //       [
+  //         style({ opacity: 0 }),
+  //         animate('0.4s', style({ opacity: 1 }))
+  //       ],
+  //       { optional: true }
+  //     )
+  //   ])
+  // ])
 })
 export class AppComponent implements OnInit {
   isAnimation: boolean = true;

@@ -10,6 +10,7 @@ import {
   query,
   style,
   animate,
+  state,
 } from '@angular/animations';
 import { profileSelector } from 'projects/libs/state-management/src/lib/state/profile-settings/profile-settings.selectors';
 import { getProfilepic } from 'projects/libs/state-management/src/lib/state/profile-settings/profile-settings.actions';
@@ -30,29 +31,11 @@ import { selectAllTenants, selectEditionComboboxItems, selecteTeantLoginList, se
   ],
   animations: [
     trigger('fadeAnimation', [
-      transition('* <=> *', [
-        query(':enter',
-          [
-            style({ opacity: 0 })
-          ],
-          { optional: true }
-        ),
-        query(':leave',
-          [
-            style({ opacity: 1 }),
-            animate('0.4s', style({ opacity: 0 }))
-          ],
-          { optional: true }
-        ),
-        query(':enter',
-          [
-            style({ opacity: 0 }),
-            animate('0.4s', style({ opacity: 1 }))
-          ],
-          { optional: true }
-        )
-      ])
-    ])
+      state('void', style({
+        opacity: 0
+      })),
+      transition('void <=> *', animate(1000)),
+    ]),
   ]
 })
 export class AppComponent {
