@@ -54,6 +54,8 @@ import { LanguageEffects } from 'projects/libs/state-management/src/lib/state/la
 import { LanguageReducer } from 'projects/libs/state-management/src/lib/state/language/language.reducer';
 import { TenantReducer } from 'projects/libs/state-management/src/lib/state/tenant/tenant.reducer';
 import { TenantEffects } from 'projects/libs/state-management/src/lib/state/tenant/tenant.effects';
+import { SettingEffects } from 'projects/libs/state-management/src/lib/state/settings/settings.effects';
+import { settingReducer } from 'projects/libs/state-management/src/lib/state/settings/settings.reducer';
 export function getRemoteServiceBaseUrl(): any {
   let URL = demodata.remoteServiceBaseUrl;
   return URL;
@@ -100,6 +102,8 @@ export function getRemoteServiceBaseUrl(): any {
     StoreModule.forRoot({
       products: productReducer,
       languages:LanguageReducer,
+      settings : settingReducer,
+
       tenants:TenantReducer,
       // dynamicProperty: DynamicPropertyReducer,
       // dynamicEntity: DynamicEntityReducer,
@@ -151,7 +155,8 @@ export function getRemoteServiceBaseUrl(): any {
       TextTemplateEffects,
       DownloadEffects,
       UserEffects,
-      LanguageEffects
+      LanguageEffects,
+      SettingEffects
     ]),
     SharedModule,
     UserAuthModule,
