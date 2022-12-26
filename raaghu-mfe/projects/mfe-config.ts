@@ -121,5 +121,14 @@ export const MfeConfig = {
   },
   icons: {
     url: 'http://localhost:5057/remoteEntry.js',
+  },
+  contactus: {
+    url: 'http://localhost:5058/remoteEntry.js',
+  },
+  infiniteproductlist: {
+    url: 'http://localhost:5059/remoteEntry.js',
+  },
+  ordersummary:{
+    url: 'http://localhost:5034/remoteEntry.js',
   }
 };
