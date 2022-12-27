@@ -74,7 +74,7 @@ export class ApiResourcesEffects {
       ofType(saveApiResource),
       switchMap((data) =>
         // Call the getTodos method, convert it to an observable
-        from(this.apiResourceService.apiResourcesPOST(data)).pipe(
+        from(this.apiResourceService.apiResourcesPOST(data.apiResources)).pipe(
           // Take the returned value and return a new success action containing the todos
           map(() => {
             this.store.dispatch(getAllApiResources());

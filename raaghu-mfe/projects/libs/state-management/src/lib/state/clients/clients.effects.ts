@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AlertService, ServiceProxy } from '@libs/shared';
+import { AlertService, ServiceProxy, SharedService } from '@libs/shared';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
 import { from, of } from 'rxjs';
@@ -15,7 +15,7 @@ export class ClientsEffects {
     private clientsService: ServiceProxy,
     private alertService: AlertService,
     private store: Store,
-    private roleService: ServiceProxy
+    private roleService: ServiceProxy,
   ) { }
   getAllClients$ = createEffect(() =>
     this.actions$.pipe(
@@ -38,7 +38,7 @@ export class ClientsEffects {
   getClient$ = createEffect(() =>
     this.actions$.pipe(
       ofType(getClient),
-      switchMap((id) =>
+      switchMap(({id}) =>
         // Call the getTodos method, convert it to an observable
         from(this.clientsService.clientsGET2(id)).pipe(
           // Take the returned value and return a new success action containing the todos
@@ -58,7 +58,7 @@ export class ClientsEffects {
       ofType(saveClient),
       switchMap((data) =>
         // Call the getTodos method, convert it to an observable
-        from(this.clientsService.clientsPOST(data)).pipe(
+        from(this.clientsService.clientsPOST(data.data)).pipe(
           // Take the returned value and return a new success action containing the todos
           map(() => {
             this.store.dispatch(getAllClients());
@@ -75,7 +75,7 @@ export class ClientsEffects {
       ofType(updateClient),
       switchMap((data) =>
         // Call the getTodos method, convert it to an observable
-        from(this.clientsService.clientsPUT(data.id, data.body)).pipe(
+        from(this.clientsService.clientsPUT(data.id, data.data)).pipe(
           // Take the returned value and return a new success action containing the todos
           map(() => {
             this.store.dispatch(getAllClients());
@@ -91,8 +91,8 @@ export class ClientsEffects {
   deleteClient$ = createEffect(() =>
     this.actions$.pipe(
       ofType(deleteClient),
-      mergeMap((data) =>
-      this.clientsService.clientsDELETE(data).pipe(map((res: any) => {
+      switchMap(({id}) =>
+      this.clientsService.clientsDELETE(id).pipe(map((res: any) => {
         this.store.dispatch(getAllClients());
           this.alertService.showAlert('Success', 'Client deleted successfully','success' )
         }),
@@ -111,7 +111,7 @@ export class ClientsEffects {
     ofType(getPermissions),
     switchMap(({name}) =>
       // Call the getTodos method, convert it to an observable
-      from(this.roleService.permissionsGET("R",name)).pipe(
+      from(this.roleService.permissionsGET("C",name)).pipe(
         // Take the returned value and return a new success action containing the todos
         map((PermissionI) => {
           return getPermissionSuccess({ PermissionI })
