@@ -7,7 +7,13 @@
       </rds-button>
     </div>
     <div class="row mx-3 mt-2">
-      <mfe-loader [config]="rdsresourceTableMfeConfig"></mfe-loader>
+      <!-- <mfe-loader [config]="rdsresourceTableMfeConfig"></mfe-loader> -->
+      <rds-data-table [tableData]="ResourceTableData" 
+      [tableHeaders]="ResourceTableHeader"
+      [actions]="actions"
+      (onActionSelection)="onActionSelection($event)"
+      [noDataTitle]="'Currently you do not have identity resource'"
+      ></rds-data-table>
     </div>
   </div>
   <rds-offcanvas *ngIf="viewCanvas" [canvasTitle]="translate.instant(offCanvasTitle)"  [offId]="offCanvasId" [offcanvaswidth]="550"
@@ -35,7 +41,7 @@
         <div class="tab-pane fade" [ngClass]="{'show active': activePage === 2}" id="Properties" role="tabpanel"
           aria-labelledby="nav-home-tab">
           <!-- <mfe-loader [config]="rdsClaimsMfeConfig"></mfe-loader> -->
-         <rds-comp-properties [PropertyTableHeader]="PropertyTableHeader" [PropertyTableData]="PropertyTableData" [PropertyList]="PropertyList"></rds-comp-properties>
+         <!-- <rds-comp-properties [PropertyTableHeader]="PropertyTableHeader" [PropertyTableData]="PropertyTableData" [PropertyList]="PropertyList"></rds-comp-properties> -->
         </div>
       </div>
     </rds-nav-tab>

@@ -38,7 +38,7 @@ title: "Components > data-table"
 <div class="row m-0">
 
 ```html
-<rds-data-table
+<rds-data-table 
   [tableData]="tableData"
   [tableHeaders]="tableHeaders"
   [pagination]="true"

@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RdsCheckboxModule, RdsDropdownlistModule, RdsInputModule } from '@libs/rds-elements';
+import { RdsCheckboxModule, RdsDropdownlistModule, RdsInputModule, RdsButtonModule} from '@libs/rds-elements';
 import { RdsLabelModule } from '@libs/rds-label';
 import { RdsCompClientResourcesComponent } from './rds-comp-client-resources.component';
 import { FormsModule } from '@angular/forms';
-import { RdsButtonModule, RdsCheckboxModule, RdsDropdownlistModule, RdsLabelModule } from '@libs/rds-elements';
+
 
 
 
@@ -18,7 +18,8 @@ import { RdsButtonModule, RdsCheckboxModule, RdsDropdownlistModule, RdsLabelModu
     RdsLabelModule,
     RdsCheckboxModule,
     RdsButtonModule,
-    RdsDropdownlistModule
+    RdsDropdownlistModule,
+    RdsInputModule
   ],
   exports:[
     RdsCompClientResourcesComponent

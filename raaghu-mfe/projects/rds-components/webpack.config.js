@@ -79,10 +79,7 @@ module.exports = {
         './RdsCompTenantDashboard': './projects/rds-components/src/app/rds-comp-tenant-dashboard/rds-comp-tenant-dashboard.component.ts',
         './RdsCompAlert': './projects/rds-components/src/app/rds-comp-alert/rds-comp-alert.component.ts',
         './RdsCompRoleList': './projects/rds-components/src/app/rds-comp-role-list/rds-comp-role-list.component.ts',
-        './RdsCompDynamicProperties': './projects/rds-components/src/app/rds-comp-dynamic-properties/rds-comp-dynamic-properties.component.ts',
         './RdsCompInformation': './projects/rds-components/src/app/rds-comp-information/rds-comp-information.component.ts',
-        './RdsCompDynamicEnityProperties': './projects/rds-components/src/app/rds-comp-dynamic-enity-properties/rds-comp-dynamic-enity-properties.component.ts',
-        './RdsCompNewDynamicEntityProperty': './projects/rds-components/src/app/rds-comp-new-dynamic-entity-property/rds-comp-new-dynamic-entity-property.component.ts',
         './RdsCompPlanInformation': './projects/rds-components/src/app/rds-comp-plan-information/rds-comp-plan-information.component.ts',
         './RdsCompPageNotFound': './projects/rds-components/src/app/rds-comp-page-not-found/rds-comp-page-not-found.component.ts',
         './RdsCompFaqComponent': './projects/rds-components/src/app/rds-comp-faq/rds-comp-faq.component.ts',
@@ -140,7 +137,6 @@ module.exports = {
         "rxjs": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
         ...sharedMappings.getDescriptors()
       })
-
 
     }),
     sharedMappings.getPlugin()

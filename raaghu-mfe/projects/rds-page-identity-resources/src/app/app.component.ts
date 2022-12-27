@@ -82,6 +82,20 @@ export class AppComponent {
     }
 
   ];
+  actions=[{ id: 'delete', displayName: 'Delete' }, { id: 'edit', displayName: 'Edit' }];
+  onActionSelection (event: any) {
+    if (event.actionId === 'delete') {
+
+      this.store.dispatch(deleteIdentityResource(event.selectedData.id));
+    } else if (event.actionId === 'edit') {
+      this.EditIdentyresource(event)
+      // this.selectId = event.selectedData.id;
+      // this.BasicResource = event.selectedData
+      // this.openCanvas(true);
+      this.store.dispatch(getIdentityResource(event.selectedData.id))
+    }
+  }
+
   ngOnInit(): void {
 
     this.activePage = 0;
@@ -95,23 +109,11 @@ export class AppComponent {
         recordsPerPage: 10,
         pagination: true,
         inlineEdit: false,
-        actions: [{ id: 'delete', displayName: 'Delete' }, { id: 'edit', displayName: 'Edit' }],
+        actions: this.actions,
         noDataTitle: 'Currently you do not have identity resource'
       },
       output: {
-        onActionSelection: (event: any) => {
-          if (event.actionId === 'delete') {
-
-            this.store.dispatch(deleteIdentityResource(event.selectedData.id));
-          } else if (event.actionId === 'edit') {
-            this.EditIdentyresource(event)
-            // this.selectId = event.selectedData.id;
-            // this.BasicResource = event.selectedData
-            // this.openCanvas(true);
-            this.store.dispatch(getIdentityResource(event.selectedData.id))
-          }
-        }
-      }
+              }
     };
 
     this.store.dispatch(getAllIdentityResources());

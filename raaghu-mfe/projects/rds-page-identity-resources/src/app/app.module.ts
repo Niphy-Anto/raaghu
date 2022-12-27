@@ -3,16 +3,17 @@ import { NgxTranslateModule, SharedModule } from '@libs/shared';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {
-  RdsButtonModule,RdsInputModule, RdsPaginationModule, RdsCheckboxModule, RdsAvatarModule, RdsDropdownModule, RdsModalModule,
+  RdsButtonModule,RdsInputModule, RdsCheckboxModule, RdsDropdownModule, RdsModalModule,
   RdsNavTabModule, RdsCardModule, RdsBadgeModule,
-RdsOffcanvasModule
+RdsOffcanvasModule,
+RdsAlertModule
 } from '@libs/rds-elements';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RdsCompBasicResourcesModule } from 'projects/rds-components/src/app/rds-comp-basic-resource/rds-comp-basic-resources.module';
 import { CommonModule } from '@angular/common';
 import { TranslateService, TranslateStore } from '@ngx-translate/core';
 import { RdsCompClientResourcesModule } from 'projects/rds-components/src/app/rds-comp-client-resources/rds-comp-client-resources.module';
-import { RdsCompPropertiesModule } from 'projects/rds-components/src/app/rds-comp-properties/rds-comp-properties.module';
+import { RdsCompDataTableModule } from 'projects/rds-components/src/app/rds-comp-data-table/rds-comp-data-table.module';
 
 @NgModule({
   declarations: [
@@ -20,9 +21,11 @@ import { RdsCompPropertiesModule } from 'projects/rds-components/src/app/rds-com
     // BasicresourceComponent,
     // ClaimsComponent,
     // PropertiesComponent,
+  
   ],
   imports: [
     // BrowserModule,
+    RdsCompDataTableModule,
     CommonModule,
     AppRoutingModule,
     SharedModule,
@@ -39,7 +42,8 @@ import { RdsCompPropertiesModule } from 'projects/rds-components/src/app/rds-com
     ReactiveFormsModule,
     RdsCompClientResourcesModule,
     RdsCompBasicResourcesModule,
-    RdsCompPropertiesModule,
+    RdsAlertModule,
+    // RdsCompPropertiesModule,
     NgxTranslateModule.forRoot(),
     
   ],
