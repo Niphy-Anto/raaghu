@@ -117,6 +117,8 @@ export class AppComponent {
       allowedCorsOrigins: [],
       redirectUris: [],
       postLogoutRedirectUris: [],
+      apiResources: [],
+      identityResources: []
     }
 
   }
@@ -310,8 +312,8 @@ export class AppComponent {
           alwaysIncludeUserClaimsInIdToken: res.alwaysIncludeUserClaimsInIdToken,
           alwaysSendClientClaims: res.alwaysSendClientClaims,
           authorizationCodeLifetime: res.authorizationCodeLifetime,
-          backChannelLogoutUri: res.description,
-          backChannelLogoutSessionRequired: res.description,
+          backChannelLogoutUri: res.backChannelLogoutUri,
+          backChannelLogoutSessionRequired: res.backChannelLogoutSessionRequired,
           claims: cliams,
           clientClaimsPrefix: res.clientClaimsPrefix,
           clientId: res.clientId,
@@ -325,7 +327,7 @@ export class AppComponent {
           enableLocalLogin: res.enableLocalLogin,
           enabled: res.enabled,
           frontChannelLogoutSessionRequired: res.frontChannelLogoutSessionRequired,
-          frontChannelLogoutUri: res.description,
+          frontChannelLogoutUri: res.frontChannelLogoutUri,
           id: res.id,
           identityProviderRestrictions: identityProviderRestrictions,
           identityTokenLifetime: res.identityTokenLifetime,
@@ -369,8 +371,8 @@ export class AppComponent {
       this.updateClientData.data.clientUri = event.clientUri;
       this.updateClientData.data.logoUri = event.logoUri;
       this.updateClientData.data.allowedCorsOrigins = event.allowedCorsOrigins.map(x => x.origin);
-      this.updateClientData.data.redirectUris = event.redirectUris;
-      this.updateClientData.data.postLogoutRedirectUris = event.postLogoutRedirectUris;
+      this.updateClientData.data.redirectUris = event.redirectUris.map(x => x.redirectUri);
+      this.updateClientData.data.postLogoutRedirectUris = event.postLogoutRedirectUris.map(x => x.postLogoutRedirectUri);;
       this.updateClientData.data.requireConsent = event.requireConsent;
       this.updateClientData.data.requireRequestObject = event.requireRequestObject;
       this.updateClientData.data.allowRememberConsent = event.allowRememberConsent;
@@ -395,7 +397,31 @@ export class AppComponent {
   }
 
   selectedResourceData(data: any) {
-    this.selectedResourceId == 1 ? this.emitClientData.data.identityResources = data : this.emitClientData.data.apiResources = data;
+    if (this.selectedResourceId == 1) {
+      const identityArray: any[] = [];
+      data.forEach((element: any) => {
+        const identity = {
+          displayName: element.displayName,
+          name: element.name,
+          left: element.left
+        }
+        identityArray.push(identity);
+      });
+      this.emitClientData.data.identityResources = identityArray;
+      this.updateClientData.data.identityResources = identityArray;
+    } else {
+      const apiArray: any[] = [];
+      data.forEach((element: any) => {
+        const api = {
+          displayName: element.displayName,
+          name: element.name,
+          left: element.left
+        }
+        apiArray.push(api);
+      });
+      this.emitClientData.data.apiResources = apiArray;
+      this.updateClientData.data.apiResources = apiArray;
+    }
     if (this.emitClientData.data.identityResources != undefined && this.emitClientData.data.apiResources != undefined) {
       this.emitClientData.data.scopes = [...this.emitClientData.data.identityResources.map(x => x.name)]
         .concat(this.emitClientData.data.apiResources.map(x => x.name));
@@ -449,8 +475,6 @@ export class AppComponent {
 
   saveUpdateClient(): Promise<any> {
     return new Promise<void>((resolve, reject) => {
-      console.log('this.updateClientData', this.updateClientData);
-      
       this.actionId == 'edit' ? this.store.dispatch(updateClient(this.updateClientData)) : this.store.dispatch(saveClient(this.emitClientData));
       this.getAllClientsFn();
       resolve();
