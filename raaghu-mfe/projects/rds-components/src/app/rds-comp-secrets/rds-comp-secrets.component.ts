@@ -43,8 +43,6 @@ export class RdsCompSecretsComponent implements OnInit, OnChanges {
   constructor() { }
   ngOnChanges(changes: SimpleChanges): void {
     if (this.apiSecretsTableData != undefined) this.secretList = this.apiSecretsTableData;
-    console.log('this.secretList', this.secretList);
-    
     this.rdsApiSecretsTableMfeConfig = {
       name: 'RdsDataTable',
       input: {
@@ -73,6 +71,7 @@ export class RdsCompSecretsComponent implements OnInit, OnChanges {
         }
       },
     };
+    this.secretDataInfo.next(this.secretList);
   }
 
   ngOnInit(): void { }
