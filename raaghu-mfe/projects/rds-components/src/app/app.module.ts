@@ -55,17 +55,17 @@ import { RdsSecurityComponent } from './rds-comp-security/rds-comp-security.comp
 import { RdsCompFeaturesComponent } from './rds-comp-features/rds-comp-features.component';
 import { RdsCompMemberActivityComponent } from './rds-comp-member-activity/rds-comp-member-activity.component';
 import { RdsCompNewClaimTypeComponent } from './rds-comp-new-claim-type/rds-comp-new-claim-type.component';
-import { RdsCompBasicResourceComponent } from './rds-comp-basic-resource/rds-comp-basic-resource.component';
+// import { RdsCompBasicResourceComponent } from './rds-comp-basic-resource/rds-comp-basic-resource.component';
 import { RdsCompWebhookSubscriptionComponent } from './rds-comp-webhook-subscription/rds-comp-webhook-subscription.component';
 import { RdsCompEditLanguageTextComponent } from './rds-comp-edit-language-text/rds-comp-edit-language-text.component';
 import { RdsCompNewLanguageComponent } from './rds-comp-new-language/rds-comp-new-language.component';
-import { RdsCompClaimsComponent } from './rds-comp-claims/rds-comp-claims.component';
-import { RdsCompPropertiesComponent } from './rds-comp-properties/rds-comp-properties.component';
+// import { RdsCompClaimsComponent } from './rds-comp-claims/rds-comp-claims.component';
+// import { RdsCompPropertiesComponent } from './rds-comp-properties/rds-comp-properties.component';
 import { RdsCompCacheComponent } from './rds-comp-cache/rds-comp-cache.component';
 import { RdsCompWebsiteLogComponent } from './rds-comp-website-log/rds-comp-website-log.component';
 import { RdsCompSecretsComponent } from './rds-comp-secrets/rds-comp-secrets.component';
 import { RdsCompClientBasicsComponent } from './rds-comp-client-basics/rds-comp-client-basics.component';
-import { RdsCompClientResourcesComponent } from './rds-comp-client-resources/rds-comp-client-resources.component';
+// import { RdsCompClientResourcesComponent } from './rds-comp-client-resources/rds-comp-client-resources.component';
 import { RdsCompUserBasicsComponent } from './rds-comp-user-basics/rds-comp-user-basics.component';
 import { RdsCompUserPermissionsComponent } from './rds-comp-user-permissions/rds-comp-user-permissions.component';
 import { RdsCompsUserClaimsComponent } from './rds-comps-user-claims/rds-comps-user-claims.component';
@@ -97,7 +97,7 @@ import { RdsCompTenantInformationShimmerComponent } from './rds-comp-tenant-info
 import { RdsCompSubscriptionShimmerComponent } from './rds-comp-subscription/rds-comp-subscription-shimmer/rds-comp-subscription-shimmer.component';
 import { RdsCompSecurityShimmerComponent } from './rds-comp-security/rds-comp-security-shimmer/rds-comp-security-shimmer.component';
 import { RdsCompOrganizationTreeShimmerComponent } from './rds-comp-organization-tree/rds-comp-organization-tree-shimmer/rds-comp-organization-tree-shimmer.component';
-import { RdsCompPropertiesShimmerComponent } from './rds-comp-properties/rds-comp-properties-shimmer/rds-comp-properties-shimmer.component';
+// import { RdsCompPropertiesShimmerComponent } from './rds-comp-properties/rds-comp-properties-shimmer/rds-comp-properties-shimmer.component';
 import { RdsCompTableShimmerComponent } from './rds-comp-data-table/rds-comp-table-shimmer/rds-comp-table-shimmer.component';
 import { RdsCompFeedsComponent } from './rds-comp-feeds/rds-comp-feeds.component';
 import { RdsCompProductListComponent } from './rds-comp-product-list/rds-comp-product-list.component';
@@ -115,7 +115,7 @@ import { RdsCompShoppingCartProductComponent } from './rds-comp-shopping-cart-pr
 import { RdsCompApiScopeBasicShimmerComponent } from './rdc-comp-api-scope-basics/rds-comp-api-scope-basic-shimmer/rds-comp-api-scope-basic-shimmer.component';
 import { RdsCompApiScopeResourcesShimmerComponent } from './rdc-comp-api-scope-resources/rds-comp-api-scope-resources-shimmer/rds-comp-api-scope-resources-shimmer.component';
 import { RdsCompAddressInputShimmerComponent } from './rds-comp-address-input/rds-comp-address-input-shimmer/rds-comp-address-input-shimmer.component';
-import { RdsCompBasicResourceShimmerComponent } from './rds-comp-basic-resource/rds-comp-basic-resource-shimmer/rds-comp-basic-resource-shimmer.component';
+// import { RdsCompBasicResourceShimmerComponent } from './rds-comp-basic-resource/rds-comp-basic-resource-shimmer/rds-comp-basic-resource-shimmer.component';
 import { RdsCompCacheShimmerComponent } from './rds-comp-cache/rds-comp-cache-shimmer/rds-comp-cache-shimmer.component';
 import { RdsCompClaimsShimmerComponent } from './rds-comp-claims/rds-comp-claims-shimmer/rds-comp-claims-shimmer.component';
 import { RdsCompEmailShimmerComponent } from './rds-comp-email/rds-comp-email-shimmer/rds-comp-email-shimmer.component';
@@ -169,6 +169,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RdsCompClientAdvancedComponent } from './rds-comp-client-advanced/rds-comp-client-advanced.component';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
+
 @NgModule({
   declarations: [	
     AppComponent,
@@ -208,17 +209,17 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     RdsCompFeaturesComponent,
     RdsCompMemberActivityComponent,
     RdsCompNewClaimTypeComponent,
-    RdsCompBasicResourceComponent,
+    // RdsCompBasicResourceComponent,
     RdsCompWebhookSubscriptionComponent,
     RdsCompEditLanguageTextComponent,
     RdsCompNewLanguageComponent,
-    RdsCompClaimsComponent,
-    RdsCompPropertiesComponent,
+    // RdsCompClaimsComponent,
+    // RdsCompPropertiesComponent,
     RdsCompCacheComponent,
     RdsCompWebsiteLogComponent,
     RdsCompSecretsComponent,
     RdsCompClientBasicsComponent,
-    RdsCompClientResourcesComponent,
+    // RdsCompClientResourcesComponent,
     RdsCompUserBasicsComponent,
     RdsCompUserPermissionsComponent,
     RdsCompsUserClaimsComponent,
@@ -249,7 +250,7 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     RdsCompSubscriptionShimmerComponent,
     RdsCompSecurityShimmerComponent,
     RdsCompOrganizationTreeShimmerComponent,
-    RdsCompPropertiesShimmerComponent,
+    // RdsCompPropertiesShimmerComponent,
     RdsCompTableShimmerComponent,
     RdsCompPageNotFoundComponent,
     RdsCompFeedsComponent,
@@ -264,7 +265,7 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     RdsCompApiScopeBasicShimmerComponent,
     RdsCompApiScopeResourcesShimmerComponent,
     RdsCompAddressInputShimmerComponent,
-    RdsCompBasicResourceShimmerComponent,
+    // RdsCompBasicResourceShimmerComponent,
     RdsCompCacheShimmerComponent,
     RdsCompClaimsShimmerComponent,
     RdsCompEmailShimmerComponent,
@@ -323,7 +324,7 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     RdsCompSettingsNewComponent,
     RdsCompLanguageNewComponent,
     RdsCompClaimTypeRoleComponent,
-    RdsCompClientAdvancedComponent  
+    RdsCompClientAdvancedComponent
   ],
   imports: [
     StoreModule,

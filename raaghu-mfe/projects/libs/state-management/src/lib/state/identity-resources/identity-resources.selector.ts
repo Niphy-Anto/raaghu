@@ -12,3 +12,7 @@ export const selectIdentityResource = createSelector(
     selectIdentityResources,
     (state: IdentityResourcesState) => state.identityResource
 );
+export const selectClaimTypesAll = createSelector(
+    selectIdentityResources,
+    (state: IdentityResourcesState) => state.claims
+)

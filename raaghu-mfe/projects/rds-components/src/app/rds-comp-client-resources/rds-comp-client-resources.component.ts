@@ -1,28 +1,25 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { TranslateService } from '@ngx-translate/core';
-import { selectAllApiResource } from 'projects/libs/state-management/src/lib/state/api-resources/api-resources.selector';
-import { selectA } from 'projects/libs/state-management/src/lib/state/identity-resources/identity-resources.selector';
 
-export class ResourceCheckboxes {
-  public id: any;
-  public letterRange: string;
-  public isAllRangeSelected: boolean;
-  public resourcesData: resorceArray[];
+export interface ResourceCheckboxes {
+  id: any;
+  letterRange: string;
+  isAllRangeSelected: boolean;
+  resourcesData: ResourceData[];
 }
 
-export class resorceArray {
-  description: string;
+export interface ResourceData {
   displayName: string;
-  emphasize: boolean;
-  enabled: boolean;
-  extraProperties: any;
-  id: string;
-  name: string;
-  properties: any;
-  required: boolean;
-  showInDiscoveryDocument: boolean;
-  userClaims: any;
+  left: boolean;
+  id?: string;
+  name?: string;
+}
+
+export interface TypeData {
+  id: any;
+  value: any;
+  some: any;
 }
 
 @Component({
@@ -30,179 +27,119 @@ export class resorceArray {
   templateUrl: './rds-comp-client-resources.component.html',
   styleUrls: ['./rds-comp-client-resources.component.scss']
 })
-export class RdsCompClientResourcesComponent implements OnInit {
+export class RdsCompClientResourcesComponent implements OnInit, OnChanges {
 
   // Input Decorators
-  @Input() identityResourcesData: any[] = [];
-  @Input() apiResourcesData: any[] = [];
-  @Input() sample: string;
+  @Input() showType: boolean = false;
+  @Input() typeData: TypeData[] = [];
+  @Input() resourceData: ResourceData[] = [];
 
   // Output Decorators
-  @Output() selectedResources = new EventEmitter<any>();
+  @Output() onOptionSelection = new EventEmitter<any>();
+  @Output() selectedData = new EventEmitter<any>();
 
   // Properties
+  showSelectAllCheckbox = false;
   selectAll: boolean;
-  typeData: any[] = [
-    { id: 1, value: 'Identity Resources', some: 'Identity Resources' },
-    { id: 2, value: 'Api Resources', some: 'Api Resources' }
-  ];
-  resourcesData: any[] = [];
-  finalResourceData: ResourceCheckboxes[] = [
-    {
-      id: 1,
-      letterRange: 'A-E',
-      isAllRangeSelected: false,
-      resourcesData: []
-    },
-    {
-      id: 2,
-      letterRange: 'F-O',
-      isAllRangeSelected: false,
-      resourcesData: []
-    },
-    {
-      id: 3,
-      letterRange: 'P-Z',
-      isAllRangeSelected: false,
-      resourcesData: []
-    },
-  ];
+finalResourceData: ResourceCheckboxes[] = [];
 
-  constructor(public translate: TranslateService, private store: Store) { }
+  constructor(public translate: TranslateService) { }
 
-  ngOnInit(): void {
-    this.selectedResourceType();
-    for (let i = 0; i < this.finalResourceData.length; i++) {
-      this.finalResourceData[i].resourcesData.filter(x => x.enabled == false).length > 0 ?
-        this.finalResourceData[i].isAllRangeSelected = false :
-        this.finalResourceData[i].isAllRangeSelected = true;
-      this.onChildCheckboxCheck(i);
-    }
+  ngOnChanges(changes: SimpleChanges): void {
+    if (this.showType && this.resourceData.length > 0) this.selectedOptionData(this.resourceData);
   }
 
-  selectedResourceType(type?: any) {
-    this.getResoucesDataState();
-    this.resourcesData = [];
-    if (type != undefined) type.item.value == this.typeData[0].value ? this.resourcesData = this.identityResourcesData :
-      type.item.value == this.typeData[1].value ? this.resourcesData = this.apiResourcesData : null;
-    else this.resourcesData = this.identityResourcesData;
-    if (this.resourcesData.length > 0) {
-      this.resourcesData.filter(x => x.enabled == false).length > 0 ? this.selectAll = false : this.selectAll = true;
-      this.resourcesData.sort((a, z) => {
+  ngOnInit(): void {
+    if (!this.showType && this.resourceData.length > 0) this.selectedOptionData(this.resourceData);
+  }
+
+  // Selected Value from dropdown
+  selectedOption(data: any) {
+    this.onOptionSelection.next(data);
+  }
+
+  // Sorting of data
+  selectedOptionData(data: ResourceData[]) {
+    let resourcesData: ResourceData[] = [];
+    resourcesData = data;
+    if (resourcesData.length > 0) {
+      resourcesData.filter(x => x.left == false).length > 0 ? this.selectAll = false : this.selectAll = true;
+      resourcesData.sort((a, z) => {
         const firstLetter = a.displayName.toLowerCase();
         const lastLetter = z.displayName.toLowerCase();
         if (firstLetter < lastLetter) return -1;
         if (firstLetter > lastLetter) return 1;
         return 0;
       });
-      this.finalResourceData = [];
       this.finalResourceData = [
-        {
-          id: 1,
-          letterRange: 'A-E',
-          isAllRangeSelected: false,
-          resourcesData: []
-        },
-        {
-          id: 2,
-          letterRange: 'F-O',
-          isAllRangeSelected: false,
-          resourcesData: []
-        },
-        {
-          id: 3,
-          letterRange: 'P-Z',
-          isAllRangeSelected: false,
-          resourcesData: []
-        }
+        { id: 1, letterRange: 'A-E', isAllRangeSelected: false, resourcesData: [] },
+        { id: 2, letterRange: 'F-O', isAllRangeSelected: false, resourcesData: [] },
+        { id: 3, letterRange: 'P-Z', isAllRangeSelected: false, resourcesData: [] }
       ];
+      let firstIndex: number = 0;
       for (let i = 0; i < this.finalResourceData.length; i++) {
-        const asciiValue = i == 0 ? 102 : i == 1 ? 112 : i == 2 ? 123 : 123
-        const sortedValues = this.resourcesData.filter(x => x.displayName.toLowerCase().charCodeAt(0) < asciiValue).pop();
+        const asciiValue = i == 0 ? 102 : i == 1 ? 112 : i == 2 ? 123 : 123;
+        const sortedValues = resourcesData.filter(x => x.displayName.toLowerCase().charCodeAt(0) < asciiValue);
         if (sortedValues != undefined) {
-          const index = this.resourcesData.indexOf(sortedValues, 0);
-          const sortedAlphaArray = this.resourcesData.slice(0, index + 1);
-          this.resourcesData.splice(0, sortedAlphaArray.length);
-          const x = this.finalResourceData[i].resourcesData.concat(sortedAlphaArray);
-          this.finalResourceData[i].resourcesData = x;
-        }
-        this.onSelectChild(undefined, undefined, i);
+          const lastIndex = resourcesData.indexOf(sortedValues.pop(), 0);
+          const sortedAlphaArray = resourcesData.slice(firstIndex, lastIndex + 1);
+          this.finalResourceData[i].resourcesData = this.finalResourceData[i].resourcesData.concat(sortedAlphaArray);
+          firstIndex = lastIndex + 1;
+          this.showSelectAllCheckbox = true;
+          this.onSelectChild(i);
+        } else this.showSelectAllCheckbox = false;
       }
+      this.emitSelectedData();
     }
   }
 
-  getResoucesDataState() {
-    this.store.select(selectA).subscribe(res => {
-      if (res && res.items) {
-        const data: any[] = [];
-        res.items.forEach(element => {
-          const item: any = {
-            description: element.description,
-            displayName: element.displayName,
-            emphasize: element.emphasize,
-            enabled: element.enabled,
-            extraProperties: element.extraProperties,
-            id: element.id,
-            name: element.name,
-            properties: element.properties,
-            required: element.required,
-            showInDiscoveryDocument: element.showInDiscoveryDocument,
-            userClaims: element.userClaims
-          };
-          data.push(item);
-        });
-        this.identityResourcesData = data;
-      }
-    });
-    this.store.select(selectAllApiResource).subscribe(res => {
-      const data: any[] = [];
-      if (res && res.items) {
-        res.items.forEach(element => {
-          const item: any = {
-            allowedAccessTokenSigningAlgorithms: element.allowedAccessTokenSigningAlgorithms,
-            description: element.description,
-            displayName: element.displayName,
-            enabled: element.enabled,
-            extraProperties: element.extraProperties,
-            id: element.id,
-            name: element.name,
-            properties: element.properties,
-            scopes: element.scopes,
-            secrets: element.secrets,
-            showInDiscoveryDocument: element.showInDiscoveryDocument,
-            userClaims: element.userClaims
-          };
-          data.push(item);
-        });
-        this.apiResourcesData = data;
-      }
-    })
-  }
-
+  // Select All Data
   selectAllItems(event: any) {
     for (let i = 0; i < this.finalResourceData.length; i++) {
       this.finalResourceData.forEach(element => element.isAllRangeSelected = event.target.checked);
       this.selectAllSectionItems(event, i);
     }
+    this.emitSelectedData();
   }
 
+  // Select all data in a section
   selectAllSectionItems(event: any, index: number) {
-    this.finalResourceData[index].resourcesData.forEach(element => element.enabled = event.target.checked);
+    this.finalResourceData[index].resourcesData.forEach(element => element.left = event.target.checked);
     this.onChildCheckboxCheck(index);
+    this.emitSelectedData();
   }
 
-  onSelectChild(event?: any, data?: any, parentIndex?: number) {
+  // Select Particular checkbox
+  onSelectChild(parentIndex: number) {
     this.onChildCheckboxCheck(parentIndex);
+    this.emitSelectedData();
   }
 
   onChildCheckboxCheck(index: number) {
-    if (this.finalResourceData[index].resourcesData.filter(x => x.enabled == false).length > 0) {
+    if (this.finalResourceData[index].resourcesData.filter(x => x.left == false).length > 0) {
       this.selectAll = false;
       this.finalResourceData[index].isAllRangeSelected = false;
     } else {
       this.selectAll = true;
       this.finalResourceData[index].isAllRangeSelected = true;
     }
+  }
+
+  // Emit Selected Data
+  emitSelectedData() {
+    const selectedData: any[] = [];
+    for (let i = 0; i < this.finalResourceData.length; i++) {
+      this.finalResourceData[i].resourcesData.filter(x => x.left == true).forEach(ele => {
+        const item = {
+          displayName: ele.displayName,
+          left: ele.left,
+          name: ele.name,
+          id : ele.id
+        };
+        selectedData.push(item);
+      });
+    };
+    this.selectedData.next(selectedData);
   }
 
 }

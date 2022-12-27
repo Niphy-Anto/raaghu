@@ -16,7 +16,7 @@ export default {
         
       imports: [
         FormsModule, ReactiveFormsModule, HttpClientModule, NgxTranslateModule, RdsInputModule, RdsLabelModule,
-        RdsCheckboxModule,RdsButtonModule,RdsTextareaModule
+        RdsCheckboxModule,RdsButtonModule,RdsTextareaModule,RdsInputModule
       ],
       providers: [
         FormBuilder

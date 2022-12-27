@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@angular/core';
 import { ComponentLoaderOptions } from '@libs/shared';
 import { TableHeader } from '../../models/table-header.model';
 
@@ -6,7 +6,7 @@ export class Properties {
   public key: any;
   public value: any;
 
- 
+
 }
 @Component({
   selector: 'rds-comp-properties',
@@ -16,21 +16,30 @@ export class Properties {
 export class RdsCompPropertiesComponent implements OnInit {
 
   constructor() { }
-  key:string;
-  value:string;
+  key: string;
+  value: string;
   @Input() PropertyTableData: any = []
-  @Input() PropertyList:any=[];
+  @Input() PropertyList: any = [];
   @Output()
-  onPropertyResourceSave = new EventEmitter<{Property:any}>()
+  onPropertyResourceSave = new EventEmitter<{ Property: any }>()
   rdsresourceTableMfeConfig: ComponentLoaderOptions;
-  PropertiesData:Properties={
-  key: undefined,
-  value: undefined
-}
-PropertyTableHeader: TableHeader[] = [
-  { displayName: 'Key', key: 'key', dataType: 'text', dataLength: 30, sortable: false, required: true },
-  { displayName: 'Value', key: 'value', dataType: 'text', dataLength: 30, sortable: false, required: true },
- ]
+  @Input() PropertiesData: Properties = {
+    key: undefined,
+    value: undefined
+  }
+  @Input() PropertyTableHeader: TableHeader[] = [
+    { displayName: 'Key', key: 'key', dataType: 'text', dataLength: 30, sortable: false, required: true },
+    { displayName: 'Value', key: 'value', dataType: 'text', dataLength: 30, sortable: false, required: true },
+  ]
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (!this.PropertiesData) {
+
+      this.PropertiesData['key'] = '';
+      this.PropertiesData['value'] = '';
+
+    }
+  }
   ngOnInit(): void {
     this.rdsresourceTableMfeConfig = {
       name: 'RdsDataTable',
@@ -39,23 +48,29 @@ PropertyTableHeader: TableHeader[] = [
         tableStyle: 'light',
         width: '100%',
         tableData: this.PropertyList,
-        recordsPerPage:10,
-       
+        recordsPerPage: 10,
+
       },
       output: {
-   
-       
+
+
       }
     };
   }
-  addProperties(){
-    this.PropertyList.push(this.PropertiesData)
-    this.PropertiesData = {
-      key: '',
-      value: ''
-    }
+  addProperties() {
+    const data: any = { ...this.PropertiesData };
+    this.PropertyList.push(data)
+    // this.PropertiesData = {
+    //   key: '',
+    //   value: ''
+    // }
+    console.log(this.PropertiesData);
+
   }
-  SavePropertyData(){
+  SavePropertyData() {
     this.onPropertyResourceSave.emit({ Property: this.PropertyList });
+    console.log({ Property: this.PropertyList });
+
+
   }
 }
