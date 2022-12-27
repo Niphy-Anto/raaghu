@@ -63,9 +63,9 @@ import { RdsCompClaimsComponent } from './rds-comp-claims/rds-comp-claims.compon
 import { RdsCompPropertiesComponent } from './rds-comp-properties/rds-comp-properties.component';
 import { RdsCompCacheComponent } from './rds-comp-cache/rds-comp-cache.component';
 import { RdsCompWebsiteLogComponent } from './rds-comp-website-log/rds-comp-website-log.component';
-import { RdsCompSecretsComponent } from './rds-comp-secrets/rds-comp-secrets.component';
-import { RdsCompClientBasicsComponent } from './rds-comp-client-basics/rds-comp-client-basics.component';
-import { RdsCompClientResourcesComponent } from './rds-comp-client-resources/rds-comp-client-resources.component';
+// import { RdsCompSecretsComponent } from './rds-comp-secrets/rds-comp-secrets.component';
+// import { RdsCompClientBasicsComponent } from './rds-comp-client-basics/rds-comp-client-basics.component';
+// import { RdsCompClientResourcesComponent } from './rds-comp-client-resources/rds-comp-client-resources.component';
 import { RdsCompUserBasicsComponent } from './rds-comp-user-basics/rds-comp-user-basics.component';
 import { RdsCompUserPermissionsComponent } from './rds-comp-user-permissions/rds-comp-user-permissions.component';
 import { RdsCompsUserClaimsComponent } from './rds-comps-user-claims/rds-comps-user-claims.component';
@@ -73,7 +73,7 @@ import { RdsCompVisualSettingsComponent } from './rds-comp-visual-settings/rds-c
 import { RdcCompApiScopeBasicsComponent } from './rdc-comp-api-scope-basics/rdc-comp-api-scope-basics.component';
 import { RdcCompApiScopeResourcesComponent } from './rdc-comp-api-scope-resources/rdc-comp-api-scope-resources.component';
 import { RdsCompNewRoleComponent } from './rds-comp-new-role/rds-comp-new-role.component';
-import { RdsCompPermissionTreeComponent } from './rds-comp-permission-tree/rds-comp-permission-tree.component';
+// import { RdsCompPermissionTreeComponent } from './rds-comp-permission-tree/rds-comp-permission-tree.component';
 import { RdsCompTenantDashboardComponent } from './rds-comp-tenant-dashboard/rds-comp-tenant-dashboard.component';
 import { RdsCompAlertComponent } from './rds-comp-alert/rds-comp-alert.component';
 import { RdsCompRoleListComponent } from './rds-comp-role-list/rds-comp-role-list.component';
@@ -166,7 +166,7 @@ import { RdsCompLanguageNewComponent } from './rds-comp-language-new/rds-comp-la
 import { RdsCompLanguageTextListComponent } from './rds-comp-language-text-list/rds-comp-language-text-list.component';
 import { RdsCompClaimTypeRoleComponent } from './rds-comp-claim-type-role/rds-comp-claim-type-role.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RdsCompClientAdvancedComponent } from './rds-comp-client-advanced/rds-comp-client-advanced.component';
+// import { RdsCompClientAdvancedComponent } from './rds-comp-client-advanced/rds-comp-client-advanced.component';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 @NgModule({
@@ -216,9 +216,9 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     RdsCompPropertiesComponent,
     RdsCompCacheComponent,
     RdsCompWebsiteLogComponent,
-    RdsCompSecretsComponent,
-    RdsCompClientBasicsComponent,
-    RdsCompClientResourcesComponent,
+    // RdsCompSecretsComponent,
+    // RdsCompClientBasicsComponent,
+    // RdsCompClientResourcesComponent,
     RdsCompUserBasicsComponent,
     RdsCompUserPermissionsComponent,
     RdsCompsUserClaimsComponent,
@@ -226,7 +226,7 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     RdsCompNewRoleComponent,
     RdcCompApiScopeBasicsComponent,
     RdcCompApiScopeResourcesComponent,
-    RdsCompPermissionTreeComponent,
+    // RdsCompPermissionTreeComponent,
     RdsCompTenantDashboardComponent,
     RdsCompAlertComponent,
     RdsCompRoleListComponent,
@@ -323,7 +323,7 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     RdsCompSettingsNewComponent,
     RdsCompLanguageNewComponent,
     RdsCompClaimTypeRoleComponent,
-    RdsCompClientAdvancedComponent  
+    // RdsCompClientAdvancedComponent  
   ],
   imports: [
     StoreModule,

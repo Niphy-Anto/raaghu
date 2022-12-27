@@ -56,10 +56,12 @@ export class IdentityResourcesEffects {
       ofType(saveIdentityResource),
       switchMap((data) =>
         // Call the getTodos method, convert it to an observable
-        from(this.identityResourceService.identityResourcesPOST(data)).pipe(
+        from(this.identityResourceService.identityResourcesPOST(data.data.identityResources)).pipe(
           // Take the returned value and return a new success action containing the todos
-          map(() => {
-            this.store.dispatch(getAllIdentityResources());
+          map((res) => {
+            console.log('Identity res', res);
+            
+            // this.store.dispatch(getAllIdentityResources());
             return saveIdentityResourceSuccess();
           }),
           // Or... if it errors return a new failure action containing the error
