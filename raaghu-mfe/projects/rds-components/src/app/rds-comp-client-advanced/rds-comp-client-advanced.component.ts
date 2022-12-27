@@ -61,7 +61,17 @@ export class RdsCompClientAdvancedComponent implements OnInit, OnChanges {
     if (this.clientAdvancedObj != undefined) this.advanceObjFn();
   }
 
+
+  onActionSelection (actionEvent: any) {
+    const deleteData = this.clientAdvancedObj.claims.find((x: any) => x.type == actionEvent.selectedData.type);
+    const deleteDataIndex = this.clientAdvancedObj.claims.indexOf(deleteData, 0);
+    if (deleteDataIndex != undefined) this.clientAdvancedObj.claims.splice(deleteDataIndex, 1);
+    this.rdsClaimsDataTableConfig.input.tableData = this.clientAdvancedObj.claims;
+  }
+
+
   ngOnInit(): void {
+   
     if (this.clientAdvancedObj == undefined) this.advanceObjFn();
     setTimeout(() => {
       if (this.clientAdvancedForm && this.clientAdvancedObj) {
@@ -85,12 +95,7 @@ export class RdsCompClientAdvancedComponent implements OnInit, OnChanges {
         noDataTitle: 'Currently you do not have claims'
       },
       output: {
-        onActionSelection: (actionEvent: any) => {
-          const deleteData = this.clientAdvancedObj.claims.find((x: any) => x.type == actionEvent.selectedData.type);
-          const deleteDataIndex = this.clientAdvancedObj.claims.indexOf(deleteData, 0);
-          if (deleteDataIndex != undefined) this.clientAdvancedObj.claims.splice(deleteDataIndex, 1);
-          this.rdsClaimsDataTableConfig.input.tableData = this.clientAdvancedObj.claims;
-        }
+        
       },
     };
 

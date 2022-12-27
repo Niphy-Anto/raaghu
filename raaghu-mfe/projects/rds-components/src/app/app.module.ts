@@ -7,7 +7,7 @@ import { RdsAddressInputComponent } from './rds-comp-address-input/rds-comp-addr
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { SharedModule, NgxTranslateModule, HttpLoaderFactory } from '@libs/shared';
-import { RdsDataTableComponent } from './rds-comp-data-table/rds-comp-data-table.component';
+// import { RdsDataTableComponent } from './rds-comp-data-table/rds-comp-data-table.component';
 import { RdsTopNavigationComponent } from './rds-comp-top-navigation/rds-comp-top-navigation.component';
 import { RdsAdminDashboardComponent } from './rds-comp-admin-dashboard/rds-comp-admin-dashboard.component';
 import { RdsForgotPasswordComponent } from './rds-comp-forgot-password/rds-comp-forgot-password.component';
@@ -24,7 +24,7 @@ import { RdsCompSubscriptionComponent } from './rds-comp-subscription/rds-comp-s
 import { RdsUserDelegationsComponent } from './rds-comp-user-delegations/rds-comp-user-delegations.component';
 import { RdsMysettingsComponent } from './rds-comp-mysettings/rds-comp-mysettings.component';
 import { RdsCompDownloadCollectionComponent } from './rds-comp-download-collection/rds-comp-download-collection.component';
-import { RdsCompAlertPopupComponent } from './rds-comp-alert-popup/rds-comp-alert-popup.component';
+// import { RdsCompAlertPopupComponent } from './rds-comp-alert-popup/rds-comp-alert-popup.component';
 import { RdsLinkedAccountsComponent } from './rds-comp-linked-accounts/rds-comp-linked-accounts.component';
 import { RdsCompAuditLogsComponent } from './rds-comp-audit-logs/rds-comp-audit-logs.component';
 import { RdsCompTenantListComponent } from './rds-comp-tenant-list/rds-comp-tenant-list.component';
@@ -77,9 +77,7 @@ import { RdsCompNewRoleComponent } from './rds-comp-new-role/rds-comp-new-role.c
 import { RdsCompTenantDashboardComponent } from './rds-comp-tenant-dashboard/rds-comp-tenant-dashboard.component';
 import { RdsCompAlertComponent } from './rds-comp-alert/rds-comp-alert.component';
 import { RdsCompRoleListComponent } from './rds-comp-role-list/rds-comp-role-list.component';
-import { RdsCompDynamicPropertiesComponent } from './rds-comp-dynamic-properties/rds-comp-dynamic-properties.component';
 import { RdsCompInformationComponent } from './rds-comp-information/rds-comp-information.component';
-import { RdsCompDynamicEnityPropertiesComponent } from './rds-comp-dynamic-enity-properties/rds-comp-dynamic-enity-properties.component';
 import { RdsCompNewDynamicEntityPropertyComponent } from './rds-comp-new-dynamic-entity-property/rds-comp-new-dynamic-entity-property.component';
 import { RdsCompPlanInformationComponent } from './rds-comp-plan-information/rds-comp-plan-information.component';
 import { RdsCompVisualSettingsShimmerComponent } from './rds-comp-visual-settings/rds-comp-visual-settings-shimmer/rds-comp-visual-settings-shimmer.component';
@@ -168,6 +166,7 @@ import { RdsCompClaimTypeRoleComponent } from './rds-comp-claim-type-role/rds-co
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import { RdsCompClientAdvancedComponent } from './rds-comp-client-advanced/rds-comp-client-advanced.component';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+// import { RdsCompClientAdvancedComponent } from './rds-comp-client-advanced/rds-comp-client-advanced.component';
 
 
 @NgModule({
@@ -175,7 +174,7 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     AppComponent,
     RdsLoginComponent,
     RdsAddressInputComponent,
-    RdsDataTableComponent,
+    // RdsDataTableComponent,
     RdsTopNavigationComponent,
     RdsAdminDashboardComponent,
     RdsCompProfileComponent,
@@ -190,7 +189,7 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     RdsCompSubscriptionComponent,
     RdsCompHierarchyComponent,
     RdsCompDownloadCollectionComponent,
-    RdsCompAlertPopupComponent,
+    // RdsCompAlertPopupComponent,
     RdsLinkedAccountsComponent,
     RdsCompAuditLogsComponent,
     RdsCompTenantListComponent,
@@ -219,7 +218,7 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     RdsCompWebsiteLogComponent,
     RdsCompSecretsComponent,
     RdsCompClientBasicsComponent,
-    RdsCompClientResourcesComponent,
+    // RdsCompClientResourcesComponent,
     RdsCompUserBasicsComponent,
     RdsCompUserPermissionsComponent,
     RdsCompsUserClaimsComponent,
@@ -231,9 +230,7 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     RdsCompTenantDashboardComponent,
     RdsCompAlertComponent,
     RdsCompRoleListComponent,
-    RdsCompDynamicPropertiesComponent,
     RdsCompInformationComponent,
-    RdsCompDynamicEnityPropertiesComponent,
     RdsCompNewDynamicEntityPropertyComponent,
     RdsCompPlanInformationComponent,
     RdsCompVisualSettingsShimmerComponent,
@@ -323,8 +320,7 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     RdsCompAccountNewComponent,
     RdsCompSettingsNewComponent,
     RdsCompLanguageNewComponent,
-    RdsCompClaimTypeRoleComponent,
-    RdsCompClientAdvancedComponent  
+    RdsCompClaimTypeRoleComponent  
   ],
   imports: [
     StoreModule,
