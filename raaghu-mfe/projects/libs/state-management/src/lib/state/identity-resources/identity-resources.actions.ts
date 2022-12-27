@@ -39,7 +39,7 @@ export const updateIdentityResourceFailure = createAction(
 
 export const saveIdentityResource = createAction(
     '[Identity-Resources Page] Save Identity-Resource Types',
-    (data) => ( data )
+    (data) => ( {data} )
     );
 
 export const saveIdentityResourceSuccess = createAction(
@@ -53,9 +53,16 @@ export const saveIdentityResourceFailure = createAction(
 
 export const deleteIdentityResource = createAction(
     '[Identity-Resources Page] Delete Identity-Resource',
-    (data) => (data)
+    (data) => ({data})
 );
 export const deleteIdentityResourceSucess = createAction(
     '[Identity-Resources Page] Delete Identity-Resource Success',
 );
+export const  claimTypesAll = createAction(
+    '[Identity-Resources Page] Get Claims',
+);
 
+export const claimTypesAllSuccess = createAction(
+    '[Identity-Resources Page] Get Claims Success Failure',
+    props<{ claims: any }>()
+);

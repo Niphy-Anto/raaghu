@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { AlertPopupData } from '../rds-comp-alert-popup/rds-comp-alert-popup.component';
+// import { AlertPopupData } from '../rds-comp-alert-popup/rds-comp-alert-popup.component';
 declare var bootstrap: any;
 
 @Component({
@@ -15,14 +15,14 @@ export class RdsCompApplyForPositionComponent implements OnInit {
   public emailPattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   public contactNumber ='[1-9]{1}[0-9]{9}'
   showConfirmationPopup: boolean = false;
-  alertData: AlertPopupData = {
-    iconUrl: "tick",
-    colorVariant: "success",
-    alertConfirmation: "Thank You!",
-    messageAlert: "Your application has been summited successfully.",
-    CancelButtonLabel: "Cancel",
-    DeleteButtonLabel: "Delete"
-  }
+  // alertData: AlertPopupData = {
+  //   iconUrl: "tick",
+  //   colorVariant: "success",
+  //   alertConfirmation: "Thank You!",
+  //   messageAlert: "Your application has been summited successfully.",
+  //   CancelButtonLabel: "Cancel",
+  //   DeleteButtonLabel: "Delete"
+  // }
   constructor() { }
 
   ngOnInit(): void {

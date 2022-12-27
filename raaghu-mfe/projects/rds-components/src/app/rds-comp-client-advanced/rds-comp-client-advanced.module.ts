@@ -5,6 +5,7 @@ import { RdsLabelModule } from '@libs/rds-label';
 import { FormsModule } from '@angular/forms';
 import { RdsCompClientAdvancedComponent } from './rds-comp-client-advanced.component';
 import { NgxTranslateModule, SharedModule } from '@libs/shared';
+import { RdsCompDataTableModule } from '../rds-comp-data-table/rds-comp-data-table.module';
 
 
 
@@ -21,7 +22,8 @@ import { NgxTranslateModule, SharedModule } from '@libs/shared';
     FormsModule,
     SharedModule,
     RdsDropdownlistModule,
-    NgxTranslateModule
+    NgxTranslateModule,
+    RdsCompDataTableModule
   ],
   exports: [
     RdsCompClientAdvancedComponent
