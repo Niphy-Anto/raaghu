@@ -248,7 +248,7 @@ export const APP_ROUTES: Routes = [
           }).then((m) => m.AppModule),
       },
       {
-        path: 'IdentityResources',
+        path: 'identityResources',
         loadChildren: () =>
           loadRemoteModule({
             type: 'module',

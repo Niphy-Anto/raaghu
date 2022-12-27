@@ -41,7 +41,7 @@ export class RdsCompClientResourcesComponent implements OnInit, OnChanges {
   // Properties
   showSelectAllCheckbox = false;
   selectAll: boolean;
-  finalResourceData: ResourceCheckboxes[] = [];
+finalResourceData: ResourceCheckboxes[] = [];
 
   constructor(public translate: TranslateService) { }
 
@@ -134,7 +134,7 @@ export class RdsCompClientResourcesComponent implements OnInit, OnChanges {
           displayName: ele.displayName,
           left: ele.left,
           name: ele.name,
-          id: ele.id
+          id : ele.id
         };
         selectedData.push(item);
       });

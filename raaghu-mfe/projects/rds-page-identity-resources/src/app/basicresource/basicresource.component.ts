@@ -6,9 +6,9 @@ export class Resource {
   public Name: string;
   public Displayname: string;
   public Description: string;
-  public enables:boolean
-  public required:boolean
-  public emphasize:boolean
+  public enables:boolean  = false
+  public required:boolean = false
+  public emphasize:boolean = false
   public showindiscovery:boolean
 }
 @Component({
@@ -46,7 +46,7 @@ export class BasicresourceComponent implements OnInit {
     };
   }
   @Input() ResourceData:Resource={
-    Name: '',
+    Name: 'fff',
     Displayname: '',
     Description: '',
     enables: false,
@@ -60,6 +60,7 @@ export class BasicresourceComponent implements OnInit {
     }else{
       this.onBsicResourceSave.emit({ BasicResource: this.ResourceData });
       this.ResourceData=new Resource();
+      console.log(this.ResourceData,'data')
     }
     
   }

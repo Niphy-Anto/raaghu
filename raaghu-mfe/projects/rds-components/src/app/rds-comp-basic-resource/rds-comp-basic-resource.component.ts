@@ -1,47 +1,70 @@
-import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
-export class Resource {
-  public Name: string;
-  public Displayname: string;
-  public Description: string;
-  public enables:boolean
-  public required:boolean
-  public emphasize:boolean
-  public showindiscovery:boolean
-}
+
 @Component({
   selector: 'rds-comp-basic-resource',
   templateUrl: './rds-comp-basic-resource.component.html',
   styleUrls: ['./rds-comp-basic-resource.component.scss']
 })
 export class RdsCompBasicResourceComponent implements OnInit {
-  scopeBasics: any = {};
-  constructor(public translate:TranslateService) { }
+  // scopeBasics: any = {};
+  constructor(public translate: TranslateService) { }
+  
   @Output()
-  onBsicResourceSave = new EventEmitter<{BasicResource:any}>()
+  onBsicResourceSave = new EventEmitter<any>()
   @ViewChild('resourceForm') resourceForm: NgForm;
-  name:string;
+  @Input() ResourceData: any=[];
   ngOnInit(): void {
-    this.ResourceData=new Resource()
+
   }
-  @Input() ResourceData:Resource={
-    Name: '',
-    Displayname: '',
-    Description: '',
-    enables: false,
-    required: false,
-    emphasize: false,
-    showindiscovery: false
+
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (!this.ResourceData) {
+      this.ResourceData = {}
+      this.ResourceData['name'] = '';
+      this.ResourceData['description']='';
+      this.ResourceData['displayName'] = '';
+      this.ResourceData['enables'] = false;
+      this.ResourceData['required'] = false;
+      this.ResourceData['emphasize'] = false;
+      this.ResourceData['showInDiscoveryDocument'] = false;
+    }
   }
   saveResource(resourceForm: NgForm) {
-    if (resourceForm.invalid) {
+    resourceForm.form.markAllAsTouched();
+    if (!resourceForm || resourceForm.invalid) {
       return;
-    }else{
-      this.onBsicResourceSave.emit({ BasicResource: this.ResourceData });
-      this.ResourceData=new Resource();
     }
+
+    this.onBsicResourceSave.emit({ scopeResource: this.ResourceData, next: true });
+
+    console.log(this.ResourceData, 'this.ResourceData');
+    this.onBsicResourceSave.emit(this.ResourceData);
+    console.log(this.ResourceData, 'this.ResourceData');
+  }
+
+  getCheckboxValue(event: boolean, value: string) {
+    switch (value) {
+      case 'enables':
+        this.ResourceData.enables = event;
     
+        break
+
+      case 'required':
+        this.ResourceData.required = event;
+       
+        break;
+
+      case 'emphasize':
+        this.ResourceData.emphasize = event;
+        break;
+      case 'showindiscovery':
+        this.ResourceData.showInDiscoveryDocument = event;
+        break;
+    }
+
   }
 
 }
