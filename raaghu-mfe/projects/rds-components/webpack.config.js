@@ -123,6 +123,8 @@ module.exports = {
         './RdsCompThemeNew' : './projects/rds-components/src/app/rds-comp-theme-new/rds-comp-theme-new.component.ts',
         './RdsCompClaimTypeRole' : './projects/rds-components/src/app/rds-comp-claim-type-role/rds-comp-claim-type-role.component.ts',
         './RdsCompClientAdvanced' : './projects/rds-components/src/app/rds-comp-client-advanced/rds-comp-client-advanced.component.ts',
+        './RdsCompApiScopeList' : './projects/rds-components/src/app/rds-comp-api-scope-list/rds-comp-api-scope-list.component.ts',
+
       },
 
 

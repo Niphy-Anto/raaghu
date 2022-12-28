@@ -4,6 +4,7 @@
       <div class="card-body m-1">
         <div class="row">
           <rds-data-table
+          [noDataTitle]="'Currently you do not have api scope'"
             [tableData]="PropertyTableData"
             [inlineEdit]="false"
             [pagination]="true"
