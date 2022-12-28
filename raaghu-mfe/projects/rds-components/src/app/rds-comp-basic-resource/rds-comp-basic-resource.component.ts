@@ -1,38 +1,62 @@
-import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output, SimpleChanges, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
-
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'rds-comp-basic-resource',
-
   templateUrl: './rds-comp-basic-resource.component.html',
-
-  styleUrls: ['./rds-comp-basic-resource.component.scss'],
+  styleUrls: ['./rds-comp-basic-resource.component.scss']
 })
-export class RdsCompBasicResourceComponent implements OnInit {
-  // scopeBasics: any = {};
+export class RdsCompBasicResourceComponent implements OnInit, AfterViewInit {
   constructor(public translate: TranslateService) { }
-  
-  @Output()
-  onBsicResourceSave = new EventEmitter<any>()
-  @ViewChild('resourceForm') resourceForm: NgForm;
-  @Input() ResourceData: any=[];
-  ngOnInit(): void {
 
+  @Input() isApiResources: boolean = false;
+  @Output() onBasicInfoSave = new EventEmitter<any>();
+  @Output() onValidForm = new EventEmitter<any>();
+
+  @Output() onFormValid = new EventEmitter<any>()
+
+  @ViewChild('resourceForm') resourceForm: NgForm;
+  @Input() basicInfo: any;
+
+  ngAfterViewInit(): void {
+    if (this.basicInfo && this.resourceForm) {
+      this.resourceForm.statusChanges.subscribe(res => {
+        if (res === 'VALID') {
+          this.onValidForm.emit(this.basicInfo);
+        } else {
+          this.onValidForm.emit(undefined);
+        }
+      });
+    }
+  }
+  ngOnInit(): void {
+    if (!this.basicInfo) {
+      this.basicInfo = {}
+      this.basicInfo['name'] = '';
+      this.basicInfo['description'] = '';
+      this.basicInfo['displayName'] = '';
+      this.basicInfo['enables'] = false;
+      this.basicInfo['required'] = false;
+      this.basicInfo['emphasize'] = false;
+      this.basicInfo['showInDiscoveryDocument'] = false;
+      this.basicInfo['algorithm'] = '';
+    }
   }
 
 
+
   ngOnChanges(changes: SimpleChanges): void {
-    if (!this.ResourceData) {
-      this.ResourceData = {}
-      this.ResourceData['name'] = '';
-      this.ResourceData['description']='';
-      this.ResourceData['displayName'] = '';
-      this.ResourceData['enables'] = false;
-      this.ResourceData['required'] = false;
-      this.ResourceData['emphasize'] = false;
-      this.ResourceData['showInDiscoveryDocument'] = false;
+    if (!this.basicInfo) {
+      this.basicInfo = {}
+      this.basicInfo['name'] = '';
+      this.basicInfo['description'] = '';
+      this.basicInfo['displayName'] = '';
+      this.basicInfo['enables'] = false;
+      this.basicInfo['required'] = false;
+      this.basicInfo['emphasize'] = false;
+      this.basicInfo['showInDiscoveryDocument'] = false;
+      this.basicInfo['algorithm'] = ''
     }
   }
 
@@ -41,27 +65,30 @@ export class RdsCompBasicResourceComponent implements OnInit {
     if (!resourceForm || resourceForm.invalid) {
       return;
     }
-    this.onBsicResourceSave.emit({ scopeResource: this.ResourceData, next: true });
-    console.log(this.ResourceData, 'this.ResourceData');
+    // this.onBasicInfoSave.emit({ scopeResource: this.basicInfo, next: true });
+    this.onBasicInfoSave.emit(this.basicInfo);
+
   }
 
   getCheckboxValue(event: boolean, value: string) {
     switch (value) {
       case 'enables':
-        this.ResourceData.enables = event;
-        break;
+        this.basicInfo.enables = event;
+        break
 
       case 'required':
-        this.ResourceData.required = event;
+        this.basicInfo.required = event;
+
         break;
 
       case 'emphasize':
-        this.ResourceData.emphasize = event;
+        this.basicInfo.emphasize = event;
         break;
-
       case 'showindiscovery':
-        this.ResourceData.showInDiscoveryDocument = event;
+        this.basicInfo.showInDiscoveryDocument = event;
         break;
     }
+
   }
+
 }
