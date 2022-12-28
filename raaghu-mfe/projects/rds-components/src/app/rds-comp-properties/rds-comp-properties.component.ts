@@ -22,7 +22,7 @@ export class RdsCompPropertiesComponent implements OnInit {
   @Input() PropertyList: any = [];
   @Output()
   onPropertyResourceSave = new EventEmitter<{ Property: any }>()
-  rdsresourceTableMfeConfig: ComponentLoaderOptions;
+  // rdsresourceTableMfeConfig: ComponentLoaderOptions;
   @Input() PropertiesData: Properties = {
     key: undefined,
     value: undefined
@@ -41,21 +41,10 @@ export class RdsCompPropertiesComponent implements OnInit {
     }
   }
   ngOnInit(): void {
-    this.rdsresourceTableMfeConfig = {
-      name: 'RdsDataTable',
-      input: {
-        tableHeaders: this.PropertyTableHeader,
-        tableStyle: 'light',
-        width: '100%',
-        tableData: this.PropertyList,
-        recordsPerPage: 10,
+  }
 
-      },
-      output: {
-
-
-      }
-    };
+  ngAfterViewInit() : void {
+    this.onPropertyResourceSave.emit({ Property: this.PropertyList });
   }
   addProperties() {
     const data: any = { ...this.PropertiesData };
@@ -68,7 +57,7 @@ export class RdsCompPropertiesComponent implements OnInit {
 
   }
   SavePropertyData() {
-    this.onPropertyResourceSave.emit({ Property: this.PropertyList });
+    // this.onPropertyResourceSave.emit({ Property: this.PropertyList });
     console.log({ Property: this.PropertyList });
 
 

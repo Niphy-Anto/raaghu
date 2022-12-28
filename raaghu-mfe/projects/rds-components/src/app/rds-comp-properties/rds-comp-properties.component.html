@@ -3,14 +3,14 @@
     <div class="card border-0 h-100">
       <div class="card-body m-1">
         <div class="row">
-          <!-- <rds-data-table
-            [tableData]="PropertyTableData"
+          <rds-data-table
+            [tableData]="PropertyList"
             [inlineEdit]="false"
             [pagination]="true"
             [recordsPerPage]="10"
             [tableHeaders]="PropertyTableHeader"
             [noDataTitle]="'Currently you do not have properties'"
-          ></rds-data-table> -->
+          ></rds-data-table>
         </div>
         <div class="mt-4 row pb-5">
           <div class="col-md-5 mb-3">
@@ -56,9 +56,8 @@
           </div>
         </div>
         
-          <div class="row">
-            <div class="col-sm-12 ml-1">
-              <rds-button
+          <!-- <div class="footer-buttons">
+            <rds-button
                 class="me-2"
                 [label]="'Cancel'"
                 [isOutline]="true"
@@ -76,8 +75,7 @@
                 (click)="SavePropertyData()"
               >
               </rds-button>
-            </div>
-          </div>
+          </div> -->
         
       </div>
     </div>

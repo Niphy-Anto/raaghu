@@ -28,7 +28,7 @@ export class AppComponent implements OnInit {
   title = 'scope';
   viewCanvas: boolean = false;
   activePage: number = 0;
-  scopeUniqueId: any ;
+  scopeUniqueId: any;
   offcanvasId: string = 'scope_canvas';
   scopeTableHeaders: TableHeader[] = [
     {
@@ -50,9 +50,8 @@ export class AppComponent implements OnInit {
   content!: TemplateRef<any>;
   scopeList: any = [];
   userClaims = [];
-  properties = [];
   scope: any = {};
-  isShimmer : boolean = true
+  isShimmer: boolean = true;
   canvasTitle: string = 'New Scope';
   public navtabsItems: any = [
     {
@@ -65,24 +64,33 @@ export class AppComponent implements OnInit {
       tablink: '#resources',
       ariacontrols: 'resources',
     },
-    {
-      label: this.translate.instant('Properties'),
-      tablink: '#properties',
-      ariacontrols: 'properties',
-    },
   ];
 
-  actions : TableAction[] = [
+  actions: TableAction[] = [
     { id: 'delete', displayName: 'Delete' },
     { id: 'edit', displayName: 'Edit' },
   ];
 
   PropertyTableHeader: TableHeader[] = [
-    { displayName: 'Key', key: 'key', dataType: 'text', dataLength: 30, sortable: false, required: true },
-    { displayName: 'Value', key: 'value', dataType: 'text', dataLength: 30, sortable: false, required: true },
-   ];
-   PropertyList:any=[];
-   PropertyTableData:any=[];
+    {
+      displayName: 'Key',
+      key: 'key',
+      dataType: 'text',
+      dataLength: 30,
+      sortable: false,
+      required: true,
+    },
+    {
+      displayName: 'Value',
+      key: 'value',
+      dataType: 'text',
+      dataLength: 30,
+      sortable: false,
+      required: true,
+    },
+  ];
+  PropertyList: any = [];
+  PropertyTableData: any = [];
   apiScopeEdit: any;
 
   constructor(public translate: TranslateService, private store: Store) {}
@@ -101,13 +109,55 @@ export class AppComponent implements OnInit {
           };
           this.scopeList.push(data);
         });
-        this.isShimmer = false
+        this.isShimmer = false;
       }
     });
 
     this.store.select(selectApiScope).subscribe((res: any) => {
       if (res) {
-      this.apiScopeEdit = res
+        const data: any = {
+          name: res.name,
+          description: res.description,
+          displayName: res.displayName,
+          emphasize: res.emphasize,
+          enables: res.enables,
+          required: res.required,
+          showInDiscoveryDocument: res.showInDiscoveryDocument,
+        };
+        this.apiScopeEdit = data;
+
+        // res.userClaims.forEach((element) => {
+        //   const _claimsData = {
+        //     apiScopeId: element.apiScopeId,
+        //     type: element.type,
+        //     left : true,
+        //   };
+        //   this.userClaims.push(_claimsData);
+        // });
+        if (res.userClaims && res.userClaims.length > 0) {
+          this.userClaims.forEach((claim: any) => {
+            if (claim) {
+              const _claim = res.userClaims.find(
+                (x: any) => x.type == claim.displayName
+              );
+              if (_claim) {
+                claim.left = true;
+              }
+            }
+          });
+        }
+        this.PropertyList = [];
+        if(res.properties && res.properties.length> 0){
+          res.properties.forEach((element) => {
+            const _PropData = {
+              apiScopeId: element.apiScopeId,
+              value: element.value,
+              key: element.key,
+            };
+            this.PropertyList.push(_PropData);
+          });
+        }
+      
       }
     });
 
@@ -116,24 +166,22 @@ export class AppComponent implements OnInit {
       if (res) {
         this.userClaims = [];
         res.forEach((element) => {
-            let item = {
-              id: element.id,
-              displayName: element.name,
-              left : false
-            };
-             this.userClaims.push(item);
+          let item = {
+            id: element.id,
+            displayName: element.name,
+            left: false,
+          };
+          this.userClaims.push(item);
         });
-      console.log(this.userClaims , 'this.userClaims');
-      
+        console.log(this.userClaims, 'this.userClaims');
       }
     });
   }
 
   onActionSelect(event: any): void {
     if (event.actionId === 'delete') {
-     this.store.dispatch(deleteApiScope(event.selectedData.id));
-    } 
-    else if (event.actionId === 'edit') {
+      this.store.dispatch(deleteApiScope(event.selectedData.id));
+    } else if (event.actionId === 'edit') {
       this.scopeUniqueId = event.selectedData.id;
       this.canvasTitle = this.translate.instant('Edit Scope');
       this.store.dispatch(getApiScope(event.selectedData.id));
@@ -146,8 +194,39 @@ export class AppComponent implements OnInit {
     if (!edit) {
       this.scopeUniqueId = undefined;
       this.canvasTitle = 'New Scope';
+
+      this.navtabsItems = [
+        {
+          label: this.translate.instant('Basics'),
+          tablink: '#basics',
+          ariacontrols: 'basics',
+        },
+        {
+          label: this.translate.instant('Claims'),
+          tablink: '#resources',
+          ariacontrols: 'resources',
+        },
+      ];
     } else {
       this.canvasTitle = 'Edit Scope';
+
+      this.navtabsItems = [
+        {
+          label: this.translate.instant('Basics'),
+          tablink: '#basics',
+          ariacontrols: 'basics',
+        },
+        {
+          label: this.translate.instant('Claims'),
+          tablink: '#resources',
+          ariacontrols: 'resources',
+        },
+        {
+          label: this.translate.instant('Properties'),
+          tablink: '#properties',
+          ariacontrols: 'properties',
+        },
+      ];
     }
     setTimeout(() => {
       var offcanvas = document.getElementById(this.offcanvasId);
@@ -157,7 +236,7 @@ export class AppComponent implements OnInit {
   }
 
   close(): void {
-      this.apiScopeEdit = []
+    this.apiScopeEdit = [];
     this.viewCanvas = false;
     this.activePage = 0;
     this.scopeUniqueId = undefined;
@@ -170,35 +249,56 @@ export class AppComponent implements OnInit {
     this.scope.basicInfo = event.scopeResource;
   }
 
-  getClaims(event:any) : void {
+  getClaims(event: any): void {
     this.scope.userClaims = event;
   }
 
-  getProperties(event:any) : void {
-    this.scope.properties = event
+  getProperties(event: any): void {
+    this.scope.PropertyList = event.Property;
+    console.log(event, 'prop');
   }
 
   save(): void {
     if (this.scopeUniqueId) {
+      const _data: any[] = [];
+      this.scope.userClaims.forEach((element) => {
+        const _claimsData = {
+          apiScopeId: element.id,
+          type: element.displayName,
+        };
+        _data.push(_claimsData);
+      });
+      const _dataProp: any[] = [];
+      this.scope.PropertyList.forEach((element) => {
+        const _PropData = {
+          apiScopeId: element.id,
+          value: element.value,
+          key: element.key,
+        };
+        _dataProp.push(_PropData);
+      });
       const data: any = {
-        description: this.scope.basicInfo.description,
-        displayName: this.scope.basicInfo.displayName,
-        emphasize: this.scope.basicInfo.emphasize,
-        enabled: this.scope.basicInfo.enables,
-        required: this.scope.basicInfo.required,
-        showInDiscoveryDocument: this.scope.basicInfo.showInDiscoveryDocument,
-        userClaims: this.userClaims,
-        properties: [],
+        id: this.scopeUniqueId,
+        body: {
+          description: this.scope.basicInfo.description,
+          displayName: this.scope.basicInfo.displayName,
+          emphasize: this.scope.basicInfo.emphasize,
+          enabled: this.scope.basicInfo.enables,
+          required: this.scope.basicInfo.required,
+          showInDiscoveryDocument: this.scope.basicInfo.showInDiscoveryDocument,
+          userClaims: _data,
+          properties: _dataProp,
+        },
       };
       this.store.dispatch(updateApiScope(data));
     } else {
-      const _data : any[] = []
-      this.scope.userClaims.forEach(element => {
+      const _data: any[] = [];
+      this.scope.userClaims.forEach((element) => {
         const _claimsData = {
-          apiScopeId :  element.id,
-          type : element.displayName
-        }
-       _data.push(_claimsData)
+          apiScopeId: element.id,
+          type: element.displayName,
+        };
+        _data.push(_claimsData);
       });
       const data: any = {
         description: this.scope.basicInfo.description,

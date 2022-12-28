@@ -29,7 +29,7 @@ export class RdsCompBasicResourceComponent implements OnInit {
       this.ResourceData['name'] = '';
       this.ResourceData['description']='';
       this.ResourceData['displayName'] = '';
-      this.ResourceData['enables'] = false;
+      this.ResourceData['enabled'] = false;
       this.ResourceData['required'] = false;
       this.ResourceData['emphasize'] = false;
       this.ResourceData['showInDiscoveryDocument'] = false;
@@ -48,7 +48,7 @@ export class RdsCompBasicResourceComponent implements OnInit {
   getCheckboxValue(event: boolean, value: string) {
     switch (value) {
       case 'enables':
-        this.ResourceData.enables = event;
+        this.ResourceData.enabled = event;
         break;
 
       case 'required':
