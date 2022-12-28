@@ -220,7 +220,6 @@ export class RdsCompClientBasicsComponent implements OnInit, OnChanges {
   addSignoutUrl(event: string) {
     this.clientId != undefined ? this.clientBasics.postLogoutRedirectUris.push({ clientId: this.clientId, postLogoutRedirectUri: event }) :
       this.clientBasics.postLogoutRedirectUris.push(event);
-
     this.rdsSignoutTableConfig.input.tableData = [...this.clientBasics.postLogoutRedirectUris];
     this.signoutUrl = '';
   }
@@ -233,55 +232,3 @@ export class RdsCompClientBasicsComponent implements OnInit, OnChanges {
   }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  // clientId: '',
-  // clientName: '',
-  // description: '',
-  // clientUri: '',
-  // logoUri: '',
-  // allowedCorsOrigins: [],
-  // redirectUris: [],
-  // postLogoutRedirectUrisL: [],
-  // requireConsent: false,
-  // requireRequestObject: false,
-  // allowRememberConsent: true,
-  // enabled: true,
-  // allowOfflineAccess: true,
-  // frontChannelLogoutUri: null,
-  // frontChannelLogoutSessionRequired: true,
-  // backChannelLogoutUri: null,
-  // backChannelLogoutSessionRequired: true,
-  // allowedIdentityTokenSigningAlgorithms: null,
-  // id: ''

@@ -18,6 +18,7 @@ export class RdsCompSecretsComponent implements OnInit, OnChanges {
     { displayName: 'Description', key: 'description', dataType: 'text', dataLength: 30, required: true, sortable: true, },
   ];
   @Input() apiSecretsTableData: any[] = [];
+  @Input() showSecretForm = false;
 
   // Output Decorators
   @Output() secretDataInfo = new EventEmitter();
@@ -32,7 +33,6 @@ export class RdsCompSecretsComponent implements OnInit, OnChanges {
     expiration: new Date(),
     description: ''
   };
-  showSecretForm = false;
   selectedEndDate: any;
   selectedEndDateEmit: any;
   typeData: any[] = [
@@ -59,13 +59,11 @@ export class RdsCompSecretsComponent implements OnInit, OnChanges {
       output: {
         onActionSelection: (event: any) => {
           if (event.actionId == 'delete') {
-            const index1 = this.secretList.findIndex(x => x.value == event.selectedData.value);
-            const index2 = this.secretListShow.findIndex(x => x.value == event.selectedData.value);
-            if (index1 != -1 && index2 != -1) {
-              this.secretList.splice(index1, 1);
+            const index = this.secretList.findIndex(x => x.value == event.selectedData.value);
+            if (index != -1) {
+              this.secretList.splice(index, 1);
               this.secretDataInfo.next(this.secretList);
-              this.secretListShow.splice(index2, 1);
-              this.rdsApiSecretsTableMfeConfig.input.tableData = [...this.secretListShow];
+              this.rdsApiSecretsTableMfeConfig.input.tableData = [...this.secretList];
             }
           }
         }
