@@ -1,4 +1,3 @@
-
 <form #resourceForm="ngForm">
   <div class="row">
     <div class="form-group col-sm-4 col-md-6 mb-3">
@@ -20,7 +19,6 @@
       </div>
     </div>
   </div>
-  
 
   <div class="form-group col-sm-12 mb-3">
     <rds-textarea #description="ngModel" [placeholderText]="translate.instant('Enter Description')"
@@ -31,26 +29,38 @@
       <span class="text-danger" *ngIf="description.errors.required">{{translate.instant("Description is required")}}</span>
     </div>
 
+    <div
+      class="form-control-feedback"
+      *ngIf="description.errors && (description.dirty || description.touched)"
+    >
+      <span class="text-danger" *ngIf="description.errors.required">{{
+        translate.instant("Description is required")
+      }}</span>
+    </div>
   </div>
 
   <div class="fw-bold">
     <rds-label [label]="'Others'"></rds-label>
   </div>
+
   <div class="mb-2 pt-2">
     <rds-checkbox [label]="translate.instant('Enable')" [checked]="ResourceData.enables" [disabled]="false" [switch]="false" [inline]="false"
       [withLabel]="true" [isInputGroup]="false"  (onChange)="getCheckboxValue($event,'enables')"
       [id]="'enable'"></rds-checkbox>
 
   </div>
+
   <div class="mb-2">
     <rds-checkbox label="Required" [checked]="ResourceData.required" [disabled]="false" [switch]="false"
       [inline]="false" [withLabel]="true" [isInputGroup]="false" name="required" (onChange)="getCheckboxValue($event,'required')"
       [id]="'require'"></rds-checkbox>
   </div>
+
   <div class="mb-2">
     <rds-checkbox label="Emphasize" [checked]="ResourceData.emphasize" [disabled]="false" [switch]="false"
       [inline]="false" [withLabel]="true" [isInputGroup]="false"  (onChange)="getCheckboxValue($event,'emphasize')" name="emphasize"  [id]="'emphasize'"></rds-checkbox>
   </div>
+
   <div class="mb-2">
     <rds-checkbox label="Show in discovery Documents" [checked]="ResourceData.showInDiscoveryDocument" [disabled]="false"
       [switch]="false" [inline]="false" [withLabel]="true" [isInputGroup]="false" name="showInDiscoveryDocument" (onChange)="getCheckboxValue($event,'showindiscovery')"

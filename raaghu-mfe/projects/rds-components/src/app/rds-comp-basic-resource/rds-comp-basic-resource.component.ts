@@ -1,11 +1,14 @@
 import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
+
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'rds-comp-basic-resource',
+
   templateUrl: './rds-comp-basic-resource.component.html',
-  styleUrls: ['./rds-comp-basic-resource.component.scss']
+
+  styleUrls: ['./rds-comp-basic-resource.component.scss'],
 })
 export class RdsCompBasicResourceComponent implements OnInit {
   // scopeBasics: any = {};
@@ -32,16 +35,13 @@ export class RdsCompBasicResourceComponent implements OnInit {
       this.ResourceData['showInDiscoveryDocument'] = false;
     }
   }
+
   saveResource(resourceForm: NgForm) {
     resourceForm.form.markAllAsTouched();
     if (!resourceForm || resourceForm.invalid) {
       return;
     }
-
     this.onBsicResourceSave.emit({ scopeResource: this.ResourceData, next: true });
-
-    console.log(this.ResourceData, 'this.ResourceData');
-    this.onBsicResourceSave.emit(this.ResourceData);
     console.log(this.ResourceData, 'this.ResourceData');
   }
 
@@ -49,22 +49,19 @@ export class RdsCompBasicResourceComponent implements OnInit {
     switch (value) {
       case 'enables':
         this.ResourceData.enables = event;
-    
-        break
+        break;
 
       case 'required':
         this.ResourceData.required = event;
-       
         break;
 
       case 'emphasize':
         this.ResourceData.emphasize = event;
         break;
+
       case 'showindiscovery':
         this.ResourceData.showInDiscoveryDocument = event;
         break;
     }
-
   }
-
 }
