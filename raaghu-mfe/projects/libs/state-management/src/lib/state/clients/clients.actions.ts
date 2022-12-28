@@ -13,7 +13,7 @@ export const getAllClientsFailure = createAction(
 );
 
 export const getClient = createAction('[Clients Page] Get Client',
-    (id: any) => (id));
+    (id: any) => ({ id }));
 
 export const getClientSuccess = createAction(
     '[Clients Page] Get Client Success',
@@ -53,13 +53,13 @@ export const saveClientFailure = createAction(
 
 export const deleteClient = createAction(
     '[Clients Page] Delete Client',
-    (data) => (data)
+    (id: any) => ({ id })
 );
 export const deleteClientSucess = createAction(
     '[Clients Page] Delete Client Success',
 );
 
-export const getPermissions = createAction('[Clients Page] Get Permissions',(name: any) => ({ name }));
+export const getPermissions = createAction('[Clients Page] Get Permissions', (name: any) => ({ name }));
 
 export const getPermissionSuccess = createAction(
     '[Clients Page] get Permission Success',
@@ -72,7 +72,7 @@ export const getPermissionFailure = createAction(
 );
 
 export const savePermissions = createAction('[Clients Page] Save Permissions',
-(data) => ({ data }));
+    (data) => ({ data }));
 
 export const savePermissionsSuccess = createAction(
     '[Clients Page] Save Permissions Success',

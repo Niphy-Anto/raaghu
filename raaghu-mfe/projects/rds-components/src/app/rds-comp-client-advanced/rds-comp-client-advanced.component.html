@@ -92,7 +92,13 @@
             </div>
         </div>
         <div class="my-3">
-            <mfe-loader [config]="rdsClaimsDataTableConfig"></mfe-loader>
+           <rds-data-table
+           [tableData]="clientAdvancedObj.claims"
+           [tableHeaders]="claimHeaders"
+           (onActionSelection)="onActionSelection($event)"
+           [noDataTitle]="'Currently you do not have claims'"
+           [actions]="actions"
+           ></rds-data-table>
         </div>
         <div class="col-md-6 my-2">
             <div class="form-group">

@@ -54,7 +54,8 @@ export class RdsCompClaimTypeRoleComponent implements OnInit {
         pagination: true,
         recordsPerPage: 4,
         actions: this.actions,
-        isShimmer: false
+        isShimmer: false,
+        noDataTitle: 'Currently you do not have claims'
       },
       output: {
         deleteEvent: (deleteEvent: any) => {

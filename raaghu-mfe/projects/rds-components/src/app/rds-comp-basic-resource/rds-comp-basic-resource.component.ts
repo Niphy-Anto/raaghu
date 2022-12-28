@@ -1,13 +1,4 @@
-import {
-  Component,
-  EventEmitter,
-  Input,
-  OnInit,
-  Output,
-  SimpleChanges,
-  ViewChild,
-} from '@angular/core';
-
+import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 import { TranslateService } from '@ngx-translate/core';
@@ -21,23 +12,22 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class RdsCompBasicResourceComponent implements OnInit {
   // scopeBasics: any = {};
-
-  constructor(public translate: TranslateService) {}
-
+  constructor(public translate: TranslateService) { }
+  
   @Output()
-  onBsicResourceSave = new EventEmitter<any>();
-
+  onBsicResourceSave = new EventEmitter<any>()
   @ViewChild('resourceForm') resourceForm: NgForm;
+  @Input() ResourceData: any=[];
+  ngOnInit(): void {
 
-  @Input() ResourceData: any = [];
+  }
 
-  ngOnInit(): void {}
 
   ngOnChanges(changes: SimpleChanges): void {
     if (!this.ResourceData) {
-      this.ResourceData = {};
+      this.ResourceData = {}
       this.ResourceData['name'] = '';
-      this.ResourceData['description'] = '';
+      this.ResourceData['description']='';
       this.ResourceData['displayName'] = '';
       this.ResourceData['enables'] = false;
       this.ResourceData['required'] = false;
@@ -47,7 +37,6 @@ export class RdsCompBasicResourceComponent implements OnInit {
   }
 
   saveResource(resourceForm: NgForm) {
-
     resourceForm.form.markAllAsTouched();
     if (!resourceForm || resourceForm.invalid) {
       return;

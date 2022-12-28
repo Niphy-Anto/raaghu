@@ -1,10 +1,11 @@
 import { createReducer, on } from "@ngrx/store";
-import { deleteIdentityResource, deleteIdentityResourceSucess, getAllIdentityResources, getAllIdentityResourcesFailure, getAllIdentityResourcesSuccess, getIdentityResource, getIdentityResourceFailure, getIdentityResourceSuccess, saveIdentityResource, saveIdentityResourceFailure, saveIdentityResourceSuccess, updateIdentityResource, updateIdentityResourceFailure, updateIdentityResourceSuccess } from "./identity-resources.actions";
+import { claimTypesAll, claimTypesAllSuccess, deleteIdentityResource, deleteIdentityResourceSucess, getAllIdentityResources, getAllIdentityResourcesFailure, getAllIdentityResourcesSuccess, getIdentityResource, getIdentityResourceFailure, getIdentityResourceSuccess, saveIdentityResource, saveIdentityResourceFailure, saveIdentityResourceSuccess, updateIdentityResource, updateIdentityResourceFailure, updateIdentityResourceSuccess } from "./identity-resources.actions";
 
 
 export interface IdentityResourcesState {
     allIdentityResources:any;
     identityResource:any;
+    claims:any;
     error: string;
     status: 'pending' | 'loading' | 'error' | 'success';
 }
@@ -13,6 +14,7 @@ export interface IdentityResourcesState {
 export const IdentityResourcesInitialState: IdentityResourcesState = {
     allIdentityResources:null,
     identityResource:null,
+    claims:null,
     error: null,
     status: 'pending',
 };
@@ -77,5 +79,12 @@ export const IdentityResourcesReducer = createReducer(
         ...state,
         error: error,
         status: 'error'
-    }))
+    })),
+    on(claimTypesAll, (state)=>({...state,status:'loading'})),
+    on(claimTypesAllSuccess, (state, { claims}) => ({
+        ...state,
+        claims: claims,   
+        error: null,
+        status: 'success',
+    })),
 )

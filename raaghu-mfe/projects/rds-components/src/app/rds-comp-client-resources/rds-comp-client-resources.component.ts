@@ -41,12 +41,11 @@ export class RdsCompClientResourcesComponent implements OnInit, OnChanges {
   // Properties
   showSelectAllCheckbox = false;
   selectAll: boolean;
-  finalResourceData: ResourceCheckboxes[] = [];
+finalResourceData: ResourceCheckboxes[] = [];
 
   constructor(public translate: TranslateService) { }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log(this.resourceData);
     if (this.showType && this.resourceData.length > 0) this.selectedOptionData(this.resourceData);
   }
 

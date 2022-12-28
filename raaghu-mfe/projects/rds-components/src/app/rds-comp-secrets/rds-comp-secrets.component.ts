@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ComponentLoaderOptions } from '@libs/shared';
 import { TableHeader } from '../../models/table-header.model';
@@ -8,7 +8,7 @@ import { TableHeader } from '../../models/table-header.model';
   templateUrl: './rds-comp-secrets.component.html',
   styleUrls: ['./rds-comp-secrets.component.scss']
 })
-export class RdsCompSecretsComponent implements OnInit {
+export class RdsCompSecretsComponent implements OnInit, OnChanges {
 
   // Input Decorators
   @Input() apiSecretTableHeader: TableHeader[] = [
@@ -35,16 +35,19 @@ export class RdsCompSecretsComponent implements OnInit {
   showSecretForm = false;
   selectedEndDate: any;
   selectedEndDateEmit: any;
+  typeData: any[] = [
+    { id: 1, value: 'Shared Secret', some: 'Shared Secret' },
+    { id: 2, value: 'X509 Thumbprint', some: 'X509 Thumbprint' }
+  ];
 
   constructor() { }
-
-  ngOnInit(): void {
-    if (this.apiSecretsTableData.length > 0) this.secretList = this.apiSecretsTableData;
+  ngOnChanges(changes: SimpleChanges): void {
+    if (this.apiSecretsTableData != undefined) this.secretList = this.apiSecretsTableData;
     this.rdsApiSecretsTableMfeConfig = {
       name: 'RdsDataTable',
       input: {
         tableHeaders: this.apiSecretTableHeader,
-        tableData: this.secretListShow,
+        tableData: this.secretList,
         tableStyle: 'light',
         width: '100%',
         recordsPerPage: 10,
@@ -68,12 +71,19 @@ export class RdsCompSecretsComponent implements OnInit {
         }
       },
     };
+    this.secretDataInfo.next(this.secretList);
   }
+
+  ngOnInit(): void { }
 
   selectEndDate(event: Date) {
     this.selectedEndDate = '';
     this.secretData.expiration = event;
     this.selectedEndDate = event.getDate() + '/' + event.getMonth() + '/' + event.getFullYear();
+  }
+
+  selectedOption(event: any) {
+    this.secretData.type = event.item.value;
   }
 
   addSecrets(secretForm: NgForm) {
