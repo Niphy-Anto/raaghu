@@ -45,7 +45,7 @@ module.exports = {
         './RdsCompEdition': './projects/rds-components/src/app/rds-comp-edition/rds-comp-edition.component.ts',
         './RdsCompSubscription': './projects/rds-components/src/app/rds-comp-subscription/rds-comp-subscription.component.ts',
         './RdsCompHierarchy': './projects/rds-components/src/app/rds-comp-hierarchy/rds-comp-hierarchy.component.ts',
-        './RdsCompAlertPopup': './projects/rds-components/src/app/rds-comp-alert-popup/rds-comp-alert-popup.component.ts',
+        // './RdsCompAlertPopup': './projects/rds-components/src/app/rds-comp-alert-popup/rds-comp-alert-popup.component.ts',
         //'./RdsCompAuditLogs': './projects/rds-components/src/app/rds-comp-audit-logs/rds-comp-audit-logs.component.ts',
         './RdsCompTenantList': './projects/rds-components/src/app/rds-comp-tenant-list/rds-comp-tenant-list.component.ts',
         './RdsOrganizationTree': './projects/rds-components/src/app/rds-comp-organization-tree/rds-comp-organization-tree.component.ts',
