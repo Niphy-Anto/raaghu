@@ -37,8 +37,8 @@ export class ApiScopeEffects {
           this.clientsService.apiScopesGET(
             undefined,
             undefined,
-            undefined,
-            undefined
+            0,
+            1000
           )
         ).pipe(
           // Take the returned value and return a new success action containing the todos

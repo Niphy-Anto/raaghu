@@ -14,6 +14,7 @@ import {
   selectApiScope,
   selectClaimTypesAll,
 } from 'projects/libs/state-management/src/lib/state/api-scope/api-scope.selector';
+import { TableAction } from 'projects/rds-components/src/models/table-action.model';
 import { TableHeader } from 'projects/rds-components/src/models/table-header.model';
 import { ComponentLoaderOptions } from '../../../libs/shared/src/public-api';
 declare var bootstrap: any;
@@ -27,12 +28,8 @@ export class AppComponent implements OnInit {
   title = 'scope';
   viewCanvas: boolean = false;
   activePage: number = 0;
-  scopeUniqueId: any;
+  scopeUniqueId: any ;
   offcanvasId: string = 'scope_canvas';
-  rdsApiScopeTableMfeConfig: ComponentLoaderOptions;
-  rdsBasicsResourcesMfeConfig: ComponentLoaderOptions;
-  rdsScopeClaimsMfeConfig: ComponentLoaderOptions;
-  rdsScopeProperties : ComponentLoaderOptions
   scopeTableHeaders: TableHeader[] = [
     {
       displayName: 'Name',
@@ -55,6 +52,7 @@ export class AppComponent implements OnInit {
   userClaims = [];
   properties = [];
   scope: any = {};
+  isShimmer : boolean = true
   canvasTitle: string = 'New Scope';
   public navtabsItems: any = [
     {
@@ -74,76 +72,26 @@ export class AppComponent implements OnInit {
     },
   ];
 
+  actions : TableAction[] = [
+    { id: 'delete', displayName: 'Delete' },
+    { id: 'edit', displayName: 'Edit' },
+  ];
+
+  PropertyTableHeader: TableHeader[] = [
+    { displayName: 'Key', key: 'key', dataType: 'text', dataLength: 30, sortable: false, required: true },
+    { displayName: 'Value', key: 'value', dataType: 'text', dataLength: 30, sortable: false, required: true },
+   ];
+   PropertyList:any=[];
+   PropertyTableData:any=[];
+  apiScopeEdit: any;
+
   constructor(public translate: TranslateService, private store: Store) {}
 
   ngOnInit(): void {
-    this.rdsApiScopeTableMfeConfig = {
-      name: 'RdsDataTable',
-      input: {
-        tableData: this.scopeList,
-        tableHeaders: this.scopeTableHeaders,
-        recordsPerPage: 10,
-        inlineEdit: false,
-        width: '100%',
-        pagination: true,
-        actions: [
-          { id: 'delete', displayName: 'Delete' },
-          { id: 'edit', displayName: 'Edit' },
-        ],
-        noDataTitle: 'Currently you do not have api scope',
-      },
-
-      output: {
-        onActionSelection: (event) => {
-          if (event.actionId === 'edit') {
-            this.scopeUniqueId = event.selectedData.id;
-            this.store.dispatch(getApiScope(event.selectedData.id));
-            this.canvasTitle = 'Edit Scope';
-            this.newScope(true);
-          } else if (event.actionId === 'delete') {
-            this.store.dispatch(deleteApiScope(event.selectedData.id));
-          }
-        },
-      },
-    };
-    this.rdsBasicsResourcesMfeConfig = {
-      name: 'RdsCompBasicResource',
-      input: {},
-      output: {
-        onBsicResourceSave: (eventData: any) => {
-          this.getScopeInfo(eventData);
-        },
-      },
-    };
-    this.rdsScopeClaimsMfeConfig = {
-      name: 'RdsCompClientResources',
-      input: {
-      },
-      output: {
-        selectedData: (event: any) => {
-          this.getClaims(event)
-        
-          console.log(event , 'event');
-          
-        },
-      },
-    };
-    this.rdsScopeProperties = {
-      name : 'RdsCompProperties',
-      input:{
-
-      },
-      output: {
-        onPropertyResourceSave :(event : any)=>{
-          this.scope.properties = event
-        }
-      }
-    }
-
     this.store.dispatch(getAllApiScope());
     this.store.select(selectAllScope).subscribe((res: any) => {
-      this.scopeList = [];
       if (res && res.items) {
+        this.scopeList = [];
         res.items.forEach((ele: any) => {
           const data: any = {
             id: ele.id,
@@ -153,28 +101,20 @@ export class AppComponent implements OnInit {
           };
           this.scopeList.push(data);
         });
-        const mfeConfig = this.rdsApiScopeTableMfeConfig;
-        mfeConfig.input.tableData = [...this.scopeList];
-        mfeConfig.input.refresh = true;
-        this.rdsApiScopeTableMfeConfig = mfeConfig;
+        this.isShimmer = false
       }
     });
 
     this.store.select(selectApiScope).subscribe((res: any) => {
       if (res) {
-        const mfeConfig = this.rdsBasicsResourcesMfeConfig;
-        mfeConfig.input.ResourceData = res;
-        this.rdsBasicsResourcesMfeConfig = mfeConfig;
-
-        // const mfeConfigs = this.rdsScopeClaimsMfeConfig;
-        // mfeConfigs.input.resourceData = res.userClaims;
-        // this.rdsScopeClaimsMfeConfig = mfeConfigs
+      this.apiScopeEdit = res
       }
     });
 
     this.store.dispatch(claimTypesAll());
     this.store.select(selectClaimTypesAll).subscribe((res: any) => {
       if (res) {
+        this.userClaims = [];
         res.forEach((element) => {
             let item = {
               id: element.id,
@@ -183,11 +123,22 @@ export class AppComponent implements OnInit {
             };
              this.userClaims.push(item);
         });
-      this.rdsScopeClaimsMfeConfig.input.resourceData = this.userClaims;
       console.log(this.userClaims , 'this.userClaims');
       
       }
     });
+  }
+
+  onActionSelect(event: any): void {
+    if (event.actionId === 'delete') {
+     this.store.dispatch(deleteApiScope(event.selectedData.id));
+    } 
+    else if (event.actionId === 'edit') {
+      this.scopeUniqueId = event.selectedData.id;
+      this.canvasTitle = this.translate.instant('Edit Scope');
+      this.store.dispatch(getApiScope(event.selectedData.id));
+      this.newScope(true);
+    }
   }
 
   newScope(edit: boolean = false): void {
@@ -206,6 +157,7 @@ export class AppComponent implements OnInit {
   }
 
   close(): void {
+      this.apiScopeEdit = []
     this.viewCanvas = false;
     this.activePage = 0;
     this.scopeUniqueId = undefined;
@@ -220,6 +172,10 @@ export class AppComponent implements OnInit {
 
   getClaims(event:any) : void {
     this.scope.userClaims = event;
+  }
+
+  getProperties(event:any) : void {
+    this.scope.properties = event
   }
 
   save(): void {
