@@ -1,22 +1,10 @@
-import { Component, OnInit, TemplateRef } from '@angular/core';
+import { Component, OnInit, SimpleChanges, TemplateRef } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { TranslateService } from '@ngx-translate/core';
-import {
-  claimTypesAll,
-  deleteApiScope,
-  getAllApiScope,
-  getApiScope,
-  saveApiScope,
-  updateApiScope,
-} from 'projects/libs/state-management/src/lib/state/api-scope/api-scope-action';
-import {
-  selectAllScope,
-  selectApiScope,
-  selectClaimTypesAll,
-} from 'projects/libs/state-management/src/lib/state/api-scope/api-scope.selector';
+import { claimTypesAll, deleteApiScope, getAllApiScope,getApiScope,saveApiScope,updateApiScope,} from 'projects/libs/state-management/src/lib/state/api-scope/api-scope-action';
+import { selectAllScope, selectApiScope, selectClaimTypesAll,} from 'projects/libs/state-management/src/lib/state/api-scope/api-scope.selector';
 import { TableAction } from 'projects/rds-components/src/models/table-action.model';
 import { TableHeader } from 'projects/rds-components/src/models/table-header.model';
-import { ComponentLoaderOptions } from '../../../libs/shared/src/public-api';
 declare var bootstrap: any;
 
 @Component({
@@ -47,12 +35,19 @@ export class AppComponent implements OnInit {
     },
     { displayName: 'Description', key: 'description', dataType: 'text' },
   ];
-  content!: TemplateRef<any>;
+  public property_actions: any = [
+    {
+      id: 'delete',
+      displayName: 'Delete',
+    },
+  ];
   scopeList: any = [];
   userClaims = [];
-  scope: any = {};
+  public claims: any = [];
+  public basicInfo: any;
   isShimmer: boolean = true;
-  canvasTitle: string = 'New Scope';
+  canvasTitle: string = 'New Api Scopes';
+  public isEdit: boolean = false;
   public navtabsItems: any = [
     {
       label: this.translate.instant('Basics'),
@@ -67,8 +62,8 @@ export class AppComponent implements OnInit {
   ];
 
   actions: TableAction[] = [
-    { id: 'delete', displayName: 'Delete' },
     { id: 'edit', displayName: 'Edit' },
+    { id: 'delete', displayName: 'Delete' },
   ];
 
   PropertyTableHeader: TableHeader[] = [
@@ -94,7 +89,17 @@ export class AppComponent implements OnInit {
   apiScopeEdit: any;
 
   constructor(public translate: TranslateService, private store: Store) {}
-
+  ngOnChanges(changes: SimpleChanges): void {
+    const offcanvas = document.getElementById(this.offcanvasId);
+    if (offcanvas) {
+      offcanvas.addEventListener('hidden.bs.offcanvas', (event) => {
+        this.viewCanvas = false;
+        this.basicInfo = undefined;
+        this.PropertyList = [];
+        this.userClaims = [];
+      });
+    }
+  }
   ngOnInit(): void {
     this.store.dispatch(getAllApiScope());
     this.store.select(selectAllScope).subscribe((res: any) => {
@@ -120,26 +125,16 @@ export class AppComponent implements OnInit {
           description: res.description,
           displayName: res.displayName,
           emphasize: res.emphasize,
-          enables: res.enables,
+          enabled: res.enabled,
           required: res.required,
+          id:res.id,
           showInDiscoveryDocument: res.showInDiscoveryDocument,
         };
         this.apiScopeEdit = data;
-
-        // res.userClaims.forEach((element) => {
-        //   const _claimsData = {
-        //     apiScopeId: element.apiScopeId,
-        //     type: element.type,
-        //     left : true,
-        //   };
-        //   this.userClaims.push(_claimsData);
-        // });
         if (res.userClaims && res.userClaims.length > 0) {
-          this.userClaims.forEach((claim: any) => {
+          this.claims.forEach((claim: any) => {
             if (claim) {
-              const _claim = res.userClaims.find(
-                (x: any) => x.type == claim.displayName
-              );
+              const _claim = res.userClaims.find( (x: any) => x.type == claim.displayName);
               if (_claim) {
                 claim.left = true;
               }
@@ -147,7 +142,7 @@ export class AppComponent implements OnInit {
           });
         }
         this.PropertyList = [];
-        if(res.properties && res.properties.length> 0){
+        if (res.properties && res.properties.length > 0) {
           res.properties.forEach((element) => {
             const _PropData = {
               apiScopeId: element.apiScopeId,
@@ -157,23 +152,21 @@ export class AppComponent implements OnInit {
             this.PropertyList.push(_PropData);
           });
         }
-      
       }
     });
 
     this.store.dispatch(claimTypesAll());
     this.store.select(selectClaimTypesAll).subscribe((res: any) => {
       if (res) {
-        this.userClaims = [];
+       this.claims = [];
         res.forEach((element) => {
           let item = {
             id: element.id,
             displayName: element.name,
             left: false,
           };
-          this.userClaims.push(item);
+          this.claims.push(item);
         });
-        console.log(this.userClaims, 'this.userClaims');
       }
     });
   }
@@ -182,6 +175,10 @@ export class AppComponent implements OnInit {
     if (event.actionId === 'delete') {
       this.store.dispatch(deleteApiScope(event.selectedData.id));
     } else if (event.actionId === 'edit') {
+      this.claims.forEach((element) => {
+        element.left = false;
+      });
+      this.isEdit = true;
       this.scopeUniqueId = event.selectedData.id;
       this.canvasTitle = this.translate.instant('Edit Scope');
       this.store.dispatch(getApiScope(event.selectedData.id));
@@ -192,8 +189,13 @@ export class AppComponent implements OnInit {
   newScope(edit: boolean = false): void {
     this.viewCanvas = true;
     if (!edit) {
+      this.isEdit = false;
       this.scopeUniqueId = undefined;
-      this.canvasTitle = 'New Scope';
+      this.apiScopeEdit = [];
+      this.claims.forEach((element) => {
+        element.left = false;
+      });
+      this.canvasTitle = 'New Api Scopes';
 
       this.navtabsItems = [
         {
@@ -208,8 +210,8 @@ export class AppComponent implements OnInit {
         },
       ];
     } else {
-      this.canvasTitle = 'Edit Scope';
-
+      this.canvasTitle = 'Edit Api Scopes';
+      this.isEdit = true;
       this.navtabsItems = [
         {
           label: this.translate.instant('Basics'),
@@ -237,41 +239,42 @@ export class AppComponent implements OnInit {
 
   close(): void {
     this.apiScopeEdit = [];
+   this.userClaims = [];
     this.viewCanvas = false;
     this.activePage = 0;
     this.scopeUniqueId = undefined;
   }
 
   getScopeInfo(event: any): void {
-    if (event.next) {
-      this.activePage = 1;
-    }
-    this.scope.basicInfo = event.scopeResource;
+    this.basicInfo = event;
+    this.save();
   }
 
   getClaims(event: any): void {
-    this.scope.userClaims = event;
+    this.userClaims = event;
   }
 
   getProperties(event: any): void {
-    this.scope.PropertyList = event.Property;
-    console.log(event, 'prop');
+    this.PropertyList = event.Property;
+    this.save();
   }
 
   save(): void {
     if (this.scopeUniqueId) {
       const _data: any[] = [];
-      this.scope.userClaims.forEach((element) => {
-        const _claimsData = {
-          apiScopeId: element.id,
-          type: element.displayName,
-        };
-        _data.push(_claimsData);
+      this.userClaims.forEach((element) => {
+        if (element) {
+          const _claimsData = {
+            apiScopeId: this.scopeUniqueId,
+            type: element.displayName,
+          };
+          _data.push(_claimsData);
+        }
       });
       const _dataProp: any[] = [];
-      this.scope.PropertyList.forEach((element) => {
+      this.PropertyList.forEach((element) => {
         const _PropData = {
-          apiScopeId: element.id,
+          apiScopeId: this.scopeUniqueId,
           value: element.value,
           key: element.key,
         };
@@ -280,37 +283,39 @@ export class AppComponent implements OnInit {
       const data: any = {
         id: this.scopeUniqueId,
         body: {
-          description: this.scope.basicInfo.description,
-          displayName: this.scope.basicInfo.displayName,
-          emphasize: this.scope.basicInfo.emphasize,
-          enabled: this.scope.basicInfo.enables,
-          required: this.scope.basicInfo.required,
-          showInDiscoveryDocument: this.scope.basicInfo.showInDiscoveryDocument,
+          description: this.apiScopeEdit.description,
+          displayName: this.apiScopeEdit.displayName,
+          emphasize: this.apiScopeEdit.emphasize,
+          enabled: this.apiScopeEdit.enabled,
+          required: this.apiScopeEdit.required,
+          showInDiscoveryDocument: this.apiScopeEdit.showInDiscoveryDocument,
           userClaims: _data,
           properties: _dataProp,
         },
       };
       this.store.dispatch(updateApiScope(data));
     } else {
-      const _data: any[] = [];
-      this.scope.userClaims.forEach((element) => {
-        const _claimsData = {
-          apiScopeId: element.id,
-          type: element.displayName,
-        };
-        _data.push(_claimsData);
-      });
       const data: any = {
-        description: this.scope.basicInfo.description,
-        displayName: this.scope.basicInfo.displayName,
-        emphasize: this.scope.basicInfo.emphasize,
-        enabled: this.scope.basicInfo.enables,
-        name: this.scope.basicInfo.name,
-        required: this.scope.basicInfo.required,
-        showInDiscoveryDocument: this.scope.basicInfo.showInDiscoveryDocument,
-        userClaims: _data,
+        description: this.apiScopeEdit.description,
+        displayName: this.apiScopeEdit.displayName,
+        emphasize: this.apiScopeEdit.emphasize,
+        enabled: this.apiScopeEdit.enabled,
+        name: this.apiScopeEdit.name,
+        required: this.apiScopeEdit.required,
+        showInDiscoveryDocument: this.apiScopeEdit.showInDiscoveryDocument,
+        // userClaims: _data,
+        userClaims: [],
         properties: [],
       };
+      this.userClaims.forEach((element) => {
+        if (element) {
+          const _claimsData = {
+            apiScopeId: this.scopeUniqueId,
+            type: element.displayName,
+          };
+          data.userClaims.push(_claimsData);
+        }
+      });
       this.store.dispatch(saveApiScope(data));
     }
     this.activePage = 0;
