@@ -61,7 +61,7 @@ export class ClientsEffects {
         from(this.clientsService.clientsPOST(data.data)).pipe(
           // Take the returned value and return a new success action containing the todos
           map(() => {
-            this.store.dispatch(getAllClients());
+            // this.store.dispatch(getAllClients());
             return saveClientSuccess();
           }),
           // Or... if it errors return a new failure action containing the error
@@ -78,7 +78,7 @@ export class ClientsEffects {
         from(this.clientsService.clientsPUT(data.id, data.data)).pipe(
           // Take the returned value and return a new success action containing the todos
           map(() => {
-            this.store.dispatch(getAllClients());
+            // this.store.dispatch(getAllClients());
             return updateClientSuccess();
           }),
           // Or... if it errors return a new failure action containing the error

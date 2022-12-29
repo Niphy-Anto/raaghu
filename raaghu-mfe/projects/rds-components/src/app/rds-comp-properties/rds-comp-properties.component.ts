@@ -16,49 +16,47 @@ export class Properties {
 export class RdsCompPropertiesComponent implements OnInit {
 
   constructor() { }
-  key: string;
-  value: string;
-  @Input() PropertyTableData: any = []
-  @Input() PropertyList: any = [];
-  @Output()
-  onPropertyResourceSave = new EventEmitter<{ Property: any }>()
-  // rdsresourceTableMfeConfig: ComponentLoaderOptions;
-  @Input() PropertiesData: Properties = {
+
+  @Input() propertyTableData: any = [];
+  @Input() propertyActions: any = [];
+  @Output() onPropertyResourceSave = new EventEmitter<{ Property: any }>()
+  rdsresourceTableMfeConfig: ComponentLoaderOptions;
+  PropertiesData: Properties = {
     key: undefined,
     value: undefined
   }
-  @Input() PropertyTableHeader: TableHeader[] = [
+  @Input() propertyTableHeader: TableHeader[] = [
     { displayName: 'Key', key: 'key', dataType: 'text', dataLength: 30, sortable: false, required: true },
     { displayName: 'Value', key: 'value', dataType: 'text', dataLength: 30, sortable: false, required: true },
   ]
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (!this.PropertiesData) {
 
-      this.PropertiesData['key'] = '';
-      this.PropertiesData['value'] = '';
-
-    }
   }
   ngOnInit(): void {
-  }
 
-  ngAfterViewInit() : void {
-    this.onPropertyResourceSave.emit({ Property: this.PropertyList });
   }
   addProperties() {
     const data: any = { ...this.PropertiesData };
-    this.PropertyList.push(data)
-    // this.PropertiesData = {
-    //   key: '',
-    //   value: ''
-    // }
-    console.log(this.PropertiesData);
+    this.propertyTableData.push(data);
+    // this.onPropertyResourceSave.emit({ Property: this.propertyTableData });
 
   }
+
+  onActionSelection(event): void {
+    if (event && event.selectedData) {
+      if (event.actionId === 'delete') {
+        const index = this.propertyTableData.findIndex((x: any) => x.key == event.selectedData.key);
+        if (index !== -1) {
+          this.propertyTableData.splice(index, 1);
+          // this.onPropertyResourceSave.emit({ Property: this.propertyTableData });
+        }
+      }
+    }
+  }
+
   SavePropertyData() {
-    // this.onPropertyResourceSave.emit({ Property: this.PropertyList });
-    console.log({ Property: this.PropertyList });
+    this.onPropertyResourceSave.emit({ Property: this.propertyTableData });
 
 
   }

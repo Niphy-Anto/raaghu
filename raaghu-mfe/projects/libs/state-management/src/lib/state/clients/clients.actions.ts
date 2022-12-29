@@ -47,7 +47,7 @@ export const saveClientSuccess = createAction(
 );
 
 export const saveClientFailure = createAction(
-    '[Clients Page] Save Clinet Failure',
+    '[Clients Page] Save Client Failure',
     props<{ error: string }>()
 );
 
