@@ -307,7 +307,11 @@ export class AppComponent implements OnInit, OnChanges {
   }
 
   openCanvas(): void {
+
     this.isButtonSpinner = true;
+
+    
+
     this.claims.forEach((claim) => {
       claim.left = false;
     });
