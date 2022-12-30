@@ -290,6 +290,7 @@ export class AppComponent implements OnInit, OnChanges {
   }
 
   openCanvas(): void {
+    
     this.claims.forEach((claim) => {
       claim.left = false;
     });
